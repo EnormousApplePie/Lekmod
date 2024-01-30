@@ -4739,10 +4739,20 @@ bool CvPlayerPolicies::IsTimeToChooseIdeology() const
 						int iIdeologyTriggerCount = pkBuildingInfo->GetXBuiltTriggersIdeologyChoice();
 						if (iIdeologyTriggerCount > 0)
 						{
+
 							if (m_pPlayer->getBuildingClassCount((BuildingClassTypes)iI) >= iIdeologyTriggerCount)
 							{
 								return true;
 							}
+#ifdef LEKMOD_UNLOCK_IDEO_ALL_CITIES
+							else if (m_pPlayer->getNumCities() < iIdeologyTriggerCount)
+							{
+								if (m_pPlayer->getBuildingClassCount((BuildingClassTypes)iI) >= m_pPlayer->getNumCities())
+								{
+									return true;
+								}
+							}
+#endif
 						}
 					}
 				}

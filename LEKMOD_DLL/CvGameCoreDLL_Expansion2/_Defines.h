@@ -911,6 +911,10 @@
 #define LEKMOD_AI_XP_CAP
 // Interception is now only triggered if the damage is greater than 0 (prevents 100 evasion units from triggering interception even though they don't do anything)
 #define LEKMOD_100_EVASIION_FIX
+// Unlocks ideology if all your cities have a factory or otherwise a building that unlocks ideology, else the specified number entered (default 3)
+#define LEKMOD_UNLOCK_IDEO_ALL_CITIES
+
+
 
 //Added a notification step mid-turn when you found a religion after having the reformation policy
 //#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
@@ -1003,6 +1007,11 @@
 #define AUTOSAVE_END_OF_TURN
 // Autosaves no longer skip turns
 #define AUTOSAVE_FIX_PREVENT_TURN_SKIP
+// -------------------------
+
+// -- Debug minidump
+
+#define AUI_MINIDUMPS
 
 //Firstmove fix, still allowing 1 move on turn load. Immos version of LEKMOD_FIRSTMOVE_FIX
 
@@ -1028,3 +1037,8 @@
 #define MOD_RESOURCES_PRODUCTION_COST_MODIFIERS
 #endif
 
+// From VMC DLL
+// Remove leaderscreens in singleplayer (which means effectively everywhere). If you turn this off, you will need to add various leaderscreens back to the game,but vanilla ones will work.
+#define NO_LEADER_SCREEN
+// Also adds a new leader screen exit lua method called with Game.ExitLeaderScreen. This will run lExitLeaderscreen in here.
+#define LUAAPIEXTN(method, type, ...) static int l##method(lua_State* L)

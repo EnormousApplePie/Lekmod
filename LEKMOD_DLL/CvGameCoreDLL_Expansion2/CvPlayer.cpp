@@ -9626,7 +9626,7 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 	}
 
 	// Is this a !!build!! that is only useable by a specific civ? ~EAP
-
+	/*
 	if(eImprovement != NO_IMPROVEMENT)
 	{
 		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
@@ -9639,7 +9639,7 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 			}
 		}
 	}
-
+	*/
 
 	if(!bTestVisible)
 	{
@@ -18279,12 +18279,15 @@ void CvPlayer::setTurnActiveForPbem(bool bActive)
 void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 {
 #ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-	float t1;
-	float t2;
-	GC.getGame().GetTurnTimerData(t1, t2);
-	if (isHuman() && isAlive())
+	if (GC.getGame().isOption("GAMEOPTION_FIRSTMOVE")) 
 	{
-		//SLOG("%f %f setTurnActive player: %d bNewValue: %d bDoTurn: %d", t1, t2, GetID(), bNewValue ? 1 : 0, bDoTurn ? 1 : 0);
+		float t1;
+		float t2;
+		GC.getGame().GetTurnTimerData(t1, t2);
+		if (isHuman() && isAlive())
+		{
+			//SLOG("%f %f setTurnActive player: %d bNewValue: %d bDoTurn: %d", t1, t2, GetID(), bNewValue ? 1 : 0, bDoTurn ? 1 : 0);
+		}
 	}
 #endif
 	if(isTurnActive() != bNewValue)

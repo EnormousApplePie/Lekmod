@@ -219,6 +219,9 @@ PREGAMEVARDEFAULT(CvString,                           s_gameName);
 PREGAMEVAR(GameSpeedTypes,                     s_gameSpeed,              NO_GAMESPEED);
 PREGAMEVAR(bool,                               s_gameStarted,            false);
 PREGAMEVAR(int,                                s_gameTurn,               -1);
+#ifdef NO_LEADER_SCREEN
+GameTypes s_pushedGameType = GAME_TYPE_NONE;
+#endif
 PREGAMEVAR(GameTypes,                          s_gameType,               GAME_TYPE_NONE);
 PREGAMEVAR(GameMapTypes,                       s_gameMapType,            GAME_USER_PARAMETERS);
 PREGAMEVAR(int,                                s_gameUpdateTime,         0);
@@ -2600,6 +2603,25 @@ void setGameType(const CvString& g)
 	if(s_gameType != GAME_NETWORK_MULTIPLAYER)
 		s_isInternetGame = false;
 }
+
+#ifdef NO_LEADER_SCREEN
+void pushGameType(GameTypes g)
+{
+	if (s_pushedGameType == GAME_TYPE_NONE) {
+		s_pushedGameType = gameType();
+		setGameType(g);
+	}
+}
+
+void popGameType()
+{
+	if (s_pushedGameType != GAME_TYPE_NONE) {
+		setGameType(s_pushedGameType);
+
+		s_pushedGameType = GAME_TYPE_NONE;
+	}
+}
+#endif
 
 void setGameStartType(GameStartTypes eStartType)
 {
