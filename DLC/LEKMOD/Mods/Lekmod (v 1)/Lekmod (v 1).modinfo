@@ -24,6 +24,7 @@
   <Blocks />
   <Files>
   
+	<File md5="a03e6ccea24a9dee4915a1966c5044a1" import="1">CvGameCore_Expansion2.pdb</File>
 	<!-- temp -->
 	
 	<File md5="D3858C1C5913DC0739470D08B8BFA5FA" import="1">Art/Observer/BannerBody.dds</File>

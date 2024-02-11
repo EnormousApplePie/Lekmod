@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<!-- Copy-paste this table into your mod if you want to have the map make use of this -->
+<GameData>
+
+	<!-- new tables for map script -->
+	<Table name ="Resource_Preferences">
+		<Column name="ResourceType" type="text" notnull="true" />
+		<Column name="TreeRequired" type="boolean"  default="0"/>
+		<Column name="HillRequired" type="boolean"  default="0"/>
+		<Column name="FlatRequired" type="boolean"  default="0"/>
+		<Column name="FeatureType" type="text" default="FEATURE_NONE"/>
+		<Column name="TerrainType" type="text" default="TERRAIN_NONE" />
+		<Column name="PreferenceValue" type="integer" default="0" />
+		
+	</Table>
+	
+	<Resource_Preferences>
+	<!-- New table for Resources -->
+	<!--  This table handles preferences and hard setting required terrain/features. Perefences are normally done in various places in the map script. Simplified and made editable here in the database.
+		Default Frequencies are in the <Resources> table under "TilesPer" column. Editing the default frequency means you should also edit the bonus values here.
+		
+		##### IMPORTANT ##### Currently this table only supports global placements and only for strategics. ######## 
+		
+		Any terrain/features entered is treated as "spawning more/less often on x terrain/features". 
+		
+		The value (y) means: x resource will spawn once per y amount of tiles it is viable on.
+		Example: Iron is placed once every 10 tiles it is viable on by default. If we enter TERRAIN_TUNDRA for RESOURCE_IRON with a value of -5, 
+		then for every (10 - 5 ) = 5 tundra tiles an iron can spawn on it will be placed once every 5 rather than every 10 tiles, so twice as often. 
+		However, it will still only be placed once every 10 tiles on any other terrain it is valid (such as plains).
+		
+		
+	-->
+	
+	<!-- TreeRequired will force any resource to spawn with a forest/jungle depending on valid features. Unused and has no effect yet.
+		The booleans main purpose is for certain resources to still be flexable with regards to spawn rules, but still need to have a plot/feature type present.
+		Setting them anywhere here will not affect initial spawning, only cleaning them up after everything else.
+		-->
+		
+	<!-- Multiple entries for one resource is allowed, but will resort in more of the resource being placed. Duplicate entries are allowed.
+		###Important: Setting both a terrain and feature type in one row will combine them. Useful for if you want a resource to spawn more often on a feature but only in a certain biome.
+	-->
+	
+	<!-- Default frequency of strategics is 0, so it will only spawn on the terrain/features set here regardless of Terrain/Feature/FeatureTerrain Booleans  -->
+		
+		<Row>
+			<ResourceType>RESOURCE_URANIUM</ResourceType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<PreferenceValue>60</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_URANIUM</ResourceType>
+			<FeatureType>FEATURE_MARSH</FeatureType>
+			<PreferenceValue>20</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_URANIUM</ResourceType>
+			<FeatureType>FEATURE_JUNGLE</FeatureType>
+			<PreferenceValue>140</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_OIL</ResourceType>
+			<TerrainType>TERRAIN_DESERT</TerrainType>
+			<PreferenceValue>28</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_OIL</ResourceType>
+			<TerrainType>TERRAIN_SNOW</TerrainType>
+			<PreferenceValue>45</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_OIL</ResourceType>
+			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+			<PreferenceValue>50</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_OIL</ResourceType>
+			<FeatureType>FEATURE_MARSH</FeatureType>
+			<PreferenceValue>15</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_OIL</ResourceType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<PreferenceValue>140</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_ALUMINUM</ResourceType>
+			<TerrainType>TERRAIN_SNOW</TerrainType>
+			<PreferenceValue>70</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_ALUMINUM</ResourceType>
+			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+			<PreferenceValue>80</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_ALUMINUM</ResourceType>
+			<TerrainType>TERRAIN_HILL</TerrainType>
+			<PreferenceValue>50</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+			<PreferenceValue>50</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<TerrainType>TERRAIN_SNOW</TerrainType>
+			<PreferenceValue>75</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<TerrainType>TERRAIN_HILL</TerrainType>
+			<PreferenceValue>88</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<TerrainType>TERRAIN_DESERT</TerrainType>
+			<PreferenceValue>35</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_COAL</ResourceType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<PreferenceValue>200</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_COAL</ResourceType>
+			<FeatureType>FEATURE_JUNGLE</FeatureType>
+			<PreferenceValue>72</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_COAL</ResourceType>
+			<TerrainType>TERRAIN_HILL</TerrainType>
+			<PreferenceValue>60</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_HORSE</ResourceType>
+			<TerrainType>TERRAIN_GRASS</TerrainType>
+			<PreferenceValue>17</PreferenceValue>
+		</Row>
+		<Row>
+			<ResourceType>RESOURCE_HORSE</ResourceType>
+			<TerrainType>TERRAIN_PLAINS</TerrainType>
+			<PreferenceValue>17</PreferenceValue>
+		</Row>
+	
+	</Resource_Preferences>
+	
+</GameData>

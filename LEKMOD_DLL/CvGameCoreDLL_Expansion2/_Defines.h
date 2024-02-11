@@ -886,9 +886,6 @@
 //EAP: Underground Sect/World Church now apply to all cities -- Kinda a HACK, would have to also update wording xml, and only applies to specific yields (culture/science).
 #define LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES
 
-//EAP: Remove majority of first move cases by disallowing actions to be queued during turn transitions
-#define LEKMOD_FIRSTMOVE_FIX
-
 // Disembarkes the worker when it finishes a water walk improvement (polders/pontoon bridges)
 #define LEKMOD_WATER_IMPROVEMENT_FIX
 //added a civ requirement tag to the builds table

@@ -14,6 +14,9 @@
   <Description>
 	<Value language="en_US">Multiplayer Modspack</Value>
   </Description>
+  <Files>
+	<File md5="84e2384d50deb5b49882a317b8deeb73" import="1">UI/Utils/Lek_Utils.lua</File>
+  </Files>
   <UISkin name="Expansion2Primary" set="Expansion2" platform="Common">
 	<GameplaySkin>
 		<Directory>UI</Directory>

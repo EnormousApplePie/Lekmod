@@ -860,45 +860,7 @@ ContinueMissionExit: // goto destination to clean up the flag value
 bool CvUnitMission::CanStartMission(UnitHandle hUnit, int iMission, int iData1, int iData2, CvPlot* pPlot, bool bTestVisible)
 {
 	UnitHandle pTargetUnit;
-#ifdef LEKMOD_FIRSTMOVE_FIX
-	//Lekmod edit: block moving during turn transition
-	CvGame& kGame = GC.getGame();
-	CvPlayerAI& kUnitOwner = GET_PLAYER(hUnit->getOwner());
-	
-	if(kGame.isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && kGame.isOption("GAMEOPTION_FIRSTMOVE_FIX"))
-	{
-		// if we are processing a new turn, we cannot start anything new (queuing moves)
-		//exclude automated units, else they wont move at all.
-		//also exclude players who are not at war
-		TeamTypes eTeam = kUnitOwner.getTeam();
-		bool bAtPeace = GET_TEAM(eTeam).getAtWarCount(true) == 0;
 
-		if (!hUnit->IsAutomated() && kUnitOwner.isHuman() && kUnitOwner.isAlive() && !bAtPeace)
-		{	
-			
-			//if we are in the first turn, we can do whatever we want
-			if (kGame.getElapsedGameTurns() > 0)
-			{
-
-				float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
-
-				//NOTE:  These times exclude the time used for AI processing.
-				//Time since the current player's turn started.  Used for measuring time for players in sequential turn mode.
-				float fTimeSinceCurrentTurnStart = kGame.m_curTurnTimer.Peek() + kGame.m_fCurrentTurnTimerPauseDelta;
-
-				//Time since the game (year) turn started.  Used for measuring time for players in simultaneous turn mode.
-				float fTimeSinceGameTurnStart = kGame.m_timeSinceGameTurnStart.Peek() + kGame.m_fCurrentTurnTimerPauseDelta;
-
-				float fTimeElapsed = (GET_PLAYER(kGame.getActivePlayer()).isSimultaneousTurns() ? fTimeSinceGameTurnStart : fTimeSinceCurrentTurnStart);
-
-				if (fTimeElapsed < 3.0f)
-				{
-					return false;
-				}
-			}
-		}
-	}
-#endif
 	if(hUnit->IsBusy())
 	{
 		return false;

@@ -1,7 +1,20 @@
+
 include("PlotIterators")
 include("FLuaVector.lua")
 include("PlotAreaSweepIterator.lua")
 -- Author: EnormousApplePie & Lek10
+
+--=================================================================================================================
+--=================================================================================================================
+						-- NO LEADER SCREENS
+--=================================================================================================================
+--=================================================================================================================
+
+						function OnLeavingLeaderViewMode()
+							Game.ExitLeaderScreen()
+							print("exit leader screen")
+						end
+						Events.LeavingLeaderViewMode.Add(OnLeavingLeaderViewMode)
 
 --=================================================================================================================
 --=================================================================================================================
@@ -16,6 +29,45 @@ local g_MathFloor				= math.floor
 local g_MathMax					= math.max
 local g_MathMin					= math.min
 
+
+-- UTILITY FUNCTIONS
+-------------------------------------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------------------------------------
+-- Adding Dummy Buildings
+function doDummyBuilding(playerID)
+    print("Lek Utils: Dummy Buildings")
+    for dummy_data in GameInfo.Civilization_Dummy_Buildings() do
+        if GameInfo.Civilization_Dummy_Buildings == nil then print("dummy table does not exist, check the xml!") return end
+        
+        local civType = dummy_data.Type
+        local bIsCapitalOnly = dummy_data.IsCapitalOnly
+        local buildingType = dummy_data.BuildingType
+        local techType = dummy_data.TechType
+
+        for playerID, player in pairs(Players) do
+            if player:GetCivilizationType() == GameInfoTypes[civType] then
+				print(civType)
+                if techType ~= nil then print(techType) if not Teams[player:GetTeam()]:IsHasTech(GameInfoTypes[techType]) then break end end
+                local player = Players[playerID]
+                if player:IsEverAlive() then
+                    for city in player:Cities() do
+                        if not bIsCapitalOnly then
+                            city:SetNumRealBuilding(GameInfoTypes[buildingType], 1)
+                        elseif city:IsCapital() then
+                            city:SetNumRealBuilding(GameInfoTypes[buildingType], 1)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+GameEvents.PlayerCityFounded.Add(doDummyBuilding)
+GameEvents.CityCaptureComplete.Add(doDummyBuilding)
+GameEvents.TeamSetHasTech.Add(doDummyBuilding)
+-------------------------------------------------------------------------------------------------------------------------
 
 
 --=================================================================================================================
@@ -108,7 +160,7 @@ function PlaceExtraJuice()
     for playerID = 0, GameDefines.MAX_MAJOR_CIVS - 1 do
         local player = Players[playerID]
         if (player:IsEverAlive()) then
-             PlaceExtraJuiceResource(player:GetStartingPlot(), FishID)
+             --PlaceExtraJuiceResource(player:GetStartingPlot(), FishID)
         end
 	end
     placeRes = true
@@ -1044,49 +1096,6 @@ end
 if bIsActive then
 	GameEvents.PlayerDoTurn.Add(KilwaTrait)
 end
-
--- Ukraine UA 
-
-local iCiv = GameInfoTypes["CIVILIZATION_UKRAINE"]
-local bIsActive = JFD_IsCivilisationActive(iCiv)
-if bIsActive then
-GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
-	print("working: ukraine ontechbonus")
-	for playerID, player in pairs(Players) do
-		local player = Players[playerID];
-		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_UKRAINE"] then
-			if player:GetTeam() == iTeam then
-				if (iTech == GameInfoTypes["TECH_THE_WHEEL"]) then
-					local pCity = player:GetCapitalCity();
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_UKRAINE_TRAIT"], 1);
-				end
-			end
-		end
-	end
-end);
-end
-
--- Wales UA 
-
-local iCiv = GameInfoTypes["CIVILIZATION_WALES"]
-local bIsActive = JFD_IsCivilisationActive(iCiv)
-if bIsActive then
-GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
-	print("working: ukraine ontechbonus")
-	for playerID, player in pairs(Players) do
-		local player = Players[playerID];
-		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_WALES"] then
-			if player:GetTeam() == iTeam then
-				if (iTech == GameInfoTypes["TECH_ANIMAL_HUSBANDRY"]) then
-					local pCity = player:GetCapitalCity();
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_WALES_TRAIT"], 1);
-				end
-			end
-		end
-	end
-end);
-end
-
 -- GAULS UA 
 
 local iCiv = GameInfoTypes["CIVILIZATION_GAUL"]
@@ -1203,7 +1212,7 @@ end
 
 local iCiv = GameInfoTypes["CIVILIZATION_VENEZ"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
-
+--[[
 -- Venez trait tech research
 print("loaded venez ua")
 if bIsActive then
@@ -1222,6 +1231,7 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 	end
 end)
 end
+--]]
 --Horde
 
 local civHorde = GameInfoTypes["CIVILIZATION_GOLDEN_HORDE"];
@@ -2249,7 +2259,6 @@ local civSwiss = GameInfoTypes["CIVILIZATION_SWISS"];
 local swissIsActive = JFD_IsCivilisationActive(civSwiss);
 
 local skiResort = GameInfoTypes["BUILDING_SWISS_SKI_RESORT"];
-local skiResortM = GameInfoTypes["BUILDING_SWISS_SKI_RESORT_MOUNTAIN"];
 
 local swissTrait = GameInfoTypes["BUILDING_SWISS_TRAIT"];
 
@@ -2280,9 +2289,11 @@ function SkiResortMountain(playerID)
                 end
                 
             else
-                for i in 0, 4 do 
-                  pCity:SetNumRealBuilding(skiResortM[i], 0)
-                end
+               	for iLoop, skiResort in pairs(skiResortM) do
+					if pCity:IsHasBuilding(skiResort) then
+						pCity:SetNumRealBuilding(skiResortM, 0)
+					end
+				end
             end
         end
     end
@@ -2350,7 +2361,7 @@ end
 
 if swissIsActive then
 GameEvents.PlayerDoTurn.Add(SkiResortMountain);
-GameEvents.PlayerDoTurn.Add(SwissUA);
+--GameEvents.PlayerDoTurn.Add(SwissUA);
 GameEvents.UnitSetXY.Add(Mountaineer);
 end
 
