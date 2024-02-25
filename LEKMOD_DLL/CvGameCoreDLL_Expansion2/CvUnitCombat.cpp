@@ -1531,7 +1531,12 @@ void CvUnitCombat::ResolveCityMeleeCombat(const CvCombatInfo& kCombatInfo, uint 
 				strBuffer = GetLocalizedText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW_CITY", pkAttacker->getNameKey(), iDefenderDamageInflicted, pkDefender->getNameKey(), iAttackerDamageInflicted);
 				GC.GetEngineUserInterface()->AddMessage(uiParentEventID, pkDefender->getOwner(), true, GC.getEVENT_MESSAGE_TIME(), strBuffer/*, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pkPlot->getX(), pkPlot->getY()*/);
 			}
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+			int iPenalty = pkAttacker->GetCityAttackMovePenalty();
+			pkAttacker->changeMoves(-GC.getMOVE_DENOMINATOR() + iPenalty);
+#else
 			pkAttacker->changeMoves(-GC.getMOVE_DENOMINATOR());
+#endif
 
 			ApplyPostCityCombatEffects(pkAttacker, pkDefender, iAttackerDamageInflicted);
 		}

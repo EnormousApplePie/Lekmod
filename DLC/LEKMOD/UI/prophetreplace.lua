@@ -9,13 +9,13 @@ include("PlotAreaSweepIterator.lua")
 						-- NO LEADER SCREENS
 --=================================================================================================================
 --=================================================================================================================
-
+--[[
 						function OnLeavingLeaderViewMode()
 							Game.ExitLeaderScreen()
 							print("exit leader screen")
 						end
 						Events.LeavingLeaderViewMode.Add(OnLeavingLeaderViewMode)
-
+--]]
 --=================================================================================================================
 --=================================================================================================================
 						-- GLOBALS (from JFD)
@@ -231,7 +231,7 @@ local bIsActive = JFD_IsCivilisationActive(iCiv)
 local iBuilding = GameInfoTypes["BUILDING_PHILIPPINES_TRAIT"]
 local iNumCities = 2
 
-function PhilippineExpandsBonus(playerID, iX, iY) -- Thanks Chrisy for always fixing my lua
+function PhilippineExpandsBonus(playerID, iX, iY)
     local pPlayer = Players[playerID]
     if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_PHILIPPINES"] and pPlayer:IsAlive() and pPlayer:CountNumBuildings(iBuilding) < iNumCities then
         local pPlot = Map.GetPlot(iX, iY)

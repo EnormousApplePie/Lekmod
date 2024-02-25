@@ -106,6 +106,9 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iCapitalDefenseModifier(0),
 	m_iCapitalDefenseFalloff(0),
 	m_iCityAttackPlunderModifier(0),
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	m_iCityAttackMovePenalty(0),
+#endif
 	m_iReligiousStrengthLossRivalTerritory(0),
 	m_iTradeMissionInfluenceModifier(0),
 	m_iTradeMissionGoldModifier(0),
@@ -350,6 +353,9 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iCapitalDefenseModifier = kResults.GetInt("CapitalDefenseModifier");
 	m_iCapitalDefenseFalloff = kResults.GetInt("CapitalDefenseFalloff");
 	m_iCityAttackPlunderModifier = kResults.GetInt("CityAttackPlunderModifier");
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	m_iCityAttackMovePenalty = kResults.GetInt("CityMovementPenalty");
+#endif
 	m_iReligiousStrengthLossRivalTerritory = kResults.GetInt("ReligiousStrengthLossRivalTerritory");
 	m_iTradeMissionInfluenceModifier = kResults.GetInt("TradeMissionInfluenceModifier");
 	m_iTradeMissionGoldModifier = kResults.GetInt("TradeMissionGoldModifier");
@@ -1238,10 +1244,19 @@ int CvPromotionEntry::GetCapitalDefenseFalloff() const
 }
 
 /// Accessor: gold earned from damage on an attacked city
-int CvPromotionEntry::GetCityAttackPlunderModifier() const
+int CvPromotionEntry::GetCityAttackPlunderModifier() const 
 {
 	return m_iCityAttackPlunderModifier;
 }
+
+
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+/// Accessor: movement penalty when attacking a city
+int CvPromotionEntry::GetCityAttackMovePenalty() const
+{
+	return m_iCityAttackMovePenalty;
+}
+#endif
 
 /// Accessor: loss of strength at end of each turn in rival territory without open borders
 int CvPromotionEntry::GetReligiousStrengthLossRivalTerritory() const

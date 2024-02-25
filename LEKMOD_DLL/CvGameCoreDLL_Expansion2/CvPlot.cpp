@@ -743,11 +743,13 @@ void CvPlot::verifyUnitValidPlot()
 							// Unit not allowed to be here
 							if(getNumFriendlyUnitsOfType(pLoopUnit) > /*1*/ GC.getPLOT_UNIT_LIMIT())
 							{
+#ifndef AVOID_UNIT_SPLIT_MID_TURN
 								if (!pLoopUnit->jumpToNearestValidPlot())
 								{
 									pLoopUnit->kill(false);
 									pLoopUnit = NULL;
 								}
+#endif
 							}
 							
 							if (pLoopUnit != NULL)
@@ -4241,10 +4243,24 @@ int CvPlot::getNumFriendlyUnitsOfType(const CvUnit* pUnit, bool bBreakOnUnitLimi
 #ifdef FIX_DO_ATTACK_SUBMARINES_IN_SHADOW_OF_WAR
 						if (!pLoopUnit->isInvisible(pUnit->getTeam(), false))
 						{
+#ifdef TRADE_UNITS_DO_NOT_CAUSES_REPOSITION
+							if (!pLoopUnit->isTrade())
+							{
+								iNumUnitsOfSameType++;
+							}
+#else
+							iNumUnitsOfSameType++;
+#endif
+						}
+#else
+#ifdef TRADE_UNITS_DO_NOT_CAUSES_REPOSITION
+						if (!pLoopUnit->isTrade())
+						{
 							iNumUnitsOfSameType++;
 						}
 #else
 						iNumUnitsOfSameType++;
+#endif
 #endif
 					}
 				}
@@ -6715,6 +6731,9 @@ void CvPlot::SetImprovementPillaged(bool bPillaged)
 							if(GetResourceLinkedCity() != NULL)
 								SetResourceLinkedCityActive(true);
 						}
+#ifdef FIX_SET_IMPROVEMENT_PILLAGED_HAPPINESS_UPDATE
+						GET_PLAYER(getOwner()).DoUpdateHappiness();
+#endif
 					}
 				}
 			}

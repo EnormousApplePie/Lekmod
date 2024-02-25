@@ -1737,6 +1737,9 @@ CvTeamTechs::CvTeamTechs():
 	m_eLastTechAcquired(NO_TECH),
 #endif
 	m_pabHasTech(NULL),
+#ifdef HAS_TECH_BY_HUMAN
+	m_pabHasTechByHuman(NULL),
+#endif
 	m_pabNoTradeTech(NULL),
 	m_paiResearchProgress(NULL),
 	m_paiTechCount(NULL)
@@ -1758,6 +1761,10 @@ void CvTeamTechs::Init(CvTechXMLEntries* pTechs, CvTeam* pTeam)
 	// Initialize status arrays
 	CvAssertMsg(m_pabHasTech==NULL, "about to leak memory, CvTeamTechs::m_pabHasTech");
 	m_pabHasTech = FNEW(bool[m_pTechs->GetNumTechs()], c_eCiv5GameplayDLL, 0);
+#ifdef HAS_TECH_BY_HUMAN
+	CvAssertMsg(m_pabHasTechByHuman == NULL, "about to leak memory, CvTeamTechs::m_pabHasTechByHuman");
+	m_pabHasTechByHuman = FNEW(bool[m_pTechs->GetNumTechs()], c_eCiv5GameplayDLL, 0);
+#endif
 	CvAssertMsg(m_pabNoTradeTech==NULL, "about to leak memory, CvTeamTechs::m_pabNoTradeTech");
 	m_pabNoTradeTech = FNEW(bool[m_pTechs->GetNumTechs()], c_eCiv5GameplayDLL, 0);
 	CvAssertMsg(m_paiResearchProgress==NULL, "about to leak memory, CvTeamTechs::m_paiResearchProgress");
@@ -1772,6 +1779,9 @@ void CvTeamTechs::Init(CvTechXMLEntries* pTechs, CvTeam* pTeam)
 void CvTeamTechs::Uninit()
 {
 	SAFE_DELETE_ARRAY(m_pabHasTech);
+#ifdef HAS_TECH_BY_HUMAN
+	SAFE_DELETE_ARRAY(m_pabHasTechByHuman);
+#endif
 	SAFE_DELETE_ARRAY(m_pabNoTradeTech);
 	SAFE_DELETE_ARRAY(m_paiResearchProgress);
 	SAFE_DELETE_ARRAY(m_paiTechCount);
@@ -1791,6 +1801,9 @@ void CvTeamTechs::Reset()
 	for(iI = 0; iI < m_pTechs->GetNumTechs(); iI++)
 	{
 		m_pabHasTech[iI] = false;
+#ifdef HAS_TECH_BY_HUMAN
+		m_pabHasTechByHuman[iI] = false;
+#endif
 		m_pabNoTradeTech[iI] = false;
 		m_paiResearchProgress[iI] = 0;
 		m_paiTechCount[iI] = 0;
@@ -1916,6 +1929,23 @@ void CvTeamTechs::Read(FDataStream& kStream)
 		CvInfosSerializationHelper::ReadHashedTypeArray(kStream, iNumSavedTechs, paTechIDs, iNumSavedTechs);
 
 		CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_pabHasTech, iNumActiveTechs, paTechIDs);
+#ifdef HAS_TECH_BY_HUMAN
+#ifdef SAVE_BACKWARDS_COMPATIBILITY
+		if (uiVersion >= BUMP_SAVE_VERSION_TECHS)
+		{
+#endif
+			CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_pabHasTechByHuman, iNumActiveTechs, paTechIDs);
+#ifdef SAVE_BACKWARDS_COMPATIBILITY
+		}
+		else
+		{
+			for (int iI = 0; iI < m_pTechs->GetNumTechs(); iI++)
+			{
+				m_pabHasTechByHuman[iI] = false;
+			}
+		}
+#endif
+#endif
 		CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_pabNoTradeTech, iNumActiveTechs, paTechIDs);
 		CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_paiResearchProgress, iNumActiveTechs, paTechIDs);
 		CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_paiTechCount, iNumActiveTechs, paTechIDs);
@@ -1951,6 +1981,9 @@ void CvTeamTechs::Write(FDataStream& kStream)
 			CvInfosSerializationHelper::WriteHashed(kStream, m_pTechs->GetEntry(i));
 
 		kStream << ArrayWrapper<bool>(iNumTechs, m_pabHasTech);
+#ifdef HAS_TECH_BY_HUMAN
+		kStream << ArrayWrapper<bool>(iNumTechs, m_pabHasTechByHuman);
+#endif
 		kStream << ArrayWrapper<bool>(iNumTechs, m_pabNoTradeTech);
 		kStream << ArrayWrapper<int>(iNumTechs, m_paiResearchProgress);
 		kStream << ArrayWrapper<int>(iNumTechs, m_paiTechCount);
@@ -2006,6 +2039,38 @@ bool CvTeamTechs::HasTech(TechTypes eIndex) const
 	else
 		return false;
 }
+
+#ifdef HAS_TECH_BY_HUMAN
+/// Accessor: set whether team owns a tech researched by a human
+void CvTeamTechs::SetHasTechByHuman(TechTypes eIndex, bool bNewValue)
+{
+	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eIndex < GC.getNumTechInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	if (m_pabHasTechByHuman[eIndex] != bNewValue)
+	{
+		m_pabHasTechByHuman[eIndex] = bNewValue;
+	}
+}
+
+/// Accessor: does team have a tech researched by a human?
+bool CvTeamTechs::HasTechByHuman(TechTypes eIndex) const
+{
+	if (eIndex == NO_TECH)
+	{
+		return true;
+	}
+
+	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eIndex < GC.getNumTechInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	CvAssertMsg(m_pabHasTechByHuman != NULL, "m_pabHasTechByHuman is not expected to be equal with NULL");
+	if (m_pabHasTechByHuman != NULL)
+		return m_pabHasTechByHuman[eIndex];
+	else
+		return false;
+}
+
+#endif
 
 /// What was the most recent tech acquired?
 TechTypes CvTeamTechs::GetLastTechAcquired() const

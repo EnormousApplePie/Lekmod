@@ -1100,7 +1100,10 @@ public:
 	void SetTourismBlastStrength(int iValue);
 	int GetResearchBulbAmount() const;
 	void SetResearchBulbAmount(int iValue);
-
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	int GetScientistBirthTurn() const;
+	void SetScientistBirthTurn(int iValue);
+#endif
 	// Arbitrary Script Data
 	std::string getScriptData() const;
 #ifdef AUI_WARNING_FIXES
@@ -1292,7 +1295,10 @@ public:
 
 	void ChangeCityAttackPlunderModifier(int iValue);
 	int GetCityAttackPlunderModifier() const;
-
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	void ChangeCityAttackMovePenalty(int iValue);
+	int GetCityAttackMovePenalty() const;
+#endif
 	void ChangeReligiousStrengthLossRivalTerritory(int iValue);
 	int GetReligiousStrengthLossRivalTerritory() const;
 
@@ -1608,6 +1614,9 @@ protected:
 	int m_iCapitalDefenseModifier;
 	int m_iCapitalDefenseFalloff;
 	int m_iCityAttackPlunderModifier;
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	int m_iCityAttackMovePenalty;
+#endif
 	int m_iReligiousStrengthLossRivalTerritory;
 	int m_iTradeMissionInfluenceModifier;
 	int m_iTradeMissionGoldModifier;
@@ -1619,6 +1628,10 @@ protected:
 	GreatWorkType m_eGreatWork;
 	int m_iTourismBlastStrength;
 	int m_iResearchBulbAmount; // GJS - new stored bulb amount
+
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	int m_iScientistBirthTurn;
+#endif
 
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_ON_CREATION_TURN)
 	bool m_bCanInstahealThisTurn;

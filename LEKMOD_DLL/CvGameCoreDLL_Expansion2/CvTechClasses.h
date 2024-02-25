@@ -297,6 +297,11 @@ public:
 	void Read(FDataStream& kStream);
 	void Write(FDataStream& kStream);
 
+#ifdef HAS_TECH_BY_HUMAN
+	void SetHasTechByHuman(TechTypes eIndex, bool bNewValue);
+	bool HasTechByHuman(TechTypes eIndex) const;
+#endif
+
 	// Accessor functions
 	void SetHasTech(TechTypes eIndex, bool bNewValue);
 	bool HasTech(TechTypes eIndex) const;
@@ -328,6 +333,9 @@ private:
 	TechTypes m_eLastTechAcquired;
 
 	bool* m_pabHasTech;
+#ifdef HAS_TECH_BY_HUMAN
+	bool* m_pabHasTechByHuman;
+#endif
 	bool* m_pabNoTradeTech;
 	int* m_paiResearchProgress;  // Stored in hundredths
 	int* m_paiTechCount;

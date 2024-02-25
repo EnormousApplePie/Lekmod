@@ -267,13 +267,19 @@ CvUnit::CvUnit() :
 	, m_iCapitalDefenseModifier(0)
 	, m_iCapitalDefenseFalloff(0)
 	, m_iCityAttackPlunderModifier(0)
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	, m_iCityAttackMovePenalty(0)
+#endif
 	, m_iReligiousStrengthLossRivalTerritory(0)
 	, m_iTradeMissionInfluenceModifier(0)
 	, m_iTradeMissionGoldModifier(0)
 	, m_strName("")
 	, m_eGreatWork(NO_GREAT_WORK)
-	, m_iTourismBlastStrength(0) // GJS - new research bulb amount value
-	, m_iResearchBulbAmount(0)
+	, m_iTourismBlastStrength(0) 
+	, m_iResearchBulbAmount(0) // GJS - new research bulb amount value
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	, m_iScientistBirthTurn(0)
+#endif
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP)
 	, m_bCanInstahealThisTurn(true)
 #endif
@@ -694,12 +700,22 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 		SetTourismBlastStrength(kPlayer.GetCulture()->GetTourismBlastStrength(getUnitInfo().GetOneShotTourism()));
 	}
 
-	// GJS: Great Scientists now bulb for science at point of birth, not current science 
+	// GJS: Great Scientists now bulb for science at point of birth, not current science
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	if (GC.getGame().isOption("GAMEOPTION_NO_SCIENTIST_SAVING"))
+	{
+		SetScientistBirthTurn(GC.getGame().getGameTurn());
+	}
+	else if (getUnitInfo().GetBaseBeakersTurnsToCount() > 0)
+	{
+		SetResearchBulbAmount(kPlayer.GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), getUnitInfo().GetBaseBeakersTurnsToCount()));
+	}
+#else
 	if (getUnitInfo().GetBaseBeakersTurnsToCount() > 0)
 	{
 		SetResearchBulbAmount(kPlayer.GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), getUnitInfo().GetBaseBeakersTurnsToCount()));
 	}
-
+#endif
 	int iTourism = kPlayer.GetPlayerPolicies()->GetTourismFromUnitCreation((UnitClassTypes)(getUnitInfo().GetUnitClassType()));
 	if (iTourism > 0)
 	{
@@ -1042,6 +1058,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iCapitalDefenseModifier = 0;
 	m_iCapitalDefenseFalloff = 0;
 	m_iCityAttackPlunderModifier = 0;
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	m_iCityAttackMovePenalty = 0;
+#endif
 	m_iReligiousStrengthLossRivalTerritory = 0;
 	m_iTradeMissionInfluenceModifier = 0;
 	m_iTradeMissionGoldModifier = 0;
@@ -1094,6 +1113,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_eGreatWork = NO_GREAT_WORK;
 	m_iTourismBlastStrength = 0;
 	m_iResearchBulbAmount = 0; // GJS - new research bulb amount init
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	m_iScientistBirthTurn = 0;
+#endif
 	m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility = "";
 	m_strScriptData ="";
 	m_iScenarioData = 0;
@@ -1579,7 +1601,9 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer /*= NO_PLAYER*/)
 			}
 			else
 			{
+#ifndef REMOVE_EXCESS_CAMERA_CENTERING
 				DLLUI->setDirty(SelectionCamera_DIRTY_BIT, true);
+#endif
 			}
 		}
 	}
@@ -5428,7 +5452,20 @@ int CvUnit::GetCityAttackPlunderModifier() const
 {
 	return m_iCityAttackPlunderModifier;
 }
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
 
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeCityAttackMovePenalty(int iValue)
+{
+	m_iCityAttackMovePenalty += iValue;
+}
+//	--------------------------------------------------------------------------------
+int CvUnit::GetCityAttackMovePenalty() const
+{
+	return m_iCityAttackMovePenalty;
+}
+
+#endif
 //	--------------------------------------------------------------------------------
 void CvUnit::ChangeReligiousStrengthLossRivalTerritory(int iValue)
 {
@@ -8617,7 +8654,19 @@ int CvUnit::getDiscoverAmount()
 			// Beakers boost based on previous turns
 			//int iPreviousTurnsToCount = m_pUnitInfo->GetBaseBeakersTurnsToCount(); // GJS: commented out
 			//iValue = pPlayer->GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), iPreviousTurnsToCount); // GJS: commented out 
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+			if (GC.getGame().isOption("GAMEOPTION_NO_SCIENTIST_SAVING"))
+			{
+				int iPreviousTurnsToCount = std::max(m_pUnitInfo->GetBaseBeakersTurnsToCount() - std::max(GC.getGame().getGameTurn() - GetScientistBirthTurn() - 1, 0), 0);
+				iValue = pPlayer->GetScienceYieldFromPreviousTurns(GetScientistBirthTurn(), iPreviousTurnsToCount);
+			}
+			else
+			{
+				iValue = GetResearchBulbAmount();
+			}
+#else
 			iValue = GetResearchBulbAmount();
+#endif
 			if (pPlayer->GetGreatScientistBeakerMod() != 0)
 			{
 				iValue += (iValue * pPlayer->GetGreatScientistBeakerMod()) / 100;
@@ -19352,7 +19401,20 @@ void CvUnit::SetResearchBulbAmount(int iValue)
 {
 	m_iResearchBulbAmount = iValue;
 }
+//  --------------------------------------------------------------------------------
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+int CvUnit::GetScientistBirthTurn() const
+{
+	return m_iScientistBirthTurn;
+}
 
+//	--------------------------------------------------------------------------------
+
+void CvUnit::SetScientistBirthTurn(int iValue)
+{
+	m_iScientistBirthTurn = iValue;
+}
+#endif
 //	--------------------------------------------------------------------------------
 std::string CvUnit::getScriptData() const
 {
@@ -20003,6 +20065,9 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		ChangeCapitalDefenseModifier((thisPromotion.GetCapitalDefenseModifier()) * iChange);
 		ChangeCapitalDefenseFalloff((thisPromotion.GetCapitalDefenseFalloff()) * iChange);
 		ChangeCityAttackPlunderModifier((thisPromotion.GetCityAttackPlunderModifier()) *  iChange);
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+		ChangeCityAttackMovePenalty((thisPromotion.GetCityAttackMovePenalty()) * iChange);
+#endif
 		ChangeReligiousStrengthLossRivalTerritory((thisPromotion.GetReligiousStrengthLossRivalTerritory()) *  iChange);
 		ChangeTradeMissionInfluenceModifier((thisPromotion.GetTradeMissionInfluenceModifier()) * iChange);
 		ChangeTradeMissionGoldModifier((thisPromotion.GetTradeMissionGoldModifier()) * iChange);
@@ -20398,7 +20463,9 @@ void CvUnit::read(FDataStream& kStream)
 	kStream >> m_iCapitalDefenseFalloff;
 
 	kStream >> m_iCityAttackPlunderModifier;
-
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	kStream >> m_iCityAttackMovePenalty;
+#endif
 	kStream >> m_iReligiousStrengthLossRivalTerritory;
 
 	kStream >> m_iTradeMissionInfluenceModifier;
@@ -20511,7 +20578,9 @@ void CvUnit::read(FDataStream& kStream)
 	}
 
 	kStream >> m_iResearchBulbAmount; // GJS
-
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	kStream >> m_iScientistBirthTurn;
+#endif
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP)
 	kStream >> m_bCanInstahealThisTurn;
 #endif
@@ -20584,6 +20653,9 @@ void CvUnit::write(FDataStream& kStream) const
 	kStream << m_iCapitalDefenseModifier;
 	kStream << m_iCapitalDefenseFalloff;
 	kStream << m_iCityAttackPlunderModifier;
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	kStream << m_iCityAttackMovePenalty;
+#endif
 	kStream << m_iReligiousStrengthLossRivalTerritory;
 	kStream << m_iTradeMissionInfluenceModifier;
 	kStream << m_iTradeMissionGoldModifier;
@@ -20656,7 +20728,9 @@ void CvUnit::write(FDataStream& kStream) const
 #endif
 
 	kStream << m_iResearchBulbAmount; // GJS
-
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	kStream << m_iScientistBirthTurn;
+#endif
 	//  Write mission list
 	kStream << m_missionQueue.getLength();
 #ifdef AUI_FIX_FFASTVECTOR_USE_UNSIGNED

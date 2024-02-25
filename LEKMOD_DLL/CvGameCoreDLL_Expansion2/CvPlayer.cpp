@@ -4682,6 +4682,56 @@ void CvPlayer::doTurnPostDiplomacy()
 	// Great People gifts from Allied City States (if we have that policy)
 	DoGreatPeopleSpawnTurn();
 
+#ifdef AUTOMATICALLY_SPEND_FREE_TECHNOLOGIES
+	if (GC.getGame().isOption("GAMEOPTION_NO_TECH_SAVING"))
+	{
+		FStaticVector<TechTypes, 128, true, c_eCiv5GameplayDLL> vePossibleTechs;
+		int iCheapestTechCost = MAX_INT;
+		while (GetNumFreeTechs() > 0)
+		{
+			for (int i = 0; i < GC.getNumTechInfos(); i++)
+			{
+				TechTypes e = (TechTypes)i;
+				CvTechEntry* pInfo = GC.getTechInfo(e);
+				if (pInfo)
+				{
+					// We don't
+					if (!GET_TEAM(getTeam()).GetTeamTechs()->HasTech(e))
+					{
+						// But we could
+						if (GetPlayerTechs()->CanResearch(e))
+						{
+							if (pInfo->GetResearchCost() < iCheapestTechCost)
+							{
+								iCheapestTechCost = pInfo->GetResearchCost();
+								vePossibleTechs.clear();
+								vePossibleTechs.push_back(e);
+							}
+							else if (pInfo->GetResearchCost() == iCheapestTechCost)
+							{
+								vePossibleTechs.push_back(e);
+							}
+						}
+					}
+				}
+			}
+
+			if (!vePossibleTechs.empty())
+			{
+				int iRoll = GC.getGame().getJonRandNum((int)vePossibleTechs.size(), "Rolling to choose free tech from conquering a city");
+				TechTypes eFreeTech = vePossibleTechs[iRoll];
+				CvAssert(eFreeTech != NO_TECH)
+					if (eFreeTech != NO_TECH)
+					{
+						GET_TEAM(getTeam()).setHasTech(eFreeTech, true, GetID(), true, true);
+						GET_TEAM(getTeam()).GetTeamTechs()->SetNoTradeTech(eFreeTech, true);
+					}
+			}
+			SetNumFreeTechs(max(0, GetNumFreeTechs() - 1));
+		}
+	}
+#endif
+
 	// Do turn for all Cities
 	{
 		AI_PERF_FORMAT("AI-perf.csv", ("Do City Turns, Turn %03d, %s", GC.getGame().getElapsedGameTurns(), getCivilizationShortDescription()) );
@@ -9989,10 +10039,26 @@ int CvPlayer::calculateResearchModifier(TechTypes eTech)
 		{
 			if(GET_TEAM(getTeam()).isHasMet((TeamTypes)iI))
 			{
-				if(kLoopTeam.GetTeamTechs()->HasTech(eTech))
+#ifdef HAS_TECH_BY_HUMAN
+				if (GC.getGame().isOption("GAMEOPTION_NO_AI_TECH_DISCOUNT"))
 				{
-					iKnownCount++;
+					if (kLoopTeam.GetTeamTechs()->HasTechByHuman(eTech))
+#else
+					if (kLoopTeam.GetTeamTechs()->HasTech(eTech))
+#endif
+					{
+						iKnownCount++;
+					}
+#ifdef HAS_TECH_BY_HUMAN
 				}
+				else
+				{
+					if (kLoopTeam.GetTeamTechs()->HasTech(eTech))
+					{
+						iKnownCount++;
+					}
+				}
+#endif
 			}
 			iPossibleKnownCount++;
 		}
@@ -18404,7 +18470,9 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 					DLLUI->setCycleSelectionCounter(1);
 				}
 
+#ifndef REMOVE_EXCESS_CAMERA_CENTERING
 				DLLUI->setDirty(SelectionCamera_DIRTY_BIT, true);
+#endif
 
 				// slewis - added this so the tutorial knows when a turn begins
 				DLLUI->PublishActivePlayerTurnStart();
@@ -24524,7 +24592,18 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 									else if (pNewUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
 									{
 										// GJS: Great Scientists now bulb for science at point of birth, not current science 
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+										if (GC.getGame().isOption("GAMEOPTION_NO_SCIENTIST_SAVING"))
+										{
+											pNewUnit->SetScientistBirthTurn(GC.getGame().getGameTurn());
+										}
+										else
+										{
+											pNewUnit->SetResearchBulbAmount(GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), pNewUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
+										}
+#else
 										pNewUnit->SetResearchBulbAmount(GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), pNewUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
+#endif
 										// GJS NQMP - Free Great Scientists from policies are actually free
 										//incrementGreatScientistsCreated();
 										pNewUnit->jumpToNearestValidPlot();
