@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-23 22:48:02 -->
+<GameData>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_TOURIST_CENTER" />
+		<Row Tag="TXT_KEY_BUILDING_TOURIST_CENTER">
+			<Text>National Visitor Center [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE]Must have built a Hotel in all Cities. The cost goes up the more cities there are in the empire. 100% of the [ICON_CULTURE] Culture from World Wonders, Natural Wonders, and Improvements (Landmarks, Moai, Chateau) is added to the [ICON_TOURISM] Tourism output of the city. [ICON_TOURISM] Tourism output from Great Works +100%.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_TOURIST_CENTER" />
+		<Row Tag="TXT_KEY_BUILDING_TOURIST_CENTER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]National Visitor Center [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Must have built a Hotel in all Cities. The cost goes up the more cities there are in the empire. 100% of the [ICON_CULTURE] Culture from World Wonders, Natural Wonders, and Improvements (Landmarks, Moai, Chateau) is added to the [ICON_TOURISM] Tourism output of the city. [ICON_TOURISM] Tourism output from Great Works +100%.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_TOURIST_CENTER" />
+		<Row Tag="TXT_KEY_BUILDING_TOURIST_CENTER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]National Visitor Center [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Must have built a Hotel in all Cities. The cost goes up the more cities there are in the empire. 100% of the [ICON_CULTURE] Culture from World Wonders, Natural Wonders, and Improvements (Landmarks, Moai, Chateau) is added to the [ICON_TOURISM] Tourism output of the city. [ICON_TOURISM] Tourism output from Great Works +100%.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_TOURIST_CENTER" />
+		<Row Tag="TXT_KEY_BUILDING_TOURIST_CENTER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]National Visitor Center [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_TOURIST_CENTER_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Must have built a Hotel in all Cities. The cost goes up the more cities there are in the empire. 100% of the [ICON_CULTURE] Culture from World Wonders, Natural Wonders, and Improvements (Landmarks, Moai, Chateau) is added to the [ICON_TOURISM] Tourism output of the city. [ICON_TOURISM] Tourism output from Great Works +100%.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

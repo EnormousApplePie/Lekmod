@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/7/2015 7:27:39 PM -->
+<GameData>
+
+	<Buildings>
+		<Update>
+			<Set PrereqTech="TECH_DRAMA" />
+			<Where Type="BUILDING_GARDEN" />
+		</Update>
+	</Buildings>
+
+</GameData>

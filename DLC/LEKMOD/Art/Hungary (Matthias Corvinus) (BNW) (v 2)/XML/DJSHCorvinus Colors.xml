@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/18/2013 10:24:05 PM -->
+<GameData>
+	<Colors>
+		<Row>
+			<Type>COLOR_PLAYER_DJSH_HUNGARY_CORVINUS_BACKGROUND</Type>
+			<Red>0.2275</Red>
+			<Green>0.3725</Green>
+			<Blue>0.0431</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+		<Row>
+			<Type>COLOR_PLAYER_DJSH_HUNGARY_CORVINUS_ICON</Type>
+			<Red>0.8</Red>
+			<Green>0.4</Green>
+			<Blue>0.2</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+	</Colors>
+	<PlayerColors>
+		<Row>
+			<Type>PLAYERCOLOR_DJSH_HUNGARY_CORVINUS</Type>
+			<PrimaryColor>COLOR_PLAYER_DJSH_HUNGARY_CORVINUS_ICON</PrimaryColor>
+			<SecondaryColor>COLOR_PLAYER_DJSH_HUNGARY_CORVINUS_BACKGROUND</SecondaryColor>
+			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
+		</Row>
+	</PlayerColors>
+</GameData>

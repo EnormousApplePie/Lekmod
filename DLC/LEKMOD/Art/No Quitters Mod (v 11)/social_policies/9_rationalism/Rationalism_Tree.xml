@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- New Rationalism Tree
+	
+					   Sovereignty					Humanism
+	  			  __________|___________
+	  			 |					    |
+	   	    Free Thought      Scientific Revolution
+			     |______________________|	    
+					        |				        
+			           Secularism			  
+					
+	-->
+
+	<Policies>
+		<Update>
+			<Set GridX="1" GridY="1" />
+			<Where Type="POLICY_SOVEREIGNTY" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="2" />
+			<Where Type="POLICY_SCIENTIFIC_REVOLUTION" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="1" />
+			<Where Type="POLICY_FREE_THOUGHT" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="3" />
+			<Where Type="POLICY_SECULARISM" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="1" />
+			<Where Type="POLICY_HUMANISM" />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_SOVEREIGNTY" />
+		<Delete PolicyType="POLICY_SCIENTIFIC_REVOLUTION" />
+		<Delete PolicyType="POLICY_FREE_THOUGHT" />
+		<Delete PolicyType="POLICY_SECULARISM" />
+		<Delete PolicyType="POLICY_HUMANISM" />
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<PrereqPolicy>POLICY_SOVEREIGNTY</PrereqPolicy>
+		</Row>
+
+		<Row>
+			<PolicyType>POLICY_SCIENTIFIC_REVOLUTION</PolicyType>
+			<PrereqPolicy>POLICY_FREE_THOUGHT</PrereqPolicy>
+		</Row>
+
+		<Row>
+			<PolicyType>POLICY_SECULARISM</PolicyType>
+			<PrereqPolicy>POLICY_SCIENTIFIC_REVOLUTION</PrereqPolicy>
+		</Row>
+
+	</Policy_PrereqPolicies>
+
+</GameData>

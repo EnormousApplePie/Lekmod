@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-14 15:03:45 -->
+<GameData>
+
+	<!-- [New UU] Great Humanitarian (replaces Great Merchant): Trade Missions with City States provide 90 Influence (up from 30) and twice as much gold as usual. -->
+	<Units>
+		<Row>
+			<Class>UNITCLASS_MERCHANT</Class>
+			<Type>UNIT_SWEDISH_HUMANITARIAN</Type>
+			<Cost>-1</Cost>
+			<Moves>2</Moves>
+			<CivilianAttackPriority>CIVILIAN_ATTACK_PRIORITY_HIGH</CivilianAttackPriority>
+			<Special>SPECIALUNIT_PEOPLE</Special>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_MERCHANT</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_SWEDISH_HUMANITARIAN</Description>
+			<Civilopedia>TXT_KEY_CIV5_SWEDISH_HUMANITARIAN_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_SWEDISH_HUMANITARIAN_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_SWEDISH_HUMANITARIAN</Help>
+			<AdvancedStartCost>-1</AdvancedStartCost>
+			<WorkRate>1</WorkRate>
+			<CombatLimit>0</CombatLimit>
+			<BaseGold>300</BaseGold>
+			<NumGoldPerEra>100</NumGoldPerEra>
+			<UnitArtInfo>ART_DEF_UNIT_U_VENETIAN_MERCHANT</UnitArtInfo>
+			<UnitArtInfoEraVariation>true</UnitArtInfoEraVariation>
+			<UnitFlagAtlas>EXPANSION2_UNIT_FLAG_ATLAS</UnitFlagAtlas>
+			<UnitFlagIconOffset>12</UnitFlagIconOffset>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>37</PortraitIndex>
+			<MoveRate>WOODEN_BOAT</MoveRate>
+		</Row>
+	</Units>
+	<Unit_AITypes>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UnitAIType>UNITAI_MERCHANT</UnitAIType>
+		</Row>
+	</Unit_AITypes>
+	<Unit_Builds>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<BuildType>BUILD_CUSTOMS_HOUSE</BuildType>
+		</Row>
+	</Unit_Builds>
+	<Unit_Flavors>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>100</Flavor>
+		</Row>
+	</Unit_Flavors>
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<PromotionType>PROMOTION_TRADE_MISSION_BONUS</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+	<UnitPromotions>
+		<Update>
+			<Set TradeMissionInfluenceModifier="200" ExtraNavalMovement="0" />
+			<Where Type="PROMOTION_TRADE_MISSION_BONUS" />
+		</Update>
+	</UnitPromotions>
+	<Unit_UniqueNames>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_SVANTE_ARRHENIUS</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_KLAS_PONTUS_ARNOLDSSON</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_SELMA_LAGERLOF</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_ALLVAR_GULLSTRAND</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_GUSTAV_DALEN</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_VERNER_VON_HEIDENSTAM</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_HJALMAR_BRANTING</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_MANNE_SIEGBAHN</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_THE_SVEDBERG</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_HANS_VON_EULER_CHELPIN</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_NATHAN_SODERBLOM</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_ERIK_KARLFELDT</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_ARNE_TISELIUS</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_PAR_LAGERKVIST</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_HUGO_THEORELL</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_DAG_HAMMARSKJOLD</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_NELLY_SACHS</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_RAGNAR_GRANIT</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_HANNES_ALFVEN</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_ULF_VON_EULER</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_EYVIND_JOHNSON</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_GUNNAR_MYRDAL</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_BERTIL_OHLIN</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_TORSTEN_WIESEL</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_KAI_SIEGBAHN</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_ALVA_MYRDAL</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_SUNE_BERGSTROM</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_ARVID_CARLSSON</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_TRANSTROMER</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_LINDAHL</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_BENGT_SAMUELSSON</UniqueName>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HUMANITARIAN</UnitType>
+			<UniqueName>TXT_KEY_SWEDISH_HUMANITARIAN_HARRY_MARTINSON</UniqueName>
+		</Row>
+	</Unit_UniqueNames>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_PROMOTION_TRADE_MISSION_BONUS_HELP" />
+		<Row Tag="TXT_KEY_PROMOTION_TRADE_MISSION_BONUS_HELP">
+			<Text>Double [ICON_GOLD] Gold and triple [ICON_INFLUENCE] Influence (90 total) from Trade Missions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_SWEDISH_HUMANITARIAN">
+			<Text>This Swedish unique Great Person replaces the Great Merchant. It gains triple [ICON_INFLUENCE] Influence (90 total) and double [ICON_GOLD] Gold when it conducts a Trade Mission.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SWEDISH_HUMANITARIAN_STRATEGY">
+			<Text>Use Great Humanitarians to conduct Trade Missions in crucial City States you need as allies.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SWEDISH_HUMANITARIAN_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/List_of_Nobel_laureates)[ENDCOLOR][NEWLINE][NEWLINE]The Nobel Prizes (Swedish: Nobelpriset, Norwegian: Nobelprisen) are prizes awarded annually by the Royal Swedish Academy of Sciences, the Swedish Academy, the Karolinska Institutet, and the Norwegian Nobel Committee to individuals and organizations who make outstanding contributions in the fields of chemistry, physics, literature, peace, and physiology or medicine. They were established by the 1895 will of Alfred Nobel, which dictates that the awards should be administered by the Nobel Foundation. The Nobel Memorial Prize in Economic Sciences was established in 1968 by the Sveriges Riksbank, the central bank of Sweden, for contributions to the field of economics. Each recipient, or "laureate", receives a gold medal, a diploma, and a sum of money, which is decided by the Nobel Foundation, yearly.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SWEDISH_HUMANITARIAN">
+			<Text>Great Humanitarian</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SVANTE_ARRHENIUS">
+			<Text>Svante Arrhenius</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_KLAS_PONTUS_ARNOLDSSON">
+			<Text>Klas Pontus Arnoldsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SELMA_LAGERLOF">
+			<Text>Selma Lagerlöf</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ALLVAR_GULLSTRAND">
+			<Text>Allvar Gullstrand</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_GUSTAV_DALEN">
+			<Text>Gustav Dalen</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_VERNER_VON_HEIDENSTAM">
+			<Text>Verner von Heidenstam</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HJALMAR_BRANTING">
+			<Text>Hjalmar Branting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_MANNE_SIEGBAHN">
+			<Text>Manne Siegbahn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_THE_SVEDBERG">
+			<Text>The Svedberg</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HANS_VON_EULER_CHELPIN">
+			<Text>Hans von Euler-Chelpin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_NATHAN_SODERBLOM">
+			<Text>Nathan Söderblom</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ERIK_KARLFELDT">
+			<Text>Erik Karlfeldt</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ARNE_TISELIUS">
+			<Text>Arne Tiselius</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_PAR_LAGERKVIST">
+			<Text>Pär Lagerkvist</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HUGO_THEORELL">
+			<Text>Hugo Theorell</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_DAG_HAMMARSKJOLD">
+			<Text>Dag Hammarskjöld</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_NELLY_SACHS">
+			<Text>Nelly Sachs</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_RAGNAR_GRANIT">
+			<Text>Ragnar Granit</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HANNES_ALFVEN">
+			<Text>Hannes Alfven</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ULF_VON_EULER">
+			<Text>Ulf von Euler</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_EYVIND_JOHNSON">
+			<Text>Eyvind Johnson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_GUNNAR_MYRDAL">
+			<Text>Gunnar Myrdal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_BERTIL_OHLIN">
+			<Text>Bertil Ohlin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TORSTEN_WIESEL">
+			<Text>Torsten Wiesel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_KAI_SIEGBAHN">
+			<Text>Kai Siegbahn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ALVA_MYRDAL">
+			<Text>Alva Myrdal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SUNE_BERGSTROM">
+			<Text>Sune Bergström</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ARVID_CARLSSON">
+			<Text>Arvid Carlsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_TRANSTROMER">
+			<Text>Tomas Transtromer</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_LINDAHL">
+			<Text>Tomas Lindahl</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_BENGT_SAMUELSSON">
+			<Text>Bengt Samuelsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HARRY_MARTINSON">
+			<Text>Harry Martinson</Text>
+		</Row>
+	</Language_en_US>
+
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_PROMOTION_TRADE_MISSION_BONUS_HELP" />
+		<Row Tag="TXT_KEY_PROMOTION_TRADE_MISSION_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Double [ICON_GOLD] Gold and triple [ICON_INFLUENCE] Influence (90 total) from Trade Missions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_SWEDISH_HUMANITARIAN">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]This Swedish unique Great Person replaces the Great Merchant. It gains triple [ICON_INFLUENCE] Influence (90 total) and double [ICON_GOLD] Gold when it conducts a Trade Mission.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SWEDISH_HUMANITARIAN_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Use Great Humanitarians to conduct Trade Missions in crucial City States you need as allies.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SWEDISH_HUMANITARIAN_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/List_of_Nobel_laureates)[ENDCOLOR][NEWLINE][NEWLINE]The Nobel Prizes (Swedish: Nobelpriset, Norwegian: Nobelprisen) are prizes awarded annually by the Royal Swedish Academy of Sciences, the Swedish Academy, the Karolinska Institutet, and the Norwegian Nobel Committee to individuals and organizations who make outstanding contributions in the fields of chemistry, physics, literature, peace, and physiology or medicine. They were established by the 1895 will of Alfred Nobel, which dictates that the awards should be administered by the Nobel Foundation. The Nobel Memorial Prize in Economic Sciences was established in 1968 by the Sveriges Riksbank, the central bank of Sweden, for contributions to the field of economics. Each recipient, or "laureate", receives a gold medal, a diploma, and a sum of money, which is decided by the Nobel Foundation, yearly.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SWEDISH_HUMANITARIAN">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Great Humanitarian</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SVANTE_ARRHENIUS">
+			<Text>Svante Arrhenius</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_KLAS_PONTUS_ARNOLDSSON">
+			<Text>Klas Pontus Arnoldsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SELMA_LAGERLOF">
+			<Text>Selma Lagerlöf</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ALLVAR_GULLSTRAND">
+			<Text>Allvar Gullstrand</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_GUSTAV_DALEN">
+			<Text>Gustav Dalen</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_VERNER_VON_HEIDENSTAM">
+			<Text>Verner von Heidenstam</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HJALMAR_BRANTING">
+			<Text>Hjalmar Branting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_MANNE_SIEGBAHN">
+			<Text>Manne Siegbahn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_THE_SVEDBERG">
+			<Text>The Svedberg</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HANS_VON_EULER_CHELPIN">
+			<Text>Hans von Euler-Chelpin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_NATHAN_SODERBLOM">
+			<Text>Nathan Söderblom</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ERIK_KARLFELDT">
+			<Text>Erik Karlfeldt</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ARNE_TISELIUS">
+			<Text>Arne Tiselius</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_PAR_LAGERKVIST">
+			<Text>Pär Lagerkvist</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HUGO_THEORELL">
+			<Text>Hugo Theorell</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_DAG_HAMMARSKJOLD">
+			<Text>Dag Hammarskjöld</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_NELLY_SACHS">
+			<Text>Nelly Sachs</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_RAGNAR_GRANIT">
+			<Text>Ragnar Granit</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HANNES_ALFVEN">
+			<Text>Hannes Alfven</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ULF_VON_EULER">
+			<Text>Ulf von Euler</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_EYVIND_JOHNSON">
+			<Text>Eyvind Johnson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_GUNNAR_MYRDAL">
+			<Text>Gunnar Myrdal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_BERTIL_OHLIN">
+			<Text>Bertil Ohlin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TORSTEN_WIESEL">
+			<Text>Torsten Wiesel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_KAI_SIEGBAHN">
+			<Text>Kai Siegbahn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ALVA_MYRDAL">
+			<Text>Alva Myrdal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SUNE_BERGSTROM">
+			<Text>Sune Bergström</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ARVID_CARLSSON">
+			<Text>Arvid Carlsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_TRANSTROMER">
+			<Text>Tomas Transtromer</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_LINDAHL">
+			<Text>Tomas Lindahl</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_BENGT_SAMUELSSON">
+			<Text>Bengt Samuelsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HARRY_MARTINSON">
+			<Text>Harry Martinson</Text>
+		</Row>
+	</Language_DE_DE>
+
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_PROMOTION_TRADE_MISSION_BONUS_HELP" />
+		<Row Tag="TXT_KEY_PROMOTION_TRADE_MISSION_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Double [ICON_GOLD] Gold and triple [ICON_INFLUENCE] Influence (90 total) from Trade Missions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_SWEDISH_HUMANITARIAN">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]This Swedish unique Great Person replaces the Great Merchant. It gains triple [ICON_INFLUENCE] Influence (90 total) and double [ICON_GOLD] Gold when it conducts a Trade Mission.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SWEDISH_HUMANITARIAN_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Use Great Humanitarians to conduct Trade Missions in crucial City States you need as allies.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SWEDISH_HUMANITARIAN_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/List_of_Nobel_laureates)[ENDCOLOR][NEWLINE][NEWLINE]The Nobel Prizes (Swedish: Nobelpriset, Norwegian: Nobelprisen) are prizes awarded annually by the Royal Swedish Academy of Sciences, the Swedish Academy, the Karolinska Institutet, and the Norwegian Nobel Committee to individuals and organizations who make outstanding contributions in the fields of chemistry, physics, literature, peace, and physiology or medicine. They were established by the 1895 will of Alfred Nobel, which dictates that the awards should be administered by the Nobel Foundation. The Nobel Memorial Prize in Economic Sciences was established in 1968 by the Sveriges Riksbank, the central bank of Sweden, for contributions to the field of economics. Each recipient, or "laureate", receives a gold medal, a diploma, and a sum of money, which is decided by the Nobel Foundation, yearly.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SWEDISH_HUMANITARIAN">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Great Humanitarian</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SVANTE_ARRHENIUS">
+			<Text>Svante Arrhenius</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_KLAS_PONTUS_ARNOLDSSON">
+			<Text>Klas Pontus Arnoldsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SELMA_LAGERLOF">
+			<Text>Selma Lagerlöf</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ALLVAR_GULLSTRAND">
+			<Text>Allvar Gullstrand</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_GUSTAV_DALEN">
+			<Text>Gustav Dalen</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_VERNER_VON_HEIDENSTAM">
+			<Text>Verner von Heidenstam</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HJALMAR_BRANTING">
+			<Text>Hjalmar Branting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_MANNE_SIEGBAHN">
+			<Text>Manne Siegbahn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_THE_SVEDBERG">
+			<Text>The Svedberg</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HANS_VON_EULER_CHELPIN">
+			<Text>Hans von Euler-Chelpin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_NATHAN_SODERBLOM">
+			<Text>Nathan Söderblom</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ERIK_KARLFELDT">
+			<Text>Erik Karlfeldt</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ARNE_TISELIUS">
+			<Text>Arne Tiselius</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_PAR_LAGERKVIST">
+			<Text>Pär Lagerkvist</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HUGO_THEORELL">
+			<Text>Hugo Theorell</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_DAG_HAMMARSKJOLD">
+			<Text>Dag Hammarskjöld</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_NELLY_SACHS">
+			<Text>Nelly Sachs</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_RAGNAR_GRANIT">
+			<Text>Ragnar Granit</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HANNES_ALFVEN">
+			<Text>Hannes Alfven</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ULF_VON_EULER">
+			<Text>Ulf von Euler</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_EYVIND_JOHNSON">
+			<Text>Eyvind Johnson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_GUNNAR_MYRDAL">
+			<Text>Gunnar Myrdal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_BERTIL_OHLIN">
+			<Text>Bertil Ohlin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TORSTEN_WIESEL">
+			<Text>Torsten Wiesel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_KAI_SIEGBAHN">
+			<Text>Kai Siegbahn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ALVA_MYRDAL">
+			<Text>Alva Myrdal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SUNE_BERGSTROM">
+			<Text>Sune Bergström</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ARVID_CARLSSON">
+			<Text>Arvid Carlsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_TRANSTROMER">
+			<Text>Tomas Transtromer</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_LINDAHL">
+			<Text>Tomas Lindahl</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_BENGT_SAMUELSSON">
+			<Text>Bengt Samuelsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HARRY_MARTINSON">
+			<Text>Harry Martinson</Text>
+		</Row>
+	</Language_PL_PL>
+
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_PROMOTION_TRADE_MISSION_BONUS_HELP" />
+		<Row Tag="TXT_KEY_PROMOTION_TRADE_MISSION_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Double [ICON_GOLD] Gold and triple [ICON_INFLUENCE] Influence (90 total) from Trade Missions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_SWEDISH_HUMANITARIAN">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]This Swedish unique Great Person replaces the Great Merchant. It gains triple [ICON_INFLUENCE] Influence (90 total) and double [ICON_GOLD] Gold when it conducts a Trade Mission.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SWEDISH_HUMANITARIAN_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Use Great Humanitarians to conduct Trade Missions in crucial City States you need as allies.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SWEDISH_HUMANITARIAN_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/List_of_Nobel_laureates)[ENDCOLOR][NEWLINE][NEWLINE]The Nobel Prizes (Swedish: Nobelpriset, Norwegian: Nobelprisen) are prizes awarded annually by the Royal Swedish Academy of Sciences, the Swedish Academy, the Karolinska Institutet, and the Norwegian Nobel Committee to individuals and organizations who make outstanding contributions in the fields of chemistry, physics, literature, peace, and physiology or medicine. They were established by the 1895 will of Alfred Nobel, which dictates that the awards should be administered by the Nobel Foundation. The Nobel Memorial Prize in Economic Sciences was established in 1968 by the Sveriges Riksbank, the central bank of Sweden, for contributions to the field of economics. Each recipient, or "laureate", receives a gold medal, a diploma, and a sum of money, which is decided by the Nobel Foundation, yearly.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SWEDISH_HUMANITARIAN">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Great Humanitarian</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SVANTE_ARRHENIUS">
+			<Text>Svante Arrhenius</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_KLAS_PONTUS_ARNOLDSSON">
+			<Text>Klas Pontus Arnoldsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SELMA_LAGERLOF">
+			<Text>Selma Lagerlöf</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ALLVAR_GULLSTRAND">
+			<Text>Allvar Gullstrand</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_GUSTAV_DALEN">
+			<Text>Gustav Dalen</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_VERNER_VON_HEIDENSTAM">
+			<Text>Verner von Heidenstam</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HJALMAR_BRANTING">
+			<Text>Hjalmar Branting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_MANNE_SIEGBAHN">
+			<Text>Manne Siegbahn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_THE_SVEDBERG">
+			<Text>The Svedberg</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HANS_VON_EULER_CHELPIN">
+			<Text>Hans von Euler-Chelpin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_NATHAN_SODERBLOM">
+			<Text>Nathan Söderblom</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ERIK_KARLFELDT">
+			<Text>Erik Karlfeldt</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ARNE_TISELIUS">
+			<Text>Arne Tiselius</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_PAR_LAGERKVIST">
+			<Text>Pär Lagerkvist</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HUGO_THEORELL">
+			<Text>Hugo Theorell</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_DAG_HAMMARSKJOLD">
+			<Text>Dag Hammarskjöld</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_NELLY_SACHS">
+			<Text>Nelly Sachs</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_RAGNAR_GRANIT">
+			<Text>Ragnar Granit</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HANNES_ALFVEN">
+			<Text>Hannes Alfven</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ULF_VON_EULER">
+			<Text>Ulf von Euler</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_EYVIND_JOHNSON">
+			<Text>Eyvind Johnson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_GUNNAR_MYRDAL">
+			<Text>Gunnar Myrdal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_BERTIL_OHLIN">
+			<Text>Bertil Ohlin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TORSTEN_WIESEL">
+			<Text>Torsten Wiesel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_KAI_SIEGBAHN">
+			<Text>Kai Siegbahn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ALVA_MYRDAL">
+			<Text>Alva Myrdal</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_SUNE_BERGSTROM">
+			<Text>Sune Bergström</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_ARVID_CARLSSON">
+			<Text>Arvid Carlsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_TRANSTROMER">
+			<Text>Tomas Transtromer</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_TOMAS_LINDAHL">
+			<Text>Tomas Lindahl</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_BENGT_SAMUELSSON">
+			<Text>Bengt Samuelsson</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SWEDISH_HUMANITARIAN_HARRY_MARTINSON">
+			<Text>Harry Martinson</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

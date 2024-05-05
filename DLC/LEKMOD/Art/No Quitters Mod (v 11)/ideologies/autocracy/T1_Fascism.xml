@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-21 13:09:50 -->
+<GameData>
+
+	<!-- Old policy - Fortified Borders: Removed. -->
+	<!-- New policy - Fascism: +12 Happiness in the Empire. -->
+	<Policies>
+		<Update>
+			<Set ExtraHappiness="12" />
+			<Where Type="POLICY_FORTIFIED_BORDERS" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassHappiness>
+		<Delete PolicyType="POLICY_FORTIFIED_BORDERS" BuildingClassType="BUILDINGCLASS_CASTLE" Happiness="1" />
+		<Delete PolicyType="POLICY_FORTIFIED_BORDERS" BuildingClassType="BUILDINGCLASS_ARSENAL" Happiness="1" />
+		<Delete PolicyType="POLICY_FORTIFIED_BORDERS" BuildingClassType="BUILDINGCLASS_MILITARY_BASE" Happiness="1" />
+	</Policy_BuildingClassHappiness>
+	<Policy_Flavors>
+		<Delete PolicyType="POLICY_FORTIFIED_BORDERS" FlavorType="FLAVOR_CITY_DEFENSE" Flavor="8" />
+	</Policy_Flavors>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS">
+			<Text>Fascism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Fascism[ENDCOLOR][NEWLINE]+12 [ICON_HAPPINESS_1] Global Happiness in the Empire.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Fascism)[ENDCOLOR][NEWLINE][NEWLINE]Fascism is a form of radical authoritarian nationalism that came to prominence in early 20th-century Europe, influenced by national syndicalism. Fascism originated in Italy during World War I and spread to other European countries. Fascism opposes liberalism, Marxism and anarchism and is usually placed on the far-right within the traditional left–right spectrum.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Fascism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Fascism[ENDCOLOR][NEWLINE]+12 [ICON_HAPPINESS_1] Global Happiness in the Empire.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Fascism)[ENDCOLOR][NEWLINE][NEWLINE]Fascism is a form of radical authoritarian nationalism that came to prominence in early 20th-century Europe, influenced by national syndicalism. Fascism originated in Italy during World War I and spread to other European countries. Fascism opposes liberalism, Marxism and anarchism and is usually placed on the far-right within the traditional left–right spectrum.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Fascism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Fascism[ENDCOLOR][NEWLINE]+12 [ICON_HAPPINESS_1] Global Happiness in the Empire.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Fascism)[ENDCOLOR][NEWLINE][NEWLINE]Fascism is a form of radical authoritarian nationalism that came to prominence in early 20th-century Europe, influenced by national syndicalism. Fascism originated in Italy during World War I and spread to other European countries. Fascism opposes liberalism, Marxism and anarchism and is usually placed on the far-right within the traditional left–right spectrum.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Fascism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Fascism[ENDCOLOR][NEWLINE]+12 [ICON_HAPPINESS_1] Global Happiness in the Empire.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_FORTIFIED_BORDERS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Fascism)[ENDCOLOR][NEWLINE][NEWLINE]Fascism is a form of radical authoritarian nationalism that came to prominence in early 20th-century Europe, influenced by national syndicalism. Fascism originated in Italy during World War I and spread to other European countries. Fascism opposes liberalism, Marxism and anarchism and is usually placed on the far-right within the traditional left–right spectrum.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Tomatekh -->
+<GameData>
+	<UnitMemberArtInfo>
+		<Type>ART_DEF_UNIT_KONGO_POMBO_MEMBER_MOD</Type>
+		<fScale>0.14</fScale>
+		<Granny>EthiopiaSpearman.fxsxml</Granny>
+		<Combat>
+			<Defaults>ART_DEF_TEMPLATE_SPEARMAN</Defaults>
+		</Combat>
+		<MaterialTypeTag>CLOTH</MaterialTypeTag>
+		<MaterialTypeSoundOverrideTag>FLESH</MaterialTypeSoundOverrideTag>
+	</UnitMemberArtInfo>
+</GameData>

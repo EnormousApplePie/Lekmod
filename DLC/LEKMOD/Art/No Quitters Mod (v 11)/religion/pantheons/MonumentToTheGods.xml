@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +20% Production towards Ancient, Classical, and Medieval Wonders. -->
+	<Beliefs>
+		<Update>
+			<Set WonderProductionModifier="20" ObsoleteEra="ERA_RENAISSANCE" />
+			<Where Type="BELIEF_MONUMENT_GODS" />
+		</Update>
+	</Beliefs>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_MONUMENT_GODS" />
+		<Row Tag="TXT_KEY_BELIEF_MONUMENT_GODS">
+			<Text>+20% [ICON_PRODUCTION] Production towards Ancient, Classical, and Medieval Wonders</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_MONUMENT_GODS" />
+		<Row Tag="TXT_KEY_BELIEF_MONUMENT_GODS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+20% [ICON_PRODUCTION] Production towards Ancient, Classical, and Medieval Wonders</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_MONUMENT_GODS" />
+		<Row Tag="TXT_KEY_BELIEF_MONUMENT_GODS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+20% [ICON_PRODUCTION] Production towards Ancient, Classical, and Medieval Wonders</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_MONUMENT_GODS" />
+		<Row Tag="TXT_KEY_BELIEF_MONUMENT_GODS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+20% [ICON_PRODUCTION] Production towards Ancient, Classical, and Medieval Wonders</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+
+</GameData>

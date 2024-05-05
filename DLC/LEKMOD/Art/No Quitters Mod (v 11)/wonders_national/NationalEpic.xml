@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-23 22:48:02 -->
+<GameData>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_NATIONAL_EPIC" />
+		<Row Tag="TXT_KEY_BUILDING_NATIONAL_EPIC">
+			<Text>National Epic [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE]+25% [ICON_GREAT_PEOPLE] Great People generation in this City.[NEWLINE][NEWLINE]Must have built a Monument in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_NATIONAL_EPIC" />
+		<Row Tag="TXT_KEY_BUILDING_NATIONAL_EPIC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]National Epic [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+25% [ICON_GREAT_PEOPLE] Great People generation in this City.[NEWLINE][NEWLINE]Must have built a Monument in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_NATIONAL_EPIC" />
+		<Row Tag="TXT_KEY_BUILDING_NATIONAL_EPIC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]National Epic [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+25% [ICON_GREAT_PEOPLE] Great People generation in this City.[NEWLINE][NEWLINE]Must have built a Monument in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_NATIONAL_EPIC" />
+		<Row Tag="TXT_KEY_BUILDING_NATIONAL_EPIC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]National Epic [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_NATIONAL_EPIC_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+25% [ICON_GREAT_PEOPLE] Great People generation in this City.[NEWLINE][NEWLINE]Must have built a Monument in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2016 8:39:17 AM -->
+<GameData>
+
+	<!-- Museums now need Amphitheaters instead of Opera Houses. They also now provide +2 Culture and +15% Culture. -->
+	<Buildings>
+		<Update>
+			<Set CultureRateModifier="10" Help="TXT_KEY_BUILDING_MUSEUM_HELP" />
+			<Where Type="BUILDING_MUSEUM" />
+		</Update>
+	</Buildings>
+	<Building_ClassesNeededInCity>
+		<Update>
+			<Set BuildingClassType="BUILDINGCLASS_AMPHITHEATER" />
+			<Where BuildingType="BUILDING_MUSEUM" />
+		</Update>
+	</Building_ClassesNeededInCity>
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="2" />
+			<Where BuildingType="BUILDING_MUSEUM" YieldType="YIELD_CULTURE" />
+		</Update>
+	</Building_YieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_MUSEUM_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MUSEUM_HELP">
+			<Text>+10% [ICON_CULTURE] Culture in this City.[NEWLINE][NEWLINE]City must have an Amphitheater.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_MUSEUM_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MUSEUM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+15% [ICON_CULTURE] Culture in this City.[NEWLINE][NEWLINE]City must have an Amphitheater.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_MUSEUM_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MUSEUM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+15% [ICON_CULTURE] Culture in this City.[NEWLINE][NEWLINE]City must have an Amphitheater.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_MUSEUM_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MUSEUM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+15% [ICON_CULTURE] Culture in this City.[NEWLINE][NEWLINE]City must have an Amphitheater.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

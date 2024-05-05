@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-14 15:07:35 -->
+<GameData>
+
+	<!-- [New UB] Falu Gruva (replaces Ironworks): +8 Production, +8 Gold, hills provide +1 Production, and +4 merchant points. Also provides +6 Tourism at Flight. -->
+	<Buildings>
+		<Row>
+			<Type>BUILDING_FALU_GRUVA</Type>
+			<BuildingClass>BUILDINGCLASS_IRONWORKS</BuildingClass>
+			<Cost>125</Cost>
+			<PrereqTech>TECH_MACHINERY</PrereqTech>
+			<Help>TXT_KEY_BUILDING_FALU_GRUVA_HELP</Help>
+			<Description>TXT_KEY_BUILDING_FALU_GRUVA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_FALU_GRUVA_PEDIA</Civilopedia>
+			<EnhancedYieldTech>TECH_FLIGHT</EnhancedYieldTech>
+			<TechEnhancedTourism>6</TechEnhancedTourism>
+			<Strategy>TXT_KEY_BUILDING_FALU_GRUVA_STRATEGY</Strategy>
+			<ArtDefineTag>ART_DEF_BUILDING_IRONWORKS</ArtDefineTag>
+			<NukeImmune>true</NukeImmune>
+			<NumCityCostMod>30</NumCityCostMod>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<MinAreaSize>-1</MinAreaSize>
+			<NeverCapture>true</NeverCapture>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>1</PortraitIndex>
+		</Row>
+	</Buildings>
+	<Building_ClassesNeededInCity>
+		<Row>
+			<BuildingType>BUILDING_FALU_GRUVA</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+		</Row>
+	</Building_ClassesNeededInCity>
+	<Building_PrereqBuildingClasses>
+		<Row>
+			<BuildingType>BUILDING_FALU_GRUVA</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+			<NumBuildingNeeded>-1</NumBuildingNeeded>
+		</Row>
+	</Building_PrereqBuildingClasses>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_FALU_GRUVA</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>8</Yield>
+		</Row>
+	</Building_YieldChanges>
+	<Building_TerrainYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_FALU_GRUVA</BuildingType>
+			<TerrainType>TERRAIN_HILL</TerrainType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_TerrainYieldChanges>
+	<Building_Flavors>
+		<Row>
+			<BuildingType>BUILDING_FALU_GRUVA</BuildingType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>75</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_FALU_GRUVA</BuildingType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>50</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_FALU_GRUVA</BuildingType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+	</Building_Flavors>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA">
+			<Text>Falu Gruva [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE]Must have built a Workshop in all Cities. The cost goes up the more cities there are in the empire. +1 [ICON_PRODUCTION] Production for all hill tiles worked by this City. +6 [ICON_TOURISM] Tourism once Flight is discovered.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_PEDIA">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Falun_Mine)[ENDCOLOR][NEWLINE][NEWLINE]Falun Mine (Swedish: Falu Gruva) was a mine in Falun, Sweden, that operated for a millennium from the 10th century to 1992. It produced as much as two thirds of Europe's copper needs and helped fund many of Sweden's wars in the 17th century. Technological developments at the mine had a profound influence on mining globally for two centuries. Since 2001 it has been designated a UNESCO world heritage site as well as a museum.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_STRATEGY">
+			<Text>In addition to the normal +8 [ICON_PRODUCTION] Production of the Ironworks it replaces, Falu Gruva also provides +1 [ICON_PRODUCTION] Production for all hill tiles worked by the city. +6 [ICON_TOURISM] Tourism once Flight is discovered. Only Sweden may build it.</Text>
+		</Row>
+	</Language_en_US>
+
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Falu Gruva [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Must have built a Workshop in all Cities. The cost goes up the more cities there are in the empire. +1 [ICON_PRODUCTION] Production for all hill tiles worked by this City. +6 [ICON_TOURISM] Tourism once Flight is discovered.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Falun_Mine)[ENDCOLOR][NEWLINE][NEWLINE]Falun Mine (Swedish: Falu Gruva) was a mine in Falun, Sweden, that operated for a millennium from the 10th century to 1992. It produced as much as two thirds of Europe's copper needs and helped fund many of Sweden's wars in the 17th century. Technological developments at the mine had a profound influence on mining globally for two centuries. Since 2001 it has been designated a UNESCO world heritage site as well as a museum.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]In addition to the normal +8 [ICON_PRODUCTION] Production of the Ironworks it replaces, Falu Gruva also provides +8 [ICON_GOLD] Gold, +1 [ICON_PRODUCTION] Production for all hill tiles worked by the city, and +4 Great Merchant points. +6 [ICON_TOURISM] Tourism once Flight is discovered. Only Sweden may build it.</Text>
+		</Row>
+	</Language_DE_DE>
+
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Falu Gruva [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Must have built a Workshop in all Cities. The cost goes up the more cities there are in the empire. +1 [ICON_PRODUCTION] Production for all hill tiles worked by this City. +6 [ICON_TOURISM] Tourism once Flight is discovered.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Falun_Mine)[ENDCOLOR][NEWLINE][NEWLINE]Falun Mine (Swedish: Falu Gruva) was a mine in Falun, Sweden, that operated for a millennium from the 10th century to 1992. It produced as much as two thirds of Europe's copper needs and helped fund many of Sweden's wars in the 17th century. Technological developments at the mine had a profound influence on mining globally for two centuries. Since 2001 it has been designated a UNESCO world heritage site as well as a museum.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]In addition to the normal +8 [ICON_PRODUCTION] Production of the Ironworks it replaces, Falu Gruva also provides +8 [ICON_GOLD] Gold, +1 [ICON_PRODUCTION] Production for all hill tiles worked by the city, and +4 Great Merchant points. +6 [ICON_TOURISM] Tourism once Flight is discovered. Only Sweden may build it.</Text>
+		</Row>
+	</Language_PL_PL>
+
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Falu Gruva [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Must have built a Workshop in all Cities. The cost goes up the more cities there are in the empire. +1 [ICON_PRODUCTION] Production for all hill tiles worked by this City. +6 [ICON_TOURISM] Tourism once Flight is discovered.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Falun_Mine)[ENDCOLOR][NEWLINE][NEWLINE]Falun Mine (Swedish: Falu Gruva) was a mine in Falun, Sweden, that operated for a millennium from the 10th century to 1992. It produced as much as two thirds of Europe's copper needs and helped fund many of Sweden's wars in the 17th century. Technological developments at the mine had a profound influence on mining globally for two centuries. Since 2001 it has been designated a UNESCO world heritage site as well as a museum.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_FALU_GRUVA_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]In addition to the normal +8 [ICON_PRODUCTION] Production of the Ironworks it replaces, Falu Gruva also provides +8 [ICON_GOLD] Gold, +1 [ICON_PRODUCTION] Production for all hill tiles worked by the city, and +4 Great Merchant points. +6 [ICON_TOURISM] Tourism once Flight is discovered. Only Sweden may build it.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

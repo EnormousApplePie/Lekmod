@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Tomatekh -->
+<GameData>
+	<UnitArtInfo>
+		<Type>ART_DEF_UNIT_KONGO_POMBO_MOD</Type>
+		<Formation>Pikeman</Formation>
+		<DamageStates>1</DamageStates>
+		<UnitMemberArt>
+			<MemberType>ART_DEF_UNIT_KONGO_POMBO_MEMBER_MOD</MemberType>
+			<MemberCount>4</MemberCount>
+		</UnitMemberArt>
+	</UnitArtInfo>
+</GameData>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- Temples provide +1 Happiness and +1 Production -->
+	<Beliefs>
+		<Update>
+			<Set MinFollowers="0" />
+			<Where Type="BELIEF_RELIGIOUS_CENTER" />
+		</Update>
+	</Beliefs>
+	<Belief_BuildingClassYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_RELIGIOUS_CENTER</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_RELIGIOUS_CENTER</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+	<Belief_BuildingClassHappiness>
+		<Update>
+			<Set Happiness="1" />
+			<Where BeliefType="BELIEF_RELIGIOUS_CENTER" BuildingClassType="BUILDINGCLASS_TEMPLE" />
+		</Update>
+	</Belief_BuildingClassHappiness>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
+			<Text>Temples provide +1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_GOLD] Gold and +1 [ICON_PRODUCTION] Production</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Temples provide +1 [ICON_HAPPINESS_1] Happiness and +1 [ICON_PRODUCTION] Production</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Temples provide +1 [ICON_HAPPINESS_1] Happiness and +1 [ICON_PRODUCTION] Production</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Temples provide +1 [ICON_HAPPINESS_1] Happiness and +1 [ICON_PRODUCTION] Production</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

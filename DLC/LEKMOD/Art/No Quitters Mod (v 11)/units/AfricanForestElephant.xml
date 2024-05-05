@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-13 22:44:47 -->
+<GameData>
+	
+	<!-- African Forest Elephant now costs the same hammers as Horseman and gains Charge Downhill (if attacking from higher elevation to lower elevation, gains +20% Combat Strength and knocks opponents back just like Winged Hussar) -->
+
+	<Units>
+		<Update>
+			<Set Cost="75" />
+			<Where Type="UNIT_CARTHAGINIAN_FOREST_ELEPHANT" />
+		</Update>
+	</Units>
+
+	<!-- Promotion HeavyChargeDownhill is defined in HeavyChargeDownhill.xml -->
+	
+</GameData>

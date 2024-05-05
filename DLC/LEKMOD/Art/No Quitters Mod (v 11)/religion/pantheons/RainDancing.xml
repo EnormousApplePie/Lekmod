@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +1 Culture and +1 Faith from Lakes and Oases. -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_RAIN_DANCING</Type>
+			<Description>TXT_KEY_BELIEF_RAIN_DANCING</Description>
+			<ShortDescription>TXT_KEY_BELIEF_RAIN_DANCING_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+		</Row>
+	</Beliefs>
+	<Belief_FeatureYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_RAIN_DANCING</BeliefType>
+			<FeatureType>FEATURE_ICE</FeatureType> <!-- Cheating!! DLL is hard-coded to use lakes instead of ice for this. Ugly but works. -->
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_RAIN_DANCING</BeliefType>
+			<FeatureType>FEATURE_ICE</FeatureType> <!-- Cheating!! DLL is hard-coded to use lakes instead of ice for this. Ugly but works. -->
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_RAIN_DANCING</BeliefType>
+			<FeatureType>FEATURE_OASIS</FeatureType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_RAIN_DANCING</BeliefType>
+			<FeatureType>FEATURE_OASIS</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Belief_FeatureYieldChanges>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_RAIN_DANCING">
+			<Text>+1 [ICON_CULTURE] Culture and +2 [ICON_PEACE] Faith from Lakes and Oases</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_RAIN_DANCING_SHORT">
+			<Text>Rain Dancing</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_RAIN_DANCING">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith from Lakes and Oases</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_RAIN_DANCING_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Rain Dancing</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_RAIN_DANCING">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith from Lakes and Oases</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_RAIN_DANCING_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Rain Dancing</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_RAIN_DANCING">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith from Lakes and Oases</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_RAIN_DANCING_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Rain Dancing</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>
