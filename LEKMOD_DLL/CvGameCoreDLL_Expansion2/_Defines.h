@@ -927,6 +927,21 @@
 #define LEKMOD_MOVE_PENALTY_CITY_COMBAT
 
 
+/// ###############################
+/// Lekmod: New Lua Events and Methods
+/// ################################
+
+// new lua event that triggers when a player's happiness changes.
+// " PlayerHappinessChanged ". Passed parameters: playerID
+
+// new lua event that triggers when a new unit is created.
+// " UnitCreated ". Passed parameters: playerID, unitID, unitType, unitX, unitY
+
+#define LEKMOD_NEW_LUA_EVENTS
+
+
+
+
 
 //Added a notification step mid-turn when you found a religion after having the reformation policy
 //#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN

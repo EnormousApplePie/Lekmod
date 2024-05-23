@@ -12263,6 +12263,22 @@ void CvPlayer::DoUpdateHappiness()
 	}
 
 	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
+
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	// MOD.EAP: Add a new lua event.
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+		args->Push(GetID());
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "PlayerHappinessChanged", args.get(), bResult);
+	}
+#endif
 }
 
 //	--------------------------------------------------------------------------------
