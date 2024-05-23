@@ -870,11 +870,9 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 			}
 		}
 	}
-
 #ifdef NQM_UNIT_FIX_NO_INSTAHEAL_ON_CREATION_TURN
-	setCanInstahealThisTurn(false);
+	setCanInstahealThisTurn(canInstahealThisTurn());
 #endif
-
 	if(bSetupGraphical)
 		setupGraphical();
 

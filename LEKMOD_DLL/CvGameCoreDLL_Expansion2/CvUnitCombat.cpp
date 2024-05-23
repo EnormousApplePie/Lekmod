@@ -1533,7 +1533,7 @@ void CvUnitCombat::ResolveCityMeleeCombat(const CvCombatInfo& kCombatInfo, uint 
 			}
 #ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
 			int iPenalty = pkAttacker->GetCityAttackMovePenalty();
-			pkAttacker->changeMoves(-GC.getMOVE_DENOMINATOR() + iPenalty);
+			pkAttacker->changeMoves(-GC.getMOVE_DENOMINATOR() * ( 1 + iPenalty));
 #else
 			pkAttacker->changeMoves(-GC.getMOVE_DENOMINATOR());
 #endif

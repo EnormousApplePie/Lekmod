@@ -68,7 +68,7 @@
 #define AUI_DANGER_PLOTS_FIX_USE_ARRAY_NOT_FFASTVECTOR
 */
 /// Units who are delayed dead will not be fetched by functions that get enemy defenders
-#define AUI_PLOT_FIX_ENEMY_DEFENDER_GETTER_DOES_NOT_GET_DELAYED_DEAD
+//#define AUI_PLOT_FIX_ENEMY_DEFENDER_GETTER_DOES_NOT_GET_DELAYED_DEAD
 /*
 /// When the citizen manager reallocates all citizens, it no longer goes through the costly process of calculating the worst plot multiple times
 #define AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_NO_COSTLY_PLOT_REMOVAL
@@ -296,7 +296,7 @@
 #define AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 */
 /// Relaxed the limits on the slice limits before turn timers are forced to expire in network multiplayer games (should help stop resyncs due to last-second moves)
-#define NQM_GAME_MORE_RELAXED_TURN_SLICE_LIMIT_FOR_NETWORK_MULTIPLAYER
+//#define NQM_GAME_MORE_RELAXED_TURN_SLICE_LIMIT_FOR_NETWORK_MULTIPLAYER
 
 // Deliberate AI hindrances
 
@@ -328,9 +328,9 @@
 
 // Fixes specific to simultaneous mode
 /// Units can no longer insta-heal twice in the same turn. This should only affect simultaneous mode and stops a few cheesey strategies
-#define NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN
+//#define NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN
 /// Units can no longer insta-heal the turn they are created
-#define NQM_UNIT_FIX_NO_INSTAHEAL_ON_CREATION_TURN
+//#define NQM_UNIT_FIX_NO_INSTAHEAL_ON_CREATION_TURN
 /*
 /// Paradroping a unit disqualifies it from insta-healing in the same turn. This should only affect simultaneous mode and stops a few cheesey strategies
 #define NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP
