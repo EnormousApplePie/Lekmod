@@ -892,7 +892,6 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 		LuaSupport::CallHook(pkScriptSystem, "UnitCreated", args.get(), bResult);
 	}
 #endif
-
 	if(bSetupGraphical)
 		setupGraphical();
 

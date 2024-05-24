@@ -1,4 +1,4 @@
-﻿// Defines.h
+// Defines.h
 
 
 #pragma once
@@ -940,11 +940,11 @@
 #define LEKMOD_NEW_LUA_EVENTS
 
 
-
-
+/// ###############################
 
 //Added a notification step mid-turn when you found a religion after having the reformation policy
 //#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
+
 
 
 
