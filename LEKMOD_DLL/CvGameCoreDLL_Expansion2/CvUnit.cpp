@@ -873,6 +873,25 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 #ifdef NQM_UNIT_FIX_NO_INSTAHEAL_ON_CREATION_TURN
 	setCanInstahealThisTurn(canInstahealThisTurn());
 #endif
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	// MOD.EAP: Add a new lua event.
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+
+		args->Push(eOwner);
+		args->Push(eUnit);
+		args->Push(iX);
+		args->Push(iY);
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "UnitCreated", args.get(), bResult);
+	}
+#endif
 	if(bSetupGraphical)
 		setupGraphical();
 
