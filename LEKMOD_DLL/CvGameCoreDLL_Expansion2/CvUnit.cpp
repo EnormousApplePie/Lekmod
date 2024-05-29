@@ -882,7 +882,7 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 		CvLuaArgsHandle args;
 
 		args->Push(eOwner);
-		args->Push(eUnit);
+		args->Push(GetID());
 		args->Push(iX);
 		args->Push(iY);
 
@@ -12321,6 +12321,15 @@ int CvUnit::GetMaxAttackStrength(const CvPlot* pFromPlot, const CvPlot* pToPlot,
 				iModifier += iTempModifier;
 			}
 
+#ifdef LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
+			// Nearby unit gives a city attack bonus
+			if (IsNearCityAttackBonus())
+			{
+				iTempModifier = getNearUnitCityAttackModifier();
+				iModifier += iTempModifier;
+			}
+#endif
+
 			// City Defending against a Barbarian
 			if(isBarbarian())
 			{
@@ -18479,6 +18488,205 @@ bool CvUnit::IsNearSapper(const CvCity* pTargetCity) const
 
 	return false;
 }
+
+#ifdef LEKMOD_NEW_LUA_METHODS
+#ifdef LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
+//	--------------------------------------------------------------------------------
+int CvUnit::GetAdjacentCityAttackModifier() const
+{
+	return m_iAdjacentCityAttackModifier;
+}
+//--------------------------------------------------------------------------------
+void CvUnit::ChangeAdjacentCityAttackModifier(int iChange)
+{
+	m_iAdjacentCityAttackModifier += iChange;
+}
+#endif
+//--------------------------------------------------------------------------------
+bool CvUnit::IsNearUnitWithPromotion(PromotionTypes ePromotion, int iRange, bool bSameDomain, bool bSamePlayer) const
+{
+	VALIDATE_OBJECT
+
+	CvAssertMsg(ePromotion, "Promotion is null!");
+	if (!ePromotion || iRange < 1)
+	{
+		return false;
+	}
+
+	CvPlot* pLoopPlot;
+	IDInfo* pUnitNode;
+	CvUnit* pLoopUnit;
+
+	// Look around this Unit to see if there's a unit with the given promotion nearby
+	for (int iX = -iRange; iX <= iRange; iX++)
+	{
+		for (int iY = -iRange; iY <= iRange; iY++)
+		{
+			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+
+			if (pLoopPlot != NULL)
+			{
+				// If there are Units here, loop through them
+				if (pLoopPlot->getNumUnits() > 0)
+				{
+					pUnitNode = pLoopPlot->headUnitNode();
+
+					while (pUnitNode != NULL)
+					{
+						pLoopUnit = ::getUnit(*pUnitNode);
+						pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+
+						// Needs to be owned by us if enabled
+						if (bSamePlayer && (pLoopUnit->getOwner() != getOwner()))
+						{
+							continue;
+						}
+						// Does the unit have the promotion?
+						if (pLoopUnit->isHasPromotion(ePromotion))
+						{
+							// Must be same domain if enabled
+							if (bSameDomain && (pLoopUnit->getDomainType() != getDomainType()))
+							{
+								continue;
+							}
+							
+							return true;
+							
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return false;
+}
+//--------------------------------------------------------------------------------
+bool CvUnit::IsNearTerrainType(TerrainTypes eTerrainType, int iRange, bool bSameOwner) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eTerrainType > 0, "eTerrainType is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eTerrainType < GC.getNumTerrainInfos(), "eTerrainType is expected to be within maximum bounds (invalid eTerrainType)");
+
+	if (eTerrainType == NO_TERRAIN || iRange <= 0)
+	{
+		return false;
+	}
+
+	CvPlot* pLoopPlot;
+
+	// Look around this Unit to see if there's a unit with the given promotion nearby
+	for (int iX = -iRange; iX <= iRange; iX++)
+	{
+		for (int iY = -iRange; iY <= iRange; iY++)
+		{
+			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+
+			if (pLoopPlot != NULL)
+			{	
+				//check if this loop plot is the right type
+				if (pLoopPlot->getTerrainType() == eTerrainType)
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+					
+					return true;
+
+				}
+			}
+		}
+	}
+
+	return false;
+}
+//--------------------------------------------------------------------------------
+bool CvUnit::IsNearFeatureType(FeatureTypes eFeature, int iRange, bool bSameOwner) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eFeature > 0, "eFeature is expected to be non-negative (invalid eFeature)");
+	CvAssertMsg(eFeature < GC.getNumFeatureInfos() "eFeature is expected to be within maximum bounds (invalid eFeature)");
+
+	if (eFeature < 0 || eFeature > GC.getNumFeatureInfos() || iRange <= 0)
+	{
+		return false;
+	}
+
+	CvPlot* pLoopPlot;
+
+	// Look around this Unit to see if there's the required feature nearby
+	for (int iX = -iRange; iX <= iRange; iX++)
+	{
+		for (int iY = -iRange; iY <= iRange; iY++)
+		{
+			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+
+			if (pLoopPlot != NULL)
+			{
+				//check if this loop plot is the right type
+				if (pLoopPlot->getFeatureType() == eFeature)
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+
+					return true;
+
+				}
+			}
+		}
+	}
+
+	return false;
+}
+//--------------------------------------------------------------------------------
+bool CvUnit::IsNearImprovementType(ImprovementTypes eImprovement, int iRange, bool bSameOwner) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(ePromotion, "Improvement!");
+	if (!eImprovement || iRange < 1)
+	{
+		return false;
+	}
+
+	CvPlot* pLoopPlot;
+	IDInfo* pUnitNode;
+	CvUnit* pLoopUnit;
+
+	// Look around this Unit to see if there's a unit with the given promotion nearby
+	for (int iX = -iRange; iX <= iRange; iX++)
+	{
+		for (int iY = -iRange; iY <= iRange; iY++)
+		{
+			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+
+			if (pLoopPlot != NULL)
+			{
+				//check if this loop plot has the right improvement
+				if (pLoopPlot->getImprovementType() == eImprovement)
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+
+					return true;
+
+				}
+				
+			}
+		}
+	}
+
+	return false;
+}
+
+#endif
 
 //	--------------------------------------------------------------------------------
 bool CvUnit::IsCanHeavyCharge() const

@@ -14690,6 +14690,17 @@ void CvPlayer::changeGoldenAgeTurns(int iChange)
 
 				pNotifications->Add(eNotification, locString.toUTF8(), locSummaryString.toUTF8(), -1, -1, -1);
 			}
+#ifdef LEKMOD_NEW_LUA_EVENTS
+			ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+			if (pkScriptSystem)
+			{
+				CvLuaArgsHandle args;
+				args->Push(GetID());
+
+				bool bResult;
+				LuaSupport::CallHook(pkScriptSystem, "PlayerSetGoldenAge", args.get(), bResult);
+			}
+#endif
 		}
 
 		if(GetID() == GC.getGame().getActivePlayer())

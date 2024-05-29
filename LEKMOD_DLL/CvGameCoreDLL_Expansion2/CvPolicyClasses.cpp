@@ -2578,6 +2578,9 @@ CvPolicyBranchEntry* CvPolicyXMLEntries::GetPolicyBranchEntry(int index)
 /// Constructor
 CvPlayerPolicies::CvPlayerPolicies():
 	m_pabHasPolicy(NULL),
+#ifdef LEKMOD_NEW_LUA_METHODS
+	m_pabHasPolicyBranch(NULL),
+#endif
 	m_pabHasOneShotPolicyFired(NULL),
 	m_pabHaveOneShotFreeUnitsFired(NULL),
 	m_pabPolicyBranchUnlocked(NULL),
@@ -2618,6 +2621,10 @@ void CvPlayerPolicies::Init(CvPolicyXMLEntries* pPolicies, CvPlayer* pPlayer, bo
 	// Initialize policy status array
 	CvAssertMsg(m_pabHasPolicy==NULL, "about to leak memory, CvPlayerPolicies::m_pabHasPolicy");
 	m_pabHasPolicy = FNEW(bool[m_pPolicies->GetNumPolicies()], c_eCiv5GameplayDLL, 0);
+#ifdef LEKMOD_NEW_LUA_METHODS
+	CvAssertMsg(m_pabHasPolicyBranch == NULL, "about to leak memory, CvPlayerPolicies::m_pabHasPolicyBranch");
+	m_pabHasPolicyBranch = FNEW(bool[m_pPolicies->GetNumPolicyBranches()], c_eCiv5GameplayDLL, 0);
+#endif
 	CvAssertMsg(m_pabHasOneShotPolicyFired==NULL, "about to leak memory, CvPlayerPolicies::m_pabHasOneShotPolicyFired");
 	m_pabHasOneShotPolicyFired = FNEW(bool[m_pPolicies->GetNumPolicies()], c_eCiv5GameplayDLL, 0);
 	CvAssertMsg(m_pabHaveOneShotFreeUnitsFired==NULL, "about to leak memory, CvPlayerPolicies::m_pabHaveOneShotFreeUnitsFired");
@@ -2654,6 +2661,9 @@ void CvPlayerPolicies::Uninit()
 	CvFlavorRecipient::Uninit();
 
 	SAFE_DELETE_ARRAY(m_pabHasPolicy);
+#ifdef LEKMOD_NEW_LUA_METHODS
+	SAFE_DELETE_ARRAY(m_pabHasPolicyBranch);
+#endif
 	SAFE_DELETE_ARRAY(m_pabHasOneShotPolicyFired);
 	SAFE_DELETE_ARRAY(m_pabHaveOneShotFreeUnitsFired);
 	SAFE_DELETE_ARRAY(m_pabPolicyBranchUnlocked);
@@ -2683,6 +2693,9 @@ void CvPlayerPolicies::Reset()
 
 	for(iI = 0; iI < m_pPolicies->GetNumPolicyBranches(); iI++)
 	{
+#ifdef LEKMOD_NEW_LUA_METHODS
+		m_pabHasPolicyBranch[iI] = false;
+#endif
 		m_pabPolicyBranchUnlocked[iI] = false;
 		m_pabPolicyBranchBlocked[iI] = false;
 		m_pabPolicyBranchFinished[iI] = false;
@@ -2760,6 +2773,10 @@ void CvPlayerPolicies::Read(FDataStream& kStream)
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabHasOneShotPolicyFired, uiPolicyCount);
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabHaveOneShotFreeUnitsFired, uiPolicyCount);
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabHasPolicyBranch, uiPolicyBranchCount);
+#endif
+
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabPolicyBranchUnlocked, uiPolicyBranchCount);
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabPolicyBranchBlocked, uiPolicyBranchCount);
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabPolicyBranchFinished, uiPolicyBranchCount);
@@ -2809,6 +2826,9 @@ void CvPlayerPolicies::Write(FDataStream& kStream) const
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyTypes>(kStream, m_pabHasPolicy, uiPolicyCount);
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyTypes>(kStream, m_pabHasOneShotPolicyFired, uiPolicyCount);
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyTypes>(kStream, m_pabHaveOneShotFreeUnitsFired, uiPolicyCount);
+#ifdef LEKMOD_NEW_LUA_METHODS
+	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_pabHasPolicyBranch, uiPolicyBranchCount);
+#endif
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_pabPolicyBranchUnlocked, uiPolicyBranchCount);
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_pabPolicyBranchBlocked, uiPolicyBranchCount);
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_pabPolicyBranchFinished, uiPolicyBranchCount);
@@ -2847,7 +2867,15 @@ bool CvPlayerPolicies::HasPolicy(PolicyTypes eIndex) const
 	CvAssertMsg(eIndex < GC.getNumPolicyInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
 	return m_pabHasPolicy[eIndex];
 }
-
+#ifdef LEKMOD_NEW_LUA_METHODS
+/// Accessor: does a player have a policy
+bool CvPlayerPolicies::HasPolicyBranch(PolicyBranchTypes eIndex) const
+{
+	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eIndex < GC.getNumPolicyBranchInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_pabHasPolicyBranch[eIndex];
+}
+#endif
 /// Accessor: set whether player has a policy
 void CvPlayerPolicies::SetPolicy(PolicyTypes eIndex, bool bNewValue)
 {
@@ -3927,6 +3955,9 @@ void CvPlayerPolicies::SetPolicyBranchUnlocked(PolicyBranchTypes eBranchType, bo
 
 	if(IsPolicyBranchUnlocked(eBranchType) != bNewValue)
 	{
+#ifdef LEKMOD_NEW_LUA_METHODS
+		m_pabHasPolicyBranch[eBranchType] = bNewValue;
+#endif
 		// Unlocked?
 		if (bNewValue)
 		{

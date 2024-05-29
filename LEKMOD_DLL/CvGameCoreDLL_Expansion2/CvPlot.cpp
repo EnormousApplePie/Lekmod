@@ -241,6 +241,11 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_bIsAdjacentToLand = false;
 	m_bIsImpassable = false;
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+	m_bIsSetFreshWater = false;
+#endif
+
+
 	m_eOwner = NO_PLAYER;
 	m_ePlotType = PLOT_OCEAN;
 	m_eTerrainType = NO_TERRAIN;
@@ -1107,6 +1112,15 @@ bool CvPlot::isFreshWater() const
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+
+	if(isSetFreshWater())
+	{
+		return true;
+	}
+
+#endif
+
 	if(isWater() || isImpassable() || isMountain())
 		return false;
 
@@ -1154,8 +1168,19 @@ bool CvPlot::isFreshWater() const
 	return false;
 }
 
+#ifdef LEKMOD_NEW_LUA_METHODS
 
+void CvPlot::setFreshWater(bool bValue)
+{
+	if (isFreshWater() == bValue || (bValue != true && bValue != false))
+	{
+		return;
+	}
+	m_bIsSetFreshWater = bValue;
 
+}
+
+#endif
 
 //	--------------------------------------------------------------------------------
 bool CvPlot::isRiverCrossingFlowClockwise(DirectionTypes eDirection) const

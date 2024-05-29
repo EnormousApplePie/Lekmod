@@ -13221,6 +13221,21 @@ void CvCity::DoAcquirePlot(int iPlotX, int iPlotY)
 	pPlot->setOwner(getOwner(), GetID(), /*bCheckUnits*/ true, /*bUpdateResources*/ true);
 
 	DoUpdateCheapestPlotInfluence();
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+		args->Push(getOwner());
+		args->Push(GetID());
+		args->Push(iPlotX);
+		args->Push(iPlotY);
+
+		bool bResult;
+		LuaSupport::CallHook(pkScriptSystem, "CityAcquirePlot", args.get(), bResult);
+	}
+#endif
 }
 
 //	--------------------------------------------------------------------------------

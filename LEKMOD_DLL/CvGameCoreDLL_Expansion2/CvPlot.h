@@ -444,6 +444,16 @@ public:
 		return m_bIsImpassable;
 	}
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+
+	bool isSetFreshWater() const
+	{
+		return m_bIsSetFreshWater;
+	}
+
+	void setFreshWater(bool bFresh);
+
+#endif
 	bool IsAllowsWalkWater() const;
 
 	bool IsAllowsSailLand() const;
@@ -972,6 +982,10 @@ protected:
 	bool m_bImprovedByGiftFromMajor:1;
 	bool m_bIsAdjacentToLand:1;				// Cached value, do not serialize
 	bool m_bIsImpassable:1;					// Cached value, do not serialize
+
+#ifdef LEKMOD_NEW_LUA_METHODS
+	bool m_bIsSetFreshWater:1;
+#endif
 
 	CvArchaeologyData m_kArchaeologyData;
 

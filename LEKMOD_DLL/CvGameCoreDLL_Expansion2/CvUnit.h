@@ -968,6 +968,13 @@ public:
 	bool IsSappingCity(const CvCity* pTargetCity) const;
 	bool IsNearSapper(const CvCity* pTargetCity) const;
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+	bool IsNearUnitWithPromotion(PromotionTypes ePromotion, int iRange, bool bSameDomain, bool bSamePlayer) const;
+	bool IsNearTerrainType(TerrainTypes eTerrainType, int iRange, bool bSameOwner) const;
+	bool IsNearFeatureType(FeatureTypes eFeature, int iRange, bool bSameOwner) const;
+	bool IsNearImprovementType(ImprovementTypes eImprovement, int iRange, bool bSameOwner) const;
+#endif
+
 	bool IsCanHeavyCharge() const;
 	void ChangeCanHeavyChargeCount(int iChange);
 

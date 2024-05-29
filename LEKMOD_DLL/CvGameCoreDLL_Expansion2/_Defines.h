@@ -925,20 +925,51 @@
 #define LEKMOD_UNLOCK_IDEO_ALL_CITIES
 // Adds a promotion that enables units to have a movement penalty (amount specified in xml) when attacking cities
 #define LEKMOD_MOVE_PENALTY_CITY_COMBAT
+// Building tourism from TechEnhancedTourism can now apply multiple times if the same building exists multiple times in the city
+#define LEKMOD_TECH_ENHANCED_TOURISM_MULTIPLIER
+// Add a new promotion value that gives adjacent units a bonus to city attack. Works the same as the sapper promo just unhardcoded
+// requires: LEKMOD_NEAR_UNIT_WITH_PROMOTION
+//#define LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
 
 
 /// ###############################
 /// Lekmod: New Lua Events and Methods
 /// ################################
 
-// new lua event that triggers when a player's happiness changes.
-// " PlayerHappinessChanged ". Passed parameters: playerID
-
-// new lua event that triggers when a new unit is created.
-// " UnitCreated ". Passed parameters: playerID, unitID, unitType, unitX, unitY
-
 #define LEKMOD_NEW_LUA_EVENTS
-
+// -------------------------------------------------------------------------------------
+// new lua event that triggers when a player's happiness changes.
+/// " PlayerHappinessChanged ". Passed parameters: playerID
+// -------------------------------------------------------------------------------------
+// new lua event that triggers when a new unit is created.
+/// " UnitCreated ". Passed parameters: playerID, unitID, unitType, unitX, unitY
+// -------------------------------------------------------------------------------------
+// new lua event that triggers whenever a player enteres, extends, or exits a golden age.
+/// " PlayerSetGoldenAge ". Passed parameters: playerID
+// -------------------------------------------------------------------------------------
+#define LEKMOD_NEW_LUA_METHODS
+//--------------------------------------------------------------------------------------
+// new lua method. Sets a plot to be fresh water or not.
+/// "SetFreshWater(bool bValue)".
+// -------------------------------------------------------------------------------------
+// new lua method, variant of lSetNumRealBuilding. Instead you enter a building class,
+// which will find and choose a unique building for the civ if able. Otherwise will choose the default building.
+/// "void SetNumRealBuildingClass(BuildingClassType eBuildingClass, int iNewValue)".
+// -------------------------------------------------------------------------------------
+// new lua method. Searches for a specific unit around a unit with a specific promotion and returns true if found.
+/// "bool IsNearUnitWithPromotion((PromotionTypes ePromotion, int iRange, bool bSameDomain, bool bSamePlayer)"
+// -------------------------------------------------------------------------------------
+// new lua method. Searches for a specific terrain type around a unit and returns true if found.
+/// "bool IsNearTerrainType(TerrainTypes eTerrainType, int iRange, bool bSamePlayer)"
+// -------------------------------------------------------------------------------------
+// new lua method. Searches for a specific feature type around a unit and returns true if found.
+/// "bool IsNearFeatureType(PlotTypes eFeature, int iRange, bool bSamePlayer)"
+// -------------------------------------------------------------------------------------
+// new lua method. Searches for a specific improvement around a unit and returns true if found.
+/// "bool IsNearImprovement(ImprovementTypes eImprovement, int iRange,  bool bSamePlayer)"
+// -------------------------------------------------------------------------------------
+// new lua method. Rather than checking for a specific policy, this method checks for a policy branch.
+/// "bool IsPolicyBranchUnlocked(PolicyBranchTypes eBranch)"
 
 /// ###############################
 
