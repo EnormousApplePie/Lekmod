@@ -142,6 +142,10 @@ CvImprovementEntry::CvImprovementEntry(void):
 	m_ppiTechFreshWaterYieldChanges(NULL),
 	m_ppiRouteYieldChanges(NULL),
 #endif
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	m_ppiImprovementAdjacentBonus(NULL),
+#endif
+
 	m_paImprovementResource(NULL)
 {
 }
@@ -193,6 +197,12 @@ CvImprovementEntry::~CvImprovementEntry(void)
 	if(m_ppiRouteYieldChanges != NULL)
 	{
 		CvDatabaseUtility::SafeDelete2DArray(m_ppiRouteYieldChanges);
+	}
+#endif
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	if (m_ppiImprovementAdjacentBonus != NULL)
+	{
+		CvDatabaseUtility::SafeDelete4DArray(m_ppiImprovementAdjacentBonus);
 	}
 #endif
 }
@@ -315,6 +325,8 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 
 	kUtility.SetFlavors(m_piFlavorValue, "Improvement_Flavors", "ImprovementType", szImprovementType);
 
+
+
 	{
 		//Initialize Improvement Resource Types to number of Resources
 		const int iNumResources = kUtility.MaxRows("Resources");
@@ -409,6 +421,46 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 #endif
 		}
 	}
+
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	{
+		//Initialize Improvement_Adjacency_Yields, with improvementtype, otherimprovementtype, amount, yieldtype, yield
+
+		const int iNumImprovements = kUtility.MaxRows("Improvements");
+		const int iNumCivilizationTypes = GC.getNumCivilizationInfos();
+		//initialize 4D array
+		kUtility.Initialize4DArray(m_ppiImprovementAdjacentBonus, iNumCivilizationTypes, iNumImprovements, 6, iNumYields);
+
+		kUtility.InitializeArray(m_piImprovementAdjacentImprovementType, iNumCivilizationTypes);
+
+		std::string strKey = "Improvements - AdjacencyYields";
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select ImprovementType, OtherImprovementType, Amount, CivilizationType, YieldType, Yield from Improvement_Adjacency_Yields where ImprovementType = ?");
+		}
+
+		pResults->Bind(1, szImprovementType, lenImprovementType, false);
+
+		while (pResults->Step())
+		{
+			const char* szOtherImprovementType = pResults->GetText(1);
+			const int iOtherImprovementType = GC.getInfoTypeForString(szOtherImprovementType, true);
+			const int iAmount = pResults->GetInt(2);
+			const char* szCivilizationType = pResults->GetText(3);
+			const int iCivilizationType = GC.getInfoTypeForString(szCivilizationType, true);
+			const char* szYieldType = pResults->GetText(4);
+			const int iYieldType = GC.getInfoTypeForString(szYieldType, true);
+			const int iYield = pResults->GetInt(4);
+
+			m_ppiImprovementAdjacentBonus[iCivilizationType][iOtherImprovementType][iAmount][iYieldType] = iYield;
+			m_piImprovementAdjacentImprovementType[iCivilizationType] = iOtherImprovementType;
+		}
+
+		pResults->Reset();
+
+	}
+#endif
 
 	//TechNoFreshWaterYieldChanges
 	{
@@ -1038,6 +1090,28 @@ int* CvImprovementEntry::GetTechYieldChangesArray(int i)
 #endif
 }
 
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+/// How much a type of improvement adjacent to this improvement improves the yield of this improvement
+int CvImprovementEntry::GetImprovementAdjacentBonus(int i, int j, int k, int l) const
+{
+	CvAssertMsg(i < GC.getNumCivilizationInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < GC.getNumImprovementInfos(), "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	CvAssertMsg(k < 6, "Index out of bounds");
+	CvAssertMsg(k > -1, "Index out of bounds");
+	CvAssertMsg(l < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(l > -1, "Index out of bounds");
+	return m_ppiImprovementAdjacentBonus[i][j][k][l];
+}
+
+// what improvement type is required to be adjacent to this improvement to get the yield bonus
+int CvImprovementEntry::GetImprovementAdjacentImprovementType(int i) const
+{
+	return m_piImprovementAdjacentImprovementType[i];
+}
+
+#endif
 /// How much a tech improves the yield of this improvement if it DOES NOT have fresh water
 int CvImprovementEntry::GetTechNoFreshWaterYieldChanges(int i, int j) const
 {

@@ -168,6 +168,94 @@ void CvDatabaseUtility::Initialize2DArray(int**& ppArray, const size_t iCount1, 
 #endif
 }
 //------------------------------------------------------------------------------
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+bool CvDatabaseUtility::Initialize4DArray(int****& ppArray, const char* szTable1Name, const char* szTable2Name, const char* szTable3Name, const char* szTable4Name, int iDefault /* = 0 */)
+{
+	const size_t iCount1 = MaxRows(szTable1Name);
+	const size_t iCount2 = MaxRows(szTable2Name);
+	const size_t iCount3 = MaxRows(szTable3Name);
+	const size_t iCount4 = MaxRows(szTable4Name);
+
+	if(iCount1 <= 0 || iCount2 <= 0 || iCount3 <= 0 || iCount4 <= 0)
+	{
+		ppArray = NULL;
+		CvAssertMsg(false, "Cannot initialize array to 0 size.");
+		return false;
+	}
+
+	unsigned int iNumBytes = iCount1 * sizeof(int***) + iCount1 * iCount2 * sizeof(int**) + iCount1 * iCount2 * iCount3 * sizeof(int*) + iCount1 * iCount2 * iCount3 * iCount4 * sizeof(int);
+	unsigned char* pData = FNEW(unsigned char[iNumBytes], c_eCiv5GameplayDLL, 0);
+	ppArray = (int***)pData;
+	ppArray[0] = (int**)(pData + iCount1 * sizeof(int***));
+	ppArray[0][0] = (int*)(pData + iCount1 * sizeof(int***) + iCount1 * iCount2 * sizeof(int**));
+	ppArray[0][0][0] = (int*)(pData + iCount1 * sizeof(int***) + iCount1 * iCount2 * sizeof(int**) + iCount1 * iCount2 * iCount3 * sizeof(int*));
+	for(int i = 0; i < iCount4; ++i)
+	{
+		ppArray[0][0][0][i] = iDefault;
+	}
+
+	return true;
+}
+
+void CvDatabaseUtility::Initialize4DArray(int****& ppArray, const size_t iCount1, const size_t iCount2, const size_t iCount3, const size_t iCount4, int iDefault /*= 0*/)
+{
+	if(iCount1 <= 0 || iCount2 <= 0 || iCount3 <= 0 || iCount4 <= 0)
+	{
+		CvAssertMsg(false, "Cannot initialize array to 0 size.");
+		return;
+	}
+
+	ppArray = FNEW(int***[iCount1], c_eCiv5GameplayDLL, 0);
+	for (size_t i = 0; i < iCount1; i++)
+	{
+		ppArray[i] = FNEW(int**[iCount2], c_eCiv5GameplayDLL, 0);
+		for (size_t j = 0; j < iCount2; j++)
+		{
+			ppArray[i][j] = FNEW(int*[iCount3], c_eCiv5GameplayDLL, 0);
+			for (size_t k = 0; k < iCount3; k++)
+			{
+				ppArray[i][j][k] = FNEW(int[iCount4], c_eCiv5GameplayDLL, 0);
+			}
+		}
+	}
+	for (size_t i = 0; i < iCount1; i++)
+	{
+		for (size_t j = 0; j < iCount2; j++)
+		{
+			for (size_t k = 0; k < iCount3; k++)
+			{
+				for (size_t l = 0; l < iCount4; l++)
+				{
+					ppArray[i][j][k][l] = iDefault;
+				}
+			}
+		}
+	}
+
+	return;
+}
+//------------------------------------------------------------------------------
+void CvDatabaseUtility::SafeDelete4DArray(int****& ppArray, const size_t iCount1, const size_t iCount2, const size_t iCount3)
+{
+	if (ppArray == NULL)
+		return;
+	for (size_t i = 0; i < iCount1; i++)
+	{
+		for (size_t j = 0; j < iCount2; j++)
+		{
+			for (size_t k = 0; k < iCount3; k++)
+			{
+				delete[] ppArray[i][j][k];
+			}
+			delete[] ppArray[i][j];
+		}
+		delete[] ppArray[i];
+	}
+	delete[] ppArray;
+	ppArray = NULL;
+}
+#endif
+//------------------------------------------------------------------------------
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
 void CvDatabaseUtility::SafeDelete2DArray(int**& ppArray, const char* szTable1Name)
 {

@@ -927,6 +927,8 @@
 #define LEKMOD_MOVE_PENALTY_CITY_COMBAT
 // Building tourism from TechEnhancedTourism can now apply multiple times if the same building exists multiple times in the city
 #define LEKMOD_TECH_ENHANCED_TOURISM_MULTIPLIER
+// New function that checks for improvements and checks adjacency to other improvements then updates the yield of the improvement
+#define LEKMOD_ADJACENT_IMPROVEMENT_YIELD
 // Add a new promotion value that gives adjacent units a bonus to city attack. Works the same as the sapper promo just unhardcoded
 // requires: LEKMOD_NEAR_UNIT_WITH_PROMOTION
 //#define LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK

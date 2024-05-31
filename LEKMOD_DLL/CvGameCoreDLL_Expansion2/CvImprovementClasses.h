@@ -147,6 +147,10 @@ public:
 
 	int GetTechYieldChanges(int i, int j) const;
 	int* GetTechYieldChangesArray(int i);
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	int GetImprovementAdjacentBonus(int i, int j, int k, int l) const;
+	int GetImprovementAdjacentImprovementType(int i) const;
+#endif
 	int GetTechNoFreshWaterYieldChanges(int i, int j) const;
 	int* GetTechNoFreshWaterYieldChangesArray(int i);
 	int GetTechFreshWaterYieldChanges(int i, int j) const;
@@ -255,7 +259,11 @@ protected:
 	int** m_ppiTechFreshWaterYieldChanges;
 	int** m_ppiRouteYieldChanges;
 #endif
-
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	// 4d array, yip
+	int**** m_ppiImprovementAdjacentBonus;
+	int* m_piImprovementAdjacentImprovementType;
+#endif
 	CvImprovementResourceInfo* m_paImprovementResource;
 };
 

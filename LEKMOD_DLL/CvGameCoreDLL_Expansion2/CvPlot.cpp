@@ -7732,6 +7732,36 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		iYield += pImprovement->GetHillsYieldChange(eYield);
 	}
 
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	if (ePlayer != NO_PLAYER)
+	{
+	
+		CvCivilizationInfo& playerCivilizationInfo = GET_PLAYER(ePlayer).getCivilizationInfo();
+		int iCivID = playerCivilizationInfo.GetID();
+
+		int iAdjacentImprovementCount = 0;
+		for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+		{
+			CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iI));
+			if (pAdjacentPlot != NULL)
+			{
+				ImprovementTypes eAdjacentImprovement = pAdjacentPlot->getImprovementType();
+				if (eAdjacentImprovement != NO_IMPROVEMENT)
+				{
+
+					if (GC.getImprovementInfo(eAdjacentImprovement)->GetImprovementAdjacentImprovementType(iCivID) > 0)
+					{
+						iYield += pImprovement->GetImprovementAdjacentBonus(iCivID, eAdjacentImprovement, iAdjacentImprovementCount, eYield);
+						iAdjacentImprovementCount++;
+					}
+					
+				}
+			}
+		}
+	}
+
+#endif
+
 	// Check to see if there's a bonus to apply before doing any looping
 	if(pImprovement->GetAdjacentCityYieldChange(eYield) > 0 ||
 	        pImprovement->GetAdjacentMountainYieldChange(eYield) > 0)

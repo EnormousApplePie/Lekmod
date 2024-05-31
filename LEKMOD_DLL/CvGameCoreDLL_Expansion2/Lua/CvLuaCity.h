@@ -493,6 +493,10 @@ protected:
 	static int lGetCultureFromSpecialist(lua_State* L);
 
 	static int lGetReligionCityRangeStrikeModifier(lua_State* L);
+
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	static int lSetImprovementAdjacencyBonus(lua_State* L);
+#endif
 };
 
 #endif //CVLUACITY_H

@@ -936,6 +936,9 @@ public:
 	void			clearCombat();
 	bool			isFighting() const;
 
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	void improvementAdjacency(ImprovementTypes eImprovement, ImprovementTypes eOtherImprovement, int iAmount, YieldTypes eYield, int iYieldChange, bool bBonusPerAmount);
+#endif
 	///
 	bool HasBuilding(BuildingTypes iBuildingType) const;
 	bool HasBuildingClass(BuildingClassTypes iBuildingClassType) const;
