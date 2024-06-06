@@ -484,9 +484,6 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetNumForcedWorkingPlots);
 
 	Method(GetReligionCityRangeStrikeModifier);
-#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
-	Method(SetImprovementAdjacencyBonus);
-#endif
 }
 //------------------------------------------------------------------------------
 void CvLuaCity::HandleMissingInstance(lua_State* L)
@@ -4107,21 +4104,3 @@ int CvLuaCity::lGetReligionCityRangeStrikeModifier(lua_State* L)
 
 	return 1;
 }
-#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
-//------------------------------------------------------------------------------
-int CvLuaCity::lSetImprovementAdjacencyBonus(lua_State* L)
-{
-	CvCity* pkCity = GetInstance(L);
-	const ImprovementTypes eImprovement = (ImprovementTypes) lua_tointeger(L, 2);
-	const ImprovementTypes eOtherImprovement = (ImprovementTypes) lua_tointeger(L, 3);
-	const int iAmount = lua_tointeger(L, 4);
-	const YieldTypes eYield = (YieldTypes) lua_tointeger(L, 5);
-	const int iValue = lua_tointeger(L, 5);
-	const bool bBonusPerAmount = lua_toboolean(L, 6);
-
-	pkCity->improvementAdjacency(eImprovement, eOtherImprovement, iAmount, eYield, iValue, bBonusPerAmount);
-
-	return 1;
-}
-#endif
-

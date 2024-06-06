@@ -212,9 +212,6 @@ public:
 
 	bool NoTrain(UnitClassTypes eUnitClassType);
 
-	//EAP: No build
-	bool NoBuild(ImprovementTypes eImprovementType);
-
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
 protected:
@@ -374,9 +371,6 @@ protected:
 	std::multimap<int, int> m_FreePromotionUnitCombats;
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;
 	std::vector<bool> m_abNoTrainUnitClass;
-
-	//EAP: No build
-	std::vector<bool> m_abNoBuildImprovement;
 
 private:
 	CvTraitEntry(const CvTraitEntry&);
@@ -950,9 +944,6 @@ public:
 
 	bool NoTrain(UnitClassTypes eUnitClassType);
 
-	//EAP: No build
-	bool NoBuild(ImprovementTypes eImprovementType);
-
 	// Maya calendar routines
 	bool IsUsingMayaCalendar() const;
 	bool IsEndOfMayaLongCount();
@@ -1117,8 +1108,6 @@ private:
 	int m_iStrategicResourceQuantityModifier[NUM_TERRAIN_TYPES];
 	std::vector<int> m_aiResourceQuantityModifier;
 	std::vector<bool> m_abNoTrain;
-	//EAP: No build
-	std::vector<bool> m_abNoBuild;
 
 	FStaticVector<FreeTraitUnit, SAFE_ESTIMATE_NUM_FREE_UNITS, true, c_eCiv5GameplayDLL, 0> m_aFreeTraitUnits;
 	std::vector<int> m_aUniqueLuxuryAreas;

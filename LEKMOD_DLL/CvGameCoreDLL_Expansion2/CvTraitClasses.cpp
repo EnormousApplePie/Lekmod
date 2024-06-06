@@ -1075,20 +1075,6 @@ bool CvTraitEntry::NoTrain(UnitClassTypes eUnitClass)
 	}
 }
 
-//EAP: No build
-
-bool CvTraitEntry::NoBuild(ImprovementTypes eImprovementType)
-{
-	if (eImprovementType != NO_IMPROVEMENT)
-	{
-		return m_abNoBuildImprovement[eImprovementType];
-	}
-	else
-	{
-		return false;
-	}
-}
-
 /// Load XML data
 bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
 {
@@ -1548,35 +1534,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 			m_abNoTrainUnitClass[iUnitClass] = true;
 		}
 	}
-
-
-	// EAP: NoBuild
-	{
-
-		int iImprovementLoop;
-		for(int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
-
-		{
-			m_abNoBuildImprovement.push_back(false);
-		}
-
-		std::string strKey("Trait_NoBuild");
-		Database::Results* pResults = kUtility.GetResults(strKey);
-		if (pResults == NULL)
-		{
-			pResults = kUtility.PrepareResults(strKey, "SELECT Traits.ID, Improvements.ID FROM Trait_NoBuild inner join Traits on Trait_NoBuild.TraitType = Traits.Type inner join Improvements on Trait_NoBuild.ImprovementType = Improvements.Type where TraitType = ?");
-		}
-
-		pResults->Bind(1, szTraitType);
-
-		while (pResults->Step())
-		{
-			const int iImprovementID = pResults->GetInt(1);
-			m_abNoBuildImprovement[iImprovementID] = true;
-		}
-	}
 	
-
 	// FreeResourceXCities
 	{
 		// Init vector
@@ -1996,11 +1954,7 @@ void CvPlayerTraits::InitPlayerTraits()
 				m_abNoTrain[iUnitClass] = trait->NoTrain((UnitClassTypes)iUnitClass);
 			}
 
-			//EAP: No Build
-			for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
-			{
-				m_abNoBuild[iImprovement] = trait->NoBuild((ImprovementTypes)iImprovement);
-			}
+			
 
 			FreeTraitUnit traitUnit;
 #ifdef AUI_WARNING_FIXES
@@ -2048,8 +2002,6 @@ void CvPlayerTraits::Uninit()
 {
 	m_aiResourceQuantityModifier.clear();
 	m_abNoTrain.clear();
-	//EAP: No build
-	m_abNoBuild.clear();
 
 	m_paiMovesChangeUnitCombat.clear();
 	m_paiMaintenanceModifierUnitCombat.clear();
@@ -2281,14 +2233,6 @@ void CvPlayerTraits::Reset()
 #endif
 	{
 		m_abNoTrain[iUnitClass] = false;
-	}
-
-	// EAP: No build
-	m_abNoBuild.clear();
-	m_abNoBuild.resize(GC.getNumImprovementInfos());
-	for (int iImprovement = 0; iImprovement < GC.getNumUnitClassInfos(); iImprovement++)
-	{
-		m_abNoBuild[iImprovement] = false;
 	}
 
 	m_aFreeTraitUnits.clear();
@@ -2798,21 +2742,6 @@ bool CvPlayerTraits::NoTrain(UnitClassTypes eUnitClassType)
 	if (eUnitClassType != NO_UNITCLASS)
 	{
 		return m_abNoTrain[eUnitClassType];
-	}
-	else
-	{
-		return false;
-	}
-}
-
-
-// EAP: No build
-
-bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovementType)
-{
-	if (eImprovementType != NO_IMPROVEMENT)
-	{
-		return m_abNoBuild[eImprovementType];
 	}
 	else
 	{
@@ -3539,16 +3468,6 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 		kStream >> bValue;
 		m_abNoTrain.push_back(bValue);
 	}
-	
-	//EAP: No build
-	kStream >> iNumEntries;
-	m_abNoBuild.clear();
-	for (int i = 0; i < iNumEntries; i++)
-	{
-		bool bValue;
-		kStream >> bValue;
-		m_abNoBuild.push_back(bValue);
-	}
 
 	kStream >> iNumEntries;
 	m_aFreeTraitUnits.clear();
@@ -3767,13 +3686,6 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	for (uint ui = 0; ui < m_abNoTrain.size(); ui++)
 	{
 		kStream << m_abNoTrain[ui];
-	}
-	
-	// EAP: No build
-	kStream << m_abNoBuild.size();
-	for (uint ui = 0; ui < m_abNoBuild.size(); ui++)
-	{
-		kStream << m_abNoBuild[ui];
 	}
 
 	kStream << m_aFreeTraitUnits.size();

@@ -9665,14 +9665,7 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 				return true;
 			}
 		}
-		else
-		{
-			CvImprovementEntry* pkEntry = GC.getImprovementInfo(eImprovement);
-			if (GetPlayerTraits()->NoBuild(eImprovement))
-			{
-					return false;
-			}
-		}
+		
 	}
 
 	// Is this a !!build!! that is only useable by a specific civ? ~EAP

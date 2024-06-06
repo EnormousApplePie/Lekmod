@@ -148,8 +148,10 @@ public:
 	int GetTechYieldChanges(int i, int j) const;
 	int* GetTechYieldChangesArray(int i);
 #ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
-	int GetImprovementAdjacentBonus(int i, int j, int k, int l) const;
-	int GetImprovementAdjacentImprovementType(int i) const;
+	int GetImprovementAdjacentBonus(int i, int j) const;
+	int GetImprovementAdjacentCivilizationAmount(int i, int j) const;
+	int GetImprovementAdjacentBonusCivilization(int i, int j) const;
+	int GetImprovementAdjacentAmount(int i, int j) const;
 #endif
 	int GetTechNoFreshWaterYieldChanges(int i, int j) const;
 	int* GetTechNoFreshWaterYieldChangesArray(int i);
@@ -260,9 +262,11 @@ protected:
 	int** m_ppiRouteYieldChanges;
 #endif
 #ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
-	// 4d array, yip
-	int**** m_ppiImprovementAdjacentBonus;
-	int* m_piImprovementAdjacentImprovementType;
+	// 
+	int** m_ppiImprovementAdjacentBonus;
+	int** m_ppiImprovementAdjacentCivilizationAmount;
+	int** m_ppiImprovementAdjacentBonusCivilization;
+	int** m_ppiImprovementAdjacentAmount;
 #endif
 	CvImprovementResourceInfo* m_paImprovementResource;
 };

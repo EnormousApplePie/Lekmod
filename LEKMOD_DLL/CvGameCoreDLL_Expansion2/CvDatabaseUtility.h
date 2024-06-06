@@ -40,11 +40,6 @@ public:
 #else
 	void Initialize2DArray(int**& ppArray, const size_t iCount1, const size_t iCount2, int iDefault = 0);
 #endif
-#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
-	void Initialize4DArray(int****& ppArray, const size_t iCount1, const size_t iCount2, const size_t iCount3, const size_t iCount4, int iDefault = 0);
-	bool Initialize4DArray(int****& ppArray, const char* szTable1Name, const char* szTable2Name, const char* szTable3Name, const char* szTable4Name, int iDefault /* = 0 */);
-	static void SafeDelete4DArray(int****& ppArray, const size_t iCount1, const size_t iCount2, const size_t iCount3);
-#endif
 
 	//!Allocates an array to Count(szTableName) and zero's memory.
 	template<typename T>
