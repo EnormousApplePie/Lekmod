@@ -52,6 +52,11 @@ public:
 
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+	const char* GetIconString() const;
+	void SetIconString(const char* szVal);
+#endif
+
 	int GetGoldMaintenance() const;
 	int GetCultureBombRadius() const;
 	int GetCultureBombRadiusNeutral() const;
@@ -172,6 +177,10 @@ public:
 protected:
 #ifndef NQM_PRUNING
 	void InitImprovementResourceList(CvImprovementResourceInfo** ppImprovementResource, int iListLen);
+#endif
+
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+	CvString m_strIconString;
 #endif
 
 	int m_iGoldMaintenance;

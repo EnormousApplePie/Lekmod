@@ -296,6 +296,11 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 	const char* szCivilizationType = kResults.GetText("CivilizationType");
 	m_eRequiredCivilization = (CivilizationTypes)GC.getInfoTypeForString(szCivilizationType, true);
 
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+	const char* szIconString = kResults.GetText("IconString");
+	SetIconString(szIconString);
+#endif
+
 	//References
 	const char* szWorldsoundscapeAudioScript = kResults.GetText("WorldSoundscapeAudioScript");
 	if(szWorldsoundscapeAudioScript != NULL)
@@ -661,6 +666,19 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 
 	return true;
 }
+
+/// Support for custom improvement icons
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+const char* CvImprovementEntry::GetIconString() const
+{
+	return m_strIconString;
+}
+//------------------------------------------------------------------------------
+void CvImprovementEntry::SetIconString(const char* szVal)
+{
+	m_strIconString = szVal;
+}
+#endif
 
 /// The gold maintenance cost
 int CvImprovementEntry::GetGoldMaintenance() const

@@ -100,6 +100,14 @@ bool CvDllImprovementInfo::IsGoody() const
 	return m_pImprovementInfo->IsGoody();
 }
 //------------------------------------------------------------------------------
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+const char* CvDllImprovementInfo::GetIconString() const
+{
+	return m_pImprovementInfo->GetIconString();
+}
+//------------------------------------------------------------------------------
+#endif
+
 const char* CvDllImprovementInfo::GetArtDefineTag() const
 {
 	return m_pImprovementInfo->GetArtDefineTag();
