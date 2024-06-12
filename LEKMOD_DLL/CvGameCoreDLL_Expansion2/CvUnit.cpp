@@ -16154,6 +16154,7 @@ void CvUnit::ShowDamageDeltaText(int iDelta, CvPlot* pkPlot, float fAdditionalTe
 int CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, float fAdditionalTextDelay, const CvString* pAppendText)
 {
 	VALIDATE_OBJECT
+
 	int iOldValue;
 
 	iOldValue = getDamage();
@@ -16263,15 +16264,41 @@ int CvUnit::changeDamage(int iChange, PlayerTypes ePlayer, float fAdditionalText
 	VALIDATE_OBJECT;
 #ifdef DEL_RANGED_COUNTERATTACKS
 	if (iChange != 0)
-#endif
-	return setDamage((getDamage() + iChange), ePlayer, fAdditionalTextDelay, pAppendText);
-#ifdef DEL_RANGED_COUNTERATTACKS
+
+	{
+		return setDamage(getDamage() + iChange, ePlayer, fAdditionalTextDelay, pAppendText);
+	}
 	else
+	{
 		return 0;
+	}
 #endif
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	if (iChange < 0)
+	{
+		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+		if (pkScriptSystem)
+		{
+			CvLuaArgsHandle args;
+			args->Push(getOwner());
+			args->Push(GetID());
+			args->Push(iChange);
+			args->Push(getX());
+			args->Push(getY());
+
+
+			bool bResult = false;
+			LuaSupport::CallHook(pkScriptSystem, "UnitHealed", args.get(), bResult);
+		}
+	}
+
+#endif
+
+	return setDamage(getDamage() + iChange, ePlayer, fAdditionalTextDelay, pAppendText);
+
+
 }
-
-
 //	--------------------------------------------------------------------------------
 int CvUnit::getMoves() const
 {
@@ -18647,7 +18674,7 @@ bool CvUnit::IsNearFeatureType(FeatureTypes eFeature, int iRange, bool bSameOwne
 bool CvUnit::IsNearImprovementType(ImprovementTypes eImprovement, int iRange, bool bSameOwner) const
 {
 	VALIDATE_OBJECT
-	CvAssertMsg(ePromotion, "Improvement!");
+	CvAssertMsg(eImprovement > 0, "eImprovement is expected to be non-negative (invalid eImprovement)");
 	if (!eImprovement || iRange < 1)
 	{
 		return false;

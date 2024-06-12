@@ -931,7 +931,10 @@
 #define LEKMOD_ADJACENT_IMPROVEMENT_YIELD
 // Support for custom improvement icons
 #define LEKMOD_CUSTOM_IMPROVEMENT_ICONS
-
+// Trait table that disables the ability to build specified improvements
+#define LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+// Fixed a bug where free buildings would not give bonus yields from buildings sometimes.
+#define LEKMOD_FREE_BUILDING_FIX
 // Add a new promotion value that gives adjacent units a bonus to city attack. Works the same as the sapper promo just unhardcoded
 // requires: LEKMOD_NEAR_UNIT_WITH_PROMOTION
 //#define LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
@@ -952,6 +955,8 @@
 // new lua event that triggers whenever a player enteres, extends, or exits a golden age.
 /// " PlayerSetGoldenAge ". Passed parameters: playerID
 // -------------------------------------------------------------------------------------
+// new lua event that triggers whenever a unit is healed (negative damage).
+/// " UnitHealed ". Passed parameters: playerID, unitID, unitX, unitY
 #define LEKMOD_NEW_LUA_METHODS
 //--------------------------------------------------------------------------------------
 // new lua method. Sets a plot to be fresh water or not.

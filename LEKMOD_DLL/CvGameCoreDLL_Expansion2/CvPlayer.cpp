@@ -9527,7 +9527,11 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 				CvBuildingEntry* pkBuilding = GC.getBuildingInfo(eBuilding);
 				if(pkBuilding)
 				{
+#ifdef LEKMOD_FREE_BUILDING_FIX
+					iBuildingCount = pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding);
+#else
 					iBuildingCount = pLoopCity->GetCityBuildings()->GetNumRealBuilding(eBuilding);
+#endif
 
 					if(iBuildingCount > 0)
 					{
@@ -9646,44 +9650,6 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 		}
 	}
 
-	// EAP: NO build : Is this an improvement that cannot be built by a specific civ?
-	
-	if(eImprovement != NO_IMPROVEMENT)
-	{	
-
-		//allow CivSpecific builds regardless of the NoBuild table, so civs can still have unique builds that lead to "removed" improvements
-		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
-		if(pkBuildInfo->IsSpecificCivRequired())
-		{
-			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
-			if(eCiv != getCivilizationType())
-			{
-				return false;
-			}
-			else
-			{
-				return true;
-			}
-		}
-		
-	}
-
-	// Is this a !!build!! that is only useable by a specific civ? ~EAP
-	/*
-	if(eImprovement != NO_IMPROVEMENT)
-	{
-		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
-		if(pkBuildInfo->IsSpecificCivRequired())
-		{
-			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
-			if(eCiv != getCivilizationType())
-			{
-				return false;
-			}
-		}
-	}
-	*/
-
 	if(!bTestVisible)
 	{
 		if(IsBuildBlockedByFeature(eBuild, pPlot->getFeatureType()))
@@ -9699,6 +9665,36 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 			}
 		}
 	}
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	// Is this an improvement that cannot be built by a specific civ?
+
+	if (eImprovement != NO_IMPROVEMENT)
+	{
+
+		//allow CivSpecific builds regardless of the NoBuild table, so civs can still have unique builds that lead to "removed" improvements
+		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
+		if (pkBuildInfo->IsSpecificCivRequired())
+		{
+			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
+			if (eCiv != getCivilizationType())
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+
+		//check if the player has the trait that blocks the improvement
+		if (GetPlayerTraits()->NoBuild(eImprovement))
+		{
+			return false;
+		}
+
+	}
+#endif
 
 	return true;
 }

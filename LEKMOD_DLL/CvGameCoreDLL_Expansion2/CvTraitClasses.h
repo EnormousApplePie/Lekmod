@@ -212,6 +212,10 @@ public:
 
 	bool NoTrain(UnitClassTypes eUnitClassType);
 
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	bool NoBuildImprovements(ImprovementTypes eImprovement);
+#endif
+
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
 protected:
@@ -371,6 +375,10 @@ protected:
 	std::multimap<int, int> m_FreePromotionUnitCombats;
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;
 	std::vector<bool> m_abNoTrainUnitClass;
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	std::vector<bool> m_abNoBuildImprovements;
+#endif
 
 private:
 	CvTraitEntry(const CvTraitEntry&);
@@ -944,6 +952,10 @@ public:
 
 	bool NoTrain(UnitClassTypes eUnitClassType);
 
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	bool NoBuild(ImprovementTypes eImprovement);
+#endif
+
 	// Maya calendar routines
 	bool IsUsingMayaCalendar() const;
 	bool IsEndOfMayaLongCount();
@@ -1108,6 +1120,10 @@ private:
 	int m_iStrategicResourceQuantityModifier[NUM_TERRAIN_TYPES];
 	std::vector<int> m_aiResourceQuantityModifier;
 	std::vector<bool> m_abNoTrain;
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	std::vector<bool> m_abNoBuild;
+#endif
 
 	FStaticVector<FreeTraitUnit, SAFE_ESTIMATE_NUM_FREE_UNITS, true, c_eCiv5GameplayDLL, 0> m_aFreeTraitUnits;
 	std::vector<int> m_aUniqueLuxuryAreas;
