@@ -935,6 +935,14 @@
 #define LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 // Fixed a bug where free buildings would not give bonus yields from buildings sometimes.
 #define LEKMOD_FREE_BUILDING_FIX
+// Added a new tag to the buildings table in xml "gold cost". This overrides the gold cost of a building regardless of hurry cost modifiers but will be discounted by other effects.
+#define LEKMOD_BUILDING_GOLD_COST
+// Uncouples an assumption that belief buildings cannot have production costs
+#define LEKMOD_BELIEF_BUILDING_PRODUCTION_COST
+// New buildingentry table that awards a certain yield whenever a great person is expended (mausoelum effect)
+#define LEKMOD_BUILDING_GP_EXPEND_YIELD
+// Units or Buildings with a faith cost no longer need a religion to be purchased unless unlocked by a belief
+#define LEKMOD_FAITH_PURCHASE_NO_RELIGION
 // Add a new promotion value that gives adjacent units a bonus to city attack. Works the same as the sapper promo just unhardcoded
 // requires: LEKMOD_NEAR_UNIT_WITH_PROMOTION
 //#define LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK

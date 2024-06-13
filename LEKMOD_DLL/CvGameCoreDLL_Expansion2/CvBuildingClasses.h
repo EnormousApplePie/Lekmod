@@ -118,6 +118,10 @@ public:
 	int GetTrainedFreePromotion() const;
 	int GetFreePromotionRemoved() const;
 	int GetProductionCost() const;
+#ifdef LEKMOD_BUILDING_GOLD_COST
+	int GetGoldCost() const;
+	bool RequiresGoldPurchase() const;
+#endif
 	int GetFaithCost() const;
 	int GetLeagueCost() const;
 	int GetNumCityCostMod() const;
@@ -318,6 +322,9 @@ public:
 	int GetTerrainYieldChange(int i, int j) const;
 	int* GetTerrainYieldChangeArray(int i) const;
 	int GetBuildingClassYieldChange(int i, int j) const;
+#ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
+	int GetGreatPersonExpendYield(int i) const;
+#endif
 	int GetBuildingClassHappiness(int i) const;
 
 	CvThemingBonusInfo *GetThemingBonusInfo(int i) const;
@@ -357,6 +364,10 @@ private:
 	int m_iTrainedFreePromotion;
 	int m_iFreePromotionRemoved;
 	int m_iProductionCost;
+#ifdef LEKMOD_BUILDING_GOLD_COST
+	int m_iGoldCost;
+	bool m_bRequiresGoldPurchase;
+#endif
 	int m_iFaithCost;
 	int m_iLeagueCost;
 	int m_iNumCityCostMod;
@@ -542,6 +553,10 @@ private:
 	int** m_ppaiTerrainYieldChange;
 	int** m_ppiBuildingClassYieldChanges;
 #endif
+#ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
+	int* m_piGreatPersonExpendYield;
+#endif
+
 	int* m_paiBuildingClassHappiness;
 
 	CvThemingBonusInfo* m_paThemingBonusInfo;
