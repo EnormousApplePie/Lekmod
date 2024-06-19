@@ -2397,8 +2397,7 @@
   </Files>
   <Actions>
     <OnModActivated>
-      <UpdateDatabase>Override/CIV5Units.xml</UpdateDatabase>
-      <UpdateDatabase>Override/CIV5Units_Mongol.xml</UpdateDatabase>
+      
     </OnModActivated>
   </Actions>
  <EntryPoints>

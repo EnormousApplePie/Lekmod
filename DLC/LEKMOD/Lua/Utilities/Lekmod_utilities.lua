@@ -26,7 +26,7 @@ end
 function LekmodUtilities:get_round(number, idp)
 
    local mult = 10^(idp or 0)
-   return g_MathFloor(number * mult + 0.5) / mult
+   return math.floor(number * mult + 0.5) / mult
 
 end
 ------------------------------------------------------------------------------------------------------------------------

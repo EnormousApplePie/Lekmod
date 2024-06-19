@@ -2,7 +2,10 @@
 -- Author: Fruitstrike
 -- DateCreated: 2/14/2016 8:45:43 PM
 --------------------------------------------------------------
+-- Note: Made obsolete in lekmod v32.3 update.
+--------------------------------------------------------------
 
+--[[
 function addT1EconomicUnionBuilding(player, iX, iY)
 	local plot = Map.GetPlot(iX, iY);
 	local cCity = plot:GetPlotCity();
@@ -40,3 +43,4 @@ function NQMP_Freedom_T1_Economic_Union_OnPolicyAdopted(playerID, policyID)
 
 end
 GameEvents.PlayerAdoptPolicy.Add(NQMP_Freedom_T1_Economic_Union_OnPolicyAdopted)
+]]

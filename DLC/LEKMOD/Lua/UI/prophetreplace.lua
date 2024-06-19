@@ -139,7 +139,7 @@ end
 Events.SequenceGameInitComplete.Add(PlaceExtraJuice)
 --===================================================================================================================================
 
-
+--[[
 -- Philippine ua
 local iCiv = GameInfoTypes["CIVILIZATION_PHILIPPINES"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
@@ -160,7 +160,7 @@ end
 
 
 
---[[
+
 -- From JFD
 function PhilippineMovementBonus(playerID, unitID, unitX, unitY)
 	local player = Players[playerID]
@@ -326,7 +326,7 @@ if bIsActive then
 GameEvents.PlayerDoTurn.Add(MoorsEraUA2)
 GameEvents.PlayerDoTurn.Add(MoorsEraUA)
 end
---]]
+
 --- UAE UA
 
 
@@ -401,7 +401,6 @@ end
 local iCiv = GameInfoTypes["CIVILIZATION_OMAN"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 
---[[
 function JFD_GetGoldFromDomesticTradeRoutes(player)
 	local numDomesticTRSToConqueredCities = 0
 	local goldFromDomesticTRS = 0
@@ -449,7 +448,7 @@ end
 if bIsActive then
 	GameEvents.PlayerDoTurn.Add(JFD_DomesticTRGold)
 end
---]]
+
 --- Oman UB
 
 local direction_types = {
@@ -485,8 +484,6 @@ if bIsActive then
 GameEvents.PlayerDoTurn.Add(JFD_MinaaAttrition)
 end
 
-
-
 function JFD_MinaaNavalProduction(playerID)
 	local player = Players[playerID]
 	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_OMAN"] and player:IsAlive() then
@@ -504,14 +501,14 @@ end
 if bIsActive then
 	GameEvents.PlayerDoTurn.Add(JFD_MinaaNavalProduction)	
 end
-
+--]]
 --- Cuba ua
-
+--[[
 local iCiv = GameInfoTypes["CIVILIZATION_CUBA"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
-
+]]
 -- UB: Dance Hall
-
+--[[
 function DanceHallDo(iPlayer)
     local pPlayer = Players[iPlayer]
     if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_CUBA"] then
@@ -526,7 +523,6 @@ function DanceHallDo(iPlayer)
         end
     end
 end
-
 -- UA
 function CubaCultureYoink(iPlayer) --- Fixed my original broken code by LeeS(Master of the Galaxy)
     local player = Players[iPlayer]
@@ -548,7 +544,6 @@ function CubaCultureYoink(iPlayer) --- Fixed my original broken code by LeeS(Mas
         end
     end
 end
-
 -- UU
 
 function UUnlock(iPlayer, policyTypeID)
@@ -563,10 +558,9 @@ function UUnlock(iPlayer, policyTypeID)
 	end
 end
 
-
 if bIsActive then
 	GameEvents.PlayerAdoptPolicy.Add(UUnlock);
-	 GameEvents.PlayerDoTurn.Add(DanceHallDo)
+	 --GameEvents.PlayerDoTurn.Add(DanceHallDo)
 	 GameEvents.PlayerDoTurn.Add(CubaCultureYoink)
 end
 
@@ -634,7 +628,6 @@ end
 if bIsActive then
 	GameEvents.GreatPersonExpended.Add(IsPersonExpended)
 end
-
 -- mongolia additional UA. This is where the spice begins ~EAP
 
 local iCiv = GameInfoTypes["CIVILIZATION_MONGOL"]
@@ -659,7 +652,6 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 end);
 
 end
-
 -- Romania new UA Culture from GA  (orignal code from DJS)
 
 local iCiv = GameInfoTypes["CIVILIZATION_ROMANIA"]
@@ -682,7 +674,7 @@ if bIsActive then
 GameEvents.PlayerDoTurn.Add(RomaniaGACulture)
 end
 
--- Maori Promotion (UA) 
+-- Maori Promotion (UA)
 -- Code by EnormousApplePie
 
 local iCiv = GameInfoTypes["CIVILIZATION_MAORI"]
@@ -718,21 +710,6 @@ if bIsActive then
 GameEvents.PlayerDoTurn.Add(EAP_Maori_Turn)
 end
 
-local unitEmbarkPromotionActiveID = GameInfoTypes["PROMOTION_MOVE_ALL_TERRAIN"]
-local unitEmbarkPromotionID = GameInfoTypes["PROMOTION_EMBARKATION"]
-
-function EAP_Embark_Fix(playerID)
-	local player = Players[playerID]
-	local playerTeam = Teams[player:GetTeam()]
-	if (not player:IsAlive()) then return end
-	if player:IsBarbarian() then return end
-	for unit in player:Units() do
-		if unit:IsHasPromotion(unitEmbarkPromotionActiveID) then
-			unit:SetHasPromotion(unitEmbarkPromotionID, false)
-		end
-	end
-end
-GameEvents.PlayerDoTurn.Add(EAP_Embark_Fix)
 
 
 --local iairgunID = GameInfo.Units.UNIT_HELICOPTER_GUNSHIP
@@ -908,7 +885,6 @@ if bIsActive then
 	GameEvents.PlayerDoTurn.Add(MC_MaoriBattalion)
 	GameEvents.PlayerDoTurn.Add(JFD_NewZealand_Defender_PlayerDoTurn)
 end
-
 	-- Tongo UB food
 	-- Code by JFD
 	-- Hoped to edit it somewhat and make it slightly more original, but I couldn't quite change it without bringing down the balance ~EAP
@@ -1018,7 +994,6 @@ if bIsActive then
 	GameEvents.PlayerDoTurn.Add(KilwaTrait)
 end
 -- GAULS UA 
-
 local iCiv = GameInfoTypes["CIVILIZATION_GAUL"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 if bIsActive then
@@ -1129,7 +1104,7 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 	end
 end)
 end
-
+]]
 
 local iCiv = GameInfoTypes["CIVILIZATION_VENEZ"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
@@ -1152,7 +1127,7 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 	end
 end)
 end
---]]
+
 --Horde
 
 local civHorde = GameInfoTypes["CIVILIZATION_GOLDEN_HORDE"];
@@ -1185,7 +1160,7 @@ end
 if hordeIsActive then
 GameEvents.PlayerDoTurn.Add(HordeUA);
 end
-
+--]]
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------- DUMMY POLICIES ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1194,7 +1169,7 @@ end
 
 --local iCiv = GameInfoTypes["CIVILIZATION_CUBA"]
 --local bIsActive = JFD_IsCivilisationActive(iCiv)
-
+--[[
 print("dummy policy loaded - Cuba")
 function DummyPolicyCuba(player)
 	print("working - Cuba")
@@ -1227,7 +1202,6 @@ function DummyPolicyCuba(player)
 		end
 	end 
 end
-
 -- AKKAD UA --
 
 include("PlotIterators")
@@ -1302,6 +1276,7 @@ if bIsActive then
 GameEvents.PlayerDoTurn.Add(liteGreatGeneralBonusReset)
 GameEvents.UnitSetXY.Add(liteGreatGeneralBonusAgainstCities)
 end
+--]]
 --_________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
@@ -1348,7 +1323,7 @@ end
 --========================================================================================
 --========================================================================================
 
-
+--[[
 --================
 -- RESETTLEMENTS
 --================
@@ -1411,53 +1386,6 @@ function ResettlementsNewCities(iPlayer, iCityX, iCityY)
 end
 GameEvents.PlayerCityFounded.Add(ResettlementsNewCities)
 
-
---================
--- ECONOMIC UNION
---================
-
-function EconomicUnionTradeRouteUpdate(iPlayer)
-	local player = Players[iPlayer]
-	local pCapital = player:GetCapitalCity()
-
-	-- destroy Building
-	for pCity in player:Cities() do
-		if (pCity ~= pCapital) then
-			if (pCity:GetNumRealBuilding(GameInfoTypes["BUILDING_ECONOMIC_UNION_TRADE"]) > 0) then
-				pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ECONOMIC_UNION_TRADE"], 0)
-			end
-		end
-	end
-
-	-- add It back to the capital if needed
-	if (pCapital:GetNumRealBuilding(GameInfoTypes["BUILDING_ECONOMIC_UNION_TRADE"]) < 1) then
-		pCapital:SetNumRealBuilding(GameInfoTypes["BUILDING_ECONOMIC_UNION_TRADE"], 1)
-	end
-
-end
-
-function EconomicUnionTradeRoute_PlayerDoTurn(iPlayer)
-
-	local player = Players[iPlayer]
-	if (player:IsEverAlive()) then
-		if (player:HasPolicy(GameInfo.Policies["POLICY_ECONOMIC_UNION"].ID)) then
-			EconomicUnionTradeRouteUpdate(iPlayer)
-		end
-	end
-
-end
-GameEvents.PlayerDoTurn.Add(EconomicUnionTradeRoute_PlayerDoTurn);
-
-function EconomicUnionTradeRoute_OnAdopt(playerID, policyID)
-
-	local player = Players[playerID]
-	if (policyID == GameInfo.Policies["POLICY_ECONOMIC_UNION"].ID) then
-		EconomicUnionTradeRouteUpdate(playerID)
-	end
-
-end
-GameEvents.PlayerAdoptPolicy.Add(EconomicUnionTradeRoute_OnAdopt)
-
 --================
 -- Italy ua
 --================
@@ -1498,12 +1426,12 @@ end
 if bIsActive then
 	GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
 end
-
+]]
 -- HonorChanges
 -- Author: Cirra
 -- DateCreated: 7/27/2019 1:22:18 AM
 --------------------------------------------------------------
-
+--[[
 function Honor_OnPolicyAdopted(playerID, policyID)
 
 	local player = Players[playerID]
@@ -1560,11 +1488,11 @@ function LakeWonderRequireLake(playerID, cityID, buildingType)
 end
 
 GameEvents.CityCanConstruct.Add(LakeWonderRequireLake);
-
+--]]
 --================
 -- Workboat for AI
 --================
-
+--[[
 local workBoat = GameInfoTypes["UNIT_WORKBOAT"]
 
 function WorkboatforAI(playerID, cityID, unitType)
@@ -1861,11 +1789,11 @@ GameEvents.PlayerDoTurn.Add(SkiResortMountain);
 --GameEvents.PlayerDoTurn.Add(SwissUA);
 GameEvents.UnitSetXY.Add(Mountaineer);
 end
-
+]]
 --=================================================================================================================
 -- Yugoslavia
 --=================================================================================================================
-
+--[[
 local civYugoslavia = GameInfoTypes["CIVILIZATION_YUGOSLAVIA"];
 local yugoslaviaIsActive = JFD_IsCivilisationActive(civYugoslavia);
 
@@ -1947,8 +1875,6 @@ GameEvents.PlayerDoTurn.Add(YugoslaviaUA);
 GameEvents.PlayerAdoptPolicy.Add(YugoslaviaUAAdopt);
 Events.SequenceGameInitComplete.Add(YugoslaviaInit);
 end
-
-
 -- =======================================================================================================================
 -- Colombia UA : Add a dummy building to give science from lumbermills on tech, add golden age points on city capture
 -- =======================================================================================================================
@@ -1979,6 +1905,7 @@ if (bIsActive and iCiv) then
     GameEvents.CityCaptureComplete.Add(ColombiaTrait)
     GameEvents.PlayerCityFounded.Add(ColombiaTrait)
 end
+
 -- =======================================================================================================================
 -- Phoenicia UA : Add +1 Population after Optics on new cities
 -- =======================================================================================================================
@@ -2064,7 +1991,6 @@ end
 if bIsActive then
 	GameEvents.PlayerDoTurn.Add(MexicoUA);
 end
-
 --=======================================================================================================================
 -- Papal States UA
 --=======================================================================================================================
@@ -2131,3 +2057,4 @@ if bIsActive then
 	GameEvents.CityCaptureComplete.Add(VaticanUACourthouseCapture);
 	GameEvents.ReligionFounded.Add(VaticanUAonFound);
 end
+]]
