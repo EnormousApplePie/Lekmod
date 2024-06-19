@@ -5322,7 +5322,11 @@ int CvCity::GetFaithPurchaseCost(UnitTypes eUnit, bool bIncludeBeliefDiscounts)
 					
 					if (eReligion == NO_RELIGION)
 					{
+#ifdef LEKMOD_FAITH_PURCHASE_NO_RELIGION
+						iCost = kPlayer.GetReligions()->GetCostNextProphet(false /*bIncludeBeliefDiscounts*/, false /*bAdjustForSpeedDifficulty*/);
+#else
 						iCost = -1;
+#endif
 					}
 					else
 					{
@@ -5498,14 +5502,12 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 
 #ifdef LEKMOD_BUILDING_GOLD_COST
 	int iCost = pkBuildingInfo->GetGoldCost();
-
+	int iModifier = pkBuildingInfo->GetHurryCostModifier();
+	if (iModifier == -1)
+		return -1;
 	if (iCost == 0)
 	{
-		int iModifier = pkBuildingInfo->GetHurryCostModifier();
-
-		if (iModifier == -1)
-			return -1;
-
+	
 		iCost = GetPurchaseCostFromProduction(getProductionNeeded(eBuilding));
 		iCost *= (100 + iModifier);
 		iCost /= 100;
@@ -5517,8 +5519,15 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 	else
 	//if gold cost an actual value, adjust it based on game speed
 	{
+		//adjust for global gold discounts (big ben, commerce policy)
+		iCost *= (100 + iModifier);
+		iCost /= 100;
+		
 		iCost *= GC.getGame().getGameSpeedInfo().getConstructPercent();
 		iCost /= 100;
+
+		
+
 	}
 #else
 	int iModifier = pkBuildingInfo->GetHurryCostModifier();
@@ -14775,13 +14784,7 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 					return false;
 				}
 
-				if (!(eReligion <= RELIGION_PANTHEON))
-				{
-					if (pkUnitInfo->IsRequiresEnhancedReligion() && !(GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_bEnhanced))
-					{
-						return false;
-					}
-				}
+				
 #else
 			CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnitType);
 			if(pkUnitInfo)
@@ -14834,7 +14837,29 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 #ifdef LEKMOD_FAITH_PURCHASE_NO_RELIGION
 				// If we dont have a belief that enables unit purchasing, but we still have a faith cost,
 				// we can still purchase it, given we can also train it.
-				else if (!canTrain(eUnitType, false, !bTestTrainable, false /*bIgnoreCost*/, true /*bWillPurchase*/))
+
+				//Units that can spread, remove or simply require a form of religion do however need one
+				if (pkUnitInfo->IsRequiresEnhancedReligion())
+				{
+					if (eReligion <= RELIGION_PANTHEON)
+					{
+						return false;
+
+					}
+					else if (!(GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_bEnhanced))
+					{
+						return false;
+					}
+				}
+				else if (pkUnitInfo->GetReligionSpreads() > 0 || pkUnitInfo->GetReligiousStrength() > 0 || pkUnitInfo->IsRemoveHeresy())
+				{	
+
+					if (eReligion <= RELIGION_PANTHEON)
+					{
+						return false;
+					}
+				}
+				else if (!canTrain(eUnitType, false, !bTestTrainable, true /*bIgnoreCost*/, true /*bWillPurchase*/))
 				{
 					return false;
 				}
@@ -14877,7 +14902,15 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 
 #ifdef LEKMOD_FAITH_PURCHASE_NO_RELIGION
 			}
+
+			//If we don't need a belief or religion, check if we actually can get the building
+			if (!canConstruct(eBuildingType, false, !bTestTrainable, true /*bIgnoreCost*/))
+			{
+				return false;
+			}
 #endif
+
+
 			TechTypes ePrereqTech = (TechTypes)pkBuildingInfo->GetPrereqAndTech();
 			if (ePrereqTech != NO_TECH)
 			{

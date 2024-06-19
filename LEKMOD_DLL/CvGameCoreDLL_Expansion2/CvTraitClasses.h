@@ -372,7 +372,9 @@ protected:
 	int** m_ppiUnimprovedFeatureYieldChanges;
 #endif
 
+
 	std::multimap<int, int> m_FreePromotionUnitCombats;
+
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;
 	std::vector<bool> m_abNoTrainUnitClass;
 

@@ -943,6 +943,8 @@
 #define LEKMOD_BUILDING_GP_EXPEND_YIELD
 // Units or Buildings with a faith cost no longer need a religion to be purchased unless unlocked by a belief
 #define LEKMOD_FAITH_PURCHASE_NO_RELIGION
+// Fixed and applied the policy free promotion for combat units
+//#define LEKMOD_UNITCOMBAT_FREE_PROMOTION
 // Add a new promotion value that gives adjacent units a bonus to city attack. Works the same as the sapper promo just unhardcoded
 // requires: LEKMOD_NEAR_UNIT_WITH_PROMOTION
 //#define LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK

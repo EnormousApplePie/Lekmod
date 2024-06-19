@@ -556,7 +556,11 @@ private:
 	BuildingTypes m_eFreeBuildingOnConquest;
 
 	// Arrays
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	int** m_FreePromotionUnitCombats;
+#else
 	std::multimap<int, int> m_FreePromotionUnitCombats;
+#endif
 	int* m_piPrereqOrPolicies;
 	int* m_piPrereqAndPolicies;
 	int* m_piPolicyDisables;

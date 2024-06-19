@@ -344,6 +344,10 @@ CvPolicyEntry::~CvPolicyEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassFlavorChanges);
 #endif
 #endif
+
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	CvDatabaseUtility::SafeDelete2DArray(m_FreePromotionUnitCombats);
+#endif
 }
 
 /// Read from XML file (pass 1)
@@ -833,8 +837,38 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	}
 
 	//UnitCombatFreePromotions
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	{
+		
+		kUtility.Initialize2DArray(m_FreePromotionUnitCombats, "UnitPromotions", "UnitCombatInfos");
+
+		std::string sqlKey = "Policy_FreePromotionUnitCombats";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL = "select UnitPromotions.ID as UnitPromotionID, UnitCombatInfos.ID as UnitCombatInfoID from Policy_FreePromotionUnitCombats inner join UnitPromotions on UnitPromotions.Type = PromotionType inner join UnitCombatInfos on UnitCombatInfos.Type = UnitCombatType where PolicyType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+
+		pResults->Bind(1, szPolicyType);
+
+		while (pResults->Step())
+		{
+			const int UnitPromotionID = pResults->GetInt(0);
+			const int UnitCombatInfoID = pResults->GetInt(1);
+
+			OutputDebugStringA(CvString::format("UnitPromotionID: %d, UnitCombatInfoID: %d\n", UnitPromotionID, UnitCombatInfoID).c_str());
+
+			m_FreePromotionUnitCombats[UnitPromotionID][UnitCombatInfoID] = UnitCombatInfoID;
+		}
+
+		pResults->Reset();
+	}
+#else
 	{
 		m_FreePromotionUnitCombats.clear();
+
+
 		std::string sqlKey = "m_FreePromotionsUnitCombats";
 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 		if(pResults == NULL)
@@ -850,6 +884,7 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 			const int UnitPromotionID = pResults->GetInt(0);
 			const int UnitCombatInfoID = pResults->GetInt(1);
 
+
 			m_FreePromotionUnitCombats.insert(std::pair<int, int>(UnitPromotionID, UnitCombatInfoID));
 		}
 
@@ -858,8 +893,9 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 
 		pResults->Reset();
 	}
-
+#endif
 	return true;
+
 }
 
 /// Cost of next policy
@@ -2152,6 +2188,11 @@ int CvPolicyEntry::IsFreePromotion(int i) const
 /// Does the specific unit combat get a specific free promotion?
 bool CvPolicyEntry::IsFreePromotionUnitCombat(const int promotionID, const int unitCombatID) const
 {
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+
+	return m_FreePromotionUnitCombats ? m_FreePromotionUnitCombats[promotionID][unitCombatID] : -1;
+
+#else
 	std::multimap<int, int>::const_iterator it = m_FreePromotionUnitCombats.find(promotionID);
 	if(it != m_FreePromotionUnitCombats.end())
 	{
@@ -2167,8 +2208,10 @@ bool CvPolicyEntry::IsFreePromotionUnitCombat(const int promotionID, const int u
 			}
 		}
 	}
-
 	return false;
+#endif
+
+	
 }
 
 /// Free experience by unit type

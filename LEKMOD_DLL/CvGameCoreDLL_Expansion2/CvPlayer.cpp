@@ -416,6 +416,9 @@ CvPlayer::CvPlayer() :
 	, m_paiImprovementCount("CvPlayer::m_paiImprovementCount", m_syncArchive)
 	, m_paiFreeBuildingCount("CvPlayer::m_paiFreeBuildingCount", m_syncArchive)
 	, m_paiFreePromotionCount("CvPlayer::m_paiFreePromotionCount", m_syncArchive)
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	, m_paiUnitCombatFreePromotionCount("CvPlayer::m_paiFreeUnitCombatPromotionCount", m_syncArchive)
+#endif
 	, m_paiUnitCombatProductionModifiers("CvPlayer::m_paiUnitCombatProductionModifiers", m_syncArchive)
 	, m_paiUnitCombatFreeExperiences("CvPlayer::m_paiUnitCombatFreeExperiences", m_syncArchive)
 	, m_paiUnitClassCount("CvPlayer::m_paiUnitClassCount", m_syncArchive, true)
@@ -726,6 +729,9 @@ void CvPlayer::uninit()
 	m_paiFreeBuildingCount.clear();
 	m_paiFreePromotionCount.clear();
 	m_paiUnitCombatProductionModifiers.clear();
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	m_paiUnitCombatFreePromotionCount.clear();
+#endif
 	m_paiUnitCombatFreeExperiences.clear();
 	m_paiUnitClassCount.clear();
 	m_paiUnitClassMaking.clear();
@@ -1228,6 +1234,21 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 		m_paiFreePromotionCount.clear();
 		m_paiFreePromotionCount.resize(GC.getNumPromotionInfos(), 0);
+
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+		m_paiUnitCombatFreePromotionCount.clear();
+		m_paiUnitCombatFreePromotionCount.resize(GC.getNumPromotionInfos(), GC.getNumUnitCombatClassInfos());
+		for(int i = 0; i < GC.getNumPromotionInfos(); i++)
+		{
+			for (int j = 0; j < GC.getNumUnitCombatClassInfos(); j++)
+			{
+				//setat doesnt 3 arguments, how do we set this?
+				m_paiUnitCombatFreePromotionCount.setAt2D(i, j, 0);
+				//yeah but setAt doesnt take 3 arguments
+
+			}
+		}
+#endif
 
 		m_paiUnitClassCount.clear();
 		m_paiUnitClassCount.resize(GC.getNumUnitClassInfos(), 0);
@@ -21098,7 +21119,66 @@ void CvPlayer::ChangeFreePromotionCount(PromotionTypes ePromotion, int iChange)
 		}
 	}
 }
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
 
+//	--------------------------------------------------------------------------------
+/// Is ePromotion a free promotion for a specific unitcombat?
+int CvPlayer::GetFreePromotionUnitCombatCount(PromotionTypes ePromotion, int iIndex) const
+{
+	CvAssertMsg(ePromotion >= 0, "ePromotion is expected to be non-negative (invalid Index)");
+	CvAssertMsg(ePromotion < GC.getNumPromotionInfos(), "ePromotion is expected to be within maximum bounds (invalid Index)");
+	return m_paiUnitCombatFreePromotionCount[ePromotion][iIndex];
+}
+
+//	--------------------------------------------------------------------------------
+/// Is ePromotion a free promotion?
+bool CvPlayer::IsFreePromotionUnitCombat(PromotionTypes ePromotion, int iIndex) const
+{
+	return (GetFreePromotionUnitCombatCount(ePromotion, iIndex) > 0);
+}
+
+void CvPlayer::ChangeFreePromotionUnitCombatCount(PromotionTypes ePromotion, int iChange, int iIndex)
+{
+	CvAssertMsg(ePromotion >= 0, "ePromotion is expected to be non-negative (invalid Index)");
+	CvAssertMsg(ePromotion < GC.getNumPromotionInfos(), "ePromotion is expected to be within maximum bounds (invalid Index)");
+	OutputDebugStringA(CvString::format("UnitCombat: %i\n", iIndex).c_str());
+	if(iChange != 0)
+	{
+		bool bWasFree = IsFreePromotionUnitCombat(ePromotion, iIndex);
+
+		
+		//put both epromotion and unit combat class in the array
+		m_paiUnitCombatFreePromotionCount.setAt2D(ePromotion, iIndex, m_paiUnitCombatFreePromotionCount[ePromotion][iIndex] + iChange);
+
+		CvAssert(GetFreePromotionUnitCombatCount(ePromotion, iIndex) >= 0);
+
+
+		// This promotion is now set to be free, but wasn't before we called this function
+		if(IsFreePromotionUnitCombat(ePromotion, iIndex) && !bWasFree)
+		{
+			// Loop through Units
+			CvUnit* pLoopUnit;
+
+			int iLoop;
+			for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+			{
+				OutputDebugStringA(CvString::format("LoopUnit: %i\n", pLoopUnit->getUnitCombatType()).c_str());
+				//Q: at the beginning of the function the eUnitCombat is a number, but now it is 3, why?
+				//A: 
+				if (pLoopUnit->getUnitCombatType() == iIndex)
+				{
+
+					OutputDebugStringA(CvString::format("UnitCombat: %i\n", pLoopUnit->getUnitCombatType()).c_str());
+					//right combat unit
+					pLoopUnit->setHasPromotion(ePromotion, true);
+			
+				}
+				
+			}
+		}
+	}
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 int CvPlayer::getUnitCombatProductionModifiers(UnitCombatTypes eIndex) const
@@ -24240,8 +24320,26 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	{
 		ePromotion = (PromotionTypes) iI;
 
-		if(pPolicy->IsFreePromotion(ePromotion))
+		if (pPolicy->IsFreePromotion(ePromotion))
+		{
 			ChangeFreePromotionCount(ePromotion, iChange);
+		}
+
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+		// Free promotions for unit combats
+		for (iJ = 0; iJ < GC.getNumUnitCombatClassInfos(); iJ++)
+		{
+			UnitCombatTypes eUnitCombat = (UnitCombatTypes)iJ;
+			
+			if (pPolicy->IsFreePromotionUnitCombat(ePromotion, eUnitCombat))
+			{
+				OutputDebugStringA(CvString::format("Free promotion for %s in unit combat %s\n", GC.getPromotionInfo(ePromotion)->GetDescription(), GC.getUnitCombatClassInfo(eUnitCombat)->GetType()).c_str());
+				int unitCombatIndex = GC.getUnitCombatClassInfo(eUnitCombat)->GetID();
+				ChangeFreePromotionUnitCombatCount(ePromotion, iChange, unitCombatIndex);
+			}
+		}
+#endif
+
 	}
 
 	CvCity* pLoopCity;
@@ -25545,6 +25643,10 @@ void CvPlayer::Read(FDataStream& kStream)
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiFreeBuildingCount.dirtyGet());
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiFreePromotionCount.dirtyGet());
 
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiUnitCombatFreePromotionCount.dirtyGet());
+#endif
+
 	kStream >> m_paiUnitCombatProductionModifiers;
 	kStream >> m_paiUnitCombatFreeExperiences;
 	kStream >> m_paiUnitClassCount;
@@ -26056,6 +26158,13 @@ void CvPlayer::Write(FDataStream& kStream) const
 	CvInfosSerializationHelper::WriteHashedDataArray<BuildingTypes, int>(kStream, m_paiFreeBuildingCount);
 
 	CvInfosSerializationHelper::WriteHashedDataArray<PromotionTypes, int>(kStream, m_paiFreePromotionCount);
+
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	
+	//we need a 2d array for this
+	CvInfosSerializationHelper::WriteHashedDataArray<UnitCombatTypes, int>(kStream, m_paiUnitCombatFreePromotionCount);
+
+#endif
 
 	kStream << m_paiUnitCombatProductionModifiers;
 	kStream << m_paiUnitCombatFreeExperiences;
