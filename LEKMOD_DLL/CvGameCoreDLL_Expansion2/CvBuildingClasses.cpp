@@ -2811,6 +2811,24 @@ void CvCityBuildings::DoSellBuilding(BuildingTypes eIndex)
 	SetNumRealBuilding(eIndex, 0);
 
 	SetSoldBuildingThisTurn(true);
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	// MOD.EAP: Add a new lua event.
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+
+		args->Push(m_pCity->getOwner());
+		args->Push(eIndex);
+		args->Push(m_pCity->GetID());
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "BuildingSold", args.get(), bResult);
+	}
+#endif
 }
 
 /// How much of a refund will the player get from selling eIndex?
