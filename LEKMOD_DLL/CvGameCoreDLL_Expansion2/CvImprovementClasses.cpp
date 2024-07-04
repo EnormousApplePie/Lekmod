@@ -222,7 +222,7 @@ CvImprovementEntry::~CvImprovementEntry(void)
 
 	if (m_piImprovementAdjacentBonusCivilization != NULL)
 	{
-		SAFE_DELETE_ARRAY(m_piImprovementAdjacentBonusCivilization);
+		CvDatabaseUtility::SafeDelete2DArray(m_piImprovementAdjacentBonusCivilization);
 	}
 
 	if (m_ppiImprovementAdjacentAmount != NULL)
@@ -461,7 +461,7 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 		const int iNumYields = kUtility.MaxRows("Yields");
 		const int iNumMaxAmount = 7;
 
-		kUtility.InitializeArray(m_piImprovementAdjacentBonusCivilization, iImprovementTypes);
+		kUtility.Initialize2DArray(m_piImprovementAdjacentBonusCivilization, 200, iImprovementTypes);
 		kUtility.Initialize2DArray(m_ppiImprovementAdjacentCivilizationAmount, iNumYields, iNumMaxAmount);
 		kUtility.Initialize2DArray(m_ppiImprovementAdjacentBonusCivilizationNoAmount, iImprovementTypes, iNumYields);
 
@@ -486,7 +486,7 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 			CvAssert(iYieldType > -1);
 			const int iYield = pResults->GetInt(4);
 
-			m_piImprovementAdjacentBonusCivilization[sImprovementType] = iCivilizationType;
+			m_piImprovementAdjacentBonusCivilization[iCivilizationType][sImprovementType] = sImprovementType;
 			if (iAmount == 0)
 			{
 				m_ppiImprovementAdjacentBonusCivilizationNoAmount[sImprovementType][iYieldType] = iYield;
@@ -1198,11 +1198,12 @@ int CvImprovementEntry::GetImprovementAdjacentBonus(int i, int j) const
 	return m_ppiImprovementAdjacentBonus[i][j];
 }
 
-int CvImprovementEntry::GetImprovementAdjacentBonusCivilization(int i) const
-{
+int CvImprovementEntry::GetImprovementAdjacentBonusCivilization(int i, int j) const
+{	
+	CvAssertMsg(i < 200, "Index out of bounds");
 	CvAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
 	CvAssertMsg(i > -1, "Index out of bounds");
-	return m_piImprovementAdjacentBonusCivilization[i];
+	return m_piImprovementAdjacentBonusCivilization[i][j];
 }
 
 // what improvement type is required to be adjacent to this improvement to get the yield bonus

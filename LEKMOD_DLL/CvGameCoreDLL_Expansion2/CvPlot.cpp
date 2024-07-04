@@ -7767,7 +7767,7 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 
 					}
 					// Civilization Requirement
-					if (pAdjacentPlot->getOwner() == ePlayer && pImprovement->GetImprovementAdjacentBonusCivilization(eAdjacentImprovement) == iCivID)
+					if (pAdjacentPlot->getOwner() == ePlayer && pImprovement->GetImprovementAdjacentBonusCivilization(iCivID, eAdjacentImprovement) == eAdjacentImprovement)
 					{
 						iAdjacentImprovementCount++;
 						if (pImprovement->GetImprovementAdjacentCivilizationAmount(eYield, iAdjacentImprovementCount) > 0)

@@ -156,7 +156,7 @@ public:
 	int GetImprovementAdjacentBonus(int i, int j) const;
 	int GetImprovementAdjacentCivilizationAmount(int i, int j) const;
 	int GetImprovementAdjacentBonusCivilizationNoAmount(int i, int j) const;
-	int GetImprovementAdjacentBonusCivilization(int i) const;
+	int GetImprovementAdjacentBonusCivilization(int i, int j) const;
 	int GetImprovementAdjacentAmount(int i, int j) const;
 #endif
 	int GetTechNoFreshWaterYieldChanges(int i, int j) const;
@@ -276,7 +276,7 @@ protected:
 	int** m_ppiImprovementAdjacentBonus;
 	int** m_ppiImprovementAdjacentCivilizationAmount;
 	int** m_ppiImprovementAdjacentBonusCivilizationNoAmount;
-	int* m_piImprovementAdjacentBonusCivilization;
+	int** m_piImprovementAdjacentBonusCivilization;
 	int** m_ppiImprovementAdjacentAmount;
 #endif
 	CvImprovementResourceInfo* m_paImprovementResource;
