@@ -3754,13 +3754,22 @@ void CvCityCitizens::DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, b
 	{
 		newUnit->SetTourismBlastStrength(kPlayer.GetCulture()->GetTourismBlastStrength(newUnit->getUnitInfo().GetOneShotTourism()));
 	}
-
-	// GJS: Great Scientists now bulb for science at point of birth, not current science 
+	// GJS: Great Scientists now bulb for science at point of birth, not current science
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	if (GC.getGame().isOption("GAMEOPTION_NO_SCIENTIST_SAVING"))
+	{
+		newUnit->SetScientistBirthTurn(GC.getGame().getGameTurn());
+	}
+	else if (newUnit->getUnitInfo().GetBaseBeakersTurnsToCount() > 0)
+	{
+		newUnit->SetResearchBulbAmount(kPlayer.GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), newUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
+	}
+#else 
 	if (newUnit->getUnitInfo().GetBaseBeakersTurnsToCount() > 0)
 	{
 		newUnit->SetResearchBulbAmount(kPlayer.GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), newUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
 	}
-
+#endif
 #ifdef NQ_WAR_HERO
 	if (newUnit->IsGreatGeneral() && kPlayer.IsWarHero())
 	{

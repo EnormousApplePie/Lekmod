@@ -6019,7 +6019,7 @@ function AssignStartingPlots:NormalizeStartLocation(region_number)
 	end
 	
 	-- If early hammers will be too short, attempt to add a small Horse or Iron to second ring.
-	if innerHammerScore <= 4 and earlyHammerScore < 10 then -- Add a small Horse or Iron to second ring.
+	if innerHammerScore <= 4 and earlyHammerScore < 8 then -- Add a small Horse or Iron to second ring.
 		if isEvenY then
 			randomized_second_ring_adjustments = GetShuffledCopyOfTable(self.secondRingYIsEven);
 		else
@@ -9226,7 +9226,7 @@ function AssignStartingPlots:GenerateGlobalResourcePlotLists_NEW()
 						-- Do not process this plot!
 					elseif plot:GetResourceType(-1) ~= -1 then
 						-- Plot has a resource already, do not include it.
-					elseif self:CheckResourceEligibility(resource_ID, x, y, nil) then
+					elseif self:CheckResourceEligibility(resource_ID, x, y) then
 						table.insert(results_table[resource_ID], i)
 					end		
 				end
@@ -9995,24 +9995,15 @@ function AssignStartingPlots:HandleResourcePreferences(plot_list, resources_to_p
 		-- TO DO: use default values from config file
 	end
 
-	--print the incoming plot list
-	--[[
-	for index, plotIndex in ipairs(plot_list) do
-		local iW, iH = Map.GetGridSize();
-		local x = (plotIndex - 1) % iW;
-		local y = (plotIndex - x - 1) / iW;
-		local plot = Map.GetPlot(x, y);
-		local terrainType = plot:GetTerrainType();
-		local featureType = plot:GetFeatureType();
-		print("Plot index: ", plotIndex, " x: ", x, " y: ", y, " terrain: ", terrainType, " feature: ", featureType);
-	end
-	]]
 	local non_prefered_plot_list = plot_list;
+	if non_prefered_plot_list == nil then
+		print("Plot list was nil! -ProcessResourceList");
+		return
+	end
 	local frequency = self.ResourceTypes[res_ID].Frequency;
 
 	-- main loop
 	for i, preference_data in pairs(self.ordered_preference_list) do
-		--print("Preference data: ", preference_data.ResourceType, preference_data.TerrainType, preference_data.FeatureType, preference_data.PreferenceValue);
 		local resource_type = preference_data.ResourceType;
 		local data_terrain_type = preference_data.TerrainType;
 		local data_feature_type = preference_data.FeatureType;
@@ -10024,7 +10015,7 @@ function AssignStartingPlots:HandleResourcePreferences(plot_list, resources_to_p
 			-- seperate the incoming plot_list into terrain/feature types based on the preference data
 			if data_feature_type ~= nil or data_terrain_type ~= nil then
 				-- check if any plotindex in the plot_list table matches the terrain/feature type
-				for index, plotIndex in ipairs(non_prefered_plot_list) do
+				for index, plotIndex in pairs(non_prefered_plot_list) do
 					local iW, iH = Map.GetGridSize();
 					local x = (plotIndex - 1) % iW;
 					local y = (plotIndex - x - 1) / iW;
@@ -10040,7 +10031,7 @@ function AssignStartingPlots:HandleResourcePreferences(plot_list, resources_to_p
 							-- feature type is also specified
 							if data_terrain_type == "TERRAIN_HILL" then
 								-- check if the plot is actually a hill
-								if featureType == 5 and FeatureTypes[data_feature_type] == featureType then
+								if plotType == PlotTypes.PLOT_HILLS and FeatureTypes[data_feature_type] == featureType then
 									table.remove(non_prefered_plot_list, plotIndex);
 									table.insert(prefered_plot_list, plotIndex);
 								end
@@ -10052,7 +10043,7 @@ function AssignStartingPlots:HandleResourcePreferences(plot_list, resources_to_p
 						-- feature type is not specified
 						elseif data_terrain_type == "TERRAIN_HILL" then
 							-- check if the plot is actually a hill
-							if featureType == 5 then -- hill
+							if plotType == PlotTypes.PLOT_HILLS then -- hill
 								table.remove(non_prefered_plot_list, plotIndex);
 								table.insert(prefered_plot_list, plotIndex);
 							end
@@ -10710,7 +10701,7 @@ function AssignStartingPlots:AssignLuxuryToRegion(region_number)
 									local plot = Map.GetPlot(realX, realY);		
 									local plotIndex = realY * iW + realX + 1;
 									--print("checking if this start has any plots for the luxury candidate");
-									if self:CheckResourceEligibility(res_ID, realX, realY, nil) then
+									if self:CheckResourceEligibility(res_ID, realX, realY) then
 										table.insert(results_table, plotIndex);
 									end
 								end
@@ -11224,28 +11215,32 @@ function AssignStartingPlots:GetListOfAllowableLuxuriesAtCitySite(x, y, radius)
 						-- MOD.EAP: Start
 
 						if plot:IsLake() == false then
-							for resourceID, resource in pairs(self.ResourceTypes) do
+							for loop, resource in pairs(self.ResourceTypes) do
+								local res_ID = resource.ID
 								if resource.Class == "RESOURCECLASS_LUXURY" then
 									-- check trough both valid terrain tables
-									if self.ValidTerrainTypes[resourceID] ~= nil then							
-										for i, validTerrain in pairs(self.ValidTerrainTypes[resourceID]) do
+									if self.ValidTerrainTypes[res_ID] ~= nil then							
+										for i, validTerrain in pairs(self.ValidTerrainTypes[res_ID]) do
 											-- resources that have the terrain hill in their valid terrain table can spawn anywhere on hills.
 											if plotType == PlotTypes.PLOT_HILLS then
 												if validTerrain == "TERRAIN_HILL" then
-													allowed_luxuries[resourceID] = true;			
+													allowed_luxuries[res_ID] = true;
+													--print("Luxury ID#", resourceID, "allowed at this site.");
 													break;
 												end
 											end
 											if TerrainTypes[validTerrain] == terrainType then
-												allowed_luxuries[resourceID] = true;							
+												allowed_luxuries[res_ID] = true;
+												--print("Luxury ID#", resourceID, "allowed at this site.");
 												break;
 											end
 										end
 									end
-									if self.ValidTerrainFeatureTypes[resourceID] ~= nil then							
-										for i, validTerrain in pairs(self.ValidTerrainFeatureTypes[resourceID]) do
+									if self.ValidTerrainFeatureTypes[res_ID] ~= nil then							
+										for i, validTerrain in pairs(self.ValidTerrainFeatureTypes[res_ID]) do
 											if TerrainTypes[validTerrain] == terrainType then
-												allowed_luxuries[resourceID] = true;
+												allowed_luxuries[res_ID] = true;
+												--print("Luxury ID#", resourceID, "allowed at this site.");
 												break;
 											end
 										end
@@ -11266,7 +11261,7 @@ function AssignStartingPlots:GetListOfAllowableLuxuriesAtCitySite(x, y, radius)
 end
 ------------------------------------------------------------------------------
 -- MOD.EAP: New function
-function AssignStartingPlots:CheckResourceEligibility(resource_ID, x, y, iAreaID)
+function AssignStartingPlots:CheckResourceEligibility(resource_ID, x, y)
 
 	--[[ MOD.EAP:
 		For luxuries, We can technically check for valid features here, however this would limit the amount of flexibility certain resources have.
@@ -11277,113 +11272,61 @@ function AssignStartingPlots:CheckResourceEligibility(resource_ID, x, y, iAreaID
 	]]
 
 	-- plot info
-	local iW, iH = Map.GetGridSize();
-	local plot = Map.GetPlot(x, y);
-	local plotIndex = y * iW + x + 1;
+	local iW, iH = Map.GetGridSize()
+	local plot = Map.GetPlot(x, y)
+	local plotIndex = y * iW + x + 1
 	local terrainType = plot:GetTerrainType()
 	local featureType = plot:GetFeatureType()
 	local plotType = plot:GetPlotType()
 
 	-- resource info
 	local resource = self.ResourceTypes[resource_ID]
-	
-	-- area info
-	local region_area_object = nil;
-	if iAreaID ~= -1 and iAreaID ~= nil then
-		region_area_object = Map.GetArea(iAreaID);
-	end
 
 	--check if the resource does not have any of the usually illegal feature types in ValidFeatures table
-	if featureType ~= FeatureTypes.FEATURE_ICE and featureType ~= self.feature_atoll and featureType ~= FeatureTypes.FEATURE_OASIS and plotType ~= PlotTypes.PLOT_MOUNTAIN then
-	
-		if plot:IsLake() == false then -- might want to add support for lake resources later
+	if featureType == FeatureTypes.FEATURE_ICE 
+	or featureType == self.feature_atoll 
+	or featureType == FeatureTypes.FEATURE_OASIS 
+	or plotType == PlotTypes.PLOT_MOUNTAIN 
+	or plot:IsLake() then return false end -- might want to add support for lake resources later
 
-			if resource.isForMinor == false and resource.isForCivType == nil and resource.Special == false then -- exlude special case resources
-				if self.ValidTerrainTypes[resource_ID] ~= nil then		
-					for i, validTerrain in pairs(self.ValidTerrainTypes[resource_ID]) do					
-						if plotType == PlotTypes.PLOT_HILLS then
-							if resource.canBeHill == true then
-								if TerrainTypes[validTerrain] == terrainType or validTerrain == "TERRAIN_HILL" then 
-									-- resources that have the terrain hill in their valid terrain table can spawn anywhere on hills.
-									if resource.Class ~= "RESOURCECLASS_LUXURY" then
-										if featureType ~= FeatureTypes.NO_FEATURE then
-											if self.ValidFeatureTypes[resource_ID] ~= nil then
-												for i, validFeature in pairs(self.ValidFeatureTypes[resource_ID]) do
-													if FeatureTypes[validFeature] == featureType then return true end;
-												end
-											end
-										else return true end;
-									else return true end;
-								end
-							end
-						elseif TerrainTypes[validTerrain] == terrainType then				
-							-- since we do a seperate check for hills, we assume now we are dealing with flat terrain or coast.
-							if resource.Class ~= "RESOURCECLASS_LUXURY" then
-								if (plotType ~= PlotTypes.PLOT_HILLS and resource.canBeFlat == true) or (resource.canBeFlat == false and resource.canBeHill == false) then
-									if featureType ~= FeatureTypes.NO_FEATURE then
-										if self.ValidFeatureTypes[resource_ID] ~= nil then
-											for i, validFeature in pairs(self.ValidFeatureTypes[resource_ID]) do
-												if FeatureTypes[validFeature] == featureType then
-													return true;
-												end
-											end
-										end
-									else return true end;
-								end
-							elseif terrainType == TerrainTypes.TERRAIN_COAST and iAreaID ~= nil and region_area_object ~= nil then
-								if iAreaID == -1 then
-									if plot:IsAdjacentToLand() then return true end;
-								else
-									print(region_area_object)
-									if plot:IsAdjacentToArea(region_area_object) then return true end;
-								end
-							elseif terrainType == TerrainTypes.TERRAIN_COAST and iAreaID == nil then if plot:IsAdjacentToLand() then return true end;	
-							else return true end;
-						end
+	if resource.isForMinor or resource.isForCivType ~= nil 
+	or resource.Special then return false end 
+	-- exlude special case resources
+	
+	-- extra checks for non-luxury resources
+	if resource.Class ~= "RESOURCECLASS_LUXURY" then
+		if (plotType == PlotTypes.PLOT_HILLS and (not resource.canBeHill)) 
+		or (plotType == PlotTypes.PLOT_LAND and (not resource.canBeFlat)) then return false end
+		-- if the resource cannot be on flat nor hill terrain, it is considered a water resource and can only spawn on coast.
+	end
+
+	function CheckValidDataTable(table)
+		if table[resource_ID] == nil then return false end
+		for i, validTerrain in pairs(table[resource_ID]) do					
+			if TerrainTypes[validTerrain] == terrainType or (plotType == PlotTypes.PLOT_LAND and validTerrain == "TERRAIN_HILL") then
+				-- resources that have the terrain hill in their valid terrain table can spawn anywhere on hills if on land.
+				if resource.Class == "RESOURCECLASS_LUXURY" then return true end
+				if self.ValidFeatureTypes[resource_ID] ~= nil and featureType ~= FeatureTypes.NO_FEATURE then
+					for i, validFeature in pairs(self.ValidFeatureTypes[resource_ID]) do
+						if FeatureTypes[validFeature] == featureType then return true end
 					end
-				end				
-				-- also check trough the valid terrain features table
-				if self.ValidTerrainFeatureTypes[resource_ID] ~= nil then
-					for i, validTerrain in pairs(self.ValidTerrainFeatureTypes[resource_ID]) do
-						if TerrainTypes[validTerrain] == terrainType then
-							if resource.Class ~= "RESOURCECLASS_LUXURY" then
-								if (plotType == PlotTypes.PLOT_HILLS and resource.canBeHill) or (plotType ~= PlotTypes.PLOT_HILLS and resource.canBeFlat) or (resource.canBeFlat == false and resource.canBeHill == false) then
-									if self.ValidFeatureTypes[resource_ID] ~= nil then
-										if featureType ~= FeatureTypes.NO_FEATURE then
-											for i, validFeature in pairs(self.ValidFeatureTypes[resource_ID]) do
-												if FeatureTypes[validFeature] == featureType then return true end;
-											end
-										end
-									else
-										print("Tried to assign", resource.Type, "to a plot, but it has no valid features table. Check the xml!");
-										return false;
-									end
-								end		
-							elseif terrainType == TerrainTypes.TERRAIN_COAST and iAreaID ~= nil and region_area_object ~= nil then
-								if iAreaID == -1 then
-									if plot:IsAdjacentToLand() then return true end;
-								else
-									if plot:IsAdjacentToArea(region_area_object) then return true end;
-								end
-							elseif terrainType == TerrainTypes.TERRAIN_COAST and iAreaID == nil then if plot:IsAdjacentToLand() then return true end;	
-							else return true end;
-						end	
-					end
-				end
-				-- if no entries found in either table, assume it can be on any terrain (except snow)
-				-- this is not supposed to happen anyways if you enter the correct data in the xml.
-				if self.ValidTerrainFeatureTypes[resource_ID] == nil and self.ValidTerrainTypes[resource_ID] == nil then
-					if terrainType ~= TerrainTypes.TERRAIN_SNOW then
-						--print("Could not find any entries for resource ID#", resource_ID, "assigning it to anything");
-						return true;
-					end
-				end	
+				elseif featureType == FeatureTypes.NO_FEATURE then return true end
 			end
 		end
-	end
+	return false end
+	if CheckValidDataTable(self.ValidTerrainTypes) 
+	or CheckValidDataTable(self.ValidTerrainFeatureTypes) then return true end
 	
-	return false;
-end
+	-- if no entries found in either table, assume it can be on any terrain (except snow)
+	-- this is not supposed to happen anyways if you enter the correct data in the xml.
+	if self.ValidTerrainFeatureTypes[resource_ID] == nil and self.ValidTerrainTypes[resource_ID] == nil then
+		if terrainType ~= TerrainTypes.TERRAIN_SNOW then
+			--print("Could not find any entries for resource ID#", resource_ID, "assigning it to anything");
+			return true
+		end
+	end	
+	
+return false end
 ------------------------------------------------------------------------------
 function AssignStartingPlots:GenerateLuxuryPlotListsAtCitySite(x, y, radius, luxury_type, bRemoveFeatureIce)
 
@@ -11442,7 +11385,7 @@ function AssignStartingPlots:GenerateLuxuryPlotListsAtCitySite(x, y, radius, lux
 								plot:SetFeatureType(FeatureTypes.NO_FEATURE, -1);
 							end
 						-- Otherwise generate the plot list.
-						elseif self:CheckResourceEligibility(luxury_type, realX, realY, nil) then
+						elseif self:CheckResourceEligibility(luxury_type, realX, realY) then
 							table.insert(results_table, plotIndex);
 						end
 					end
@@ -11480,7 +11423,7 @@ function AssignStartingPlots:GenerateLuxuryPlotListsInRegion(region_number, luxu
 			local plot = Map.GetPlot(x, y);
 			local area_of_plot = plot:GetArea();
 
-			if self:CheckResourceEligibility(luxury_type, x, y, plotIndex, results_table, iAreaID) then
+			if self:CheckResourceEligibility(luxury_type, x, y, plotIndex, results_table) then
 				table.insert(results_table, plotIndex);
 			end
 		end
@@ -11563,8 +11506,8 @@ function AssignStartingPlots:GetWorldLuxuryTargetNumbers()
 		worldsizes = {
 			[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {20, 3},
 			[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {35, 4},
-			[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {60, 5},
-			--[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {53, 4},
+			--[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {60, 5},
+			[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {53, 5},
 			[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {60, 5},
 			[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {88, 5},
 			[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = {112, 6}
@@ -11651,7 +11594,8 @@ function AssignStartingPlots:PlaceLuxuries()
 			-- If any CS-Only types are eligible, then all combined will have a weighting of 80%
 			local cs_only_types = {};
 			for loop, res_ID in ipairs(self.resourceIDs_assigned_to_cs) do
-				if allowed_luxuries[res_ID] == true then
+				local luxury_plot_lists = self:GenerateLuxuryPlotListsAtCitySite(x, y, 2, res_ID, false)
+				if allowed_luxuries[res_ID] and #luxury_plot_lists ~= 0 then
 					table.insert(cs_only_types, res_ID);
 				end
 			end
@@ -11666,7 +11610,8 @@ function AssignStartingPlots:PlaceLuxuries()
 			if self.iNumTypesRandom > 0 or region_number > 0 then
 				local random_types_allowed = {};
 				for loop, res_ID in ipairs(self.resourceIDs_assigned_to_random) do
-					if allowed_luxuries[res_ID] == true then
+					local luxury_plot_lists = self:GenerateLuxuryPlotListsAtCitySite(x, y, 2, res_ID, false)
+					if allowed_luxuries[res_ID] and #luxury_plot_lists ~= 0 then
 						table.insert(random_types_allowed, res_ID);
 					end
 				end
@@ -11807,12 +11752,13 @@ function AssignStartingPlots:PlaceLuxuries()
 			local LandXY = iW * iH;
 			local NumRandToAdd = 4;
 
+			-- MOD.EAP: Edited numbers by -2 to decrease the amount of random luxuries placed.
 			if LandXY < 2500 then
-				NumRandToAdd = 4;
+				NumRandToAdd = 2;
 			elseif LandXY < 6000 then
-				NumRandToAdd = 5;
+				NumRandToAdd = 3;
 			elseif LandXY < 10000 then
-				NumRandToAdd = 6;
+				NumRandToAdd = 4;
 			end
 
 			iNumThisLuxToPlace = math.max(NumRandToAdd, math.ceil(iNumRandomLuxTarget / 10));
@@ -11824,7 +11770,7 @@ function AssignStartingPlots:PlaceLuxuries()
 				break;
 			end
 			current_list = self.global_luxury_plot_lists_temp[res_ID];
-			iNumLeftToPlace = self:PlaceSpecificNumberOfResources(res_ID, 1, iNumThisLuxToPlace, 0.25, 2, lux_distance, 0, current_list);
+			iNumLeftToPlace = self:PlaceSpecificNumberOfResources(res_ID, 1, iNumThisLuxToPlace, 0.5, 2, lux_distance, 0, current_list);
 			iNumRandomLuxPlaced = iNumRandomLuxPlaced + iNumThisLuxToPlace - iNumLeftToPlace;
 			print("-"); 
 			print("Random Luxury ID#:", res_ID);	-- MOD.Barathor: Test
@@ -12672,139 +12618,130 @@ function AssignStartingPlots:FixResource(x,y)
 	
 	local lat, avgJungleRange = self:GetJungleRange(x,y)
 	
-
-
-
-
 	local plot = Map.GetPlot(x, y)
 	local res_ID = plot:GetResourceType(-1)
 	local featureType = plot:GetFeatureType()
 	local terrainType = plot:GetTerrainType()
 	local plotType = plot:GetPlotType()
-	
 			
-	if self.ResourceTypes[res_ID] ~= nil then -- must have a resource that exist in the resources table
-		-- ValidTerrainTypes should already be handled. ValidFeatures should be handled in some cases, but not all, so we check here.
-		-- Also do check for hill/flat eligibility
-		if self.ResourceTypes[res_ID].Class == "RESOURCECLASS_LUXURY" or self.ResourceTypes[res_ID].Type == "RESOURCE_HARDWOOD" then -- hardcoding hardwood for now
+	if self.ResourceTypes[res_ID] == nil then return end -- must have a resource that exist in the resources table
 
-			if self.ResourceTypes[res_ID].HillRequired then
-				if plotType ~= PlotTypes.PLOT_HILLS then
-					plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true)
+	-- here we set terrains/features for non-luxuries if needed. Usually for specific resources.
+	if self.ResourceTypes[res_ID].Type == "RESOURCE_DEER" and featureType ~= FeatureTypes.FEATURE_FOREST then
+		plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1)
+	end
+
+	-- ValidTerrainTypes should already be handled. ValidFeatures should be handled in some cases, but not all, so we check here.
+	-- Also do check for hill/flat eligibility
+	if self.ResourceTypes[res_ID].Class ~= "RESOURCECLASS_LUXURY"
+	and self.ResourceTypes[res_ID].Type ~= "RESOURCE_HARDWOOD" then return end -- hardcoding hardwood for now
+
+
+
+	if self.ResourceTypes[res_ID].HillRequired and plotType ~= PlotTypes.PLOT_HILLS then
+		plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true)
+	elseif self.ResourceTypes[res_ID].FlatRequired and plotType == PlotTypes.PLOT_HILLS then
+		plot:SetPlotType(PlotTypes.PLOT_LAND, false, true)
+	end
+	-- TODO: Add support for TreeRequired
+
+	--if the resource is on a plottype (flat or hill) that it can't be on, swap it.
+	if self.ResourceTypes[res_ID].canBeHill == false 
+	and self.ResourceTypes[res_ID].canBeFlat
+	and plotType == PlotTypes.PLOT_HILLS then
+		plot:SetPlotType(PlotTypes.PLOT_LAND, false, true)
+	end
+	if self.ResourceTypes[res_ID].canBeFlat == false 
+	and self.ResourceTypes[res_ID].canBeHill
+	and plotType == PlotTypes.PLOT_LAND then
+		plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true)
+	end
+
+	-- here we do some manual edits based on our own balance interpretations
+	-- first is to set any resource on flat desert/tundra to be on desert/tundra hills instead
+	if plotType == PlotTypes.PLOT_LAND 
+	and (terrainType == TerrainTypes.TERRAIN_DESERT or terrainType == TerrainTypes.TERRAIN_TUNDRA) 
+	and featureType ~= FeatureTypes.FEATURE_FLOOD_PLAINS then
+		plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true)
+	end
+	if terrainType == TerrainTypes.TERRAIN_SNOW then
+		plot:SetTerrainType(TerrainTypes.TERRAIN_TUNDRA, false, true)
+		plot:SetFeatureType(FeatureTypes.NO_FEATURE, -1)
+	end
+
+	-- moving on to checking correct features for resources
+	if featureType ~= FeatureTypes.NO_FEATURE then
+		if self.ValidFeatureTypes[res_ID] == nil then
+			-- resource has no valid feature entries yet is on one. Remove it.
+			if featureType == FeatureTypes.FEATURE_FLOOD_PLAINS then
+				if self.ResourceTypes[res_ID].canBeFlat == false then
+					plot:SetFeatureType(FeatureTypes.NO_FEATURE, -1);
+					plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true);
+					return;
+				end
+				-- if the resource can be flat we keep the flood plains. Gosh flood plains are hard to handle.
+			else
+				plot:SetFeatureType(FeatureTypes.NO_FEATURE, -1)
+			end
+		else -- has an entry	
+			-- remove a feature if the resource is not valid on it
+			local validFeatureOnPlot = false
+			for i, validFeatureType in pairs(self.ValidFeatureTypes[res_ID]) do
+				if FeatureTypes[validFeatureType] == featureType then
+					validFeatureOnPlot = true;
+					break;
 				end
 			end
-			if self.ResourceTypes[res_ID].FlatRequired then
-				if plotType ~= PlotTypes.PLOT_LAND and (terrainType ~= TerrainTypes.TERRAIN_COAST) then
-					plot:SetPlotType(PlotTypes.PLOT_LAND, false, true)
-				end
-			end
-			-- TODO: Add support for TreeRequired
-
-			 --if the resource is on a plottype (flat or hill) that it can't be on, swap it.
-			if self.ResourceTypes[res_ID].canBeFlat and self.ResourceTypes[res_ID].canBeHill == false then
-				if plotType == PlotTypes.PLOT_HILL then plot:SetPlotType(PlotTypes.PLOT_LAND, false, true) end;
-			elseif self.ResourceTypes[res_ID].canBeFlat == false and self.ResourceTypes[res_ID].canBeHill then
-				if plotType == PlotTypes.PLOT_LAND then plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true) end;
-			end
-
-			-- here we do some manual edits based on our own balance interpretations
-			-- first is to set any resource on flat desert/tundra to be on desert/tundra hills instead
-			if plotType == PlotTypes.PLOT_LAND and (terrainType == TerrainTypes.TERRAIN_DESERT or terrainType == TerrainTypes.TERRAIN_TUNDRA) and featureType ~= FeatureTypes.FEATURE_FLOOD_PLAINS then
-				plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true)
-			end
-
-			-- moving on to checking correct features for resources
-			if featureType ~= FeatureTypes.NO_FEATURE then
-				if self.ValidFeatureTypes[res_ID] == nil then
-					-- resource has no valid feature entries yet is on one. Remove it.
-					if featureType == FeatureTypes.FEATURE_FLOOD_PLAINS then
-						if self.ResourceTypes[res_ID].canBeFlat == false then
-							plot:SetFeatureType(FeatureTypes.NO_FEATURE, -1);
-							plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true);
-							return;
-						end
-						-- if the resource can be flat we keep the flood plains. Gosh flood plains are hard to handle.
-					else
-						plot:SetFeatureType(FeatureTypes.NO_FEATURE, -1)
-					end
-				else -- has an entry	
-					-- remove a feature if the resource is not valid on it
-					local validFeatureOnPlot = false
-					for i, validFeatureType in pairs(self.ValidFeatureTypes[res_ID]) do
-						if FeatureTypes[validFeatureType] == featureType then
-							validFeatureOnPlot = true;
-							break;
-						end
-					end
-					if validFeatureOnPlot == false then
-						plot:SetFeatureType(FeatureTypes.NO_FEATURE, -1);
-					end
-				end
-			end
-			if self.ValidFeatureTypes[res_ID] ~= nil and featureType == FeatureTypes.NO_FEATURE then	
-				
-				-- check if we want to add a feature
-				-- Function will return once it has made a change.
-				for _, validFeature in pairs(self.ValidFeatureTypes[res_ID]) do
-					if self.ValidTerrainFeatureTypes[res_ID] ~= nil then
-						for _, validTerrainFeature in pairs(self.ValidTerrainFeatureTypes[res_ID]) do
-							if TerrainTypes[validTerrainFeature] == terrainType then
-								--resource is on valid terrain for a feature.
-								-- handle placing forest/jungle by checking latitude (jungle line)	
-								if FeatureTypes[validFeature] == FeatureTypes.FEATURE_FOREST or FeatureTypes[validFeature] == FeatureTypes.FEATURE_JUNGLE then
-									if terrainType ~= TerrainTypes.TERRAIN_DESERT then -- floodplains check
-										local validOnBoth = false
-										local count = 0
-										for i, validForestJungleFeature in pairs(self.ValidFeatureTypes[res_ID]) do
-											
-											if FeatureTypes[validForestJungleFeature] == FeatureTypes.FEATURE_FOREST or FeatureTypes[validForestJungleFeature] == FeatureTypes.FEATURE_JUNGLE then
-												count = count + 1
-												print(count);
-												if count >= 2 then 
-													print("resource: " .. self.ResourceTypes[res_ID].Type .. " has both forest and jungle as valid features.");
-													validOnBoth = true;
-													break; 
-												end
-											end
-										end
-										if validOnBoth then
-											print(lat, avgJungleRange)
-											if lat <= avgJungleRange then
-												plot:SetFeatureType(FeatureTypes.FEATURE_JUNGLE, -1)
-												plot:SetTerrainType(TerrainTypes.TERRAIN_PLAINS, false, true)
-												return;
-											else
-												plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1)
-												return;
-											end
-										else
-											plot:SetFeatureType(FeatureTypes[validFeature], -1)
-											if FeatureTypes[validFeature] == FeatureTypes.FEATURE_JUNGLE then
-												plot:SetTerrainType(TerrainTypes.TERRAIN_PLAINS, false, true)
-											end
-											return;
-										end
-									end
-								elseif terrainType == TerrainTypes.TERRAIN_DESERT and FeatureTypes[validFeature] ~= FeatureTypes.FEATURE_MARSH then -- TODO: Do this better
-									plot:SetFeatureType(FeatureTypes[validFeature], -1)
-									return;
-								elseif terrainType == TerrainTypes.TERRAIN_COAST or terrainType == TerrainTypes.TERRAIN_OCEAN then
-									plot:SetFeatureType(FeatureTypes[validFeature], -1)
-									return;
-								end
-							end
-						end
-					end
-				end
-			end
-		else -- here we set terrains/features for non-luxuries if needed. Usually for specific resources.
-			if self.ResourceTypes[res_ID].Type == "RESOURCE_DEER" and featureType ~= FeatureTypes.FEATURE_FOREST then
-				plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1)
+			if validFeatureOnPlot == false then
+				plot:SetFeatureType(FeatureTypes.NO_FEATURE, -1);
 			end
 		end
+	end
+	if self.ValidFeatureTypes[res_ID] ~= nil and featureType == FeatureTypes.NO_FEATURE then	
 		
+		-- check if we want to add a feature
+		-- Function will return once it has made a change.
+		for i, validFeature in pairs(self.ValidFeatureTypes[res_ID]) do
+			if self.ValidTerrainFeatureTypes[res_ID] ~= nil then
+				for i, validTerrainFeature in pairs(self.ValidTerrainFeatureTypes[res_ID]) do
+					if TerrainTypes[validTerrainFeature] == terrainType then
+						--resource is on valid terrain for a feature.
+						-- handle placing forest/jungle by checking latitude (jungle line)	
+						if FeatureTypes[validFeature] == FeatureTypes.FEATURE_FOREST or FeatureTypes[validFeature] == FeatureTypes.FEATURE_JUNGLE then
+							if terrainType == TerrainTypes.TERRAIN_DESERT then break end -- floodplains check
+							for _, validFeatureJungle in pairs(self.ValidFeatureTypes[res_ID]) do
+								if FeatureTypes[validFeatureJungle] == FeatureTypes.FEATURE_JUNGLE then
+									if lat <= avgJungleRange then
+										plot:SetFeatureType(FeatureTypes.FEATURE_JUNGLE, -1)
+										plot:SetTerrainType(TerrainTypes.TERRAIN_PLAINS, false, true)
+										return
+									else
+										plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1)
+										return
+									end
+								end
+							end
+							if FeatureTypes[validFeature] == FeatureTypes.FEATURE_FOREST then
+								plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1)
+								return
+							end
+						elseif terrainType == TerrainTypes.TERRAIN_DESERT and FeatureTypes[validFeature] == FeatureTypes.FEATURE_FLOOD_PLAINS then -- TODO: Do this better
+							plot:SetFeatureType(FeatureTypes.FEATURE_FLOOD_PLAINS, -1)
+							return
+						elseif terrainType == TerrainTypes.TERRAIN_GRASS and FeatureTypes[validFeature] == FeatureTypes.FEATURE_MARSH then
+							plot:SetFeatureType(FeatureTypes.FEATURE_MARSH, -1)
+							return
+						elseif terrainType == TerrainTypes.TERRAIN_COAST or terrainType == TerrainTypes.TERRAIN_OCEAN then
+							plot:SetFeatureType(FeatureTypes[validFeature], -1)
+							return;
+						end
+					end
+				end
+			end
+		end
 	end
 	
+
 end
 ------------------------------------------------------------------------------
 function AssignStartingPlots:GetJungleRange(x,y)
@@ -13012,26 +12949,26 @@ function AssignStartingPlots:PlaceStrategicAndBonusResources()
 	strat_major_amount, strat_minor_amount = self:GetStrategicResourceQuantityValues()
 	
 	-- Adjust appearance rate per Resource Setting chosen by user.
-	local bonus_multiplier = 0.65;
+	local bonus_multiplier = 0.70;
 
 	if self.resource_setting == 1 then -- Near to nothing
 		bonus_multiplier = 1;
 	elseif self.resource_setting == 2 then -- 
 		bonus_multiplier = 0.90;
 	elseif self.resource_setting == 3 then -- 
-		bonus_multiplier = 0.80;
+		bonus_multiplier = 0.85;
 	elseif self.resource_setting == 4 then -- 
-		bonus_multiplier = 0.75;
+		bonus_multiplier = 0.80;
 	elseif self.resource_setting == 6 then -- 
-		bonus_multiplier = 0.55;
+		bonus_multiplier = 0.60;
 	elseif self.resource_setting == 7 then -- 
-		bonus_multiplier = 0.45;
+		bonus_multiplier = 0.50;
 	elseif self.resource_setting == 8 then -- 
-		bonus_multiplier = 0.35;
+		bonus_multiplier = 0.40;
 	elseif self.resource_setting == 9 then -- 
-		bonus_multiplier = 0.25;
+		bonus_multiplier = 0.30;
 	elseif self.resource_setting == 10 then -- filled the map full
-		bonus_multiplier = 0.15;
+		bonus_multiplier = 0.20;
 	end
 
 	--
@@ -13126,7 +13063,7 @@ function AssignStartingPlots:PlaceStrategicAndBonusResources()
 	]]
 	self:AddModernMinorStrategicsToCityStates() -- Added spring 2011
 	
-	self:PlaceSmallQuantitiesOfStrategics(23 * bonus_multiplier, self.land_list);
+	self:PlaceSmallQuantitiesOfStrategics(35 * bonus_multiplier, self.land_list);
 	
 	self:PlaceOilInTheSea();
 

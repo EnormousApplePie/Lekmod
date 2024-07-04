@@ -2042,6 +2042,13 @@ void CvLeague::DoTurn(LeagueSpecialSessionTypes eTriggeredSpecialSession)
 	}
 	else
 	{
+#ifdef FINISH_LEAGUE_SESSION_EVEN_IF_SOMEONE_HAS_VOTES
+		for (MemberList::iterator it = m_vMembers.begin(); it != m_vMembers.end(); it++)
+		{
+			if (CanVote(it->ePlayer))
+				DoVoteAbstain(it->ePlayer, GetRemainingVotesForMember(it->ePlayer));
+		}
+#endif
 		CheckFinishSession();
 	}
 

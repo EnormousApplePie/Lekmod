@@ -22,7 +22,7 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap: Pangaea - Fractal (v5 Beta)",
+		Name = "Lekmap: Pangaea - Fractal (v5.1)",
 		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Pangaea - Fractal",
 		IsAdvancedMap = false,
 		IconIndex = 0,
@@ -477,7 +477,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 
 	while allcomplete == false do
 
-		local sea_level_low = 63;
+		local sea_level_low = 60;
 		local sea_level_normal = 67;
 		local sea_level_high = 73;
 		local world_age_old = 2;
@@ -518,6 +518,8 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 			water_percent = sea_level_low
 		elseif sea_level == 3 then -- High Sea Level
 			water_percent = sea_level_high
+		elseif sea_level == 5 then -- Medium - Low Sea Level
+			water_percent = sea_level_low - math.floor(fjordmodif / 10);
 		else -- Normal Sea Level
 		
 		end

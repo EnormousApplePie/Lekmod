@@ -556,7 +556,11 @@ private:
 	BuildingTypes m_eFreeBuildingOnConquest;
 
 	// Arrays
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	int** m_FreePromotionUnitCombats;
+#else
 	std::multimap<int, int> m_FreePromotionUnitCombats;
+#endif
 	int* m_piPrereqOrPolicies;
 	int* m_piPrereqAndPolicies;
 	int* m_piPolicyDisables;
@@ -825,6 +829,9 @@ public:
 
 	// Accessor functions
 	bool HasPolicy(PolicyTypes eIndex) const;
+#ifdef LEKMOD_NEW_LUA_METHODS
+	bool HasPolicyBranch(PolicyBranchTypes eIndex) const;
+#endif
 	void SetPolicy(PolicyTypes eIndex, bool bNewValue);
 	int GetNumPoliciesOwned() const;
 	int GetNumPoliciesOwnedInBranch(PolicyBranchTypes eBranch) const;
@@ -916,6 +923,9 @@ private:
 	void LogFlavors(FlavorTypes eFlavor = NO_FLAVOR);
 
 	bool* m_pabHasPolicy;
+#ifdef LEKMOD_NEW_LUA_METHODS
+	bool* m_pabHasPolicyBranch;
+#endif
 	bool* m_pabHasOneShotPolicyFired;
 	bool* m_pabHaveOneShotFreeUnitsFired;
 	bool* m_pabPolicyBranchUnlocked;

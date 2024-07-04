@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<glyphgen>
+  <textures width="135" height="90">
+    <texture name="" src="TechnologyAtlas45_Polynesia.dds" allowcolor="1" alloweffects="1" inuse="1" />
+  </textures>
+
+  <styles count="1">
+    <style name="">
+      <layers count="1">
+        <layer tex="" />
+      </layers>
+    </style>
+  </styles>
+
+  <glyphs count="5" fudgeadv="0" ascadj="-6" spacing="0" height="0" ascent="0" descent="0">
+    <glyph  ch="1"   u="7"   v="7" width="31" height="31" a="0" b="31" c="0" originx="0" originy="31" />
+    <glyph  ch="2"  u="52"   v="7" width="31" height="31" a="0" b="31" c="0" originx="0" originy="31" />
+    <glyph  ch="3"  u="97"   v="7" width="31" height="31" a="0" b="31" c="0" originx="0" originy="31" />
+    <glyph  ch="4"   u="7"  v="52" width="31" height="31" a="0" b="31" c="0" originx="0" originy="31" />
+    <glyph  ch="5"  u="52"  v="52" width="31" height="31" a="0" b="31" c="0" originx="0" originy="31" />
+  </glyphs>
+
+  <imports count="0"/>
+  <toolonly>
+    <metainfo pt="0.000000" width="256" height="256" alphabias="64" maxsize="256" bestfit="0" pow2="1" freetype="2" fontsrc="" />
+    <glyphsets>
+      <set name="GlyphSetAscii" />
+    </glyphsets>
+  </toolonly>
+</glyphgen>

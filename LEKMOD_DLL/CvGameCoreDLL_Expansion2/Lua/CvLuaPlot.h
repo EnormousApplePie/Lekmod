@@ -288,5 +288,9 @@ protected:
 
 	static int lGetCityPurchaseID(lua_State* L);
 	static int lSetCityPurchaseID(lua_State* L);
+
+#ifdef LEKMOD_NEW_LUA_METHODS
+	static int lSetFreshWater(lua_State* L);
+#endif
 };
 #endif

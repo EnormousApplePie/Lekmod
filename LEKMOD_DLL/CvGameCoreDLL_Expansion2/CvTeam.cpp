@@ -5546,6 +5546,12 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 		}
 		else
 		{
+#ifdef HAS_TECH_BY_HUMAN
+			if (isHuman())
+			{
+				GetTeamTechs()->SetHasTechByHuman(eIndex, bNewValue);
+			}
+#endif
 			GetTeamTechs()->SetHasTech(eIndex, bNewValue);
 
 			// Tech progress affects city strength, so update

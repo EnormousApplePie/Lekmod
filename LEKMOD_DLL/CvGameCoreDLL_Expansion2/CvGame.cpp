@@ -9252,7 +9252,57 @@ void CvGame::updateMoves()
 
 					// check if the (for now human) player is overstacked and move the units
 					//if (player.isHuman())
+#ifdef AVOID_UNIT_SPLIT_MID_TURN
+					if (player.isHuman())
+					{
+						for (int iI = 0; iI < GC.getMap().numPlots(); iI++)
+						{
+							FStaticVector<IDInfo, 50, true, c_eCiv5GameplayDLL, 0> oldUnitList;
 
+							IDInfo* pUnitNode;
+							CvUnit* pLoopUnit;
+
+							oldUnitList.clear();
+
+							pUnitNode = GC.getMap().plotByIndexUnchecked(iI)->headUnitNode();
+
+							while (pUnitNode != NULL)
+							{
+								oldUnitList.push_back(*pUnitNode);
+								pUnitNode = GC.getMap().plotByIndexUnchecked(iI)->nextUnitNode(pUnitNode);
+							}
+							int iUnitListSize = (int)oldUnitList.size();
+							for (int iVectorLoop = 0; iVectorLoop < (int)iUnitListSize; ++iVectorLoop)
+							{
+								pLoopUnit = GetPlayerUnit(oldUnitList[iVectorLoop]);
+								if (pLoopUnit != NULL)
+								{
+									if (!pLoopUnit->isDelayedDeath())
+									{
+										if (pLoopUnit->atPlot(*(GC.getMap().plotByIndexUnchecked(iI))))
+										{
+											if (!(pLoopUnit->isCargo()))
+											{
+												if (!(pLoopUnit->isInCombat()))
+												{
+													// Unit not allowed to be here
+													if (GC.getMap().plotByIndexUnchecked(iI)->getNumFriendlyUnitsOfType(pLoopUnit) > /*1*/ GC.getPLOT_UNIT_LIMIT())
+													{
+														if (!pLoopUnit->jumpToNearestValidPlot())
+														{
+															pLoopUnit->kill(false);
+															pLoopUnit = NULL;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+#endif
 					// slewis - I changed this to only be the AI because human players should have the tools to deal with this now
 					if(!player.isHuman())
 					{

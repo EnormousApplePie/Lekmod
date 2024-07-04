@@ -2991,6 +2991,16 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 			}
 		}
 	}
+#ifdef LEKMOD_BUILDING_GOLD_COST
+	// Does this building have no production cost, but has a gold cost?
+	if(pkBuildingInfo->GetProductionCost() <= 0 && pkBuildingInfo->GetGoldCost() <= 0)
+	{
+		if(!bIgnoreCost)
+		{
+			return false;
+		}
+	}
+#endif
 
 	///////////////////////////////////////////////////////////////////////////////////
 	// Everything above this is what is checked to see if Building shows up in the list of construction items
@@ -5312,7 +5322,11 @@ int CvCity::GetFaithPurchaseCost(UnitTypes eUnit, bool bIncludeBeliefDiscounts)
 					
 					if (eReligion == NO_RELIGION)
 					{
+#ifdef LEKMOD_FAITH_PURCHASE_NO_RELIGION
+						iCost = kPlayer.GetReligions()->GetCostNextProphet(false /*bIncludeBeliefDiscounts*/, false /*bAdjustForSpeedDifficulty*/);
+#else
 						iCost = -1;
+#endif
 					}
 					else
 					{
@@ -5486,6 +5500,36 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 	if(pkBuildingInfo == NULL)
 		return -1;
 
+#ifdef LEKMOD_BUILDING_GOLD_COST
+	int iCost = pkBuildingInfo->GetGoldCost();
+	int iModifier = pkBuildingInfo->GetHurryCostModifier();
+	if (iModifier == -1)
+		return -1;
+	if (iCost == 0)
+	{
+	
+		iCost = GetPurchaseCostFromProduction(getProductionNeeded(eBuilding));
+		iCost *= (100 + iModifier);
+		iCost /= 100;
+	}
+	else if (iCost < 0)
+	{
+		return -1;
+	}
+	else
+	//if gold cost an actual value, adjust it based on game speed
+	{
+		//adjust for global gold discounts (big ben, commerce policy)
+		iCost *= (100 + iModifier);
+		iCost /= 100;
+		
+		iCost *= GC.getGame().getGameSpeedInfo().getConstructPercent();
+		iCost /= 100;
+
+		
+
+	}
+#else
 	int iModifier = pkBuildingInfo->GetHurryCostModifier();
 
 	if(iModifier == -1)
@@ -5494,7 +5538,7 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 	int iCost = GetPurchaseCostFromProduction(getProductionNeeded(eBuilding));
 	iCost *= (100 + iModifier);
 	iCost /= 100;
-
+#endif
 	// Cost of purchasing buildings modified?
 	iCost *= (100 + GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_BUILDING_PURCHASE_COST_MODIFIER));
 	iCost /= 100;
@@ -13221,6 +13265,21 @@ void CvCity::DoAcquirePlot(int iPlotX, int iPlotY)
 	pPlot->setOwner(getOwner(), GetID(), /*bCheckUnits*/ true, /*bUpdateResources*/ true);
 
 	DoUpdateCheapestPlotInfluence();
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+		args->Push(getOwner());
+		args->Push(GetID());
+		args->Push(iPlotX);
+		args->Push(iPlotY);
+
+		bool bResult;
+		LuaSupport::CallHook(pkScriptSystem, "CityAcquirePlot", args.get(), bResult);
+	}
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -14615,7 +14674,26 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 		// Building
 		else if(eBuildingType != NO_BUILDING)
 		{
-			if(!canConstruct(eBuildingType, false, !bTestTrainable))
+#ifdef LEKMOD_BUILDING_GOLD_COST
+			CvBuildingEntry* pkBuildingInfo = GC.GetGameBuildings()->GetEntry(eBuildingType);
+			//does this building have a set gold cost?
+			if (pkBuildingInfo->GetGoldCost() > 0)
+			{
+				if(!canConstruct(eBuildingType, false, !bTestTrainable, true /*IgnoreCost*/))
+				{
+					bool bAlreadyUnderConstruction = canConstruct(eBuildingType, true, !bTestTrainable, true /*IgnoreCost*/) && getFirstBuildingOrder(eBuildingType) != -1;
+					if (!bAlreadyUnderConstruction)
+					{
+						return false;
+					}
+				}
+			}
+			else if(pkBuildingInfo->GetGoldCost() < 0)
+			{
+				//can't purchase this building
+				return false;
+			}
+			else if(!canConstruct(eBuildingType, false, !bTestTrainable))
 			{
 				bool bAlreadyUnderConstruction = canConstruct(eBuildingType, true, !bTestTrainable) && getFirstBuildingOrder(eBuildingType) != -1;
 				if(!bAlreadyUnderConstruction)
@@ -14623,6 +14701,18 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 					return false;
 				}
 			}
+#else
+			if (!canConstruct(eBuildingType, false, !bTestTrainable))
+			{
+				bool bAlreadyUnderConstruction = canConstruct(eBuildingType, true, !bTestTrainable) && getFirstBuildingOrder(eBuildingType) != -1;
+				if (!bAlreadyUnderConstruction)
+				{
+					return false;
+				}
+			}
+#endif
+
+			
 
 			iGoldCost = GetPurchaseCost(eBuildingType);
 		}
@@ -14658,13 +14748,16 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 	{
 		int iFaithCost = -1;
 
+#ifndef LEKMOD_FAITH_PURCHASE_NO_RELIGION
 		// Does this city have a majority religion?
 		ReligionTypes eReligion = GetCityReligions()->GetReligiousMajority();
 		if(eReligion <= RELIGION_PANTHEON)
 		{
 			return false;
 		}
-
+#else
+		ReligionTypes eReligion = GetCityReligions()->GetReligiousMajority();
+#endif
 		// Unit
 		if(eUnitType != NO_UNIT)
 		{
@@ -14691,10 +14784,7 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 					return false;
 				}
 
-				if (pkUnitInfo->IsRequiresEnhancedReligion() && !(GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_bEnhanced))
-				{
-					return false;
-				}
+				
 #else
 			CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnitType);
 			if(pkUnitInfo)
@@ -14704,12 +14794,12 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 					return false;
 				}
 #endif
-
-				
-
-				
 				if (pkUnitInfo->IsRequiresFaithPurchaseEnabled())
 				{
+					if (eReligion <= RELIGION_PANTHEON)
+					{
+						return false;
+					}
 					TechTypes ePrereqTech = (TechTypes)pkUnitInfo->GetPrereqAndTech();
 					if (ePrereqTech == -1)
 					{
@@ -14744,74 +14834,121 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 						}
 					}
 				}
+#ifdef LEKMOD_FAITH_PURCHASE_NO_RELIGION
+				// If we dont have a belief that enables unit purchasing, but we still have a faith cost,
+				// we can still purchase it, given we can also train it.
+
+				//Units that can spread, remove or simply require a form of religion do however need one
+				if (pkUnitInfo->IsRequiresEnhancedReligion())
+				{
+					if (eReligion <= RELIGION_PANTHEON)
+					{
+						return false;
+
+					}
+					else if (!(GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_bEnhanced))
+					{
+						return false;
+					}
+				}
+				else if (pkUnitInfo->GetReligionSpreads() > 0 || pkUnitInfo->GetReligiousStrength() > 0 || pkUnitInfo->IsRemoveHeresy())
+				{	
+
+					if (eReligion <= RELIGION_PANTHEON)
+					{
+						return false;
+					}
+				}
+				else if (!canTrain(eUnitType, false, !bTestTrainable, true /*bIgnoreCost*/, true /*bWillPurchase*/))
+				{
+					return false;
+				}
+#endif
 			}
 		}
 		// Building
 		else if(eBuildingType != NO_BUILDING)
 		{
 			CvBuildingEntry* pkBuildingInfo = GC.GetGameBuildings()->GetEntry(eBuildingType);
- 
+#ifdef LEKMOD_FAITH_PURCHASE_NO_RELIGION
+			if (!pkBuildingInfo)
+			{
+				return false;
+			}
+#endif
 			// Religion-enabled building
-			if(pkBuildingInfo && pkBuildingInfo->IsUnlockedByBelief())
+			if (pkBuildingInfo && pkBuildingInfo->IsUnlockedByBelief())
 			{
 				ReligionTypes eMajority = GetCityReligions()->GetReligiousMajority();
-				if(eMajority <= RELIGION_PANTHEON)
+				if (eMajority <= RELIGION_PANTHEON)
 				{
 					return false;
 				}
 				const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, getOwner());
-				if(pReligion == NULL || !pReligion->m_Beliefs.IsBuildingClassEnabled((BuildingClassTypes)pkBuildingInfo->GetBuildingClassType()))
+				if (pReligion == NULL || !pReligion->m_Beliefs.IsBuildingClassEnabled((BuildingClassTypes)pkBuildingInfo->GetBuildingClassType()))
 				{
 					return false;
 				}
 
-				if(!canConstruct(eBuildingType, false, !bTestTrainable, true /*bIgnoreCost*/))
+				if (!canConstruct(eBuildingType, false, !bTestTrainable, true /*bIgnoreCost*/))
 				{
 					return false;
 				}
 
-				if(GetCityBuildings()->GetNumBuilding(eBuildingType) > 0)
+				if (GetCityBuildings()->GetNumBuilding(eBuildingType) > 0)
 				{
 					return false;
 				}
 
-				TechTypes ePrereqTech = (TechTypes)pkBuildingInfo->GetPrereqAndTech();
-				if(ePrereqTech != NO_TECH)
+#ifdef LEKMOD_FAITH_PURCHASE_NO_RELIGION
+			}
+
+			//If we don't need a belief or religion, check if we actually can get the building
+			if (!canConstruct(eBuildingType, false, !bTestTrainable, true /*bIgnoreCost*/))
+			{
+				return false;
+			}
+#endif
+
+
+			TechTypes ePrereqTech = (TechTypes)pkBuildingInfo->GetPrereqAndTech();
+			if (ePrereqTech != NO_TECH)
+			{
+				CvTechEntry* pkTechInfo = GC.GetGameTechs()->GetEntry(ePrereqTech);
+				if (pkTechInfo && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).GetTeamTechs()->HasTech(ePrereqTech))
 				{
-					CvTechEntry *pkTechInfo = GC.GetGameTechs()->GetEntry(ePrereqTech);
-					if (pkTechInfo && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).GetTeamTechs()->HasTech(ePrereqTech))
-					{
-						return false;
-					}
+					return false;
+				}
+			}
+
+			// Does this city have prereq buildings?
+			int iNumBuildingClassInfos = GC.getNumBuildingClassInfos();
+			BuildingTypes ePrereqBuilding;
+			for(int iI = 0; iI < iNumBuildingClassInfos; iI++)
+			{
+				CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo((BuildingClassTypes)iI);
+				if(!pkBuildingClassInfo)
+				{
+					continue;
 				}
 
-				// Does this city have prereq buildings?
-				int iNumBuildingClassInfos = GC.getNumBuildingClassInfos();
-				BuildingTypes ePrereqBuilding;
-				for(int iI = 0; iI < iNumBuildingClassInfos; iI++)
+				if(pkBuildingInfo->IsBuildingClassNeededInCity(iI))
 				{
-					CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo((BuildingClassTypes)iI);
-					if(!pkBuildingClassInfo)
-					{
-						continue;
-					}
+					CvCivilizationInfo& thisCivInfo = getCivilizationInfo();
+					ePrereqBuilding = ((BuildingTypes)(thisCivInfo.getCivilizationBuildings(iI)));
 
-					if(pkBuildingInfo->IsBuildingClassNeededInCity(iI))
+					if(ePrereqBuilding != NO_BUILDING)
 					{
-						CvCivilizationInfo& thisCivInfo = getCivilizationInfo();
-						ePrereqBuilding = ((BuildingTypes)(thisCivInfo.getCivilizationBuildings(iI)));
-
-						if(ePrereqBuilding != NO_BUILDING)
+						if(0 == m_pCityBuildings->GetNumBuilding(ePrereqBuilding))
 						{
-							if(0 == m_pCityBuildings->GetNumBuilding(ePrereqBuilding))
-							{
-								return false;
-							}
+							return false;
 						}
 					}
 				}
 			}
-
+#ifndef LEKMOD_FAITH_PURCHASE_NO_RELIGION
+			}
+#endif
 			iFaithCost = GetFaithPurchaseCost(eBuildingType);
 			if(iFaithCost < 1) return false;
 		}

@@ -52,6 +52,11 @@ public:
 
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+	const char* GetIconString() const;
+	void SetIconString(const char* szVal);
+#endif
+
 	int GetGoldMaintenance() const;
 	int GetCultureBombRadius() const;
 	int GetCultureBombRadiusNeutral() const;
@@ -147,6 +152,13 @@ public:
 
 	int GetTechYieldChanges(int i, int j) const;
 	int* GetTechYieldChangesArray(int i);
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	int GetImprovementAdjacentBonus(int i, int j) const;
+	int GetImprovementAdjacentCivilizationAmount(int i, int j) const;
+	int GetImprovementAdjacentBonusCivilizationNoAmount(int i, int j) const;
+	int GetImprovementAdjacentBonusCivilization(int i, int j) const;
+	int GetImprovementAdjacentAmount(int i, int j) const;
+#endif
 	int GetTechNoFreshWaterYieldChanges(int i, int j) const;
 	int* GetTechNoFreshWaterYieldChangesArray(int i);
 	int GetTechFreshWaterYieldChanges(int i, int j) const;
@@ -165,6 +177,10 @@ public:
 protected:
 #ifndef NQM_PRUNING
 	void InitImprovementResourceList(CvImprovementResourceInfo** ppImprovementResource, int iListLen);
+#endif
+
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+	CvString m_strIconString;
 #endif
 
 	int m_iGoldMaintenance;
@@ -255,7 +271,14 @@ protected:
 	int** m_ppiTechFreshWaterYieldChanges;
 	int** m_ppiRouteYieldChanges;
 #endif
-
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	// 
+	int** m_ppiImprovementAdjacentBonus;
+	int** m_ppiImprovementAdjacentCivilizationAmount;
+	int** m_ppiImprovementAdjacentBonusCivilizationNoAmount;
+	int** m_piImprovementAdjacentBonusCivilization;
+	int** m_ppiImprovementAdjacentAmount;
+#endif
 	CvImprovementResourceInfo* m_paImprovementResource;
 };
 

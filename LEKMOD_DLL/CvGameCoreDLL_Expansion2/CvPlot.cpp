@@ -241,6 +241,11 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_bIsAdjacentToLand = false;
 	m_bIsImpassable = false;
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+	m_bIsSetFreshWater = false;
+#endif
+
+
 	m_eOwner = NO_PLAYER;
 	m_ePlotType = PLOT_OCEAN;
 	m_eTerrainType = NO_TERRAIN;
@@ -743,11 +748,13 @@ void CvPlot::verifyUnitValidPlot()
 							// Unit not allowed to be here
 							if(getNumFriendlyUnitsOfType(pLoopUnit) > /*1*/ GC.getPLOT_UNIT_LIMIT())
 							{
+#ifndef AVOID_UNIT_SPLIT_MID_TURN
 								if (!pLoopUnit->jumpToNearestValidPlot())
 								{
 									pLoopUnit->kill(false);
 									pLoopUnit = NULL;
 								}
+#endif
 							}
 							
 							if (pLoopUnit != NULL)
@@ -1105,6 +1112,15 @@ bool CvPlot::isFreshWater() const
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+
+	if(isSetFreshWater())
+	{
+		return true;
+	}
+
+#endif
+
 	if(isWater() || isImpassable() || isMountain())
 		return false;
 
@@ -1152,8 +1168,19 @@ bool CvPlot::isFreshWater() const
 	return false;
 }
 
+#ifdef LEKMOD_NEW_LUA_METHODS
 
+void CvPlot::setFreshWater(bool bValue)
+{
+	if (isFreshWater() == bValue || (bValue != true && bValue != false))
+	{
+		return;
+	}
+	m_bIsSetFreshWater = bValue;
 
+}
+
+#endif
 
 //	--------------------------------------------------------------------------------
 bool CvPlot::isRiverCrossingFlowClockwise(DirectionTypes eDirection) const
@@ -4241,10 +4268,24 @@ int CvPlot::getNumFriendlyUnitsOfType(const CvUnit* pUnit, bool bBreakOnUnitLimi
 #ifdef FIX_DO_ATTACK_SUBMARINES_IN_SHADOW_OF_WAR
 						if (!pLoopUnit->isInvisible(pUnit->getTeam(), false))
 						{
+#ifdef TRADE_UNITS_DO_NOT_CAUSES_REPOSITION
+							if (!pLoopUnit->isTrade())
+							{
+								iNumUnitsOfSameType++;
+							}
+#else
+							iNumUnitsOfSameType++;
+#endif
+						}
+#else
+#ifdef TRADE_UNITS_DO_NOT_CAUSES_REPOSITION
+						if (!pLoopUnit->isTrade())
+						{
 							iNumUnitsOfSameType++;
 						}
 #else
 						iNumUnitsOfSameType++;
+#endif
 #endif
 					}
 				}
@@ -6715,6 +6756,9 @@ void CvPlot::SetImprovementPillaged(bool bPillaged)
 							if(GetResourceLinkedCity() != NULL)
 								SetResourceLinkedCityActive(true);
 						}
+#ifdef FIX_SET_IMPROVEMENT_PILLAGED_HAPPINESS_UPDATE
+						GET_PLAYER(getOwner()).DoUpdateHappiness();
+#endif
 					}
 				}
 			}
@@ -7687,6 +7731,65 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	{
 		iYield += pImprovement->GetHillsYieldChange(eYield);
 	}
+
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+
+	// Check for adjacent improvement bonuses
+	if (ePlayer != NO_PLAYER)
+	{
+
+		CvCivilizationInfo& playerCivilizationInfo = GET_PLAYER(ePlayer).getCivilizationInfo();
+		int iCivID = playerCivilizationInfo.GetID();
+
+		int iAdjacentImprovementCount = 0;
+		for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+		{
+		
+			CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iI));
+			if (pAdjacentPlot != NULL)
+			{
+
+				ImprovementTypes eAdjacentImprovement = pAdjacentPlot->getImprovementType();
+				if (eAdjacentImprovement != NO_IMPROVEMENT)
+				{
+					// No requirements
+					if (pAdjacentPlot->getOwner() == ePlayer && (pImprovement->GetImprovementAdjacentBonus(eAdjacentImprovement, eYield) > 0 || pImprovement->GetImprovementAdjacentAmount(eYield, iAdjacentImprovementCount) > 0))
+					{
+						iAdjacentImprovementCount++;
+						if (pImprovement->GetImprovementAdjacentAmount(eYield, iAdjacentImprovementCount) > 0)
+						{
+							iYield += pImprovement->GetImprovementAdjacentAmount(eYield, iAdjacentImprovementCount);
+						}
+						else if (pImprovement->GetImprovementAdjacentBonus(eAdjacentImprovement, eYield) > 0)
+						{
+							iYield += pImprovement->GetImprovementAdjacentBonus(eAdjacentImprovement, eYield);
+						}
+
+					}
+					// Civilization Requirement
+					if (pAdjacentPlot->getOwner() == ePlayer && pImprovement->GetImprovementAdjacentBonusCivilization(iCivID, eAdjacentImprovement) == eAdjacentImprovement)
+					{
+						iAdjacentImprovementCount++;
+						if (pImprovement->GetImprovementAdjacentCivilizationAmount(eYield, iAdjacentImprovementCount) > 0)
+						{
+							iYield += pImprovement->GetImprovementAdjacentCivilizationAmount(eYield, iAdjacentImprovementCount);
+						}
+						else if (pImprovement->GetImprovementAdjacentBonusCivilizationNoAmount(eAdjacentImprovement, eYield) > 0)
+						{
+							iYield += pImprovement->GetImprovementAdjacentBonusCivilizationNoAmount(eAdjacentImprovement, eYield);
+						}
+					}
+
+					
+
+				}
+					
+			}
+
+		}
+	}
+
+#endif
 
 	// Check to see if there's a bonus to apply before doing any looping
 	if(pImprovement->GetAdjacentCityYieldChange(eYield) > 0 ||
