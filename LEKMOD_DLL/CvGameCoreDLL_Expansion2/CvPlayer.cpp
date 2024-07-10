@@ -15219,98 +15219,99 @@ void CvPlayer::DoGreatPersonExpended(UnitTypes eGreatPersonUnit)
 	{
 		BuildingClassTypes eBuildingClass = (BuildingClassTypes)iBuildingClass;
 		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType())->getCivilizationBuildings(eBuildingClass);
+
+		// if it is not a civ specific building, check the default building
+		if(eBuilding == NO_BUILDING)
+		{
+			eBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass)->getDefaultBuildingIndex();
+		}
+
 		if(eBuilding != NO_BUILDING)
 		{
 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 			if(pkBuildingInfo)
 			{
-				//loop trough every yield
-				for(int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+
+				// loop trough the player's cities and apply the yield for each city that has the building
+
+				int iNumCities = getNumCities();
+				for(int iCityLoop = 0; iCityLoop < iNumCities; iCityLoop++)
 				{
-					YieldTypes eYield = (YieldTypes)iYield;
-
-					int iYieldAmount = pkBuildingInfo->GetGreatPersonExpendYield(eYield);
-
-					//OutputDebugStringA(CvString::format("Great Person expended: %s, Building: %s, Yield: %s, Amount: %d\n", GC.getUnitInfo(eGreatPersonUnit)->GetDescription(), pkBuildingInfo->GetDescription(), GC.getYieldInfo(eYield)->GetDescription(), iYieldAmount).c_str());
-
-					if (iYieldAmount <= 0)
+					CvCity* pCity = getCity(iCityLoop);
+					if(!pCity)
+					{
+						continue;
+					}
+					if(pCity->GetCityBuildings()->GetNumBuilding(eBuilding) <= 0)
 					{
 						continue;
 					}
 
-					//adjust iYieldAmount for the gamespeed
-					iYieldAmount *= GC.getGame().getGameSpeedInfo().getTrainPercent();
-					iYieldAmount /= 100;
-					
-					switch (eYield)
+					//loop trough every yield
+					for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 					{
+						YieldTypes eYield = (YieldTypes)iYield;
+
+						int iYieldAmount = pkBuildingInfo->GetGreatPersonExpendYield(eYield);
+
+						//OutputDebugStringA(CvString::format("Great Person expended: %s, Building: %s, Yield: %s, Amount: %d\n", GC.getUnitInfo(eGreatPersonUnit)->GetDescription(), pkBuildingInfo->GetDescription(), GC.getYieldInfo(eYield)->GetDescription(), iYieldAmount).c_str());
+
+						if (iYieldAmount <= 0)
+						{
+							continue;
+						}
+
+						//adjust iYieldAmount for the gamespeed
+						iYieldAmount *= GC.getGame().getGameSpeedInfo().getTrainPercent();
+						iYieldAmount /= 100;
+
+						switch (eYield)
+						{
 						case YIELD_FOOD:
 						{
-							//for the owner of the great person, go trough every city of that player and add the yield if the city has the building
-							for (int iCity = 0; iCity < getNumCities(); iCity++)
+							
+
+							pCity->changeFood(iYieldAmount);
+							//if the food added is enough to grow, grow the city. Do until the city is no longer able to grow in case of large food yields
+							while (pCity->getFood() >= pCity->growthThreshold())
 							{
-								CvCity* pCity = getCity(iCity);
-								if (pCity)
-								{
-									if (pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
-									{
-										
-										pCity->changeFood(iYieldAmount);
-										//if the food added is enough to grow, grow the city. Do until the city is no longer able to grow in case of large food yields
-										while (pCity->getFood() >= pCity->growthThreshold())
-										{
-											pCity->changeFood(-(std::max(0, (pCity->growthThreshold() - pCity->getFoodKept()))));
-											pCity->changePopulation(1);
+								pCity->changeFood(-(std::max(0, (pCity->growthThreshold() - pCity->getFoodKept()))));
+								pCity->changePopulation(1);
 
 #ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
-											// Only show notification if the city is small
-											if (pCity->getPopulation() <= 5)
-											{
+								// Only show notification if the city is small
+								if (pCity->getPopulation() <= 5)
+								{
 #endif
-												CvNotifications* pNotifications = GET_PLAYER(pCity->getOwner()).GetNotifications();
-												if (pNotifications)
-												{
-													Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_CITY_GROWTH");
-													localizedText << pCity->getNameKey() << pCity->getPopulation();
-													Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_CITY_GROWTH");
-													localizedSummary << pCity->getNameKey();
-													pNotifications->Add(NOTIFICATION_CITY_GROWTH, localizedText.toUTF8(), localizedSummary.toUTF8(), pCity->getX(), pCity->getY(), pCity->GetID());
-												}
-#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
-											}
-#endif
-										}	
+									CvNotifications* pNotifications = GET_PLAYER(pCity->getOwner()).GetNotifications();
+									if (pNotifications)
+									{
+										Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_CITY_GROWTH");
+										localizedText << pCity->getNameKey() << pCity->getPopulation();
+										Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_CITY_GROWTH");
+										localizedSummary << pCity->getNameKey();
+										pNotifications->Add(NOTIFICATION_CITY_GROWTH, localizedText.toUTF8(), localizedSummary.toUTF8(), pCity->getX(), pCity->getY(), pCity->GetID());
 									}
+#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
 								}
+#endif
 							}
+							
 
 						}
 						break;
 						case YIELD_PRODUCTION:
 						{
-							//for the owner of the great person, go trough every city of that player and add the yield if the city has the building
-							for (int iCity = 0; iCity < getNumCities(); iCity++)
+							//check if we are currently having anything in the queue
+							if (pCity->isProductionProcess())
 							{
-								CvCity* pCity = getCity(iCity);
-								if (pCity)
-								{
-									if (pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
-									{
-
-										//check if we are currently having anything in the queue
-										if (pCity->isProductionProcess())
-										{
-											pCity->changeProduction(iYieldAmount);
-										}
-										//if not, add it to the overflow
-										else 
-										{
-											pCity->setOverflowProduction(pCity->getOverflowProduction() + iYieldAmount);
-										}
-
-									}
-								}
+								pCity->changeProduction(iYieldAmount);
 							}
+							//if not, add it to the overflow
+							else
+							{
+								pCity->setOverflowProduction(pCity->getOverflowProduction() + iYieldAmount);
+							}	
 						}
 						break;
 						case YIELD_GOLD:
@@ -15344,9 +15345,12 @@ void CvPlayer::DoGreatPersonExpended(UnitTypes eGreatPersonUnit)
 							ChangeFaith(iYieldAmount);
 						}
 						break;
-					}
+						}
 
+					}
+					
 				}
+				
 			}
 		}
 	}
