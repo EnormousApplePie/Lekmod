@@ -10316,6 +10316,10 @@ void CvPlot::read(FDataStream& kStream)
 	m_bResourceLinkedCityActive = bitPackWorkaround;
 	kStream >> bitPackWorkaround;
 	m_bImprovedByGiftFromMajor = bitPackWorkaround;
+#ifdef LEKMOD_NEW_LUA_METHODS
+	kStream >> bitPackWorkaround;
+	m_bIsSetFreshWater = bitPackWorkaround;
+#endif
 
 	kStream >> m_eOwner;
 	kStream >> m_ePlotType;
@@ -10525,6 +10529,10 @@ void CvPlot::write(FDataStream& kStream) const
 	kStream << m_bRoughFeature;
 	kStream << m_bResourceLinkedCityActive;
 	kStream << m_bImprovedByGiftFromMajor;
+
+#ifdef LEKMOD_NEW_LUA_METHODS
+	kStream << m_bIsSetFreshWater;
+#endif
 	// m_bPlotLayoutDirty not saved
 	// m_bLayoutStateWorked not saved
 

@@ -15215,17 +15215,10 @@ void CvPlayer::DoGreatPersonExpended(UnitTypes eGreatPersonUnit)
 #ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
 
 	// Any yield specified in the table.
-	for(int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
+	for(int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
 	{
-		BuildingClassTypes eBuildingClass = (BuildingClassTypes)iBuildingClass;
-		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType())->getCivilizationBuildings(eBuildingClass);
-
-		// if it is not a civ specific building, check the default building
-		if(eBuilding == NO_BUILDING)
-		{
-			eBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass)->getDefaultBuildingIndex();
-		}
-
+	
+		BuildingTypes eBuilding = (BuildingTypes)iBuilding;
 		if(eBuilding != NO_BUILDING)
 		{
 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);

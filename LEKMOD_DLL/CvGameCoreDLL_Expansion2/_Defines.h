@@ -967,6 +967,7 @@
 // -------------------------------------------------------------------------------------
 // new lua event that triggers whenever a unit is healed (negative damage).
 /// " UnitHealed ". Passed parameters: playerID, unitID, unitX, unitY
+
 #define LEKMOD_NEW_LUA_METHODS
 //--------------------------------------------------------------------------------------
 // new lua method. Sets a plot to be fresh water or not.
@@ -1033,6 +1034,8 @@
 
 // Note: Not all of these defines are exact copies of the Immos defines, some have been modified.
 
+/// Exploit fix: Queueing up Science or Gold projects (converting production to science/gold) behind other builds no longer gives gold/science for free
+#define PRODUCTION_TO_YIELD_FIX
 /// Fast hand - Intercept and Paradrops can no longer be set when the turn timer is > 50% full
 #define CAN_PARADROP_HALF_TIMER
 #define CAN_SET_INTERCEPT_HALF_TIMER

@@ -283,6 +283,9 @@ CvCity::CvCity() :
 	, m_iUnmoddedHappinessFromBuildings(0)
 	, m_bRouteToCapitalConnectedLastTurn(false)
 	, m_bRouteToCapitalConnectedThisTurn(false)
+#ifdef PRODUCTION_TO_YIELD_FIX
+	, m_bFinishedOrderThisTurn(false)
+#endif
 	, m_strName("")
 	, m_orderQueue()
 	, m_yieldChanges( NUM_YIELD_TYPES )
@@ -2204,7 +2207,17 @@ bool CvCity::IsRouteToCapitalConnected(void)
 	return m_bRouteToCapitalConnectedThisTurn;
 }
 
-
+#ifdef PRODUCTION_TO_YIELD_FIX
+// ---------------------------------------------------------------------------------
+bool CvCity::IsFinishedOrderThisTurn() const
+{
+	return m_bFinishedOrderThisTurn;
+}
+void CvCity::SetFinishedOrderThisTurn(bool bFinished)
+{
+	m_bFinishedOrderThisTurn = bFinished;
+}
+#endif
 //	--------------------------------------------------------------------------------
 void CvCity::createGreatGeneral(UnitTypes eGreatPersonUnit)
 {
@@ -11091,8 +11104,11 @@ int CvCity::getYieldRateTimes100(YieldTypes eIndex, bool bIgnoreTrade) const
 	}
 
 	int iProcessYield = 0;
-
+#ifdef PRODUCTION_TO_YIELD_FIX
+	if (getProductionToYieldModifier(eIndex) != 0 && !IsFinishedOrderThisTurn())
+#else
 	if(getProductionToYieldModifier(eIndex) != 0)
+#endif
 	{
 		CvAssertMsg(eIndex != YIELD_PRODUCTION, "GAMEPLAY: should not be trying to convert Production into Production via process.");
 
@@ -15712,6 +15728,9 @@ void CvCity::doProduction(bool bAllowNoProduction)
 	}
 #endif
 
+#ifdef PRODUCTION_TO_YIELD_FIX
+	SetFinishedOrderThisTurn(false);
+#endif
 	if(!bAllowNoProduction && !isProduction())
 	{
 		return;
@@ -15761,6 +15780,10 @@ void CvCity::doProduction(bool bAllowNoProduction)
 			int iOldProdDiff = getRawProductionDifferenceTimes100(bIsFoodProd, false);
 #endif
 			popOrder(0, true, true);
+#ifdef PRODUCTION_TO_YIELD_FIX
+			SetFinishedOrderThisTurn(true);
+#endif
+
 #ifdef AUI_CITY_FIX_DO_PRODUCTION_CONSIDER_FOOD_HAMMERS_FROM_NEW_BUILDING
 			if (!bIsFoodProd && !isFoodProduction())
 			{
@@ -16122,7 +16145,9 @@ void CvCity::read(FDataStream& kStream)
 
 	kStream >> m_abEverOwned;
 	kStream >> m_abRevealed;
-
+#ifdef PRODUCTION_TO_YIELD_FIX
+	kStream >> m_bFinishedOrderThisTurn;
+#endif
 	kStream >> m_strName;
 	kStream >> m_strScriptData;
 
@@ -16450,7 +16475,9 @@ void CvCity::write(FDataStream& kStream) const
 
 	kStream << m_abEverOwned;
 	kStream << m_abRevealed;
-
+#ifdef PRODUCTION_TO_YIELD_FIX
+	kStream << m_bFinishedOrderThisTurn;
+#endif
 	kStream << m_strName;
 	kStream << m_strScriptData;
 

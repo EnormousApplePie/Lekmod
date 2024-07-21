@@ -4062,6 +4062,23 @@ void CvPlayerPolicies::SetPolicyBranchUnlocked(PolicyBranchTypes eBranchType, bo
 		}
 
 		m_pabPolicyBranchUnlocked[eBranchType] = bNewValue;
+#ifdef LEKMOD_NEW_LUA_EVENTS
+		if (bNewValue)
+		{
+			ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+			if (pkScriptSystem)
+			{
+				CvLuaArgsHandle args;
+				args->Push(m_pPlayer->GetID());
+				args->Push(eBranchType);
+
+				// Attempt to execute the game events.
+				// Will return false if there are no registered listeners.
+				bool bResult = false;
+				LuaSupport::CallHook(pkScriptSystem, "PlayerPolicyBranchUnlocked", args.get(), bResult);
+			}
+		}
+#endif
 	}
 }
 
