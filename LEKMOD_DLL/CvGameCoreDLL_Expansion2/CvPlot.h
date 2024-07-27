@@ -577,6 +577,10 @@ public:
 	int calculateBestNatureYield(YieldTypes eIndex, TeamTypes eTeam) const;
 	int calculateTotalBestNatureYield(TeamTypes eTeam) const;
 	int calculateImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield, PlayerTypes ePlayer, bool bOptimal = false, RouteTypes eAssumeThisRoute = NUM_ROUTE_TYPES) const;
+
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	int calculateImprovementAdjacentYieldChange(YieldTypes eYield, ImprovementTypes eImprovement, PlayerTypes ePlayer, int iYield) const;
+#endif
 	int calculateYield(YieldTypes eIndex, bool bDisplay = false);
 	bool hasYield() const;
 	void updateYield();

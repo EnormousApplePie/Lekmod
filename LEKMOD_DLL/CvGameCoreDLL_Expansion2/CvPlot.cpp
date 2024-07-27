@@ -7936,6 +7936,65 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	return iYield;
 }
 
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+//  --------------------------------------------------------------------------------
+int CvPlot::calculateImprovementAdjacentYieldChange(YieldTypes eYield, ImprovementTypes eImprovement, PlayerTypes ePlayer, int iYield) const
+{
+	CvCivilizationInfo& playerCivilizationInfo = GET_PLAYER(ePlayer).getCivilizationInfo();
+	int iCivID = playerCivilizationInfo.GetID();
+	CvImprovementEntry* pImprovement = GC.getImprovementInfo(eImprovement);
+
+	uint iI;
+	int iAdjacentImprovementCount = 0;
+	for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	{
+
+		CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iI));
+		if (pAdjacentPlot != NULL)
+		{
+
+			ImprovementTypes eAdjacentImprovement = pAdjacentPlot->getImprovementType();
+			if (eAdjacentImprovement != NO_IMPROVEMENT)
+			{
+				// No requirements
+				if (pAdjacentPlot->getOwner() == ePlayer && (pImprovement->GetImprovementAdjacentBonus(eAdjacentImprovement, eYield) > 0 || pImprovement->GetImprovementAdjacentAmount(eYield, iAdjacentImprovementCount) > 0))
+				{
+					iAdjacentImprovementCount++;
+					if (pImprovement->GetImprovementAdjacentAmount(eYield, iAdjacentImprovementCount) > 0)
+					{
+						iYield += pImprovement->GetImprovementAdjacentAmount(eYield, iAdjacentImprovementCount);
+					}
+					else if (pImprovement->GetImprovementAdjacentBonus(eAdjacentImprovement, eYield) > 0)
+					{
+						iYield += pImprovement->GetImprovementAdjacentBonus(eAdjacentImprovement, eYield);
+					}
+
+				}
+				// Civilization Requirement
+				if (pAdjacentPlot->getOwner() == ePlayer && pImprovement->GetImprovementAdjacentBonusCivilization(iCivID, eAdjacentImprovement) == eAdjacentImprovement)
+				{
+					iAdjacentImprovementCount++;
+					if (pImprovement->GetImprovementAdjacentCivilizationAmount(eYield, iAdjacentImprovementCount) > 0)
+					{
+						iYield += pImprovement->GetImprovementAdjacentCivilizationAmount(eYield, iAdjacentImprovementCount);
+					}
+					else if (pImprovement->GetImprovementAdjacentBonusCivilizationNoAmount(eAdjacentImprovement, eYield) > 0)
+					{
+						iYield += pImprovement->GetImprovementAdjacentBonusCivilizationNoAmount(eAdjacentImprovement, eYield);
+					}
+				}
+
+
+
+			}
+
+		}
+
+	}
+
+	return iYield;
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
