@@ -29,6 +29,9 @@ public:
 	bool DLLCALL IsWater() const;
 	bool DLLCALL IsDestroyedWhenPillaged() const;
 	bool DLLCALL IsGoody() const;
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+	const char* DLLCALL GetIconString() const;
+#endif
 	const char* DLLCALL GetArtDefineTag() const;
 	ImprovementUsageTypes DLLCALL GetImprovementUsage() const;
 	int DLLCALL GetWorldSoundscapeScriptId() const;

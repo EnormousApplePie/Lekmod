@@ -57,6 +57,10 @@ void CvLuaPlot::PushMethods(lua_State* L, int t)
 	Method(IsLake);
 	Method(IsFreshWater);
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+	Method(SetFreshWater);
+#endif
+
 	Method(IsRiverSide);
 	Method(IsRiverConnection);
 	Method(IsRiverCrossingFlowClockwise);
@@ -1851,3 +1855,13 @@ int CvLuaPlot::lSetCityPurchaseID(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvPlot::SetCityPurchaseID);
 }
+
+#ifdef LEKMOD_NEW_LUA_METHODS
+//------------------------------------------------------------------------------
+//void setFreshWater(bool bValues);
+int CvLuaPlot::lSetFreshWater(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvPlot::setFreshWater);
+}
+#endif
+//------------------------------------------------------------------------------

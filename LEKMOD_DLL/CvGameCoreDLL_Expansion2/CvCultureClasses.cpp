@@ -4582,6 +4582,10 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 			if(pkEntry && m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 			{
 				int iTourism = pkEntry->GetTechEnhancedTourism();
+#ifdef LEKMOD_TECH_ENHANCED_TOURISM_MULTIPLIER
+				//multiply for the amount of this building in the city (in case of duplicates)
+				iTourism *= m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding);
+#endif
 				if (iTourism > 0 && GET_TEAM(m_pCity->getTeam()).GetTeamTechs()->HasTech((TechTypes)pkEntry->GetEnhancedYieldTech()))
 				{
 					iBase += iTourism;
@@ -4940,6 +4944,10 @@ CvString CvCityCulture::GetTourismTooltip()
 			if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 			{
 				int iTechEnhancedTourism = GC.getBuildingInfo(eBuilding)->GetTechEnhancedTourism();
+#ifdef LEKMOD_TECH_ENHANCED_TOURISM_MULTIPLIER
+				//multiply for the amount of this building in the city (in case of duplicates)
+				iTechEnhancedTourism *= m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding);
+#endif
 				if (iTechEnhancedTourism > 0 && GET_TEAM(m_pCity->getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getBuildingInfo(eBuilding)->GetEnhancedYieldTech()))
 				{
 					if (szRtnValue.length() > 0)

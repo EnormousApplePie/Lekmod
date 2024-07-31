@@ -388,6 +388,9 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetNumPolicies);
 	Method(GetNumPoliciesInBranch);
 	Method(HasPolicy);
+#ifdef LEKMOD_NEW_LUA_METHODS
+	Method(HasPolicyBranch);
+#endif
 	Method(SetHasPolicy);
 	Method(GetNextPolicyCost);
 	Method(CanAdoptPolicy);
@@ -4976,6 +4979,20 @@ int CvLuaPlayer::lHasPolicy(lua_State* L)
 	lua_pushboolean(L, bResult);
 	return 1;
 }
+#ifdef LEKMOD_NEW_LUA_METHODS
+//------------------------------------------------------------------------------
+//bool hasPolicyBranch(PolicyBranchTypes  iIndex);
+int CvLuaPlayer::lHasPolicyBranch(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const PolicyBranchTypes iIndex = (PolicyBranchTypes)lua_tointeger(L, 2);
+
+	const bool bResult
+		= pkPlayer->GetPlayerPolicies()->HasPolicyBranch(iIndex);
+	lua_pushboolean(L, bResult);
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 //void setHasPolicy(PolicyTypes  eIndex, bool bNewValue);
 int CvLuaPlayer::lSetHasPolicy(lua_State* L)

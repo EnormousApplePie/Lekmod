@@ -444,6 +444,16 @@ public:
 		return m_bIsImpassable;
 	}
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+
+	bool isSetFreshWater() const
+	{
+		return m_bIsSetFreshWater;
+	}
+
+	void setFreshWater(bool bFresh);
+
+#endif
 	bool IsAllowsWalkWater() const;
 
 	bool IsAllowsSailLand() const;
@@ -567,6 +577,10 @@ public:
 	int calculateBestNatureYield(YieldTypes eIndex, TeamTypes eTeam) const;
 	int calculateTotalBestNatureYield(TeamTypes eTeam) const;
 	int calculateImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield, PlayerTypes ePlayer, bool bOptimal = false, RouteTypes eAssumeThisRoute = NUM_ROUTE_TYPES) const;
+
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	int calculateImprovementAdjacentYieldChange(YieldTypes eYield, ImprovementTypes eImprovement, PlayerTypes ePlayer, int iYield) const;
+#endif
 	int calculateYield(YieldTypes eIndex, bool bDisplay = false);
 	bool hasYield() const;
 	void updateYield();
@@ -972,6 +986,10 @@ protected:
 	bool m_bImprovedByGiftFromMajor:1;
 	bool m_bIsAdjacentToLand:1;				// Cached value, do not serialize
 	bool m_bIsImpassable:1;					// Cached value, do not serialize
+
+#ifdef LEKMOD_NEW_LUA_METHODS
+	bool m_bIsSetFreshWater:1;
+#endif
 
 	CvArchaeologyData m_kArchaeologyData;
 

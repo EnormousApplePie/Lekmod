@@ -1075,19 +1075,19 @@ bool CvTraitEntry::NoTrain(UnitClassTypes eUnitClass)
 	}
 }
 
-//EAP: No build
-
-bool CvTraitEntry::NoBuild(ImprovementTypes eImprovementType)
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+bool CvTraitEntry::NoBuildImprovements(ImprovementTypes eImprovement)
 {
-	if (eImprovementType != NO_IMPROVEMENT)
+	if (eImprovement != NO_IMPROVEMENT)
 	{
-		return m_abNoBuildImprovement[eImprovementType];
+		return m_abNoBuildImprovements[eImprovement];
 	}
 	else
 	{
 		return false;
 	}
 }
+#endif
 
 /// Load XML data
 bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
@@ -1549,34 +1549,32 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 		}
 	}
 
-
-	// EAP: NoBuild
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	// NoBuild (Improvements)
 	{
-
-		int iImprovementLoop;
-		for(int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
-
+		for (int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
 		{
-			m_abNoBuildImprovement.push_back(false);
+			m_abNoBuildImprovements.push_back(false);
 		}
 
-		std::string strKey("Trait_NoBuild");
+		std::string strKey("Trait_NoBuildImprovement");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
-			pResults = kUtility.PrepareResults(strKey, "SELECT Traits.ID, Improvements.ID FROM Trait_NoBuild inner join Traits on Trait_NoBuild.TraitType = Traits.Type inner join Improvements on Trait_NoBuild.ImprovementType = Improvements.Type where TraitType = ?");
+			pResults = kUtility.PrepareResults(strKey, "SELECT Traits.ID, Improvements.ID FROM Trait_NoBuildImprovement inner join Traits on Trait_NoBuildImprovement.TraitType = Traits.Type inner join Improvements on Trait_NoBuildImprovement.ImprovementType = Improvements.Type where TraitType = ?");
 		}
 
 		pResults->Bind(1, szTraitType);
 
 		while (pResults->Step())
 		{
-			const int iImprovementID = pResults->GetInt(1);
-			m_abNoBuildImprovement[iImprovementID] = true;
+			const int iImprovement = pResults->GetInt(1);
+			m_abNoBuildImprovements[iImprovement] = true;
 		}
-	}
-	
 
+	}
+#endif
+	
 	// FreeResourceXCities
 	{
 		// Init vector
@@ -1996,11 +1994,14 @@ void CvPlayerTraits::InitPlayerTraits()
 				m_abNoTrain[iUnitClass] = trait->NoTrain((UnitClassTypes)iUnitClass);
 			}
 
-			//EAP: No Build
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 			for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 			{
-				m_abNoBuild[iImprovement] = trait->NoBuild((ImprovementTypes)iImprovement);
+				m_abNoBuild[iImprovement] = trait->NoBuildImprovements((ImprovementTypes)iImprovement);
 			}
+#endif
+
+			
 
 			FreeTraitUnit traitUnit;
 #ifdef AUI_WARNING_FIXES
@@ -2048,8 +2049,10 @@ void CvPlayerTraits::Uninit()
 {
 	m_aiResourceQuantityModifier.clear();
 	m_abNoTrain.clear();
-	//EAP: No build
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	m_abNoBuild.clear();
+#endif
 
 	m_paiMovesChangeUnitCombat.clear();
 	m_paiMaintenanceModifierUnitCombat.clear();
@@ -2274,6 +2277,9 @@ void CvPlayerTraits::Reset()
 
 	m_abNoTrain.clear();
 	m_abNoTrain.resize(GC.getNumUnitClassInfos());
+
+
+
 #ifdef AUI_WARNING_FIXES
 	for (uint iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); iUnitClass++)
 #else
@@ -2283,13 +2289,15 @@ void CvPlayerTraits::Reset()
 		m_abNoTrain[iUnitClass] = false;
 	}
 
-	// EAP: No build
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	m_abNoBuild.clear();
 	m_abNoBuild.resize(GC.getNumImprovementInfos());
-	for (int iImprovement = 0; iImprovement < GC.getNumUnitClassInfos(); iImprovement++)
+
+	for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 	{
 		m_abNoBuild[iImprovement] = false;
 	}
+#endif
 
 	m_aFreeTraitUnits.clear();
 
@@ -2805,20 +2813,21 @@ bool CvPlayerTraits::NoTrain(UnitClassTypes eUnitClassType)
 	}
 }
 
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 
-// EAP: No build
-
-bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovementType)
+bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovement)
 {
-	if (eImprovementType != NO_IMPROVEMENT)
+	if (eImprovement != NO_IMPROVEMENT)
 	{
-		return m_abNoBuild[eImprovementType];
+		return m_abNoBuild[eImprovement];
 	}
 	else
 	{
 		return false;
 	}
 }
+
+#endif
 
 // MAYA TRAIT SPECIAL METHODS
 
@@ -3539,8 +3548,8 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 		kStream >> bValue;
 		m_abNoTrain.push_back(bValue);
 	}
-	
-	//EAP: No build
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	kStream >> iNumEntries;
 	m_abNoBuild.clear();
 	for (int i = 0; i < iNumEntries; i++)
@@ -3549,6 +3558,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 		kStream >> bValue;
 		m_abNoBuild.push_back(bValue);
 	}
+#endif
 
 	kStream >> iNumEntries;
 	m_aFreeTraitUnits.clear();
@@ -3768,13 +3778,14 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	{
 		kStream << m_abNoTrain[ui];
 	}
-	
-	// EAP: No build
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	kStream << m_abNoBuild.size();
 	for (uint ui = 0; ui < m_abNoBuild.size(); ui++)
 	{
 		kStream << m_abNoBuild[ui];
 	}
+#endif
 
 	kStream << m_aFreeTraitUnits.size();
 	for(uint ui = 0; ui < m_aFreeTraitUnits.size(); ui++)

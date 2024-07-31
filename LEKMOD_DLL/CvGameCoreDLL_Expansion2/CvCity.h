@@ -94,6 +94,12 @@ public:
 	bool IsRouteToCapitalConnected(void);
 #endif
 
+
+#ifdef PRODUCTION_TO_YIELD_FIX
+	bool IsFinishedOrderThisTurn() const;
+	void SetFinishedOrderThisTurn(bool bFinished);
+#endif
+
 	void createGreatGeneral(UnitTypes eGreatPersonUnit);
 	void createGreatAdmiral(UnitTypes eGreatPersonUnit);
 
@@ -935,7 +941,6 @@ public:
 	void			setCombatUnit(CvUnit* pUnit, bool bAttacking = false);
 	void			clearCombat();
 	bool			isFighting() const;
-
 	///
 	bool HasBuilding(BuildingTypes iBuildingType) const;
 	bool HasBuildingClass(BuildingClassTypes iBuildingClassType) const;
@@ -1089,6 +1094,10 @@ protected:
 
 	bool m_bRouteToCapitalConnectedLastTurn;
 	bool m_bRouteToCapitalConnectedThisTurn;
+
+#ifdef PRODUCTION_TO_YIELD_FIX
+	bool m_bFinishedOrderThisTurn;
+#endif
 	CvString m_strName;
 
 	bool m_bOwedCultureBuilding;

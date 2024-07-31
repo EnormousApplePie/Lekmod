@@ -127,6 +127,9 @@ public:
 	FAutoVariable & operator=(const std::vector<ElementType> & rhs);
 
 	void setAt(size_t index, const ElementType & source);
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	void setAt2D(size_t index, size_t subindex, const ElementType & source);
+#endif
 	void push_back(const ElementType & source);
 	void erase(size_t index);
 	void insert(size_t index, const ElementType & source);
@@ -352,6 +355,22 @@ void FAutoVariable<std::vector<ElementType>, ClassContainer>::setAt(size_t index
 		m_commands.push_back(AutoVectorCommand<ElementType>(AutoVectorCommand<ElementType>::SET, index, v));
 	}
 }
+
+//---------------------------------------------------------------------------------------
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+//make a setat that can take 3 arguments, the index and the subindex
+//this will allow us to set the value of a vector of vectors
+template<typename ElementType, typename ClassContainer>
+void FAutoVariable<std::vector<ElementType>, ClassContainer>::setAt2D(size_t index, size_t subindex, const ElementType& v)
+{
+	if (!(v == m_value[index][subindex]))
+	{
+		m_owner.touch(*this);
+		m_value[index][subindex] = v;
+		m_commands.push_back(AutoVectorCommand<ElementType>(AutoVectorCommand<ElementType>::SET, index, v));
+	}
+}
+#endif
 
 //---------------------------------------------------------------------------------------
 

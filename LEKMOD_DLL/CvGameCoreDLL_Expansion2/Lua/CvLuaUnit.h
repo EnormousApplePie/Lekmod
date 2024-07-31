@@ -498,6 +498,12 @@ protected:
 #ifdef NQ_UNIT_IMMUNE_TO_PLUNDER_FROM_TRAIT
 	static int lIsPlunderBlockedByOpposingTrait(lua_State* L);
 #endif
+#ifdef LEKMOD_NEW_LUA_METHODS
+	static int lIsNearUnitWithPromotion(lua_State* L);
+	static int lIsNearTerrainType(lua_State* L);
+	static int lIsNearFeatureType(lua_State* L);
+	static int lIsNearImprovementType(lua_State* L);
+#endif
 };
 
 

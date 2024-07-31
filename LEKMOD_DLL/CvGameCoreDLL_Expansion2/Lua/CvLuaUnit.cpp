@@ -489,6 +489,12 @@ void CvLuaUnit::PushMethods(lua_State* L, int t)
 #ifdef NQ_UNIT_IMMUNE_TO_PLUNDER_FROM_TRAIT
 	Method(IsPlunderBlockedByOpposingTrait);
 #endif
+#ifdef LEKMOD_NEW_LUA_METHODS
+	Method(IsNearUnitWithPromotion);
+	Method(IsNearTerrainType);
+	Method(IsNearFeatureType);
+	Method(IsNearImprovementType);
+#endif
 }
 //------------------------------------------------------------------------------
 const char* CvLuaUnit::GetTypeName()
@@ -4613,6 +4619,61 @@ int CvLuaUnit::lIsPlunderBlockedByOpposingTrait(lua_State* L)
 	CvUnit* pkUnit = GetInstance(L);
 	const bool bResult = pkUnit->IsPlunderBlockedByOpposingTrait();
 
+	lua_pushboolean(L, bResult);
+	return 1;
+}
+#endif
+
+#ifdef LEKMOD_NEW_LUA_METHODS
+//------------------------------------------------------------------------------
+//bool IsNearUnitWithPromotion(PromotionTypes ePromotion, int iRange, bool bSameDomain, bool SamePlayer);
+int CvLuaUnit::lIsNearUnitWithPromotion(lua_State* L)
+{
+	CvUnit* pkUnit = GetInstance(L);
+	const PromotionTypes ePromotion = (PromotionTypes)lua_tointeger(L, 2);
+	const int iRange = lua_tointeger(L, 3);
+	const bool bSameDomain = lua_toboolean(L, 4);
+	const bool bSamePlayer = lua_toboolean(L, 5);
+
+	const bool bResult = pkUnit->IsNearUnitWithPromotion(ePromotion, iRange, bSameDomain, bSamePlayer);
+	lua_pushboolean(L, bResult);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//bool IsNearTerrainType(TerrainTypes eTerrainType, int iRange, bool bSamePlayer);
+int CvLuaUnit::lIsNearTerrainType(lua_State* L)
+{
+	CvUnit* pkUnit = GetInstance(L);
+	const TerrainTypes eTerrainType = (TerrainTypes)lua_tointeger(L, 2);
+	const int iRange = lua_tointeger(L, 3);
+	const bool bSamePlayer = lua_toboolean(L, 4);
+
+	const bool bResult = pkUnit->IsNearTerrainType(eTerrainType, iRange, bSamePlayer);
+	lua_pushboolean(L, bResult);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//bool IsNearFeatureType(FeatureTypes eFeature, int iRange, bool bSamePlayer);
+int CvLuaUnit::lIsNearFeatureType(lua_State* L)
+{
+	CvUnit* pkUnit = GetInstance(L);
+	const FeatureTypes eFeature = (FeatureTypes)lua_tointeger(L, 2);
+	const int iRange = lua_tointeger(L, 3);
+	const bool bSamePlayer = lua_toboolean(L, 4);
+
+	const bool bResult = pkUnit->IsNearFeatureType(eFeature, iRange, bSamePlayer);
+	lua_pushboolean(L, bResult);
+	return 1;
+}
+//bool IsNearImprovementType(ImprovementTypes eImprovement, int iRange, bool bSamePlayer);
+int CvLuaUnit::lIsNearImprovementType(lua_State* L)
+{
+	CvUnit* pkUnit = GetInstance(L);
+	const ImprovementTypes eImprovement = (ImprovementTypes)lua_tointeger(L, 2);
+	const int iRange = lua_tointeger(L, 3);
+	const bool bSamePlayer = lua_toboolean(L, 4);
+
+	const bool bResult = pkUnit->IsNearImprovementType(eImprovement, iRange, bSamePlayer);
 	lua_pushboolean(L, bResult);
 	return 1;
 }

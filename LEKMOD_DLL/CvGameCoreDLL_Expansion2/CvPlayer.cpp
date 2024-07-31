@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -416,6 +416,9 @@ CvPlayer::CvPlayer() :
 	, m_paiImprovementCount("CvPlayer::m_paiImprovementCount", m_syncArchive)
 	, m_paiFreeBuildingCount("CvPlayer::m_paiFreeBuildingCount", m_syncArchive)
 	, m_paiFreePromotionCount("CvPlayer::m_paiFreePromotionCount", m_syncArchive)
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	, m_paiUnitCombatFreePromotionCount("CvPlayer::m_paiFreeUnitCombatPromotionCount", m_syncArchive)
+#endif
 	, m_paiUnitCombatProductionModifiers("CvPlayer::m_paiUnitCombatProductionModifiers", m_syncArchive)
 	, m_paiUnitCombatFreeExperiences("CvPlayer::m_paiUnitCombatFreeExperiences", m_syncArchive)
 	, m_paiUnitClassCount("CvPlayer::m_paiUnitClassCount", m_syncArchive, true)
@@ -726,6 +729,9 @@ void CvPlayer::uninit()
 	m_paiFreeBuildingCount.clear();
 	m_paiFreePromotionCount.clear();
 	m_paiUnitCombatProductionModifiers.clear();
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	m_paiUnitCombatFreePromotionCount.clear();
+#endif
 	m_paiUnitCombatFreeExperiences.clear();
 	m_paiUnitClassCount.clear();
 	m_paiUnitClassMaking.clear();
@@ -1228,6 +1234,21 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 		m_paiFreePromotionCount.clear();
 		m_paiFreePromotionCount.resize(GC.getNumPromotionInfos(), 0);
+
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+		m_paiUnitCombatFreePromotionCount.clear();
+		m_paiUnitCombatFreePromotionCount.resize(GC.getNumPromotionInfos(), GC.getNumUnitCombatClassInfos());
+		for(int i = 0; i < GC.getNumPromotionInfos(); i++)
+		{
+			for (int j = 0; j < GC.getNumUnitCombatClassInfos(); j++)
+			{
+				//setat doesnt 3 arguments, how do we set this?
+				m_paiUnitCombatFreePromotionCount.setAt2D(i, j, 0);
+				//yeah but setAt doesnt take 3 arguments
+
+			}
+		}
+#endif
 
 		m_paiUnitClassCount.clear();
 		m_paiUnitClassCount.resize(GC.getNumUnitClassInfos(), 0);
@@ -4681,6 +4702,56 @@ void CvPlayer::doTurnPostDiplomacy()
 
 	// Great People gifts from Allied City States (if we have that policy)
 	DoGreatPeopleSpawnTurn();
+
+#ifdef AUTOMATICALLY_SPEND_FREE_TECHNOLOGIES
+	if (GC.getGame().isOption("GAMEOPTION_NO_TECH_SAVING"))
+	{
+		FStaticVector<TechTypes, 128, true, c_eCiv5GameplayDLL> vePossibleTechs;
+		int iCheapestTechCost = MAX_INT;
+		while (GetNumFreeTechs() > 0)
+		{
+			for (int i = 0; i < GC.getNumTechInfos(); i++)
+			{
+				TechTypes e = (TechTypes)i;
+				CvTechEntry* pInfo = GC.getTechInfo(e);
+				if (pInfo)
+				{
+					// We don't
+					if (!GET_TEAM(getTeam()).GetTeamTechs()->HasTech(e))
+					{
+						// But we could
+						if (GetPlayerTechs()->CanResearch(e))
+						{
+							if (pInfo->GetResearchCost() < iCheapestTechCost)
+							{
+								iCheapestTechCost = pInfo->GetResearchCost();
+								vePossibleTechs.clear();
+								vePossibleTechs.push_back(e);
+							}
+							else if (pInfo->GetResearchCost() == iCheapestTechCost)
+							{
+								vePossibleTechs.push_back(e);
+							}
+						}
+					}
+				}
+			}
+
+			if (!vePossibleTechs.empty())
+			{
+				int iRoll = GC.getGame().getJonRandNum((int)vePossibleTechs.size(), "Rolling to choose free tech from conquering a city");
+				TechTypes eFreeTech = vePossibleTechs[iRoll];
+				CvAssert(eFreeTech != NO_TECH)
+					if (eFreeTech != NO_TECH)
+					{
+						GET_TEAM(getTeam()).setHasTech(eFreeTech, true, GetID(), true, true);
+						GET_TEAM(getTeam()).GetTeamTechs()->SetNoTradeTech(eFreeTech, true);
+					}
+			}
+			SetNumFreeTechs(max(0, GetNumFreeTechs() - 1));
+		}
+	}
+#endif
 
 	// Do turn for all Cities
 	{
@@ -9477,7 +9548,11 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 				CvBuildingEntry* pkBuilding = GC.getBuildingInfo(eBuilding);
 				if(pkBuilding)
 				{
+#ifdef LEKMOD_FREE_BUILDING_FIX
+					iBuildingCount = pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding);
+#else
 					iBuildingCount = pLoopCity->GetCityBuildings()->GetNumRealBuilding(eBuilding);
+#endif
 
 					if(iBuildingCount > 0)
 					{
@@ -9596,51 +9671,6 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 		}
 	}
 
-	// EAP: NO build : Is this an improvement that cannot be built by a specific civ?
-	
-	if(eImprovement != NO_IMPROVEMENT)
-	{	
-
-		//allow CivSpecific builds regardless of the NoBuild table, so civs can still have unique builds that lead to "removed" improvements
-		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
-		if(pkBuildInfo->IsSpecificCivRequired())
-		{
-			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
-			if(eCiv != getCivilizationType())
-			{
-				return false;
-			}
-			else
-			{
-				return true;
-			}
-		}
-		else
-		{
-			CvImprovementEntry* pkEntry = GC.getImprovementInfo(eImprovement);
-			if (GetPlayerTraits()->NoBuild(eImprovement))
-			{
-					return false;
-			}
-		}
-	}
-
-	// Is this a !!build!! that is only useable by a specific civ? ~EAP
-	/*
-	if(eImprovement != NO_IMPROVEMENT)
-	{
-		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
-		if(pkBuildInfo->IsSpecificCivRequired())
-		{
-			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
-			if(eCiv != getCivilizationType())
-			{
-				return false;
-			}
-		}
-	}
-	*/
-
 	if(!bTestVisible)
 	{
 		if(IsBuildBlockedByFeature(eBuild, pPlot->getFeatureType()))
@@ -9656,6 +9686,36 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 			}
 		}
 	}
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	// Is this an improvement that cannot be built by a specific civ?
+
+	if (eImprovement != NO_IMPROVEMENT)
+	{
+
+		//allow CivSpecific builds regardless of the NoBuild table, so civs can still have unique builds that lead to "removed" improvements
+		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
+		if (pkBuildInfo->IsSpecificCivRequired())
+		{
+			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
+			if (eCiv != getCivilizationType())
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+
+		//check if the player has the trait that blocks the improvement
+		if (GetPlayerTraits()->NoBuild(eImprovement))
+		{
+			return false;
+		}
+
+	}
+#endif
 
 	return true;
 }
@@ -9989,10 +10049,26 @@ int CvPlayer::calculateResearchModifier(TechTypes eTech)
 		{
 			if(GET_TEAM(getTeam()).isHasMet((TeamTypes)iI))
 			{
-				if(kLoopTeam.GetTeamTechs()->HasTech(eTech))
+#ifdef HAS_TECH_BY_HUMAN
+				if (GC.getGame().isOption("GAMEOPTION_NO_AI_TECH_DISCOUNT"))
 				{
-					iKnownCount++;
+					if (kLoopTeam.GetTeamTechs()->HasTechByHuman(eTech))
+#else
+					if (kLoopTeam.GetTeamTechs()->HasTech(eTech))
+#endif
+					{
+						iKnownCount++;
+					}
+#ifdef HAS_TECH_BY_HUMAN
 				}
+				else
+				{
+					if (kLoopTeam.GetTeamTechs()->HasTech(eTech))
+					{
+						iKnownCount++;
+					}
+				}
+#endif
 			}
 			iPossibleKnownCount++;
 		}
@@ -12197,6 +12273,22 @@ void CvPlayer::DoUpdateHappiness()
 	}
 
 	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	// MOD.EAP: Add a new lua event.
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+
+		args->Push(GetID());
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "PlayerHappinessChanged", args.get(), bResult);
+	}
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -14608,6 +14700,17 @@ void CvPlayer::changeGoldenAgeTurns(int iChange)
 
 				pNotifications->Add(eNotification, locString.toUTF8(), locSummaryString.toUTF8(), -1, -1, -1);
 			}
+#ifdef LEKMOD_NEW_LUA_EVENTS
+			ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+			if (pkScriptSystem)
+			{
+				CvLuaArgsHandle args;
+				args->Push(GetID());
+
+				bool bResult;
+				LuaSupport::CallHook(pkScriptSystem, "PlayerSetGoldenAge", args.get(), bResult);
+			}
+#endif
 		}
 
 		if(GetID() == GC.getGame().getActivePlayer())
@@ -15108,6 +15211,144 @@ void CvPlayer::DoGreatPersonExpended(UnitTypes eGreatPersonUnit)
 			}
 		}
 	}
+
+#ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
+
+	// Any yield specified in the table.
+	for(int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
+	{
+	
+		BuildingTypes eBuilding = (BuildingTypes)iBuilding;
+		if(eBuilding != NO_BUILDING)
+		{
+			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+			if(pkBuildingInfo)
+			{
+
+				// loop trough the player's cities and apply the yield for each city that has the building
+
+				int iNumCities = getNumCities();
+				for(int iCityLoop = 0; iCityLoop < iNumCities; iCityLoop++)
+				{
+					CvCity* pCity = getCity(iCityLoop);
+					if(!pCity)
+					{
+						continue;
+					}
+					if(pCity->GetCityBuildings()->GetNumBuilding(eBuilding) <= 0)
+					{
+						continue;
+					}
+
+					//loop trough every yield
+					for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+					{
+						YieldTypes eYield = (YieldTypes)iYield;
+
+						int iYieldAmount = pkBuildingInfo->GetGreatPersonExpendYield(eYield);
+
+						//OutputDebugStringA(CvString::format("Great Person expended: %s, Building: %s, Yield: %s, Amount: %d\n", GC.getUnitInfo(eGreatPersonUnit)->GetDescription(), pkBuildingInfo->GetDescription(), GC.getYieldInfo(eYield)->GetDescription(), iYieldAmount).c_str());
+
+						if (iYieldAmount <= 0)
+						{
+							continue;
+						}
+
+						//adjust iYieldAmount for the gamespeed
+						iYieldAmount *= GC.getGame().getGameSpeedInfo().getTrainPercent();
+						iYieldAmount /= 100;
+
+						switch (eYield)
+						{
+						case YIELD_FOOD:
+						{
+							
+
+							pCity->changeFood(iYieldAmount);
+							//if the food added is enough to grow, grow the city. Do until the city is no longer able to grow in case of large food yields
+							while (pCity->getFood() >= pCity->growthThreshold())
+							{
+								pCity->changeFood(-(std::max(0, (pCity->growthThreshold() - pCity->getFoodKept()))));
+								pCity->changePopulation(1);
+
+#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
+								// Only show notification if the city is small
+								if (pCity->getPopulation() <= 5)
+								{
+#endif
+									CvNotifications* pNotifications = GET_PLAYER(pCity->getOwner()).GetNotifications();
+									if (pNotifications)
+									{
+										Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_CITY_GROWTH");
+										localizedText << pCity->getNameKey() << pCity->getPopulation();
+										Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_CITY_GROWTH");
+										localizedSummary << pCity->getNameKey();
+										pNotifications->Add(NOTIFICATION_CITY_GROWTH, localizedText.toUTF8(), localizedSummary.toUTF8(), pCity->getX(), pCity->getY(), pCity->GetID());
+									}
+#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
+								}
+#endif
+							}
+							
+
+						}
+						break;
+						case YIELD_PRODUCTION:
+						{
+							//check if we are currently having anything in the queue
+							if (pCity->isProductionProcess())
+							{
+								pCity->changeProduction(iYieldAmount);
+							}
+							//if not, add it to the overflow
+							else
+							{
+								pCity->setOverflowProduction(pCity->getOverflowProduction() + iYieldAmount);
+							}	
+						}
+						break;
+						case YIELD_GOLD:
+						{
+							//add the yield to the treasury
+							GetTreasury()->ChangeGold(iYieldAmount);
+						}
+						break;
+						case YIELD_SCIENCE:
+						{
+							//add the yield to the research, if there is nothing being researched, add it to the overflow
+							TechTypes eCurrentTech = GetPlayerTechs()->GetCurrentResearch();
+							if (eCurrentTech == NO_TECH)
+							{
+								changeOverflowResearch(iYieldAmount);
+							}
+							else
+							{
+								GET_TEAM(getTeam()).GetTeamTechs()->ChangeResearchProgress(eCurrentTech, iYieldAmount, GetID());
+							}
+
+						}
+						break;
+						case YIELD_CULTURE:
+						{
+							changeJONSCulture(iYieldAmount);
+						}
+						break;
+						case YIELD_FAITH:
+						{
+							ChangeFaith(iYieldAmount);
+						}
+						break;
+						}
+
+					}
+					
+				}
+				
+			}
+		}
+	}
+
+#endif
 
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if (pkScriptSystem)
@@ -18404,7 +18645,9 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 					DLLUI->setCycleSelectionCounter(1);
 				}
 
+#ifndef REMOVE_EXCESS_CAMERA_CENTERING
 				DLLUI->setDirty(SelectionCamera_DIRTY_BIT, true);
+#endif
 
 				// slewis - added this so the tutorial knows when a turn begins
 				DLLUI->PublishActivePlayerTurnStart();
@@ -20873,7 +21116,66 @@ void CvPlayer::ChangeFreePromotionCount(PromotionTypes ePromotion, int iChange)
 		}
 	}
 }
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
 
+//	--------------------------------------------------------------------------------
+/// Is ePromotion a free promotion for a specific unitcombat?
+int CvPlayer::GetFreePromotionUnitCombatCount(PromotionTypes ePromotion, int iIndex) const
+{
+	CvAssertMsg(ePromotion >= 0, "ePromotion is expected to be non-negative (invalid Index)");
+	CvAssertMsg(ePromotion < GC.getNumPromotionInfos(), "ePromotion is expected to be within maximum bounds (invalid Index)");
+	return m_paiUnitCombatFreePromotionCount[ePromotion][iIndex];
+}
+
+//	--------------------------------------------------------------------------------
+/// Is ePromotion a free promotion?
+bool CvPlayer::IsFreePromotionUnitCombat(PromotionTypes ePromotion, int iIndex) const
+{
+	return (GetFreePromotionUnitCombatCount(ePromotion, iIndex) > 0);
+}
+
+void CvPlayer::ChangeFreePromotionUnitCombatCount(PromotionTypes ePromotion, int iChange, int iIndex)
+{
+	CvAssertMsg(ePromotion >= 0, "ePromotion is expected to be non-negative (invalid Index)");
+	CvAssertMsg(ePromotion < GC.getNumPromotionInfos(), "ePromotion is expected to be within maximum bounds (invalid Index)");
+	OutputDebugStringA(CvString::format("UnitCombat: %i\n", iIndex).c_str());
+	if(iChange != 0)
+	{
+		bool bWasFree = IsFreePromotionUnitCombat(ePromotion, iIndex);
+
+		
+		//put both epromotion and unit combat class in the array
+		m_paiUnitCombatFreePromotionCount.setAt2D(ePromotion, iIndex, m_paiUnitCombatFreePromotionCount[ePromotion][iIndex] + iChange);
+
+		CvAssert(GetFreePromotionUnitCombatCount(ePromotion, iIndex) >= 0);
+
+
+		// This promotion is now set to be free, but wasn't before we called this function
+		if(IsFreePromotionUnitCombat(ePromotion, iIndex) && !bWasFree)
+		{
+			// Loop through Units
+			CvUnit* pLoopUnit;
+
+			int iLoop;
+			for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+			{
+				OutputDebugStringA(CvString::format("LoopUnit: %i\n", pLoopUnit->getUnitCombatType()).c_str());
+				//Q: at the beginning of the function the eUnitCombat is a number, but now it is 3, why?
+				//A: 
+				if (pLoopUnit->getUnitCombatType() == iIndex)
+				{
+
+					OutputDebugStringA(CvString::format("UnitCombat: %i\n", pLoopUnit->getUnitCombatType()).c_str());
+					//right combat unit
+					pLoopUnit->setHasPromotion(ePromotion, true);
+			
+				}
+				
+			}
+		}
+	}
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 int CvPlayer::getUnitCombatProductionModifiers(UnitCombatTypes eIndex) const
@@ -24015,8 +24317,26 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	{
 		ePromotion = (PromotionTypes) iI;
 
-		if(pPolicy->IsFreePromotion(ePromotion))
+		if (pPolicy->IsFreePromotion(ePromotion))
+		{
 			ChangeFreePromotionCount(ePromotion, iChange);
+		}
+
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+		// Free promotions for unit combats
+		for (iJ = 0; iJ < GC.getNumUnitCombatClassInfos(); iJ++)
+		{
+			UnitCombatTypes eUnitCombat = (UnitCombatTypes)iJ;
+			
+			if (pPolicy->IsFreePromotionUnitCombat(ePromotion, eUnitCombat))
+			{
+				OutputDebugStringA(CvString::format("Free promotion for %s in unit combat %s\n", GC.getPromotionInfo(ePromotion)->GetDescription(), GC.getUnitCombatClassInfo(eUnitCombat)->GetType()).c_str());
+				int unitCombatIndex = GC.getUnitCombatClassInfo(eUnitCombat)->GetID();
+				ChangeFreePromotionUnitCombatCount(ePromotion, iChange, unitCombatIndex);
+			}
+		}
+#endif
+
 	}
 
 	CvCity* pLoopCity;
@@ -24524,7 +24844,18 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 									else if (pNewUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
 									{
 										// GJS: Great Scientists now bulb for science at point of birth, not current science 
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+										if (GC.getGame().isOption("GAMEOPTION_NO_SCIENTIST_SAVING"))
+										{
+											pNewUnit->SetScientistBirthTurn(GC.getGame().getGameTurn());
+										}
+										else
+										{
+											pNewUnit->SetResearchBulbAmount(GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), pNewUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
+										}
+#else
 										pNewUnit->SetResearchBulbAmount(GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), pNewUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
+#endif
 										// GJS NQMP - Free Great Scientists from policies are actually free
 										//incrementGreatScientistsCreated();
 										pNewUnit->jumpToNearestValidPlot();
@@ -25309,6 +25640,10 @@ void CvPlayer::Read(FDataStream& kStream)
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiFreeBuildingCount.dirtyGet());
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiFreePromotionCount.dirtyGet());
 
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiUnitCombatFreePromotionCount.dirtyGet());
+#endif
+
 	kStream >> m_paiUnitCombatProductionModifiers;
 	kStream >> m_paiUnitCombatFreeExperiences;
 	kStream >> m_paiUnitClassCount;
@@ -25820,6 +26155,13 @@ void CvPlayer::Write(FDataStream& kStream) const
 	CvInfosSerializationHelper::WriteHashedDataArray<BuildingTypes, int>(kStream, m_paiFreeBuildingCount);
 
 	CvInfosSerializationHelper::WriteHashedDataArray<PromotionTypes, int>(kStream, m_paiFreePromotionCount);
+
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	
+	//we need a 2d array for this
+	CvInfosSerializationHelper::WriteHashedDataArray<UnitCombatTypes, int>(kStream, m_paiUnitCombatFreePromotionCount);
+
+#endif
 
 	kStream << m_paiUnitCombatProductionModifiers;
 	kStream << m_paiUnitCombatFreeExperiences;
