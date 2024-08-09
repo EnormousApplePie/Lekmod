@@ -6961,7 +6961,8 @@ int CvLuaPlayer::lGetTeam(lua_State* L)
 #ifdef AUI_WARNING_FIXES
 	return BasicLuaMethod<TeamTypes>(L, (&CvPlayerAI::getTeam));
 #else
-	return BasicLuaMethod(L, &CvPlayerAI::getTeam);
+	// MOD.EAP: Edit
+	return BasicLuaMethod<TeamTypes>(L, (&CvPlayerAI::getTeam));
 #endif
 }
 //------------------------------------------------------------------------------
