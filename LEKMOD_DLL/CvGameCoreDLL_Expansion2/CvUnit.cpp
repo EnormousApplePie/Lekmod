@@ -9432,7 +9432,7 @@ bool CvUnit::DoCultureBomb()
 //	--------------------------------------------------------------------------------
 void CvUnit::PerformCultureBomb(int iRadius, int iNeutralRadius, int iMaxRadiusFromCities)
 {
-	// TODO Frenk
+	// TODO Frenk test
 
 	CvPlot* pThisPlot = plot();
 
