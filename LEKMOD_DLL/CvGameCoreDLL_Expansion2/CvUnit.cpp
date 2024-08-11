@@ -9469,8 +9469,8 @@ bool CvUnit::DoCultureBomb()
 		CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
 		kPlayer.changeCultureBombTimer(iCooldown);
 
-		PerformCultureBomb(pkUnitEntry->GetCultureBombRadius(), pkUnitEntry->GetCultureBombMaxRadiusFromCities(), false);
-		PerformCultureBomb(pkUnitEntry->GetCultureBombRadiusNeutral(), pkUnitEntry->GetCultureBombMaxRadiusFromCities(), true);
+		PerformCultureBomb(pkUnitEntry->GetCultureBombRadius(), pkUnitEntry->GetCultureBombMaxRadiusFromOwnedCities(), false);
+		PerformCultureBomb(pkUnitEntry->GetCultureBombRadiusNeutral(), pkUnitEntry->GetCultureBombMaxRadiusFromOwnedCities(), true);
 
 		if(pThisPlot->isActiveVisible(false))
 		{
@@ -9497,7 +9497,7 @@ bool CvUnit::DoCultureBomb()
 }
 
 //	--------------------------------------------------------------------------------
-void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeutralTilesOnly)
+void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromOwnedCities, bool iNeutralTilesOnly)
 {
 	// TODO Frenk: Toch liever 1 functie
 
@@ -9593,36 +9593,36 @@ void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeu
 				continue;
 			
 			bool foundOwnedCityCloseEnough = true;
-			if(0 < iMaxRadiusFromCities)
+			if(0 < iMaxRadiusFromOwnedCities)
 			{
 				// MaxRadiusFromCities is provided (more than 0), so check if the player owns a city nearby enough
 				foundOwnedCityCloseEnough = false;
 				int iMaxDXx, iDXx, iDYy;
 #ifdef AUI_HEXSPACE_DX_LOOPS
-				for (iDYy = -iMaxRadiusFromCities; iDYy <= iMaxRadiusFromCities; iDYy++)
+				for (iDYy = -iMaxRadiusFromOwnedCities; iDYy <= iMaxRadiusFromOwnedCities; iDYy++)
 				{
 					if(foundOwnedCityCloseEnough)
 						break;
 
-					iMaxDXx = iMaxRadiusFromCities - MAX(0, iDYy);
-					for (iDXx = -iMaxRadiusFromCities - MIN(0, iDYy); iDXx <= iMaxDXx; iDXx++) // MIN() and MAX() stuff is to reduce loops (hexspace!)
+					iMaxDXx = iMaxRadiusFromOwnedCities - MAX(0, iDYy);
+					for (iDXx = -iMaxRadiusFromOwnedCities - MIN(0, iDYy); iDXx <= iMaxDXx; iDXx++) // MIN() and MAX() stuff is to reduce loops (hexspace!)
 					{
 						pLoopPlotDistance = plotXY(pPlot->getX(), pPlot->getY(), iDXx, iDYy);
 #else
-				for(iDXx = -(iMaxRadiusFromCities); iDXx <= iMaxRadiusFromCities; iDXx++)
+				for(iDXx = -(iMaxRadiusFromOwnedCities); iDXx <= iMaxRadiusFromOwnedCities; iDXx++)
 				{
 					if(foundOwnedCityCloseEnough)
 						break;
 
-					for(iDYy = -(iMaxRadiusFromCities); iDYy <= iMaxRadiusFromCities; iDYy++)
+					for(iDYy = -(iMaxRadiusFromOwnedCities); iDYy <= iMaxRadiusFromOwnedCities; iDYy++)
 					{
-						pLoopPlotDistance = plotXYWithRangeCheck(pPlot->getX(), pPlot->getY(), iDXx, iDYy, iMaxRadiusFromCities);
+						pLoopPlotDistance = plotXYWithRangeCheck(pPlot->getX(), pPlot->getY(), iDXx, iDYy, iMaxRadiusFromOwnedCities);
 #endif
 						if(pLoopPlotDistance != NULL)
 						{
 							if(pLoopPlotDistance->getOwner() == getOwner() && pLoopPlotDistance->isCity())
 							{
-								if(pLoopPlotDistance->getLandmass() == pPlot->getLandmass() || hexDistance(iDXx, iDYy) < iMaxRadiusFromCities) // one less for off shore
+								if(pLoopPlotDistance->getLandmass() == pPlot->getLandmass() || hexDistance(iDXx, iDYy) < iMaxRadiusFromOwnedCities) // one less for off shore
 								{
 									foundOwnedCityCloseEnough = true;
 									break;
@@ -10251,8 +10251,8 @@ bool CvUnit::build(BuildTypes eBuild)
 				CvImprovementEntry* pkImprovementInfo = GC.getImprovementInfo(eImprovement);
 				if(pkImprovementInfo)
 				{
-					PerformCultureBomb(pkImprovementInfo->GetCultureBombRadius(), pkImprovementInfo->GetCultureBombMaxRadiusFromCities(), false);
-					PerformCultureBomb(pkImprovementInfo->GetCultureBombRadiusNeutral(), pkImprovementInfo->GetCultureBombMaxRadiusFromCities(), true);
+					PerformCultureBomb(pkImprovementInfo->GetCultureBombRadius(), pkImprovementInfo->GetCultureBombMaxRadiusFromOwnedCities(), false);
+					PerformCultureBomb(pkImprovementInfo->GetCultureBombRadiusNeutral(), pkImprovementInfo->GetCultureBombMaxRadiusFromOwnedCities(), true);
 				}
 			}
 			else if(pkBuildInfo->getRoute() != NO_ROUTE)

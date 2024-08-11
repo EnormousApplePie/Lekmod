@@ -374,7 +374,7 @@ public:
 
 	bool DoCultureBomb();
 	bool CanCultureBomb(const CvPlot* pPlot, bool bTestVisible = false) const;
-	void PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeutralTilesOnly);
+	void PerformCultureBomb(int iRadius, int iMaxRadiusFromOwnedCities, bool iNeutralTilesOnly);
 
 	bool canGoldenAge(const CvPlot* pPlot, bool bTestVisible = false) const;
 	bool goldenAge();

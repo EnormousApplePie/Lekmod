@@ -109,7 +109,7 @@ public:
 	bool IsFoundAbroad() const;
 	int GetCultureBombRadius() const;
 	int GetCultureBombRadiusNeutral() const;
-	int GetCultureBombMaxRadiusFromCities() const;
+	int GetCultureBombMaxRadiusFromOwnedCities() const;
 	int GetGoldenAgeTurns() const;
 	int GetFreePolicies() const;
 	int GetOneShotTourism() const;
@@ -245,7 +245,7 @@ private:
 	bool m_bFoundAbroad;
 	int m_iCultureBombRadius;
 	int m_iCultureBombRadiusNeutral;
-	int m_iCultureBombMaxRadiusFromCities;
+	int m_iCultureBombMaxRadiusFromOwnedCities;
 	int m_iGoldenAgeTurns;
 	int m_iFreePolicies;
 	int m_iOneShotTourism;

@@ -88,7 +88,7 @@ CvUnitEntry::CvUnitEntry(void) :
 	m_bFoundAbroad(false),
 	m_iCultureBombRadius(0),
 	m_iCultureBombRadiusNeutral(0),
-	m_iCultureBombMaxRadiusFromCities(0),
+	m_iCultureBombMaxRadiusFromOwnedCities(0),
 	m_iGoldenAgeTurns(0),
 	m_iFreePolicies(0),
 	m_iOneShotTourism(0),
@@ -226,7 +226,7 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_bFoundAbroad = kResults.GetBool("FoundAbroad");
 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
 	m_iCultureBombRadiusNeutral = kResults.GetInt("CultureBombRadiusNeutral");
-	m_iCultureBombMaxRadiusFromCities = kResults.GetInt("CultureBombMaxRadiusFromCities");
+	m_iCultureBombMaxRadiusFromOwnedCities = kResults.GetInt("CultureBombMaxRadiusFromOwnedCities");
 	m_iGoldenAgeTurns = kResults.GetInt("GoldenAgeTurns");
 	m_iFreePolicies = kResults.GetInt("FreePolicies");
 	m_iOneShotTourism = kResults.GetInt("OneShotTourism");
@@ -898,9 +898,9 @@ int CvUnitEntry::GetCultureBombRadiusNeutral() const
 }
 
 /// Max distance from owned cities this unit steals
-int CvUnitEntry::GetCultureBombMaxRadiusFromCities() const
+int CvUnitEntry::GetCultureBombMaxRadiusFromOwnedCities() const
 {
-	return m_iCultureBombMaxRadiusFromCities;
+	return m_iCultureBombMaxRadiusFromOwnedCities;
 }
 
 /// Number of GA turns this Unit can give us

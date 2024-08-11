@@ -60,7 +60,7 @@ public:
 	int GetGoldMaintenance() const;
 	int GetCultureBombRadius() const;
 	int GetCultureBombRadiusNeutral() const;
-	int GetCultureBombMaxRadiusFromCities() const;
+	int GetCultureBombMaxRadiusFromOwnedCities() const;
 	int GetCultureAdjacentSameType() const;
 
 	int GetTilesPerGoody() const;
@@ -187,7 +187,7 @@ protected:
 	int m_iGoldMaintenance;
 	int m_iCultureBombRadius;
 	int m_iCultureBombRadiusNeutral;
-	int m_iCultureBombMaxRadiusFromCities;
+	int m_iCultureBombMaxRadiusFromOwnedCities;
 	int m_iCultureAdjacentSameType;
 
 	int m_iTilesPerGoody;

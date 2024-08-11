@@ -67,7 +67,7 @@ CvImprovementEntry::CvImprovementEntry(void):
 	m_iGoldMaintenance(0),
 	m_iCultureBombRadius(0),
 	m_iCultureBombRadiusNeutral(0),
-	m_iCultureBombMaxRadiusFromCities(0),
+	m_iCultureBombMaxRadiusFromOwnedCities(0),
 	m_iRequiresXAdjacentLand(-1),
 	m_iCultureAdjacentSameType(0),
 	m_iTilesPerGoody(0),
@@ -247,7 +247,7 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 	m_iGoldMaintenance = kResults.GetInt("GoldMaintenance");
 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
 	m_iCultureBombRadiusNeutral = kResults.GetInt("CultureBombRadiusNeutral");
-	m_iCultureBombMaxRadiusFromCities = kResults.GetInt("CultureBombMaxRadiusFromCities");
+	m_iCultureBombMaxRadiusFromOwnedCities = kResults.GetInt("CultureBombMaxRadiusFromOwnedCities");
 	m_iRequiresXAdjacentLand = kResults.GetInt("RequiresXAdjacentLand");
 	m_iCultureAdjacentSameType = kResults.GetInt("CultureAdjacentSameType");
 	m_bHillsMakesValid = kResults.GetBool("HillsMakesValid");
@@ -701,9 +701,9 @@ int CvImprovementEntry::GetCultureBombRadiusNeutral() const
 }
 
 /// Max distance from owned cities this improvement steals
-int CvImprovementEntry::GetCultureBombMaxRadiusFromCities() const
+int CvImprovementEntry::GetCultureBombMaxRadiusFromOwnedCities() const
 {
-	return m_iCultureBombMaxRadiusFromCities;
+	return m_iCultureBombMaxRadiusFromOwnedCities;
 }
 
 /// How many adjacent tiles must be land?
