@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -9341,7 +9341,7 @@ bool CvUnit::CanCultureBomb(const CvPlot* pPlot, bool bTestVisible) const
 {
 	VALIDATE_OBJECT
 
-	if(m_pUnitInfo->GetCultureBombRadius() <= 0)
+	if(m_pUnitInfo->GetCultureBombRadius() <= 0 && m_pUnitInfo->CultureBombRadiusNeutral() <= 0)
 		return false;
 
 	if(isDelayedDeath())
@@ -9403,7 +9403,7 @@ bool CvUnit::DoCultureBomb()
 		CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
 		kPlayer.changeCultureBombTimer(iCooldown);
 
-		PerformCultureBomb(pkUnitEntry->GetCultureBombRadius());
+		PerformCultureBomb(pkUnitEntry->GetCultureBombRadius(), pkUnitEntry->GetCultureBombRadius(), pkUnitEntry->GetCultureBombMaxRadiusFromCities());
 
 		if(pThisPlot->isActiveVisible(false))
 		{
@@ -9430,8 +9430,10 @@ bool CvUnit::DoCultureBomb()
 }
 
 //	--------------------------------------------------------------------------------
-void CvUnit::PerformCultureBomb(int iRadius)
+void CvUnit::PerformCultureBomb(int iRadius, int iNeutralRadius, int iMaxRadiusFromCities)
 {
+	// TODO Frenk
+
 	CvPlot* pThisPlot = plot();
 
 	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
@@ -9608,6 +9610,8 @@ void CvUnit::PerformCultureBomb(int iRadius)
 //	--------------------------------------------------------------------------------
 void CvUnit::PerformNeutralCultureBomb(int iRadius)
 {
+	// TODO: Frenk
+
 	CvPlot* pThisPlot = plot();
 
 	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
@@ -10310,20 +10314,10 @@ bool CvUnit::build(BuildTypes eBuild)
 				CvImprovementEntry* pkImprovementInfo = GC.getImprovementInfo(eImprovement);
 				if(pkImprovementInfo)
 				{
-					if (pkImprovementInfo->GetCultureBombRadius() > 0) // 
+					if (pkImprovementInfo->GetCultureBombRadius() > 0 || pkImprovementInfo->GetCultureBombRadiusNeutral() > 0)
 					{
-						PerformCultureBomb(pkImprovementInfo->GetCultureBombRadius());
+						PerformCultureBomb(pkImprovementInfo->GetCultureBombRadius(), pkImprovementInfo->GetCultureBombRadius(), pkImprovementInfo->GetCultureBombMaxRadiusFromCities());
 					}
-
-					if (pkImprovementInfo->GetCultureBombRadiusNeutral() > 0) // Decided to write new table entry instead, this is works like the one above, but for neutral tiles only!  ~EAP
-					{
-						PerformNeutralCultureBomb(pkImprovementInfo->GetCultureBombRadiusNeutral());
-					}
-					/*if (pkImprovementInfo->GetCultureBombRadius() = 2) // 2 will actually act as 1, but will not attempt to claim enemy tiles ~EAP
-					{
-						PerformCultureBombTwo(pkImprovementInfo->GetCultureBombRadius());
-					}
-					*/
 				}
 			}
 			else if(pkBuildInfo->getRoute() != NO_ROUTE)

@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -78,6 +78,8 @@ CvUnitEntry::CvUnitEntry(void) :
 	m_bFound(false),
 	m_bFoundAbroad(false),
 	m_iCultureBombRadius(0),
+	m_iCultureBombRadiusNeutral(0),
+	m_iCultureBombMaxRadiusFromCities(0),
 	m_iGoldenAgeTurns(0),
 	m_bIgnoreBuildingDefense(false),
 	m_bPrereqResources(false),
@@ -187,6 +189,8 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_bFound = kResults.GetBool("Found");
 	m_bFoundAbroad = kResults.GetBool("FoundAbroad");
 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
+	m_iCultureBombRadiusNeutral = kResults.GetInt("CultureBombRadiusNeutral");
+	m_iCultureBombMaxRadiusFromCities = kResults.GetInt("CultureBombMaxRadiusFromCities");
 	m_iGoldenAgeTurns = kResults.GetInt("GoldenAgeTurns");
 	m_bIgnoreBuildingDefense = kResults.GetBool("IgnoreBuildingDefense");
 	m_bPrereqResources = kResults.GetBool("PrereqResources");
@@ -772,6 +776,18 @@ bool CvUnitEntry::IsFoundAbroad() const
 int CvUnitEntry::GetCultureBombRadius() const
 {
 	return m_iCultureBombRadius;
+}
+
+/// Distance this unit steals neutral tiles
+int CvUnitEntry::GetCultureBombRadiusNeutral() const
+{
+	return m_iCultureBombRadiusNeutral;
+}
+
+/// Max distance from owned cities this unit steals
+int CvUnitEntry::GetCultureBombMaxRadiusFromCities() const
+{
+	return m_iCultureBombMaxRadiusFromCities;
 }
 
 /// Number of GA turns this Unit can give us

@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -314,9 +314,9 @@ public:
 	bool CanBuildSpaceship(const CvPlot* pPlot, bool bTestVisible) const;
 	bool DoBuildSpaceship();
 
-	bool CanCultureBomb(const CvPlot* pPlot, bool bTestVisible = false) const;
 	bool DoCultureBomb();
-	void PerformCultureBomb(int iRadius);
+	bool CanCultureBomb(const CvPlot* pPlot, bool bTestVisible = false) const;
+	void PerformCultureBomb(int iRadius, int iNeutralRadius, int iMaxRadiusFromCities);
 
 	bool canGoldenAge(const CvPlot* pPlot, bool bTestVisible = false) const;
 	bool goldenAge();

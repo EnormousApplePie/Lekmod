@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -67,6 +67,7 @@ CvImprovementEntry::CvImprovementEntry(void):
 	m_iGoldMaintenance(0),
 	m_iCultureBombRadius(0),
 	m_iCultureBombRadiusNeutral(0),
+	m_iCultureBombMaxRadiusFromCities(0),
 	m_iRequiresXAdjacentLand(-1),
 	m_iCultureAdjacentSameType(0),
 	m_iTilesPerGoody(0),
@@ -210,6 +211,7 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 	m_iGoldMaintenance = kResults.GetInt("GoldMaintenance");
 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
 	m_iCultureBombRadiusNeutral = kResults.GetInt("CultureBombRadiusNeutral");
+	m_iCultureBombMaxRadiusFromCities = kResults.GetInt("CultureBombMaxRadiusFromCities");
 	m_iRequiresXAdjacentLand = kResults.GetInt("RequiresXAdjacentLand");
 	m_iCultureAdjacentSameType = kResults.GetInt("CultureAdjacentSameType");
 	m_bHillsMakesValid = kResults.GetBool("HillsMakesValid");
@@ -537,15 +539,22 @@ int CvImprovementEntry::GetGoldMaintenance() const
 	return m_iGoldMaintenance;
 }
 
-/// Convert nearby tiles?
+/// Distance this improvement steals
 int CvImprovementEntry::GetCultureBombRadius() const
 {
 	return m_iCultureBombRadius;
 }
 
+/// Distance this improvement steals neutral tiles
 int CvImprovementEntry::GetCultureBombRadiusNeutral() const
 {
 	return m_iCultureBombRadiusNeutral;
+}
+
+/// Max distance from owned cities this improvement steals
+int CvImprovementEntry::GetCultureBombMaxRadiusFromCities() const
+{
+	return m_iCultureBombMaxRadiusFromCities;
 }
 
 /// How many adjacent tiles must be land?
