@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	� 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -9499,7 +9499,12 @@ bool CvUnit::DoCultureBomb()
 //	--------------------------------------------------------------------------------
 void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeutralTilesOnly)
 {
-	// TODO Frenk
+	// TODO Frenk: Toch liever een functie
+
+	if (iRadius <= 0)
+	{
+		return;
+	}
 
 	CvPlot* pThisPlot = plot();
 
@@ -9584,6 +9589,11 @@ void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeu
 
 			// Can't flip Cities, sorry
 			if(pLoopPlot->isCity())
+				continue;
+			
+			// TODO Frenk
+			// MaxRadiusFromCities is provided (more than 0) AND TODO
+			if(0 < iMaxRadiusFromCities)
 				continue;
 
 #ifdef AUI_UNIT_CITADEL_RESISTANT_TO_CULTURE_BOMB
