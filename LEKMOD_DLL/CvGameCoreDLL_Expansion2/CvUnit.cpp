@@ -9469,7 +9469,8 @@ bool CvUnit::DoCultureBomb()
 		CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
 		kPlayer.changeCultureBombTimer(iCooldown);
 
-		PerformCultureBomb(pkUnitEntry->GetCultureBombRadius(), pkUnitEntry->GetCultureBombRadius(), pkUnitEntry->GetCultureBombMaxRadiusFromCities());
+		PerformCultureBomb(pkUnitEntry->GetCultureBombRadius(), pkUnitEntry->GetCultureBombMaxRadiusFromCities(), false);
+		PerformCultureBomb(pkUnitEntry->GetCultureBombRadiusNeutral(), pkUnitEntry->GetCultureBombMaxRadiusFromCities(), true);
 
 		if(pThisPlot->isActiveVisible(false))
 		{
@@ -9496,9 +9497,9 @@ bool CvUnit::DoCultureBomb()
 }
 
 //	--------------------------------------------------------------------------------
-void CvUnit::PerformCultureBomb(int iRadius, int iNeutralRadius, int iMaxRadiusFromCities)
+void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeutralTilesOnly)
 {
-	// TODO Frenk test
+	// TODO Frenk
 
 	CvPlot* pThisPlot = plot();
 
@@ -9577,6 +9578,10 @@ void CvUnit::PerformCultureBomb(int iRadius, int iNeutralRadius, int iMaxRadiusF
 			if(pLoopPlot->getOwner() == getOwner())
 				continue;
 
+			// Can't be Enemy plots when capturing neutral tiles
+			if(iNeutralTilesOnly && pLoopPlot->getOwner() != NO_PLAYER)
+				continue;
+
 			// Can't flip Cities, sorry
 			if(pLoopPlot->isCity())
 				continue;
@@ -9586,7 +9591,7 @@ void CvUnit::PerformCultureBomb(int iRadius, int iNeutralRadius, int iMaxRadiusF
 			if (eLoopImprovement != NO_IMPROVEMENT)
 			{
 				pImprovementInfo = GC.getImprovementInfo(eLoopImprovement);
-				if (pImprovementInfo && pImprovementInfo->GetCultureBombRadius() > 0)
+				if (pImprovementInfo && (pImprovementInfo->GetCultureBombRadius() > 0 || pImprovementInfo->GetCultureBombRadiusNeutral() > 0))
 				{
 					bool bPlotHasResistingCitadel = false;
 
@@ -9600,7 +9605,7 @@ void CvUnit::PerformCultureBomb(int iRadius, int iNeutralRadius, int iMaxRadiusF
 								eLoopImprovement = pLoopPlot->getRevealedImprovementType(getTeam());
 								// Citadels don't defend adjacent citadels on their own (so 2 neighboring citadels don't become invulnerable to culture bombs
 								if (eLoopImprovement == NO_IMPROVEMENT ||
-									(GC.getImprovementInfo(eLoopImprovement) && GC.getImprovementInfo(eLoopImprovement)->GetCultureBombRadius() <= 0))
+									(GC.getImprovementInfo(eLoopImprovement) && GC.getImprovementInfo(eLoopImprovement)->GetCultureBombRadius() <= 0 && GC.getImprovementInfo(eLoopImprovement)->GetCultureBombRadiusNeutral() <= 0))
 								{
 									bPlotHasResistingCitadel = true;
 									break;
@@ -9672,190 +9677,6 @@ void CvUnit::PerformCultureBomb(int iRadius, int iNeutralRadius, int iMaxRadiusF
 		}
 	}
 }
-
-//	--------------------------------------------------------------------------------
-void CvUnit::PerformNeutralCultureBomb(int iRadius)
-{
-	// TODO: Frenk
-
-	CvPlot* pThisPlot = plot();
-
-	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
-
-	// Figure out which City gets ownership of these plots
-	int iBestCityID = -1;
-
-	// Plot we're standing on belongs to a city already
-	if(pThisPlot->getOwner() == getOwner() && pThisPlot->GetCityPurchaseID() != -1)
-	{
-		iBestCityID = pThisPlot->GetCityPurchaseID();
-	}
-	// Find closest city
-	else
-	{
-		int iBestCityDistance = -1;
-
-		int iDistance;
-
-		CvCity* pLoopCity = NULL;
-		int iLoop = 0;
-		for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
-		{
-			CvPlot* pPlot = pLoopCity->plot();
-			if(pPlot)
-			{
-				iDistance = plotDistance(getX(), getY(), pLoopCity->getX(), pLoopCity->getY());
-
-				if(iBestCityDistance == -1 || iDistance < iBestCityDistance)
-				{
-					iBestCityID = pLoopCity->GetID();
-					iBestCityDistance = iDistance;
-				}
-			}
-		}
-	}
-
-	// Keep track of got hit by this so we can figure the diplo ramifications later
-	FStaticVector<bool, MAX_CIV_PLAYERS, true, c_eCiv5GameplayDLL, 0> vePlayersBombed;
-	for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
-	{
-		vePlayersBombed.push_back(false);
-	}
-
-	// Change ownership of nearby plots
-	int iBombRange = iRadius;
-	CvPlot* pLoopPlot;
-#ifdef AUI_UNIT_CITADEL_RESISTANT_TO_CULTURE_BOMB
-	ImprovementTypes eLoopImprovement = NO_IMPROVEMENT;
-	const CvImprovementEntry* pImprovementInfo = NULL;
-	const CvPlot* pLoopPlot2 = NULL;
-	int iI;
-#endif
-#ifdef AUI_HEXSPACE_DX_LOOPS
-	int iMaxDX, iDX;
-	for (int iDY = -iBombRange; iDY <= iBombRange; iDY++)
-	{
-		iMaxDX = iBombRange - MAX(0, iDY);
-		for (iDX = -iBombRange - MIN(0, iDY); iDX <= iMaxDX; iDX++) // MIN() and MAX() stuff is to reduce loops (hexspace!)
-		{
-			// No need for range check because loops are set up properly
-			pLoopPlot = plotXY(getX(), getY(), iDX, iDY);
-#else
-	for(int i = -iBombRange; i <= iBombRange; ++i)
-	{
-		for(int j = -iBombRange; j <= iBombRange; ++j)
-		{
-			pLoopPlot = ::plotXYWithRangeCheck(getX(), getY(), i, j, iBombRange);
-#endif
-
-			if(pLoopPlot == NULL)
-				continue;
-
-			// Can't be our plot
-			if(pLoopPlot->getOwner() == getOwner())
-				continue;
-
-			// Can't be Enemy plots either, this is the neutral function!
-			if(pLoopPlot->getOwner() != NO_PLAYER )
-				continue;
-
-			// Can't flip Cities, sorry
-			if(pLoopPlot->isCity())
-				continue;
-
-#ifdef AUI_UNIT_CITADEL_RESISTANT_TO_CULTURE_BOMB
-			eLoopImprovement = pLoopPlot->getRevealedImprovementType(getTeam());
-			if (eLoopImprovement != NO_IMPROVEMENT)
-			{
-				pImprovementInfo = GC.getImprovementInfo(eLoopImprovement);
-				if (pImprovementInfo && pImprovementInfo->GetCultureBombRadius() > 0)
-				{
-					bool bPlotHasResistingCitadel = false;
-
-					for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
-					{
-						pLoopPlot2 = plotDirection(pLoopPlot->getX(), pLoopPlot->getY(), (DirectionTypes)iI);
-						if (pLoopPlot2 != NULL && pLoopPlot2->getOwner() == pLoopPlot->getOwner())
-						{
-							if (plotDistance(getX(), getY(), pLoopPlot2->getX(), pLoopPlot2->getY()) > iBombRange && !pLoopPlot->isCity())
-							{
-								eLoopImprovement = pLoopPlot->getRevealedImprovementType(getTeam());
-								// Citadels don't defend adjacent citadels on their own (so 2 neighboring citadels don't become invulnerable to culture bombs
-								if (eLoopImprovement == NO_IMPROVEMENT ||
-									(GC.getImprovementInfo(eLoopImprovement) && GC.getImprovementInfo(eLoopImprovement)->GetCultureBombRadius() <= 0))
-								{
-									bPlotHasResistingCitadel = true;
-									break;
-								}
-							}
-						}
-					}
-
-					if (bPlotHasResistingCitadel)
-						continue;
-				}
-			}
-#endif
-
-			if(pLoopPlot->getOwner() != NO_PLAYER){
-				// Notify plot owner
-				if(pLoopPlot->getOwner() != getOwner() && !vePlayersBombed[pLoopPlot->getOwner()]){
-					CvNotifications* pNotifications = GET_PLAYER(pLoopPlot->getOwner()).GetNotifications();
-					if(pNotifications){
-						CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_GREAT_ARTIST_STOLE_PLOT", GET_PLAYER(getOwner()).getNameKey());
-						CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_GREAT_ARTIST_STOLE_PLOT", GET_PLAYER(getOwner()).getNameKey());
-						pNotifications->Add(NOTIFICATION_GENERIC, strBuffer, strSummary, pLoopPlot->getX(), pLoopPlot->getY(), -1);
-					}
-				}
-				vePlayersBombed[pLoopPlot->getOwner()] = true;
-			}
-
-			// Have to set owner after we do the above stuff
-			pLoopPlot->setOwner(getOwner(), iBestCityID);
-		}
-	}
-
-	bool bAlreadyShownLeader = false;
-
-	// Now that we know who was hit, figure the diplo ramifications
-	CvPlayer* pPlayer;
-	for(int iSlotLoop = 0; iSlotLoop < MAX_CIV_PLAYERS; iSlotLoop++)
-	{
-		if(vePlayersBombed[iSlotLoop])
-		{
-			pPlayer = &GET_PLAYER((PlayerTypes) iSlotLoop);
-			TeamTypes eOtherTeam = pPlayer->getTeam();
-
-			// Humans can handle their own diplo
-			if(pPlayer->isHuman())
-				continue;
-
-			// Minor civ response
-			if(pPlayer->isMinorCiv())
-			{
-				int iFriendship = /*-50*/ GC.getCULTURE_BOMB_MINOR_FRIENDSHIP_CHANGE();
-				pPlayer->GetMinorCivAI()->ChangeFriendshipWithMajor(getOwner(), iFriendship);
-			}
-			// Major civ response
-			else
-			{
-				pPlayer->GetDiplomacyAI()->ChangeNumTimesCultureBombed(getOwner(), 1);
-
-				// Message for human
-				if(getTeam() != eOtherTeam && !GET_TEAM(eOtherTeam).isAtWar(getTeam()) && !CvPreGame::isNetworkMultiplayerGame() && GC.getGame().getActivePlayer() == getOwner() && !bAlreadyShownLeader)
-				{
-					bAlreadyShownLeader = true;
-
-					DLLUI->SetForceDiscussionModeQuitOnBack(true);		// Set force quit so that when discuss mode pops up the Back button won't go to leader root
-					const char* strText = pPlayer->GetDiplomacyAI()->GetDiploStringForMessage(DIPLO_MESSAGE_CULTURE_BOMBED);
-					gDLL->GameplayDiplomacyAILeaderMessage(pPlayer->GetID(), DIPLO_UI_STATE_BLANK_DISCUSSION, strText, LEADERHEAD_ANIM_HATE_NEGATIVE);
-				}
-			}
-		}
-	}
-}
-
-
 
 //	--------------------------------------------------------------------------------
 bool CvUnit::canGoldenAge(const CvPlot* pPlot, bool bTestVisible) const
@@ -10380,10 +10201,8 @@ bool CvUnit::build(BuildTypes eBuild)
 				CvImprovementEntry* pkImprovementInfo = GC.getImprovementInfo(eImprovement);
 				if(pkImprovementInfo)
 				{
-					if (pkImprovementInfo->GetCultureBombRadius() > 0 || pkImprovementInfo->GetCultureBombRadiusNeutral() > 0)
-					{
-						PerformCultureBomb(pkImprovementInfo->GetCultureBombRadius(), pkImprovementInfo->GetCultureBombRadius(), pkImprovementInfo->GetCultureBombMaxRadiusFromCities());
-					}
+					PerformCultureBomb(pkImprovementInfo->GetCultureBombRadius(), pkImprovementInfo->GetCultureBombMaxRadiusFromCities(), false);
+					PerformCultureBomb(pkImprovementInfo->GetCultureBombRadiusNeutral(), pkImprovementInfo->GetCultureBombMaxRadiusFromCities(), true);
 				}
 			}
 			else if(pkBuildInfo->getRoute() != NO_ROUTE)

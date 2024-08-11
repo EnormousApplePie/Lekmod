@@ -109,6 +109,7 @@ public:
 	bool IsFoundAbroad() const;
 	int GetCultureBombRadius() const;
 	int GetCultureBombRadiusNeutral() const;
+	int GetCultureBombMaxRadiusFromCities() const;
 	int GetGoldenAgeTurns() const;
 	int GetFreePolicies() const;
 	int GetOneShotTourism() const;
