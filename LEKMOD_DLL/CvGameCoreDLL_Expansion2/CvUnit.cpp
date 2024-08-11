@@ -9499,7 +9499,7 @@ bool CvUnit::DoCultureBomb()
 //	--------------------------------------------------------------------------------
 void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeutralTilesOnly)
 {
-	// TODO Frenk: Toch liever een functie
+	// TODO Frenk: Toch liever 1 functie
 
 	if (iRadius <= 0)
 	{
@@ -9553,6 +9553,7 @@ void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeu
 	// Change ownership of nearby plots
 	int iBombRange = iRadius;
 	CvPlot* pLoopPlot;
+	CvPlot* pLoopPlotDistance;
 #ifdef AUI_UNIT_CITADEL_RESISTANT_TO_CULTURE_BOMB
 	ImprovementTypes eLoopImprovement = NO_IMPROVEMENT;
 	const CvImprovementEntry* pImprovementInfo = NULL;
@@ -9591,9 +9592,48 @@ void CvUnit::PerformCultureBomb(int iRadius, int iMaxRadiusFromCities, bool iNeu
 			if(pLoopPlot->isCity())
 				continue;
 			
-			// TODO Frenk
-			// MaxRadiusFromCities is provided (more than 0) AND TODO
+			bool foundOwnedCityCloseEnough = true;
 			if(0 < iMaxRadiusFromCities)
+			{
+				// MaxRadiusFromCities is provided (more than 0), so check if the player owns a city nearby enough
+				foundOwnedCityCloseEnough = false;
+				int iMaxDXx, iDXx, iDYy;
+#ifdef AUI_HEXSPACE_DX_LOOPS
+				for (iDYy = -iMaxRadiusFromCities; iDYy <= iMaxRadiusFromCities; iDYy++)
+				{
+					if(foundOwnedCityCloseEnough)
+						break;
+
+					iMaxDXx = iMaxRadiusFromCities - MAX(0, iDYy);
+					for (iDXx = -iMaxRadiusFromCities - MIN(0, iDYy); iDXx <= iMaxDXx; iDXx++) // MIN() and MAX() stuff is to reduce loops (hexspace!)
+					{
+						pLoopPlotDistance = plotXY(pPlot->getX(), pPlot->getY(), iDXx, iDYy);
+#else
+				for(iDXx = -(iMaxRadiusFromCities); iDXx <= iMaxRadiusFromCities; iDXx++)
+				{
+					if(foundOwnedCityCloseEnough)
+						break;
+
+					for(iDYy = -(iMaxRadiusFromCities); iDYy <= iMaxRadiusFromCities; iDYy++)
+					{
+						pLoopPlotDistance = plotXYWithRangeCheck(pPlot->getX(), pPlot->getY(), iDXx, iDYy, iMaxRadiusFromCities);
+#endif
+						if(pLoopPlotDistance != NULL)
+						{
+							if(pLoopPlotDistance->getOwner() == getOwner() && pLoopPlotDistance->isCity())
+							{
+								if(pLoopPlotDistance->getLandmass() == pPlot->getLandmass() || hexDistance(iDXx, iDYy) < iMaxRadiusFromCities) // one less for off shore
+								{
+									foundOwnedCityCloseEnough = true;
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			if(!foundOwnedCityCloseEnough)
 				continue;
 
 #ifdef AUI_UNIT_CITADEL_RESISTANT_TO_CULTURE_BOMB
