@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CvGameCoreDLL_Expansion2", "CvGameCoreDLL_Expansion2.vcxproj", "{F58F230D-EE4A-40E0-91D5-93626E790055}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Mod|x86 = Mod|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F58F230D-EE4A-40E0-91D5-93626E790055}.Mod|x86.ActiveCfg = Mod|Win32
+		{F58F230D-EE4A-40E0-91D5-93626E790055}.Mod|x86.Build.0 = Mod|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A1B7B32-52EC-4C59-8952-087732E23E23}
+	EndGlobalSection
+EndGlobal

@@ -451,6 +451,10 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(IsForcedWorkingPlot);
 	Method(GetNumRealBuilding);
 	Method(SetNumRealBuilding);
+#ifdef LEKMOD_NEW_LUA_METHODS
+	Method(SetNumRealBuildingClass);
+#endif
+
 	Method(GetNumFreeBuilding);
 	Method(IsBuildingSellable);
 	Method(GetSellBuildingRefund);
@@ -3732,6 +3736,9 @@ int CvLuaCity::lSetNumRealBuilding(lua_State* L)
 {
 	CvCity* pkCity = GetInstance(L);
 	const BuildingTypes iIndex = toValue<BuildingTypes>(L, 2);
+
+
+
 	if(iIndex != NO_BUILDING)
 	{
 		const int iNewValue = lua_tointeger(L, 3);
@@ -3740,6 +3747,42 @@ int CvLuaCity::lSetNumRealBuilding(lua_State* L)
 
 	return 1;
 }
+#ifdef LEKMOD_NEW_LUA_METHODS
+//------------------------------------------------------------------------------
+//void setNumRealBuilding(BuildingClassTypes iIndex, int iNewValue);
+int CvLuaCity::lSetNumRealBuildingClass(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const BuildingClassTypes iIndex = toValue<BuildingClassTypes>(L, 2);
+	const PlayerTypes ePlayer = pkCity->getOwner();
+	const CvCivilizationInfo& thisCiv = (GET_PLAYER(ePlayer)).getCivilizationInfo();
+
+	if (iIndex != NO_BUILDINGCLASS)
+	{
+		CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(iIndex);
+		if (pkBuildingClassInfo)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)thisCiv.getCivilizationBuildings(iIndex);
+			if (eBuilding != NO_BUILDING)
+			{
+				const int iNewValue = lua_tointeger(L, 3);
+				pkCity->GetCityBuildings()->SetNumRealBuilding(eBuilding, iNewValue);
+			}
+			else
+			{
+				BuildingTypes eDefaultBuilding = (BuildingTypes)pkBuildingClassInfo->getDefaultBuildingIndex();
+				if (eDefaultBuilding != NO_BUILDING)
+				{
+					const int iNewValue = lua_tointeger(L, 3);
+					pkCity->GetCityBuildings()->SetNumRealBuilding(eDefaultBuilding, iNewValue);
+				}
+			}
+		}
+	}
+
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 //int getNumFreeBuilding(BuildingTypes iIndex);
 int CvLuaCity::lGetNumFreeBuilding(lua_State* L)
@@ -4061,4 +4104,3 @@ int CvLuaCity::lGetReligionCityRangeStrikeModifier(lua_State* L)
 
 	return 1;
 }
-

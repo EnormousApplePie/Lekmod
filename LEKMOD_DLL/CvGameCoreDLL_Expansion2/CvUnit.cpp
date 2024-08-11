@@ -267,13 +267,19 @@ CvUnit::CvUnit() :
 	, m_iCapitalDefenseModifier(0)
 	, m_iCapitalDefenseFalloff(0)
 	, m_iCityAttackPlunderModifier(0)
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	, m_iCityAttackMovePenalty(0)
+#endif
 	, m_iReligiousStrengthLossRivalTerritory(0)
 	, m_iTradeMissionInfluenceModifier(0)
 	, m_iTradeMissionGoldModifier(0)
 	, m_strName("")
 	, m_eGreatWork(NO_GREAT_WORK)
-	, m_iTourismBlastStrength(0) // GJS - new research bulb amount value
-	, m_iResearchBulbAmount(0)
+	, m_iTourismBlastStrength(0) 
+	, m_iResearchBulbAmount(0) // GJS - new research bulb amount value
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	, m_iScientistBirthTurn(0)
+#endif
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP)
 	, m_bCanInstahealThisTurn(true)
 #endif
@@ -694,12 +700,22 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 		SetTourismBlastStrength(kPlayer.GetCulture()->GetTourismBlastStrength(getUnitInfo().GetOneShotTourism()));
 	}
 
-	// GJS: Great Scientists now bulb for science at point of birth, not current science 
+	// GJS: Great Scientists now bulb for science at point of birth, not current science
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	if (GC.getGame().isOption("GAMEOPTION_NO_SCIENTIST_SAVING"))
+	{
+		SetScientistBirthTurn(GC.getGame().getGameTurn());
+	}
+	else if (getUnitInfo().GetBaseBeakersTurnsToCount() > 0)
+	{
+		SetResearchBulbAmount(kPlayer.GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), getUnitInfo().GetBaseBeakersTurnsToCount()));
+	}
+#else
 	if (getUnitInfo().GetBaseBeakersTurnsToCount() > 0)
 	{
 		SetResearchBulbAmount(kPlayer.GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), getUnitInfo().GetBaseBeakersTurnsToCount()));
 	}
-
+#endif
 	int iTourism = kPlayer.GetPlayerPolicies()->GetTourismFromUnitCreation((UnitClassTypes)(getUnitInfo().GetUnitClassType()));
 	if (iTourism > 0)
 	{
@@ -854,11 +870,28 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 			}
 		}
 	}
-
 #ifdef NQM_UNIT_FIX_NO_INSTAHEAL_ON_CREATION_TURN
-	setCanInstahealThisTurn(false);
+	setCanInstahealThisTurn(canInstahealThisTurn());
 #endif
 
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	// MOD.EAP: Add a new lua event.
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+
+		args->Push(eOwner);
+		args->Push(GetID());
+		args->Push(iX);
+		args->Push(iY);
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "UnitCreated", args.get(), bResult);
+	}
+#endif
 	if(bSetupGraphical)
 		setupGraphical();
 
@@ -1042,6 +1075,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iCapitalDefenseModifier = 0;
 	m_iCapitalDefenseFalloff = 0;
 	m_iCityAttackPlunderModifier = 0;
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	m_iCityAttackMovePenalty = 0;
+#endif
 	m_iReligiousStrengthLossRivalTerritory = 0;
 	m_iTradeMissionInfluenceModifier = 0;
 	m_iTradeMissionGoldModifier = 0;
@@ -1094,6 +1130,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_eGreatWork = NO_GREAT_WORK;
 	m_iTourismBlastStrength = 0;
 	m_iResearchBulbAmount = 0; // GJS - new research bulb amount init
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	m_iScientistBirthTurn = 0;
+#endif
 	m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility = "";
 	m_strScriptData ="";
 	m_iScenarioData = 0;
@@ -1579,7 +1618,9 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer /*= NO_PLAYER*/)
 			}
 			else
 			{
+#ifndef REMOVE_EXCESS_CAMERA_CENTERING
 				DLLUI->setDirty(SelectionCamera_DIRTY_BIT, true);
+#endif
 			}
 		}
 	}
@@ -5428,7 +5469,20 @@ int CvUnit::GetCityAttackPlunderModifier() const
 {
 	return m_iCityAttackPlunderModifier;
 }
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
 
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeCityAttackMovePenalty(int iValue)
+{
+	m_iCityAttackMovePenalty += iValue;
+}
+//	--------------------------------------------------------------------------------
+int CvUnit::GetCityAttackMovePenalty() const
+{
+	return m_iCityAttackMovePenalty;
+}
+
+#endif
 //	--------------------------------------------------------------------------------
 void CvUnit::ChangeReligiousStrengthLossRivalTerritory(int iValue)
 {
@@ -8617,7 +8671,19 @@ int CvUnit::getDiscoverAmount()
 			// Beakers boost based on previous turns
 			//int iPreviousTurnsToCount = m_pUnitInfo->GetBaseBeakersTurnsToCount(); // GJS: commented out
 			//iValue = pPlayer->GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), iPreviousTurnsToCount); // GJS: commented out 
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+			if (GC.getGame().isOption("GAMEOPTION_NO_SCIENTIST_SAVING"))
+			{
+				int iPreviousTurnsToCount = std::max(m_pUnitInfo->GetBaseBeakersTurnsToCount() - std::max(GC.getGame().getGameTurn() - GetScientistBirthTurn() - 1, 0), 0);
+				iValue = pPlayer->GetScienceYieldFromPreviousTurns(GetScientistBirthTurn(), iPreviousTurnsToCount);
+			}
+			else
+			{
+				iValue = GetResearchBulbAmount();
+			}
+#else
 			iValue = GetResearchBulbAmount();
+#endif
 			if (pPlayer->GetGreatScientistBeakerMod() != 0)
 			{
 				iValue += (iValue * pPlayer->GetGreatScientistBeakerMod()) / 100;
@@ -12248,6 +12314,15 @@ int CvUnit::GetMaxAttackStrength(const CvPlot* pFromPlot, const CvPlot* pToPlot,
 				iTempModifier = GC.getSAPPED_CITY_ATTACK_MODIFIER();
 				iModifier += iTempModifier;
 			}
+
+#ifdef LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
+			// Nearby unit gives a city attack bonus
+			if (IsNearCityAttackBonus())
+			{
+				iTempModifier = getNearUnitCityAttackModifier();
+				iModifier += iTempModifier;
+			}
+#endif
 
 			// City Defending against a Barbarian
 			if(isBarbarian())
@@ -16073,6 +16148,7 @@ void CvUnit::ShowDamageDeltaText(int iDelta, CvPlot* pkPlot, float fAdditionalTe
 int CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, float fAdditionalTextDelay, const CvString* pAppendText)
 {
 	VALIDATE_OBJECT
+
 	int iOldValue;
 
 	iOldValue = getDamage();
@@ -16182,15 +16258,41 @@ int CvUnit::changeDamage(int iChange, PlayerTypes ePlayer, float fAdditionalText
 	VALIDATE_OBJECT;
 #ifdef DEL_RANGED_COUNTERATTACKS
 	if (iChange != 0)
-#endif
-	return setDamage((getDamage() + iChange), ePlayer, fAdditionalTextDelay, pAppendText);
-#ifdef DEL_RANGED_COUNTERATTACKS
+
+	{
+		return setDamage(getDamage() + iChange, ePlayer, fAdditionalTextDelay, pAppendText);
+	}
 	else
+	{
 		return 0;
+	}
 #endif
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	if (iChange < 0)
+	{
+		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+		if (pkScriptSystem)
+		{
+			CvLuaArgsHandle args;
+			args->Push(getOwner());
+			args->Push(GetID());
+			args->Push(iChange);
+			args->Push(getX());
+			args->Push(getY());
+
+
+			bool bResult = false;
+			LuaSupport::CallHook(pkScriptSystem, "UnitHealed", args.get(), bResult);
+		}
+	}
+
+#endif
+
+	return setDamage(getDamage() + iChange, ePlayer, fAdditionalTextDelay, pAppendText);
+
+
 }
-
-
 //	--------------------------------------------------------------------------------
 int CvUnit::getMoves() const
 {
@@ -18408,6 +18510,205 @@ bool CvUnit::IsNearSapper(const CvCity* pTargetCity) const
 	return false;
 }
 
+#ifdef LEKMOD_NEW_LUA_METHODS
+#ifdef LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
+//	--------------------------------------------------------------------------------
+int CvUnit::GetAdjacentCityAttackModifier() const
+{
+	return m_iAdjacentCityAttackModifier;
+}
+//--------------------------------------------------------------------------------
+void CvUnit::ChangeAdjacentCityAttackModifier(int iChange)
+{
+	m_iAdjacentCityAttackModifier += iChange;
+}
+#endif
+//--------------------------------------------------------------------------------
+bool CvUnit::IsNearUnitWithPromotion(PromotionTypes ePromotion, int iRange, bool bSameDomain, bool bSamePlayer) const
+{
+	VALIDATE_OBJECT
+
+	CvAssertMsg(ePromotion, "Promotion is null!");
+	if (!ePromotion || iRange < 1)
+	{
+		return false;
+	}
+
+	CvPlot* pLoopPlot;
+	IDInfo* pUnitNode;
+	CvUnit* pLoopUnit;
+
+	// Look around this Unit to see if there's a unit with the given promotion nearby
+	for (int iX = -iRange; iX <= iRange; iX++)
+	{
+		for (int iY = -iRange; iY <= iRange; iY++)
+		{
+			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+
+			if (pLoopPlot != NULL)
+			{
+				// If there are Units here, loop through them
+				if (pLoopPlot->getNumUnits() > 0)
+				{
+					pUnitNode = pLoopPlot->headUnitNode();
+
+					while (pUnitNode != NULL)
+					{
+						pLoopUnit = ::getUnit(*pUnitNode);
+						pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+
+						// Needs to be owned by us if enabled
+						if (bSamePlayer && (pLoopUnit->getOwner() != getOwner()))
+						{
+							continue;
+						}
+						// Does the unit have the promotion?
+						if (pLoopUnit->isHasPromotion(ePromotion))
+						{
+							// Must be same domain if enabled
+							if (bSameDomain && (pLoopUnit->getDomainType() != getDomainType()))
+							{
+								continue;
+							}
+							
+							return true;
+							
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return false;
+}
+//--------------------------------------------------------------------------------
+bool CvUnit::IsNearTerrainType(TerrainTypes eTerrainType, int iRange, bool bSameOwner) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eTerrainType > 0, "eTerrainType is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eTerrainType < GC.getNumTerrainInfos(), "eTerrainType is expected to be within maximum bounds (invalid eTerrainType)");
+
+	if (eTerrainType == NO_TERRAIN || iRange <= 0)
+	{
+		return false;
+	}
+
+	CvPlot* pLoopPlot;
+
+	// Look around this Unit to see if there's a unit with the given promotion nearby
+	for (int iX = -iRange; iX <= iRange; iX++)
+	{
+		for (int iY = -iRange; iY <= iRange; iY++)
+		{
+			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+
+			if (pLoopPlot != NULL)
+			{	
+				//check if this loop plot is the right type
+				if (pLoopPlot->getTerrainType() == eTerrainType)
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+					
+					return true;
+
+				}
+			}
+		}
+	}
+
+	return false;
+}
+//--------------------------------------------------------------------------------
+bool CvUnit::IsNearFeatureType(FeatureTypes eFeature, int iRange, bool bSameOwner) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eFeature > 0, "eFeature is expected to be non-negative (invalid eFeature)");
+	CvAssertMsg(eFeature < GC.getNumFeatureInfos() "eFeature is expected to be within maximum bounds (invalid eFeature)");
+
+	if (eFeature < 0 || eFeature > GC.getNumFeatureInfos() || iRange <= 0)
+	{
+		return false;
+	}
+
+	CvPlot* pLoopPlot;
+
+	// Look around this Unit to see if there's the required feature nearby
+	for (int iX = -iRange; iX <= iRange; iX++)
+	{
+		for (int iY = -iRange; iY <= iRange; iY++)
+		{
+			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+
+			if (pLoopPlot != NULL)
+			{
+				//check if this loop plot is the right type
+				if (pLoopPlot->getFeatureType() == eFeature)
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+
+					return true;
+
+				}
+			}
+		}
+	}
+
+	return false;
+}
+//--------------------------------------------------------------------------------
+bool CvUnit::IsNearImprovementType(ImprovementTypes eImprovement, int iRange, bool bSameOwner) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eImprovement > 0, "eImprovement is expected to be non-negative (invalid eImprovement)");
+	if (!eImprovement || iRange < 1)
+	{
+		return false;
+	}
+
+	CvPlot* pLoopPlot;
+	IDInfo* pUnitNode;
+	CvUnit* pLoopUnit;
+
+	// Look around this Unit to see if there's a unit with the given promotion nearby
+	for (int iX = -iRange; iX <= iRange; iX++)
+	{
+		for (int iY = -iRange; iY <= iRange; iY++)
+		{
+			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+
+			if (pLoopPlot != NULL)
+			{
+				//check if this loop plot has the right improvement
+				if (pLoopPlot->getImprovementType() == eImprovement)
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+
+					return true;
+
+				}
+				
+			}
+		}
+	}
+
+	return false;
+}
+
+#endif
+
 //	--------------------------------------------------------------------------------
 bool CvUnit::IsCanHeavyCharge() const
 {
@@ -19346,7 +19647,20 @@ void CvUnit::SetResearchBulbAmount(int iValue)
 {
 	m_iResearchBulbAmount = iValue;
 }
+//  --------------------------------------------------------------------------------
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+int CvUnit::GetScientistBirthTurn() const
+{
+	return m_iScientistBirthTurn;
+}
 
+//	--------------------------------------------------------------------------------
+
+void CvUnit::SetScientistBirthTurn(int iValue)
+{
+	m_iScientistBirthTurn = iValue;
+}
+#endif
 //	--------------------------------------------------------------------------------
 std::string CvUnit::getScriptData() const
 {
@@ -19997,6 +20311,9 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		ChangeCapitalDefenseModifier((thisPromotion.GetCapitalDefenseModifier()) * iChange);
 		ChangeCapitalDefenseFalloff((thisPromotion.GetCapitalDefenseFalloff()) * iChange);
 		ChangeCityAttackPlunderModifier((thisPromotion.GetCityAttackPlunderModifier()) *  iChange);
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+		ChangeCityAttackMovePenalty((thisPromotion.GetCityAttackMovePenalty()) * iChange);
+#endif
 		ChangeReligiousStrengthLossRivalTerritory((thisPromotion.GetReligiousStrengthLossRivalTerritory()) *  iChange);
 		ChangeTradeMissionInfluenceModifier((thisPromotion.GetTradeMissionInfluenceModifier()) * iChange);
 		ChangeTradeMissionGoldModifier((thisPromotion.GetTradeMissionGoldModifier()) * iChange);
@@ -20392,7 +20709,9 @@ void CvUnit::read(FDataStream& kStream)
 	kStream >> m_iCapitalDefenseFalloff;
 
 	kStream >> m_iCityAttackPlunderModifier;
-
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	kStream >> m_iCityAttackMovePenalty;
+#endif
 	kStream >> m_iReligiousStrengthLossRivalTerritory;
 
 	kStream >> m_iTradeMissionInfluenceModifier;
@@ -20505,7 +20824,9 @@ void CvUnit::read(FDataStream& kStream)
 	}
 
 	kStream >> m_iResearchBulbAmount; // GJS
-
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	kStream >> m_iScientistBirthTurn;
+#endif
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP)
 	kStream >> m_bCanInstahealThisTurn;
 #endif
@@ -20578,6 +20899,9 @@ void CvUnit::write(FDataStream& kStream) const
 	kStream << m_iCapitalDefenseModifier;
 	kStream << m_iCapitalDefenseFalloff;
 	kStream << m_iCityAttackPlunderModifier;
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	kStream << m_iCityAttackMovePenalty;
+#endif
 	kStream << m_iReligiousStrengthLossRivalTerritory;
 	kStream << m_iTradeMissionInfluenceModifier;
 	kStream << m_iTradeMissionGoldModifier;
@@ -20650,7 +20974,9 @@ void CvUnit::write(FDataStream& kStream) const
 #endif
 
 	kStream << m_iResearchBulbAmount; // GJS
-
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	kStream << m_iScientistBirthTurn;
+#endif
 	//  Write mission list
 	kStream << m_missionQueue.getLength();
 #ifdef AUI_FIX_FFASTVECTOR_USE_UNSIGNED

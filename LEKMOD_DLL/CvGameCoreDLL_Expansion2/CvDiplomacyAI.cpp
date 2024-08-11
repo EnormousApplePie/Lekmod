@@ -15836,9 +15836,14 @@ void CvDiplomacyAI::DoBeginDiploWithHuman()
 {
 	if(!GC.getGame().isOption(GAMEOPTION_ALWAYS_WAR))
 	{
+#ifdef NO_LEADER_SCREEN
+		CvPreGame::pushGameType(GAME_NETWORK_MULTIPLAYER);
+#endif
 		LeaderheadAnimationTypes eAnimation = LEADERHEAD_ANIM_NEUTRAL_HELLO;
 		const char* szText = GetGreetHumanMessage(eAnimation);
-
+#ifdef NO_LEADER_SCREEN
+		CvPreGame::pushGameType(GAME_NETWORK_MULTIPLAYER);
+#endif
 		gDLL->GameplayDiplomacyAILeaderMessage(GetPlayer()->GetID(), DIPLO_UI_STATE_DEFAULT_ROOT, szText, eAnimation);
 	}
 }
@@ -15861,6 +15866,9 @@ void CvDiplomacyAI::DoBeginDiploWithHumanInDiscuss()
 	{
 		LeaderheadAnimationTypes eAnimation = LEADERHEAD_ANIM_NEUTRAL_HELLO;
 		const char* szText = GetGreetHumanMessage(eAnimation);
+#ifdef NO_LEADER_SCREEN
+		CvPreGame::pushGameType(GAME_NETWORK_MULTIPLAYER);
+#endif
 		gDLL->GameplayDiplomacyAILeaderMessage(GetPlayer()->GetID(), DIPLO_UI_STATE_DISCUSS_HUMAN_INVOKED, szText, eAnimation);
 	}
 }

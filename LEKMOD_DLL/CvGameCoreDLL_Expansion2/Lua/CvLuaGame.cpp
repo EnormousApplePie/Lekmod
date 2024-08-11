@@ -383,6 +383,10 @@ void CvLuaGame::RegisterMembers(lua_State* L)
 
 	Method(GetNumArchaeologySites);
 	Method(GetNumHiddenArchaeologySites);
+
+#ifdef NO_LEADER_SCREEN
+	Method(ExitLeaderScreen);
+#endif
 #ifdef MP_PLAYERS_VOTING_SYSTEM
 	Method(GetLastProposalID);
 	Method(GetProposalIDbyUIid);
@@ -3005,6 +3009,13 @@ int CvLuaGame::lGetNumHiddenArchaeologySites(lua_State* L)
 	lua_pushinteger(L, GC.getGame().GetNumHiddenArchaeologySites());
 	return 1;
 }
+#ifdef NO_LEADER_SCREEN
+int CvLuaGame::lExitLeaderScreen(lua_State* L)
+{
+	CvPreGame::popGameType();
+	return 0;
+}
+#endif
 #ifdef MP_PLAYERS_VOTING_SYSTEM
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetLastProposalID(lua_State* L)

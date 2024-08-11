@@ -601,6 +601,30 @@ void WriteHashedDataArray(FDataStream& kStream, const std::vector<TData>& aArray
 	}
 }
 
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+//write a hashed 2d array
+//2d template array
+template<typename TType, typename TData>
+void WriteHashed2DDataArray(FDataStream& kStream, TData** ppaArray, uint uiSubArraySize, uint uiArraySize)
+{
+	kStream << uiArraySize;
+
+	for (uint iI = 0; iI < uiArraySize; iI++)
+	{
+		const TType eType = static_cast<TType>(iI);
+
+		if (WriteHashed(kStream, eType))
+		{
+			TData* paArray = ppaArray[iI];
+			for (uint iJ = 0; iJ < uiSubArraySize; ++iJ)
+			{
+				kStream << paArray[iJ];
+			}
+		}
+	}
+}
+#endif
+
 /// Helper function to write out an integer array of data sized according to number of resource types
 template<typename TType, typename TData>
 void WriteDataArray(FDataStream& kStream, TData** ppaArray, uint uiSubArraySize, uint uiArraySize)

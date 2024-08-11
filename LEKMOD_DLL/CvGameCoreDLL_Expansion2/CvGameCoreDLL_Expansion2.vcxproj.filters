@@ -1021,6 +1021,12 @@
     <ClInclude Include="Lua\CvLuaUnit.h">
       <Filter>Lua</Filter>
     </ClInclude>
+    <ClInclude Include="_Defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_FruityDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CvGameCoreDLL.rc" />

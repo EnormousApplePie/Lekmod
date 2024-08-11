@@ -1,4 +1,4 @@
-﻿// Defines.h
+// Defines.h
 
 
 #pragma once
@@ -66,12 +66,16 @@
 #define AUI_UNIT_FIX_CAN_MOVE_INTO_OPTIMIZED
 /// The object used to store danger values is changed to an array instead of an FFastVector
 #define AUI_DANGER_PLOTS_FIX_USE_ARRAY_NOT_FFASTVECTOR
+*/
 /// Units who are delayed dead will not be fetched by functions that get enemy defenders
-#define AUI_PLOT_FIX_ENEMY_DEFENDER_GETTER_DOES_NOT_GET_DELAYED_DEAD
+//#define AUI_PLOT_FIX_ENEMY_DEFENDER_GETTER_DOES_NOT_GET_DELAYED_DEAD
+/*
 /// When the citizen manager reallocates all citizens, it no longer goes through the costly process of calculating the worst plot multiple times
 #define AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_NO_COSTLY_PLOT_REMOVAL
+*/
 /// If a city is on manual specialist control, reallocate citizens will not remove any specialists before reassigning citizens
 #define AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_OBEY_MANUAL_SPECIALIST_CONTROL
+/*
 /// The function that gets the amount of different trading partners a player has will now use an array instead of a vector to avoid crash possibilities
 #define AUI_TRADE_FIX_GET_NUM_DIFFERENT_TRADING_PARTNERS_USES_ARRAY
 /// Fixes the fact that the game's Linear Congruential RNG is set to use constants that would require a modulus of 2^31 instead of ones that need 2^32 (I couldn't introduce a modulus step because Civ5's engine really dislikes modifications to the RNG system)
@@ -90,16 +94,18 @@
 #define AUI_FLAVORMANAGER_FIX_POSSIBLE_CRASH_ON_FLAVOR_BROADCAST
 /// When CvCity's constructor is called, component objects of CvCity have their parent pointers set immediately when the components are constructed (improves stability)
 #define AUI_CITY_FIX_COMPONENT_CONSTRUCTORS_CONTAIN_POINTERS
+*/
 /// Visibility update is always triggered when a plot's visibility changes for a player, thus fixing situations like purchasing a plot not updating sight immediately
 #define AUI_PLOT_FIX_RESPONSIVE_VISIBILITY_UPDATE
-*/
+
 /// Fixes the discrepancy where culture is not stored and calculated with hundredths in mind, which greatly messes up modifiers applied to it
 #define AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
-/*
+
 /// Puppet cities and cities with automated production will no longer accidentally trigger the production notification
 #define AUI_CITY_FIX_PUPPET_CHOOSE_PRODUCTION_NOTIFICATION
 /// Adds a bunch of extra checks to the production notification invalidator so that it gets invalidated properly in more cases (e.g. when the city's owner changes)
 #define AUI_NOFITICATIONS_FIX_PRODUCTION_NOTIFICATION_REMOVAL_EXTRA_CHECKS
+/*
 /// Firaxis' original database-handling code had a weird way of allocating and destructing 2D arrays. It was not standard-compliant and possibly caused memory leaks. This has been rectified.
 #define AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
 /// Makes UI combat prediction more representative of the actual combat that will take place when combat would tie
@@ -110,11 +116,12 @@
 #define AUI_RELIGION_FIX_SIMULTANEOUS_ENHANCE_OR_FOUND_CAUSING_MULTIPLE
 /// Moved the check for available beliefs from CvUnit to CvReligion so that it always fires properly for non-pantheons
 #define AUI_RELIGION_FIX_NO_BELIEFS_AVAILABLE_CHECK_FOR_NON_PANTHEON_MOVED
+*/
 /// If a unit is dead, it cannot perform any mission (fixes cases where players could cause two missions to fire in multiplayer)
 #define AUI_UNIT_MISSION_FIX_NO_MISSION_ON_DEATH
 
 // Fixes to game bugs and New/Tweaked gameplay aspects ported from AuI
-*/
+
 /// Yields are cached and processed after the player's turn completes, not before the player's turn starts
 // ------ #define AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 /*
@@ -192,17 +199,18 @@
 #define AUI_DEAL_FIX_ACCURATE_EARLYGAME_RESEARCH_AGREEMENT_YIELDS
 */
 /// Automating a unit no longer resets the turn timer (from theCAndeMan)
-//#define NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
-/*
+#define NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
+
 /// If multiple civs have are eligible to found the league, choose a random one instead of the one with the highest slot
 #define AUI_VOTING_RANDOMIZED_LEAGUE_FOUNDER
+/*
 /// Adds a few more things that are transferred to gifted units (GS beaker count, whether the unit is set up for ranged attacks, how many interceptions the unit has made) and removed some things being applied to gifted units (eg. gifted GP no longer triggers CS quests)
 #define AUI_UNIT_FIX_GIFTED_UNITS_ARE_GIFTED_NOT_CLONED
 /// Fixes a piece of code related to setting tiles around puppets to be worked by the puppet that not only did not work as intended, but could also have strange side-effects as well.
 #define AUI_CITY_FIX_PUPPET_WORKED_PLOT_OVERRIDE
+*/
 /// Units that are marked for death no longer generate a ZoC (from RushSecond)
 #define AUI_UNIT_MOVEMENT_FIX_DELAYED_DEATH_UNITS_GENERATE_ZOC
-*/
 /// Fixed the fact that some player-based modifiers to research costs are all only aesthetic, i.e. their only effect before would be to increase the number the UI displays for tech cost (they didn't actually modify tech cost)
 #define AUI_TECH_FIX_PLAYER_BASED_RESEARCH_COST_ONLY_AESTHETIC
 /// Fixed the bug where the production bonus from having a railroad connecting a city to the capital is not removed if the railroad connection is broken (credits to Wr4ith pointing this out after having researched the "weirdness" behind harbors, railroads, and the railroad bonus)
@@ -215,10 +223,10 @@
 */
 /// Fixes the bug where building a new improvement on a tile with a pillaged improvement keeps the tile marked as pillaged
 #define AUI_PLOT_FIX_PILLAGED_PLOT_ON_NEW_IMPROVEMENT
-/*
+
 /// Hovering units will no longer embark on shallow water, but will embark in deep water
-#define AUI_UNIT_FIX_HOVERING_EMBARK
-*/
+//#define AUI_UNIT_FIX_HOVERING_EMBARK
+
 /// Research overflow will no longer double-dip with research modifiers (once for the tech that generated it, once for the tech for which it is used). This also stops overflow from multiplying in ways that are exploitable and needed a band-aid fix from Firaxis.
 #define AUI_PLAYER_FIX_NO_RESEARCH_OVERFLOW_DOUBLE_DIP
 /// When war is manually declared by a player against another (i.e. not through a defensive pact), if the defender has any trade routes to the attacker, those trade routes get cancelled instead of destroyed. This applies to both sides of a Defensive Pact DoW.
@@ -242,8 +250,10 @@
 #endif
 /// Puppet cities belonging to Venice do not get penalties to science, gold, and faith (they still get penalties to culture to offset the fact that they don't increase policy cost)
 #define AUI_CITY_FIX_VENICE_PUPPETS_GET_NO_YIELD_PENALTIES_BESIDES_CULTURE
+*/
 /// Units with the ability to retreat from melee combat will not do so if they are guarding a civilian unit.
 #define AUI_UNIT_FIX_NO_RETREAT_ON_CIVILIAN_GUARD
+/*
 /// Fixed cases where moving a friendly unit into the owner's city would pop up an attack city dialogue AND where cities could be radared in unrevealed tiles.
 #define AUI_UNIT_FIX_CAN_MOVE_INTO_CITY_ATTACK_BLOCKER
 */
@@ -284,11 +294,12 @@
 /*
 /// New option that pauses the game when an active player disconnects and the game is not sequential
 #define AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+*/
 /// Relaxed the limits on the slice limits before turn timers are forced to expire in network multiplayer games (should help stop resyncs due to last-second moves)
-#define NQM_GAME_MORE_RELAXED_TURN_SLICE_LIMIT_FOR_NETWORK_MULTIPLAYER
+//#define NQM_GAME_MORE_RELAXED_TURN_SLICE_LIMIT_FOR_NETWORK_MULTIPLAYER
 
 // Deliberate AI hindrances
-*/
+
 /// AI players will no longer spread their religion to other human players' cities
 #define NQM_AI_GIMP_NO_RELIGION_SPREAD
 /// AI players will no longer attempt to build any world wonders or world projects
@@ -314,19 +325,21 @@
 */
 // Altered score calculations as an option toggleable in-game
 #define NQM_OPTIONAL_SCORING_TWEAKS
-/*
+
 // Fixes specific to simultaneous mode
 /// Units can no longer insta-heal twice in the same turn. This should only affect simultaneous mode and stops a few cheesey strategies
-#define NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN
+//#define NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN
 /// Units can no longer insta-heal the turn they are created
-#define NQM_UNIT_FIX_NO_INSTAHEAL_ON_CREATION_TURN
+//#define NQM_UNIT_FIX_NO_INSTAHEAL_ON_CREATION_TURN
+/*
 /// Paradroping a unit disqualifies it from insta-healing in the same turn. This should only affect simultaneous mode and stops a few cheesey strategies
 #define NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP
 /// Fortifying a unit will only give it a strength boost at the end of the turn. This should only affect simultaneous mode and stops players from fortifying units at the start of the turn for the defensive bonus, then using those units as normal.
 #define NQM_UNIT_FIX_FORTIFY_BONUS_RECEIVED_END_OF_TURN_NOT_INSTANTLY
-/// If the game/player who is in simultaneous mode declares war and the turn timer has less than 60 seconds remaining, it is filled back up to 60 seconds
-//#define NQM_GAME_EXTEND_TURN_TIMER_ON_LAST_MINUTE_WAR_DECLARATION_IF_SIMULTANEOUS
 */
+/// If the game/player who is in simultaneous mode declares war and the turn timer has less than 60 seconds remaining, it is filled back up to 60 seconds
+#define NQM_GAME_EXTEND_TURN_TIMER_ON_LAST_MINUTE_WAR_DECLARATION_IF_SIMULTANEOUS
+
 /// Randomizes the order in which player turns activate in simultaneous mode. E.g. this makes it so that the host no longer wins wonder races against all other players if they finish a wonder the same turn as another player.
 #define NQM_GAME_RANDOMIZE_TURN_ACTIVATION_ORDER_IN_SIMULTANEOUS
 /*
@@ -886,9 +899,6 @@
 //EAP: Underground Sect/World Church now apply to all cities -- Kinda a HACK, would have to also update wording xml, and only applies to specific yields (culture/science).
 #define LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES
 
-//EAP: Remove majority of first move cases by disallowing actions to be queued during turn transitions
-#define LEKMOD_FIRSTMOVE_FIX
-
 // Disembarkes the worker when it finishes a water walk improvement (polders/pontoon bridges)
 #define LEKMOD_WATER_IMPROVEMENT_FIX
 //added a civ requirement tag to the builds table
@@ -911,9 +921,82 @@
 #define LEKMOD_AI_XP_CAP
 // Interception is now only triggered if the damage is greater than 0 (prevents 100 evasion units from triggering interception even though they don't do anything)
 #define LEKMOD_100_EVASIION_FIX
+// Unlocks ideology if all your cities have a factory or otherwise a building that unlocks ideology, else the specified number entered (default 3)
+#define LEKMOD_UNLOCK_IDEO_ALL_CITIES
+// Adds a promotion that enables units to have a movement penalty (amount specified in xml) when attacking cities
+#define LEKMOD_MOVE_PENALTY_CITY_COMBAT
+// Building tourism from TechEnhancedTourism can now apply multiple times if the same building exists multiple times in the city
+#define LEKMOD_TECH_ENHANCED_TOURISM_MULTIPLIER
+// New table that holds information on improvements that can yield extra yields when adjacent to other improvements
+#define LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+// Support for custom improvement icons
+#define LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+// Trait table that disables the ability to build specified improvements
+#define LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+// Fixed a bug where free buildings would not give bonus yields from buildings sometimes.
+#define LEKMOD_FREE_BUILDING_FIX
+// Added a new tag to the buildings table in xml "gold cost". This overrides the gold cost of a building regardless of hurry cost modifiers but will be discounted by other effects.
+#define LEKMOD_BUILDING_GOLD_COST
+// Uncouples an assumption that belief buildings cannot have production costs
+#define LEKMOD_BELIEF_BUILDING_PRODUCTION_COST
+// New buildingentry table that awards a certain yield whenever a great person is expended (mausoelum effect)
+#define LEKMOD_BUILDING_GP_EXPEND_YIELD
+// Units or Buildings with a faith cost no longer need a religion to be purchased unless unlocked by a belief
+#define LEKMOD_FAITH_PURCHASE_NO_RELIGION
+// Fixed and applied the policy free promotion for combat units
+//#define LEKMOD_UNITCOMBAT_FREE_PROMOTION
+// Add a new promotion value that gives adjacent units a bonus to city attack. Works the same as the sapper promo just unhardcoded
+// requires: LEKMOD_NEAR_UNIT_WITH_PROMOTION
+//#define LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
+
+
+/// ###############################
+/// Lekmod: New Lua Events and Methods
+/// ################################
+
+#define LEKMOD_NEW_LUA_EVENTS
+// -------------------------------------------------------------------------------------
+// new lua event that triggers when a player's happiness changes.
+/// " PlayerHappinessChanged ". Passed parameters: playerID
+// -------------------------------------------------------------------------------------
+// new lua event that triggers when a new unit is created.
+/// " UnitCreated ". Passed parameters: playerID, unitID, unitType, unitX, unitY
+// -------------------------------------------------------------------------------------
+// new lua event that triggers whenever a player enteres, extends, or exits a golden age.
+/// " PlayerSetGoldenAge ". Passed parameters: playerID
+// -------------------------------------------------------------------------------------
+// new lua event that triggers whenever a unit is healed (negative damage).
+/// " UnitHealed ". Passed parameters: playerID, unitID, unitX, unitY
+
+#define LEKMOD_NEW_LUA_METHODS
+//--------------------------------------------------------------------------------------
+// new lua method. Sets a plot to be fresh water or not.
+/// "SetFreshWater(bool bValue)".
+// -------------------------------------------------------------------------------------
+// new lua method, variant of lSetNumRealBuilding. Instead you enter a building class,
+// which will find and choose a unique building for the civ if able. Otherwise will choose the default building.
+/// "void SetNumRealBuildingClass(BuildingClassType eBuildingClass, int iNewValue)".
+// -------------------------------------------------------------------------------------
+// new lua method. Searches for a specific unit around a unit with a specific promotion and returns true if found.
+/// "bool IsNearUnitWithPromotion((PromotionTypes ePromotion, int iRange, bool bSameDomain, bool bSamePlayer)"
+// -------------------------------------------------------------------------------------
+// new lua method. Searches for a specific terrain type around a unit and returns true if found.
+/// "bool IsNearTerrainType(TerrainTypes eTerrainType, int iRange, bool bSamePlayer)"
+// -------------------------------------------------------------------------------------
+// new lua method. Searches for a specific feature type around a unit and returns true if found.
+/// "bool IsNearFeatureType(PlotTypes eFeature, int iRange, bool bSamePlayer)"
+// -------------------------------------------------------------------------------------
+// new lua method. Searches for a specific improvement around a unit and returns true if found.
+/// "bool IsNearImprovement(ImprovementTypes eImprovement, int iRange,  bool bSamePlayer)"
+// -------------------------------------------------------------------------------------
+// new lua method. Rather than checking for a specific policy, this method checks for a policy branch.
+/// "bool IsPolicyBranchUnlocked(PolicyBranchTypes eBranch)"
+
+/// ###############################
 
 //Added a notification step mid-turn when you found a religion after having the reformation policy
 //#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
+
 
 
 
@@ -951,6 +1034,8 @@
 
 // Note: Not all of these defines are exact copies of the Immos defines, some have been modified.
 
+/// Exploit fix: Queueing up Science or Gold projects (converting production to science/gold) behind other builds no longer gives gold/science for free
+#define PRODUCTION_TO_YIELD_FIX
 /// Fast hand - Intercept and Paradrops can no longer be set when the turn timer is > 50% full
 #define CAN_PARADROP_HALF_TIMER
 #define CAN_SET_INTERCEPT_HALF_TIMER
@@ -994,6 +1079,23 @@
 #define FIX_DO_ATTACK_SUBMARINES_IN_SHADOW_OF_WAR
 //Fixes a bug where nuclear missiles could be seen on nuclear subs
 #define INVISIBILITY_OF_NUCLEAR_MISSILESS_ON_SUBMARINES
+//Stops centering camera on turn starts or when selected units are killed
+#define REMOVE_EXCESS_CAMERA_CENTERING
+//Trading units no longer block civilian units when they are on the same tile
+#define TRADE_UNITS_DO_NOT_CAUSES_REPOSITION
+//Units no longer get pushed out of tile by other units mid-turn. Now only happens during turn transitions
+#define AVOID_UNIT_SPLIT_MID_TURN
+// Toggable game option: AI no longer contributes to known-tech-cost-discount
+// Also allows us to know if a human has researched a tech
+#define HAS_TECH_BY_HUMAN
+// Toggable game option: Automatically spends free technologies at the end of the turn
+#define AUTOMATICALLY_SPEND_FREE_TECHNOLOGIES
+// Bug fix: Now updates happiness right away when an improvement is pillaged or repaired
+#define FIX_SET_IMPROVEMENT_PILLAGED_HAPPINESS_UPDATE
+// Now automatically voids any remaining votes when a player has not used all of their votes at the end of the turn
+#define FINISH_LEAGUE_SESSION_EVEN_IF_SOMEONE_HAS_VOTES
+// Toggable game option: Scientist bulb amounts will now decay after 1 turn
+#define DECREASE_BULB_AMOUNT_OVER_TIME
 //Water tiles are now considered for scoring
 //#define INCLUDE_WATER_IN_LAND_SCORE
 // -------------------------
@@ -1003,6 +1105,11 @@
 #define AUTOSAVE_END_OF_TURN
 // Autosaves no longer skip turns
 #define AUTOSAVE_FIX_PREVENT_TURN_SKIP
+// -------------------------
+
+// -- Debug minidump
+
+#define AUI_MINIDUMPS
 
 //Firstmove fix, still allowing 1 move on turn load. Immos version of LEKMOD_FIRSTMOVE_FIX
 
@@ -1028,3 +1135,8 @@
 #define MOD_RESOURCES_PRODUCTION_COST_MODIFIERS
 #endif
 
+// From VMC DLL
+// Remove leaderscreens in singleplayer (which means effectively everywhere). If you turn this off, you will need to add various leaderscreens back to the game,but vanilla ones will work.
+//#define NO_LEADER_SCREEN
+// Also adds a new leader screen exit lua method called with Game.ExitLeaderScreen. This will run lExitLeaderscreen in here.
+//#define LUAAPIEXTN(method, type, ...) static int l##method(lua_State* L)

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<glyphgen>
+  <textures width="64" height="32">
+    <texture name="" src="civsymbols_dlc_wonderpack_32.dds" allowcolor="1" alloweffects="1" inuse="1" />
+  </textures>
+
+  <styles count="1">
+    <style name="">
+      <layers count="1">
+        <layer tex="" />
+      </layers>
+    </style>
+  </styles>
+
+  <glyphs count="2" fudgeadv="0" ascadj="-6" spacing="0" height="0" ascent="0" descent="0">
+    <glyph  ch="1"   u="5"   v="5" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
+    <glyph  ch="2"  u="37"   v="5" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
+  </glyphs>
+
+  <imports count="0"/>
+  <toolonly>
+    <metainfo pt="0.000000" width="256" height="256" alphabias="64" maxsize="256" bestfit="0" pow2="1" freetype="2" fontsrc="" />
+    <glyphsets>
+      <set name="GlyphSetAscii" />
+    </glyphsets>
+  </toolonly>
+</glyphgen>

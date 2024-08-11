@@ -1323,6 +1323,12 @@ public:
 	bool IsFreePromotion(PromotionTypes eIndex) const;
 	void ChangeFreePromotionCount(PromotionTypes eIndex, int iChange);
 
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	int GetFreePromotionUnitCombatCount(PromotionTypes ePromotion, int iIndex) const;
+	bool IsFreePromotionUnitCombat(PromotionTypes ePromotion, int iIndex) const;
+	void ChangeFreePromotionUnitCombatCount(PromotionTypes ePromotion, int iChange, int iIndex);
+#endif
+
 	int getUnitCombatProductionModifiers(UnitCombatTypes eIndex) const;
 	void changeUnitCombatProductionModifiers(UnitCombatTypes eIndex, int iChange);
 	int getUnitCombatFreeExperiences(UnitCombatTypes eIndex) const;
@@ -2115,6 +2121,10 @@ protected:
 	FAutoVariable<std::vector<int>, CvPlayer> m_paiImprovementCount;
 	FAutoVariable<std::vector<int>, CvPlayer> m_paiFreeBuildingCount;
 	FAutoVariable<std::vector<int>, CvPlayer> m_paiFreePromotionCount;
+#ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
+	//can we make a 2d array of 2 ints
+	FAutoVariable<std::vector<int>, CvPlayer> m_paiUnitCombatFreePromotionCount;
+#endif
 	FAutoVariable<std::vector<int>, CvPlayer> m_paiUnitCombatProductionModifiers;
 	FAutoVariable<std::vector<int>, CvPlayer> m_paiUnitCombatFreeExperiences;
 	FAutoVariable<std::vector<int>, CvPlayer> m_paiUnitClassCount;

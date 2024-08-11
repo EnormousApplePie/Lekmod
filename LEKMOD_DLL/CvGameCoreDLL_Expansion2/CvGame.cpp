@@ -2855,7 +2855,7 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 		{
 #ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
 			if (GC.getGame().isOption("GAMEOPTION_FIRSTMOVE"))
-			{	
+			{
 				if (isGameMultiPlayer())
 				{
 					float t1;
@@ -2875,20 +2875,14 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 					// both is true means turn is about to end
 					// both is false means turn just started
 					if (bAllComplete == getHasReceivedFirstMission()) {
-
-						CvPlayerAI& kPlayer = GET_PLAYER(getActivePlayer());
-						TeamTypes eTeam = kPlayer.getTeam();
-						if (GET_TEAM(kPlayer.getTeam()).isAtWarWithHumans())
-						{
-							if (isMPOrderedMoveOnTurnLoading()) {
-								//SLOG("--- subsequent move order REJECTED %f %f", t1, t2);
-								//SLOG("HasReceivedTurnAllComplete %d bAllComplete %d getHasReceivedFirstMission %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0, getHasReceivedFirstMission() ? 1 : 0);
-								return;
-							}
-							else {
-								//SLOG("--- first move order");
-								setMPOrderedMoveOnTurnLoading(true);
-							}
+						if (isMPOrderedMoveOnTurnLoading()) {
+							//SLOG("--- subsequent move order REJECTED %f %f", t1, t2);
+							//SLOG("HasReceivedTurnAllComplete %d bAllComplete %d getHasReceivedFirstMission %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0, getHasReceivedFirstMission() ? 1 : 0);
+							return;
+						}
+						else {
+							//SLOG("--- first move order");
+							setMPOrderedMoveOnTurnLoading(true);
 						}
 					}
 
@@ -2971,26 +2965,19 @@ void CvGame::selectedCitiesGameNetMessage(int eMessage, int iData2, int iData3, 
 									if (!gDLL->HasReceivedTurnComplete((PlayerTypes)i))
 										bAllComplete = false;
 								}
-								
 							}
 
 							// both is true means turn is about to end
 							// both is false means turn just started
 							if (bAllComplete == getHasReceivedFirstMission()) {
-
-								CvPlayerAI& kPlayer = GET_PLAYER(getActivePlayer());
-								TeamTypes eTeam = kPlayer.getTeam();
-								if (GET_TEAM(kPlayer.getTeam()).isAtWarWithHumans()) 
-								{
-									if (isMPOrderedMoveOnTurnLoading()) {
-										//SLOG("--- subsequent move order REJECTED %f %f", t1, t2);
-										//SLOG("HasReceivedTurnAllComplete %d bAllComplete %d getHasReceivedFirstMission %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0, getHasReceivedFirstMission() ? 1 : 0);
-										return;
-									}
-									else {
-										//SLOG("--- first move order");
-										setMPOrderedMoveOnTurnLoading(true);
-									}
+								if (isMPOrderedMoveOnTurnLoading()) {
+									//SLOG("--- subsequent move order REJECTED %f %f", t1, t2);
+									//SLOG("HasReceivedTurnAllComplete %d bAllComplete %d getHasReceivedFirstMission %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0, getHasReceivedFirstMission() ? 1 : 0);
+									return;
+								}
+								else {
+									//SLOG("--- first move order");
+									setMPOrderedMoveOnTurnLoading(true);
 								}
 							}
 
@@ -9265,7 +9252,57 @@ void CvGame::updateMoves()
 
 					// check if the (for now human) player is overstacked and move the units
 					//if (player.isHuman())
+#ifdef AVOID_UNIT_SPLIT_MID_TURN
+					if (player.isHuman())
+					{
+						for (int iI = 0; iI < GC.getMap().numPlots(); iI++)
+						{
+							FStaticVector<IDInfo, 50, true, c_eCiv5GameplayDLL, 0> oldUnitList;
 
+							IDInfo* pUnitNode;
+							CvUnit* pLoopUnit;
+
+							oldUnitList.clear();
+
+							pUnitNode = GC.getMap().plotByIndexUnchecked(iI)->headUnitNode();
+
+							while (pUnitNode != NULL)
+							{
+								oldUnitList.push_back(*pUnitNode);
+								pUnitNode = GC.getMap().plotByIndexUnchecked(iI)->nextUnitNode(pUnitNode);
+							}
+							int iUnitListSize = (int)oldUnitList.size();
+							for (int iVectorLoop = 0; iVectorLoop < (int)iUnitListSize; ++iVectorLoop)
+							{
+								pLoopUnit = GetPlayerUnit(oldUnitList[iVectorLoop]);
+								if (pLoopUnit != NULL)
+								{
+									if (!pLoopUnit->isDelayedDeath())
+									{
+										if (pLoopUnit->atPlot(*(GC.getMap().plotByIndexUnchecked(iI))))
+										{
+											if (!(pLoopUnit->isCargo()))
+											{
+												if (!(pLoopUnit->isInCombat()))
+												{
+													// Unit not allowed to be here
+													if (GC.getMap().plotByIndexUnchecked(iI)->getNumFriendlyUnitsOfType(pLoopUnit) > /*1*/ GC.getPLOT_UNIT_LIMIT())
+													{
+														if (!pLoopUnit->jumpToNearestValidPlot())
+														{
+															pLoopUnit->kill(false);
+															pLoopUnit = NULL;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+#endif
 					// slewis - I changed this to only be the AI because human players should have the tools to deal with this now
 					if(!player.isHuman())
 					{

@@ -50,6 +50,10 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_iTrainedFreePromotion(NO_PROMOTION),
 	m_iFreePromotionRemoved(NO_PROMOTION),
 	m_iProductionCost(0),
+#ifdef LEKMOD_BUILDING_GOLD_COST
+	m_iGoldCost(0),
+	m_bRequiresGoldPurchase(false),
+#endif
 	m_iFaithCost(0),
 	m_iLeagueCost(0),
 	m_iNumCityCostMod(0),
@@ -215,6 +219,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_ppaiTerrainYieldChange(NULL),
 	m_ppiBuildingClassYieldChanges(NULL),
 #endif
+#ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
+	m_piGreatPersonExpendYield(NULL),
+#endif
 	m_paiBuildingClassHappiness(NULL),
 	m_paThemingBonusInfo(NULL),
 #ifdef AUI_WARNING_FIXES
@@ -286,6 +293,9 @@ CvBuildingEntry::~CvBuildingEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiTerrainYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges);
 #endif
+#ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
+	SAFE_DELETE_ARRAY(m_piGreatPersonExpendYield);
+#endif
 }
 
 /// Read from XML file
@@ -319,6 +329,10 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	m_bDiplomaticVoting = kResults.GetBool("DiplomaticVoting");
 	m_bAllowsWaterRoutes = kResults.GetBool("AllowsWaterRoutes");
 	m_iProductionCost = kResults.GetInt("Cost");
+#ifdef LEKMOD_BUILDING_GOLD_COST
+	m_iGoldCost = kResults.GetInt("GoldCost");
+	m_bRequiresGoldPurchase = kResults.GetBool("RequiresGoldPurchase");
+#endif
 	m_iFaithCost = kResults.GetInt("FaithCost");
 	m_iLeagueCost = kResults.GetInt("LeagueCost");
 	m_bUnlockedByBelief = kResults.GetBool("UnlockedByBelief");
@@ -806,6 +820,34 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 		}
 	}
 
+#ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
+	//Building GP expended yields
+	{
+
+		kUtility.InitializeArray(m_piGreatPersonExpendYield, "Yields");
+
+		std::string strKey("Building_GreatPersonExpendedYields");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select Yields.ID as YieldID, Yield from Building_GreatPersonExpendedYields inner join Yields on Yields.Type = YieldType where BuildingType = ?");
+		}
+
+		pResults->Bind(1, szBuildingType);
+
+		while (pResults->Step())
+		{
+			const int iYieldID = pResults->GetInt(0);
+			const int iYieldChange = pResults->GetInt(1);
+
+			m_piGreatPersonExpendYield[iYieldID] = iYieldChange;
+
+			//OutputDebugStringA(CvString::format("Building_GreatPersonExpendedYields: %s, %d, %d\n", szBuildingType, iYieldID, iYieldChange).c_str());
+
+		}
+	}
+#endif
+
 	{
 		//Initialize Theming Bonuses
 		const int iNumThemes = MAX_THEMING_BONUSES; /* 12 */
@@ -1044,6 +1086,19 @@ int CvBuildingEntry::GetProductionCost() const
 	return m_iProductionCost;
 }
 
+#ifdef LEKMOD_BUILDING_GOLD_COST
+
+/// Does this building require to be bought with gold?
+bool CvBuildingEntry::RequiresGoldPurchase() const
+{
+	return m_bRequiresGoldPurchase;
+}
+/// Gold cost to construct the building
+int CvBuildingEntry::GetGoldCost() const
+{
+	return m_iGoldCost;
+}
+#endif
 /// Faith to construct the unit (as a percentage of cost of next Great Prophet)
 int CvBuildingEntry::GetFaithCost() const
 {
@@ -2326,6 +2381,18 @@ int CvBuildingEntry::GetBuildingClassYieldChange(int i, int j) const
 #endif
 }
 
+#ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
+
+///Yield for expending a Great Person
+int CvBuildingEntry::GetGreatPersonExpendYield(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piGreatPersonExpendYield[i];
+}
+
+#endif
+
 /// Amount of extra Happiness per turn a BuildingClass provides
 int CvBuildingEntry::GetBuildingClassHappiness(int i) const
 {
@@ -2744,6 +2811,24 @@ void CvCityBuildings::DoSellBuilding(BuildingTypes eIndex)
 	SetNumRealBuilding(eIndex, 0);
 
 	SetSoldBuildingThisTurn(true);
+
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	// MOD.EAP: Add a new lua event.
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+
+		args->Push(m_pCity->getOwner());
+		args->Push(eIndex);
+		args->Push(m_pCity->GetID());
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "BuildingSold", args.get(), bResult);
+	}
+#endif
 }
 
 /// How much of a refund will the player get from selling eIndex?

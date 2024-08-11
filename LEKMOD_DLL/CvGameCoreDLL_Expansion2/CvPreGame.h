@@ -211,6 +211,10 @@ bool										 SetGameOptions(const std::vector<CustomOption>& gameOptions);
 void                                       setGameType(GameTypes g);
 void                                       setGameType(GameTypes g, GameStartTypes eStartType);
 void                                       setGameType(const CvString& g);
+#ifdef NO_LEADER_SCREEN
+void                                       pushGameType(GameTypes g);
+void                                       popGameType();
+#endif
 void                                       setGameStartType(GameStartTypes g);
 void                                       setGameUpdateTime(int updateTime);                 // setupdata
 void                                       setHandicap(PlayerTypes p, HandicapTypes h);

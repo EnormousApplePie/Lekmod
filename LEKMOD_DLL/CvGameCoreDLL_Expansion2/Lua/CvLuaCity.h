@@ -455,6 +455,9 @@ protected:
 	static int lGetNumForcedWorkingPlots(lua_State* L);
 	static int lGetNumRealBuilding(lua_State* L);
 	static int lSetNumRealBuilding(lua_State* L);
+#ifdef LEKMOD_NEW_LUA_METHODS
+	static int lSetNumRealBuildingClass(lua_State* L);
+#endif
 	static int lGetNumFreeBuilding(lua_State* L);
 	static int lIsBuildingSellable(lua_State* L);
 	static int lGetSellBuildingRefund(lua_State* L);

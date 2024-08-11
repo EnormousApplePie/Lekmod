@@ -143,6 +143,15 @@ CvImprovementEntry::CvImprovementEntry(void):
 	m_ppiTechFreshWaterYieldChanges(NULL),
 	m_ppiRouteYieldChanges(NULL),
 #endif
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	m_piImprovementAdjacentBonusCivilization(NULL),
+	m_ppiImprovementAdjacentCivilizationAmount(NULL),
+	m_ppiImprovementAdjacentBonusCivilizationNoAmount(NULL),
+	m_ppiImprovementAdjacentBonus(NULL),
+	m_ppiImprovementAdjacentAmount(NULL),
+
+#endif
+
 	m_paImprovementResource(NULL)
 {
 }
@@ -195,6 +204,33 @@ CvImprovementEntry::~CvImprovementEntry(void)
 	{
 		CvDatabaseUtility::SafeDelete2DArray(m_ppiRouteYieldChanges);
 	}
+#endif
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+	if (m_ppiImprovementAdjacentBonus != NULL)
+	{
+		CvDatabaseUtility::SafeDelete2DArray(m_ppiImprovementAdjacentBonus);
+	}
+
+	if (m_ppiImprovementAdjacentCivilizationAmount != NULL)
+	{
+		CvDatabaseUtility::SafeDelete2DArray(m_ppiImprovementAdjacentCivilizationAmount);
+	}
+
+	if (m_ppiImprovementAdjacentBonusCivilizationNoAmount != NULL)
+	{
+		CvDatabaseUtility::SafeDelete2DArray(m_ppiImprovementAdjacentBonusCivilizationNoAmount);
+	}
+
+	if (m_piImprovementAdjacentBonusCivilization != NULL)
+	{
+		CvDatabaseUtility::SafeDelete2DArray(m_piImprovementAdjacentBonusCivilization);
+	}
+
+	if (m_ppiImprovementAdjacentAmount != NULL)
+	{
+		CvDatabaseUtility::SafeDelete2DArray(m_ppiImprovementAdjacentAmount);
+	}
+
 #endif
 }
 
@@ -262,6 +298,11 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 	const char* szCivilizationType = kResults.GetText("CivilizationType");
 	m_eRequiredCivilization = (CivilizationTypes)GC.getInfoTypeForString(szCivilizationType, true);
 
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+	const char* szIconString = kResults.GetText("IconString");
+	SetIconString(szIconString);
+#endif
+
 	//References
 	const char* szWorldsoundscapeAudioScript = kResults.GetText("WorldSoundscapeAudioScript");
 	if(szWorldsoundscapeAudioScript != NULL)
@@ -316,6 +357,8 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 	kUtility.SetYields(m_piPrereqNatureYield, "Improvement_PrereqNatureYields", "ImprovementType", szImprovementType);
 
 	kUtility.SetFlavors(m_piFlavorValue, "Improvement_Flavors", "ImprovementType", szImprovementType);
+
+
 
 	{
 		//Initialize Improvement Resource Types to number of Resources
@@ -411,6 +454,99 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 #endif
 		}
 	}
+
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+
+	{
+		
+		const int iImprovementTypes = kUtility.MaxRows("Improvements");
+		const int iNumYields = kUtility.MaxRows("Yields");
+		const int iNumMaxAmount = 7;
+
+		kUtility.Initialize2DArray(m_piImprovementAdjacentBonusCivilization, 200, iImprovementTypes);
+		kUtility.Initialize2DArray(m_ppiImprovementAdjacentCivilizationAmount, iNumYields, iNumMaxAmount);
+		kUtility.Initialize2DArray(m_ppiImprovementAdjacentBonusCivilizationNoAmount, iImprovementTypes, iNumYields);
+
+		std::string strKey = "Improvement_AdjacencyYieldCivilization";
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select OtherImprovementType, Civilizations.ID, Amount, Yields.ID, Yield from Improvement_AdjacencyYieldCivilization inner join Yields on YieldType = Yields.Type inner join Civilizations on CivilizationType = Civilizations.Type where ImprovementType = ?");
+		}
+
+		pResults->Bind(1, szImprovementType, lenImprovementType, false);
+
+		while (pResults->Step())
+		{
+			const int sImprovementType = GC.getInfoTypeForString(pResults->GetText(0), true);
+			CvAssert(sImprovementType > -1);
+			const int iCivilizationType = pResults->GetInt(1);
+			CvAssert(iCivilizationType > -1);
+			const int iAmount = pResults->GetInt(2);
+			CvAssert(iAmount > -1);
+			const int iYieldType = pResults->GetInt(3);
+			CvAssert(iYieldType > -1);
+			const int iYield = pResults->GetInt(4);
+
+			m_piImprovementAdjacentBonusCivilization[iCivilizationType][sImprovementType] = sImprovementType;
+			if (iAmount == 0)
+			{
+				m_ppiImprovementAdjacentBonusCivilizationNoAmount[sImprovementType][iYieldType] = iYield;
+			}
+			else if (iAmount > 0 && iAmount < iNumMaxAmount)
+			{
+				m_ppiImprovementAdjacentCivilizationAmount[iYieldType][iAmount] = iYield;
+			}
+		}
+
+		pResults->Reset();
+
+	}
+	
+	//ImprovementAdjacentBonus no Civilization but with amount
+	{
+		
+		const int iImprovementTypes = kUtility.MaxRows("Improvements");
+		const int iNumYields = kUtility.MaxRows("Yields");
+		const int iNumMaxAmount = 7;
+		kUtility.Initialize2DArray(m_ppiImprovementAdjacentBonus, iImprovementTypes, iNumYields);
+		kUtility.Initialize2DArray(m_ppiImprovementAdjacentAmount, iImprovementTypes, iNumMaxAmount);
+
+		std::string strKey = "Improvement_AdjacencyYield";
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select OtherImprovementType, Amount, Yields.ID, Yield from Improvement_AdjacencyYield inner join Yields on YieldType = Yields.Type where ImprovementType = ?");
+		}
+
+		pResults->Bind(1, szImprovementType, lenImprovementType, false);
+
+		while (pResults->Step())
+		{
+			const int sImprovementType = GC.getInfoTypeForString(pResults->GetText(0), true);
+			CvAssert(sImprovementType > -1);
+			const int iAmount = pResults->GetInt(1);
+			CvAssert(iAmount > -1);
+			const int iYieldType = pResults->GetInt(2);
+			CvAssert(iYieldType > -1);
+			const int iYield = pResults->GetInt(3);
+
+			if (iAmount == 0)
+			{
+				m_ppiImprovementAdjacentBonus[sImprovementType][iYieldType] = iYield;
+			}
+			else if (iAmount > 0 && iAmount < iNumMaxAmount)
+			{
+				m_ppiImprovementAdjacentAmount[iYieldType][iAmount] = iYield;
+			}
+		}
+
+		pResults->Reset();
+
+	}
+	
+
+#endif
 
 	//TechNoFreshWaterYieldChanges
 	{
@@ -532,6 +668,19 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 
 	return true;
 }
+
+/// Support for custom improvement icons
+#ifdef LEKMOD_CUSTOM_IMPROVEMENT_ICONS
+const char* CvImprovementEntry::GetIconString() const
+{
+	return m_strIconString;
+}
+//------------------------------------------------------------------------------
+void CvImprovementEntry::SetIconString(const char* szVal)
+{
+	m_strIconString = szVal;
+}
+#endif
 
 /// The gold maintenance cost
 int CvImprovementEntry::GetGoldMaintenance() const
@@ -1047,6 +1196,54 @@ int* CvImprovementEntry::GetTechYieldChangesArray(int i)
 #endif
 }
 
+#ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
+/// How much a type of improvement adjacent to this improvement improves the yield of this improvement
+int CvImprovementEntry::GetImprovementAdjacentBonus(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiImprovementAdjacentBonus[i][j];
+}
+
+int CvImprovementEntry::GetImprovementAdjacentBonusCivilization(int i, int j) const
+{	
+	CvAssertMsg(i < 200, "Index out of bounds");
+	CvAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piImprovementAdjacentBonusCivilization[i][j];
+}
+
+// what improvement type is required to be adjacent to this improvement to get the yield bonus
+int CvImprovementEntry::GetImprovementAdjacentCivilizationAmount(int i, int j) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < 6, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiImprovementAdjacentCivilizationAmount[i][j];
+}
+
+int CvImprovementEntry::GetImprovementAdjacentBonusCivilizationNoAmount(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiImprovementAdjacentBonusCivilizationNoAmount[i][j];
+}
+
+// what improvement type is required to be adjacent to this improvement to get the yield bonus
+int CvImprovementEntry::GetImprovementAdjacentAmount(int i, int j) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < 6, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiImprovementAdjacentAmount[i][j];
+}
+#endif
 /// How much a tech improves the yield of this improvement if it DOES NOT have fresh water
 int CvImprovementEntry::GetTechNoFreshWaterYieldChanges(int i, int j) const
 {

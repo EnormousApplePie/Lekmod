@@ -136,6 +136,9 @@ public:
 	int GetCapitalDefenseModifier() const;
 	int GetCapitalDefenseFalloff() const;
 	int GetCityAttackPlunderModifier() const;
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	int GetCityAttackMovePenalty() const;
+#endif
 	int GetReligiousStrengthLossRivalTerritory() const;
 	
 	int GetTradeMissionInfluenceModifier() const;
@@ -337,6 +340,9 @@ protected:
 	int m_iCapitalDefenseModifier;
 	int m_iCapitalDefenseFalloff;
 	int m_iCityAttackPlunderModifier;
+#ifdef LEKMOD_MOVE_PENALTY_CITY_COMBAT
+	int m_iCityAttackMovePenalty;
+#endif
 	int m_iReligiousStrengthLossRivalTerritory;
 	int m_iTradeMissionInfluenceModifier;
 	int m_iTradeMissionGoldModifier;

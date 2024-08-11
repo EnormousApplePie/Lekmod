@@ -2449,7 +2449,6 @@ bool CvCivilizationInfo::CacheResults(Database::Results& kResults, CvDatabaseUti
 		pResults->Reset();
 
 	}
-
 	kUtility.PopulateArrayByExistence(m_pbCivilizationFreeBuildingClass,
 	                                  "BuildingClasses", "Civilization_FreeBuildingClasses",
 	                                  "BuildingClassType", "CivilizationType", szType);

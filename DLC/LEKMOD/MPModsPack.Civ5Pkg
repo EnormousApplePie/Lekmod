@@ -16,10 +16,8 @@
   </Description>
   <UISkin name="Expansion2Primary" set="Expansion2" platform="Common">
 	<GameplaySkin>
-		<Directory>UI</Directory>
-		<Directory>Mods</Directory>
-		<Directory>LUA</Directory>
-		<Directory>CultureOverview</Directory>
+		<Directory>Art</Directory>
+		<Directory>Lua</Directory>
 	</GameplaySkin>
   </UISkin>
 </Civ5Package>
