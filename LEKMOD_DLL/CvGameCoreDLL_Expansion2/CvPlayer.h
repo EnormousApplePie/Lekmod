@@ -241,6 +241,11 @@ public:
 	void receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit);
 	void doGoody(CvPlot* pPlot, CvUnit* pUnit);
 
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	CvCity* findBestCityForGoody(CvPlot* pPlot) const;
+	bool canGoodyImprovePlot(CvPlot* pPlot, BuildTypes eBuild) const;
+#endif
+
 	void AwardFreeBuildings(CvCity* pCity); // slewis - broken out so that Venice can get free buildings when they purchase something
 	bool canFound(int iX, int iY, bool bTestVisible = false) const;
 	void found(int iX, int iY);

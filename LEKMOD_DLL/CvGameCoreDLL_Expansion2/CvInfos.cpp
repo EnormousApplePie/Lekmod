@@ -4009,6 +4009,17 @@ CvGoodyInfo::CvGoodyInfo() : CvBaseInfo()
 	, m_bUpgradeUnit(false)
 	, m_bPantheonFaith(false)
 	, m_bBad(false)
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	, m_iFoodMin(0)
+	, m_iFoodMax(0)
+	, m_iFaithMin(0)
+	, m_iFaithMax(0)
+	, m_iBeforeTurn(0)
+	, m_iAfterTurn(0)
+	, m_iTileGrowths(0)
+	, m_iRandomImprovement(0)
+#endif
 {
 }
 
@@ -4127,6 +4138,42 @@ bool CvGoodyInfo::isBad() const
 	return m_bBad;
 }
 
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+int CvGoodyInfo::getFoodMin() const
+{
+	return m_iFoodMin;
+}
+int CvGoodyInfo::getFoodMax() const
+{
+	return m_iFoodMax;
+}
+int CvGoodyInfo::getFaithMin() const
+{
+	return m_iFaithMin;
+}
+int CvGoodyInfo::getFaithMax() const
+{
+	return m_iFaithMax;
+}
+int CvGoodyInfo::getBeforeTurn() const
+{
+	return m_iBeforeTurn;
+}
+int CvGoodyInfo::getAfterTurn() const
+{
+	return m_iAfterTurn;
+}
+int CvGoodyInfo::getTileGrowths() const
+{
+	return m_iTileGrowths;
+}
+
+int CvGoodyInfo::getRandomImprovement() const
+{
+	return m_iRandomImprovement;
+}
+#endif
+
 const char* CvGoodyInfo::getSound() const
 {
 	return m_strSound.c_str();
@@ -4183,6 +4230,17 @@ bool CvGoodyInfo::CacheResults(Database::Results& results, CvDatabaseUtility& kU
 	m_bRevealUnknownResource = results.GetBool("RevealUnknownResource");
 	m_bUpgradeUnit = results.GetBool("UpgradeUnit");
 	m_bPantheonFaith = results.GetBool("PantheonFaith");
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	m_iFoodMin = results.GetInt("FoodMin");
+	m_iFoodMax = results.GetInt("FoodMax");
+	m_iFaithMin = results.GetInt("FaithMin");
+	m_iFaithMax = results.GetInt("FaithMax");
+	m_iBeforeTurn = results.GetInt("BeforeTurn");
+	m_iAfterTurn = results.GetInt("AfterTurn");
+	m_iTileGrowths = results.GetInt("TileGrowths");
+	m_iRandomImprovement = results.GetInt("RandomImprovement");
+#endif
 
 	//TEMP TEMP TEMP TEMP
 	m_iUnitClassType = GC.getInfoTypeForString(results.GetText("UnitClass"), true);

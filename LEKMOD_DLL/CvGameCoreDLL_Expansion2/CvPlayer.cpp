@@ -6359,6 +6359,110 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		return false;
 	}
 
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	// New data entered trough XML. Handles the turn limits for goody huts, rather than the old hardcoded values.
+	
+	if(kGoodyInfo.getAfterTurn() > 0)
+	{
+		if(GC.getGame().getElapsedGameTurns() < kGoodyInfo.getAfterTurn())
+		{
+			return false;
+		}
+	}
+	if(kGoodyInfo.getBeforeTurn() > 0)
+	{
+		if(GC.getGame().getElapsedGameTurns() > kGoodyInfo.getBeforeTurn())
+		{
+			return false;
+		}
+	}
+	
+	// Set a few limits for the new rewards
+	if(kGoodyInfo.getFoodMin() > 0 || kGoodyInfo.getFoodMax() > 0)
+	{
+		if (getNumCities() == 0)
+		{
+			return false;
+		}
+
+		if(kGoodyInfo.getFoodMin() > kGoodyInfo.getFoodMax())
+		{
+			return false;
+		}
+		
+	}
+	if(kGoodyInfo.getFaithMin() > 0 || kGoodyInfo.getFaithMax() > 0)
+	{
+		if(kGoodyInfo.getFaithMin() > kGoodyInfo.getFaithMax())
+		{
+			return false;
+		}
+	}
+
+	if(kGoodyInfo.getTileGrowths() > 0)
+	{
+		if (getNumCities() == 0)
+		{
+			return false;
+		}
+	}
+
+	if (kGoodyInfo.getRandomImprovement() > 0)
+	{
+		if (getNumCities() == 0)
+		{
+			return false;
+		}
+
+		CvCity* pBestCity = findBestCityForGoody(pPlot);
+
+		int iNumTilesToImprove = kGoodyInfo.getRandomImprovement();
+		int iNumImprovements = 0;
+
+		//loop trough all city plots, excluding the city plot itself
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+
+			// if we have improved enough tiles, stop
+			if (iNumImprovements >= iNumTilesToImprove)
+			{
+				break;
+			}
+
+			CvPlot* pCityPlot = pBestCity->GetCityCitizens()->GetCityPlotFromIndex(iI);	
+			if (pCityPlot == NULL || pCityPlot == pBestCity->plot() || pCityPlot->getImprovementType() != NO_IMPROVEMENT)
+			{
+				continue;
+			}
+
+			// choose a random improvement we can build on this plot
+			for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
+			{
+				CvBuildInfo* pkBuildInfo = GC.getBuildInfo((BuildTypes)iJ);
+				ImprovementTypes eImprovement = (ImprovementTypes)pkBuildInfo->getImprovement();
+
+				if (!pkBuildInfo || !eImprovement)
+				{
+					continue;
+				}
+
+				if (canGoodyImprovePlot(pCityPlot, ((BuildTypes)iJ)))
+				{
+					iNumImprovements++;
+					break;
+				}
+			}
+		}
+
+		// We have looped trough all city plots, and we have not improved enough tiles, so we return false
+		if (iNumImprovements < iNumTilesToImprove)
+		{
+			return false;
+		}
+
+	}
+#else
+
 	// No XP in first 10 turns
 	if(kGoodyInfo.getExperience() > 0)
 	{
@@ -6367,7 +6471,15 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 			return false;
 		}
 	}
-
+	// NQMP GJS - NQMP_1_GJS fix so that culture ruins cannot be selected before turn 12
+	if (kGoodyInfo.getCulture() > 0)
+	{
+		if (GC.getGame().getElapsedGameTurns() < 12)
+		{
+			return false;
+		}
+	}
+#endif
 	// Unit Healing
 	if(kGoodyInfo.getDamagePrereq() > 0)
 	{
@@ -6377,18 +6489,12 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		}
 	}
 
-	// NQMP GJS - NQMP_1_GJS fix so that culture ruins cannot be selected before turn 12
-	if (kGoodyInfo.getCulture() > 0)
-	{
-		if (GC.getGame().getElapsedGameTurns() < 12)
-		{
-			return false;
-		}
-	}
+	
 
 	// Early pantheon
 	if(kGoodyInfo.isPantheonFaith())
 	{
+#ifndef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
 		if(GC.getGame().getElapsedGameTurns() < 20)
 		{
 			return false;
@@ -6397,6 +6503,9 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		{
 			return (!GetReligions()->HasCreatedPantheon() && !GetReligions()->HasCreatedReligion());
 		}
+#else
+		return (!GetReligions()->HasCreatedPantheon() && !GetReligions()->HasCreatedReligion());
+#endif
 	}
 
 	// Faith toward Great Prophet
@@ -6786,8 +6895,177 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 #ifdef AUI_PLAYER_RECEIVE_GOODY_PLOT_MESSAGE_FOR_YIELD
 		ReportYieldFromKill(YIELD_GOLD, iGold, pPlot->getX(), pPlot->getY(), iNumYieldBonuses);
 		iNumYieldBonuses += 1;
+
 #endif
 	}
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	// Food
+	int iFood = 0;
+	if (kGoodyInfo.getFoodMin() > 0 && kGoodyInfo.getFoodMax() > 0)
+	{
+		int iMinValue = kGoodyInfo.getFoodMin();
+		int iMaxValue = kGoodyInfo.getFoodMax();
+		iFood = GC.getGame().getJonRandNum(iMaxValue - iMinValue + 1, "Goody Food Rand") + iMinValue;
+		if (iFood > 0)
+		{
+		
+			CvCity* pBestCity = findBestCityForGoody(pPlot);
+
+			if (pBestCity != NULL)
+			{
+				// Add the food to the city, and grow it if possible
+				pBestCity->changeFood(iFood);
+				if (GetID() == GC.getGame().getActivePlayer())
+				{
+					// Notification
+					strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iFood);
+
+					// Plot Popup Text
+					char text[256] = { 0 };
+					float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 3;
+					text[0] = NULL;
+					sprintf_s(text, "[COLOR_WHITE]+%d[ENDCOLOR][ICON_FOOD]", iFood);
+					GC.GetEngineUserInterface()->AddPopupText(pPlot->getX(), pPlot->getY(), text, fDelay);
+				}
+
+
+				while (pBestCity->getFood() >= pBestCity->growthThreshold())
+				{
+					pBestCity->changeFood(-(std::max(0, (pBestCity->growthThreshold() - pBestCity->getFoodKept()))));
+					pBestCity->changePopulation(1);
+
+#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
+					// Only show notification if the city is small
+					if (pBestCity->getPopulation() <= 5)
+					{
+#endif
+						CvNotifications* pNotifications = GET_PLAYER(pBestCity->getOwner()).GetNotifications();
+						if (pNotifications)
+						{
+							Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_CITY_GROWTH");
+							localizedText << pBestCity->getNameKey() << pBestCity->getPopulation();
+							Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_CITY_GROWTH");
+							localizedSummary << pBestCity->getNameKey();
+							pNotifications->Add(NOTIFICATION_CITY_GROWTH, localizedText.toUTF8(), localizedSummary.toUTF8(), pBestCity->getX(), pBestCity->getY(), pBestCity->GetID());
+						}
+#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
+					}
+#endif
+				}
+			}
+		}
+	}
+
+	// Random Faith
+	int iRandomFaith = 0;
+	if (kGoodyInfo.getFaithMin() > 0 && kGoodyInfo.getFaithMax() > 0)
+	{
+		int iMinValue = kGoodyInfo.getFaithMin();
+		int iMaxValue = kGoodyInfo.getFaithMax();
+		iRandomFaith = GC.getGame().getJonRandNum(iMaxValue - iMinValue + 1, "Goody Faith Rand") + iMinValue;
+		if (iRandomFaith > 0)
+		{
+			ChangeFaith(iRandomFaith);
+			if (GetID() == GC.getGame().getActivePlayer())
+			{
+				// Notification
+				strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iRandomFaith);
+				// Plot Popup Text
+				char text[256] = { 0 };
+				float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 3;
+				text[0] = NULL;
+				sprintf_s(text, "[COLOR_WHITE]+%d[ENDCOLOR][ICON_PEACE]", iRandomFaith);
+				GC.GetEngineUserInterface()->AddPopupText(pPlot->getX(), pPlot->getY(), text, fDelay);
+			}
+		}
+	}
+
+	// Tile Growths
+	if (kGoodyInfo.getTileGrowths() > 0)
+	{
+		int iTiles = kGoodyInfo.getTileGrowths();
+		CvCity* pBestCity = findBestCityForGoody(pPlot);
+		
+		if (pBestCity != NULL)
+		{
+			for (int iI = 0; iI < iTiles; iI++)
+			{
+				// Award a tile growth
+				CvPlot* pPlotToAcquire = pBestCity->GetNextBuyablePlot();
+
+				// maybe the player owns ALL of the plots or there are none available?
+				if (pPlotToAcquire)
+				{
+					pBestCity->DoAcquirePlot(pPlotToAcquire->getX(), pPlotToAcquire->getY());
+				}
+			}
+		}
+	}
+
+	// Resource improvements
+	if (kGoodyInfo.getRandomImprovement() > 0)
+	{
+		CvCity* pBestCity = findBestCityForGoody(pPlot);
+		if (pBestCity != NULL)
+		{
+
+			int iNumTilesToImprove = kGoodyInfo.getRandomImprovement();
+			int iNumImprovements = 0;
+			
+			
+			// a previous check ensured this city has enough tiles to be improved by the ruin, 
+			// so we add a while loop to ensure enough tiles are improved
+			while (iNumImprovements < iNumTilesToImprove)
+			{
+
+				//loop trough all city plots, excluding the city plot itself
+				for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+				{
+					if (iNumImprovements >= iNumTilesToImprove)
+					{
+						break;
+					}
+				
+					// choose a random plot from the city
+					int iRandPlot = GC.getGame().getJonRandNum(NUM_CITY_PLOTS, "Goody Improvement Rand");
+					CvPlot* pCityPlot = pBestCity->GetCityCitizens()->GetCityPlotFromIndex(iRandPlot);
+					if (pCityPlot == NULL || pCityPlot == pBestCity->plot() || pCityPlot->getImprovementType() != NO_IMPROVEMENT)
+					{
+						continue;
+					}
+
+					// choose a random improvement we can build on this plot
+					for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
+					{
+						CvBuildInfo* pkBuildInfo = GC.getBuildInfo((BuildTypes)iJ);
+						ImprovementTypes eImprovement = (ImprovementTypes)pkBuildInfo->getImprovement();
+
+						if (!pkBuildInfo || !eImprovement)
+						{
+							continue;
+						}
+
+						if (canGoodyImprovePlot(pCityPlot, ((BuildTypes)iJ)))
+						{
+							pCityPlot->setImprovementType(eImprovement);
+							if (kGoodyInfo.getRandomImprovement() == 1)
+							{
+								// Notification, if there is only one improvement to add, add the improvement icon + name, followed by the resource icon + name
+								strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), pkBuildInfo->GetType(), GC.getImprovementInfo(eImprovement)->GetTextKey(), GC.getResourceInfo(pCityPlot->getResourceType())->GetIconString(), GC.getResourceInfo(pCityPlot->getResourceType())->GetTextKey());
+								
+							}
+							iNumImprovements++;
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+#endif
 
 	// Population
 	if(kGoodyInfo.getPopulation() > 0)
@@ -6877,7 +7155,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		iNumYieldBonuses += 1;
 #endif
 	}
-
+#ifndef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
 	// Faith for pantheon
 	bool bPantheon = kGoodyInfo.isPantheonFaith();
 	if(bPantheon)
@@ -6896,6 +7174,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		iNumYieldBonuses += 1;
 #endif
 	}
+#endif
 
 	// Faith for percent of great prophet
 	int iProphetPercent = kGoodyInfo.getProphetPercent();
@@ -7430,12 +7709,16 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		{
 			int iSpecialValue = 0;
 
-			if(iGold > 0)
+			if (iGold > 0)
 				iSpecialValue = iGold;
-			else if(iCulture > 0)
+			else if (iCulture > 0)
 				iSpecialValue = iCulture;
-			else if(iFaith > 0)
+			else if (iFaith > 0)
 				iSpecialValue = iFaith;
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+			else if (iFood > 0)
+				iSpecialValue = iFood;
+#endif
 
 			CvPopupInfo kPopupInfo(BUTTONPOPUP_GOODY_HUT_REWARD, eGoody, iSpecialValue);
 			GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
@@ -7444,8 +7727,112 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		}
 	}
 }
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+//  --------------------------------------------------------------------------------
+bool CvPlayer::canGoodyImprovePlot(CvPlot* pPlot, BuildTypes eBuild) const
+{
+	if (pPlot == NULL)
+	{
+		return false;
+	}
+
+	// we need to own the plot
+	if (pPlot->getOwner() != GetID())
+	{
+		return false;
+	}
+
+	// plot needs to have a resource
+	ResourceTypes eResource = pPlot->getResourceType(getTeam());
+
+	if (!eResource || eResource == NO_RESOURCE)
+	{
+		return false;
+	}
 
 
+	CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
+	if (!pkBuildInfo)
+	{
+		return false;
+	}
+
+	ImprovementTypes eImprovement = (ImprovementTypes)pkBuildInfo->getImprovement();
+	CvImprovementEntry* pkImprovementInfo = GC.getImprovementInfo(eImprovement);
+
+	// tile can't have an improvement already
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
+	{
+		return false;
+	}
+
+	// the improvement actually needs to improve the resource
+	if (!pkImprovementInfo)
+	{
+		return false;
+	}
+
+	if (!pkImprovementInfo->IsImprovementResourceTrade(eResource))
+	{
+		return false;
+	}
+
+	// do not use great person improvements
+	if (pkImprovementInfo->IsCreatedByGreatPerson())
+	{
+		return false;
+	}
+	
+	// do not remove features
+	if (pPlot->getFeatureType() != NO_FEATURE)
+	{
+		FeatureTypes eFeature = pPlot->getFeatureType();
+		CvFeatureInfo* pkFeatureInfo = GC.getFeatureInfo(eFeature);
+		if (pkFeatureInfo)
+		{
+			if (pkBuildInfo->isFeatureRemove(eFeature))
+			{
+				return false;
+			}
+		}
+	}
+
+	if (canBuild(pPlot, eBuild))
+	{
+		return true;
+	}
+
+	return false;
+}
+//  --------------------------------------------------------------------------------
+CvCity* CvPlayer::findBestCityForGoody(CvPlot* pPlot) const
+{
+	int iDistance;
+	int iBestCityDistance = -1;
+	CvCity* pBestCity = NULL;
+
+	//make a player object equal to the one calling this function
+	PlayerTypes ePlayer = GetID();
+	CvPlayer* pPlayer = &GET_PLAYER(ePlayer);
+
+	CvCity* pLoopCity;
+	int iLoop;
+	// Find the closest City to us to add the food to
+	for (pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pPlayer->nextCity(&iLoop))
+	{
+		iDistance = plotDistance(pPlot->getX(), pPlot->getY(), pLoopCity->getX(), pLoopCity->getY());
+
+		if (iBestCityDistance == -1 || iDistance < iBestCityDistance)
+		{
+			iBestCityDistance = iDistance;
+			pBestCity = pLoopCity;
+		}
+	}
+
+	return pBestCity;
+	
+}
+#endif
 //	--------------------------------------------------------------------------------
 void CvPlayer::doGoody(CvPlot* pPlot, CvUnit* pUnit)
 {

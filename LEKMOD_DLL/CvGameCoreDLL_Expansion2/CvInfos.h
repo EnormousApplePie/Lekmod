@@ -1221,6 +1221,17 @@ public:
 	bool isPantheonFaith() const;
 	bool isBad() const;
 
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	int getFoodMin() const;
+	int getFoodMax() const;
+	int getFaithMin() const;
+	int getFaithMax() const;
+	int getBeforeTurn() const;
+	int getAfterTurn() const;
+	int getTileGrowths() const;
+	int getRandomImprovement() const;
+#endif
+
 	const char* getSound() const;
 	void setSound(const char* szVal);
 
@@ -1254,6 +1265,17 @@ protected:
 	bool m_bUpgradeUnit;
 	bool m_bPantheonFaith;
 	bool m_bBad;
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	int m_iFoodMin;
+	int m_iFoodMax;
+	int m_iFaithMin;
+	int m_iFaithMax;
+	int m_iBeforeTurn;
+	int m_iAfterTurn;
+	int m_iTileGrowths;
+	int m_iRandomImprovement;
+#endif
 
 	CvString m_strSound;
 	CvString m_strChooseDesc;

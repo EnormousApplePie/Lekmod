@@ -943,11 +943,8 @@
 #define LEKMOD_BUILDING_GP_EXPEND_YIELD
 // Units or Buildings with a faith cost no longer need a religion to be purchased unless unlocked by a belief
 #define LEKMOD_FAITH_PURCHASE_NO_RELIGION
-// Fixed and applied the policy free promotion for combat units
-//#define LEKMOD_UNITCOMBAT_FREE_PROMOTION
-// Add a new promotion value that gives adjacent units a bonus to city attack. Works the same as the sapper promo just unhardcoded
-// requires: LEKMOD_NEAR_UNIT_WITH_PROMOTION
-//#define LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
+// New ancient ruin rewards that can be specified in xml
+#define LEKMOD_NEW_ANCIENT_RUIN_REWARDS
 
 
 /// ###############################
@@ -1004,6 +1001,11 @@
 ////////////////////////
 //Benched or not working
 ////////////////////////
+// Fixed and applied the policy free promotion for combat units
+//#define LEKMOD_UNITCOMBAT_FREE_PROMOTION
+// Add a new promotion value that gives adjacent units a bonus to city attack. Works the same as the sapper promo just unhardcoded
+// requires: LEKMOD_NEAR_UNIT_WITH_PROMOTION
+//#define LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
 //EAP: Embarking now only costs 1 movement
 //#define LEK_EMBARK_1_MOVEMENT
 //EAP: Benched for now: Added a new table for Guruship effect on traits and with specific specialist type. AKA: If city is working any [insert specialist] slot, receive x yield (aka switzerland depending on when you read this) CURRENTLY NOT WORKING
