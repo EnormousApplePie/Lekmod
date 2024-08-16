@@ -7033,13 +7033,14 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 					if (pCityPlot == NULL || pCityPlot == pBestCity->plot() || pCityPlot->getImprovementType() != NO_IMPROVEMENT)
 					{
 						continue;
-					}
+					} 
 
 					// choose a random improvement we can build on this plot
 					for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
 					{
 						CvBuildInfo* pkBuildInfo = GC.getBuildInfo((BuildTypes)iJ);
 						ImprovementTypes eImprovement = (ImprovementTypes)pkBuildInfo->getImprovement();
+						CvImprovementEntry* pkImprovementInfo = GC.getImprovementInfo(eImprovement);
 
 						if (!pkBuildInfo || !eImprovement)
 						{
@@ -7055,6 +7056,29 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 								strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), pkBuildInfo->GetType(), GC.getImprovementInfo(eImprovement)->GetTextKey(), GC.getResourceInfo(pCityPlot->getResourceType())->GetIconString(), GC.getResourceInfo(pCityPlot->getResourceType())->GetTextKey());
 								
 							}
+
+							if (pkImprovementInfo->GetCultureBombRadius() > 0) 
+							{
+								
+								//Q: CvUnit seems to be incompatible with UnitTypes, how do I fix this?
+								//A: You can use the CvUnit class to create a dummy unit to perform the culture bomb
+
+								UnitTypes eDummyUnit = pUnit->getUnitType();
+								CvUnit* pDummyUnit = initUnit(eDummyUnit, pCityPlot->getX(), pCityPlot->getY(), NO_UNITAI, NO_DIRECTION, true, true);
+								pDummyUnit->PerformCultureBomb(pkImprovementInfo->GetCultureBombRadius());
+								pDummyUnit->kill(true);
+
+							}
+
+							if (pkImprovementInfo->GetCultureBombRadiusNeutral() > 0)
+							{
+								UnitTypes eDummyUnit = pUnit->getUnitType();
+								CvUnit* pDummyUnit = initUnit(eDummyUnit, pCityPlot->getX(), pCityPlot->getY(), NO_UNITAI, NO_DIRECTION, true, true);
+								pDummyUnit->PerformNeutralCultureBomb(pkImprovementInfo->GetCultureBombRadiusNeutral());
+								pDummyUnit->kill(true);
+								
+							}
+							
 							iNumImprovements++;
 							break;
 						}
