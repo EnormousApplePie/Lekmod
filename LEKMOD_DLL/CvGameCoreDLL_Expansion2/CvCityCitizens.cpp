@@ -3653,7 +3653,11 @@ int CvCityCitizens::GetSpecialistUpgradeThreshold(UnitClassTypes eUnitClass)
 }
 
 /// Create a GP!
+#ifdef ENHANCED_GRAPHS
+void CvCityCitizens::DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, bool bCountAsProphet, bool bMayaBoost)
+#else
 void CvCityCitizens::DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, bool bCountAsProphet)
+#endif
 {
 	CvAssert(eUnit != NO_UNIT);
 
@@ -3683,11 +3687,20 @@ void CvCityCitizens::DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, b
 	{
 		if(newUnit->IsGreatGeneral())
 		{
+#ifdef ENHANCED_GRAPHS
+			kPlayer.ChangeNumGeneralsTotal(1);
+#else
 			kPlayer.incrementGreatGeneralsCreated();
+#endif
 		}
+
 		else if(newUnit->IsGreatAdmiral())
 		{
+#ifdef ENHANCED_GRAPHS
+			kPlayer.ChangeNumAdmiralsTotal(1);
+#else
 			kPlayer.incrementGreatAdmiralsCreated();
+#endif
 			CvPlot *pSpawnPlot = kPlayer.GetGreatAdmiralSpawnPlot(newUnit);
 			if (newUnit->plot() != pSpawnPlot)
 			{
@@ -3696,31 +3709,76 @@ void CvCityCitizens::DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, b
 		}
 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
 		{
+#ifdef ENHANCED_GRAPHS
+			if (bMayaBoost)
+			{
+				kPlayer.SetMayaBoostWriters(true);
+			}
+			kPlayer.ChangeNumWritersTotal(1);
+#endif
 			kPlayer.incrementGreatWritersCreated();
 		}							
 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
 		{
+#ifdef ENHANCED_GRAPHS
+			if (bMayaBoost)
+			{
+				kPlayer.SetMayaBoostArtists(true);
+			}
+			kPlayer.ChangeNumArtistsTotal(1);
+#endif
 			kPlayer.incrementGreatArtistsCreated();
 		}							
 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
 		{
+#ifdef ENHANCED_GRAPHS
+			if (bMayaBoost)
+			{
+				kPlayer.SetMayaBoostMusicians(true);
+			}
+			kPlayer.ChangeNumMusiciansTotal(1);
+#endif
 			kPlayer.incrementGreatMusiciansCreated();
 		}		
 		// GJS: Start separation of great people
 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
 		{
+#ifdef ENHANCED_GRAPHS
+			if (bMayaBoost)
+			{
+				kPlayer.SetMayaBoostScientist(true);
+			}
+			kPlayer.ChangeNumScientistsTotal(1);
+#endif
 			kPlayer.incrementGreatScientistsCreated();
 		}
 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
 		{
+#ifdef ENHANCED_GRAPHS
+			if (bMayaBoost)
+			{
+				kPlayer.SetMayaBoostEngineers(true);
+			}
+			kPlayer.ChangeNumEngineersTotal(1);
+#endif
 			kPlayer.incrementGreatEngineersCreated();
 		}
 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
 		{
+#ifdef ENHANCED_GRAPHS
+			if (bMayaBoost)
+			{
+				kPlayer.SetMayaBoostMerchants(true);
+			}
+			kPlayer.ChangeNumMerchantsTotal(1);
+#endif
 			kPlayer.incrementGreatMerchantsCreated();
 		}
 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
 		{
+#ifdef ENHANCED_GRAPHS
+			kPlayer.ChangeNumProphetsTotal(1);
+#endif
 			kPlayer.incrementGreatProphetsCreated();
 		}
 		// GJS: End separation of great people
@@ -3729,11 +3787,47 @@ void CvCityCitizens::DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, b
 			kPlayer.incrementGreatPeopleCreated();
 		}
 	}
-
+#ifdef ENHANCED_GRAPHS
+	if (!bIncrementCount && !bCountAsProphet)
+	{
+		if (newUnit->IsGreatGeneral())
+		{
+			kPlayer.ChangeNumGeneralsTotal(1);
+		}
+		else if (newUnit->IsGreatAdmiral())
+		{
+			kPlayer.ChangeNumAdmiralsTotal(1);
+			CvPlot* pSpawnPlot = kPlayer.GetGreatAdmiralSpawnPlot(newUnit);
+			if (newUnit->plot() != pSpawnPlot)
+			{
+				newUnit->setXY(pSpawnPlot->getX(), pSpawnPlot->getY());
+			}
+		}
+		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
+		{
+			kPlayer.ChangeNumWritersTotal(1);
+		}
+		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
+		{
+			kPlayer.ChangeNumArtistsTotal(1);
+		}
+		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
+		{
+			kPlayer.ChangeNumMusiciansTotal(1);
+		}
+		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+		{
+			kPlayer.ChangeNumProphetsTotal(1);
+		}
+	}
+#endif
 	// NQMP GJS: In order to make "free" Great Prophets truly free, had to remove the 2nd half of the check below, left it commented out though in case I screw something up.
 	if(bCountAsProphet)// || newUnit->getUnitInfo().IsFoundReligion())
 	{
 		kPlayer.GetReligions()->ChangeNumProphetsSpawned(1);
+#ifdef ENHANCED_GRAPHS
+		kPlayer.ChangeNumProphetsTotal(1);
+#endif
 	}
 
 	// Setup prophet properly

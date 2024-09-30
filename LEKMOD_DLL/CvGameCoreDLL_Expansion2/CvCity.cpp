@@ -6943,6 +6943,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							// NQMP GJS - this code only runs when a building spawns a unit that can found a religion (currently ONLY Hagia Sophia)
 							// Since that Great Prophet should be free, I changed the 2 boolean parameters below from true to false
 							GetCityCitizens()->DoSpawnGreatPerson(eFreeUnitType, false /*bIncrementCount*/, false);
+#ifdef ENHANCED_GRAPHS
+							owningPlayer.ChangeNumProphetsTotal(1);
+#endif
 						}
 						else
 						{
@@ -6951,7 +6954,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							// Bump up the count
 							if(pFreeUnit->IsGreatGeneral())
 							{
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumGeneralsTotal(1);
+#else
 								owningPlayer.incrementGreatGeneralsCreated();
+#endif
 								if (!pFreeUnit->jumpToNearestValidPlot())
 									pFreeUnit->kill(false);	// Could not find a valid spot!
 #ifdef NQ_WAR_HERO
@@ -6963,7 +6970,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							}
 							else if(pFreeUnit->IsGreatAdmiral())
 							{
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumAdmiralsTotal(1);
+#else
 								owningPlayer.incrementGreatAdmiralsCreated();
+#endif
 								CvPlot *pSpawnPlot = owningPlayer.GetGreatAdmiralSpawnPlot(pFreeUnit);
 								if (pFreeUnit->plot() != pSpawnPlot)
 								{
@@ -6974,6 +6985,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							{
 								// GJS NQMP - Free Great Writer is now actually free
 								//owningPlayer.incrementGreatWritersCreated();
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumWritersTotal(1);
+#endif
 								if (!pFreeUnit->jumpToNearestValidPlot())
 									pFreeUnit->kill(false);	// Could not find a valid spot!
 							}							
@@ -6981,6 +6995,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							{
 								// GJS NQMP - Free Great Artist is now actually free
 								//owningPlayer.incrementGreatArtistsCreated();
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumArtistsTotal(1);
+#endif
 								if (!pFreeUnit->jumpToNearestValidPlot())
 									pFreeUnit->kill(false);	// Could not find a valid spot!
 							}							
@@ -6988,6 +7005,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							{
 								// GJS NQMP - Free Great Musician is now actually free
 								//owningPlayer.incrementGreatMusiciansCreated();
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumMusiciansTotal(1);
+#endif
 								if (!pFreeUnit->jumpToNearestValidPlot())
 									pFreeUnit->kill(false);	// Could not find a valid spot!
 							}
@@ -6996,6 +7016,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							{
 								// GJS NQMP - Free Great Scientist is now actually free
 								//owningPlayer.incrementGreatScientistsCreated();
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumScientistsTotal(1);
+#endif
 								if (!pFreeUnit->jumpToNearestValidPlot())
 									pFreeUnit->kill(false);	// Could not find a valid spot!
 							}
@@ -7003,6 +7026,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							{
 								// GJS NQMP - Free Great Engineer is now actually free
 								//owningPlayer.incrementGreatEngineersCreated();
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumEngineersTotal(1);
+#endif
 								if (!pFreeUnit->jumpToNearestValidPlot())
 									pFreeUnit->kill(false);	// Could not find a valid spot!
 							}
@@ -7010,6 +7036,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							{
 								// GJS NQMP - Free Great merchant is now actually free
 								//owningPlayer.incrementGreatMerchantsCreated();
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumMerchantsTotal(1);
+#endif
 								if (!pFreeUnit->jumpToNearestValidPlot())
 									pFreeUnit->kill(false);	// Could not find a valid spot!
 							}
@@ -7017,6 +7046,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 							{
 								// GJS NQMP - Free Great Prophet is now actually free
 								//owningPlayer.incrementGreatProphetsCreated();
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumProphetsTotal(1);
+#endif
 								if (!pFreeUnit->jumpToNearestValidPlot())
 									pFreeUnit->kill(false);	// Could not find a valid spot!
 							}
@@ -13205,6 +13237,9 @@ void CvCity::BuyPlot(int iPlotX, int iPlotY)
 	CvPlayer& thisPlayer = GET_PLAYER(getOwner());
 	thisPlayer.GetTreasury()->LogExpenditure("", iCost, 1);
 	thisPlayer.GetTreasury()->ChangeGold(-iCost);
+#ifdef ENHANCED_GRAPHS
+	thisPlayer.ChangeGoldSpentBuys(iCost);
+#endif
 	thisPlayer.ChangeNumPlotsBought(1);
 
 	// See if there's anyone else nearby that could get upset by this action
@@ -14411,6 +14446,12 @@ int CvCity::CreateUnit(UnitTypes eUnitType, UnitAITypes eAIType, bool bUseToSati
 	{
 		IncrementUnitStatCount(pUnit);
 	}
+#ifdef ENHANCED_GRAPHS
+	if (GC.getUnitInfo(eUnitType)->GetUnitCombatType() != NO_UNITCOMBAT)
+	{
+		thisPlayer.ChangeNumTrainedUnits(1);
+	}
+#endif
 
 	return pUnit->GetID();
 }
@@ -15030,6 +15071,9 @@ void CvCity::Purchase(UnitTypes eUnitType, BuildingTypes eBuildingType, ProjectT
 		}
 
 		GET_PLAYER(getOwner()).GetTreasury()->ChangeGold(-iGoldCost);
+#ifdef ENHANCED_GRAPHS
+		GET_PLAYER(getOwner()).ChangeGoldSpentBuys(iGoldCost);
+#endif
 
 		bool bResult = false;
 		if(eUnitType >= 0)
@@ -15057,6 +15101,12 @@ void CvCity::Purchase(UnitTypes eUnitType, BuildingTypes eBuildingType, ProjectT
 					bool bScriptResult;
 					LuaSupport::CallHook(pkScriptSystem, "CityTrained", args.get(), bScriptResult);
 				}
+#ifdef ENHANCED_GRAPHS
+				if (GC.getUnitInfo(eUnitType)->GetUnitCombatType() != NO_UNITCOMBAT)
+				{
+					kPlayer.ChangeNumTrainedUnits(1);
+				}
+#endif
 			}
 		}
 		else if(eBuildingType >= 0)
@@ -15254,6 +15304,14 @@ void CvCity::Purchase(UnitTypes eUnitType, BuildingTypes eBuildingType, ProjectT
 				strLogMsg += temp;
 				GC.getGame().GetGameReligions()->LogReligionMessage(strLogMsg);
 			}
+
+#ifdef ENHANCED_GRAPHS
+			if (GC.getUnitInfo(eUnitType)->GetUnitCombatType() != NO_UNITCOMBAT)
+			{
+				kPlayer.ChangeNumTrainedUnits(1);
+			}
+#endif
+
 		}
 
 		else if(eBuildingType >= 0)
@@ -15357,6 +15415,9 @@ void CvCity::doGrowth()
 		if(GetCityCitizens()->IsForcedAvoidGrowth())  // don't grow a city if we are at avoid growth
 		{
 			setFood(growthThreshold());
+#ifdef ENHANCED_GRAPHS
+			GetPlayer()->ChangeTurnsStagnated(1);
+#endif
 		}
 		else
 		{
@@ -15471,6 +15532,9 @@ bool CvCity::doCheckProduction()
 						if(iProductionGold > 0)
 						{
 							thisPlayer.GetTreasury()->ChangeGold(iProductionGold);
+#ifdef ENHANCED_GRAPHS
+							thisPlayer.ChangeProductionGoldFromWonders(iProductionGold);
+#endif
 
 							if(getOwner() == GC.getGame().getActivePlayer())
 							{
@@ -15540,6 +15604,9 @@ bool CvCity::doCheckProduction()
 					if(iProductionGold > 0)
 					{
 						thisPlayer.GetTreasury()->ChangeGold(iProductionGold);
+#ifdef ENHANCED_GRAPHS
+						thisPlayer.ChangeProductionGoldFromWonders(iProductionGold);
+#endif
 
 						if(getOwner() == GC.getGame().getActivePlayer())
 						{
@@ -15574,6 +15641,10 @@ bool CvCity::doCheckProduction()
 					if(iProductionGold > 0)
 					{
 						thisPlayer.GetTreasury()->ChangeGold(iProductionGold);
+
+#ifdef ENHANCED_GRAPHS
+						thisPlayer.ChangeProductionGoldFromWonders(iProductionGold);
+#endif
 
 						if(getOwner() == GC.getGame().getActivePlayer())
 						{

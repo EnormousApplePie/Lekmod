@@ -1030,12 +1030,16 @@
 
 //--------------------------------------------------------------------------------------------------
 
-// LEKMOD: From IMMOS - Russian Community
+// LEKMOD: From IMMOS - CIS Community
 
 //--------------------------------------------------------------------------------------------------
 
 // Note: Not all of these defines are exact copies of the Immos defines, some have been modified.
 
+// Better end-game graphs
+#define ENHANCED_GRAPHS
+// Exploit fix: added a few missing sanity checks to avoid duping unit mission in laggy MP games.
+#define NET_FIX_SINGLE_USE_ABILITY_DUPE
 /// Exploit fix: Queueing up Science or Gold projects (converting production to science/gold) behind other builds no longer gives gold/science for free
 #define PRODUCTION_TO_YIELD_FIX
 /// Fast hand - Intercept and Paradrops can no longer be set when the turn timer is > 50% full

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/15/2016 2:20:03 PM -->
+<GameData>
+
+	<!-- Elite Forces now gives flat +10% combat boost and makes units heal twice as fast -->
+	<Policies>
+		<Update>
+			<Set WoundedUnitDamageMod="0" />
+			<Where Type="POLICY_ELITE_FORCES" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_ELITE_FORCES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ELITE_FORCES_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Elite Forces[ENDCOLOR][NEWLINE]All Military Units have +10% [ICON_STRENGTH] increased Combat Strength and gain an extra 10 HP when healing.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_ELITE_FORCES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ELITE_FORCES_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Elite Forces[ENDCOLOR][NEWLINE]All Military Units have +10% [ICON_STRENGTH] increased Combat Strength and gain an extra 10 HP when healing.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_ELITE_FORCES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ELITE_FORCES_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Elite Forces[ENDCOLOR][NEWLINE]All Military Units have +10% [ICON_STRENGTH] increased Combat Strength and gain an extra 10 HP when healing.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_ELITE_FORCES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ELITE_FORCES_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Elite Forces[ENDCOLOR][NEWLINE]All Military Units have +10% [ICON_STRENGTH] increased Combat Strength and gain an extra 10 HP when healing.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- new promotion -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_ELITE_FORCES</Type>
+			<Description>TXT_KEY_PROMOTION_ELITE_FORCES</Description>
+			<Help>TXT_KEY_PROMOTION_ELITE_FORCES_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<OrderPriority>6</OrderPriority>
+			<PortraitIndex>24</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_MELEE</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ELITE_FORCES</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+			<CombatPercent>10</CombatPercent>
+			<EnemyHealChange>10</EnemyHealChange>
+			<NeutralHealChange>10</NeutralHealChange>
+			<FriendlyHealChange>10</FriendlyHealChange>
+		</Row>
+	</UnitPromotions>
+	<Policy_FreePromotions>
+		<Row>
+			<PolicyType>POLICY_ELITE_FORCES</PolicyType>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+		</Row>
+	</Policy_FreePromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALRANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ELITE_FORCES</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+
+	<!-- Promotion tooltips -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_PROMOTION_ELITE_FORCES">
+			<Text>Elite Forces</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ELITE_FORCES_HELP">
+			<Text>+10% [ICON_STRENGTH] Combat Strength and gains an extra 10 HP when healing.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_PROMOTION_ELITE_FORCES">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Elite Forces</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ELITE_FORCES_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+10% [ICON_STRENGTH] Combat Strength and gains an extra 10 HP when healing.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_PROMOTION_ELITE_FORCES">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Elite Forces</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ELITE_FORCES_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+10% [ICON_STRENGTH] Combat Strength and gains an extra 10 HP when healing.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_PROMOTION_ELITE_FORCES">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Elite Forces</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ELITE_FORCES_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+10% [ICON_STRENGTH] Combat Strength and gains an extra 10 HP when healing.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

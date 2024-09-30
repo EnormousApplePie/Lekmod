@@ -1230,6 +1230,9 @@ public:
 	int getAfterTurn() const;
 	int getTileGrowths() const;
 	int getRandomImprovement() const;
+	bool isOncePerGame() const;
+	int getFreePromotion() const;
+	int getCityStateInfluence() const;
 #endif
 
 	const char* getSound() const;
@@ -1275,6 +1278,9 @@ protected:
 	int m_iAfterTurn;
 	int m_iTileGrowths;
 	int m_iRandomImprovement;
+	bool m_bIsOncePerGame;
+	int m_iFreePromotion;
+	int m_iCityStateInfluence;
 #endif
 
 	CvString m_strSound;

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/12/2015 12:01:20 AM -->
+<GameData>
+
+	<!-- Artistic Genius -->
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_ARTISTIC_GENIUS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ARTISTIC_GENIUS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ARTISTIC_GENIUS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MUSEUM</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ARTISTIC_GENIUS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_GreatWorkYieldChanges>
+		<Row>
+			<PolicyType>POLICY_ARTISTIC_GENIUS</PolicyType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>3</Yield>
+		</Row>
+	</Policy_GreatWorkYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_ARTISTIC_GENIUS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARTISTIC_GENIUS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Artistic Genius[ENDCOLOR][NEWLINE]A Great Artist appears. Amphitheaters, Opera Houses, Museums, and Broadcast Towers provide +1 [ICON_RESEARCH] Science. Great Works provide +3 [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_YIELD_FROM_GREAT_WORKS">
+			<Text>{1_Num} {2_IconString} from [ICON_GREAT_WORK] Great Works</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_ARTISTIC_GENIUS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARTISTIC_GENIUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Artistic Genius[ENDCOLOR][NEWLINE]A Great Artist appears. Amphitheaters, Opera Houses, Museums, and Broadcast Towers provide +1 [ICON_RESEARCH] Science. Great Works provide +3 [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_YIELD_FROM_GREAT_WORKS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]{1_Num} {2_IconString} from [ICON_GREAT_WORK] Great Works</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_ARTISTIC_GENIUS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARTISTIC_GENIUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Artistic Genius[ENDCOLOR][NEWLINE]A Great Artist appears. Amphitheaters, Opera Houses, Museums, and Broadcast Towers provide +1 [ICON_RESEARCH] Science. Great Works provide +3 [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_YIELD_FROM_GREAT_WORKS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]{1_Num} {2_IconString} from [ICON_GREAT_WORK] Great Works</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_ARTISTIC_GENIUS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARTISTIC_GENIUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Artistic Genius[ENDCOLOR][NEWLINE]A Great Artist appears. Amphitheaters, Opera Houses, Museums, and Broadcast Towers provide +1 [ICON_RESEARCH] Science. Great Works provide +3 [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_YIELD_FROM_GREAT_WORKS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]{1_Num} {2_IconString} from [ICON_GREAT_WORK] Great Works</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

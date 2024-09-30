@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-26 23:18:13 -->
+<GameData>
+
+	<!-- Removed or moved the following Reformations: Charitable Missions, Evangelism, Heathen Conversion, Religious Fervor, To The Glory Of God, Unity of the Prophets -->
+	<Beliefs>
+		<!-- BELIEF_CHARITABLE_MISSIONS moved to Founder in /religion/founders/CharitableMissions.xml -->
+		<Delete Type="BELIEF_EVANGELISM" />
+		<Delete Type="BELIEF_RELIGIOUS_FERVOR" />
+		<Delete Type="BELIEF_TO_GLORY_OF_GOD" />
+		<!-- BELIEF_UNITY_OF_PROPHETS moved to Enhancer in /religion/enhancers/UnityOfTheProphets.xml -->
+	</Beliefs>
+	<Belief_EraFaithUnitPurchase>
+		<Delete BeliefType="BELIEF_RELIGIOUS_FERVOR" />
+	</Belief_EraFaithUnitPurchase>
+</GameData>

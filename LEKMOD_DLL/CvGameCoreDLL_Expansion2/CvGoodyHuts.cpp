@@ -12,6 +12,10 @@
 // static
 int **CvGoodyHuts::m_aaiPlayerGoodyHutResults = NULL;
 
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+int** CvGoodyHuts::m_aiGoodyHutsOncePerGame = NULL;
+#endif
+
 //	---------------------------------------------------------------------------
 /// New Goody Hut Result from a Player
 void CvGoodyHuts::DoPlayerReceivedGoody(PlayerTypes ePlayer, GoodyTypes eGoody)
@@ -63,6 +67,30 @@ bool CvGoodyHuts::IsHasPlayerReceivedGoodyLately(PlayerTypes ePlayer, GoodyTypes
 
 	return false;
 }
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+//	---------------------------------------------------------------------------
+/// Set whether this goody hut type is only allowed to be received once per game
+void CvGoodyHuts::DoPlayerReceivedGoodyOncePerGame(PlayerTypes ePlayer, GoodyTypes eGoody)
+{
+	FAssert(ePlayer >= 0);
+	FAssert(ePlayer < MAX_MAJOR_CIVS);
+	FAssert(eGoody >= 0);
+	FAssert(eGoody < DB.count("GoodyHuts"));
+	m_aiGoodyHutsOncePerGame[ePlayer][eGoody] = 1;
+}
+//	---------------------------------------------------------------------------
+/// Is thie goody hut type only allowed to be received once per game?
+bool CvGoodyHuts::IsGoodyHutOncePerGame(PlayerTypes ePlayer, GoodyTypes eGoody)
+{
+	FAssert(eGoody >= 0);
+	FAssert(eGoody < DB.count("GoodyHuts"));
+	if (m_aiGoodyHutsOncePerGame == NULL)
+	{
+		return false;
+	}
+	return m_aiGoodyHutsOncePerGame[ePlayer][eGoody] == 1;
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 /// Reset
@@ -88,6 +116,28 @@ void CvGoodyHuts::Reset()
 			m_aaiPlayerGoodyHutResults[iI][iJ] = -1;
 		}
 	}
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	//Allocate memory
+	if (m_aiGoodyHutsOncePerGame == NULL)
+	{
+		m_aiGoodyHutsOncePerGame = FNEW(int*[MAX_MAJOR_CIVS], c_eCiv5GameplayDLL, 0);
+		for (iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+		{
+			m_aiGoodyHutsOncePerGame[iI] = FNEW(int[DB.Count("GoodyHuts")], c_eCiv5GameplayDLL, 0);
+		}
+	}
+
+	// Default values
+	for (iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+	{
+		for (iJ = 0; iJ < DB.Count("GoodyHuts"); iJ++)
+		{
+			m_aiGoodyHutsOncePerGame[iI][iJ] = 0;
+		}
+	}
+#endif
+	
 }
 
 //	---------------------------------------------------------------------------
@@ -102,6 +152,16 @@ void CvGoodyHuts::Uninit()
 		}
 		SAFE_DELETE_ARRAY(m_aaiPlayerGoodyHutResults);
 	}
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	if (m_aiGoodyHutsOncePerGame != NULL)
+	{
+		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+		{
+			SAFE_DELETE_ARRAY(m_aiGoodyHutsOncePerGame[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_aiGoodyHutsOncePerGame);
+	}
+#endif
 }
 
 //	---------------------------------------------------------------------------
@@ -124,6 +184,17 @@ void CvGoodyHuts::Read(FDataStream& kStream, uint uiParentVersion)
 #else
 		kStream >> ArrayWrapper<int>(NUM_GOODIES_REMEMBERED, m_aaiPlayerGoodyHutResults[iI]);
 #endif
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+		
+		if (uiVersion >= 1)
+		{
+			for (int iJ = 0; iJ < DB.Count("GoodyHuts"); iJ++)
+			{
+				kStream >> m_aiGoodyHutsOncePerGame[iI][iJ];
+			}
+		}
+#endif
+	
 	}
 }
 
@@ -143,4 +214,14 @@ void CvGoodyHuts::Write(FDataStream& kStream)
 		kStream << ArrayWrapper<int>(NUM_GOODIES_REMEMBERED, m_aaiPlayerGoodyHutResults[iI]);
 #endif
 	}
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+	{
+		for (int iJ = 0; iJ < DB.Count("GoodyHuts"); iJ++)
+		{
+			kStream << m_aiGoodyHutsOncePerGame[iI][iJ];
+		}
+	}
+#endif
 }

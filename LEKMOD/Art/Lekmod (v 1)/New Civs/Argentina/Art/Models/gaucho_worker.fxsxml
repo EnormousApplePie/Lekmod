@@ -1,0 +1,58 @@
+<Asset>
+	<Mesh file="gaucho_worker.gr2"/>
+	<Animation file="Worker_EURO_IdleA.gr2" ec="1000"/>
+	<Animation file="Worker_EURO_FidgetA.gr2" ec="1040"/>
+	<Animation file="Worker_EURO_IdleA_Trans_IdleB.gr2" ec="1020"/>
+	<Animation file="Worker_EURO_IdleB.gr2" ec="2000"/>
+	<Animation file="Worker_EURO_FidgetB.gr2" ec="2040"/>
+	<Animation file="Worker_EURO_IdleB_Trans_IdleA.gr2" ec="2020"/>
+	<Animation file="Worker_EURO_Sleep.gr2" ec="1500"/>
+	<Animation file="Worker_EURO_Sleep_Idle.gr2" ec="1520"/>
+	<Animation file="Worker_EURO_Sleep_Idle_Trans_IdleA.gr2" ec="1580"/>
+	<Animation file="Worker_EURO_Run.gr2" ec="1400"/>
+	<Animation file="Worker_EURO_Stop_Run.gr2" ec="1440"/>
+	<Animation file="Worker_EURO_Shovel.gr2" ec="1910"/>
+	<Animation file="Worker_EURO_Rake.gr2" ec="1920"/>
+	<Animation file="Worker_EURO_Axe.gr2" ec="1930"/>
+	<Animation file="Worker_EURO_Pickaxe.gr2" ec="1940"/>
+	<Animation file="Worker_EURO_Hammer.gr2" ec="1950"/>
+	<Animation file="Worker_EURO_Railroad.gr2" ec="1960"/>
+	<Animation file="Worker_EURO_Captured.gr2" ec="1190, 1200"/>
+	<Animation file="Worker_EURO_Captured_Idle.gr2" ec="1195, 1220"/>
+	<Animation file="Worker_EURO_Activate_Idle.gr2" ec="1995"/>
+	<Animation file="Worker_EURO_Bombard_Defense.gr2" ec="1280"/>
+	<Animation file="Worker_EURO_Bombard_Defense_Idle.gr2" ec="1285"/>
+	<Animation file="Worker_EURO_Bombard_Defense_Idle_Trans_IdleA.gr2" ec="1290"/>
+	<Texture file="CubeLight_Generic_32.dds"/>
+	<Texture file="Environment_Steel_Dull_32.dds"/>
+	<Texture file="Environment_Steel_Sharp_64.dds"/>
+	<Texture file="Worker_EURO_DIFF.dds"/>
+	<Texture file="Worker_EURO_SREF.dds"/>
+	<AnimGraph file="CIVILIAN_DEATH_FINAL.dge"/>
+	<AnimGraph file="CIVILIAN_ENTER_BOMBARD_DEFEND.dge"/>
+	<AnimGraph file="LEAVE_BOMBARD_DEFEND_TRANS_IDLE_A_GRAPH.dge"/>
+	<AnimGraph file="BOMBARD_DEFEND_LOOP_GRAPH.dge"/>
+	<TimedTrigger file="FX_Triggers_Worker_EURO.ftsxml"/>
+	<StateMachine file="WORKER_STATE.fsmxml"/>
+	<AnimGraph file="CAPTURED.dge"/>
+	<AnimGraph file="RUN_START_CIVILIAN.dge"/>
+	<AnimGraph file="STOP_RUNNING_CIVILIAN.dge"/>
+	<AnimGraph file="FIDGETS_GRAPH.dge"/>
+	<AnimGraph file="IDLE_GRAPH.dge"/>
+	<AnimGraph file="RUNNING_LOOP_GRAPH.dge"/>
+	<AnimGraph file="TRANSITIONS_FOR_IDLES.dge"/>
+	<AnimGraph file="WORKER_WORK.dge"/>
+	<AnimGraph file="WORKER_EXIT_WORK.dge"/>
+	<AnimGraph file="WORKER_ENTER_WORK.dge"/>
+	<AnimGraph file="FORTIFY_GRAPH.dge"/>
+	<AnimGraph file="WORKER_ENTER_SLEEP.dge"/>
+	<AnimGraph file="WORKER_EXIT_SLEEP.dge"/>
+	<BoneUsage>
+		<Bone name="box_axeL"/>
+		<Bone name="box_hammerL"/>
+		<Bone name="box_ShovelL"/>
+		<Bone name="box_rakeL"/>
+		<Bone name="box_pickR"/>
+	</BoneUsage>
+</Asset>
+

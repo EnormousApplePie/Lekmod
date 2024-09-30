@@ -6680,6 +6680,55 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 				iDefaultAI = GC.GetGameUnits()->GetEntry(eLoopUnit)->GetDefaultUnitAIType();
 				pNewUnitPlot = kPlayer.addFreeUnit(eLoopUnit,(UnitAITypes)iDefaultAI);
 
+#ifdef ENHANCED_GRAPHS
+				// Update the number of units of this type that we have created this game
+				// scientist
+				if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
+				{
+					kPlayer.ChangeNumScientistsTotal(1);
+				}
+				// prophet
+				else if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+				{
+					kPlayer.ChangeNumProphetsTotal(1);
+				}
+				// merchant
+				else if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
+				{
+					kPlayer.ChangeNumMerchantsTotal(1);
+				}
+				//engineer
+				else if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
+				{
+					kPlayer.ChangeNumEngineersTotal(1);
+				}
+				//general
+				else if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GENERAL"))
+				{
+					kPlayer.ChangeNumGeneralsTotal(1);
+				}
+				//admiral
+				else if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ADMIRAL"))
+				{
+					kPlayer.ChangeNumAdmiralsTotal(1);
+				}
+				//artist
+				else if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
+				{
+					kPlayer.ChangeNumArtistsTotal(1);
+				}
+				//musician
+				else if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
+				{
+					kPlayer.ChangeNumMusiciansTotal(1);
+				}
+				//writer
+				else if (GC.GetGameUnits()->GetEntry(eLoopUnit)->GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
+				{
+					kPlayer.ChangeNumWritersTotal(1);
+				}
+#endif
+
 				// Notification below only tells user if their civ gets a Great Person from their trait.  But trait code allows ANY unit to be received from reaching a tech.
 				// So in the future we should use a different notification ("you received a new unit from your trait since you reached this tech") instead.
 				SpecialUnitTypes eSpecialUnitGreatPerson = (SpecialUnitTypes) GC.getInfoTypeForString("SPECIALUNIT_PEOPLE");

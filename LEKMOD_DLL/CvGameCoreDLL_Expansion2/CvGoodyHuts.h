@@ -20,6 +20,11 @@ public:
 	static bool IsCanPlayerReceiveGoody(PlayerTypes ePlayer, GoodyTypes eGoody);
 	static bool IsHasPlayerReceivedGoodyLately(PlayerTypes ePlayer, GoodyTypes eGoody);
 
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	static void DoPlayerReceivedGoodyOncePerGame(PlayerTypes iPlayer, GoodyTypes iGoodyHut);
+	static bool IsGoodyHutOncePerGame(PlayerTypes ePlayer, GoodyTypes eGoody);
+#endif
+
 	static void Reset();
 	static void Uninit();
 
@@ -28,6 +33,10 @@ public:
 
 private:
 	static int** m_aaiPlayerGoodyHutResults;
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	static int** m_aiGoodyHutsOncePerGame;
+#endif
 
 };
 

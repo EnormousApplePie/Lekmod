@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +1 Faith from Copper, Silver, Gold, Iron, Stone, and Marble. -->
+	<Belief_ResourceYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_FORMAL_LITURGY</BeliefType>
+			<ResourceType>RESOURCE_COPPER</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_FORMAL_LITURGY</BeliefType>
+			<ResourceType>RESOURCE_COPPER</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_ResourceYieldChanges>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_FORMAL_LITURGY" />
+		<Row Tag="TXT_KEY_BELIEF_FORMAL_LITURGY">
+			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_CULTURE] from Copper, Silver, and Gold</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_FORMAL_LITURGY" />
+		<Row Tag="TXT_KEY_BELIEF_FORMAL_LITURGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_PEACE] Faith from Copper, Silver, Gold, Iron, Stone, and Marble</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_FORMAL_LITURGY" />
+		<Row Tag="TXT_KEY_BELIEF_FORMAL_LITURGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_PEACE] Faith from Copper, Silver, Gold, Iron, Stone, and Marble</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_FORMAL_LITURGY" />
+		<Row Tag="TXT_KEY_BELIEF_FORMAL_LITURGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_PEACE] Faith from Copper, Silver, Gold, Iron, Stone, and Marble</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-03 20:47:35 -->
+<GameData>
+	
+	<!-- Manufactory now provides +5 Production -->
+	<Improvement_Yields>
+		<Update>
+			<Set Yield="6" />
+			<Where ImprovementType="IMPROVEMENT_MANUFACTORY" YieldType="YIELD_PRODUCTION" />
+		</Update>
+		<Row>
+			<ImprovementType>IMPROVEMENT_MANUFACTORY</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Improvement_Yields>
+	
+</GameData>

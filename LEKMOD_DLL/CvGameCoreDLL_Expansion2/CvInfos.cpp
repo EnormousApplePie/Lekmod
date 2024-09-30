@@ -4019,6 +4019,9 @@ CvGoodyInfo::CvGoodyInfo() : CvBaseInfo()
 	, m_iAfterTurn(0)
 	, m_iTileGrowths(0)
 	, m_iRandomImprovement(0)
+	, m_bIsOncePerGame(false)
+	, m_iFreePromotion(NO_PROMOTION)
+	, m_iCityStateInfluence(0)
 #endif
 {
 }
@@ -4172,6 +4175,21 @@ int CvGoodyInfo::getRandomImprovement() const
 {
 	return m_iRandomImprovement;
 }
+
+bool CvGoodyInfo::isOncePerGame() const
+{
+	return m_bIsOncePerGame;
+}
+
+int CvGoodyInfo::getFreePromotion() const
+{
+	return m_iFreePromotion;
+}
+
+int CvGoodyInfo::getCityStateInfluence() const
+{
+	return m_iCityStateInfluence;
+}
 #endif
 
 const char* CvGoodyInfo::getSound() const
@@ -4240,6 +4258,9 @@ bool CvGoodyInfo::CacheResults(Database::Results& results, CvDatabaseUtility& kU
 	m_iAfterTurn = results.GetInt("AfterTurn");
 	m_iTileGrowths = results.GetInt("TileGrowths");
 	m_iRandomImprovement = results.GetInt("RandomImprovement");
+	m_bIsOncePerGame = results.GetBool("IsOncePerGame");
+	m_iFreePromotion = GC.getInfoTypeForString(results.GetText("FreePromotion"), true);
+	m_iCityStateInfluence = results.GetInt("CityStateInfluence");
 #endif
 
 	//TEMP TEMP TEMP TEMP

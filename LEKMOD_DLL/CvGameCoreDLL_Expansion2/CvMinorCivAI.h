@@ -466,6 +466,13 @@ public:
 
 	int GetBullyGoldAmount(PlayerTypes eBullyPlayer);
 
+#ifdef ENHANCED_GRAPHS
+	int GetBullyGoldAmountTotalByPlayer(PlayerTypes eBullyPlayer);
+	void ChangeBullyGoldAmountTotalByPlayer(PlayerTypes eBullyPlayer, int iChange);
+	int GetBullyWorkersAmountTotalByPlayer(PlayerTypes eBullyPlayer);
+	void ChangeBullyWorkersAmountTotalByPlayer(PlayerTypes eBullyPlayer, int iChange);
+#endif
+
 	int CalculateBullyMetric(PlayerTypes eBullyPlayer, bool bForUnit, CvString* sTooltipSink = NULL);
 
 	bool CanMajorBullyGold(PlayerTypes ePlayer);
@@ -580,6 +587,11 @@ private:
 	PlayerTypes m_eAlly;
 	int m_iTurnAllied;
 	PlayerTypes m_eMajorBoughtOutBy;
+
+#ifdef ENHANCED_GRAPHS
+	int m_aiBullyGoldAmountTotalByPlayer[MAX_CIV_PLAYERS];
+	int m_aiBullyWorkersAmountTotalByPlayer[MAX_CIV_PLAYERS];
+#endif
 
 	int m_aiFriendshipWithMajorTimes100[MAX_MAJOR_CIVS];
 	int m_aiAngerFreeIntrusionCounter[MAX_MAJOR_CIVS];

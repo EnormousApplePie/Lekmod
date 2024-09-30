@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 13:57:30 -->
+<GameData>
+
+	<!-- Moved the following Pantheons to Follower Beliefs: Faith Healers, Messenger of the Gods, Sacred Waters -->
+	<Beliefs>
+		<!-- BELIEF_FAITH_HEALERS moved to Follower in /religion/followers/FaithHealers.xml -->
+		<!-- BELIEF_MESSENGER_GODS moved (and renamed) to Follower in /religion/followers/SpiritualDialogue.xml -->
+		<!-- BELIEF_SACRED_WATERS moved to Follower in /religion/followers/SacredWaters.xml -->
+	</Beliefs>
+
+	<!-- Removed the following Pantheons from the game: Dance of the Aurora, Fertility Rites, God of Craftsmen, God of War, Goddess of Love, Goddess of Protection, Religious Settlements, Tears of the Gods -->
+	
+	<Beliefs>
+		<Delete Type="BELIEF_DANCE_AURORA" />
+		<Delete Type="BELIEF_FERTILITY_RITES" />
+		<Delete Type="BELIEF_GOD_CRAFTSMEN" />
+		<Delete Type="BELIEF_GOD_WAR" />
+		<Delete Type="BELIEF_GODDESS_LOVE" />
+		<Delete Type="BELIEF_GODDESS_STRATEGY" />
+		<Delete Type="BELIEF_RELIGIOUS_SETTLEMENTS" />
+		<Delete Type="BELIEF_TEARS_OF_GODS" />
+	</Beliefs>
+	<Belief_TerrainYieldChanges>
+		<Delete BeliefType="BELIEF_DANCE_AURORA" />
+	</Belief_TerrainYieldChanges>
+	<Belief_CityYieldChanges>
+		<Delete BeliefType="BELIEF_GOD_CRAFTSMEN" />
+	</Belief_CityYieldChanges>
+	<Belief_ResourceYieldChanges>
+		<Delete BeliefType="BELIEF_TEARS_OF_GODS" />
+	</Belief_ResourceYieldChanges>
+	
+</GameData>

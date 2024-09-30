@@ -1,0 +1,7 @@
+<Asset>
+  <Mesh file="Resource_Potatoe.gr2" source="Max" />
+  <Texture file="Generic_Grey_8.dds" source="Max" />
+  <Texture file="Plant_Resource_Shadows.dds" source="Max" />
+  <Texture file="Potatoe_DIFF.dds" source="Max" />
+  <Texture file="Potatoe_SREF.dds" source="Max" />
+</Asset>

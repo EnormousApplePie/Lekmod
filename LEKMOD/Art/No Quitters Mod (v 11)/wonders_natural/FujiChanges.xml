@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-09 20:02:26 -->
+<GameData>
+
+	<!-- Mt Fuji can now appear on the mainland -->
+	<Natural_Wonder_Placement>
+		<Update>
+			<Set AvoidBiggestLandmass="false" />
+			<Where NaturalWonderType="FEATURE_FUJI" />
+		</Update>
+	</Natural_Wonder_Placement>
+	
+</GameData>

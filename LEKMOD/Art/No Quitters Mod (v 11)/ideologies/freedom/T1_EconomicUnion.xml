@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/14/2016 8:40:53 PM -->
+<GameData>
+	<Policies>
+		<Update>
+			<Set SharedIdeologyTradeGoldChange="0" />
+			<Where Type="POLICY_ECONOMIC_UNION" />
+		</Update>
+	</Policies>
+
+	<!-- Tooltip texts -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GOLDMOD_YIELD_T1_ECONOMIC_UNION">
+			<Text>[NEWLINE][ICON_BULLET]Modifier for Economic Union: {1_Num}%</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_ECONOMIC_UNION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ECONOMIC_UNION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Economic Union[ENDCOLOR][NEWLINE]All cities gain +5% [ICON_GOLD] Gold for each Trade Route your civilization has with a City-State.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GOLDMOD_YIELD_T1_ECONOMIC_UNION">
+			<Text>[NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][ICON_BULLET]Modifier for Economic Union: {1_Num}%</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_ECONOMIC_UNION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ECONOMIC_UNION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][NEWLINE]All cities gain +5% [ICON_GOLD] Gold for each Trade Route your civilization has with a City-State.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GOLDMOD_YIELD_T1_ECONOMIC_UNION">
+			<Text>[NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][ICON_BULLET]Modifier for Economic Union: {1_Num}%</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_ECONOMIC_UNION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ECONOMIC_UNION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][NEWLINE]All cities gain +5% [ICON_GOLD] Gold for each Trade Route your civilization has with a City-State.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GOLDMOD_YIELD_T1_ECONOMIC_UNION">
+			<Text>[NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][ICON_BULLET]Modifier for Economic Union: {1_Num}%</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_ECONOMIC_UNION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ECONOMIC_UNION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][NEWLINE]All cities gain +5% [ICON_GOLD] Gold for each Trade Route your civilization has with a City-State.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- T1 Economic Union building: Trade Depot -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_T1_ECONOMIC_UNION</Type>
+			<DefaultBuilding>BUILDING_T1_ECONOMIC_UNION</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_T1_ECONOMIC_UNION_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_T1_ECONOMIC_UNION</Type>
+			<BuildingClass>BUILDINGCLASS_T1_ECONOMIC_UNION</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<CityStateTradeRouteGoldModifier>5</CityStateTradeRouteGoldModifier>
+			<Help>TXT_KEY_BUILDING_T1_ECONOMIC_UNION_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_T1_ECONOMIC_UNION_DESC</Description>
+			<Civilopedia>TXT_KEY_BUILDING_T1_ECONOMIC_UNION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_T1_ECONOMIC_UNION_STRATEGY</Strategy>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>31</PortraitIndex>
+			<NeverCapture>true</NeverCapture>
+		</Row>
+	</Buildings>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_DESC">
+			<Text>Trade Depot</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_PEDIA">
+			<Text>A Trade Depot is automatically constructed in every city after you have adopted the Economic Union tenet in the Freedom ideology.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_STRATEGY">
+			<Text>+5% [ICON_GOLD] Gold for each Trade Route your civilization has with a City-State.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Trade Depot</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]A Trade Depot is automatically constructed in every city after you have adopted the Economic Union tenet in the Freedom ideology.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+5% [ICON_GOLD] Gold for each Trade Route your civilization has with a City-State.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Trade Depot</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]A Trade Depot is automatically constructed in every city after you have adopted the Economic Union tenet in the Freedom ideology.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+5% [ICON_GOLD] Gold for each Trade Route your civilization has with a City-State.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Trade Depot</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]A Trade Depot is automatically constructed in every city after you have adopted the Economic Union tenet in the Freedom ideology.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_ECONOMIC_UNION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+5% [ICON_GOLD] Gold for each Trade Route your civilization has with a City-State.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

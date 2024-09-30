@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 03:01:43 -->
+<GameData>
+
+	<!-- Lakes now produce 3 Food and 1 Gold by default -->
+	<Yields>
+		<Update>
+			<Set LakeChange="2" />
+			<Where Type="YIELD_FOOD" />
+		</Update>
+	</Yields>
+	
+</GameData>

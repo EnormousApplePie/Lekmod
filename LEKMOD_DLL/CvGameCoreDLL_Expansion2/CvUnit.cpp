@@ -1472,6 +1472,14 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer /*= NO_PLAYER*/)
 		}
 	}
 
+#ifdef ENHANCED_GRAPHS
+	if (getUnitCombatType() != NO_UNITCOMBAT && ePlayer != NO_PLAYER && ePlayer != BARBARIAN_PLAYER)
+	{
+		GET_PLAYER(ePlayer).ChangeNumKilledUnits(1);
+		GET_PLAYER(getOwner()).ChangeNumLostUnits(1);
+	}
+#endif
+
 	auto_ptr<ICvUnit1> pDllThisUnit = GC.WrapUnitPointer(this);
 
 	if(IsSelected() && !bDelay)
@@ -6039,10 +6047,18 @@ int CvUnit::healTurns(const CvPlot* pPlot) const
 void CvUnit::doHeal()
 {
 	VALIDATE_OBJECT
+#ifdef ENHANCED_GRAPHS
+		int	iHealth = GetCurrHitPoints();
+#endif
 	if(!isBarbarian())
 	{
 		changeDamage(-(healRate(plot())));
 	}
+#ifdef ENHANCED_GRAPHS
+	int iHealed = GetCurrHitPoints() - iHealth;
+	CvPlayer& thisPlayer = GET_PLAYER(getOwner());
+	thisPlayer.ChangeUnitsDamageHealed(iHealed);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -9961,6 +9977,12 @@ int CvUnit::GetGoldenAgeTurns() const
 bool CvUnit::canGivePolicies(const CvPlot* /*pPlot*/, bool /*bTestVisible*/) const
 {
 	VALIDATE_OBJECT
+#ifdef NET_FIX_SINGLE_USE_ABILITY_DUPE
+	if (isDelayedDeath())
+	{
+		return false;
+	}
+#endif
 	if(!isGivesPolicies() && getUnitInfo().GetBaseCultureTurnsToCount() == 0)
 	{
 		return false;
@@ -10079,6 +10101,12 @@ bool CvUnit::givePolicies()
 bool CvUnit::canBlastTourism(const CvPlot* pPlot, bool bTestVisible) const
 {
 	VALIDATE_OBJECT
+#ifdef NET_FIX_SINGLE_USE_ABILITY_DUPE
+	if (isDelayedDeath())
+	{
+		return false;
+	}
+#endif
 	if(!isBlastTourism())
 	{
 		return false;
@@ -10791,6 +10819,13 @@ bool CvUnit::isReadyForUpgrade() const
 {
 	VALIDATE_OBJECT
 
+#ifdef NET_FIX_SINGLE_USE_ABILITY_DUPE
+	if (isDelayedDeath())
+	{
+		return false;
+	}
+#endif
+
 	if(m_iMoves <= 0)
 	{
 		return false;
@@ -11029,6 +11064,10 @@ CvUnit* CvUnit::DoUpgrade()
 	CvPlayerAI& thisPlayer = GET_PLAYER(getOwner());
 	thisPlayer.GetTreasury()->LogExpenditure(getUnitInfo().GetText(), iUpgradeCost, 3);
 	thisPlayer.GetTreasury()->ChangeGold(-iUpgradeCost);
+
+#ifdef ENHANCED_GRAPHS
+	thisPlayer.ChangeGoldSpentUpgrades(iUpgradeCost);
+#endif
 
 	// Add newly upgraded Unit & kill the old one
 	CvUnit* pNewUnit = thisPlayer.initUnit(eUnitType, getX(), getY(), NO_UNITAI, NO_DIRECTION, false, false);
@@ -16293,6 +16332,14 @@ int CvUnit::changeDamage(int iChange, PlayerTypes ePlayer, float fAdditionalText
 		}
 	}
 
+#endif
+
+#ifdef ENHANCED_GRAPHS
+	if (ePlayer != NO_PLAYER && getUnitCombatType() != NO_UNITCOMBAT && iChange > 0)
+	{
+		GET_PLAYER(ePlayer).ChangeUnitsDamageDealt(iChange);
+		GET_PLAYER(getOwner()).ChangeUnitsDamageTaken(iChange);
+	}
 #endif
 
 	return setDamage(getDamage() + iChange, ePlayer, fAdditionalTextDelay, pAppendText);

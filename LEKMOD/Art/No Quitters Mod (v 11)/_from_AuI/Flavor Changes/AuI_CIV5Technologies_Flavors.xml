@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Technology_Flavors>
+		<Row>
+			<TechType>TECH_PHILOSOPHY</TechType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="4" />
+			<Where TechType="TECH_PHILOSOPHY" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<TechType>TECH_ACOUSTICS</TechType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="6" />
+			<Where TechType="TECH_ACOUSTICS" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Delete TechType="TECH_ARCHAEOLOGY" />
+		<Row>
+			<TechType>TECH_ARCHAEOLOGY</TechType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>25</Flavor>
+		</Row>
+		
+		<Row>
+			<TechType>TECH_RADIO</TechType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="10" />
+			<Where TechType="TECH_RADIO" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		
+		<Delete TechType="TECH_INTERNET" />
+		<Row>
+			<TechType>TECH_INTERNET</TechType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>50</Flavor>
+		</Row>
+	</Technology_Flavors>
+</GameData>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="ff12d8ad-14d4-4392-a097-b03d41099142" version="1">
+  <Properties>
+    <Name>Yakutia Civilization</Name>
+    <Stability>Alpha</Stability>
+    <Teaser>Adds the Yakuts to the game as a playable civilization.</Teaser>
+    <Description>Adds the Yakuts to the game as a playable civilization. Requires Brave New World and Gods and Kings to play.
+
+Leader: Tygyn Darkhan
+
+UA: Riches of the Sakha - Camps and Pastures yield an additional +2 gold. Toyons are generated 25% faster and a free Toyon is generated upon discovering Chivalry.
+
+UU1: Toyon - Replaces Great General. In addition to the Great General's abilities, can build a Toyon's Estate on resources which can be improved by a Pasture or Camp, which claims surrounding territory and yields +4 gold.
+
+UU2: Batas Cavalry - Replaces Lancer. Starts with the Blitz promotion.
+
+Credits:
+XML - Hiram
+Icons - TarcisioCM, COF
+Leader Art - Janboruta
+Map - COF
+Music - The Creative Assembly</Description>
+    <Authors>Ben (Hiram)</Authors>
+    <SpecialThanks>TarcisioCM, Janboruta, COF, LastSword</SpecialThanks>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>0</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>1</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
+    <Dlc id="0E3751A1-F840-4e1b-9706-519BF484E59D" minversion="0" maxversion="999" />
+  </Dependencies>
+  <References />
+  <Blocks />
+  <Files>
+    <File md5="7852302988C0C130144AD80929074ABA" import="1">Art/Civicons/yakut128.dds</File>
+    <File md5="D5825E13200A94B5658A4BF8F5E47B17" import="1">Art/Civicons/yakut214.dds</File>
+    <File md5="A641F0FE25DA23ED8112FC23DD832FDC" import="1">Art/Civicons/yakut256.dds</File>
+    <File md5="D972E4C787BA59BE299F893BB711162B" import="1">Art/Civicons/yakut32.dds</File>
+    <File md5="54329F6AE6CCF69762DFEE7DD2940CAF" import="1">Art/Civicons/yakut45.dds</File>
+    <File md5="216226DE1E4BC943539AC5F34CBE6AE1" import="1">Art/Civicons/yakut64.dds</File>
+    <File md5="D59AE396135A03621EEE91D29B5AF040" import="1">Art/Civicons/yakut80.dds</File>
+    <File md5="4B7F4DF7D3DEF583F7B9A5E72A294B63" import="1">Art/Civicons/yakutalpha128.dds</File>
+    <File md5="D39B28CD579E071FE7787E46DAF3C0E6" import="1">Art/Civicons/yakutalpha16.dds</File>
+    <File md5="2AB28B4D65E257907453C19C172BE863" import="1">Art/Civicons/yakutalpha24.dds</File>
+    <File md5="2D51A88C96D80A3D640DC64104F34A1F" import="1">Art/Civicons/yakutalpha32.dds</File>
+    <File md5="D66935C2739366F76AA0BD97C572B7E8" import="1">Art/Civicons/yakutalpha48.dds</File>
+    <File md5="ED592A11CA799D3816F7A2C3F6C6DA04" import="1">Art/Civicons/yakutalpha64.dds</File>
+    <File md5="F39A18283447F2DC11423BBE319643AD" import="1">Art/Leadericons/tygyn128.dds</File>
+    <File md5="38E6DB2A88F07F15E5DD5359ABF7267B" import="1">Art/Leadericons/tygyn256.dds</File>
+    <File md5="60F6D7BEAC85C9CC06858005B08A7FF7" import="1">Art/Leadericons/tygyn64.dds</File>
+    <File md5="383AECE1B0E68E03D565B9B23B1FDF6E" import="1">Art/tygyndarkhan.dds</File>
+    <File md5="D555EB4D5F65C6ED70610AFCEAC7E884" import="1">Art/Uniticons/batas128.dds</File>
+    <File md5="5894453C27C10F9C5E88666D1BB356D1" import="1">Art/Uniticons/batas256.dds</File>
+    <File md5="39F9FC120F81E0DDB4F6ED8E19F1D226" import="1">Art/Uniticons/batas32.dds</File>
+    <File md5="DB2B4828C53DE3AAEEB84EDD57168157" import="1">Art/Uniticons/batas45.dds</File>
+    <File md5="39E27DB608DF36C1389968FE7A962E4E" import="1">Art/Uniticons/batas64.dds</File>
+    <File md5="602A0ABE0EC5EC5B4775148A69E24B46" import="1">Art/Uniticons/batas80.dds</File>
+    <File md5="0B4DFF2FADEC9CB71736F5B1E8082F16" import="1">Art/Uniticons/toyon128.dds</File>
+    <File md5="A80CABF52829CA078A64FB0E1F43A123" import="1">Art/Uniticons/toyon256.dds</File>
+    <File md5="4F6478A4BD8FF3ACA602263084305CCC" import="1">Art/Uniticons/toyon32.dds</File>
+    <File md5="A6D6B9AAA452B910A263F590FB06BAA4" import="1">Art/Uniticons/toyon45.dds</File>
+    <File md5="EB05855DD82A538296BA82C96D2F2209" import="1">Art/Uniticons/toyon64.dds</File>
+    <File md5="914E4F2E7EDE785F0A6145892767F127" import="1">Art/Uniticons/toyon80.dds</File>
+    <File md5="150F983EBE684D00672BB1D240685342" import="1">Art/yakutDOM.dds</File>
+    <File md5="AA6FE948C327DF56D16C445315351D52" import="1">Art/yakutmap.dds</File>
+    <File md5="A30A3A5FC762876AB35CD496211AB996" import="1">Sound/TygynPeace.mp3</File>
+    <File md5="3F916C767EBAE83BCAA598F18AC11E1D" import="1">Sound/TygynWar.mp3</File>
+    <File md5="9A420C45E9C15C9BFAA525FB5BF48BCE" import="0">XML/Civilizations.xml</File>
+    <File md5="0C6EE9F54B41A116693BF5A105BE3623" import="0">XML/IconAtlas.xml</File>
+    <File md5="DA69D1B4FA21E0ADD3900115BA567EFC" import="0">XML/Improvements.xml</File>
+    <File md5="CABA5955DB00D04514EA1D6DB6D34DEB" import="0">XML/Leaders.xml</File>
+    <File md5="F1F139E9A93CFC09AB265DFEEAFF7239" import="0">XML/Sounds.xml</File>
+    <File md5="8E46D6497A0B71FA73186A4449F8CDD2" import="0">XML/Text.xml</File>
+    <File md5="618EECCFD2158EA0D207A8B667E1DF9D" import="1">XML/Tygyn_Scene.xml</File>
+    <File md5="AF7791020317F0CA2DE56369066D6F93" import="0">XML/Units.xml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>XML/Civilizations.xml</UpdateDatabase>
+      <UpdateDatabase>XML/IconAtlas.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Improvements.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Leaders.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Sounds.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Units.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+</Mod>

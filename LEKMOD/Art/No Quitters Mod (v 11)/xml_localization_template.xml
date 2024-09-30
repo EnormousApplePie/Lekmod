@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/11/2015 6:46:54 PM -->
+<GameData>
+	
+	<!-- OLD TAGS -->
+	
+	<Language_en_US>
+		<Delete Tag="" />
+		<Row Tag="">
+			<Text></Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="" />
+		<Row Tag="">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="" />
+		<Row Tag="">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="" />
+		<Row Tag="">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]</Text>
+		</Row>
+	</Language_RU_RU>
+
+	
+	<!-- NEW TAGS -->
+
+	<Language_en_US>
+		<Row Tag="">
+			<Text></Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

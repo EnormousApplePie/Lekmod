@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="355e6185-0f39-4079-8b47-3d6d893e1d5e" version="3">
+  <Properties>
+    <Name>[BNW] Colonialist Legacies - Malaysia</Name>
+    <Stability>Beta</Stability>
+    <Teaser>Incorporates [COLOR_POSITIVE_TEXT]Malaysia[ENDCOLOR], led by Parameswara, into the game.</Teaser>
+    <Description>Incorporates Malaysia, led by Parameswara, into the game.</Description>
+    <Authors>TPangolin, JFD</Authors>
+    <SpecialThanks>Senshi, Neirai, Mewr11, Civitar, Knightmare, DJSHenniger, Chrisy15</SpecialThanks>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>1</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References>
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="JFD's Cultural Diversity (Core)" />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="JFD’s Piety" />
+    <Mod id="d99bf7aa-51ac-4bef-bd88-d765b28e260e" minversion="0" maxversion="999" title="JFD’s Sovereignty" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Sukritact’s Events &amp; Decisions" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="Yet (not) Another Earth Map Pack" />
+    <Mod id="e576894a-ed2b-4033-be14-ed1c8ceb81d3" minversion="0" maxversion="999" title="Map Labels" />
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="8670da15-d435-44ea-9758-7438cb321411" minversion="0" maxversion="999" title="R.E.D. Modpack" />
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="0" maxversion="999" title="Community Patch" />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="Community Balance Patch" />
+    <Mod id="1153b26a-69fd-4cd5-899c-a8ba8e0e5e5d" minversion="0" maxversion="999" title="Civ IV Leader Traits in Civ V" />
+    <Mod id="6676902b-b907-45f1-8db5-32dcb2135eee" minversion="0" maxversion="999" title="JFD's Exploration Continued Expanded" />
+    <Mod id="ce8aa614-7ef7-4a45-a179-5329869e8d6d" minversion="0" maxversion="999" title="Enlightenment Era" />
+    <Mod id="a19351c5-c0b3-4b07-8695-4affaa199949" minversion="0" maxversion="999" title="JFD’s and Pouakai’s Mercenaries" />
+    <Mod id="10e9728f-d61c-4317-be4f-7d52d6bae6f4" minversion="0" maxversion="999" title="JFD’s Claims, Colonies, and Crimes" />
+    <Mod id="d9ece224-6cd8-4519-a27a-c417b59cdf35" minversion="0" maxversion="999" title="Future Worlds" />
+    <Mod id="66f38ce9-fc7b-448d-a7db-949d105b9b9f" minversion="0" maxversion="999" title="RER" />
+    <Mod id="94238d47-db2a-4821-a8e9-b99a13357e77" minversion="0" maxversion="999" title="RER Triggers" />
+  </References>
+  <Blocks />
+  <Files>
+	<!-- -->
+    <File md5="90610ABB61DEE694BD310FA69510AE53" import="1">Art/Graphics/Kampung/Coracle_256.dds</File>
+    <File md5="FC57BB14E0E85FFF1745668A61CAA7EA" import="1">Art/Graphics/Kampung/southpacific.dds</File>
+    <File md5="C1E942858990B65B29879599F417FE1D" import="1">Art/Graphics/Kampung/sv_Kampung.dds</File>
+    <File md5="B19F71F371126E70F51778820660DD2D" import="1">Art/Graphics/Kampung/Water Village B.fxsxml</File>
+    <File md5="AA3EC33C6E724DC6841189C7E901DC1B" import="1">Art/Graphics/Kampung/Water Village HB.fxsxml</File>
+    <File md5="EA5CCBB5CAA3F53B6E381C255339111C" import="1">Art/Graphics/Kampung/Water Village HB.gr2</File>
+    <File md5="8DB95EFDBC3429051D9012C7D1C5EF51" import="1">Art/Graphics/Kampung/Water Village PL.fxsxml</File>
+    <File md5="BEE717E832CD426DBEBCD6DC4731B867" import="1">Art/Graphics/Kampung/Water Village PL.gr2</File>
+    <File md5="613A6736D630F09D0B9E9CD820D8C095" import="1">Art/Graphics/Kampung/Water Village.gr2</File>
+    <File md5="1B6BCE686C95EC3D7EDA5D656BF1D088" import="0">Art/Graphics/Pesilat/PesilatDefine.xml</File>
+    <File md5="256EF065379CE187B500BA31F05662EE" import="1">Art/Graphics/Pesilat/u_malaysian_silat.fxsxml</File>
+    <File md5="C6DB2A4F67407F30360417C5A4474E83" import="1">Art/Graphics/Pesilat/u_malaysian_silat.gr2</File>
+    <File md5="9669EA0DAC5D7D662444DE3EEDAFD046" import="1">Art/Graphics/Pesilat/u_malaysian_silat_diff.dds</File>
+    <File md5="AB1247F2D35D3B358BF79F631DF30FCD" import="1">Art/Graphics/Pesilat/u_malaysian_silat_sref.dds</File>
+    <File md5="37CEA49EE9ECFCA6AEF7FE7FB96B1F3D" import="1">Art/IconAtlas/AlphaCLMalaysiaIcon128.dds</File>
+    <File md5="B934B47FA8FF137992026FD730293C63" import="1">Art/IconAtlas/AlphaCLMalaysiaIcon16.dds</File>
+    <File md5="FF3B9AF2BAEE911271C220C88A1A347B" import="1">Art/IconAtlas/AlphaCLMalaysiaIcon24.dds</File>
+    <File md5="5E4483A07CF1FCF47095F91E497CEBB4" import="1">Art/IconAtlas/AlphaCLMalaysiaIcon32.dds</File>
+    <File md5="87A1C28084A6AC53846AA814B645E354" import="1">Art/IconAtlas/AlphaCLMalaysiaIcon48.dds</File>
+    <File md5="6175E234955B9323ACD48007D4048AD8" import="1">Art/IconAtlas/AlphaCLMalaysiaIcon64.dds</File>
+    <File md5="BCC609245D978FCE00962EC96D50A349" import="1">Art/IconAtlas/AlphaCLMalaysiaIcon80.dds</File>
+    <File md5="7E63549F0164EC469AF64651BE2FD651" import="1">Art/IconAtlas/CLMalaysiaIcons128.dds</File>
+    <File md5="2D461FDC97F0F58724127BB9731C6B85" import="1">Art/IconAtlas/CLMalaysiaIcons256.dds</File>
+    <File md5="ECA38A3EE4531E90392A7FAE08C2BABE" import="1">Art/IconAtlas/CLMalaysiaIcons32.dds</File>
+    <File md5="6AFB64A9203853A7D995C821F6BEB262" import="1">Art/IconAtlas/CLMalaysiaIcons45.dds</File>
+    <File md5="0D259E56E47573A7248F09905F113675" import="1">Art/IconAtlas/CLMalaysiaIcons48.dds</File>
+    <File md5="2837E9F5907B0C7D7F98081BC02F3B14" import="1">Art/IconAtlas/CLMalaysiaIcons64.dds</File>
+    <File md5="845AE3A2B242411CCCC7F8470777BB3E" import="1">Art/IconAtlas/CLMalaysiaIcons80.dds</File>
+    <File md5="C737A7B191CCC35C5A238A5E6B74DB0C" import="1">Art/IconAtlas/CLPesilatflag.dds</File>
+    <File md5="62DCBF0BD0E4B471792606BB1C9EDA2B" import="0">Art/IconAtlas/IconAtlas.xml</File>
+    <File md5="F1390D36F3FCCD6770DD9B9C61600B3F" import="1">Art/IconAtlas/KampungIcon256.dds</File>
+    <File md5="07317150B01A7777C451E6F07AC34F78" import="1">Art/IconAtlas/KampungIcon45.dds</File>
+    <File md5="FA02D6C7187EF7622C44D5F9104A0D8B" import="1">Art/IconAtlas/KampungIcon64.dds</File>
+    <File md5="AB632F3C6394124E862E014A4B8808FB" import="1">Art/IconAtlas/sv_CLkampung.dds</File>
+    <File md5="3C497A827F765243CD11AF6A6EDE34D8" import="1">Art/IconAtlas/sv_CLpesilat.dds</File>
+    <File md5="88C4A3F69CCA225DE935CB725DFBF0EE" import="1">Art/Misc/MalaysiaMap.dds</File>
+    <File md5="319A94FFD619180A7C6734192EB789C9" import="1">Art/Misc/Parameswara_Scene.xml</File>
+    <File md5="9435FA7B4F347407725698DFAFB37238" import="1">Art/Misc/ParamesDiplo.dds</File>
+    <File md5="39234039286F344D5F80A49BFF3E46B5" import="1">Art/Misc/ParamesDOM.dds</File>
+    <File md5="269B48FE91276B7988CBE811AF019142" import="0">Core/Buildings.sql</File>
+    <File md5="BBD000978E07D0B416CBEDD047D7D0DB" import="0">Core/CityStates.sql</File>
+    <File md5="EA0A121C9D2E43AF71EB3B14B38EC3C9" import="0">Core/Civilizations.sql</File>
+    <File md5="44B21265738840CFF413FF9DAD7764F6" import="0">Core/DiplomacyResponses.xml</File>
+    <File md5="F2751C8E642817D2F4593927AA4CF1AB" import="0">Core/Fixaraysia2.sql</File>
+    <File md5="F472E0B693F057066F8CC1D0FFACF4D2" import="0">Core/GameText.xml</File>
+    <File md5="B11AABE3B03EACE7297FF839B0031521" import="0">Core/GameText_ModSupport.xml</File>
+    <File md5="13D4FC6BECAD060EC4544E5A991EC2A5" import="0">Core/Improvements.sql</File>
+    <File md5="CF5747139A86B66B944C30512C4CBB03" import="0">Core/ArtDefines.sql</File>
+    <File md5="22FA3B321D46DCB6641CA376FB8686AD" import="0">Core/KampungDisplay.sql</File>
+    <File md5="A91AE42069EE1A8CF9378D94B80A21ED" import="0">Core/Leaderhead.sql</File>
+    <File md5="75C93DD0338E0C1AD49DC148E4C5800C" import="0">Core/ModSupport.sql</File>
+    <File md5="0F12A5DFBE4C8A3BB52FD10AF7CE25CC" import="0">Core/PlayerColours.sql</File>
+    <File md5="CE6B33F72D3E1EF21682D4B4BBBC4886" import="0">Core/Traits.sql</File>
+    <File md5="643CFA4CFA7EDD7E2DDD4E5622D61BB3" import="0">Core/Units.sql</File>
+    <File md5="1D1B6B8A6245F9FBA11DBD0192FCEC73" import="0">Core/WorkerFix.sql</File>
+    <File md5="FC6E117C75835973F759656BB4F6EF97" import="0">DeleteMissingReferences.xml</File>
+    <File md5="90570198098B312825F96460E95CCC5E" import="1">Lua/C15_Malaysia_Decisions.lua</File>
+    <File md5="5DBBE0BF4D30808A12F0DF7D51F0139F" import="0">Lua/C15_Malaysia_Food_MCIS.lua</File>
+    <File md5="1B25F64146D83BA3ED5CDBAA8731FD7F" import="1">Lua/C15_Malaysia_Food_MCIS.xml</File>
+    <File md5="2D99B6CB7E7A2D32618D74A83A680139" import="0">Lua/C15_Malaysia_Lua.lua</File>
+    <File md5="FD2589D515F9891245F9F7F2614C64F6" import="0">Lua/C15_Malaysia_Lua.xml</File>
+    <File md5="F5B7602CDB8517E79955B006B7B1635C" import="1">Lua/C15_Malaysia_TopPanelSupport.lua</File>
+    <File md5="BBE3163F62C0FCDC21DE1A187D693FEC" import="0">Lua/Utilities/JFD_TopPanelUpdated.lua</File>
+    <File md5="5244308719C5B41D37E35BCE6F354D41" import="1">Lua/Utilities/PlotIterators.lua</File>
+    <File md5="64DF635BD57CDEB13DC1038934568A7E" import="0">Lua/Utilities/Sukritact MCIS/CityInfoStack.lua</File>
+    <File md5="4E7C5E4894BC0A0E0CBA1743787E1015" import="0">Lua/Utilities/Sukritact MCIS/CityInfoStack.xml</File>
+    <File md5="ABC65B39ECCAA9171E3557937F1C3245" import="0">Lua/Utilities/Sukritact MCIS/JFD_Malaysia_Kampung_CityInfo.lua</File>
+    <File md5="5325A3EE5F6A22CF9ECD0FA9D340DF5F" import="0">Lua/Utilities/Sukritact MCIS/JFD_Malaysia_Kampung_CityInfo.xml</File>
+    <File md5="C80B4C5BB96E6DC940C72B027A6FD597" import="0">ProblemsWithMalaysia.txt</File>
+    <File md5="7A674DEF06DF703EA1CFF0E740959211" import="1">Sound/MalaysiaPeace.mp3</File>
+    <File md5="34F9C3F0196AB444D2D03F2A13FCCDA3" import="1">Sound/MalaysiaWar.mp3</File>
+    <File md5="DAE2C122D05EDCB2883274874A0FCE1A" import="0">Sound/SoundRig.xml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>Art/IconAtlas/IconAtlas.xml</UpdateDatabase>
+      <UpdateDatabase>Art/Graphics/Pesilat/PesilatDefine.xml</UpdateDatabase>
+      <UpdateDatabase>Core/ArtDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Civilizations.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Leaderhead.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Traits.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Units.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Improvements.sql</UpdateDatabase>
+      <UpdateDatabase>Core/PlayerColours.sql</UpdateDatabase>
+      <UpdateDatabase>Sound/SoundRig.xml</UpdateDatabase>
+      <UpdateDatabase>Core/GameText.xml</UpdateDatabase>
+      <UpdateDatabase>Core/ModSupport.sql</UpdateDatabase>
+      <UpdateDatabase>Core/GameText_ModSupport.xml</UpdateDatabase>
+      <UpdateDatabase>DeleteMissingReferences.xml</UpdateDatabase>
+      <UpdateDatabase>Core/WorkerFix.sql</UpdateDatabase>
+      <UpdateDatabase>Core/DiplomacyResponses.xml</UpdateDatabase>
+      <UpdateDatabase>Core/CityStates.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Fixaraysia2.sql</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/Utilities/Sukritact MCIS/CityInfoStack.lua">
+      <Name>Sukritact MCIS</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/Utilities/Sukritact MCIS/JFD_Malaysia_Kampung_CityInfo.lua">
+      <Name>JFD_Malaysia_Kampung_CityInfo</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/C15_Malaysia_Lua.lua">
+      <Name>C15_Malaysia_Lua</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/Utilities/JFD_TopPanelUpdated.lua">
+      <Name>JFD_TopPanelUpdated</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/C15_Malaysia_Food_MCIS.lua">
+      <Name>C15_Malaysia_Food_MCIS</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/C15_Malaysia_TopPanelSupport.lua">
+      <Name>C15_Malaysia_TopPanelSupport</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

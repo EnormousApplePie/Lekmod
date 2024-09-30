@@ -1662,6 +1662,11 @@ void CvMinorCivAI::Reset()
 
 		m_abRouteConnectionEstablished[iI] = false;
 
+#ifdef ENHANCED_GRAPHS
+		m_aiBullyGoldAmountTotalByPlayer[iI] = 0;
+		m_aiBullyWorkersAmountTotalByPlayer[iI] = 0;
+#endif
+
 		m_aiFriendshipWithMajorTimes100[iI] = 0;
 		m_aiAngerFreeIntrusionCounter[iI] = 0;
 		m_aiPlayerQuests[iI] = NO_MINOR_CIV_QUEST_TYPE;
@@ -1749,6 +1754,11 @@ void CvMinorCivAI::Read(FDataStream& kStream)
 
 	kStream >> m_abRouteConnectionEstablished;
 
+#ifdef ENHANCED_GRAPHS
+	kStream >> m_aiBullyGoldAmountTotalByPlayer;
+	kStream >> m_aiBullyWorkersAmountTotalByPlayer;
+#endif
+
 	kStream >> m_aiFriendshipWithMajorTimes100;
 
 	kStream >> m_aiAngerFreeIntrusionCounter;
@@ -1830,6 +1840,11 @@ void CvMinorCivAI::Write(FDataStream& kStream) const
 	kStream << m_aaiNumEnemyUnitsLeftToKillByMajor;
 
 	kStream << m_abRouteConnectionEstablished;
+
+#ifdef ENHANCED_GRAPHS
+	kStream << m_aiBullyGoldAmountTotalByPlayer;
+	kStream << m_aiBullyWorkersAmountTotalByPlayer;
+#endif
 
 	kStream << m_aiFriendshipWithMajorTimes100;
 	kStream << m_aiAngerFreeIntrusionCounter;
@@ -8065,6 +8080,29 @@ int CvMinorCivAI::GetBullyGoldAmount(PlayerTypes /*eBullyPlayer*/)
 	return iGold;
 }
 
+
+#ifdef ENHANCED_GRAPHS
+// Stuff for graphs
+int CvMinorCivAI::GetBullyGoldAmountTotalByPlayer(PlayerTypes eBullyPlayer)
+{
+	return m_aiBullyGoldAmountTotalByPlayer[eBullyPlayer];
+}
+
+void CvMinorCivAI::ChangeBullyGoldAmountTotalByPlayer(PlayerTypes eBullyPlayer, int iChange)
+{
+	m_aiBullyGoldAmountTotalByPlayer[eBullyPlayer] = m_aiBullyGoldAmountTotalByPlayer[eBullyPlayer] + iChange;
+}
+int CvMinorCivAI::GetBullyWorkersAmountTotalByPlayer(PlayerTypes eBullyPlayer)
+{
+	return m_aiBullyWorkersAmountTotalByPlayer[eBullyPlayer];
+}
+
+void CvMinorCivAI::ChangeBullyWorkersAmountTotalByPlayer(PlayerTypes eBullyPlayer, int iChange)
+{
+	m_aiBullyWorkersAmountTotalByPlayer[eBullyPlayer] = m_aiBullyWorkersAmountTotalByPlayer[eBullyPlayer] + iChange;
+}
+#endif
+
 // Calculates a basic score for whether the major can bully this minor based on many factors.
 // Negative score if bully attempt is a failure, zero or positive if success.
 // May be modified after return, if the task is easier or harder (ex. bully a worker vs. bully gold)
@@ -8617,6 +8655,9 @@ void CvMinorCivAI::DoMajorBullyGold(PlayerTypes eBully, int iGold)
 #else
 		DoBulliedByMajorReaction(eBully, GC.getMINOR_FRIENDSHIP_DROP_BULLY_GOLD_SUCCESS());
 #endif
+#ifdef ENHANCED_GRAPHS
+		ChangeBullyGoldAmountTotalByPlayer(eBully, iGold);
+#endif
 	}
 
 	// Logging
@@ -8670,6 +8711,9 @@ void CvMinorCivAI::DoMajorBullyUnit(PlayerTypes eBully, UnitTypes eUnitType)
 		}
 		else
 			pNewUnit->kill(false);	// Could not find a spot for the unit!
+#ifdef ENHANCED_GRAPHS
+		ChangeBullyWorkersAmountTotalByPlayer(eBully, 1);
+#endif
 	}
 
 	// Logging

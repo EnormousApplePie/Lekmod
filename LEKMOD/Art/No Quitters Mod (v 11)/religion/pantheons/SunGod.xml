@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +1 Food from Wheat, Bananas, Citrus, and Cocoa. -->
+	<Belief_ResourceYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_SUN_GOD</BeliefType>
+			<ResourceType>RESOURCE_COCOA</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SUN_GOD</BeliefType>
+			<ResourceType>RESOURCE_OLIVE</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_ResourceYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_SUN_GOD" />
+		<Row Tag="TXT_KEY_BELIEF_SUN_GOD">
+			<Text>+1 [ICON_FOOD] Food from Wheat, Bananas, Citrus, Olives and Cocoa</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_SUN_GOD" />
+		<Row Tag="TXT_KEY_BELIEF_SUN_GOD">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_FOOD] Food from Wheat, Bananas, Citrus, and Cocoa</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_SUN_GOD" />
+		<Row Tag="TXT_KEY_BELIEF_SUN_GOD">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_FOOD] Food from Wheat, Bananas, Citrus, and Cocoa</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_SUN_GOD" />
+		<Row Tag="TXT_KEY_BELIEF_SUN_GOD">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_FOOD] Food from Wheat, Bananas, Citrus, and Cocoa</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

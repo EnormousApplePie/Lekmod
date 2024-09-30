@@ -195,12 +195,15 @@ public:
 
 	int GetSpecialistUpgradeThreshold(UnitClassTypes eUnitClass);
 #endif
+#ifdef ENHANCED_GRAPHS
+	void DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, bool bCountAsProphet, bool bMayaBoost = false);
+#else
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	void DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, bool bCountAsProphet, bool bSpawnWithNoExpendedTrigger = false);
 #else
 	void DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, bool bCountAsProphet);
 #endif
-
+#endif
 
 #ifdef AUI_CITIZENS_FOOD_PRODUCTION_TRIAL_RUN_THEN_SELF_CONSISTENCY
 	bool getIgnoreFoodProduction() const;

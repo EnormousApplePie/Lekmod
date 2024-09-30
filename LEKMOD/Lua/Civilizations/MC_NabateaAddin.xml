@@ -1,0 +1,23 @@
+<Context Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow">
+	<Box Offset="0,0" ID="NabateaBox" Anchor="L,T" Size="254,64" Color="255,255,255,0" Hidden="1">
+		<Box ID="NabateaLine" Anchor="R,T" Color="27.53.64.255" Offset="4,0" Size="254,1"/>
+		<Stack Anchor="C,T" Offset="0,0" Padding="0" StackGrowth="Right" ID="NabateaStack">
+			<Button ID="IconFrame" Anchor="R,C" Size="64,64" Offset="0,0" Texture="64x64FrameButtons.dds" >
+					<Image ID="NabateaIcon" Anchor="C,C" Size="64.64" Texture="LeaderPortraits512.dds" />
+			</Button>
+			<Box Offset="0,0" Anchor="C,T" Size="10,1" Color="255,255,255,0"/>
+			<GridButton Anchor="C,C" Style="BaseButton" Size="150,25" Offset="0,0" StateOffsetIncrement="0,0" ID="BuyButton">
+				<Stack Anchor="C,C" Offset="0,0" Padding="0" StackGrowth="Bottom">
+					<Label Anchor="R,C" Offset="0,0" String="Build a Reservoir" Font="TwCenMT16" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="FlavorText"/>
+					<Label Anchor="R,C" Offset="0,10" String="300 [ICON_GOLD]" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="CostText"/>
+				</Stack>
+			</GridButton>
+			<GridButton Anchor="C,C" Style="BaseButton" Size="150,25" Offset="0,0" StateOffsetIncrement="0,0" ID="BuyButton">
+				<Stack Anchor="C,C" Offset="0,0" Padding="0" StackGrowth="Bottom">
+					<Label Anchor="R,C" Offset="0,0" String="Build a Reservoir" Font="TwCenMT16" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="FlavorText"/>
+					<Label Anchor="R,C" Offset="0,10" String="300 [ICON_GOLD]" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="CostText"/>
+				</Stack>
+			</GridButton>
+		</Stack>
+	</Box>
+</Context>

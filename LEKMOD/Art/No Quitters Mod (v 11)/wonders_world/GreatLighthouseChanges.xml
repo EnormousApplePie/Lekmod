@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-09 17:56:05 -->
+<GameData>
+
+	<!-- Great Lighthouse now also provides +1 Gold from coast/ocean tiles and a free Great Admiral -->
+	<Building_TerrainYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_GREAT_LIGHTHOUSE</BuildingType>
+			<TerrainType>TERRAIN_COAST</TerrainType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_GREAT_LIGHTHOUSE</BuildingType>
+			<TerrainType>TERRAIN_OCEAN</TerrainType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_TerrainYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_GREAT_LIGHTHOUSE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_GREAT_LIGHTHOUSE_HELP">
+			<Text>All military naval units receive +1 [ICON_MOVES] movement and +1 sight. Provides +1 [ICON_GOLD] from all water tiles in the city and a free Lighthouse in the city in which it is built.[NEWLINE][NEWLINE]City must be built on the coast.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_GREAT_LIGHTHOUSE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_GREAT_LIGHTHOUSE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]All military naval units receive +1 [ICON_MOVES] movement and +1 sight. Provides +1 [ICON_GOLD] from all water tiles in the city and a free Lighthouse in the city in which it is built. A Great Admiral appears near the city.[NEWLINE][NEWLINE]City must be built on the coast.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_GREAT_LIGHTHOUSE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_GREAT_LIGHTHOUSE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]All military naval units receive +1 [ICON_MOVES] movement and +1 sight. Provides +1 [ICON_GOLD] from all water tiles in the city and a free Lighthouse in the city in which it is built. A Great Admiral appears near the city.[NEWLINE][NEWLINE]City must be built on the coast.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_GREAT_LIGHTHOUSE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_GREAT_LIGHTHOUSE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]All military naval units receive +1 [ICON_MOVES] movement and +1 sight. Provides +1 [ICON_GOLD] from all water tiles in the city and a free Lighthouse in the city in which it is built. A Great Admiral appears near the city.[NEWLINE][NEWLINE]City must be built on the coast.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

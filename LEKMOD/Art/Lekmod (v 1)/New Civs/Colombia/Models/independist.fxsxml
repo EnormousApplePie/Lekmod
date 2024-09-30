@@ -1,0 +1,53 @@
+<Asset>
+	<Mesh file="Independist.gr2"/>
+	<Animation file="GreatGeneral_Early_IdleA.gr2" ec="1000, 1040, 1020, 2000, 2040, 2020"/>
+	<Animation file="GreatGeneral_Early_Run.gr2" ec="1400"/>
+	<Animation file="GreatGeneral_Early_Stop_Run.gr2" ec="1440"/>
+	<Animation file="GreatGeneral_Early_Combat_Ready.gr2" ec="1600"/>
+	<Animation file="GreatGeneral_Early_Combat_Ready_Idle.gr2" ec="1620"/>
+	<Animation file="GreatGeneral_Early_Combat_Ready_Idle_Trans_idleA.gr2" ec="1640"/>
+	<Animation file="GreatGeneral_Early_AttackA.gr2" ec="1100"/>
+	<Animation file="GreatGeneral_Early_Activate.gr2" ec="1990"/>
+	<Animation file="GreatGeneral_Early_Activate_Idle.gr2" ec="1995"/>
+	<Animation file="GreatGeneral_Early_DeathA.gr2" ec="1200"/>
+	<Animation file="GreatGeneral_Early_DeathA_Idle.gr2" ec="1220"/>
+	<Animation file="GreatGeneral_Early_Fortify.gr2" ec="1500"/>
+	<Animation file="GreatGeneral_Early_Fortify_Idle.gr2" ec="1520"/>
+	<Animation file="GreatGeneral_Early_Fortify_Idle_Trans_IdleA.gr2" ec="1580"/>
+	<Animation file="GreatGeneral_Early_Bombard_Defense.gr2" ec="1280"/>
+	<Animation file="GreatGeneral_Early_Bombard_Defense_Idle.gr2" ec="1285"/>
+	<Animation file="GreatGeneral_Early_Bombard_Defense_Idle_Trans_IdleA.gr2" ec="1290"/>
+	<Texture file="independist.dds"/>
+	<Texture file="Great_Early_General_Flag_DIFF.dds"/>
+	<Texture file="Great_Early_General_Flag_SREF.dds"/>
+	<Texture file="independist_SREF.dds"/>
+	<Texture file="Unit_Environment_Dull.dds"/>
+	<Texture file="Unit_Environment_Sharp.dds"/>
+	<Texture file="Unit_Irradiance.dds"/>
+	<BoneUsage>
+		<Bone name="Horse"/>
+		<Bone name="World"/>
+	</BoneUsage>
+	<TimedTrigger file="FX_Triggers_GreatGeneral_Early.ftsxml"/>
+	<AnimGraph file="GREAT_GENERAL_LEAVE_COMBAT_READY.dge"/>
+	<AnimGraph file="ATTACK_A_GRAPH.dge"/>
+	<AnimGraph file="COMBAT_READY_GRAPH.dge"/>
+	<AnimGraph file="LEAVE_BOMBARD_DEFEND_TRANS_IDLE_A_GRAPH.dge"/>
+	<AnimGraph file="CIVILIAN_ACTIVATE_CAPTURED.dge"/>
+	<AnimGraph file="CIVILIAN_ENTER_BOMBARD_DEFEND.dge"/>
+	<AnimGraph file="LEAVE_FORTIFY_TO_IDLE_A.dge"/>
+	<AnimGraph file="FORTIFY_GRAPH.dge"/>
+	<AnimGraph file="ENTER_SLEEP_CIVILIAN.dge"/>
+	<AnimGraph file="BOMBARD_DEFEND_LOOP_GRAPH.dge"/>
+	<AnimGraph file="IDLE_OFFSET_CONTINUE_TRUE_GRAPH.dge"/>
+	<AnimGraph file="IDLE_GRAPH.dge"/>
+	<AnimGraph file="FIDGETS_GRAPH.dge"/>
+	<AnimGraph file="TRANSITIONS_FOR_IDLES.dge"/>
+	<AnimGraph file="RUN_START_CIVILIAN.dge"/>
+	<AnimGraph file="STOP_RUNNING_CIVILIAN.dge"/>
+	<AnimGraph file="RUNNING_LOOP_GRAPH.dge"/>
+	<AnimGraph file="CIVILIAN_DEATH_FINAL.dge"/>
+	<AnimGraph file="ENTER_COMBAT_READY_GRAPH.dge"/>
+	<StateMachine file="GREAT_GENERAL_STATE_01.fsmxml"/>
+</Asset>
+
