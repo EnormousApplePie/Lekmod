@@ -6,7 +6,7 @@ It includes the custom mapscript and the custom .dll source files in addition to
 
 
 ### Want to contribute?
-* I no longer accept pull requests. But if you have something you really want to contribute you can always send me a DM or email.
+* UPDATE 30th of September 2024: I now accept pull request again, provided the quality of the request is sufficient.
 
 
 
