@@ -7,7 +7,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Kilwa UB. Add a dummy building that gives 5% food for each outgoing trade route in the city.
 ------------------------------------------------------------------------------------------------------------------------
-local function kilwa_ua_food(player_id)
+function lekmod_kilwa_ua_food(player_id)
 
 	local player = Players[player_id]
 	if player:GetCivilizationType() ~= this_civ or not player:IsAlive() then return end
@@ -21,6 +21,6 @@ local function kilwa_ua_food(player_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   GameEvents.PlayerDoTurn.Add(kilwa_ua_food)
-   GameEvents.UnitPrekill.Add(kilwa_ua_food)
+   GameEvents.PlayerDoTurn.Add(lekmod_kilwa_ua_food)
+   GameEvents.UnitPrekill.Add(lekmod_kilwa_ua_food)
 end

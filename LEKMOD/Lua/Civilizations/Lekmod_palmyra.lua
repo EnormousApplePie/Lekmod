@@ -9,7 +9,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Palmyra UA: Add fresh water to cities settled
 ------------------------------------------------------------------------------------------------------------------------
-local function ua_add_fresh_water(player_id, x, y, new_player_id)
+function lekmod_ua_palmyra_add_fresh_water(player_id, x, y, new_player_id)
 
    local player = Players[player_id]
    local new_player = Players[new_player_id]
@@ -31,21 +31,24 @@ local function ua_add_fresh_water(player_id, x, y, new_player_id)
    end
 
    for loop_plot in PlotAreaSweepIterator(plot, 1, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+
       if is_owned then
-         loop_plot:SetFreshWater(true)
+         if not loop_plot:IsWater() then
+            loop_plot:SetFreshWater(true)
+         end
       else
          loop_plot:SetFreshWater(false)
       end
    end
 
 end
-local function ua_add_fresh_water_city_capture(player_id, _, x, y, new_player_id)
+function lekmod_ua_palmyra_add_fresh_water_city_capture(player_id, _, x, y, new_player_id)
 
-   ua_add_fresh_water(player_id, x, y, new_player_id)
+   lekmod_ua_palmyra_add_fresh_water(player_id, x, y, new_player_id)
 
 end
-------------------------------------------------------------------------------------------------------------------------
+
 if is_active then
-   GameEvents.PlayerCityFounded.Add(ua_add_fresh_water)
-   GameEvents.CityCaptureComplete.Add(ua_add_fresh_water_city_capture)
+   GameEvents.PlayerCityFounded.Add(lekmod_ua_palmyra_add_fresh_water)
+   GameEvents.CityCaptureComplete.Add(lekmod_ua_palmyra_add_fresh_water_city_capture)
 end

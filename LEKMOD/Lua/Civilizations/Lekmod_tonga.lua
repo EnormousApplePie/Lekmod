@@ -8,7 +8,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Tonga UA. Reveal nearby islands and explore nearby coastline at the start of the game.
 ------------------------------------------------------------------------------------------------------------------------
-local function tonga_explore(player)
+function lekmod_tonga_explore(player)
 
    local team = player:GetTeam()
    local start_plot = player:GetStartingPlot()
@@ -48,11 +48,11 @@ local function tonga_explore(player)
 
 end
 
-local function tonga_ua()
+function lekmod_tonga_ua()
 
    for _, player in pairs(Players) do
       if player:IsEverAlive() and player:GetCivilizationType() == this_civ then
-         tonga_explore(player)
+         lekmod_tonga_explore(player)
       end
    end
 
@@ -60,7 +60,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- Tonga UB. Add a dummy building that awards food and culture if the city has at least 3 water tiles next to it.
 ------------------------------------------------------------------------------------------------------------------------
-local function count_coastal_tiles(city)
+function lekmod_tonga_count_coastal_tiles(city)
 
    local city_plot = Map.GetPlot(city:GetX(), city:GetY())
    local count = 0
@@ -72,30 +72,35 @@ local function count_coastal_tiles(city)
 
 return count end
 
-local function tonga_ub_food_bonus(player_id, ...)
+function lekmod_tonga_ub_food_bonus(player_id)
 
-   local player
-   -- CityCaptureComplete has a different argument structure
-   if arg["eNewPlayer"] ~= nil then
-      if Players[arg["eNewPlayer"]]:GetCivilizationType() ~= this_civ then return end
-      player = Players[arg["eNewPlayer"]]
-   else
-      player = Players[player_id]
-   end
+   local player = Players[player_id]
+  
    if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
 
    for city in player:Cities() do
-      if city and city:IsHasBuilding(GameInfoTypes["BUILDING_MC_TONGAN_MALAE"]) and count_coastal_tiles(city) >= 3 then
+      if city and city:IsHasBuilding(GameInfoTypes["BUILDING_MC_TONGAN_MALAE"]) and lekmod_tonga_count_coastal_tiles(city) >= 3 then
          city:SetNumRealBuilding(GameInfoTypes["BUILDING_MC_MALAE_FOOD"], 1)
+      else
+         city:SetNumRealBuilding(GameInfoTypes["BUILDING_MC_MALAE_FOOD"], 0)
       end
    end
 
 end
+
+function lekmod_tonga_ub_food_bonus_on_capture(player_id, city_id, _, _, new_player_id)
+
+   if Players[new_player_id]:GetCivilizationType() ~= this_civ then return end
+   lekmod_tonga_ub_food_bonus(new_player_id)
+
+end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   Events.SequenceGameInitComplete.Add(tonga_ua)
-   GameEvents.PlayerDoTurn.Add(tonga_ub_food_bonus)
-   GameEvents.PlayerCityFounded.Add(tonga_ub_food_bonus)
-   GameEvents.CityCaptureComplete.Add(tonga_ub_food_bonus)
-   GameEvents.CityConstructed.Add(tonga_ub_food_bonus)
+   Events.SequenceGameInitComplete.Add(lekmod_tonga_ua)
+   --GameEvents.PlayerDoTurn.Add(tonga_ub_food_bonus)
+   -- Note: BuildingSold is a Lekmod event! Not available in the base game
+   GameEvents.BuildingSold.Add(lekmod_tonga_ub_food_bonus)
+   GameEvents.PlayerCityFounded.Add(lekmod_tonga_ub_food_bonus)
+   GameEvents.CityCaptureComplete.Add(lekmod_tonga_ub_food_bonus_on_capture)
+   GameEvents.CityConstructed.Add(lekmod_tonga_ub_food_bonus)
 end

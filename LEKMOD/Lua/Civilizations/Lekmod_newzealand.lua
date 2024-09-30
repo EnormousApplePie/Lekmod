@@ -9,7 +9,9 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- New Zealand UA. Give a bonus to the player when they meet a new civ.
 ------------------------------------------------------------------------------------------------------------------------
-local function new_zealand_ua_award_bonus(player, other_player)
+function lekmod_new_zealand_ua_award_bonus(player, other_player)
+
+   if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
 
    local rewards = {
       [1] = {reward = 10, type = "Faith", string = "[ICON_PEACE] Faith", method = "ChangeFaith"},
@@ -39,46 +41,22 @@ local function new_zealand_ua_award_bonus(player, other_player)
 
 end
 
-local function new_zealand_ua_on_meet(team_met_id, player_team_id)
+function lekmod_new_zealand_ua_on_meet(team_met_id, player_team_id)
 
 	local player_team = Teams[player_team_id]
 	local team_met = Teams[team_met_id]
-	local player_id = 0
-	for player_loop_id = 0, GameDefines.MAX_MAJOR_CIVS-1, 1 do
-		local player = Players[player_loop_id]
-		if player:GetCivilizationType() == this_civ
-      and (player:GetTeam() == player_team_id or player:GetTeam() == team_met_id) then
-			player_id = player:GetID()
-         break
-		end
-	end
+	
+	local player_id = player_team:GetLeaderID()
+	local met_player_id = team_met:GetLeaderID()
 
-   local other_team
-	local new_zealand_player = Players[player_id]
-	if new_zealand_player:GetTeam() == player_team_id then
-		other_team = team_met
-	elseif new_zealand_player:GetTeam() == team_met_id then
-		other_team = player_team
-	else
-		return
-	end
-	if other_team:IsMinorCiv() then
-		new_zealand_ua_award_bonus(new_zealand_player, other_team)
-	else
-		for player_loop_id = 0, GameDefines.MAX_MAJOR_CIVS -1, 1 do
-			local player = Players[player_loop_id]
-			if player:GetTeam() == team_met_id then
-				new_zealand_ua_award_bonus(new_zealand_player, player)
-            break
-         end
-		end
-	end
+	lekmod_new_zealand_ua_award_bonus(Players[player_id], Players[met_player_id])
+	lekmod_new_zealand_ua_award_bonus(Players[met_player_id], Players[player_id])
 
 end
 ------------------------------------------------------------------------------------------------------------------------
 -- New Zealand Maori Battalion. Yields 1 influence with a city state per turn if within their borders.
 ------------------------------------------------------------------------------------------------------------------------
-function is_in_city_state_borders(player_id, unit)
+function lekmod_is_in_city_state_borders(player_id, unit)
 
 	local plot = unit:GetPlot()
 	if plot:GetOwner() > -1 then
@@ -88,7 +66,7 @@ function is_in_city_state_borders(player_id, unit)
 
 return false end
 
-local function new_zealand_uu_batallion(player_id)
+function lekmod_new_zealand_uu_batallion(player_id)
 
    local maori_promotion_id = GameInfoTypes["PROMOTION_ATTACK_AWAY_CAPITAL"]
    local player = Players[player_id]
@@ -98,7 +76,7 @@ local function new_zealand_uu_batallion(player_id)
    for unit in player:Units() do
 
       if not unit:IsHasPromotion(maori_promotion_id) then -- skip
-      elseif is_in_city_state_borders(player_id, unit) then
+      elseif lekmod_is_in_city_state_borders(player_id, unit) then
          local city_state_id = unit:GetPlot():GetOwner()
          local city_state = Players[city_state_id]
          city_state:ChangeMinorCivFriendshipWithMajor(player_id, 1)
@@ -113,7 +91,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- New Zealand UU ironclad. Set a promotion that ignores ZoC on the unit if it is a near a friendly city.
 ------------------------------------------------------------------------------------------------------------------------
-local function new_zealand_uu_defender(player_id)
+function lekmod_new_zealand_uu_defender(player_id)
 
    local defender_promotion_zoc_id = GameInfoTypes["PROMOTION_JFD_DEFENDER_ACTIVE"]
    local defender_promotion_default_id	= GameInfoTypes["PROMOTION_JFD_DEFENDER"]
@@ -156,8 +134,8 @@ local function new_zealand_uu_defender(player_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-	GameEvents.TeamMeet.Add(new_zealand_ua_on_meet)
+	GameEvents.TeamMeet.Add(lekmod_new_zealand_ua_on_meet)
 end
 -- Unique units should work even if the civ is not active
-GameEvents.PlayerDoTurn.Add(new_zealand_uu_batallion)
-GameEvents.PlayerDoTurn.Add(new_zealand_uu_defender)
+GameEvents.PlayerDoTurn.Add(lekmod_new_zealand_uu_batallion)
+GameEvents.PlayerDoTurn.Add(lekmod_new_zealand_uu_defender)

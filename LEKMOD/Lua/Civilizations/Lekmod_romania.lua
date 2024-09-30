@@ -8,7 +8,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Romania UA. Award golden age points whenever the player captures or liberates a city
 ------------------------------------------------------------------------------------------------------------------------
-local function ua_on_capture(player_id, _, _, _, new_player_id)
+function lekmod_romania_ua_on_capture(player_id, _, _, _, new_player_id)
 
    local player = Players[new_player_id]
    if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
@@ -18,5 +18,5 @@ local function ua_on_capture(player_id, _, _, _, new_player_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   GameEvents.CityCaptureComplete.Add(ua_on_capture)
+   GameEvents.CityCaptureComplete.Add(lekmod_romania_ua_on_capture)
 end

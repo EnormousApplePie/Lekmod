@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 -- Resettlements. Add a few buildings to newly founded cities if the player has the policy
 ------------------------------------------------------------------------------------------------------------------------
-local function resettlements_policy_new_buildings(player_id, x, y)
+function lekmod_resettlements_policy_new_buildings(player_id, x, y)
 
     local player = Players[player_id]
     if not player:HasPolicy(GameInfo.Policies["POLICY_RESETTLEMENT"].ID) then return end
@@ -18,11 +18,11 @@ local function resettlements_policy_new_buildings(player_id, x, y)
     end
 
 end
-GameEvents.PlayerCityFounded.Add(resettlements_policy_new_buildings)
+GameEvents.PlayerCityFounded.Add(lekmod_resettlements_policy_new_buildings)
 ------------------------------------------------------------------------------------------------------------------------
 -- Policy_FreePromotionUnitCombats. Give a free promotion to units for specific combat classes as put in the xml table
 ------------------------------------------------------------------------------------------------------------------------
-local function policy_free_promotion_unit_combats(player_id, unit_id)
+function lekmod_policy_free_promotion_unit_combats(player_id, unit_id)
 
     local player = Players[player_id]
     local unit = player:GetUnitByID(unit_id)
@@ -46,18 +46,18 @@ local function policy_free_promotion_unit_combats(player_id, unit_id)
 
 end
 
-local function policy_free_promotion_unit_combats_on_adopt(player_id)
+function lekmod_policy_free_promotion_unit_combats_on_adopt(player_id)
 
     local player = Players[player_id]
 
     -- Apply to all the right currently existing units once upon adopting the policy
     for unit in player:Units() do
         if unit then
-            policy_free_promotion_unit_combats(player_id, unit:GetID())
+            lekmod_policy_free_promotion_unit_combats(player_id, unit:GetID())
         end
     end
 
 end
-GameEvents.PlayerAdoptPolicy.Add(policy_free_promotion_unit_combats_on_adopt)
-GameEvents.UnitCreated.Add(policy_free_promotion_unit_combats)
+GameEvents.PlayerAdoptPolicy.Add(lekmod_policy_free_promotion_unit_combats_on_adopt)
+GameEvents.UnitCreated.Add(lekmod_policy_free_promotion_unit_combats)
 ------------------------------------------------------------------------------------------------------------------------

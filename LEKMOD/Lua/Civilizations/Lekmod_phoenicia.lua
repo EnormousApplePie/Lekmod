@@ -7,10 +7,10 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Phoenicia UA. Add a building to a new city that gives +1 Population, +1 Happiness and +40 Gold.
 ------------------------------------------------------------------------------------------------------------------------
-local function ua_new_city_bonus(player_id, x, y)
+function lekmod_phoenicia_ua_new_city_bonus(player_id, x, y)
 
    local player = Players[player_id]
-   if not player:IsAlive() and player:GetCivilizationType() ~= this_civ or
+   if not player:IsAlive() or player:GetCivilizationType() ~= this_civ or
    not Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_OPTICS"]) then return end
 
    local plot = Map.GetPlot(x, y)
@@ -20,5 +20,5 @@ local function ua_new_city_bonus(player_id, x, y)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-	GameEvents.PlayerCityFounded.Add(ua_new_city_bonus)
+	GameEvents.PlayerCityFounded.Add(lekmod_phoenicia_ua_new_city_bonus)
 end

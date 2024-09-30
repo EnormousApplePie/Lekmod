@@ -48,3 +48,51 @@ function LekmodUtilities:get_number_trade_routes_from_city(player, city, domain)
 
 return routes_amount end
 ------------------------------------------------------------------------------------------------------------------------
+function LekmodUtilities:table_to_string(table)
+
+   for k, v in pairs(table) do
+      print(k, v)
+   end
+   local string = ""
+   for key, value in pairs(table) do
+
+      if type(value) == "table" then
+         string = string .. key .. "=" .. LekmodUtilities:table_to_string(value) .. ","
+      else
+         string = string .. key .. "=" .. value .. ","
+      end
+   end
+
+return string end
+------------------------------------------------------------------------------------------------------------------------
+function LekmodUtilities:string_to_table(string)
+   
+     local table = {}
+     -- Split the string into key-value pairs, account for a sub-table
+       for key, value in string.gmatch(string, "(%w+)=(%w+),") do
+         if tonumber(value) then
+             table[key] = tonumber(value)
+         else
+             table[key] = value
+         end
+       end
+
+return table end
+------------------------------------------------------------------------------------------------------------------------
+function LekmodUtilities:remove_from_table(table, value)
+
+   for i = #table, 1, -1 do
+      if table[i] == value then
+         table[i] = table[#table]
+         table[#table] = nil
+      end
+   end
+
+end
+------------------------------------------------------------------------------------------------------------------------
+function LekmodUtilities:table_contains(table, value)
+
+   for _, v in ipairs(table) do
+      if v == value then return true end
+   end
+end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ5Package>
-  <GUID>{b5932ae4-0f4f-498f-9333-e2d31b20e095}</GUID>
+  <GUID>{4249caef-aeb8-45cc-9ccd-ffd722c79097}</GUID>
 	<SteamApp>235580</SteamApp>
-  <Version>1</Version>
+  <Version>326</Version>
   <Priority>300</Priority>
   <Key>bf6d34a0074b7ad4b1d1716475f7f7fe</Key>
   <PTags>

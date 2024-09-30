@@ -11,7 +11,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 local dummy_building = GameInfoTypes["BUILDING_PHILIPPINES_TRAIT"]
 local bonus_cities_amount = 2
 
-local function philippine_expand_population(player_id, iX, iY)
+function lekmod_philippine_expand_population(player_id, iX, iY)
    local player = Players[player_id]
    if player:GetCivilizationType() == this_civ
       and player:IsAlive()
@@ -27,7 +27,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- Philippines UA. Give civilian units +2 movement inside owned territory.
 ------------------------------------------------------------------------------------------------------------------------
-local function philippine_movement_bonus(player_id, unit_id)
+function lekmod_philippine_movement_bonus(player_id, unit_id)
 
    local movement_promotion = GameInfoTypes["PROMOTION_GOOD_FIGHT"]
 	local player = Players[player_id]
@@ -52,6 +52,6 @@ local function philippine_movement_bonus(player_id, unit_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   GameEvents.PlayerCityFounded.Add(philippine_expand_population)
-   GameEvents.UnitSetXY.Add(philippine_movement_bonus)
+   GameEvents.PlayerCityFounded.Add(lekmod_philippine_expand_population)
+   GameEvents.UnitSetXY.Add(lekmod_philippine_movement_bonus)
 end

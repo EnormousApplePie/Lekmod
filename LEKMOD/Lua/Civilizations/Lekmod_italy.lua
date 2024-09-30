@@ -8,15 +8,16 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Italy UA: Enter a golden age or extend one whenever a player finishes a policy tree
 ------------------------------------------------------------------------------------------------------------------------
-local function ua_on_policy_adopt(player_id, policy_id)
+function lekmod_italy_ua_on_policy_adopt(player_id, policy_id)
 
-	local player = Players[policy_id]
+   print("Italy UA: Policy Adopted")
+	local player = Players[player_id]
    local policy = GameInfo.Policies[policy_id]
    local policy_branch = GameInfo.PolicyBranchTypes[policy.PolicyBranchType]
 
 	if not player:IsEverAlive() or player:GetCivilizationType() ~= this_civ
    or policy_branch == nil or not player:HasPolicy(policy_id)
-   or not player:IsPolicyBranchFinished(policyBranch.ID)
+   or not player:IsPolicyBranchFinished(policy_branch.ID)
    or Game.GetActivePlayer() ~= player_id then return end
 
    -- amount made for quick speed, but scales with other speeds.
@@ -36,5 +37,5 @@ local function ua_on_policy_adopt(player_id, policy_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   GameEvents.PlayerAdoptPolicy.Add(ua_on_policy_adopt)
+   GameEvents.PlayerAdoptPolicy.Add(lekmod_italy_ua_on_policy_adopt)
 end

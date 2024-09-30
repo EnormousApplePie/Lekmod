@@ -8,10 +8,10 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Nabatea UA. Add a dummy technology that gives fresh water farms +1 food until civil service is researched.
 ------------------------------------------------------------------------------------------------------------------------
-local function nabatea_ua_farm_food(player_id)
+function lekmod_nabatea_ua_farm_food(player_id)
 
 	local player = Players[player_id]
-	if not player:GetCivilizationType() == this_civ then return end
+	if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
 
    local team = Teams[player:GetTeam()]
    if team:IsHasTech(GameInfoTypes["TECH_CIVIL_SERVICE"]) then
@@ -24,7 +24,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- Nabatea UU. Award gold for discovering cities with a Zabonah.
 ------------------------------------------------------------------------------------------------------------------------
-local function nabatea_unit_exploration(player_id, unit, unit_x, unit_y)
+function lekmod_nabatea_unit_exploration(player_id, unit, unit_x, unit_y)
 
    local nabatea_unit = GameInfoTypes["UNIT_MC_ZABONAH"]
 	local player = Players[player_id]
@@ -54,7 +54,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- Nabatea UB. Add a dummy building to a city with the UB that gives +1 food for each trade route originating from the city.
 ------------------------------------------------------------------------------------------------------------------------
-local function nabatea_building_food(player_id)
+function lekmod_nabatea_building_food(player_id)
 
 	local player = Players[player_id]
 	if player:GetCivilizationType() ~= this_civ or not player:IsAlive() then return end
@@ -70,9 +70,9 @@ local function nabatea_building_food(player_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   GameEvents.PlayerDoTurn.Add(nabatea_building_food)
-   GameEvents.UnitPrekill.Add(nabatea_building_food)
-   GameEvents.TeamSetHasTech.Add(nabatea_ua_farm_food)
+   GameEvents.PlayerDoTurn.Add(lekmod_nabatea_building_food)
+   GameEvents.UnitPrekill.Add(lekmod_nabatea_building_food)
+   GameEvents.TeamSetHasTech.Add(lekmod_nabatea_ua_farm_food)
 end
    -- A unique unit can be present in the game without the civilization being active.
-   GameEvents.UnitSetXY.Add(nabatea_unit_exploration)
+   GameEvents.UnitSetXY.Add(lekmod_nabatea_unit_exploration)

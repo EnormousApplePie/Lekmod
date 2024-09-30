@@ -7,7 +7,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Cuba UA. Add a dumy building for every 5 culture present in other players' capitals
 ------------------------------------------------------------------------------------------------------------------------
-local function cuba_ua_culture(player_id)
+function lekmod_cuba_ua_culture(player_id)
 
    local player = Players[player_id]
    if player:GetCivilizationType() == this_civ then
@@ -36,7 +36,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- Cuba UB Dance Hall. Add a dummy building if there is a great work of music in the city.
 ------------------------------------------------------------------------------------------------------------------------
-local function cuba_building(player_id)
+function lekmod_cuba_building(player_id)
    local player = Players[player_id]
    if player:GetCivilizationType() == this_civ then
       for city in player:Cities() do
@@ -53,7 +53,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- Cuba UU. Unlock and give 2 of the unit if the player has adopted an ideology tenet for the first time.
 ------------------------------------------------------------------------------------------------------------------------
-local function cuba_unit_unlock(player_id, policy_id)
+function lekmod_cuba_unit_unlock(player_id, policy_id)
 	local player = Players[player_id]
 	local capital = player:GetCapitalCity()
 	if player:GetCivilizationType() == this_civ then
@@ -71,7 +71,7 @@ local function cuba_unit_unlock(player_id, policy_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   GameEvents.PlayerDoTurn.Add(cuba_building)
-   GameEvents.PlayerDoTurn.Add(cuba_ua_culture)
-   GameEvents.PlayerAdoptPolicy.Add(cuba_unit_unlock)
+   GameEvents.PlayerDoTurn.Add(lekmod_cuba_building)
+   GameEvents.PlayerDoTurn.Add(lekmod_cuba_ua_culture)
+   GameEvents.PlayerAdoptPolicy.Add(lekmod_cuba_unit_unlock)
 end

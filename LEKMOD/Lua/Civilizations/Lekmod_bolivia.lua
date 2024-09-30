@@ -10,15 +10,15 @@ Lek_SaveData = Modding.OpenSaveData()
 
 Lek_Properties = {}
 
-local function get_persistent_property(name)
+function lekmod_bolivia_get_persistent_property(name)
    if not Lek_Properties[name] then
       Lek_Properties[name] = Lek_SaveData.GetValue(name)
    end
    return Lek_Properties[name]
 end
 
-local function set_persistent_data(name, value)
-   if get_persistent_property(name) == value then return end
+function lekmod_bolivia_set_persistent_data(name, value)
+   if lekmod_bolivia_get_persistent_property(name) == value then return end
    Lek_SaveData.SetValue(name, value)
    Lek_Properties[name] = value
 end
@@ -28,9 +28,8 @@ end
 -- Bolivia UA. Add a dummy building that either gives +1 production or +1 food to mines globally when
 -- either a writer or artist is expended. Save this data to the save file so that it can be remembered
 ------------------------------------------------------------------------------------------------------------------------
-local function bolivia_is_person_expended(player_id, unit_id, arg3, arg4, new_player_id)
+function lekmod_bolivia_is_person_expended(player_id, unit_id, arg3, arg4, new_player_id)
 
-   print("bolivia_is_person_expended")
    local artist_unit_id = GameInfoTypes["UNIT_ARTIST"]
    local writer_unit_id = GameInfoTypes["UNIT_WRITER"]
 
@@ -53,15 +52,15 @@ local function bolivia_is_person_expended(player_id, unit_id, arg3, arg4, new_pl
 
    -- Great Person expended event only has 2 arguments.
    if (unit_id == artist_unit_id or unit_id == writer_unit_id) then
-      set_persistent_data("bolivia_last_expended", unit_id .. player_id)
+      lekmod_bolivia_set_persistent_data("bolivia_last_expended", unit_id .. player_id)
    end
 
-   local bolivia_last_expended = tostring(get_persistent_property("bolivia_last_expended") or 0)
+   local bolivia_last_expended = tostring(lekmod_bolivia_get_persistent_property("bolivia_last_expended") or 0)
 
    if bolivia_last_expended == (artist_unit_id .. player_id) then
       capital:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_PRODUCTION"], 1)
       capital:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_FOOD"], 0)
-      if capital:IsHuman() and unit_id == artist_unit_id  then
+      if capital:IsHuman() and unit_id == artist_unit_id and Game.GetActivePlayer() == player_id  then
          Events.GameplayAlertMessage(Locale.ConvertTextKey("TXT_KEY_THP_BOLIVIA_BUTTON_TITLE_RIGHT"))
       end
    end
@@ -69,21 +68,21 @@ local function bolivia_is_person_expended(player_id, unit_id, arg3, arg4, new_pl
    if bolivia_last_expended == (writer_unit_id .. player_id) then
       capital:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_FOOD"], 1)
       capital:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_PRODUCTION"], 0)
-      if capital:IsHuman() and unit_id == writer_unit_id then
+      if capital:IsHuman() and unit_id == writer_unit_id and Game.GetActivePlayer() == player_id then
          Events.GameplayAlertMessage(Locale.ConvertTextKey("TXT_KEY_THP_BOLIVIA_BUTTON_TITLE_LEFT"))
       end
    end
 
    -- Make sure to delete the building in anything other than the capital to avoid stacking effects
    if new_player ~= nil then
-      bolivia_retain_building_capture(new_player_id)
+      lekmod_bolivia_retain_building_capture(new_player_id)
    else
-      bolivia_retain_building_capture(player_id)
+      lekmod_bolivia_retain_building_capture(player_id)
    end
 
 end
 
-function bolivia_retain_building_capture(player_id)
+function lekmod_bolivia_retain_building_capture(player_id)
 
    local player = Players[player_id]
    local capital = player:GetCapitalCity()
@@ -100,7 +99,7 @@ end
 -- Bolivia UU. Colorado. Add a combat strength bonus to the Colorado unit based on excess happiness.
 ------------------------------------------------------------------------------------------------------------------------
 -- Note: Might want to make a lua hook for when a player's happiness changes to update the combat strength better
-local function bolivia_uu_combat_strength(player_id, unit_id)
+function lekmod_bolivia_uu_combat_strength(player_id, unit_id)
 
 
    local colorado_unit_id = GameInfoTypes["UNIT_COLORADO"]
@@ -124,9 +123,11 @@ end
 if is_active then
 	--GameEvents.PlayerDoTurn.Add(bolivia_uu_combat_strength)
    -- Note: PlayerHappinessChanged is a Lekmod specific event
-	GameEvents.PlayerHappinessChanged.Add(bolivia_uu_combat_strength)
-   GameEvents.UnitCreated.Add(bolivia_uu_combat_strength)
-	GameEvents.GreatPersonExpended.Add(bolivia_is_person_expended)
-   GameEvents.CityCaptureComplete.Add(bolivia_is_person_expended)
-   GameEvents.PlayerCityFounded.Add(bolivia_is_person_expended)
+	
+	GameEvents.GreatPersonExpended.Add(lekmod_bolivia_is_person_expended)
+   GameEvents.CityCaptureComplete.Add(lekmod_bolivia_is_person_expended)
+   GameEvents.PlayerCityFounded.Add(lekmod_bolivia_is_person_expended)
 end
+GameEvents.PlayerHappinessChanged.Add(lekmod_bolivia_uu_combat_strength)
+GameEvents.UnitCreated.Add(lekmod_bolivia_uu_combat_strength)
+------------------------------------------------------------------------------------------------------------------------

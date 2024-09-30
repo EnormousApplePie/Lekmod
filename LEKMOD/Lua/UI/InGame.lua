@@ -1290,6 +1290,7 @@ ContextPtr:LoadNewContext("Lekmod_technologies")
 ContextPtr:LoadNewContext("Lekmod_units")
 ContextPtr:LoadNewContext("Lekmod_policies")
 ContextPtr:LoadNewContext("Lekmod_improvements")
+ContextPtr:LoadNewContext("Lekmod_buildings")
 ContextPtr:LoadNewContext("mountain")
 
 -- Lekmod Civilization
@@ -1320,3 +1321,4 @@ ContextPtr:LoadNewContext("Lekmod_phoenicia")
 ContextPtr:LoadNewContext("Lekmod_polynesia")
 ContextPtr:LoadNewContext("Lekmod_mexico")
 ContextPtr:LoadNewContext("Lekmod_vatican")
+ContextPtr:LoadNewContext("Lekmod_georgia")

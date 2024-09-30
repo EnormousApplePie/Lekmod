@@ -7,7 +7,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Polynesia UA Bug fix : Remove ocean impassable promotion from upgraded units (galley -> galleas)
 ------------------------------------------------------------------------------------------------------------------------
-local function ua_ocean_impassable_fix(player_id)
+function lekmod_polynesia_ua_ocean_impassable_fix(player_id)
 
 	local player = Players[player_id]
 	if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
@@ -22,5 +22,5 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
    -- Note: UnitCreated is a Lekmod event! Not in the base game.
-   GameEvents.UnitCreated.Add(ua_ocean_impassable_fix)
+   GameEvents.UnitCreated.Add(lekmod_polynesia_ua_ocean_impassable_fix)
 end

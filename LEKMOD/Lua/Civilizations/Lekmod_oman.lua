@@ -8,7 +8,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Oman UB. If a city has this UB, enemy naval units adjacent to the city take 30 damage per turn.
 ------------------------------------------------------------------------------------------------------------------------
-local function oman_ub_damage(player_id)
+function lekmod_oman_ub_damage(player_id)
 
 	local player = Players[player_id]
 	if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
@@ -37,7 +37,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- Oman UB. Add a dummy building to a city with the UB that gives +2 Production for each trade route originating from the city.
 ------------------------------------------------------------------------------------------------------------------------
-local function oman_building_production(player_id)
+function lekmod_oman_building_production(player_id)
 
 	local player = Players[player_id]
 	if player:GetCivilizationType() == this_civ and player:IsAlive() then
@@ -54,8 +54,8 @@ local function oman_building_production(player_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-    GameEvents.PlayerDoTurn.Add(oman_ub_damage)
-    GameEvents.PlayerDoTurn.Add(oman_building_production)
-    GameEvents.UnitPrekill.Add(oman_building_production)
+    GameEvents.PlayerDoTurn.Add(lekmod_oman_ub_damage)
+    GameEvents.PlayerDoTurn.Add(lekmod_oman_building_production)
+    GameEvents.UnitPrekill.Add(lekmod_oman_building_production)
 end
 

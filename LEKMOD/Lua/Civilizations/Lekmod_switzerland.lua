@@ -10,7 +10,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 -- Switzerland UB: Swiss Ski Resort. Loop trough all cities with the UB. Count the mountains within 3 tiles of the city,
 -- then add the appropriate amount of mountain buildings to the city to give the bonus.
 ------------------------------------------------------------------------------------------------------------------------
-local function ub_mountain_bonus(player_id)
+function lekmod_switzerland_ub_mountain_bonus(player_id)
 
    local player = Players[player_id]
    if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
@@ -35,11 +35,11 @@ local function ub_mountain_bonus(player_id)
 
 end
 
-local function ub_mountain_bonus_on_construct(player_id)
-   ub_mountain_bonus(player_id)
+function lekmod_switzerland_ub_mountain_bonus_on_construct(player_id)
+   lekmod_switzerland_ub_mountain_bonus(player_id)
 end
-local function ub_mountain_bonus_on_conquest(_, _, _, _, new_player_id)
-   ub_mountain_bonus(new_player_id)
+function lekmod_switzerland_ub_mountain_bonus_on_conquest(_, _, _, _, new_player_id)
+   lekmod_switzerland_ub_mountain_bonus(new_player_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 -- Switzerland UU: Reislaufer. Check if the unit that just moved is a reislaufer and if it is near a mountain. If it is,
@@ -48,7 +48,7 @@ end
 local mountaineer = GameInfoTypes["PROMOTION_SWISS_MOUNTAINEER"];
 local mountaineer_active = GameInfoTypes["PROMOTION_SWISS_MOUNTAINEER_ACTIVE"];
 
-local function uu_mountain_bonus(player_id, unit_id)
+function lekmod_switzerland_uu_mountain_bonus(player_id, unit_id)
 
 	local player = Players[player_id]
 	local unit = player:GetUnitByID(unit_id)
@@ -64,11 +64,11 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
    -- Note: CityAcquirePlot is a Lekmod Event! Not available in the base game
-   GameEvents.CityAcquirePlot.Add(ub_mountain_bonus)
-   GameEvents.CityCaptureComplete.Add(ub_mountain_bonus_on_conquest)
-   GameEvents.CityConstructed.Add(ub_mountain_bonus_on_construct)
+   GameEvents.CityAcquirePlot.Add(lekmod_switzerland_ub_mountain_bonus)
+   GameEvents.CityCaptureComplete.Add(lekmod_switzerland_ub_mountain_bonus_on_conquest)
+   GameEvents.CityConstructed.Add(lekmod_switzerland_ub_mountain_bonus_on_construct)
 end
 -- Unique Units can be active even if the civilization is not active
-GameEvents.UnitSetXY.Add(uu_mountain_bonus)
+GameEvents.UnitSetXY.Add(lekmod_switzerland_uu_mountain_bonus)
 -- Note: UnitCreated is a Lekmod Event! Not available in the base game
-GameEvents.UnitCreated.Add(uu_mountain_bonus)
+GameEvents.UnitCreated.Add(lekmod_switzerland_uu_mountain_bonus)

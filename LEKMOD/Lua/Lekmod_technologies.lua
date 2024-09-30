@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 -- Add a permanent building that gives +1 Vote in the world congress if the technology has been set to give additional delegates
 ------------------------------------------------------------------------------------------------------------------------
-function add_globalization_dummy_building(team_id, tech_id)
+function lekmod_add_globalization_dummy_building(team_id, tech_id)
 
    local delegates_number = 0
    for player_id, player in pairs(Players) do
@@ -29,7 +29,7 @@ function add_globalization_dummy_building(team_id, tech_id)
 
 end
 ------------------------------------------------------------------------------------------------------------------------
-GameEvents.TeamSetHasTech.Add(add_globalization_dummy_building)
-GameEvents.PlayerCityFounded.Add(add_globalization_dummy_building)
-GameEvents.CityCaptureComplete.Add(add_globalization_dummy_building)
+GameEvents.TeamSetHasTech.Add(lekmod_add_globalization_dummy_building)
+GameEvents.PlayerCityFounded.Add(lekmod_add_globalization_dummy_building)
+GameEvents.CityCaptureComplete.Add(lekmod_add_globalization_dummy_building)
 ------------------------------------------------------------------------------------------------------------------------

@@ -8,7 +8,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Tibet UA. Gain a certain amount of dummy buildings with that depends on how many eras the player has advanced
 ------------------------------------------------------------------------------------------------------------------------
-local function add_building(player)
+function lekmod_tibet_add_building(player)
 
    if player:GetCivilizationType() ~= this_civ or not player:IsAlive() then return end
    local amount = (player:GetCurrentEra() - 1) or 0
@@ -23,7 +23,7 @@ local function add_building(player)
 
 end
 
-local function tibet_ua_on_era(team_id)
+function lekmod_tibet_ua_on_era(team_id)
 
    for _, player in pairs(Players) do
       if player:GetTeam() == team_id then add_building(player) end
@@ -31,14 +31,27 @@ local function tibet_ua_on_era(team_id)
 
 end
 
-local function tibet_ua_on_turn(player_id)
+function lekmod_tibet_ua_on_city_founded(player_id)
 
    local player = Players[player_id]
-   add_building(player)
+   lekmod_tibet_add_building(player)
+
+end
+
+function lekmod_tibet_ua_city_capture(old_owner_id, is_capital, x, y, new_owner_id)
+
+   local new_player = Players[new_owner_id]
+   local old_player = Players[old_owner_id]
+   if new_player:GetCivilizationType() ~= this_civ then
+      lekmod_tibet_add_building(old_player)
+   else
+      lekmod_tibet_add_building(new_player)
+   end
 
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   GameEvents.TeamSetEra.Add(tibet_ua_on_era)
-   GameEvents.PlayerDoTurn.Add(tibet_ua_on_turn)
+   GameEvents.TeamSetEra.Add(lekmod_tibet_ua_on_era)
+   GameEvents.PlayerCityFounded.Add(lekmod_tibet_ua_on_city_founded)
+   GameEvents.CityCaptureComplete.Add(lekmod_tibet_ua_city_capture)
 end

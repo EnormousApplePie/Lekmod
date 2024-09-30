@@ -7,7 +7,7 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 -------------------------------------------------------------------------------------------------------------------------
 -- Akkad UA: Add a bonus promotion to units near a great general
 -------------------------------------------------------------------------------------------------------------------------
-local function akkad_general_city_bonus(player_id)
+function lekmod_akkad_general_city_bonus(player_id)
 
     local player = Players[player_id]
     if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
@@ -17,7 +17,7 @@ local function akkad_general_city_bonus(player_id)
     local needs_same_player = true
 
     for unit in player:Units() do
-        if not unit:IsCombatUnit() then -- skip
+        if not unit:IsCombatUnit() and unit:GetDomainType() ~= GameInfoTypes["DOMAIN_AIR"] then -- skip
         -- Note: IsNearUnitWithPromotion is a Lekmod method. It is not available in the base game
         elseif unit:IsNearUnitWithPromotion(GameInfoTypes["PROMOTION_GREAT_GENERAL"], range, needs_same_domain, needs_same_player) then
             unit:SetHasPromotion(GameInfoTypes["PROMOTION_LITE_AKKAD_CITY_BONUS"], true)
@@ -29,7 +29,7 @@ local function akkad_general_city_bonus(player_id)
 end
 -------------------------------------------------------------------------------------------------------------------------
 if is_active then
-    GameEvents.UnitSetXY.Add(akkad_general_city_bonus)
+    GameEvents.UnitSetXY.Add(lekmod_akkad_general_city_bonus)
     -- Note: UnitCreated is a Lekmod Event! Not available in the base game
-    GameEvents.UnitCreated.Add(akkad_general_city_bonus)
+    GameEvents.UnitCreated.Add(lekmod_akkad_general_city_bonus)
 end

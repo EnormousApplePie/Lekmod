@@ -9,13 +9,13 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 ------------------------------------------------------------------------------------------------------------------------
 -- Aksum UA. Set all owned cities to follow the players religion upon founding one.
 ------------------------------------------------------------------------------------------------------------------------
-local function aksum_ua_follow_religion(player_id, founded_city, religion_id)
+function lekmod_aksum_ua_follow_religion(player_id, founded_city, religion_id)
 
    --local religion_id = arg["eReligion"]
    local player = Players[player_id]
-   if player:GetCivilizationType() ~= this_civ then return end
+   if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
    for city in player:Cities() do
-      if city ~= founded_city then
+      if city and city:GetID() ~= founded_city then
             city:AdoptReligionFully(religion_id)
       end
    end
@@ -24,7 +24,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 -- Aksum UI. Any unit healing next to or on the UI will grant the owner of the UI faith.
 ------------------------------------------------------------------------------------------------------------------------
-local function aksum_ui_faith_on_heal(player_id, unit_id, _, x, y)
+function lekmod_aksum_ui_faith_on_heal(player_id, unit_id, _, x, y)
 
    print("Aksum UI")
    local player = Players[player_id]
@@ -53,7 +53,7 @@ local function aksum_ui_faith_on_heal(player_id, unit_id, _, x, y)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-	GameEvents.ReligionFounded.Add(aksum_ua_follow_religion)
+	GameEvents.ReligionFounded.Add(lekmod_aksum_ua_follow_religion)
 end
 -- Note: UnitHealed is a Lekmod Event! Not available in the base game
-GameEvents.UnitHealed.Add(aksum_ui_faith_on_heal)
+GameEvents.UnitHealed.Add(lekmod_aksum_ui_faith_on_heal)
