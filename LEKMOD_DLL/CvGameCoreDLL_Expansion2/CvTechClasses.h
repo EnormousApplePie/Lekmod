@@ -258,6 +258,9 @@ public:
 	int GetResearchCost(TechTypes eTech) const;
 	int GetResearchProgress(TechTypes eTech) const;
 	int GetMedianTechResearch() const;
+#ifdef ESPIONAGE_SYSTEM_REWORK
+	int GetMedianTechToStealResearch(PlayerTypes eTarget) const;
+#endif
 
 private:
 	void AddFlavorAsStrategies(int iPropagatePercent);

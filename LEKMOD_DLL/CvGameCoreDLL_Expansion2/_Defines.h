@@ -1063,8 +1063,6 @@
 #define AI_CANT_DECLARE_WAR
 // AI cannot build spaceparts
 #define NO_AI_PROJECTS
-// Can't steal pre-medieval techs
-#define CANT_STEAL_CLASSICAL_ERA_TECHS
 // Turn timer roll keybind
 #define TURN_TIMER_RESET_BUTTON
 // Turn timer pause
@@ -1132,6 +1130,14 @@
 #define NOTIFICATION_MP_PROPOSAL_RESULT -1076480691
 /*MP VOTING SYSTEM END*/
 
+/*ESPIONAGE CHANGES*/
+// Can't steal pre-medieval techs
+#define CANT_STEAL_CLASSICAL_ERA_TECHS
+// Technologies that can be stolen from other players are no longer updated during the turn.
+#define BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+//
+#define ESPIONAGE_SYSTEM_REWORK
+/*ESPIONAGE CHANGES END*/
 
 
 /////////////////////

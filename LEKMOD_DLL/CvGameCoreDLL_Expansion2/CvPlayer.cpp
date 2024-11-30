@@ -27455,7 +27455,11 @@ bool CvPlayer::canStealTech(PlayerTypes eTarget, TechTypes eTech) const
 {
 	if(GET_TEAM(GET_PLAYER(eTarget).getTeam()).GetTeamTechs()->HasTech(eTech))
 	{
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+		if (GetPlayerTechs()->CanResearch(eTech) && GetEspionage()->IsTechStealable(eTarget, eTech) && GetEspionage()->m_aiNumTechsToStealList[eTarget] > 0)
+#else
 		if(GetPlayerTechs()->CanResearch(eTech))
+#endif
 		{
 			return true;
 		}

@@ -1635,6 +1635,45 @@ int CvPlayerTechs::GetMedianTechResearch() const
 	return iRtnValue;
 }
 
+#ifdef ESPIONAGE_SYSTEM_REWORK
+int CvPlayerTechs::GetMedianTechToStealResearch(PlayerTypes eTarget) const
+{
+	vector<int> aiTechCosts;
+	int iRtnValue = 0;
+
+	for (int iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
+	{
+		TechTypes eTech = (TechTypes)iTechLoop;
+
+		if (m_pPlayer->canStealTech(eTarget, eTech))
+		{
+			aiTechCosts.push_back(GetResearchCost(eTech));
+		}
+	}
+
+	int iNumEntries = aiTechCosts.size();
+	if (iNumEntries > 0)
+	{
+		std::sort(aiTechCosts.begin(), aiTechCosts.end());
+
+		// Odd number, take middle?
+		if ((iNumEntries / 2) * 2 != iNumEntries)
+		{
+			iRtnValue = aiTechCosts[iNumEntries / 2];
+		}
+
+		// Even number, average middle 2
+		else
+		{
+			iRtnValue = (aiTechCosts[(iNumEntries - 1) / 2] + aiTechCosts[iNumEntries / 2]) / 2;
+		}
+	}
+
+	return iRtnValue;
+}
+
+#endif
+
 // PRIVATE METHODS
 
 // Internal method to add all of this leaderheads' flavors as strategies for tech AI

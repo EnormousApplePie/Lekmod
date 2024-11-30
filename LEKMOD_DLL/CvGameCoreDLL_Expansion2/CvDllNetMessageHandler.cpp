@@ -1152,10 +1152,38 @@ void CvDllNetMessageHandler::ResponseResearch(PlayerTypes ePlayer, TechTypes eTe
 		CvAssertMsg(kPlayer.GetEspionage()->m_aaPlayerStealableTechList[ePlayerToStealFrom].size() > 0, "No techs to be stolen from this player");
 		CvAssertMsg(kPlayer.GetPlayerTechs()->CanResearch(eTech), "Player can't research this technology");
 		CvAssertMsg(GET_TEAM(GET_PLAYER(ePlayerToStealFrom).getTeam()).GetTeamTechs()->HasTech(eTech), "ePlayerToStealFrom does not have the requested tech");
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+		if (kPlayer.GetEspionage()->GetNumTechsToSteal(ePlayerToStealFrom) > 0 && kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0)
+#else
 		if (kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0)
+#endif
 		{
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+			if (kPlayer.canStealTech(ePlayerToStealFrom, eTech))
+			{
+#ifdef ESPIONAGE_SYSTEM_REWORK
+				if (kTeam.GetTeamTechs())
+				{
+					if (kPlayer.GetEspionage()->m_aaPlayerScienceToStealList[ePlayerToStealFrom].size() > 0)
+					{
+					}
+				}
+				if (kPlayer.GetEspionage()->m_aaPlayerScienceToStealList[ePlayerToStealFrom].size() > 0)
+				{
+					kPlayer.GetEspionage()->m_aaPlayerScienceToStealList[ePlayerToStealFrom].pop_back();
+				}
+#else
+				kTeam.setHasTech(eTech, true, ePlayer, true, true);
+#endif
+				if (kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0)
+				{
+					kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom]--;
+				}
+			}
+#else
 			kTeam.setHasTech(eTech, true, ePlayer, true, true);
 			kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom]--;
+#endif
 		}
 	}
 	// Normal tech

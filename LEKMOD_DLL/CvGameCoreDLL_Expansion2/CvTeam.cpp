@@ -6113,11 +6113,20 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 				{
 					for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
 					{
+#ifndef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
 						pEspionage->BuildStealableTechList((PlayerTypes)ui);
+#endif
 
 						// if the player is out of techs to steal, set their number of stealable techs to zero
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+						if (pEspionage->GetNumTechsToSteal((PlayerTypes)ui) == 0)
+#else
 						if(pEspionage->m_aaPlayerStealableTechList[ui].size() == 0)
+#endif
 						{
+#ifdef ESPIONAGE_SYSTEM_REWORK
+							pEspionage->m_aaPlayerScienceToStealList[ui].clear();
+#endif
 							pEspionage->m_aiNumTechsToStealList[ui] = 0;
 						}
 					}
