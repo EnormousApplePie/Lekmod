@@ -28166,7 +28166,18 @@ int CvPlayer::GetMaxEffectiveCities(bool bIncludePuppets)
 
 	if (bIncludePuppets)
 	{
+#ifdef FIX_MAX_EFFECTIVE_CITIES
+		if (m_iMaxEffectiveCities > getNumCities() - iNumLimboCities)
+		{
+			return m_iMaxEffectiveCities;
+		}
+		else
+		{
+			return getNumCities() - iNumLimboCities;
+		}
+#else
 		return m_iMaxEffectiveCities + iNumPuppetCities;
+#endif
 	}
 
 	return m_iMaxEffectiveCities;
