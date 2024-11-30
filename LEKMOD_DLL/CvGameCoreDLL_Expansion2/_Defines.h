@@ -1139,6 +1139,8 @@
 #define ESPIONAGE_SYSTEM_REWORK
 /*ESPIONAGE CHANGES END*/
 
+// The number of free policies for accepting an ideology is set at the start of the turn.
+#define POLICY_BRANCH_UNLOCKING_TURN
 // Set possible proposals/enacts at the start of the turn
 #define CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
 // Players can only make proposals one by one (first congress host second most votes)
