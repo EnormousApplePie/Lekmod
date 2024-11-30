@@ -308,6 +308,10 @@ public:
 	// Accessor functions
 	void SetHasTech(TechTypes eIndex, bool bNewValue);
 	bool HasTech(TechTypes eIndex) const;
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+	void SetHasTechForLeague(TechTypes eIndex, bool bNewValue);
+	bool HasTechForLeague(TechTypes eIndex) const;
+#endif
 
 	TechTypes GetLastTechAcquired() const;
 	void SetLastTechAcquired(TechTypes eTech);
@@ -338,6 +342,9 @@ private:
 	bool* m_pabHasTech;
 #ifdef HAS_TECH_BY_HUMAN
 	bool* m_pabHasTechByHuman;
+#endif
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+	bool* m_pabHasTechForLeague;
 #endif
 	bool* m_pabNoTradeTech;
 	int* m_paiResearchProgress;  // Stored in hundredths

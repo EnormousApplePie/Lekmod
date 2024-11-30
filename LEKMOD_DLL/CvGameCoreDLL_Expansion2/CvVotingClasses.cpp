@@ -2015,6 +2015,9 @@ void CvLeague::Init(LeagueSpecialSessionTypes eGoverningSpecialSession)
 	CvAssert(eGoverningSpecialSession != NO_LEAGUE_SPECIAL_SESSION);
 	m_eLastSpecialSession = eGoverningSpecialSession; // Fake the last special session so we have data to inform the World Congress's status
 	AssignProposalPrivileges();
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+	UpdateCanProposeEnact();
+#endif
 	ResetTurnsUntilSession();
 }
 
@@ -2698,6 +2701,16 @@ bool CvLeague::CanProposeEnact(ResolutionTypes eResolution, PlayerTypes ePropose
 	if (pInfo->GetTechPrereqAnyMember() != NO_TECH)
 	{
 		bool bMemberHasTech = false;
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+		for (MemberList::iterator it = m_vMembers.begin(); it != m_vMembers.end(); it++)
+		{
+			if (GET_TEAM(GET_PLAYER(it->ePlayer).getTeam()).GetTeamTechs()->HasTechForLeague(pInfo->GetTechPrereqAnyMember()))
+			{
+				bMemberHasTech = true;
+				break;
+			}
+		}
+#else
 #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
 		for (MemberList::iterator it = m_vMembers.begin(); it != m_vMembers.end(); ++it)
 #else
@@ -2710,6 +2723,7 @@ bool CvLeague::CanProposeEnact(ResolutionTypes eResolution, PlayerTypes ePropose
 				break;
 			}
 		}
+#endif
 
 		if (!bMemberHasTech)
 		{
@@ -3248,6 +3262,35 @@ int CvLeague::GetNumProposersPerSession() const
 	return iProposers;
 }
 
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+void CvLeague::UpdateCanProposeEnact()
+{
+	for (int iResolutionLoop = 0; iResolutionLoop < GC.getNumResolutionInfos(); iResolutionLoop++)
+	{
+		CvResolutionEntry* pInfo = GC.getResolutionInfo((ResolutionTypes)iResolutionLoop);
+		if (pInfo)
+		{
+			if (pInfo->GetTechPrereqAnyMember() != NO_TECH)
+			{
+				for (MemberList::iterator it = m_vMembers.begin(); it != m_vMembers.end(); it++)
+				{
+					if (GET_PLAYER(it->ePlayer).isAlive())
+					{
+						if (GET_TEAM(GET_PLAYER(it->ePlayer).getTeam()).GetTeamTechs()->HasTechByHuman(pInfo->GetTechPrereqAnyMember()))
+						{
+							GET_TEAM(GET_PLAYER(it->ePlayer).getTeam()).GetTeamTechs()->SetHasTechForLeague(pInfo->GetTechPrereqAnyMember(), true);
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return;
+}
+
+#endif
 #ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
 void CvLeague::AssignSecondProposalPrivilege()
 {
@@ -5862,6 +5905,9 @@ void CvLeague::FinishSession()
 			// Players get to make the proposals for next session
 			CvAssertMsg(!IsAnythingProposed(), "Assigning proposal privileges to players when something is already proposed. Please send Anton your save file and version.");
 			AssignProposalPrivileges();
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+			UpdateCanProposeEnact();
+#endif
 		}
 
 		// Reset counter

@@ -1779,6 +1779,9 @@ CvTeamTechs::CvTeamTechs():
 #ifdef HAS_TECH_BY_HUMAN
 	m_pabHasTechByHuman(NULL),
 #endif
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+	m_pabHasTechForLeague(NULL),
+#endif
 	m_pabNoTradeTech(NULL),
 	m_paiResearchProgress(NULL),
 	m_paiTechCount(NULL)
@@ -1804,6 +1807,10 @@ void CvTeamTechs::Init(CvTechXMLEntries* pTechs, CvTeam* pTeam)
 	CvAssertMsg(m_pabHasTechByHuman == NULL, "about to leak memory, CvTeamTechs::m_pabHasTechByHuman");
 	m_pabHasTechByHuman = FNEW(bool[m_pTechs->GetNumTechs()], c_eCiv5GameplayDLL, 0);
 #endif
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+	CvAssertMsg(m_pabHasTechForLeague == NULL, "about to leak memory, CvTeamTechs::m_pabHasTechForLeague");
+	m_pabHasTechForLeague = FNEW(bool[m_pTechs->GetNumTechs()], c_eCiv5GameplayDLL, 0);
+#endif
 	CvAssertMsg(m_pabNoTradeTech==NULL, "about to leak memory, CvTeamTechs::m_pabNoTradeTech");
 	m_pabNoTradeTech = FNEW(bool[m_pTechs->GetNumTechs()], c_eCiv5GameplayDLL, 0);
 	CvAssertMsg(m_paiResearchProgress==NULL, "about to leak memory, CvTeamTechs::m_paiResearchProgress");
@@ -1820,6 +1827,9 @@ void CvTeamTechs::Uninit()
 	SAFE_DELETE_ARRAY(m_pabHasTech);
 #ifdef HAS_TECH_BY_HUMAN
 	SAFE_DELETE_ARRAY(m_pabHasTechByHuman);
+#endif
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+	SAFE_DELETE_ARRAY(m_pabHasTechForLeague);
 #endif
 	SAFE_DELETE_ARRAY(m_pabNoTradeTech);
 	SAFE_DELETE_ARRAY(m_paiResearchProgress);
@@ -1842,6 +1852,9 @@ void CvTeamTechs::Reset()
 		m_pabHasTech[iI] = false;
 #ifdef HAS_TECH_BY_HUMAN
 		m_pabHasTechByHuman[iI] = false;
+#endif
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+		m_pabHasTechForLeague[iI] = false;
 #endif
 		m_pabNoTradeTech[iI] = false;
 		m_paiResearchProgress[iI] = 0;
@@ -1985,6 +1998,23 @@ void CvTeamTechs::Read(FDataStream& kStream)
 		}
 #endif
 #endif
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+# ifdef SAVE_BACKWARDS_COMPATIBILITY
+		if (uiVersion >= 1000)
+		{
+# endif
+			CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_pabHasTechForLeague, iNumActiveTechs, paTechIDs);
+# ifdef SAVE_BACKWARDS_COMPATIBILITY
+		}
+		else
+		{
+			for (int iI = 0; iI < m_pTechs->GetNumTechs(); iI++)
+			{
+				m_pabHasTechForLeague[iI] = false;
+			}
+		}
+# endif
+#endif
 		CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_pabNoTradeTech, iNumActiveTechs, paTechIDs);
 		CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_paiResearchProgress, iNumActiveTechs, paTechIDs);
 		CvInfosSerializationHelper::ReadAndRemapDataArray(kStream, iNumSavedTechs, m_paiTechCount, iNumActiveTechs, paTechIDs);
@@ -2022,6 +2052,9 @@ void CvTeamTechs::Write(FDataStream& kStream)
 		kStream << ArrayWrapper<bool>(iNumTechs, m_pabHasTech);
 #ifdef HAS_TECH_BY_HUMAN
 		kStream << ArrayWrapper<bool>(iNumTechs, m_pabHasTechByHuman);
+#endif
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+		kStream << ArrayWrapper<bool>(iNumTechs, m_pabHasTechForLeague);
 #endif
 		kStream << ArrayWrapper<bool>(iNumTechs, m_pabNoTradeTech);
 		kStream << ArrayWrapper<int>(iNumTechs, m_paiResearchProgress);
@@ -2105,6 +2138,35 @@ bool CvTeamTechs::HasTechByHuman(TechTypes eIndex) const
 	CvAssertMsg(m_pabHasTechByHuman != NULL, "m_pabHasTechByHuman is not expected to be equal with NULL");
 	if (m_pabHasTechByHuman != NULL)
 		return m_pabHasTechByHuman[eIndex];
+	else
+		return false;
+}
+
+#endif
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+void CvTeamTechs::SetHasTechForLeague(TechTypes eIndex, bool bNewValue)
+{
+	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eIndex < GC.getNumTechInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	if(m_pabHasTechForLeague[eIndex] != bNewValue)
+	{
+		m_pabHasTechForLeague[eIndex] = bNewValue;
+	}
+}
+
+bool CvTeamTechs::HasTechForLeague(TechTypes eIndex) const
+{
+	if(eIndex == NO_TECH)
+	{
+		return true;
+	}
+
+	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eIndex < GC.getNumTechInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	CvAssertMsg(m_pabHasTechForLeague != NULL, "m_pabHasTechForLeague is not expected to be equal with NULL");
+	if(m_pabHasTechForLeague != NULL)
+		return m_pabHasTechForLeague[eIndex];
 	else
 		return false;
 }

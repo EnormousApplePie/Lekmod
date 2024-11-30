@@ -1139,6 +1139,8 @@
 #define ESPIONAGE_SYSTEM_REWORK
 /*ESPIONAGE CHANGES END*/
 
+// Set possible proposals/enacts at the start of the turn
+#define CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
 // Players can only make proposals one by one (first congress host second most votes)
 #define ASSIGN_SECOND_PROPOSAL_PRIVILEGE
 
