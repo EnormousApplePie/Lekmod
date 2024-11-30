@@ -2054,6 +2054,10 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 		}
 	}
 
+#ifdef BUILDINGS_DESTROY_ONCE_PER_TURN
+	int iTurnsSinceAcquire = GC.getGame().getGameTurn() - pOldCity->getGameTurnAcquired();
+#endif
+
 	if(bConquest)
 	{
 		CvNotifications* pNotifications = GET_PLAYER(pOldCity->getOwner()).GetNotifications();
@@ -2837,7 +2841,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 							if(!isProductionMaxedBuildingClass(((BuildingClassTypes)(pkBuildingInfo->GetBuildingClassType())), true))
 							{
 								// here would be a good place to put additional checks (for example, influence)
+#ifdef BUILDINGS_DESTROY_ONCE_PER_TURN
+								if(!bConquest || bRecapture || iTurnsSinceAcquire > 0 || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+#else
+								
 								if(!bConquest || bRecapture || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+#endif
 								{
 									iNum += paiNumRealBuilding[iI];
 								}

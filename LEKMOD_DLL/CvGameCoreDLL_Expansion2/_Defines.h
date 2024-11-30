@@ -1145,6 +1145,8 @@
 #define ASSIGN_SECOND_PROPOSAL_PRIVILEGE
 // Can't liberate cities for non-human players
 #define NEW_CITIES_LIBERATION
+// When a city is captured, buildings in it are destroyed only once per turn for each city
+#define BUILDINGS_DESTROY_ONCE_PER_TURN
 // “Instant heals” cannot be taken on built or purchased units that have available promotions or after durationing promotion
 #define PROMOTION_INSTA_HEAL_LOCKED
 
