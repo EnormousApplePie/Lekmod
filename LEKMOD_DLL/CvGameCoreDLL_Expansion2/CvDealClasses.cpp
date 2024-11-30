@@ -667,6 +667,17 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 		if(!pFromTeam->HasEmbassyAtTeam(eToTeam) || !pToTeam->HasEmbassyAtTeam(eFromTeam))
 			return false;
 
+#else
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive())
+			{
+				if (GET_TEAM((TeamTypes)iI).GetCurrentEra() >= GC.getInfoTypeForString("ERA_FUTURE", true /*bHideAssert*/))
+				{
+					return false;
+				}
+			}
+		}
 #endif
 		// Already has DP
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
