@@ -627,6 +627,40 @@ void CvDllNetMessageHandler::ResponseLeagueProposeEnact(LeagueTypes eLeague, Res
 #endif
 	CvAssertMsg(pLeague->CanProposeEnact(eResolution, eProposer, iChoice), "eProposer not allowed to enact Resolution. Please send Anton your save file and version.");
 	pLeague->DoProposeEnact(eResolution, eProposer, iChoice);
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+	if (GC.getGame().isGameMultiPlayer())
+	{
+		if (eProposer == pLeague->GetHostMember() && pLeague->GetNumProposersPerSession() == 2)
+		{
+			pLeague->AssignSecondProposalPrivilege();
+		}
+
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if ((PlayerTypes)iI != pLeague->GetHostMember() && (PlayerTypes)iI != eProposer)
+			{
+				// Call for Proposals
+				if (pLeague->CanPropose((PlayerTypes)iI))
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isHuman())
+					{
+						CvNotifications* pNotifications = GET_PLAYER((PlayerTypes)iI).GetNotifications();
+						if (pNotifications)
+						{
+							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_LEAGUE_PROPOSALS_NEEDED");
+
+							Localization::String strTemp = Localization::Lookup("TXT_KEY_NOTIFICATION_LEAGUE_PROPOSALS_NEEDED_TT");
+							strTemp << pLeague->GetName();
+							CvString strInfo = strTemp.toUTF8();
+
+							pNotifications->Add(NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS, strInfo, strSummary, -1, -1, pLeague->GetID());
+						}
+					}
+				}
+			}
+}
+	}
+#endif
 }
 //------------------------------------------------------------------------------
 #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
@@ -648,6 +682,40 @@ void CvDllNetMessageHandler::ResponseLeagueProposeRepeal(LeagueTypes eLeague, in
 #endif
 	CvAssertMsg(pLeague->CanProposeRepeal(iResolutionID, eProposer), "eProposer not allowed to repeal Resolution. Please send Anton your save file and version.");
 	pLeague->DoProposeRepeal(iResolutionID, eProposer);
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+	if (GC.getGame().isGameMultiPlayer())
+	{
+		if (eProposer == pLeague->GetHostMember() && pLeague->GetNumProposersPerSession() == 2)
+		{
+			pLeague->AssignSecondProposalPrivilege();
+		}
+
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if ((PlayerTypes)iI != pLeague->GetHostMember() && (PlayerTypes)iI != eProposer)
+			{
+				// Call for Proposals
+				if (pLeague->CanPropose((PlayerTypes)iI))
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isHuman())
+					{
+						CvNotifications* pNotifications = GET_PLAYER((PlayerTypes)iI).GetNotifications();
+						if (pNotifications)
+						{
+							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_LEAGUE_PROPOSALS_NEEDED");
+
+							Localization::String strTemp = Localization::Lookup("TXT_KEY_NOTIFICATION_LEAGUE_PROPOSALS_NEEDED_TT");
+							strTemp << pLeague->GetName();
+							CvString strInfo = strTemp.toUTF8();
+
+							pNotifications->Add(NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS, strInfo, strSummary, -1, -1, pLeague->GetID());
+						}
+					}
+				}
+			}
+}
+	}
+#endif
 }
 //------------------------------------------------------------------------------
 #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH

@@ -1139,6 +1139,8 @@
 #define ESPIONAGE_SYSTEM_REWORK
 /*ESPIONAGE CHANGES END*/
 
+// Players can only make proposals one by one (first congress host second most votes)
+#define ASSIGN_SECOND_PROPOSAL_PRIVILEGE
 
 /////////////////////
 

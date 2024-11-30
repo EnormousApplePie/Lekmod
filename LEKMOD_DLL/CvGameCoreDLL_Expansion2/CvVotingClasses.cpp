@@ -3248,6 +3248,56 @@ int CvLeague::GetNumProposersPerSession() const
 	return iProposers;
 }
 
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+void CvLeague::AssignSecondProposalPrivilege()
+{
+	CvWeightedVector<Member*, MAX_CIV_PLAYERS, false> vpPossibleProposers;
+	for (MemberList::iterator it = m_vMembers.begin(); it != m_vMembers.end(); it++)
+	{
+		if (CanEverPropose(it->ePlayer))
+		{
+			int iVotes = CalculateStartingVotesForMember(it->ePlayer);
+			vpPossibleProposers.push_back(it, iVotes);
+		}
+		else
+		{
+			CvAssertMsg(!it->bMayPropose, "Found a member with proposal rights that should not have them. Please send Anton your save file and version.");
+			CvAssertMsg(it->iProposals == 0, "Found a member with remaining proposals that should not have them. Please send Anton your save file and version.");
+		}
+	}
+	vpPossibleProposers.SortItems();
+
+	int iPrivileges = GetNumProposersPerSession() - 1;
+
+	/*// Host gets one
+	PlayerTypes eHost = GetHostMember();
+	if (eHost != NO_PLAYER)
+	{
+		GetMember(eHost)->bMayPropose = true;
+		GetMember(eHost)->iProposals = GC.getLEAGUE_MEMBER_PROPOSALS_BASE();
+		iPrivileges--;
+	}*/
+
+	// Give rest to largest delegations
+	for (int i = 0; i < vpPossibleProposers.size(); i++)
+	{
+		if (iPrivileges == 0)
+		{
+			break;
+		}
+
+		// Only one privilege per player
+		if (!vpPossibleProposers.GetElement(i)->bMayPropose)
+		{
+			vpPossibleProposers.GetElement(i)->bMayPropose = true;
+			vpPossibleProposers.GetElement(i)->iProposals = GC.getLEAGUE_MEMBER_PROPOSALS_BASE();
+			iPrivileges--;
+		}
+	}
+
+	CvAssert(iPrivileges == 0);
+}
+#endif
 void CvLeague::AddMember(PlayerTypes ePlayer)
 {
 	if (ePlayer < 0 || ePlayer >= MAX_CIV_PLAYERS)
@@ -5883,6 +5933,7 @@ void CvLeague::AssignProposalPrivileges()
 		iPrivileges--;
 	}
 
+#ifndef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
 	// Give rest to largest delegations
 	for (int i = 0; i < vpPossibleProposers.size(); i++)
 	{
@@ -5901,6 +5952,32 @@ void CvLeague::AssignProposalPrivileges()
 	}
 
 	CvAssert(iPrivileges == 0);
+#else
+	if (GC.getGame().isGameMultiPlayer())
+	{
+		CvAssert(iPrivileges == 1);
+	}
+	else
+	{
+		for (int i = 0; i < vpPossibleProposers.size(); i++)
+		{
+			if (iPrivileges == 0)
+			{
+				break;
+			}
+
+			// Only one privilege per player
+			if (!vpPossibleProposers.GetElement(i)->bMayPropose)
+			{
+				vpPossibleProposers.GetElement(i)->bMayPropose = true;
+				vpPossibleProposers.GetElement(i)->iProposals = GC.getLEAGUE_MEMBER_PROPOSALS_BASE();
+				iPrivileges--;
+			}
+		}
+
+		CvAssert(iPrivileges == 0);
+	}
+#endif
 }
 
 void CvLeague::CheckProposalsValid()
@@ -10802,11 +10879,21 @@ void CvLeagueAI::AllocateProposals(CvLeague* pLeague)
 		{
 			ResolutionTypes eResolution = vInactive[proposal.iIndex];
 			pLeague->DoProposeEnact(eResolution, GetPlayer()->GetID(), proposal.iChoice);
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+			if (GC.getGame().isGameMultiPlayer())
+				if (GetPlayer()->GetID() == pLeague->GetHostMember() && pLeague->GetNumProposersPerSession() == 2)
+					pLeague->AssignSecondProposalPrivilege();
+#endif
 		}
 		else
 		{
 			int iID = vActive[proposal.iIndex].GetID();
 			pLeague->DoProposeRepeal(iID, GetPlayer()->GetID());
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+			if (GC.getGame().isGameMultiPlayer())
+				if (GetPlayer()->GetID() == pLeague->GetHostMember() && pLeague->GetNumProposersPerSession() == 2)
+					pLeague->AssignSecondProposalPrivilege();
+#endif
 		}
 	}
 }

@@ -582,6 +582,9 @@ public:
 	ActiveResolutionList GetActiveResolutions() const;
 	int GetNumResolutionsEverEnacted() const;
 	int GetNumProposersPerSession() const;
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+	void AssignSecondProposalPrivilege();
+#endif
 
 	// Members
 	void AddMember(PlayerTypes ePlayer);
