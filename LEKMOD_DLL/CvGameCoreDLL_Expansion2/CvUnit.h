@@ -1042,6 +1042,11 @@ public:
 	void setPromotionReady(bool bNewValue);
 	void testPromotionReady();
 
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	bool isInstaHealLocked() const;
+	void setInstaHealLocked(bool bNewValue);
+#endif
+
 	bool isDelayedDeath() const;
 	bool isDelayedDeathExported() const;
 	void startDelayedDeath();
@@ -1648,6 +1653,9 @@ protected:
 #endif
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	FAutoVariable<bool, CvUnit> m_bIsIgnoreExpended;
+#endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	bool m_bInstaHealLocked;
 #endif
 
 	mutable CvPathNodeArray m_kLastPath;

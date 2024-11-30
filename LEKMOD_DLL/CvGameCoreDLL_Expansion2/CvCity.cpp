@@ -1045,6 +1045,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 #endif
 
 	m_strName = "";
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	m_bInstaHealLocked = false;
+#endif
 	m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility = "";
 	m_strScriptData = "";
 
@@ -4255,6 +4258,12 @@ void CvCity::addProductionExperience(CvUnit* pUnit, bool bConscript)
 	if(pUnit->canAcquirePromotionAny())
 	{
 		pUnit->changeExperience(getProductionExperience(pUnit->getUnitType()) / ((bConscript) ? 2 : 1));
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+		if (pUnit->getExperience() > 0 && GET_PLAYER(pUnit->getOwner()).isHuman())
+		{
+			pUnit->setInstaHealLocked(true);
+		}
+#endif
 		
 		// XP2 Achievement
 		if (getOwner() != NO_PLAYER)

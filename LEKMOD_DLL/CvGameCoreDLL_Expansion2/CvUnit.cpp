@@ -289,6 +289,9 @@ CvUnit::CvUnit() :
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	, m_bIsIgnoreExpended("CvUnit::m_bIsIgnoreExpended", m_syncArchive)
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	, m_bInstaHealLocked(false)
+#endif
 	, m_bPromotionReady("CvUnit::m_bPromotionReady", m_syncArchive)
 	, m_bDeathDelay("CvUnit::m_bDeathDelay", m_syncArchive)
 	, m_bCombatFocus("CvUnit::m_bCombatFocus", m_syncArchive)
@@ -1997,6 +2000,12 @@ void CvUnit::doTurn()
 		SetActivityType(ACTIVITY_AWAKE);
 	}
 
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	if (isPromotionReady() && GET_PLAYER(getOwner()).isHuman())
+	{
+		setInstaHealLocked(true);
+	}
+#endif
 	testPromotionReady();
 
 	FeatureTypes eFeature = plot()->getFeatureType();
@@ -2357,6 +2366,12 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 		{
 		case COMMAND_PROMOTION:
 			promote((PromotionTypes)iData1, iData2);
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+			if (getExperience() < experienceNeeded())
+			{
+				setInstaHealLocked(false);
+			}
+#endif
 			break;
 
 		case COMMAND_UPGRADE:
@@ -10561,6 +10576,12 @@ bool CvUnit::canPromote(PromotionTypes ePromotion, int iLeaderUnitId) const
 	{
 		return false;
 	}
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	if (isInstaHealLocked() && ePromotion == 0)
+	{
+		return false;
+	}
+#endif
 
 	if(!canAcquirePromotion(ePromotion))
 	{
@@ -19714,6 +19735,20 @@ void CvUnit::SetScientistBirthTurn(int iValue)
 	m_iScientistBirthTurn = iValue;
 }
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+//	--------------------------------------------------------------------------------
+bool CvUnit::isInstaHealLocked() const
+{
+	return m_bInstaHealLocked;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::setInstaHealLocked(bool bNewValue)
+{
+	m_bInstaHealLocked = bNewValue;
+}
+
+#endif
 //	--------------------------------------------------------------------------------
 std::string CvUnit::getScriptData() const
 {
@@ -20889,6 +20924,9 @@ void CvUnit::read(FDataStream& kStream)
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	kStream >> m_bIsIgnoreExpended;
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	kStream >> m_bInstaHealLocked;
+#endif
 
 	//  Read mission queue
 	UINT uSize;
@@ -21024,6 +21062,9 @@ void CvUnit::write(FDataStream& kStream) const
 #endif
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	kStream << m_bIsIgnoreExpended;
+#endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	kStream << m_bInstaHealLocked;
 #endif
 
 	kStream << m_iResearchBulbAmount; // GJS
