@@ -3741,6 +3741,19 @@ bool CvPlayer::CanLiberatePlayer(PlayerTypes ePlayer)
 	return true;
 }
 
+#ifdef NEW_CITIES_LIBERATION
+//	--------------------------------------------------------------------------------
+bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
+{
+	if (GET_PLAYER(ePlayer).isHuman())
+	{
+		return true;
+	}
+
+	return false;
+}
+
+#else
 //	--------------------------------------------------------------------------------
 bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
 {
@@ -3751,6 +3764,7 @@ bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
 
 	return true;
 }
+#endif
 
 //	--------------------------------------------------------------------------------
 #ifdef AUI_UNIT_FIX_GIFTED_UNITS_ARE_GIFTED_NOT_CLONED

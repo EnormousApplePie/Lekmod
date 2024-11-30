@@ -1143,6 +1143,8 @@
 #define CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
 // Players can only make proposals one by one (first congress host second most votes)
 #define ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+// Can't liberate cities for non-human players
+#define NEW_CITIES_LIBERATION
 // “Instant heals” cannot be taken on built or purchased units that have available promotions or after durationing promotion
 #define PROMOTION_INSTA_HEAL_LOCKED
 
