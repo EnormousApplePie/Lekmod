@@ -1045,9 +1045,6 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 #endif
 
 	m_strName = "";
-#ifdef PROMOTION_INSTA_HEAL_LOCKED
-	m_bInstaHealLocked = false;
-#endif
 	m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility = "";
 	m_strScriptData = "";
 

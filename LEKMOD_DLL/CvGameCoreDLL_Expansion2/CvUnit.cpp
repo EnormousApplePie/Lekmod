@@ -1136,6 +1136,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 #ifdef DECREASE_BULB_AMOUNT_OVER_TIME
 	m_iScientistBirthTurn = 0;
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	m_bInstaHealLocked = false;
+#endif
 	m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility = "";
 	m_strScriptData ="";
 	m_iScenarioData = 0;
