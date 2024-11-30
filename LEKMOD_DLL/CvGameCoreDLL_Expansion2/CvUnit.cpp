@@ -1402,6 +1402,10 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 	setIsInterceptBlockedUntilEndTurn(pUnit->isInterceptBlockedUntilEndTurn());
 #endif
 
+#ifdef GIFTED_UNITS_ATTACK
+	m_iAttacksMade = pUnit->m_iAttacksMade;
+#endif
+
 	if (pUnit->getUnitInfo().GetNumExoticGoods() > 0)
 	{
 		setNumExoticGoods(pUnit->getNumExoticGoods());

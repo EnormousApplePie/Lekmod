@@ -1153,6 +1153,8 @@
 #define FIX_MAX_EFFECTIVE_CITIES
 // “Instant heals” cannot be taken on built or purchased units that have available promotions or after durationing promotion
 #define PROMOTION_INSTA_HEAL_LOCKED
+/// Gifted units can't attack if they have already attacked this turn
+#define GIFTED_UNITS_ATTACK
 
 
 /////////////////////
