@@ -126,7 +126,7 @@ void ClearPlayerDeltas()
 //	--------------------------------------------------------------------------------
 CvPlayer::CvPlayer() :
 	m_syncArchive(*this)
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 	, m_bIsDisconnected("CvPlayer::m_bIsDisconnected", m_syncArchive)
 #endif
 	, m_iStartingX("CvPlayer::m_iStartingX", m_syncArchive)
@@ -854,7 +854,7 @@ void CvPlayer::uninit()
 	FAutoArchive& archive = getSyncArchive();
 	archive.clearDelta();
 
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 	m_bIsDisconnected = false;
 #endif
 	m_iStartingX = INVALID_PLOT_COORD;
@@ -1476,7 +1476,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	}
 }
 
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 bool CvPlayer::isDisconnected() const
 {
 	return m_bIsDisconnected;
@@ -29129,17 +29129,34 @@ void CvPlayer::disconnected()
 				}
 			}
 
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
-		if (!isObserver())
-		{
-			if (!CvPreGame::isPitBoss() || gDLL->IsPlayerKicked(GetID()))
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+			if (!isObserver())
 			{
-				setIsDisconnected(false); // kicked players should unpause the game
-				if (GC.getGame().getPausePlayer() == GetID())
-					GC.getGame().setPausePlayer(NO_PLAYER);
-#else
-		if(!isObserver() && (!CvPreGame::isPitBoss() || gDLL->IsPlayerKicked(GetID())))
-		{
+				if (!CvPreGame::isPitBoss() || gDLL->IsPlayerKicked(GetID()))
+				{
+					setIsDisconnected(false); // kicked players should unpause the game
+					bool isAnyDisconnected = false;
+					for (int iI = 0; iI < MAX_PLAYERS; iI++)
+					{
+						PlayerTypes eLoopPlayer = (PlayerTypes)iI;
+						if (GET_PLAYER(eLoopPlayer).isDisconnected())
+						{
+							isAnyDisconnected = true;
+						}
+				}
+#ifdef TURN_TIMER_PAUSE_BUTTON
+					{
+						if (!isAnyDisconnected && GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && !GC.getGame().isPaused() && GC.getGame().getGameState() == GAMESTATE_ON)
+						{
+							if ((GC.getGame().getElapsedGameTurns() > 0) && GET_PLAYER(GC.getGame().getActivePlayer()).isTurnActive())
+							{
+								// as there is no netcode for timer pause,
+								// this function will act as one, if called with special agreed upon arguments
+								// resetTurnTimer(true);
+								gDLL->sendGiftUnit(NO_PLAYER, -11);
+							}
+						}
+					}
 #endif
 			// JAR : First pass, automatically fall back to CPU so the
 			// game can continue. Todo : add popup on host asking whether
@@ -29148,25 +29165,114 @@ void CvPlayer::disconnected()
 			CvPreGame::setSlotStatus(GetID(), SS_COMPUTER);
 			CvPreGame::VerifyHandicap(GetID());	//Changing the handicap because we're switching to AI
 
-			// Load leaderhead for this new AI player
-			gDLL->NotifySpecificAILeaderInGame(GetID());
-			
-#ifdef AUI_GAME_BETTER_HYBRID_MODE
-			if (GC.getGame().isAnySimultaneousTurns())
-#else
-			if(!GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) && GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS))
+					// Load leaderhead for this new AI player
+					gDLL->NotifySpecificAILeaderInGame(GetID());
+
+					if (!GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) && GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS))
+					{//When in fully simultaneous turn mode, having a player disconnect might trigger the automove phase for all human players.
+						checkRunAutoMovesForEveryone();
+					}
+#ifdef DO_CANCEL_DEALS_WITH_AI
+					GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
+					for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
+					{
+						TeamTypes eTeam = (TeamTypes)iLoopTeam;
+						if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+						{
+							GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
+							GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
+							GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
+							GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
+							GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
+							GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
+							GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
+
+							// Bump Units out of places they shouldn't be
+							GC.getMap().verifyUnitValidPlot();
+						}
+					}
 #endif
-			{//When in fully simultaneous turn mode, having a player disconnect might trigger the automove phase for all human players.
-				checkRunAutoMovesForEveryone();
+#ifdef CHANGE_HOST_IF_DISCONNECTED
+					CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
+					if (pLeague != NULL)
+					{
+						// Check host
+						if (pLeague->IsHostMember(GetID()))
+						{
+							pLeague->AssignNewHost();
+						}
+					}
+#endif
 			}
-		}
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
-			else if (GC.getGame().isOption("GAMEOPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT") && isAlive() && isTurnActive() &&
-				(GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) || GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)) && !gDLL->IsPlayerKicked(GetID()))
+#else
+			if (!isObserver() && (!CvPreGame::isPitBoss() || gDLL->IsPlayerKicked(GetID())))
 			{
-				setIsDisconnected(true);
-				GC.getGame().setPausePlayer(GetID());
+				// JAR : First pass, automatically fall back to CPU so the
+				// game can continue. Todo : add popup on host asking whether
+				// the AI should take over or everyone should wait for the
+				// player to reconnect
+				CvPreGame::setSlotStatus(GetID(), SS_COMPUTER);
+				CvPreGame::VerifyHandicap(GetID());	//Changing the handicap because we're switching to AI
+
+				// Load leaderhead for this new AI player
+				gDLL->NotifySpecificAILeaderInGame(GetID());
+
+				if (!GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) && GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS))
+				{//When in fully simultaneous turn mode, having a player disconnect might trigger the automove phase for all human players.
+					checkRunAutoMovesForEveryone();
+				}
+#ifdef DO_CANCEL_DEALS_WITH_AI
+				GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
+				for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
+				{
+					TeamTypes eTeam = (TeamTypes)iLoopTeam;
+					if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+					{
+						GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
+						GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
+						GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
+						GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
+						GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
+						GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
+						GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
+
+						// Bump Units out of places they shouldn't be
+						GC.getMap().verifyUnitValidPlot();
+					}
+				}
+#endif
+#ifdef CHANGE_HOST_IF_DISCONNECTED
+				CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
+				if (pLeague != NULL)
+				{
+					// Check host
+					if (pLeague->IsHostMember(GetID()))
+					{
+						pLeague->AssignNewHost();
+					}
+				}
+#endif
 			}
+#endif
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+		else if (/*GC.getGame().isOption("GAMEOPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT")*/ true && isAlive() && isTurnActive() && (GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) || GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)) && !gDLL->IsPlayerKicked(GetID()))
+		{
+			setIsDisconnected(true);
+#ifdef TURN_TIMER_PAUSE_BUTTON
+			{
+				if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && !GC.getGame().isPaused() && GC.getGame().getGameState() == GAMESTATE_ON)
+				{
+					if ((GC.getGame().getElapsedGameTurns() > 0) && GET_PLAYER(GC.getGame().getActivePlayer()).isTurnActive())
+					{
+						// as there is no netcode for timer pause,
+						// this function will act as one, if called with special agreed upon arguments
+						// resetTurnTimer(true);
+						gDLL->sendGiftUnit(NO_PLAYER, -10);
+					}
+				}
+			}
+#endif
+		}
 		}
 #endif
 	}
@@ -29196,8 +29302,31 @@ void CvPlayer::reconnected()
 		{
 			pNotifications->Add(NOTIFICATION_PLAYER_CONNECTING, connectString.toUTF8(), connectString.toUTF8(), -1, -1, GetID());
 		}
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 		setIsDisconnected(false);
+		bool isAnyDisconnected = false;
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			PlayerTypes eLoopPlayer = (PlayerTypes)iI;
+			if (GET_PLAYER(eLoopPlayer).isDisconnected())
+			{
+				isAnyDisconnected = true;
+			}
+		}
+#ifdef TURN_TIMER_PAUSE_BUTTON
+		{
+			if (!isAnyDisconnected && GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && !GC.getGame().isPaused() && GC.getGame().getGameState() == GAMESTATE_ON)
+			{
+				if ((GC.getGame().getElapsedGameTurns() > 0) && GET_PLAYER(GC.getGame().getActivePlayer()).isTurnActive())
+				{
+					// as there is no netcode for timer pause,
+					// this function will act as one, if called with special agreed upon arguments
+					// resetTurnTimer(true);
+					gDLL->sendGiftUnit(NO_PLAYER, -11);
+				}
+			}
+		}
+#endif
 		// Game pauses during a reconnection and will unpause when the reconnect is finished, so there's no need to insert unpause code here
 #endif
 	}

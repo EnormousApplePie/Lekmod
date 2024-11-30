@@ -78,7 +78,7 @@ public:
 	void reset(PlayerTypes eID = NO_PLAYER, bool bConstructorCall = false);
 	void gameStartInit();
 	void uninit();
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 	bool isDisconnected() const;
 	void setIsDisconnected(bool bNewValue);
 #endif
@@ -1861,7 +1861,7 @@ protected:
 	int m_iCachedSpyStartingRank;
 #endif
 
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 	FAutoVariable<bool, CvPlayer> m_bIsDisconnected;
 #endif
 	FAutoVariable<int, CvPlayer> m_iStartingX;

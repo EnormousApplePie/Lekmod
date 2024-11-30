@@ -2096,7 +2096,19 @@ bool CvGame::hasTurnTimerExpired(PlayerTypes playerID)
 		if(getElapsedGameTurns() > 0)
 #endif
 		{
-#ifdef NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
+#if defined GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL && defined NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
+			PlayerTypes ePausePlayer = NO_PLAYER;
+			for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+			{
+				CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+				if (kPlayer.isAlive() && kPlayer.isHuman() && !kPlayer.isConnected())
+				{
+					// ePausePlayer = kPlayer.GetID();
+					break;
+				}
+		}
+			if (isLocalPlayer && (!gDLL->allAICivsProcessedThisTurn() || !allUnitAIProcessed()) && ePausePlayer == NO_PLAYER || (isOption("GAMEOPTION_AUTOMATION_RESETS_TIMER") && !allUnitAIProcessed())))
+#elif defined NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
 			if (isLocalPlayer && ((!gDLL->allAICivsProcessedThisTurn() && allUnitAIProcessed()) || (isOption("GAMEOPTION_AUTOMATION_RESETS_TIMER") && !allUnitAIProcessed())))
 #else
 			if(isLocalPlayer && (!gDLL->allAICivsProcessedThisTurn() || !allUnitAIProcessed()))
@@ -6369,20 +6381,6 @@ bool CvGame::isPaused()
 //	-----------------------------------------------------------------------------------------------
 void CvGame::setPausePlayer(PlayerTypes eNewValue)
 {
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
-	if (isOption("GAMEOPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT") && eNewValue == NO_PLAYER)
-	{
-		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
-		{
-			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
-			if (kPlayer.isAlive() && kPlayer.isHuman() && kPlayer.isDisconnected())
-			{
-				eNewValue = kPlayer.GetID();
-				break;
-			}
-		}
-	}
-#endif
 #ifndef AUI_GAME_SET_PAUSED_TURN_TIMERS_PAUSE_ON_RECONNECT
 	if(!isNetworkMultiPlayer())
 #endif

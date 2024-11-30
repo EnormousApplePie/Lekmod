@@ -826,6 +826,17 @@ void CvDllNetMessageHandler::ResponseGiftUnit(PlayerTypes ePlayer, PlayerTypes e
 	// -6 -- vote no
 	CvGame& game = GC.getGame();
 	CvMPVotingSystem* pkMPVotingSystem = game.GetMPVotingSystem();
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+	bool isAnyDisconnected = false;
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		PlayerTypes eLoopPlayer = (PlayerTypes)iI;
+		if (GET_PLAYER(eLoopPlayer).isDisconnected())
+		{
+			isAnyDisconnected = true;
+		}
+	}
+#endif
 	switch (iUnitID) {
 	case -2:
 		game.GetMPVotingSystem()->AddProposal(PROPOSAL_IRR, ePlayer, ePlayer);
@@ -884,6 +895,51 @@ void CvDllNetMessageHandler::ResponseGiftUnit(PlayerTypes ePlayer, PlayerTypes e
 			// -8 -- increment num times opened demographics
 			if (iUnitID == -8) {
 				GET_PLAYER(ePlayer).ChangeNumTimesOpenedDemographics(1);
+			}
+			else
+#endif
+#if defined TURN_TIMER_PAUSE_BUTTON && defined GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+			if (iUnitID == -10) {
+				if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+				{
+					if (!GC.getGame().m_bIsPaused)
+					{
+						GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
+						GC.getGame().m_timeSinceGameTurnStart.Stop();
+						GC.getGame().m_bIsPaused = true;
+						// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+					}
+					ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+					CvLuaArgsHandle args;
+					bool bResult;
+					if (pkScriptSystem)
+					{
+						args->Push(GC.getGame().m_bIsPaused);
+						LuaSupport::CallHook(pkScriptSystem, "EndTurnTimerPause", args.get(), bResult);
+					}
+				}
+			}
+			else
+			if (iUnitID == -11) {
+				if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+				{
+					if (GC.getGame().m_bIsPaused)
+					{
+						GC.getGame().resetTurnTimer(true);
+						GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
+						GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
+						GC.getGame().m_bIsPaused = false;
+						// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+					}
+					ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+					CvLuaArgsHandle args;
+					bool bResult;
+					if (pkScriptSystem)
+					{
+						args->Push(GC.getGame().m_bIsPaused);
+						LuaSupport::CallHook(pkScriptSystem, "EndTurnTimerPause", args.get(), bResult);
+					}
+				}
 			}
 			else
 #endif

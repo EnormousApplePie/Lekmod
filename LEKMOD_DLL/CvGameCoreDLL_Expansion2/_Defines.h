@@ -1155,6 +1155,8 @@
 #define PROMOTION_INSTA_HEAL_LOCKED
 /// Gifted units can't attack if they have already attacked this turn
 #define GIFTED_UNITS_ATTACK
+// Pause on player disconnect
+#define GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 
 
 /////////////////////
