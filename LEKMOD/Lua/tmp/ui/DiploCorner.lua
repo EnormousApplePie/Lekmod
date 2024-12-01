@@ -523,3 +523,7 @@ OnActivePlayerTurnStart();
 if(Game.IsOption("GAMEOPTION_NO_CULTURE_OVERVIEW_UI")) then
 	Controls.CultureOverviewButton:SetHide(true);
 end
+-- NEW: disable chatpull in tournament mode
+if PreGame.GetGameOption("GAMEOPTION_DISABLE_CHAT") > 0 then
+    Controls.ChatPull:SetDisabled(true);
+end
