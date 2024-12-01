@@ -4096,6 +4096,13 @@ bool CvUnit::CanAutomate(AutomateTypes eAutomate, bool bTestVisibility) const
 		return false;
 	}
 
+#ifdef DISABLE_AUTOMOVES
+	if (isHuman())
+	{
+		return false;
+	}
+#endif
+
 	switch(eAutomate)
 	{
 	case AUTOMATE_BUILD:
