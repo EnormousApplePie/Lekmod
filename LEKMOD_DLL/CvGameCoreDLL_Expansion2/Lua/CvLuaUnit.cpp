@@ -259,6 +259,9 @@ void CvLuaUnit::PushMethods(lua_State* L, int t)
 	Method(GetAdjacentModifier);
 	Method(GetAttackModifier);
 	Method(GetDefenseModifier);
+#ifdef FIX_RANGE_DEFENSE_MOD
+	Method(RangedDefenseModifier);
+#endif
 	Method(GetRangedAttackModifier);
 	Method(CityAttackModifier);
 	Method(CityDefenseModifier);
@@ -2656,6 +2659,19 @@ int CvLuaUnit::lGetDefenseModifier(lua_State* L)
 	lua_pushinteger(L, iResult);
 	return 1;
 }
+#ifdef FIX_RANGE_DEFENSE_MOD
+//------------------------------------------------------------------------------
+//int rangedDefenseModifier();
+int CvLuaUnit::lRangedDefenseModifier(lua_State* L)
+{
+	CvUnit* pkUnit = GetInstance(L);
+	PlayerTypes ePlayer = (PlayerTypes)lua_tointeger(L, 2);
+
+	const int iResult = pkUnit->rangedDefenseModifier();
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 //int GetRangedAttackModifier();
 int CvLuaUnit::lGetRangedAttackModifier(lua_State* L)

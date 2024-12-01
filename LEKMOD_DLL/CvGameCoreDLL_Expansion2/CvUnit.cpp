@@ -12837,9 +12837,11 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 		// Domain modifier VS other unit
 		iModifier += domainModifier(pOtherUnit->getDomainType());
 
+#ifndef FIX_RANGE_DEFENSE_MOD
 		// Bonus VS fortified
 		if(pOtherUnit->getFortifyTurns() > 0)
 			iModifier += attackFortifiedModifier();
+#endif
 
 		// Bonus VS wounded
 		if(pOtherUnit->getDamage() > 0)
@@ -12905,6 +12907,12 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 			// Rough Ground
 			if(pTargetPlot->isRoughGround())
 				iModifier += roughRangedAttackModifier();
+
+#ifdef FIX_RANGE_DEFENSE_MOD
+			// Bonus VS fortified
+			if (pOtherUnit->getFortifyTurns() > 0)
+				iModifier += attackFortifiedModifier();
+#endif
 
 #ifdef AUI_UNIT_FIX_BAD_BONUS_STACKS
 		}
@@ -13016,7 +13024,7 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 		// Ranged DEFENSE
 		else
 		{
-#ifndef AUI_UNIT_FIX_BAD_BONUS_STACKS // Moved out of Known Unit block because this doesn't rely on the other unit
+#ifndef FIX_RANGE_DEFENSE_MOD
 			// Ranged Defense Mod
 			iModifier += rangedDefenseModifier();
 #endif
@@ -13098,6 +13106,60 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 			iModifier += iTempModifier;
 
 		iModifier += getDefenseModifier();
+
+#ifdef FIX_RANGE_DEFENSE_MOD
+		// Ranged Defense Mod
+		iModifier += rangedDefenseModifier();
+
+		// Bonus for fighting in one's lands
+		if (plot()->IsFriendlyTerritory(getOwner()))
+		{
+			iTempModifier = getFriendlyLandsModifier();
+			iModifier += iTempModifier;
+
+			// Founder Belief bonus
+			CvCity* pPlotCity = plot()->getWorkingCity();
+			if (pPlotCity)
+			{
+				ReligionTypes eReligion = pPlotCity->GetCityReligions()->GetReligiousMajority();
+				if (eReligion != NO_RELIGION && eReligion == eFoundedReligion)
+				{
+					const CvReligion* pCityReligion = pReligions->GetReligion(eReligion, pPlotCity->getOwner());
+					if (pCityReligion)
+					{
+						iTempModifier = pCityReligion->m_Beliefs.GetCombatModifierFriendlyCities();
+						iModifier += iTempModifier;
+					}
+				}
+			}
+		}
+
+		// Bonus for fighting outside one's lands
+		else
+		{
+			iTempModifier = getOutsideFriendlyLandsModifier();
+			iModifier += iTempModifier;
+
+			// Founder Belief bonus (this must be a city controlled by an enemy)
+			CvCity* pPlotCity = plot()->getWorkingCity();
+			if (pPlotCity)
+			{
+				if (atWar(getTeam(), pPlotCity->getTeam()))
+				{
+					ReligionTypes eReligion = pPlotCity->GetCityReligions()->GetReligiousMajority();
+					if (eReligion != NO_RELIGION && eReligion == eFoundedReligion)
+					{
+						const CvReligion* pCityReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, pPlotCity->getOwner());
+						if (pCityReligion)
+						{
+							iTempModifier = pCityReligion->m_Beliefs.GetCombatModifierEnemyCities();
+							iModifier += iTempModifier;
+						}
+					}
+				}
+			}
+		}
+#endif
 	}
 
 	// Unit can't drop below 10% strength

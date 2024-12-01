@@ -680,7 +680,7 @@ function UpdateCombatOddsUnitVsUnit(pMyUnit, pTheirUnit)
 				if (pTheirUnit:IsEmbarked()) then
 					iTheirStrength = pTheirUnit:GetEmbarkedUnitDefense();
 				else
-					iTheirStrength = pTheirUnit:GetMaxRangedCombatStrength(pMyUnit, nil, false, true);
+					iTheirStrength = pTheirUnit:GetMaxRangedCombatStrength(pMyUnit, nil, false, false);
 				end
 				
 				if (iTheirStrength == 0 or pTheirUnit:GetDomainType() == DomainTypes.DOMAIN_SEA or pTheirUnit:IsRangedSupportFire()) then
@@ -936,7 +936,7 @@ function UpdateCombatOddsUnitVsUnit(pMyUnit, pTheirUnit)
 			end
 
 			-- Bonus for fighting in one's lands
-			if (pToPlot:IsFriendlyTerritory(c)) then
+			if (pToPlot:IsFriendlyTerritory(iMyPlayer)) then
 				
 				-- General combat mod
 				iModifier = pMyUnit:GetFriendlyLandsModifier();
@@ -1492,6 +1492,16 @@ function UpdateCombatOddsUnitVsUnit(pMyUnit, pTheirUnit)
 
 					--strString.append(GetLocalizedText("TXT_KEY_COMBAT_PLOT_MOD_VS_TYPE", iModifier, kDomainInfo.GetDescription()));
 				end
+		
+				-- Range Defense Modifier
+				if (bRanged) then
+					iModifier = pTheirUnit:RangedDefenseModifier();
+					if (iModifier ~= 0) then
+						controlTable = g_TheirCombatDataIM:GetInstance();
+						controlTable.Text:LocalizeAndSetText(  "TXT_KEY_EUPANEL_RANGE_DEFENSE_BONUS" );
+						controlTable.Value:SetText( GetFormattedText(strText, iModifier, false, true) );
+					end
+				end
 				
 				-- HillsDefenseModifier
 				if (pToPlot:IsHills()) then
@@ -1959,6 +1969,13 @@ function UpdateCombatOddsCityVsUnit(myCity, theirUnit)
 			end
 		end
 		
+		-- Range Defense Modifier
+		iModifier = theirUnit:RangedDefenseModifier();
+		if (iModifier ~= 0) then
+			controlTable = g_TheirCombatDataIM:GetInstance();
+			controlTable.Text:LocalizeAndSetText(  "TXT_KEY_EUPANEL_RANGE_DEFENSE_BONUS" );
+			controlTable.Value:SetText( GetFormattedText(strText, iModifier, false, true) );
+		end
 		-- BarbarianBonuses
 		if (theirUnit:IsBarbarian()) then
 			iModifier = GameInfo.HandicapInfos[Game:GetHandicapType()].BarbarianBonus;

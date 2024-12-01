@@ -1177,6 +1177,8 @@
 #define AI_CANT_COUP
 // AI cannot accumulate culture if next policy cost is greater than 1000
 #define AI_CULTURE_RESTRICTION
+// Fixed a bug due to which defense bonuses did not work when long-range units fought (Shoshone bonus, Himeji bonus, Defender of the Faith, Patriotic War)
+#define FIX_RANGE_DEFENSE_MOD
 
 
 /////////////////////
