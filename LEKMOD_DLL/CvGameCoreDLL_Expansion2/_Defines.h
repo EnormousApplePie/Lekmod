@@ -1127,6 +1127,7 @@
 #define NOTIFICATION_MP_IRR_PROPOSAL -300693023
 #define NOTIFICATION_MP_CC_PROPOSAL -832529557
 #define NOTIFICATION_MP_SCRAP_PROPOSAL 1628401511
+#define NOTIFICATION_MP_REMAP_PROPOSAL 577315649
 #define NOTIFICATION_MP_PROPOSAL_RESULT -1076480691
 /*MP VOTING SYSTEM END*/
 
@@ -1199,6 +1200,19 @@
 #define AI_CULTURE_RESTRICTION
 // Fixed a bug due to which defense bonuses did not work when long-range units fought (Shoshone bonus, Himeji bonus, Defender of the Faith, Patriotic War)
 #define FIX_RANGE_DEFENSE_MOD
+
+
+/*LOGGING START*/
+///
+#define SLOG(sFmt, ...) {  \
+  CvString sRef;  \
+  CvString::format(sRef, "[%s:%d]: ", __FUNCTION__, __LINE__);  \
+  CvString sMsg;  \
+  CvString::format(sMsg, sFmt, __VA_ARGS__);  \
+  sRef+= sMsg; \
+  LOGFILEMGR.GetLog("PATCH.log", FILogFile::kDontTimeStamp)->Msg(sRef.c_str());  \
+}
+/*LOGGING END*/
 
 
 /////////////////////

@@ -738,10 +738,8 @@ function( Id )
 
 --print( "removing Notification " .. Id .. " " .. tostring( g_ActiveNotifications[ Id ] ) .. " " .. tostring( g_notificationNames[ g_ActiveNotifications[ Id ] ] ) )
 
-	if (playerID == g_activePlayerID) then
-		RemoveNotificationID( Id )
-		ProcessStackSizes()
-	end
+	RemoveNotificationID( Id )
+	ProcessStackSizes()
 
 end)
 

@@ -1,5 +1,6 @@
 -------------------------------------------------
 -- edit: MP voting system for vanilla UI
+-- edit: FIX Events.NotificationRemoved missing PlayerID argument 
 -------------------------------------------------
 -- Action Info Panel
 -------------------------------------------------
@@ -32,7 +33,6 @@ end
 function GenericRightClick ( Id )
 	UI.RemoveNotification( Id )
 end
-
 
 ------------------------------------------------------------------------------------
 -- set up the exceptions
@@ -244,6 +244,11 @@ g_NameTable[ NotificationTypes.NOTIFICATION_MP_PROPOSAL_RESULT ] = "MPVotingSyst
 -------------------------------------------------
 -------------------------------------------------
 function OnNotificationAdded( Id, type, toolTip, strSummary, iGameValue, iExtraGameData, ePlayer )
+	--print('------new notification-------')
+	--print('UI_id', Id)
+	--print('type', type)
+	--print('-----------------------------')
+
 	if(g_ActiveNotifications[ Id ] ~= nil) then
         return;
     end
@@ -329,6 +334,11 @@ function OnNotificationAdded( Id, type, toolTip, strSummary, iGameValue, iExtraG
 			
 			LuaEvents.OnProposalCreated()
 			CivIconHookup( playerID, 45, instance.CivIcon, instance.CivIconBG, instance.CivIconShadow, false, true );
+		elseif type == NotificationTypes.NOTIFICATION_MP_REMAP_PROPOSAL then
+			instance.StatusFrame:SetText('[ICON_FLOWER]')
+			LuaEvents.OnProposalCreated();
+			instance.SmallCivFrame:SetHide(true);
+			CivIconHookup( 0, 45, instance.CivIcon, instance.CivIconBG, instance.CivIconShadow, false, true );
 		elseif type == NotificationTypes.NOTIFICATION_MP_PROPOSAL_RESULT then
 			if Game.GetProposalStatus( iGameValue ) == 1 then
 				instance.MPVotingSystemResultCancelImage:SetHide(true)  -- hide cancel frame
@@ -493,15 +503,12 @@ end
 
 -------------------------------------------------
 -------------------------------------------------
--- edit: FIX Events.NotificationRemoved missing PlayerID argument 
-function NotificationRemoved( Id, PlayerID )
+function NotificationRemoved( Id )
 
     --print( "removing Notification " .. Id .. " " .. tostring( g_ActiveNotifications[ Id ] ) .. " " .. tostring( g_NameTable[ g_ActiveNotifications[ Id ] ] ) );
         
-	if (PlayerID == Game.GetActivePlayer()) then
-		RemoveNotificationID( Id );	
-		ProcessStackSizes();
-	end
+	RemoveNotificationID( Id );	
+    ProcessStackSizes();
 
 end
 Events.NotificationRemoved.Add( NotificationRemoved );

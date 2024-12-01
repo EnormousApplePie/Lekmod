@@ -566,7 +566,7 @@ bool CvNotifications::MayUserDismiss(int iLookupIndex)
 			case NOTIFICATION_MP_IRR_PROPOSAL:
 			case NOTIFICATION_MP_CC_PROPOSAL:
 			case NOTIFICATION_MP_SCRAP_PROPOSAL:
-			// case NOTIFICATION_MP_REMAP_PROPOSAL:
+			case NOTIFICATION_MP_REMAP_PROPOSAL:
 #endif
 				return false;
 				break;
@@ -1123,7 +1123,7 @@ void CvNotifications::Activate(Notification& notification)
 	case NOTIFICATION_MP_IRR_PROPOSAL:
 	case NOTIFICATION_MP_CC_PROPOSAL:
 	case NOTIFICATION_MP_SCRAP_PROPOSAL:
-	// case NOTIFICATION_MP_REMAP_PROPOSAL:
+	case NOTIFICATION_MP_REMAP_PROPOSAL:
 	case NOTIFICATION_MP_PROPOSAL_RESULT:
 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
 		if (notification.m_iGameDataIndex >= 0)
@@ -1852,7 +1852,7 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 	case NOTIFICATION_MP_IRR_PROPOSAL:
 	case NOTIFICATION_MP_CC_PROPOSAL:
 	case NOTIFICATION_MP_SCRAP_PROPOSAL:
-	// case NOTIFICATION_MP_REMAP_PROPOSAL:
+	case NOTIFICATION_MP_REMAP_PROPOSAL:
 	{
 		if (GC.getGame().GetMPVotingSystem()->GetProposalCompletion(m_aNotifications[iIndex].m_iGameDataIndex))
 		{

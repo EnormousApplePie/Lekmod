@@ -12227,7 +12227,7 @@ void CvMPVotingSystem::DoTurn()
 					sMessage = GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_SCRAP", GET_PLAYER(it->eProposalOwner).getName());
 					sSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_MP_SCRAP_PROPOSAL");
 				}
-				/*else if (it->eType == PROPOSAL_REMAP)
+				else if (it->eType == PROPOSAL_REMAP)
 				{
 					if (CvPreGame::IsHasRemapToken(eActivePlayer))
 					{
@@ -12235,7 +12235,7 @@ void CvMPVotingSystem::DoTurn()
 						sMessage = GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_REMAP");
 						sSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_MP_REMAP_PROPOSAL");
 					}
-				}*/
+				}
 
 				for (int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop) {
 					CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)iNotifyLoop);
@@ -12308,7 +12308,7 @@ void CvMPVotingSystem::AddProposal(MPVotingSystemProposalTypes eProposalType, Pl
 		sMessage = GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_SCRAP", GET_PLAYER(eProposalOwner).getName());
 		sSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_MP_SCRAP_PROPOSAL");
 	}
-	/*else if (eProposalType == PROPOSAL_REMAP)
+	else if (eProposalType == PROPOSAL_REMAP)
 	{
 		proposal.iExpirationCounter = REMAP_PROPOSAL_REVEAL_TURN;
 		for (int i = 0; i < MAX_MAJOR_CIVS; i++)
@@ -12321,7 +12321,7 @@ void CvMPVotingSystem::AddProposal(MPVotingSystemProposalTypes eProposalType, Pl
 		eType = (NotificationTypes)NOTIFICATION_MP_REMAP_PROPOSAL;
 		sMessage = GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_REMAP");
 		sSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_MP_REMAP_PROPOSAL");
-	}*/
+	}
 
 	m_vProposals.push_back(proposal);
 
