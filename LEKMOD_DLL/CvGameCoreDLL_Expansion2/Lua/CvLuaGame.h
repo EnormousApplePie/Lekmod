@@ -397,6 +397,9 @@ protected:
 	static int lIsPlayerHasActiveProposal(lua_State* L);
 	static int lIsAnyActiveProposalType(lua_State* L);
 #endif
+#ifdef INGAME_HOTKEY_MANAGER
+	static int lUpdateActions(lua_State* L);
+#endif
 };
 
 #endif //CVLUAGAME_H

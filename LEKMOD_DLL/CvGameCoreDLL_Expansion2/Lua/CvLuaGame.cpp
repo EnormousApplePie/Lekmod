@@ -405,6 +405,9 @@ void CvLuaGame::RegisterMembers(lua_State* L)
 	Method(IsPlayerHasActiveProposal);
 	Method(IsAnyActiveProposalType);
 #endif
+#ifdef INGAME_HOTKEY_MANAGER
+	Method(UpdateActions);
+#endif
 }
 //------------------------------------------------------------------------------
 
@@ -3156,5 +3159,72 @@ int CvLuaGame::lIsAnyActiveProposalType(lua_State* L)
 
 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->IsAnyActiveProposalType(eType));
 	return 1;
+}
+#endif
+#ifdef INGAME_HOTKEY_MANAGER
+//------------------------------------------------------------------------------
+// replace GameInfoActions with fresh hotkeys data, may be called ingame with Game.UpdateActions()
+namespace Lua = FLua::Details;
+using FLua::Table;
+int CvLuaGame::lUpdateActions(lua_State* L)
+{
+	lua_newtable(L);
+	lua_pushvalue(L, -1);
+	lua_setglobal(L, "GameInfoActions");
+
+	const int t = lua_gettop(L);
+	int idx = 0;
+
+	typedef std::vector<CvActionInfo*> ActionInfos;
+	ActionInfos& infos = GC.getActionInfo();
+	for (ActionInfos::const_iterator it = infos.begin();
+		it != infos.end(); ++it)
+	{
+		CvActionInfo* pEntry = (*it);
+		lua_createtable(L, 0, 0);
+
+		Table kEntry(L, -1);
+
+		kEntry["MissionData"] = pEntry->getMissionData();
+		kEntry["CommandData"] = pEntry->getCommandData();
+
+		kEntry["AutomateType"] = pEntry->getAutomateType();
+		kEntry["InterfaceModeType"] = pEntry->getInterfaceModeType();
+		kEntry["MissionType"] = pEntry->getMissionType();
+		kEntry["CommandType"] = pEntry->getCommandType();
+		kEntry["ControlType"] = pEntry->getControlType();
+		kEntry["OriginalIndex"] = pEntry->getOriginalIndex();
+
+		kEntry["ConfirmCommand"] = pEntry->isConfirmCommand();
+		kEntry["Visible"] = pEntry->isVisible();
+		kEntry["SubType"] = (int)pEntry->getSubType();
+
+		kEntry["Type"] = pEntry->GetType();
+		kEntry["TextKey"] = pEntry->GetTextKey();
+
+		kEntry["ActionInfoIndex"] = pEntry->getActionInfoIndex();
+		kEntry["HotKeyVal"] = pEntry->getHotKeyVal();
+		kEntry["HotKeyPriority"] = pEntry->getHotKeyPriority();
+		kEntry["HotKeyValAlt"] = pEntry->getHotKeyValAlt();
+		kEntry["HotKeyPriorityAlt"] = pEntry->getHotKeyPriorityAlt();
+		kEntry["OrderPriority"] = pEntry->getOrderPriority();
+
+		kEntry["AltDown"] = pEntry->isAltDown();
+		kEntry["ShiftDown"] = pEntry->isShiftDown();
+		kEntry["CtrlDown"] = pEntry->isCtrlDown();
+		kEntry["AltDownAlt"] = pEntry->isAltDownAlt();
+		kEntry["ShiftDownAlt"] = pEntry->isShiftDownAlt();
+		kEntry["CtrlDownAlt"] = pEntry->isCtrlDownAlt();
+
+		kEntry["HotKey"] = pEntry->getHotKeyString();
+		kEntry["Help"] = pEntry->GetHelp();
+		kEntry["DisabledHelp"] = pEntry->GetDisabledHelp();
+
+		lua_rawseti(L, t, idx);
+
+		++idx;
+	}
+
+	return 0;
 }
 #endif

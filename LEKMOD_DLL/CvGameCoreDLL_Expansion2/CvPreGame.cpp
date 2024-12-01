@@ -2679,9 +2679,71 @@ void setLeaderName(PlayerTypes p, const CvString& n)
 	if(p >= 0 && p < MAX_PLAYERS)
 		s_leaderNames.setAt(p, n);
 }
+#ifdef INGAME_HOTKEY_MANAGER
+// first find and edit matching ActionInfo instance, then update core DB (probably redundant)
+void UpdateHotkey(int iSubType, int iIndex, const char* szHotkeyStr, bool bCtrl, bool bAlt, bool bShift/*, int iHotkeyPriority*/)
+{
+	typedef std::vector<CvActionInfo*> ActionInfoVector;
+	ActionInfoVector& actionInfos = GC.getActionInfo();
+	for (ActionInfoVector::iterator it = actionInfos.begin(); it != actionInfos.end(); ++it)
+	{
+		if ((*it)->getSubType() == iSubType && (*it)->getOriginalIndex() == iIndex)
+		{
+			//SLOG("OLD HK: %d %d '%s' %d -- %s", (*it)->getSubType(), (*it)->getOriginalIndex(), (*it)->getHotKey(), (*it)->getHotKeyVal(), (*it)->GetDescription());
+			(*it)->UpdateHotkey(szHotkeyStr, bAlt, bShift, bCtrl);
+			//SLOG("UPD HK: %d %d '%s' %d -- %s", (*it)->getSubType(), (*it)->getOriginalIndex(), (*it)->getHotKey(), (*it)->getHotKeyVal(), (*it)->GetDescription());
+
+			Database::Results kData;
+			Database::Connection* db = GC.GetGameDatabase();
+			char szSQL[512];
+
+			CvString ActionSubTypesStr[] = { "InterfaceModes", "Commands", "Builds", "UnitPromotions", "Specialists", "Controls", "Automates", "Missions" };
+			CvString str = ActionSubTypesStr[iSubType];
+			if (iSubType <= (sizeof(ActionSubTypesStr) / sizeof(*ActionSubTypesStr))) {
+
+				//sprintf_s(szSQL, "UPDATE %s SET HotKey = '%s', CtrlDown = %d, AltDown = %d, ShiftDown = %d WHERE ID = %d", str.c_str(), szHotkeyStr, bCtrl ? 1 : 0, bAlt ? 1 : 0, bShift ? 1 : 0, iIndex);
+				//SLOG(szSQL);
+				if (db->Execute(kData, szSQL))
+				{
+					while (kData.Step())
+					{
+						// SLOG("Step");
+					}
+				}
+			}
+			else {
+				// SLOG("illegal Subtype index: %d", iSubType);
+			}
+
+			break;
+			//SLOG("%s", (*it)->getHotKeyDescription());  // crash
+
+		}
+	}
+}
+#endif
 
 void setLeaderKey(PlayerTypes p, const CvString& szKey)
 {
+#ifdef INGAME_HOTKEY_MANAGER
+	// intercept Pregame.SetLeaderKey here, check if leftmost bits are 0001
+	// it actually limits max PlayerType value to 2^28 (it's OK)
+	if ((((uint)p >> 28) & 15) == 1)  // 4 left-most bits reserved for mode (0 default; 1-15 moddable)
+	{
+		int iSubType = (((uint)p >> 24) & 15);  // 4-bit
+		int iIndex = (((uint)p >> 8) & 65535);  // 16-bit
+		// bool bHotkeyAlt = (((uint)p >> 7) & 1);  // 4x1-bit flags
+		bool bCtrl = (((uint)p >> 6) & 1);
+		bool bAlt = (((uint)p >> 5) & 1);
+		bool bShift = (((uint)p >> 4) & 1);
+		// int iHotkeyPriority = (((uint)p) & 15);  // 4-bit
+
+		const char* hotkeyStr = szKey.c_str();
+
+		UpdateHotkey(iSubType, iIndex, hotkeyStr, bCtrl, bAlt, bShift/*, iHotkeyPriority*/);
+		return;
+	}
+#endif
 	if(p >= 0 && p < MAX_PLAYERS)
 	{
 		s_leaderKeys[p] = szKey;

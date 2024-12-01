@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- edit: Ingame Hotkey Manager for vanilla UI -->
 <Context ColorSet="Beige_Black" Font="TwCenMT22" FontStyle="Shadow">
 
 
@@ -30,7 +31,7 @@
     <!-- Top Panel  GridSquareHL8-->
     <Box Anchor="C,T" Size="926,29" Offset="0,44" Color="0.0.0.128" >
 
-      <Stack Anchor="L,T" Size="926,32" Offset="20,3" Padding="0" StackGrowth="Right">
+      <Stack Anchor="L,T" Size="926,32" Offset="0,3" Padding="0" StackGrowth="Right">
 
 
         <Button  Anchor="L,T" Size="160,24" Font="TwCenMT18" Offset="0,0"  String="TXT_KEY_GAME_OPTIONS" ID="GameButton" >
@@ -69,15 +70,25 @@
           <Grid Anchor="C,C" Offset="0,0" Size="160,26"  Style="Grid9FrameTurns" Hidden="1" ID="AudioHighlight" />
         </Button>
 
-        <Button  Anchor="L,T" Size="200,24" Font="TwCenMT18" Offset="0,0"  String="TXT_KEY_MULTIPLAYER_OPTIONS" ID="MultiplayerButton" >
+		<!-- NEW: shorten this tab a bit -->
+        <Button  Anchor="L,T" Size="160,24" Font="TwCenMT18" Offset="0,0"  String="TXT_KEY_MULTIPLAYER_OPTIONS_SHORT" ID="MultiplayerButton" >
           <ShowOnMouseOver>
-            <AlphaAnim Anchor="L,T" Size="200,27" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
-              <Grid   Size="200,27" Offset="0,-1" Padding="0,0" Style="Grid9FrameTurnsHL" />
+            <AlphaAnim Anchor="L,T" Size="160,27" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+              <Grid   Size="160,27" Offset="0,-1" Padding="0,0" Style="Grid9FrameTurnsHL" />
             </AlphaAnim>
           </ShowOnMouseOver>
-          <Grid Anchor="C,C" Offset="0,0" Size="200,26"  Style="Grid9FrameTurns" Hidden="1" ID="MultiplayerHighlight" />
+          <Grid Anchor="C,C" Offset="0,0" Size="160,26"  Style="Grid9FrameTurns" Hidden="1" ID="MultiplayerHighlight" />
         </Button>
 
+		<!-- NEW: Hotkey Manager tab -->
+		<Button ID="HotkeyManagerButton" Anchor="L,T" Size="100,24" Font="TwCenMT18" String="TXT_KEY_HOTKEY_OPTIONS_SHORT" >
+			<ShowOnMouseOver>
+			<AlphaAnim Anchor="L,T" Size="120,27" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+				<Grid Size="100,27" Offset="0,-1" Style="Grid9FrameTurnsHL" />
+			</AlphaAnim>
+			</ShowOnMouseOver>
+			<Grid ID="HotkeyManagerHighlight" Anchor="C,C" Size="100,26" Style="Grid9FrameTurns" Hidden="1" />
+		</Button>
       </Stack>
 
       <Image Anchor="C,B" Offset="1,-6" Texture="HorizontalTrim.dds" Size="926.5" />
@@ -249,9 +260,9 @@
         </PullDown>
 
         <!--
-              &TerrainSettings::g_uCacheSize
-              &TerrainSettings::g_uTilesToCalcPerFrame
-              &TerrainSettings::g_uNumContinents
+            	&TerrainSettings::g_uCacheSize
+            	&TerrainSettings::g_uTilesToCalcPerFrame
+            	&TerrainSettings::g_uNumContinents
                 -->
       </Stack>
       <Box Offset="16,28" Size="928,460" Color="Black.200" ID="VideoPanelBlock" Hidden="1" ConsumeMouse="1" >
@@ -353,22 +364,37 @@
         </Stack>
       </Grid>
 
-      <!-- LAN Nick Name Option -->
-      <Grid Offset="40,350" Size="395,200" Color="White,128" Style="Grid9FrameButtons" >
-        <Label Anchor="C,T" Offset="0,5" WrapWidth="250" LeadingOffset="-10" String="TXT_KEY_MULTIPLAYER_LAN_GAME" />
-        <Stack Anchor="L,T" Offset="10,30" Padding="10" StackGrowth="Bottom">
-          <Label Anchor="L,C" Offset="0,10" LeadingOffset="-10" WrapWidth="300" String="TXT_KEY_MP_NICK_NAME">
-            <Box Anchor="R,C" AnchorSide="o,i" Offset="10,0" Size="84,24" Color="255,255,200,255" >
-              <Box Anchor="C,C"  Offset="0,0" Size="82,22" Color="0,0,0,255" >
-                <EditBox EditMode="1" Size="80,18" Anchor="C,C" ID="LANNickNameEdit" Font="TwCenMT16" NumberInput="0" MaxLength="64" />
-              </Box>
-            </Box>
-          </Label>
-        </Stack>
-      </Grid>
+			<!-- LAN Nick Name Option -->
+			<Grid Offset="40,350" Size="395,200" Color="White,128" Style="Grid9FrameButtons" >
+				<Label Anchor="C,T" Offset="0,5" WrapWidth="250" LeadingOffset="-10" String="TXT_KEY_MULTIPLAYER_LAN_GAME" />
+				<Stack Anchor="L,T" Offset="10,30" Padding="10" StackGrowth="Bottom">
+					<Label Anchor="L,C" Offset="0,10" LeadingOffset="-10" WrapWidth="300" String="TXT_KEY_MP_NICK_NAME">
+						<Box Anchor="R,C" AnchorSide="o,i" Offset="10,0" Size="84,24" Color="255,255,200,255" >
+							<Box Anchor="C,C"  Offset="0,0" Size="82,22" Color="0,0,0,255" >
+								<EditBox EditMode="1" Size="80,18" Anchor="C,C" ID="LANNickNameEdit" Font="TwCenMT16" NumberInput="0" MaxLength="64" />
+							</Box>
+						</Box>
+					</Label>
+				</Stack>
+			</Grid>
 
     </Container>
 
+	<!-- NEW: Hotkey Manager -->
+	<Container ID="HotkeysPanel" Size="971,550" Hidden="1" >
+		<ScrollPanel Anchor="C,T" Size="880,467" Offset="0,80" Vertical="1" ID="ScrollPanel" >
+			<Stack ID="HotkeysStack" Anchor="C,T" Padding="0" StackGrowth="Bottom">
+			</Stack>
+			<ScrollBar  Offset="0,18" Anchor="R,T" AnchorSide="O,I" Style="VertSlider" Length="430" />
+			<UpButton   Offset="0,0"  Anchor="R,T" AnchorSide="O,I" Style="ScrollBarUp" />
+			<DownButton Offset="0,1"  Anchor="R,B" AnchorSide="O,I" Style="ScrollBarDown" />
+		</ScrollPanel>
+		<GridButton ID="ResetAllHotkeysButton" Offset="50,15" Anchor="L,B" Size="200,32" Style="SmallButton">
+			<Label Anchor="C,C" String="TXT_KEY_OPSCREEN_RESET_ALL_HOTKEYS" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" />
+		</GridButton>
+		<CheckBox ID="ShowInvalidHotkeysCheckbox" WrapWidth="200" Offset="220,55" Anchor="L,B" String="TXT_KEY_OPSCREEN_SHOW_ALL_ACTIONS" Font="TwCenMT18" IsChecked="0" ToolTip="TXT_KEY_OPSCREEN_SHOW_ALL_ACTIONS_TT" ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" />
+	</Container>
+	
     <!-- Cancel Button  -->
     <Box Anchor="C,B" AnchorSide="I.I" Offset="0,54"   Size="910,56" Color="255,255,255,0" >
       <GridButton Anchor="L,B"  Style="SmallButton" Size="150,32"  Offset="14,0" StateOffsetIncrement="0,0" ID="CancelButton"  >
@@ -429,5 +455,115 @@
       </Stack>
     </Grid>
   </Box>
+
+    <!-- NEW: Reset all hotkeys confirmation popup -->
+	<Box ID="ConfirmResetAllHotkeysPopup" Color="Black.128" Size="Full.Full" Hidden="1" ConsumeMouseOver="1" >
+		<Grid Size="400,300" Anchor="C,C" Padding="0,20" Style="Grid9DetailFive140" Hidden="0" >
+
+			<!-- Side treatments -->
+			<Box Style="PopupLeftSideTreatment"/>
+			<Box Style="PopupRightSideTreatment"/>
+			<Box Style="PopupNotificationTopTreatment"/>
+
+			<Label Anchor="C,T"  Offset="0,74" WrapWidth="300" Font="TwCenMT22" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" String="TXT_KEY_OPSCREEN_CONFIRM" />
+
+			<Stack Anchor="C,B" Offset="0,80" Padding="24" StackGrowth="Bottom" ID="ButtonStack">
+			  <!-- Yes Button -->
+			  <GridButton ID="ConfirmResetAllHotkeysYes" Style="SmallButton" Size="250,36" Anchor="C,T" Hidden="0">
+			    <Label Anchor="C,C" Offset="0,0" String="TXT_KEY_YES_BUTTON" ColorSet="Beige_Black" Font="TwCenMT22" FontStyle="Shadow" />
+			  </GridButton>
+			  <!-- No Button -->
+			  <GridButton ID="ConfirmResetAllHotkeysNo" Style="SmallButton" Size="250,36" Anchor="C,T" Hidden="0">
+			    <Label Anchor="C,C" Offset="0,0" String="TXT_KEY_NO_BUTTON" ColorSet="Beige_Black" Font="TwCenMT22" FontStyle="Shadow" />
+			  </GridButton>
+			</Stack>
+		</Grid>
+	</Box>
+
+	<!-- NEW: Instances for hotkeys screen -->
+	<Instance Name="KeyEntry" >
+        <Container ID="Root" Anchor="L,T" Size="200,34" Offset="-30,0" ConsumeMouse="1" Hidden="0">
+			<Box Anchor="L,C" Size="200,34" ID="HotkeyEditButtonsBox" Color="0,0,0,0" Hidden="1">
+                <Button Offset="210,-36" Anchor="R,C" TextAnchorSide="Right" Font="TwCenMT22" Size="100,36" ConsumeMouse="1" ID="HotkeyEditCancelButton">
+					<HideOnMouseOver>
+						<Stack Anchor="R,C" Size="100,36" Offset="0,0" StackGrowth="Left" >
+							<Label Anchor="R,C" Font="TwCenMT22" FontStyle="Shadow" String="TXT_KEY_OPSCREEN_CANCEL_BUTTON" />
+							<Image Color="Red,220" Anchor="L,C" AnchorSide="O.I" Offset="2,-2" Texture="checkx.dds" Size="26,26" />
+						</Stack>
+					</HideOnMouseOver>
+                    <ShowOnMouseOver>
+						<Stack Anchor="R,C" Size="100,36" Offset="0,0" StackGrowth="Left" >
+							<Label Anchor="R,C" Font="TwCenMT22" FontStyle="SoftShadow" String="TXT_KEY_OPSCREEN_CANCEL_BUTTON" />
+							<Image Color="Red,220" Anchor="L,C" AnchorSide="O.I" Offset="2,-2" Texture="checkx.dds" Size="26,26" />
+						</Stack>
+                    </ShowOnMouseOver>
+                </Button>
+                <Button Offset="210,0" Anchor="R,C" TextAnchorSide="Right" Font="TwCenMT22" Size="100,36" ConsumeMouse="1" ID="HotkeyEditConfirmButton">
+					<HideOnMouseOver>
+						<Stack Anchor="R,C" Size="100,36" Offset="0,0" StackGrowth="Left" >
+							<Label Anchor="R,C" Font="TwCenMT22" FontStyle="Shadow" String="TXT_KEY_OPSCREEN_CONFIRM_HOTKEY" />
+					<Image Anchor="L,C" AnchorSide="O.I" Offset="2,0" Texture="checkmark.dds" Size="26,26" />
+						</Stack>
+					</HideOnMouseOver>
+                    <ShowOnMouseOver>
+						<Stack Anchor="R,C" Size="100,36" Offset="0,0" StackGrowth="Left" >
+							<Label Anchor="R,C" Font="TwCenMT22" FontStyle="SoftShadow" String="TXT_KEY_OPSCREEN_CONFIRM_HOTKEY" />
+					<Image Anchor="L,C" AnchorSide="O.I" Offset="2,0" Texture="checkmark.dds" Size="26,26" />
+						</Stack>
+                    </ShowOnMouseOver>
+                </Button>
+                <Button Offset="210,36" Anchor="R,C" TextAnchorSide="Right" Font="TwCenMT22" Size="100,36" ConsumeMouse="1" ID="HotkeyEditResetButton">
+					<HideOnMouseOver>
+						<Stack Anchor="R,C" Size="100,36" Offset="0,0" StackGrowth="Left" >
+							<Label Anchor="R,C" Font="TwCenMT22" FontStyle="Shadow" String="TXT_KEY_OPSCREEN_RESET_HOTKEY" />
+							<Label Offset="0,-1" String="[ICON_SWAP]" />
+						</Stack>
+					</HideOnMouseOver>
+                    <ShowOnMouseOver>
+						<Stack Anchor="R,C" Size="100,36" Offset="0,0" StackGrowth="Left" >
+							<Label Anchor="R,C" Font="TwCenMT22" FontStyle="SoftShadow" String="TXT_KEY_OPSCREEN_RESET_HOTKEY" />
+							<Label Offset="0,-1" String="[ICON_SWAP]" />
+						</Stack>
+                    </ShowOnMouseOver>
+                </Button>
+			</Box>
+			<Box Anchor="L,C" Size="154,24" Color="255,255,200,255" ID="HotkeyOuterBox" >
+				<Box Anchor="C,C" Size="152,22" Offset="0,0" Color="0,0,0,255" >
+					<EditBox ID="HotkeyEdit" EditMode="1" Size="150,18" Anchor="C,C" Font="TwCenMT16" NumberInput="0" Disabled="1" MaxLength="64" />
+				</Box>
+			</Box>
+			<Button ID="HotkeyEditButton" Anchor="L,C" Size="154,24" ConsumeMouse="1">
+				<Label ID="HotkeyEditFrontLabel" Size="150,18" Anchor="C,C" Font="TwCenMT16" />
+			</Button>
+			<Image ID="HotkeyDescriptionIcon" Offset="153,0" Anchor="L,C" Size="45,45" />
+			<Image ID="HotkeyDescriptionIcon32" Offset="160,0" Anchor="L,C" Size="32,32" Hidden="1" />
+			<Label ID="HotkeyDescriptionLabel" Offset="197,0" Anchor="L,C" Font="TwCenMT20" />
+        </Container>
+    </Instance>
+	<Instance Name="CategorySeparator" >
+		<Container ID="Root" Anchor="C,T" Size="200,55" ConsumeMouse="1" Hidden="0">
+			<Button ID="CategoryButton" Anchor="C,T" Size="300,35" Offset="0,10" Font="TwCenMT18" >
+				<ShowOnMouseOver>
+				<AlphaAnim Anchor="C,T" Size="300,30" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+					<Grid Anchor="C,T" Size="300,38" Offset="0,-2" Style="Grid9FrameTurnsHL" />
+				</AlphaAnim>
+				</ShowOnMouseOver>
+			</Button>
+			<Image Offset="0,12" Anchor="C,T" Texture="bar300x2.dds" Size="300.1"/>
+			<Label ID="ControlCategoryText" Offset="0,21" Anchor="C,T" Font="TwCenMT20" />
+			<Image Offset="0,42" Anchor="C,T" Texture="bar300x2.dds" Size="300.1"/>
+		</Container>
+	</Instance>
+	<Instance Name="CategoryStackInstance" >
+		<Container ID="Root" Anchor="C,T" Size="200,450" ConsumeMouse="1" Hidden="1">
+			<Stack ID="CategoryStack2" Anchor="L,T" Padding="0" StackGrowth="Bottom">
+			</Stack>
+		</Container>
+	</Instance>
+	<Instance Name="ScrollFinisher" >
+		<Container ID="Root" Anchor="C,T" Size="200,55" >
+			<Box Anchor="C,T" Size="200,55" Color="0,0,0,0" />
+		</Container>
+	</Instance>
 
 </Context>

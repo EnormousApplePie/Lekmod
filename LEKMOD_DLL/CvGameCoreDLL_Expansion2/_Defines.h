@@ -1130,6 +1130,26 @@
 #define NOTIFICATION_MP_PROPOSAL_RESULT -1076480691
 /*MP VOTING SYSTEM END*/
 
+/*INGAME HOTKEY MANAGER START*/
+// Adds UI options screen and internal methods to customize units/interface hotkeys
+// Note: on lua side, GameInfo table still holds the original hotkeys, and GameInfoactions data is updated as soon as Game.UpdateActions() is called;
+#define INGAME_HOTKEY_MANAGER
+// Extended controls: pseudo-enums
+/*#define CONTROL_CAMERA_MOVE_LEFT 44
+#define CONTROL_CAMERA_MOVE_RIGHT 45
+#define CONTROL_CAMERA_MOVE_FORWARD 46
+#define CONTROL_CAMERA_MOVE_BACK 47
+#define CONTROL_CAMERA_MOVE_OUT 48
+#define CONTROL_CAMERA_MOVE_OUT_ALT 49
+#define CONTROL_CAMERA_MOVE_IN 50
+#define CONTROL_CAMERA_MOVE_IN_ALT 51
+#define CONTROL_TOGGLE_HEX_GRID 52
+#define CONTROL_TOGGLE_CHAT 53*/
+// IMPORTANT
+// Must be defined only ONCE and account for all ControlTypes additions
+// #define NUM_CONTROL_TYPES 54
+/*INGAME HOTKEY MANAGER END*/
+
 /*ESPIONAGE CHANGES*/
 // Can't steal pre-medieval techs
 #define CANT_STEAL_CLASSICAL_ERA_TECHS
