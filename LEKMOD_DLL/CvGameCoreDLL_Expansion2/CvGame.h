@@ -251,6 +251,10 @@ public:
 
 	unsigned int getInitialTime();
 	void setInitialTime(unsigned int uiNewValue);
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	float getPreviousTurnLen();
+	void setPreviousTurnLen(float fNewValue);
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	float getTimeElapsed();
 	void setTimeElapsed(float fNewValue);
@@ -673,6 +677,9 @@ protected:
 	int m_iMapScoreMod;
 
 	unsigned int m_uiInitialTime;
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	float m_fPreviousTurnLen;
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	float m_fTimeElapsed;
 #endif

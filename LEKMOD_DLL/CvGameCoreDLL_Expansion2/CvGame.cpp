@@ -1100,6 +1100,9 @@ void CvGame::uninit()
 	m_iMapScoreMod = 0;
 
 	m_uiInitialTime = 0;
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	m_fPreviousTurnLen = 0.0f;
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	m_fTimeElapsed = 0.0f;
 #endif
@@ -2107,7 +2110,7 @@ bool CvGame::hasTurnTimerExpired(PlayerTypes playerID)
 					break;
 				}
 		}
-			if (isLocalPlayer && (!gDLL->allAICivsProcessedThisTurn() || !allUnitAIProcessed()) && ePausePlayer == NO_PLAYER || (isOption("GAMEOPTION_AUTOMATION_RESETS_TIMER") && !allUnitAIProcessed())))
+			if (isLocalPlayer && (!gDLL->allAICivsProcessedThisTurn() || !allUnitAIProcessed()) && ePausePlayer == NO_PLAYER || (isOption("GAMEOPTION_AUTOMATION_RESETS_TIMER") && !allUnitAIProcessed()))
 #elif defined NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
 			if (isLocalPlayer && ((!gDLL->allAICivsProcessedThisTurn() && allUnitAIProcessed()) || (isOption("GAMEOPTION_AUTOMATION_RESETS_TIMER") && !allUnitAIProcessed())))
 #else
@@ -2130,19 +2133,17 @@ bool CvGame::hasTurnTimerExpired(PlayerTypes playerID)
 
 				// Has the turn expired?
 #ifdef AUI_GAME_PLAYER_BASED_TURN_LENGTH
-				FFastVector<int, true, c_eCiv5GameplayDLL>::const_iterator piCurMaxTurnLength = m_aiMaxTurnLengths.begin();
-				piCurMaxTurnLength += curPlayer.getTurnOrder();
-
-				float fGameTurnEnd = static_cast<float>(*piCurMaxTurnLength);
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+				float gameTurnEnd = getPreviousTurnLen();
 #else
 				float gameTurnEnd = static_cast<float>(getMaxTurnLen());
+#endif
 
 				//NOTE:  These times exclude the time used for AI processing.
 				//Time since the current player's turn started.  Used for measuring time for players in sequential turn mode.
 				float timeSinceCurrentTurnStart = m_curTurnTimer.Peek() + m_fCurrentTurnTimerPauseDelta; 
 				//Time since the game (year) turn started.  Used for measuring time for players in simultaneous turn mode.
-				float timeSinceGameTurnStart = m_timeSinceGameTurnStart.Peek() + m_fCurrentTurnTimerPauseDelta; 
-#endif
+				float timeSinceGameTurnStart = m_timeSinceGameTurnStart.Peek() + m_fCurrentTurnTimerPauseDelta;
 				
 #ifdef AUI_GAME_PLAYER_BASED_TURN_LENGTH
 				float fTimeElapsed = m_curTurnTimer.Peek() + m_fCurrentTurnTimerPauseDelta;
@@ -2233,7 +2234,11 @@ bool CvGame::hasTurnTimerExpired(PlayerTypes playerID)
 			{
 
 				// Has the turn expired?
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+				float gameTurnEnd = getPreviousTurnLen();
+#else
 				float gameTurnEnd = static_cast<float>(getMaxTurnLen());
+#endif
 
 
 				float timeElapsed = getTimeElapsed();
@@ -5141,6 +5146,16 @@ int CvGame::getMaxTurnLen()
 		{
 			if(GET_PLAYER((PlayerTypes)i).isAlive())
 			{
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+				if (GET_PLAYER((PlayerTypes)i).isHuman() && GET_PLAYER((PlayerTypes)i).getNumUnits() > iMaxUnits)
+				{
+					iMaxUnits = GET_PLAYER((PlayerTypes)i).getNumUnits();
+				}
+				if (GET_PLAYER((PlayerTypes)i).isHuman() && GET_PLAYER((PlayerTypes)i).getNumCities() > iMaxCities)
+				{
+					iMaxCities = GET_PLAYER((PlayerTypes)i).getNumCities();
+				}
+#else
 				if(GET_PLAYER((PlayerTypes)i).getNumUnits() > iMaxUnits)
 				{
 					iMaxUnits = GET_PLAYER((PlayerTypes)i).getNumUnits();
@@ -5149,6 +5164,7 @@ int CvGame::getMaxTurnLen()
 				{
 					iMaxCities = GET_PLAYER((PlayerTypes)i).getNumCities();
 				}
+#endif
 			}
 		}
 
@@ -5572,6 +5588,24 @@ void CvGame::setInitialTime(unsigned int uiNewValue)
 {
 	m_uiInitialTime = uiNewValue;
 }
+
+
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+//	--------------------------------------------------------------------------------
+float CvGame::getPreviousTurnLen()
+{
+	return m_fPreviousTurnLen;
+}
+
+
+//	--------------------------------------------------------------------------------
+void CvGame::setPreviousTurnLen(float fNewValue)
+{
+	m_fPreviousTurnLen = fNewValue;
+}
+
+
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 //	--------------------------------------------------------------------------------
 float CvGame::getTimeElapsed()
@@ -8218,6 +8252,10 @@ void CvGame::doTurn()
 	}
 
 	// END OF TURN
+
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	setPreviousTurnLen(static_cast<float>(getMaxTurnLen()));
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	GC.getGame().m_bIsPaused = false;
 #endif
@@ -10456,6 +10494,9 @@ void CvGame::Read(FDataStream& kStream)
 	kStream >> m_iMapScoreMod;
 
 	// m_uiInitialTime not saved
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	kStream >> m_fPreviousTurnLen;
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	kStream >> m_fTimeElapsed;
 	kStream >> m_bIsPaused;
@@ -10706,6 +10747,9 @@ void CvGame::Write(FDataStream& kStream) const
 	kStream << m_iMapScoreMod;
 
 	// m_uiInitialTime not saved
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	kStream << m_fPreviousTurnLen;
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	kStream << m_fTimeElapsed;
 	kStream << m_bIsPaused;

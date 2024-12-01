@@ -1383,6 +1383,9 @@ void CvTeam::DoDeclareWar(TeamTypes eTeam, bool bDefensivePact, bool bMinorAllyP
 
 				float fGameTurnEnd = static_cast<float>(*piCurMaxTurnLength);
 #else
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+				float fGameTurnEnd = kGame.getPreviousTurnLen();
+#else
 				float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
 
 				//NOTE:  These times exclude the time used for AI processing.

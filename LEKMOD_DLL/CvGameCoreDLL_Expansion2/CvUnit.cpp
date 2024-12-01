@@ -4886,7 +4886,11 @@ bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 		kGame.getPitbossTurnTime() == 0)
 #endif
 	{
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+		float fGameTurnEnd = kGame.getPreviousTurnLen();
+#else
 		float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 		float fTimeElapsed = kGame.getTimeElapsed();
 #else
@@ -6600,7 +6604,11 @@ bool CvUnit::canParadropAt(const CvPlot* pPlot, int iX, int iY) const
 		kGame.getPitbossTurnTime() == 0)
 #endif
 	{
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+		float fGameTurnEnd = kGame.getPreviousTurnLen();
+#else
 		float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
+#endif
 
 #ifdef TURN_TIMER_PAUSE_BUTTON
 		float fTimeElapsed = kGame.getTimeElapsed();
