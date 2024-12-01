@@ -1123,6 +1123,32 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	}
 #endif
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	{
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			for (int jJ = 0; jJ < MAX_PLAYERS; jJ++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).getTeam() == GetID() && GET_PLAYER((PlayerTypes)jJ).getTeam() == eTeam)
+				{
+					if (GC.getGame().getGameTurn() < GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowing((PlayerTypes)jJ))
+					{
+						return false;
+					}
+					if (GC.getGame().getGameTurn() == GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowing((PlayerTypes)jJ))
+					{
+						if (GC.getGame().getTimeElapsed() < GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowing((PlayerTypes)jJ))
+						{
+							return false;
+						}
+					}
+				}
+			}
+		}
+	}
+#endif
+
 	// First, obtain the Lua script system.
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if(pkScriptSystem)
@@ -1387,6 +1413,7 @@ void CvTeam::DoDeclareWar(TeamTypes eTeam, bool bDefensivePact, bool bMinorAllyP
 				float fGameTurnEnd = kGame.getPreviousTurnLen();
 #else
 				float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
+#endif
 
 				//NOTE:  These times exclude the time used for AI processing.
 				//Time since the current player's turn started.  Used for measuring time for players in sequential turn mode.

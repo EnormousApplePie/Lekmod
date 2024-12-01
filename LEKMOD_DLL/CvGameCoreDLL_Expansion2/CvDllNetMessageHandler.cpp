@@ -863,85 +863,123 @@ void CvDllNetMessageHandler::ResponseGiftUnit(PlayerTypes ePlayer, PlayerTypes e
 #ifdef TURN_TIMER_RESET_BUTTON
 	// here we intercept response, when UnitID equals -1 we agree to reset timer
 	if (iUnitID == -1) {
-		GC.getGame().resetTurnTimer(true);
-		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_RESET", GET_PLAYER(ePlayer).getName()).GetCString());
+		if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+		{
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+			float fGameTurnEnd = game.getPreviousTurnLen();
+#else
+			float fGameTurnEnd = static_cast<float>(game.getMaxTurnLen());
+#endif
+			float fTimeElapsed = game.getTimeElapsed();
+			for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+			{
+				for (int jJ = 0; jJ < MAX_MAJOR_CIVS; jJ++)
+				{
+					for (int kK = MAX_MAJOR_CIVS; kK < MAX_MINOR_CIVS; kK++)
+					{
+						PlayerTypes eLoopMinor = (PlayerTypes)kK;
+						if (game.getGameTurn() == GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor))
+						{
+							if (fTimeElapsed < GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor))
+							{
+								GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor) - fTimeElapsed);
+							}
+							else
+							{
+								GET_PLAYER((PlayerTypes)iI).setTurnCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, -1);
+								GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, 0.f);
+							}
+						}
+						if (game.getGameTurn() < GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor))
+						{
+							GET_PLAYER((PlayerTypes)iI).setTurnCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, game.getGameTurn());
+							GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor) + (fGameTurnEnd - fTimeElapsed));
+						}
+					}
+				}
+			}
+#endif
+			GC.getGame().resetTurnTimer(true);
+			DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_RESET", GET_PLAYER(ePlayer).getName()).GetCString());
+		}
 	}
 	else
 #endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
-		if (iUnitID == -7) {
-			if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	if (iUnitID == -7) {
+		if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+		{
+			if (!GC.getGame().m_bIsPaused)
 			{
-				if (!GC.getGame().m_bIsPaused)
-				{
-					GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
-					GC.getGame().m_timeSinceGameTurnStart.Stop();
-					GC.getGame().m_bIsPaused = true;
-					DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
-				}
-				else
-				{
-					GC.getGame().resetTurnTimer(true);
-					GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
-					GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
-					GC.getGame().m_bIsPaused = false;
-					DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
-				}
+				GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
+				GC.getGame().m_timeSinceGameTurnStart.Stop();
+				GC.getGame().m_bIsPaused = true;
+				DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+			}
+			else
+			{
+				GC.getGame().resetTurnTimer(true);
+				GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
+				GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
+				GC.getGame().m_bIsPaused = false;
+				DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
 			}
 		}
-		else
+	}
+	else
 #endif
 #ifdef ENHANCED_GRAPHS
-			// -8 -- increment num times opened demographics
-			if (iUnitID == -8) {
-				GET_PLAYER(ePlayer).ChangeNumTimesOpenedDemographics(1);
-			}
-			else
+	// -8 -- increment num times opened demographics
+	if (iUnitID == -8) {
+		GET_PLAYER(ePlayer).ChangeNumTimesOpenedDemographics(1);
+	}
+	else
 #endif
 #if defined TURN_TIMER_PAUSE_BUTTON && defined GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
-			if (iUnitID == -10) {
-				if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
-				{
-					if (!GC.getGame().m_bIsPaused)
-					{
-						GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
-						GC.getGame().m_timeSinceGameTurnStart.Stop();
-						GC.getGame().m_bIsPaused = true;
-						// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
-					}
-					ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
-					CvLuaArgsHandle args;
-					bool bResult;
-					if (pkScriptSystem)
-					{
-						args->Push(GC.getGame().m_bIsPaused);
-						LuaSupport::CallHook(pkScriptSystem, "EndTurnTimerPause", args.get(), bResult);
-					}
-				}
+	if (iUnitID == -10) {
+		if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+		{
+			if (!GC.getGame().m_bIsPaused)
+			{
+				GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
+				GC.getGame().m_timeSinceGameTurnStart.Stop();
+				GC.getGame().m_bIsPaused = true;
+				// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
 			}
-			else
-			if (iUnitID == -11) {
-				if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
-				{
-					if (GC.getGame().m_bIsPaused)
-					{
-						GC.getGame().resetTurnTimer(true);
-						GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
-						GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
-						GC.getGame().m_bIsPaused = false;
-						// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
-					}
-					ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
-					CvLuaArgsHandle args;
-					bool bResult;
-					if (pkScriptSystem)
-					{
-						args->Push(GC.getGame().m_bIsPaused);
-						LuaSupport::CallHook(pkScriptSystem, "EndTurnTimerPause", args.get(), bResult);
-					}
-				}
+			ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+			CvLuaArgsHandle args;
+			bool bResult;
+			if (pkScriptSystem)
+			{
+				args->Push(GC.getGame().m_bIsPaused);
+				LuaSupport::CallHook(pkScriptSystem, "EndTurnTimerPause", args.get(), bResult);
 			}
-			else
+		}
+	}
+	else
+	if (iUnitID == -11) {
+		if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+		{
+			if (GC.getGame().m_bIsPaused)
+			{
+				GC.getGame().resetTurnTimer(true);
+				GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
+				GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
+				GC.getGame().m_bIsPaused = false;
+				// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+			}
+			ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+			CvLuaArgsHandle args;
+			bool bResult;
+			if (pkScriptSystem)
+			{
+				args->Push(GC.getGame().m_bIsPaused);
+				LuaSupport::CallHook(pkScriptSystem, "EndTurnTimerPause", args.get(), bResult);
+			}
+		}
+	}
+	else
 #endif
 #if defined(TURN_TIMER_RESET_BUTTON) || defined(TURN_TIMER_PAUSE_BUTTON) || defined(ENHANCED_GRAPHS)
 		{

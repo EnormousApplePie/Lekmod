@@ -495,6 +495,10 @@ CvPlayer::CvPlayer() :
 	, m_iFaithPurchaseIndex(0)
 	, m_bProcessedAutoMoves(false)
 	, m_kPlayerAchievements(*this)
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	, m_ppaaiTurnCSWarAllowing("CvPlayer::m_ppaaiTurnCSWarAllowing", m_syncArchive)
+	, m_ppaafTimeCSWarAllowing("CvPlayer::m_ppaafTimeCSWarAllowing", m_syncArchive)
+#endif
 
 // CMP
 	, m_paiNumCitiesFreeChosenBuilding("CvPlayer::m_paiNumCitiesFreeChosenBuilding", m_syncArchive)
@@ -785,6 +789,11 @@ void CvPlayer::uninit()
 
 	m_pabLoyalMember.clear();
 	m_pabGetsScienceFromPlayer.clear();
+
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	m_ppaaiTurnCSWarAllowing.clear();
+	m_ppaafTimeCSWarAllowing.clear();
+#endif
 
 	m_pPlayerPolicies->Uninit();
 	m_pEconomicAI->Uninit();
@@ -1360,6 +1369,32 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 		m_pabGetsScienceFromPlayer.clear();
 		m_pabGetsScienceFromPlayer.resize(MAX_CIV_PLAYERS, false);
+
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+		Firaxis::Array< int, MAX_MINOR_CIVS > turn;
+		for (unsigned int j = 0; j < MAX_MINOR_CIVS; ++j)
+		{
+			turn[j] = -1;
+		}
+		m_ppaaiTurnCSWarAllowing.clear();
+		m_ppaaiTurnCSWarAllowing.resize(MAX_MAJOR_CIVS);
+		for (unsigned int i = 0; i < m_ppaaiTurnCSWarAllowing.size(); ++i)
+		{
+			m_ppaaiTurnCSWarAllowing.setAt(i, turn);
+		}
+
+		Firaxis::Array< float, MAX_MINOR_CIVS > time;
+		for (unsigned int j = 0; j < MAX_MINOR_CIVS; ++j)
+		{
+			time[j] = 0.f;
+		}
+		m_ppaafTimeCSWarAllowing.clear();
+		m_ppaafTimeCSWarAllowing.resize(MAX_MAJOR_CIVS);
+		for (unsigned int i = 0; i < m_ppaafTimeCSWarAllowing.size(); ++i)
+		{
+			m_ppaafTimeCSWarAllowing.setAt(i, time);
+		}
+#endif
 
 		m_pEconomicAI->Init(GC.GetGameEconomicAIStrategies(), this);
 		m_pMilitaryAI->Init(GC.GetGameMilitaryAIStrategies(), this, GetDiplomacyAI());
@@ -26626,6 +26661,11 @@ void CvPlayer::Read(FDataStream& kStream)
 
 	kStream >> m_pabGetsScienceFromPlayer;
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	kStream >> m_ppaaiTurnCSWarAllowing;
+	kStream >> m_ppaafTimeCSWarAllowing;
+#endif
+
 	m_pPlayerPolicies->Read(kStream);
 	m_pEconomicAI->Read(kStream);
 	m_pCitySpecializationAI->Read(kStream);
@@ -27177,6 +27217,11 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_pabLoyalMember;
 
 	kStream << m_pabGetsScienceFromPlayer;
+
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	kStream << m_ppaaiTurnCSWarAllowing;
+	kStream << m_ppaafTimeCSWarAllowing;
+#endif
 
 	m_pPlayerPolicies->Write(kStream);
 	m_pEconomicAI->Write(kStream);
@@ -28680,6 +28725,60 @@ bool CvPlayer::IsAllowedToTradeWith(PlayerTypes eOtherPlayer)
 
 	return true;
 }
+
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+int CvPlayer::getTurnCSWarAllowing(PlayerTypes ePlayer)
+{
+	int iValue = -1;
+	for (int iI = 0; iI < MAX_MINOR_CIVS; iI++)
+	{
+		if (m_ppaaiTurnCSWarAllowing[ePlayer][iI] > iValue)
+		{
+			iValue = m_ppaaiTurnCSWarAllowing[ePlayer][iI];
+		}
+	}
+
+	return iValue;
+}
+
+int CvPlayer::getTurnCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor)
+{
+	return m_ppaaiTurnCSWarAllowing[ePlayer][int(eMinor) - MAX_MAJOR_CIVS];
+}
+
+void CvPlayer::setTurnCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor, int iValue)
+{
+	Firaxis::Array<int, MAX_MINOR_CIVS> turn = m_ppaaiTurnCSWarAllowing[ePlayer];
+	turn[int(eMinor) - MAX_MAJOR_CIVS] = iValue;
+	m_ppaaiTurnCSWarAllowing.setAt(ePlayer, turn);
+}
+
+float CvPlayer::getTimeCSWarAllowing(PlayerTypes ePlayer)
+{
+	float fValue = 0.f;
+	for (int iI = 0; iI < MAX_MINOR_CIVS; iI++)
+	{
+		if (m_ppaafTimeCSWarAllowing[ePlayer][iI] > fValue)
+		{
+			fValue = m_ppaafTimeCSWarAllowing[ePlayer][iI];
+		}
+	}
+
+	return fValue;
+}
+
+float CvPlayer::getTimeCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor)
+{
+	return m_ppaafTimeCSWarAllowing[ePlayer][int(eMinor) - MAX_MAJOR_CIVS];
+}
+
+void CvPlayer::setTimeCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor, float fValue)
+{
+	Firaxis::Array<float, MAX_MINOR_CIVS> time = m_ppaafTimeCSWarAllowing[ePlayer];
+	time[int(eMinor) - MAX_MAJOR_CIVS] = fValue;
+	m_ppaafTimeCSWarAllowing.setAt(ePlayer, time);
+}
+#endif
 
 //////////////////////////////////////////////////////////////////////////
 // Tutorial Stuff...
