@@ -1,4 +1,9 @@
 ----------------------------------------------------------------
+-- edit: MP voting system for EUI & vanilla UI
+----------------------------------------------------------------
+local g_NextProposalRequestTurn = -1;
+REQUEST_PROPOSALS_COOLDOWN = 1;
+----------------------------------------------------------------
 ----------------------------------------------------------------
 include( "IconSupport" );
 include( "SupportFunctions"  );
@@ -818,6 +823,7 @@ function SetupScreen()
 		Controls.MPProposeCCLabel:SetAlpha( 0.5 );
 		Controls.MPProposeScrapLabel:SetAlpha( 0.5 );
 	end
+
 	-- Populate Victories
 	PopulateDomination();
 	PopulateSpaceRace();
