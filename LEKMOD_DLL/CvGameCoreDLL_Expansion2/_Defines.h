@@ -1159,6 +1159,7 @@
 #define GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 // No trade routes to AI, no trades, except for concluding peace and declaring war. Already concluded deals and active caravans are reset when the player leaves the game.
 #define DO_CANCEL_DEALS_WITH_AI
+#define NO_TRADE_ITEMS_WITH_AI
 // Remove auto explore
 #define DISABLE_AUTOMOVES
 
