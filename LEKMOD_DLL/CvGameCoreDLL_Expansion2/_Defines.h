@@ -1169,6 +1169,8 @@
 #ifdef CS_ALLYING_WAR_RESCTRICTION
 #define CS_ALLYING_WAR_RESCTRICTION_TIMER 120.f
 #endif
+// Non-AI civs can vote only for themselves in world leader congress
+#define DIPLO_VICTORY_VOTING
 
 
 /////////////////////

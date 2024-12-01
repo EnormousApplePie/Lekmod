@@ -3110,6 +3110,31 @@ std::vector<int> CvLeague::GetChoicesForDecision(ResolutionDecisionTypes eDecisi
 		}
 		break;
 	case RESOLUTION_DECISION_MAJOR_CIV_MEMBER:
+#ifdef DIPLO_VICTORY_VOTING
+		for (EnactProposalList::iterator it = m_vEnactProposals.begin(); it != m_vEnactProposals.end(); ++it)
+		{
+			if (it->GetEffects()->bDiplomaticVictory)
+			{
+				for (uint i = 0; i < m_vMembers.size(); i++)
+				{
+					if (m_vMembers[i].ePlayer == eDecider)
+					{
+						vChoices.push_back(m_vMembers[i].ePlayer);
+					}
+				}
+			}
+			else
+			{
+				for (uint i = 0; i < m_vMembers.size(); i++)
+				{
+					if (!GET_PLAYER(m_vMembers[i].ePlayer).isMinorCiv())
+					{
+						vChoices.push_back(m_vMembers[i].ePlayer);
+					}
+				}
+			}
+		}
+#else
 		for (uint i = 0; i < m_vMembers.size(); i++)
 		{
 			if (!GET_PLAYER(m_vMembers[i].ePlayer).isMinorCiv())
@@ -3118,6 +3143,7 @@ std::vector<int> CvLeague::GetChoicesForDecision(ResolutionDecisionTypes eDecisi
 			}
 		}
 		break;
+#endif
 	case RESOLUTION_DECISION_OTHER_MAJOR_CIV_MEMBER:
 		for (uint i = 0; i < m_vMembers.size(); i++)
 		{
