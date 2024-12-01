@@ -566,6 +566,7 @@ bool CvNotifications::MayUserDismiss(int iLookupIndex)
 			case NOTIFICATION_MP_IRR_PROPOSAL:
 			case NOTIFICATION_MP_CC_PROPOSAL:
 			case NOTIFICATION_MP_SCRAP_PROPOSAL:
+			// case NOTIFICATION_MP_REMAP_PROPOSAL:
 #endif
 				return false;
 				break;
@@ -1122,14 +1123,15 @@ void CvNotifications::Activate(Notification& notification)
 	case NOTIFICATION_MP_IRR_PROPOSAL:
 	case NOTIFICATION_MP_CC_PROPOSAL:
 	case NOTIFICATION_MP_SCRAP_PROPOSAL:
+	// case NOTIFICATION_MP_REMAP_PROPOSAL:
 	case NOTIFICATION_MP_PROPOSAL_RESULT:
 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
 		if (notification.m_iGameDataIndex >= 0)
 		{
 			CvMPVotingSystem* pkMPVotingSystem = GC.getGame().GetMPVotingSystem();
-			int iUI_id = notification.m_iLookupIndex;
-			int iStatus = (int)pkMPVotingSystem->GetProposalStatus(pkMPVotingSystem->GetProposalIDbyUIid(iUI_id));
-			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_0, iUI_id, iStatus);
+			int iId = notification.m_iGameDataIndex;
+			int iStatus = (int)pkMPVotingSystem->GetProposalStatus(iId);
+			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_0, iId, iStatus);
 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 		}
 		break;
@@ -1845,6 +1847,20 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 		}
 	}
 	break;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+
+	case NOTIFICATION_MP_IRR_PROPOSAL:
+	case NOTIFICATION_MP_CC_PROPOSAL:
+	case NOTIFICATION_MP_SCRAP_PROPOSAL:
+	// case NOTIFICATION_MP_REMAP_PROPOSAL:
+	{
+		if (GC.getGame().GetMPVotingSystem()->GetProposalCompletion(m_aNotifications[iIndex].m_iGameDataIndex))
+		{
+			return true;
+		}
+	}
+	break;
+#endif
 
 	default:	// don't expire
 	{

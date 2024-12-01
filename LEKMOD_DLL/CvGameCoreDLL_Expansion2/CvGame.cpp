@@ -1368,7 +1368,7 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 		CvAssertMsg(m_pTacticalMap==NULL, "about to leak memory, CvGame::m_pTacticalMap");
 		m_pTacticalMap = FNEW(CvTacticalAnalysisMap, c_eCiv5GameplayDLL, 0);
 #ifdef MP_PLAYERS_VOTING_SYSTEM
-		CvAssertMsg(m_pMPVotingSystem == NULL, "about to leak memory, CvGame::m_pTacticalMap");
+		CvAssertMsg(m_pMPVotingSystem == NULL, "about to leak memory, CvGame::m_pMPVotingSystem");
 		m_pMPVotingSystem = FNEW(CvMPVotingSystem, c_eCiv5GameplayDLL, 0);
 
 #endif
@@ -6527,6 +6527,12 @@ void CvGame::setWinner(TeamTypes eNewWinner, VictoryTypes eNewVictory)
 
 				Localization::String localizedText = Localization::Lookup("TXT_KEY_GAME_WON");
 				localizedText << GET_TEAM(getWinner()).getName().GetCString() << szVictoryTextKey;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+				if (strcmp(pkVictoryInfo->GetType(), "VICTORY_SCRAP") == 0)
+				{
+					localizedText = Localization::Lookup(pkVictoryInfo->GetDescriptionKey());
+				}
+#endif
 				addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, winningTeamLeaderID, localizedText.toUTF8(), -1, -1);
 
 				//Notify everyone of the victory
@@ -6535,6 +6541,13 @@ void CvGame::setWinner(TeamTypes eNewWinner, VictoryTypes eNewVictory)
 
 				Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_VICTORY_WINNER");
 				localizedSummary << szWinningTeamLeaderNameKey;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+				if (strcmp(pkVictoryInfo->GetType(), "VICTORY_SCRAP") == 0)
+				{
+					localizedText = Localization::Lookup(pkVictoryInfo->GetDescriptionKey());
+					localizedSummary = Localization::Lookup(pkVictoryInfo->GetTextKey());
+				}
+#endif
 
 				for(int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop){
 					PlayerTypes eNotifyPlayer = (PlayerTypes) iNotifyLoop;

@@ -2722,6 +2722,45 @@ void UpdateHotkey(int iSubType, int iIndex, const char* szHotkeyStr, bool bCtrl,
 	}
 }
 #endif
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+bool IsHasRemapToken(PlayerTypes p)
+{
+	if ((int)p < 0 || (int)p > MAX_MAJOR_CIVS)
+		return false;
+	if (GC.getGame().isOption("GAMEOPTION_DUEL_STUFF"))
+	{
+		if (GC.getGame().isOption("GAMEOPTION_ENABLE_REMAP_VOTE"))
+		{
+			int i = -1;
+			CvPreGame::GetGameOption("GAMEOPTION_REMAP_VOTE_TOKENS", i);
+			return 1 == ((i >> static_cast<int>(p)) & 1);
+		}
+	}
+	return false;
+}
+
+void SetHasRemapToken(PlayerTypes p, bool bValue)
+{
+	if ((int)p < 0 || (int)p > MAX_MAJOR_CIVS)
+		return;
+	if (GC.getGame().isOption("GAMEOPTION_DUEL_STUFF"))
+	{
+		if (GC.getGame().isOption("GAMEOPTION_ENABLE_REMAP_VOTE"))
+		{
+			int i = -1;
+			CvPreGame::GetGameOption("GAMEOPTION_REMAP_VOTE_TOKENS", i);
+			SLOG("OLD REMAP TOKEN %d", i);
+			if (bValue)
+				((i) |= (1ULL << (static_cast<int>(p))));  // set bit
+			else
+				((i) &= ~(1ULL << (static_cast<int>(p))));  // clear bit
+			CvPreGame::SetGameOption("GAMEOPTION_REMAP_VOTE_TOKENS", i);
+			SLOG("NEW REMAP TOKEN %d", i);
+		}
+	}
+}
+
+#endif
 
 void setLeaderKey(PlayerTypes p, const CvString& szKey)
 {
@@ -2741,6 +2780,18 @@ void setLeaderKey(PlayerTypes p, const CvString& szKey)
 		const char* hotkeyStr = szKey.c_str();
 
 		UpdateHotkey(iSubType, iIndex, hotkeyStr, bCtrl, bAlt, bShift/*, iHotkeyPriority*/);
+		return;
+	}
+#endif
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	if ((((uint)p >> 28) & 15) == 2)  // 4 left-most bits reserved for mode (0 default; 1-15 moddable)
+	{
+		uint uiPlayerID = (((uint)p >> 1) & 134217727);  // 27-bit
+		int iValue = (((uint)p) & 1);  // 1-bit
+
+		if (uiPlayerID > MAX_MAJOR_CIVS)
+			return;
+		SetHasRemapToken((PlayerTypes)uiPlayerID, (bool)iValue);
 		return;
 	}
 #endif

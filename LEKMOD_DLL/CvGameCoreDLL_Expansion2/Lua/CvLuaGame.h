@@ -381,9 +381,9 @@ protected:
 #endif
 #ifdef MP_PLAYERS_VOTING_SYSTEM
 	static int lGetLastProposalID(lua_State* L);
-	static int lGetProposalIDbyUIid(lua_State* L);
 	static int lGetProposalExpirationCounter(lua_State* L);
 	static int lGetProposalType(lua_State* L);
+	static int lGetProposalTypeCooldownResetTurn(lua_State* L);
 	static int lGetProposalStatus(lua_State* L);
 	static int lGetProposalOwner(lua_State* L);
 	static int lGetProposalSubject(lua_State* L);
@@ -396,6 +396,8 @@ protected:
 	static int lGetMaxVotes(lua_State* L);
 	static int lIsPlayerHasActiveProposal(lua_State* L);
 	static int lIsAnyActiveProposalType(lua_State* L);
+	static int lIsProposalTypeOnCooldown(lua_State* L);
+	static int lIsProposalTypeAvailable(lua_State* L);
 #endif
 #ifdef INGAME_HOTKEY_MANAGER
 	static int lUpdateActions(lua_State* L);

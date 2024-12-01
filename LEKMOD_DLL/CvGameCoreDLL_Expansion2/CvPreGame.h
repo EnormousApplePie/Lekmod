@@ -222,6 +222,10 @@ void																			 setLastHumanHandicap(PlayerTypes p, HandicapTypes h);
 void                                       setInternetGame(bool isInternetGame);
 void                                       setLeaderHead(PlayerTypes p, LeaderHeadTypes l);
 void                                       setLeaderName(PlayerTypes p, const CvString& n);
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+bool                                       IsHasRemapToken(PlayerTypes p);
+void                                       SetHasRemapToken(PlayerTypes p, bool bValue);
+#endif
 void                                       setLeaderKey(PlayerTypes p, const CvString& n);
 void                                       setLeaderKeyPackageID(PlayerTypes p, const GUID& n);
 void										 setLoadFileName(const CvString& fileName);

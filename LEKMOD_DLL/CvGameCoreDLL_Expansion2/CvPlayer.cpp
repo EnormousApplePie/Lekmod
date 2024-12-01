@@ -29471,9 +29471,9 @@ void CvPlayer::reconnected()
 #endif
 	}
 #ifdef MP_PLAYERS_VOTING_SYSTEM
-	if (isMultiplayer && isLocalPlayer())
+	if (isLocalPlayer())
 	{
-		GC.getGame().GetMPVotingSystem()->ResendActiveProposals();
+		GC.getGame().GetMPVotingSystem()->Init();
 	}
 #endif
 }
