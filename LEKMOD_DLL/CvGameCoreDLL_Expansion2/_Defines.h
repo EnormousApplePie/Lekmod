@@ -1173,6 +1173,8 @@
 #define DIPLO_VICTORY_VOTING
 // AI cant spawn a prophets and spread/found/enhance/reform religion
 #define CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
+// AI can no longer perform a coup in a city-state
+#define AI_CANT_COUP
 
 
 /////////////////////
