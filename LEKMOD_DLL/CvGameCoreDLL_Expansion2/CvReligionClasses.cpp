@@ -466,8 +466,15 @@ void CvGameReligions::DoPlayerTurn(CvPlayer& kPlayer)
 	{
 		if (!kPlayer.isHuman())
 		{
+#ifdef CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
+			/*if (!GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))*/
+			{
+#endif
 			BeliefTypes eReformationBelief = kPlayer.GetReligionAI()->ChooseReformationBelief();
 			AddReformationBelief(ePlayer, eReligionCreated, eReformationBelief);
+#ifdef CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
+			}
+#endif
 		}
 		else
 		{
@@ -2514,6 +2521,12 @@ bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 
 	int iChance = GC.getRELIGION_BASE_CHANCE_PROPHET_SPAWN();
 	iChance += (iFaith - iCost);
+#ifdef CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
+	/*if (GC.getGame().isOption("GAMEOPTION_DUEL_STUFF"))*/
+	{
+		iChance = -1;
+	}
+#endif
 
 	int iRand = GC.getGame().getJonRandNum(100, "Religion: spawn Great Prophet roll.");
 	if(iRand >= iChance)

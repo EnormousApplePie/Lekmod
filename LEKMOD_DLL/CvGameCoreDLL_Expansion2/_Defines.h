@@ -1171,6 +1171,8 @@
 #endif
 // Non-AI civs can vote only for themselves in world leader congress
 #define DIPLO_VICTORY_VOTING
+// AI cant spawn a prophets and spread/found/enhance/reform religion
+#define CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
 
 
 /////////////////////
