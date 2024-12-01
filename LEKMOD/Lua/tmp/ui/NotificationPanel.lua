@@ -1,4 +1,6 @@
 -------------------------------------------------
+-- edit: MP voting system for vanilla UI
+-------------------------------------------------
 -- Action Info Panel
 -------------------------------------------------
 include( "IconSupport" );
@@ -227,6 +229,11 @@ g_NameTable[ NotificationTypes.NOTIFICATION_CITY_REVOLT ] = "Generic";
 
 g_NameTable[ NotificationTypes.NOTIFICATION_LEAGUE_PROJECT_COMPLETE ] = "LeagueProjectComplete";
 g_NameTable[ NotificationTypes.NOTIFICATION_LEAGUE_PROJECT_PROGRESS ] = "LeagueProjectProgress";
+g_NameTable[ NotificationTypes.NOTIFICATION_MP_IRR_PROPOSAL ] = "MPVotingSystemProposal";
+g_NameTable[ NotificationTypes.NOTIFICATION_MP_CC_PROPOSAL ] = "MPVotingSystemProposal";
+g_NameTable[ NotificationTypes.NOTIFICATION_MP_SCRAP_PROPOSAL ] = "MPVotingSystemProposal";
+g_NameTable[ NotificationTypes.NOTIFICATION_MP_REMAP_PROPOSAL ] = "MPVotingSystemProposal";
+g_NameTable[ NotificationTypes.NOTIFICATION_MP_PROPOSAL_RESULT ] = "MPVotingSystemResult";
 
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
@@ -302,6 +309,33 @@ function OnNotificationAdded( Id, type, toolTip, strSummary, iGameValue, iExtraG
 				CivIconHookup( 22, 45, instance.CivIcon, instance.CivIconBG, instance.CivIconShadow, false, true );
 				instance.WonderSmallCivFrame:SetHide(true);				
 			end
+		elseif type == NotificationTypes.NOTIFICATION_MP_IRR_PROPOSAL
+			or type == NotificationTypes.NOTIFICATION_MP_CC_PROPOSAL
+			or type == NotificationTypes.NOTIFICATION_MP_SCRAP_PROPOSAL
+			then
+			--print('irr/cc/scrap notification setup')
+			--print('icon hookup for proposal owner:', iGameValue)
+			local playerID = Game.GetProposalOwner( iGameValue )
+
+			if type == NotificationTypes.NOTIFICATION_MP_IRR_PROPOSAL then
+				instance.StatusFrame:SetText('[ICON_TEAM_1]')
+			elseif type == NotificationTypes.NOTIFICATION_MP_CC_PROPOSAL then
+				instance.StatusFrame:SetText('[ICON_TROPHY_GOLD]')
+			elseif type == NotificationTypes.NOTIFICATION_MP_SCRAP_PROPOSAL then
+				instance.StatusFrame:SetText('[ICON_FLOWER]')
+			end
+			-- debug only
+			--instance.StatusFrame:SetText(Id .. '|' .. Game.GetProposalIDbyUIid(Id) .. '/' .. Game.GetLastProposalID())
+			
+			LuaEvents.OnProposalCreated()
+			CivIconHookup( playerID, 45, instance.CivIcon, instance.CivIconBG, instance.CivIconShadow, false, true );
+		elseif type == NotificationTypes.NOTIFICATION_MP_PROPOSAL_RESULT then
+			if Game.GetProposalStatus( iGameValue ) == 1 then
+				instance.MPVotingSystemResultCancelImage:SetHide(true)  -- hide cancel frame
+			else
+				instance.MPVotingSystemResultCancelImage:SetHide(false)  -- show cancel frame
+			end
+			--return IconHookup( 57, 64, GameInfo.Policies.POLICY_LEGALISM.IconAtlas, instance.MPVotingSystemProposalResultImage )
 		elseif type == NotificationTypes.NOTIFICATION_PROJECT_COMPLETED then
 			if iGameValue ~= -1 then
 				local portraitIndex = GameInfo.Projects[iGameValue].PortraitIndex;
@@ -392,8 +426,8 @@ function OnNotificationAdded( Id, type, toolTip, strSummary, iGameValue, iExtraG
     
     button:SetHide( false );
     button:SetVoid1( Id );
-    button:RegisterCallback( Mouse.eLClick, GenericLeftClick );
-    button:RegisterCallback( Mouse.eRClick, GenericRightClick );
+   	button:RegisterCallback( Mouse.eLClick, GenericLeftClick );
+   	button:RegisterCallback( Mouse.eRClick, GenericRightClick );
     if (UI.IsTouchScreenEnabled()) then
         button:RegisterCallback( Mouse.eLDblClick, GenericRightClick );
 	end
@@ -421,7 +455,9 @@ function RemoveNotificationID( Id )
     end
 
     local name = g_NameTable[ g_ActiveNotifications[ Id ] ];
-    
+    if 	g_ActiveNotifications[ Id ] >= 1001 and	g_ActiveNotifications[ Id ] <= 1003 then
+    	name = "MPVotingSystemProposal"
+    end
     if( name == "Production" or
         name == "Tech" or
         name == "FreeTech" or
@@ -435,7 +471,8 @@ function RemoveNotificationID( Id )
 		name == "LeagueCallForProposals" or
 		name == "ChooseArchaeology" or
 		name == "LeagueCallForVotes" or
-		name == "ChooseIdeology")
+		name == "ChooseIdeology"
+		)
     then
         Controls[ name .. "Button" ]:SetHide( true );
     else
@@ -451,18 +488,20 @@ function RemoveNotificationID( Id )
 		end
         
     end
-    
 	g_ActiveNotifications[ Id ] = nil;    
 end
 
 -------------------------------------------------
 -------------------------------------------------
-function NotificationRemoved( Id )
+-- edit: FIX Events.NotificationRemoved missing PlayerID argument 
+function NotificationRemoved( Id, PlayerID )
 
     --print( "removing Notification " .. Id .. " " .. tostring( g_ActiveNotifications[ Id ] ) .. " " .. tostring( g_NameTable[ g_ActiveNotifications[ Id ] ] ) );
         
-	RemoveNotificationID( Id );	
-    ProcessStackSizes();
+	if (PlayerID == Game.GetActivePlayer()) then
+		RemoveNotificationID( Id );	
+		ProcessStackSizes();
+	end
 
 end
 Events.NotificationRemoved.Add( NotificationRemoved );

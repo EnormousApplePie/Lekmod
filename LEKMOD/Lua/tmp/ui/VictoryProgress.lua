@@ -38,6 +38,44 @@ local g_ScoreList = {};
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
+function OnProposeIrr()
+	Controls.MPProposeIrrButton:SetDisabled(true)
+	Controls.MPProposeCCButton:SetDisabled(true)
+	Controls.MPProposeScrapButton:SetDisabled(true)
+	Controls.MPProposeIrrLabel:SetAlpha( 0.5 );
+	Controls.MPProposeCCLabel:SetAlpha( 0.5 );
+	Controls.MPProposeScrapLabel:SetAlpha( 0.5 );
+	g_NextProposalRequestTurn = Game.GetElapsedGameTurns() + REQUEST_PROPOSALS_COOLDOWN;
+	Network.SendGiftUnit(-1, -2);
+end
+Controls.MPProposeIrrButton:RegisterCallback( Mouse.eLClick, OnProposeIrr );
+
+function OnProposeCC()
+	Controls.MPProposeIrrButton:SetDisabled(true)
+	Controls.MPProposeCCButton:SetDisabled(true)
+	Controls.MPProposeScrapButton:SetDisabled(true)
+	Controls.MPProposeIrrLabel:SetAlpha( 0.5 );
+	Controls.MPProposeCCLabel:SetAlpha( 0.5 );
+	Controls.MPProposeScrapLabel:SetAlpha( 0.5 );
+	g_NextProposalRequestTurn = Game.GetElapsedGameTurns() + REQUEST_PROPOSALS_COOLDOWN;
+	LuaEvents.MPProposeCCButtonPress({ Type = 123 });
+end
+Controls.MPProposeCCButton:RegisterCallback( Mouse.eLClick, OnProposeCC );
+
+function OnProposeScrap()
+	Controls.MPProposeIrrButton:SetDisabled(true)
+	Controls.MPProposeCCButton:SetDisabled(true)
+	Controls.MPProposeScrapButton:SetDisabled(true)
+	Controls.MPProposeIrrLabel:SetAlpha( 0.5 );
+	Controls.MPProposeCCLabel:SetAlpha( 0.5 );
+	Controls.MPProposeScrapLabel:SetAlpha( 0.5 );
+	g_NextProposalRequestTurn = Game.GetElapsedGameTurns() + REQUEST_PROPOSALS_COOLDOWN;
+	Network.SendGiftUnit(-1, -4);
+end
+Controls.MPProposeScrapButton:RegisterCallback( Mouse.eLClick, OnProposeScrap );
+
+----------------------------------------------------------------
+----------------------------------------------------------------
 function OnBack()
 	Controls.YourDetails:SetHide(false);
 	Controls.ScoreScreen:SetHide(true);
@@ -686,7 +724,100 @@ function SetupScreen()
 	
 	-- Set Player Score
 	PopulateScoreBreakdown();
-	
+	-- Proposal buttons
+	local pPlayer = Game.GetActivePlayer();
+	Controls.MPProposeIrrButton:SetToolTipString( nil );
+	Controls.MPProposeCCButton:SetToolTipString( nil );
+	Controls.MPProposeScrapButton:SetToolTipString( nil );
+
+	local tstrHintIrr = {};
+	if (Game.IsAnyActiveProposalType(0) == true) then
+		table.insert(tstrHintIrr, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_ACTIVE"));
+	end
+	if (Game.IsProposalTypeAvailable(0) == false) then
+		table.insert(tstrHintIrr, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_UNAVAILABLE"));
+	end
+	if (Game.IsProposalTypeOnCooldown(0, pPlayer) == true) then
+		table.insert(tstrHintIrr, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_ON_COOLDOWN", Game.GetProposalTypeCooldownResetTurn(0, pPlayer)));
+	end
+
+	local tstrHintCC = {};
+	if (Game.IsAnyActiveProposalType(1) == true) then
+		table.insert(tstrHintCC, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_ACTIVE"));
+	end
+	if (Game.IsProposalTypeAvailable(1) == false) then
+		table.insert(tstrHintCC, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_UNAVAILABLE"));
+	end
+	if (Game.IsProposalTypeOnCooldown(1, pPlayer) == true) then
+		table.insert(tstrHintCC, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_ON_COOLDOWN", Game.GetProposalTypeCooldownResetTurn(1, pPlayer)));
+	end
+
+	local tstrHintScrap = {};
+	if (Game.IsAnyActiveProposalType(2) == true) then
+		table.insert(tstrHintScrap, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_ACTIVE"));
+	end
+	if (Game.IsProposalTypeAvailable(2) == false) then
+		table.insert(tstrHintScrap, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_UNAVAILABLE"));
+	end
+	if (Game.IsProposalTypeOnCooldown(2, pPlayer) == true) then
+		table.insert(tstrHintScrap, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_TYPE_ON_COOLDOWN", Game.GetProposalTypeCooldownResetTurn(2, pPlayer)));
+	end
+
+	if (Game.GetElapsedGameTurns() < g_NextProposalRequestTurn) then
+		table.insert(tstrHintIrr, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_WAIT_NEXT_TURN"));
+		table.insert(tstrHintCC, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_WAIT_NEXT_TURN"));
+		table.insert(tstrHintScrap, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_WAIT_NEXT_TURN"));
+	end
+	if (Game.IsPlayerHasActiveProposal(Game.GetActivePlayer()) == true) then
+		table.insert(tstrHintIrr, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_ALREADY_HAS_ACTIVE"));
+		table.insert(tstrHintCC, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_ALREADY_HAS_ACTIVE"));
+		table.insert(tstrHintScrap, Locale.Lookup("TXT_KEY_WARN_MP_PROPOSAL_ALREADY_HAS_ACTIVE"));
+	end
+
+	Controls.MPProposeIrrButton:SetToolTipString( table.concat(tstrHintIrr, '[ENDCOLOR][NEWLINE]') );
+	Controls.MPProposeCCButton:SetToolTipString( table.concat(tstrHintCC, '[ENDCOLOR][NEWLINE]') );
+	Controls.MPProposeScrapButton:SetToolTipString( table.concat(tstrHintScrap, '[ENDCOLOR][NEWLINE]') );
+
+	if (Game.GetElapsedGameTurns() >= g_NextProposalRequestTurn) and (Game.IsPlayerHasActiveProposal(Game.GetActivePlayer()) == false) then
+		--print('has active proposal false')
+		if (Game.IsAnyActiveProposalType(0) == false) and (Game.IsProposalTypeAvailable(0) == true) and (Game.IsProposalTypeOnCooldown(0, pPlayer) == false) then  -- irr
+			--print('any active irr false')
+			Controls.MPProposeIrrButton:SetDisabled(false)
+			Controls.MPProposeIrrLabel:SetAlpha( 1 );
+		else
+			--print('any active irr true')
+			Controls.MPProposeIrrButton:SetDisabled(true)
+			Controls.MPProposeIrrLabel:SetAlpha( 0.5 );
+		end
+
+		if (Game.IsAnyActiveProposalType(1) == false) and (Game.IsProposalTypeAvailable(1) == true) and (Game.IsProposalTypeOnCooldown(1, pPlayer) == false) then  -- cc
+			--print('any active cc false')
+			Controls.MPProposeCCButton:SetDisabled(false)
+			Controls.MPProposeCCLabel:SetAlpha( 1 );
+		else
+			--print('any active cc true')
+			Controls.MPProposeCCButton:SetDisabled(true)
+			Controls.MPProposeCCLabel:SetAlpha( 0.5 );
+		end
+
+		if (Game.IsAnyActiveProposalType(2) == false) and (Game.IsProposalTypeAvailable(2) == true) and (Game.IsProposalTypeOnCooldown(2, pPlayer) == false) then  -- scrap
+			--print('any active scrap false')
+			Controls.MPProposeScrapButton:SetDisabled(false)
+			Controls.MPProposeScrapLabel:SetAlpha( 1 );
+		else
+			--print('any active scrap true')
+			Controls.MPProposeScrapButton:SetDisabled(true)
+			Controls.MPProposeScrapLabel:SetAlpha( 0.5 );
+		end
+	else
+		--print('has active proposal true')
+		Controls.MPProposeIrrButton:SetDisabled(true)
+		Controls.MPProposeCCButton:SetDisabled(true)
+		Controls.MPProposeScrapButton:SetDisabled(true)
+		Controls.MPProposeIrrLabel:SetAlpha( 0.5 );
+		Controls.MPProposeCCLabel:SetAlpha( 0.5 );
+		Controls.MPProposeScrapLabel:SetAlpha( 0.5 );
+	end
 	-- Populate Victories
 	PopulateDomination();
 	PopulateSpaceRace();
@@ -694,6 +825,16 @@ function SetupScreen()
 	PopulateCultural();
 		
 end
+
+function UpdateIfVisible()
+	if ContextPtr:IsHidden() == false then
+		SetupScreen()
+	end
+end
+
+LuaEvents.OnProposalCreated.Add( UpdateIfVisible )
+Events.ActivePlayerTurnStart.Add( UpdateIfVisible );
+GameEvents.MPVotingSystemProposalResult.Add( UpdateIfVisible )
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------

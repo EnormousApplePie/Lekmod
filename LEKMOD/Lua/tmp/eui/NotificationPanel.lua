@@ -5,6 +5,13 @@
 -- and minimize notification clutter
 -- code is common using gk_mode and bnw_mode switches
 -------------------------------------------------
+-- edit:
+--     MP voting system
+--     Diplomacy stack left/right switch option
+--     FIX Events.NotificationRemoved missing PlayerID argument
+--     FIX stacked tech notifications
+-- for EUI
+-------------------------------------------------
 include( "EUI_tooltips" )
 
 Events.SequenceGameInitComplete.Add(function()
@@ -318,6 +325,11 @@ for k, v, w in ([[
 
 	NOTIFICATION_LEAGUE_PROJECT_COMPLETE		LeagueProjectComplete
 	NOTIFICATION_LEAGUE_PROJECT_PROGRESS		LeagueProjectProgress
+	NOTIFICATION_MP_IRR_PROPOSAL		MPVotingSystemProposal
+	NOTIFICATION_MP_CC_PROPOSAL		MPVotingSystemProposal
+	NOTIFICATION_MP_SCRAP_PROPOSAL		MPVotingSystemProposal
+	NOTIFICATION_MP_REMAP_PROPOSAL		MPVotingSystemProposal
+	NOTIFICATION_MP_PROPOSAL_RESULT		MPVotingSystemResult
 ]]):gmatch("(%S+)[^%S\n\r]*(%S*)[^%S\n\r]*(%S*)[^\n\r]*") do
 	local n = NotificationTypes[k]
 	if n then
@@ -437,6 +449,40 @@ local function SetupNotification( instance, sequence, Id, type, toolTip, strSumm
 			itemImage = instance.WonderConstructedAlphaAnim
 			smallCivFrame = instance.WonderSmallCivFrame
 
+		elseif type == NotificationTypes.NOTIFICATION_MP_IRR_PROPOSAL
+			or type == NotificationTypes.NOTIFICATION_MP_CC_PROPOSAL
+			or type == NotificationTypes.NOTIFICATION_MP_SCRAP_PROPOSAL
+			then
+			--print('irr/cc/scrap notification setup')
+			--print('icon hookup for proposal owner:', iGameValue)
+			local playerID = Game.GetProposalOwner( iGameValue )
+
+			if type == NotificationTypes.NOTIFICATION_MP_IRR_PROPOSAL then
+				instance.StatusFrame:SetText('[ICON_TEAM_1]')
+			elseif type == NotificationTypes.NOTIFICATION_MP_CC_PROPOSAL then
+				instance.StatusFrame:SetText('[ICON_TROPHY_GOLD]')
+			elseif type == NotificationTypes.NOTIFICATION_MP_SCRAP_PROPOSAL then
+				instance.StatusFrame:SetText('[ICON_FLOWER]')
+			end
+			-- debug only
+			--instance.StatusFrame:SetText(Id .. '|' .. Game.GetProposalIDbyUIid(Id) .. '/' .. Game.GetLastProposalID())
+
+			LuaEvents.OnProposalCreated()
+			return CivIconHookup( playerID, 45, instance.CivIcon, instance.CivIconBG, instance.CivIconShadow, false, true );
+		
+		elseif type == NotificationTypes.NOTIFICATION_MP_REMAP_PROPOSAL then
+			instance.StatusFrame:SetText('[ICON_FLOWER]')
+			LuaEvents.OnProposalCreated();
+			instance.SmallCivFrame:SetHide(true);
+			return CivIconHookup( 0, 45, instance.CivIcon, instance.CivIconBG, instance.CivIconShadow, false, true );
+		
+		elseif type == NotificationTypes.NOTIFICATION_MP_PROPOSAL_RESULT then
+			if Game.GetProposalStatus( iGameValue ) == 1 then
+				instance.MPVotingSystemResultCancelImage:SetHide(true)  -- hide cancel frame
+			else
+				instance.MPVotingSystemResultCancelImage:SetHide(false)  -- show cancel frame
+			end
+			--return IconHookup( 57, 64, GameInfo.Policies.POLICY_LEGALISM.IconAtlas, instance.MPVotingSystemProposalResultImage )
 		elseif type == NotificationTypes.NOTIFICATION_PROJECT_COMPLETED then
 			itemInfo = GameInfo.Projects[ iGameValue ]
 			itemImage = instance.ProjectConstructedAlphaAnim
@@ -588,9 +634,9 @@ end
 -- Notification Added
 -------------------------------------------------
 Events.NotificationAdded.Add(
-function( Id, type, ... ) -- toolTip, strSummary, iGameValue, iExtraGameData, playerID )
-
+function( Id, type, toolTip, strSummary, iGameValue, iExtraGameData, playerID ) -- toolTip, strSummary, iGameValue, iExtraGameData, playerID )
 	local name = not g_ActiveNotifications[ Id ] and (g_notificationNames[ type ] or "Generic")
+
 	if name then
 		local button = Controls[ name ]
 		local bundled = button or g_notificationBundled[ type ]
@@ -620,6 +666,7 @@ function( Id, type, ... ) -- toolTip, strSummary, iGameValue, iExtraGameData, pl
 					button = instance.Button
 					button:RegisterCallback( Mouse.eLClick, GenericLeftClick )
 					button:RegisterCallback( Mouse.eRClick, GenericRightClick )
+
 					button:RegisterCallback( Mouse.eMouseExit, MouseExit )
 					if UI.IsTouchScreenEnabled() then
 						button:RegisterCallback( Mouse.eLDblClick, GenericRightClick )
@@ -631,10 +678,10 @@ function( Id, type, ... ) -- toolTip, strSummary, iGameValue, iExtraGameData, pl
 			button:SetVoid1( Id )
 		end
 		if bundled then
-			table_insert( instance, { Id, type, ... } )
+			table_insert( instance, { Id, type, toolTip, strSummary, iGameValue, iExtraGameData, playerID } )
 			SetupNotification( instance, #instance )
 		else
-			SetupNotification( instance, nil, Id, type, ... )
+			SetupNotification( instance, nil, Id, type, toolTip, strSummary, iGameValue, iExtraGameData, playerID )
 		end
 
 		ProcessStackSizes( true )
@@ -691,8 +738,10 @@ function( Id )
 
 --print( "removing Notification " .. Id .. " " .. tostring( g_ActiveNotifications[ Id ] ) .. " " .. tostring( g_notificationNames[ g_ActiveNotifications[ Id ] ] ) )
 
-	RemoveNotificationID( Id )
-	ProcessStackSizes()
+	if (playerID == g_activePlayerID) then
+		RemoveNotificationID( Id )
+		ProcessStackSizes()
+	end
 
 end)
 

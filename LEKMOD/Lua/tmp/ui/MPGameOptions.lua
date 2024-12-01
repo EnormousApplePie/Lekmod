@@ -1,3 +1,6 @@
+-------------------------------------------------
+-- edit: MP voting system for EUI & vanilla UI
+-------------------------------------------------
 include( "MPGameDefaults" );
 
 local bIsModding = false;
@@ -1013,18 +1016,20 @@ function RefreshGameOptions()
 	---------------------------------
 	-- Victory conditions
 	for row in GameInfo.Victories() do
-		local victoryCondition = g_VictoryCondtionsManager:GetInstance();
-		
-		local victoryConditionTextButton = victoryCondition.GameOptionRoot:GetTextButton();
-		victoryConditionTextButton:LocalizeAndSetText(row.Description);
-		
-		victoryCondition.GameOptionRoot:SetCheck(PreGame.IsVictory(row.ID));
-		victoryCondition.GameOptionRoot:SetDisabled( not bCanEdit );
-		
-		victoryCondition.GameOptionRoot:RegisterCheckHandler( function(bCheck)
-				PreGame.SetVictory(row.ID, bCheck);
-				SendGameOptionChanged();
-			end);
+		if(row.Type ~= "VICTORY_SCRAP") then
+			local victoryCondition = g_VictoryCondtionsManager:GetInstance();
+			
+			local victoryConditionTextButton = victoryCondition.GameOptionRoot:GetTextButton();
+			victoryConditionTextButton:LocalizeAndSetText(row.Description);
+			
+			victoryCondition.GameOptionRoot:SetCheck(PreGame.IsVictory(row.ID));
+			victoryCondition.GameOptionRoot:SetDisabled( not bCanEdit );
+			
+			victoryCondition.GameOptionRoot:RegisterCheckHandler( function(bCheck)
+					PreGame.SetVictory(row.ID, bCheck);
+					SendGameOptionChanged();
+				end);
+		end;
 		
 	end
 

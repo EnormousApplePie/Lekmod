@@ -1,4 +1,6 @@
 ----------------------------------------------------------------
+-- edit: MP voting system for EUI & vanilla UI
+----------------------------------------------------------------
 ----------------------------------------------------------------
 include( "IconSupport" );
 include( "CommonBehaviors" );
@@ -181,6 +183,11 @@ function OnDisplay( type, team )
 		elseif( type == EndGameTypes.Time ) then
 	    	Controls.EndGameText:SetText( Locale.ConvertTextKey( "TXT_KEY_VICTORY_FLAVOR_TIME" ) );
 	    	victoryType = "VICTORY_TIME";
+	    end
+	    -- NEW: scrap victory
+		if( Game.GetVictory() == GameInfoTypes.VICTORY_SCRAP ) then
+	    	Controls.EndGameText:SetText( Locale.ConvertTextKey( "TXT_KEY_VICTORY_FLAVOR_SCRAP" ) );
+	    	victoryType = "VICTORY_SCRAP";
 		end
 		
 		if(victoryType ~= nil and PreGame.GetGameOption("GAMEOPTION_NO_EXTENDED_PLAY") ~= 1)then
@@ -219,6 +226,9 @@ function OnDisplay( type, team )
 				Controls.BackButton:SetDisabled( false );
 				m_bAllowBack = true;
 			elseif( type == EndGameTypes.Time ) then
+				Controls.BackButton:SetDisabled( false );
+				m_bAllowBack = true;
+			elseif( type == -1 ) then
 				Controls.BackButton:SetDisabled( false );
 				m_bAllowBack = true;
 			elseif( type == EndGameTypes.Loss ) then
