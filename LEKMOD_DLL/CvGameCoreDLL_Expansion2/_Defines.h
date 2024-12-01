@@ -1175,6 +1175,8 @@
 #define CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
 // AI can no longer perform a coup in a city-state
 #define AI_CANT_COUP
+// AI cannot accumulate culture if next policy cost is greater than 1000
+#define AI_CULTURE_RESTRICTION
 
 
 /////////////////////

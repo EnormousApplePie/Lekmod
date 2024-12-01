@@ -4937,6 +4937,23 @@ void CvPlayer::doTurnPostDiplomacy()
 #else
 	if(kGame.isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
 	{
+#ifdef AI_CULTURE_RESTRICTION
+		if (getJONSCulture() < getNextPolicyCost())
+		{
+			if (isHuman() || getNextPolicyCost() < 1000/* || !GC.getGame().isOption("GAMEOPTION_AI_TWEAKS")*/)
+			{
+#if defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100) && defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
+			changeJONSCultureTimes100(getCachedJONSCultureForThisTurn());
+#elif defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100)
+			changeJONSCultureTimes100(GetTotalJONSCulturePerTurnTimes100());
+#elif defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
+			changeJONSCulture(getCachedJONSCultureForThisTurn());
+#else
+			changeJONSCulture(GetTotalJONSCulturePerTurn());
+#endif
+			}
+	}
+#else
 		if(getJONSCulture() < getNextPolicyCost())
 #endif
 #if defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100) && defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
@@ -4947,6 +4964,7 @@ void CvPlayer::doTurnPostDiplomacy()
 			changeJONSCulture(getCachedJONSCultureForThisTurn());
 #else
 			changeJONSCulture(GetTotalJONSCulturePerTurn());
+#endif
 #endif
 	}
 #ifndef NQM_PRUNING
