@@ -50,7 +50,7 @@ local UnitMoving = UnitMoving
 local GetPlotNumUnits = Map_GetPlot(0,0).GetNumLayerUnits or Map_GetPlot(0,0).GetNumUnits
 local GetPlotUnit = Map_GetPlot(0,0).GetLayerUnit or Map_GetPlot(0,0).GetUnit
 
-local g_ScrapControls = Controls.AirCraftFlags --!!! TODO
+local g_ScrapControls = Controls.ScrapControls
 local g_AirCraftFlags = Controls.AirCraftFlags
 local g_CivilianFlags = Controls.CivilianFlags
 local g_MilitaryFlags = Controls.MilitaryFlags
@@ -209,16 +209,22 @@ local function UpdatePlotFlags( plot )
 	local aflags = {}
 	local unit, flag, n
 	local city = plot:GetPlotCity()
+	local strToolTip = ""
 	if city then
 		local l, r, y = -43, 43, Game.GetActiveTeam() == city:GetTeam() and -39 or -36
 		local gflags = {}
 		for i = 0, GetPlotNumUnits( plot ) - 1 do
 			unit = GetPlotUnit( plot, i )
 			flag = g_UnitFlags[ unit:GetOwner() ][ unit:GetID() ]
-			if flag and flag.m_Plot then
+			if flag and flag.m_Plot and not unit:IsInvisible( Game.GetActiveTeam(), true ) then
 				if unit:IsCargo() then
+					table_insert( aflags, flag )
 				elseif flag.m_IsAirCraft then
-					table_insert( aflags, unit )
+					table_insert( aflags, flag )
+					if (strToolTip ~= "") then
+						strToolTip = strToolTip .. "[NEWLINE]"
+					end
+					strToolTip = strToolTip .. Locale.ConvertTextKey(unit:GetNameKey())
 				elseif unit:IsGarrisoned() then
 					table_insert( gflags, flag )
 				else
@@ -259,8 +265,9 @@ local function UpdatePlotFlags( plot )
 			-- DebugFlag( flag,"candidate is aircraft?", flag and flag.m_IsAirCraft ) end
 			if flag and flag.m_Plot then
 				if unit:IsCargo() then
+					table_insert( aflags, flag )
 				elseif flag.m_IsAirCraft then
-					table_insert( aflags, unit )
+					table_insert( aflags, flag )
 				else
 					table_insert( flags, flag )
 				end
@@ -280,32 +287,120 @@ local function UpdatePlotFlags( plot )
 		end
 	end
 	n = #aflags
-	-- DebugPrint( n,"airbase flags found") end
-	local plotIndex = plot:GetPlotIndex()
-	flag = g_AirbaseFlags[ plotIndex ]
-	if n > 0 then
-		if not flag then
-			flag = table_remove( g_spareAirbaseFlags )
-			if flag then
-				flag.Anchor:ChangeParent( g_AirbaseControls )
-			else
-				flag = {}
-				ContextPtr:BuildInstanceForControl( "AirbaseFlag", flag, g_AirbaseControls )
-				flag.Button:RegisterCallback( Mouse.eLClick, AirbaseFlagClicked )
+	if city then
+		-- DebugPrint( n,"airbase flags found") end
+		local plotIndex = plot:GetPlotIndex()
+		flag = g_AirbaseFlags[ plotIndex ]
+		if n > 0 then
+			if not flag then
+				flag = table_remove( g_spareAirbaseFlags )
+				if flag then
+					flag.Anchor:ChangeParent( g_AirbaseControls )
+				else
+					flag = {}
+					ContextPtr:BuildInstanceForControl( "AirbaseFlag", flag, g_AirbaseControls )
+					flag.Button:RegisterCallback( Mouse.eLClick, AirbaseFlagClicked )
+				end
+				g_AirbaseFlags[ plotIndex ] = flag
+				local x, y, z = GridToWorld( plot:GetX(), plot:GetY() )
+				flag.Anchor:SetWorldPositionVal( x, y, z + 35 ) -- World Position Offset
+				flag.Button:SetVoid1( plotIndex )
 			end
-			g_AirbaseFlags[ plotIndex ] = flag
-			local x, y, z = GridToWorld( plot:GetX(), plot:GetY() )
-			flag.Anchor:SetWorldPositionVal( x, y, z + 35 ) -- World Position Offset
-			flag.Button:SetVoid1( plotIndex )
+			flag.Anchor:SetHide( not plot:IsVisible( g_activeTeamID, true ) )
+			flag.Button:SetText( n )
+			flag.Button:SetToolTipString( strToolTip )
+			-- flag.Button:LocalizeAndSetToolTip( "TXT_KEY_STATIONED_AIRCRAFT", n )
+		elseif flag then
+			g_AirbaseFlags[ plotIndex ] = nil
+			flag.Anchor:ChangeParent( g_ScrapControls )
+			table_insert( g_spareAirbaseFlags, flag )
 		end
-		flag.Anchor:SetHide( not plot:IsVisible( g_activeTeamID, true ) )
-		flag.Button:SetText( n )
-		flag.Button:LocalizeAndSetToolTip( "TXT_KEY_STATIONED_AIRCRAFT", n )
-	elseif flag then
-		g_AirbaseFlags[ plotIndex ] = nil
-		flag.Anchor:ChangeParent( g_ScrapControls )
-		table_insert( g_spareAirbaseFlags, flag )
+	else
+		local plotIndex = plot:GetPlotIndex()
+		flag = g_AirbaseFlags[ plotIndex ]
+		if flag then
+			g_AirbaseFlags[ plotIndex ] = nil
+			flag.Anchor:ChangeParent( g_ScrapControls )
+			table_insert( g_spareAirbaseFlags, flag )
+		end
 	end
+	--
+	--local transportUnit = selectedUnit:GetTransportUnit()
+	local cargoUnit, cargoFlag
+	local airbase = {}
+	local transportnits = {}
+	for i = 0, GetPlotNumUnits( plot ) - 1 do
+		cargoUnit = GetPlotUnit( plot, i )
+		cargoFlag = g_UnitFlags[ cargoUnit:GetOwner() ][ cargoUnit:GetID() ]
+		if cargoFlag and cargoFlag.m_IsAirCraft and not cargoUnit:GetTransportUnit() then
+			table_insert( airbase, cargoFlag )
+		end
+		if cargoFlag and not cargoFlag.m_IsAirCraft then
+			table_insert( transportnits, cargoFlag )
+		end
+	end
+	if city then
+		-- DebugPrint("#aflags ", #aflags)
+		-- DebugPrint( n, "aircraft found") end
+		if #aflags > 0 then
+			local a = math_min( 0.5, 2.7 / #aflags )
+			local a0 = -a*(#aflags+1)/2 - math_pi/2
+			local r = math_max( 80, 14 + 11*#aflags )
+			for i = 1, #aflags do
+				-- DebugFlag( cargoFlag, "adding aircraft to airbase at position", i ) end
+				aflags[i].Container:SetOffsetVal( math_cos( a*i + a0 )*r, math_sin( a*i + a0 )*r )
+				SetFlagParent( aflags[i] )
+			end
+		end
+	else
+		-- DebugPrint("#airbase ", #airbase)
+		-- DebugPrint( n, "aircraft found") end
+		if #airbase > 0 then
+			local a = math_min( 0.5, 2.7 / #airbase )
+			local a0 = -a*(#airbase+1)/2 - math_pi/2
+			local r = math_max( 80, 14 + 11*#airbase )
+			for i = 1, #airbase do
+				-- DebugFlag( cargoFlag, "adding aircraft to airbase at position", i ) end
+				airbase[i].Container:SetOffsetVal( math_cos( a*i + a0 )*r, math_sin( a*i + a0 )*r )
+				SetFlagParent( airbase[i] )
+			end
+		end
+		--
+		-- DebugPrint("#transportnits ", #transportnits)
+		if #transportnits > 0 then
+			for i = 1, #transportnits do
+				local transportUnit = transportnits[i].m_Player:GetUnitByID( transportnits[i].m_UnitID )
+				local cargo = transportUnit:GetCargo()
+				if cargo > 0 then
+					local x, y
+					local transportFlag = g_UnitFlags[ transportUnit:GetOwner() ][ transportUnit:GetID() ]
+					if transportFlag then
+						x, y = transportFlag.Container:GetOffsetVal()
+					else
+						x, y = 0, 0
+					end
+					local a = math_min( math_pi / 3, 5.7 / cargo )
+					local a0 = -a*(cargo-1)/2 - math_pi
+					local j = 0
+					-- DebugFlag( transportFlag, "transport identified, cargo#=", cargo ) end
+					for k = 0, GetPlotNumUnits( plot ) - 1 do
+						cargoUnit = GetPlotUnit( plot, k )
+						if cargoUnit:GetTransportUnit() == transportUnit then
+							cargoFlag = g_UnitFlags[ cargoUnit:GetOwner() ][ cargoUnit:GetID() ]
+							if cargoFlag then
+								-- DebugFlag( cargoFlag, "added to cargo at position", j ) end
+								--table_insert( g_SelectedCargo, cargoFlag )
+								cargoFlag.Container:SetOffsetVal( math_cos( a*j + a0 )*38 + x, math_sin( a*j + a0 )*38 + y )
+								SetFlagParent( cargoFlag )
+							end
+							j = j + 1
+						end
+					end
+				end
+			end
+		end
+	end
+	--
 end--UpdatePlotFlags
 
 --==========================================================
@@ -314,12 +409,12 @@ local function SetFlagSelected( flag, isSelected )
 	flag.m_IsSelected = isSelected
 	flag.FlagHighlight:SetHide( not isSelected )
 	-- RestoreCargoFlagParents
-	for i = 1, #g_SelectedCargo do
+	--[[for i = 1, #g_SelectedCargo do
 		SetFlagParent( g_SelectedCargo[i] )
 		g_SelectedCargo[i] = nil
-	end
+	end]]
 	if isSelected then
-		local selectedUnit = flag.m_Player:GetUnitByID( flag.m_UnitID )
+		--[[local selectedUnit = flag.m_Player:GetUnitByID( flag.m_UnitID )
 		local plot = selectedUnit and selectedUnit:GetPlot()
 		if plot then
 			local transportUnit = selectedUnit:GetTransportUnit()
@@ -365,16 +460,17 @@ local function SetFlagSelected( flag, isSelected )
 				if n > 0 then
 					local a = math_min( 0.5, 2.7 / n )
 					local a0 = -a*(n+1)/2 - math_pi/2
+					local r = math_max( 80, 14 + 11*n )
 					for i = 1, n do
 						cargoFlag = airbase[i]
 						-- DebugFlag( cargoFlag, "adding aircraft to airbase at position", i ) end
 						table_insert( g_SelectedCargo, cargoFlag )
 						cargoFlag.Anchor:ChangeParent( g_SelectedFlags )
-						cargoFlag.Container:SetOffsetVal( math_cos( a*i + a0 )*80, math_sin( a*i + a0 )*80 )
+						cargoFlag.Container:SetOffsetVal( math_cos( a*i + a0 )*r, math_sin( a*i + a0 )*r )
 					end
 				end
 			end
-		end
+		end]]
 		g_SelectedFlag = flag
 	elseif g_SelectedFlag == flag then
 		g_SelectedFlag = nil
@@ -392,18 +488,46 @@ local function FinishMove( flag )
 		if flag.m_TransportUnit then
 			local oldCarrier = g_UnitFlags[ flag.m_TransportUnit:GetOwner() ][ flag.m_TransportUnit:GetID() ]
 			if oldCarrier then
-				local cargo = oldCarrier.m_Unit:GetCargo()
+				-- local cargo = oldCarrier.m_Unit:GetCargo()
+				local cargo = 0
+				local plot = unit:GetPlot()
+				local strToolTip = ""
+				for i = 0, GetPlotNumUnits( plot ) - 1 do
+					local loopUnit = GetPlotUnit( plot, i )
+					if loopUnit:GetTransportUnit() == flag.m_TransportUnit then
+						cargo = cargo + 1
+						if (strToolTip ~= "") then
+							strToolTip = strToolTip .. "[NEWLINE]"
+						end
+						strToolTip = strToolTip .. Locale.ConvertTextKey(loopUnit:GetNameKey())
+					end
+				end
 				oldCarrier.CargoBG:SetHide( cargo < 1 )
 				oldCarrier.Cargo:SetText( cargo )
+				oldCarrier.Cargo:SetToolTipString( strToolTip )
 			end
 		end
 		flag.m_TransportUnit = transportUnit
 		if transportUnit then
 			local newCarrier = g_UnitFlags[ transportUnit:GetOwner() ][ transportUnit:GetID() ]
 			if newCarrier then
-				local cargo = transportUnit:GetCargo()
+				-- local cargo = transportUnit:GetCargo()
+				local cargo = 0
+				local plot = unit:GetPlot()
+				local strToolTip = ""
+				for i = 0, GetPlotNumUnits( plot ) - 1 do
+					local loopUnit = GetPlotUnit( plot, i )
+					if loopUnit:GetTransportUnit() == flag.m_TransportUnit then
+						cargo = cargo + 1
+						if (strToolTip ~= "") then
+							strToolTip = strToolTip .. "[NEWLINE]"
+						end
+						strToolTip = strToolTip .. Locale.ConvertTextKey(loopUnit:GetNameKey())
+					end
+				end
 				newCarrier.CargoBG:SetHide( cargo < 1 )
 				newCarrier.Cargo:SetText( cargo )
+				newCarrier.Cargo:SetToolTipString( strToolTip )
 			end
 		end
 	end
@@ -551,7 +675,7 @@ local function CreateNewFlag( playerID, unitID, isSelected, isHiddenByFog, isInv
 		flag.m_IsCivilian = isCivilian
 		flag.m_IsGarrisoned = unit:IsGarrisoned()
 		flag.m_IsHiddenByFog = isHiddenByFog
-		flag.m_IsInvisibleToActiveTeam = isInvisibleToActiveTeam
+		flag.m_IsInvisibleToActiveTeam = (isInvisibleToActiveTeam or (flag.m_IsAirCraft and Players[playerID]:GetTeam() ~= Game.GetActiveTeam()))
 		flag.m_Plot = nil
 		flag.m_IsSelected = isSelected
 		flag.m_IsTrade = unit.IsTrade and unit:IsTrade()
@@ -579,13 +703,37 @@ local function CreateNewFlag( playerID, unitID, isSelected, isHiddenByFog, isInv
 
 		---------------------------------------------------------
 		-- Can carry units
-		local cargo = unit:GetCargo()
+		-- local cargo = unit:GetCargo()
+		local cargo = 0
+		local plot = unit:GetPlot()
+		local strToolTip = ""
+		for i = 0, GetPlotNumUnits( plot ) - 1 do
+			local loopUnit = GetPlotUnit( plot, i )
+			if loopUnit:GetTransportUnit() == unit then
+				cargo = cargo + 1
+				if (strToolTip ~= "") then
+					strToolTip = strToolTip .. "[NEWLINE]"
+				end
+				strToolTip = strToolTip .. Locale.ConvertTextKey(loopUnit:GetNameKey())
+			end
+		end
 		flag.CargoBG:SetHide( cargo < 1 )
 		flag.Cargo:SetText( cargo )
+		flag.Cargo:SetToolTipString( strToolTip )
 
 		---------------------------------------------------------
 		-- update all other info
-		flag.Anchor:SetHide( isHiddenByFog or isInvisibleToActiveTeam )
+		flag.Anchor:SetHide( isHiddenByFog or isInvisibleToActiveTeam or (flag.m_IsAirCraft and Players[playerID]:GetTeam() ~= Game.GetActiveTeam()) )
+		if unit:CanMove() then
+			flag.IsOutOfAttacks:SetHide(true)
+			-- flag.IsOutOfAttacks:SetHide(g_activeTeamID ~= teamID or not unit:IsOutOfAttacks())
+		else
+			flag.IsOutOfAttacks:SetHide(true)
+		end
+		-- flag.IsHealing:SetHide(g_activeTeamID ~= teamID or (unit:GetMoves() < unit:MaxMoves() and not unit:IsHasPromotion(31)) or not (unit:GetDamage() > 0))
+		flag.IsHealing:SetHide(true)
+		-- flag.IsNoCapture:SetHide(g_activeTeamID ~= teamID or not (unit:GetDropRange() > 0) or unit:IsOutOfAttacks() or not unit:IsNoCapture())
+		flag.IsNoCapture:SetHide(true)
 		flag.FlagShadow:SetAlpha( unit:CanMove() and 1 or 0.5 )
 		flag.Button:SetDisabled( g_activeTeamID ~= teamID )
 		flag.Button:SetConsumeMouseOver( g_activeTeamID == teamID )
@@ -608,6 +756,31 @@ end--CreateNewFlag
 --==========================================================
 local function DestroyFlag( flag )
 	-- DebugFlag( flag, "DestroyFlag" ) end
+	local unit = flag.m_Unit
+	if flag.m_TransportUnit then
+		local Carrier = g_UnitFlags[ flag.m_TransportUnit:GetOwner() ][ flag.m_TransportUnit:GetID() ]
+		if Carrier then
+			-- local cargo = Carrier.m_Unit:GetCargo()
+			local cargo = 0
+			local plot = unit:GetPlot()
+			local strToolTip = ""
+			if plot then
+				for i = 0, GetPlotNumUnits( plot ) - 1 do
+					local loopUnit = GetPlotUnit( plot, i )
+					if loopUnit:GetTransportUnit() == flag.m_TransportUnit then
+						cargo = cargo + 1
+						if (strToolTip ~= "") then
+							strToolTip = strToolTip .. "[NEWLINE]"
+						end
+						strToolTip = strToolTip .. Locale.ConvertTextKey(loopUnit:GetNameKey())
+					end
+				end
+			end
+			Carrier.CargoBG:SetHide( cargo < 1 )
+			Carrier.Cargo:SetText( cargo )
+			Carrier.Cargo:SetToolTipString( strToolTip )
+		end
+	end
 	flag.Anchor:ChangeParent( g_ScrapControls )
 	table_insert( g_spareNewUnitFlags, flag )
 	g_UnitFlags[ flag.m_PlayerID ][ flag.m_UnitID ] = nil
@@ -703,9 +876,11 @@ function( playerID, unitID, isVisible, checkFlag )--, blendTime )
 	-- DebugUnit( playerID, unitID, "UnitVisibilityChanged, isVisible=", isVisible, "checkFlag=", checkFlag ) end
 	if checkFlag then
 		local flag = g_UnitFlags[ playerID ][ unitID ]
+		local unit = Players[ playerID ]:GetUnitByID( unitID )
 		if flag then
-			flag.m_IsInvisibleToActiveTeam = not isVisible
-			flag.Anchor:SetHide( not isVisible or flag.m_IsInvisibleToActiveTeamm_IsHiddenByFog )
+			flag.m_IsInvisibleToActiveTeam = (unit:IsInvisible( Game.GetActiveTeam(), true ) or (flag.m_IsAirCraft and Players[playerID]:GetTeam() ~= Game.GetActiveTeam()))
+			flag.Anchor:SetHide( unit:IsInvisible( Game.GetActiveTeam(), true ) or flag.m_IsHiddenByFog )
+			UpdatePlotFlags(unit:GetPlot())
 		end
 	end
 end)
@@ -717,7 +892,9 @@ Events.SerialEventUnitDestroyed.Add(
 function( playerID, unitID )
 	-- DebugUnit( playerID, unitID, "SerialEventUnitDestroyed" ) end
 	local flag = g_UnitFlags[ playerID ][ unitID ]
+	print("test1")
 	if flag then
+		print("test2")
 		DestroyFlag( flag )
 	else
 		-- DebugUnit( playerID, unitID, "flag not found for SerialEventUnitDestroyed" ) end
@@ -746,8 +923,19 @@ Events.SerialEventUnitSetDamage.Add(
 function( playerID, unitID, damage )--, previousDamage )
 	-- !!! can be called for dead unit !!!
 	-- DebugUnit( playerID, unitID, "SerialEventUnitSetDamage, damage=", damage ) end
+	local active_team = Game.GetActiveTeam();
+	local team = Players[playerID]:GetTeam();
+	local isActiveTeam = (active_team == team);
 	local flag = g_UnitFlags[ playerID ][ unitID ]
+	local player = Players[ playerID ]
+	local unit = player and player:GetUnitByID( unitID )
 	if flag then
+		if unit then
+			-- flag.IsHealing:SetHide(not isActiveTeam or (unit:GetMoves() < unit:MaxMoves() and not unit:IsHasPromotion(31)) or not (damage > 0))
+			flag.IsHealing:SetHide(true)
+		else
+			flag.IsHealing:SetHide(true)
+		end
 		UpdateFlagHealth( flag, damage )
 	else
 		-- DebugUnit( playerID, unitID, "flag not found for SerialEventUnitSetDamage" ) end
@@ -818,9 +1006,27 @@ function( playerID, unitID, isDimmed )
 	-- DebugUnit( playerID, unitID, "UnitShouldDimFlag, isDimmed=", isDimmed ) end
 	local flag = g_UnitFlags[ playerID ][ unitID ]
 	if flag then
-	local active_team = Game.GetActiveTeam();
-	local team = Players[playerID]:GetTeam();
-	local isActiveTeam = (active_team == team);
+		local active_team = Game.GetActiveTeam();
+		local team = Players[playerID]:GetTeam();
+		local isActiveTeam = (active_team == team);
+		local player = Players[ playerID ]
+		local unit = player and player:GetUnitByID( unitID )
+		if unit then
+			if unit:CanMove() then
+				-- flag.IsOutOfAttacks:SetHide(not isActiveTeam or not unit:IsOutOfAttacks())
+				flag.IsOutOfAttacks:SetHide(true)
+			else
+				flag.IsOutOfAttacks:SetHide(true)
+			end
+			-- flag.IsHealing:SetHide(not isActiveTeam or (unit:GetMoves() < unit:MaxMoves() and not unit:IsHasPromotion(31)) or not (unit:GetDamage() > 0))
+			flag.IsHealing:SetHide(true)
+			-- flag.IsNoCapture:SetHide(not isActiveTeam or not (unit:GetDropRange() > 0) or unit:IsOutOfAttacks() or not unit:IsNoCapture())
+			flag.IsNoCapture:SetHide(true)
+		else
+			flag.IsOutOfAttacks:SetHide(true)
+			flag.IsHealing:SetHide(true)
+			flag.IsNoCapture:SetHide(true)
+		end
 		flag.FlagShadow:SetAlpha( (isDimmed and isActiveTeam) and 0.5 or 1.0 )
 	else
 		-- DebugUnit( playerID, unitID, "flag not found for UnitShouldDimFlag" ) end
@@ -869,6 +1075,7 @@ Events.StrategicViewStateChanged.Add( function( isStrategicView, isCityBanners )
 	-- DebugPrint( "StrategicViewStateChanged, isStrategicView=", isStrategicView, "isCityBanners=", isCityBanners ) end
 	g_CivilianFlags:SetHide( isStrategicView )
 	g_MilitaryFlags:SetHide( isStrategicView )
+	g_AirCraftFlags:SetHide ( isStrategicView )
 	g_GarrisonFlags:SetHide( isStrategicView and not isCityBanners )
 	g_AirbaseControls:SetHide( isStrategicView )
 	g_SelectedFlags:SetHide( isStrategicView )

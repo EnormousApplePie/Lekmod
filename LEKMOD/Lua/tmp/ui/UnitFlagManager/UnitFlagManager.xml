@@ -13,10 +13,10 @@
         <WorldAnchor ID="Anchor" >
             <PullDown Anchor="C,C" Offset="0,-48" AnchorSide="o,i" Size="60,22" SpaceForScroll="0" AutoSizePopUp="0" ScrollThreshold="300" ID="PullDown" >
                 <ButtonData>
-                    <Button ID="MajorButton" Size="60,26"  >
-                        <Grid   BranchAlpha="1.2" Anchor="C,C" Size="60,26" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurns" />
+                    <Button ID="MajorButton" Size="60,22"  >
+                        <Grid   BranchAlpha="1.2" Anchor="C,C" Size="60,22" Offset="0,0" Padding="0,0" Style="Grid9FrameTurns" />
                         <ShowOnMouseOver>
-                            <Grid  BranchAlpha="1.2" Anchor="C,C" Size="60,26" Offset="0,-2" Padding="0,0" Style="Grid9FrameTurnsHL" />
+                            <Grid  BranchAlpha="1.2" Anchor="C,C" Size="60,22" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
                         </ShowOnMouseOver>
                     </Button>
                 </ButtonData>
@@ -35,16 +35,16 @@
 
 
                 <InstanceData Name="UnitInstance" >
-                    <Button Size="150,28" Anchor="C,C" TruncateWidth="200" ID="Button">
+                    <Button Size="150,26" Anchor="C,C" TruncateWidth="200" ID="Button">
                         <ShowOnMouseOver>
-                            <AlphaAnim ID="SelectAnim" Anchor="C,C" Offset="0,0" Size="150,28" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
-                                <Grid  ID="SelectHL" Size="150,28" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+                            <AlphaAnim ID="SelectAnim" Anchor="C,C" Offset="0,0" Size="150,24" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+                                <Grid  ID="SelectHL" Size="150,24" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
                             </AlphaAnim>
                         </ShowOnMouseOver>
                     </Button>
                 </InstanceData>
 
-                <Label Anchor="c,c" Font="TwCenMT22" Offset="0,-2" ColorSet="Beige_Black_Alpha" FontStyle="Stroke" ID="Count" />
+                <Label Anchor="c,c" Font="TwCenMT14" ColorSet="Beige_Black_Alpha" FontStyle="Stroke" ID="Count" />
 
             </PullDown>
         </WorldAnchor>
@@ -55,11 +55,11 @@
 
         <PullDown Anchor="R,C" Offset="-25,0" AnchorSide="o,i" Size="40,22" SpaceForScroll="0" AutoSizePopUp="0" ScrollThreshold="300" ID="PullDown" >
             <ButtonData>
-                <Button ID="MajorButton" Size="50,28"  >
-                    <Grid   Anchor="C,C" Size="50,28" Offset="0,0" Padding="0,0" Style="Grid9FrameTurns" />
+                <Button ID="MajorButton" Size="40,22"  >
+                    <Grid   Anchor="C,C" Size="40,22" Offset="0,0" Padding="0,0" Style="Grid9FrameTurns" />
                     <ShowOnMouseOver>
-                        <AlphaAnim Anchor="C,C" Size="50,28" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
-                            <Grid  Anchor="C,C" Size="50,28" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+                        <AlphaAnim Anchor="C,C" Size="40,22" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+                            <Grid  Anchor="C,C" Size="40,22" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
                         </AlphaAnim>
                     </ShowOnMouseOver>
                 </Button>
@@ -78,16 +78,16 @@
 
 
             <InstanceData Name="UnitInstance" >
-                <Button Size="175,28" Anchor="C,C" ID="Button"  >
+                <Button Size="175,26" Anchor="C,C" ID="Button"  >
                     <ShowOnMouseOver>
-                        <AlphaAnim ID="SelectAnim" Anchor="C,C" Offset="0,0" Size="150,28" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
-                            <Grid  ID="SelectHL" Size="150,28" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
+                        <AlphaAnim ID="SelectAnim" Anchor="C,C" Offset="0,0" Size="150,24" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+                            <Grid  ID="SelectHL" Size="150,24" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
                         </AlphaAnim>
                     </ShowOnMouseOver>
                 </Button>
             </InstanceData>
 
-            <Label Anchor="c,c" Font="TwCenMT22" Offset="0,-1" ColorSet="Beige_Black_Alpha" FontStyle="Stroke" ID="Count" />
+            <Label Anchor="c,c" Font="TwCenMT14" ColorSet="Beige_Black_Alpha" FontStyle="Stroke" ID="Count" />
 
         </PullDown>
 
@@ -170,6 +170,10 @@
                         <Image Anchor="C,C" Size="32,32" Offset="1,-1"  Texture="Assets/UI/Art/Icons/Units/UnitFlagAtlasWhite.dds" Color="240,199,0,255" ID="UnitIcon"  ToolTip="" />
                     </Image>
                 </AlphaAnim>
+
+                <Label ID="IsHealing" Anchor="L,T" Offset="10,10" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="[ICON_FLOWER]" Hidden="1" />
+                <Label ID="IsOutOfAttacks" Anchor="L,B" Offset="10,10" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="[ICON_WAR]" Hidden="1" />
+                <Label ID="IsNoCapture" Anchor="L,B" Offset="10,10" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="[ICON_CAPITAL]" Hidden="1" />
             </Image>
         </WorldAnchor>
     </Instance>

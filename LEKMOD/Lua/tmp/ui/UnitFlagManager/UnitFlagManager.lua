@@ -93,19 +93,6 @@ local g_UnitFlagClass =
 
             o.m_Instance = o.m_InstanceManager:GetInstance();
             o:Initialize( playerID, unitID, fogState, invisible );
-           
-            ---------------------------------------------------------
-            -- Can carry units
-            if( pUnit:CargoSpace() > 0 ) then
-            
-                --print( "unit has cargo space, building air button" );
-                o.m_CargoControls = {};
-                ContextPtr:BuildInstanceForControl( "AirButton", o.m_CargoControls, o.m_Instance.AirAnchor );
-                o.m_CargoControls.PullDown:RegisterSelectionCallback( UnitFlagClicked );
-                o.m_CargoControls.PullDown:ReprocessAnchoring();
-               -- print( "creation cargo" );
-                o:UpdateCargo();
-            end
 
             ---------------------------------------------------------
             -- build the table for this player and store the flag
@@ -116,6 +103,22 @@ local g_UnitFlagClass =
                 g_MasterList[ playerID ] = playerTable
             end
             g_MasterList[ playerID ][ unitID ] = o;
+           
+            -- FIX: call UpdateCargo after building g_MasterList
+            ---------------------------------------------------------
+            -- Can carry units
+            if( pUnit:CargoSpace() > 0 ) then
+            
+                --print( "unit has cargo space, building air button" );
+                o.m_CargoControls = {};
+                ContextPtr:BuildInstanceForControl( "AirButton", o.m_CargoControls, o.m_Instance.AirAnchor );
+                o.m_CargoControls.PullDown:RegisterSelectionCallback( UnitFlagClicked );
+                o.m_CargoControls.PullDown:ReprocessAnchoring();
+               -- print( "creation cargo" );
+                if (o.m_CarrierFlag ~= nil) then
+                    o.m_CarrierFlag:UpdateCargo();
+                end
+            end
             
             -- If the unit is cargo, link to the carrier, if it is already created.  If not, the carrier will create the link
             if (pUnit:IsCargo() and o.m_CarrierFlag == nil) then
@@ -196,6 +199,11 @@ local g_UnitFlagClass =
             o.m_Instance.HealthBarButton:RegisterCallback( Mouse.eMouseExit, UnitFlagExit );
 		end            		
 		
+		    local pPlot = pUnit:GetPlot();
+		    if( pPlot:IsCity() ) then
+			    o.m_CityFlag = UpdateCityCargo( pPlot );
+		    end
+
         if( active_team == team ) then
             o.m_Instance.NormalButton:SetDisabled( false );
             o.m_Instance.NormalButton:SetConsumeMouseOver( true );
@@ -203,11 +211,16 @@ local g_UnitFlagClass =
             o.m_Instance.HealthBarButton:SetDisabled( false );
             o.m_Instance.HealthBarButton:SetConsumeMouseOver( true );
             
-		    local pPlot = pUnit:GetPlot();
-		    if( pPlot:IsCity() ) then
-			    o.m_CityFlag = UpdateCityCargo( pPlot );
-		    end
-
+            if pUnit:CanMove() then
+                -- o.m_Instance.IsOutOfAttacks:SetHide(not pUnit:IsOutOfAttacks())
+                o.m_Instance.IsOutOfAttacks:SetHide(true)
+            else
+                o.m_Instance.IsOutOfAttacks:SetHide(true)
+            end
+            -- o.m_Instance.IsHealing:SetHide((pUnit:GetMoves() < pUnit:MaxMoves() and not pUnit:IsHasPromotion(31))or not (pUnit:GetDamage() > 0))
+            o.m_Instance.IsHealing:SetHide(true)
+            -- o.m_Instance.IsNoCapture:SetHide(not (pUnit:GetDropRange() > 0) or pUnit:IsOutOfAttacks() or not pUnit:IsNoCapture())
+            o.m_Instance.IsNoCapture:SetHide(true)
         else
             o.m_Instance.NormalButton:SetDisabled( true );
             o.m_Instance.NormalButton:SetConsumeMouseOver( false );
@@ -349,18 +362,25 @@ local g_UnitFlagClass =
     ------------------------------------------------------------
     ------------------------------------------------------------
     UpdateVisibility = function( self )
-		local bVisible = self.m_IsCurrentlyVisible and not self.m_IsInvisible and not self.m_IsForceHide;
+        local isInvisible = false
+        local pUnit = Players[ self.m_PlayerID ]:GetUnitByID( self.m_UnitID );
+        if pUnit ~= nil then
+            isInvisible = pUnit:IsInvisible( Game.GetActiveTeam(), true );
+        end
+		local bVisible = self.m_IsCurrentlyVisible and not (self.m_IsInvisible or isInvisible) and not self.m_IsForceHide;
     	if InStrategicView() then
     		local bShowInStrategicView = bVisible and g_GarrisonedUnitFlagsInStrategicView and self.m_IsGarrisoned;
     		self.m_Instance.Anchor:SetHide(not bShowInStrategicView);
+            -- print( "m_PlayerID: " .. tostring( self.m_PlayerID ) .. "m_UnitID: " .. tostring( self.m_UnitID ) .. "m_IsCurrentlyVisible: " .. tostring( self.m_IsCurrentlyVisible ) .. " m_IsInvisible: " .. tostring( self.m_IsInvisible ) .. " m_IsForceHide: " .. tostring( self.m_IsForceHide ) )
     	else
+            -- print( "m_PlayerID: " .. tostring( self.m_PlayerID ) .. "m_UnitID: " .. tostring( self.m_UnitID ) .. "m_IsCurrentlyVisible: " .. tostring( self.m_IsCurrentlyVisible ) .. " m_IsInvisible: " .. tostring( self.m_IsInvisible ) .. " m_IsForceHide: " .. tostring( self.m_IsForceHide ) )
     		self.m_Instance.Anchor:SetHide(not bVisible);
     		-- Set the escorted unit too.
     		-- Do not change this in relation to the 'invisible' flag, that is a state of only that unit.  i.e. A sub does not hide the escorted unit
-    		if( self.m_Escort ~= nil ) then
+    		--[[if( self.m_Escort ~= nil ) then
 				local bEscortVisible = self.m_IsCurrentlyVisible and not self.m_IsForceHide;
         		self.m_Escort.m_Instance.Anchor:SetHide(not bEscortVisible);
-        	end
+            end--]]
         	if( self.m_CargoControls ~= nil and bVisible) then
         		self:UpdateCargo();
     		end
@@ -390,6 +410,11 @@ local g_UnitFlagClass =
         -- going to damaged state
         if( healthPercent < 1 )
         then
+            local pPlayer = Players[Game.GetActivePlayer()];
+            local active_team = pPlayer:GetTeam();
+            local team = self.m_Player:GetTeam();
+            -- self.m_Instance.IsHealing:SetHide(active_team ~= team or (pUnit:GetMoves() < pUnit:MaxMoves() and not pUnit:IsHasPromotion(31)))
+            self.m_Instance.IsHealing:SetHide(true)
             -- show the bar and the button anim
             self.m_Instance.HealthBarBG:SetHide( false );
             self.m_Instance.HealthBar:SetHide( false );
@@ -422,6 +447,7 @@ local g_UnitFlagClass =
         --------------------------------------------------------------------    
         -- going to full health
         else
+            self.m_Instance.IsHealing:SetHide(true)
             self.m_Instance.HealthBar:SetFGColor( Vector4( 0, 1, 0, 1 ) );
             
             -- hide the bar and the button anim
@@ -1159,7 +1185,7 @@ function UpdateCityCargo( pPlot )
         cityFlagInstance.Count:SetText( cargoCount );
         cityFlagInstance.PullDown:LocalizeAndSetToolTip( "TXT_KEY_STATIONED_AIRCRAFT", cargoCount );
         cityFlagInstance.PullDown:CalculateInternals();
-        cityFlagInstance.PullDown:SetHide( false );
+        cityFlagInstance.PullDown:SetHide( not pPlot:IsVisible( Players[Game.GetActivePlayer()]:GetTeam(), true ) );
         
         return cityFlagInstance;
     else
@@ -1453,6 +1479,23 @@ function OnDimEvent( playerID, unitID, bDim )
         	
         	if( active_team == team )
         	then
+                local pUnit = Players[ playerID ]:GetUnitByID( unitID )
+                if pUnit then
+                    if pUnit:CanMove() then
+                        -- flag.m_Instance.IsOutOfAttacks:SetHide(not pUnit:IsOutOfAttacks())
+                        flag.m_Instance.IsOutOfAttacks:SetHide(true)
+                    else
+                        flag.m_Instance.IsOutOfAttacks:SetHide(true)
+                    end
+                    -- flag.m_Instance.IsHealing:SetHide((pUnit:GetMoves() < pUnit:MaxMoves() and not pUnit:IsHasPromotion(31)) or not (pUnit:GetDamage() > 0))
+                    flag.m_Instance.IsHealing:SetHide(true)
+                    -- flag.m_Instance.IsNoCapture:SetHide(not (pUnit:GetDropRange() > 0) or pUnit:IsOutOfAttacks() or not pUnit:IsNoCapture())
+                    flag.m_Instance.IsNoCapture:SetHide(true)
+                else
+                    flag.m_Instance.IsOutOfAttacks:SetHide(true)
+                    flag.m_Instance.IsHealing:SetHide(true)
+                    flag.m_Instance.IsNoCapture:SetHide(true)
+                end
                 --print( "  Unit dim: " .. tostring( playerID ) .. " " .. tostring( unitID ) .. " " .. iDim );
                 flag:SetDim( bDim  );
         	end
