@@ -207,16 +207,22 @@ local g_cityToolTips = {
 				local resource = GameInfo.Resources[ resourceID ]
 				if resource then
 					local numConnected, numNotConnected = math_modf( numResource )
+					local numResourceVisible = 0
 					numNotConnected = numNotConnected * 65536
 					local usageID = Game.GetResourceUsageType( resourceID )
 					if usageID == ResourceUsageTypes.RESOURCEUSAGE_STRATEGIC
 						or usageID == ResourceUsageTypes.RESOURCEUSAGE_LUXURY
 					then
 						if numConnected > 0 then
-							tipText = tipText .. " [COLOR_POSITIVE_TEXT]" .. numConnected .. "[ENDCOLOR]" .. resource.IconString
+							numResourceVisible = numResourceVisible + numConnected
+					--		tipText = tipText .. " [COLOR_POSITIVE_TEXT]" .. numConnected .. "[ENDCOLOR]" .. resource.IconString
 						end
 						if numNotConnected > 0 then
-							tipText = tipText .. " [COLOR_WARNING_TEXT]" .. numNotConnected .. "[ENDCOLOR]" .. resource.IconString
+							numResourceVisible = numResourceVisible + numNotConnected
+					--		tipText = tipText .. " [COLOR_WARNING_TEXT]" .. numNotConnected .. "[ENDCOLOR]" .. resource.IconString
+						end
+						if numResourceVisible > 0 then
+							tipText = tipText .. numResourceVisible .. resource.IconString
 						end
 					end
 				end
