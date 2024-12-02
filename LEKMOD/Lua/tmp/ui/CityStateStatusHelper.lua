@@ -609,7 +609,7 @@ function GetActiveQuestToolTip(iMajor, iMinor)
 			-- This data is not pertinent for all quest types, but grab it here for readability
 			local iQuestData1 = pMinor:GetQuestData1(iMajor, eType);
 			local iQuestData2 = pMinor:GetQuestData2(iMajor, eType);
-			local iTurnsRemaining = pMinor:GetQuestTurnsRemaining(iMajor, eType, Game.GetGameTurn() - 1); -- add 1 since began on CS's turn (1 before), and avoids "0 turns remaining"
+			local iTurnsRemaining = pMinor:GetQuestTurnsRemaining(iMajor, eType, Game.GetGameTurn()); -- add 1 since began on CS's turn (1 before), and avoids "0 turns remaining"
 			
 			if (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_ROUTE) then
 				sToolTipText = sToolTipText .. Locale.Lookup( "TXT_KEY_CITY_STATE_QUEST_ROUTE_FORMAL" );
