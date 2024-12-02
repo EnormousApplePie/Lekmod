@@ -26,12 +26,30 @@ IF NOT EXIST "%cd%\UI_bc1\CityView\ProductionPopup.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.lua" "%cd%\%patchfolder%\Lua\UI\ProductionPopup.lua"
 )
 REM --------------------------------------------------------------------------------------------------
-ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Core" "%cd%\%patchfolder%\Lua\UI\"
+IF NOT EXIST "%cd%\UI_bc1\Core\CityStateStatusHelper.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Core\CityStateStatusHelper.lua" "%cd%\%patchfolder%\Lua\UI\CityStateStatusHelper.lua"
+)
+IF EXIST "%cd%\UI_bc1\Core\EUI_tooltip_library.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\Core\EUI_tooltip_library.lua" "%cd%\%patchfolder%\Lua\UI\EUI_tooltip_library.lua"
+)
+IF EXIST "%cd%\UI_bc1\Core\EUI_unit_include.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\Core\EUI_unit_include.lua" "%cd%\%patchfolder%\Lua\UI\EUI_unit_include.lua"
+)
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview" "%cd%\%patchfolder%\Lua\UI\"
 REM --------------------------------------------------------------------------------------------------
+ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\GPList" "%cd%\%patchfolder%\Lua\UI\"
+REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%cd%\UI_bc1\Improvements\WorldView.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Improvements\WorldView.lua" "%cd%\%patchfolder%\Lua\UI\WorldView.lua"
+) ELSE (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\Improvements\WorldView.lua" "%cd%\%patchfolder%\Lua\UI\WorldView.lua"
+)
+REM --------------------------------------------------------------------------------------------------
+IF NOT EXIST "%cd%\UI_bc1\LeaderHead\TradeLogic.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\LeaderHead\TradeLogic.lua" "%cd%\%patchfolder%\Lua\UI\TradeLogic.lua"
+) ELSE (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\LeaderHead\TradeLogic.lua" "%cd%\%patchfolder%\Lua\UI\TradeLogic.lua"
 )
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby" "%cd%\%patchfolder%\Lua\UI\"
@@ -46,9 +64,7 @@ IF NOT EXIST "%cd%\UI_bc1\NotificationPanel\DiploCorner.xml" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\NotificationPanel\DiploCorner.xml" "%cd%\%patchfolder%\Lua\UI\DiploCorner.xml"
 )
 REM --------------------------------------------------------------------------------------------------
-ECHO NotificationPanel.lua does not exists on EUI, copying to TM
 IF NOT EXIST "%cd%\UI_bc1\NotificationPanel\NotificationPanel.lua" (
-  ECHO NotificationPanel1.lua does not exists on EUI, copying to TM
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\NotificationPanel\NotificationPanel.lua" "%cd%\%patchfolder%\Lua\UI\NotificationPanel.lua"
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\NotificationPanel\NotificationPanel.xml" "%cd%\%patchfolder%\Lua\UI\NotificationPanel.xml"
 ) ELSE (
@@ -79,6 +95,14 @@ IF NOT EXIST "%cd%\UI_bc1\ToolTips\TechButtonInclude.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\ToolTips" "%cd%\%patchfolder%\Lua\UI\"
 )
 REM --------------------------------------------------------------------------------------------------
+ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\GPList" "%cd%\%patchfolder%\Lua\UI\"
+REM --------------------------------------------------------------------------------------------------
+IF NOT EXIST "%cd%\UI_bc1\UnitFlagManager\UnitFlagManager.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitFlagManager" "%cd%\%patchfolder%\Lua\UI\"
+) ELSE (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\UnitFlagManager" "%cd%\%patchfolder%\Lua\UI\"
+)
+REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitPanel\EnemyUnitPanel.lua" "%cd%\%patchfolder%\Lua\UI\UnitPanel.lua"
 set text="-- modified by bc1 from Civ V 1.0.3.276 code"
 FIND %text% "%cd%\UI_bc1\UnitPanel\UnitPanel.lua" && (
@@ -88,12 +112,6 @@ FIND %text% "%cd%\UI_bc1\UnitPanel\UnitPanel.lua" && (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitPanel\UnitPanel.lua" "%cd%\%patchfolder%\Lua\UI\UnitPanel.lua"
 )
 REM --------------------------------------------------------------------------------------------------
-IF NOT EXIST "%cd%\UI_bc1\UnitFlagManager\UnitFlagManager.lua" (
-  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitFlagManager" "%cd%\%patchfolder%\Lua\UI\"
-) ELSE (
-  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\UnitFlagManager" "%cd%\%patchfolder%\Lua\UI\"
-)
-REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\VotingSystem" "%cd%\%patchfolder%\Lua\UI\"
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\EndGameMenu.lua" "%cd%\%patchfolder%\Lua\UI\EndGameMenu.lua"
@@ -101,10 +119,6 @@ REM ----------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\InGame.lua" "%cd%\%patchfolder%\Lua\UI\InGame.lua"
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\mountain.lua" "%cd%\%patchfolder%\Lua\UI\mountain.lua"
-REM --------------------------------------------------------------------------------------------------
-
-ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\ProductionPopup.lua" "%cd%\%patchfolder%\Lua\UI\ProductionPopup.lua"
-
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\prophetreplace.lua" "%cd%\%patchfolder%\Lua\UI\prophetreplace.lua"
 REM --------------------------------------------------------------------------------------------------
