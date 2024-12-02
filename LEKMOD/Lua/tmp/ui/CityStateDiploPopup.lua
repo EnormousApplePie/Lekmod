@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
+-- edit: keep gift/tribute screens open despite global events (except war) for
+-- vanilla UI
+-------------------------------------------------------------------------------  
+local bActiveTakeScreen = false;
+local bActiveGiveScreen = false;
+-------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- City State Diplo Popup
 --
@@ -612,9 +618,22 @@ function OnDisplay()
 	SetButtonSize(Controls.NoUnitSpawningLabel, Controls.NoUnitSpawningButton, Controls.NoUnitSpawningAnim, Controls.NoUnitSpawningButtonHL);
 	SetButtonSize(Controls.BuyoutLabel, Controls.BuyoutButton, Controls.BuyoutAnim, Controls.BuyoutButtonHL);
 	
-	Controls.GiveStack:SetHide(true);
-	Controls.TakeStack:SetHide(true);
-	Controls.ButtonStack:SetHide(false);
+	-- NEW: stay at the current menu level, update visible buttons 
+	if isAtWar == false and bActiveGiveScreen == true then
+		PopulateGiftChoices()
+		Controls.GiveStack:SetHide(false)
+		Controls.TakeStack:SetHide(true)
+		Controls.ButtonStack:SetHide(true)
+	elseif isAtWar == false and bActiveTakeScreen == true then
+		PopulateTakeChoices()
+		Controls.GiveStack:SetHide(true)
+		Controls.TakeStack:SetHide(false)
+		Controls.ButtonStack:SetHide(true)
+	else
+		Controls.GiveStack:SetHide(true)
+		Controls.TakeStack:SetHide(true)
+		Controls.ButtonStack:SetHide(false)
+	end
 	
 	UpdateButtonStack();
 end
@@ -750,6 +769,8 @@ function OnGiveButtonClicked ()
 	Controls.TakeStack:SetHide(true);
 	Controls.ButtonStack:SetHide(true);
 	PopulateGiftChoices();
+
+	bActiveGiveScreen = true
 end
 Controls.GiveButton:RegisterCallback( Mouse.eLClick, OnGiveButtonClicked );
 
@@ -761,6 +782,8 @@ function OnTakeButtonClicked ()
 	Controls.TakeStack:SetHide(false);
 	Controls.ButtonStack:SetHide(true);
 	PopulateTakeChoices();
+
+	bActiveTakeScreen = true
 end
 Controls.TakeButton:RegisterCallback( Mouse.eLClick, OnTakeButtonClicked );
 
@@ -768,6 +791,8 @@ Controls.TakeButton:RegisterCallback( Mouse.eLClick, OnTakeButtonClicked );
 -- Close
 ----------------------------------------------------------------
 function OnCloseButtonClicked ()
+	bActiveGiveScreen = false
+	bActiveTakeScreen = false
 	UIManager:DequeuePopup( ContextPtr );
 end
 Controls.CloseButton:RegisterCallback( Mouse.eLClick, OnCloseButtonClicked );
@@ -798,8 +823,7 @@ local iGoldGiftLarge = GameDefines["MINOR_GOLD_GIFT_LARGE"];
 local iGoldGiftMedium = GameDefines["MINOR_GOLD_GIFT_MEDIUM"];
 local iGoldGiftSmall = GameDefines["MINOR_GOLD_GIFT_SMALL"];
 
-function PopulateGiftChoices()
-	
+function PopulateGiftChoices()	
 	local pPlayer = Players[g_iMinorCivID];
 	
 	local iActivePlayer = Game.GetActivePlayer();
@@ -1020,6 +1044,7 @@ Controls.TileImprovementGiftButton:RegisterCallback( Mouse.eLClick, OnGiftTileIm
 -- Close Give Submenu
 ----------------------------------------------------------------
 function OnCloseGive()
+	bActiveGiveScreen = false
 	Controls.GiveStack:SetHide(true);
 	Controls.TakeStack:SetHide(true);
 	Controls.ButtonStack:SetHide(false);
@@ -1163,6 +1188,7 @@ Controls.UnitTributeButton:RegisterCallback( Mouse.eLClick, OnUnitTributeButtonC
 -- Close Take Submenu
 ----------------------------------------------------------------
 function OnCloseTake()
+	bActiveTakeScreen = false
 	Controls.GiveStack:SetHide(true);
 	Controls.TakeStack:SetHide(true);
 	Controls.ButtonStack:SetHide(false);
