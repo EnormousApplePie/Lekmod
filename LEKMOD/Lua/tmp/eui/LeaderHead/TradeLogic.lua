@@ -1,3 +1,7 @@
+-- edit:
+-- expandable MP Trade Panel size
+-- for EUI
+------------------------------------------------------
 -- modified by bc1 from 1.0.3.276 brave new world code
 -- code is common using gk_mode and bnw_mode switches
 -- show missing cash for trade agreements
@@ -377,6 +381,74 @@ end
 local DoClearDeal = DoClearDeal
 Events.ClearDiplomacyTradeTable.Add( DoClearDeal )
 
+-------------------------------------------------
+-- NEW: expandable MP Trade Panel size
+-------------------------------------------------
+local EUI_options = Modding.OpenUserData( "Enhanced User Interface Options", 1);
+function resizeTradeLayout()
+	local iTradePanelSizeY = EUI_options.GetValue( "DB_iTradePanelSizeY" );
+	if iTradePanelSizeY ~= nil then
+		local w, h = UIManager:GetScreenSizeVal();
+		local y1 = math.max( math.min( iTradePanelSizeY, h - 500 ), 200 );
+		local pocketY = math.floor(y1 * 229/349);
+		local tablesY = math.floor(y1 * 120/349);
+		Controls.MainGrid:SetSizeY(y1 + 200);
+		Controls.Pockets:SetSizeY(pocketY);
+		Controls.PocketsVertSeparator:SetSizeY(pocketY + 2);
+		Controls.UsPocketWhole:SetSizeY(pocketY - 9);
+		Controls.UsPocketPanel:SetSizeY(pocketY - 11);
+		Controls.ThemPocketWhole:SetSizeY(pocketY - 9);
+		Controls.ThemPocketPanel:SetSizeY(pocketY - 11);
+	
+		Controls.Tables:SetSizeY(tablesY);
+		Controls.TablesVertSeparator:SetSizeY(tablesY + 2);
+		Controls.UsTableWhole:SetSizeY(tablesY);
+		Controls.UsTablePanel:SetSizeY(tablesY - 3);
+		Controls.ThemTableWhole:SetSizeY(tablesY);
+		Controls.ThemTablePanel:SetSizeY(tablesY - 3);
+		Controls.ModificationBlock:SetSizeY(tablesY);
+	
+		Controls.UsPocketPanel:CalculateInternalSize();
+		Controls.UsPocketPanel:ReprocessAnchoring();
+		Controls.ThemPocketPanel:CalculateInternalSize();
+		Controls.ThemPocketPanel:ReprocessAnchoring();
+		Controls.UsTablePanel:CalculateInternalSize();
+		Controls.UsTablePanel:ReprocessAnchoring();
+		Controls.ThemTablePanel:CalculateInternalSize();
+		Controls.ThemTablePanel:ReprocessAnchoring();
+	end
+end
+function resizeTradeLayout2()
+	local iTradePanelSizeY2 = EUI_options.GetValue( "DB_iTradePanelSizeY2" );
+	if iTradePanelSizeY2 ~= nil then
+		local w, h = UIManager:GetScreenSizeVal();
+		local y1 = math.max( math.min( iTradePanelSizeY2, h - 500 ), 300 );
+    	Controls.MainGrid:SetSizeY(y1 + 200);
+    	local shift = 262 - (Controls.ModifyButton:IsHidden() and Controls.ModifyButton:GetSizeY() or 0)
+    		- (Controls.ProposeButton:IsHidden() and Controls.ProposeButton:GetSizeY() or 0)
+    		- (Controls.CancelButton:IsHidden() and Controls.CancelButton:GetSizeY() or 0);
+    	tablesY = y1 - shift;
+	
+		Controls.Tables:SetSizeY(tablesY);
+		Controls.TablesVertSeparator:SetSizeY(tablesY + 2);
+		Controls.UsTableWhole:SetSizeY(tablesY);
+		Controls.UsTablePanel:SetSizeY(tablesY - 3);
+		Controls.ThemTableWhole:SetSizeY(tablesY);
+		Controls.ThemTablePanel:SetSizeY(tablesY - 3);
+		Controls.ModificationBlock:SetSizeY(tablesY);
+	
+		Controls.UsPocketPanel:CalculateInternalSize();
+		Controls.UsPocketPanel:ReprocessAnchoring();
+		Controls.ThemPocketPanel:CalculateInternalSize();
+		Controls.ThemPocketPanel:ReprocessAnchoring();
+		Controls.UsTablePanel:CalculateInternalSize();
+		Controls.UsTablePanel:ReprocessAnchoring();
+		Controls.ThemTablePanel:CalculateInternalSize();
+		Controls.ThemTablePanel:ReprocessAnchoring();
+	end
+end
+-- expandable MP Trade Panel size END
+
 ---------------------------------------------------------
 -- Update buttons at the bottom
 ---------------------------------------------------------
@@ -392,6 +464,9 @@ function DoUpdateButtons( diploMessage )
 			Controls.ModifyButton:SetHide( false )
 			Controls.Pockets:SetHide( true )
 			Controls.ModificationBlock:SetHide( false )
+			-- expandable MP Trade Panel size START
+			resizeTradeLayout2()
+			-- expandable MP Trade Panel size END
 
 		elseif g_PVPTrade == 1 then -- this is our proposal
 			Controls.ProposeButton:LocalizeAndSetText( "TXT_KEY_DIPLO_WITHDRAW" )
@@ -399,6 +474,9 @@ function DoUpdateButtons( diploMessage )
 			Controls.ModifyButton:SetHide( true )
 			Controls.Pockets:SetHide( true )
 			Controls.ModificationBlock:SetHide( false )
+			-- expandable MP Trade Panel size START
+			resizeTradeLayout2()
+			-- expandable MP Trade Panel size END
 
 		else -- this is a new deal
 			propose = g_Deal:GetNumItems() == 0
@@ -408,6 +486,9 @@ function DoUpdateButtons( diploMessage )
 			Controls.ModifyButton:SetHide( true )
 			Controls.Pockets:SetHide( false )
 			Controls.ModificationBlock:SetHide( true )
+			-- expandable MP Trade Panel size START
+			resizeTradeLayout()
+			-- expandable MP Trade Panel size END
 
 		end
 		Controls.ProposeButton:SetHide( propose )
@@ -525,15 +606,22 @@ local function SetPocketCities( InstanceManager, fromPlayer, fromPlayerID, toPla
 	InstanceManager:ResetInstances()
 	if fromPlayer then
 		for city in fromPlayer:Cities() do
-			if g_Deal:IsPossibleToTradeItem( fromPlayerID, toPlayerID, TradeableItems.TRADE_ITEM_CITIES, city:GetX(), city:GetY() ) then
+			-- if g_Deal:IsPossibleToTradeItem( fromPlayerID, toPlayerID, TradeableItems.TRADE_ITEM_CITIES, city:GetX(), city:GetY() ) then
 				local instance = InstanceManager:GetInstance()
 				local cityID = city:GetID()
-				instance.CityName:SetText( city:GetName() )
-				instance.CityPop:SetText( city:GetPopulation().."[ICON_CITIZEN]" )
+            	if ( not g_Deal:IsPossibleToTradeItem( fromPlayerID, toPlayerID, TradeableItems.TRADE_ITEM_CITIES, city:GetX(), city:GetY() )) then
+					instance.CityName:SetText( "[COLOR_GREY]"..city:GetName().."[ENDCOLOR]" )
+					instance.CityPop:SetText( "[COLOR_GREY]"..city:GetPopulation().."[ENDCOLOR]".."[ICON_CITIZEN]" )
+            	else
+					instance.CityName:SetText( city:GetName() )
+					instance.CityPop:SetText( city:GetPopulation().."[ICON_CITIZEN]" )
+				end
 				local button = instance.Button
 				button:SetVoids( fromPlayerID, cityID )
 				button:RegisterCallback( Mouse.eLClick, AddCityTrade )
-			end
+
+            button:SetDisabled( not g_Deal:IsPossibleToTradeItem( fromPlayerID, toPlayerID, TradeableItems.TRADE_ITEM_CITIES, city:GetX(), city:GetY() ) );
+            -- end
 		end
 	end
 end
@@ -919,11 +1007,21 @@ function ResetDisplay( diploMessage )
 	-- pocket resources for us
 	----------------------------------------------------------------------------------
 	for resourceID, instance in pairs( g_UsPocketResources ) do
-
-		if g_Deal:IsPossibleToTradeItem( g_iUs, g_iThem, TradeableItems.TRADE_ITEM_RESOURCES, resourceID, 1 ) then	-- 1 here is 1 quanity of the Resource, which is the minimum possible
+		if gk_mode and g_Deal:GetNumResource(g_iUs, resourceID) > 0 or g_pUs:GetNumResourceAvailable( resourceID, false ) > 0 then
 			instance.Button:SetHide( false )
+
 			local resource = GameInfo.Resources[resourceID]
 			instance.Button:SetText( resource.IconString .. Locale.ConvertTextKey(resource.Description) .. " (" .. ( gk_mode and g_Deal:GetNumResource(g_iUs, resourceID) or g_pUs:GetNumResourceAvailable( resourceID, false ) ) .. ")" )
+
+			local bCanTradeResource = g_Deal:IsPossibleToTradeItem( g_iUs, g_iThem, TradeableItems.TRADE_ITEM_RESOURCES, resourceID, 1 );
+			instance.Button:SetDisabled( not bCanTradeResource )
+            if ( not bCanTradeResource ) then
+	    		instance.Button:GetTextControl():SetColorByName("Gray_Black");
+	    		instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+            else
+	    		instance.Button:GetTextControl():SetColorByName("Beige_Black");
+	    		instance.Button:SetToolTipString(nil);
+            end
 		else
 			instance.Button:SetHide( true )
 		end
@@ -933,11 +1031,21 @@ function ResetDisplay( diploMessage )
 	-- pocket resources for them
 	----------------------------------------------------------------------------------
 	for resourceID, instance in pairs( g_ThemPocketResources ) do
-		if g_Deal:IsPossibleToTradeItem(g_iThem, g_iUs, TradeableItems.TRADE_ITEM_RESOURCES, resourceID, 1) then -- 1 here is 1 quanity of the Resource, which is the minimum possible
+		if gk_mode and g_Deal:GetNumResource(g_iThem, resourceID) > 0 or g_pThem:GetNumResourceAvailable( resourceID, false ) > 0 then
 			instance.Button:SetHide( false )
-			local resource = GameInfo.Resources[resourceID]
 
-			instance.Button:SetText( resource.IconString .. " " .. Locale.ConvertTextKey(resource.Description) .. " (" .. (gk_mode and g_Deal:GetNumResource(g_iThem, resourceID) or g_pThem:GetNumResourceAvailable( resourceID, false )) .. ")" )
+			local resource = GameInfo.Resources[resourceID]
+			instance.Button:SetText( resource.IconString .. Locale.ConvertTextKey(resource.Description) .. " (" .. ( gk_mode and g_Deal:GetNumResource(g_iThem, resourceID) or g_pThem:GetNumResourceAvailable( resourceID, false ) ) .. ")" )
+
+			local bCanTradeResource = g_Deal:IsPossibleToTradeItem( g_iThem, g_iUs, TradeableItems.TRADE_ITEM_RESOURCES, resourceID, 1 );
+			instance.Button:SetDisabled( not bCanTradeResource )
+            if ( not bCanTradeResource ) then
+	    		instance.Button:GetTextControl():SetColorByName("Gray_Black");
+	    		instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+            else
+	    		instance.Button:GetTextControl():SetColorByName("Beige_Black");
+	    		instance.Button:SetToolTipString(nil);
+            end
 		else
 			instance.Button:SetHide( true )
 		end
@@ -1314,6 +1422,22 @@ function OnOpenPlayerDealScreen( playerID )
 		if isAtWar then
 			g_Deal:AddPeaceTreaty( g_iUs, g_iPeaceDuration )
 			g_Deal:AddPeaceTreaty( g_iThem, g_iPeaceDuration )
+
+			for iLoopMinor = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_CIV_PLAYERS-1, 1 do
+				pLoopMinor = Players[ iLoopMinor ];
+				iLoopTeam = pLoopMinor:GetTeam();
+            	local iAlly = Players[iLoopMinor]:GetAlly();
+
+            	if (iAlly == g_iThem) then
+            		if( g_pUsTeam:IsAtWar( iLoopTeam ) ) then
+    					g_Deal:AddThirdPartyPeace( g_iUs, iLoopTeam, GameDefines.PEACE_TREATY_LENGTH );
+            		end
+            	elseif (iAlly == g_iUs) then
+            		if( g_pThemTeam:IsAtWar( iLoopTeam ) ) then
+    					g_Deal:AddThirdPartyPeace( g_iThem, iLoopTeam, GameDefines.PEACE_TREATY_LENGTH );
+            		end
+            	end
+			end
 		end
 	end
 
@@ -2084,11 +2208,11 @@ local function RemoveThirdPartyPeace( firstPartyID, playerID )
 	local player = Players[ playerID ]
 	-- if this is a peace negotiation
 	local allyID = g_pUsTeam:IsAtWar( g_iThemTeam ) and player:IsMinorCiv() and player:GetAlly()
-	if not allyID or ( allyID ~= g_iUs and allyID ~= g_iThem ) then
+	-- if not allyID or ( allyID ~= g_iUs and allyID ~= g_iThem ) then
 		--print("Removing peace deal")
 		g_Deal:RemoveThirdPartyPeace( firstPartyID, player:GetTeam() )
 		DoUIDealChangedByHuman( true )
-	end
+	-- end
 end
 
 local function RemoveThirdPartyWar( firstPartyID, playerID )
