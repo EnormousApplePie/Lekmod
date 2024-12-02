@@ -2610,7 +2610,9 @@ local function GetMoodInfo( playerID )
 					allied:insert( otherPlayerName )
 				-- Friendships
 				elseif otherPlayer:IsFriends(playerID) then
-					friends:insert( otherPlayerName )
+					if isUs then
+						friends:insert( otherPlayerName )
+					end
 				end
 				-- Protections
 				if player:IsProtectingMinor(otherPlayerID) then
