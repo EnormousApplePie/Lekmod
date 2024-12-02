@@ -622,7 +622,6 @@ function UpdatePlayer( slotInstance, playerInfo )
 
 				IconHookup( 22, 64, "LEADER_ATLAS", slotInstance.Portrait );
 				SimpleCivIconHookup(-1, 64, slotInstance.Icon);
-
 			else
 				--------------------------------------------------------------
 				-- A player has chosen a civilization we don't have access to
@@ -633,11 +632,6 @@ function UpdatePlayer( slotInstance, playerInfo )
 				SimpleCivIconHookup(-1, 64, slotInstance.Icon);
 			end				
 		end
-
-		--------------------------------------------------------------
-		-- MOD.EAP: Civ Drafting
-		--------------------------------------------------------------
-		
 
 		if (PreGame.CanReadyLocalPlayer()) then
 			Controls.LocalReadyCheck:LocalizeAndSetToolTip( "TXT_KEY_MP_READY_CHECK" );				
@@ -2030,3 +2024,35 @@ Events.MultiplayerGameAbandoned.Add( OnAbandoned );
 
 -------------------------------------------------
 AdjustScreenSize();
+
+
+-- NEW: Community Remarks - populate tables from the database
+for i in GameInfo.PlayerMMRoleTypes() do
+	g_MMRoleTypes[i.ID] =
+		{
+			Type = i.Type,
+			Description = Locale.ConvertTextKey(i.Description),
+			Tooltip = Locale.ConvertTextKey(i.TooltipText),
+		};
+end
+for i in GameInfo.CommunityPlayerRemarks() do
+	local netID = i.PlayerNetID:sub(2);
+	local date = os.date('%d %b %Y ', i.EpochTimestamp);
+	if g_CommunityRemarks[netID] == nil then
+		g_CommunityRemarks[netID] = {};
+	end
+	table.insert(g_CommunityRemarks[netID],
+		{
+			NetID = netID,
+			Name = i.PlayerLastObservedName,
+			Role = g_MMRoleTypes[i.PlayerMMRoleType] and g_MMRoleTypes[i.PlayerMMRoleType].Description or '??',
+			Tooltip = '[ICON_BULLET]' .. date .. Locale.ConvertTextKey('TXT_KEY_COMMUNITY_REMARKS_PLAYERNAME', i.PlayerLastObservedName) .. ': ' .. (g_MMRoleTypes[i.PlayerMMRoleType] and g_MMRoleTypes[i.PlayerMMRoleType].Tooltip or '??'),
+		});
+end
+-- real netID from the dll (only for non-local MP games)
+function GetNetID( iPlayerID )
+	if iPlayerID >= 0 and iPlayerID < 2 ^ 28 then
+		local product = (2 ^ 28) + iPlayerID;
+    	return PreGame.GetNickName(product);
+    end
+end
