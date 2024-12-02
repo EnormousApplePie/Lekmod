@@ -8,9 +8,19 @@ ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\AncientRuins" "%cd%\%patchfo
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityStateDiploPopup" "%cd%\%patchfolder%\Lua\UI\CityStateDiploPopup\"
 REM --------------------------------------------------------------------------------------------------
+IF NOT EXIST "%cd%\UI_bc1\CityView\ProductionPopup.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.lua" "%cd%\%patchfolder%\Lua\UI\CityView\ProductionPopup.lua"
+) ELSE (
+)
+REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Core" "%cd%\%patchfolder%\Lua\UI\Core\"
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview" "%cd%\%patchfolder%\Lua\UI\CultureOverview\"
+REM --------------------------------------------------------------------------------------------------
+IF NOT EXIST "%cd%\UI_bc1\Improvements\WorldView.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Improvements\WorldView.lua" "%cd%\%patchfolder%\Lua\UI\CityView\WorldView.lua"
+) ELSE (
+)
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby" "%cd%\%patchfolder%\Lua\UI\Lobby\"
 REM --------------------------------------------------------------------------------------------------
