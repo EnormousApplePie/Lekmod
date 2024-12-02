@@ -1560,8 +1560,8 @@ function TipHandler( control )
 		
 		local iBuildTurns = pPlot:GetBuildTurnsLeft(iBuildID, Game.GetActivePlayer(), iExtraBuildRate, iExtraBuildRate);
 		--print("iBuildTurns: " .. iBuildTurns);
-		if (iBuildTurns > 1) then
-			strBuildTurnsString = " ... " .. Locale.ConvertTextKey("TXT_KEY_BUILD_NUM_TURNS", iBuildTurns);
+		if (iBuildTurns > 0) then
+			strBuildTurnsString = " ... " .. Locale.ConvertTextKey("TXT_KEY_STR_TURNS", iBuildTurns);
 		end
 		
 		-- Extra Yield from this build
