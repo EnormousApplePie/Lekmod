@@ -119,6 +119,7 @@
 				<CheckBox ID="MPQuickMovementCheckbox" Anchor="R,C" String="TXT_KEY_OPSCREEN_MULTIPLAYER_QUICK_MOVEMENT" LeadingOffset="-10" WrapWidth="350" ToolTip="TXT_KEY_OPSCREEN_MULTIPLAYER_QUICK_MOVEMENT_TT" Hidden = "1" />
 				<CheckBox ID="QuickSelectionAdvCheckbox" Anchor="R,C" String="TXT_KEY_OPSCREEN_QUICK_SELECTION_ADVANCE" LeadingOffset="-10" WrapWidth="450" ToolTip="TXT_KEY_OPSCREEN_QUICK_SELECTION_ADVANCE_TT" />
 				<CheckBox ID="AutoUnitCycleCheck" Anchor="R,C" String="TXT_KEY_AUTO_UNIT_CYCLE" LeadingOffset="-10" WrapWidth="450" ToolTip="TXT_KEY_AUTO_UNIT_CYCLE_TT" />
+				<CheckBox ID="RightButtonRebaseCheckbox" Anchor="R,C" String="TXT_KEY_RIGHT_BUTTON_REBASE" LeadingOffset="-10" WrapWidth="450" IsChecked="0" ToolTip="TXT_KEY_RIGHT_BUTTON_REBASE_TT" />
 			</Stack>
 
 			<Stack Anchor="R,T" Offset="50,50" Padding="10" >

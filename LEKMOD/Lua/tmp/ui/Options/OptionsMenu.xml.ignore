@@ -120,6 +120,7 @@
         <CheckBox String="TXT_KEY_OPSCREEN_SPLAYER_QUICK_MOVEMENT" LeadingOffset="-10" WrapWidth="350" Anchor="R,C" ID="SPQuickMovementCheckBox" ToolTip="TXT_KEY_OPSCREEN_SPLAYER_QUICK_MOVEMENT_TT" />
         <CheckBox String="TXT_KEY_OPSCREEN_MULTIPLAYER_QUICK_COMBAT" LeadingOffset="-10" WrapWidth="350" Anchor="R,C" ID="MPQuickCombatCheckbox" ToolTip="TXT_KEY_OPSCREEN_MULTIPLAYER_QUICK_COMBAT_TT" />
         <CheckBox String="TXT_KEY_OPSCREEN_MULTIPLAYER_QUICK_MOVEMENT" LeadingOffset="-10" WrapWidth="350" Anchor="R,C" ID="MPQuickMovementCheckbox" ToolTip="TXT_KEY_OPSCREEN_MULTIPLAYER_QUICK_MOVEMENT_TT" />
+        <CheckBox String="TXT_KEY_RIGHT_BUTTON_REBASE" LeadingOffset="-10" WrapWidth="350" Anchor="R,C" IsChecked="0" ID="RightButtonRebaseCheckbox" ToolTip="TXT_KEY_RIGHT_BUTTON_REBASE_TT" />
       </Stack>
 
       <Stack Anchor="L,C" Offset="380,0" Padding="15" >

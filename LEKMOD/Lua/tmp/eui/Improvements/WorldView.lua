@@ -3,6 +3,39 @@
 -------------------------------------------------
 -- World View
 -------------------------------------------------
+-- edit: Ingame Hotkey Manager – extended controls
+-------------------------------------------------
+g_needsUpdate = true;
+-- NEW: simple map from legacy KB to VK keycodes
+g_KeyMap = { 27, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 189, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+	81, 82, 83, 84, 85, 86, 87, 88, 89, 90,	187, 8, 9, 219, 220, 13, 162, 186, 222, 192, 160, 220, 188, 190, 191, 161, 106,
+	164, 32, 20, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 144, 145, 103, 104, 105, 109, 100, 101, 102, 107, 97, 98,
+	99, 96, 110, 122, 123, -1, -1, -1, -1, -1, 163, 174, 175, -1, 111, -1, 165, 19, 36, 38, 33, 37, 39, 35, 40,	34, 45, 46 };
+-- NEW update GameInfoActions for this context explicitly
+-- check g_needsUpdate before any call to GameInfoActions[].HotKey property
+LuaEvents.UpdateHotkey.Add(function() g_needsUpdate = true; end);
+-- NEW: populate Camera table with camera controls indexes (if presented)
+local Camera = {};
+for actionID, action in next, GameInfoActions do
+    if action.Type == 'CONTROL_CAMERA_MOVE_LEFT' then
+    	Camera.Left = actionID;
+    elseif action.Type == 'CONTROL_CAMERA_MOVE_RIGHT' then
+    	Camera.Right = actionID;
+    elseif action.Type == 'CONTROL_CAMERA_MOVE_FORWARD' then
+    	Camera.Up = actionID;
+    elseif action.Type == 'CONTROL_CAMERA_MOVE_BACK' then
+    	Camera.Down = actionID;
+    elseif action.Type == 'CONTROL_CAMERA_MOVE_OUT' then
+    	Camera.Out = actionID;
+    elseif action.Type == 'CONTROL_CAMERA_MOVE_OUT_ALT' then
+    	Camera.OutAlt = actionID;
+    elseif action.Type == 'CONTROL_CAMERA_MOVE_IN' then
+    	Camera.In = actionID;
+    elseif action.Type == 'CONTROL_CAMERA_MOVE_IN_ALT' then
+    	Camera.InAlt = actionID;
+    end
+end
+-------------------------------------------------
 include( "FLuaVector" );
 local Vector2 = Vector2
 local Vector4 = Vector4
@@ -114,28 +147,31 @@ local InterfaceModeMessageHandler =
 local DefaultMessageHandler = {};
 
 
+-- NEW: replace input handles with configurable variables
 DefaultMessageHandler[KeyEvents.KeyDown] =
 function( wParam )
-	if wParam == Keys.VK_LEFT then
+	if Camera.Left and wParam == g_KeyMap[GameInfoActions[Camera.Left].HotKeyVal] then
 		Events.SerialEventCameraStopMovingRight();
 		Events.SerialEventCameraStartMovingLeft();
 		return true;
-	elseif wParam == Keys.VK_RIGHT then
+	elseif Camera.Right and wParam == g_KeyMap[GameInfoActions[Camera.Right].HotKeyVal] then
 		Events.SerialEventCameraStopMovingLeft();
 		Events.SerialEventCameraStartMovingRight();
 		return true;
-	elseif wParam == Keys.VK_UP then
+	elseif Camera.Up and wParam == g_KeyMap[GameInfoActions[Camera.Up].HotKeyVal] then
 		Events.SerialEventCameraStopMovingBack();
 		Events.SerialEventCameraStartMovingForward();
 		return true;
-	elseif wParam == Keys.VK_DOWN then
+	elseif Camera.Down and wParam == g_KeyMap[GameInfoActions[Camera.Down].HotKeyVal] then
 		Events.SerialEventCameraStopMovingForward();
 		Events.SerialEventCameraStartMovingBack();
 		return true;
-	elseif wParam == Keys.VK_NEXT or wParam == Keys.VK_OEM_MINUS then
+	elseif Camera.Out and wParam == g_KeyMap[GameInfoActions[Camera.Out].HotKeyVal] or
+		Camera.OutAlt and wParam == g_KeyMap[GameInfoActions[Camera.OutAlt].HotKeyVal] then
 		Events.SerialEventCameraOut( Vector2(0,0) );
 		return true;
-	elseif wParam == Keys.VK_PRIOR or wParam == Keys.VK_OEM_PLUS then
+	elseif Camera.In and wParam == g_KeyMap[GameInfoActions[Camera.In].HotKeyVal] or
+		Camera.InAlt and wParam == g_KeyMap[GameInfoActions[Camera.InAlt].HotKeyVal] then
 		Events.SerialEventCameraIn( Vector2(0,0) );
 		return true;
 	elseif wParam == Keys.VK_ESCAPE and InStrategicView() then
@@ -145,18 +181,19 @@ function( wParam )
 end
 
 
+-- NEW: replace input handles with configurable variables
 DefaultMessageHandler[KeyEvents.KeyUp] =
 function( wParam )
-	if wParam == Keys.VK_LEFT then
+	if Camera.Left and wParam == g_KeyMap[GameInfoActions[Camera.Left].HotKeyVal] then
 		Events.SerialEventCameraStopMovingLeft();
 		return true;
-	elseif wParam == Keys.VK_RIGHT then
+	elseif Camera.Right and wParam == g_KeyMap[GameInfoActions[Camera.Right].HotKeyVal] then
 		Events.SerialEventCameraStopMovingRight();
 		return true;
-	elseif wParam == Keys.VK_UP then
+	elseif Camera.Up and wParam == g_KeyMap[GameInfoActions[Camera.Up].HotKeyVal] then
 		Events.SerialEventCameraStopMovingForward();
 		return true;
-	elseif wParam == Keys.VK_DOWN then
+	elseif Camera.Down and wParam == g_KeyMap[GameInfoActions[Camera.Down].HotKeyVal] then
 		Events.SerialEventCameraStopMovingBack();
 		return true;
 	end
@@ -165,14 +202,20 @@ end
 
 
 -- Emergency key up handler
+-- NEW: replace input handles with configurable variables
 function KeyUpHandler( wParam )
-	if wParam == Keys.VK_LEFT then
+	-- NEW: update GameInfoActions now?
+	if g_needsUpdate == true then
+		Game.UpdateActions();
+		g_needsUpdate = false;
+	end
+	if Camera.Left and wParam == g_KeyMap[GameInfoActions[Camera.Left].HotKeyVal] then
 		Events.SerialEventCameraStopMovingLeft();
-	elseif wParam == Keys.VK_RIGHT then
+	elseif Camera.Right and wParam == g_KeyMap[GameInfoActions[Camera.Right].HotKeyVal] then
 		Events.SerialEventCameraStopMovingRight();
-	elseif wParam == Keys.VK_UP then
+	elseif Camera.Up and wParam == g_KeyMap[GameInfoActions[Camera.Up].HotKeyVal] then
 		Events.SerialEventCameraStopMovingForward();
-	elseif wParam == Keys.VK_DOWN then
+	elseif Camera.Down and wParam == g_KeyMap[GameInfoActions[Camera.Down].HotKeyVal] then
 		Events.SerialEventCameraStopMovingBack();
 	end
 end
@@ -659,6 +702,8 @@ function ClearAllHighlights()
 end
 
 function MovementRButtonUp()
+	local EUI_options = Modding.OpenUserData( "Enhanced User Interface Options", 1);
+	local bRightButtonRebase = EUI_options.GetValue( "DB_bRightButtonRebase" );
 	if bEatNextUp == true then
 		bEatNextUp = false;
 		return;
@@ -756,8 +801,19 @@ function MovementRButtonUp()
 				Game.SelectionListGameNetMessage(GameMessageTypes.GAMEMESSAGE_DO_COMMAND, CommandTypes.COMMAND_CANCEL_ALL);
 			else--if plot == UI.GetGotoPlot() then
 				--print("Game.SelectionListMove(plot,  bAlt, bShift, bCtrl);");
-				Game.SelectionListMove(plot,  bAlt, bShift, bCtrl);
+				--Game.SelectionListMove(plot,  bAlt, bShift, bCtrl);
 				--UI.SetGotoPlot(nil);
+
+				if (pHeadSelectedUnit:GetDomainType() == DomainTypes.DOMAIN_AIR and bRightButtonRebase == 1) then
+					iMission = MissionTypes.MISSION_REBASE;
+				
+					Game.SelectionListGameNetMessage(GameMessageTypes.GAMEMESSAGE_PUSH_MISSION, iMission, plotX, plotY, 0, false, bShift);
+					UI.SetInterfaceMode(InterfaceModeTypes.INTERFACEMODE_SELECTION);
+					--Events.ClearHexHighlights();
+					ClearAllHighlights();
+				else
+					Game.SelectionListMove(plot,  bAlt, bShift, bCtrl);
+				end
 			end
 			--Events.ClearHexHighlights();
 			ClearAllHighlights();
@@ -817,6 +873,11 @@ end
 -- Input handling
 ----------------------------------------------------------------
 function InputHandler( uiMsg, wParam, lParam )
+	-- NEW: update GameInfoActions now?
+	if g_needsUpdate == true then
+		Game.UpdateActions();
+		g_needsUpdate = false;
+	end
 	if uiMsg == MouseEvents.RButtonDown then
 		rButtonDown = true;
 	elseif uiMsg == MouseEvents.RButtonUp then
