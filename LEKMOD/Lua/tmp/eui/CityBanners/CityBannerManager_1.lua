@@ -488,6 +488,18 @@ local g_cityToolTips = {
 		end
 		return connectionTip
 	end,
+	CityIsRailConnected = function( city )
+		local connectionTip = L"TXT_KEY_CITY_RAIL_CONNECTED"
+		local cityOwnerID = city:GetOwner()
+		local cityOwner = Players[ cityOwnerID ]
+		if not cityOwner then
+		elseif cityOwner.GetRouteGoldTimes100 then
+			connectionTip = connectionTip .. S(" (%+g[ICON_GOLD])", cityOwner:GetRouteGoldTimes100( city ) / 100 )
+		elseif cityOwner.GetCityConnectionRouteGoldTimes100 then
+			connectionTip = connectionTip .. S(" (%+g[ICON_GOLD])", cityOwner:GetCityConnectionRouteGoldTimes100( city ) / 100 )
+		end
+		return connectionTip
+	end,
 	CityIsBlockaded = function()
 		return L"TXT_KEY_CITY_BLOCKADED"
 	end,
@@ -515,7 +527,8 @@ end
 local function HideGarrisonFrame( instance, isHide )
 	-- Only the active team has a Garrison ring
 	if instance and instance[1] then
-		instance.GarrisonFrame:SetHide( isHide )
+		instance.GarrisonFrame:SetHide( true )
+		-- instance.GarrisonFrame:SetHide( isHide )
 	end
 end
 
@@ -921,7 +934,8 @@ local function RefreshCityBannersNow()
 			instance.CityIsBlockaded:SetHide( not city:IsBlockaded() )
 
 			-- Garrisoned ?
-			instance.GarrisonFrame:SetHide( not ( plot:IsVisible( activeTeamID, true ) and city:GetGarrisonedUnit() ) )
+			instance.GarrisonFrame:SetHide( true )
+			-- instance.GarrisonFrame:SetHide( not ( plot:IsVisible( g_activeTeamID, true ) and city:GetGarrisonedUnit() ) )
 
 			instance.CityBannerBackground:SetColor( backgroundColor )
 			instance.CityBannerRightBackground:SetColor( backgroundColor )
@@ -1025,7 +1039,8 @@ local function RefreshCityBannersNow()
 				end
 
 				-- Connected to capital?
-				instance.CityIsConnected:SetHide( city:IsCapital() or not cityOwner:IsCapitalConnectedToCity( city ) )
+				instance.CityIsConnected:SetHide( city:IsCapital() or not cityOwner:IsCapitalConnectedToCity( city ) or city:IsIndustrialRouteToCapital() == 1)
+				instance.CityIsRailConnected:SetHide( city:IsCapital() or city:IsIndustrialRouteToCapital() ~= 1)
 
 				-- Demand resource / King day ?
 				local resource = GameInfo.Resources[ city:GetResourceDemanded() ]
@@ -1366,7 +1381,8 @@ end)
 
 Events.StrategicViewStateChanged.Add( function(isStrategicView, showCityBanners)
 	local showBanners = showCityBanners or not isStrategicView
-	Controls.CityBanners:SetHide( not showBanners )
+	Controls.CityBanners:SetHide( false )
+	-- Controls.CityBanners:SetHide( not showBanners )
 	return Controls.StrategicViewStrikeButtons:SetHide( showBanners )
 end)
 

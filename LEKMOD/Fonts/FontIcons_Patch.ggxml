@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<glyphgen>
+  <textures width="256" height="256">
+    <texture name="" src="FontIcons_Patch.dds" allowcolor="1" alloweffects="1" inuse="1" />
+  </textures>
+  <styles count="1">
+    <style name="">
+      <layers count="1">
+        <layer tex="" />
+      </layers>
+    </style>
+  </styles>
+  <glyphs fudgeadv="0" ascadj="-6" spacing="0" count="79" height="0" ascent="0" descent="0">
+    <glyph ch="1" u="0" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
+    <glyph ch="2" u="22" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
+    <glyph ch="3" u="44" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
+  </glyphs>
+</glyphgen>

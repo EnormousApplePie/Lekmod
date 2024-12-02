@@ -3,16 +3,6 @@
 	<Container ID="Scrap" Hidden="1"/>
 	<Container ID="CityBanners"/>
 	<Container ID="StrategicViewStrikeButtons" Hidden="1"/>
-	<Grid Anchor="R,C" Size="240,Full"
-			Texture="Grid9BlackIndentFade8.dds"
-			LSize="8,28"  LTexStart="0,8"
-			CSize="28,28" CTexStart="8,8"
-			Color="255,255,255,160"/>
-	<Grid Anchor="L,C" Size="240,Full"
-			Texture="Grid9BlackIndentFade8Right.dds"
-			CSize="28,28" CTexStart="8,8"
-			RSize="8,28"  RTexStart="36,8"
-			Color="255,255,255,160"/>
 
 	<!--   =========================================================== Team City Banner ===========================================================   -->
 	<Instance Name="TeamCityBanner">
@@ -84,7 +74,7 @@
 				</Container>
 				<!-- Production -->
 				<Label ID="BuildGrowth" Anchor="C,C" Offset="0,7" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1"/>
-				<Container ID="CityBannerProductionBox" Anchor="C,C" Size="38,48">
+				<Button ID="CityBannerProductionButton" Anchor="C,C" Size="38,48">
 					<Image Anchor="L,C" Offset="6,0" Size="48,64" Texture="CityBannerProductionBackground.dds"/>
 					<Image ID="CityBannerProductionImage" Anchor="L,C" Size="45,45" Texture="CityBannerProductionImage.dds"/>
 					<Box Anchor="L,C" Size="6,30" Color="0,0,0,255">
@@ -93,7 +83,7 @@
 						<Box Anchor="L,C" Size="3,30" Color="0,0,0,64"/>
 						<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64"/>
 					</Box>
-				</Container>
+				</Button>
 			</Stack>
 
 			<!-- City Health Bar -->
@@ -119,6 +109,7 @@
 				<Label ID="CityIsRazing" String="[ICON_RAZING]"/>
 				<Label ID="CityIsResistance" String="[ICON_RESISTANCE]"/>
 				<Label ID="CityIsConnected" String="[ICON_CONNECTED]"/>
+				<Label ID="CityIsRailConnected" String="[ICON_RAIL_CONNECTED]"/>
 				<Label ID="CityIsBlockaded" String="[ICON_BLOCKADED]"/>
 				<Label ID="CityIsOccupied" String="[ICON_OCCUPIED]"/>
 			</Stack>

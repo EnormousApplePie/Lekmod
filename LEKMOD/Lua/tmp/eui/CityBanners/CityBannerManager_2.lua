@@ -263,7 +263,7 @@ local g_cityToolTips = {
 				end
 
 				if cityOwner:IsMinorCiv() then
-					tipText = L("TXT_KEY_CITY_OF", "", city:GetName() ) .. tipText .. "[NEWLINE][NEWLINE]"
+					tipText = L("TXT_KEY_MINOR_CITY_OF", city:GetName() ) .. tipText .. "[NEWLINE][NEWLINE]"
 						.. GetCityStateStatusToolTip( g_activePlayerID, cityOwnerID, true )
 				else
 					tipText = L("TXT_KEY_CITY_OF", cityOwner:GetCivilizationAdjectiveKey(), city:GetName() )
@@ -293,7 +293,7 @@ local g_cityToolTips = {
 	end,
 
 	-- City Production ToolTip
-	CityBannerProductionBox = function( city )
+	CityBannerProductionButton = function( city )
 		local cityName = city:GetName()
 		local isNoob = not OptionsManager.IsNoBasicHelp()
 		local cityProductionName = city:GetProductionNameKey()
@@ -488,6 +488,18 @@ local g_cityToolTips = {
 		end
 		return connectionTip
 	end,
+	CityIsRailConnected = function( city )
+		local connectionTip = L"TXT_KEY_CITY_RAIL_CONNECTED"
+		local cityOwnerID = city:GetOwner()
+		local cityOwner = Players[ cityOwnerID ]
+		if not cityOwner then
+		elseif cityOwner.GetRouteGoldTimes100 then
+			connectionTip = connectionTip .. S(" (%+g[ICON_GOLD])", cityOwner:GetRouteGoldTimes100( city ) / 100 )
+		elseif cityOwner.GetCityConnectionRouteGoldTimes100 then
+			connectionTip = connectionTip .. S(" (%+g[ICON_GOLD])", cityOwner:GetCityConnectionRouteGoldTimes100( city ) / 100 )
+		end
+		return connectionTip
+	end,
 	CityIsBlockaded = function()
 		return L"TXT_KEY_CITY_BLOCKADED"
 	end,
@@ -515,7 +527,7 @@ end
 local function HideGarrisonFrame( instance, isHide )
 	-- Only the active team has a Garrison ring
 	if instance and instance[1] then
-		instance.GarrisonFrame:SetHide( isHide )
+		instance.GarrisonFrame:SetHide( true )
 	end
 end
 
@@ -641,6 +653,28 @@ local function OnCityRangeStrikeButtonClick( plotIndex )
 end
 
 -------------------------------------------------
+-- Click on production button
+-------------------------------------------------
+
+local function OnProdClick( plotIndex )
+	local plot = Map_GetPlotByIndex( plotIndex )
+	local city = plot and plot:GetPlotCity()
+
+	if city and city:GetTeam() == g_activeTeamID then
+		local cityID = city:GetID()
+		local popupInfo = {
+				Type = ButtonPopupTypes.BUTTONPOPUP_CHOOSEPRODUCTION,
+				Data1 = cityID,
+				Data2 = -1,
+				Data3 = -1,
+				Option1 = false,
+				Option2 = false;
+			}
+		Events.SerialEventGameMessagePopup( popupInfo )
+	end
+end
+
+-------------------------------------------------
 -- Left Click on city banner
 -------------------------------------------------
 local function OnBannerClick( plotIndex )
@@ -653,9 +687,15 @@ local function OnBannerClick( plotIndex )
 		-- Active player city
 		if cityOwnerID == g_activePlayerID then
 
-			-- always open city screen, puppets are not that special
-			ClearHexHighlights()
-			UI.DoSelectCityAtPlot( plot )
+
+			if (city:IsPuppet() and not cityOwner:MayNotAnnex()) then
+				ClearHexHighlights()
+				AnnexPopup (plotIndex)
+			else
+				-- always open city screen, puppets are not that special
+				ClearHexHighlights()
+				UI.DoSelectCityAtPlot( plot )
+			end
 
 		-- Observers get to look at anything
 		elseif Game.IsDebugMode() or g_activePlayer:IsObserver() then
@@ -842,12 +882,16 @@ local function RefreshCityBannersNow()
 					else
 						instance = {}
 						ContextPtr:BuildInstanceForControl( "TeamCityBanner", instance, Controls.CityBanners )
+						instance.CityBannerProductionButton:RegisterCallback( Mouse.eMouseEnter, OnMouseEnter )
+						instance.CityBannerProductionButton:RegisterCallback( Mouse.eLClick, OnProdClick )
 						instance.CityRangeStrikeButton:RegisterCallback( Mouse.eLClick, OnCityRangeStrikeButtonClick )
 						instance.CityIsPuppet:RegisterCallback( Mouse.eLClick, AnnexPopup )
 						InitBannerCallbacks( instance )
 					end
 					instance.CityIsPuppet:SetVoid1( plotIndex )
 					instance.CityRangeStrikeButton:SetVoid1( plotIndex )
+					instance.CityBannerProductionButton:SetVoid1( plotIndex )
+					instance.CityBannerProductionButton:SetDisabled( true )
 				else
 					-- create a foreign type city banner
 					instance = table_remove( g_scrapOtherBanners )
@@ -921,7 +965,8 @@ local function RefreshCityBannersNow()
 			instance.CityIsBlockaded:SetHide( not city:IsBlockaded() )
 
 			-- Garrisoned ?
-			instance.GarrisonFrame:SetHide( not ( plot:IsVisible( activeTeamID, true ) and city:GetGarrisonedUnit() ) )
+			instance.GarrisonFrame:SetHide( true )
+			-- instance.GarrisonFrame:SetHide( not ( plot:IsVisible( g_activeTeamID, true ) and city:GetGarrisonedUnit() ) )
 
 			instance.CityBannerBackground:SetColor( backgroundColor )
 			instance.CityBannerRightBackground:SetColor( backgroundColor )
@@ -1015,6 +1060,7 @@ local function RefreshCityBannersNow()
 
 				instance.CityBannerProductionImage:SetHide( not( item and
 					IconHookup( portraitIndex or item.PortraitIndex, 45, portraitAtlas or item.IconAtlas, instance.CityBannerProductionImage )))
+				instance.CityBannerProductionButton:SetDisabled( not isActivePlayerCity )
 
 				-- Focus?
 				if isRazing or isResistance or isPuppet then
@@ -1025,7 +1071,8 @@ local function RefreshCityBannersNow()
 				end
 
 				-- Connected to capital?
-				instance.CityIsConnected:SetHide( city:IsCapital() or not cityOwner:IsCapitalConnectedToCity( city ) )
+				instance.CityIsConnected:SetHide( city:IsCapital() or not cityOwner:IsCapitalConnectedToCity( city ) or city:IsIndustrialRouteToCapital() == 1)
+				instance.CityIsRailConnected:SetHide( city:IsCapital() or city:IsIndustrialRouteToCapital() ~= 1)
 
 				-- Demand resource / King day ?
 				local resource = GameInfo.Resources[ city:GetResourceDemanded() ]
@@ -1366,7 +1413,8 @@ end)
 
 Events.StrategicViewStateChanged.Add( function(isStrategicView, showCityBanners)
 	local showBanners = showCityBanners or not isStrategicView
-	Controls.CityBanners:SetHide( not showBanners )
+	Controls.CityBanners:SetHide( false )
+	-- Controls.CityBanners:SetHide( not showBanners )
 	return Controls.StrategicViewStrikeButtons:SetHide( showBanners )
 end)
 

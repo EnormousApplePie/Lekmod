@@ -97,6 +97,7 @@
 				<Label ID="RazingIcon" Anchor="C,C" Offset="0,0" String="[ICON_RAZING]" Hidden="1"/>
 				<Label ID="ResistanceIcon" Anchor="C,C" Offset="0,0" String="[ICON_RESISTANCE]" Hidden="1"/>
 				<Label ID="ConnectedIcon" Anchor="C,C" Offset="0,0" String="[ICON_CONNECTED]" Hidden="1"/>
+				<Label ID="RailConnectedIcon" Anchor="C,C" Offset="0,0" String="[ICON_RAIL_CONNECTED]" Hidden="1"/>
 				<Label ID="BlockadedIcon" Anchor="C,C" Offset="0,0" String="[ICON_BLOCKADED]" Hidden="1"/>
 				<Label ID="PuppetIcon" Anchor="C,C" Offset="0,0" String="[ICON_PUPPET]" Hidden="1"/>
 				<Label ID="OccupiedIcon" Anchor="C,C" Offset="0,0" String="[ICON_OCCUPIED]" Hidden="1"/>
@@ -165,6 +166,7 @@
 				<Label ID="RazingIcon" Anchor="C,C" Offset="0,0" String="[ICON_RAZING]" Font="TwCenMT18" FontStyle="Shadow" Hidden="1"/>
 				<Label ID="ResistanceIcon" Anchor="C,C" Offset="0,0" String="[ICON_RESISTANCE]" Font="TwCenMT18" FontStyle="Shadow" Hidden="1"/>
 				<Label ID="ConnectedIcon" Anchor="C,C" Offset="0,0" String="[ICON_CONNECTED]" Font="TwCenMT18" FontStyle="Shadow" Hidden="1"/>
+				<Label ID="RailConnectedIcon" Anchor="C,C" Offset="0,0" String="[ICON_RAIL_CONNECTED]" Font="TwCenMT18" FontStyle="Shadow" Hidden="1"/>
 				<Label ID="BlockadedIcon" Anchor="C,C" Offset="0,0" String="[ICON_BLOCKADED]" Font="TwCenMT18" FontStyle="Shadow" Hidden="1"/>
 				<Label ID="PuppetIcon" Anchor="C,C" Offset="0,0" String="[ICON_PUPPET]" Font="TwCenMT18" FontStyle="Shadow" Hidden="1"/>
 				<Label ID="OccupiedIcon" Anchor="C,C" Offset="0,0" String="[ICON_OCCUPIED]" Font="TwCenMT18" FontStyle="Shadow" Hidden="1"/>
