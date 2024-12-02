@@ -88,6 +88,12 @@ FIND %text% "%cd%\UI_bc1\UnitPanel\UnitPanel.lua" && (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitPanel\UnitPanel.lua" "%cd%\%patchfolder%\Lua\UI\UnitPanel.lua"
 )
 REM --------------------------------------------------------------------------------------------------
+IF NOT EXIST "%cd%\UI_bc1\UnitFlagManager\UnitFlagManager.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitFlagManager" "%cd%\%patchfolder%\Lua\UI\"
+) ELSE (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\UnitFlagManager" "%cd%\%patchfolder%\Lua\UI\"
+)
+REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\VotingSystem" "%cd%\%patchfolder%\Lua\UI\"
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\EndGameMenu.lua" "%cd%\%patchfolder%\Lua\UI\EndGameMenu.lua"
