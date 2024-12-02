@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- edit: expandable Info Panel size for EUI & vanilla UI -->
 <Context  ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow">
 
     <Instance Name="UnitInstance" >
@@ -66,7 +67,7 @@
     <!--=======================================================================================================================-->
     <!--=======================================================================================================================-->
 
-    <Grid Size="390,400" Anchor="L,T" Offset="-7,4"  Style="Grid9DetailFive140" ConsumeMouse="1" >
+    <Grid Size="390,400" Anchor="L,T" Offset="-7,4"  Style="Grid9DetailFive140" ConsumeMouse="1" ID="MainGrid" >
 
 
         <Box Offset="18,44" Anchor="L,T" Size="355,24"  Color="255,255,255,0" >
@@ -125,10 +126,9 @@
 
             </Stack>
 
-            <ScrollBar Offset="0,0" Style="VertSlider" Anchor="L,T" Length="255" ID="ScrollBar"/>
-            <UpButton  Offset="-222,0"  Style="ScrollBarUp"  Anchor="l,T" ID="UpButton"/>
-            <DownButton Offset="-222,261" Style="ScrollBarDown"  Anchor="l,T" ID="DownButton"/>
-
+            <ScrollBar Offset="0,18" Style="VertSlider" Anchor="L,T" Length="219" ID="ScrollBar"/>
+            <UpButton  Offset="0,0"  Style="ScrollBarUp"  Anchor="L,T" ID="UpButton"/>
+            <DownButton Offset="-18,1" Style="ScrollBarDown"  Anchor="L,B" AnchorSide="O.I" ID="DownButton"/>
 
         </ScrollPanel>
 
@@ -147,6 +147,8 @@
             <Image Anchor="L,B" Offset="0,24" Texture="HorizontalTrim.dds" Size="355.5" />
         </Box>
 
+		<!-- NEW: expandable Info Panel size for EUI & vanilla UI -->
+		<Slider ID="VerticalSizeDragArea" Anchor="L,B" Vertical="1" Texture="Blank.dds" BranchAlpha="0" Length="32" Size="390,1" Offset="0,10" />
 
         <TextButton Offset="0,22" Anchor="C,B" Style="Font14or20" ColorSet="Beige_Black_Alpha" String="TXT_KEY_CLOSE" FontStyle="Shadow" MouseOverStyle="SoftShadow" ConsumeMouse="1" ID="CloseButton" />
 

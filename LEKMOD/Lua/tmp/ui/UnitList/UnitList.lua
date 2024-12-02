@@ -1,3 +1,6 @@
+-- edit:
+-- expandable Info Panel size
+-- for EUI & vanilla UI
 -------------------------------------------------
 -- UnitList
 -------------------------------------------------
@@ -147,7 +150,11 @@ function UpdateDisplay()
         -- Status field
         local buildType = unit:GetBuildType();
         local activityType = unit:GetActivityType();
-        if( unit:IsEmbarked() ) then
+        local pCity = unit:GetPlot():GetPlotCity();
+        if( unit:GetDomainType() == DomainTypes.DOMAIN_AIR and pCity ~= nil ) then
+            sortEntry.status = pCity:GetName();
+            instance.Status:SetHide( false );
+        elseif( unit:IsEmbarked() ) then
             sortEntry.status = "TXT_KEY_UNIT_STATUS_EMBARKED";
             instance.Status:SetHide( false );
             
@@ -158,9 +165,6 @@ function UpdateDisplay()
         elseif( unit:IsAutomated()) then
 			if(unit:IsWork()) then
 				sortEntry.status = "TXT_KEY_ACTION_AUTOMATE_BUILD";
-				instance.Status:SetHide( false );
-			elseif(unit:IsTrade()) then
-				sortEntry.status = "TXT_KEY_ACTION_AUTOMATE_TRADE";
 				instance.Status:SetHide( false );
 			else
 				sortEntry.status = "TXT_KEY_ACTION_AUTOMATE_EXPLORE";
@@ -260,7 +264,7 @@ end
 -------------------------------------------------
 -------------------------------------------------
 function SortFunction( a, b )
-    local valueA, valueB;
+    local valueA, valueB, valueC, valueD;
     local entryA = m_SortTable[ tostring( a ) ];
     local entryB = m_SortTable[ tostring( b ) ];
 	
@@ -280,6 +284,8 @@ function SortFunction( a, b )
 		if( m_SortMode == eName ) then
 			valueA = entryA.name;
 			valueB = entryB.name;
+            valueC = entryA.status;
+            valueD = entryB.status;
 		elseif( m_SortMode == eStatus ) then
 			valueA = entryA.status;
 			valueB = entryB.status;
@@ -289,16 +295,38 @@ function SortFunction( a, b )
 		end
 	    
 		if( valueA == valueB ) then
-			valueA = entryA.unit:GetID();
-			valueB = entryB.unit:GetID();
+            if( m_SortMode == eName and valueC ~= nil and valueD ~= nil ) then
+                if( valueC == valueD ) then
+        			valueA = entryA.unit:GetID();
+        			valueB = entryB.unit:GetID();
+                end
+            else
+                valueA = entryA.unit:GetID();
+                valueB = entryB.unit:GetID();
+            end
 		end
-	    
-	   
-		if( m_bSortReverse ) then
-			return valueA > valueB;
-		else
-			return valueA < valueB;
-		end
+        
+        if( m_SortMode == eName and valueC ~= nil and valueD ~= nil ) then
+            if( m_bSortReverse ) then
+                if ( valueA ~= valueB ) then
+                    return valueA > valueB;
+                else
+                    return valueC > valueD;
+                end
+            else
+                if ( valueA ~= valueB ) then
+                    return valueB > valueA;
+                else
+                    return valueD > valueC;
+                end
+            end
+        else
+    		if( m_bSortReverse ) then
+    			return valueA > valueB;
+    		else
+    			return valueA < valueB;
+    		end
+        end
     end
 end
 
@@ -335,3 +363,67 @@ function OnOpenInfoCorner( iInfoType )
     end
 end
 Events.OpenInfoCorner.Add( OnOpenInfoCorner );
+
+    
+-------------------------------------------------
+-- NEW: expandable Info Panel size
+-------------------------------------------------
+local EUI_options = Modding.OpenUserData( "Enhanced User Interface Options", 1);
+local iUnitListSizeY = EUI_options.GetValue( "DB_iInfoPanelSizeY" );
+if iUnitListSizeY ~= nil then
+    local w, h = UIManager:GetScreenSizeVal();
+    local y1 = math.max( math.min( iUnitListSizeY, h - 200 ), 200 );
+    local y2 = y1 - 145;
+    Controls.MainGrid:SetSizeY(y1);
+    Controls.ScrollPanel:SetSizeY(y2);
+
+    Controls.MilitaryStack:CalculateSize();
+    Controls.MilitaryStack:ReprocessAnchoring();
+    Controls.CivilianStack:CalculateSize();
+    Controls.CivilianStack:ReprocessAnchoring();
+    Controls.MainStack:CalculateSize();
+    Controls.MainStack:ReprocessAnchoring();
+    Controls.ScrollPanel:CalculateInternalSize();
+    Controls.ScrollPanel:ReprocessAnchoring();
+end
+
+local timeSinceLastDBWrite = 0;
+function OnEditVerticalSize(v)
+    if Controls.VerticalSizeDragArea:HasMouseOver() then
+        local w, h = UIManager:GetScreenSizeVal();
+        local dx, dy = UIManager:GetMouseDelta();
+        local y1 = math.max( math.min( Controls.MainGrid:GetSizeY() - dy, h - 200 ), 200 );
+        if os.clock() - timeSinceLastDBWrite > 0.1 then  -- 0.1s cooldown for DB access
+            EUI_options.SetValue( "DB_iInfoPanelSizeY", y1 );
+            timeSinceLastDBWrite = os.clock();
+        end
+        LuaEvents.InfoPanelResize(y1)
+    end
+end
+function OnMouseEnterDragArea()
+    UIManager:SetUICursor(15);
+    return true;
+end
+function OnMouseExitDragArea()
+    UIManager:SetUICursor(0);
+    return true;
+end
+function ApplyVerticalSizeChange(dy)
+    local dy2 = dy - 145;
+    Controls.MainGrid:SetSizeY(dy);
+    Controls.ScrollPanel:SetSizeY(dy2);
+
+    Controls.MilitaryStack:CalculateSize();
+    Controls.MilitaryStack:ReprocessAnchoring();
+    Controls.CivilianStack:CalculateSize();
+    Controls.CivilianStack:ReprocessAnchoring();
+    Controls.MainStack:CalculateSize();
+    Controls.MainStack:ReprocessAnchoring();
+    Controls.ScrollPanel:CalculateInternalSize();
+    Controls.ScrollPanel:ReprocessAnchoring();
+end
+LuaEvents.InfoPanelResize.Add(ApplyVerticalSizeChange)
+
+Controls.VerticalSizeDragArea:RegisterSliderCallback( OnEditVerticalSize );
+Controls.VerticalSizeDragArea:RegisterCallback( Mouse.eMouseEnter, OnMouseEnterDragArea );
+Controls.VerticalSizeDragArea:RegisterCallback( Mouse.eMouseExit, OnMouseExitDragArea );
