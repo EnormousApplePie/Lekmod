@@ -47,11 +47,13 @@ function EUI.ShortUnitTip( unit )
 		end
 	end
 
+	--[[
 	local originalOwnerID = unit:GetOriginalOwner()
 	local originalOwner = originalOwnerID and Players[originalOwnerID]
 	if originalOwner and originalOwnerID ~= unitOwnerID and activeTeam:IsHasMet( originalOwner:GetTeam() ) then
 		unitTip = unitTip .. " (" .. originalOwner:GetCivilizationAdjective() .. ")"
 	end
+	]]
 
 	-- Debug stuff
 	if Game.IsDebugMode() then
