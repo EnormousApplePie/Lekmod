@@ -67,7 +67,7 @@ IF NOT EXIST "%cd%\UI_bc1\OptionsMenu\OptionsMenu.lua" (
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Replays" "%cd%\%patchfolder%\Lua\UI\"
 REM --------------------------------------------------------------------------------------------------
-IF NOT EXIST "%cd%\UI_bc1\TechTree.lua" (
+IF NOT EXIST "%cd%\UI_bc1\TechTree\TechTree.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\TechTree" "%cd%\%patchfolder%\Lua\UI\"
 ) ELSE (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\TechTree" "%cd%\%patchfolder%\Lua\UI\"
