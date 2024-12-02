@@ -119,10 +119,12 @@ function AirStrikeHighlight()
 					if plotDistance <= iRange then
 						local hexID = ToHexFromGrid( Vector2( plotX, plotY) );
 						if thingThatCanActuallyFire:CanRangeStrikeAt(plotX,plotY) then
-							Events.SerialEventHexHighlight( hexID, true, highlightColor, "FireRangeBorder" );
+							Events.SerialEventHexHighlight( hexID, true, highlightColor, "AirRangeFill" );
+							Events.SerialEventHexHighlight( hexID, true, highlightColor, "AirRangeBorder" );
 							Events.SerialEventHexHighlight( hexID, true, redColor, "ValidFireTargetBorder");
 						else
-							Events.SerialEventHexHighlight( hexID, true, highlightColor, "FireRangeBorder" );
+							Events.SerialEventHexHighlight( hexID, true, highlightColor, "AirRangeFill" );
+							Events.SerialEventHexHighlight( hexID, true, highlightColor, "AirRangeBorder" );
 						end
 					end
 				end
@@ -165,7 +167,8 @@ function NukeStrikeHighlight()
 					if plotDistance <= iRange then
 						local hexID = ToHexFromGrid( Vector2( plotX, plotY) );
 						if thingThatCanActuallyFire:CanNukeAt(plotX,plotY) then
-							Events.SerialEventHexHighlight( hexID, true, highlightColor, "FireRangeBorder" );
+							Events.SerialEventHexHighlight( hexID, true, highlightColor, "AirRangeFill" );
+							Events.SerialEventHexHighlight( hexID, true, highlightColor, "AirRangeBorder" );
 						end
 					end
 				end
@@ -296,6 +299,8 @@ function EndAirAttack()
 	Events.RemoveAllArrowsEvent();
 	Events.SerialEventMouseOverHex.Remove( DisplayBombardArrow );
 	ClearUnitHexHighlights();
+	Events.ClearHexHighlightStyle("AirRangeFill");
+	Events.ClearHexHighlightStyle("AirRangeBorder");
 end
 
 -------------------------------------------------
@@ -314,4 +319,47 @@ function EndNukeAttack()
 	Events.RemoveAllArrowsEvent();
 	Events.SerialEventMouseOverHex.Remove( DisplayNukeArrow );
 	ClearUnitHexHighlights();
+	Events.ClearHexHighlightStyle("AirRangeFill");
+	Events.ClearHexHighlightStyle("AirRangeBorder");
 end
+
+-------------------------------------------------
+function AirSweepHighlightHB()
+	local interfaceMode = UI.GetInterfaceMode()
+	if interfaceMode == InterfaceModeTypes.INTERFACEMODE_AIR_SWEEP then
+		local pSelUnit = UI.GetHeadSelectedUnit()
+		local selUnitPlot = pSelUnit:GetPlot()
+		local selX = selUnitPlot:GetX()
+		local selY = selUnitPlot:GetY()
+		local range = pSelUnit:Range()
+		for x = -range,range do
+			for y = -range,range do
+				local tPlot = Map.GetPlotXY(selX,selY,x,y)
+				if tPlot ~= nil then
+					local tX = tPlot:GetX()
+					local tY = tPlot:GetY()
+					local tdist = Map.PlotDistance(selX,selY,tX,tY)
+					if tdist <= range then
+						local hex = ToHexFromGrid(Vector2(tX,tY))
+						Events.SerialEventHexHighlight(hex,true,Vector4(0.7,0.7,0,1),"AirSweepFill")
+						Events.SerialEventHexHighlight(hex,true,Vector4(0.7,0.7,0,1),"AirSweepBorder")
+					end
+				end
+			end
+		end
+	end
+end
+
+-------------------------------------------------
+function ClearHBCustomHex()
+	local interfaceMode = UI.GetInterfaceMode()
+
+	if interfaceMode ~= InterfaceModeTypes.INTERFACEMODE_AIR_SWEEP then
+		Events.ClearHexHighlightStyle( "AirSweepFill" )
+		Events.ClearHexHighlightStyle( "AirSweepBorder" )
+	end
+end
+
+-------------------------------------------------
+Events.InterfaceModeChanged.Add(AirSweepHighlightHB)
+Events.InterfaceModeChanged.Add(ClearHBCustomHex)
