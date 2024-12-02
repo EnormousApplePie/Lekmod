@@ -1,3 +1,6 @@
+-- edit:
+-- expandable Info Panel size
+-- for EUI & vanilla UI
 --------------------------------------------------------------
 --------------------------------------------------------------
 include( "IconSupport" );
@@ -501,3 +504,82 @@ function OnCityRClick( x, y )
     	UI.LookAt( plot );
 	end
 end
+
+-------------------------------------------------
+-- NEW: expandable Info Panel size
+-------------------------------------------------
+local EUI_options = Modding.OpenUserData( "Enhanced User Interface Options", 1);
+local iUnitListSizeY = EUI_options.GetValue( "DB_iInfoPanelSizeY" );
+if iUnitListSizeY ~= nil then
+    local w, h = UIManager:GetScreenSizeVal();
+    local y1 = math.max( math.min( iUnitListSizeY, h - 200 ), 200 );
+    local y2 = y1 - 177;
+    Controls.MainGrid:SetSizeY(y1);
+    Controls.ScrollPanel:SetSizeY(y2);
+
+    Controls.ArtistStack:CalculateSize();
+    Controls.ArtistStack:ReprocessAnchoring();
+    Controls.EngineerStack:CalculateSize();
+    Controls.EngineerStack:ReprocessAnchoring();
+    Controls.MerchantStack:CalculateSize();
+    Controls.MerchantStack:ReprocessAnchoring();
+    Controls.MusicianStack:CalculateSize();
+    Controls.MusicianStack:ReprocessAnchoring();
+    Controls.ScientistStack:CalculateSize();
+    Controls.ScientistStack:ReprocessAnchoring();
+    Controls.WriterStack:CalculateSize();
+    Controls.WriterStack:ReprocessAnchoring();
+    Controls.MainStack:CalculateSize();
+    Controls.MainStack:ReprocessAnchoring();
+    Controls.ScrollPanel:CalculateInternalSize();
+    Controls.ScrollPanel:ReprocessAnchoring();
+end
+
+local timeSinceLastDBWrite = 0;
+function OnEditVerticalSize(v)
+    if Controls.VerticalSizeDragArea:HasMouseOver() then
+        local w, h = UIManager:GetScreenSizeVal();
+        local dx, dy = UIManager:GetMouseDelta();
+        local y1 = math.max( math.min( Controls.MainGrid:GetSizeY() - dy, h - 200 ), 200 );
+        if os.clock() - timeSinceLastDBWrite > 0.1 then  -- 0.1s cooldown for DB access
+            EUI_options.SetValue( "DB_iInfoPanelSizeY", y1 );
+            timeSinceLastDBWrite = os.clock();
+        end
+        LuaEvents.InfoPanelResize(y1)
+    end
+end
+function OnMouseEnterDragArea()
+    UIManager:SetUICursor(15);
+    return true;
+end
+function OnMouseExitDragArea()
+    UIManager:SetUICursor(0);
+    return true;
+end
+function ApplyVerticalSizeChange(dy)
+    local dy2 = dy - 177;
+    Controls.MainGrid:SetSizeY(dy);
+    Controls.ScrollPanel:SetSizeY(dy2);
+
+    Controls.ArtistStack:CalculateSize();
+    Controls.ArtistStack:ReprocessAnchoring();
+    Controls.EngineerStack:CalculateSize();
+    Controls.EngineerStack:ReprocessAnchoring();
+    Controls.MerchantStack:CalculateSize();
+    Controls.MerchantStack:ReprocessAnchoring();
+    Controls.MusicianStack:CalculateSize();
+    Controls.MusicianStack:ReprocessAnchoring();
+    Controls.ScientistStack:CalculateSize();
+    Controls.ScientistStack:ReprocessAnchoring();
+    Controls.WriterStack:CalculateSize();
+    Controls.WriterStack:ReprocessAnchoring();
+    Controls.MainStack:CalculateSize();
+    Controls.MainStack:ReprocessAnchoring();
+    Controls.ScrollPanel:CalculateInternalSize();
+    Controls.ScrollPanel:ReprocessAnchoring();
+end
+LuaEvents.InfoPanelResize.Add(ApplyVerticalSizeChange)
+
+Controls.VerticalSizeDragArea:RegisterSliderCallback( OnEditVerticalSize );
+Controls.VerticalSizeDragArea:RegisterCallback( Mouse.eMouseEnter, OnMouseEnterDragArea );
+Controls.VerticalSizeDragArea:RegisterCallback( Mouse.eMouseExit, OnMouseExitDragArea );

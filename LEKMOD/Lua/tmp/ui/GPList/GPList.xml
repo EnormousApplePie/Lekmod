@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- edit: expandable Info Panel size for EUI & vanilla UI -->
 <Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow">
 	<Instance Name="GPInstance">
 		<Box Anchor="R,C" Color="255.255.255.0" Offset="0,0" Size="355,35" ID="Root">
@@ -31,7 +32,7 @@
 	<!--=======================================================================================================================-->
 	<!--=======================================================================================================================-->
 
-	<Grid Size="390,400" Anchor="L,T" Offset="-7,4" Style="Grid9DetailFive140" ConsumeMouse="1" >
+	<Grid Size="390,400" Anchor="L,T" Offset="-7,4" Style="Grid9DetailFive140" ConsumeMouse="1" ID="MainGrid" >
 		<Box Offset="18,44" Anchor="L,T" Size="355,24" Color="255,255,255,0" >
 			<Stack Anchor="L,C" StackGrowth="Right" Offset="0,0" Padding="0" >
 				<Button Offset="0,0" Anchor="R,C" Size="150,24" ID="SortCity" ToolTip="TXT_KEY_GP_SORT_CITY">
@@ -58,7 +59,7 @@
 			<Image Anchor="L,T" Offset="0,24" Texture="HorizontalTrim.dds" Size="355.5" />
 		</Box>
 
-		<ScrollPanel Anchor="L,T" Offset="18,72" Size="412,220" Vertical="1" ID="ScrollPanel" AutoScrollBar="0" HideScrollBar="0" >
+		<ScrollPanel Anchor="L,T" Offset="18,72" Size="412,220" Vertical="1" ID="ScrollPanel" >
 			<Stack Anchor="L,T" StackGrowth="B" Padding="0" ID="MainStack" >
 
 				<Stack Size="355,24" Anchor="L,C" StackGrowth="B" Color="255,255,255,0" ID="ArtistHeader">
@@ -160,9 +161,9 @@
 				</Stack>
 			</Stack>
 
-			<ScrollBar Offset="0,0" Style="VertSlider" Anchor="L,T" Length="220" ID="ScrollBar" />
-			<UpButton Offset="-222,0" Style="ScrollBarUp" Anchor="L,T" ID="UpButton" />
-			<DownButton Offset="-222,261" Style="ScrollBarDown" Anchor="L,T" ID="DownButton" />
+            <ScrollBar Offset="0,18" Style="VertSlider" Anchor="L,T" Length="219" ID="ScrollBar"/>
+            <UpButton  Offset="0,0"  Style="ScrollBarUp"  Anchor="L,T" ID="UpButton"/>
+            <DownButton Offset="-18,1" Style="ScrollBarDown"  Anchor="L,B" AnchorSide="O.I" ID="DownButton"/>
 		</ScrollPanel>		
 
 		<Box Offset="18,76" Anchor="L,B" Size="355,22"  Color="255,255,255,0" >
@@ -196,6 +197,9 @@
 
 			<Image Anchor="L,B" Offset="0,24" Texture="HorizontalTrim.dds" Size="355.5" />
 		</Box>
+		
+		<!-- NEW: expandable Info Panel size for EUI & vanilla UI -->
+		<Slider ID="VerticalSizeDragArea" Anchor="L,B" Vertical="1" Texture="Blank.dds" BranchAlpha="0" Length="32" Size="390,1" Offset="0,10" />
 
 		<TextButton Offset="0,22" Anchor="C,B" Style="Font14or20" ColorSet="Beige_Black_Alpha" String="TXT_KEY_CLOSE" FontStyle="Shadow" MouseOverStyle="SoftShadow" ConsumeMouse="1" ID="CloseButton" Hidden="0" />
 	</Grid>
