@@ -2,6 +2,11 @@
 -- merge city state greeting so actions are available right away
 -- code is common using gk_mode and bnw_mode switches
 -------------------------------------------------------------------------------
+-- edit: keep gift/tribute screens open despite global events (except war) for EUI
+-------------------------------------------------------------------------------  
+local bActiveTakeScreen = false;
+local bActiveGiveScreen = false;
+-------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- City State Diplo Popup
 --
@@ -665,9 +670,22 @@ function OnDisplay()
 	SetButtonSize(Controls.NoUnitSpawningLabel, Controls.NoUnitSpawningButton, Controls.NoUnitSpawningAnim, Controls.NoUnitSpawningButtonHL)
 	SetButtonSize(Controls.BuyoutLabel, Controls.BuyoutButton, Controls.BuyoutAnim, Controls.BuyoutButtonHL)
 
-	Controls.GiveStack:SetHide(true)
-	Controls.TakeStack:SetHide(true)
-	Controls.ButtonStack:SetHide(false)
+	-- NEW: stay at the current menu level, update visible buttons 
+	if isAtWar == false and bActiveGiveScreen == true then
+		PopulateGiftChoices()
+		Controls.GiveStack:SetHide(false)
+		Controls.TakeStack:SetHide(true)
+		Controls.ButtonStack:SetHide(true)
+	elseif isAtWar == false and bActiveTakeScreen == true then
+		PopulateTakeChoices()
+		Controls.GiveStack:SetHide(true)
+		Controls.TakeStack:SetHide(false)
+		Controls.ButtonStack:SetHide(true)
+	else
+		Controls.GiveStack:SetHide(true)
+		Controls.TakeStack:SetHide(true)
+		Controls.ButtonStack:SetHide(false)
+	end
 
 	UpdateButtonStack()
 end
@@ -806,6 +824,8 @@ function OnGiveButtonClicked ()
 	Controls.TakeStack:SetHide(true)
 	Controls.ButtonStack:SetHide(true)
 	PopulateGiftChoices()
+
+	bActiveGiveScreen = true
 end
 Controls.GiveButton:RegisterCallback( Mouse.eLClick, OnGiveButtonClicked )
 
@@ -817,6 +837,8 @@ function OnTakeButtonClicked ()
 	Controls.TakeStack:SetHide(false)
 	Controls.ButtonStack:SetHide(true)
 	PopulateTakeChoices()
+
+	bActiveTakeScreen = true
 end
 Controls.TakeButton:RegisterCallback( Mouse.eLClick, OnTakeButtonClicked )
 
@@ -824,6 +846,8 @@ Controls.TakeButton:RegisterCallback( Mouse.eLClick, OnTakeButtonClicked )
 -- Close or 'Active' (local human) player has changed
 ----------------------------------------------------------------
 function OnCloseButtonClicked ()
+	bActiveGiveScreen = false
+	bActiveTakeScreen = false
 	m_lastAction = kiNoAction
 	m_pendingAction = kiNoAction
 	UIManager:DequeuePopup( ContextPtr )
@@ -974,32 +998,11 @@ function PopulateGiftChoices()
 	local iAlliesAmount = GameDefines["FRIENDSHIP_THRESHOLD_ALLIES"]
 	local iFriendship = minorPlayer:GetMinorCivFriendshipWithMajor(activePlayerID)
 	local strInfoTT = L("TXT_KEY_POP_CSTATE_GOLD_STATUS_TT", iFriendsAmount, iAlliesAmount, iFriendship)
-	
-	-- begin NQ_FIX_CITY_STATE_GIFT_TOOLTIPS
-	-- we get ride of these 2 lines so that the tooltip isn't cluttered with (only semi-accurate) extraneous info
-	--strInfoTT = strInfoTT .. "[NEWLINE][NEWLINE]";
-	--strInfoTT = strInfoTT .. Locale.ConvertTextKey("TXT_KEY_POP_CSTATE_GOLD_TT");
-	-- end NQ_FIX_CITY_STATE_GIFT_TOOLTIPS
-
-	-- begin NQ_FIX_CITY_STATE_GIFT_TOOLTIPS
-	local strSmallGiftButtonTT = strInfoTT;
-	if (iNumGoldPlayerHas < iGoldGiftSmall) then
-		strSmallGiftButtonTT = "[COLOR_NEGATIVE_TEXT]" .. L("TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD") .. "[ENDCOLOR][NEWLINE][NEWLINE]" .. strSmallGiftButtonTT;
-	end
-	Controls.SmallGiftButton:SetToolTipString(strSmallGiftButtonTT);
-
-	local strMediumGiftButtonTT = strInfoTT;
-	if (iNumGoldPlayerHas < iGoldGiftMedium) then
-		strMediumGiftButtonTT = "[COLOR_NEGATIVE_TEXT]" .. L("TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD") .. "[ENDCOLOR][NEWLINE][NEWLINE]" .. strMediumGiftButtonTT;
-	end
-	Controls.MediumGiftButton:SetToolTipString(strMediumGiftButtonTT);
-
-	local strLargeGiftButtonTT = strInfoTT;
-	if (iNumGoldPlayerHas < iGoldGiftLarge) then
-		strLargeGiftButtonTT = "[COLOR_NEGATIVE_TEXT]" .. L("TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD") .. "[ENDCOLOR][NEWLINE][NEWLINE]" .. strLargeGiftButtonTT;
-	end
-	Controls.LargeGiftButton:SetToolTipString(strLargeGiftButtonTT);
-	-- end NQ_FIX_CITY_STATE_GIFT_TOOLTIPS
+	strInfoTT = strInfoTT .. "[NEWLINE][NEWLINE]"
+	strInfoTT = strInfoTT .. L("TXT_KEY_POP_CSTATE_GOLD_TT")
+	Controls.SmallGiftButton:SetToolTipString(strInfoTT)
+	Controls.MediumGiftButton:SetToolTipString(strInfoTT)
+	Controls.LargeGiftButton:SetToolTipString(strInfoTT)
 
 	UpdateButtonStack()
 end
@@ -1077,6 +1080,7 @@ Controls.TileImprovementGiftButton:RegisterCallback( Mouse.eLClick, OnGiftTileIm
 -- Close Give Submenu
 ----------------------------------------------------------------
 function OnCloseGive()
+	bActiveGiveScreen = false
 	Controls.GiveStack:SetHide(true)
 	Controls.TakeStack:SetHide(true)
 	Controls.ButtonStack:SetHide(false)
@@ -1226,6 +1230,7 @@ Controls.UnitTributeButton:RegisterCallback( Mouse.eLClick, OnUnitTributeButtonC
 -- Close Take Submenu
 ----------------------------------------------------------------
 function OnCloseTake()
+	bActiveTakeScreen = false
 	Controls.GiveStack:SetHide(true)
 	Controls.TakeStack:SetHide(true)
 	Controls.ButtonStack:SetHide(false)
