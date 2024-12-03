@@ -25,7 +25,11 @@ IF EXIST "%cd%\%euifolder%\CityBanners\CityBannerManager.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityBanners\CityBannerManager.xml" "%cd%\%patchfolder%\Lua\UI\CityBannerManager.xml"
 )
 REM --------------------------------------------------------------------------------------------------
-ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityStateDiploPopup" "%cd%\%patchfolder%\Lua\UI\"
+IF NOT EXIST "%cd%\%euifolder%\CityStatePopup\CityStateDiploPopup.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityStatePopup\CityStateDiploPopup.lua" "%cd%\%patchfolder%\Lua\UI\CityStateDiploPopup.lua"
+) ELSE (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\CityStatePopup\CityStateDiploPopup.lua" "%cd%\%patchfolder%\Lua\UI\CityStateDiploPopup.lua"
+)
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%cd%\%euifolder%\CityView\ProductionPopup.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.lua" "%cd%\%patchfolder%\Lua\UI\ProductionPopup.lua"
