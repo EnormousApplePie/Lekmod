@@ -2319,15 +2319,16 @@ bool CvPlayerEspionage::AttemptCoup(uint uiSpyIndex)
 					float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
 #endif
 					float fTimeElapsed = kGame.getTimeElapsed();
-					if (fGameTurnEnd - fTimeElapsed > CS_ALLYING_WAR_RESCTRICTION_TIMER)
+					float fRestrictionTime = std::min(CS_ALLYING_WAR_RESCTRICTION_TIMER, fGameTurnEnd);
+					if (fGameTurnEnd - fTimeElapsed > fRestrictionTime)
 					{
 						GET_PLAYER(m_pPlayer->GetID()).setTurnCSWarAllowingMinor(ePreviousAlly, eCityOwner, kGame.getGameTurn());
-						GET_PLAYER(m_pPlayer->GetID()).setTimeCSWarAllowingMinor(ePreviousAlly, eCityOwner, fTimeElapsed + CS_ALLYING_WAR_RESCTRICTION_TIMER);
+						GET_PLAYER(m_pPlayer->GetID()).setTimeCSWarAllowingMinor(ePreviousAlly, eCityOwner, fTimeElapsed + fRestrictionTime);
 					}
 					else
 					{
 						GET_PLAYER(m_pPlayer->GetID()).setTurnCSWarAllowingMinor(ePreviousAlly, eCityOwner, kGame.getGameTurn() + 1);
-						GET_PLAYER(m_pPlayer->GetID()).setTimeCSWarAllowingMinor(ePreviousAlly, eCityOwner, CS_ALLYING_WAR_RESCTRICTION_TIMER - (fGameTurnEnd - fTimeElapsed));
+						GET_PLAYER(m_pPlayer->GetID()).setTimeCSWarAllowingMinor(ePreviousAlly, eCityOwner, fRestrictionTime - (fGameTurnEnd - fTimeElapsed));
 					}
 				}
 			}

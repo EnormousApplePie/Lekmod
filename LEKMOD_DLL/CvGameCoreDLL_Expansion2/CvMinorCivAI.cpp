@@ -5726,15 +5726,16 @@ void CvMinorCivAI::SetAlly(PlayerTypes eNewAlly)
 					float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
 #endif
 					float fTimeElapsed = kGame.getTimeElapsed();
-					if (fGameTurnEnd - fTimeElapsed > CS_ALLYING_WAR_RESCTRICTION_TIMER)
+					float fRestrictionTime = std::min(CS_ALLYING_WAR_RESCTRICTION_TIMER, fGameTurnEnd);
+					if (fGameTurnEnd - fTimeElapsed > fRestrictionTime)
 					{
 						GET_PLAYER(eNewAlly).setTurnCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), kGame.getGameTurn());
-						GET_PLAYER(eNewAlly).setTimeCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), fTimeElapsed + CS_ALLYING_WAR_RESCTRICTION_TIMER);
+						GET_PLAYER(eNewAlly).setTimeCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), fTimeElapsed + fRestrictionTime);
 					}
 					else
 					{
 						GET_PLAYER(eNewAlly).setTurnCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), kGame.getGameTurn() + 1);
-						GET_PLAYER(eNewAlly).setTimeCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), CS_ALLYING_WAR_RESCTRICTION_TIMER - (fGameTurnEnd - fTimeElapsed));
+						GET_PLAYER(eNewAlly).setTimeCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), fRestrictionTime - (fGameTurnEnd - fTimeElapsed));
 					}
 				}
 			}
