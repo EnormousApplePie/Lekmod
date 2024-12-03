@@ -1066,9 +1066,6 @@ function PopulateTakeChoices()
 	local iActivePlayer = Game.GetActivePlayer();
 	local buttonText = "";
 	local ttText = "";
-	Controls.GoldTributeLabel:SetText(buttonText);
-	Controls.GoldTributeButton:SetToolTipString(ttText);
-	SetButtonSize(Controls.GoldTributeLabel, Controls.GoldTributeButton, Controls.GoldTributeAnim, Controls.GoldTributeButtonHL);
 	-- begin NQ_MINOR_FRIENDSHIP_GAIN_BULLY_GOLD_SUCCESS_FROM_POLICIES
 	local iBullyGold = pPlayer:GetMinorCivBullyGoldAmount(iActivePlayer);
 	local pActivePlayer = Players[iActivePlayer];
