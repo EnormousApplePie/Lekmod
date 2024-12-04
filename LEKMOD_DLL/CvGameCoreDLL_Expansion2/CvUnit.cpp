@@ -16093,12 +16093,19 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	for (int iI = MAX_MAJOR_CIVS; iI < MAX_MINOR_CIVS; iI++)
 	{
 		PlayerTypes eLoopMinor = (PlayerTypes)iI;
+		CvPlot* pPlot = NULL;
 		if (!GET_PLAYER(eLoopMinor).isAlive())
 		{
 			continue;
 		}
-		CvPlot* pPlot = GET_PLAYER(eLoopMinor).getCapitalCity()->plot();
-		pPlot->updateFog();
+		if (GET_PLAYER(eLoopMinor).getCapitalCity())
+		{
+			pPlot = GET_PLAYER(eLoopMinor).getCapitalCity()->plot();
+			if (pPlot)
+			{
+				pPlot->updateFog();
+			}
+		}
 	}
 #endif
 }
@@ -16420,12 +16427,19 @@ int CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, float fAdditionalTextD
 	for (int iI = MAX_MAJOR_CIVS; iI < MAX_MINOR_CIVS; iI++)
 	{
 		PlayerTypes eLoopMinor = (PlayerTypes)iI;
+		CvPlot* pPlot = NULL;
 		if (!GET_PLAYER(eLoopMinor).isAlive())
 		{
 			continue;
 		}
-		CvPlot* pPlot = GET_PLAYER(eLoopMinor).getCapitalCity()->plot();
-		pPlot->updateFog();
+		if (GET_PLAYER(eLoopMinor).getCapitalCity())
+		{
+			pPlot = GET_PLAYER(eLoopMinor).getCapitalCity()->plot();
+			if (pPlot)
+			{
+				pPlot->updateFog();
+			}
+		}
 	}
 #endif
 
