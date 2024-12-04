@@ -16088,6 +16088,19 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 			}
 		}
 	}
+
+#ifdef UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
+	for (int iI = MAX_MAJOR_CIVS; iI < MAX_MINOR_CIVS; iI++)
+	{
+		PlayerTypes eLoopMinor = (PlayerTypes)iI;
+		if (!GET_PLAYER(eLoopMinor).isAlive())
+		{
+			continue;
+		}
+		CvPlot* pPlot = GET_PLAYER(eLoopMinor).getCapitalCity()->plot();
+		pPlot->updateFog();
+	}
+#endif
 }
 
 //	---------------------------------------------------------------------------
@@ -16402,6 +16415,19 @@ int CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, float fAdditionalTextD
 			GET_PLAYER(ePlayer).DoUnitKilledCombat(getOwner(), getUnitType());
 		}
 	}
+
+#ifdef UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
+	for (int iI = MAX_MAJOR_CIVS; iI < MAX_MINOR_CIVS; iI++)
+	{
+		PlayerTypes eLoopMinor = (PlayerTypes)iI;
+		if (!GET_PLAYER(eLoopMinor).isAlive())
+		{
+			continue;
+		}
+		CvPlot* pPlot = GET_PLAYER(eLoopMinor).getCapitalCity()->plot();
+		pPlot->updateFog();
+	}
+#endif
 
 	return iDiff;
 }

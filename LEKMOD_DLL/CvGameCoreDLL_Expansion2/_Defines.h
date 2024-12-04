@@ -1200,6 +1200,8 @@
 #define AI_CULTURE_RESTRICTION
 // Fixed a bug due to which defense bonuses did not work when long-range units fought (Shoshone bonus, Himeji bonus, Defender of the Faith, Patriotic War)
 #define FIX_RANGE_DEFENSE_MOD
+// City-States IconStatusBG updates after every unit move (or creation/removing) or health change
+#define UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
 
 
 /*LOGGING START*/
