@@ -532,6 +532,16 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 				}
 			}
 
+#ifdef TECH_RESTRICTION_FOR_STRATEGIC_DEAL
+			if (eUsage == RESOURCEUSAGE_STRATEGIC)
+			{
+				if (!GET_TEAM(pFromPlayer->getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(eResource)->getTechReveal()) || !GET_TEAM(pToPlayer->getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(eResource)->getTechReveal()))
+				{
+					return false;
+				}
+			}
+#endif
+
 			// Can't trade them something they're already giving us in the deal
 			if(IsResourceTrade(eToPlayer, eResource))
 				return false;

@@ -1016,8 +1016,13 @@ function ResetDisplay( diploMessage )
 			local bCanTradeResource = g_Deal:IsPossibleToTradeItem( g_iUs, g_iThem, TradeableItems.TRADE_ITEM_RESOURCES, resourceID, 1 );
 			instance.Button:SetDisabled( not bCanTradeResource )
             if ( not bCanTradeResource ) then
-	    		instance.Button:GetTextControl():SetColorByName("Gray_Black");
-	    		instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+        		if (resource.ResourceUsage == 1) then
+	    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
+	    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_BOTH_HAVE_NOT_REASEARCHED_ONE_LINE", GameInfo.Technologies[resource.TechReveal].Description));
+        		else
+	    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
+	    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+	    		end
             else
 	    		instance.Button:GetTextControl():SetColorByName("Beige_Black");
 	    		instance.Button:SetToolTipString(nil);
@@ -1040,8 +1045,13 @@ function ResetDisplay( diploMessage )
 			local bCanTradeResource = g_Deal:IsPossibleToTradeItem( g_iThem, g_iUs, TradeableItems.TRADE_ITEM_RESOURCES, resourceID, 1 );
 			instance.Button:SetDisabled( not bCanTradeResource )
             if ( not bCanTradeResource ) then
-	    		instance.Button:GetTextControl():SetColorByName("Gray_Black");
-	    		instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+        		if (resource.ResourceUsage == 1) then
+	    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
+	    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_BOTH_HAVE_NOT_REASEARCHED_ONE_LINE", GameInfo.Technologies[resource.TechReveal].Description));
+        		else
+	    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
+	    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+	    		end
             else
 	    		instance.Button:GetTextControl():SetColorByName("Beige_Black");
 	    		instance.Button:SetToolTipString(nil);

@@ -1641,8 +1641,13 @@ function ResetDisplay()
             	instance.Button:SetText( strString );
 
             	if (not bCanTradeResource) then
-	    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
-	    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+            		if (pResource.ResourceUsage == 1) then
+		    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
+		    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_BOTH_HAVE_NOT_REASEARCHED_ONE_LINE", GameInfo.Technologies[pResource.TechReveal].Description));
+            		else
+		    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
+		    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+		    		end
             	else
 	    			instance.Button:GetTextControl():SetColorByName("Beige_Black");
 	    			instance.Button:SetToolTipString(nil);
@@ -1719,8 +1724,13 @@ function ResetDisplay()
             	instance.Button:SetText( strString );
 
             	if (not bCanTradeResource) then
-	    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
-	    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+            		if (pResource.ResourceUsage == 1) then
+		    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
+		    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_BOTH_HAVE_NOT_REASEARCHED_ONE_LINE", GameInfo.Technologies[pResource.TechReveal].Description));
+            		else
+		    			instance.Button:GetTextControl():SetColorByName("Gray_Black");
+		    			instance.Button:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_DIPLO_ITEM_EMBARGOED_ONE_LINE"));
+		    		end
             	else
 	    			instance.Button:GetTextControl():SetColorByName("Beige_Black");
 	    			instance.Button:SetToolTipString(nil);
