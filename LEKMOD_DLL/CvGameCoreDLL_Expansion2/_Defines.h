@@ -1204,6 +1204,8 @@
 #define UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
 // No trading strategic resources unless the tech for them is not researched by both players.
 #define TECH_RESTRICTION_FOR_STRATEGIC_DEAL
+// EnemyUnitPanel shows City AttackStrength correctly
+#define CORRECT_ATTACK_CITY_STRENGTH
 
 
 /*LOGGING START*/

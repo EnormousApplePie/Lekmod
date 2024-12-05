@@ -166,7 +166,8 @@ end
 function UpdateCityStats(pCity)
 	
 	-- Strength
-	local strength = math.floor(pCity:GetStrengthValue() / 100);
+	-- Correct Attack City Strength
+	local strength = math.floor(pCity:GetStrengthValue(false) / 100);
 	
 	strength = strength .. " [ICON_STRENGTH]";
 	Controls.UnitStrengthBox:SetHide(false);
@@ -311,7 +312,8 @@ function UpdateCombatOddsUnitVsCity(pMyUnit, pCity)
 			iMyStrength = pMyUnit:GetMaxAttackStrength(pFromPlot, pToPlot, nil);
 		end
 		
-		iTheirStrength = pCity:GetStrengthValue();
+		-- Correct Attack City Strength
+		iTheirStrength = pCity:GetStrengthValue(false);
 		
 		if (iMyStrength > 0) then
 			
