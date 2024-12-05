@@ -1,3 +1,7 @@
+-- Edit:
+--     show defeat screen
+--     don't force exit to menu
+-- for EUI & vanilla UI
 
 -- KICKED POPUP
 PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_KICKED] = function(popupInfo)
@@ -12,12 +16,11 @@ PopupLayouts[ButtonPopupTypes.BUTTONPOPUP_KICKED] = function(popupInfo)
 	end	
 		
 	SetPopupText(popupText);
+	Events.EndGameShow(EndGameTypes.Loss, -1)
 		
 	-- Initialize 'OK' button.
 	local OnOK = function()
-		Events.ExitToMainMenu();		
-		local interfaceModeSelection = InterfaceModeTypes.INTERFACEMODE_SELECTION
-		UI.SetInterfaceMode(interfaceModeSelection);
+		UIManager:DequeuePopup(ContextPtr)
 	end
 	
 	local buttonText = Locale.ConvertTextKey("TXT_KEY_OK_BUTTON");
@@ -32,7 +35,7 @@ end
 PopupInputHandlers[ButtonPopupTypes.BUTTONPOPUP_KICKED] = function( uiMsg, wParam, lParam )
     if uiMsg == KeyEvents.KeyDown then
         if( wParam == Keys.VK_ESCAPE or wParam == Keys.VK_RETURN ) then
-			Events.ExitToMainMenu();		
+			UIManager:DequeuePopup(ContextPtr)	
             return true;
         end
     end
