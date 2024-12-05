@@ -1056,7 +1056,7 @@
 // Fixed a bug related to Aqueduct duping when finishing tradition
 #define AQUEDUCT_FIX
 /// Fixes some leftover radar issues
-#define ASTAR_AI_CONTROL_FIX_RADAR
+// #define ASTAR_AI_CONTROL_FIX_RADAR
 // AI can no longer choose an ideology
 #define AI_CANT_ADOPT_IDEOLOGY
 // AI cannot declare war
