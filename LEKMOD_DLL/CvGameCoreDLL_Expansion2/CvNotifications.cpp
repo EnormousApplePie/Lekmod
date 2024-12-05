@@ -1583,8 +1583,16 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 		}
 		else
 		{
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+			if ((GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0))
+			{
+				GET_PLAYER(m_ePlayer).setIsDelayedPolicy(false);
+				return true;
+			}
+#else
 			if((GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0))
 				return true;
+#endif
 		}
 	}
 	break;
@@ -1620,6 +1628,9 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 	{
 		if(GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0)
 		{
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+			GET_PLAYER(m_ePlayer).setIsDelayedPolicy(false);
+#endif
 			return true;
 		}
 	}

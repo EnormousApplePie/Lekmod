@@ -1557,5 +1557,12 @@ void CvDllNetMessageHandler::ResponseUpdatePolicies(PlayerTypes ePlayer, bool bN
 			pPlayerPolicies->DoUnlockPolicyBranch(eBranch);
 		}
 	}
+
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	if (!(kPlayer.getJONSCulture() >= kPlayer.getNextPolicyCost() || kPlayer.GetNumFreePolicies() > 0))
+	{
+		kPlayer.setIsDelayedPolicy(false);
+	}
+#endif
 }
 //------------------------------------------------------------------------------

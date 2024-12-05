@@ -499,6 +499,9 @@ CvPlayer::CvPlayer() :
 	, m_ppaaiTurnCSWarAllowing("CvPlayer::m_ppaaiTurnCSWarAllowing", m_syncArchive)
 	, m_ppaafTimeCSWarAllowing("CvPlayer::m_ppaafTimeCSWarAllowing", m_syncArchive)
 #endif
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	, m_bIsDelayedPolicy(false)
+#endif
 
 // CMP
 	, m_paiNumCitiesFreeChosenBuilding("CvPlayer::m_paiNumCitiesFreeChosenBuilding", m_syncArchive)
@@ -1158,6 +1161,9 @@ void CvPlayer::uninit()
 	m_iFaithPurchaseIndex = 0;
 	m_iMaxEffectiveCities = 1;
 	m_iLastSliceMoved = 0;
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	m_bIsDelayedPolicy = false;
+#endif
 
 #ifdef NQ_CHEAT_FIRST_ROYAL_LIBRARY_COMES_WITH_GREAT_WORK
 	m_bHasEverBuiltRoyalLibrary = false;
@@ -4801,6 +4807,80 @@ void CvPlayer::doTurnPostDiplomacy()
 {
 	CvGame& kGame = GC.getGame();
 
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	while (IsDelayedPolicy())
+	{
+		FStaticVector<PolicyTypes, 64, true, c_eCiv5GameplayDLL, 0> adoptablePolicies;
+		FStaticVector<PolicyBranchTypes, 16, true, c_eCiv5GameplayDLL, 0> adoptablePolicyBranches;
+
+		for (int iI = 0; iI < GC.GetGamePolicies()->GetNumPolicies(); iI++)
+		{
+			if (canAdoptPolicy((PolicyTypes)iI))
+			{
+				adoptablePolicies.push_back((PolicyTypes)iI);
+			}
+		}
+
+		if (adoptablePolicies.size() > 0)
+		{
+			int iNextPolicy = GC.getGame().getJonRandNum(adoptablePolicies.size(), "Random Policy Pick");
+			doAdoptPolicy(adoptablePolicies[iNextPolicy]);
+			if (!(getJONSCulture() >= getNextPolicyCost() || GetNumFreePolicies() > 0))
+			{
+				setIsDelayedPolicy(false);
+			}
+		}
+		else
+		{
+			for (int iI = 0; iI < GC.GetGamePolicies()->GetNumPolicyBranches(); iI++)
+			{
+				PolicyBranchTypes eBranch = (PolicyBranchTypes)iI;
+				if (GetPlayerPolicies()->CanUnlockPolicyBranch(eBranch))
+				{
+					adoptablePolicyBranches.push_back((PolicyBranchTypes)iI);
+				}
+			}
+
+			if (adoptablePolicyBranches.size() > 0)
+			{
+				int iNextPolicyBranch = GC.getGame().getJonRandNum(adoptablePolicyBranches.size(), "Random Policy Pick");
+				GetPlayerPolicies()->DoUnlockPolicyBranch(adoptablePolicyBranches[iNextPolicyBranch]);
+				if (!(getJONSCulture() >= getNextPolicyCost() || GetNumFreePolicies() > 0))
+				{
+					setIsDelayedPolicy(false);
+				}
+			}
+			else
+			{
+				setIsDelayedPolicy(false);
+			}
+		}
+		adoptablePolicies.clear();
+		adoptablePolicyBranches.clear();
+	}
+
+
+	int iNumFreePoliciesFromProjectReward = GetNumFreePolicies() / 1024;
+	if (iNumFreePoliciesFromProjectReward > 0)
+	{
+		ChangeNumFreePolicies(-1024 * iNumFreePoliciesFromProjectReward);
+	}
+	if (kGame.isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	{
+		if (getJONSCulture() >= getNextPolicyCost() || GetNumFreePolicies() > 0)
+		{
+			if (isHuman())
+			{
+				setIsDelayedPolicy(true);
+			}
+		}
+		else
+		{
+			setIsDelayedPolicy(false);
+		}
+	}
+	ChangeNumFreePolicies(iNumFreePoliciesFromProjectReward);
+#endif
 	if(isAlive())
 	{
 		kGame.GetTacticalAnalysisMap()->RefreshDataForNextPlayer(this);
@@ -4952,10 +5032,9 @@ void CvPlayer::doTurnPostDiplomacy()
 			changeJONSCulture(GetTotalJONSCulturePerTurn());
 #endif
 			}
-	}
+		}
 #else
 		if(getJONSCulture() < getNextPolicyCost())
-#endif
 #if defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100) && defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
 			changeJONSCultureTimes100(getCachedJONSCultureForThisTurn());
 #elif defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100)
@@ -4964,6 +5043,7 @@ void CvPlayer::doTurnPostDiplomacy()
 			changeJONSCulture(getCachedJONSCultureForThisTurn());
 #else
 			changeJONSCulture(GetTotalJONSCulturePerTurn());
+#endif
 #endif
 #endif
 	}
@@ -26563,6 +26643,9 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_bHasEverBuiltRoyalLibrary;
 #endif
 	kStream >> m_bHasBetrayedMinorCiv;
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	kStream >> m_bIsDelayedPolicy;
+#endif
 	kStream >> m_bAlive;
 	kStream >> m_bEverAlive;
 	kStream >> m_bBeingResurrected;
@@ -27150,6 +27233,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_bHasEverBuiltRoyalLibrary;
 #endif
 	kStream << m_bHasBetrayedMinorCiv;
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	kStream << m_bIsDelayedPolicy;
+#endif
 	kStream << m_bAlive;
 	kStream << m_bEverAlive;
 	kStream << m_bBeingResurrected;
@@ -28795,6 +28881,18 @@ void CvPlayer::setTimeCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor
 	Firaxis::Array<float, MAX_MINOR_CIVS> time = m_ppaafTimeCSWarAllowing[ePlayer];
 	time[int(eMinor) - MAX_MAJOR_CIVS] = fValue;
 	m_ppaafTimeCSWarAllowing.setAt(ePlayer, time);
+}
+#endif
+
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+bool CvPlayer::IsDelayedPolicy() const
+{
+	return m_bIsDelayedPolicy;
+}
+
+void CvPlayer::setIsDelayedPolicy(bool bValue)
+{
+	m_bIsDelayedPolicy = bValue;
 }
 #endif
 

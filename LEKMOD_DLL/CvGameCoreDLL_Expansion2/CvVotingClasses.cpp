@@ -6669,7 +6669,12 @@ void CvLeague::DoProjectReward(PlayerTypes ePlayer, LeagueProjectTypes eLeaguePr
 		// Free Social Policy
 		if (pRewardInfo->GetFreeSocialPolicies() > 0)
 		{
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+			GET_PLAYER(ePlayer).ChangeNumFreePolicies(1024 * pRewardInfo->GetFreeSocialPolicies());
+			GET_PLAYER(ePlayer).ChangeNumFreePoliciesEver(-1024 * pRewardInfo->GetFreeSocialPolicies());
+#else
 			GET_PLAYER(ePlayer).ChangeNumFreePolicies(pRewardInfo->GetFreeSocialPolicies());
+#endif
 		}
 
 		// Temporary Culture Modifier

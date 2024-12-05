@@ -1712,6 +1712,11 @@ public:
 	void setTimeCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor, float fValue);
 #endif
 
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	bool IsDelayedPolicy() const;
+	void setIsDelayedPolicy(bool bValue);
+#endif
+
 	CvPlayerPolicies* GetPlayerPolicies() const;
 	CvPlayerTraits* GetPlayerTraits() const;
 	CvEconomicAI* GetEconomicAI() const;
@@ -2399,6 +2404,9 @@ protected:
 #ifdef CS_ALLYING_WAR_RESCTRICTION
 	FAutoVariable <std::vector< Firaxis::Array< int, MAX_MINOR_CIVS > >, CvPlayer> m_ppaaiTurnCSWarAllowing;
 	FAutoVariable <std::vector< Firaxis::Array< float, MAX_MINOR_CIVS > >, CvPlayer> m_ppaafTimeCSWarAllowing;
+#endif
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	bool m_bIsDelayedPolicy;
 #endif
 };
 
