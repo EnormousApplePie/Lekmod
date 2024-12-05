@@ -410,6 +410,9 @@ void CvLuaGame::RegisterMembers(lua_State* L)
 #ifdef INGAME_HOTKEY_MANAGER
 	Method(UpdateActions);
 #endif
+#ifdef LUAAPI_GET_TURN_TIME_ELAPSED
+	Method(GetTurnTimeElapsed);
+#endif
 }
 //------------------------------------------------------------------------------
 
@@ -3266,5 +3269,13 @@ int CvLuaGame::lUpdateActions(lua_State* L)
 	}
 
 	return 0;
+}
+#endif
+#ifdef LUAAPI_GET_TURN_TIME_ELAPSED
+int CvLuaGame::lGetTurnTimeElapsed(lua_State* L)
+{
+	lua_pushinteger(L, static_cast<int>(GC.getGame().getTimeElapsed() * 1000));
+
+	return 1;
 }
 #endif

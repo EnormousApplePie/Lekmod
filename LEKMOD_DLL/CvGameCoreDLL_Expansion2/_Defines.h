@@ -1218,6 +1218,8 @@
 // IMPORTANT
 // Must be defined only ONCE and account for all ReplayMessageTypes additions
 // #define NUM_REPLAY_MESSAGE_TYPES 8
+// Game.GetTurnTimeElapsed() returns elapsed time in milliseconds
+#define LUAAPI_GET_TURN_TIME_ELAPSED
 /*REPLAY EVENTS CHANGES END*/
 
 
