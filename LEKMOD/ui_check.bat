@@ -81,7 +81,7 @@ IF NOT EXIST "%cd%\%euifolder%\NotificationPanel\NotificationPanel.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\NotificationPanel\NotificationPanel.xml" "%cd%\%patchfolder%\Lua\UI\NotificationPanel.xml"
 )
 REM --------------------------------------------------------------------------------------------------
-IF NOT EXIST "%cd%\%euifolder%\OptionsMenu\OptionsMenu.lua" (
+IF NOT EXIST "%cd%\%euifolder%\Options\OptionsMenu.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Options\OptionsMenu.lua.ignore" "%cd%\%patchfolder%\Lua\UI\OptionsMenu.lua"
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Options\OptionsMenu.xml.ignore" "%cd%\%patchfolder%\Lua\UI\OptionsMenu.xml"
 ) ELSE (
