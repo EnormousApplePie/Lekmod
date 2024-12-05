@@ -1571,7 +1571,11 @@ int CvLuaGame::lGetReplayMessage(lua_State* L)
 	{
 		const CvReplayMessage* pMessage = game.getReplayMessage(idx);
 
+#ifdef REPLAY_MESSAGE_EXTENDED
+		lua_createtable(L, 0, 8);
+#else
 		lua_createtable(L, 0, 5);
+#endif
 		const int t = lua_gettop(L);
 
 		lua_pushinteger(L, pMessage->getPlayer());
@@ -1582,6 +1586,18 @@ int CvLuaGame::lGetReplayMessage(lua_State* L)
 
 		lua_pushinteger(L, pMessage->getType());
 		lua_setfield(L, t, "Type");
+
+#ifdef REPLAY_MESSAGE_EXTENDED
+		lua_pushinteger(L, pMessage->getTimestamp());
+		lua_setfield(L, t, "Timestamp");
+
+		lua_pushinteger(L, pMessage->getExtraData1());
+		lua_setfield(L, t, "Data1");
+
+		lua_pushinteger(L, pMessage->getExtraData2());
+		lua_setfield(L, t, "Data2");
+
+#endif
 
 		const CvString& text = pMessage->getText();
 		if(text.GetLength() > 0)
@@ -1633,7 +1649,11 @@ int CvLuaGame::lGetReplayMessages(lua_State* L)
 	{
 		const CvReplayMessage* pMessage = game.getReplayMessage(i);
 
+#ifdef REPLAY_MESSAGE_EXTENDED
+		lua_createtable(L, 0, 8);
+#else
 		lua_createtable(L, 0, 5);
+#endif
 		const int t = lua_gettop(L);
 
 		lua_pushinteger(L, pMessage->getPlayer());
@@ -1644,6 +1664,17 @@ int CvLuaGame::lGetReplayMessages(lua_State* L)
 
 		lua_pushinteger(L, pMessage->getType());
 		lua_setfield(L, t, "Type");
+
+#ifdef REPLAY_MESSAGE_EXTENDED
+		lua_pushinteger(L, pMessage->getTimestamp());
+		lua_setfield(L, t, "Timestamp");
+
+		lua_pushinteger(L, pMessage->getExtraData1());
+		lua_setfield(L, t, "Data1");
+
+		lua_pushinteger(L, pMessage->getExtraData2());
+		lua_setfield(L, t, "Data2");
+#endif
 
 		const CvString& text = pMessage->getText();
 		if(text.GetLength() > 0)

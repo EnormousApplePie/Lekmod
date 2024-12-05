@@ -60,6 +60,11 @@
 #include "CvInfosSerializationHelper.h"
 #include "CvCityManager.h"
 
+#if defined (DEV_RECORDING_STATISTICS) || defined (REPLAY_EVENTS)
+# include <winsqlite3.h>
+# pragma comment(lib, "winsqlite3.lib")
+#endif
+
 // Public Functions...
 // must be included after all other headers
 #include "LintFree.h"
@@ -1046,6 +1051,9 @@ void CvGame::uninit()
 	m_jonRand.uninit();
 
 	clearReplayMessageMap();
+#ifdef REPLAY_EVENTS
+	clearReplayEventMap();
+#endif
 
 	m_aPlotExtraYields.clear();
 	m_aPlotExtraCosts.clear();
@@ -10466,6 +10474,33 @@ void CvGame::addReplayMessage(ReplayMessageTypes eType, PlayerTypes ePlayer, con
 	m_listReplayMessages.push_back(message);
 }
 
+#ifdef REPLAY_MESSAGE_EXTENDED
+// overload with iData1 and iData2
+void CvGame::addReplayMessage(ReplayMessageTypes eType, PlayerTypes ePlayer, const CvString& pszText, int iData1, int iData2, int iPlotX, int iPlotY)
+{
+	int iGameTurn = getGameTurn();
+
+	//If this is a plot-related message, search for any previously created messages that match this one and just add the plot.
+	if (iPlotX != -1 || iPlotY != -1)
+	{
+		for (ReplayMessageList::iterator it = m_listReplayMessages.begin(); it != m_listReplayMessages.end(); ++it)
+		{
+			CvReplayMessage& msg = (*it);
+			if (msg.getType() == eType && msg.getTurn() == iGameTurn && msg.getPlayer() == ePlayer && msg.getText() == pszText)
+			{
+				msg.addPlot(iPlotX, iPlotY);
+				return;
+			}
+		}
+	}
+
+	CvReplayMessage message(iGameTurn, iData1, iData2, eType, ePlayer);
+	message.addPlot(iPlotX, iPlotY);
+	message.setText(pszText);
+	m_listReplayMessages.push_back(message);
+}
+#endif
+
 //	--------------------------------------------------------------------------------
 void CvGame::clearReplayMessageMap()
 {
@@ -10488,6 +10523,44 @@ const CvReplayMessage* CvGame::getReplayMessage(uint i) const
 
 	return NULL;
 }
+#ifdef REPLAY_EVENTS
+
+//	--------------------------------------------------------------------------------
+void CvGame::clearReplayEventMap()
+{
+	m_listReplayEvents.clear();
+}
+
+//	--------------------------------------------------------------------------------
+void CvGame::addReplayEvent(int eType, std::vector<int> vNumArgs, CvString strArg)
+{
+	CvReplayEvent event(eType, vNumArgs, strArg);
+	m_listReplayEvents.push_back(event);
+}
+//	--------------------------------------------------------------------------------
+void CvGame::addReplayEvent(int eType, PlayerTypes ePlayer, std::vector<int> vNumArgs, CvString strArg)
+{
+	CvReplayEvent event(eType, ePlayer, vNumArgs, strArg);
+	m_listReplayEvents.push_back(event);
+}
+
+//	--------------------------------------------------------------------------------
+uint CvGame::getNumReplayEvents() const
+{
+	return m_listReplayEvents.size();
+}
+
+//	--------------------------------------------------------------------------------
+const CvReplayEvent* CvGame::getReplayEvent(uint i) const
+{
+	if (i < m_listReplayEvents.size())
+	{
+		return &(m_listReplayEvents[i]);
+	}
+
+	return NULL;
+}
+#endif
 
 // Private Functions...
 
@@ -10652,7 +10725,22 @@ void CvGame::Read(FDataStream& kStream)
 			message.read(kStream, uiReplayMessageVersion);
 			m_listReplayMessages.push_back(message);
 		}
+#ifdef REPLAY_EVENTS
+		clearReplayEventMap();
 
+		unsigned int uiReplayEventVersion = 1;
+		iSize = 0;
+
+		kStream >> uiReplayEventVersion;
+
+		kStream >> iSize;
+		for (int i = 0; i < iSize; i++)
+		{
+			CvReplayEvent event;
+			event.read(kStream, uiReplayEventVersion);
+			m_listReplayEvents.push_back(event);
+		}
+#endif
 	}
 
 	kStream >> m_iNumSessions;
@@ -10876,6 +10964,17 @@ void CvGame::Write(FDataStream& kStream) const
 	{
 		(*it).write(kStream);
 	}
+#ifdef REPLAY_EVENTS
+	const int iSize2 = m_listReplayEvents.size();
+	kStream << CvReplayEvent::Version();
+	kStream << iSize2;
+
+	ReplayEventList::const_iterator it2;
+	for (it2 = m_listReplayEvents.begin(); it2 != m_listReplayEvents.end(); ++it2)
+	{
+		(*it2).write(kStream);
+	}
+#endif
 
 	kStream << m_iNumSessions;
 

@@ -444,43 +444,60 @@ void CvDllNetMessageHandler::ResponseEnhanceReligion(PlayerTypes ePlayer, Religi
 #endif
 {
 	CvGame& kGame(GC.getGame());
-	CvGameReligions* pkGameReligions(kGame.GetGameReligions());
-
-	CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanEnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
-	if(eResult == CvGameReligions::FOUNDING_OK)
-		pkGameReligions->EnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+#ifdef REPLAY_MESSAGE_EXTENDED
+	// -1 -- adds chat message to replay
+	// goes to Replay Messages instead of Replay Events
+	if (eReligion == -1)
+	{
+		CvString strText = szCustomName;
+		int iTargetType = static_cast<int>(eBelief1);
+		int iToPlayerOrTeam = static_cast<int>(eBelief2);
+		// SLOG("addReplayMessage %d %s %d %d", (int)ePlayer, szCustomName, iTargetType, iToPlayerOrTeam);
+		GC.getGame().addReplayMessage((ReplayMessageTypes)REPLAY_MESSAGE_CHAT, ePlayer, strText, iTargetType, iToPlayerOrTeam, -1, -1);
+	}
 	else
 	{
-		CvGameReligions::NotifyPlayer(ePlayer, eResult);
-		// We don't want them to lose the opportunity to enhance the religion, and the Great Prophet is already gone so just repost the notification
-		CvCity* pkCity = GC.getMap().plot(iCityX, iCityY)->getPlotCity();
-		CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+#endif
+		CvGameReligions* pkGameReligions(kGame.GetGameReligions());
+
+		CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanEnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+		if (eResult == CvGameReligions::FOUNDING_OK)
+			pkGameReligions->EnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+		else
+		{
+			CvGameReligions::NotifyPlayer(ePlayer, eResult);
+			// We don't want them to lose the opportunity to enhance the religion, and the Great Prophet is already gone so just repost the notification
+			CvCity* pkCity = GC.getMap().plot(iCityX, iCityY)->getPlotCity();
+			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
-		if (kPlayer.isHuman() && pkCity && eResult != CvGameReligions::FOUNDING_NO_BELIEFS_AVAILABLE)
+			if (kPlayer.isHuman() && pkCity && eResult != CvGameReligions::FOUNDING_NO_BELIEFS_AVAILABLE)
 #else
-		if(kPlayer.isHuman() && eResult != CvGameReligions::FOUNDING_NO_RELIGIONS_AVAILABLE && pkCity)
+			if (kPlayer.isHuman() && eResult != CvGameReligions::FOUNDING_NO_RELIGIONS_AVAILABLE && pkCity)
 #endif
-		{
-			CvNotifications* pNotifications = kPlayer.GetNotifications();
-			if(pNotifications)
 			{
-				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCE_RELIGION");
-				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION");
-				pNotifications->Add(NOTIFICATION_ENHANCE_RELIGION, strBuffer, strSummary, iCityX, iCityY, -1, pkCity->GetID());
+				CvNotifications* pNotifications = kPlayer.GetNotifications();
+				if (pNotifications)
+				{
+					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCE_RELIGION");
+					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION");
+					pNotifications->Add(NOTIFICATION_ENHANCE_RELIGION, strBuffer, strSummary, iCityX, iCityY, -1, pkCity->GetID());
+				}
+				kPlayer.GetReligions()->SetFoundingReligion(true);
 			}
-			kPlayer.GetReligions()->SetFoundingReligion(true);
-		}
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
-		else if (kPlayer.getCapitalCity())
-		{
-			UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
-			if (eUnit != NO_UNIT)
+			else if (kPlayer.getCapitalCity())
 			{
-				kPlayer.getCapitalCity()->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, false, true);
+				UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
+				if (eUnit != NO_UNIT)
+				{
+					kPlayer.getCapitalCity()->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, false, true);
+				}
 			}
-		}
 #endif
+		}
+#ifdef REPLAY_MESSAGE_EXTENDED
 	}
+#endif
 }
 //------------------------------------------------------------------------------
 void CvDllNetMessageHandler::ResponseMoveSpy(PlayerTypes ePlayer, int iSpyIndex, int iTargetPlayer, int iTargetCity, bool bAsDiplomat)

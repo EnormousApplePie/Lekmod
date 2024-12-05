@@ -1151,7 +1151,7 @@
 // #define NUM_CONTROL_TYPES 54
 /*INGAME HOTKEY MANAGER END*/
 
-/*ESPIONAGE CHANGES*/
+/*ESPIONAGE CHANGES START*/
 // Can't steal pre-medieval techs
 #define CANT_STEAL_CLASSICAL_ERA_TECHS
 // Technologies that can be stolen from other players are no longer updated during the turn.
@@ -1206,6 +1206,19 @@
 #define TECH_RESTRICTION_FOR_STRATEGIC_DEAL
 // EnemyUnitPanel shows City AttackStrength correctly
 #define CORRECT_ATTACK_CITY_STRENGTH
+
+
+/*REPLAY EVENTS CHANGES START*/
+// A more flexible alternative to Replay Messages; primarily for statistics purposes (Cut)
+// #define REPLAY_EVENTS
+// Adds timestamp for replay messages, saves chat messages
+#define REPLAY_MESSAGE_EXTENDED
+// Extended replay messages: pseudo-enums
+// #define REPLAY_MESSAGE_CHAT 7
+// IMPORTANT
+// Must be defined only ONCE and account for all ReplayMessageTypes additions
+// #define NUM_REPLAY_MESSAGE_TYPES 8
+/*REPLAY EVENTS CHANGES END*/
 
 
 /*LOGGING START*/

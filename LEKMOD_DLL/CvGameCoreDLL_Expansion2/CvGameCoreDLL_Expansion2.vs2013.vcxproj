@@ -57,6 +57,10 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Mod|Win32'">CvGameCore_Expansion2</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CvGameCore_Expansion2</TargetName>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)ThirdPartyLibs\winsqlite3\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)ThirdPartyLibs\winsqlite3\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Mod|Win32'">
     <ClCompile>
       <AdditionalOptions>/EHsc %(AdditionalOptions)</AdditionalOptions>

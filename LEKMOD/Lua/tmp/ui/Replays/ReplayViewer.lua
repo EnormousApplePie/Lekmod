@@ -1,3 +1,6 @@
+-------------------------------------------------------------------
+-- edit: extended replay messages for EUI & vanilla UI
+-------------------------------------------------------------------
 include("InstanceManager");
 include("IconSupport");
 include("GameCalendarUtilities.lua");
@@ -241,7 +244,8 @@ Panels = {
 				
 					messageInstance.MessageText2:SetHide(true);
 				
-					local text = tostring(message.Turn) .. " - " .. message.Text;
+					-- NEW: extended replay messages -- add timestamp
+					local text = "T" .. tostring(message.Turn) .. " (" .. (message.Timestamp / 1000) .. "s) - " .. message.Text;
 										
 					if(message.Player > -1) then					
 						local playerInfo = g_ReplayInfo.PlayerInfo[message.Player];
@@ -1286,7 +1290,8 @@ function GenerateReplayInfoFromCurrentGame()
 	local messages = Game.GetReplayMessages();
 	-- table.sort(messages, function(a, b) return a.Turn < b.Turn end);
 	for i,message in ipairs(messages) do
-		table.insert(replayMessages, {Turn = message.Turn, Text = message.Text, Type = message.Type, Player = playerMap[message.Player], Plots = message.Plots});
+		-- NEW: extended replay messages -- add timestamp
+		table.insert(replayMessages, {Turn = message.Turn, Text = message.Text, Type = message.Type, Player = playerMap[message.Player], Plots = message.Plots, Timestamp = message.Timestamp});
 	end
 	g_ReplayInfo.Messages = replayMessages;
 	
