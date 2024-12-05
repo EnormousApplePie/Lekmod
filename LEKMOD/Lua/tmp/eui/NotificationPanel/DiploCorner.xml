@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Anton Strenger (Firaxis Games) -->
+<!-- edit: Ingame Hotkey Manager for EUI -->
+<!-- edit: Emote Picker Menu for EUI -->
 <Context ColorSet="Beige_Black_Alpha" FontStyle="Shadow" Font="TwCenMT16">
 	<Stack Offset="0,30" Anchor="R,T" StackGrowth="Bottom">
 		<!-- CHAT PANEL    GridGlass16 Max Size="505,520" -->
-		<Grid Size="523,170" Anchor="R,T" Padding="0,0" Style="GridGlass16" ConsumeMouseButton="1" ConsumeMouseOver="1" ID="ChatPanel" Hidden="1">
+		<Grid Size="523,170" Anchor="R,T" Padding="0,10" Style="GridGlass16" ConsumeMouseButton="1" ConsumeMouseOver="1" ID="ChatPanel" Hidden="1">
 			<!-- Chat ScrollPanel Max Size="464,493"  -->
 			<ScrollPanel Anchor="L,T" Offset="12,2" Size="490,134" Vertical="1" ID="ChatScroll" AutoScrollBar="1">
 				<Stack Anchor="L,T" StackGrowth="Bottom" ID="ChatStack"/>
@@ -13,17 +15,32 @@
 				<DownButton Style="ScrollBarDown" Anchor="R,B" AnchorSide="O,I"/>
 			</ScrollPanel>
 			<!-- Chat Grid9Detail48 Max Size="523,540"-->
-			<Grid Size="543,190" Anchor="R,T" Offset="-15,-15" Padding="0,0" Style="Grid9Detail48"/>
+			<Grid Size="543,180" Anchor="R,T" Offset="-15,-5" Padding="0,0" Style="Grid9Detail48"/>
 			<Box Anchor="L,B" Size="513,30" Offset="10.1" Color="0,0,0,255">
 				<Box Anchor="L,T" Size="513,1" Color="255,255,200,255"/>
 				<PullDown Anchor="L,C" Style="GenericPullDown" ScrollThreshold="200" SpaceForScroll="0" Size="136,26" ID="ChatPull">
 					<Label ID="LengthTest" Anchor="L,C" Font="TwCenMT20" FontStyle="SoftShadow" Hidden="1"/>
-					<Box Anchor="R,C" AnchorSide="O,I" Offset="4,0" Size="366,18" Color="255,255,200,255">
-						<Box Anchor="C,C" Size="364,16" Color="0,0,0,255">
-							<EditBox Offset="1,0" MaxLength="255" Size="364,16" Anchor="C,C" Font="TwCenMT14" ID="ChatEntry"/>
+					<Box Anchor="R,C" AnchorSide="O,I" Offset="4,0" Size="341,18" Color="255,255,200,255">
+						<Box Anchor="C,C" Size="339,16" Color="0,0,0,255">
+							<EditBox Offset="1,0" MaxLength="127" Size="339,16" Anchor="C,C" Font="TwCenMT14" ID="ChatEntry" FocusStop="1" KeepFocus="1" />
+							<Stack ID="DummyStack" />
 						</Box>
 					</Box>
 				</PullDown>
+				<Button ID="EmotePickerButton" Anchor="R,C" String="[ICON_FLOWER]" Offset="5,0" Size="22,30" >
+					<Grid ID="EmotePicker" Style="GridBlack8" AnchorSide="O.O" Anchor="L,T" Offset="0,2" Size="185,130" ConsumeMouse="True" Hidden="True" >
+						<Grid Anchor="C,C" Offset="0,0" Size="189,134" Padding="0,0" Style="Grid9Frame" />
+						<ScrollPanel Anchor="L,T" Offset="8,8" Size="181,114" Vertical="1" ID="EmotesScrollPanel" >
+							<Stack ID="EmoteStack" Anchor="L,T" StackGrowth="Right" WrapWidth="183" WrapGrowth="Down" >
+							</Stack>
+
+							<ScrollBar Offset="0,10" Style="VertSlider" AnchorSide="O.I" Anchor="R,T" Length="94" ConsumeMouse="True" />
+							<UpButton  Offset="0,-6"  Style="ScrollBarUp" AnchorSide="O.I" Anchor="R,T" />
+							<DownButton Offset="0,-6" Style="ScrollBarDown" AnchorSide="O.I" Anchor="R,B" />
+
+						</ScrollPanel>
+					</Grid>
+				</Button>
 			</Box>
 		</Grid>
 		<Container Size="10,1" Anchor="R,T" Offset="0,-1">
@@ -124,6 +141,15 @@
 	<!-- Extra Diplo Corner Buttons -->
 	<Instance Name="DiploCornerButton" >
 		<Button ID="Button" ConsumeMouseOver="1" Anchor="R,T" Size="45.45" Texture="DC45_Generic.dds" />
+	</Instance>
+	<Instance Name="DummyInstance">
+		<Box ID="Root" Anchor="R,C" AnchorSide="O,I" Offset="1000,0" Size="1,1" ConsumeMouse="1">
+			<EditBox MaxLength="255" Size="1,1" Anchor="C,C" Font="TwCenMT14" ID="Dummy" FocusStop="2" EditMode="1" />
+		</Box>
+	</Instance>
+	<Instance Name="EmoteInstance">
+			<Button ID="EmoteButton" ConsumeMouseOver="1" Anchor="L,T" Size="28,28" >
+			</Button>
 	</Instance>
 
 </Context>

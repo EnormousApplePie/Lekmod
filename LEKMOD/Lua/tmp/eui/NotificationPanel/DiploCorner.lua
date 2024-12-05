@@ -1,6 +1,33 @@
 -------------------------------------------------
 -- Diplomacy and Advisors Buttons that float out in the screen
 -------------------------------------------------
+-- edit:
+--     Ingame Hotkey Manager – extended controls
+--     Restore messages on game load
+--     Emote Picker Menu
+-- for EUI
+-------------------------------------------------
+g_needsUpdate = true;
+g_bWaitForKeyUp = false;
+-- NEW: simple map from legacy KB to VK keycodes
+g_KeyMap = { 27, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 189, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+    81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 187, 8, 9, 219, 220, 13, 162, 186, 222, 192, 160, 220, 188, 190, 191, 161, 106,
+    164, 32, 20, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 144, 145, 103, 104, 105, 109, 100, 101, 102, 107, 97, 98,
+    99, 96, 110, 122, 123, -1, -1, -1, -1, -1, 163, 174, 175, -1, 111, -1, 165, 19, 36, 38, 33, 37, 39, 35, 40, 34, 45, 46 };
+-- NEW update GameInfoActions for this context explicitly
+-- check g_needsUpdate before any call to GameInfoActions[].HotKey property
+LuaEvents.UpdateHotkey.Add(function() g_needsUpdate = true; end);
+-- NEW: search for chat control index
+local ToggleChat = -1;
+for actionID, action in next, GameInfoActions do
+    if action.Type == 'CONTROL_TOGGLE_CHAT' then
+        ToggleChat = actionID;
+    end
+end
+
+local EUI_options = Modding.OpenUserData( "Enhanced User Interface Options", 1);
+local bLargeEspionage = EUI_options.GetValue('DB_bLargeEspionage') or 0;
+-------------------------------------------------
 include( "IconSupport" );
 include( "SupportFunctions"  );
 include( "InstanceManager" );
@@ -129,9 +156,10 @@ Controls.ChatToggle:RegisterCallback( Mouse.eLClick, OnChatToggle );
 
 
 -------------------------------------------------
+-- NEW: bSkipSound, show message timestamp on hover
 -------------------------------------------------
 local bFlipper = false;
-function OnChat( fromPlayer, toPlayer, text, eTargetType )
+function OnChat( fromPlayer, toPlayer, text, eTargetType, bSkipSound, iTurn, iTimestamp )
 
     local controlTable = {};
     ContextPtr:BuildInstanceForControl( "ChatEntry", controlTable, Controls.ChatStack );
@@ -177,7 +205,17 @@ function OnChat( fromPlayer, toPlayer, text, eTargetType )
     end
     bFlipper = not bFlipper;
     
-	Events.AudioPlay2DSound( "AS2D_IF_MP_CHAT_DING" );		
+    if ( bSkipSound ~= true ) then
+	    Events.AudioPlay2DSound( "AS2D_IF_MP_CHAT_DING" );
+    end	
+
+    -- set tooltip with message timestamp info, either historical or generated ATM
+    if ( iTurn == nil or iTimestamp == nil ) then
+        iTurn = Game.GetElapsedGameTurns();
+        iTimestamp = Game.GetTurnTimeElapsed();
+    end
+    local strToolTip = string.format("T%i, %is", iTurn, iTimestamp / 1000);
+    controlTable.Box:SetToolTipString(strToolTip);
 
     Controls.ChatStack:CalculateSize();
     Controls.ChatScroll:CalculateInternalSize();
@@ -187,14 +225,49 @@ Events.GameMessageChat.Add( OnChat );
 
 
 -------------------------------------------------
+-- NEW: store chat messages
 -------------------------------------------------
 function SendChat( text )
     if( string.len( text ) > 0 ) then
+        local iTarget = ChatTargetTypes.NO_CHATTARGET;
+        local iToPlayerOrTeam = -1;
+        if (g_iChatTeam ~= -1) then
+            iTarget = ChatTargetTypes.CHATTARGET_TEAM;
+            iToPlayerOrTeam = g_iChatTeam;
+        elseif (g_iChatPlayer ~= -1) then
+            iTarget = ChatTargetTypes.CHATTARGET_PLAYER;
+            iToPlayerOrTeam = g_iChatPlayer;
+        else
+            iTarget = ChatTargetTypes.CHATTARGET_ALL;
+        end
+        Network.SendEnhanceReligion(Game.GetActivePlayer(), -1, text:sub(1,127), iTarget, iToPlayerOrTeam, -1, -1);
         Network.SendChat( text, g_iChatTeam, g_iChatPlayer );
     end
     Controls.ChatEntry:ClearString();
 end
 Controls.ChatEntry:RegisterCallback( SendChat );
+
+function onDummyFocus(text, control, focus)
+    ContextPtr:SetUpdate(KillDummy)
+end
+local m_dummy = InstanceManager:new( "DummyInstance", "Root", Controls.DummyStack );
+g_ins = m_dummy:GetInstance();
+g_ins.Dummy:RegisterCallback(onDummyFocus);
+function KillDummy()
+    ContextPtr:ClearUpdate()
+    Controls.DummyStack:DestroyAllChildren();
+    OnChatToggle();
+    ContextPtr:SetUpdate(BuildDummy)
+end
+function BuildDummy()
+    ContextPtr:ClearUpdate()
+    g_ins = m_dummy:GetInstance();
+    g_ins.Dummy:RegisterCallback(onDummyFocus);
+end
+function ChatFocus()
+    ContextPtr:ClearUpdate()
+    Controls.ChatEntry:TakeFocus();
+end
 
 -------------------------------------------------
 -------------------------------------------------
@@ -234,12 +307,26 @@ ContextPtr:SetShowHideHandler( ShowHideHandler );
 
 -------------------------------------------------
 -------------------------------------------------
+-- NEW: replace input handles with configurable variables
 function InputHandler( uiMsg, wParam, lParam )
-    if( m_bChatOpen 
-        and uiMsg == KeyEvents.KeyUp
-        and wParam == Keys.VK_TAB ) then
-        Controls.ChatEntry:TakeFocus();
+    -- NEW: update GameInfoActions now?
+    if g_needsUpdate == true then
+        Game.UpdateActions();
+        g_needsUpdate = false;
+    end
+    if ( uiMsg == KeyEvents.KeyDown and wParam == g_KeyMap[GameInfoActions[ToggleChat].HotKeyVal] ) then
+        if( m_bChatOpen and not g_bWaitForKeyUp) then
+            g_bWaitForKeyUp = true;
+            ContextPtr:SetUpdate(ChatFocus);
+        -- show chat if hidden
+        elseif not g_bWaitForKeyUp then
+            g_bWaitForKeyUp = true;
+            OnChatToggle();
+        end
         return true;
+    end
+    if ( uiMsg == KeyEvents.KeyUp and wParam == g_KeyMap[GameInfoActions[ToggleChat].HotKeyVal] ) then
+        g_bWaitForKeyUp = false;
     end
 end
 ContextPtr:SetInputHandler( InputHandler );
@@ -527,3 +614,34 @@ end
 if PreGame.GetGameOption("GAMEOPTION_DISABLE_CHAT") > 0 then
     Controls.ChatPull:SetDisabled(true);
 end
+
+-- NEW: add saved chat messages on load
+function LoadChatMessages()
+    local messages = Game.GetReplayMessages();
+    local iLocalPlayer = Game.GetActivePlayer();
+    local iLocalTeam = Players[iLocalPlayer]:GetTeam();
+    for i,message in ipairs(messages) do
+        if (message.Type == 7) then -- chat message
+            print(message.Player, message.Data1, message.Data2, message.Text);
+            local eTarget = message.Data1;
+            local toPlayer = message.Data2;
+            if ( not (eTarget == ChatTargetTypes.CHATTARGET_PLAYER and message.Player ~= iLocalPlayer and toPlayer ~= iLocalPlayer or eTarget == ChatTargetTypes.CHATTARGET_TEAM and Players[message.Player]:GetTeam() ~= iLocalTeam)) then
+                OnChat( message.Player, message.Data2, message.Text, message.Data1, true, message.Turn, message.Timestamp )
+            end
+        end
+    end
+end
+
+-- NEW: populate Emote Picker
+Controls.EmotePickerButton:RegisterCallback( Mouse.eLClick, function() Controls.EmotePicker:SetHide(not Controls.EmotePicker:IsHidden()) end );
+for i in GameInfo.IconFontMapping('1 ORDER BY LENGTH(IconFontTexture), rowid') do
+    local ins = {};
+    ContextPtr:BuildInstanceForControl('EmoteInstance', ins, Controls.EmoteStack);
+    local emoteText = string.format('[%s]', i.IconName);
+    ins.EmoteButton:SetText(emoteText);
+    ins.EmoteButton:RegisterCallback( Mouse.eLClick, function() Controls.ChatEntry:TakeFocus(); Controls.ChatEntry:SetText(Controls.ChatEntry:GetText() .. emoteText); return true; end );
+end
+Controls.EmotesScrollPanel:ReprocessAnchoring()
+Controls.EmotesScrollPanel:CalculateInternalSize()
+
+LoadChatMessages();
