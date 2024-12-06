@@ -8976,6 +8976,15 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		return false;
 	}
 
+#ifdef NQM_AI_GIMP_NO_WORLD_WONDERS
+	CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+	if (GC.getGame().isBuildingClassMaxedOut(eBuildingClass) ||
+		isWorldWonderClass(*pkBuildingClassInfo) && (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER")) && !isHuman())
+	{
+		return false;
+	}
+#endif
+
 	if(currentTeam.isBuildingClassMaxedOut(eBuildingClass))
 	{
 		return false;
