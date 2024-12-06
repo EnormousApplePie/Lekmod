@@ -1206,7 +1206,7 @@
 #define TECH_RESTRICTION_FOR_STRATEGIC_DEAL
 // EnemyUnitPanel shows City AttackStrength correctly
 #define CORRECT_ATTACK_CITY_STRENGTH
-//
+// Max durationing for policies results in policy being assigned randomly with 1 turn of grace period
 #define PENALTY_FOR_DELAYING_POLICIES
 
 
