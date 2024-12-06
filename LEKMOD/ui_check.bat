@@ -34,9 +34,12 @@ REM ----------------------------------------------------------------------------
 IF NOT EXIST "%cd%\%euifolder%\CityView\ProductionPopup.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.lua" "%cd%\%patchfolder%\Lua\UI\ProductionPopup.lua"
 )
+IF NOT EXIST "%cd%\%euifolder%\CityView\CityView.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\CityView.lua" "%cd%\%patchfolder%\Lua\UI\CityView.lua"
+)
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%cd%\%euifolder%\Core\CityStateStatusHelper.lua" (
-  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Core\CityStateStatusHelper.lua" "%cd%\%patchfolder%\Lua\UI\CityStateStatusHelper.lua"
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Core\CityStateStatusHelper.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityStateStatusHelper.lua"
 )
 IF EXIST "%cd%\%euifolder%\Core\EUI_tooltip_library.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\Core\EUI_tooltip_library.lua" "%cd%\%patchfolder%\Lua\UI\EUI_tooltip_library.lua"
