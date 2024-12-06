@@ -579,7 +579,7 @@ function SetUpMinorMeter( iMajor, iMinor, controls, minorColor )
 	-- If we're neutral, show the minor's own colors
 	if (GetCityStateStatusType(iMajor, iMinor) == "MINOR_FRIENDSHIP_STATUS_NEUTRAL") then
 		controls.StatusIcon:SetColor( minorColor );
-		controls.StatusIconBG:SetHide( true );
+		-- controls.StatusIconBG:SetHide( true );
     	controls.StatusIcon:SetOffsetX( -5 );
     end
 	
