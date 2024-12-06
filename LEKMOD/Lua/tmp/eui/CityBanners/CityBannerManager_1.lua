@@ -263,7 +263,7 @@ local g_cityToolTips = {
 				end
 
 				if cityOwner:IsMinorCiv() then
-					tipText = L("TXT_KEY_CITY_OF", "", city:GetName() ) .. tipText .. "[NEWLINE][NEWLINE]"
+					tipText = L("TXT_KEY_MINOR_CITY_OF", city:GetName() ) .. tipText .. "[NEWLINE][NEWLINE]"
 						.. GetCityStateStatusToolTip( g_activePlayerID, cityOwnerID, true )
 				else
 					tipText = L("TXT_KEY_CITY_OF", cityOwner:GetCivilizationAdjectiveKey(), city:GetName() )
