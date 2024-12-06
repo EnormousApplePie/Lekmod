@@ -998,6 +998,32 @@ function PopulateGiftChoices()
 	local iAlliesAmount = GameDefines["FRIENDSHIP_THRESHOLD_ALLIES"]
 	local iFriendship = minorPlayer:GetMinorCivFriendshipWithMajor(activePlayerID)
 	local strInfoTT = L("TXT_KEY_POP_CSTATE_GOLD_STATUS_TT", iFriendsAmount, iAlliesAmount, iFriendship)
+	
+	-- begin NQ_FIX_CITY_STATE_GIFT_TOOLTIPS
+	-- we get ride of these 2 lines so that the tooltip isn't cluttered with (only semi-accurate) extraneous info
+	--strInfoTT = strInfoTT .. "[NEWLINE][NEWLINE]";
+	--strInfoTT = strInfoTT .. Locale.ConvertTextKey("TXT_KEY_POP_CSTATE_GOLD_TT");
+	-- end NQ_FIX_CITY_STATE_GIFT_TOOLTIPS
+
+	-- begin NQ_FIX_CITY_STATE_GIFT_TOOLTIPS
+	local strSmallGiftButtonTT = strInfoTT;
+	if (iNumGoldPlayerHas < iGoldGiftSmall) then
+		strSmallGiftButtonTT = "[COLOR_NEGATIVE_TEXT]" .. L("TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD") .. "[ENDCOLOR][NEWLINE][NEWLINE]" .. strSmallGiftButtonTT;
+	end
+	Controls.SmallGiftButton:SetToolTipString(strSmallGiftButtonTT);
+
+	local strMediumGiftButtonTT = strInfoTT;
+	if (iNumGoldPlayerHas < iGoldGiftMedium) then
+		strMediumGiftButtonTT = "[COLOR_NEGATIVE_TEXT]" .. L("TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD") .. "[ENDCOLOR][NEWLINE][NEWLINE]" .. strMediumGiftButtonTT;
+	end
+	Controls.MediumGiftButton:SetToolTipString(strMediumGiftButtonTT);
+
+	local strLargeGiftButtonTT = strInfoTT;
+	if (iNumGoldPlayerHas < iGoldGiftLarge) then
+		strLargeGiftButtonTT = "[COLOR_NEGATIVE_TEXT]" .. L("TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD") .. "[ENDCOLOR][NEWLINE][NEWLINE]" .. strLargeGiftButtonTT;
+	end
+	Controls.LargeGiftButton:SetToolTipString(strLargeGiftButtonTT);
+	-- end NQ_FIX_CITY_STATE_GIFT_TOOLTIPS
 	strInfoTT = strInfoTT .. "[NEWLINE][NEWLINE]"
 	strInfoTT = strInfoTT .. L("TXT_KEY_POP_CSTATE_GOLD_TT")
 	Controls.SmallGiftButton:SetToolTipString(strInfoTT)
