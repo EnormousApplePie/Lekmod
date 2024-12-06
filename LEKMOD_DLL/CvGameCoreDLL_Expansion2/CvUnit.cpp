@@ -4097,7 +4097,7 @@ bool CvUnit::CanAutomate(AutomateTypes eAutomate, bool bTestVisibility) const
 	}
 
 #ifdef DISABLE_AUTOMOVES
-	if (isHuman())
+	if (GC.getGame().isNetworkMultiPlayer() && GC.getGame().isOption("GAMEOPTION_REMOVE_AUTO_EXPLORE") && isHuman())
 	{
 		return false;
 	}
