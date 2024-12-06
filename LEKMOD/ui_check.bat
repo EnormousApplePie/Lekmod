@@ -47,6 +47,8 @@ IF EXIST "%cd%\%euifolder%\Core\EUI_unit_include.lua" (
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview" "%cd%\%patchfolder%\Lua\UI\"
 REM --------------------------------------------------------------------------------------------------
+ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\FrontEnd" "%cd%\%patchfolder%\Lua\UI\"
+REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\GPList" "%cd%\%patchfolder%\Lua\UI\"
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%cd%\%euifolder%\Improvements\WorldView.lua" (
