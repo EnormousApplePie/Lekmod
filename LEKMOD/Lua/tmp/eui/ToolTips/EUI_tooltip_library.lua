@@ -1596,6 +1596,10 @@ local function GetYieldTooltip( city, yieldID, baseYield, totalYield, yieldIconS
 	-- Base Yield from Specialists
 	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_SPECIALISTS", city:GetBaseYieldRateFromSpecialists( yieldID ), yieldIconString )
 
+	-- NQMP GJS: Artistic Genius add support for Science from Great Works in EUI
+	-- Base Yield from Great Works
+	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_GREAT_WORKS", city:GetBaseYieldRateFromGreatWorks( yieldID ), yieldIconString )
+
 	-- Base Yield from Misc
 	tips:insertLocalizedBulletIfNonZero( yieldID == YieldTypes.YIELD_SCIENCE and "TXT_KEY_YIELD_FROM_POP" or "TXT_KEY_YIELD_FROM_MISC", city:GetBaseYieldRateFromMisc( yieldID ), yieldIconString )
 
