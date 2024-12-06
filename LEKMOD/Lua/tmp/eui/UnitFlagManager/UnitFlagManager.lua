@@ -892,9 +892,7 @@ Events.SerialEventUnitDestroyed.Add(
 function( playerID, unitID )
 	-- DebugUnit( playerID, unitID, "SerialEventUnitDestroyed" ) end
 	local flag = g_UnitFlags[ playerID ][ unitID ]
-	print("test1")
 	if flag then
-		print("test2")
 		DestroyFlag( flag )
 	else
 		-- DebugUnit( playerID, unitID, "flag not found for SerialEventUnitDestroyed" ) end
