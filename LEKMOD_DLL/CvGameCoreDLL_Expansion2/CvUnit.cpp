@@ -8071,8 +8071,8 @@ bool CvUnit::CanFoundReligion(const CvPlot* pPlot) const
 		return false;
 	}
 
-#ifdef CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
-	if (!GET_TEAM(getTeam()).isHuman()/* && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS")*/)
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+	if (!GET_TEAM(getTeam()).isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
 #else
 	if(GET_TEAM(getTeam()).isMinorCiv())
 #endif
@@ -8242,8 +8242,8 @@ bool CvUnit::CanEnhanceReligion(const CvPlot* pPlot) const
 		return false;
 	}
 
-#ifdef CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
-	if (!GET_TEAM(getTeam()).isHuman()/* && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS")*/)
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+	if (!GET_TEAM(getTeam()).isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
 #else
 	if(GET_TEAM(getTeam()).isMinorCiv())
 #endif
@@ -8366,8 +8366,8 @@ bool CvUnit::CanSpreadReligion(const CvPlot* pPlot) const
 		return false;
 	}
 
-#ifdef CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
-	if (!GET_TEAM(getTeam()).isHuman()/* && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS")*/)
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+	if (!GET_TEAM(getTeam()).isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
 	{
 		return false;
 	}

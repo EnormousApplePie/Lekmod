@@ -5088,7 +5088,7 @@ void CvEspionageAI::AttemptCoups()
 		if (iRoll < iChanceOfSuccess)
 		{
 #ifdef AI_CANT_COUP
-			if (false /*!GC.getGame().isOption("GAMEOPTION_AI_TWEAKS")*/)
+			if (!GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
 #endif
 			pEspionage->AttemptCoup(uiSpy);
 		}

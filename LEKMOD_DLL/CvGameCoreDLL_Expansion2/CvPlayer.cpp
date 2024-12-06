@@ -5020,7 +5020,7 @@ void CvPlayer::doTurnPostDiplomacy()
 #ifdef AI_CULTURE_RESTRICTION
 		if (getJONSCulture() < getNextPolicyCost())
 		{
-			if (isHuman() || getNextPolicyCost() < 1000/* || !GC.getGame().isOption("GAMEOPTION_AI_TWEAKS")*/)
+			if (isHuman() || getNextPolicyCost() < 1000 || !GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
 			{
 #if defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100) && defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
 			changeJONSCultureTimes100(getCachedJONSCultureForThisTurn());
@@ -29420,22 +29420,25 @@ void CvPlayer::disconnected()
 						checkRunAutoMovesForEveryone();
 					}
 #ifdef DO_CANCEL_DEALS_WITH_AI
-					GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
-					for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
+					if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
 					{
-						TeamTypes eTeam = (TeamTypes)iLoopTeam;
-						if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+						GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
+						for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
 						{
-							GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
-							GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
-							GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
-							GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
-							GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
-							GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
-							GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
+							TeamTypes eTeam = (TeamTypes)iLoopTeam;
+							if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+							{
+								GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
+								GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
+								GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
+								GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
+								GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
+								GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
+								GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
 
-							// Bump Units out of places they shouldn't be
-							GC.getMap().verifyUnitValidPlot();
+								// Bump Units out of places they shouldn't be
+								GC.getMap().verifyUnitValidPlot();
+							}
 						}
 					}
 #endif
@@ -29469,22 +29472,25 @@ void CvPlayer::disconnected()
 					checkRunAutoMovesForEveryone();
 				}
 #ifdef DO_CANCEL_DEALS_WITH_AI
-				GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
-				for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
+				if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
 				{
-					TeamTypes eTeam = (TeamTypes)iLoopTeam;
-					if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+					GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
+					for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
 					{
-						GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
-						GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
-						GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
-						GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
-						GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
-						GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
-						GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
+						TeamTypes eTeam = (TeamTypes)iLoopTeam;
+						if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+						{
+							GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
+							GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
+							GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
+							GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
+							GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
+							GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
+							GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
 
-						// Bump Units out of places they shouldn't be
-						GC.getMap().verifyUnitValidPlot();
+							// Bump Units out of places they shouldn't be
+							GC.getMap().verifyUnitValidPlot();
+						}
 					}
 				}
 #endif

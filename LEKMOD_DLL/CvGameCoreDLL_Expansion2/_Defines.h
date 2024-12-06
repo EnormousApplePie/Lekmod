@@ -1193,7 +1193,7 @@
 // Non-AI civs can vote only for themselves in world leader congress
 #define DIPLO_VICTORY_VOTING
 // AI cant spawn a prophets and spread/found/enhance/reform religion
-#define CAN_FOUND_OR_ENHANCE_OR_SPREAD_REL_ONLY_HUMAN
+#define AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
 // AI can no longer perform a coup in a city-state
 #define AI_CANT_COUP
 // AI cannot accumulate culture if next policy cost is greater than 1000
