@@ -1156,7 +1156,7 @@
 #define CANT_STEAL_CLASSICAL_ERA_TECHS
 // Technologies that can be stolen from other players are no longer updated during the turn.
 #define BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
-//
+// Descruption https://docs.google.com/document/d/1i5nFrJT5HRlEhPELHmOWDiQs9j0hsbt3B5wq6-5WBUA/
 #define ESPIONAGE_SYSTEM_REWORK
 /*ESPIONAGE CHANGES END*/
 
