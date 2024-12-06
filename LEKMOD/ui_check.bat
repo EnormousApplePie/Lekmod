@@ -100,9 +100,14 @@ IF NOT EXIST "%cd%\%euifolder%\TechTree\TechTree.lua" (
 )
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%cd%\%euifolder%\ToolTips\TechButtonInclude.lua" (
-  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\ToolTips" "%cd%\%patchfolder%\Lua\UI\"
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\ToolTips\TechButtonInclude.lua" "%cd%\%patchfolder%\Lua\UI\TechButtonInclude.lua"
 ) ELSE (
-  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\ToolTips" "%cd%\%patchfolder%\Lua\UI\"
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\ToolTips\TechButtonInclude.lua" "%cd%\%patchfolder%\Lua\UI\TechButtonInclude.lua"
+)
+IF NOT EXIST "%cd%\%euifolder%\ToolTips\InfoTooltipInclude.lua" (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\ToolTips\InfoTooltipInclude.lua" "%cd%\%patchfolder%\Lua\UI\InfoTooltipInclude.lua"
+) ELSE (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\ToolTips\EUI_tooltip_library.lua" "%cd%\%patchfolder%\Lua\UI\EUI_tooltip_library.lua"
 )
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\GPList" "%cd%\%patchfolder%\Lua\UI\"
@@ -125,6 +130,8 @@ REM ----------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\VotingSystem" "%cd%\%patchfolder%\Lua\UI\"
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Bombardment.lua" "%cd%\%patchfolder%\Lua\UI\Bombardment.lua"
+REM --------------------------------------------------------------------------------------------------
+ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\DiscussionDialog.lua" "%cd%\%patchfolder%\Lua\UI\DiscussionDialog.lua"
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\EndGameMenu.lua" "%cd%\%patchfolder%\Lua\UI\EndGameMenu.lua"
 REM --------------------------------------------------------------------------------------------------
