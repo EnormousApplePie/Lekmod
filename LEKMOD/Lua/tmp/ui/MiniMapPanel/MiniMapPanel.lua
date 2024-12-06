@@ -1,5 +1,6 @@
-
-----------------------------------------------------------------        
+----------------------------------------------------------------
+-- edit: Victory Screen button for EUI & vanilla UI
+----------------------------------------------------------------       
 ----------------------------------------------------------------        
 include( "InstanceManager" );
 
@@ -74,9 +75,49 @@ function OnResetTurnTimer()
 end
 Controls.ResetTurnTimerButton:RegisterCallback( Mouse.eLClick, OnResetTurnTimer );
 
+function OnPauseTurnTimer()
+	local bIsObserver = PreGame.GetSlotStatus( Game.GetActivePlayer() ) == SlotStatus.SS_OBSERVER;
+	if (not bIsObserver) then
+			Game.DoControl(GameInfoTypes.CONTROL_SCORES);
+	end		
+end
+Controls.ResetTurnTimerButton:RegisterCallback( Mouse.eRClick, OnPauseTurnTimer );
+
 if(not Game.IsOption("GAMEOPTION_END_TURN_TIMER_ENABLED")) then
 	Controls.ResetTurnTimerButton:SetHide(true);
 end
+
+----------------------------------------------------------------  
+-- NEW: show victory screen button when game is over      
+----------------------------------------------------------------    	
+
+function OnVictoryScreenOpen()
+	local victory = Game.GetVictory();
+	local endgametype = -1;
+	if victory == GameInfoTypes.VICTORY_TIME then
+		endgametype = EndGameTypes.Time;
+	elseif victory == GameInfoTypes.VICTORY_SPACE_RACE then
+		endgametype = EndGameTypes.Technology;
+	elseif victory == GameInfoTypes.VICTORY_DOMINATION then
+		endgametype = EndGameTypes.Domination;
+	elseif victory == GameInfoTypes.VICTORY_CULTURAL then
+		endgametype = EndGameTypes.Culture;
+	elseif victory == GameInfoTypes.VICTORY_DIPLOMATIC then
+		endgametype = EndGameTypes.Diplomatic;
+	elseif victory == GameInfoTypes.VICTORY_SCRAP then
+		endgametype = 11;
+	end
+	Events.EndGameShow( endgametype, -2 );
+end
+Controls.VictoryScreenButton:RegisterCallback( Mouse.eLClick, OnVictoryScreenOpen );
+
+if (Game.GetGameState() == GameplayGameStateTypes.GAMESTATE_ON) then
+	Controls.VictoryScreenButton:SetHide(true);
+else
+	Controls.VictoryScreenButton:SetHide(false);
+end
+Events.EndGameShow.Add( function() Controls.VictoryScreenButton:SetHide(false) end);
+
 ----------------------------------------------------------------        
 ----------------------------------------------------------------        
 function OnStrategicViewStateChanged(bStrategicView)
