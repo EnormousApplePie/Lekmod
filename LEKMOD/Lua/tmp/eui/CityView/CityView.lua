@@ -126,7 +126,7 @@ local g_activePlayerID = Game.GetActivePlayer()
 local g_activePlayer = Players[ g_activePlayerID ]
 local g_finishedItems = {}
 
-local g_workerHeadingOpen = OptionsManager.IsNoCitizenWarning()
+local g_workerHeadingOpen = true
 
 local g_rightTipControls = {}
 local g_leftTipControls = {}
