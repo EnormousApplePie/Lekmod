@@ -33,6 +33,8 @@ IF NOT EXIST "%cd%\%euifolder%\CityStatePopup\CityStateDiploPopup.lua" (
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%cd%\%euifolder%\CityView\CityView.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\CityView.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityView.lua"
+) ELSE (
+  ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\eui\CityView\CityView.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityView.lua"
 )
 IF NOT EXIST "%cd%\%euifolder%\CityView\ProductionPopup.lua" (
   ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.lua.ignore" "%cd%\%patchfolder%\Lua\UI\ProductionPopup.lua"
