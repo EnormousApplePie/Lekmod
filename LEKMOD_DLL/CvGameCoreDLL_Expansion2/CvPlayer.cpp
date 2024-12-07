@@ -4822,7 +4822,7 @@ void CvPlayer::doTurnPostDiplomacy()
 	CvGame& kGame = GC.getGame();
 
 #ifdef PENALTY_FOR_DELAYING_POLICIES
-	while (IsDelayedPolicy())
+	while (IsDelayedPolicy() && GC.getGame().isOption("GAMEOPTION_NO_MP_POLICY_SAVING"))
 	{
 		FStaticVector<PolicyTypes, 64, true, c_eCiv5GameplayDLL, 0> adoptablePolicies;
 		FStaticVector<PolicyBranchTypes, 16, true, c_eCiv5GameplayDLL, 0> adoptablePolicyBranches;
