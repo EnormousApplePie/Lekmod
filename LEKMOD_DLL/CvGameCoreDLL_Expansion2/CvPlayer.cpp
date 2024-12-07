@@ -3795,8 +3795,22 @@ bool CvPlayer::CanLiberatePlayer(PlayerTypes ePlayer)
 //	--------------------------------------------------------------------------------
 bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
 {
-	if (GET_PLAYER(ePlayer).isHuman())
+	if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_LIBERATION"))
 	{
+		if (GET_PLAYER(ePlayer).isHuman())
+		{
+			return true;
+		}
+
+		return false;
+	}
+	else
+	{
+		if (!GET_PLAYER(ePlayer).isAlive())
+		{
+			return CanLiberatePlayer(ePlayer);
+		}
+
 		return true;
 	}
 
@@ -4737,7 +4751,7 @@ void CvPlayer::doTurn()
 			if(!isMinorCiv())
 			{
 #ifdef DO_CANCEL_DEALS_WITH_AI
-				if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+				if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_DEALS"))
 				{
 					GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
 					for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
@@ -5020,7 +5034,7 @@ void CvPlayer::doTurnPostDiplomacy()
 #ifdef AI_CULTURE_RESTRICTION
 		if (getJONSCulture() < getNextPolicyCost())
 		{
-			if (isHuman() || getNextPolicyCost() < 1000 || !GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			if (isHuman() || getNextPolicyCost() < 1000 || !GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_CULTURE"))
 			{
 #if defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100) && defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
 			changeJONSCultureTimes100(getCachedJONSCultureForThisTurn());
@@ -29420,7 +29434,7 @@ void CvPlayer::disconnected()
 						checkRunAutoMovesForEveryone();
 					}
 #ifdef DO_CANCEL_DEALS_WITH_AI
-					if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+					if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_DEALS"))
 					{
 						GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
 						for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
@@ -29472,7 +29486,7 @@ void CvPlayer::disconnected()
 					checkRunAutoMovesForEveryone();
 				}
 #ifdef DO_CANCEL_DEALS_WITH_AI
-				if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+				if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_DEALS"))
 				{
 					GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
 					for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)

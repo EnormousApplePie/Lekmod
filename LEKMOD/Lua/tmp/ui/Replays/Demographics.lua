@@ -49,12 +49,21 @@ function GetBest( table, iPlayer )
     for i = 0, GameDefines.MAX_MAJOR_CIVS do
 		local pPlayer = Players[i];
         -- exclude AI from Demographics
-        if((pPlayer:IsAlive() and not Game.IsNetworkMultiPlayer() or pPlayer:IsHuman()) and not pPlayer:IsMinorCiv()) then
-            if( highest == nil or table[i] > highest ) then
-                highest = table[i];
-                highestID = i;
+        if Game.IsOption(GameOptionTypes.GAMEOPTION_AI_GIMP_NO_DEMOGRAPHICS) then
+            if((pPlayer:IsAlive() and not Game.IsNetworkMultiPlayer() or pPlayer:IsHuman()) and not pPlayer:IsMinorCiv()) then
+                if( highest == nil or table[i] > highest ) then
+                    highest = table[i];
+                    highestID = i;
+                end
             end
-       end
+        else
+            if(pPlayer:IsAlive() and not pPlayer:IsMinorCiv()) then
+                if( highest == nil or table[i] > highest ) then
+                    highest = table[i];
+                    highestID = i;
+                end
+            end
+        end
     end
     
     return { highest, highestID };
@@ -70,9 +79,16 @@ function GetAverage( table, iPlayer )
     for i = 0, GameDefines.MAX_MAJOR_CIVS do
        	local pPlayer = Players[i];
         -- exclude AI from Demographics
-        if((pPlayer:IsAlive() and not Game.IsNetworkMultiPlayer() or pPlayer:IsHuman()) and not pPlayer:IsMinorCiv()) then
-            count = count + 1;
-            accum = accum + table[i];
+        if Game.IsOption(GameOptionTypes.GAMEOPTION_AI_GIMP_NO_DEMOGRAPHICS) then
+            if((pPlayer:IsAlive() and not Game.IsNetworkMultiPlayer() or pPlayer:IsHuman()) and not pPlayer:IsMinorCiv()) then
+                count = count + 1;
+                accum = accum + table[i];
+            end
+        else
+            if(pPlayer:IsAlive() and not pPlayer:IsMinorCiv()) then
+                count = count + 1;
+                accum = accum + table[i];
+            end
         end
     end
     
@@ -88,12 +104,21 @@ function GetWorst( table, iPlayer )
     for i = 0, GameDefines.MAX_MAJOR_CIVS do
         local pPlayer = Players[i];
         -- exclude AI from Demographics
-		if((pPlayer:IsAlive() and not Game.IsNetworkMultiPlayer() or pPlayer:IsHuman()) and not pPlayer:IsMinorCiv()) then
-            if( lowest == nil or table[i] <= lowest ) then
-                lowest = table[i];
-                lowestID = i;
+        if Game.IsOption(GameOptionTypes.GAMEOPTION_AI_GIMP_NO_DEMOGRAPHICS) then
+            if((pPlayer:IsAlive() and not Game.IsNetworkMultiPlayer() or pPlayer:IsHuman()) and not pPlayer:IsMinorCiv()) then
+                if( lowest == nil or table[i] <= lowest ) then
+                    lowest = table[i];
+                    lowestID = i;
+                end
             end
-       end
+        else
+            if(pPlayer:IsAlive() and not pPlayer:IsMinorCiv()) then
+                if( lowest == nil or table[i] <= lowest ) then
+                    lowest = table[i];
+                    lowestID = i;
+                end
+            end
+        end
     end
     
     return { lowest, lowestID };
@@ -109,9 +134,17 @@ function GetRank( table, iPlayer )
     for i = 0, GameDefines.MAX_MAJOR_CIVS do
         local pPlayer = Players[i];
         -- exclude AI from Demographics
-		if((pPlayer:IsAlive() and not Game.IsNetworkMultiPlayer() or pPlayer:IsHuman()) and not pPlayer:IsMinorCiv()) then
-            if( table[i] > playerVal ) then
-                rank = rank + 1;
+        if Game.IsOption(GameOptionTypes.GAMEOPTION_AI_GIMP_NO_DEMOGRAPHICS) then
+            if((pPlayer:IsAlive() and not Game.IsNetworkMultiPlayer() or pPlayer:IsHuman()) and not pPlayer:IsMinorCiv()) then
+                if( table[i] > playerVal ) then
+                    rank = rank + 1;
+                end
+            end
+        else
+            if(pPlayer:IsAlive() and not pPlayer:IsMinorCiv()) then
+                if( table[i] > playerVal ) then
+                    rank = rank + 1;
+                end
             end
         end
     end
