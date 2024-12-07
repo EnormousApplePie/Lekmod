@@ -78,7 +78,11 @@ function GetCityStateStatusRow(iMajor, iMinor)
 		end
 	-- Neutral
 	elseif (iInf < GameDefines["FRIENDSHIP_THRESHOLD_FRIENDS"]) then
-		return GameInfo.MinorCivTraits_Status["MINOR_FRIENDSHIP_STATUS_NEUTRAL"];
+		if (bCanBully) then
+			return GameInfo.MinorCivTraits_Status["MINOR_FRIENDSHIP_STATUS_AFRAID"];
+		else
+			return GameInfo.MinorCivTraits_Status["MINOR_FRIENDSHIP_STATUS_NEUTRAL"];
+		end
 	-- Friends
 	elseif (iInf < GameDefines["FRIENDSHIP_THRESHOLD_ALLIES"]) then
 		return GameInfo.MinorCivTraits_Status["MINOR_FRIENDSHIP_STATUS_FRIENDS"];
