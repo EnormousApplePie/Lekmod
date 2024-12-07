@@ -389,9 +389,9 @@ void CvLuaGame::RegisterMembers(lua_State* L)
 #endif
 #ifdef MP_PLAYERS_VOTING_SYSTEM
 	Method(GetLastProposalID);
-	Method(GetProposalIDbyUIid);
 	Method(GetProposalExpirationCounter);
 	Method(GetProposalType);
+	Method(GetProposalTypeCooldownResetTurn);
 	Method(GetProposalStatus);
 	Method(GetProposalOwner);
 	Method(GetProposalSubject);
@@ -404,6 +404,14 @@ void CvLuaGame::RegisterMembers(lua_State* L)
 	Method(GetMaxVotes);
 	Method(IsPlayerHasActiveProposal);
 	Method(IsAnyActiveProposalType);
+	Method(IsProposalTypeOnCooldown);
+	Method(IsProposalTypeAvailable);
+#endif
+#ifdef INGAME_HOTKEY_MANAGER
+	Method(UpdateActions);
+#endif
+#ifdef LUAAPI_GET_TURN_TIME_ELAPSED
+	Method(GetTurnTimeElapsed);
 #endif
 }
 //------------------------------------------------------------------------------
@@ -1566,7 +1574,11 @@ int CvLuaGame::lGetReplayMessage(lua_State* L)
 	{
 		const CvReplayMessage* pMessage = game.getReplayMessage(idx);
 
+#ifdef REPLAY_MESSAGE_EXTENDED
+		lua_createtable(L, 0, 8);
+#else
 		lua_createtable(L, 0, 5);
+#endif
 		const int t = lua_gettop(L);
 
 		lua_pushinteger(L, pMessage->getPlayer());
@@ -1577,6 +1589,18 @@ int CvLuaGame::lGetReplayMessage(lua_State* L)
 
 		lua_pushinteger(L, pMessage->getType());
 		lua_setfield(L, t, "Type");
+
+#ifdef REPLAY_MESSAGE_EXTENDED
+		lua_pushinteger(L, pMessage->getTimestamp());
+		lua_setfield(L, t, "Timestamp");
+
+		lua_pushinteger(L, pMessage->getExtraData1());
+		lua_setfield(L, t, "Data1");
+
+		lua_pushinteger(L, pMessage->getExtraData2());
+		lua_setfield(L, t, "Data2");
+
+#endif
 
 		const CvString& text = pMessage->getText();
 		if(text.GetLength() > 0)
@@ -1628,7 +1652,11 @@ int CvLuaGame::lGetReplayMessages(lua_State* L)
 	{
 		const CvReplayMessage* pMessage = game.getReplayMessage(i);
 
+#ifdef REPLAY_MESSAGE_EXTENDED
+		lua_createtable(L, 0, 8);
+#else
 		lua_createtable(L, 0, 5);
+#endif
 		const int t = lua_gettop(L);
 
 		lua_pushinteger(L, pMessage->getPlayer());
@@ -1639,6 +1667,17 @@ int CvLuaGame::lGetReplayMessages(lua_State* L)
 
 		lua_pushinteger(L, pMessage->getType());
 		lua_setfield(L, t, "Type");
+
+#ifdef REPLAY_MESSAGE_EXTENDED
+		lua_pushinteger(L, pMessage->getTimestamp());
+		lua_setfield(L, t, "Timestamp");
+
+		lua_pushinteger(L, pMessage->getExtraData1());
+		lua_setfield(L, t, "Data1");
+
+		lua_pushinteger(L, pMessage->getExtraData2());
+		lua_setfield(L, t, "Data2");
+#endif
 
 		const CvString& text = pMessage->getText();
 		if(text.GetLength() > 0)
@@ -3024,17 +3063,9 @@ int CvLuaGame::lGetLastProposalID(lua_State* L)
 	return 1;
 }
 //------------------------------------------------------------------------------
-int CvLuaGame::lGetProposalIDbyUIid(lua_State* L)
-{
-	const int iUI_Id = luaL_checkint(L, 1);
-	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id));
-	return 1;
-}
-//------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalExpirationCounter(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetProposalExpirationCounter(iProposalId));
 	return 1;
@@ -3042,17 +3073,24 @@ int CvLuaGame::lGetProposalExpirationCounter(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalType(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalType(iProposalId)));
 	return 1;
 }
 //------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalTypeCooldownResetTurn(lua_State* L)
+{
+	const MPVotingSystemProposalTypes eType = static_cast<MPVotingSystemProposalTypes>(luaL_checkint(L, 1));
+	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+
+	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetProposalTypeCooldownResetTurn(eType, ePlayer));
+	return 1;
+}
+//------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalStatus(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalStatus(iProposalId)));
 	return 1;
@@ -3060,8 +3098,7 @@ int CvLuaGame::lGetProposalStatus(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalOwner(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalOwner(iProposalId)));
 	return 1;
@@ -3069,8 +3106,7 @@ int CvLuaGame::lGetProposalOwner(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalSubject(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalSubject(iProposalId)));
 	return 1;
@@ -3078,8 +3114,7 @@ int CvLuaGame::lGetProposalSubject(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalCompletion(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetProposalCompletion(iProposalId));
 	return 1;
@@ -3087,8 +3122,7 @@ int CvLuaGame::lGetProposalCompletion(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalVoterVote(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
 
 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterVote(iProposalId, ePlayer));
@@ -3097,8 +3131,7 @@ int CvLuaGame::lGetProposalVoterVote(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalVoterHasVoted(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
 
 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterHasVoted(iProposalId, ePlayer));
@@ -3107,8 +3140,7 @@ int CvLuaGame::lGetProposalVoterHasVoted(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetProposalVoterEligibility(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
 
 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterEligibility(iProposalId, ePlayer));
@@ -3117,8 +3149,7 @@ int CvLuaGame::lGetProposalVoterEligibility(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetYesVotes(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetYesVotes(iProposalId));
 	return 1;
@@ -3126,8 +3157,7 @@ int CvLuaGame::lGetYesVotes(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetNoVotes(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetNoVotes(iProposalId));
 	return 1;
@@ -3135,8 +3165,7 @@ int CvLuaGame::lGetNoVotes(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaGame::lGetMaxVotes(lua_State* L)
 {
-	const int iUI_Id = luaL_checkint(L, 1);
-	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const int iProposalId = luaL_checkint(L, 1);
 
 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetMaxVotes(iProposalId));
 	return 1;
@@ -3155,6 +3184,98 @@ int CvLuaGame::lIsAnyActiveProposalType(lua_State* L)
 	const MPVotingSystemProposalTypes eType = static_cast<MPVotingSystemProposalTypes>(luaL_checkint(L, 1));
 
 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->IsAnyActiveProposalType(eType));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lIsProposalTypeOnCooldown(lua_State* L)
+{
+	const MPVotingSystemProposalTypes eType = static_cast<MPVotingSystemProposalTypes>(luaL_checkint(L, 1));
+	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+
+	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->IsProposalTypeOnCooldown(eType, ePlayer));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lIsProposalTypeAvailable(lua_State* L)
+{
+	const MPVotingSystemProposalTypes eType = static_cast<MPVotingSystemProposalTypes>(luaL_checkint(L, 1));
+
+	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->IsProposalTypeAvailable(eType));
+	return 1;
+}
+#endif
+#ifdef INGAME_HOTKEY_MANAGER
+//------------------------------------------------------------------------------
+// replace GameInfoActions with fresh hotkeys data, may be called ingame with Game.UpdateActions()
+namespace Lua = FLua::Details;
+using FLua::Table;
+int CvLuaGame::lUpdateActions(lua_State* L)
+{
+	lua_newtable(L);
+	lua_pushvalue(L, -1);
+	lua_setglobal(L, "GameInfoActions");
+
+	const int t = lua_gettop(L);
+	int idx = 0;
+
+	typedef std::vector<CvActionInfo*> ActionInfos;
+	ActionInfos& infos = GC.getActionInfo();
+	for (ActionInfos::const_iterator it = infos.begin();
+		it != infos.end(); ++it)
+	{
+		CvActionInfo* pEntry = (*it);
+		lua_createtable(L, 0, 0);
+
+		Table kEntry(L, -1);
+
+		kEntry["MissionData"] = pEntry->getMissionData();
+		kEntry["CommandData"] = pEntry->getCommandData();
+
+		kEntry["AutomateType"] = pEntry->getAutomateType();
+		kEntry["InterfaceModeType"] = pEntry->getInterfaceModeType();
+		kEntry["MissionType"] = pEntry->getMissionType();
+		kEntry["CommandType"] = pEntry->getCommandType();
+		kEntry["ControlType"] = pEntry->getControlType();
+		kEntry["OriginalIndex"] = pEntry->getOriginalIndex();
+
+		kEntry["ConfirmCommand"] = pEntry->isConfirmCommand();
+		kEntry["Visible"] = pEntry->isVisible();
+		kEntry["SubType"] = (int)pEntry->getSubType();
+
+		kEntry["Type"] = pEntry->GetType();
+		kEntry["TextKey"] = pEntry->GetTextKey();
+
+		kEntry["ActionInfoIndex"] = pEntry->getActionInfoIndex();
+		kEntry["HotKeyVal"] = pEntry->getHotKeyVal();
+		kEntry["HotKeyPriority"] = pEntry->getHotKeyPriority();
+		kEntry["HotKeyValAlt"] = pEntry->getHotKeyValAlt();
+		kEntry["HotKeyPriorityAlt"] = pEntry->getHotKeyPriorityAlt();
+		kEntry["OrderPriority"] = pEntry->getOrderPriority();
+
+		kEntry["AltDown"] = pEntry->isAltDown();
+		kEntry["ShiftDown"] = pEntry->isShiftDown();
+		kEntry["CtrlDown"] = pEntry->isCtrlDown();
+		kEntry["AltDownAlt"] = pEntry->isAltDownAlt();
+		kEntry["ShiftDownAlt"] = pEntry->isShiftDownAlt();
+		kEntry["CtrlDownAlt"] = pEntry->isCtrlDownAlt();
+
+		kEntry["HotKey"] = pEntry->getHotKeyString();
+		kEntry["Help"] = pEntry->GetHelp();
+		kEntry["DisabledHelp"] = pEntry->GetDisabledHelp();
+
+		lua_rawseti(L, t, idx);
+
+		++idx;
+	}
+
+	return 0;
+}
+#endif
+#ifdef LUAAPI_GET_TURN_TIME_ELAPSED
+int CvLuaGame::lGetTurnTimeElapsed(lua_State* L)
+{
+	lua_pushinteger(L, static_cast<int>(GC.getGame().getTimeElapsed() * 1000));
+
 	return 1;
 }
 #endif

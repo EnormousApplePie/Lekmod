@@ -566,6 +566,7 @@ bool CvNotifications::MayUserDismiss(int iLookupIndex)
 			case NOTIFICATION_MP_IRR_PROPOSAL:
 			case NOTIFICATION_MP_CC_PROPOSAL:
 			case NOTIFICATION_MP_SCRAP_PROPOSAL:
+			case NOTIFICATION_MP_REMAP_PROPOSAL:
 #endif
 				return false;
 				break;
@@ -1122,14 +1123,15 @@ void CvNotifications::Activate(Notification& notification)
 	case NOTIFICATION_MP_IRR_PROPOSAL:
 	case NOTIFICATION_MP_CC_PROPOSAL:
 	case NOTIFICATION_MP_SCRAP_PROPOSAL:
+	case NOTIFICATION_MP_REMAP_PROPOSAL:
 	case NOTIFICATION_MP_PROPOSAL_RESULT:
 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
 		if (notification.m_iGameDataIndex >= 0)
 		{
 			CvMPVotingSystem* pkMPVotingSystem = GC.getGame().GetMPVotingSystem();
-			int iUI_id = notification.m_iLookupIndex;
-			int iStatus = (int)pkMPVotingSystem->GetProposalStatus(pkMPVotingSystem->GetProposalIDbyUIid(iUI_id));
-			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_0, iUI_id, iStatus);
+			int iId = notification.m_iGameDataIndex;
+			int iStatus = (int)pkMPVotingSystem->GetProposalStatus(iId);
+			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_0, iId, iStatus);
 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 		}
 		break;
@@ -1581,8 +1583,16 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 		}
 		else
 		{
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+			if ((GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0))
+			{
+				GET_PLAYER(m_ePlayer).setIsDelayedPolicy(false);
+				return true;
+			}
+#else
 			if((GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0))
 				return true;
+#endif
 		}
 	}
 	break;
@@ -1618,6 +1628,9 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 	{
 		if(GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0)
 		{
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+			GET_PLAYER(m_ePlayer).setIsDelayedPolicy(false);
+#endif
 			return true;
 		}
 	}
@@ -1764,7 +1777,11 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 	case NOTIFICATION_SPY_STOLE_TECH:
 	{
 		CvPlayerEspionage* pEspionage = GET_PLAYER(m_ePlayer).GetEspionage();
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+		if (pEspionage->GetNumTechsToSteal((PlayerTypes)m_aNotifications[iIndex].m_iGameDataIndex) <= 0 || pEspionage->m_aiNumTechsToStealList[m_aNotifications[iIndex].m_iGameDataIndex] <= 0)
+#else
 		if (pEspionage->m_aiNumTechsToStealList[m_aNotifications[iIndex].m_iGameDataIndex] <= 0)
+#endif
 		{
 			return true;
 		}
@@ -1841,6 +1858,20 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 		}
 	}
 	break;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+
+	case NOTIFICATION_MP_IRR_PROPOSAL:
+	case NOTIFICATION_MP_CC_PROPOSAL:
+	case NOTIFICATION_MP_SCRAP_PROPOSAL:
+	case NOTIFICATION_MP_REMAP_PROPOSAL:
+	{
+		if (GC.getGame().GetMPVotingSystem()->GetProposalCompletion(m_aNotifications[iIndex].m_iGameDataIndex))
+		{
+			return true;
+		}
+	}
+	break;
+#endif
 
 	default:	// don't expire
 	{

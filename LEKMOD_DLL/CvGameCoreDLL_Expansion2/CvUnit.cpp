@@ -289,6 +289,9 @@ CvUnit::CvUnit() :
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	, m_bIsIgnoreExpended("CvUnit::m_bIsIgnoreExpended", m_syncArchive)
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	, m_bInstaHealLocked(false)
+#endif
 	, m_bPromotionReady("CvUnit::m_bPromotionReady", m_syncArchive)
 	, m_bDeathDelay("CvUnit::m_bDeathDelay", m_syncArchive)
 	, m_bCombatFocus("CvUnit::m_bCombatFocus", m_syncArchive)
@@ -1133,6 +1136,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 #ifdef DECREASE_BULB_AMOUNT_OVER_TIME
 	m_iScientistBirthTurn = 0;
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	m_bInstaHealLocked = false;
+#endif
 	m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility = "";
 	m_strScriptData ="";
 	m_iScenarioData = 0;
@@ -1397,6 +1403,10 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 #endif
 #if defined(NQM_UNIT_NO_AA_INTERCEPT_AFTER_MOVE_BEFORE_TURN_END) || defined(NQM_UNIT_FIGHTER_NO_INTERCEPT_UNTIL_AFTER_TURN_END)
 	setIsInterceptBlockedUntilEndTurn(pUnit->isInterceptBlockedUntilEndTurn());
+#endif
+
+#ifdef GIFTED_UNITS_ATTACK
+	m_iAttacksMade = pUnit->m_iAttacksMade;
 #endif
 
 	if (pUnit->getUnitInfo().GetNumExoticGoods() > 0)
@@ -1997,6 +2007,12 @@ void CvUnit::doTurn()
 		SetActivityType(ACTIVITY_AWAKE);
 	}
 
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	if (isPromotionReady() && GET_PLAYER(getOwner()).isHuman())
+	{
+		setInstaHealLocked(true);
+	}
+#endif
 	testPromotionReady();
 
 	FeatureTypes eFeature = plot()->getFeatureType();
@@ -2357,6 +2373,12 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 		{
 		case COMMAND_PROMOTION:
 			promote((PromotionTypes)iData1, iData2);
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+			if (getExperience() < experienceNeeded())
+			{
+				setInstaHealLocked(false);
+			}
+#endif
 			break;
 
 		case COMMAND_UPGRADE:
@@ -4074,6 +4096,13 @@ bool CvUnit::CanAutomate(AutomateTypes eAutomate, bool bTestVisibility) const
 		return false;
 	}
 
+#ifdef DISABLE_AUTOMOVES
+	if (GC.getGame().isNetworkMultiPlayer() && GC.getGame().isOption("GAMEOPTION_REMOVE_AUTO_EXPLORE") && isHuman())
+	{
+		return false;
+	}
+#endif
+
 	switch(eAutomate)
 	{
 	case AUTOMATE_BUILD:
@@ -4857,7 +4886,11 @@ bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 		kGame.getPitbossTurnTime() == 0)
 #endif
 	{
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+		float fGameTurnEnd = kGame.getPreviousTurnLen();
+#else
 		float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 		float fTimeElapsed = kGame.getTimeElapsed();
 #else
@@ -6571,7 +6604,11 @@ bool CvUnit::canParadropAt(const CvPlot* pPlot, int iX, int iY) const
 		kGame.getPitbossTurnTime() == 0)
 #endif
 	{
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+		float fGameTurnEnd = kGame.getPreviousTurnLen();
+#else
 		float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
+#endif
 
 #ifdef TURN_TIMER_PAUSE_BUTTON
 		float fTimeElapsed = kGame.getTimeElapsed();
@@ -8034,7 +8071,11 @@ bool CvUnit::CanFoundReligion(const CvPlot* pPlot) const
 		return false;
 	}
 
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+	if (!GET_TEAM(getTeam()).isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+#else
 	if(GET_TEAM(getTeam()).isMinorCiv())
+#endif
 	{
 		return false;
 	}
@@ -8201,7 +8242,11 @@ bool CvUnit::CanEnhanceReligion(const CvPlot* pPlot) const
 		return false;
 	}
 
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+	if (!GET_TEAM(getTeam()).isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+#else
 	if(GET_TEAM(getTeam()).isMinorCiv())
+#endif
 	{
 		return false;
 	}
@@ -8320,6 +8365,13 @@ bool CvUnit::CanSpreadReligion(const CvPlot* pPlot) const
 	{
 		return false;
 	}
+
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+	if (!GET_TEAM(getTeam()).isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+	{
+		return false;
+	}
+#endif
 
 	pCity = pPlot->getPlotCity();
 	if(pCity == NULL)
@@ -10561,6 +10613,12 @@ bool CvUnit::canPromote(PromotionTypes ePromotion, int iLeaderUnitId) const
 	{
 		return false;
 	}
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	if (isInstaHealLocked() && ePromotion == 0)
+	{
+		return false;
+	}
+#endif
 
 	if(!canAcquirePromotion(ePromotion))
 	{
@@ -12779,9 +12837,11 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 		// Domain modifier VS other unit
 		iModifier += domainModifier(pOtherUnit->getDomainType());
 
+#ifndef FIX_RANGE_DEFENSE_MOD
 		// Bonus VS fortified
 		if(pOtherUnit->getFortifyTurns() > 0)
 			iModifier += attackFortifiedModifier();
+#endif
 
 		// Bonus VS wounded
 		if(pOtherUnit->getDamage() > 0)
@@ -12847,6 +12907,12 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 			// Rough Ground
 			if(pTargetPlot->isRoughGround())
 				iModifier += roughRangedAttackModifier();
+
+#ifdef FIX_RANGE_DEFENSE_MOD
+			// Bonus VS fortified
+			if (pOtherUnit->getFortifyTurns() > 0)
+				iModifier += attackFortifiedModifier();
+#endif
 
 #ifdef AUI_UNIT_FIX_BAD_BONUS_STACKS
 		}
@@ -12958,7 +13024,7 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 		// Ranged DEFENSE
 		else
 		{
-#ifndef AUI_UNIT_FIX_BAD_BONUS_STACKS // Moved out of Known Unit block because this doesn't rely on the other unit
+#ifndef FIX_RANGE_DEFENSE_MOD
 			// Ranged Defense Mod
 			iModifier += rangedDefenseModifier();
 #endif
@@ -13040,6 +13106,60 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 			iModifier += iTempModifier;
 
 		iModifier += getDefenseModifier();
+
+#ifdef FIX_RANGE_DEFENSE_MOD
+		// Ranged Defense Mod
+		iModifier += rangedDefenseModifier();
+
+		// Bonus for fighting in one's lands
+		if (plot()->IsFriendlyTerritory(getOwner()))
+		{
+			iTempModifier = getFriendlyLandsModifier();
+			iModifier += iTempModifier;
+
+			// Founder Belief bonus
+			CvCity* pPlotCity = plot()->getWorkingCity();
+			if (pPlotCity)
+			{
+				ReligionTypes eReligion = pPlotCity->GetCityReligions()->GetReligiousMajority();
+				if (eReligion != NO_RELIGION && eReligion == eFoundedReligion)
+				{
+					const CvReligion* pCityReligion = pReligions->GetReligion(eReligion, pPlotCity->getOwner());
+					if (pCityReligion)
+					{
+						iTempModifier = pCityReligion->m_Beliefs.GetCombatModifierFriendlyCities();
+						iModifier += iTempModifier;
+					}
+				}
+			}
+		}
+
+		// Bonus for fighting outside one's lands
+		else
+		{
+			iTempModifier = getOutsideFriendlyLandsModifier();
+			iModifier += iTempModifier;
+
+			// Founder Belief bonus (this must be a city controlled by an enemy)
+			CvCity* pPlotCity = plot()->getWorkingCity();
+			if (pPlotCity)
+			{
+				if (atWar(getTeam(), pPlotCity->getTeam()))
+				{
+					ReligionTypes eReligion = pPlotCity->GetCityReligions()->GetReligiousMajority();
+					if (eReligion != NO_RELIGION && eReligion == eFoundedReligion)
+					{
+						const CvReligion* pCityReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, pPlotCity->getOwner());
+						if (pCityReligion)
+						{
+							iTempModifier = pCityReligion->m_Beliefs.GetCombatModifierEnemyCities();
+							iModifier += iTempModifier;
+						}
+					}
+				}
+			}
+		}
+#endif
 	}
 
 	// Unit can't drop below 10% strength
@@ -15159,6 +15279,16 @@ void CvUnit::setHotKeyNumber(int iNewValue)
 void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool bCheckPlotVisible, bool bNoMove)
 {
 	VALIDATE_OBJECT
+#ifdef UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
+	std::vector<bool> oldCanBully(MAX_MAJOR_CIVS * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS));
+	for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+	{
+		for (int jJ = MAX_MAJOR_CIVS; jJ < MAX_MINOR_CIVS; jJ++)
+		{
+			oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] = GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI);
+		}
+	}
+#endif
 	IDInfo* pUnitNode = 0;
 	CvCity* pOldCity = 0;
 	CvCity* pNewCity = 0;
@@ -15968,6 +16098,30 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 			}
 		}
 	}
+
+#ifdef UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
+	for (int jJ = MAX_MAJOR_CIVS; jJ < MAX_MINOR_CIVS; jJ++)
+	{
+		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+		{
+			if (oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] != GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI))
+			{
+				PlayerTypes eLoopMinor = (PlayerTypes)jJ;
+				if (GET_PLAYER(eLoopMinor).isAlive())
+				{
+					if (GET_PLAYER(eLoopMinor).getCapitalCity())
+					{
+						if (GET_PLAYER(eLoopMinor).getCapitalCity()->plot())
+						{
+							GET_PLAYER(eLoopMinor).getCapitalCity()->plot()->updateFog();
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+#endif
 }
 
 //	---------------------------------------------------------------------------
@@ -16193,6 +16347,16 @@ void CvUnit::ShowDamageDeltaText(int iDelta, CvPlot* pkPlot, float fAdditionalTe
 int CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, float fAdditionalTextDelay, const CvString* pAppendText)
 {
 	VALIDATE_OBJECT
+#ifdef UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
+	std::vector<bool> oldCanBully(MAX_MAJOR_CIVS * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS));
+	for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+	{
+		for (int jJ = MAX_MAJOR_CIVS; jJ < MAX_MINOR_CIVS; jJ++)
+		{
+			oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] = GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI);
+		}
+	}
+#endif
 
 	int iOldValue;
 
@@ -16282,6 +16446,30 @@ int CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, float fAdditionalTextD
 			GET_PLAYER(ePlayer).DoUnitKilledCombat(getOwner(), getUnitType());
 		}
 	}
+
+#ifdef UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
+	for (int jJ = MAX_MAJOR_CIVS; jJ < MAX_MINOR_CIVS; jJ++)
+	{
+		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+		{
+			if (oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] != GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI))
+			{
+				PlayerTypes eLoopMinor = (PlayerTypes)jJ;
+				if (GET_PLAYER(eLoopMinor).isAlive())
+				{
+					if (GET_PLAYER(eLoopMinor).getCapitalCity())
+					{
+						if (GET_PLAYER(eLoopMinor).getCapitalCity()->plot())
+						{
+							GET_PLAYER(eLoopMinor).getCapitalCity()->plot()->updateFog();
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+#endif
 
 	return iDiff;
 }
@@ -19714,6 +19902,20 @@ void CvUnit::SetScientistBirthTurn(int iValue)
 	m_iScientistBirthTurn = iValue;
 }
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+//	--------------------------------------------------------------------------------
+bool CvUnit::isInstaHealLocked() const
+{
+	return m_bInstaHealLocked;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::setInstaHealLocked(bool bNewValue)
+{
+	m_bInstaHealLocked = bNewValue;
+}
+
+#endif
 //	--------------------------------------------------------------------------------
 std::string CvUnit::getScriptData() const
 {
@@ -20889,6 +21091,9 @@ void CvUnit::read(FDataStream& kStream)
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	kStream >> m_bIsIgnoreExpended;
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	kStream >> m_bInstaHealLocked;
+#endif
 
 	//  Read mission queue
 	UINT uSize;
@@ -21024,6 +21229,9 @@ void CvUnit::write(FDataStream& kStream) const
 #endif
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	kStream << m_bIsIgnoreExpended;
+#endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	kStream << m_bInstaHealLocked;
 #endif
 
 	kStream << m_iResearchBulbAmount; // GJS

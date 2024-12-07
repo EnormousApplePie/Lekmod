@@ -43,6 +43,9 @@ enum CvSpyResult // what was the result of the last spy action
     SPY_RESULT_UNDETECTED, // spy was not detected
     SPY_RESULT_DETECTED,   // a spy was detected in the city, but the defensive player can't tell which player
     SPY_RESULT_IDENTIFIED, // a spy was detected and identified in the city
+#ifdef ESPIONAGE_SYSTEM_REWORK
+	SPY_RESULT_SPOTTED,
+#endif
     SPY_RESULT_KILLED,     // a spy was detected, identified, and killed in the city
     NUM_SPY_RESULTS
 };
@@ -122,6 +125,10 @@ struct IntrigueNotificationMessage
 typedef FStaticVector<CvEspionageSpy, 8, false, c_eCiv5GameplayDLL > SpyList;
 typedef FStaticVector<TechTypes, 1, false, c_eCiv5GameplayDLL> TechList;
 typedef FStaticVector<TechList, MAX_MAJOR_CIVS, false, c_eCiv5GameplayDLL> PlayerTechList;
+#ifdef ESPIONAGE_SYSTEM_REWORK
+typedef FStaticVector<int, 1, false, c_eCiv5GameplayDLL> ScienceToStealList;
+typedef FStaticVector<ScienceToStealList, MAX_MAJOR_CIVS, false, c_eCiv5GameplayDLL> PlayerScienceToStealList;
+#endif
 typedef FStaticVector<int, MAX_MAJOR_CIVS, false, c_eCiv5GameplayDLL> NumTechsToStealList;
 typedef Firaxis::Array<int, MAX_MAJOR_CIVS> MaxTechCost;
 typedef Firaxis::Array<std::vector<HeistLocation>, MAX_MAJOR_CIVS> HeistLocationList;
@@ -212,6 +219,9 @@ public:
 	std::vector<int> m_aiSpyListNameOrder;
 	int m_iSpyListNameOrderIndex;
 	PlayerTechList m_aaPlayerStealableTechList;
+#ifdef ESPIONAGE_SYSTEM_REWORK
+	PlayerScienceToStealList m_aaPlayerScienceToStealList;
+#endif
 	NumTechsToStealList m_aiNumTechsToStealList;
 	MaxTechCost m_aiMaxTechCost;
 	HeistLocationList m_aHeistLocations;

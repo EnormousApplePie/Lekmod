@@ -5710,6 +5710,47 @@ void CvMinorCivAI::SetAlly(PlayerTypes eNewAlly)
 
 	PlayerTypes eOldAlly = GetAlly();
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	{
+		if (eOldAlly != NO_PLAYER)
+		{
+			if (eNewAlly != NO_PLAYER)
+			{
+				if (GET_PLAYER(eOldAlly).isHuman() && GET_PLAYER(eNewAlly).isHuman() && GET_PLAYER(eOldAlly).getTeam() != GET_PLAYER(eNewAlly).getTeam())
+				{
+					CvGame& kGame = GC.getGame();
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+					float fGameTurnEnd = kGame.getPreviousTurnLen();
+#else
+					float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
+#endif
+					float fTimeElapsed = kGame.getTimeElapsed();
+					float fRestrictionTime = std::min(CS_ALLYING_WAR_RESCTRICTION_TIMER, fGameTurnEnd);
+					if (fGameTurnEnd - fTimeElapsed > fRestrictionTime)
+					{
+						GET_PLAYER(eNewAlly).setTurnCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), kGame.getGameTurn());
+						GET_PLAYER(eNewAlly).setTimeCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), fTimeElapsed + fRestrictionTime);
+					}
+					else
+					{
+						GET_PLAYER(eNewAlly).setTurnCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), kGame.getGameTurn() + 1);
+						GET_PLAYER(eNewAlly).setTimeCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), fRestrictionTime - (fGameTurnEnd - fTimeElapsed));
+					}
+				}
+			}
+			if (GET_PLAYER(eOldAlly).isHuman())
+			{
+				for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+				{
+					GET_PLAYER(eOldAlly).setTurnCSWarAllowingMinor((PlayerTypes)iI, GetPlayer()->GetID(), -1);
+					GET_PLAYER(eOldAlly).setTimeCSWarAllowingMinor((PlayerTypes)iI, GetPlayer()->GetID(), 0.f);
+				}
+			}
+		}
+	}
+#endif
+
 	int iPlotVisRange = GC.getPLOT_VISIBILITY_RANGE();
 
 	if(eOldAlly != NO_PLAYER)

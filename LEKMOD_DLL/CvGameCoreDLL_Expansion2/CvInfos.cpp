@@ -526,6 +526,18 @@ bool CvHotKeyInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 
 	return true;
 }
+#ifdef INGAME_HOTKEY_MANAGER
+//------------------------------------------------------------------------------
+void CvHotKeyInfo::UpdateHotkey(const char* szHK, bool bAlt, bool bShift, bool bCtrl)
+{
+	setHotKey(szHK);
+	setHotKeyVal(GetHotKeyInt(szHK));
+	setAltDown(bAlt);
+	setShiftDown(bShift);
+	setCtrlDown(bCtrl);
+	setHotKeyDescription(GetTextKey(), NULL, CreateHotKeyFromDescription(getHotKey(), m_bShiftDown, m_bAltDown, m_bCtrlDown));
+}
+#endif
 //------------------------------------------------------------------------------
 int CvHotKeyInfo::getActionInfoIndex() const
 {
@@ -1011,6 +1023,16 @@ CvActionInfo::CvActionInfo() :
 	m_eSubType(NO_ACTIONSUBTYPE)
 {
 }
+#ifdef INGAME_HOTKEY_MANAGER
+//------------------------------------------------------------------------------
+void CvActionInfo::UpdateHotkey(const char* szHK, bool bAlt, bool bShift, bool bCtrl) const
+{
+	if (getHotkeyInfo())
+	{
+		getHotkeyInfo()->UpdateHotkey(szHK, bAlt, bShift, bCtrl);
+	}
+}
+#endif
 //------------------------------------------------------------------------------
 int CvActionInfo::getMissionData() const
 {

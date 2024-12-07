@@ -126,7 +126,7 @@ void ClearPlayerDeltas()
 //	--------------------------------------------------------------------------------
 CvPlayer::CvPlayer() :
 	m_syncArchive(*this)
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 	, m_bIsDisconnected("CvPlayer::m_bIsDisconnected", m_syncArchive)
 #endif
 	, m_iStartingX("CvPlayer::m_iStartingX", m_syncArchive)
@@ -495,6 +495,13 @@ CvPlayer::CvPlayer() :
 	, m_iFaithPurchaseIndex(0)
 	, m_bProcessedAutoMoves(false)
 	, m_kPlayerAchievements(*this)
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	, m_ppaaiTurnCSWarAllowing("CvPlayer::m_ppaaiTurnCSWarAllowing", m_syncArchive)
+	, m_ppaafTimeCSWarAllowing("CvPlayer::m_ppaafTimeCSWarAllowing", m_syncArchive)
+#endif
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	, m_bIsDelayedPolicy(false)
+#endif
 
 // CMP
 	, m_paiNumCitiesFreeChosenBuilding("CvPlayer::m_paiNumCitiesFreeChosenBuilding", m_syncArchive)
@@ -786,6 +793,11 @@ void CvPlayer::uninit()
 	m_pabLoyalMember.clear();
 	m_pabGetsScienceFromPlayer.clear();
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	m_ppaaiTurnCSWarAllowing.clear();
+	m_ppaafTimeCSWarAllowing.clear();
+#endif
+
 	m_pPlayerPolicies->Uninit();
 	m_pEconomicAI->Uninit();
 	m_pMilitaryAI->Uninit();
@@ -854,7 +866,7 @@ void CvPlayer::uninit()
 	FAutoArchive& archive = getSyncArchive();
 	archive.clearDelta();
 
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 	m_bIsDisconnected = false;
 #endif
 	m_iStartingX = INVALID_PLOT_COORD;
@@ -1149,6 +1161,9 @@ void CvPlayer::uninit()
 	m_iFaithPurchaseIndex = 0;
 	m_iMaxEffectiveCities = 1;
 	m_iLastSliceMoved = 0;
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	m_bIsDelayedPolicy = false;
+#endif
 
 #ifdef NQ_CHEAT_FIRST_ROYAL_LIBRARY_COMES_WITH_GREAT_WORK
 	m_bHasEverBuiltRoyalLibrary = false;
@@ -1361,6 +1376,32 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_pabGetsScienceFromPlayer.clear();
 		m_pabGetsScienceFromPlayer.resize(MAX_CIV_PLAYERS, false);
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+		Firaxis::Array< int, MAX_MINOR_CIVS > turn;
+		for (unsigned int j = 0; j < MAX_MINOR_CIVS; ++j)
+		{
+			turn[j] = -1;
+		}
+		m_ppaaiTurnCSWarAllowing.clear();
+		m_ppaaiTurnCSWarAllowing.resize(MAX_MAJOR_CIVS);
+		for (unsigned int i = 0; i < m_ppaaiTurnCSWarAllowing.size(); ++i)
+		{
+			m_ppaaiTurnCSWarAllowing.setAt(i, turn);
+		}
+
+		Firaxis::Array< float, MAX_MINOR_CIVS > time;
+		for (unsigned int j = 0; j < MAX_MINOR_CIVS; ++j)
+		{
+			time[j] = 0.f;
+		}
+		m_ppaafTimeCSWarAllowing.clear();
+		m_ppaafTimeCSWarAllowing.resize(MAX_MAJOR_CIVS);
+		for (unsigned int i = 0; i < m_ppaafTimeCSWarAllowing.size(); ++i)
+		{
+			m_ppaafTimeCSWarAllowing.setAt(i, time);
+		}
+#endif
+
 		m_pEconomicAI->Init(GC.GetGameEconomicAIStrategies(), this);
 		m_pMilitaryAI->Init(GC.GetGameMilitaryAIStrategies(), this, GetDiplomacyAI());
 		m_pCitySpecializationAI->Init(GC.GetGameCitySpecializations(), this);
@@ -1476,7 +1517,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	}
 }
 
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 bool CvPlayer::isDisconnected() const
 {
 	return m_bIsDisconnected;
@@ -2053,6 +2094,10 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 			}
 		}
 	}
+
+#ifdef BUILDINGS_DESTROY_ONCE_PER_TURN
+	int iTurnsSinceAcquire = GC.getGame().getGameTurn() - pOldCity->getGameTurnAcquired();
+#endif
 
 	if(bConquest)
 	{
@@ -2837,7 +2882,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 							if(!isProductionMaxedBuildingClass(((BuildingClassTypes)(pkBuildingInfo->GetBuildingClassType())), true))
 							{
 								// here would be a good place to put additional checks (for example, influence)
+#ifdef BUILDINGS_DESTROY_ONCE_PER_TURN
+								if(!bConquest || bRecapture || iTurnsSinceAcquire > 0 || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+#else
+								
 								if(!bConquest || bRecapture || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+#endif
 								{
 									iNum += paiNumRealBuilding[iI];
 								}
@@ -3741,6 +3791,19 @@ bool CvPlayer::CanLiberatePlayer(PlayerTypes ePlayer)
 	return true;
 }
 
+#ifdef NEW_CITIES_LIBERATION
+//	--------------------------------------------------------------------------------
+bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
+{
+	if (GET_PLAYER(ePlayer).isHuman())
+	{
+		return true;
+	}
+
+	return false;
+}
+
+#else
 //	--------------------------------------------------------------------------------
 bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
 {
@@ -3751,6 +3814,7 @@ bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
 
 	return true;
 }
+#endif
 
 //	--------------------------------------------------------------------------------
 #ifdef AUI_UNIT_FIX_GIFTED_UNITS_ARE_GIFTED_NOT_CLONED
@@ -4672,6 +4736,29 @@ void CvPlayer::doTurn()
 		{
 			if(!isMinorCiv())
 			{
+#ifdef DO_CANCEL_DEALS_WITH_AI
+				if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+				{
+					GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
+					for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
+					{
+						TeamTypes eTeam = (TeamTypes)iLoopTeam;
+						if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+						{
+							GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
+							GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
+							GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
+							GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
+							GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
+							GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
+							GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
+
+							// Bump Units out of places they shouldn't be
+							GC.getMap().verifyUnitValidPlot();
+						}
+					}
+				}
+#endif
 				GetTrade()->DoTurn();
 				GetMilitaryAI()->ResetCounters();
 				GetGrandStrategyAI()->DoTurn();
@@ -4720,6 +4807,80 @@ void CvPlayer::doTurnPostDiplomacy()
 {
 	CvGame& kGame = GC.getGame();
 
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	while (IsDelayedPolicy())
+	{
+		FStaticVector<PolicyTypes, 64, true, c_eCiv5GameplayDLL, 0> adoptablePolicies;
+		FStaticVector<PolicyBranchTypes, 16, true, c_eCiv5GameplayDLL, 0> adoptablePolicyBranches;
+
+		for (int iI = 0; iI < GC.GetGamePolicies()->GetNumPolicies(); iI++)
+		{
+			if (canAdoptPolicy((PolicyTypes)iI))
+			{
+				adoptablePolicies.push_back((PolicyTypes)iI);
+			}
+		}
+
+		if (adoptablePolicies.size() > 0)
+		{
+			int iNextPolicy = GC.getGame().getJonRandNum(adoptablePolicies.size(), "Random Policy Pick");
+			doAdoptPolicy(adoptablePolicies[iNextPolicy]);
+			if (!(getJONSCulture() >= getNextPolicyCost() || GetNumFreePolicies() > 0))
+			{
+				setIsDelayedPolicy(false);
+			}
+		}
+		else
+		{
+			for (int iI = 0; iI < GC.GetGamePolicies()->GetNumPolicyBranches(); iI++)
+			{
+				PolicyBranchTypes eBranch = (PolicyBranchTypes)iI;
+				if (GetPlayerPolicies()->CanUnlockPolicyBranch(eBranch))
+				{
+					adoptablePolicyBranches.push_back((PolicyBranchTypes)iI);
+				}
+			}
+
+			if (adoptablePolicyBranches.size() > 0)
+			{
+				int iNextPolicyBranch = GC.getGame().getJonRandNum(adoptablePolicyBranches.size(), "Random Policy Pick");
+				GetPlayerPolicies()->DoUnlockPolicyBranch(adoptablePolicyBranches[iNextPolicyBranch]);
+				if (!(getJONSCulture() >= getNextPolicyCost() || GetNumFreePolicies() > 0))
+				{
+					setIsDelayedPolicy(false);
+				}
+			}
+			else
+			{
+				setIsDelayedPolicy(false);
+			}
+		}
+		adoptablePolicies.clear();
+		adoptablePolicyBranches.clear();
+	}
+
+
+	int iNumFreePoliciesFromProjectReward = GetNumFreePolicies() / 1024;
+	if (iNumFreePoliciesFromProjectReward > 0)
+	{
+		ChangeNumFreePolicies(-1024 * iNumFreePoliciesFromProjectReward);
+	}
+	if (kGame.isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	{
+		if (getJONSCulture() >= getNextPolicyCost() || GetNumFreePolicies() > 0)
+		{
+			if (isHuman())
+			{
+				setIsDelayedPolicy(true);
+			}
+		}
+		else
+		{
+			setIsDelayedPolicy(false);
+		}
+	}
+	ChangeNumFreePolicies(iNumFreePoliciesFromProjectReward);
+#endif
 	if(isAlive())
 	{
 		kGame.GetTacticalAnalysisMap()->RefreshDataForNextPlayer(this);
@@ -4856,8 +5017,11 @@ void CvPlayer::doTurnPostDiplomacy()
 #else
 	if(kGame.isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
 	{
-		if(getJONSCulture() < getNextPolicyCost())
-#endif
+#ifdef AI_CULTURE_RESTRICTION
+		if (getJONSCulture() < getNextPolicyCost())
+		{
+			if (isHuman() || getNextPolicyCost() < 1000 || !GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			{
 #if defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100) && defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
 			changeJONSCultureTimes100(getCachedJONSCultureForThisTurn());
 #elif defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100)
@@ -4866,6 +5030,21 @@ void CvPlayer::doTurnPostDiplomacy()
 			changeJONSCulture(getCachedJONSCultureForThisTurn());
 #else
 			changeJONSCulture(GetTotalJONSCulturePerTurn());
+#endif
+			}
+		}
+#else
+		if(getJONSCulture() < getNextPolicyCost())
+#if defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100) && defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
+			changeJONSCultureTimes100(getCachedJONSCultureForThisTurn());
+#elif defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100)
+			changeJONSCultureTimes100(GetTotalJONSCulturePerTurnTimes100());
+#elif defined(AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE)
+			changeJONSCulture(getCachedJONSCultureForThisTurn());
+#else
+			changeJONSCulture(GetTotalJONSCulturePerTurn());
+#endif
+#endif
 #endif
 	}
 #ifndef NQM_PRUNING
@@ -8796,6 +8975,15 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	{
 		return false;
 	}
+
+#ifdef NQM_AI_GIMP_NO_WORLD_WONDERS
+	CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+	if (GC.getGame().isBuildingClassMaxedOut(eBuildingClass) ||
+		isWorldWonderClass(*pkBuildingClassInfo) && (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER")) && !isHuman())
+	{
+		return false;
+	}
+#endif
 
 	if(currentTeam.isBuildingClassMaxedOut(eBuildingClass))
 	{
@@ -26464,6 +26652,9 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_bHasEverBuiltRoyalLibrary;
 #endif
 	kStream >> m_bHasBetrayedMinorCiv;
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	kStream >> m_bIsDelayedPolicy;
+#endif
 	kStream >> m_bAlive;
 	kStream >> m_bEverAlive;
 	kStream >> m_bBeingResurrected;
@@ -26579,6 +26770,11 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_pabLoyalMember;
 
 	kStream >> m_pabGetsScienceFromPlayer;
+
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	kStream >> m_ppaaiTurnCSWarAllowing;
+	kStream >> m_ppaafTimeCSWarAllowing;
+#endif
 
 	m_pPlayerPolicies->Read(kStream);
 	m_pEconomicAI->Read(kStream);
@@ -27046,6 +27242,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_bHasEverBuiltRoyalLibrary;
 #endif
 	kStream << m_bHasBetrayedMinorCiv;
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	kStream << m_bIsDelayedPolicy;
+#endif
 	kStream << m_bAlive;
 	kStream << m_bEverAlive;
 	kStream << m_bBeingResurrected;
@@ -27131,6 +27330,11 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_pabLoyalMember;
 
 	kStream << m_pabGetsScienceFromPlayer;
+
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	kStream << m_ppaaiTurnCSWarAllowing;
+	kStream << m_ppaafTimeCSWarAllowing;
+#endif
 
 	m_pPlayerPolicies->Write(kStream);
 	m_pEconomicAI->Write(kStream);
@@ -27455,7 +27659,11 @@ bool CvPlayer::canStealTech(PlayerTypes eTarget, TechTypes eTech) const
 {
 	if(GET_TEAM(GET_PLAYER(eTarget).getTeam()).GetTeamTechs()->HasTech(eTech))
 	{
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+		if (GetPlayerTechs()->CanResearch(eTech) && GetEspionage()->IsTechStealable(eTarget, eTech) && GetEspionage()->m_aiNumTechsToStealList[eTarget] > 0)
+#else
 		if(GetPlayerTechs()->CanResearch(eTech))
+#endif
 		{
 			return true;
 		}
@@ -28139,7 +28347,18 @@ int CvPlayer::GetMaxEffectiveCities(bool bIncludePuppets)
 
 	if (bIncludePuppets)
 	{
+#ifdef FIX_MAX_EFFECTIVE_CITIES
+		if (m_iMaxEffectiveCities > getNumCities() - iNumLimboCities)
+		{
+			return m_iMaxEffectiveCities;
+		}
+		else
+		{
+			return getNumCities() - iNumLimboCities;
+		}
+#else
 		return m_iMaxEffectiveCities + iNumPuppetCities;
+#endif
 	}
 
 	return m_iMaxEffectiveCities;
@@ -28620,6 +28839,72 @@ bool CvPlayer::IsAllowedToTradeWith(PlayerTypes eOtherPlayer)
 	return true;
 }
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+int CvPlayer::getTurnCSWarAllowing(PlayerTypes ePlayer)
+{
+	int iValue = -1;
+	for (int iI = 0; iI < MAX_MINOR_CIVS; iI++)
+	{
+		if (m_ppaaiTurnCSWarAllowing[ePlayer][iI] > iValue)
+		{
+			iValue = m_ppaaiTurnCSWarAllowing[ePlayer][iI];
+		}
+	}
+
+	return iValue;
+}
+
+int CvPlayer::getTurnCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor)
+{
+	return m_ppaaiTurnCSWarAllowing[ePlayer][int(eMinor) - MAX_MAJOR_CIVS];
+}
+
+void CvPlayer::setTurnCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor, int iValue)
+{
+	Firaxis::Array<int, MAX_MINOR_CIVS> turn = m_ppaaiTurnCSWarAllowing[ePlayer];
+	turn[int(eMinor) - MAX_MAJOR_CIVS] = iValue;
+	m_ppaaiTurnCSWarAllowing.setAt(ePlayer, turn);
+}
+
+float CvPlayer::getTimeCSWarAllowing(PlayerTypes ePlayer)
+{
+	float fValue = 0.f;
+	for (int iI = 0; iI < MAX_MINOR_CIVS; iI++)
+	{
+		if (m_ppaafTimeCSWarAllowing[ePlayer][iI] > fValue)
+		{
+			fValue = m_ppaafTimeCSWarAllowing[ePlayer][iI];
+		}
+	}
+
+	return fValue;
+}
+
+float CvPlayer::getTimeCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor)
+{
+	return m_ppaafTimeCSWarAllowing[ePlayer][int(eMinor) - MAX_MAJOR_CIVS];
+}
+
+void CvPlayer::setTimeCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor, float fValue)
+{
+	Firaxis::Array<float, MAX_MINOR_CIVS> time = m_ppaafTimeCSWarAllowing[ePlayer];
+	time[int(eMinor) - MAX_MAJOR_CIVS] = fValue;
+	m_ppaafTimeCSWarAllowing.setAt(ePlayer, time);
+}
+#endif
+
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+bool CvPlayer::IsDelayedPolicy() const
+{
+	return m_bIsDelayedPolicy;
+}
+
+void CvPlayer::setIsDelayedPolicy(bool bValue)
+{
+	m_bIsDelayedPolicy = bValue;
+}
+#endif
+
 //////////////////////////////////////////////////////////////////////////
 // Tutorial Stuff...
 //////////////////////////////////////////////////////////////////////////
@@ -29091,17 +29376,34 @@ void CvPlayer::disconnected()
 				}
 			}
 
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
-		if (!isObserver())
-		{
-			if (!CvPreGame::isPitBoss() || gDLL->IsPlayerKicked(GetID()))
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+			if (!isObserver())
 			{
-				setIsDisconnected(false); // kicked players should unpause the game
-				if (GC.getGame().getPausePlayer() == GetID())
-					GC.getGame().setPausePlayer(NO_PLAYER);
-#else
-		if(!isObserver() && (!CvPreGame::isPitBoss() || gDLL->IsPlayerKicked(GetID())))
-		{
+				if (!CvPreGame::isPitBoss() || gDLL->IsPlayerKicked(GetID()))
+				{
+					setIsDisconnected(false); // kicked players should unpause the game
+					bool isAnyDisconnected = false;
+					for (int iI = 0; iI < MAX_PLAYERS; iI++)
+					{
+						PlayerTypes eLoopPlayer = (PlayerTypes)iI;
+						if (GET_PLAYER(eLoopPlayer).isDisconnected())
+						{
+							isAnyDisconnected = true;
+						}
+				}
+#ifdef TURN_TIMER_PAUSE_BUTTON
+					{
+						if (!isAnyDisconnected && GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && !GC.getGame().isPaused() && GC.getGame().getGameState() == GAMESTATE_ON)
+						{
+							if ((GC.getGame().getElapsedGameTurns() > 0) && GET_PLAYER(GC.getGame().getActivePlayer()).isTurnActive())
+							{
+								// as there is no netcode for timer pause,
+								// this function will act as one, if called with special agreed upon arguments
+								// resetTurnTimer(true);
+								gDLL->sendGiftUnit(NO_PLAYER, -11);
+							}
+						}
+					}
 #endif
 			// JAR : First pass, automatically fall back to CPU so the
 			// game can continue. Todo : add popup on host asking whether
@@ -29110,25 +29412,120 @@ void CvPlayer::disconnected()
 			CvPreGame::setSlotStatus(GetID(), SS_COMPUTER);
 			CvPreGame::VerifyHandicap(GetID());	//Changing the handicap because we're switching to AI
 
-			// Load leaderhead for this new AI player
-			gDLL->NotifySpecificAILeaderInGame(GetID());
-			
-#ifdef AUI_GAME_BETTER_HYBRID_MODE
-			if (GC.getGame().isAnySimultaneousTurns())
-#else
-			if(!GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) && GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS))
+					// Load leaderhead for this new AI player
+					gDLL->NotifySpecificAILeaderInGame(GetID());
+
+					if (!GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) && GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS))
+					{//When in fully simultaneous turn mode, having a player disconnect might trigger the automove phase for all human players.
+						checkRunAutoMovesForEveryone();
+					}
+#ifdef DO_CANCEL_DEALS_WITH_AI
+					if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+					{
+						GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
+						for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
+						{
+							TeamTypes eTeam = (TeamTypes)iLoopTeam;
+							if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+							{
+								GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
+								GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
+								GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
+								GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
+								GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
+								GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
+								GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
+
+								// Bump Units out of places they shouldn't be
+								GC.getMap().verifyUnitValidPlot();
+							}
+						}
+					}
 #endif
-			{//When in fully simultaneous turn mode, having a player disconnect might trigger the automove phase for all human players.
-				checkRunAutoMovesForEveryone();
+#ifdef CHANGE_HOST_IF_DISCONNECTED
+					CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
+					if (pLeague != NULL)
+					{
+						// Check host
+						if (pLeague->IsHostMember(GetID()))
+						{
+							pLeague->AssignNewHost();
+						}
+					}
+#endif
 			}
-		}
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
-			else if (GC.getGame().isOption("GAMEOPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT") && isAlive() && isTurnActive() &&
-				(GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) || GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)) && !gDLL->IsPlayerKicked(GetID()))
+#else
+			if (!isObserver() && (!CvPreGame::isPitBoss() || gDLL->IsPlayerKicked(GetID())))
 			{
-				setIsDisconnected(true);
-				GC.getGame().setPausePlayer(GetID());
+				// JAR : First pass, automatically fall back to CPU so the
+				// game can continue. Todo : add popup on host asking whether
+				// the AI should take over or everyone should wait for the
+				// player to reconnect
+				CvPreGame::setSlotStatus(GetID(), SS_COMPUTER);
+				CvPreGame::VerifyHandicap(GetID());	//Changing the handicap because we're switching to AI
+
+				// Load leaderhead for this new AI player
+				gDLL->NotifySpecificAILeaderInGame(GetID());
+
+				if (!GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) && GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS))
+				{//When in fully simultaneous turn mode, having a player disconnect might trigger the automove phase for all human players.
+					checkRunAutoMovesForEveryone();
+				}
+#ifdef DO_CANCEL_DEALS_WITH_AI
+				if (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+				{
+					GC.getGame().GetGameTrade()->ClearAllCivTradeRoutes(GetID());
+					for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
+					{
+						TeamTypes eTeam = (TeamTypes)iLoopTeam;
+						if (getTeam() != eTeam && GET_TEAM(eTeam).isAlive() && GET_TEAM(eTeam).isHuman())
+						{
+							GC.getGame().GetGameDeals()->DoCancelDealsBetweenTeams(GET_PLAYER(GetID()).getTeam(), (TeamTypes)iLoopTeam);
+							GET_TEAM(getTeam()).CloseEmbassyAtTeam(eTeam);
+							GET_TEAM(eTeam).CloseEmbassyAtTeam(getTeam());
+							GET_TEAM(getTeam()).CancelResearchAgreement(eTeam);
+							GET_TEAM(eTeam).CancelResearchAgreement(getTeam());
+							GET_TEAM(getTeam()).EvacuateDiplomatsAtTeam(eTeam);
+							GET_TEAM(eTeam).EvacuateDiplomatsAtTeam(getTeam());
+
+							// Bump Units out of places they shouldn't be
+							GC.getMap().verifyUnitValidPlot();
+						}
+					}
+				}
+#endif
+#ifdef CHANGE_HOST_IF_DISCONNECTED
+				CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
+				if (pLeague != NULL)
+				{
+					// Check host
+					if (pLeague->IsHostMember(GetID()))
+					{
+						pLeague->AssignNewHost();
+					}
+				}
+#endif
 			}
+#endif
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+		else if (/*GC.getGame().isOption("GAMEOPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT")*/ true && isAlive() && isTurnActive() && (GC.getGame().isOption(GAMEOPTION_DYNAMIC_TURNS) || GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)) && !gDLL->IsPlayerKicked(GetID()))
+		{
+			setIsDisconnected(true);
+#ifdef TURN_TIMER_PAUSE_BUTTON
+			{
+				if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && !GC.getGame().isPaused() && GC.getGame().getGameState() == GAMESTATE_ON)
+				{
+					if ((GC.getGame().getElapsedGameTurns() > 0) && GET_PLAYER(GC.getGame().getActivePlayer()).isTurnActive())
+					{
+						// as there is no netcode for timer pause,
+						// this function will act as one, if called with special agreed upon arguments
+						// resetTurnTimer(true);
+						gDLL->sendGiftUnit(NO_PLAYER, -10);
+					}
+				}
+			}
+#endif
+		}
 		}
 #endif
 	}
@@ -29158,15 +29555,38 @@ void CvPlayer::reconnected()
 		{
 			pNotifications->Add(NOTIFICATION_PLAYER_CONNECTING, connectString.toUTF8(), connectString.toUTF8(), -1, -1, GetID());
 		}
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 		setIsDisconnected(false);
+		bool isAnyDisconnected = false;
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			PlayerTypes eLoopPlayer = (PlayerTypes)iI;
+			if (GET_PLAYER(eLoopPlayer).isDisconnected())
+			{
+				isAnyDisconnected = true;
+			}
+		}
+#ifdef TURN_TIMER_PAUSE_BUTTON
+		{
+			if (!isAnyDisconnected && GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && !GC.getGame().isPaused() && GC.getGame().getGameState() == GAMESTATE_ON)
+			{
+				if ((GC.getGame().getElapsedGameTurns() > 0) && GET_PLAYER(GC.getGame().getActivePlayer()).isTurnActive())
+				{
+					// as there is no netcode for timer pause,
+					// this function will act as one, if called with special agreed upon arguments
+					// resetTurnTimer(true);
+					gDLL->sendGiftUnit(NO_PLAYER, -11);
+				}
+			}
+		}
+#endif
 		// Game pauses during a reconnection and will unpause when the reconnect is finished, so there's no need to insert unpause code here
 #endif
 	}
 #ifdef MP_PLAYERS_VOTING_SYSTEM
-	if (isMultiplayer && isLocalPlayer())
+	if (isLocalPlayer())
 	{
-		GC.getGame().GetMPVotingSystem()->ResendActiveProposals();
+		GC.getGame().GetMPVotingSystem()->Init();
 	}
 #endif
 }

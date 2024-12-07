@@ -444,43 +444,60 @@ void CvDllNetMessageHandler::ResponseEnhanceReligion(PlayerTypes ePlayer, Religi
 #endif
 {
 	CvGame& kGame(GC.getGame());
-	CvGameReligions* pkGameReligions(kGame.GetGameReligions());
-
-	CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanEnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
-	if(eResult == CvGameReligions::FOUNDING_OK)
-		pkGameReligions->EnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+#ifdef REPLAY_MESSAGE_EXTENDED
+	// -1 -- adds chat message to replay
+	// goes to Replay Messages instead of Replay Events
+	if (eReligion == -1)
+	{
+		CvString strText = szCustomName;
+		int iTargetType = static_cast<int>(eBelief1);
+		int iToPlayerOrTeam = static_cast<int>(eBelief2);
+		// SLOG("addReplayMessage %d %s %d %d", (int)ePlayer, szCustomName, iTargetType, iToPlayerOrTeam);
+		GC.getGame().addReplayMessage((ReplayMessageTypes)REPLAY_MESSAGE_CHAT, ePlayer, strText, iTargetType, iToPlayerOrTeam, -1, -1);
+	}
 	else
 	{
-		CvGameReligions::NotifyPlayer(ePlayer, eResult);
-		// We don't want them to lose the opportunity to enhance the religion, and the Great Prophet is already gone so just repost the notification
-		CvCity* pkCity = GC.getMap().plot(iCityX, iCityY)->getPlotCity();
-		CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+#endif
+		CvGameReligions* pkGameReligions(kGame.GetGameReligions());
+
+		CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanEnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+		if (eResult == CvGameReligions::FOUNDING_OK)
+			pkGameReligions->EnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+		else
+		{
+			CvGameReligions::NotifyPlayer(ePlayer, eResult);
+			// We don't want them to lose the opportunity to enhance the religion, and the Great Prophet is already gone so just repost the notification
+			CvCity* pkCity = GC.getMap().plot(iCityX, iCityY)->getPlotCity();
+			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
-		if (kPlayer.isHuman() && pkCity && eResult != CvGameReligions::FOUNDING_NO_BELIEFS_AVAILABLE)
+			if (kPlayer.isHuman() && pkCity && eResult != CvGameReligions::FOUNDING_NO_BELIEFS_AVAILABLE)
 #else
-		if(kPlayer.isHuman() && eResult != CvGameReligions::FOUNDING_NO_RELIGIONS_AVAILABLE && pkCity)
+			if (kPlayer.isHuman() && eResult != CvGameReligions::FOUNDING_NO_RELIGIONS_AVAILABLE && pkCity)
 #endif
-		{
-			CvNotifications* pNotifications = kPlayer.GetNotifications();
-			if(pNotifications)
 			{
-				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCE_RELIGION");
-				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION");
-				pNotifications->Add(NOTIFICATION_ENHANCE_RELIGION, strBuffer, strSummary, iCityX, iCityY, -1, pkCity->GetID());
+				CvNotifications* pNotifications = kPlayer.GetNotifications();
+				if (pNotifications)
+				{
+					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCE_RELIGION");
+					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION");
+					pNotifications->Add(NOTIFICATION_ENHANCE_RELIGION, strBuffer, strSummary, iCityX, iCityY, -1, pkCity->GetID());
+				}
+				kPlayer.GetReligions()->SetFoundingReligion(true);
 			}
-			kPlayer.GetReligions()->SetFoundingReligion(true);
-		}
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
-		else if (kPlayer.getCapitalCity())
-		{
-			UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
-			if (eUnit != NO_UNIT)
+			else if (kPlayer.getCapitalCity())
 			{
-				kPlayer.getCapitalCity()->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, false, true);
+				UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
+				if (eUnit != NO_UNIT)
+				{
+					kPlayer.getCapitalCity()->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, false, true);
+				}
 			}
-		}
 #endif
+		}
+#ifdef REPLAY_MESSAGE_EXTENDED
 	}
+#endif
 }
 //------------------------------------------------------------------------------
 void CvDllNetMessageHandler::ResponseMoveSpy(PlayerTypes ePlayer, int iSpyIndex, int iTargetPlayer, int iTargetCity, bool bAsDiplomat)
@@ -627,6 +644,40 @@ void CvDllNetMessageHandler::ResponseLeagueProposeEnact(LeagueTypes eLeague, Res
 #endif
 	CvAssertMsg(pLeague->CanProposeEnact(eResolution, eProposer, iChoice), "eProposer not allowed to enact Resolution. Please send Anton your save file and version.");
 	pLeague->DoProposeEnact(eResolution, eProposer, iChoice);
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+	if (GC.getGame().isGameMultiPlayer())
+	{
+		if (eProposer == pLeague->GetHostMember() && pLeague->GetNumProposersPerSession() == 2)
+		{
+			pLeague->AssignSecondProposalPrivilege();
+		}
+
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if ((PlayerTypes)iI != pLeague->GetHostMember() && (PlayerTypes)iI != eProposer)
+			{
+				// Call for Proposals
+				if (pLeague->CanPropose((PlayerTypes)iI))
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isHuman())
+					{
+						CvNotifications* pNotifications = GET_PLAYER((PlayerTypes)iI).GetNotifications();
+						if (pNotifications)
+						{
+							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_LEAGUE_PROPOSALS_NEEDED");
+
+							Localization::String strTemp = Localization::Lookup("TXT_KEY_NOTIFICATION_LEAGUE_PROPOSALS_NEEDED_TT");
+							strTemp << pLeague->GetName();
+							CvString strInfo = strTemp.toUTF8();
+
+							pNotifications->Add(NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS, strInfo, strSummary, -1, -1, pLeague->GetID());
+						}
+					}
+				}
+			}
+}
+	}
+#endif
 }
 //------------------------------------------------------------------------------
 #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
@@ -648,6 +699,40 @@ void CvDllNetMessageHandler::ResponseLeagueProposeRepeal(LeagueTypes eLeague, in
 #endif
 	CvAssertMsg(pLeague->CanProposeRepeal(iResolutionID, eProposer), "eProposer not allowed to repeal Resolution. Please send Anton your save file and version.");
 	pLeague->DoProposeRepeal(iResolutionID, eProposer);
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+	if (GC.getGame().isGameMultiPlayer())
+	{
+		if (eProposer == pLeague->GetHostMember() && pLeague->GetNumProposersPerSession() == 2)
+		{
+			pLeague->AssignSecondProposalPrivilege();
+		}
+
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if ((PlayerTypes)iI != pLeague->GetHostMember() && (PlayerTypes)iI != eProposer)
+			{
+				// Call for Proposals
+				if (pLeague->CanPropose((PlayerTypes)iI))
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isHuman())
+					{
+						CvNotifications* pNotifications = GET_PLAYER((PlayerTypes)iI).GetNotifications();
+						if (pNotifications)
+						{
+							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_LEAGUE_PROPOSALS_NEEDED");
+
+							Localization::String strTemp = Localization::Lookup("TXT_KEY_NOTIFICATION_LEAGUE_PROPOSALS_NEEDED_TT");
+							strTemp << pLeague->GetName();
+							CvString strInfo = strTemp.toUTF8();
+
+							pNotifications->Add(NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS, strInfo, strSummary, -1, -1, pLeague->GetID());
+						}
+					}
+				}
+			}
+}
+	}
+#endif
 }
 //------------------------------------------------------------------------------
 #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
@@ -758,6 +843,17 @@ void CvDllNetMessageHandler::ResponseGiftUnit(PlayerTypes ePlayer, PlayerTypes e
 	// -6 -- vote no
 	CvGame& game = GC.getGame();
 	CvMPVotingSystem* pkMPVotingSystem = game.GetMPVotingSystem();
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+	bool isAnyDisconnected = false;
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		PlayerTypes eLoopPlayer = (PlayerTypes)iI;
+		if (GET_PLAYER(eLoopPlayer).isDisconnected())
+		{
+			isAnyDisconnected = true;
+		}
+	}
+#endif
 	switch (iUnitID) {
 	case -2:
 		game.GetMPVotingSystem()->AddProposal(PROPOSAL_IRR, ePlayer, ePlayer);
@@ -784,40 +880,123 @@ void CvDllNetMessageHandler::ResponseGiftUnit(PlayerTypes ePlayer, PlayerTypes e
 #ifdef TURN_TIMER_RESET_BUTTON
 	// here we intercept response, when UnitID equals -1 we agree to reset timer
 	if (iUnitID == -1) {
-		GC.getGame().resetTurnTimer(true);
-		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_RESET", GET_PLAYER(ePlayer).getName()).GetCString());
+		if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+		{
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+			float fGameTurnEnd = game.getPreviousTurnLen();
+#else
+			float fGameTurnEnd = static_cast<float>(game.getMaxTurnLen());
+#endif
+			float fTimeElapsed = game.getTimeElapsed();
+			for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+			{
+				for (int jJ = 0; jJ < MAX_MAJOR_CIVS; jJ++)
+				{
+					for (int kK = MAX_MAJOR_CIVS; kK < MAX_MINOR_CIVS; kK++)
+					{
+						PlayerTypes eLoopMinor = (PlayerTypes)kK;
+						if (game.getGameTurn() == GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor))
+						{
+							if (fTimeElapsed < GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor))
+							{
+								GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor) - fTimeElapsed);
+							}
+							else
+							{
+								GET_PLAYER((PlayerTypes)iI).setTurnCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, -1);
+								GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, 0.f);
+							}
+						}
+						if (game.getGameTurn() < GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor))
+						{
+							GET_PLAYER((PlayerTypes)iI).setTurnCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, game.getGameTurn());
+							GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor, GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eLoopMinor) + (fGameTurnEnd - fTimeElapsed));
+						}
+					}
+				}
+			}
+#endif
+			GC.getGame().resetTurnTimer(true);
+			DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_RESET", GET_PLAYER(ePlayer).getName()).GetCString());
+		}
 	}
 	else
 #endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
-		if (iUnitID == -7) {
-			if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	if (iUnitID == -7) {
+		if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+		{
+			if (!GC.getGame().m_bIsPaused)
 			{
-				if (!GC.getGame().m_bIsPaused)
-				{
-					GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
-					GC.getGame().m_timeSinceGameTurnStart.Stop();
-					GC.getGame().m_bIsPaused = true;
-					DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
-				}
-				else
-				{
-					GC.getGame().resetTurnTimer(true);
-					GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
-					GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
-					GC.getGame().m_bIsPaused = false;
-					DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
-				}
-			}
-		}
-		else
-#endif
-#ifdef ENHANCED_GRAPHS
-			// -8 -- increment num times opened demographics
-			if (iUnitID == -8) {
-				GET_PLAYER(ePlayer).ChangeNumTimesOpenedDemographics(1);
+				GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
+				GC.getGame().m_timeSinceGameTurnStart.Stop();
+				GC.getGame().m_bIsPaused = true;
+				DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
 			}
 			else
+			{
+				GC.getGame().resetTurnTimer(true);
+				GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
+				GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
+				GC.getGame().m_bIsPaused = false;
+				DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+			}
+		}
+	}
+	else
+#endif
+#ifdef ENHANCED_GRAPHS
+	// -8 -- increment num times opened demographics
+	if (iUnitID == -8) {
+		GET_PLAYER(ePlayer).ChangeNumTimesOpenedDemographics(1);
+	}
+	else
+#endif
+#if defined TURN_TIMER_PAUSE_BUTTON && defined GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+	if (iUnitID == -10) {
+		if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+		{
+			if (!GC.getGame().m_bIsPaused)
+			{
+				GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
+				GC.getGame().m_timeSinceGameTurnStart.Stop();
+				GC.getGame().m_bIsPaused = true;
+				// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+			}
+			ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+			CvLuaArgsHandle args;
+			bool bResult;
+			if (pkScriptSystem)
+			{
+				args->Push(GC.getGame().m_bIsPaused);
+				LuaSupport::CallHook(pkScriptSystem, "EndTurnTimerPause", args.get(), bResult);
+			}
+		}
+	}
+	else
+	if (iUnitID == -11) {
+		if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+		{
+			if (GC.getGame().m_bIsPaused)
+			{
+				GC.getGame().resetTurnTimer(true);
+				GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
+				GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
+				GC.getGame().m_bIsPaused = false;
+				// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+			}
+			ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+			CvLuaArgsHandle args;
+			bool bResult;
+			if (pkScriptSystem)
+			{
+				args->Push(GC.getGame().m_bIsPaused);
+				LuaSupport::CallHook(pkScriptSystem, "EndTurnTimerPause", args.get(), bResult);
+			}
+		}
+	}
+	else
 #endif
 #if defined(TURN_TIMER_RESET_BUTTON) || defined(TURN_TIMER_PAUSE_BUTTON) || defined(ENHANCED_GRAPHS)
 		{
@@ -1152,10 +1331,38 @@ void CvDllNetMessageHandler::ResponseResearch(PlayerTypes ePlayer, TechTypes eTe
 		CvAssertMsg(kPlayer.GetEspionage()->m_aaPlayerStealableTechList[ePlayerToStealFrom].size() > 0, "No techs to be stolen from this player");
 		CvAssertMsg(kPlayer.GetPlayerTechs()->CanResearch(eTech), "Player can't research this technology");
 		CvAssertMsg(GET_TEAM(GET_PLAYER(ePlayerToStealFrom).getTeam()).GetTeamTechs()->HasTech(eTech), "ePlayerToStealFrom does not have the requested tech");
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+		if (kPlayer.GetEspionage()->GetNumTechsToSteal(ePlayerToStealFrom) > 0 && kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0)
+#else
 		if (kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0)
+#endif
 		{
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+			if (kPlayer.canStealTech(ePlayerToStealFrom, eTech))
+			{
+#ifdef ESPIONAGE_SYSTEM_REWORK
+				if (kTeam.GetTeamTechs())
+				{
+					if (kPlayer.GetEspionage()->m_aaPlayerScienceToStealList[ePlayerToStealFrom].size() > 0)
+					{
+					}
+				}
+				if (kPlayer.GetEspionage()->m_aaPlayerScienceToStealList[ePlayerToStealFrom].size() > 0)
+				{
+					kPlayer.GetEspionage()->m_aaPlayerScienceToStealList[ePlayerToStealFrom].pop_back();
+				}
+#else
+				kTeam.setHasTech(eTech, true, ePlayer, true, true);
+#endif
+				if (kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0)
+				{
+					kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom]--;
+				}
+			}
+#else
 			kTeam.setHasTech(eTech, true, ePlayer, true, true);
 			kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom]--;
+#endif
 		}
 	}
 	// Normal tech
@@ -1350,5 +1557,12 @@ void CvDllNetMessageHandler::ResponseUpdatePolicies(PlayerTypes ePlayer, bool bN
 			pPlayerPolicies->DoUnlockPolicyBranch(eBranch);
 		}
 	}
+
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	if (!(kPlayer.getJONSCulture() >= kPlayer.getNextPolicyCost() || kPlayer.GetNumFreePolicies() > 0))
+	{
+		kPlayer.setIsDelayedPolicy(false);
+	}
+#endif
 }
 //------------------------------------------------------------------------------

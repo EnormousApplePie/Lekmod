@@ -2627,6 +2627,9 @@ CvPlayerPolicies::CvPlayerPolicies():
 	m_pabHasOneShotPolicyFired(NULL),
 	m_pabHaveOneShotFreeUnitsFired(NULL),
 	m_pabPolicyBranchUnlocked(NULL),
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+	m_paiPolicyBranchUnlockingTurn(NULL),
+#endif
 	m_pabPolicyBranchBlocked(NULL),
 	m_pabPolicyBranchFinished(NULL),
 	m_paePolicyBranchesChosen(NULL),
@@ -2676,6 +2679,10 @@ void CvPlayerPolicies::Init(CvPolicyXMLEntries* pPolicies, CvPlayer* pPlayer, bo
 	// Policy Branches Chosen
 	CvAssertMsg(m_pabPolicyBranchUnlocked==NULL, "about to leak memory, CvPlayerPolicies::m_pabPolicyBranchUnlocked");
 	m_pabPolicyBranchUnlocked = FNEW(bool[m_pPolicies->GetNumPolicyBranches()], c_eCiv5GameplayDLL, 0);
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+	CvAssertMsg(m_paiPolicyBranchUnlockingTurn == NULL, "about to leak memory, CvPlayerPolicies::m_paiPolicyBranchUnlockingTurn");
+	m_paiPolicyBranchUnlockingTurn = FNEW(int[m_pPolicies->GetNumPolicyBranches()], c_eCiv5GameplayDLL, 0);
+#endif
 
 	// Policy Branches Blocked by choices
 	CvAssertMsg(m_pabPolicyBranchBlocked==NULL, "about to leak memory, CvPlayerPolicies::m_pabPolicyBranchBlocked");
@@ -2710,6 +2717,9 @@ void CvPlayerPolicies::Uninit()
 	SAFE_DELETE_ARRAY(m_pabHasOneShotPolicyFired);
 	SAFE_DELETE_ARRAY(m_pabHaveOneShotFreeUnitsFired);
 	SAFE_DELETE_ARRAY(m_pabPolicyBranchUnlocked);
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+	SAFE_DELETE_ARRAY(m_paiPolicyBranchUnlockingTurn);
+#endif
 	SAFE_DELETE_ARRAY(m_pabPolicyBranchBlocked);
 	SAFE_DELETE_ARRAY(m_pabPolicyBranchFinished);
 	SAFE_DELETE_ARRAY(m_paePolicyBranchesChosen);
@@ -2740,6 +2750,9 @@ void CvPlayerPolicies::Reset()
 		m_pabHasPolicyBranch[iI] = false;
 #endif
 		m_pabPolicyBranchUnlocked[iI] = false;
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+		m_paiPolicyBranchUnlockingTurn[iI] = -1;
+#endif
 		m_pabPolicyBranchBlocked[iI] = false;
 		m_pabPolicyBranchFinished[iI] = false;
 		m_paePolicyBranchesChosen[iI] = NO_POLICY_BRANCH_TYPE;
@@ -2821,6 +2834,9 @@ void CvPlayerPolicies::Read(FDataStream& kStream)
 #endif
 
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabPolicyBranchUnlocked, uiPolicyBranchCount);
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiPolicyBranchUnlockingTurn, uiPolicyBranchCount);
+#endif
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabPolicyBranchBlocked, uiPolicyBranchCount);
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabPolicyBranchFinished, uiPolicyBranchCount);
 	CvInfosSerializationHelper::ReadHashedTypeArray(kStream, m_paePolicyBranchesChosen, uiPolicyBranchCount);
@@ -2873,6 +2889,9 @@ void CvPlayerPolicies::Write(FDataStream& kStream) const
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_pabHasPolicyBranch, uiPolicyBranchCount);
 #endif
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_pabPolicyBranchUnlocked, uiPolicyBranchCount);
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_paiPolicyBranchUnlockingTurn, uiPolicyBranchCount);
+#endif
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_pabPolicyBranchBlocked, uiPolicyBranchCount);
 	CvInfosSerializationHelper::WriteHashedDataArray<PolicyBranchTypes>(kStream, m_pabPolicyBranchFinished, uiPolicyBranchCount);
 	CvInfosSerializationHelper::WriteHashedTypeArray<PolicyBranchTypes>(kStream, m_paePolicyBranchesChosen, uiPolicyBranchCount);
@@ -3982,6 +4001,15 @@ bool CvPlayerPolicies::CanUnlockPolicyBranch(PolicyBranchTypes eBranchType)
 	return true;
 }
 
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+int CvPlayerPolicies::PolicyBranchUnlockingTurn(PolicyBranchTypes eBranchType) const
+{
+	CvAssertMsg(eBranchType >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eBranchType < m_pPolicies->GetNumPolicyBranches(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_paiPolicyBranchUnlockingTurn[eBranchType];
+}
+
+#endif
 /// Accessor: has a player unlocked eBranchType to pick Policies from?
 bool CvPlayerPolicies::IsPolicyBranchUnlocked(PolicyBranchTypes eBranchType) const
 {
@@ -4062,6 +4090,9 @@ void CvPlayerPolicies::SetPolicyBranchUnlocked(PolicyBranchTypes eBranchType, bo
 		}
 
 		m_pabPolicyBranchUnlocked[eBranchType] = bNewValue;
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+		m_paiPolicyBranchUnlockingTurn[eBranchType] = GC.getGame().getGameTurn();
+#endif
 #ifdef LEKMOD_NEW_LUA_EVENTS
 		if (bNewValue)
 		{
@@ -5081,7 +5112,11 @@ int PolicyHelpers::GetNumPlayersWithBranchUnlocked(PolicyBranchTypes eBranch)
 
 		if (kPlayer.isAlive() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
 		{
+#ifdef POLICY_BRANCH_UNLOCKING_TURN
+			if (kPlayer.GetPlayerPolicies()->IsPolicyBranchUnlocked(eBranch) && kPlayer.GetPlayerPolicies()->PolicyBranchUnlockingTurn(eBranch) < GC.getGame().getGameTurn())
+#else
 			if (kPlayer.GetPlayerPolicies()->IsPolicyBranchUnlocked(eBranch))
+#endif
 			{
 				iRtnValue++;
 			}

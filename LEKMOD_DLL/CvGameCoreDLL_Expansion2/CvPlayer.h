@@ -78,7 +78,7 @@ public:
 	void reset(PlayerTypes eID = NO_PLAYER, bool bConstructorCall = false);
 	void gameStartInit();
 	void uninit();
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 	bool isDisconnected() const;
 	void setIsDisconnected(bool bNewValue);
 #endif
@@ -1703,6 +1703,20 @@ public:
 	bool IsAllowedToTradeWith(PlayerTypes eOtherPlayer);
 	// end International Trade
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	int getTurnCSWarAllowing(PlayerTypes ePlayer);
+	int getTurnCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor);
+	void setTurnCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor, int iValue);
+	float getTimeCSWarAllowing(PlayerTypes ePlayer);
+	float getTimeCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor);
+	void setTimeCSWarAllowingMinor(PlayerTypes ePlayer, PlayerTypes eMinor, float fValue);
+#endif
+
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	bool IsDelayedPolicy() const;
+	void setIsDelayedPolicy(bool bValue);
+#endif
+
 	CvPlayerPolicies* GetPlayerPolicies() const;
 	CvPlayerTraits* GetPlayerTraits() const;
 	CvEconomicAI* GetEconomicAI() const;
@@ -1861,7 +1875,7 @@ protected:
 	int m_iCachedSpyStartingRank;
 #endif
 
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+#ifdef GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
 	FAutoVariable<bool, CvPlayer> m_bIsDisconnected;
 #endif
 	FAutoVariable<int, CvPlayer> m_iStartingX;
@@ -2386,6 +2400,14 @@ protected:
 	friend const CvUnit* GetPlayerUnit(const IDInfo& unit);
 
 	CvPlayerAchievements m_kPlayerAchievements;
+
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	FAutoVariable <std::vector< Firaxis::Array< int, MAX_MINOR_CIVS > >, CvPlayer> m_ppaaiTurnCSWarAllowing;
+	FAutoVariable <std::vector< Firaxis::Array< float, MAX_MINOR_CIVS > >, CvPlayer> m_ppaafTimeCSWarAllowing;
+#endif
+#ifdef PENALTY_FOR_DELAYING_POLICIES
+	bool m_bIsDelayedPolicy;
+#endif
 };
 
 extern bool CancelActivePlayerEndTurn();

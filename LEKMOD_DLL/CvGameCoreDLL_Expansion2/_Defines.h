@@ -749,7 +749,7 @@
 #define NQ_GOLDEN_AGE_OVERHAUL
 // coup chances now use base influence instead of effective influence (which would be -60 during war)
 // Cirra Edit
-// #define NQ_COUP_FORMULA_USES_BASE_FRIENDSHIP_NOT_EFFECTIVE_FRIENDSHIP
+#define NQ_COUP_FORMULA_USES_BASE_FRIENDSHIP_NOT_EFFECTIVE_FRIENDSHIP
 // show base influence you would have at peace in tooltip while at war with city states
 #define NQ_SHOW_BASE_INFLUENCE_WHILE_AT_WAR_IN_CS_TOOLTIP
 // disable gifting of great people between major powers
@@ -1056,15 +1056,13 @@
 // Fixed a bug related to Aqueduct duping when finishing tradition
 #define AQUEDUCT_FIX
 /// Fixes some leftover radar issues
-#define ASTAR_AI_CONTROL_FIX_RADAR
+// #define ASTAR_AI_CONTROL_FIX_RADAR
 // AI can no longer choose an ideology
 #define AI_CANT_ADOPT_IDEOLOGY
 // AI cannot declare war
 #define AI_CANT_DECLARE_WAR
 // AI cannot build spaceparts
 #define NO_AI_PROJECTS
-// Can't steal pre-medieval techs
-#define CANT_STEAL_CLASSICAL_ERA_TECHS
 // Turn timer roll keybind
 #define TURN_TIMER_RESET_BUTTON
 // Turn timer pause
@@ -1129,9 +1127,115 @@
 #define NOTIFICATION_MP_IRR_PROPOSAL -300693023
 #define NOTIFICATION_MP_CC_PROPOSAL -832529557
 #define NOTIFICATION_MP_SCRAP_PROPOSAL 1628401511
+#define NOTIFICATION_MP_REMAP_PROPOSAL 577315649
 #define NOTIFICATION_MP_PROPOSAL_RESULT -1076480691
 /*MP VOTING SYSTEM END*/
 
+/*INGAME HOTKEY MANAGER START*/
+// Adds UI options screen and internal methods to customize units/interface hotkeys
+// Note: on lua side, GameInfo table still holds the original hotkeys, and GameInfoactions data is updated as soon as Game.UpdateActions() is called;
+#define INGAME_HOTKEY_MANAGER
+// Extended controls: pseudo-enums
+/*#define CONTROL_CAMERA_MOVE_LEFT 44
+#define CONTROL_CAMERA_MOVE_RIGHT 45
+#define CONTROL_CAMERA_MOVE_FORWARD 46
+#define CONTROL_CAMERA_MOVE_BACK 47
+#define CONTROL_CAMERA_MOVE_OUT 48
+#define CONTROL_CAMERA_MOVE_OUT_ALT 49
+#define CONTROL_CAMERA_MOVE_IN 50
+#define CONTROL_CAMERA_MOVE_IN_ALT 51
+#define CONTROL_TOGGLE_HEX_GRID 52
+#define CONTROL_TOGGLE_CHAT 53*/
+// IMPORTANT
+// Must be defined only ONCE and account for all ControlTypes additions
+// #define NUM_CONTROL_TYPES 54
+/*INGAME HOTKEY MANAGER END*/
+
+/*ESPIONAGE CHANGES START*/
+// Can't steal pre-medieval techs
+#define CANT_STEAL_CLASSICAL_ERA_TECHS
+// Technologies that can be stolen from other players are no longer updated during the turn.
+#define BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+// Descruption https://docs.google.com/document/d/1i5nFrJT5HRlEhPELHmOWDiQs9j0hsbt3B5wq6-5WBUA/
+#define ESPIONAGE_SYSTEM_REWORK
+/*ESPIONAGE CHANGES END*/
+
+// The number of free policies for accepting an ideology is set at the start of the turn.
+#define POLICY_BRANCH_UNLOCKING_TURN
+// Set possible proposals/enacts at the start of the turn
+#define CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+// Players can only make proposals one by one (first congress host second most votes)
+#define ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+// Can't liberate cities for non-human players
+#define NEW_CITIES_LIBERATION
+// When a city is captured, buildings in it are destroyed only once per turn for each city
+#define BUILDINGS_DESTROY_ONCE_PER_TURN
+// Fixed a bug due to which in some cases the cost of technologies could decrease when annexing a city
+#define FIX_MAX_EFFECTIVE_CITIES
+// “Instant heals” cannot be taken on built or purchased units that have available promotions or after durationing promotion
+#define PROMOTION_INSTA_HEAL_LOCKED
+/// Gifted units can't attack if they have already attacked this turn
+#define GIFTED_UNITS_ATTACK
+// Pause on player disconnect
+#define GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
+// No trade routes to AI, no trades, except for concluding peace and declaring war. Already concluded deals and active caravans are reset when the player leaves the game.
+#define DO_CANCEL_DEALS_WITH_AI
+#define NO_TRADE_ITEMS_WITH_AI
+// Remove auto explore
+#define DISABLE_AUTOMOVES
+// Prevent timer mid-turn fluctuations - update it once per turn
+#define GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+// Can’t declare war after allying enemy css for CS_ALLYING_WAR_RESCTRICTION_TIMER seconds
+#define CS_ALLYING_WAR_RESCTRICTION
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+#define CS_ALLYING_WAR_RESCTRICTION_TIMER 120.f
+#endif
+// Non-AI civs can vote only for themselves in world leader congress
+#define DIPLO_VICTORY_VOTING
+// AI cant spawn a prophets and spread/found/enhance/reform religion
+#define AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+// AI can no longer perform a coup in a city-state
+#define AI_CANT_COUP
+// AI cannot accumulate culture if next policy cost is greater than 1000
+#define AI_CULTURE_RESTRICTION
+// Fixed a bug due to which defense bonuses did not work when long-range units fought (Shoshone bonus, Himeji bonus, Defender of the Faith, Patriotic War)
+#define FIX_RANGE_DEFENSE_MOD
+// City-States IconStatusBG updates after every unit move (or creation/removing) or health change
+#define UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
+// No trading strategic resources unless the tech for them is not researched by both players.
+#define TECH_RESTRICTION_FOR_STRATEGIC_DEAL
+// EnemyUnitPanel shows City AttackStrength correctly
+#define CORRECT_ATTACK_CITY_STRENGTH
+// Max durationing for policies results in policy being assigned randomly with 1 turn of grace period
+#define PENALTY_FOR_DELAYING_POLICIES
+
+
+/*REPLAY EVENTS CHANGES START*/
+// A more flexible alternative to Replay Messages; primarily for statistics purposes (Cut)
+// #define REPLAY_EVENTS
+// Adds timestamp for replay messages, saves chat messages
+#define REPLAY_MESSAGE_EXTENDED
+// Extended replay messages: pseudo-enums
+// #define REPLAY_MESSAGE_CHAT 7
+// IMPORTANT
+// Must be defined only ONCE and account for all ReplayMessageTypes additions
+// #define NUM_REPLAY_MESSAGE_TYPES 8
+// Game.GetTurnTimeElapsed() returns elapsed time in milliseconds
+#define LUAAPI_GET_TURN_TIME_ELAPSED
+/*REPLAY EVENTS CHANGES END*/
+
+
+/*LOGGING START*/
+///
+#define SLOG(sFmt, ...) {  \
+  CvString sRef;  \
+  CvString::format(sRef, "[%s:%d]: ", __FUNCTION__, __LINE__);  \
+  CvString sMsg;  \
+  CvString::format(sMsg, sFmt, __VA_ARGS__);  \
+  sRef+= sMsg; \
+  LOGFILEMGR.GetLog("PATCH.log", FILogFile::kDontTimeStamp)->Msg(sRef.c_str());  \
+}
+/*LOGGING END*/
 
 
 /////////////////////

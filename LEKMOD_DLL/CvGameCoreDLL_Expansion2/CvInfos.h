@@ -127,6 +127,9 @@ public:
 
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
+#ifdef INGAME_HOTKEY_MANAGER
+	void UpdateHotkey(const char* szHK, bool bAlt, bool bShift, bool bCtrl);
+#endif
 	int getActionInfoIndex() const;
 	void setActionInfoIndex(int i);
 
@@ -349,6 +352,9 @@ class CvActionInfo
 public:
 	CvActionInfo();
 
+#ifdef INGAME_HOTKEY_MANAGER
+	void UpdateHotkey(const char* szHK, bool bAlt, bool bShift, bool bCtrl) const;
+#endif
 	int getMissionData() const;
 	int getCommandData() const;
 

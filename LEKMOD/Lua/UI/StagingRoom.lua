@@ -381,7 +381,7 @@ function OnReadyCheck( bChecked )
 	CheckGameAutoStart();	
 	ShowHideSaveButton();	
 end
-Controls.LocalReadyCheck:RegisterCheckHandler( OnReadyCheck );
+-- Controls.LocalReadyCheck:RegisterCheckHandler( OnReadyCheck );
 
 
 -------------------------------------------------
@@ -1586,10 +1586,27 @@ function PopulateCivPulldown( pullDown, playerID )
 						
 		local title = Locale.Lookup("TXT_KEY_RANDOM_LEADER_CIV", Locale.Lookup(row.LeaderDescription), Locale.Lookup(row.CivShortDescription)); 
 
-		table.insert(civEntries, {ID = row.CivID, Title = title, Description = Locale.Lookup(row.CivDescription)});						
+		table.insert(civEntries, {ID = row.CivID, Title = title, Description = Locale.Lookup(row.CivDescription), ShortDescription = Locale.Lookup(row.CivShortDescription)});						
 	end
 	
-	table.sort(civEntries, function(a,b) return Locale.Compare(a.Title, b.Title) == -1; end);
+-- Sorting Civs by Short Description
+	table.sort(civEntries, function(a,b)
+		local astr = Locale.ConvertTextKey(a.ShortDescription);
+		local bstr = Locale.ConvertTextKey(b.ShortDescription);
+		local a0, b0
+		if astr:match("The ") then
+			a0 = astr:sub(5)
+		else
+			a0 = astr
+		end
+		if bstr:match("The ") then
+			b0 = bstr:sub(5)
+		else
+			b0 = bstr
+		end
+		return a0 < b0
+	end);
+-- Sorting Civs by Short Description END
 
 	for i,v in ipairs(civEntries) do
 		

@@ -582,6 +582,12 @@ public:
 	ActiveResolutionList GetActiveResolutions() const;
 	int GetNumResolutionsEverEnacted() const;
 	int GetNumProposersPerSession() const;
+#ifdef CAN_PROPOSE_ENACT_UPDATES_ONCE_PER_SESSION
+	void UpdateCanProposeEnact();
+#endif
+#ifdef ASSIGN_SECOND_PROPOSAL_PRIVILEGE
+	void AssignSecondProposalPrivilege();
+#endif
 
 	// Members
 	void AddMember(PlayerTypes ePlayer);
@@ -1444,6 +1450,7 @@ enum MPVotingSystemProposalTypes
 	PROPOSAL_IRR,
 	PROPOSAL_CC,
 	PROPOSAL_SCRAP,
+	PROPOSAL_REMAP,
 
 	NUM_PROPOSAL_TYPES
 };
@@ -1478,6 +1485,7 @@ public:
 
 		int iID;
 		int iUIid;
+		int iCreationTurn;
 		int iExpirationCounter;
 		MPVotingSystemProposalTypes eType;
 		MPVotingSystemProposalStatus eStatus;
@@ -1494,9 +1502,8 @@ public:
 
 	int GetLastProposalID();
 	Proposal* GetProposalByID(int iProposalID);
-	int GetProposalUIid(int iProposalID);
-	int GetProposalIDbyUIid(int iProposalUIid);
 	int GetProposalExpirationCounter(int iProposalID);
+	int GetProposalTypeCooldownResetTurn(MPVotingSystemProposalTypes eType, PlayerTypes ePlayerID);
 	MPVotingSystemProposalTypes GetProposalType(int iProposalID);
 	MPVotingSystemProposalStatus GetProposalStatus(int iProposalID);
 	PlayerTypes GetProposalOwner(int iProposalID);
@@ -1510,12 +1517,13 @@ public:
 	int GetMaxVotes(int iProposalID);
 	bool IsPlayerHasActiveProposal(PlayerTypes ePlayerID);
 	bool IsAnyActiveProposalType(MPVotingSystemProposalTypes eType);
+	bool IsAnyProposalType(MPVotingSystemProposalTypes eType);
+	bool IsProposalTypeOnCooldown(MPVotingSystemProposalTypes eType, PlayerTypes ePlayerID);
+	bool IsProposalTypeAvailable(MPVotingSystemProposalTypes eType);
 
 	void DoTurn();
 	void AddProposal(MPVotingSystemProposalTypes eProposalType, PlayerTypes eProposalOwner, PlayerTypes eProposalSubject);
 	void DoVote(int iProposalID, PlayerTypes ePlayerID, bool bVote);
-	void ResendActiveProposals();
-	void SetProposalUIid(int iProposalID, int iId);
 	void SetProposalType(int iProposalID, MPVotingSystemProposalTypes eType);
 	void SetProposalExpirationCounter(int iProposalID, int iValue);
 	void SetProposalStatus(int iProposalID, MPVotingSystemProposalStatus eStatus);
@@ -1526,8 +1534,10 @@ public:
 	void SetVoterHasVoted(int iProposalID, PlayerTypes ePlayerID, bool bValue);
 	void SetVoterVote(int iProposalID, PlayerTypes ePlayerID, bool bValue);
 private:
-	const static int IRR_THRESHOLD_TIMES_100 = 100;  // EDIT EAP: 100% of the voters needed to pass IRR, change this number if desired
+	const static int IRR_THRESHOLD_TIMES_100 = 80;  // 80% of total support is enough for irr. 100% during tournament competition. 
 	const static int MAX_ACTIVE_RESOLUTIONS = MAX_MAJOR_CIVS + 2;  // 1 irr x players, 1 cc and 1 scrap
+	const static int PROPOSAL_COOLDOWN = 10;
+	const static int REMAP_PROPOSAL_REVEAL_TURN = 10;
 
 	void DoCheckVoters(int iProposalID);
 	void DoUpdateProposalStatus(int iProposalID);

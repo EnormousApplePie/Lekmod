@@ -60,6 +60,11 @@
 #include "CvInfosSerializationHelper.h"
 #include "CvCityManager.h"
 
+#if defined (DEV_RECORDING_STATISTICS) || defined (REPLAY_EVENTS)
+# include <winsqlite3.h>
+# pragma comment(lib, "winsqlite3.lib")
+#endif
+
 // Public Functions...
 // must be included after all other headers
 #include "LintFree.h"
@@ -1046,6 +1051,9 @@ void CvGame::uninit()
 	m_jonRand.uninit();
 
 	clearReplayMessageMap();
+#ifdef REPLAY_EVENTS
+	clearReplayEventMap();
+#endif
 
 	m_aPlotExtraYields.clear();
 	m_aPlotExtraCosts.clear();
@@ -1100,6 +1108,9 @@ void CvGame::uninit()
 	m_iMapScoreMod = 0;
 
 	m_uiInitialTime = 0;
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	m_fPreviousTurnLen = 0.0f;
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	m_fTimeElapsed = 0.0f;
 #endif
@@ -1365,7 +1376,7 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 		CvAssertMsg(m_pTacticalMap==NULL, "about to leak memory, CvGame::m_pTacticalMap");
 		m_pTacticalMap = FNEW(CvTacticalAnalysisMap, c_eCiv5GameplayDLL, 0);
 #ifdef MP_PLAYERS_VOTING_SYSTEM
-		CvAssertMsg(m_pMPVotingSystem == NULL, "about to leak memory, CvGame::m_pTacticalMap");
+		CvAssertMsg(m_pMPVotingSystem == NULL, "about to leak memory, CvGame::m_pMPVotingSystem");
 		m_pMPVotingSystem = FNEW(CvMPVotingSystem, c_eCiv5GameplayDLL, 0);
 
 #endif
@@ -2096,7 +2107,19 @@ bool CvGame::hasTurnTimerExpired(PlayerTypes playerID)
 		if(getElapsedGameTurns() > 0)
 #endif
 		{
-#ifdef NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
+#if defined GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL && defined NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
+			PlayerTypes ePausePlayer = NO_PLAYER;
+			for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+			{
+				CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+				if (kPlayer.isAlive() && kPlayer.isHuman() && !kPlayer.isConnected())
+				{
+					// ePausePlayer = kPlayer.GetID();
+					break;
+				}
+		}
+			if (isLocalPlayer && (!gDLL->allAICivsProcessedThisTurn() || !allUnitAIProcessed()) && ePausePlayer == NO_PLAYER || (isOption("GAMEOPTION_AUTOMATION_RESETS_TIMER") && !allUnitAIProcessed()))
+#elif defined NQM_GAME_FIX_TURN_TIMER_RESET_ON_AUTOMATION
 			if (isLocalPlayer && ((!gDLL->allAICivsProcessedThisTurn() && allUnitAIProcessed()) || (isOption("GAMEOPTION_AUTOMATION_RESETS_TIMER") && !allUnitAIProcessed())))
 #else
 			if(isLocalPlayer && (!gDLL->allAICivsProcessedThisTurn() || !allUnitAIProcessed()))
@@ -2117,20 +2140,17 @@ bool CvGame::hasTurnTimerExpired(PlayerTypes playerID)
 				CvPlayer& curPlayer = GET_PLAYER(playerID);
 
 				// Has the turn expired?
-#ifdef AUI_GAME_PLAYER_BASED_TURN_LENGTH
-				FFastVector<int, true, c_eCiv5GameplayDLL>::const_iterator piCurMaxTurnLength = m_aiMaxTurnLengths.begin();
-				piCurMaxTurnLength += curPlayer.getTurnOrder();
-
-				float fGameTurnEnd = static_cast<float>(*piCurMaxTurnLength);
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+				float gameTurnEnd = getPreviousTurnLen();
 #else
 				float gameTurnEnd = static_cast<float>(getMaxTurnLen());
+#endif
 
 				//NOTE:  These times exclude the time used for AI processing.
 				//Time since the current player's turn started.  Used for measuring time for players in sequential turn mode.
 				float timeSinceCurrentTurnStart = m_curTurnTimer.Peek() + m_fCurrentTurnTimerPauseDelta; 
 				//Time since the game (year) turn started.  Used for measuring time for players in simultaneous turn mode.
-				float timeSinceGameTurnStart = m_timeSinceGameTurnStart.Peek() + m_fCurrentTurnTimerPauseDelta; 
-#endif
+				float timeSinceGameTurnStart = m_timeSinceGameTurnStart.Peek() + m_fCurrentTurnTimerPauseDelta;
 				
 #ifdef AUI_GAME_PLAYER_BASED_TURN_LENGTH
 				float fTimeElapsed = m_curTurnTimer.Peek() + m_fCurrentTurnTimerPauseDelta;
@@ -2221,7 +2241,11 @@ bool CvGame::hasTurnTimerExpired(PlayerTypes playerID)
 			{
 
 				// Has the turn expired?
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+				float gameTurnEnd = getPreviousTurnLen();
+#else
 				float gameTurnEnd = static_cast<float>(getMaxTurnLen());
+#endif
 
 
 				float timeElapsed = getTimeElapsed();
@@ -5129,6 +5153,16 @@ int CvGame::getMaxTurnLen()
 		{
 			if(GET_PLAYER((PlayerTypes)i).isAlive())
 			{
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+				if (GET_PLAYER((PlayerTypes)i).isHuman() && GET_PLAYER((PlayerTypes)i).getNumUnits() > iMaxUnits)
+				{
+					iMaxUnits = GET_PLAYER((PlayerTypes)i).getNumUnits();
+				}
+				if (GET_PLAYER((PlayerTypes)i).isHuman() && GET_PLAYER((PlayerTypes)i).getNumCities() > iMaxCities)
+				{
+					iMaxCities = GET_PLAYER((PlayerTypes)i).getNumCities();
+				}
+#else
 				if(GET_PLAYER((PlayerTypes)i).getNumUnits() > iMaxUnits)
 				{
 					iMaxUnits = GET_PLAYER((PlayerTypes)i).getNumUnits();
@@ -5137,6 +5171,7 @@ int CvGame::getMaxTurnLen()
 				{
 					iMaxCities = GET_PLAYER((PlayerTypes)i).getNumCities();
 				}
+#endif
 			}
 		}
 
@@ -5560,6 +5595,24 @@ void CvGame::setInitialTime(unsigned int uiNewValue)
 {
 	m_uiInitialTime = uiNewValue;
 }
+
+
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+//	--------------------------------------------------------------------------------
+float CvGame::getPreviousTurnLen()
+{
+	return m_fPreviousTurnLen;
+}
+
+
+//	--------------------------------------------------------------------------------
+void CvGame::setPreviousTurnLen(float fNewValue)
+{
+	m_fPreviousTurnLen = fNewValue;
+}
+
+
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 //	--------------------------------------------------------------------------------
 float CvGame::getTimeElapsed()
@@ -6369,20 +6422,6 @@ bool CvGame::isPaused()
 //	-----------------------------------------------------------------------------------------------
 void CvGame::setPausePlayer(PlayerTypes eNewValue)
 {
-#ifdef AUI_GAME_AUTOPAUSE_ON_ACTIVE_DISCONNECT_IF_NOT_SEQUENTIAL
-	if (isOption("GAMEOPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT") && eNewValue == NO_PLAYER)
-	{
-		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
-		{
-			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
-			if (kPlayer.isAlive() && kPlayer.isHuman() && kPlayer.isDisconnected())
-			{
-				eNewValue = kPlayer.GetID();
-				break;
-			}
-		}
-	}
-#endif
 #ifndef AUI_GAME_SET_PAUSED_TURN_TIMERS_PAUSE_ON_RECONNECT
 	if(!isNetworkMultiPlayer())
 #endif
@@ -6496,6 +6535,12 @@ void CvGame::setWinner(TeamTypes eNewWinner, VictoryTypes eNewVictory)
 
 				Localization::String localizedText = Localization::Lookup("TXT_KEY_GAME_WON");
 				localizedText << GET_TEAM(getWinner()).getName().GetCString() << szVictoryTextKey;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+				if (strcmp(pkVictoryInfo->GetType(), "VICTORY_SCRAP") == 0)
+				{
+					localizedText = Localization::Lookup(pkVictoryInfo->GetDescriptionKey());
+				}
+#endif
 				addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, winningTeamLeaderID, localizedText.toUTF8(), -1, -1);
 
 				//Notify everyone of the victory
@@ -6504,6 +6549,13 @@ void CvGame::setWinner(TeamTypes eNewWinner, VictoryTypes eNewVictory)
 
 				Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_VICTORY_WINNER");
 				localizedSummary << szWinningTeamLeaderNameKey;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+				if (strcmp(pkVictoryInfo->GetType(), "VICTORY_SCRAP") == 0)
+				{
+					localizedText = Localization::Lookup(pkVictoryInfo->GetDescriptionKey());
+					localizedSummary = Localization::Lookup(pkVictoryInfo->GetTextKey());
+				}
+#endif
 
 				for(int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop){
 					PlayerTypes eNotifyPlayer = (PlayerTypes) iNotifyLoop;
@@ -8220,8 +8272,46 @@ void CvGame::doTurn()
 	}
 
 	// END OF TURN
+
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	setPreviousTurnLen(static_cast<float>(getMaxTurnLen()));
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	GC.getGame().m_bIsPaused = false;
+#endif
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	{
+		CvGame& kGame = GC.getGame();
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+		float fGameTurnEnd = kGame.getPreviousTurnLen();
+#else
+		float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
+#endif
+		float fTimeElapsed = kGame.getTimeElapsed();
+		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+		{
+			for (int jJ = 0; jJ < MAX_MAJOR_CIVS; jJ++)
+			{
+				for (int kK = MAX_MAJOR_CIVS; kK < MAX_MINOR_CIVS; kK++)
+				{
+					PlayerTypes eMinor = (PlayerTypes)kK;
+					if (kGame.getGameTurn() < GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowingMinor((PlayerTypes)jJ, eMinor))
+					{
+						GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor, GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor) + (fGameTurnEnd - fTimeElapsed));
+					}
+					if (kGame.getGameTurn() == GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowingMinor((PlayerTypes)jJ, eMinor))
+					{
+						if (fTimeElapsed < GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor))
+						{
+							GET_PLAYER((PlayerTypes)iI).setTurnCSWarAllowingMinor((PlayerTypes)jJ, eMinor, kGame.getGameTurn() + 1);
+							GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor, GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor) - (fGameTurnEnd - fTimeElapsed));
+						}
+					}
+				}
+			}
+		}
+	}
 #endif
 	//We reset the turn timer now so that we know that the turn timer has been reset at least once for
 	//this turn.  CvGameController::Update() will continue to reset the timer if there is prolonged ai processing.
@@ -10384,6 +10474,33 @@ void CvGame::addReplayMessage(ReplayMessageTypes eType, PlayerTypes ePlayer, con
 	m_listReplayMessages.push_back(message);
 }
 
+#ifdef REPLAY_MESSAGE_EXTENDED
+// overload with iData1 and iData2
+void CvGame::addReplayMessage(ReplayMessageTypes eType, PlayerTypes ePlayer, const CvString& pszText, int iData1, int iData2, int iPlotX, int iPlotY)
+{
+	int iGameTurn = getGameTurn();
+
+	//If this is a plot-related message, search for any previously created messages that match this one and just add the plot.
+	if (iPlotX != -1 || iPlotY != -1)
+	{
+		for (ReplayMessageList::iterator it = m_listReplayMessages.begin(); it != m_listReplayMessages.end(); ++it)
+		{
+			CvReplayMessage& msg = (*it);
+			if (msg.getType() == eType && msg.getTurn() == iGameTurn && msg.getPlayer() == ePlayer && msg.getText() == pszText)
+			{
+				msg.addPlot(iPlotX, iPlotY);
+				return;
+			}
+		}
+	}
+
+	CvReplayMessage message(iGameTurn, iData1, iData2, eType, ePlayer);
+	message.addPlot(iPlotX, iPlotY);
+	message.setText(pszText);
+	m_listReplayMessages.push_back(message);
+}
+#endif
+
 //	--------------------------------------------------------------------------------
 void CvGame::clearReplayMessageMap()
 {
@@ -10406,6 +10523,44 @@ const CvReplayMessage* CvGame::getReplayMessage(uint i) const
 
 	return NULL;
 }
+#ifdef REPLAY_EVENTS
+
+//	--------------------------------------------------------------------------------
+void CvGame::clearReplayEventMap()
+{
+	m_listReplayEvents.clear();
+}
+
+//	--------------------------------------------------------------------------------
+void CvGame::addReplayEvent(int eType, std::vector<int> vNumArgs, CvString strArg)
+{
+	CvReplayEvent event(eType, vNumArgs, strArg);
+	m_listReplayEvents.push_back(event);
+}
+//	--------------------------------------------------------------------------------
+void CvGame::addReplayEvent(int eType, PlayerTypes ePlayer, std::vector<int> vNumArgs, CvString strArg)
+{
+	CvReplayEvent event(eType, ePlayer, vNumArgs, strArg);
+	m_listReplayEvents.push_back(event);
+}
+
+//	--------------------------------------------------------------------------------
+uint CvGame::getNumReplayEvents() const
+{
+	return m_listReplayEvents.size();
+}
+
+//	--------------------------------------------------------------------------------
+const CvReplayEvent* CvGame::getReplayEvent(uint i) const
+{
+	if (i < m_listReplayEvents.size())
+	{
+		return &(m_listReplayEvents[i]);
+	}
+
+	return NULL;
+}
+#endif
 
 // Private Functions...
 
@@ -10458,6 +10613,9 @@ void CvGame::Read(FDataStream& kStream)
 	kStream >> m_iMapScoreMod;
 
 	// m_uiInitialTime not saved
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	kStream >> m_fPreviousTurnLen;
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	kStream >> m_fTimeElapsed;
 	kStream >> m_bIsPaused;
@@ -10567,7 +10725,22 @@ void CvGame::Read(FDataStream& kStream)
 			message.read(kStream, uiReplayMessageVersion);
 			m_listReplayMessages.push_back(message);
 		}
+#ifdef REPLAY_EVENTS
+		clearReplayEventMap();
 
+		unsigned int uiReplayEventVersion = 1;
+		iSize = 0;
+
+		kStream >> uiReplayEventVersion;
+
+		kStream >> iSize;
+		for (int i = 0; i < iSize; i++)
+		{
+			CvReplayEvent event;
+			event.read(kStream, uiReplayEventVersion);
+			m_listReplayEvents.push_back(event);
+		}
+#endif
 	}
 
 	kStream >> m_iNumSessions;
@@ -10708,6 +10881,9 @@ void CvGame::Write(FDataStream& kStream) const
 	kStream << m_iMapScoreMod;
 
 	// m_uiInitialTime not saved
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+	kStream << m_fPreviousTurnLen;
+#endif
 #ifdef TURN_TIMER_PAUSE_BUTTON
 	kStream << m_fTimeElapsed;
 	kStream << m_bIsPaused;
@@ -10788,6 +10964,17 @@ void CvGame::Write(FDataStream& kStream) const
 	{
 		(*it).write(kStream);
 	}
+#ifdef REPLAY_EVENTS
+	const int iSize2 = m_listReplayEvents.size();
+	kStream << CvReplayEvent::Version();
+	kStream << iSize2;
+
+	ReplayEventList::const_iterator it2;
+	for (it2 = m_listReplayEvents.begin(); it2 != m_listReplayEvents.end(); ++it2)
+	{
+		(*it2).write(kStream);
+	}
+#endif
 
 	kStream << m_iNumSessions;
 

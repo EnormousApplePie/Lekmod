@@ -365,6 +365,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Gold
 	if(eItem == TRADE_ITEM_GOLD)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		// DoF has not been made with this player
 		if (!this->IsPeaceTreatyTrade(eToPlayer) && !this->IsPeaceTreatyTrade(ePlayer))
 		{
@@ -380,6 +384,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Gold per Turn
 	else if(eItem == TRADE_ITEM_GOLD_PER_TURN)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		// Can't trade more GPT than you're making
 		int iGoldPerTurn = iData1;
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
@@ -434,6 +442,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Resource
 	else if(eItem == TRADE_ITEM_RESOURCES)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		ResourceTypes eResource = (ResourceTypes) iData1;
 		if(eResource != NO_RESOURCE)
 		{
@@ -520,6 +532,16 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 				}
 			}
 
+#ifdef TECH_RESTRICTION_FOR_STRATEGIC_DEAL
+			if (eUsage == RESOURCEUSAGE_STRATEGIC)
+			{
+				if (!GET_TEAM(pFromPlayer->getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(eResource)->getTechReveal()) || !GET_TEAM(pToPlayer->getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(eResource)->getTechReveal()))
+				{
+					return false;
+				}
+			}
+#endif
+
 			// Can't trade them something they're already giving us in the deal
 			if(IsResourceTrade(eToPlayer, eResource))
 				return false;
@@ -534,6 +556,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// City
 	else if(eItem == TRADE_ITEM_CITIES)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		CvCity* pCity = NULL;
 		CvPlot* pPlot = GC.getMap().plot(iData1, iData2);
 		if(pPlot != NULL)
@@ -573,6 +599,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Embassy
 	else if(eItem == TRADE_ITEM_ALLOW_EMBASSY)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		// too few cities
 		if (pToPlayer->getNumCities() < 1)
 			return false;
@@ -589,6 +619,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Open Borders
 	else if(eItem == TRADE_ITEM_OPEN_BORDERS)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		// Neither of us yet has the Tech for OP
 		if(!pFromTeam->isOpenBordersTradingAllowed() && !pToTeam->isOpenBordersTradingAllowed())
 			return false;
@@ -658,6 +692,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Defensive Pact
 	else if(eItem == TRADE_ITEM_DEFENSIVE_PACT)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		
 #ifndef NEW_DEFENSIVE_PACT //EAP: from Immos
 		// Neither of us yet has the Tech for DP
@@ -667,6 +705,17 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 		if(!pFromTeam->HasEmbassyAtTeam(eToTeam) || !pToTeam->HasEmbassyAtTeam(eFromTeam))
 			return false;
 
+#else
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive())
+			{
+				if (GET_TEAM((TeamTypes)iI).GetCurrentEra() >= GC.getInfoTypeForString("ERA_FUTURE", true /*bHideAssert*/))
+				{
+					return false;
+				}
+			}
+		}
 #endif
 		// Already has DP
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
@@ -729,6 +778,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Research Agreement
 	else if(eItem == TRADE_ITEM_RESEARCH_AGREEMENT)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		if(GC.getGame().isOption(GAMEOPTION_NO_SCIENCE))
 			return false;
 
@@ -932,6 +985,10 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Declaration of friendship
 	else if(eItem == TRADE_ITEM_DECLARATION_OF_FRIENDSHIP)
 	{
+#ifdef NO_TRADE_ITEMS_WITH_AI
+		if (!(GET_PLAYER(ePlayer).isHuman() && GET_PLAYER(eToPlayer).isHuman()) && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+			return false;
+#endif
 		// If we are at war, then we can't until we make peace
 		if(pFromTeam->isAtWar(eToTeam))
 			return false;

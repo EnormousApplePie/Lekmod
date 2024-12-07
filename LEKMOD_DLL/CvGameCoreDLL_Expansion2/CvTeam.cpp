@@ -1123,6 +1123,32 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	}
 #endif
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	{
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			for (int jJ = 0; jJ < MAX_PLAYERS; jJ++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).getTeam() == GetID() && GET_PLAYER((PlayerTypes)jJ).getTeam() == eTeam)
+				{
+					if (GC.getGame().getGameTurn() < GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowing((PlayerTypes)jJ))
+					{
+						return false;
+					}
+					if (GC.getGame().getGameTurn() == GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowing((PlayerTypes)jJ))
+					{
+						if (GC.getGame().getTimeElapsed() < GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowing((PlayerTypes)jJ))
+						{
+							return false;
+						}
+					}
+				}
+			}
+		}
+	}
+#endif
+
 	// First, obtain the Lua script system.
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if(pkScriptSystem)
@@ -1383,7 +1409,11 @@ void CvTeam::DoDeclareWar(TeamTypes eTeam, bool bDefensivePact, bool bMinorAllyP
 
 				float fGameTurnEnd = static_cast<float>(*piCurMaxTurnLength);
 #else
+#ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
+				float fGameTurnEnd = kGame.getPreviousTurnLen();
+#else
 				float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
+#endif
 
 				//NOTE:  These times exclude the time used for AI processing.
 				//Time since the current player's turn started.  Used for measuring time for players in sequential turn mode.
@@ -6113,11 +6143,20 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 				{
 					for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
 					{
+#ifndef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
 						pEspionage->BuildStealableTechList((PlayerTypes)ui);
+#endif
 
 						// if the player is out of techs to steal, set their number of stealable techs to zero
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+						if (pEspionage->GetNumTechsToSteal((PlayerTypes)ui) == 0)
+#else
 						if(pEspionage->m_aaPlayerStealableTechList[ui].size() == 0)
+#endif
 						{
+#ifdef ESPIONAGE_SYSTEM_REWORK
+							pEspionage->m_aaPlayerScienceToStealList[ui].clear();
+#endif
 							pEspionage->m_aiNumTechsToStealList[ui] = 0;
 						}
 					}
