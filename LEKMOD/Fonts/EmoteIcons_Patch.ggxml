@@ -13,6 +13,7 @@
   <glyphs fudgeadv="0" ascadj="-6" spacing="0" count="79" height="0" ascent="0" descent="0">
     <glyph ch="1" u="0" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
     <glyph ch="2" u="22" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
+    <glyph ch="3" u="44" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
     <glyph ch="4" u="66" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
     <glyph ch="5" u="88" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
     <glyph ch="6" u="110" v="0" width="22" height="22" a="0" b="22" c="0" originx="0" originy="22" />
