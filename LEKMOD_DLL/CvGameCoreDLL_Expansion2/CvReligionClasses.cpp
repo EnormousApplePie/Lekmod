@@ -2485,6 +2485,15 @@ bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 	UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
 #endif
 
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+	if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_FOUNDING"))
+	{
+		if (!kPlayer.isHuman())
+		{
+			return false;
+		}
+	}
+#endif
 
 #ifdef LEK_UNIQUE_FAITH_UNIT_FIX
 	

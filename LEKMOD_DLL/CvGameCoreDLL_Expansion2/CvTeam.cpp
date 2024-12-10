@@ -1128,7 +1128,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	{
 		for (int iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			for (int jJ = 0; jJ < MAX_PLAYERS; jJ++)
+			for (int jJ = 0; jJ < MAX_MAJOR_CIVS; jJ++)
 			{
 				if (GET_PLAYER((PlayerTypes)iI).getTeam() == GetID() && GET_PLAYER((PlayerTypes)jJ).getTeam() == eTeam)
 				{
