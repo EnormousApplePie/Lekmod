@@ -48,8 +48,8 @@ function ResetMultiplayerOptions()
 		PreGame.SetGameOption("GAMEOPTION_DYNAMIC_TURNS", false);
 		PreGame.SetGameOption("GAMEOPTION_SIMULTANEOUS_TURNS", false);
 	else
-		PreGame.SetGameOption("GAMEOPTION_DYNAMIC_TURNS", true);
-		PreGame.SetGameOption("GAMEOPTION_SIMULTANEOUS_TURNS", false);
+		PreGame.SetGameOption("GAMEOPTION_DYNAMIC_TURNS", false);
+		PreGame.SetGameOption("GAMEOPTION_SIMULTANEOUS_TURNS", true);
 	end
 end
 

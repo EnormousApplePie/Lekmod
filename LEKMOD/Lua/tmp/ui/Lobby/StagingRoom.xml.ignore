@@ -370,6 +370,325 @@
         <!-- List of Check Boxes -->
         <Stack Anchor="L,T" Offset="20,0" Padding="-7" StackGrowth="Bottom" ID="GameOptionsStack" />
 
+            <!-- AI Options Check -->
+            <Box Anchor="L,T" Size="480,25" Offset="30,-7" Color="255,255,255,0" >
+
+              <Stack ID="AIOptionsStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_OPTIONS" ToolTip="TXT_KEY_GAME_OPTION_AI_HELP_OPTIONS" IsChecked="0" ID="AIOptionsCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Always Accept White Peace -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AIAlwaysAcceptWhitePeaceBox" >
+
+              <Stack ID="AIAlwaysAcceptWhitePeaceStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_ALWAYS_WHITE_PEACE" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_ALWAYS_WHITE_PEACE_HELP" IsChecked="0" ID="AIAlwaysAcceptWhitePeaceCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot Accumulate Culture -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotAccumulateCultureBox" >
+
+              <Stack ID="AICannotAccumulateCultureStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_CULTURE" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_CULTURE_HELP" IsChecked="0" ID="AICannotAccumulateCultureCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot Build Settlers -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotBuildSettlersBox" >
+
+              <Stack ID="AICannotBuildSettlersStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_BUILDING_SETTLERS" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_BUILDING_SETTLERS_HELP" IsChecked="0" ID="AICannotBuildSettlersCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot Build World Wonders -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotBuildWorldWondersBox" >
+
+              <Stack ID="AICannotBuildWorldWondersStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_WORLD_WONDER" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_WORLD_WONDER_HELP" IsChecked="0" ID="AICannotBuildWorldWondersCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot Coup City-States -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotCoupCityStatesBox" >
+
+              <Stack ID="AICannotCoupCityStatesStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_COUP" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_COUP_HELP" IsChecked="0" ID="AICannotCoupCityStatesCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot Found a Religion -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotFoundReligionBox" >
+
+              <Stack ID="AICannotFoundReligionStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_RELIGION_FOUNDING" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_RELIGION_FOUNDING_HELP" IsChecked="0" ID="AICannotFoundReligionCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot Spread Religion to City-States -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotSpreadReligionCSBox" >
+
+              <Stack ID="AICannotSpreadReligionCityStatesStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_NO_MINOR_RELIGION_SPREAD" ToolTip="TXT_KEY_GAME_OPTION_NO_MINOR_RELIGION_SPREAD_HELP" IsChecked="0" ID="AICannotSpreadReligionCSCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot Spread Religion to Humans -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotSpreadReligionHumansBox" >
+
+              <Stack ID="AICannotSpreadReligionHumansStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_RELIGION_SPREAD" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_RELIGION_SPREAD_HELP" IsChecked="0" ID="AICannotSpreadRelHumansCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot Vote In Congress -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotVoteInCongressBox" >
+
+              <Stack ID="AICannotVoteInCongressStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_NO_VOTE" ToolTip="TXT_KEY_GAME_OPTION_AI_NO_VOTE_HELP" IsChecked="0" ID="AICannotVoteInCongressCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot be Liberated -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotBeLiberatedBox" >
+
+              <Stack ID="AICannotBeLiberatedStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_LIBERATION" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_LIBERATION_HELP" IsChecked="0" ID="AICannotBeLiberatedCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- AI Cannot have deals with Humans -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AICannotHaveWealsWithHumansBox" >
+
+              <Stack ID="AICannotHaveWealsWithHumansStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_DEALS" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_DEALS_HELP" IsChecked="0" ID="AICannotHaveWealsWithHumansCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- Disable AI in Demographics -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="DisableAIDemographicsBox" >
+
+              <Stack ID="DisableAIDemographicsStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_GIMP_NO_DEMOGRAPHICS" ToolTip="TXT_KEY_GAME_OPTION_AI_GIMP_NO_DEMOGRAPHICS_HELP" IsChecked="0" ID="DisableAIDemographicsCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- No AI Start Advantage -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="NoAIStartAdvantageBox" >
+
+              <Stack ID="NoAIStartAdvantageStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_HANDICAP_START" ToolTip="TXT_KEY_GAME_OPTION_AI_HANDICAP_START_HELP" IsChecked="0" ID="NoAIStartAdvantageCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- No Penalty for Expansion -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="NoPenaltyForExpansionBox" >
+
+              <Stack ID="NoPenaltyForExpansionStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER" ToolTip="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER_HELP" IsChecked="0" ID="NoPenaltyForExpansionCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- No XP from AI -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="NoXPFromAIBox" >
+
+              <Stack ID="NoXPFromAIStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_AI_XP_CAP" ToolTip="TXT_KEY_GAME_OPTION_AI_XP_CAP_HELP" IsChecked="0" ID="NoXPFromAICheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+
+            <!-- Additional Options Check -->
+            <Box Anchor="L,T" Size="480,25" Offset="30,0" Color="255,255,255,0" >
+
+              <Stack ID="AdditionalOptionsStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_ADDITIONAL" ToolTip="TXT_KEY_GAME_OPTION_ADDITIONAL_HELP" IsChecked="0" ID="AdditionalOptionsCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- Allow Policy Saving -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AllowPolicySavingBox" >
+
+              <Stack ID="AllowPolicySavingStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_POLICY_SAVING" ToolTip="TXT_KEY_GAME_OPTION_POLICY_SAVING_HELP" IsChecked="0" ID="AllowPolicySavingCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- Allow Promotion Saving -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AllowPromotionSavingBox" >
+
+              <Stack ID="AllowPromotionSavingStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_PROMOTION_SAVING" ToolTip="TXT_KEY_GAME_OPTION_PROMOTION_SAVING_HELP" IsChecked="0" ID="AllowPromotionSavingCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- Alternate Score Calculations -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="AlternateScoreCalculationsBox" >
+
+              <Stack ID="AlternateScoreCalculationsStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_TWEAKED_SCORING" ToolTip="TXT_KEY_GAME_OPTION_TWEAKED_SCORING_HELP" IsChecked="0" ID="AlternateScoreCalculationsCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- Complete Kills -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="CompleteKillsBox" >
+
+              <Stack ID="CompleteKillsStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_COMPLETE_KILLS" ToolTip="TXT_KEY_GAME_OPTION_COMPLETE_KILLS_HELP" IsChecked="0" ID="CompleteKillsCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- Disable Start Bias -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="DisableStartBiasBox" >
+
+              <Stack ID="DisableStartBiasStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_DISABLE_START_BIAS" ToolTip="TXT_KEY_GAME_OPTION_DISABLE_START_BIAS_HELP" IsChecked="0" ID="DisableStartBiasCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- No Ancient Ruins -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="NoAncientRuinsBox" >
+
+              <Stack ID="NoAncientRuinsStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_NO_GOODY_HUTS" ToolTip="TXT_KEY_GAME_OPTION_NO_GOODY_HUTS_HELP" IsChecked="0" ID="NoAncientRuinsCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- No Barbarians -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="NoBarbariansBox" >
+
+              <Stack ID="NoBarbariansStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_NO_BARBARIANS" ToolTip="TXT_KEY_GAME_OPTION_NO_BARBARIANS_HELP" IsChecked="0" ID="NoBarbariansCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- No City Razing -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="NoCityRazingBox" >
+
+              <Stack ID="NoCityRazingStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_NO_CITY_RAZING" ToolTip="TXT_KEY_GAME_OPTION_NO_CITY_RAZING_HELP" IsChecked="0" ID="NoCityRazingCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- No Espionage -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="NoEspionageBox" >
+
+              <Stack ID="NoEspionageStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_NO_ESPIONAGE" ToolTip="TXT_KEY_GAME_OPTION_NO_ESPIONAGE_HELP" IsChecked="0" ID="NoEspionageCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- One City Challenge -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="OneCityChallengeBox" >
+
+              <Stack ID="OneCityChallengeStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_ONE_CITY_CHALLENGE" ToolTip="TXT_KEY_GAME_OPTION_ONE_CITY_CHALLENGE_HELP" IsChecked="0" ID="OneCityChallengeCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- Raging Barbarians -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="RagingBarbariansBox" >
+
+              <Stack ID="RagingBarbariansStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_RAGING_BARBARIANS" ToolTip="TXT_KEY_GAME_OPTION_RAGING_BARBARIANS_HELP" IsChecked="0" ID="RagingBarbariansCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
+
+            <!-- Random Personalities -->
+            <Box Hidden="1" Anchor="L,T" Size="480,25" Offset="45,0" Color="255,255,255,0" ID="RandomPersonalitiesBox" >
+
+              <Stack ID="RandomPersonalitiesStack" Anchor="L,T" Size="463,32" Offset="0,0" StackGrowth="Right">
+                <Box Anchor="L,C"  Size="200,32" Color="255,255,200,0" >
+                  <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Font="TwCenMT20" Anchor="L,C" TextAnchorSide="Right" TextOffset="40,0" String="TXT_KEY_GAME_OPTION_RANDOM_PERSONALITIES" ToolTip="TXT_KEY_GAME_OPTION_RANDOM_PERSONALITIES_HELP" IsChecked="0" ID="RandomPersonalitiesCheck" ConsumeMouse="1" />
+                </Box>
+              </Stack>
+            </Box>
+
         <!-- DLC -->
         <Box Anchor="C,T" Size="500,30" Offset="0,7" Color="White.0" >
           <Image  Anchor="C,T"  Offset="0,0" Texture="bar500x2.dds" Size="500.1" />
