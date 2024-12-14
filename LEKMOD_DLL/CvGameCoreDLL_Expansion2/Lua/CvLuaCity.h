@@ -161,6 +161,9 @@ protected:
 	static int lIsCapital(lua_State* L);
 	static int lIsOriginalCapital(lua_State* L);
 	static int lIsOriginalMajorCapital(lua_State* L);
+#ifdef LUA_METHOD_IS_INDUSTRIAL_ROUTE_TO_CAPITAL
+	static int lIsIndustrialRouteToCapital(lua_State* L);
+#endif
 	static int lIsCoastal(lua_State* L);
 
 	static int lFoodConsumption(lua_State* L);
