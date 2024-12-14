@@ -6729,6 +6729,11 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 
 	if (kGoodyInfo.getFreePromotion() != NO_PROMOTION)
 	{
+		//is this unit a combat unit?
+		if (pUnit != NULL && !pUnit->IsCombatUnit())
+		{
+			return false;
+		}
 		//does the unit already have the promotion?
 		if (pUnit != NULL && pUnit->isHasPromotion((PromotionTypes)kGoodyInfo.getFreePromotion()))
 		{
