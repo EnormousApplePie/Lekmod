@@ -51,8 +51,8 @@ IF EXIST "%cd%\%euifolder%\Core\EUI_unit_include.lua" (
 )
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CultureOverview.lua"
-ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.xml.ignore" "%cd%\%patchfolder%\Lua\UI\CultureOverview.lua"
-ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview\EconomicGeneralInfo.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CultureOverview.lua"
+ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.xml.ignore" "%cd%\%patchfolder%\Lua\UI\CultureOverview.xml"
+ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview\EconomicGeneralInfo.lua.ignore" "%cd%\%patchfolder%\Lua\UI\EconomicGeneralInfo.lua"
 REM --------------------------------------------------------------------------------------------------
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\FrontEnd\EULA.lua.ignore" "%cd%\%patchfolder%\Lua\UI\EULA.lua"
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\FrontEnd\FrontEnd.lua.ignore" "%cd%\%patchfolder%\Lua\UI\FrontEnd.lua"
