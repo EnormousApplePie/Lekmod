@@ -326,6 +326,265 @@ function UpdateGameOptionsDisplay(bUpdateOnly)
 	Controls.TurnModePull:SetDisabled( not bCanEdit );
 	Controls.TurnModeRoot:SetHide(PreGame.IsHotSeatGame());	
 
+	Controls.AIOptionsCheck:SetDisabled( not bCanEdit );
+
+	-- AI Options
+	if PreGame.GetGameOption("GAMEOPTION_AI_OPTIONS") <= 0 then
+		Controls.AIOptionsCheck:SetCheck( false );
+		Controls.AIAlwaysAcceptWhitePeaceBox:SetHide( true );
+		Controls.AICannotAccumulateCultureBox:SetHide( true );
+		Controls.AICannotBuildSettlersBox:SetHide( true );
+		Controls.AICannotBuildWorldWondersBox:SetHide( true );
+		Controls.AICannotCoupCityStatesBox:SetHide( true );
+		Controls.AICannotFoundReligionBox:SetHide( true );
+		Controls.AICannotSpreadReligionCSBox:SetHide( true );
+		Controls.AICannotSpreadReligionHumansBox:SetHide( true );
+		Controls.AICannotVoteInCongressBox:SetHide( true );
+		Controls.AICannotBeLiberatedBox:SetHide( true );
+		Controls.AICannotHaveWealsWithHumansBox:SetHide( true );
+		Controls.DisableAIDemographicsBox:SetHide( true );
+		Controls.NoAIStartAdvantageBox:SetHide( true );
+		Controls.NoPenaltyForExpansionBox:SetHide( true );
+		Controls.NoXPFromAIBox:SetHide( true );
+	else
+		Controls.AIOptionsCheck:SetCheck( true );
+		Controls.AIAlwaysAcceptWhitePeaceBox:SetHide( false );
+		Controls.AICannotAccumulateCultureBox:SetHide( false );
+		Controls.AICannotBuildSettlersBox:SetHide( false );
+		Controls.AICannotBuildWorldWondersBox:SetHide( false );
+		Controls.AICannotCoupCityStatesBox:SetHide( false );
+		Controls.AICannotFoundReligionBox:SetHide( false );
+		Controls.AICannotSpreadReligionCSBox:SetHide( false );
+		Controls.AICannotSpreadReligionHumansBox:SetHide( false );
+		Controls.AICannotVoteInCongressBox:SetHide( false );
+		Controls.AICannotBeLiberatedBox:SetHide( false );
+		Controls.AICannotHaveWealsWithHumansBox:SetHide( false );
+		Controls.DisableAIDemographicsBox:SetHide( false );
+		Controls.NoAIStartAdvantageBox:SetHide( false );
+		Controls.NoPenaltyForExpansionBox:SetHide( false );
+		Controls.NoXPFromAIBox:SetHide( false );
+		Controls.AIAlwaysAcceptWhitePeaceCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotAccumulateCultureCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotBuildSettlersCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotBuildWorldWondersCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotCoupCityStatesCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotFoundReligionCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotSpreadReligionCSCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotSpreadRelHumansCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotVoteInCongressCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotBeLiberatedCheck:SetDisabled( not bCanEdit );
+		Controls.AICannotHaveWealsWithHumansCheck:SetDisabled( not bCanEdit );
+		Controls.DisableAIDemographicsCheck:SetDisabled( not bCanEdit );
+		Controls.NoAIStartAdvantageCheck:SetDisabled( not bCanEdit );
+		Controls.NoPenaltyForExpansionCheck:SetDisabled( not bCanEdit );
+		Controls.NoXPFromAICheck:SetDisabled( not bCanEdit );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_ALWAYS_WHITE_PEACE") <= 0 then
+		Controls.AIAlwaysAcceptWhitePeaceCheck:SetCheck( false );
+	else
+		Controls.AIAlwaysAcceptWhitePeaceCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_CULTURE") <= 0 then
+		Controls.AICannotAccumulateCultureCheck:SetCheck( false );
+	else
+		Controls.AICannotAccumulateCultureCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS") <= 0 then
+		Controls.AICannotBuildSettlersCheck:SetCheck( false );
+	else
+		Controls.AICannotBuildSettlersCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER") <= 0 then
+		Controls.AICannotBuildWorldWondersCheck:SetCheck( false );
+	else
+		Controls.AICannotBuildWorldWondersCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_COUP") <= 0 then
+		Controls.AICannotCoupCityStatesCheck:SetCheck( false );
+	else
+		Controls.AICannotCoupCityStatesCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_RELIGION_FOUNDING") <= 0 then
+		Controls.AICannotFoundReligionCheck:SetCheck( false );
+	else
+		Controls.AICannotFoundReligionCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD") <= 0 then
+		Controls.AICannotSpreadReligionCSCheck:SetCheck( false );
+	else
+		Controls.AICannotSpreadReligionCSCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD") <= 0 then
+		Controls.AICannotSpreadRelHumansCheck:SetCheck( false );
+	else
+		Controls.AICannotSpreadRelHumansCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_NO_VOTE") <= 0 then
+		Controls.AICannotVoteInCongressCheck:SetCheck( false );
+	else
+		Controls.AICannotVoteInCongressCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_LIBERATION") <= 0 then
+		Controls.AICannotBeLiberatedCheck:SetCheck( false );
+	else
+		Controls.AICannotBeLiberatedCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_DEALS") <= 0 then
+		Controls.AICannotHaveWealsWithHumansCheck:SetCheck( false );
+	else
+		Controls.AICannotHaveWealsWithHumansCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_GIMP_NO_DEMOGRAPHICS") <= 0 then
+		Controls.DisableAIDemographicsCheck:SetCheck( false );
+	else
+		Controls.DisableAIDemographicsCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_HANDICAP_START") <= 0 then
+		Controls.NoAIStartAdvantageCheck:SetCheck( false );
+	else
+		Controls.NoAIStartAdvantageCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_DISABLE_RECKLESS_EXPANDER") <= 0 then
+		Controls.NoPenaltyForExpansionCheck:SetCheck( false );
+	else
+		Controls.NoPenaltyForExpansionCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_AI_XP_CAP") <= 0 then
+		Controls.NoXPFromAICheck:SetCheck( false );
+	else
+		Controls.NoXPFromAICheck:SetCheck( true );
+	end
+
+	-- Additional Options
+	if PreGame.GetGameOption("GAMEOPTION_ADDITIONAL") <= 0 then
+		Controls.AdditionalOptionsCheck:SetCheck( false );
+		Controls.AllowPolicySavingBox:SetHide( true );
+		Controls.AllowPromotionSavingBox:SetHide( true );
+		Controls.AlternateScoreCalculationsBox:SetHide( true );
+		Controls.CompleteKillsBox:SetHide( true );
+		Controls.DisableStartBiasBox:SetHide( true );
+		Controls.NoAncientRuinsBox:SetHide( true );
+		Controls.NoBarbariansBox:SetHide( true );
+		Controls.NoCityRazingBox:SetHide( true );
+		Controls.NoEspionageBox:SetHide( true );
+		Controls.OneCityChallengeBox:SetHide( true );
+		Controls.RagingBarbariansBox:SetHide( true );
+		Controls.RandomPersonalitiesBox:SetHide( true );
+	else
+		Controls.AdditionalOptionsCheck:SetCheck( true );
+		Controls.AllowPolicySavingBox:SetHide( false );
+		Controls.AllowPromotionSavingBox:SetHide( false );
+		Controls.AlternateScoreCalculationsBox:SetHide( false );
+		Controls.CompleteKillsBox:SetHide( false );
+		Controls.DisableStartBiasBox:SetHide( false );
+		Controls.NoAncientRuinsBox:SetHide( false );
+		Controls.NoBarbariansBox:SetHide( false );
+		Controls.NoCityRazingBox:SetHide( false );
+		Controls.NoEspionageBox:SetHide( false );
+		Controls.OneCityChallengeBox:SetHide( false );
+		Controls.RagingBarbariansBox:SetHide( false );
+		Controls.RandomPersonalitiesBox:SetHide( false );
+		Controls.AllowPolicySavingCheck:SetDisabled( not bCanEdit );
+		Controls.AllowPromotionSavingCheck:SetDisabled( not bCanEdit );
+		Controls.AlternateScoreCalculationsCheck:SetDisabled( not bCanEdit );
+		Controls.CompleteKillsCheck:SetDisabled( not bCanEdit );
+		Controls.DisableStartBiasCheck:SetDisabled( not bCanEdit );
+		Controls.NoAncientRuinsCheck:SetDisabled( not bCanEdit );
+		Controls.NoBarbariansCheck:SetDisabled( not bCanEdit );
+		Controls.NoCityRazingCheck:SetDisabled( not bCanEdit );
+		Controls.NoEspionageCheck:SetDisabled( not bCanEdit );
+		Controls.OneCityChallengeCheck:SetDisabled( not bCanEdit );
+		Controls.RagingBarbariansCheck:SetDisabled( not bCanEdit );
+		Controls.RandomPersonalitiesCheck:SetDisabled( not bCanEdit );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_POLICY_SAVING") <= 0 then
+		Controls.AllowPolicySavingCheck:SetCheck( false );
+	else
+		Controls.AllowPolicySavingCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_PROMOTION_SAVING") <= 0 then
+		Controls.AllowPromotionSavingCheck:SetCheck( false );
+	else
+		Controls.AllowPromotionSavingCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_TWEAKED_SCORING") <= 0 then
+		Controls.AlternateScoreCalculationsCheck:SetCheck( false );
+	else
+		Controls.AlternateScoreCalculationsCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_COMPLETE_KILLS") <= 0 then
+		Controls.CompleteKillsCheck:SetCheck( false );
+	else
+		Controls.CompleteKillsCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_DISABLE_START_BIAS") <= 0 then
+		Controls.DisableStartBiasCheck:SetCheck( false );
+	else
+		Controls.DisableStartBiasCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_NO_GOODY_HUTS") <= 0 then
+		Controls.NoAncientRuinsCheck:SetCheck( false );
+	else
+		Controls.NoAncientRuinsCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_NO_BARBARIANS") <= 0 then
+		Controls.NoBarbariansCheck:SetCheck( false );
+	else
+		Controls.NoBarbariansCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_NO_CITY_RAZING") <= 0 then
+		Controls.NoCityRazingCheck:SetCheck( false );
+	else
+		Controls.NoCityRazingCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_NO_ESPIONAGE") <= 0 then
+		Controls.NoEspionageCheck:SetCheck( false );
+	else
+		Controls.NoEspionageCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_ONE_CITY_CHALLENGE") <= 0 then
+		Controls.OneCityChallengeCheck:SetCheck( false );
+	else
+		Controls.OneCityChallengeCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_RAGING_BARBARIANS") <= 0 then
+		Controls.RagingBarbariansCheck:SetCheck( false );
+	else
+		Controls.RagingBarbariansCheck:SetCheck( true );
+	end
+
+	if PreGame.GetGameOption("GAMEOPTION_RANDOM_PERSONALITIES") <= 0 then
+		Controls.RandomPersonalitiesCheck:SetCheck( false );
+	else
+		Controls.RandomPersonalitiesCheck:SetCheck( true );
+	end
+
 	-- Update the options panel
 	RefreshGameOptions();
 	RefreshDropDownOptions();		
@@ -861,6 +1120,530 @@ function OnMaxTurnsChecked()
 	SendGameOptionChanged();
 end
 Controls.MaxTurnsCheck:RegisterCallback( Mouse.eLClick, OnMaxTurnsChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAIOptionsOption()
+	local isChecked = Controls.AIOptionsCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_OPTIONS", isChecked);
+	SendGameOptionChanged();
+
+	Controls.AIAlwaysAcceptWhitePeaceBox:SetHide( not isChecked );
+	Controls.AICannotAccumulateCultureBox:SetHide( not isChecked );
+	Controls.AICannotBuildSettlersBox:SetHide( not isChecked );
+	Controls.AICannotBuildWorldWondersBox:SetHide( not isChecked );
+	Controls.AICannotCoupCityStatesBox:SetHide( not isChecked );
+	Controls.AICannotFoundReligionBox:SetHide( not isChecked );
+	Controls.AICannotSpreadReligionCSBox:SetHide( not isChecked );
+	Controls.AICannotSpreadReligionHumansBox:SetHide( not isChecked );
+	Controls.AICannotVoteInCongressBox:SetHide( not isChecked );
+	Controls.AICannotBeLiberatedBox:SetHide( not isChecked );
+	Controls.AICannotHaveWealsWithHumansBox:SetHide( not isChecked );
+	Controls.DisableAIDemographicsBox:SetHide( not isChecked );
+	Controls.NoAIStartAdvantageBox:SetHide( not isChecked );
+	Controls.NoPenaltyForExpansionBox:SetHide( not isChecked );
+	Controls.NoXPFromAIBox:SetHide( not isChecked );
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAIOptionsChecked()
+	SetAIOptionsOption();
+	SendGameOptionChanged();
+end
+Controls.AIOptionsCheck:RegisterCallback( Mouse.eLClick, OnAIOptionsChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAIAlwaysAcceptWhitePeaceOption()
+	local isChecked = Controls.AIAlwaysAcceptWhitePeaceCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_ALWAYS_WHITE_PEACE", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAIAlwaysAcceptWhitePeaceChecked()
+	SetAIAlwaysAcceptWhitePeaceOption();
+	SendGameOptionChanged();
+end
+Controls.AIAlwaysAcceptWhitePeaceCheck:RegisterCallback( Mouse.eLClick, OnAIAlwaysAcceptWhitePeaceChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotAccumulateCultureOption()
+	local isChecked = Controls.AICannotAccumulateCultureCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_CULTURE", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotAccumulateCultureChecked()
+	SetAICannotAccumulateCultureOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotAccumulateCultureCheck:RegisterCallback( Mouse.eLClick, OnAICannotAccumulateCultureChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotBuildSettlersOption()
+	local isChecked = Controls.AICannotBuildSettlersCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotBuildSettlersChecked()
+	SetAICannotBuildSettlersOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotBuildSettlersCheck:RegisterCallback( Mouse.eLClick, OnAICannotBuildSettlersChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotBuildWorldWondersOption()
+	local isChecked = Controls.AICannotBuildWorldWondersCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotCoupCityStatesChecked()
+	SetAICannotCoupCityStatesOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotCoupCityStatesCheck:RegisterCallback( Mouse.eLClick, OnAICannotCoupCityStatesChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotCoupCityStatesOption()
+	local isChecked = Controls.AICannotCoupCityStatesCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_COUP", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotBuildWorldWondersChecked()
+	SetAICannotBuildWorldWondersOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotBuildWorldWondersCheck:RegisterCallback( Mouse.eLClick, OnAICannotBuildWorldWondersChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotFoundReligionOption()
+	local isChecked = Controls.AICannotFoundReligionCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_RELIGION_FOUNDING", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotFoundReligionChecked()
+	SetAICannotFoundReligionOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotFoundReligionCheck:RegisterCallback( Mouse.eLClick, OnAICannotFoundReligionChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotSpreadReligionCSOption()
+	local isChecked = Controls.AICannotSpreadReligionCSCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotSpreadReligionCSChecked()
+	SetAICannotSpreadReligionCSOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotSpreadReligionCSCheck:RegisterCallback( Mouse.eLClick, OnAICannotSpreadReligionCSChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotSpreadReligionHumansOption()
+	local isChecked = Controls.AICannotSpreadRelHumansCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotSpreadRelHumansChecked()
+	SetAICannotSpreadReligionHumansOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotSpreadRelHumansCheck:RegisterCallback( Mouse.eLClick, OnAICannotSpreadRelHumansChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotVoteInCongressOption()
+	local isChecked = Controls.AICannotVoteInCongressCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_NO_VOTE", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotVoteInCongressChecked()
+	SetAICannotVoteInCongressOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotVoteInCongressCheck:RegisterCallback( Mouse.eLClick, OnAICannotVoteInCongressChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotBeLiberatedOption()
+	local isChecked = Controls.AICannotBeLiberatedCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_LIBERATION", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotBeLiberatedChecked()
+	SetAICannotBeLiberatedOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotBeLiberatedCheck:RegisterCallback( Mouse.eLClick, OnAICannotBeLiberatedChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAICannotHaveWealsWithHumansOption()
+	local isChecked = Controls.AICannotHaveWealsWithHumansCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_DEALS", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAICannotHaveWealsWithHumansChecked()
+	SetAICannotHaveWealsWithHumansOption();
+	SendGameOptionChanged();
+end
+Controls.AICannotHaveWealsWithHumansCheck:RegisterCallback( Mouse.eLClick, OnAICannotHaveWealsWithHumansChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetDisableAIDemographicsOption()
+	local isChecked = Controls.DisableAIDemographicsCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_GIMP_NO_DEMOGRAPHICS", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnDisableAIDemographicsChecked()
+	SetDisableAIDemographicsOption();
+	SendGameOptionChanged();
+end
+Controls.DisableAIDemographicsCheck:RegisterCallback( Mouse.eLClick, OnDisableAIDemographicsChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetNoAIStartAdvantageOption()
+	local isChecked = Controls.NoAIStartAdvantageCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_HANDICAP_START", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnNoAIStartAdvantageChecked()
+	SetNoAIStartAdvantageOption();
+	SendGameOptionChanged();
+end
+Controls.NoAIStartAdvantageCheck:RegisterCallback( Mouse.eLClick, OnNoAIStartAdvantageChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetNoPenaltyForExpansionOption()
+	local isChecked = Controls.NoPenaltyForExpansionCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_DISABLE_RECKLESS_EXPANDER", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnNoPenaltyForExpansionChecked()
+	SetNoPenaltyForExpansionOption();
+	SendGameOptionChanged();
+end
+Controls.NoPenaltyForExpansionCheck:RegisterCallback( Mouse.eLClick, OnNoPenaltyForExpansionChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetNoXPFromAIOption()
+	local isChecked = Controls.NoXPFromAICheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_AI_XP_CAP", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnNoXPFromAIChecked()
+	SetNoXPFromAIOption();
+	SendGameOptionChanged();
+end
+Controls.NoXPFromAICheck:RegisterCallback( Mouse.eLClick, OnNoXPFromAIChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAdditionalOptionsOption()
+	local isChecked = Controls.AdditionalOptionsCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_ADDITIONAL", isChecked);
+	SendGameOptionChanged();
+
+	Controls.AllowPolicySavingBox:SetHide( not isChecked );
+	Controls.AllowPromotionSavingBox:SetHide( not isChecked );
+	Controls.AlternateScoreCalculationsBox:SetHide( not isChecked );
+	Controls.CompleteKillsBox:SetHide( not isChecked );
+	Controls.DisableStartBiasBox:SetHide( not isChecked );
+	Controls.NoAncientRuinsBox:SetHide( not isChecked );
+	Controls.NoBarbariansBox:SetHide( not isChecked );
+	Controls.NoCityRazingBox:SetHide( not isChecked );
+	Controls.NoEspionageBox:SetHide( not isChecked );
+	Controls.OneCityChallengeBox:SetHide( not isChecked );
+	Controls.RagingBarbariansBox:SetHide( not isChecked );
+	Controls.NoPenaltyForExpansionBox:SetHide( not isChecked );
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAdditionalOptionsChecked()
+	SetAdditionalOptionsOption();
+	SendGameOptionChanged();
+end
+Controls.AdditionalOptionsCheck:RegisterCallback( Mouse.eLClick, OnAdditionalOptionsChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAllowPolicySavingOption()
+	local isChecked = Controls.AllowPolicySavingCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_POLICY_SAVING", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAllowPolicySavingChecked()
+	SetAllowPolicySavingOption();
+	SendGameOptionChanged();
+end
+Controls.AllowPolicySavingCheck:RegisterCallback( Mouse.eLClick, OnAllowPolicySavingChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAllowPromotionSavingOption()
+	local isChecked = Controls.AllowPromotionSavingCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_PROMOTION_SAVING", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAllowPromotionSavingChecked()
+	SetAllowPromotionSavingOption();
+	SendGameOptionChanged();
+end
+Controls.AllowPromotionSavingCheck:RegisterCallback( Mouse.eLClick, OnAllowPromotionSavingChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetAlternateScoreCalculationsOption()
+	local isChecked = Controls.AlternateScoreCalculationsCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_TWEAKED_SCORING", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnAlternateScoreCalculationsChecked()
+	SetAlternateScoreCalculationsOption();
+	SendGameOptionChanged();
+end
+Controls.AlternateScoreCalculationsCheck:RegisterCallback( Mouse.eLClick, OnAlternateScoreCalculationsChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetCompleteKillsOption()
+	local isChecked = Controls.CompleteKillsCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_COMPLETE_KILLS", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnCompleteKillsChecked()
+	SetCompleteKillsOption();
+	SendGameOptionChanged();
+end
+Controls.CompleteKillsCheck:RegisterCallback( Mouse.eLClick, OnCompleteKillsChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetDisableStartBiasOption()
+	local isChecked = Controls.DisableStartBiasCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_DISABLE_START_BIAS", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnDisableStartBiasChecked()
+	SetDisableStartBiasOption();
+	SendGameOptionChanged();
+end
+Controls.DisableStartBiasCheck:RegisterCallback( Mouse.eLClick, OnDisableStartBiasChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetNoAncientRuinsOption()
+	local isChecked = Controls.NoAncientRuinsCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_NO_GOODY_HUTS", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnNoAncientRuinsChecked()
+	SetNoAncientRuinsOption();
+	SendGameOptionChanged();
+end
+Controls.NoAncientRuinsCheck:RegisterCallback( Mouse.eLClick, OnNoAncientRuinsChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetNoBarbariansOption()
+	local isChecked = Controls.NoBarbariansCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_NO_BARBARIANS", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnNoBarbariansChecked()
+	SetNoBarbariansOption();
+	SendGameOptionChanged();
+end
+Controls.NoBarbariansCheck:RegisterCallback( Mouse.eLClick, OnNoBarbariansChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetNoCityRazingOption()
+	local isChecked = Controls.NoCityRazingCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_NO_CITY_RAZING", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnNoCityRazingChecked()
+	SetNoCityRazingOption();
+	SendGameOptionChanged();
+end
+Controls.NoCityRazingCheck:RegisterCallback( Mouse.eLClick, OnNoCityRazingChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetNoEspionageOption()
+	local isChecked = Controls.NoEspionageCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_NO_ESPIONAGE", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnNoEspionageChecked()
+	SetNoEspionageOption();
+	SendGameOptionChanged();
+end
+Controls.NoEspionageCheck:RegisterCallback( Mouse.eLClick, OnNoEspionageChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetOneCityChallengeOption()
+	local isChecked = Controls.OneCityChallengeCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_ONE_CITY_CHALLENGE", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnOneCityChallengeChecked()
+	SetOneCityChallengeOption();
+	SendGameOptionChanged();
+end
+Controls.OneCityChallengeCheck:RegisterCallback( Mouse.eLClick, OnOneCityChallengeChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetRagingBarbariansCheckOption()
+	local isChecked = Controls.RagingBarbariansCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_RAGING_BARBARIANS", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnRagingBarbariansChecked()
+	SetRagingBarbariansCheckOption();
+	SendGameOptionChanged();
+end
+Controls.RagingBarbariansCheck:RegisterCallback( Mouse.eLClick, OnRagingBarbariansChecked );
+
+-------------------------------------------------
+-------------------------------------------------
+function SetRandomPersonalitiesOption()
+	local isChecked = Controls.RandomPersonalitiesCheck:IsChecked();
+	PreGame.SetGameOption("GAMEOPTION_RANDOM_PERSONALITIES", isChecked);
+
+	UpdateGameOptionsDisplay();
+end
+
+-------------------------------------------------
+-------------------------------------------------
+function OnRandomPersonalitiesChecked()
+	SetRandomPersonalitiesOption();
+	SendGameOptionChanged();
+end
+Controls.RandomPersonalitiesCheck:RegisterCallback( Mouse.eLClick, OnRandomPersonalitiesChecked );
 
 ----------------------------------------------------------------        
 ----------------------------------------------------------------

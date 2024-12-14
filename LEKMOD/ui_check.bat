@@ -78,7 +78,7 @@ ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\JoiningRoom.xml.ignore
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\LoadMenu.lua.ignore" "%cd%\%patchfolder%\Lua\UI\LoadMenu.lua"
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\Lobby.lua.ignore" "%cd%\%patchfolder%\Lua\UI\Lobby.lua"
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\Lobby.xml.ignore" "%cd%\%patchfolder%\Lua\UI\Lobby.xml"
-ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\MPGameOptions.lua.ignore" "%cd%\%patchfolder%\Lua\UI\MPGameOptions.lua
+ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\MPGameOptions.lua.ignore" "%cd%\%patchfolder%\Lua\UI\MPGameOptions.lua"
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\MPGameSetupScreen.lua.ignore" "%cd%\%patchfolder%\Lua\UI\MPGameSetupScreen.lua"
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\MPGameSetupScreen.xml.ignore" "%cd%\%patchfolder%\Lua\UI\MPGameSetupScreen.xml"
 ECHO F | xcopy /s /y "%cd%\%patchfolder%\Lua\tmp\ui\Lobby\StagingRoom.lua.ignore" "%cd%\%patchfolder%\Lua\UI\StagingRoom.lua"

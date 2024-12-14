@@ -390,6 +390,7 @@ function PopulateGameOptions()
 			local controlTable = g_AdvancedOptionIM:GetInstance();
 			g_AdvancedOptionsList[count] = controlTable;
 			controlTable.Text:LocalizeAndSetText(option.Description);
+			controlTable.Text:LocalizeAndSetToolTip(option.Help);
 			count = count + 1;
 		end
 	end
