@@ -162,6 +162,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(IsCapital);
 	Method(IsOriginalCapital);
 	Method(IsOriginalMajorCapital);
+#ifdef LUA_METHOD_IS_INDUSTRIAL_ROUTE_TO_CAPITAL
+	Method(IsIndustrialRouteToCapital);
+#endif
 	Method(IsCoastal);
 
 	Method(FoodConsumption);
@@ -1579,6 +1582,18 @@ int CvLuaCity::lIsOriginalMajorCapital(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::IsOriginalMajorCapital);
 }
+#ifdef LUA_METHOD_IS_INDUSTRIAL_ROUTE_TO_CAPITAL
+//------------------------------------------------------------------------------
+//bool IsIndustrialRouteToCapital();
+int CvLuaCity::lIsIndustrialRouteToCapital(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const int eValue = (int)pkCity->IsIndustrialRouteToCapital();
+
+	lua_pushinteger(L, eValue);
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 //bool isCoastal(int iMinWaterSize);
 int CvLuaCity::lIsCoastal(lua_State* L)

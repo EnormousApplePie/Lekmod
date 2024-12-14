@@ -1208,6 +1208,8 @@
 #define CORRECT_ATTACK_CITY_STRENGTH
 // Max durationing for policies results in policy being assigned randomly with 1 turn of grace period
 #define PENALTY_FOR_DELAYING_POLICIES
+// Adds rail connection icon
+#define LUA_METHOD_IS_INDUSTRIAL_ROUTE_TO_CAPITAL
 
 
 /*REPLAY EVENTS CHANGES START*/
