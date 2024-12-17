@@ -190,7 +190,6 @@ Copy-Item -Path "$patchfolder\lua\tmp\ui\UnitPanel\EnemyUnitPanel.lua.ignore" -D
 #if (Test-Path -Path $euifolder\UnitPanel\UnitPanel.lua)
 if (Select-String -Path $euifolder\UnitPanel\UnitPanel.lua -Pattern '-- modified by bc1 from Civ V 1.0.3.276 code')
 {
-    'File'
     Copy-Item -Path "$patchfolder\lua\tmp\eui\UnitPanel\UnitPanel.lua.ignore" -Destination "$patchfolder\Lua\UI\UnitPanel.lua"
 }
 else
