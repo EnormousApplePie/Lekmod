@@ -3801,6 +3801,10 @@ bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
 		{
 			return true;
 		}
+		if (GET_PLAYER(ePlayer).isMinorCiv())
+		{
+			return CanLiberatePlayer(ePlayer);
+		}
 
 		return false;
 	}
