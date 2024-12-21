@@ -1808,39 +1808,30 @@ function ActionToolTipHandler( control )
 		end
 
 		-- Production for clearing a feature
-		if (pFeature) then
-			local bFeatureRemoved = pPlot:IsBuildRemovesFeature(iBuildID);
-			if (bFeatureRemoved) then
-				
-				-- Add spacing for all entries after the first
-				if (bFirstEntry) then
-					bFirstEntry = false;
-				elseif (not bFirstEntry) then
-					strClearFeatureString = strClearFeatureString .. "[NEWLINE]";
+		if feature and plot:IsBuildRemovesFeature(buildID) then
+			toolTip:insertLocalized( "TXT_KEY_BUILD_FEATURE_CLEARED", feature.Description )
+
+			local featureProduction = plot:GetFeatureProduction(buildID, g_activeTeamID)
+			local featureFood = 0 --plot:GetFeatureFood(buildID, g_activeTeamID)
+			if featureProduction > 0 then
+				toolTip:append( L("TXT_KEY_BUILD_FEATURE_PRODUCTION", featureProduction) )
+				local city = plot:GetWorkingCity()
+				if city then
+					toolTip:append( " (".. city:GetName()..")" )
 				end
-				
-				strClearFeatureString = strClearFeatureString .. "[NEWLINE]";
-				strClearFeatureString = strClearFeatureString .. Locale.ConvertTextKey("TXT_KEY_BUILD_FEATURE_CLEARED", pFeature.Description);
+			elseif featureFood > 0 then
+				toolTip:append( L("TXT_KEY_BUILD_FEATURE_FOOD", featureFood) )
+				local city = plot:GetWorkingCity()
+				if city then
+					toolTip:append( " (".. city:GetName()..")" )
+				end
 			end
-			
-			local iFeatureProduction = pPlot:GetFeatureProduction(iBuildID, iActiveTeam);
-			if (iFeatureProduction > 0) then
-				strClearFeatureString = strClearFeatureString .. Locale.ConvertTextKey("TXT_KEY_BUILD_FEATURE_PRODUCTION", iFeatureProduction);
-				
-			-- Add period to end if we're not going to append info about feature production
-			elseif (bFeatureRemoved) then
-				strClearFeatureString = strClearFeatureString .. ".";
-			end
-			
-			strToolTip = strToolTip .. strClearFeatureString;
 		end
 	end
-    
-    -- Tooltip
-    if (strToolTip and strToolTip ~= "") then
-        tipControlTable.UnitActionHelp:SetText( strToolTip );
-    end
-	
+
+	-- Tooltip
+	tipControlTable.UnitActionHelp:SetText( toolTip:concat("[NEWLINE]") )
+
 	-- Title
 	tipControlTable.UnitActionText:SetText( "[COLOR_POSITIVE_TEXT]" .. L( tostring( action.TextKey or action.Type ) ) .. "[ENDCOLOR]".. strBuildTurnsString )
 
