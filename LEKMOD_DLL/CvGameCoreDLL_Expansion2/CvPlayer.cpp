@@ -2883,7 +2883,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 							{
 								// here would be a good place to put additional checks (for example, influence)
 #ifdef BUILDINGS_DESTROY_ONCE_PER_TURN
-								if(!bConquest || bRecapture || iTurnsSinceAcquire > 0 || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+								if(!bConquest || bRecapture || !(iTurnsSinceAcquire > 0) || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
 #else
 								
 								if(!bConquest || bRecapture || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
@@ -3800,6 +3800,10 @@ bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
 		if (GET_PLAYER(ePlayer).isHuman())
 		{
 			return true;
+		}
+		if (GET_PLAYER(ePlayer).isMinorCiv())
+		{
+			return CanLiberatePlayer(ePlayer);
 		}
 
 		return false;
