@@ -22,7 +22,7 @@ function lekmod_georgia_ua_check_faith_building(player, city)
 	if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
 
 	local religion = city:GetReligiousMajority();
-	if religion == 0 then return end
+	if religion == 0 or nil then return end
 
    for _, belief in ipairs(Game.GetBeliefsInReligion(religion)) do
       if belief then
@@ -49,7 +49,9 @@ end
 function lekmod_georgia_ua(player_id)
 	local player = Players[player_id]
 	for city in player:Cities() do
-		lekmod_georgia_ua_check_faith_building(player, city)
+      if city ~= nil then
+         lekmod_georgia_ua_check_faith_building(player, city)
+      end
 	end
 end
 
@@ -66,7 +68,7 @@ function lekmod_georgia_disable_normal_faith_buildings(playerID, cityID, buildin
 		end
 	end
 	return true
-	
+
 
 end
 ------------------------------------------------------------------------------------------------------------------------

@@ -4037,12 +4037,14 @@ CvGoodyInfo::CvGoodyInfo() : CvBaseInfo()
 	, m_iFoodMax(0)
 	, m_iFaithMin(0)
 	, m_iFaithMax(0)
+	, m_iIncreasePerPop(0)
 	, m_iBeforeTurn(0)
 	, m_iAfterTurn(0)
 	, m_iTileGrowths(0)
 	, m_iRandomImprovement(0)
 	, m_bIsOncePerGame(false)
 	, m_iFreePromotion(NO_PROMOTION)
+	, m_iExcludeUnitClass(NO_UNITCLASS)
 	, m_iCityStateInfluence(0)
 #endif
 {
@@ -4180,6 +4182,12 @@ int CvGoodyInfo::getFaithMax() const
 {
 	return m_iFaithMax;
 }
+
+int CvGoodyInfo::getIncreasePerPop() const
+{
+	return m_iIncreasePerPop;
+}
+
 int CvGoodyInfo::getBeforeTurn() const
 {
 	return m_iBeforeTurn;
@@ -4206,6 +4214,11 @@ bool CvGoodyInfo::isOncePerGame() const
 int CvGoodyInfo::getFreePromotion() const
 {
 	return m_iFreePromotion;
+}
+
+int CvGoodyInfo::getExcludeUnitClass() const
+{
+	return m_iExcludeUnitClass;
 }
 
 int CvGoodyInfo::getCityStateInfluence() const
@@ -4276,12 +4289,14 @@ bool CvGoodyInfo::CacheResults(Database::Results& results, CvDatabaseUtility& kU
 	m_iFoodMax = results.GetInt("FoodMax");
 	m_iFaithMin = results.GetInt("FaithMin");
 	m_iFaithMax = results.GetInt("FaithMax");
+	m_iIncreasePerPop = results.GetInt("IncreasePerPop");
 	m_iBeforeTurn = results.GetInt("BeforeTurn");
 	m_iAfterTurn = results.GetInt("AfterTurn");
 	m_iTileGrowths = results.GetInt("TileGrowths");
 	m_iRandomImprovement = results.GetInt("RandomImprovement");
 	m_bIsOncePerGame = results.GetBool("IsOncePerGame");
 	m_iFreePromotion = GC.getInfoTypeForString(results.GetText("FreePromotion"), true);
+	m_iExcludeUnitClass = GC.getInfoTypeForString(results.GetText("ExcludeUnitClass"), true);
 	m_iCityStateInfluence = results.GetInt("CityStateInfluence");
 #endif
 

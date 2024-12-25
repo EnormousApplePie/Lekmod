@@ -945,6 +945,8 @@
 #define LEKMOD_FAITH_PURCHASE_NO_RELIGION
 // New ancient ruin rewards that can be specified in xml
 #define LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+// Fixes a rare events where players could get the oxford university building for free with the legalism policy
+#define LEKMOD_NO_FREE_TEAM_WONDERS
 
 
 /// ###############################

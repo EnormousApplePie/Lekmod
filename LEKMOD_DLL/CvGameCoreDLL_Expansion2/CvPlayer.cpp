@@ -6738,6 +6738,20 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		{
 			return false;
 		}
+
+		//is this unit from a unit class that is excluded?
+		if (kGoodyInfo.getExcludeUnitClass() != NO_UNITCLASS)
+		{
+			eUnit = pUnit->getUnitType();
+			if (eUnit != NO_UNIT)
+			{
+				if (GC.getUnitInfo(eUnit)->GetUnitClassType() == kGoodyInfo.getExcludeUnitClass())
+				{
+					return false;
+				}
+			}
+		}
+
 		//does the unit already have the promotion?
 		if (pUnit != NULL && pUnit->isHasPromotion((PromotionTypes)kGoodyInfo.getFreePromotion()))
 		{
@@ -7228,6 +7242,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		int iMinValue = kGoodyInfo.getFoodMin();
 		int iMaxValue = kGoodyInfo.getFoodMax();
 		iFood = GC.getGame().getJonRandNum(iMaxValue - iMinValue + 1, "Goody Food Rand") + iMinValue;
+
 		if (iFood > 0)
 		{
 
@@ -7235,6 +7250,13 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 
 			if (pBestCity != NULL)
 			{
+				// is the value affected by the city's population?
+				if (kGoodyInfo.getIncreasePerPop() > 0)
+				{
+					iFood += kGoodyInfo.getIncreasePerPop() * pBestCity->getPopulation();
+				}
+
+
 				// Add the food to the city, and grow it if possible
 				pBestCity->changeFood(iFood);
 				if (GetID() == GC.getGame().getActivePlayer())

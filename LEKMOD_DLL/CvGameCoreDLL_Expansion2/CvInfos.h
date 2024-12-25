@@ -1232,12 +1232,14 @@ public:
 	int getFoodMax() const;
 	int getFaithMin() const;
 	int getFaithMax() const;
+	int getIncreasePerPop() const;
 	int getBeforeTurn() const;
 	int getAfterTurn() const;
 	int getTileGrowths() const;
 	int getRandomImprovement() const;
 	bool isOncePerGame() const;
 	int getFreePromotion() const;
+	int getExcludeUnitClass() const;
 	int getCityStateInfluence() const;
 #endif
 
@@ -1280,12 +1282,14 @@ protected:
 	int m_iFoodMax;
 	int m_iFaithMin;
 	int m_iFaithMax;
+	int m_iIncreasePerPop;
 	int m_iBeforeTurn;
 	int m_iAfterTurn;
 	int m_iTileGrowths;
 	int m_iRandomImprovement;
 	bool m_bIsOncePerGame;
 	int m_iFreePromotion;
+	int m_iExcludeUnitClass;
 	int m_iCityStateInfluence;
 #endif
 

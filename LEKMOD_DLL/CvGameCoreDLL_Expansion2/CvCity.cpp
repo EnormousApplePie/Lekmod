@@ -10419,7 +10419,11 @@ BuildingTypes CvCity::ChooseFreeCultureBuilding() const
 		if(pkBuildingInfo)
 		{
 			const CvBuildingClassInfo& kBuildingClassInfo = pkBuildingInfo->GetBuildingClassInfo();
+#ifdef LEKMOD_NO_FREE_TEAM_WONDERS
+			if (!isWorldWonderClass(kBuildingClassInfo) && !isNationalWonderClass(kBuildingClassInfo) && !isTeamWonderClass(kBuildingClassInfo))
+#else
 			if(!isWorldWonderClass(kBuildingClassInfo) && !isNationalWonderClass(kBuildingClassInfo))
+#endif
 			{
 				int iCulture = pkBuildingInfo->GetYieldChange(YIELD_CULTURE);
 				int iCost = pkBuildingInfo->GetProductionCost();
