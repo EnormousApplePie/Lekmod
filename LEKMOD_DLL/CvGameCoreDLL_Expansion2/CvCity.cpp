@@ -10381,7 +10381,7 @@ BuildingTypes CvCity::ChooseFreeCultureBuilding() const
 		if(pkBuildingInfo)
 		{
 			const CvBuildingClassInfo& kBuildingClassInfo = pkBuildingInfo->GetBuildingClassInfo();
-			if(!isWorldWonderClass(kBuildingClassInfo) && !isNationalWonderClass(kBuildingClassInfo))
+			if(!isWorldWonderClass(kBuildingClassInfo) && !isNationalWonderClass(kBuildingClassInfo) && !isTeamWonderClass(kBuildingClassInfo))
 			{
 				int iCulture = pkBuildingInfo->GetYieldChange(YIELD_CULTURE);
 				int iCost = pkBuildingInfo->GetProductionCost();
