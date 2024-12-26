@@ -6742,6 +6742,11 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		//is this unit from a unit class that is excluded?
 		if (kGoodyInfo.getExcludeUnitClass() != NO_UNITCLASS)
 		{
+			if (pUnit == NULL)
+			{
+				return false;
+			}
+
 			eUnit = pUnit->getUnitType();
 			if (eUnit != NO_UNIT)
 			{
