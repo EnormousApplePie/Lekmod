@@ -21102,6 +21102,9 @@ void CvUnit::read(FDataStream& kStream)
 #ifdef DECREASE_BULB_AMOUNT_OVER_TIME
 	kStream >> m_iScientistBirthTurn;
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	kStream >> m_bInstaHealLocked;
+#endif
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP)
 	kStream >> m_bCanInstahealThisTurn;
 #endif
@@ -21110,9 +21113,6 @@ void CvUnit::read(FDataStream& kStream)
 #endif
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	kStream >> m_bIsIgnoreExpended;
-#endif
-#ifdef PROMOTION_INSTA_HEAL_LOCKED
-	kStream >> m_bInstaHealLocked;
 #endif
 
 	//  Read mission queue
@@ -21241,6 +21241,14 @@ void CvUnit::write(FDataStream& kStream) const
 
 	kStream << m_iTourismBlastStrength;
 
+	kStream << m_iResearchBulbAmount; // GJS
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	kStream << m_iScientistBirthTurn;
+#endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	kStream << m_bInstaHealLocked;
+#endif
+
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP)
 	kStream << m_bCanInstahealThisTurn;
 #endif
@@ -21249,14 +21257,6 @@ void CvUnit::write(FDataStream& kStream) const
 #endif
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	kStream << m_bIsIgnoreExpended;
-#endif
-#ifdef PROMOTION_INSTA_HEAL_LOCKED
-	kStream << m_bInstaHealLocked;
-#endif
-
-	kStream << m_iResearchBulbAmount; // GJS
-#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
-	kStream << m_iScientistBirthTurn;
 #endif
 	//  Write mission list
 	kStream << m_missionQueue.getLength();
