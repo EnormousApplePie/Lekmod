@@ -93,7 +93,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
    GameEvents.ReligionFounded.Add(lekmod_georgia_ua)
-   GameEvents.ReligionEnhanced.Add(lekmod_georgia_ua)
+   --GameEvents.PlayerDoTurn.Add(lekmod_georgia_ua)
    GameEvents.CityAdoptReligion.Add(lekmod_georgia_ua_on_convert)
    GameEvents.CityConvertsReligion.Add(lekmod_georgia_ua_on_convert)
    GameEvents.CityCanConstruct.Add(lekmod_georgia_disable_normal_faith_buildings)
