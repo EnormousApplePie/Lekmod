@@ -15285,7 +15285,14 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	{
 		for (int jJ = MAX_MAJOR_CIVS; jJ < MAX_MINOR_CIVS; jJ++)
 		{
-			oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] = GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI);
+			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			{
+				oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] = GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI);
+			}
+			else
+			{
+				oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] = false;
+			}
 		}
 	}
 #endif
@@ -16104,17 +16111,20 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	{
 		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
 		{
-			if (oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] != GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI))
+			if (GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
-				PlayerTypes eLoopMinor = (PlayerTypes)jJ;
-				if (GET_PLAYER(eLoopMinor).isAlive())
+				if (oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] != GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI))
 				{
-					if (GET_PLAYER(eLoopMinor).getCapitalCity())
+					PlayerTypes eLoopMinor = (PlayerTypes)jJ;
+					if (GET_PLAYER(eLoopMinor).isAlive())
 					{
-						if (GET_PLAYER(eLoopMinor).getCapitalCity()->plot())
+						if (GET_PLAYER(eLoopMinor).getCapitalCity())
 						{
-							GET_PLAYER(eLoopMinor).getCapitalCity()->plot()->updateFog();
-							break;
+							if (GET_PLAYER(eLoopMinor).getCapitalCity()->plot())
+							{
+								GET_PLAYER(eLoopMinor).getCapitalCity()->plot()->updateFog();
+								break;
+							}
 						}
 					}
 				}
@@ -16353,7 +16363,14 @@ int CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, float fAdditionalTextD
 	{
 		for (int jJ = MAX_MAJOR_CIVS; jJ < MAX_MINOR_CIVS; jJ++)
 		{
-			oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] = GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI);
+			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			{
+				oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] = GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI);
+			}
+			else
+			{
+				oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] = false;
+			}
 		}
 	}
 #endif
@@ -16452,17 +16469,20 @@ int CvUnit::setDamage(int iNewValue, PlayerTypes ePlayer, float fAdditionalTextD
 	{
 		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
 		{
-			if (oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] != GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI))
+			if (GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
-				PlayerTypes eLoopMinor = (PlayerTypes)jJ;
-				if (GET_PLAYER(eLoopMinor).isAlive())
+				if (oldCanBully[iI * (MAX_MINOR_CIVS - MAX_MAJOR_CIVS) + jJ - MAX_MAJOR_CIVS] != GET_PLAYER((PlayerTypes)jJ).GetMinorCivAI()->CanMajorBullyGold((PlayerTypes)iI))
 				{
-					if (GET_PLAYER(eLoopMinor).getCapitalCity())
+					PlayerTypes eLoopMinor = (PlayerTypes)jJ;
+					if (GET_PLAYER(eLoopMinor).isAlive())
 					{
-						if (GET_PLAYER(eLoopMinor).getCapitalCity()->plot())
+						if (GET_PLAYER(eLoopMinor).getCapitalCity())
 						{
-							GET_PLAYER(eLoopMinor).getCapitalCity()->plot()->updateFog();
-							break;
+							if (GET_PLAYER(eLoopMinor).getCapitalCity()->plot())
+							{
+								GET_PLAYER(eLoopMinor).getCapitalCity()->plot()->updateFog();
+								break;
+							}
 						}
 					}
 				}
@@ -21082,6 +21102,9 @@ void CvUnit::read(FDataStream& kStream)
 #ifdef DECREASE_BULB_AMOUNT_OVER_TIME
 	kStream >> m_iScientistBirthTurn;
 #endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	kStream >> m_bInstaHealLocked;
+#endif
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP)
 	kStream >> m_bCanInstahealThisTurn;
 #endif
@@ -21090,9 +21113,6 @@ void CvUnit::read(FDataStream& kStream)
 #endif
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	kStream >> m_bIsIgnoreExpended;
-#endif
-#ifdef PROMOTION_INSTA_HEAL_LOCKED
-	kStream >> m_bInstaHealLocked;
 #endif
 
 	//  Read mission queue
@@ -21221,6 +21241,14 @@ void CvUnit::write(FDataStream& kStream) const
 
 	kStream << m_iTourismBlastStrength;
 
+	kStream << m_iResearchBulbAmount; // GJS
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+	kStream << m_iScientistBirthTurn;
+#endif
+#ifdef PROMOTION_INSTA_HEAL_LOCKED
+	kStream << m_bInstaHealLocked;
+#endif
+
 #if defined(NQM_UNIT_FIX_NO_DOUBLE_INSTAHEAL_ON_SAME_TURN) || defined(NQM_UNIT_FIX_NO_INSTAHEAL_AFTER_PARADROP)
 	kStream << m_bCanInstahealThisTurn;
 #endif
@@ -21229,14 +21257,6 @@ void CvUnit::write(FDataStream& kStream) const
 #endif
 #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
 	kStream << m_bIsIgnoreExpended;
-#endif
-#ifdef PROMOTION_INSTA_HEAL_LOCKED
-	kStream << m_bInstaHealLocked;
-#endif
-
-	kStream << m_iResearchBulbAmount; // GJS
-#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
-	kStream << m_iScientistBirthTurn;
 #endif
 	//  Write mission list
 	kStream << m_missionQueue.getLength();

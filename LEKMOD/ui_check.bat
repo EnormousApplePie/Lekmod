@@ -13,7 +13,7 @@ copy /y "%cd%\%patchfolder%\Lua\tmp\ui\AncientRuins\GoodyHutPopup.lua.ignore" "%
 REM --------------------------------------------------------------------------------------------------
 set text="CityBannerProductionBox = function( city )"
 IF EXIST "%cd%\%euifolder%\CityBanners\CityBannerManager.lua" (
-  FIND %text% "%cd%\%euifolder%\CityBanners\CityBannerManager.lua" > nul && (
+  FIND %text% "%cd%\%euifolder%\CityBanners\CityBannerManager.lua" > nul 2>&1 && (
     copy /y "%cd%\%patchfolder%\Lua\tmp\eui\CityBanners\CityBannerManager_1.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityBannerManager.lua" > nul
     copy /y "%cd%\%patchfolder%\Lua\tmp\eui\CityBanners\CityBannerManager_1.xml.ignore" "%cd%\%patchfolder%\Lua\UI\CityBannerManager.xml" > nul
   ) || (
@@ -149,9 +149,9 @@ REM ----------------------------------------------------------------------------
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitList\UnitList.lua.ignore" "%cd%\%patchfolder%\Lua\UI\UnitList.lua" > nul
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitList\UnitList.xml.ignore" "%cd%\%patchfolder%\Lua\UI\UnitList.xml" > nul
 REM --------------------------------------------------------------------------------------------------
-copy /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitPanel\EnemyUnitPanel.lua.ignore" "%cd%\%patchfolder%\Lua\UI\UnitPanel.lua"
+copy /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitPanel\EnemyUnitPanel.lua.ignore" "%cd%\%patchfolder%\Lua\UI\UnitPanel.lua" > nul
 set text="-- modified by bc1 from Civ V 1.0.3.276 code"
-FIND %text% "%cd%\%euifolder%\UnitPanel\UnitPanel.lua" > nul && (
+FIND %text% "%cd%\%euifolder%\UnitPanel\UnitPanel.lua" > nul 2>&1 && (
   copy /y "%cd%\%patchfolder%\Lua\tmp\eui\UnitPanel\UnitPanel.lua.ignore" "%cd%\%patchfolder%\Lua\UI\UnitPanel.lua" > nul
 ) || (
   ECHO UnitPanel.lua does not exists on EUI, copying to TM
