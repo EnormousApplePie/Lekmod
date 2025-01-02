@@ -529,7 +529,7 @@ void CvPlayerEspionage::ProcessSpy(uint uiSpyIndex)
 #ifdef UNDERGROUND_SECT_REWORK
 			int iSpyRankDifference = (pSpy->m_eRank + GET_PLAYER(ePlayer).GetReligions()->GetSpyPressure() + 1) - iCounterspyRank + 1;
 #else
-			int iSpyRankDifference = pSpy->m_eRank - iCounterspyRank + 1;
+			int iSpyRankDifference = (pSpy->m_eRank + 1) - iCounterspyRank + 1;
 #endif
 
 			bool bSpyUpgrade = false;
