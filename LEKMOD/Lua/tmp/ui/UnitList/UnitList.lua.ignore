@@ -12,10 +12,10 @@ local m_CivilianIM = InstanceManager:new( "UnitInstance", "Root", Controls.Civil
 local m_SortTable;
 local eName     = 0;
 local eStatus   = 1;
-local eMovement = 2;
+local eHealth = 2;
 
 local m_SortMode = eName;
-local m_bSortReverse = false;
+local m_bSortReverse = true;
 
 
 -------------------------------------------------
@@ -33,6 +33,7 @@ ContextPtr:SetShowHideHandler( ShowHideHandler );
 function OnClose( )
     ContextPtr:SetHide( true );
     Events.OpenInfoCorner( InfoCornerID.None );
+    m_bSortReverse = true;
 end
 Controls.CloseButton:RegisterCallback( Mouse.eLClick, OnClose );
 
@@ -132,6 +133,23 @@ function UpdateDisplay()
         instance.Button:RegisterCallback( Mouse.eLClick, UnitClicked );
         instance.Button:SetVoid1( unit:GetID() );
         
+        local iHealth = 100 - unit:GetDamage()
+        if iHealth == 100 then
+            sortEntry.name = Locale.ConvertTextKey( unit:GetNameKey() );
+        else
+            if iHealth >= 66 then
+                sortEntry.name = "[COLOR_GREEN]" .. Locale.ConvertTextKey( unit:GetNameKey() ) .. "[ENDCOLOR]";
+                --green
+    
+            elseif iHealth >= 33 then
+                sortEntry.name = "[COLOR_YELLOW]" .. Locale.ConvertTextKey( unit:GetNameKey() ) .. "[ENDCOLOR]";
+                --yellow
+
+            else
+                sortEntry.name = "[COLOR_RED]" .. Locale.ConvertTextKey( unit:GetNameKey() ) .. "[ENDCOLOR]";
+                --red
+            end
+        end
         sortEntry.name = Locale.ConvertTextKey( unit:GetNameKey() );
         TruncateString( instance.UnitName, 110, sortEntry.name );
         
@@ -219,18 +237,25 @@ function UpdateDisplay()
 		   instance.SelectHL:SetSizeY(statusY);
 		   instance.SelectAnim:SetSizeY(statusY);
         end
-	    local move_denominator = GameDefines["MOVE_DENOMINATOR"];
-	    local moves_left = unit:MovesLeft() / move_denominator;
-	    local max_moves = unit:MaxMoves() / move_denominator;
-        sortEntry.movement = moves_left;
-        
-        if( moves_left == max_moves ) then
-            instance.MovementPip:SetTextureOffsetVal( 0, 0 );
-        elseif( moves_left == 0 ) then
-            instance.MovementPip:SetTextureOffsetVal( 0, 96 );
+
+        local iHealth = 100 - unit:GetDamage()
+        if iHealth == 100 then
+            sortEntry.health = tostring(iHealth);
         else
-            instance.MovementPip:SetTextureOffsetVal( 0, 32 );
-        end  
+            if iHealth >= 66 then
+                sortEntry.health = "[COLOR_GREEN]" .. tostring(iHealth) .. "[ENDCOLOR]";
+                --green
+    
+            elseif iHealth >= 33 then
+                sortEntry.health = "[COLOR_YELLOW]" .. tostring(iHealth) .. "[ENDCOLOR]";
+                --yellow
+
+            else
+                sortEntry.health = "[COLOR_RED]" .. tostring(iHealth) .. "[ENDCOLOR]";
+                --red
+            end
+        end
+        instance.HP:LocalizeAndSetText( sortEntry.health );
         
 		instance.UnitStack:CalculateSize();
 		instance.UnitStack:ReprocessAnchoring();
@@ -265,6 +290,7 @@ end
 -------------------------------------------------
 function SortFunction( a, b )
     local valueA, valueB, valueC, valueD;
+    local healthA, healthB = 100, 100;
     local entryA = m_SortTable[ tostring( a ) ];
     local entryB = m_SortTable[ tostring( b ) ];
 	
@@ -282,27 +308,31 @@ function SortFunction( a, b )
         end;
     else
 		if( m_SortMode == eName ) then
-			valueA = entryA.name;
-			valueB = entryB.name;
+			valueA = Locale.ConvertTextKey( entryA.unit:GetNameKey() );
+			valueB = Locale.ConvertTextKey( entryB.unit:GetNameKey() );
             valueC = entryA.status;
             valueD = entryB.status;
+            healthA = entryA.unit:GetDamage();
+            healthB = entryB.unit:GetDamage();
 		elseif( m_SortMode == eStatus ) then
 			valueA = entryA.status;
 			valueB = entryB.status;
-		else -- movement
-			valueA = entryA.movement;
-			valueB = entryB.movement;
+		else -- health
+			valueA = 100 - entryA.health;
+			valueB = 100 - entryB.health;
 		end
 	    
 		if( valueA == valueB ) then
             if( m_SortMode == eName and valueC ~= nil and valueD ~= nil ) then
-                if( valueC == valueD ) then
+                if( valueC == valueD and healthA == healthB) then
         			valueA = entryA.unit:GetID();
         			valueB = entryB.unit:GetID();
                 end
             else
-                valueA = entryA.unit:GetID();
-                valueB = entryB.unit:GetID();
+                if( healthA == healthB) then
+                    valueA = entryA.unit:GetID();
+                    valueB = entryB.unit:GetID();
+                end
             end
 		end
         
@@ -311,20 +341,36 @@ function SortFunction( a, b )
                 if ( valueA ~= valueB ) then
                     return valueA > valueB;
                 else
-                    return valueC > valueD;
+                    if ( valueC ~= valueC ) then
+                        return valueC > valueD;
+                    else
+                        return healthA > healthB;
+                    end
                 end
             else
                 if ( valueA ~= valueB ) then
                     return valueB > valueA;
                 else
-                    return valueD > valueC;
+                    if ( valueC ~= valueC ) then
+                        return valueD > valueC;
+                    else
+                        return healthB > healthA;
+                    end
                 end
             end
         else
     		if( m_bSortReverse ) then
-    			return valueA > valueB;
+                if ( valueA ~= valueB ) then
+                    return valueA > valueB;
+                else
+                    return healthA > healthB;
+                end
     		else
-    			return valueA < valueB;
+                if ( valueA ~= valueB ) then
+                    return valueB > valueA;
+                else
+                    return healthB > healthA;
+                end
     		end
         end
     end
@@ -346,10 +392,10 @@ function OnSort( type )
 end
 Controls.SortName:RegisterCallback( Mouse.eLClick, OnSort );
 Controls.SortStatus:RegisterCallback( Mouse.eLClick, OnSort );
-Controls.SortMovement:RegisterCallback( Mouse.eLClick, OnSort );
+Controls.SortHealth:RegisterCallback( Mouse.eLClick, OnSort );
 Controls.SortName:SetVoid1( eName );
 Controls.SortStatus:SetVoid1( eStatus );
-Controls.SortMovement:SetVoid1( eMovement );
+Controls.SortHealth:SetVoid1( eHealth );
 
 	
 -------------------------------------------------
