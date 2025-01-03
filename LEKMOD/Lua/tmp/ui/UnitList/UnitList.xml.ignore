@@ -52,7 +52,7 @@
                 </Box>
 
                 <Box Anchor="L,C"  Color="255.255.255.0" Offset="0,0" Size="40,24">
-                    <Image Anchor="C,C" Offset="0,0" Texture="assets/UI/Art/Icons/MarcPips.dds" Size="32.32" ID="MovementPip" />
+                    <Label Anchor="C,C"  WrapWidth="40" LeadingOffset="-10" Offset="0,0" ColorSet="Beige_Black_Alpha" Font="TwCenMT18" FontStyle="Shadow" Hidden="0" ID="HP" />
                 </Box>
 
             </Stack>
@@ -95,8 +95,8 @@
 
                 </Button>
 
-                <Button  Anchor="L,C" Size="60,24"    ID="SortMovement"    >
-                    <Image Anchor="C,C" Offset="0,0" Texture="assets/UI/Art/Icons/MarcPips.dds" TextureOffset="0.96" Size="32.32" ID="MovementPip" />
+                <Button  Anchor="L,C" Size="60,24"    ID="SortHealth"    >
+                    <Label Anchor="C,C" Offset="0,0" String="TXT_KEY_HP"  ColorSet="Beige_Black_Alpha" Font="TwCenMT20" FontStyle="Shadow" />
                     <ShowOnMouseOver>
                         <AlphaAnim Anchor="L,C" Size="60,32" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
                             <Grid   Size="60,32" Offset="0,0" Padding="0,0" Style="Grid9FrameTurnsHL" />
