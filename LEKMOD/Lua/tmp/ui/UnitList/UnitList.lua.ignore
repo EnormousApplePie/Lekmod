@@ -119,7 +119,7 @@ function UpdateDisplay()
         local instance;
         local iUnit = unit:GetID();
         
-        if( unit:IsCombatUnit() ) then
+        if( unit:IsCombatUnit() or unit:GetDomainType() == DomainTypes.DOMAIN_AIR ) then
             instance = m_MilitaryIM:GetInstance();
             bFoundMilitary = true;
         else
