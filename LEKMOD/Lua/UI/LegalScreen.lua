@@ -1,5 +1,5 @@
 -------------------------------------------------
 -------------------------------------------------
-Controls.ContinueButton:RegisterCallback(Mouse.eLClick, function()
-	UIManager:DequeuePopup(ContextPtr);
+Controls.ExitGameButton:RegisterCallback(Mouse.eLClick, function()
+    Events.UserRequestClose();
 end);
