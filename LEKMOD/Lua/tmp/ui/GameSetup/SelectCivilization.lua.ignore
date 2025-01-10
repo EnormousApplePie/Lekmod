@@ -186,13 +186,32 @@ function InitCivSelection()
 			for i, v in pairs(civList) do
 				if(v.Playable) then
 					for row in scenarioCivQuery(v.CivType) do
-						table.insert(civEntries, {Locale.Lookup(row.LeaderDescription), row, i - 1});
+						table.insert(civEntries, {Locale.Lookup(row.ShortDescription), row, i - 1});
 					end
 				end
 			end
 			
 			-- Sort by leader description;
-			table.sort(civEntries, function(a, b) return Locale.Compare(a[1], b[1]) == -1 end);
+			-- table.sort(civEntries, function(a, b) return Locale.Compare(a[1], b[1]) == -1 end);
+
+			-- Sorting Civs by Short Description
+			table.sort(civEntries, function(a,b)
+				local astr = a[1];
+				local bstr = b[1];
+				local a0, b0
+				if astr:match("The ") then
+					a0 = astr:sub(5)
+				else
+					a0 = astr
+				end
+				if bstr:match("The ") then
+					b0 = bstr:sub(5)
+				else
+					b0 = bstr
+				end
+				return Locale.Compare(a0, b0) == -1;
+			end);
+			-- Sorting Civs by Short Description END
 			
 			for i,v in ipairs(civEntries) do
 				local row = v[2];
@@ -222,11 +241,30 @@ function InitCivSelection()
 						Civilizations.Playable = 1
 					]];
 		for row in DB.Query(sql) do
-			table.insert(civEntries, {Locale.Lookup(row.LeaderDescription), row});
+			table.insert(civEntries, {Locale.Lookup(row.ShortDescription), row});
 		end
 		
 		-- Sort by leader description;
-		table.sort(civEntries, function(a, b) return Locale.Compare(a[1], b[1]) == -1 end);
+		-- table.sort(civEntries, function(a, b) return Locale.Compare(a[1], b[1]) == -1 end);
+
+		-- Sorting Civs by Short Description
+		table.sort(civEntries, function(a,b)
+			local astr = a[1];
+			local bstr = b[1];
+			local a0, b0
+			if astr:match("The ") then
+				a0 = astr:sub(5)
+			else
+				a0 = astr
+			end
+			if bstr:match("The ") then
+				b0 = bstr:sub(5)
+			else
+				b0 = bstr
+			end
+			return Locale.Compare(a0, b0) == -1;
+		end);
+		-- Sorting Civs by Short Description END
 		
 		for i,v in ipairs(civEntries) do
 			local row = v[2];

@@ -98,7 +98,7 @@ function( bIsHide )
 				for i, civ in pairs( civList ) do
 					if civ.Playable then
 						for row in scenarioCivQuery( civ.CivType ) do
-							table_insert( civEntries, {Locale.Lookup(row.LeaderDescription), row, i - 1} );
+							table_insert( civEntries, {Locale.Lookup(row.ShortDescription), row, i - 1} );
 						end
 					end
 				end
@@ -123,12 +123,31 @@ function( bIsHide )
 						Leaders.Type = Civilization_Leaders.LeaderheadType AND
 						Civilizations.Playable = 1
 			]]) do
-				table_insert( civEntries, {Locale.Lookup(row.LeaderDescription), row} );
+				table_insert( civEntries, {Locale.Lookup(row.ShortDescription), row} );
 			end
 		end
 
 		-- Sort civs by leader description
-		table_sort( civEntries, function(a, b) return Locale.Compare(a[1], b[1]) == -1 end );
+		-- table_sort( civEntries, function(a, b) return Locale.Compare(a[1], b[1]) == -1 end );
+
+		-- Sorting Civs by Short Description
+		table.sort(civEntries, function(a,b)
+			local astr = a[1];
+			local bstr = b[1];
+			local a0, b0
+			if astr:match("The ") then
+				a0 = astr:sub(5)
+			else
+				a0 = astr
+			end
+			if bstr:match("The ") then
+				b0 = bstr:sub(5)
+			else
+				b0 = bstr
+			end
+			return Locale.Compare(a0, b0) == -1;
+		end);
+		-- Sorting Civs by Short Description END
 
 		-- Populate civ slots
 		for i, civEntry in ipairs( civEntries ) do

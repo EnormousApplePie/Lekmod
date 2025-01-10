@@ -56,6 +56,12 @@ REM ----------------------------------------------------------------------------
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\FrontEnd\EULA.lua.ignore" "%cd%\%patchfolder%\Lua\UI\EULA.lua" > nul
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\FrontEnd\FrontEnd.lua.ignore" "%cd%\%patchfolder%\Lua\UI\FrontEnd.lua" > nul
 REM --------------------------------------------------------------------------------------------------
+IF NOT EXIST "%cd%\%euifolder%\GameSetup\SelectCivilization.lua" (
+  copy /y "%cd%\%patchfolder%\Lua\tmp\ui\GameSetup\SelectCivilization.lua.ignore" "%cd%\%patchfolder%\Lua\UI\SelectCivilization.lua" > nul
+) ELSE (
+  copy /y "%cd%\%patchfolder%\Lua\tmp\eui\GameSetup\SelectCivilization.lua.ignore" "%cd%\%patchfolder%\Lua\UI\SelectCivilization.lua" > nul
+)
+REM --------------------------------------------------------------------------------------------------
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\GPList\GPList.lua.ignore" "%cd%\%patchfolder%\Lua\UI\GPList.lua" > nul
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\GPList\GPList.xml.ignore" "%cd%\%patchfolder%\Lua\UI\GPList.xml" > nul
 REM --------------------------------------------------------------------------------------------------
