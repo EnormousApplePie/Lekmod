@@ -4,7 +4,6 @@ cd ..
 set patchfolder=LEKMOD_v33.5
 set euifolder=UI_bc1_xits
 IF EXIST "%cd%\UI_bc1" (
-  ECHO 1
   set euifolder=UI_bc1
 )
 DEL /q "%cd%\%patchfolder%\Lua\UI\"
@@ -56,6 +55,12 @@ copy /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview\EconomicGeneralInfo.lua.i
 REM --------------------------------------------------------------------------------------------------
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\FrontEnd\EULA.lua.ignore" "%cd%\%patchfolder%\Lua\UI\EULA.lua" > nul
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\FrontEnd\FrontEnd.lua.ignore" "%cd%\%patchfolder%\Lua\UI\FrontEnd.lua" > nul
+REM --------------------------------------------------------------------------------------------------
+IF NOT EXIST "%cd%\%euifolder%\GameSetup\SelectCivilization.lua" (
+  copy /y "%cd%\%patchfolder%\Lua\tmp\ui\GameSetup\SelectCivilization.lua.ignore" "%cd%\%patchfolder%\Lua\UI\SelectCivilization.lua" > nul
+) ELSE (
+  copy /y "%cd%\%patchfolder%\Lua\tmp\eui\GameSetup\SelectCivilization.lua.ignore" "%cd%\%patchfolder%\Lua\UI\SelectCivilization.lua" > nul
+)
 REM --------------------------------------------------------------------------------------------------
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\GPList\GPList.lua.ignore" "%cd%\%patchfolder%\Lua\UI\GPList.lua" > nul
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\GPList\GPList.xml.ignore" "%cd%\%patchfolder%\Lua\UI\GPList.xml" > nul
@@ -154,7 +159,6 @@ set text="-- modified by bc1 from Civ V 1.0.3.276 code"
 FIND %text% "%cd%\%euifolder%\UnitPanel\UnitPanel.lua" > nul 2>&1 && (
   copy /y "%cd%\%patchfolder%\Lua\tmp\eui\UnitPanel\UnitPanel.lua.ignore" "%cd%\%patchfolder%\Lua\UI\UnitPanel.lua" > nul
 ) || (
-  ECHO UnitPanel.lua does not exists on EUI, copying to TM
   copy /y "%cd%\%patchfolder%\Lua\tmp\ui\UnitPanel\UnitPanel.lua.ignore" "%cd%\%patchfolder%\Lua\UI\UnitPanel.lua" > nul
 )
 REM --------------------------------------------------------------------------------------------------

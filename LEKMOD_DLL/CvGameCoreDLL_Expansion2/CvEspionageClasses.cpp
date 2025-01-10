@@ -519,7 +519,7 @@ void CvPlayerEspionage::ProcessSpy(uint uiSpyIndex)
 			{
 				int iCounterspyIndex = GET_PLAYER(eCityOwner).GetEspionage()->GetSpyIndexInCity(pCity);
 				iCounterspyRank = GET_PLAYER(eCityOwner).GetEspionage()->m_aSpyList[iCounterspyIndex].m_eRank;
-				iCounterspyRank += GET_PLAYER(pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CATCH_SPIES_MODIFIER) / 100;
+				// iCounterspyRank += GET_PLAYER(pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CATCH_SPIES_MODIFIER) / 100;
 				if (pCity->GetCityBuildings()->GetNumBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_CONSTABLE")) >= GC.getCITY_MAX_NUM_BUILDINGS())
 					iCounterspyRank++;
 				if (pCity->GetCityBuildings()->GetNumBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_INTELLIGENCE_AGENCY")) >= GC.getCITY_MAX_NUM_BUILDINGS())
@@ -529,7 +529,7 @@ void CvPlayerEspionage::ProcessSpy(uint uiSpyIndex)
 #ifdef UNDERGROUND_SECT_REWORK
 			int iSpyRankDifference = (pSpy->m_eRank + GET_PLAYER(ePlayer).GetReligions()->GetSpyPressure() + 1) - iCounterspyRank + 1;
 #else
-			int iSpyRankDifference = pSpy->m_eRank - iCounterspyRank + 1;
+			int iSpyRankDifference = (pSpy->m_eRank + 1) - iCounterspyRank + 1;
 #endif
 
 			bool bSpyUpgrade = false;
