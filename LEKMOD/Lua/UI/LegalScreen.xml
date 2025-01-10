@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context ColorSet="Beige_Black_Alpha" Font="TwCenMT22" FontStyle="Shadow" >
+
+    <Image Anchor="R,T" Offset="0,0"  Size="630,200" Texture="CivilzationV_Logo.dds" ID="Civ5Logo" Hidden="0" />
+
+    <!-- Menu Panel -->
+    <Grid Size="820,480" Anchor="C,C" Offset="0.32" Padding="0,0" Style="Grid9Detail140" >
+        <Box Color="Black.200" Anchor="C,T" Offset="0.44" Size="652.393" Hidden="0" >
+            <Grid Size="48,393" Anchor="L,T" AnchorSide="O.I" Offset="0.0" Padding="0,0" Style="WindowGrid" />
+            <Grid Size="48,393" Anchor="R,T" AnchorSide="O.I" Offset="0.0" Padding="0,0" Style="WindowGrid" />
+        </Box>
+
+        <Image Anchor="C,T" Offset="0,-33" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/topframe.dds" Size="512,128" />
+        <Image Anchor="C,B" Offset="0,-109" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/bottomframe.dds" Size="512,128" />
+        <Label Style="MenuTitleCaption" />
+        <Label Anchor="C,T" ID="EULAText" Offset="0,75"  Font="TwCenMT14" WrapWidth="600" ColorSet="Beige_Black" String="TXT_KEY_LEGAL_BODY" />
+        <Label Anchor="C,C"  Offset="0,95"  String="TXT_KEY_ESRB_BODY" Font="TwCenMT20" WrapWidth="400" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
+        <Image Anchor="C,T" Offset="0,395" Texture="bar300x2.dds" Size="300.1" />
+
+        <Button Anchor="C,C"  Offset="0,174" Size="220,27" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="ContinueButton">
+            <ShowOnMouseOver>
+                <AlphaAnim Anchor="C,C" Size="208,27" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="2" AlphaEnd="1">
+                    <Grid   Size="208,27" Offset="0,-1" Padding="0,0" Style="Grid9FrameTurnsHL" />
+                </AlphaAnim>
+            </ShowOnMouseOver>
+
+            <Label Anchor="C,C"  Offset="0,0"  String="TXT_KEY_LEGAL_CONTINUE" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
+        </Button>
+
+        <Image Anchor="C,T" Offset="-350,44"  Texture="Assets/UI/Art/WorldView/WindowTrimLeft.dds" Size="98,394" />
+        <Image Anchor="C,T" Offset="350,44"  Texture="Assets/UI/Art/WorldView/WindowTrimRight.dds" Size="98,394" />
+    </Grid>
+</Context>
