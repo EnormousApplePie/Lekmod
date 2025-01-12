@@ -5726,7 +5726,8 @@ void CvMinorCivAI::SetAlly(PlayerTypes eNewAlly)
 					float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
 #endif
 					float fTimeElapsed = kGame.getTimeElapsed();
-					float fRestrictionTime = std::min(CS_ALLYING_WAR_RESCTRICTION_TIMER, fGameTurnEnd);
+					// float fRestrictionTime = std::min(CS_ALLYING_WAR_RESCTRICTION_TIMER, fGameTurnEnd);
+					float fRestrictionTime = CS_ALLYING_WAR_RESCTRICTION_TIMER;
 					if (fGameTurnEnd - fTimeElapsed > fRestrictionTime)
 					{
 						GET_PLAYER(eNewAlly).setTurnCSWarAllowingMinor(eOldAlly, GetPlayer()->GetID(), kGame.getGameTurn());

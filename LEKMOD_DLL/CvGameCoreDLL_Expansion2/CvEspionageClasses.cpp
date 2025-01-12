@@ -2319,7 +2319,8 @@ bool CvPlayerEspionage::AttemptCoup(uint uiSpyIndex)
 					float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
 #endif
 					float fTimeElapsed = kGame.getTimeElapsed();
-					float fRestrictionTime = std::min(CS_ALLYING_WAR_RESCTRICTION_TIMER, fGameTurnEnd);
+					// float fRestrictionTime = std::min(CS_ALLYING_WAR_RESCTRICTION_TIMER, fGameTurnEnd);
+					float fRestrictionTime = CS_ALLYING_WAR_RESCTRICTION_TIMER;
 					if (fGameTurnEnd - fTimeElapsed > fRestrictionTime)
 					{
 						GET_PLAYER(m_pPlayer->GetID()).setTurnCSWarAllowingMinor(ePreviousAlly, eCityOwner, kGame.getGameTurn());
