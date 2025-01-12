@@ -22,7 +22,7 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap: Pangaea - Fractal (v5.1)",
+		Name = "Lekmap: Pangaea - Fractal (v5.2)",
 		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Pangaea - Fractal",
 		IsAdvancedMap = false,
 		IconIndex = 0,
@@ -178,92 +178,44 @@ function GetMapScriptInfo()
 
 			-- 11
 			{
-				Name = "Land Size X",	-- add setting for land type (11) +28
+				Name = "Land Size X",	-- add setting for land type (11)
 				Values = {
-					"30",
-					"32",
-					"34",
-					"36",
-					"38",
-					"40",
-					"42",
-					"44",
-					"46",
-					"48",
-					"50",
-					"52",
-					"54",
-					"56",
-					"58 - Default (Small)",
-					"60",
-					"62",
-					"64",
-					"66",
-					"68",
-					"70",
-					"72",
-					"74",
-					"76",
-					"78",
-					"80",
-					"82",
-					"84",
-					"86",
-					"88",
-					"90",
-					"92",
-					"94",
-					"96",
-					"98",
-					"100",
-					"102",
-					"104",
-					"106",
-					"108",
-					"110",
+					"Default -10 tiles",
+					"Default -8 tiles",
+					"Default -6 tiles",
+					"Default -4 tiles",
+					"Default -2 tiles",
+					"Default (58 on Small)",
+					"Default +2 tiles",
+					"Default +4 tiles",
+					"Default +6 tiles",
+					"Default +8 tiles",
+					"Default +10 tiles",
 				},
 
-				DefaultValue = 15,
+				DefaultValue = 6,
 				SortPriority = -89,
 			},
 
 			-- 12
 			{
-				Name = "Land Size Y",	-- add setting for land type (12) +18
+				Name = "Land Size Y",	-- add setting for land type (12)
 				Values = {
-					"20",
-					"22",
-					"24",
-					"26",
-					"28",
-					"30",
-					"32",
-					"34",
-					"36",
-					"38",
-					"40",
-					"42",
-					"44",
-					"46",
-					"48",
-					"50",
-					"52 - Default (Small)",
-					"54",
-					"56",
-					"58",
-					"60",
-					"62",
-					"64",
-					"66",
-					"68",
-					"70",
-					"72",
-					"74",
-					"76",
+					"Default -10 tiles",
+					"Default -8 tiles",
+					"Default -6 tiles",
+					"Default -4 tiles",
+					"Default -2 tiles",
+					"Default (52 on Small)",
+					"Default +2 tiles",
+					"Default +4 tiles",
+					"Default +6 tiles",
+					"Default +8 tiles",
+					"Default +10 tiles",
 
 				},
 
-				DefaultValue = 17,
+				DefaultValue = 6,
 				SortPriority = -88,
 			},
 
@@ -382,12 +334,12 @@ function GetMapScriptInfo()
 					"20 tiles",
 					"15 tiles",
 					"12 tiles",
-					"10 tiles",
-					"8 tiles -- Default",
+					"10 tiles -- Default",
+					"8 tiles",
 					"6 tiles",
 				},
 
-				DefaultValue = 6,
+				DefaultValue = 1,
 				SortPriority = -82,
 			},
 			
@@ -395,14 +347,14 @@ function GetMapScriptInfo()
 			{
 				Name = "Fjord Length",	-- Length of fjords (20)
 				Values = {
-					"2 tiles",
+					"2 tiles -- Default",
 					"3 tiles",
-					"4 tiles -- Default",
+					"4 tiles",
 					"5 tiles",
 					"6 tiles",
 				},
 
-				DefaultValue = 3,
+				DefaultValue = 1,
 				SortPriority = -81,
 			},
 		},
@@ -411,19 +363,34 @@ end
 ------------------------------------------------------------------------------
 function GetMapInitData(worldSize)
 	
-	local LandSizeX = 28 + (Map.GetCustomOption(11) * 2);
-	local LandSizeY = 18 + (Map.GetCustomOption(12) * 2);
+	local LandSizeXDuel = 22 + (Map.GetCustomOption(11) * 2);
+	local LandSizeYDuel = 18 + (Map.GetCustomOption(12) * 2);
+
+	local LandSizeXTiny = 36 + (Map.GetCustomOption(11) * 2);
+	local LandSizeYTiny = 30 + (Map.GetCustomOption(12) * 2);
+
+	local LandSizeXSmall = 46 + (Map.GetCustomOption(11) * 2);
+	local LandSizeYSmall = 40 + (Map.GetCustomOption(12) * 2);
+
+	local LandSizeXStandard = 54 + (Map.GetCustomOption(11) * 2);
+	local LandSizeYStandard = 48 + (Map.GetCustomOption(12) * 2);
+
+	local LandSizeXLarge = 62 + (Map.GetCustomOption(11) * 2);
+	local LandSizeYLarge = 54 + (Map.GetCustomOption(12) * 2);
+
+	local LandSizeXHuge = 70 + (Map.GetCustomOption(11) * 2);
+	local LandSizeYHuge = 62 + (Map.GetCustomOption(12) * 2);
 
 	local worldsizes = {};
 
 	worldsizes = {
 
-		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {LandSizeX, LandSizeY}, -- 720
-		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {LandSizeX, LandSizeY}, -- 1664
-		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {LandSizeX, LandSizeY}, -- 2480
-		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {LandSizeX, LandSizeY}, -- 3900
-		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {LandSizeX, LandSizeY}, -- 6076
-		[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = {LandSizeX, LandSizeY} -- 9424
+		[GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {LandSizeXDuel, LandSizeYDuel}, -- 1020
+		[GameInfo.Worlds.WORLDSIZE_TINY.ID] = {LandSizeXTiny, LandSizeYTiny}, -- 2016
+		[GameInfo.Worlds.WORLDSIZE_SMALL.ID] = {LandSizeXSmall, LandSizeYSmall}, -- 3016
+		[GameInfo.Worlds.WORLDSIZE_STANDARD.ID] = {LandSizeXStandard, LandSizeYStandard}, -- 3960
+		[GameInfo.Worlds.WORLDSIZE_LARGE.ID] = {LandSizeXLarge, LandSizeYLarge}, -- 5032
+		[GameInfo.Worlds.WORLDSIZE_HUGE.ID] = {LandSizeXHuge, LandSizeYHuge} -- 6068
 		}
 		
 	local grid_size = worldsizes[worldSize];
@@ -477,12 +444,12 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 
 	while allcomplete == false do
 
-		local sea_level_low = 60;
+		local sea_level_low = 64;
 		local sea_level_normal = 67;
-		local sea_level_high = 73;
-		local world_age_old = 2;
+		local sea_level_high = 70;
+		local world_age_old = 3;
 		local world_age_normal = 4;
-		local world_age_new = 8;
+		local world_age_new = 5;
 		--
 		local extra_mountains = 6;
 		local grain_amount = 0;
@@ -492,7 +459,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 		local hills_ridge_flags = self.iFlags;
 		local peaks_ridge_flags = self.iFlags;
 		local has_center_rift = true;
-		local adjadj = 1.4;
+		local adjadj = 1.2;
 		local xshift = 0;
 		local yshift = 0;
 		local yshiftamt = 0;
@@ -518,8 +485,6 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 			water_percent = sea_level_low
 		elseif sea_level == 3 then -- High Sea Level
 			water_percent = sea_level_high
-		elseif sea_level == 5 then -- Medium - Low Sea Level
-			water_percent = sea_level_low - math.floor(fjordmodif / 10);
 		else -- Normal Sea Level
 		
 		end
@@ -539,13 +504,13 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 		else -- 4 Billion Years
 		end
 		-- Apply adjustment to hills and peaks settings.
-		local hillsBottom1 = 28 - (adjustment * adjadj);
-		local hillsTop1 = 28 + (adjustment * adjadj);
+		local hillsBottom1 = 26 - (adjustment * adjadj);
+		local hillsTop1 = 26 + (adjustment * adjadj);
 		local hillsBottom2 = 72 - (adjustment * adjadj);
 		local hillsTop2 = 72 + (adjustment * adjadj);
 		local hillsClumps = 1 + (adjustment * adjadj);
-		local hillsNearMountains = 94 - (adjustment * 2) - extra_mountains;
-		local mountains = 96 - adjustment - extra_mountains;
+		local hillsNearMountains = 91 - (adjustment * 2) - extra_mountains;
+		local mountains = 95 - adjustment - extra_mountains;
 	
 		if world_age == 4 then
 			mountains = 300 - adjustment - extra_mountains;
@@ -694,18 +659,18 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 							if (hillVal >= iPassThreshold) then -- Mountain Pass though the ridgeline - Brian
 								self.plotTypes[i] = PlotTypes.PLOT_HILLS;
 							else -- Mountain
-								-- set some randomness to moutains next to each other
-								local iIsMount = Map.Rand(100, "Mountain Spwan Chance");
+								-- set some randomness to mountains next to each other
+								local iIsMount = Map.Rand(100, "Mountain Spawn Chance");
 								--print("-"); print("Mountain Spawn Chance: ", iIsMount);
-								local iIsMountAdj = 55 - adjustment;
+								local iIsMountAdj = 48 - adjustment;
 								if iIsMount >= iIsMountAdj then
 									self.plotTypes[i] = PlotTypes.PLOT_MOUNTAIN;
 								else
 									-- set some randomness to hills or flat land next to the mountain
-									local iIsHill = Map.Rand(100, "Hill Spwan Chance");
+									local iIsHill = Map.Rand(100, "Hill Spawn Chance");
 									--print("-"); print("Mountain Spawn Chance: ", iIsMount);
-									local iIsHillAdj = 40 - adjustment;
-									if iIsHillAdj >= iIsHill then
+									local iIsHillAdj = 30 - adjustment;
+									if iIsHill >= iIsHillAdj then
 										self.plotTypes[i] = PlotTypes.PLOT_HILLS;
 									else
 										self.plotTypes[i] = PlotTypes.PLOT_LAND;
@@ -1124,7 +1089,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				fjord_l = 6;
 			end
 
-			local y, x, i, j, k;
+			
 			y = 9;
 			k = 0;
 			while (k == 0) -- Starts from bottom left going up. Fjordmaking towards right
@@ -1462,9 +1427,11 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 		else
 			islCount = Map.Rand(5, "") + 10
 		end
-
-		-- MOD.EAP: Nerf island size
+		
+		-- MOD.EAP: Island Nerf
 		maxIslandSize = 3;
+		
+
 
 		while islCount > 0 and escapeRedo > 0 do
 
@@ -1495,7 +1462,6 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				startingPlot = plotIndex;
 
 				--print("Location is Ocean");
-				
 				local radiuschk = 5;
 	
 				for ripple_radius = 1, radiuschk do
@@ -1572,119 +1538,121 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 					local plotCheck = Map.GetPlot(landX, landY);
 					local plotArea = plotCheck:Area();
 					local iAreaID = plotArea:GetID();
-
-					
 					local pullBack = 3;
+					if _lek_islands_nerfed then
+						pullBack = 3;
+					end
 
 					-- pull back the radius by 2 to 3 tiles and as long as island will be a radius of 2 then plunk it in da water init bruv!
-					if plotTypesTwo[landPlot] == PlotTypes.PLOT_LAND then
 
-						-- create us an island
-						islLandInRing = islLandInRing - pullBack;
+--					if iAreaID == biggest_ID then
+						if plotTypesTwo[landPlot] == PlotTypes.PLOT_LAND then
 
-						--self.plotTypes[startingPlot] = PlotTypes.PLOT_LAND
+							-- create us an island
+							islLandInRing = islLandInRing - pullBack;
 
-						if islLandInRing > minIslandSize and islLandInRing < maxIslandSize then
+							--self.plotTypes[startingPlot] = PlotTypes.PLOT_LAND
 
-							local islThresh = 0;
-							local landvarDefault = 10;
+							if islLandInRing > minIslandSize and islLandInRing < maxIslandSize then
 
-							local locationRnd = Map.Rand(100, "");
+								local islThresh = 0;
+								local landvarDefault = 10;
 
-							-- MOD.EAP: Nerf island hill count, less towards outer, more towards inner
-							local hill_thresh = 90;
-							local inner_hill_thresh = 90;
+								local locationRnd = Map.Rand(100, "");
 
+								-- MOD.EAP: Nerf island hill count, less towards outer, more towards inner
+								local hill_thresh = 70;
+								local inner_hill_thresh = 50;
 
-							if (locationRnd > hill_thresh) then
-								self.plotTypes[startingPlot] = PlotTypes.PLOT_LAND;
-							else
-								self.plotTypes[startingPlot] = PlotTypes.PLOT_HILLS;
-							end
+								if (locationRnd > inner_hill_thresh) then
+									self.plotTypes[startingPlot] = PlotTypes.PLOT_LAND;
+								else
+									self.plotTypes[startingPlot] = PlotTypes.PLOT_HILLS;
+								end
 
-							for ripple_radius = 1, islLandInRing do
-								local ripple_value = islLandInRing - ripple_radius + 1;
-								local currentX = x - ripple_radius;
-								local currentY = y;
-								for direction_index = 1, 6 do
-									for plot_to_handle = 1, ripple_radius do
-							 			if currentY / 2 > math.floor(currentY / 2) then
-											plot_adjustments = odd[direction_index];
-										else
-											plot_adjustments = even[direction_index];
-										end
-										nextX = currentX + plot_adjustments[1];
-										nextY = currentY + plot_adjustments[2];
-										if wrapX == false and (nextX < 0 or nextX >= iW) then
-											-- X is out of bounds.
-										elseif wrapY == false and (nextY < 0 or nextY >= iH) then
-											-- Y is out of bounds.
-										else
-											local realX = nextX;
-											local realY = nextY;
-											if wrapX then
-												realX = realX % iW;
-											end
-											if wrapY then
-												realY = realY % iH;
-											end
-											-- We've arrived at the correct x and y for the current plot.
-											--local plot = Map.GetPlot(realX, realY);
-											local plotIndex = realY * iW + realX + 1;
-											
-											
-											
-											
-											-- MOD.EAP: Nerf island size	
-											local thisislandvar = Map.Rand(30, "") + landvarDefault; -- x + 10 = 40 ~ 33~ smaller islands
-											
-
-											-- closer we get to outer edge increase chance of ocean.
-										
-											if ripple_radius == 1  then --100%
-												islThresh = Map.Rand(50, "") + thisislandvar;
-											elseif ripple_radius == 2 then -- 57% to 74%
-												islThresh = Map.Rand(45, "") + (thisislandvar / 1.25);
-											elseif ripple_radius == 3 then --40% to 57%
-												islThresh = Map.Rand(37, "") + (thisislandvar / 1.5);
-											else --30% to 50%
-												islThresh = Map.Rand(30, "") + (thisislandvar / 2);
-											end
-											--[[
-											if ripple_radius == 1  then --100%
-												islThresh = Map.Rand(50, "") + thisislandvar;
-											elseif ripple_radius == 2 then -- 57% to 74%
-												islThresh = Map.Rand(45, "") + (thisislandvar / 1.25);
-											elseif ripple_radius == 3 then --40% to 57%
-												islThresh = Map.Rand(37, "") + (thisislandvar / 1.5);
-											else --30% to 50%
-												islThresh = Map.Rand(30, "") + (thisislandvar / 2);
-											end
-											]]
-
-											local islRand = Map.Rand(100, "");
-											local islHill = Map.Rand(100, "");
-
-											--print("Rand: ", islRand, "Thresh: ", islThresh);
-
-											if islRand > islThresh then
-												self.plotTypes[plotIndex] = PlotTypes.PLOT_OCEAN
-												landvarDefault = landvarDefault + 5;
+								for ripple_radius = 1, islLandInRing do
+									local ripple_value = islLandInRing - ripple_radius + 1;
+									local currentX = x - ripple_radius;
+									local currentY = y;
+									for direction_index = 1, 6 do
+										for plot_to_handle = 1, ripple_radius do
+							 				if currentY / 2 > math.floor(currentY / 2) then
+												plot_adjustments = odd[direction_index];
 											else
-												if islHill <= inner_hill_thresh then
-													self.plotTypes[plotIndex] = PlotTypes.PLOT_LAND
-												else
-													self.plotTypes[plotIndex] = PlotTypes.PLOT_HILLS
-												end
+												plot_adjustments = even[direction_index];
 											end
+											nextX = currentX + plot_adjustments[1];
+											nextY = currentY + plot_adjustments[2];
+											if wrapX == false and (nextX < 0 or nextX >= iW) then
+												-- X is out of bounds.
+											elseif wrapY == false and (nextY < 0 or nextY >= iH) then
+												-- Y is out of bounds.
+											else
+												local realX = nextX;
+												local realY = nextY;
+												if wrapX then
+													realX = realX % iW;
+												end
+												if wrapY then
+													realY = realY % iH;
+												end
+												-- We've arrived at the correct x and y for the current plot.
+												--local plot = Map.GetPlot(realX, realY);
+												local plotIndex = realY * iW + realX + 1;
+											
+												-- MOD.EAP: Nerf island size	
+												--local thisislandvar = Map.Rand(60, "") + landvarDefault; -- 10
+										
+												local thisislandvar = Map.Rand(30, "") + landvarDefault; -- x + 10 = 40 ~ 33~ smaller islands
+											
 
-											currentX, currentY = nextX, nextY;
+												-- closer we get to outer edge increase chance of ocean.
+												if _lek_islands_nerfed then
+													if ripple_radius == 1  then --100%
+														islThresh = Map.Rand(50, "") + thisislandvar;
+													elseif ripple_radius == 2 then -- 57% to 74%
+														islThresh = Map.Rand(45, "") + (thisislandvar / 1.25);
+													elseif ripple_radius == 3 then --40% to 57%
+														islThresh = Map.Rand(37, "") + (thisislandvar / 1.5);
+													else --30% to 50%
+														islThresh = Map.Rand(30, "") + (thisislandvar / 2);
+													end
+												else
+													if ripple_radius == 1  then --100%
+														islThresh = Map.Rand(50, "") + thisislandvar;
+													elseif ripple_radius == 2 then -- 57% to 74%
+														islThresh = Map.Rand(45, "") + (thisislandvar / 1.25);
+													elseif ripple_radius == 3 then --40% to 57%
+														islThresh = Map.Rand(37, "") + (thisislandvar / 1.5);
+													else --30% to 50%
+														islThresh = Map.Rand(30, "") + (thisislandvar / 2);
+													end
+												end
+
+												local islRand = Map.Rand(100, "");
+												local islHill = Map.Rand(100, "");
+
+												--print("Rand: ", islRand, "Thresh: ", islThresh);
+
+												if islRand > islThresh then
+													self.plotTypes[plotIndex] = PlotTypes.PLOT_OCEAN
+													landvarDefault = landvarDefault + 5;
+												else
+													if islHill <= hill_thresh then
+														self.plotTypes[plotIndex] = PlotTypes.PLOT_LAND
+													else
+														self.plotTypes[plotIndex] = PlotTypes.PLOT_HILLS
+													end
+												end
+
+												currentX, currentY = nextX, nextY;
+											end
 										end
 									end
 								end
+								islCount = islCount -1;
 							end
-							islCount = islCount -1;
-						end
+--						end
 					end
 				end
 			end
@@ -1803,9 +1771,10 @@ function GenerateTerrain()
 	
 	SetTerrainTypes(terrainTypes);
 
-	FixIslands();
 	-- MOD.EAP: New
-	FixCoastLine();
+	FixCoastLine()
+	
+	FixIslands();
 
 end
 
@@ -1828,7 +1797,7 @@ function FixIslands()
 				if terrainType == TerrainTypes.TERRAIN_TUNDRA then
 					if plotType ~= PlotTypes.PLOT_HILLS then
 						--give a chance to turn this flat tundra to plains
-						local tundratoplains = Map.Rand(50, "Plains Spwan Chance");
+						local tundratoplains = Map.Rand(100, "Plains Spwan Chance");
 						if tundratoplains >= 30 then
 							plot:SetTerrainType(TerrainTypes.TERRAIN_PLAINS, false, true);
 						end
@@ -1855,14 +1824,15 @@ function FixCoastLine()
 			if plotAreaID == iAreaID then
 
 				local plotType = plot:GetPlotType();
-				if plot:IsCoastalLand(50) then
+				if plot:IsCoastalLand(50) then 
 					if plotType ~= PlotTypes.PLOT_HILLS then
-						
-						local flatToHill = Map.Rand(100, "Plains Spwan Chance");
-						if flatToHill >= 67 then
+					if not plot:IsRiverSide() then
+						local flatToHill = Map.Rand(100, "Plains Spawn Chance");
+						if flatToHill >= 80 then
 							print("Adding Hills to Coast");
 							plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true);
 						end
+					end
 					end
 				end
 				
@@ -1871,7 +1841,6 @@ function FixCoastLine()
 	end
 
 end
-
 ------------------------------------------------------------------------------
 function AddFeatures()
 

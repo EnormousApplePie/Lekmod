@@ -179,7 +179,7 @@ function GenerateCoasts(args)
 	print("Setting coasts and oceans (MapGenerator.Lua)");
 	local args = args or {};
 	local bExpandCoasts = args.bExpandCoasts or true;
-	local expansion_diceroll_table = args.expansion_diceroll_table or {2, 2};
+	local expansion_diceroll_table = args.expansion_diceroll_table or {2, 4};
 	
 	local shallowWater = GameDefines.SHALLOW_WATER_TERRAIN;
 	local deepWater = GameDefines.DEEP_WATER_TERRAIN;

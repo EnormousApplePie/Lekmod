@@ -277,6 +277,11 @@ public:
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
 
 	bool canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra = false, bool bTestVisible = false, bool bTestGold = true, bool bTestPlotOwner = true) const;
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	bool canBuildNoTech(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible = false, bool bTestGold = true, bool bTestPlotOwner = true) const;
+#endif
+
 	bool IsBuildBlockedByFeature(BuildTypes eBuild, FeatureTypes eFeature) const;
 	int getBuildCost(const CvPlot* pPlot, BuildTypes eBuild) const;
 	RouteTypes getBestRoute(CvPlot* pPlot = NULL) const;

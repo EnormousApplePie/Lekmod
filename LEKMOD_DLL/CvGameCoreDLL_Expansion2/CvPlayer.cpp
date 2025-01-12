@@ -6840,6 +6840,14 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 #endif
 	}
 
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	// Religion Faith
+	if(kGoodyInfo.isReligionFaith())
+	{
+		return (GetReligions()->HasCreatedPantheon() && !GetReligions()->HasCreatedReligion());
+	}
+#endif
+
 	// Faith toward Great Prophet
 	if(kGoodyInfo.getProphetPercent() > 0)
 	{
@@ -8182,6 +8190,8 @@ bool CvPlayer::canGoodyImprovePlot(CvPlot* pPlot, BuildTypes eBuild) const
 		return false;
 	}
 
+	
+
 
 	CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
 	if (!pkBuildInfo)
@@ -8229,7 +8239,7 @@ bool CvPlayer::canGoodyImprovePlot(CvPlot* pPlot, BuildTypes eBuild) const
 		}
 	}
 
-	if (canBuild(pPlot, eBuild))
+	if (canBuildNoTech(pPlot, eBuild))
 	{
 		return true;
 	}
@@ -10547,6 +10557,81 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 
 	return true;
 }
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+//	--------------------------------------------------------------------------------
+/// Can we eBuild on pPlot regardless of tech??
+bool CvPlayer::canBuildNoTech(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible, bool bTestGold, bool bTestPlotOwner) const
+{
+	if (!(pPlot->canBuild(eBuild, GetID(), bTestVisible, bTestPlotOwner)))
+	{
+		return false;
+	}
+
+	// Is this an improvement that is only useable by a specific civ?
+	ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild)->getImprovement();
+	if (eImprovement != NO_IMPROVEMENT)
+	{
+		CvImprovementEntry* pkEntry = GC.getImprovementInfo(eImprovement);
+		if (pkEntry->IsSpecificCivRequired())
+		{
+			CivilizationTypes eCiv = pkEntry->GetRequiredCivilization();
+			if (eCiv != getCivilizationType())
+			{
+				return false;
+			}
+		}
+	}
+
+	if (!bTestVisible)
+	{
+		if (IsBuildBlockedByFeature(eBuild, pPlot->getFeatureType()))
+		{
+			return false;
+		}
+
+		if (bTestGold)
+		{
+			if (std::max(0, GetTreasury()->GetGold()) < getBuildCost(pPlot, eBuild))
+			{
+				return false;
+			}
+		}
+	}
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	// Is this an improvement that cannot be built by a specific civ?
+
+	if (eImprovement != NO_IMPROVEMENT)
+	{
+
+		//allow CivSpecific builds regardless of the NoBuild table, so civs can still have unique builds that lead to "removed" improvements
+		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
+		if (pkBuildInfo->IsSpecificCivRequired())
+		{
+			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
+			if (eCiv != getCivilizationType())
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+
+		//check if the player has the trait that blocks the improvement
+		if (GetPlayerTraits()->NoBuild(eImprovement))
+		{
+			return false;
+		}
+
+	}
+#endif
+
+		return true;
+	}
+#endif
 
 //	--------------------------------------------------------------------------------
 /// Are we prevented from eBuild-ing because of a Feature on this plot?
