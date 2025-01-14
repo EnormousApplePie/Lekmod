@@ -172,6 +172,14 @@ function UpdateDisplay()
         if( unit:GetDomainType() == DomainTypes.DOMAIN_AIR and pCity ~= nil ) then
             sortEntry.status = pCity:GetName();
             instance.Status:SetHide( false );
+        elseif( unit:GetUnitCombatType() == 14 ) then
+            if( unit:CanParadrop(unit:GetPlot()) == true ) then
+                sortEntry.status = "TXT_KEY_CAN_PARADROP";
+                instance.Status:SetHide( false );
+            else
+                sortEntry.status = "";
+                instance.Status:SetHide( true );
+            end
         elseif( unit:IsEmbarked() ) then
             sortEntry.status = "TXT_KEY_UNIT_STATUS_EMBARKED";
             instance.Status:SetHide( false );
