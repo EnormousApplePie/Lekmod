@@ -341,7 +341,7 @@ function SortFunction( a, b )
                 if ( valueA ~= valueB ) then
                     return valueA > valueB;
                 else
-                    if ( valueC ~= valueC ) then
+                    if ( valueC ~= valueD ) then
                         return valueC > valueD;
                     else
                         return healthA > healthB;
@@ -351,7 +351,7 @@ function SortFunction( a, b )
                 if ( valueA ~= valueB ) then
                     return valueB > valueA;
                 else
-                    if ( valueC ~= valueC ) then
+                    if ( valueC ~= valueD ) then
                         return valueD > valueC;
                     else
                         return healthB > healthA;
