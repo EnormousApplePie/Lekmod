@@ -6733,6 +6733,30 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 
 	if (kGoodyInfo.getFreePromotion() != NO_PROMOTION)
 	{
+		//is this unit a combat unit?
+		if (pUnit != NULL && !pUnit->IsCombatUnit())
+		{
+			return false;
+		}
+
+		//is this unit from a unit class that is excluded?
+		if (kGoodyInfo.getExcludeUnitClass() != NO_UNITCLASS)
+		{
+			if (pUnit == NULL)
+			{
+				return false;
+			}
+
+			eUnit = pUnit->getUnitType();
+			if (eUnit != NO_UNIT)
+			{
+				if (GC.getUnitInfo(eUnit)->GetUnitClassType() == kGoodyInfo.getExcludeUnitClass())
+				{
+					return false;
+				}
+			}
+		}
+
 		//does the unit already have the promotion?
 		if (pUnit != NULL && pUnit->isHasPromotion((PromotionTypes)kGoodyInfo.getFreePromotion()))
 		{
@@ -6815,6 +6839,14 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		return (!GetReligions()->HasCreatedPantheon() && !GetReligions()->HasCreatedReligion());
 #endif
 	}
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	// Religion Faith
+	if(kGoodyInfo.isReligionFaith())
+	{
+		return (GetReligions()->HasCreatedPantheon() && !GetReligions()->HasCreatedReligion());
+	}
+#endif
 
 	// Faith toward Great Prophet
 	if(kGoodyInfo.getProphetPercent() > 0)
@@ -7223,6 +7255,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		int iMinValue = kGoodyInfo.getFoodMin();
 		int iMaxValue = kGoodyInfo.getFoodMax();
 		iFood = GC.getGame().getJonRandNum(iMaxValue - iMinValue + 1, "Goody Food Rand") + iMinValue;
+
 		if (iFood > 0)
 		{
 
@@ -7230,6 +7263,13 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 
 			if (pBestCity != NULL)
 			{
+				// is the value affected by the city's population?
+				if (kGoodyInfo.getIncreasePerPop() > 0)
+				{
+					iFood += kGoodyInfo.getIncreasePerPop() * pBestCity->getPopulation();
+				}
+
+
 				// Add the food to the city, and grow it if possible
 				pBestCity->changeFood(iFood);
 				if (GetID() == GC.getGame().getActivePlayer())
@@ -8150,6 +8190,8 @@ bool CvPlayer::canGoodyImprovePlot(CvPlot* pPlot, BuildTypes eBuild) const
 		return false;
 	}
 
+	
+
 
 	CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
 	if (!pkBuildInfo)
@@ -8197,7 +8239,7 @@ bool CvPlayer::canGoodyImprovePlot(CvPlot* pPlot, BuildTypes eBuild) const
 		}
 	}
 
-	if (canBuild(pPlot, eBuild))
+	if (canBuildNoTech(pPlot, eBuild))
 	{
 		return true;
 	}
@@ -10515,6 +10557,81 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 
 	return true;
 }
+
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+//	--------------------------------------------------------------------------------
+/// Can we eBuild on pPlot regardless of tech??
+bool CvPlayer::canBuildNoTech(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible, bool bTestGold, bool bTestPlotOwner) const
+{
+	if (!(pPlot->canBuild(eBuild, GetID(), bTestVisible, bTestPlotOwner)))
+	{
+		return false;
+	}
+
+	// Is this an improvement that is only useable by a specific civ?
+	ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(eBuild)->getImprovement();
+	if (eImprovement != NO_IMPROVEMENT)
+	{
+		CvImprovementEntry* pkEntry = GC.getImprovementInfo(eImprovement);
+		if (pkEntry->IsSpecificCivRequired())
+		{
+			CivilizationTypes eCiv = pkEntry->GetRequiredCivilization();
+			if (eCiv != getCivilizationType())
+			{
+				return false;
+			}
+		}
+	}
+
+	if (!bTestVisible)
+	{
+		if (IsBuildBlockedByFeature(eBuild, pPlot->getFeatureType()))
+		{
+			return false;
+		}
+
+		if (bTestGold)
+		{
+			if (std::max(0, GetTreasury()->GetGold()) < getBuildCost(pPlot, eBuild))
+			{
+				return false;
+			}
+		}
+	}
+
+#ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
+	// Is this an improvement that cannot be built by a specific civ?
+
+	if (eImprovement != NO_IMPROVEMENT)
+	{
+
+		//allow CivSpecific builds regardless of the NoBuild table, so civs can still have unique builds that lead to "removed" improvements
+		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
+		if (pkBuildInfo->IsSpecificCivRequired())
+		{
+			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
+			if (eCiv != getCivilizationType())
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+
+		//check if the player has the trait that blocks the improvement
+		if (GetPlayerTraits()->NoBuild(eImprovement))
+		{
+			return false;
+		}
+
+	}
+#endif
+
+		return true;
+	}
+#endif
 
 //	--------------------------------------------------------------------------------
 /// Are we prevented from eBuild-ing because of a Feature on this plot?

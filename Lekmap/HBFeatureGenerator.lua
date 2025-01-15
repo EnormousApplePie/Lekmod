@@ -48,7 +48,7 @@ function FeatureGenerator.Create(args)
 		iJunglePercent = iJunglePercent + 5;
 	end
 
-	local iForestPercent = args.iForestPercent or 18;
+	local iForestPercent = args.iForestPercent or 20;
 	local iClumpHeight = args.iClumpHeight or 75;
 	local fMarshPercent = args.fMarshPercent or 8;
 	local iOasisPercent = args.iOasisPercent or 25;

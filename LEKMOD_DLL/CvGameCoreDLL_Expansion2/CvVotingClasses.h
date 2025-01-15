@@ -1534,7 +1534,7 @@ public:
 	void SetVoterHasVoted(int iProposalID, PlayerTypes ePlayerID, bool bValue);
 	void SetVoterVote(int iProposalID, PlayerTypes ePlayerID, bool bValue);
 private:
-	const static int IRR_THRESHOLD_TIMES_100 = 80;  // 80% of total support is enough for irr. 100% during tournament competition. 
+	const static int IRR_THRESHOLD_TIMES_100 = 100;  // EAP: Put to a 100% for now - // ImmoS: 80% of total support is enough for irr. 100% during tournament competition. 
 	const static int MAX_ACTIVE_RESOLUTIONS = MAX_MAJOR_CIVS + 2;  // 1 irr x players, 1 cc and 1 scrap
 	const static int PROPOSAL_COOLDOWN = 10;
 	const static int REMAP_PROPOSAL_REVEAL_TURN = 10;

@@ -1,7 +1,7 @@
 @ECHO off
 pushd "%~dp0"
+set patchfolder=%cd%
 cd ..
-set patchfolder=LEKMOD
 set euifolder=UI_bc1_xits
 IF EXIST "%cd%\UI_bc1" (
   set euifolder=UI_bc1
