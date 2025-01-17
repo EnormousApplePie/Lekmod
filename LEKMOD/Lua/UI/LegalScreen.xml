@@ -14,6 +14,7 @@
         <Image Anchor="C,B" Offset="0,-109" AnchorSide="O.O"  Texture="Assets/UI/Art/Controls/bottomframe.dds" Size="512,128" />
         <Label Style="MenuTitleCaption" />
         <Label Anchor="C,T" ID="EULAText" Offset="0,75"  Font="TwCenMT14" WrapWidth="600" ColorSet="Beige_Black" String="TXT_KEY_UI_CHECK_BAT" />
+        <Label Anchor="C,C"  Offset="0,5"  String="TXT_KEY_UI_CHECK_BAT_TT" Font="TwCenMT20" WrapWidth="400" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
         <Image Anchor="C,T" Offset="0,395" Texture="bar300x2.dds" Size="300.1" />
 
         <Button Anchor="C,C"  Offset="0,174" Size="220,27" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="ExitGameButton">
