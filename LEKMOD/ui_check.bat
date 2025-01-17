@@ -30,10 +30,12 @@ IF NOT EXIST "%cd%\%euifolder%\CityStatePopup\CityStateDiploPopup.lua" (
   copy /y "%cd%\%patchfolder%\Lua\tmp\eui\CityStatePopup\CityStateDiploPopup.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityStateDiploPopup.lua" > nul
 )
 REM --------------------------------------------------------------------------------------------------
-IF NOT EXIST "%cd%\%euifolder%\CityView\CityView.lua" (
-  copy /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\CityView.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityView.lua" > nul
-) ELSE (
+set text="-- coded by bc1 from 1.0.3.276 brave new world code"
+FIND %text% "%cd%\UI_bc1\CityView\CityView.lua" > nul 2>&1 && (
   copy /y "%cd%\%patchfolder%\Lua\tmp\eui\CityView\CityView.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityView.lua" > nul
+) || (
+  copy /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\CityView.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityView.lua" > nul
+)
 )
 IF NOT EXIST "%cd%\%euifolder%\CityView\ProductionPopup.lua" (
   copy /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.lua.ignore" "%cd%\%patchfolder%\Lua\UI\ProductionPopup.lua" > nul
