@@ -96,6 +96,9 @@ REM ----------------------------------------------------------------------------
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\MiniMapPanel\MiniMapPanel.lua.ignore" "%cd%\%patchfolder%\Lua\UI\MiniMapPanel.lua" > nul
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\MiniMapPanel\MiniMapPanel.xml.ignore" "%cd%\%patchfolder%\Lua\UI\MiniMapPanel.xml" > nul
 REM --------------------------------------------------------------------------------------------------
+copy /y "%cd%\%patchfolder%\Lua\tmp\ui\MPTurnPanel\MPTurnPanel.lua.ignore" "%cd%\%patchfolder%\Lua\UI\MPTurnPanel.lua" > nul
+copy /y "%cd%\%patchfolder%\Lua\tmp\ui\MPTurnPanel\MPTurnPanel.xml.ignore" "%cd%\%patchfolder%\Lua\UI\MPTurnPanel.xml" > nul
+REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%cd%\%euifolder%\NotificationPanel\DiploCorner.xml" (
   copy /y "%cd%\%patchfolder%\Lua\tmp\ui\NotificationPanel\DiploCorner.lua.ignore" "%cd%\%patchfolder%\Lua\UI\DiploCorner.lua" > nul
   copy /y "%cd%\%patchfolder%\Lua\tmp\ui\NotificationPanel\DiploCorner.xml.ignore" "%cd%\%patchfolder%\Lua\UI\DiploCorner.xml" > nul
