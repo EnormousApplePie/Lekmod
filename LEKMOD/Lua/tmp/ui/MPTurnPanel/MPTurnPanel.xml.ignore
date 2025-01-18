@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context ColorSet="Beige_Black_Alpha" FontStyle="SoftShadow" >
+
+  <!-- Multiplayer Turn Queue Entry-->
+  <Instance Name="TurnQueueEntry" >
+    <Container ID="Root" Size="64,64" ConsumeMouse="1" Hidden="0">
+      <AlphaAnim ID="ActiveTurnAnim" Anchor="C,C" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="1" AlphaEnd="0" >
+        <Box ID="IconBox" Color="255,255,255,0" Size="64,64" Anchor="C,C" Offset="0,0" >
+          <Image ID="CivIconBG" Size="64.64" Anchor="C,C" Offset="0,0" TextureOffset="32,0" Texture="CivIconBGSizes.dds" />
+          <Image ID="CivIconShadow" Size="48.48" Anchor="C,C" Offset="1,1" Texture="CivSymbolAtlas16.dds" Color="Black.128"/>
+          <Image ID="Icon" Size="48.48" Offset="0,0"  Anchor="C,C" Texture="CivSymbolsColor256.dds" />
+        </Box>
+      </AlphaAnim>
+    </Container>
+  </Instance>
+
+  <Stack StackGrowth="Down" Anchor="C,B" Padding="5" Offset="0,0" ID="MultiplayerStack">
+
+    <!-- Multiplayer Turn Timer -->
+    <!-- TurnTimeRoot is the root element of the turn timer so that it can be slide partially under the turn timer button. -->
+    <Grid Anchor="C,C" Offset="0,0" Size="40,40" Style="GridBlackIndent8" ID="TurnTimeRoot">
+      <Grid Size="40,40" Style="Grid9Frame" ID="TurnTimeGridFrame">
+        <Label Anchor="C,C" String="UnknownTime"  Font="TwCenMT22" ColorSet="Beige_Black" FontStyle="Stroke" ID="TimerCountDown" />
+      </Grid>
+
+      <!-- Multiplayer Turn Timer Button-->
+      <Button Anchor="C,T" AnchorSide="O,O" StateOffsetIncrement="0,0" Offset="0,-10" ToolTip="TXT_KEY_TURN_TIMER_ACTIVE_TT" Texture="assets\UI\Art\WorldView\TimerMeter.dds" Color="Black.164" Size="100.100" ID="EndTurnTimerButton">
+        <AlphaAnim Size="100,100" ause="0" Cycle="Bounce" Speed="1" AlphaStart=".8" AlphaEnd=".4">
+          <Meter Size="100,100" Texture="assets\UI\Art\WorldView\TimerMeter.dds" HasShadow="1" Color="White.255" ShadowColor="0,0,0,100" ID="EndTurnTimeMeter" />
+          <Meter Size="100,100" Texture="assets\DLC\Shared\TimerMeter_TurnEnded.dds" HasShadow="1" Color="White.255" ShadowColor="0,0,0,100" ID="EndTurnTimeMeter_TurnEnded" />
+        </AlphaAnim>
+        <Image Anchor="C,C" Texture="assets\UI\Art\WorldView\TimerFrame.dds" Size="100.100" />
+        <AlphaAnim ID="EndTurnTimerMyTurnAnim" ause="0" Cycle="Bounce" Speed="1" AlphaStart="1" AlphaEnd=".4" Hidden="1">
+          <Image Texture="assets\DLC\Shared\UI\Art\WorldView\TimerFrame_Center.dds" Size="100.100" />
+        </AlphaAnim>
+      </Button>
+    </Grid>
+
+    <!-- Multiplayer Turn Queue Begin -->
+    <Grid Anchor="C,C" Style="GridBlackIndent8" ID="TurnQueueGrid" Hidden="1">
+      <Grid Style="Grid9Frame" ID="TurnQueueGridFrame">
+        <Stack StackGrowth="Right" WrapGrowth="Bottom" WrapWidth="500" Anchor="L,C" Offset="0,0" ID="TurnQueueStack" />
+      </Grid>
+    </Grid>
+    <!-- Multiplayer Turn Queue End -->
+
+  </Stack>
+  
+</Context>
