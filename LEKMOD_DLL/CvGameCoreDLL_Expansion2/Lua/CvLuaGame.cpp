@@ -189,6 +189,10 @@ void CvLuaGame::RegisterMembers(lua_State* L)
 	Method(GetPausePlayer);
 	Method(SetPausePlayer);
 	Method(IsPaused);
+	Method(IsPaused);
+#ifdef TURN_TIMER_PAUSE_BUTTON
+	Method(IsTurnTimerPaused);
+#endif
 	Method(GetBestLandUnit);
 	Method(GetBestLandUnitCombat);
 
@@ -1236,6 +1240,15 @@ int CvLuaGame::lIsPaused(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvGame::isPaused);
 }
+#ifdef TURN_TIMER_PAUSE_BUTTON
+//------------------------------------------------------------------------------
+//bool isTurnTimerPaused();
+int CvLuaGame::lIsTurnTimerPaused(lua_State* L)
+{
+	lua_pushboolean(L, GC.getGame().m_bIsPaused);
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 //UnitTypes getBestLandUnit();
 int CvLuaGame::lGetBestLandUnit(lua_State* L)

@@ -1,6 +1,9 @@
 -------------------------------------------------
 -- Multiplayer Turn Panel
 -------------------------------------------------
+-- Edit: add turn timer fading when game is paused
+-- for EUI and vanilla UI
+-------------------------------------------------
 include( "IconSupport" ); -- for civ icon hookups
 include( "TurnStatusBehavior" ); -- for turn status button behavior
 
@@ -324,6 +327,27 @@ function OnEndTurnTimerUpdate(percentComplete)
 end
 Events.EndTurnTimerUpdate.Add(OnEndTurnTimerUpdate);
 
+-- Edit: timer fading on pause START
+function OnPause( bPause )
+  	if Game.IsTurnTimerPaused() == true then
+		Controls.EndTurnTimerMyTurnAnim:Stop();
+		Controls.EndTurnTimerMyTurnAnim:SetAlpha(0.3)
+		Controls.EndTurnTimeMeterAnim:Stop();
+		Controls.EndTurnTimeMeterAnim:SetAlpha(0.3)
+		Controls.TimerCountDown:SetAlpha(0.3)
+  	else
+		Controls.EndTurnTimerMyTurnAnim:Play()
+		Controls.EndTurnTimerMyTurnAnim:SetAlpha(1)
+		Controls.EndTurnTimeMeterAnim:Play()
+		Controls.EndTurnTimeMeterAnim:SetAlpha(1)
+		Controls.TimerCountDown:SetAlpha(1)
+  	end
+end
+GameEvents.EndTurnTimerPause.Add( OnPause );
+GameEvents.EndTurnTimerReset.Add( OnPause );
+Events.ActivePlayerTurnStart.Add( OnPause );
+-- Edit: timer fading on pause END
+
 ----------------------------------------------
 function OnPlayerChangedEvent()
 	if not Controls.TurnTimeRoot:IsHidden() then
@@ -396,4 +420,6 @@ Controls.EndTurnTimerButton:RegisterCallback( Mouse.eLClick, OnEndTurnTimerClick
 -------------------------------------------------------------------------
 BuildStaticTeamsList();
 BuildTurnQueue();
+-- NEW in case game was saved with paused turn timer state
+OnPause(Game.IsTurnTimerPaused());
 
