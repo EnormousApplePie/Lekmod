@@ -510,7 +510,7 @@ Panels = {
 			for i,v in ipairs(playerInfos) do
 				for turn, score in pairs(v.Scores) do
 					local s = score[indexName];
-					if(s) then
+					if(s and turn <= g_ReplayInfo.FinalTurn) then
 						if(s > maxScore) then
 							maxScore = s;
 						end
@@ -541,12 +541,14 @@ Panels = {
 				
 				for i,v in ipairs(playerInfos) do
 					local graphLegend = panel.GraphLegendsByPlayer[i];
-					local isHidden = not graphLegend.ShowHide:IsChecked();
-				
-					panel.SegmentsByPlayer[i] = DrawGraph(v, panel.PlayerGraphColors[i], indexName, graphWidth, minTurn, maxTurn, YScale, minScore); 
-					if(isHidden == true) then
-						for _, instance in ipairs(panel.SegmentsByPlayer[i]) do
-							instance.LineSegment:SetHide(true);					
+					if graphLegend ~= nil then
+						local isHidden = not graphLegend.ShowHide:IsChecked();
+					
+						panel.SegmentsByPlayer[i] = DrawGraph(v, panel.PlayerGraphColors[i], indexName, graphWidth, minTurn, maxTurn, YScale, minScore); 
+						if(isHidden == true) then
+							for _, instance in ipairs(panel.SegmentsByPlayer[i]) do
+								instance.LineSegment:SetHide(true);					
+							end
 						end
 					end
 				end
