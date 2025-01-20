@@ -36,7 +36,6 @@ FIND %text% "%cd%\UI_bc1\CityView\CityView.lua" > nul 2>&1 && (
 ) || (
   copy /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\CityView.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CityView.lua" > nul
 )
-)
 IF NOT EXIST "%cd%\%euifolder%\CityView\ProductionPopup.lua" (
   copy /y "%cd%\%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.lua.ignore" "%cd%\%patchfolder%\Lua\UI\ProductionPopup.lua" > nul
 )
