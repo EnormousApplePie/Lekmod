@@ -177,6 +177,9 @@ protected:
 	static int lGetPausePlayer(lua_State* L);
 	static int lSetPausePlayer(lua_State* L);
 	static int lIsPaused(lua_State* L);
+#ifdef TURN_TIMER_PAUSE_BUTTON
+	static int lIsTurnTimerPaused(lua_State* L);
+#endif
 	static int lGetBestLandUnit(lua_State* L);
 	static int lGetBestLandUnitCombat(lua_State* L);
 

@@ -792,6 +792,7 @@ function( Id )
 
 end)
 
+--[[
 -------------------------------------------------
 -- Additional notifications
 -------------------------------------------------
@@ -815,6 +816,7 @@ function( x, y, oldPopulation, newPopulation )
 		--print( "Notification sent:", NotificationTypes.NOTIFICATION_CITY_GROWTH, sTip, sTitle, x, y )
 	end
 end)
+]]
 
 GameEvents.CityBoughtPlot.Add(
 function( playerID, cityID, x, y, isWithGold, isWithFaithOrCulture )
