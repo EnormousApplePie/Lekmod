@@ -1212,7 +1212,7 @@
 #define PENALTY_FOR_DELAYING_POLICIES
 // Adds rail connection icon
 #define LUA_METHOD_IS_INDUSTRIAL_ROUTE_TO_CAPITAL
-/// Fix Militiry Caste culture when units stacking in city
+/// Fix Military Caste culture when units stacking in city
 #define FIX_POLICY_CULTURE_PER_GARRISONED_UNIT
 
 
