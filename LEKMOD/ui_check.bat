@@ -50,6 +50,7 @@ IF EXIST "%cd%\%euifolder%\Core\EUI_tooltip_library.lua" (
 IF EXIST "%cd%\%euifolder%\Core\EUI_unit_include.lua" (
   copy /y "%cd%\%patchfolder%\Lua\tmp\eui\Core\EUI_unit_include.lua.ignore" "%cd%\%patchfolder%\Lua\UI\EUI_unit_include.lua" > nul
 )
+copy /y "%cd%\%patchfolder%\Lua\tmp\ui\Core\IconSupport.lua.ignore" "%cd%\%patchfolder%\Lua\UI\IconSupport.lua" > nul
 REM --------------------------------------------------------------------------------------------------
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.lua.ignore" "%cd%\%patchfolder%\Lua\UI\CultureOverview.lua" > nul
 copy /y "%cd%\%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.xml.ignore" "%cd%\%patchfolder%\Lua\UI\CultureOverview.xml" > nul
