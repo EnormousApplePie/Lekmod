@@ -1124,7 +1124,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 #endif
 
 #ifdef CS_ALLYING_WAR_RESCTRICTION
-	if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+	if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && GC.getGame().isOption("GAMEOPTION_CS_ALLYING_WAR_RESCTRICTION"))
 	{
 		for (int iI = 0; iI < MAX_PLAYERS; iI++)
 		{
