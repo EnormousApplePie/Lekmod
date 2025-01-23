@@ -8289,25 +8289,28 @@ void CvGame::doTurn()
 		float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
 #endif
 		float fTimeElapsed = kGame.getTimeElapsed();
-		for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+		for (int jJ = MAX_MAJOR_CIVS; jJ < MAX_MINOR_CIVS; jJ++)
 		{
-			for (int jJ = 0; jJ < MAX_MAJOR_CIVS; jJ++)
+			PlayerTypes eMinor = (PlayerTypes)jJ;
+			GET_PLAYER(eMinor).GetMinorCivAI()->RecalculateMajorPriority();
+			for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
 			{
-				for (int kK = MAX_MAJOR_CIVS; kK < MAX_MINOR_CIVS; kK++)
+				if (kGame.getGameTurn() == GET_PLAYER((PlayerTypes)iI).getPriorityTurn(eMinor))
 				{
-					PlayerTypes eMinor = (PlayerTypes)kK;
-					if (kGame.getGameTurn() < GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowingMinor((PlayerTypes)jJ, eMinor))
+					if (fTimeElapsed < GET_PLAYER((PlayerTypes)iI).getPriorityTime(eMinor))
 					{
-						GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor, GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor) + (fGameTurnEnd - fTimeElapsed));
+						GET_PLAYER((PlayerTypes)iI).setPriorityTime(eMinor, GET_PLAYER((PlayerTypes)iI).getPriorityTime(eMinor) - fTimeElapsed);
 					}
-					if (kGame.getGameTurn() == GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowingMinor((PlayerTypes)jJ, eMinor))
+					else
 					{
-						if (fTimeElapsed < GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor))
-						{
-							GET_PLAYER((PlayerTypes)iI).setTurnCSWarAllowingMinor((PlayerTypes)jJ, eMinor, kGame.getGameTurn() + 1);
-							GET_PLAYER((PlayerTypes)iI).setTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor, GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowingMinor((PlayerTypes)jJ, eMinor) - (fGameTurnEnd - fTimeElapsed));
-						}
+						GET_PLAYER((PlayerTypes)iI).setPriorityTurn(eMinor, -1);
+						GET_PLAYER((PlayerTypes)iI).setPriorityTime(eMinor, 0.f);
 					}
+				}
+				if (kGame.getGameTurn() < GET_PLAYER((PlayerTypes)iI).getPriorityTurn(eMinor))
+				{
+					GET_PLAYER((PlayerTypes)iI).setPriorityTurn(eMinor, kGame.getGameTurn());
+					GET_PLAYER((PlayerTypes)iI).setPriorityTime(eMinor, GET_PLAYER((PlayerTypes)iI).getPriorityTime(eMinor) + (fGameTurnEnd - fTimeElapsed));
 				}
 			}
 		}
