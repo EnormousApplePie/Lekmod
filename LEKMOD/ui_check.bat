@@ -34,7 +34,7 @@ set text="-- coded by bc1 from 1.0.3.276 brave new world code"
 FIND %text% "UI_bc1\CityView\CityView.lua" > nul 2>&1 && (
   copy /y "%patchfolder%\Lua\tmp\eui\CityView\CityView.lua.ignore" "%patchfolder%\Lua\UI\CityView.lua" > nul
 ) || (
-  IF NOT EXIST "%euifolder%\CityView\CityView.lua" (
+  IF NOT EXIST "%euifolder%\CityStatePopup\CityStateDiploPopup.lua" (
     copy /y "%patchfolder%\Lua\tmp\ui\CityView\CityView.lua.ignore" "%patchfolder%\Lua\UI\CityView.lua" > nul
   ) ELSE (
     copy /y "%patchfolder%\Lua\tmp\eui\CityView\CityView.lua.ignore" "%patchfolder%\Lua\UI\CityView.lua" > nul
