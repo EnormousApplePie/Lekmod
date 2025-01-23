@@ -569,6 +569,14 @@ public:
 	bool IsDisableNotifications() const;
 	void SetDisableNotifications(bool bDisableNotifications);
 
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	int GetMajorPriority(PlayerTypes ePlayer) const;
+	void SetMajorPriority(PlayerTypes ePlayer, int iValue);
+	int GetMaxMajorPriority() const;
+	PlayerTypes GetPriorityPlayer() const;
+	void RecalculateMajorPriority();
+#endif
+
 private:
 	CvPlayer* m_pPlayer;
 	MinorCivTypes m_minorCivType;
@@ -615,6 +623,10 @@ private:
 
 	int m_aiMajorScratchPad[MAX_MAJOR_CIVS];
 	bool m_bDisableNotifications;
+
+#ifdef CS_ALLYING_WAR_RESCTRICTION
+	int m_aiMajorPriority[MAX_MAJOR_CIVS];
+#endif
 };
 
 
