@@ -1126,21 +1126,35 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 #ifdef CS_ALLYING_WAR_RESCTRICTION
 	if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && GC.getGame().isOption("GAMEOPTION_CS_ALLYING_WAR_RESCTRICTION"))
 	{
-		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		for (int kK = MAX_MAJOR_CIVS; kK < MAX_CIV_PLAYERS; kK++)
 		{
-			for (int jJ = 0; jJ < MAX_MAJOR_CIVS; jJ++)
+			if (GET_PLAYER((PlayerTypes)kK).isAlive())
 			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == GetID() && GET_PLAYER((PlayerTypes)jJ).getTeam() == eTeam)
+				CvMinorCivAI* pMinorCivAI = GET_PLAYER((PlayerTypes)kK).GetMinorCivAI();
+				pMinorCivAI->RecalculateMajorPriority();
+				for (int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
 				{
-					if (GC.getGame().getGameTurn() < GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowing((PlayerTypes)jJ))
+					if (pMinorCivAI->GetAlly() == (PlayerTypes)iI)
 					{
-						return false;
-					}
-					if (GC.getGame().getGameTurn() == GET_PLAYER((PlayerTypes)iI).getTurnCSWarAllowing((PlayerTypes)jJ))
-					{
-						if (GC.getGame().getTimeElapsed() < GET_PLAYER((PlayerTypes)iI).getTimeCSWarAllowing((PlayerTypes)jJ))
+						for (int jJ = 0; jJ < MAX_MAJOR_CIVS; jJ++)
 						{
-							return false;
+							if (GET_PLAYER((PlayerTypes)iI).getTeam() == GetID() && GET_PLAYER((PlayerTypes)jJ).getTeam() == eTeam)
+							{
+								if (pMinorCivAI->GetMajorPriority((PlayerTypes)iI) > pMinorCivAI->GetMajorPriority((PlayerTypes)jJ))
+								{
+									if (GC.getGame().getGameTurn() < GET_PLAYER((PlayerTypes)jJ).getPriorityTurn((PlayerTypes)kK))
+									{
+										return false;
+									}
+									if (GC.getGame().getGameTurn() == GET_PLAYER((PlayerTypes)jJ).getPriorityTurn((PlayerTypes)kK))
+									{
+										if (GC.getGame().getTimeElapsed() < GET_PLAYER((PlayerTypes)jJ).getPriorityTime((PlayerTypes)kK))
+										{
+											return false;
+										}
+									}
+								}
+							}
 						}
 					}
 				}
