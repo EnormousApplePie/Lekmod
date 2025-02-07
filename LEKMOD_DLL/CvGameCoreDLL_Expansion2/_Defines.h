@@ -1188,7 +1188,7 @@
 // Prevent timer mid-turn fluctuations - update it once per turn
 #define GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
 // Can’t declare war after allying enemy css for CS_ALLYING_WAR_RESCTRICTION_TIMER seconds
-#define CS_ALLYING_WAR_RESCTRICTION
+// #define CS_ALLYING_WAR_RESCTRICTION
 #ifdef CS_ALLYING_WAR_RESCTRICTION
 #define CS_ALLYING_WAR_RESCTRICTION_TIMER 120.f
 #endif
