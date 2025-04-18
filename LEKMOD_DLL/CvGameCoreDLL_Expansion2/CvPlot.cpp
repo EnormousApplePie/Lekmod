@@ -6413,13 +6413,9 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 		if(eOldImprovement != NO_IMPROVEMENT)
 		{
 			CvImprovementEntry& oldImprovementEntry = *GC.getImprovementInfo(eOldImprovement);
-#if !defined (LEKMOD_ADJACENT_IMPROVEMENT_YIELD) // Fix visual Bug
+
 			// If this improvement can add culture to nearby improvements, update them as well
 			if(oldImprovementEntry.GetCultureAdjacentSameType() > 0)
-#else
-			// If this improvement can add yields to nearby improvements, update them as well
-			if (oldImprovementEntry.GetCultureAdjacentSameType() > 0 && oldImprovementEntry.HasAnyAdjacencyYieldBonus())
-#endif
 			{
 				for(iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 				{
@@ -6527,13 +6523,9 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 		if(m_eImprovementType != NO_IMPROVEMENT)
 		{
 			CvImprovementEntry& newImprovementEntry = *GC.getImprovementInfo(eNewValue);
-#if !defined (LEKMOD_ADJACENT_IMPROVEMENT_YIELD) // Fix visual Bug
+
 			// If this improvement can add culture to nearby improvements, update them as well
 			if(newImprovementEntry.GetCultureAdjacentSameType() > 0)
-#else
-			// If this improvement can add yields to nearby improvements, update them as well
-			if (newImprovementEntry.GetCultureAdjacentSameType() > 0 && newImprovementEntry.HasAnyAdjacencyYieldBonus())
-#endif
 			{
 				for(iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 				{

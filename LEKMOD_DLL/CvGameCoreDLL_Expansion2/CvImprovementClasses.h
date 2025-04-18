@@ -158,7 +158,6 @@ public:
 	int GetImprovementAdjacentBonusCivilizationNoAmount(int i, int j) const;
 	int GetImprovementAdjacentBonusCivilization(int i, int j) const;
 	int GetImprovementAdjacentAmount(int i, int j) const;
-	bool HasAnyAdjacencyYieldBonus() const;
 #endif
 	int GetTechNoFreshWaterYieldChanges(int i, int j) const;
 	int* GetTechNoFreshWaterYieldChangesArray(int i);
