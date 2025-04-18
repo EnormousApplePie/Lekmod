@@ -1234,6 +1234,35 @@ int CvImprovementEntry::GetImprovementAdjacentAmount(int i, int j) const
 	CvAssertMsg(j > -1, "Index out of bounds");
 	return m_ppiImprovementAdjacentAmount[i][j];
 }
+// New method to trigger the visual changes when nessesary
+bool CvImprovementEntry::HasAnyAdjacencyYieldBonus() const
+{
+	for (int i = 0; i < GC.getNumImprovementInfos(); ++i)
+	{
+		for (int j = 0; j < NUM_YIELD_TYPES; ++j) // Yield loop
+		{
+			if (GetImprovementAdjacentBonus(i, j) > 0)
+				return true;
+			if (GetImprovementAdjacentBonusCivilization(i, j) > 0)
+				return true;
+			if (GetImprovementAdjacentBonusCivilizationNoAmount(i, j) > 0)
+				return true;
+		}
+	}
+
+	for (int i = 0; i < NUM_YIELD_TYPES; ++i)
+	{
+		for (int j = 0; j < 6; ++j) // Civilization loop
+		{
+			if (GetImprovementAdjacentAmount(i, j) > 0)
+				return true;
+			if (GetImprovementAdjacentCivilizationAmount(i, j) > 0)
+				return true;
+		}
+	}
+
+	return false;
+}
 #endif
 /// How much a tech improves the yield of this improvement if it DOES NOT have fresh water
 int CvImprovementEntry::GetTechNoFreshWaterYieldChanges(int i, int j) const
