@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <Update>
+        <Buildings_YieldChanges>
+            <Update>
+                <Set YieldChange="10"/>
+                <Where BuildingType="BUILDING_STONEHENGE" YieldType="YIELD_FAITH"/>
+            </Update>
+        </Buildings_YieldChanges>
+    </Update>
+</GameData>
