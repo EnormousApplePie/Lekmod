@@ -114,19 +114,27 @@ void* CvDllDatabaseUtility::operator new(size_t bytes)
 //------------------------------------------------------------------------------
 bool CvDllDatabaseUtility::CacheGameDatabaseData()
 {
+	LogMsg("LEKMOD: CacheGameDatabaseData called, m_bGameDatabaseNeedsCaching = %d", m_bGameDatabaseNeedsCaching);
+
 	//Do not cache everything if we don't need to.
 	if(m_bGameDatabaseNeedsCaching == false)
+	{
+		LogMsg("LEKMOD: Skipping cache, database already cached");
 		return true;
+	}
 
 	//The following code depends on a valid initialized database.
 	bool bSuccess = true;
 
 	//TODO: Figure out how to handle cases where Validation has failed.
 	/*bSuccess &= */
+	LogMsg("LEKMOD: Validating database");
 	ValidateGameDatabase();
 	
 #ifdef LEKMOD_POST_DLC_DATA_LOADING
-	// Add our post-DLC loading here, after validation but before prefetching
+	// Add our post-DLC loading here, after validation but before any other data loading
+	// This ensures LEKMOD loads after base game DLCs but before regular mods
+	LogMsg("LEKMOD: Performing post-DLC loading");
 	bSuccess &= PerformPostDLCLoading();
 #endif
 
@@ -134,6 +142,7 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 	//In order to support the legacy code still using the old infos system,
 	//all of the id/type pairs must be added to gc.m_infosMap
 	//I apologize for this horrendous code, please remove it in the near future.
+	LogMsg("LEKMOD: Setting up legacy info types");
 	GC.infoTypeFromStringReset();
 	Database::Results kTables("name");
 	if(DB.SelectAt(kTables, "sqlite_master", "type", "table"))
@@ -165,15 +174,21 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 		}
 	}
 
+	LogMsg("LEKMOD: Loading global defines");
 	bSuccess &= LoadGlobalDefines();
+	LogMsg("LEKMOD: Prefetching game data");
 	bSuccess &= PrefetchGameData();
+	LogMsg("LEKMOD: Updating playable civilization counts");
 	bSuccess &= UpdatePlayableCivilizationCounts();
 
+	LogMsg("LEKMOD: Acquiring types");
 	CvTypes::AcquireTypes(DB);
 
+	LogMsg("LEKMOD: Setting global action info");
 	bSuccess &= SetGlobalActionInfo();
 
 	//Clear out database cache and tune for runtime use.
+	LogMsg("LEKMOD: Clearing database cache");
 	DB.ClearCountCache();
 
 	//Log Database Memory statistics
@@ -182,19 +197,25 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 	CvAssertMsg(bSuccess, "Failed to load Gameplay Database Data! Not Good!");
 
 	if(bSuccess)
+	{
+		LogMsg("LEKMOD: Database caching complete, setting m_bGameDatabaseNeedsCaching = false");
 		m_bGameDatabaseNeedsCaching = false;
+	}
 
 	return bSuccess;
 }
 //------------------------------------------------------------------------------
 bool CvDllDatabaseUtility::FlushGameDatabaseData()
 {
+	LogMsg("LEKMOD: FlushGameDatabaseData called, setting m_bGameDatabaseNeedsCaching = true");
 	m_bGameDatabaseNeedsCaching = true;
 	return true;
 }
 //------------------------------------------------------------------------------
 bool CvDllDatabaseUtility::PerformDatabasePostProcessing()
 {
+	LogMsg("LEKMOD: PerformDatabasePostProcessing called");
+
 	//Insert any database methods that you would like performed after the database
 	//has been fully loaded.  This method will execute every single time the game
 	//is run.
@@ -1070,51 +1091,70 @@ void CvDllDatabaseUtility::LogMsg(const char* format, ...) const
 
 	LOGFILEMGR.GetLog("xml.log", uiFlags)->Msg(buf);
 }
-
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
 bool CvDllDatabaseUtility::PerformPostDLCLoading()
 {
 	Database::Connection* db = GC.GetGameDatabase();
 	if(!db)
+	{
+		LogMsg("LEKMOD: Failed to get game database");
 		return false;
+	}
 
 	// Begin transaction for all our changes
 	db->BeginTransaction();
 
-	// Get the DLC path
-	CvString strDLCPath = gDLL->GetDLCFolderPath();
+	// Get the DLC path - use the game's Assets/DLC folder
+	CvString strDLCPath = "Assets\\DLC\\";
+	LogMsg("LEKMOD: Looking for mods in DLC path: %s", strDLCPath.c_str());
 	
 	// Find LEKMOD folder (with any version number)
 	WIN32_FIND_DATAW ffd;
-	std::wstring wstrDLCPath = CvStringUtils::FromUTF8ToUTF16(strDLCPath);
-	HANDLE hFind = FindFirstFileW((wstrDLCPath + L"LEKMOD*").c_str(), &ffd);
+	wchar_t wstrDLCPath[MAX_PATH];
+	MultiByteToWideChar(CP_UTF8, 0, strDLCPath.c_str(), -1, wstrDLCPath, MAX_PATH);
+	HANDLE hFind = FindFirstFileW((std::wstring(wstrDLCPath) + L"LEKMOD*").c_str(), &ffd);
+
+	// Set to track which files we've already loaded
+	std::set<std::wstring> loadedFiles;
 
 	if(hFind != INVALID_HANDLE_VALUE)
 	{
 		do
 		{
 			if(!(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
+			{
+				LogMsg("LEKMOD: Found non-directory: %s", ffd.cFileName);
 				continue;
+			}
 
 			// Found a LEKMOD folder, now look for XML folder
-			std::wstring wstrModPath = wstrDLCPath + ffd.cFileName + L"\\XML\\";
+			std::wstring wstrModPath = std::wstring(wstrDLCPath) + ffd.cFileName + L"\\XML\\";
+			LogMsg("LEKMOD: Found mod directory: %s", ffd.cFileName);
 			
 			// Create XML serializer
 			Database::XMLSerializer serializer(*db);
 
 			// Recursively load all XML files in the directory and its subdirectories
-			LoadXMLFilesRecursively(wstrModPath, serializer);
+			LoadXMLFilesRecursively(wstrModPath, serializer, loadedFiles);
 
 		} while(FindNextFileW(hFind, &ffd) != 0);
 		FindClose(hFind);
 	}
+	else
+	{
+		LogMsg("LEKMOD: No LEKMOD folders found in DLC directory");
+	}
 
+	// Commit all changes
 	db->EndTransaction();
 	return true;
 }
 
 // Helper function to recursively load XML files
-void CvDllDatabaseUtility::LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer)
+void CvDllDatabaseUtility::LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer, std::set<std::wstring>& loadedFiles)
 {
+	LogMsg("LEKMOD: Searching for XML files in: %s", wstrPath.c_str());
+	
 	WIN32_FIND_DATAW ffd;
 	HANDLE hFind = FindFirstFileW((wstrPath + L"*").c_str(), &ffd);
 
@@ -1129,7 +1169,7 @@ void CvDllDatabaseUtility::LoadXMLFilesRecursively(const std::wstring& wstrPath,
 					continue;
 
 				// Recursively process subdirectory
-				LoadXMLFilesRecursively(wstrPath + ffd.cFileName + L"\\", serializer);
+				LoadXMLFilesRecursively(wstrPath + ffd.cFileName + L"\\", serializer, loadedFiles);
 			}
 			else
 			{
@@ -1139,11 +1179,27 @@ void CvDllDatabaseUtility::LoadXMLFilesRecursively(const std::wstring& wstrPath,
 				   _wcsicmp(wstrFileName.substr(wstrFileName.length() - 4).c_str(), L".xml") == 0)
 				{
 					std::wstring wstrFilePath = wstrPath + ffd.cFileName;
-					serializer.Load(wstrFilePath.c_str());
+					
+					// Check if we've already loaded this file
+					if(loadedFiles.find(wstrFilePath) == loadedFiles.end())
+					{
+						LogMsg("LEKMOD: Loading XML file: %s", wstrFilePath.c_str());
+						serializer.Load(wstrFilePath.c_str());
+						loadedFiles.insert(wstrFilePath);
+					}
+					else
+					{
+						LogMsg("LEKMOD: Skipping already loaded file: %s", wstrFilePath.c_str());
+					}
 				}
 			}
 		} while(FindNextFileW(hFind, &ffd) != 0);
 		FindClose(hFind);
 	}
+	else
+	{
+		LogMsg("LEKMOD: No files found in directory: %s", wstrPath.c_str());
+	}
 }
+#endif
 

@@ -54,7 +54,7 @@ public:
 	bool PerformPostDLCLoading();
 
 	//! Helper function to recursively load XML files from a directory and its subdirectories
-	void LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer);
+	void LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer, std::set<std::wstring>& loadedFiles);
 #endif
 
 private:
