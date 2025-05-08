@@ -15583,6 +15583,7 @@ bool CvCity::doCheckProduction()
 		AI_PERF_FORMAT_NESTED("City-AI-perf.csv", ("CvCity::doCheckProduction_Building, Turn %03d, %s, %s", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()) );
 
 		int iPlayerLoop;
+		int iCityLoop;
 		PlayerTypes eLoopPlayer;
 
 		for(iI = 0; iI < iNumBuildingInfos; iI++)
@@ -15598,23 +15599,101 @@ bool CvCity::doCheckProduction()
 			if(iBuildingProduction > 0)
 			{
 				const BuildingClassTypes eExpiredBuildingClass = (BuildingClassTypes)(pkExpiredBuildingInfo->GetBuildingClassType());
+				bool inContest = false;
+				bool wonderAlreadyBuilt = false;
+				PlayerTypes beatenBy = PlayerTypes::NO_PLAYER;
 
-				if(thisPlayer.isProductionMaxedBuildingClass(eExpiredBuildingClass))
+				bool isBuildingMaxedOut = thisPlayer.isProductionMaxedBuildingClass(eExpiredBuildingClass);
+				if(!isBuildingMaxedOut && isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
 				{
-					// Beaten to a world wonder by someone?
-					if(isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
+					const OrderData *pThisCityOrderNode = headOrderQueueNode();
+					// if the wonder isn't currently being produced, then it cant be finished next turn
+					inContest = (
+						isProduction()
+						&& isProductionBuilding()
+						&& pThisCityOrderNode != NULL
+						&& pThisCityOrderNode->iData1 == eExpiredBuilding
+					);
+
+					if (inContest)
 					{
-						for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+						int thisCityBuildingProduction = GetCityBuildings()->GetBuildingProductionTimes100(eExpiredBuilding);
+						int thisCityProductionDelta = getCurrentProductionDifferenceTimes100(false, true);
+						int thisCityFinalProduction = (thisCityBuildingProduction + thisCityProductionDelta) / 100;
+						int winnerFinalProduction = thisCityFinalProduction;
+
+						// search for players contesting the wonder
+						for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS && inContest; iPlayerLoop++)
 						{
 							eLoopPlayer = (PlayerTypes) iPlayerLoop;
+							CvPlayerAI& loopPlayer = GET_PLAYER(eLoopPlayer);
 
-							// Found the culprit
-							if(GET_PLAYER(eLoopPlayer).getBuildingClassCount(eExpiredBuildingClass) > 0)
+							if(eLoopPlayer == getOwner())
 							{
-								GET_PLAYER(getOwner()).GetDiplomacyAI()->ChangeNumWondersBeatenTo(eLoopPlayer, 1);
-								break;
+								continue;
 							}
+
+							for(CvCity* loopCity = loopPlayer.firstCity(&iCityLoop); loopCity != NULL; loopCity = loopPlayer.nextCity(&iCityLoop))
+							{
+								if(!loopCity->isProduction() || !loopCity->isProductionBuilding())
+								{
+									continue;
+								}
+
+								const OrderData* pLoopCityOrderNode = loopCity->headOrderQueueNode();
+								if(pLoopCityOrderNode == NULL || pLoopCityOrderNode->iData1 != eExpiredBuilding)
+								{
+									continue;
+								}
+
+								int loopCityBuildingProduction = loopCity->GetCityBuildings()->GetBuildingProductionTimes100(eExpiredBuilding);
+								int loopCityProductionDelta = loopCity->getCurrentProductionDifferenceTimes100(false, true);
+								int loopCityFinalProduction = (loopCityBuildingProduction + thisCityProductionDelta) / 100;
+
+								if(loopCityFinalProduction < loopCity->getProductionNeeded(eExpiredBuilding))
+								{
+									continue;
+								}
+
+								if(loopCityFinalProduction > winnerFinalProduction)
+								{
+									wonderAlreadyBuilt = true;
+									beatenBy = eLoopPlayer;
+									winnerFinalProduction = loopCityFinalProduction;
+									goto checkNextPlayer;
+								}
+							}
+checkNextPlayer:;
 						}
+					}
+
+				}
+				else if(isBuildingMaxedOut && isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
+				{
+					wonderAlreadyBuilt = true;
+					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+					{
+						eLoopPlayer = (PlayerTypes) iPlayerLoop;
+
+						// Found the culprit
+						if(GET_PLAYER(eLoopPlayer).getBuildingClassCount(eExpiredBuildingClass) > 0)
+						{
+							beatenBy = eLoopPlayer;
+							break;
+						}
+					}
+				}
+				else
+				{
+					wonderAlreadyBuilt = isBuildingMaxedOut;
+				}
+
+				if(wonderAlreadyBuilt)
+				{
+					// Beaten to a world wonder by someone?
+					if(beatenBy != PlayerTypes::NO_PLAYER)
+					{
+						GET_PLAYER(getOwner()).GetDiplomacyAI()->ChangeNumWondersBeatenTo(beatenBy, 1);
 
 						auto_ptr<ICvCity1> pDllCity(new CvDllCity(this));
 						DLLUI->AddDeferredWonderCommand(WONDER_REMOVED, pDllCity.get(), (BuildingTypes) eExpiredBuilding, 0);
@@ -15640,6 +15719,11 @@ bool CvCity::doCheckProduction()
 					}
 
 					m_pCityBuildings->SetBuildingProduction(eExpiredBuilding, 0);
+					if (inContest)
+					{
+						popOrder(getOrderQueueLength() - 1, false, true);
+						bOK = false;
+					}
 				}
 			}
 		}
@@ -15799,7 +15883,7 @@ bool CvCity::doCheckProduction()
 
 	{
 		AI_PERF_FORMAT_NESTED("City-AI-perf.csv", ("CvCity::doCheckProduction_CleanupQueue, Turn %03d, %s, %s", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()) );
-		bOK = CleanUpQueue();
+		bOK = CleanUpQueue() && bOK;
 	}
 
 	return bOK;
