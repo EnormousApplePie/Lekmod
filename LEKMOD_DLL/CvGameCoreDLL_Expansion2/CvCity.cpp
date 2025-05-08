@@ -15510,6 +15510,68 @@ void CvCity::doGrowth()
 	}
 }
 
+#ifdef LEKMOD_FAIR_WONDER_RESULTS
+// returns: the city which will win the given wonder after all cities doProduction if any, NULL otherwise
+CvCity* _getWonderWinner(BuildingTypes eTargetWonder)
+{
+	PlayerTypes eContestant;
+	CvCity *cityCursor;
+	CvCity *winningCity = NULL;
+	OrderData *orderNode;
+	int iPlayerLoop;
+	int iCityLoop;
+	// the amount of production needed by the given city to complete the traget wonder
+	int buildingCost;
+	// the amount of production invested in the target wonder before doProduction
+	int currentProduction;
+	// the amount of production to be added during doProduction
+	int productionDelta;
+	// this value is before overflow limiting, so it's somewhat different
+	// than the actual final building production after doProduction is called
+	int productionAfterDoProduction;
+	// building costs can vary by player, so comparing surplus hammers prevents
+	// giving players with a higher building cost an unfair advantage. wonder/building cost
+	// discounts like era discounts seem to be zero in lek, so this should only affect
+	// singleplayer.
+	int surplusProduction;
+	int winningCitySurplus = -1;
+
+	for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+	{
+		eContestant = static_cast<PlayerTypes>(iPlayerLoop);
+
+		CvPlayerAI& contestant = GET_PLAYER(eContestant);
+		for(cityCursor = contestant.firstCity(&iCityLoop); cityCursor != NULL; cityCursor = contestant.nextCity(&iCityLoop))
+		{
+			if(!cityCursor->isProduction() || !cityCursor->isProductionBuilding())
+			{
+				continue;
+			}
+
+			orderNode = cityCursor->headOrderQueueNode();
+			if(orderNode == NULL || orderNode->iData1 != eTargetWonder)
+			{
+				continue;
+			}
+
+			buildingCost = cityCursor->getProductionNeeded(eTargetWonder);
+			currentProduction = cityCursor->GetCityBuildings()->GetBuildingProductionTimes100(eTargetWonder);
+			productionDelta = cityCursor->getCurrentProductionDifferenceTimes100(false, true);
+			productionAfterDoProduction = (currentProduction + productionDelta) / 100;
+			surplusProduction = productionAfterDoProduction - buildingCost;
+
+			if(surplusProduction > winningCitySurplus)
+			{
+				winningCity = cityCursor;
+				winningCitySurplus = surplusProduction;
+			}
+		}
+	}
+
+	return winningCity;
+}
+#endif
+
 //	--------------------------------------------------------------------------------
 bool CvCity::doCheckProduction()
 {
@@ -15599,12 +15661,14 @@ bool CvCity::doCheckProduction()
 			if(iBuildingProduction > 0)
 			{
 				const BuildingClassTypes eExpiredBuildingClass = (BuildingClassTypes)(pkExpiredBuildingInfo->GetBuildingClassType());
-#ifdef LEKMOD_FAIR_WONDER_RESULTS
-				bool inContest = false;
+				// true if the current order is a wonder, and that wonder has already been built or will be built 
+				// by another city after all cities do production
 				bool wonderAlreadyBuilt = false;
 				PlayerTypes beatenBy = PlayerTypes::NO_PLAYER;
-
 				bool isBuildingMaxedOut = thisPlayer.isProductionMaxedBuildingClass(eExpiredBuildingClass);
+
+#ifdef LEKMOD_FAIR_WONDER_RESULTS
+				bool inContest = false;
 				if(!isBuildingMaxedOut && isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
 				{
 					const OrderData *pThisCityOrderNode = headOrderQueueNode();
@@ -15618,66 +15682,21 @@ bool CvCity::doCheckProduction()
 
 					if (inContest)
 					{
-						int thisCityBuildingProduction = GetCityBuildings()->GetBuildingProductionTimes100(eExpiredBuilding);
-						int thisCityProductionDelta = getCurrentProductionDifferenceTimes100(false, true);
-						int thisCityFinalProduction = (thisCityBuildingProduction + thisCityProductionDelta) / 100;
-						int winnerFinalProduction = thisCityFinalProduction;
-
-						// search for players contesting the wonder
-						for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS && inContest; iPlayerLoop++)
+						CvCity *winningCity = _getWonderWinner(eExpiredBuilding);
+						if(winningCity != NULL)
 						{
-							eLoopPlayer = (PlayerTypes) iPlayerLoop;
-							CvPlayerAI& loopPlayer = GET_PLAYER(eLoopPlayer);
-
-							if(eLoopPlayer == getOwner())
-							{
-								continue;
-							}
-
-							for(CvCity* loopCity = loopPlayer.firstCity(&iCityLoop); loopCity != NULL; loopCity = loopPlayer.nextCity(&iCityLoop))
-							{
-								if(!loopCity->isProduction() || !loopCity->isProductionBuilding())
-								{
-									continue;
-								}
-
-								const OrderData* pLoopCityOrderNode = loopCity->headOrderQueueNode();
-								if(pLoopCityOrderNode == NULL || pLoopCityOrderNode->iData1 != eExpiredBuilding)
-								{
-									continue;
-								}
-
-								int loopCityBuildingProduction = loopCity->GetCityBuildings()->GetBuildingProductionTimes100(eExpiredBuilding);
-								int loopCityProductionDelta = loopCity->getCurrentProductionDifferenceTimes100(false, true);
-								int loopCityFinalProduction = (loopCityBuildingProduction + thisCityProductionDelta) / 100;
-
-								if(loopCityFinalProduction < loopCity->getProductionNeeded(eExpiredBuilding))
-								{
-									continue;
-								}
-
-								if(loopCityFinalProduction > winnerFinalProduction)
-								{
-									wonderAlreadyBuilt = true;
-									beatenBy = eLoopPlayer;
-									winnerFinalProduction = loopCityFinalProduction;
-									goto checkNextPlayer;
-								}
-							}
-checkNextPlayer:;
+							wonderAlreadyBuilt = winningCity != this;
+							beatenBy = winningCity->getOwner();
 						}
 					}
 
 				}
-				else if(isBuildingMaxedOut && isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
+				else
+#endif
+				if(isBuildingMaxedOut && isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
 				{
 					wonderAlreadyBuilt = true;
-#else
-				if (thisPlayer.isProductionMaxedBuildingClass(eExpiredBuildingClass))
-				{
-				if (isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
-				{
-#endif // LEKMOD_FAIR_WONDER_RESULTS
+
 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 					{
 						eLoopPlayer = (PlayerTypes) iPlayerLoop;
@@ -15685,28 +15704,18 @@ checkNextPlayer:;
 						// Found the culprit
 						if(GET_PLAYER(eLoopPlayer).getBuildingClassCount(eExpiredBuildingClass) > 0)
 						{
-#ifdef LEKMOD_FAIR_WONDER_RESULTS
 							beatenBy = eLoopPlayer;
-#else
-							GET_PLAYER(getOwner()).GetDiplomacyAI()->ChangeNumWondersBeatenTo(eLoopPlayer, 1);
-#endif
 							break;
 						}
 					}
-#ifdef LEKMOD_FAIR_WONDER_RESULTS
-				}
-				else
-				{
-					wonderAlreadyBuilt = isBuildingMaxedOut;
 				}
 
-				if(wonderAlreadyBuilt)
+				if(isBuildingMaxedOut || wonderAlreadyBuilt)
 				{
 					// Beaten to a world wonder by someone?
-					if(beatenBy != PlayerTypes::NO_PLAYER)
+					if(beatenBy != PlayerTypes::NO_PLAYER && beatenBy != getOwner())
 					{
 						GET_PLAYER(getOwner()).GetDiplomacyAI()->ChangeNumWondersBeatenTo(beatenBy, 1);
-#endif
 
 						auto_ptr<ICvCity1> pDllCity(new CvDllCity(this));
 						DLLUI->AddDeferredWonderCommand(WONDER_REMOVED, pDllCity.get(), (BuildingTypes) eExpiredBuilding, 0);
