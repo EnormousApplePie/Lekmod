@@ -124,7 +124,11 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 	//TODO: Figure out how to handle cases where Validation has failed.
 	/*bSuccess &= */
 	ValidateGameDatabase();
-	//bSuccess &= PerformDatabasePostProcessing();
+	
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+	// Add our post-DLC loading here, after validation but before prefetching
+	bSuccess &= PerformPostDLCLoading();
+#endif
 
 	//HACK Legacy 'FindInfoByType' support.
 	//In order to support the legacy code still using the old infos system,
@@ -1065,5 +1069,81 @@ void CvDllDatabaseUtility::LogMsg(const char* format, ...) const
 	va_end(vl);
 
 	LOGFILEMGR.GetLog("xml.log", uiFlags)->Msg(buf);
+}
+
+bool CvDllDatabaseUtility::PerformPostDLCLoading()
+{
+	Database::Connection* db = GC.GetGameDatabase();
+	if(!db)
+		return false;
+
+	// Begin transaction for all our changes
+	db->BeginTransaction();
+
+	// Get the DLC path
+	CvString strDLCPath = gDLL->GetDLCFolderPath();
+	
+	// Find LEKMOD folder (with any version number)
+	WIN32_FIND_DATAW ffd;
+	std::wstring wstrDLCPath = CvStringUtils::FromUTF8ToUTF16(strDLCPath);
+	HANDLE hFind = FindFirstFileW((wstrDLCPath + L"LEKMOD*").c_str(), &ffd);
+
+	if(hFind != INVALID_HANDLE_VALUE)
+	{
+		do
+		{
+			if(!(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
+				continue;
+
+			// Found a LEKMOD folder, now look for XML folder
+			std::wstring wstrModPath = wstrDLCPath + ffd.cFileName + L"\\XML\\";
+			
+			// Create XML serializer
+			Database::XMLSerializer serializer(*db);
+
+			// Recursively load all XML files in the directory and its subdirectories
+			LoadXMLFilesRecursively(wstrModPath, serializer);
+
+		} while(FindNextFileW(hFind, &ffd) != 0);
+		FindClose(hFind);
+	}
+
+	db->EndTransaction();
+	return true;
+}
+
+// Helper function to recursively load XML files
+void CvDllDatabaseUtility::LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer)
+{
+	WIN32_FIND_DATAW ffd;
+	HANDLE hFind = FindFirstFileW((wstrPath + L"*").c_str(), &ffd);
+
+	if(hFind != INVALID_HANDLE_VALUE)
+	{
+		do
+		{
+			if(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+			{
+				// Skip . and .. directories
+				if(wcscmp(ffd.cFileName, L".") == 0 || wcscmp(ffd.cFileName, L"..") == 0)
+					continue;
+
+				// Recursively process subdirectory
+				LoadXMLFilesRecursively(wstrPath + ffd.cFileName + L"\\", serializer);
+			}
+			else
+			{
+				// Check if file is an XML file
+				std::wstring wstrFileName = ffd.cFileName;
+				if(wstrFileName.length() > 4 && 
+				   _wcsicmp(wstrFileName.substr(wstrFileName.length() - 4).c_str(), L".xml") == 0)
+				{
+					std::wstring wstrFilePath = wstrPath + ffd.cFileName;
+					serializer.Load(wstrFilePath.c_str());
+				}
+			}
+		} while(FindNextFileW(hFind, &ffd) != 0);
+		FindClose(hFind);
+	}
 }
 

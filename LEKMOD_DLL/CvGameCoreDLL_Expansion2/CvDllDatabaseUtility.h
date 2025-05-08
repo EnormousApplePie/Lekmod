@@ -49,6 +49,14 @@ public:
 	//!	NOTE: This is executed AFTER the database has been loaded from cache or built.
 	bool DLLCALL PerformDatabasePostProcessing();
 
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+	//! Loads XML files after DLC loading but before regular mod loading
+	bool PerformPostDLCLoading();
+
+	//! Helper function to recursively load XML files from a directory and its subdirectories
+	void LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer);
+#endif
+
 private:
 	void DLLCALL Destroy();
 
