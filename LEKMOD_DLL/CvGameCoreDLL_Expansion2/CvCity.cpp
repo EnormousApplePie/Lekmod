@@ -15599,6 +15599,7 @@ bool CvCity::doCheckProduction()
 			if(iBuildingProduction > 0)
 			{
 				const BuildingClassTypes eExpiredBuildingClass = (BuildingClassTypes)(pkExpiredBuildingInfo->GetBuildingClassType());
+#ifdef LEKMOD_FAIR_WONDER_RESULTS
 				bool inContest = false;
 				bool wonderAlreadyBuilt = false;
 				PlayerTypes beatenBy = PlayerTypes::NO_PLAYER;
@@ -15671,6 +15672,12 @@ checkNextPlayer:;
 				else if(isBuildingMaxedOut && isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
 				{
 					wonderAlreadyBuilt = true;
+#else
+				if (thisPlayer.isProductionMaxedBuildingClass(eExpiredBuildingClass))
+				{
+				if (isWorldWonderClass(pkExpiredBuildingInfo->GetBuildingClassInfo()))
+				{
+#endif // LEKMOD_FAIR_WONDER_RESULTS
 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 					{
 						eLoopPlayer = (PlayerTypes) iPlayerLoop;
@@ -15678,10 +15685,15 @@ checkNextPlayer:;
 						// Found the culprit
 						if(GET_PLAYER(eLoopPlayer).getBuildingClassCount(eExpiredBuildingClass) > 0)
 						{
+#ifdef LEKMOD_FAIR_WONDER_RESULTS
 							beatenBy = eLoopPlayer;
+#else
+							GET_PLAYER(getOwner()).GetDiplomacyAI()->ChangeNumWondersBeatenTo(eLoopPlayer, 1);
+#endif
 							break;
 						}
 					}
+#ifdef LEKMOD_FAIR_WONDER_RESULTS
 				}
 				else
 				{
@@ -15694,6 +15706,7 @@ checkNextPlayer:;
 					if(beatenBy != PlayerTypes::NO_PLAYER)
 					{
 						GET_PLAYER(getOwner()).GetDiplomacyAI()->ChangeNumWondersBeatenTo(beatenBy, 1);
+#endif
 
 						auto_ptr<ICvCity1> pDllCity(new CvDllCity(this));
 						DLLUI->AddDeferredWonderCommand(WONDER_REMOVED, pDllCity.get(), (BuildingTypes) eExpiredBuilding, 0);
@@ -15719,11 +15732,13 @@ checkNextPlayer:;
 					}
 
 					m_pCityBuildings->SetBuildingProduction(eExpiredBuilding, 0);
+#ifdef LEKMOD_FAIR_WONDER_RESULTS
 					if (inContest)
 					{
 						popOrder(getOrderQueueLength() - 1, false, true);
 						bOK = false;
 					}
+#endif
 				}
 			}
 		}
@@ -15883,7 +15898,11 @@ checkNextPlayer:;
 
 	{
 		AI_PERF_FORMAT_NESTED("City-AI-perf.csv", ("CvCity::doCheckProduction_CleanupQueue, Turn %03d, %s, %s", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()) );
+#ifdef LEKMOD_FAIR_WONDER_RESULTS
 		bOK = CleanUpQueue() && bOK;
+#else
+		bOK = CleanUpQueue();
+#endif 
 	}
 
 	return bOK;

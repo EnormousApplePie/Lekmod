@@ -947,6 +947,8 @@
 #define LEKMOD_NEW_ANCIENT_RUIN_REWARDS
 // Fixes a rare events where players could get the oxford university building for free with the legalism policy
 #define LEKMOD_NO_FREE_TEAM_WONDERS
+// Awards contested wonders to the player who invested the most hammers instead of the first to have their turn allocated
+#define LEKMOD_FAIR_WONDER_RESULTS
 
 
 /// ###############################
