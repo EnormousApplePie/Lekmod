@@ -1215,6 +1215,9 @@
 /// Fix Military Caste culture when units stacking in city
 #define FIX_POLICY_CULTURE_PER_GARRISONED_UNIT
 
+/// Loads XML files after DLC loading but before regular mod loading, support for seperating xml files.
+#define LEKMOD_POST_DLC_DATA_LOADING
+
 
 /*REPLAY EVENTS CHANGES START*/
 // A more flexible alternative to Replay Messages; primarily for statistics purposes (Cut)

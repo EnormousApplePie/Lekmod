@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -48,6 +48,14 @@ public:
 	//! NOTE: This is executed after all mods have been applied.
 	//!	NOTE: This is executed AFTER the database has been loaded from cache or built.
 	bool DLLCALL PerformDatabasePostProcessing();
+
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+	//! Loads XML files after DLC loading but before regular mod loading
+	bool PerformPostDLCLoading();
+
+	//! Helper function to recursively load XML files from a directory and its subdirectories
+	void LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer);
+#endif
 
 private:
 	void DLLCALL Destroy();
