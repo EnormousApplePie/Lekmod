@@ -31,7 +31,6 @@ jobs:
 
       - name: Cache Visual Studio 2008 Installer
         id: cache-vs2008-install
-        if: steps.cache-vs2008.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: vs2008
