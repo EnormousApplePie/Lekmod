@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	
+	<Language_en_US>
 	<!-- Tunisia -->
 	
 	<Row Tag="TXT_KEY_DAWN_OF_MAN_TUNISIA_TEXT">			
@@ -174,3 +178,7 @@
 	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_9">			
 		<Text>Karim</Text>
 	</Row>
+
+	</Language_en_US>
+
+</GameData>

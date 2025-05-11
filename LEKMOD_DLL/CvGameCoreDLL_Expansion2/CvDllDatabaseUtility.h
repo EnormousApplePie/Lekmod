@@ -16,6 +16,12 @@
 #include "CvGlobals.h"
 #include "ICvDLLDatabaseUtility.h"
 
+// Forward declarations
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+void LogMessageToFile(const char* format, ...);
+bool TryDirectSQLFromXML(Database::Connection* db, const wchar_t* wszFilePath, const char* szFilePath);
+#endif
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //
 //  class : CvDllDatabaseUtility
@@ -54,7 +60,10 @@ public:
 	bool PerformPostDLCLoading();
 
 	//! Helper function to recursively load XML files from a directory and its subdirectories
-	void LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer, std::set<std::wstring>& loadedFiles);
+	void LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer, Database::Connection* db, std::set<std::wstring>& loadedFiles);
+	
+	//! Helper function to check if an XML file is valid
+	bool CheckXMLFileValidity(const wchar_t* wszFilePath, const char* szFilePath) const;
 #endif
 
 private:
