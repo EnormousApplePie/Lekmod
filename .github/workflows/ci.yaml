@@ -1,6 +1,6 @@
 name: CI Pipeline
 
-run-name: "CI: ${{ github.event.head_commit.message }}"
+run-name: "CI: ${{ github.event_name != 'pull_request' && github.event.head_commit.message || github.event.pull_request.title }}"
 
 on: 
   push:
