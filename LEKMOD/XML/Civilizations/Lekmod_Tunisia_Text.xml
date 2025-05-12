@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	
+	<Language_en_US>
+	<!-- Tunisia -->
+	
+	<Row Tag="TXT_KEY_DAWN_OF_MAN_TUNISIA_TEXT">			
+		<Text>Blessings upon you, Farhat Hached, visionary leader of Tunisia! Your people look to you for guidance in this new chapter of their storied history. From humble origins, you rose to become a champion of workers' rights and national independence, founding the powerful Tunisian General Labour Union that would challenge colonial rule. Though struck down by assassins in 1952, your martyrdom only strengthened the resolve of your people to achieve freedom. Your legacy lives on in the independent Tunisia that emerged from the struggle you helped ignite.[NEWLINE][NEWLINE]The time has come to lead your people once more - to build a civilization that will stand as a crossroads of Mediterranean culture and a beacon of reform. Will you unite your people under the banner of justice and progress? Will you build a civilization that will stand the test of time?
+		</Text>
+	</Row>
+	
+	<Row Tag="TXT_KEY_BUILDING_TUNISIA_CASTLE">				
+		<Text>Ribat</Text>
+	</Row>
+	<Row Tag="TXT_KEY_BUILDING_TUNISIA_CASTLE_PEDIA">			
+		<Text>Ribats were fortified Islamic military outposts located along coastal areas to defend against naval attacks. They also served as religious centers and places for spiritual retreat. In Tunisia, ribats played a crucial role in coastal defense against Byzantine naval incursions and later European pirates. The Ribat of Monastir, built in 796 AD, is one of the oldest and most well-preserved examples, combining military defensive structures with religious functions.</Text>
+	</Row>
+	<Row Tag="TXT_KEY_BUILDING_TUNISIA_CASTLE_HELP">			
+		<Text>Tunisian replacement for the [ICON_BUILDING_CASTLE]Castle. 50% cheaper to construct. Provides +2 [ICON_GOLD] Gold, +2 [ICON_FAITH] Faith, and generates +4 [ICON_GOLDEN_AGE] Golden Age points per turn. Does not require [ICON_BUILDING_WALLS] Walls.</Text>
+	</Row>
+	<Row Tag="TXT_KEY_BUILDING_TUNISIA_CASTLE_STRATEGY">			
+		<Text>The Ribat is significantly more accessible than regular Castles since it doesn't require Walls as a prerequisite and costs 50% less [ICON_PRODUCTION] Production. Beyond its defensive capabilities, it generates valuable [ICON_GOLD] Gold and [ICON_FAITH] Faith, while the +4 [ICON_GOLDEN_AGE] Golden Age points per turn help Tunisia trigger Golden Ages more frequently.</Text>
+	</Row>
+	
+	<Row Tag="TXT_KEY_PROMOTION_TUNISIA_CITY_ATTACK">			
+		<Text>City Attack Movement</Text>
+	</Row>
+	<Row Tag="TXT_KEY_PROMOTION_TUNISIA_CITY_ATTACK_HELP">			
+		<Text>spend 1 less [ICON_MOVES] Movement point when attacking cities</Text>
+	</Row>
+	
+	<Row Tag="TXT_KEY_CIV_TUNISIA_DESC">				
+		<Text>Tunisian Republic</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CIV_TUNISIA_SHORT_DESC">			
+		<Text>Tunisia</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CIV_TUNISIA_ADJECTIVE">			
+		<Text>Tunisian</Text>
+	</Row>
+	
+	<Row Tag="TXT_KEY_UNIT_TUNISIA_PRIVATEER">			
+		<Text>Xebec</Text>
+	</Row>
+	<Row Tag="TXT_KEY_UNIT_TUNISIA_PRIVATEER_PEDIA">			
+		<Text>The Xebec was a Mediterranean sailing ship with a distinctive hull and complex sail arrangement that made it both fast and maneuverable. It was the preferred vessel of the Barbary corsairs who operated from North Africa, including Tunisia. Tunisian corsairs used these specialized vessels to become a formidable naval power in the Mediterranean from the 16th to 19th centuries. The Xebec's shallow draft allowed it to navigate coastal waters while evading larger warships, and its speed made it perfect for capturing merchant vessels. With a combination of lateen and square sails, it could sail closer to the wind than square-rigged vessels. The Tunisian Xebecs, commanded by corsairs like Dragut and Uluj Ali, were particularly feared for their raids on European shipping and coastal settlements from Italy to Iceland.</Text>
+	</Row>
+	<Row Tag="TXT_KEY_UNIT_TUNISIA_PRIVATEER_HELP">			
+		<Text>Tunisian replacement for the [ICON_UNIT_PRIVATEER] Privateer. Has a higher [ICON_STRENGTH] Combat Strength, may capture [COLOR_POSITIVE_TEXT]Enemy[ENDCOLOR] ships (50% chance), and spends no [ICON_MOVES] movement pilaging tiles. Is more expensive to build.</Text>
+	</Row>
+	<Row Tag="TXT_KEY_UNIT_TUNISIA_PRIVATEER_STRATEGY">			
+		<Text>The Xebec is Tunisia's unique naval unit, replacing the Privateer. With higher combat strength and the ability to capture defeated enemy ships, the Xebec allows you to quickly build a powerful fleet. Use them to raid coastal routes and cities, as they can pillage without spending movement points. While they cost more than standard Privateers, their advantages in combat and mobility make them worthwhile investments for a naval power.</Text>
+	</Row>
+	
+	<Row Tag="TXT_KEY_TRAIT_TUNISIA_DESC">			
+		<Text>+100% [ICON_FOOD] Food, [ICON_PRODUCTION] Production, and [ICON_GOLD] Gold from land-based [ICON_INTERNATIONAL_TRADE] Trade Routes. [COLOR_POSITIVE_TEXT]Melee[ENDCOLOR] units spend one less [ICON_MOVES] movement point when attacking a city.</Text>
+	</Row>
+	<Row Tag="TXT_KEY_TRAIT_TUNISIA_SHORT_DESC">			
+		<Text>Mediterranean Crossroads</Text>
+	</Row>
+	<Row Tag="TXT_KEY_LEADER_TUNISIA">			
+		<Text>Farhat Hached</Text>
+	</Row>
+	<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_HEADING_1">			
+		<Text>History</Text>
+	</Row>
+	<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_TEXT_1">			
+		<Text>Farhat Hached (1914-1952) was a prominent Tunisian labor leader and national independence activist. Born to a modest family in coastal Tunisia, he began working at a young age and quickly became involved in labor organizing. In 1946, he founded the powerful Tunisian General Labour Union (UGTT), which became crucial in Tunisia's independence movement. Hached transformed labor activism into a nationalist struggle, working alongside political leaders like Habib Bourguiba. His growing influence made him a target, and he was assassinated in 1952, likely by French colonial agents. His martyrdom galvanized the independence movement, and Tunisia gained independence four years after his death. Hached remains a national hero, remembered for his commitment to workers' rights and national sovereignty.</Text>
+	</Row>
+	<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA">			
+		<Text>Farhat Hached</Text>
+	</Row>
+	<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_NAME">			
+		<Text>Farhat Hached</Text>
+	</Row>
+	<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_SUBTITLE">			
+		<Text>Founder of the Tunisian General Labour Union</Text>
+	</Row>
+	<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_LIVED">			
+		<Text>1914-1952 AD</Text>
+	</Row>
+	
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_0">			
+		<Text>Tunis</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_1">			
+		<Text>Sfax</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_2">			
+		<Text>Sousse</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_3">			
+		<Text>Kairouan</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_4">			
+		<Text>Bizerte</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_5">			
+		<Text>Gabès</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_6">			
+		<Text>Ariana</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_7">			
+		<Text>Gafsa</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_8">			
+		<Text>Monastir</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_9">			
+		<Text>Kasserine</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_10">			
+		<Text>Medenine</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_11">			
+		<Text>Nabeul</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_12">			
+		<Text>Hammamet</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_13">			
+		<Text>Tataouine</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_14">			
+		<Text>Ben Arous</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_15">			
+		<Text>Zarzis</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_16">			
+		<Text>Mahdia</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_17">			
+		<Text>Jendouba</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_18">			
+		<Text>Tozeur</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_19">			
+		<Text>Kebili</Text>
+	</Row>
+	<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_20">			
+		<Text>Béja</Text>
+	</Row>
+	
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_0">			
+		<Text>Ahmed</Text>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_1">			
+		<Text>Leila</Text>
+		<Gender>feminine</Gender>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_2">			
+		<Text>Habib</Text>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_3">			
+		<Text>Fatima</Text>
+		<Gender>feminine</Gender>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_4">			
+		<Text>Youssef</Text>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_5">			
+		<Text>Amina</Text>
+		<Gender>feminine</Gender>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_6">			
+		<Text>Tarek</Text>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_7">			
+		<Text>Salah</Text>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_8">			
+		<Text>Samira</Text>
+		<Gender>feminine</Gender>
+	</Row>
+	<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_9">			
+		<Text>Karim</Text>
+	</Row>
+
+	</Language_en_US>
+
+</GameData>

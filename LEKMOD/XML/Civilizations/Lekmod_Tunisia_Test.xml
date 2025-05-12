@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <Buildings>
+        <Row>
+            <Type>BUILDING_TUNISIA_CASTLE_TEST</Type>
+            <Description>TXT_KEY_BUILDING_TUNISIA_CASTLE</Description>
+            <Help>TXT_KEY_BUILDING_TUNISIA_CASTLE_HELP</Help>
+            <Strategy>TXT_KEY_BUILDING_TUNISIA_CASTLE_STRATEGY</Strategy>
+            <Civilopedia>TXT_KEY_BUILDING_TUNISIA_CASTLE_PEDIA</Civilopedia>
+            <BuildingClass>BUILDINGCLASS_CASTLE</BuildingClass>
+            <Cost>80</Cost>
+            <Defense>700</Defense>
+            <ExtraCityHitPoints>25</ExtraCityHitPoints>
+            <PrereqTech>TECH_CHIVALRY</PrereqTech>
+        </Row>
+    </Buildings>
+    
+    <Civilization_BuildingClassOverrides>
+        <Row>
+            <CivilizationType>CIVILIZATION_TUNISIA</CivilizationType>
+            <BuildingClassType>BUILDINGCLASS_CASTLE</BuildingClassType>
+            <BuildingType>BUILDING_TUNISIA_CASTLE_TEST</BuildingType>
+        </Row>
+    </Civilization_BuildingClassOverrides>
+</GameData> 
