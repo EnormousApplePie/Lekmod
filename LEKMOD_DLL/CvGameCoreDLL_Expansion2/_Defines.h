@@ -1174,7 +1174,7 @@
 #define BUILDINGS_DESTROY_ONCE_PER_TURN
 // Fixed a bug due to which in some cases the cost of technologies could decrease when annexing a city
 #define FIX_MAX_EFFECTIVE_CITIES
-// “Instant heals” cannot be taken on built or purchased units that have available promotions or after durationing promotion
+// "Instant heals" cannot be taken on built or purchased units that have available promotions or after durationing promotion
 #define PROMOTION_INSTA_HEAL_LOCKED
 /// Gifted units can't attack if they have already attacked this turn
 #define GIFTED_UNITS_ATTACK
@@ -1187,7 +1187,7 @@
 #define DISABLE_AUTOMOVES
 // Prevent timer mid-turn fluctuations - update it once per turn
 #define GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
-// Can’t declare war after allying enemy css for CS_ALLYING_WAR_RESCTRICTION_TIMER seconds
+// Can't declare war after allying enemy css for CS_ALLYING_WAR_RESCTRICTION_TIMER seconds
 // #define CS_ALLYING_WAR_RESCTRICTION
 #ifdef CS_ALLYING_WAR_RESCTRICTION
 #define CS_ALLYING_WAR_RESCTRICTION_TIMER 120.f
@@ -1259,3 +1259,4 @@
 //#define NO_LEADER_SCREEN
 // Also adds a new leader screen exit lua method called with Game.ExitLeaderScreen. This will run lExitLeaderscreen in here.
 //#define LUAAPIEXTN(method, type, ...) static int l##method(lua_State* L)
+

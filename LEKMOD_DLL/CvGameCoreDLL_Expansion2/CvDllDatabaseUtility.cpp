@@ -35,6 +35,7 @@
 // include this after all other headers
 #include "LintFree.h"
 
+#include <windows.h>
 
 #define GAMEPLAYXML_PATH "Gameplay\\XML\\"
 
@@ -1050,6 +1051,352 @@ void CvDllDatabaseUtility::orderHotkeyInfo(int** ppiSortedIndex, int* pHotkeyInd
 	}
 }
 
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+bool CvDllDatabaseUtility::PerformPostDLCLoading()
+{
+	Database::Connection* db = GC.GetGameDatabase();
+	if(!db)
+		return false;
+
+	// Begin transaction for all our changes
+	db->BeginTransaction();
+
+	// Use a direct path to the DLC folder
+	std::wstring wstrDLCPath = L"Assets\\DLC\\";
+	std::string strDLCPath;
+	int len = WideCharToMultiByte(CP_UTF8, 0, wstrDLCPath.c_str(), -1, NULL, 0, NULL, NULL);
+	if(len > 0) {
+		strDLCPath.resize(len - 1);
+		WideCharToMultiByte(CP_UTF8, 0, wstrDLCPath.c_str(), -1, &strDLCPath[0], len, NULL, NULL);
+	}
+	this->LogMsg("[LEKMOD] Searching DLC path: %s", strDLCPath.c_str());
+
+	WIN32_FIND_DATAW ffd;
+	HANDLE hFind = FindFirstFileW((wstrDLCPath + L"LEKMOD*").c_str(), &ffd);
+
+	if(hFind != INVALID_HANDLE_VALUE)
+	{
+		do
+		{
+			if(!(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
+				continue;
+
+			// Found a LEKMOD folder, now look for XML folder
+			std::wstring wstrModPath = wstrDLCPath + ffd.cFileName + L"\\XML\\";
+			std::string strModPath;
+			int len2 = WideCharToMultiByte(CP_UTF8, 0, wstrModPath.c_str(), -1, NULL, 0, NULL, NULL);
+			if(len2 > 0) {
+				strModPath.resize(len2 - 1);
+				WideCharToMultiByte(CP_UTF8, 0, wstrModPath.c_str(), -1, &strModPath[0], len2, NULL, NULL);
+			}
+			this->LogMsg("[LEKMOD] Found LEKMOD folder: %s", strModPath.c_str());
+
+			Database::XMLSerializer serializer(*db);
+			
+			// TWO-PASS LOADING: First load all text files, then other XML files
+			this->LogMsg("[LEKMOD] FIRST PASS: Loading text XML files from %s", strModPath.c_str());
+			LoadTextXMLFiles(wstrModPath, serializer);
+			
+			this->LogMsg("[LEKMOD] SECOND PASS: Loading non-text XML files from %s", strModPath.c_str());
+			LoadNonTextXMLFiles(wstrModPath, serializer);
+
+		} while(FindNextFileW(hFind, &ffd) != 0);
+		FindClose(hFind);
+	}
+	else
+	{
+		this->LogMsg("[LEKMOD] No LEKMOD folders found in: %s", strDLCPath.c_str());
+	}
+
+	db->EndTransaction();
+	return true;
+}
+
+// Helper function to determine if a file is a text XML
+bool CvDllDatabaseUtility::IsTextXMLFile(const std::wstring& filePath)
+{
+	// Convert to lowercase for case-insensitive checks
+	std::wstring lowerPath = filePath;
+	std::transform(lowerPath.begin(), lowerPath.end(), lowerPath.begin(), ::towlower);
+	
+	// Check if in a Text folder
+	if(lowerPath.find(L"\\text\\") != std::wstring::npos)
+		return true;
+	
+	// Check if filename contains Text
+	if(lowerPath.find(L"text.xml") != std::wstring::npos)
+		return true;
+	
+	// Check if it's a language XML file
+	if(lowerPath.find(L"language_") != std::wstring::npos)
+		return true;
+		
+	return false;
+}
+
+// Load only text XML files - first pass
+void CvDllDatabaseUtility::LoadTextXMLFiles(const std::wstring& wstrPath, Database::XMLSerializer& serializer)
+{
+	WIN32_FIND_DATAW ffd;
+	HANDLE hFind = FindFirstFileW((wstrPath + L"*").c_str(), &ffd);
+	std::string strPath;
+	int len = WideCharToMultiByte(CP_UTF8, 0, wstrPath.c_str(), -1, NULL, 0, NULL, NULL);
+	if(len > 0) {
+		strPath.resize(len - 1);
+		WideCharToMultiByte(CP_UTF8, 0, wstrPath.c_str(), -1, &strPath[0], len, NULL, NULL);
+	}
+	if(hFind == INVALID_HANDLE_VALUE)
+	{
+		this->LogMsg("[LEKMOD] Directory not found: %s", strPath.c_str());
+		return;
+	}
+	
+	do
+	{
+		if(wcscmp(ffd.cFileName, L".") == 0 || wcscmp(ffd.cFileName, L"..") == 0)
+			continue;
+			
+		std::wstring fullPath = wstrPath + ffd.cFileName;
+		
+		if(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+		{
+			// Recursively process directories
+			LoadTextXMLFiles(fullPath + L"\\", serializer);
+		}
+		else
+		{
+			// Check if it's an XML file
+			size_t extPos = fullPath.find_last_of(L'.');
+			if(extPos != std::wstring::npos && _wcsicmp(fullPath.substr(extPos).c_str(), L".xml") == 0)
+			{
+				// Check if it's a text XML file
+				if(IsTextXMLFile(fullPath))
+				{
+					std::string strFullPath;
+					int len2 = WideCharToMultiByte(CP_UTF8, 0, fullPath.c_str(), -1, NULL, 0, NULL, NULL);
+					if(len2 > 0) {
+						strFullPath.resize(len2 - 1);
+						WideCharToMultiByte(CP_UTF8, 0, fullPath.c_str(), -1, &strFullPath[0], len2, NULL, NULL);
+					}
+					this->LogMsg("[LEKMOD] Loading TEXT XML: %s", strFullPath.c_str());
+					
+					// First verify the file exists and is readable
+					HANDLE hFile = CreateFileW(fullPath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+					if (hFile == INVALID_HANDLE_VALUE) {
+						DWORD error = GetLastError();
+						this->LogMsg("[LEKMOD] ERROR: Cannot open file: %s, Windows error: %lu", strFullPath.c_str(), error);
+					} else {
+						// Read a small portion to verify content
+						char buffer[256] = {0};
+						DWORD bytesRead = 0;
+						ReadFile(hFile, buffer, sizeof(buffer) - 1, &bytesRead, NULL);
+						CloseHandle(hFile);
+						
+						// Log first bytes of file to help diagnose issues
+						buffer[bytesRead] = 0;
+						this->LogMsg("[LEKMOD] File preview (%lu bytes): %.100s", bytesRead, buffer);
+						
+						// Look for Language tag to confirm it's a text file
+						bool languageTagFound = (strstr(buffer, "<Language_") != NULL);
+						this->LogMsg("[LEKMOD] Language tag found: %s", languageTagFound ? "YES" : "NO");
+						
+						// Try manual load if it's confirmed to be a language file
+						if (languageTagFound) {
+							// Now try to load it
+							bool loaded = serializer.Load(fullPath.c_str());
+							if(loaded) {
+								this->LogMsg("[LEKMOD] Successfully loaded TEXT XML: %s", strFullPath.c_str());
+							} else {
+								this->LogMsg("[LEKMOD] FAILED to load TEXT XML: %s", strFullPath.c_str());
+								// Try manual import as a last resort
+								this->LogMsg("[LEKMOD] Attempting to load text data via alternate method...");
+								
+								// Get database from globals
+								Database::Connection* db = GC.GetGameDatabase();
+								if (db) {
+									// Try to read the file content directly
+									HANDLE hFileContent = CreateFileW(fullPath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+									if (hFileContent != INVALID_HANDLE_VALUE) {
+										// Get file size
+										DWORD fileSize = GetFileSize(hFileContent, NULL);
+										if (fileSize != INVALID_FILE_SIZE) {
+											this->LogMsg("[LEKMOD] File size: %lu bytes", fileSize);
+											
+											// Read entire file
+											char* xmlBuffer = new char[fileSize + 1];
+											DWORD bytesRead = 0;
+											if (ReadFile(hFileContent, xmlBuffer, fileSize, &bytesRead, NULL) && bytesRead > 0) {
+												xmlBuffer[bytesRead] = 0; // Null terminate
+												
+												// Try to manually parse the XML and insert records
+												this->LogMsg("[LEKMOD] Read %lu bytes, attempting manual parsing", bytesRead);
+												
+												// Simple check for language table name
+												const char* langStart = strstr(xmlBuffer, "<Language_");
+												if (langStart) {
+													// Extract language table name
+													char langTableName[64] = {0};
+													if (sscanf(langStart, "<Language_%[^>]", langTableName) == 1) {
+														this->LogMsg("[LEKMOD] Found language table: Language_%s", langTableName);
+														
+														// Look for tag/text pairs
+														int entriesAdded = 0;
+														char* pos = xmlBuffer;
+														char tagBuffer[256];
+														char textBuffer[4096];
+														
+														// Find all <Row> elements (each contains a Tag and Text)
+														while ((pos = strstr(pos, "<Row>")) != NULL) {
+															char* endRow = strstr(pos, "</Row>");
+															if (!endRow) break;
+															
+															// Extract the Tag and Text
+															char* tagStart = strstr(pos, "<Tag>");
+															char* textStart = strstr(pos, "<Text>");
+															
+															if (tagStart && textStart && tagStart < endRow && textStart < endRow) {
+																tagStart += 5; // Skip <Tag>
+																char* tagEnd = strstr(tagStart, "</Tag>");
+																
+																textStart += 6; // Skip <Text>
+																char* textEnd = strstr(textStart, "</Text>");
+																
+																if (tagEnd && textEnd && tagEnd < endRow && textEnd < endRow) {
+																	// Copy tag and text to buffers
+																	size_t tagLen = tagEnd - tagStart;
+																	size_t textLen = textEnd - textStart;
+																	
+																	if (tagLen < sizeof(tagBuffer) && textLen < sizeof(textBuffer)) {
+																		strncpy(tagBuffer, tagStart, tagLen);
+																		tagBuffer[tagLen] = 0;
+																		
+																		strncpy(textBuffer, textStart, textLen);
+																		textBuffer[textLen] = 0;
+																		
+																		// Insert into database
+																		std::string tableName = "Language_";
+																		tableName += langTableName;
+																		
+																		std::string query = "INSERT OR REPLACE INTO ";
+																		query += tableName;
+																		query += " (Tag, Text) VALUES (?, ?);";
+																		
+																		Database::Results insert;
+																		if (db->Execute(insert, query.c_str())) {
+																			insert.Bind(1, tagBuffer);
+																			insert.Bind(2, textBuffer);
+																			if (insert.Step()) {
+																				entriesAdded++;
+																			}
+																			insert.Reset();
+																		}
+																	}
+																}
+															}
+															pos = endRow;
+														}
+														
+														this->LogMsg("[LEKMOD] Manually added %d text entries to %s", entriesAdded, langTableName);
+													}
+												} else {
+													this->LogMsg("[LEKMOD] Could not find language table in XML");
+												}
+											}
+											
+											delete[] xmlBuffer;
+										}
+										CloseHandle(hFileContent);
+									} else {
+										DWORD error = GetLastError();
+										this->LogMsg("[LEKMOD] Failed to open file for manual parsing, error: %lu", error);
+									}
+								}
+							}
+						} else {
+							this->LogMsg("[LEKMOD] File does not appear to be a language file, skipping text loader");
+							// It's not actually a text file - retry in non-text pass
+						}
+					}
+				}
+			}
+		}
+	} while(FindNextFileW(hFind, &ffd) != 0);
+	
+	FindClose(hFind);
+}
+
+// Load non-text XML files - second pass
+void CvDllDatabaseUtility::LoadNonTextXMLFiles(const std::wstring& wstrPath, Database::XMLSerializer& serializer)
+{
+	WIN32_FIND_DATAW ffd;
+	HANDLE hFind = FindFirstFileW((wstrPath + L"*").c_str(), &ffd);
+	std::string strPath;
+	int len = WideCharToMultiByte(CP_UTF8, 0, wstrPath.c_str(), -1, NULL, 0, NULL, NULL);
+	if(len > 0) {
+		strPath.resize(len - 1);
+		WideCharToMultiByte(CP_UTF8, 0, wstrPath.c_str(), -1, &strPath[0], len, NULL, NULL);
+	}
+	if(hFind == INVALID_HANDLE_VALUE)
+	{
+		this->LogMsg("[LEKMOD] Directory not found: %s", strPath.c_str());
+		return;
+	}
+	
+	do
+	{
+		if(wcscmp(ffd.cFileName, L".") == 0 || wcscmp(ffd.cFileName, L"..") == 0)
+			continue;
+			
+		std::wstring fullPath = wstrPath + ffd.cFileName;
+		
+		if(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+		{
+			// Recursively process directories
+			LoadNonTextXMLFiles(fullPath + L"\\", serializer);
+		}
+		else
+		{
+			// Check if it's an XML file
+			size_t extPos = fullPath.find_last_of(L'.');
+			if(extPos != std::wstring::npos && _wcsicmp(fullPath.substr(extPos).c_str(), L".xml") == 0)
+			{
+				// Skip text XML files in this pass
+				if(!IsTextXMLFile(fullPath))
+				{
+					std::string strFullPath;
+					int len2 = WideCharToMultiByte(CP_UTF8, 0, fullPath.c_str(), -1, NULL, 0, NULL, NULL);
+					if(len2 > 0) {
+						strFullPath.resize(len2 - 1);
+						WideCharToMultiByte(CP_UTF8, 0, fullPath.c_str(), -1, &strFullPath[0], len2, NULL, NULL);
+					}
+					this->LogMsg("[LEKMOD] Loading regular XML: %s", strFullPath.c_str());
+					
+					bool loaded = serializer.Load(fullPath.c_str());
+					if(loaded)
+					{
+						this->LogMsg("[LEKMOD] Successfully loaded regular XML: %s", strFullPath.c_str());
+					}
+					else
+					{
+						this->LogMsg("[LEKMOD] FAILED to load regular XML: %s", strFullPath.c_str());
+					}
+				}
+			}
+		}
+	} while(FindNextFileW(hFind, &ffd) != 0);
+	
+	FindClose(hFind);
+}
+
+// Helper function to recursively load XML files - kept for backward compatibility
+void CvDllDatabaseUtility::LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer)
+{
+	// First load text files, then other XML files
+	LoadTextXMLFiles(wstrPath, serializer);
+	LoadNonTextXMLFiles(wstrPath, serializer);
+}
+#endif
+
 //------------------------------------------------------------------------------
 //
 // PRIVATE FUNCTIONS
@@ -1071,79 +1418,5 @@ void CvDllDatabaseUtility::LogMsg(const char* format, ...) const
 	LOGFILEMGR.GetLog("xml.log", uiFlags)->Msg(buf);
 }
 
-bool CvDllDatabaseUtility::PerformPostDLCLoading()
-{
-	Database::Connection* db = GC.GetGameDatabase();
-	if(!db)
-		return false;
 
-	// Begin transaction for all our changes
-	db->BeginTransaction();
-
-	// Get the DLC path
-	CvString strDLCPath = gDLL->GetDLCFolderPath();
-	
-	// Find LEKMOD folder (with any version number)
-	WIN32_FIND_DATAW ffd;
-	std::wstring wstrDLCPath = CvStringUtils::FromUTF8ToUTF16(strDLCPath);
-	HANDLE hFind = FindFirstFileW((wstrDLCPath + L"LEKMOD*").c_str(), &ffd);
-
-	if(hFind != INVALID_HANDLE_VALUE)
-	{
-		do
-		{
-			if(!(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
-				continue;
-
-			// Found a LEKMOD folder, now look for XML folder
-			std::wstring wstrModPath = wstrDLCPath + ffd.cFileName + L"\\XML\\";
-			
-			// Create XML serializer
-			Database::XMLSerializer serializer(*db);
-
-			// Recursively load all XML files in the directory and its subdirectories
-			LoadXMLFilesRecursively(wstrModPath, serializer);
-
-		} while(FindNextFileW(hFind, &ffd) != 0);
-		FindClose(hFind);
-	}
-
-	db->EndTransaction();
-	return true;
-}
-
-// Helper function to recursively load XML files
-void CvDllDatabaseUtility::LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer)
-{
-	WIN32_FIND_DATAW ffd;
-	HANDLE hFind = FindFirstFileW((wstrPath + L"*").c_str(), &ffd);
-
-	if(hFind != INVALID_HANDLE_VALUE)
-	{
-		do
-		{
-			if(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
-			{
-				// Skip . and .. directories
-				if(wcscmp(ffd.cFileName, L".") == 0 || wcscmp(ffd.cFileName, L"..") == 0)
-					continue;
-
-				// Recursively process subdirectory
-				LoadXMLFilesRecursively(wstrPath + ffd.cFileName + L"\\", serializer);
-			}
-			else
-			{
-				// Check if file is an XML file
-				std::wstring wstrFileName = ffd.cFileName;
-				if(wstrFileName.length() > 4 && 
-				   _wcsicmp(wstrFileName.substr(wstrFileName.length() - 4).c_str(), L".xml") == 0)
-				{
-					std::wstring wstrFilePath = wstrPath + ffd.cFileName;
-					serializer.Load(wstrFilePath.c_str());
-				}
-			}
-		} while(FindNextFileW(hFind, &ffd) != 0);
-		FindClose(hFind);
-	}
-}
 

@@ -1,7 +1,0 @@
-[
-  {
-    "directory": "${workspaceFolder}",
-    "command": "cl.exe /c /EHsc /I\"${env:ProgramFiles(x86)}\\Steam\\steamapps\\common\\Sid Meier's Civilization V SDK\\CvWorldBuilderMap\\include\" /I\"${env:ProgramFiles(x86)}\\Steam\\steamapps\\common\\Sid Meier's Civilization V SDK\\CvGameCoreDLLUtil\\include\" /I\"${env:ProgramFiles(x86)}\\Steam\\steamapps\\common\\Sid Meier's Civilization V SDK\\CvLocalization\\include\" /I\"${env:ProgramFiles(x86)}\\Steam\\steamapps\\common\\Sid Meier's Civilization V SDK\\CvGameDatabase\\include\" /I\"${env:ProgramFiles(x86)}\\Steam\\steamapps\\common\\Sid Meier's Civilization V SDK\\FirePlace\\include\" /I\"${env:ProgramFiles(x86)}\\Steam\\steamapps\\common\\Sid Meier's Civilization V SDK\\FirePlace\\include\\FireWorks\" /I\"${env:ProgramFiles(x86)}\\Steam\\steamapps\\common\\Sid Meier's Civilization V SDK\\ThirdPartyLibs\\Lua51\\include\" /DFXS_IS_DLL /DWIN32 /DNDEBUG /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /DFINAL_RELEASE /D_CRT_SECURE_NO_WARNINGS ${workspaceFolder}/CvGameCoreDLL_Expansion2/*.cpp ${workspaceFolder}/CvGameCoreDLL_Expansion2/*.h",
-    "file": "**/*.{cpp,h}"
-  }
-] 
