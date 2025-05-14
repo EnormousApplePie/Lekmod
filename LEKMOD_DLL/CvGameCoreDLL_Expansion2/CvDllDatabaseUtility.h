@@ -53,17 +53,17 @@ public:
 	//! Loads XML files after DLC loading but before regular mod loading
 	bool PerformPostDLCLoading();
 
-	//! Helper function to determine if a file is a text XML
-	bool IsTextXMLFile(const std::wstring& filePath);
-
-	// Load only text XML files - first pass
-	void LoadTextXMLFiles(const std::wstring& wstrPath, Database::XMLSerializer& serializer);
-
-	// Load non-text XML files - second pass
-	void LoadNonTextXMLFiles(const std::wstring& wstrPath, Database::XMLSerializer& serializer);
-
-	// Helper function to recursively load XML files
-	void LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer);
+	// Helper function to process non-text XML files
+	void ProcessNonTextXMLFiles(const std::wstring& wszPath, Database::XMLSerializer& serializer);
+	
+	// Helper function to process text XML files
+	void ProcessTextXMLFiles(const std::wstring& wszPath);
+	
+	// Process a single text XML file directly
+	bool ProcessTextXMLFile(const wchar_t* wszFilename);
+	
+	// Insert special text entries directly into the database
+	void InsertSpecialTextEntries();
 #endif
 
 private:
