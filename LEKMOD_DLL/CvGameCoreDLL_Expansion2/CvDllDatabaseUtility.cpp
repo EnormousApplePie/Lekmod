@@ -199,19 +199,7 @@ bool CvDllDatabaseUtility::FlushGameDatabaseData()
 	m_bGameDatabaseNeedsCaching = true;
 	
 #ifdef LEKMOD_POST_DLC_DATA_LOADING
-	this->LogMsg("[LEKMOD] Database flush requested - preserving critical text entries");
-	
-	// Create a static flag to track if text has been loaded at least once
-	static bool s_bTextLoaded = false;
-	
-	// If we've loaded text before, ensure entries are preserved during flush
-	if(s_bTextLoaded) {
-		// Force direct insertion of text entries to ensure persistence
-		InsertSpecialTextEntries();
-	}
-	
-	// Set flag to indicate text will need to be fully reloaded on next cache
-	s_bTextLoaded = true;
+	this->LogMsg("[LEKMOD] Database flush requested");
 #endif
 
 	return true;
@@ -1121,14 +1109,10 @@ bool CvDllDatabaseUtility::PerformPostDLCLoading()
 			{
 				FindClose(hXmlFind);
 				
-				// Process non-text XML files first with standard serializer
-				this->LogMsg("[LEKMOD] Processing non-text XML files in: %s", szXMLPath);
+				// Process XML files with standard serializer
+				this->LogMsg("[LEKMOD] Processing XML files in: %s", szXMLPath);
 				Database::XMLSerializer serializer(*db);
-				ProcessNonTextXMLFiles(wszXMLPath, serializer);
-				
-				// Now process text XML files directly
-				this->LogMsg("[LEKMOD] Processing text XML files in: %s", szXMLPath);
-				ProcessTextXMLFiles(wszXMLPath);
+				ProcessXMLFiles(wszXMLPath, serializer);
 				
 				foldersProcessed++;
 				bSuccess = true;
@@ -1155,10 +1139,6 @@ bool CvDllDatabaseUtility::PerformPostDLCLoading()
 	if(foldersProcessed > 0) 
 	{
 		this->LogMsg("[LEKMOD] XML loading complete - processed %d folders", foldersProcessed);
-		
-		// Insert special text entries to ensure text system is working
-		InsertSpecialTextEntries();
-		
 		return bSuccess;
 	}
 	else 
@@ -1168,10 +1148,10 @@ bool CvDllDatabaseUtility::PerformPostDLCLoading()
 	}
 }
 
-// Helper function to process non-text XML files from a folder
-void CvDllDatabaseUtility::ProcessNonTextXMLFiles(const std::wstring& wszPath, Database::XMLSerializer& serializer)
+// Helper function to process XML files from a folder
+void CvDllDatabaseUtility::ProcessXMLFiles(const std::wstring& wszPath, Database::XMLSerializer& serializer)
 {
-    // First, find all XML files in this directory
+    // Find all XML files in this directory
     WIN32_FIND_DATAW ffd;
     HANDLE hFind = FindFirstFileW((wszPath + L"*.xml").c_str(), &ffd);
     
@@ -1181,18 +1161,11 @@ void CvDllDatabaseUtility::ProcessNonTextXMLFiles(const std::wstring& wszPath, D
         
         do
         {
-            // Skip files with "Text" in the name - we'll handle those separately
-            if(wcsstr(ffd.cFileName, L"Text") != NULL || wcsstr(ffd.cFileName, L"text") != NULL || 
-               wcsstr(ffd.cFileName, L"TEXT") != NULL || wcsstr(ffd.cFileName, L"Language") != NULL)
-            {
-                continue;
-            }
-            
             std::wstring wszFile = wszPath + ffd.cFileName;
             
             // Log the file we're loading
             WideCharToMultiByte(CP_UTF8, 0, wszFile.c_str(), -1, szLogBuffer, sizeof(szLogBuffer), NULL, NULL);
-            this->LogMsg("[LEKMOD] Loading non-text XML: %s", szLogBuffer);
+            this->LogMsg("[LEKMOD] Loading XML: %s", szLogBuffer);
             
             // Try to load this XML file
             if(serializer.Load(wszFile.c_str()))
@@ -1222,7 +1195,7 @@ void CvDllDatabaseUtility::ProcessNonTextXMLFiles(const std::wstring& wszPath, D
                 continue;
                 
             // Process this subdirectory
-            ProcessNonTextXMLFiles(wszPath + ffd.cFileName + L"\\", serializer);
+            ProcessXMLFiles(wszPath + ffd.cFileName + L"\\", serializer);
             
         } while(FindNextFileW(hFind, &ffd) != 0);
         
@@ -1230,334 +1203,10 @@ void CvDllDatabaseUtility::ProcessNonTextXMLFiles(const std::wstring& wszPath, D
     }
 }
 
-// Helper function to directly insert text entries into language tables
-void CvDllDatabaseUtility::ProcessTextXMLFiles(const std::wstring& wszPath)
+// Helper function to replace min() which might not be available in VS2008
+size_t MinValue(size_t a, size_t b)
 {
-    // Get the database connection
-    Database::Connection* db = GC.GetGameDatabase();
-    if(!db) return;
-    
-    // Find all text XML files in this directory
-    WIN32_FIND_DATAW ffd;
-    HANDLE hFind = FindFirstFileW((wszPath + L"*.xml").c_str(), &ffd);
-    
-    if(hFind != INVALID_HANDLE_VALUE)
-    {
-        char szLogBuffer[256];
-        
-        do
-        {
-            // Only process files with "Text" in the name
-            if(!(wcsstr(ffd.cFileName, L"Text") != NULL || wcsstr(ffd.cFileName, L"text") != NULL || 
-                 wcsstr(ffd.cFileName, L"TEXT") != NULL || wcsstr(ffd.cFileName, L"Language") != NULL))
-            {
-                continue;
-            }
-            
-            std::wstring wszFile = wszPath + ffd.cFileName;
-            
-            // Log the file we're loading
-            WideCharToMultiByte(CP_UTF8, 0, wszFile.c_str(), -1, szLogBuffer, sizeof(szLogBuffer), NULL, NULL);
-            this->LogMsg("[LEKMOD] Processing text XML file: %s", szLogBuffer);
-            
-            // Directly process text XML file
-            if(ProcessTextXMLFile(wszFile.c_str()))
-            {
-                this->LogMsg("[LEKMOD] Successfully processed text XML file");
-            }
-            else
-            {
-                this->LogMsg("[LEKMOD] Failed to process text XML file");
-            }
-            
-        } while(FindNextFileW(hFind, &ffd) != 0);
-        
-        FindClose(hFind);
-    }
-    
-    // Process all subdirectories
-    hFind = FindFirstFileW((wszPath + L"*").c_str(), &ffd);
-    
-    if(hFind != INVALID_HANDLE_VALUE)
-    {
-        do
-        {
-            // Skip . and .. directories and non-directories
-            if(wcscmp(ffd.cFileName, L".") == 0 || wcscmp(ffd.cFileName, L"..") == 0 || 
-              !(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
-                continue;
-                
-            // Process text XMLs in this subdirectory
-            ProcessTextXMLFiles(wszPath + ffd.cFileName + L"\\");
-            
-        } while(FindNextFileW(hFind, &ffd) != 0);
-        
-        FindClose(hFind);
-    }
-}
-
-// Function to process a single text XML file
-bool CvDllDatabaseUtility::ProcessTextXMLFile(const wchar_t* wszFilename)
-{
-    // Get the database connection
-    Database::Connection* db = GC.GetGameDatabase();
-    if(!db) return false;
-    
-    // Load the XML file using a DOM parser rather than the database serializer
-    // Using TinyXML2 since it's already part of Civ 5
-    FILE* file = NULL;
-    _wfopen_s(&file, wszFilename, L"rb");
-    if(!file) 
-    {
-        this->LogMsg("[LEKMOD] Failed to open text XML file");
-        return false;
-    }
-    
-    // Use the Database utility to get current language
-    const char* szLanguage = "en_US"; // Default to English
-    Database::Results langResults;
-    if(db->Execute(langResults, "SELECT Value FROM Defines WHERE Name = 'LANGUAGE' LIMIT 1")) 
-    {
-        if(langResults.Step()) 
-        {
-            szLanguage = langResults.GetText(0);
-        }
-    }
-    
-    std::string languageTable = "Language_";
-    languageTable += szLanguage;
-    
-    // Create a statement to insert or replace text entries
-    std::string insertQuery = "INSERT OR REPLACE INTO ";
-    insertQuery += languageTable;
-    insertQuery += " (Tag, Text) VALUES (?, ?)";
-    
-    Database::Results insertResults;
-    if(!db->Execute(insertResults, insertQuery.c_str())) 
-    {
-        this->LogMsg("[LEKMOD] Failed to prepare insert statement");
-        fclose(file);
-        return false;
-    }
-    
-    // Process the file manually using a simple XML parser
-    // In a real implementation, use proper XML parsing
-    // This is simplified for demonstration purposes
-    char buffer[8192];
-    char tagBuffer[512];
-    char textBuffer[4096];
-    bool isInTag = false;
-    bool isInText = false;
-    int entriesAdded = 0;
-    
-    // Read the file line by line
-    while(fgets(buffer, sizeof(buffer), file)) 
-    {
-        // Look for <Row Tag="...">
-        if(strstr(buffer, "<Row Tag=\"") != NULL) 
-        {
-            char* tagStart = strstr(buffer, "Tag=\"") + 5;
-            char* tagEnd = strstr(tagStart, "\"");
-            if(tagEnd) 
-            {
-                size_t tagLen = tagEnd - tagStart;
-                strncpy_s(tagBuffer, tagStart, tagLen);
-                tagBuffer[tagLen] = '\0';
-                isInTag = true;
-            }
-        }
-        // Look for <Text>...</Text>
-        else if(isInTag && strstr(buffer, "<Text>") != NULL) 
-        {
-            char* textStart = strstr(buffer, "<Text>") + 6;
-            char* textEnd = strstr(textStart, "</Text>");
-            
-            if(textEnd) 
-            {
-                // Text is on the same line
-                size_t textLen = textEnd - textStart;
-                strncpy_s(textBuffer, textStart, textLen);
-                textBuffer[textLen] = '\0';
-                
-                // Add to database
-                insertResults.Bind(1, tagBuffer);
-                insertResults.Bind(2, textBuffer);
-                insertResults.Step();
-                insertResults.Reset();
-                entriesAdded++;
-                
-                isInTag = false;
-            }
-            else 
-            {
-                // Text spans multiple lines
-                size_t textLen = strlen(textStart);
-                strncpy_s(textBuffer, textStart, textLen);
-                textBuffer[textLen] = '\0';
-                isInText = true;
-            }
-        }
-        else if(isInText) 
-        {
-            char* textEnd = strstr(buffer, "</Text>");
-            if(textEnd) 
-            {
-                // End of text
-                size_t currentLen = strlen(textBuffer);
-                size_t appendLen = textEnd - buffer;
-                strncat_s(textBuffer, buffer, appendLen);
-                
-                // Add to database
-                insertResults.Bind(1, tagBuffer);
-                insertResults.Bind(2, textBuffer);
-                insertResults.Step();
-                insertResults.Reset();
-                entriesAdded++;
-                
-                isInTag = false;
-                isInText = false;
-            }
-            else 
-            {
-                // Continue appending text
-                strcat_s(textBuffer, buffer);
-            }
-        }
-    }
-    
-    fclose(file);
-    this->LogMsg("[LEKMOD] Added %d text entries from file", entriesAdded);
-    return entriesAdded > 0;
-}
-
-// Function to insert special text entries for testing
-void CvDllDatabaseUtility::InsertSpecialTextEntries()
-{
-    // Get the database connection
-    Database::Connection* db = GC.GetGameDatabase();
-    if(!db) return;
-    
-    // Get current language
-    const char* szLanguage = "en_US"; // Default to English
-    Database::Results langResults;
-    if(db->Execute(langResults, "SELECT Value FROM Defines WHERE Name = 'LANGUAGE' LIMIT 1")) 
-    {
-        if(langResults.Step()) 
-        {
-            szLanguage = langResults.GetText(0);
-        }
-    }
-    
-    std::string languageTable = "Language_";
-    languageTable += szLanguage;
-    
-    // Begin transaction
-    db->BeginTransaction();
-    
-    // Special entries to ensure the text system is working
-    const char* specialEntries[][2] = {
-        {"TXT_KEY_LEKMOD_TEST", "LEKMOD Text System Working (Direct Insert)"},
-        {"TXT_KEY_LEKMOD_VERSION", "LEKMOD v1.0"},
-        {"TXT_KEY_LEKMOD_TEXT_SYSTEM", "LEKMOD Text System Active"},
-        
-        // Tunisia text entries
-        {"TXT_KEY_CIVILIZATION_TUNISIA", "Tunisia"},
-        {"TXT_KEY_LEKMOD_TUNISIA_CIVILIZATION_DESC", "Tunisian Empire"},
-        {"TXT_KEY_LEKMOD_TUNISIA_TRAIT_TITLE", "Carthaginian Legacy"},
-        {"TXT_KEY_LEKMOD_TUNISIA_TRAIT_DESC", "Gain Gold from coastal city connections and naval trade routes. +1 Production from coastal resources."},
-        
-        // Leader text entries
-        {"TXT_KEY_LEADER_LEKMOD_TUNISIA", "Habib Bourguiba"},
-        {"TXT_KEY_LEADER_LEKMOD_TUNISIA_PEDIA", "Habib Bourguiba was a Tunisian statesman and the country's first president from 1956 to 1987."},
-        
-        // Unique Building text
-        {"TXT_KEY_BUILDING_LEKMOD_TUNISIA_UB", "Medina Quarter"},
-        {"TXT_KEY_BUILDING_LEKMOD_TUNISIA_UB_HELP", "Unique Tunisian replacement for the Market. +2 [ICON_GOLD] Gold, +1 [ICON_CULTURE] Culture."}
-    };
-    
-    // Create a prepared statement for insertion
-    std::string insertQuery = "INSERT OR REPLACE INTO ";
-    insertQuery += languageTable;
-    insertQuery += " (Tag, Text) VALUES (?, ?)";
-    
-    Database::Results insertResults;
-    if(db->Execute(insertResults, insertQuery.c_str())) 
-    {
-        for(int i = 0; i < sizeof(specialEntries)/sizeof(specialEntries[0]); i++) 
-        {
-            insertResults.Bind(1, specialEntries[i][0]);
-            insertResults.Bind(2, specialEntries[i][1]);
-            insertResults.Step();
-            insertResults.Reset();
-            this->LogMsg("[LEKMOD] Added special text entry: %s", specialEntries[i][0]);
-        }
-    }
-    
-    // Also insert entries into the base Language table (not language-specific)
-    // This is a fallback that might help with text persistence
-    std::string baseInsertQuery = "INSERT OR REPLACE INTO Language (Tag, Text, Gender, Plurality) VALUES (?, ?, 0, 0)";
-    Database::Results baseInsertResults;
-    if(db->Execute(baseInsertResults, baseInsertQuery.c_str())) 
-    {
-        for(int i = 0; i < sizeof(specialEntries)/sizeof(specialEntries[0]); i++) 
-        {
-            baseInsertResults.Bind(1, specialEntries[i][0]);
-            baseInsertResults.Bind(2, specialEntries[i][1]);
-            baseInsertResults.Step();
-            baseInsertResults.Reset();
-        }
-    }
-    
-    // Commit transaction
-    db->EndTransaction();
-    
-    // Run database optimizations to ensure text is cached
-    db->Execute("PRAGMA optimize;");
-    db->Execute("ANALYZE;");
-    
-    // Force the database to reload all text tables
-    Database::Results textTables;
-    if(db->Execute(textTables, "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'Language_%'")) 
-    {
-        while(textTables.Step()) 
-        {
-            const char* tableName = textTables.GetText(0);
-            std::string query = "SELECT COUNT(*) FROM ";
-            query += tableName;
-            Database::Results countResults;
-            if(db->Execute(countResults, query.c_str()) && countResults.Step()) 
-            {
-                int count = countResults.GetInt(0);
-                this->LogMsg("[LEKMOD] Language table %s has %d entries", tableName, count);
-            }
-        }
-    }
-    
-    // Try to access one of our inserted text entries to verify
-    std::string verifyQuery = "SELECT Text FROM ";
-    verifyQuery += languageTable;
-    verifyQuery += " WHERE Tag = ?";
-    
-    Database::Results verifyResults;
-    if(db->Execute(verifyResults, verifyQuery.c_str())) 
-    {
-        verifyResults.Bind(1, "TXT_KEY_LEKMOD_TEST");
-        if(verifyResults.Step()) 
-        {
-            const char* text = verifyResults.GetText(0);
-            this->LogMsg("[LEKMOD] Verified text entry: TXT_KEY_LEKMOD_TEST = %s", text);
-        }
-        else 
-        {
-            this->LogMsg("[LEKMOD] WARNING: Could not verify text entry TXT_KEY_LEKMOD_TEST");
-        }
-    }
-    
-    // Force the text system to refresh at game level
-    CvDatabaseUtility dbUtility;
-    dbUtility.RefreshLanguageTextFallback();
-    
-    this->LogMsg("[LEKMOD] Special text entries have been added");
+    return (a < b) ? a : b;
 }
 #endif
 
@@ -1581,13 +1230,6 @@ void CvDllDatabaseUtility::LogMsg(const char* format, ...) const
 
 	LOGFILEMGR.GetLog("xml.log", uiFlags)->Msg(buf);
 }
-
-#ifdef LEKMOD_POST_DLC_DATA_LOADING
-// Helper function to replace min() which might not be available in VS2008
-size_t MinValue(size_t a, size_t b) {
-	return (a < b) ? a : b;
-}
-#endif
 
 
 

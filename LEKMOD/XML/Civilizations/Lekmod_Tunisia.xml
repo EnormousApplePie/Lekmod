@@ -280,43 +280,43 @@
 	<Civilization_SpyNames>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_0</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_0</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_1</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_1</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_2</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_2</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_3</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_3</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_4</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_4</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_5</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_5</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_6</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_6</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_7</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_7</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_8</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_8</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_9</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_9</SpyName> 
 		</Row>
 	</Civilization_SpyNames>
 	
