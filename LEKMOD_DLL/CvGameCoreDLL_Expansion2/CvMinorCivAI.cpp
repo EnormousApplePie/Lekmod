@@ -8125,7 +8125,12 @@ void CvMinorCivAI::DoAcquire(PlayerTypes eMajor, int &iNumUnits, int& iCapitalX,
 int CvMinorCivAI::GetBullyGoldAmount(PlayerTypes /*eBullyPlayer*/)
 {
 	int iGold = GC.getMINOR_BULLY_GOLD();
+#if !defined(MISC_CHANGES) // insert new Global value into MinorBullyGold
 	int iGoldGrowthFactor = 350; //antonjs: todo: XML
+#else
+	// Loup: Normal value is 350, but can be modified by XML now ~ only took like 15 years antonjs KEK
+	int iGoldGrowthFactor = GC.getBULLY_GOLD_GROWTH_FACTOR();
+#endif
 
 	// Add gold, more if later in game
 	float fGameProgressFactor = ((float) GC.getGame().getElapsedGameTurns() / (float) GC.getGame().getEstimateEndTurn());
@@ -8386,6 +8391,30 @@ int CvMinorCivAI::CalculateBullyMetric(PlayerTypes eBullyPlayer, bool bForUnit, 
 	}
 	iScore += iPoliciesScore;
 
+#if defined(TRAITIFY)
+	// **************************
+	// Player Trait
+	//
+	// - Modifier to positive scores
+	// **************************
+	int iTraitScore = 0;
+	int iTraitMod = GET_PLAYER(eBullyPlayer).GetPlayerTraits()->GetMinorBullyModifier();
+	if (iTraitMod != 0)
+	{
+		iTraitScore += iGlobalMilitaryScore;
+		iTraitScore += iLocalPowerScore;
+		iTraitScore *= iTraitMod;
+		iTraitScore /= 100;
+	}
+	if (sTooltipSink && iTraitScore != 0)
+	{
+		Localization::String strPositiveFactor = Localization::Lookup("TXT_KEY_POP_CSTATE_BULLY_FACTOR_POSITIVE");
+		strPositiveFactor << iTraitScore;
+		strPositiveFactor << "TXT_KEY_POP_CSTATE_BULLY_FACTOR_TRAIT_MODIFIER";
+		sFactors += strPositiveFactor.toUTF8();
+	}
+	iScore += iTraitScore;
+#endif
 	// **************************
 	// Base Reluctance
 	//

@@ -201,6 +201,14 @@ CvPlayer::CvPlayer() :
 	, m_bMayaBoostMusicians(false)
 #endif
 	, m_iExtraLeagueVotes(0)
+#if defined(TRAITIFY) // Initialize
+	, m_iTraitExtraLeagueVotes(0)
+#endif
+#if defined(MISC_CHANGES) // Initialize
+	, m_iTechExtraLeagueVotes(0)
+	, m_iPolicyExtraLeagueVotes(0)
+	, m_iMiscTradeRoutes(0)
+#endif
 	, m_iSpecialPolicyBuildingHappiness("CvPlayer::m_iSpecialPolicyBuildingHappiness", m_syncArchive)
 	, m_iWoundedUnitDamageMod("CvPlayer::m_iWoundedUnitDamageMod", m_syncArchive)
 	, m_iUnitUpgradeCostMod("CvPlayer::m_iUnitUpgradeCostMod", m_syncArchive)
@@ -707,6 +715,11 @@ void CvPlayer::init(PlayerTypes eID)
 		GetTreasury()->ChangeCityConnectionTradeRouteGoldChange(GetPlayerTraits()->GetCityConnectionTradeRouteChange());
 		changeWonderProductionModifier(GetPlayerTraits()->GetWonderProductionModifier());
 		ChangeRouteGoldMaintenanceMod(GetPlayerTraits()->GetImprovementMaintenanceModifier());
+#if defined(TRAITIFY) // Init some of the player's trait here.
+		ChangeTraitExtraLeagueVotes(GetPlayerTraits()->GetNumExtraLeagueVotes()); // Vatican Trait
+		changeHalfMoreSpecialistUnhappinessCount(GetPlayerTraits()->IsHalfMoreSpecialistUnhappiness()); // Mysore Trait
+		ChangeMinorFriendshipAnchorMod(GetPlayerTraits()->GetMinorFriendshipMinimum()); // Tonga Trait
+#endif
 
 		for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 		{
@@ -946,6 +959,15 @@ void CvPlayer::uninit()
 	m_bMayaBoostMusicians = 0;
 #endif
 	m_iExtraLeagueVotes = 0;
+#if defined(TRAITIFY) // uninit()
+	m_iTraitExtraLeagueVotes = 0;
+#endif
+#if defined(MISC_CHANGES) // uninit()
+	m_iTechExtraLeagueVotes = 0;
+	m_iPolicyExtraLeagueVotes = 0;
+	m_iMiscTradeRoutes = 0;
+#endif
+
 	m_iSpecialPolicyBuildingHappiness = 0;
 	m_iWoundedUnitDamageMod = 0;
 	m_iUnitUpgradeCostMod = 0;
@@ -1863,6 +1885,7 @@ void CvPlayer::addFreeUnitAI(UnitAITypes eUnitAI, int iCount)
 
 //	--------------------------------------------------------------------------------
 /// Returns plot where new unit was created
+#if !defined(TRAITIFY) // Bug fix for Trade Units being given on non city plots, and thus being deleted.
 CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 {
 	CvPlot* pStartingPlot;
@@ -1871,14 +1894,14 @@ CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 	CvPlot* pReturnValuePlot = NULL;
 
 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
-	if(pkUnitInfo == NULL)
+	if (pkUnitInfo == NULL)
 		return pReturnValuePlot;
 
-	if(GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman())
+	if (GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman())
 	{
-		if((eUnitAI == UNITAI_SETTLE) || (pkUnitInfo->GetDefaultUnitAIType() == UNITAI_SETTLE))
+		if ((eUnitAI == UNITAI_SETTLE) || (pkUnitInfo->GetDefaultUnitAIType() == UNITAI_SETTLE))
 		{
-			if(GetNumUnitsWithUnitAI(UNITAI_SETTLE) >= 1)
+			if (GetNumUnitsWithUnitAI(UNITAI_SETTLE) >= 1)
 			{
 				return pReturnValuePlot;
 			}
@@ -1890,24 +1913,24 @@ CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 	if (GetPlayerTraits()->IsNoAnnexing())
 	{
 		// if we're trying to drop a settler
-		if((eUnitAI == UNITAI_SETTLE) || (pkUnitInfo->GetDefaultUnitAIType() == UNITAI_SETTLE))
+		if ((eUnitAI == UNITAI_SETTLE) || (pkUnitInfo->GetDefaultUnitAIType() == UNITAI_SETTLE))
 		{
 			// if we already have a settler
-			if(GetNumUnitsWithUnitAI(UNITAI_SETTLE) >= 1)
+			if (GetNumUnitsWithUnitAI(UNITAI_SETTLE) >= 1)
 			{
 				// drop a merchant of venice instead
 				// find the eUnit replacement that's the merchant of venice
 #ifdef AUI_WARNING_FIXES
 				for (uint iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 #else
-				for(int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+				for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 #endif
 				{
 					const UnitClassTypes eUnitClass = static_cast<UnitClassTypes>(iI);
 					CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
-					if(pkUnitClassInfo)
+					if (pkUnitClassInfo)
 					{
-						const UnitTypes eLocalUnit = (UnitTypes) getCivilizationInfo().getCivilizationUnits(eUnitClass);
+						const UnitTypes eLocalUnit = (UnitTypes)getCivilizationInfo().getCivilizationUnits(eUnitClass);
 						if (eLocalUnit != NO_UNIT)
 						{
 							CvUnitEntry* pUnitEntry = GC.getUnitInfo(eLocalUnit);
@@ -1922,12 +1945,12 @@ CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 					}
 				}
 			}
-		}	
+		}
 	}
 
 	CvCity* pCapital = getCapitalCity();
 
-	if(pCapital)
+	if (pCapital)
 	{
 		pStartingPlot = pCapital->plot();
 	}
@@ -1936,13 +1959,13 @@ CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 		pStartingPlot = getStartingPlot();
 	}
 
-	if(pStartingPlot != NULL)
+	if (pStartingPlot != NULL)
 	{
 		pBestPlot = NULL;
 
-		if(isHuman())
+		if (isHuman())
 		{
-			if(!(pkUnitInfo->IsFound()))
+			if (!(pkUnitInfo->IsFound()))
 			{
 				DirectionTypes eDirection;
 
@@ -1955,19 +1978,19 @@ CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 				{
 					bDirectionValid = true;
 
-					eDirection = (DirectionTypes) GC.getGame().getJonRandNum(NUM_DIRECTION_TYPES, "Placing Starting Units (Human)");
+					eDirection = (DirectionTypes)GC.getGame().getJonRandNum(NUM_DIRECTION_TYPES, "Placing Starting Units (Human)");
 
-					if(bDirectionValid)
+					if (bDirectionValid)
 					{
 						pLoopPlot = plotDirection(pStartingPlot->getX(), pStartingPlot->getY(), eDirection);
 
-						if(pLoopPlot != NULL && pLoopPlot->getArea() == pStartingPlot->getArea())
+						if (pLoopPlot != NULL && pLoopPlot->getArea() == pStartingPlot->getArea())
 						{
-							if(!pLoopPlot->isImpassable() && !pLoopPlot->isMountain())
+							if (!pLoopPlot->isImpassable() && !pLoopPlot->isMountain())
 							{
-								if(!(pLoopPlot->isUnit()))
+								if (!(pLoopPlot->isUnit()))
 								{
-									if(!(pLoopPlot->isGoody()))
+									if (!(pLoopPlot->isGoody()))
 									{
 										pBestPlot = pLoopPlot;
 										break;
@@ -1979,12 +2002,11 @@ CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 
 					// Emergency escape.  Should only really break on Debug Micro map or something really funky
 					iCount++;
-				}
-				while(iCount < 1000);
+				} while (iCount < 1000);
 			}
 		}
 
-		if(pBestPlot == NULL)
+		if (pBestPlot == NULL)
 		{
 			pBestPlot = pStartingPlot;
 		}
@@ -1995,12 +2017,12 @@ CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 			return NULL;
 
 		// Don't stack any units
-		if(pBestPlot->getNumUnits() > 1)
+		if (pBestPlot->getNumUnits() > 1)
 		{
 			if (!pNewUnit->jumpToNearestValidPlot())
 			{
 				// Could not find a spot for the unit
-				pNewUnit->kill(false);		
+				pNewUnit->kill(false);
 				return NULL;
 			}
 		}
@@ -2009,8 +2031,160 @@ CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 
 	return pReturnValuePlot;
 }
+#else 
+/// Returns plot where new unit was created
+CvPlot* CvPlayer::addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
+{
+	CvPlot* pStartingPlot;
+	CvPlot* pReturnValuePlot = NULL;
+
+	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
+	if (pkUnitInfo == NULL)
+		return pReturnValuePlot;
+
+	if (GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman())
+	{
+		if ((eUnitAI == UNITAI_SETTLE) || (static_cast<UnitAITypes>(pkUnitInfo->GetDefaultUnitAIType()) == UNITAI_SETTLE))
+		{
+			if (GetNumUnitsWithUnitAI(UNITAI_SETTLE) >= 1)
+			{
+				return pReturnValuePlot;
+			}
+		}
+	}
+
+	// Venice: Replace Settlers with Merchant of Venice
+	if (GetPlayerTraits()->IsNoAnnexing())
+	{
+		if ((eUnitAI == UNITAI_SETTLE) || (static_cast<UnitAITypes>(pkUnitInfo->GetDefaultUnitAIType()) == UNITAI_SETTLE))
+		{
+			if (GetNumUnitsWithUnitAI(UNITAI_SETTLE) >= 1)
+			{
+				for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+				{
+					const UnitClassTypes eUnitClass = static_cast<UnitClassTypes>(iI);
+					CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
+					if (pkUnitClassInfo)
+					{
+						const UnitTypes eLocalUnit = (UnitTypes)getCivilizationInfo().getCivilizationUnits(eUnitClass);
+						if (eLocalUnit != NO_UNIT)
+						{
+							CvUnitEntry* pUnitEntry = GC.getUnitInfo(eLocalUnit);
+							if (pUnitEntry->IsCanBuyCityState())
+							{
+								eUnit = eLocalUnit;
+								eUnitAI = static_cast<UnitAITypes>(pkUnitInfo->GetDefaultUnitAIType());
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	CvCity* pCapital = getCapitalCity();
+
+	if (pCapital)
+	{
+		pStartingPlot = pCapital->plot();
+	}
+	else
+	{
+		pStartingPlot = getStartingPlot();
+	}
+
+	// Determine if the unit should always spawn in the capital
+	bool bForceCapitalSpawn = false;
+	UnitAITypes eDefaultAI = static_cast<UnitAITypes>(pkUnitInfo->GetDefaultUnitAIType());
+	UnitClassTypes eUnitClass = static_cast<UnitClassTypes>(pkUnitInfo->GetUnitClassType());
+
+	if (eDefaultAI == UNITAI_TRADE_UNIT) // BUGFIX: places Caravans & Cargo Ships in the capital.
+	{
+		bForceCapitalSpawn = true;
+	}
+
+	// Check if the player's traits force this unit class to spawn in the capital
+	if (eUnitClass != NO_UNITCLASS && GetPlayerTraits()->IsUnitClassForceSpawnCapital(eUnitClass))
+	{
+		bForceCapitalSpawn = true;
+	}
 
 
+	// If the unit must spawn in the capital, override plot selection
+	if (bForceCapitalSpawn && pCapital)
+	{
+		pStartingPlot = pCapital->plot();
+	}
+
+	// Ensure we have a valid plot before spawning the unit
+	if (pStartingPlot != NULL)
+	{
+		CvUnit* pNewUnit = initUnit(eUnit, pStartingPlot->getX(), pStartingPlot->getY(), eUnitAI);
+		CvAssert(pNewUnit != NULL);
+		if (pNewUnit == NULL)
+			return NULL;
+
+		// **NEW: If forced to spawn in capital, skip adjacent placement logic**
+		if (bForceCapitalSpawn)
+		{
+			return pStartingPlot;
+		}
+
+		CvPlot* pBestPlot = NULL;
+		if (isHuman() && !(pkUnitInfo->IsFound()))
+		{
+			DirectionTypes eDirection;
+			bool bDirectionValid;
+			int iCount = 0;
+
+			// Find a random adjacent valid tile
+			do
+			{
+				bDirectionValid = true;
+				eDirection = (DirectionTypes)GC.getGame().getJonRandNum(NUM_DIRECTION_TYPES, "Placing Starting Units (Human)");
+
+				if (bDirectionValid)
+				{
+					CvPlot* pLoopPlot = plotDirection(pStartingPlot->getX(), pStartingPlot->getY(), eDirection);
+
+					if (pLoopPlot != NULL && pLoopPlot->getArea() == pStartingPlot->getArea())
+					{
+						if (!pLoopPlot->isImpassable() && !pLoopPlot->isMountain())
+						{
+							if (!(pLoopPlot->isUnit()))
+							{
+								if (!(pLoopPlot->isGoody()))
+								{
+									pBestPlot = pLoopPlot;
+									break;
+								}
+							}
+						}
+					}
+				}
+				iCount++;
+			} while (iCount < 1000);
+		}
+
+		// If no valid adjacent tile was found, spawn on the starting plot
+		if (pBestPlot == NULL)
+		{
+			pBestPlot = pStartingPlot;
+		}
+
+		// Move unit to best plot (only if NOT forced capital spawn)
+		if (!bForceCapitalSpawn)
+		{
+			pNewUnit->setXY(pBestPlot->getX(), pBestPlot->getY(), false, false, false, false);
+		}
+
+		pReturnValuePlot = pNewUnit->plot();
+	}
+
+	return pReturnValuePlot;
+}
+#endif
 //	--------------------------------------------------------------------------------
 CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bInitialFounding)
 {
@@ -4787,7 +4961,9 @@ void CvPlayer::doTurn()
 					}
 				}
 #endif
+#if !defined(LEKMOD_v34)
 				GetTrade()->DoTurn();
+#endif
 				GetMilitaryAI()->ResetCounters();
 				GetGrandStrategyAI()->DoTurn();
 				if(GC.getGame().isHotSeat() && !isHuman())
@@ -5184,7 +5360,9 @@ void CvPlayer::doTurnPostDiplomacy()
 #else
 	DoIncomingUnits();
 #endif
-
+#if defined(LEKMOD_v34) // Move GetTrade()->DoTurn() to the end of doTurnPostDiplomacy instead of inside doTurn() so that they end after all Yields are calculated
+	GetTrade()->DoTurn();
+#endif
 	const int iGameTurn = kGame.getGameTurn();
 
 	GatherPerTurnReplayStats(iGameTurn);
@@ -8677,6 +8855,27 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 		}
 	}
 
+#if defined(MISC_CHANGES) // New Unit Unlocks
+	// Policy Branch Requirement
+	PolicyBranchTypes ePolicyBranch = (PolicyBranchTypes)pUnitInfo.GetPolicyBranchType(); // Branch based Unlock
+	PolicyBranchTypes eIdeology = GetPlayerPolicies()->GetLateGamePolicyTree(); // Unlock for ANY Ideology Branch
+	if (ePolicyBranch != NO_POLICY_BRANCH_TYPE)
+	{
+		if (!GetPlayerPolicies()->HasPolicyBranch(ePolicyBranch))
+		{
+			return false;
+		}
+	}
+	// ANY Ideology Requirement
+	if (pUnitInfo.IsAnyIdeologyUnlock()) // Ensure it actually requires any ideology
+	{
+		// Ensure player has adopted an ideology
+		if (eIdeology == NO_POLICY_BRANCH_TYPE)
+		{
+			return false; // Player has no ideology
+		}
+	}
+#endif
 
 	if (GC.getGame().isOption(GAMEOPTION_NO_RELIGION))
 	{
@@ -8955,14 +9154,35 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	{
 		return false;
 	}
-
-	if(!bIgnoreCost)
+#if !defined(TRAITIFY) // redo the building blocking code that is based on the buildings base production as there is now a mechanic to override it.
+	if (!bIgnoreCost)
 	{
-		if(pBuildingInfo.GetProductionCost() == -1)
+		if (pBuildingInfo.GetProductionCost() == -1)
 		{
 			return false;
 		}
 	}
+#else
+	if (!bIgnoreCost)
+	{
+		// Get the base production cost and any trait-based override
+		int iBaseCost = pBuildingInfo.GetProductionCost();
+		int iOverrideCost = GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
+
+		// Block buildings that have a base production cost of -1 and no valid override
+		if (iBaseCost == -1 && iOverrideCost < 0)
+		{
+			return false;
+		}
+
+		// Block buildings that have a valid production cost but an override setting them to -1
+		if (iBaseCost > -1 && iOverrideCost == -1)
+		{
+			return false;
+		}
+		// Let buildings with no override and vaild production cost through, and those with a valid override
+	}
+#endif
 
 	PolicyBranchTypes eBranch = (PolicyBranchTypes)pBuildingInfo.GetPolicyBranchType();
 	if (eBranch != NO_POLICY_BRANCH_TYPE)
@@ -9676,6 +9896,14 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 
 	iProductionNeeded = pkBuildingInfo->GetProductionCost();
 
+#if defined(TRAITIFY) // BuildingProductionOverride
+	int iOverrideProductionCost = GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
+	if (iOverrideProductionCost > 0) // Only use if valid
+	{
+		iProductionNeeded = iOverrideProductionCost;
+	}
+#endif
+
 	if(pkBuildingInfo->GetNumCityCostMod() > 0 && getNumCities() > 0)
 	{
 		iProductionNeeded += (pkBuildingInfo->GetNumCityCostMod() * getNumCities());
@@ -9878,7 +10106,11 @@ int CvPlayer::getProductionModifier(UnitTypes eUnit, CvString* toolTipSink) cons
 		{
 			iTempMod = getUnitCombatProductionModifiers((UnitCombatTypes) pUnitEntry->GetUnitCombatType());
 			iMultiplier += iTempMod;
+#if !defined(LEKMOD_v34)
 			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_UNIT_COBMAT_CLASS_PLAYER", iTempMod);
+#else
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_UNIT_COMBAT_CLASS_PLAYER", iTempMod);
+#endif
 		}
 
 		// Trait bonus
@@ -11445,7 +11677,11 @@ int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) co
 #else
 	int iRtnValue = pkSpecialistInfo->getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield) + GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eYield) + GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, eYield);
 #endif
+#if !defined(TRAITIFY) // Allow the SPECIALIST_CITIZEN to be effected by Specialist Yield Changes
 	if (eSpecialist != GC.getDEFAULT_SPECIALIST())
+#else
+	if(eSpecialist != NO_SPECIALIST)
+#endif
 	{
 		iRtnValue += getSpecialistExtraYield(eYield);
 	}
@@ -11662,7 +11898,11 @@ long CvPlayer::getRealPopulation() const
 //	--------------------------------------------------------------------------------
 int CvPlayer::GetNewCityExtraPopulation() const
 {
+#if !defined(TRAITIFY) // Increase the Starting Population of Cities in this janky way since we cant use the same methods as Policies and Techs
 	return m_iNewCityExtraPopulation;
+#else
+	return m_iNewCityExtraPopulation + GetPlayerTraits()->GetExtraPopulation();
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -11788,13 +12028,20 @@ int CvPlayer::GetTotalJONSCulturePerTurnTimes100() const
 	// Temporary boost from bonus turns
 	iCulturePerTurn += GetCulturePerTurnFromBonusTurns();
 #endif
-
+#if !defined(TRAITIFY) // Golden Age Culture Modifier -- Romania Trait
 	// Golden Age bonus
 	if (isGoldenAge() && !IsGoldenAgeCultureBonusDisabled())
 	{
 		iCulturePerTurn += ((iCulturePerTurn * GC.getGOLDEN_AGE_CULTURE_MODIFIER()) / 100);
 	}
-
+#else
+	// Golden Age bonus
+	CvPlayerTraits* pPlayerTraits = GetPlayerTraits();
+	if (isGoldenAge() && !IsGoldenAgeCultureBonusDisabled())
+	{
+		iCulturePerTurn += ((iCulturePerTurn * (GC.getGOLDEN_AGE_CULTURE_MODIFIER()) + pPlayerTraits->GetGoldenAgeCultureModifier()) / 100);
+	}
+#endif
 	return iCulturePerTurn;
 }
 
@@ -14024,6 +14271,9 @@ int CvPlayer::GetHappinessFromCities() const
 	for(pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
 		iHappiness += pLoopCity->GetLocalHappiness();
+#if defined(TRAITIFY) // Burma Happiness
+		iHappiness += GetPlayerTraits()->GetLocalHappinessPerCity();
+#endif
 	}
 
 	return iHappiness;
@@ -14078,6 +14328,34 @@ int CvPlayer::GetHappinessFromBuildings() const
 			}
 		}
 	}
+#if defined(TRAITIFY) // Global Happiness from Buildings as defined by Traits (Currently Macedonia)
+	// Trait Mods
+	int iTraitBuildingHappiness = 0;
+
+	// Loop through all Building Classes and check for Trait-based Global Happiness
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		BuildingClassTypes eBuildingClass = (BuildingClassTypes)iI;
+		CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+		if (!pkBuildingClassInfo)
+		{
+			continue;
+		}
+
+		int iTraitHappiness = GetPlayerTraits()->GetBuildingClassGlobalHappiness(eBuildingClass);
+
+		if (iTraitHappiness > 0)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
+			if (eBuilding != NO_BUILDING)
+			{
+				iTraitBuildingHappiness += iTraitHappiness * countNumBuildings(eBuilding);
+			}
+		}
+	}
+
+	iHappiness += iTraitBuildingHappiness;
+#endif
 	iHappiness += iSpecialBuildingHappiness;
 
 	const CvCity* pLoopCity;
@@ -14724,6 +15002,17 @@ int CvPlayer::GetUnhappinessFromCityPopulation(CvCity* pAssumeCityAnnexed, CvCit
 				iUnhappinessFromThisCity *= (100 + GetCapitalUnhappinessMod());
 				iUnhappinessFromThisCity /= 100;
 			}
+#ifdef TRAITIFY //Horde Happiness.
+			if (pLoopCity->IsPuppet())
+			{
+				int iTraitMod = GetPlayerTraits()->GetUnhappinessModifierForPuppetedCities();
+				if (iTraitMod != 0)
+				{
+					iUnhappinessFromThisCity *= (100 + iTraitMod);
+					iUnhappinessFromThisCity /= 100;
+				}
+			}
+#endif
 
 			iUnhappiness += iUnhappinessFromThisCity;
 		}
@@ -14796,7 +15085,10 @@ int CvPlayer::GetUnhappinessFromPuppetCityPopulation() const
 
 	iUnhappiness *= 100 + GetPlayerTraits()->GetPopulationUnhappinessModifier();
 	iUnhappiness /= 100;
-
+#if defined(TRAITIFY) // New Horde Happiness effect
+	iUnhappiness *= 100 + GetPlayerTraits()->GetUnhappinessModifierForPuppetedCities();
+	iUnhappiness /= 100;
+#endif
 	// Handicap mod
 	iUnhappiness *= getHandicapInfo().getPopulationUnhappinessMod();
 	iUnhappiness /= 100;
@@ -15293,7 +15585,92 @@ void CvPlayer::ChangeExtraLeagueVotes(int iChange)
 		m_iExtraLeagueVotes = 0;
 	}
 }
-
+#if defined(TRAITIFY) // Extra Votes from Traits
+// --------------------------------------------------------------------------------
+// Extra League Votes from Traits
+int CvPlayer::GetTraitExtraLeagueVotes() const
+{
+	return m_iTraitExtraLeagueVotes;
+}
+// --------------------------------------------------------------------------------
+// Change Extra League Votes from Traits
+void CvPlayer::ChangeTraitExtraLeagueVotes(int iChange)
+{
+	m_iTraitExtraLeagueVotes += iChange;
+	CvAssert(m_iTraitExtraLeagueVotes >= 0);
+	if (m_iTraitExtraLeagueVotes < 0)
+	{
+		m_iTraitExtraLeagueVotes = 0;
+	}
+}
+#endif
+#if defined(MISC_CHANGES) // Handle Extra League Votes from Techs and Policies
+// --------------------------------------------------------------------------------
+// Tech based Extra League Votes
+int CvPlayer::GetTechExtraLeagueVotes() const
+{
+	return m_iTechExtraLeagueVotes;
+}
+// --------------------------------------------------------------------------------
+// Change Tech Votes
+void CvPlayer::ChangeTechExtraLeagueVotes(int iChange)
+{
+	m_iTechExtraLeagueVotes += iChange;
+	CvAssert(m_iTechExtraLeagueVotes >= 0);
+	if (m_iTechExtraLeagueVotes < 0)
+	{
+		m_iTechExtraLeagueVotes = 0;
+	}
+}
+// --------------------------------------------------------------------------------
+// Policy based Extra League Votes
+int CvPlayer::GetPolicyExtraLeagueVotes() const
+{
+	return m_iPolicyExtraLeagueVotes;
+}
+// --------------------------------------------------------------------------------
+// Change Policy Votes
+void CvPlayer::ChangePolicyExtraLeagueVotes(int iChange)
+{
+	m_iPolicyExtraLeagueVotes += iChange;
+	CvAssert(m_iPolicyExtraLeagueVotes >= 0);
+	if (m_iPolicyExtraLeagueVotes < 0)
+	{
+		m_iPolicyExtraLeagueVotes = 0;
+	}
+}
+// --------------------------------------------------------------------------------
+// Extra Trade Routes provided though Miscellaneous means
+int CvPlayer::GetNumMiscTradeRoutes() const
+{
+	return m_iMiscTradeRoutes;
+}
+// --------------------------------------------------------------------------------
+// Change Extra Trade Routes
+void CvPlayer::ChangeNumMiscTradeRoutes(int iChange)
+{
+	m_iMiscTradeRoutes += iChange;
+	CvAssert(m_iMiscTradeRoutes >= 0);
+	if (m_iMiscTradeRoutes < 0)
+	{
+		m_iMiscTradeRoutes = 0;
+	}
+}
+#endif
+#if defined(LEKMOD_v34)
+// --------------------------------------------------------------------------------
+// Can the Player Choose a reformation?
+bool CvPlayer::CanChooseReformationBelief() const
+{
+	return m_bCanChooseReformationBelief;
+}
+// --------------------------------------------------------------------------------
+// Set if the Player can choose a reformation
+void CvPlayer::SetCanChooseReformationBelief(int iValue)
+{
+	m_bCanChooseReformationBelief = iValue;
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// How much weaker do Units get when wounded?
 int CvPlayer::GetWoundedUnitDamageMod() const
@@ -15644,7 +16021,35 @@ void CvPlayer::ChangeTourismBonusTurns(int iChange)
 		m_iTourismBonusTurns += iChange;
 	}
 }
+#if defined(LEKMOD_v34)
+//	--------------------------------------------------------------------------------
+// Collect all the Golden Age Points from Cities
+int CvPlayer::GetGoldenAgePointsFromCities()
+{
+	int iGoldenAgePoints = 0;
+	int iLoop = 0;
+	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		iGoldenAgePoints += pLoopCity->getYieldRate(YIELD_GOLDEN_AGE_POINTS, false);
+	}
+	CvAssertMsg(iGoldenAgePoints >= 0, "Total Golden Age Points from cities is unexpectedly negative.");
+	return iGoldenAgePoints;
+}
+//	--------------------------------------------------------------------------------
+// Total up the Golden Age Points from all sources
+int CvPlayer::GetTotalGoldenAgePointsInEmpire()
+{
+	int iGoldenAgePoints = 0;
 
+	// Get Excess Happiness, currently converted 1:1 to Golden Age Points
+	iGoldenAgePoints += GetExcessHappiness();
+	// Get the amount being made by cities
+	iGoldenAgePoints += GetGoldenAgePointsFromCities();
+
+	// This can be negative, and will decrease the Golden Age Meter if so.
+	return iGoldenAgePoints;
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Update all Golden-Age related stuff
 void CvPlayer::DoProcessGoldenAge()
@@ -15673,9 +16078,11 @@ void CvPlayer::DoProcessGoldenAge()
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 			ChangeGoldenAgeProgressMeter(getCachedExcessHappinessForThisTurn());
 #else
+#if !defined(LEKMOD_v34)
 			ChangeGoldenAgeProgressMeter(GetExcessHappiness());
+#else
+			ChangeGoldenAgeProgressMeter(GetTotalGoldenAgePointsInEmpire());
 #endif
-#ifdef NQ_GOLDEN_AGE_OVERHAUL
 #endif
 
 			// Enough GA Progress to trigger new GA?
@@ -16575,6 +16982,10 @@ void CvPlayer::recomputeGreatPeopleModifiers()
 	m_iGreatPeopleRateModifier += m_pTraits->GetGreatPeopleRateModifier();
 	m_iGreatGeneralRateModifier += m_pTraits->GetGreatGeneralRateModifier();
 	m_iGreatScientistRateModifier += m_pTraits->GetGreatScientistRateModifier();
+#if defined(TRAITIFY) // Great Merchant and Engineer rates
+	m_iGreatEngineerRateModifier += m_pTraits->GetGreatEngineerRateModifier();
+	m_iGreatMerchantRateModifier += m_pTraits->GetGreatMerchantRateModifier();
+#endif
 
 	// Then get from current policies
 	m_iGreatPeopleRateModifier += m_pPlayerPolicies->GetNumericModifier(POLICYMOD_GREAT_PERSON_RATE);
@@ -25323,7 +25734,9 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 #ifdef NQ_RAIL_CONNECTION_HAPPINESS_FROM_POLICIES
 	ChangeHappinessPerRailConnection(pPolicy->GetHappinessPerRailConnection() * iChange);
 #endif
-
+#if defined(MISC_CHANGES) // processPolicies
+	ChangePolicyExtraLeagueVotes(pPolicy->GetNumExtraLeagueVotes() * iChange);
+#endif
 	ChangeHappinessPerXPopulation(pPolicy->GetHappinessPerXPopulation() * iChange);
 	ChangeExtraHappinessPerLuxury(pPolicy->GetExtraHappinessPerLuxury() * iChange);
 	ChangeUnhappinessFromUnitsMod(pPolicy->GetUnhappinessFromUnitsMod() * iChange);
@@ -25472,7 +25885,18 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 		if(iMod != 0)
 			changeSpecialistExtraYield(eYield, iMod);
 	}
+#if defined(LEKMOD_v34)
+	// Grant free resources from this policy
+	for (int i = 0; i < GC.getNumResourceInfos(); ++i)
+	{
+		int iAmount = pPolicy->GetPolicyResourceQuantity(i);
+		if (iAmount != 0)
+		{
+			changeNumResourceTotal((ResourceTypes)i, iAmount * iChange);
+		}
+	}
 
+#endif
 	for(iI = 0; iI < GC.getNumUnitCombatClassInfos(); iI++)
 	{
 		changeUnitCombatProductionModifiers((UnitCombatTypes)iI, (pPolicy->GetUnitCombatProductionModifiers(iI) * iChange));
@@ -26511,6 +26935,17 @@ void CvPlayer::Read(FDataStream& kStream)
 	{
 		m_iExtraLeagueVotes = 0;
 	}
+#if defined(TRAITIFY) // Read
+	kStream >> m_iTraitExtraLeagueVotes;
+#endif
+#if defined(MISC_CHANGES) // Read
+	kStream >> m_iTechExtraLeagueVotes;
+	kStream >> m_iPolicyExtraLeagueVotes;
+	kStream >> m_iMiscTradeRoutes;
+#endif
+#if defined(LEKMOD_v34)
+	kStream >> m_bCanChooseReformationBelief;
+#endif
 	kStream >> m_iSpecialPolicyBuildingHappiness;
 	kStream >> m_iWoundedUnitDamageMod;
 	kStream >> m_iUnitUpgradeCostMod;
@@ -27170,6 +27605,17 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_bMayaBoostMusicians;
 #endif
 	kStream << m_iExtraLeagueVotes;
+#if defined(TRAITIFY) // Write
+	kStream << m_iTraitExtraLeagueVotes;
+#endif
+#if defined(MISC_CHANGES) // Write
+	kStream << m_iTechExtraLeagueVotes;
+	kStream << m_iPolicyExtraLeagueVotes;
+	kStream << m_iMiscTradeRoutes;
+#endif
+#if defined(LEKMOD_v34) // Write
+	kStream << m_bCanChooseReformationBelief;
+#endif
 	kStream << m_iSpecialPolicyBuildingHappiness;
 	kStream << m_iWoundedUnitDamageMod;
 	kStream << m_iUnitUpgradeCostMod;

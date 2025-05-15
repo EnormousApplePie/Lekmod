@@ -49,6 +49,11 @@ std::string toString(const YieldTypes& v)
 	case YIELD_FAITH:
 		return std::string("YIELD_FAITH");
 		break;
+#if defined(LEKMOD_v34)
+	case YIELD_GOLDEN_AGE_POINTS:
+		return std::string("YIELD_GOLDEN_AGE_POINTS");
+		break;
+#endif
 	default:
 		return std::string("INVALID ENUM VALUE");
 		break;

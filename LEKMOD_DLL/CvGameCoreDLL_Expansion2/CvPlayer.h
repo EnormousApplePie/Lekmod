@@ -669,7 +669,24 @@ public:
 
 	int GetExtraLeagueVotes() const;
 	void ChangeExtraLeagueVotes(int iChange);
+#if defined(TRAITIFY) // Handle Extra League Votes from Traits
+	int GetTraitExtraLeagueVotes() const;
+	void ChangeTraitExtraLeagueVotes(int iChange);
+#endif
+#if defined(MISC_CHANGES) // Handle Extra League Votes from Techs and Policies
+	int GetTechExtraLeagueVotes() const;
+	void ChangeTechExtraLeagueVotes(int iChange);
 
+	int GetPolicyExtraLeagueVotes() const;
+	void ChangePolicyExtraLeagueVotes(int iChange);
+
+	int GetNumMiscTradeRoutes() const;
+	void ChangeNumMiscTradeRoutes(int iChange);
+#endif
+#if defined(LEKMOD_v34) // New bool and setter to allow a non policy to activate Reformation Beliefs
+	bool CanChooseReformationBelief() const;
+	void SetCanChooseReformationBelief(int iValue);
+#endif
 	int GetWoundedUnitDamageMod() const;
 	void SetWoundedUnitDamageMod(int iValue);
 	void ChangeWoundedUnitDamageMod(int iChange);
@@ -725,6 +742,11 @@ public:
 	void ChangeCultureBonusTurns(int iChange);
 	int GetTourismBonusTurns() const;
 	void ChangeTourismBonusTurns(int iChange);
+
+#if defined(LEKMOD_v34) // Some Support for Golden Age Points being handled liike yields. Some.
+	int GetGoldenAgePointsFromCities();
+	int GetTotalGoldenAgePointsInEmpire();
+#endif
 
 	// Golden Age Stuff
 
@@ -1968,6 +1990,17 @@ protected:
 	int m_bMayaBoostMusicians;
 #endif
 	int m_iExtraLeagueVotes;
+#if defined(TRAITIFY) // create variables
+	int m_iTraitExtraLeagueVotes;
+#endif
+#if defined(MISC_CHANGES) // create variables
+	int m_iTechExtraLeagueVotes;
+	int m_iPolicyExtraLeagueVotes;
+	int m_iMiscTradeRoutes;
+#endif
+#if defined(LEKMOD_v34) // create variables
+	bool m_bCanChooseReformationBelief;
+#endif
 	FAutoVariable<int, CvPlayer> m_iAdvancedStartPoints;
 	FAutoVariable<int, CvPlayer> m_iAttackBonusTurns;
 	int m_iCultureBonusTurns;

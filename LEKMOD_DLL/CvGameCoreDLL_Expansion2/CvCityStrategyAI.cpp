@@ -3268,10 +3268,16 @@ bool CityStrategyAIHelpers::IsTestCityStrategy_GoodGPCity(CvCity* pCity)
 					}
 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
 					{
+#if defined(TRAITIFY) // Great Merchant Rate Modifier
+						iMod += pCity->GetPlayer()->GetPlayerTraits()->GetGreatMerchantRateModifier();
+#endif
 						iMod += pCity->GetPlayer()->getGreatMerchantRateModifier();
 					}
 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
 					{
+#if defined(TRAITIFY) // Great Engineer Rate Modifier
+						iMod += pCity->GetPlayer()->GetPlayerTraits()->GetGreatEngineerRateModifier();
+#endif
 						iMod += pCity->GetPlayer()->getGreatEngineerRateModifier();
 					}
 

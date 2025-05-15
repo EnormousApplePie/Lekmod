@@ -255,6 +255,9 @@ CvCity::CvCity() :
 	, m_aiBaseYieldRateFromMisc("CvCity::m_aiBaseYieldRateFromMisc", m_syncArchive)
 	, m_aiYieldRateModifier("CvCity::m_aiYieldRateModifier", m_syncArchive)
 	, m_aiYieldPerPop("CvCity::m_aiYieldPerPop", m_syncArchive)
+#if defined(LEKMOD_v34)
+	, m_aiGarrisonYieldBonus("CvCity::m_aiGarrisonYieldBonus", m_syncArchive)
+#endif
 	, m_aiPowerYieldRateModifier("CvCity::m_aiPowerYieldRateModifier", m_syncArchive)
 	, m_aiResourceYieldRateModifier("CvCity::m_aiResourceYieldRateModifier", m_syncArchive)
 	, m_aiExtraSpecialistYield("CvCity::m_aiExtraSpecialistYield", m_syncArchive)
@@ -549,7 +552,14 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	changePopulation(GC.getINITIAL_CITY_POPULATION() + GC.getGame().getStartEraInfo().getFreePopulation());
 	// Free population from things (e.g. Policies)
 	changePopulation(GET_PLAYER(getOwner()).GetNewCityExtraPopulation());
-
+#ifdef TRAITIFY // New floating text for population increases for the player. Both Trait and Policy driven, excluding the initial population.
+	if (GET_PLAYER(getOwner()).GetNewCityExtraPopulation() > 0)
+	{
+		char szText[256] = { 0 };
+		sprintf_s(szText, "[COLOR_GREEN]+%d[ENDCOLOR] [ICON_CITIZEN]", GET_PLAYER(getOwner()).GetNewCityExtraPopulation());
+		GC.GetEngineUserInterface()->AddPopupText(getX(), getY(), szText, 1.5f);
+	}
+#endif
 	// Free food from things (e.g. Policies)
 	int iFreeFood = growthThreshold() * GET_PLAYER(getOwner()).GetFreeFoodBox();
 	changeFoodTimes100(iFreeFood);
@@ -997,6 +1007,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_aiBaseYieldRateFromMisc.resize(NUM_YIELD_TYPES);
 	m_aiBaseYieldRateFromReligion.resize(NUM_YIELD_TYPES);
 	m_aiYieldPerPop.resize(NUM_YIELD_TYPES);
+#if defined(LEKMOD_v34)
+	m_aiGarrisonYieldBonus.resize(NUM_YIELD_TYPES);
+#endif
 	m_aiYieldPerReligion.resize(NUM_YIELD_TYPES);
 	m_aiYieldRateModifier.resize(NUM_YIELD_TYPES);
 	m_aiPowerYieldRateModifier.resize(NUM_YIELD_TYPES);
@@ -1015,6 +1028,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiBaseYieldRateFromMisc.setAt(iI, 0);
 		m_aiBaseYieldRateFromReligion[iI] = 0;
 		m_aiYieldPerPop.setAt(iI, 0);
+#if defined(LEKMOD_v34)
+		m_aiGarrisonYieldBonus.setAt(iI, 0);
+#endif
 		m_aiYieldPerReligion[iI] = 0;
 		m_aiYieldRateModifier.setAt(iI, 0);
 		m_aiPowerYieldRateModifier.setAt(iI, 0);
@@ -1864,7 +1880,9 @@ void CvCity::doTurn()
 	setDrafted(false);
 	setMadeAttack(false);
 	GetCityBuildings()->SetSoldBuildingThisTurn(false);
-
+#if defined(LEKMOD_v34) // Move WLTKD to happen before yield calculations
+	DoTestResourceDemanded();
+#endif
 	DoUpdateFeatureSurrounded();
 
 	GetCityStrategyAI()->DoTurn();
@@ -1920,12 +1938,12 @@ void CvCity::doTurn()
 				}
 			}
 		}
-
+#if !defined(LEKMOD_v34)
 #ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 		// Following function also looks at WLTKD stuff
 		DoTestResourceDemanded();
 #endif
-
+#endif
 		// Culture accumulation
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 		if (getCachedCultureT100ForThisTurn() > 0)
@@ -2960,10 +2978,26 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		return false;
 	}
 
-	if(!isValidBuildingLocation(eBuilding))
+#if !defined(TRAITIFY) // New method of telling if a building can be made in a city based on the cities terrain, now accounts for Trait based exceptions.
+	if (!isValidBuildingLocation(eBuilding))
 	{
 		return false;
 	}
+#else
+	// Check if the building normally has terrain restrictions
+	if (!isValidBuildingLocation(eBuilding))
+	{
+		// Get the player's traits
+		CvPlayerTraits* pPlayerTraits = GET_PLAYER(getOwner()).GetPlayerTraits();
+		BuildingClassTypes eBuildingClass = (BuildingClassTypes)GC.getBuildingInfo(eBuilding)->GetBuildingClassType();
+
+		// If the player's trait allows bypassing terrain restrictions, SKIP this check
+		if (!pPlayerTraits->IsBuildingClassRemoveRequiredTerrain(eBuildingClass))
+		{
+			return false;
+		}
+	}
+#endif
 
 	// Local Resource requirements met?
 	if(!IsBuildingLocalResourceValid(eBuilding, bTestVisible, toolTipSink))
@@ -2976,6 +3010,27 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	{
 		return false;
 	}
+#if defined(TRAITIFY) // Religious Majority requirement for canConstruct (Used for Georgia)
+
+	bool bRequiresReligion = pkBuildingInfo->IsUnlockedByBelief();
+	ReligionTypes eMajority = GetCityReligions()->GetReligiousMajority();
+	// If the building requires religion, apply the restriction
+	if (bRequiresReligion)
+	{
+		// The city must have a majority religion
+		if (eMajority <= RELIGION_PANTHEON)
+		{
+			return false;
+		}
+
+		// Check if the majority religion actually unlocks the building
+		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, getOwner());
+		if (pReligion == NULL || !pReligion->m_Beliefs.IsBuildingClassEnabled((BuildingClassTypes)pkBuildingInfo->GetBuildingClassType()))
+		{
+			return false;
+		}
+	}
+#endif
 
 	CvCivilizationInfo& thisCivInfo = *GC.getCivilizationInfo(getCivilizationType());
 	int iNumBuildingClassInfos = GC.getNumBuildingClassInfos();
@@ -3007,14 +3062,29 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 #ifdef LEKMOD_BUILDING_GOLD_COST
+#ifndef TRAITIFY // Added support to allow a building that can not normally be made, and has an override value that would make it so, able to be made.
 	// Does this building have no production cost, but has a gold cost?
-	if(pkBuildingInfo->GetProductionCost() <= 0 && pkBuildingInfo->GetGoldCost() <= 0)
+	if (pkBuildingInfo->GetProductionCost() <= 0 && pkBuildingInfo->GetGoldCost() <= 0)
 	{
-		if(!bIgnoreCost)
+		if (!bIgnoreCost)
 		{
 			return false;
 		}
 	}
+#else
+	int iBaseProductionCost = pkBuildingInfo->GetProductionCost();
+	int iOverrideProductionCost = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
+	int iOverrideGoldCost = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_GOLD);
+
+	// If both base cost and override are <= 0, but has a gold cost?
+	if (iBaseProductionCost <= 0 && iOverrideProductionCost <= 0 && pkBuildingInfo->GetGoldCost() <= 0 && iOverrideGoldCost <= 0)
+	{
+		if (!bIgnoreCost)
+		{
+			return false;
+		}
+	}
+#endif
 #endif
 
 	///////////////////////////////////////////////////////////////////////////////////
@@ -3339,7 +3409,54 @@ void CvCity::ChangeResourceExtraYield(ResourceTypes eResource, YieldTypes eYield
 		updateYield();
 	}
 }
+#if defined(MISC_CHANGES) // ResouceClass Yield Changes
+//	--------------------------------------------------------------------------------
+void CvCity::ChangeResourceClassExtraYield(ResourceClassTypes eClass, YieldTypes eYield, int iChange)
+{
+	VALIDATE_OBJECT;
+	CvAssertMsg(eClass >= 0 && eClass < GC.getNumResourceClassInfos(), "Invalid resource class index.");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Invalid yield index.");
 
+	if (iChange != 0)
+	{
+		for (int i = 0; i < GC.getNumResourceInfos(); ++i)
+		{
+			ResourceTypes eResource = (ResourceTypes)i;
+			const CvResourceInfo* pResource = GC.getResourceInfo(eResource);
+			if (pResource && pResource->getResourceClassType() == eClass)
+			{
+				m_ppaiResourceYieldChange[eResource][eYield] += iChange;
+			}
+		}
+
+		updateYield();
+	}
+}
+#endif
+#if defined(LEKMOD_v34) /// Garrison Yield Changes
+int CvCity::GetGarrisonYieldBonus(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return m_aiGarrisonYieldBonus[eYield];
+}
+void CvCity::ChangeGarrisonYieldBonus(YieldTypes eYield, int iAmount)
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	if (iAmount != 0)
+	{
+		m_aiGarrisonYieldBonus.setAt(eYield, m_aiGarrisonYieldBonus[eYield] + iAmount);
+
+		if (getTeam() == GC.getGame().getActiveTeam())
+		{
+			if (isCitySelected())
+			{
+				DLLUI->setDirty(CityScreen_DIRTY_BIT, true);
+				//DLLUI->setDirty(InfoPane_DIRTY_BIT, true );
+			}
+		}
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Extra yield for a Feature this city is working?
 int CvCity::GetFeatureExtraYield(FeatureTypes eFeature, YieldTypes eYield) const
@@ -5450,7 +5567,11 @@ int CvCity::GetFaithPurchaseCost(UnitTypes eUnit, bool bIncludeBeliefDiscounts)
 
 		if (pkUnitInfo->IsSpreadReligion() || pkUnitInfo->IsRemoveHeresy())
 		{
+#if !defined(TRAITIFY) //FaithCostModifier Units
 			iMultiplier = (100 + GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_FAITH_COST_MODIFIER));
+#else
+			iMultiplier = (100 + GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_FAITH_COST_MODIFIER) + GET_PLAYER(getOwner()).GetPlayerTraits()->GetFaithCostModifier());
+#endif
 			iCost = iCost * iMultiplier / 100;
 		}
 	}
@@ -5497,8 +5618,14 @@ int CvCity::GetFaithPurchaseCost(UnitTypes eUnit, bool bIncludeBeliefDiscounts)
 
 	// Make the number not be funky
 #ifdef NQ_FAITH_COST_ROUNDS_TO_NEAREST_5
+#if !defined(MISC_CHANGES) // new Global value for FAITH_PURCHASE_VISIBLE_DIVISOR
 	iCost /= 5; // TODO: This should be put into XML as FAITH_PURCHASE_VISIBLE_DIVISOR();
 	iCost *= 5;
+#else
+	int iDivisor = /*5*/ GC.getFAITH_PURCHASE_VISIBLE_DIVISOR(); // This has been put into XML, as FAITH_PURCHASE_VISIBLE_DIVISOR();
+	iCost /= iDivisor;
+	iCost *= iDivisor;
+#endif
 #else
 	int iDivisor = /*10*/ GC.getGOLD_PURCHASE_VISIBLE_DIVISOR();
 	iCost /= iDivisor;
@@ -5523,6 +5650,13 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 
 #ifdef LEKMOD_BUILDING_GOLD_COST
 	int iCost = pkBuildingInfo->GetGoldCost();
+#if defined(TRAITIFY) // BuildingCostOverride Gold
+	int iOverrideCost = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_GOLD);
+	if (iOverrideCost > 0) // Only apply override if a valid value exists
+	{
+		iCost = iOverrideCost;
+	}
+#endif
 	int iModifier = pkBuildingInfo->GetHurryCostModifier();
 	if (iModifier == -1)
 		return -1;
@@ -5590,10 +5724,21 @@ int CvCity::GetFaithPurchaseCost(BuildingTypes eBuilding)
 
 	// Cost goes up in later eras
 	iCost = pkBuildingInfo->GetFaithCost();
+#if defined(TRAITIFY) // BuildingCostOverride Faith
+	int iOverrideCost = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_FAITH);
+	if (iOverrideCost > 0) // Only apply override if a valid value exists
+	{
+		iCost = iOverrideCost;
+	}
+#endif
 	EraTypes eEra = GET_TEAM(GET_PLAYER(getOwner()).getTeam()).GetCurrentEra();
 	int iMultiplier = GC.getEraInfo(eEra)->getFaithCostMultiplier();
 	iCost = iCost * iMultiplier / 100;
+#if !defined(TRAITIFY) //FaithCostModifier Buildings
 	iMultiplier = (100 + GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_FAITH_COST_MODIFIER));
+#else
+	iMultiplier = (100 + GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_FAITH_COST_MODIFIER) + GET_PLAYER(getOwner()).GetPlayerTraits()->GetFaithCostModifier());
+#endif
 	iCost = iCost * iMultiplier / 100;
 
 	// Adjust for game speed
@@ -5608,7 +5753,11 @@ int CvCity::GetFaithPurchaseCost(BuildingTypes eBuilding)
 	}
 
 	// Make the number not be funky
+#if !defined(MISC_CHANGES) // new Global value for FAITH_PURCHASE_VISIBLE_DIVISOR
 	int iDivisor = /*10*/ GC.getGOLD_PURCHASE_VISIBLE_DIVISOR();
+#else
+	int iDivisor = /*5*/ GC.getFAITH_PURCHASE_VISIBLE_DIVISOR(); // This has been put into XML, as FAITH_PURCHASE_VISIBLE_DIVISOR();
+#endif
 	iCost /= iDivisor;
 	iCost *= iDivisor;
 
@@ -7423,6 +7572,40 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			CvPlayerPolicies* pPolicies = GET_PLAYER(getOwner()).GetPlayerPolicies();
 			changeYieldRateModifier(eYield, pPolicies->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
 			ChangeBaseYieldRateFromBuildings(eYield, pPolicies->GetBuildingClassYieldChange(eBuildingClass, eYield) * iChange);
+#if defined(TRAITIFY) // Trait Yieldchange on buildings
+			CvPlayerTraits* pTraits = GET_PLAYER(getOwner()).GetPlayerTraits();
+			// Apply Resource-based yield changes from traits
+			if (eYield == YIELD_CULTURE) // For Culture
+			{
+				ChangeJONSCulturePerTurnFromBuildings(pTraits->GetBuildingClassYieldChange(eBuildingClass, eYield) * iChange);
+				//changeCultureRateModifier(pTraits->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
+			}
+			else if (eYield == YIELD_FAITH) // For Faith
+			{
+				ChangeFaithPerTurnFromBuildings(pTraits->GetBuildingClassYieldChange(eBuildingClass, eYield) * iChange);
+			}
+			else // For Food, Production, Gold, Science... why did firaxis do this?
+			{
+				//changeYieldRateModifier(eYield, pTraits->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
+				ChangeBaseYieldRateFromBuildings(eYield, pTraits->GetBuildingClassYieldChange(eBuildingClass, eYield) * iChange);
+			}
+#endif
+#if defined(LEKMOD_v34)
+			// If we have a buildiing that gives a yield bonus to garrisoned cities, load it here
+			if (eYield == YIELD_CULTURE)
+			{
+				ChangeGarrisonYieldBonus(eYield, pBuildingInfo->GetGarrisonYieldChange(eYield)* iChange);
+			}
+			else if (eYield == YIELD_FAITH)
+			{
+				ChangeGarrisonYieldBonus(eYield, pBuildingInfo->GetGarrisonYieldChange(eYield) * iChange);
+			}
+			else
+			{
+				ChangeGarrisonYieldBonus(eYield, pBuildingInfo->GetGarrisonYieldChange(eYield) * iChange);
+			}
+			
+#endif
 
 #ifdef AUI_WARNING_FIXES
 			for (uint iJ = 0; iJ < GC.getNumResourceInfos(); iJ++)
@@ -7432,6 +7615,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			{
 				ChangeResourceExtraYield(((ResourceTypes)iJ), eYield, (GC.getBuildingInfo(eBuilding)->GetResourceYieldChange(iJ, eYield) * iChange));
 			}
+#if defined(MISC_CHANGES) // ResourceClassYieldChange
+			for (int iJ = 0; iJ < GC.getNumResourceClassInfos(); iJ++)
+			{
+				ChangeResourceClassExtraYield(((ResourceClassTypes)iJ), eYield, (GC.getBuildingInfo(eBuilding)->GetResourceClassYieldChange(iJ, eYield) * iChange));
+			}
+#endif
 			//for(int iJ = 0; iJ < GC.getNumResourceInfos(); iJ++)
 			//{
 			//	ChangeResourceExtraYield(((ResourceTypes)iJ), eYield, (GC.getBuildingInfo(eBuilding)->GetResourceYieldChangeGlobal(iJ, eYield) * iChange));
@@ -9022,10 +9211,22 @@ int CvCity::getJONSCulturePerTurnTimes100() const
 	// Wonder here?
 	if(getNumWorldWonders() > 0)
 		iModifier += GET_PLAYER(getOwner()).GetCultureWonderMultiplier();
+#if defined(MISC_CHANGES) // Trade routes providing culture
+	// Finally adding support for Trade routes providing culture
+	int iTradeYield = GET_PLAYER(m_eOwner).GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_CULTURE);
+	iCulture += iTradeYield;
+#endif
 
 	// Puppet?
 	if(IsPuppet())
 	{
+#if defined(TRAITIFY) // Puppet Culture Modifier
+		int iTraitModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_CULTURE);
+		if (iTraitModifier != 0)
+		{
+			iModifier += iTraitModifier;
+		}
+#endif
 		iModifier += GC.getPUPPET_CULTURE_MODIFIER();
 	}
 
@@ -9059,7 +9260,18 @@ int CvCity::GetBaseJONSCulturePerTurn() const
 int CvCity::GetJONSCulturePerTurnFromBuildings() const
 {
 	VALIDATE_OBJECT
+#if defined(LEKMOD_v34)
+		if (GetGarrisonedUnit())
+		{
+			return m_iJONSCulturePerTurnFromBuildings + GetGarrisonYieldBonus(YIELD_CULTURE);
+		}
+		else
+		{
+			return m_iJONSCulturePerTurnFromBuildings;
+		}
+#else
 	return m_iJONSCulturePerTurnFromBuildings;
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -9177,12 +9389,24 @@ int CvCity::GetFaithPerTurn() const
 
 	// Puppet?
 	int iModifier = 0;
+#if defined(MISC_CHANGES) // Trade routes providing faith
+	// Finally adding support for Trade routes providing faith
+	int iTradeYield = GET_PLAYER(m_eOwner).GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_FAITH);
+	iFaith += iTradeYield;
+#endif
 #ifdef AUI_CITY_FIX_VENICE_PUPPETS_GET_NO_YIELD_PENALTIES_BESIDES_CULTURE
 	if (IsPuppet() && !GetPlayer()->GetPlayerTraits()->IsNoAnnexing())
 #else
 	if(IsPuppet())
 #endif
 	{
+#if defined(TRAITIFY) // Puppet Faith Modifier
+		int iTraitModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_FAITH);
+		if (iTraitModifier != 0)
+		{
+			iModifier += iTraitModifier;
+		}
+#endif
 		iModifier = GC.getPUPPET_FAITH_MODIFIER();
 		iFaith *= (100 + iModifier);
 		iFaith /= 100;
@@ -9195,7 +9419,18 @@ int CvCity::GetFaithPerTurn() const
 int CvCity::GetFaithPerTurnFromBuildings() const
 {
 	VALIDATE_OBJECT
+#if defined(LEKMOD_v34)
+		if (GetGarrisonedUnit())
+		{
+			return m_iFaithPerTurnFromBuildings + GetGarrisonYieldBonus(YIELD_FAITH);
+		}
+		else
+		{
+			return m_iFaithPerTurnFromBuildings;
+		}
+#else
 	return m_iFaithPerTurnFromBuildings;
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -10297,6 +10532,40 @@ int CvCity::GetLocalHappiness() const
 			}
 		}
 	}
+#if defined(TRAITIFY) // Building class happiness from traits
+	int iSpecialTraitBuildingHappiness = 0;
+
+	for (int iTraitLoop = 0; iTraitLoop < GC.getNumTraitInfos(); iTraitLoop++)
+	{
+		TraitTypes eTrait = (TraitTypes)iTraitLoop;
+		CvTraitEntry* pkTraitInfo = GC.getTraitInfo(eTrait);
+		if (pkTraitInfo)
+		{
+			if (kPlayer.GetPlayerTraits()->HasTrait(eTrait))
+			{
+				for (iBuildingClassLoop = 0; iBuildingClassLoop < GC.getNumBuildingClassInfos(); iBuildingClassLoop++)
+				{
+					eBuildingClass = (BuildingClassTypes)iBuildingClassLoop;
+
+					CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+					if (!pkBuildingClassInfo)
+					{
+						continue;
+					}
+					BuildingTypes eBuilding = (BuildingTypes)kPlayer.getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
+					if (eBuilding != NO_BUILDING && GetCityBuildings()->GetNumBuilding(eBuilding) > 0) //Maintain the NO_BUILDING check for the ConquestDLX scenario which has civ specific wonders
+					{
+						if (pkTraitInfo->GetBuildingClassHappiness(eBuildingClass) != 0)
+						{
+							iSpecialTraitBuildingHappiness += pkTraitInfo->GetBuildingClassHappiness(eBuildingClass);
+						}
+					}
+				}
+			}
+		}
+	}
+	iLocalHappiness += iSpecialTraitBuildingHappiness;
+#endif
 
 	iLocalHappiness += iSpecialPolicyBuildingHappiness;
 	int iLocalHappinessCap = getPopulation();
@@ -10975,6 +11244,9 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	VALIDATE_OBJECT
 	int iModifier = 0;
 	int iTempMod;
+#if defined(TRAITIFY)
+	int iTraitMod;
+#endif
 
 	// Yield Rate Modifier
 	iTempMod = getYieldRateModifier(eIndex);
@@ -11082,16 +11354,56 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	{
 		switch(eIndex)
 		{
+#if defined(TRAITIFY) // Puppet Yield Modifiers
+		case YIELD_FOOD:
+			iTempMod = 0;
+			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_FOOD);
+			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+			iModifier += iTempMod;
+			if (iTempMod != 0 && toolTipSink)
+				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+			break;
+		case YIELD_PRODUCTION:
+			iTempMod = 0;
+			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_PRODUCTION);
+			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+			iModifier += iTempMod;
+			if (iTempMod != 0 && toolTipSink)
+				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+			break;
+#endif
 		case YIELD_SCIENCE:
 			iTempMod = GC.getPUPPET_SCIENCE_MODIFIER();
+#if defined(TRAITIFY) // Puppet Yield Modifiers
+			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_SCIENCE);
+			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+#endif
 			iModifier += iTempMod;
 			if(iTempMod != 0 && toolTipSink)
 				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+			break;
 		case YIELD_GOLD:
 			iTempMod = GC.getPUPPET_GOLD_MODIFIER();
+#if defined(TRAITIFY) // Puppet Yield Modifiers
+			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_GOLD);
+			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+#endif
 			iModifier += iTempMod;
 			if(iTempMod != 0 && toolTipSink)
 				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+			break;
+#if defined(LEKMOD_v34) // Puppet Yield Modifiers for Golden Age Points
+		case YIELD_GOLDEN_AGE_POINTS:
+			iTempMod = 0; // Hardcoded to 0 for now
+#if defined(TRAITIFY) // Puppet Yield Modifiers
+			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_GOLDEN_AGE_POINTS);
+			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+#endif
+			iModifier += iTempMod;
+			if (iTempMod != 0 && toolTipSink)
+				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+			break;
+#endif
 		}
 	}
 
@@ -11279,8 +11591,18 @@ int CvCity::GetBaseYieldRateFromBuildings(YieldTypes eIndex) const
 	VALIDATE_OBJECT
 	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
-
+#if defined(LEKMOD_v34)
+	if(GetGarrisonedUnit())
+	{
+		return m_aiBaseYieldRateFromBuildings[eIndex] + GetGarrisonYieldBonus(eIndex);
+	}
+	else
+	{
+		return m_aiBaseYieldRateFromBuildings[eIndex];
+	}
+#else
 	return m_aiBaseYieldRateFromBuildings[eIndex];
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -11535,7 +11857,11 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	CvAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	CvAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
 
-	if (eSpecialist == GC.getDEFAULT_SPECIALIST())
+#if !defined(TRAITIFY) // Allow the SPECIALIST_CITIZEN to be effected by Specialist Yield Changes
+	if (eSpecialist != GC.getDEFAULT_SPECIALIST())
+#else
+	if (eSpecialist != NO_SPECIALIST)
+#endif
 	{
 		return 0;
 	}
@@ -12196,8 +12522,45 @@ void CvCity::changeSpecialistFreeExperience(int iChange)
 	m_iSpecialistFreeExperience += iChange;
 	CvAssert(m_iSpecialistFreeExperience >= 0);
 }
+#if defined(MISC_CHANGES) // Function to return the number of mountains in a given range around the city
+//	--------------------------------------------------------------------------------
+int CvCity::GetNumMountainsNearCity(int iRange, bool bReqireOwnership) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(iRange >= 0, "Search Range is expected to be positive");
 
+	int iMountainCount = 0;
 
+	// Get the city's plot
+	CvPlot* pCityPlot = plot();
+	if (!pCityPlot)
+		return 0;
+
+	const PlayerTypes eOwner = getOwner();
+
+	// Loop through hexagonal area around the city
+	for (int iDX = -iRange; iDX <= iRange; ++iDX)
+	{
+		for (int iDY = -iRange; iDY <= iRange; ++iDY)
+		{
+			CvPlot* pLoopPlot = plotXYWithRangeCheck(pCityPlot->getX(), pCityPlot->getY(), iDX, iDY, iRange);
+			if (pLoopPlot != NULL)
+			{
+				if (pLoopPlot->isMountain())
+				{
+					// Ownership check, only count if owner matches or ownership doesn't matter
+					if (!bReqireOwnership || pLoopPlot->getOwner() == eOwner)
+					{
+						++iMountainCount;
+					}
+				}
+			}
+		}
+	}
+	CvAssertMsg(iMountainCount >= 0, "Mountain count somehow became negative!");
+	return iMountainCount;
+}
+#endif
 //	--------------------------------------------------------------------------------
 void CvCity::updateStrengthValue()
 {
@@ -14773,6 +15136,13 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 				//can't purchase this building
 				return false;
 			}
+#if defined(TRAITIFY) // Setting a Building to be unpurchaseable via gold. 
+			if (GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuildingType, YIELD_GOLD) < 0)
+			{
+				//Can't Purchase if the trait says so
+				return false;
+			}
+#endif
 			else if(!canConstruct(eBuildingType, false, !bTestTrainable))
 			{
 				bool bAlreadyUnderConstruction = canConstruct(eBuildingType, true, !bTestTrainable) && getFirstBuildingOrder(eBuildingType) != -1;
@@ -14979,6 +15349,13 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 				{
 					return false;
 				}
+#if defined(TRAITIFY) // Setting a Building to be unpurchaseable via faith.
+				if (GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuildingType, YIELD_FAITH) < 0)
+				{
+					//Can' Purchase if the trait says so
+					return false;
+				}
+#endif
 
 #ifdef LEKMOD_FAITH_PURCHASE_NO_RELIGION
 			}
@@ -16218,6 +16595,9 @@ void CvCity::read(FDataStream& kStream)
 	kStream >> m_aiBaseYieldRateFromMisc;
 	kStream >> m_aiBaseYieldRateFromReligion;
 	kStream >> m_aiYieldPerPop;
+#if defined(LEKMOD_v34)
+	kStream >> m_aiGarrisonYieldBonus;
+#endif
 	if (uiVersion >= 4)
 	{
 		kStream >> m_aiYieldPerReligion;
@@ -16448,6 +16828,8 @@ void CvCity::read(FDataStream& kStream)
 
 	kStream >> m_yieldChanges;
 
+
+
 	CvCityManager::OnCityCreated(this);
 }
 
@@ -16557,6 +16939,9 @@ void CvCity::write(FDataStream& kStream) const
 	kStream << m_aiBaseYieldRateFromSpecialists;
 	kStream << m_aiBaseYieldRateFromMisc;
 	kStream << m_aiBaseYieldRateFromReligion;
+#if defined(LEKMOD_v34)
+	kStream << m_aiGarrisonYieldBonus;
+#endif
 	kStream << m_aiYieldPerPop;
 	kStream << m_aiYieldPerReligion;
 	kStream << m_aiYieldRateModifier;
