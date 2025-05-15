@@ -156,7 +156,17 @@ protected:
 	static int lGetResearchTurnsLeft(lua_State* L);
 	static int lGetResearchCost(lua_State* L);
 	static int lGetResearchProgress(lua_State* L);
+#if defined(LEKMOD_v34)
+	static int lCanChooseReformationBelief(lua_State* L);
+	static int lSetCanChooseReformationBelief(lua_State* L);
 
+	static int lGetGoldenAgePointsFromCities(lua_State* L);
+	static int lGetTotalGoldenAgePointsInEmpire(lua_State* L);
+#endif
+#if defined(MISC_CHANGES)
+	static int lGetNumMiscTradeRoutes(lua_State* L);
+	static int lChangeNumMiscTradeRoutes(lua_State* L);
+#endif
 	static int lUnitsRequiredForGoldenAge(lua_State* L);
 	static int lUnitsGoldenAgeCapable(lua_State* L);
 	static int lUnitsGoldenAgeReady(lua_State* L);

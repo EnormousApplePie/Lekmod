@@ -210,6 +210,9 @@ public:
 	int GetCityStateTradeRouteGoldModifier() const; // NQMP GJS - new Economic Union
 	int GetGreatScientistBeakerModifier() const;
 	int GetExtraLeagueVotes() const;
+#if defined(MISC_CHANGES) // CvBuildingClasses Getters
+	int GetMountainTourism() const;
+#endif
 	int GetPreferredDisplayPosition() const;
 	int GetPortraitIndex() const;
 	bool IsTeamShare() const;
@@ -301,6 +304,12 @@ public:
 	bool IsBuildingClassNeededInCity(int i) const;
 	int GetNumFreeUnits(int i) const;
 
+#if defined(MISC_CHANGES) // CvBuildingClasses arrays
+	int GetResourceClassYieldChange(int i, int j) const;
+#endif
+#if defined(LEKMOD_v34)
+	int GetGarrisonYieldChange(int j) const;
+#endif
 	int GetResourceYieldChange(int i, int j) const;
 	int* GetResourceYieldChangeArray(int i) const;
 	int GetFeatureYieldChange(int i, int j) const;
@@ -457,6 +466,9 @@ private:
 	int m_iCityStateTradeRouteGoldModifier; // NQMP GJS - new Economic Union
 	int m_iGreatScientistBeakerModifier;
 	int m_iExtraLeagueVotes;
+#if defined(MISC_CHANGES) // CvBuildingClasses member variables
+	int m_iTourismPerMountain;
+#endif
 	int m_iPreferredDisplayPosition;
 	int m_iPortraitIndex;
 
@@ -544,6 +556,12 @@ private:
 	std::pair<int**, size_t> m_ppiBuildingClassYieldChanges;
 #else
 	int** m_ppaiResourceYieldChange;
+#if defined(MISC_CHANGES) // CvBuildingClasses arrays
+	int** m_ppaiResourceClassYieldChange;
+#endif
+#if defined(LEKMOD_v34)
+	int* m_piGarrisonYieldChange;
+#endif
 	int** m_ppaiFeatureYieldChange;
 	std::map<int, std::map<int, int>> m_ppiResourceYieldChangeGlobal;
 	int** m_ppaiImprovementYieldChange;

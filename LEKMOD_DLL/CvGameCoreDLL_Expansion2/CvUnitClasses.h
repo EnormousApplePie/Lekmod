@@ -90,6 +90,10 @@ public:
 	int GetObsoleteTech() const;
 	int GetEra() const;
 	int GetPolicyType() const;
+#if defined(MISC_CHANGES) // Getters
+	int GetPolicyBranchType() const;
+	bool IsAnyIdeologyUnlock() const;
+#endif
 	int GetGoodyHutUpgradeUnitClass() const;
 	int GetGroupSize() const;			// the initial number of individuals in the unit group
 	int GetGroupDefinitions() const;	// the number of UnitMeshGroups for this unit
@@ -225,6 +229,10 @@ private:
 	int m_iPrereqAndTech;
 	int m_iObsoleteTech;
 	int m_iPolicyType;
+#if defined(MISC_CHANGES) // Member variables
+	int m_iPolicyBranchType;
+	bool m_bAnyIdeologyUnlock;
+#endif
 	int m_iGoodyHutUpgradeUnitClass;
 	int m_iGroupSize;
 	int m_iGroupDefinitions;

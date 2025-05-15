@@ -997,8 +997,74 @@
 //#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
 
 
+// Loup's changes for importation step 1
+#define TRAITIFY
+/* This import of Traitify has
+✓ GoldenAgeCultureModifier -- Romania Trait
+✓ NumExtraLeagueVotes -- Vactican Trait, and part of the more informative league vote break down with MISC_CHANGES
+	TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
+✓ NumTradeRouteBonus -- Venice Trait
+✓ MinorFriendshipMinimum -- Tonga Trait
+✓ GetGreatEngineerRateModifier -- Germany Trait
+✓ GetGreatMerchantRateModifier 
+✓ MinorBullyModifier -- Horde Trait
+	TXT_KEY_POP_CSTATE_BULLY_FACTOR_TRAIT_MODIFIER
+✓ ExtraPop -- Phoenicia Trait
+✓ LocalHappinessPerCity -- Burma Trait
+✓ HalfMoreSpecialistUnhappiness -- Mysore Trait
+✓ UnhappinessModifierForPuppetedCities -- Horde Trait
+✓ ForeignReligiousPressure INT -- Aksum Trait
+✓ IdeologyPressureUnhappinessModifier INT -- Cuba Trait
+✓ FaithCostModifier
+✓ InternalTradeRouteYieldModifier -- Prussia Trait
 
+InternationalRouteGrowthModifier -- Kilwa Trait the value is implemented but not used right now, haven't gotten the trade routes quite where I want them yet.
+ 
+// Arrays
+✓ Route_TraitMovementChanges -- Franks Trait
+✓ Trait_BuildingClassRemoveRequiredTerrain -- Palmyra Trait
+✓ Trait_ResourceClassYieldChange -- Netherlands Jeru etc.
+✓ Trait_BuildingCostOverride -- Georgia Trait
+✓ Trait_TerrainYieldChanges
+✓ Trait_ResourceYieldChanges
+✓ Trait_PuppetYieldModifier -- Horde Trait
+✓ Trait_UnitClassForceSpawnCapital -- Generally Useful, also later expandable for Techs and Policies maybe
+✓ Trait_BuildingClassYieldChanges -- Used by several civs, pushed over in this case for Georgia mainly.
+✓ Trait_BuildingClassHappinessChanges w/ Global Happiness BOOL -- Used by civs that use the Trait_BuildingClassYieldChange table
+✓ Altered the Trait_UnimprovedFeatureYieldChange table to be a bit more flexible
+Some Txt Keys and some changes unrelated to the above are made as they are UI related.
+*/
+#define MISC_CHANGES
+/* This is a collection of changes that are not traitify related, directly, but are along the same lines
+✓ 1.) RESOURCECLASS_BUILDING - Define yield changes based on resource class, allows the shortening of certain building's entries.
+✓ 2.) UNIT_IDEOLOGY_UNLOCK - New Boolean for units that unlock upon adopting an ideology. And a Txt value that can unlock a unit based on a policy branch.
+✓ 3.) POLICY_TRADE_ROUTES - New Integer for increasing the number of trade routes on a policy.
+4.) POLICY_OLD_TOA - New Array table to replace the current Honor finisher dummy building -- Later. this is fine as is for now.
+✓ 5.) GLOBALIZATION_IS_USEFUL_MAYBE - Connects to the integer value that gives votes upon finishing a tech and makes it actually give a vote (instead of a dummy building)
+	TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TECH_VOTES
+✓ 6.) GLOBAL_INTERNAL_BASE_VALUE - unhardcodes some internal values and turns them into global integers that can be changed in the xml
+✓ 7.) CONSULATES - New methods involving the giving of votes to the player from policies. Some lua exports are included for this.
+	TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_POLICY_VOTES
+8.) ECO_UNION_NOT_A_BUILDING - makes Economic Union no longer a building, and instead gives the gold based on a new integer value. Policy Trade Routes is used here too.
+✓ 9.) SWISS_MOUNTAINS - New function to return the amount of mountains within X tiles of a city. This is used for the Swiss Ski Resort.
 
+New TXT_KEYS
+TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TECH_VOTES
+TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_POLICY_VOTES
+TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
+*/
+#define LEKMOD_v34 // Changes made for the new version of Lekmod, unrelated to the above
+/*
+✓ LandTradeRouteYieldBonus
+✓ SelfRelgiousPressureBonus
+✓ Lua Exports for activating the new Reformation effect, also just a new bool value since the Lua was delayed a turn for some reason. and made it happen twice.
+✓ New Golden Age Points as a Yield w/ Lua Exports
+
+Building_GarrisonCityYield
+Trait_NearbyResouceBuildingClassYieldChange gave up
+Mughals Trait was quite specific and the behavoir of the code was buggy, so I elected to not use it iin the dll for now.
+✓ Policy_FreeStrategicResources
+*/
 
 ////////////////////////
 //Benched or not working

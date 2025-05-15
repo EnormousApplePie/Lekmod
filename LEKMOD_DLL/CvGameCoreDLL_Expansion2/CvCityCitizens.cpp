@@ -466,6 +466,9 @@ int CvCityCitizens::GetPlotValue(CvPlot* pPlot, bool bUseAllowGrowthFlag)
 #endif
 	int iCultureYieldValue = (GC.getAI_CITIZEN_VALUE_CULTURE() * pPlot->getYield(YIELD_CULTURE));
 	int iFaithYieldValue = (GC.getAI_CITIZEN_VALUE_FAITH() * pPlot->getYield(YIELD_FAITH));
+#if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
+	int iGoldenAgePointsValue = (GC.getAI_CITIZEN_VALUE_GOLDEN_AGE_POINTS() * pPlot->getYield(YIELD_GOLDEN_AGE_POINTS));
+#endif
 #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
 #ifndef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
 	iFoodYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD);
@@ -528,6 +531,12 @@ int CvCityCitizens::GetPlotValue(CvPlot* pPlot, bool bUseAllowGrowthFlag)
 	{
 		iFaithYieldValue *= 3;
 	}
+#if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
+	else if (eFocus == CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS)
+	{
+		iGoldenAgePointsValue *= 3;
+	}
+#endif
 
 #ifdef AUI_CITIZENS_GET_VALUE_ALTER_FOOD_VALUE_IF_FOOD_PRODUCTION
 #ifdef AUI_CITIZENS_FOOD_PRODUCTION_TRIAL_RUN_THEN_SELF_CONSISTENCY
@@ -1181,6 +1190,35 @@ bool CvCityCitizens::IsAIWantSpecialistRightNow()
 			}
 		}
 	}
+#if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
+	else if(eFocusType == CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS)
+	{
+		// Loop through all Buildings
+		for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+		{
+			const BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+			if (pkBuildingInfo)
+			{
+				// Have this Building in the City?
+				if (m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+				{
+					// Can't add more than the max
+					if (IsCanAddSpecialistToBuilding(eBuilding))
+					{
+						const SpecialistTypes eSpecialist = (SpecialistTypes)pkBuildingInfo->GetSpecialistType();
+						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+						if (pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_GOLDEN_AGE_POINTS) > 0)
+						{
+							iWeight *= 3;
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+#endif
 
 	// specialists are cheaper somehow
 	if (m_pCity->GetPlayer()->isHalfSpecialistUnhappiness() || m_pCity->GetPlayer()->isHalfSpecialistFood())
@@ -1351,6 +1389,9 @@ int CvCityCitizens::GetSpecialistValue(SpecialistTypes eSpecialist)
 #endif
 	int iCultureYieldValue = (GC.getAI_CITIZEN_VALUE_CULTURE() * m_pCity->GetCultureFromSpecialist(eSpecialist)); 
 	int iFaithYieldValue = (GC.getAI_CITIZEN_VALUE_FAITH() * pPlayer->specialistYield(eSpecialist, YIELD_FAITH));
+#if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
+	int iGoldenAgePointsYieldValue = (GC.getAI_CITIZEN_VALUE_GOLDEN_AGE_POINTS() * pPlayer->specialistYield(eSpecialist, YIELD_GOLDEN_AGE_POINTS));
+#endif
 #ifdef AUI_CITIZENS_GET_SPECIALIST_VALUE_ACCOUNT_FOR_GURUSHIP
 	if (pReligion)
 	{
@@ -1560,6 +1601,12 @@ int CvCityCitizens::GetSpecialistValue(SpecialistTypes eSpecialist)
 	{
 		iFaithYieldValue *= 3;
 	}
+#if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
+	else if (eFocus == CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS)
+	{
+		iGoldenAgePointsYieldValue *= 3;
+	}
+#endif
 	else if(eFocus == CITY_AI_FOCUS_TYPE_GREAT_PEOPLE)
 	{
 		iGPPYieldValue *= 3;
@@ -1783,6 +1830,9 @@ int CvCityCitizens::GetSpecialistValue(SpecialistTypes eSpecialist)
 	iValue += iGPPYieldValue;
 #endif
 	iValue += iHappinessYieldValue;
+#if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
+	iValue += iGoldenAgePointsYieldValue;
+	#endif
 
 	return iValue;
 }
@@ -1835,6 +1885,11 @@ bool CvCityCitizens::IsBetterThanDefaultSpecialist(SpecialistTypes eSpecialist)
 	case CITY_AI_FOCUS_TYPE_FAITH:
 		eYield = YIELD_FAITH;
 		break;
+#if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
+	case CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS:
+		eYield = YIELD_GOLDEN_AGE_POINTS;
+		break;
+#endif
 	default:
 		eYield = NO_YIELD;
 		break;
