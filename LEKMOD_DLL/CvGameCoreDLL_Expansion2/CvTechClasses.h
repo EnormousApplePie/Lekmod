@@ -50,6 +50,10 @@ public:
 	//EAP: Extra Embarked visibility on tech
 	int GetEmbarkedSightChange() const;
 
+#if defined(MISC_CHANGES) // Extra League Votes
+	int GetExtraLeagueVotes() const;
+#endif
+
 	int GetNumInternationalTradeRoutesChange() const;;
 	int GetInfluenceSpreadModifier() const;;
 	int GetExtraVotesPerDiplomat() const;
@@ -132,6 +136,10 @@ private:
 	bool m_bAllowsEmbarking;
 	//EAP: Civilian Embark
 	bool m_bAllowsEmbarkingCivilian;
+
+#if defined(MISC_CHANGES) // Extra League Votes
+	int m_iExtraLeagueVotes;
+#endif
 
 	bool m_bAllowsDefensiveEmbarking;
 	bool m_bEmbarkedAllWaterPassage;

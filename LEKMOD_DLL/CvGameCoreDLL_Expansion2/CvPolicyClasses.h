@@ -59,6 +59,10 @@ public:
 #ifdef NQ_EXTRA_SPIES_FROM_POLICIES
 	int GetNumExtraSpies() const;
 #endif
+#if defined(MISC_CHANGES) // Extra League Votes
+	int GetNumExtraLeagueVotes() const;
+	int GetNumTradeRouteBonus() const;
+#endif
 	int GetMedianTechPercentChange() const;
 	int GetStrategicResourceMod() const;
 	int GetWonderProductionModifier() const;
@@ -299,7 +303,9 @@ public:
 	int GetNumFreeUnitsByClass(int i) const;
 	int GetTourismByUnitClassCreated(int i) const;
 	int GetImprovementCultureChanges(int i) const;
-
+#if defined(LEKMOD_v34)
+	int GetPolicyResourceQuantity(int i) const;
+#endif
 	int GetHurryModifier(int i) const;
 	bool IsSpecialistValid(int i) const;
 	int GetImprovementYieldChanges(int i, int j) const;
@@ -344,6 +350,10 @@ private:
 	int m_iNumFreeGreatPeople;
 #ifdef NQ_EXTRA_SPIES_FROM_POLICIES
 	int m_iNumExtraSpies;
+#endif
+#if defined(MISC_CHANGES) // Private member variables
+	int m_iNumExtraLeagueVotes;
+	int m_iNumTradeRouteBonus;
 #endif
 	int m_iMedianTechPercentChange;
 	int m_iStrategicResourceMod;
@@ -583,6 +593,9 @@ private:
 	int* m_paiBuildingClassHappiness;
 	int* m_paiFreeUnitClasses;
 	int* m_paiTourismOnUnitCreation;
+#if defined(LEKMOD_v34)
+	int* m_piPolicyResourceQuantity;
+#endif
 
 //	bool* m_pabHurry;
 	bool* m_pabSpecialistValid;
@@ -800,6 +813,9 @@ enum PolicyModifierType
 	POLICYMOD_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER,
 #endif
 	POLICYMOD_INTERNAL_TRADE_GOLD_CHANGE, // NQMP GJS - Silk Road
+#if defined(MISC_CHANGES) // POLICYMOD enum
+	POLICYMOD_NUM_TRADE_ROUTES_BONUS,
+#endif
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -850,6 +866,9 @@ public:
 	CvString GetWeLoveTheKingString();
 	std::vector<BuildingTypes> GetFreeBuildingsOnConquest();
 	int GetTourismFromUnitCreation(UnitClassTypes eUnitClass) const;
+#if defined(LEKMOD_v34)
+	int GetPolicyResourceQuantity(ResourceTypes eResource) const;
+#endif
 
 	// Functions to give current player status with respect to policies
 	int GetNextPolicyCost();

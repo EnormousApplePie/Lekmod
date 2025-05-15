@@ -102,6 +102,32 @@ public:
 	int GetFreeUnitClassType() const;
 	int GetNaturalWonderFirstFinderGold() const;
 	int GetNaturalWonderSubsequentFinderGold() const;
+	
+#if defined(TRAITIFY) // Int and Bool getters
+	bool IsHalfMoreSpecialistUnhappiness() const;
+
+	int GetGoldenAgeCultureModifier() const;
+	int GetNumExtraLeagueVotes() const;
+	int GetNumTradeRouteBonus() const;
+	int GetMinorFriendshipMinimum() const;
+	int GetGreatEngineerRateModifier() const;
+	int GetGreatMerchantRateModifier() const;
+	int GetMinorBullyModifier() const;
+	int GetExtraPopulation() const;
+	int GetInternationalRouteGrowthModifier() const;
+	int GetLocalHappinessPerCity() const;
+	int GetInternalTradeRouteYieldModifier() const;
+	int GetUnhappinessModifierForPuppetedCities() const;
+	int GetFaithCostModifier() const; 
+	int GetIdeologyPressureUnhappinessModifier() const;
+	int GetForeignRelgionPressureModifier() const;
+#endif
+#if defined(LEKMOD_v34)
+	bool IsReligionEnhanceReformation() const;
+
+	int GetSelfReligiousPressureModifier() const;
+	int GetLandTradeRouteYieldBonus() const;
+#endif
 
 	//EAP: Natural Wonder finder faith
 	int GetNaturalWonderFirstFinderFaith() const;
@@ -183,6 +209,24 @@ public:
 	void setShortDescription(const char* szVal);
 
 	// Arrays
+#if defined(TRAITIFY) //Arrays
+	bool IsBuildingClassRemoveRequiredTerrain(int i, int j) const;
+	bool IsUnitClassForceSpawnCapital(int i, int j) const;
+
+	int GetResourceYieldChanges(int i, int j) const;
+	int GetTerrainYieldChanges(int i, int j) const;
+	int GetBuildingClassHappiness(int i) const;
+	int GetBuildingClassGlobalHappiness(int i) const;
+	int GetResourceClassYieldChanges(int i, int j) const;
+	int GetBuildingCostOverride(int i, int j) const;
+	int GetPuppetYieldModifiers(int i) const;
+	int GetBuildingClassYieldChanges(int i, int j) const;
+	int GetFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const;
+#endif
+#if defined(LEKMOD_v34)
+	int GetYieldPerPopulation(int i) const;
+	int GetYieldPerPopulationForeignReligion(int i) const;
+#endif
 	int GetExtraYieldThreshold(int i) const;
 	int GetYieldChange(int i) const;
 	int GetYieldChangeStrategicResources(int i) const;
@@ -272,6 +316,32 @@ protected:
 	int m_iNaturalWonderFirstFinderGold;
 	int m_iNaturalWonderSubsequentFinderGold;
 
+#if defined(TRAITIFY) // int and bool members
+	bool m_bHalfMoreSpecialistUnhappiness;
+
+	int m_iGoldenAgeCultureModifier;
+	int m_iNumExtraLeagueVotes;
+	int m_iNumTradeRouteBonus;
+	int m_iMinorFriendshipMinimum;
+	int m_iGreatEngineerRateModifier;
+	int m_iGreatMerchantRateModifier;
+	int m_iMinorBullyModifier;
+	int m_iExtraPopulation;
+	int m_iInternationalRouteGrowthModifier;
+	int m_iLocalHappinessPerCity;
+	int m_iInternalTradeRouteYieldModifier;
+	int m_iUnhappinessModifierForPuppetedCities;
+	int m_iFaithCostModifier;
+	int m_iIdeologyPressureUnhappinessModifier;
+	int m_iForeignRelgionPressureModifier;
+#endif
+#if defined(LEKMOD_v34)
+	bool m_bReligionEnhanceReformation;
+
+	int m_iSelfReligiousPressureModifier;
+	int m_iLandTradeRouteYieldBonus;
+#endif
+
 	//EAP: Natural wonder faith for the finder
 	int m_iNaturalWonderFirstFinderFaith;
 	int m_iNaturalWonderSubsequentFinderFaith;
@@ -346,6 +416,24 @@ protected:
 	CvString m_strShortDescription;
 
 	// Arrays
+#if defined(TRAITIFY) //Array members
+	int** m_ppiBuildingClassRemoveRequiredTerrain;
+	int** m_ppiUnitClassForceSpawnCapital;
+	int** m_ppiBuildingCostOverride;
+	int** m_ppiBuildingClassYieldChanges;
+	int** m_ppiResourceClassYieldChanges;
+	int** m_ppiFeatureYieldChanges;
+	int** m_ppiResourceYieldChanges;
+	int** m_ppiTerrainYieldChanges;
+
+	int* m_paiBuildingClassHappiness;
+	int* m_paiBuildingClassGlobalHappiness;
+	int* m_piPuppetYieldModifiers;
+#endif
+#if defined(LEKMOD_v34)
+	int* m_paiYieldPerPopulation;
+	int* m_paiYieldPerPopulationForeignReligion;
+#endif
 	int* m_paiExtraYieldThreshold;
 	int* m_paiYieldChange;
 	int* m_paiYieldChangeStrategicResources;
@@ -614,6 +702,87 @@ public:
 	};
 	int GetFirstFreeUnit(TechTypes eTech);
 	int GetNextFreeUnit();
+
+#if defined(TRAITIFY) // int and bool getters
+	bool IsHalfMoreSpecialistUnhappiness() const
+	{
+		return m_bHalfMoreSpecialistUnhappiness;
+	};
+	int GetGoldenAgeCultureModifier() const
+	{
+		return m_iGoldenAgeCultureModifier;
+	};
+	int GetNumExtraLeagueVotes() const
+	{
+		return m_iNumExtraLeagueVotes;
+	};
+	int GetNumTradeRouteBonus() const
+	{
+		return m_iNumTradeRouteBonus;
+	};
+	int GetMinorFriendshipMinimum() const
+	{
+		return m_iMinorFriendshipMinimum;
+	};
+	int GetGreatEngineerRateModifier() const
+	{
+		return m_iGreatEngineerRateModifier;
+	};
+	int GetGreatMerchantRateModifier() const
+	{
+		return m_iGreatMerchantRateModifier;
+	};
+	int GetMinorBullyModifier() const
+	{
+		return m_iMinorBullyModifier;
+	};
+	int GetExtraPopulation() const
+	{
+		return m_iExtraPopulation;
+	};
+	int GetInternationalRouteGrowthModifier() const
+	{
+		return m_iInternationalRouteGrowthModifier;
+	};
+	int GetLocalHappinessPerCity() const
+	{
+		return m_iLocalHappinessPerCity;
+	};
+	int GetInternalTradeRouteYieldModifier() const
+	{
+		return m_iInternalTradeRouteYieldModifier;
+	};
+	int GetUnhappinessModifierForPuppetedCities() const
+	{
+		return m_iUnhappinessModifierForPuppetedCities;
+	};
+	int GetFaithCostModifier() const
+	{
+		return m_iFaithCostModifier;
+	};
+	int GetIdeologyPressureUnhappinessModifier() const
+	{
+		return m_iIdeologyPressureUnhappinessModifier;
+	};
+	int GetForeignRelgionPressureModifier() const
+	{
+		return m_iForeignRelgionPressureModifier;
+	};
+#endif
+#if defined(LEKMOD_v34)
+	bool IsReligionEnhanceReformation() const
+	{
+		return m_bReligionEnhanceReformation;
+	};
+	int GetSelfReligiousPressureModifier() const
+	{
+		return m_iSelfReligiousPressureModifier;
+	};
+	int GetLandTradeRouteYieldBonus() const
+	{
+		return m_iLandTradeRouteYieldBonus;
+	};
+#endif
 	int GetNaturalWonderFirstFinderGold() const
 	{
 		return m_iNaturalWonderFirstFinderGold;
@@ -957,6 +1126,25 @@ public:
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	bool NoBuild(ImprovementTypes eImprovement);
 #endif
+#if defined(TRAITIFY) //Array members
+	bool IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass);
+	bool IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass);
+
+
+	int GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYield);
+	int GetTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYield);
+	int GetBuildingClassHappiness(BuildingClassTypes eBuildingClass);
+	int GetBuildingClassGlobalHappiness(BuildingClassTypes eBuildingClass);
+	int GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYieldType);
+	int GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYieldType) const;
+	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType);
+	int GetPuppetYieldModifier(YieldTypes eYield);
+	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
+#endif
+#if defined(LEKMOD_v34)
+	int GetYieldPerPopulation(YieldTypes eYield);
+	int GetYieldPerPopulationForeignReligion(YieldTypes eYield);
+#endif
 
 	// Maya calendar routines
 	bool IsUsingMayaCalendar() const;
@@ -1034,6 +1222,32 @@ private:
 	int m_iNaturalWonderFirstFinderGold;
 	int m_iNaturalWonderSubsequentFinderGold;
 	int m_iNaturalWonderYieldModifier;
+
+#if defined(TRAITIFY) // int and bool members
+	bool m_bHalfMoreSpecialistUnhappiness;
+
+	int m_iGoldenAgeCultureModifier;
+	int m_iNumExtraLeagueVotes;
+	int m_iNumTradeRouteBonus;
+	int m_iMinorFriendshipMinimum;
+	int m_iGreatEngineerRateModifier;
+	int m_iGreatMerchantRateModifier;
+	int m_iMinorBullyModifier;
+	int m_iExtraPopulation;
+	int m_iInternationalRouteGrowthModifier;
+	int m_iLocalHappinessPerCity;
+	int m_iInternalTradeRouteYieldModifier;
+	int m_iUnhappinessModifierForPuppetedCities;
+	int m_iFaithCostModifier;
+	int m_iIdeologyPressureUnhappinessModifier;
+	int m_iForeignRelgionPressureModifier;
+#endif
+#if defined(LEKMOD_v34)
+	bool m_bReligionEnhanceReformation;
+
+	int m_iSelfReligiousPressureModifier;
+	int m_iLandTradeRouteYieldBonus;
+#endif
 
 	//EAP: Natural wonder faith for the finder
 	int m_iNaturalWonderFirstFinderFaith;
@@ -1149,6 +1363,9 @@ private:
 #endif
 
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiUnimprovedFeatureYieldChange;
+#if defined(TRAITIFY)
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiFeatureYieldChange;
+#endif
 
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;
 };

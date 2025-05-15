@@ -8,7 +8,7 @@
 #pragma once 
 #ifndef CVENUMS_H
 #define CVENUMS_H
-
+#pragma message("Compiling: " __FILE__)
 // Mem Allocation Tags
 enum eCiv5GameCoreMPoolType
 {
@@ -2599,6 +2599,9 @@ enum CityAIFocusTypes
 	CITY_AI_FOCUS_TYPE_PROD_GROWTH,
 	CITY_AI_FOCUS_TYPE_GOLD_GROWTH,
 	CITY_AI_FOCUS_TYPE_FAITH,
+#if defined(LEKMOD_v34)
+	CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS,
+#endif
 
 	NUM_CITY_AI_FOCUS_TYPES
 };
