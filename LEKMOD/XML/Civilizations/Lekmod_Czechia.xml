@@ -3,42 +3,72 @@
 
 	<Building_YieldChanges>
 		<Row>
-			<BuildingType>BUILDING_MUGHALS_CARAVANSARY</BuildingType>
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>2</Yield>
 		</Row>
 	</Building_YieldChanges>
 
 	<Building_Flavors>
-		<Row>
-			<BuildingType>BUILDING_MUGHALS_CARAVANSARY</BuildingType>
-			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
-			<Flavor>10</Flavor>
-		</Row>
 		<Row> 
-			<BuildingType>BUILDING_MUGHALS_CARAVANSARY</BuildingType> 
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType> 
 			<FlavorType>FLAVOR_GOLD</FlavorType> 
-			<Flavor>10</Flavor> 
-		</Row>
-		<Row> 
-			<BuildingType>BUILDING_MUGHALS_CARAVANSARY</BuildingType> 
-			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType> 
-			<Flavor>10</Flavor> 
-		</Row>
-		<Row> 
-			<BuildingType>BUILDING_MUGHALS_CARAVANSARY</BuildingType> 
-			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType> 
-			<Flavor>10</Flavor> 
+			<Flavor>100</Flavor> 
 		</Row>
 	</Building_Flavors>
 
-	<Buildings>
+	<Building_LocalResourceOrs>
 		<Row> 
-			<Type>BUILDING_MUGHALS_CARAVANSARY</Type> 
-			<Description>TXT_KEY_BUILDING_MUGHALS_CARAVANSARY</Description> 
-			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_MUGHALS_CARAVANSARY_TEXT</Civilopedia> 
-			<Strategy>TXT_KEY_BUILDING_MUGHALS_CARAVANSARY_STRATEGY</Strategy> 
-			<Help>TXT_KEY_BUILDING_MUGHALS_CARAVANSARY_HELP</Help> 
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType> 
+			<ResourceType>RESOURCE_GOLD</ResourceType> 
+		</Row>
+		<Row> 
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType> 
+			<ResourceType>RESOURCE_COPPER</ResourceType> 
+		</Row>
+		<Row> 
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType> 
+			<ResourceType>RESOURCE_SILVER</ResourceType> 
+		</Row>
+		<Row> 
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType> 
+			<ResourceType>RESOURCE_IRON</ResourceType> 
+		</Row>
+	</Building_LocalResourceOrs>
+
+	<Building_ResourceYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType>
+			<ResourceType>RESOURCE_GOLD</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType>
+			<ResourceType>RESOURCE_COPPER</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType>
+			<ResourceType>RESOURCE_SILVER</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Building_ResourceYieldChanges>
+	<Buildings>
+		<Row>  
+			<Type>BUILDING_CZECHIA_MINT</Type> 
+			<Description>TXT_KEY_BUILDING_CZECHIA_MINT</Description> 
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_CZECHIA_MINT_TEXT</Civilopedia> 
+			<Strategy>TXT_KEY_BUILDING_CZECHIA_MINT_STRATEGY</Strategy> 
+			<Help>TXT_KEY_BUILDING_CZECHIA_MINT_HELP</Help> 
 			<GoldMaintenance>0</GoldMaintenance> 
 			<MutuallyExclusiveGroup>-1</MutuallyExclusiveGroup> 
 			<TeamShare>false</TeamShare> 
@@ -63,7 +93,7 @@
 			<DiplomaticVoting>false</DiplomaticVoting> 
 			<AffectSpiesNow>false</AffectSpiesNow> 
 			<NullifyInfluenceModifier>false</NullifyInfluenceModifier> 
-			<Cost>90</Cost> 
+			<Cost>75</Cost> 
 			<FaithCost>0</FaithCost> 
 			<LeagueCost>0</LeagueCost> 
 			<UnlockedByBelief>false</UnlockedByBelief> 
@@ -143,26 +173,27 @@
 			<XBuiltTriggersIdeologyChoice>0</XBuiltTriggersIdeologyChoice> 
 			<TradeRouteSeaDistanceModifier>0</TradeRouteSeaDistanceModifier> 
 			<TradeRouteSeaGoldBonus>0</TradeRouteSeaGoldBonus> 
-			<TradeRouteLandDistanceModifier>50</TradeRouteLandDistanceModifier> 
-			<TradeRouteLandGoldBonus>200</TradeRouteLandGoldBonus> 
+			<TradeRouteLandDistanceModifier>0</TradeRouteLandDistanceModifier> 
+			<TradeRouteLandGoldBonus>0</TradeRouteLandGoldBonus> 
 			<CityStateTradeRouteProductionModifier>0</CityStateTradeRouteProductionModifier> 
 			<GreatScientistBeakerModifier>0</GreatScientistBeakerModifier> 
-			<BuildingClass>BUILDINGCLASS_CARAVANSARY</BuildingClass> 
-			<ArtDefineTag>ART_DEF_BUILDING_CARAVANSARY</ArtDefineTag> 
+			<BuildingClass>BUILDINGCLASS_MINT</BuildingClass> 
+			<ArtDefineTag>ART_DEF_BUILDING_BANK</ArtDefineTag> 
 			<TechEnhancedTourism>0</TechEnhancedTourism> 
 			<PrereqTech>TECH_CURRENCY</PrereqTech> 
-			<SpecialistCount>0</SpecialistCount> 
+			<SpecialistCount>1</SpecialistCount>
+			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
 			<GreatWorkCount>0</GreatWorkCount> 
 			<SpecialistExtraCulture>0</SpecialistExtraCulture> 
 			<GreatPeopleRateChange>0</GreatPeopleRateChange> 
 			<ExtraLeagueVotes>0</ExtraLeagueVotes> 
 			<CityWall>false</CityWall> 
 			<DisplayPosition>0</DisplayPosition> 
-			<PortraitIndex>8</PortraitIndex> 
+			<PortraitIndex>34</PortraitIndex> 
 			<WonderSplashAnchor>R,T</WonderSplashAnchor> 
-			<IconAtlas>EXPANSION2_BUILDING_ATLAS</IconAtlas> 
+			<IconAtlas>BW_ATLAS_1</IconAtlas> 
 			<ArtInfoCulturalVariation>false</ArtInfoCulturalVariation> 
-			<ArtInfoEraVariation>true</ArtInfoEraVariation> 
+			<ArtInfoEraVariation>false</ArtInfoEraVariation> 
 			<ArtInfoRandomVariation>false</ArtInfoRandomVariation> 
 			<MountainScienceYield>0</MountainScienceYield> 
 			<CityStateTradeRouteGoldModifier>0</CityStateTradeRouteGoldModifier> 
@@ -172,116 +203,116 @@
 	
 	<Civilization_BuildingClassOverrides>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<BuildingClassType>BUILDINGCLASS_CARAVANSARY</BuildingClassType> 
-			<BuildingType>BUILDING_MUGHALS_CARAVANSARY</BuildingType> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<BuildingClassType>BUILDINGCLASS_MINT</BuildingClassType> 
+			<BuildingType>BUILDING_CZECHIA_MINT</BuildingType> 
 		</Row>
 	</Civilization_BuildingClassOverrides>
 	
 	<Civilization_CityNames>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_0</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_0</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_1</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_1</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_2</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_2</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_3</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_3</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_4</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_4</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_5</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_5</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_6</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_6</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
 			<CityName>TXT_KEY_CITY_NAME_MUGHALS_7</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_8</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_8</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_9</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_9</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_10</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_10</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_11</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_11</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_12</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_12</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_13</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_13</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_14</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_14</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_15</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_15</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_16</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_16</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_17</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_17</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_18</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_18</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_19</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_19</CityName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<CityName>TXT_KEY_CITY_NAME_MUGHALS_20</CityName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<CityName>TXT_KEY_CITY_NAME_CZECHIA_20</CityName> 
 		</Row>
 	</Civilization>
 	
 	<Civilization_FreeBuildingClasses>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
 			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType> 
 		</Row>
 	</Civilization_FreeBuildingClasses>
 	
 	<Civilization_FreeTechs>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
 			<TechType>TECH_AGRICULTURE</TechType> 
 		</Row>
 	</Civilization_FreeTechs>	
 	
 	<Civilization_FreeUnits>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
 			<UnitClassType>UNITCLASS_SETTLER</UnitClassType> 
 			<UnitAIType>UNITAI_SETTLE</UnitAIType> 
 			<Count>1</Count> 
@@ -290,59 +321,59 @@
 	
 	<Civilization_Leaders>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<LeaderheadType>LEADER_MUGHALS</LeaderheadType> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<LeaderheadType>LEADER_CZECHIA</LeaderheadType> 
 		</Row>
 	</Civilization_Leaders>	
 	
 	<Civilization_SpyNames>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_0</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_0</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_1</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_1</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_2</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_2</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_3</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_3</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_4</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_4</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_5</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_5</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_6</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_6</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_7</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_7</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_8</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_8</SpyName> 
 		</Row>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<SpyName>TXT_KEY_SPY_NAME_MUGHALS_9</SpyName> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<SpyName>TXT_KEY_SPY_NAME_CZECHIA_9</SpyName> 
 		</Row>
 	</Civilization_SpyNames>
 	
 	<Civilization_UnitClassOverrides>
 		<Row> 
-			<CivilizationType>CIVILIZATION_MUGHALS</CivilizationType> 
-			<UnitClassType>UNITCLASS_CANNON</UnitClassType> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
+			<CivilizationType>CIVILIZATION_CZECHIA</CivilizationType> 
+			<UnitClassType>UNITCLASS_FOREIGN_LEGION</UnitClassType> 
+			<UnitType>UNIT_CZECHIA_FOREIGN_LEGION</UnitType> 
 		</Row>
 	</Civilization_UnitClassOverrides>
 	
@@ -350,128 +381,128 @@
 		<Row>
 			<Playable>true</Playable>
 			<AIPlayable>true</AIPlayable>
-			<Type>CIVILIZATION_MUGHALS</Type>
-			<Description>TXT_KEY_CIV_MUGHALS_DESC</Description>
-			<ShortDescription>TXT_KEY_CIV_MUGHALS_SHORT_DESC</ShortDescription>
-			<Adjective>TXT_KEY_CIV_MUGHALS_ADJECTIVE</Adjective>
-			<CivilopediaTag>TXT_KEY_CIV_MUGHALS_DESC</CivilopediaTag>
-			<DefaultPlayerColor>PLAYERCOLOR_MUGHALS</DefaultPlayerColor>
+			<Type>CIVILIZATION_CZECHIA</Type>
+			<Description>TXT_KEY_CIV_CZECHIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_CZECHIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_CZECHIA_ADJECTIVE</Adjective>
+			<CivilopediaTag>TXT_KEY_CIV_CZECHIA_DESC</CivilopediaTag>
+			<DefaultPlayerColor>PLAYERCOLOR_CZECHIA</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ROME</ArtDefineTag> 
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType> 
 			<ArtStyleSuffix>_MED</ArtStyleSuffix> 
 			<ArtStylePrefix>MEDITERRANEAN</ArtStylePrefix> 
 			<PortraitIndex>0</PortraitIndex> 
-			<IconAtlas>LEKMOD_MUGHALS_ATLAS</IconAtlas> 
-			<AlphaIconAtlas>MUGHALS_ALPHA_ICON_ATLAS</AlphaIconAtlas> 
+			<IconAtlas>LEKMOD_CZECHIA_ATLAS</IconAtlas> 
+			<AlphaIconAtlas>CZECHIA_ALPHA_ICON_ATLAS</AlphaIconAtlas> 
 			<MapImage>generic_map.dds</MapImage> 
-			<DawnOfManQuote>TXT_KEY_DAWN_OF_MAN_MUGHALS_TEXT</DawnOfManQuote> 
+			<DawnOfManQuote>TXT_KEY_DAWN_OF_MAN_CZECHIA_TEXT</DawnOfManQuote> 
 			<DawnOfManImage>generic_DoM.dds</DawnOfManImage> 
 		</Row>
 	</Civilizations> 
 	
 	<Colors> 
 		<Row>
-			<Type>COLOR_PLAYER_MUGHALS_ICON</Type>
-			<Red>0.129411764705882</Red>
-			<Green>0.423529411764706</Green>
-			<Blue>0.372549019607843</Blue>
+			<Type>COLOR_PLAYER_CZECHIA_ICON</Type>
+			<Red>0.423529411764706</Red>
+			<Green>0.0509803921568627</Green>
+			<Blue>0.501960784313725</Blue>
 			<Alpha>1</Alpha>
 		</Row>
 		<Row>
-			<Type>COLOR_PLAYER_MUGHALS_BACKGROUND</Type>
-			<Red>1</Red> 
-			<Green>0.95686274509804</Green> 
-			<Blue>0.68235294117647</Blue> 
+			<Type>COLOR_PLAYER_CZECHIA_BACKGROUND</Type>
+			<Red>0.631372549019608</Red> 
+			<Green>0.627450980392157</Green> 
+			<Blue>0.607843137254902</Blue> 
 			<Alpha>1</Alpha>
 		</Row>
 	</Colors> 
 	
 	<IconTextureAtlases>
-		<!-- Mughals Art -->
+		<!-- Czechia Art -->
 
 		<Row> 
-			<Atlas>LEKMOD_MUGHALS_CANNON_FLAG</Atlas> 
+			<Atlas>LEKMOD_CZECHIA_FOREIGN_LEGION_FLAG</Atlas> 
 			<IconSize>32</IconSize> 
-			<Filename>xebec_flag_32.dds</Filename> 
+			<Filename>czechia_legion_flag_32.dds</Filename> 
 			<IconsPerRow>1</IconsPerRow> 
 			<IconsPerColumn>1</IconsPerColumn> 
 		</Row>
 
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>128</IconSize>
-			<Filename>mughals_atlas_alpha_128.dds</Filename>
+			<Filename>czechia_atlas_alpha_128.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>64</IconSize>
-			<Filename>mughals_atlas_alpha_64.dds</Filename>
+			<Filename>czechia_atlas_alpha_64.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>48</IconSize>
-			<Filename>mughals_atlas_alpha_48.dds</Filename>
+			<Filename>czechia_atlas_alpha_48.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>32</IconSize>
-			<Filename>mughals_atlas_alpha_32.dds</Filename>
+			<Filename>czechia_atlas_alpha_32.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>24</IconSize>
-			<Filename>mughals_atlas_alpha_24.dds</Filename>
+			<Filename>czechia_atlas_alpha_24.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ATLAS</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>256</IconSize>
-			<Filename>mughals_atlas_256.dds</Filename>
+			<Filename>czechia_atlas_256.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ATLAS</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>128</IconSize>
-			<Filename>mughals_atlas_128.dds</Filename>
+			<Filename>czechia_atlas_128.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ATLAS</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>80</IconSize>
-			<Filename>mughals_atlas_80.dds</Filename>
+			<Filename>czechia_atlas_80.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ATLAS</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>64</IconSize>
-			<Filename>mughals_atlas_64.dds</Filename>
+			<Filename>czechia_atlas_64.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ATLAS</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>45</IconSize>
-			<Filename>mughals_atlas_45.dds</Filename>
+			<Filename>czechia_atlas_45.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>LEKMOD_MUGHALS_ATLAS</Atlas>
+			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>32</IconSize>
-			<Filename>mughals_atlas_32.dds</Filename>
+			<Filename>czechia_atlas_32.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
@@ -479,192 +510,192 @@
 	
 	<Leader_Flavors>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_OFFENSE</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_DEFENSE</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_RECON</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_RANGED</FlavorType>
 			<Flavor>3</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_MOBILE</FlavorType>
 			<Flavor>3</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_NAVAL</FlavorType>
 			<Flavor>9</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType>
 			<Flavor>3</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
 			<Flavor>6</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_NAVAL_TILE_IMPROVEMENT</FlavorType>
 			<Flavor>7</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_AIR</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>6</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>6</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
 			<Flavor>6</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_INFRASTRUCTURE</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_GOLD</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>7</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_WONDER</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_RELIGION</FlavorType>
 			<Flavor>6</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
 			<Flavor>8</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_WATER_CONNECTION</FlavorType>
 			<Flavor>4</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_NUKE</FlavorType>
 			<Flavor>7</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_USE_NUKE</FlavorType>
 			<Flavor>6</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
 			<Flavor>6</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_ANTIAIR</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_AIR_CARRIER</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_ARCHAEOLOGY</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType>
 			<Flavor>9</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_I_SEA_TRADE_ROUTE</FlavorType>
 			<Flavor>3</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_I_TRADE_DESTINATION</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<FlavorType>FLAVOR_AIRLIFT</FlavorType>
 			<Flavor>5</Flavor>
 		</Row>
@@ -672,37 +703,37 @@
 	
 	<Leader_MajorCivApproachBiases> 
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MajorCivApproachType>MAJOR_CIV_APPROACH_WAR</MajorCivApproachType>
 			<Bias>5</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MajorCivApproachType>MAJOR_CIV_APPROACH_HOSTILE</MajorCivApproachType>
 			<Bias>5</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MajorCivApproachType>MAJOR_CIV_APPROACH_DECEPTIVE</MajorCivApproachType>
 			<Bias>5</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MajorCivApproachType>MAJOR_CIV_APPROACH_GUARDED</MajorCivApproachType>
 			<Bias>8</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MajorCivApproachType>MAJOR_CIV_APPROACH_AFRAID</MajorCivApproachType>
 			<Bias>2</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MajorCivApproachType>MAJOR_CIV_APPROACH_FRIENDLY</MajorCivApproachType>
 			<Bias>5</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MajorCivApproachType>MAJOR_CIV_APPROACH_NEUTRAL</MajorCivApproachType>
 			<Bias>8</Bias>
 		</Row>
@@ -710,45 +741,45 @@
 	
 	<Leader_MinorCivApproachBiases> 
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MinorCivApproachType>MINOR_CIV_APPROACH_IGNORE</MinorCivApproachType>
 			<Bias>3</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MinorCivApproachType>MINOR_CIV_APPROACH_FRIENDLY</MinorCivApproachType>
 			<Bias>7</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MinorCivApproachType>MINOR_CIV_APPROACH_PROTECTIVE</MinorCivApproachType>
 			<Bias>7</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MinorCivApproachType>MINOR_CIV_APPROACH_CONQUEST</MinorCivApproachType>
 			<Bias>3</Bias>
 		</Row>
 		<Row>
-			<LeaderType>LEADER_MUGHALS</LeaderType>
+			<LeaderType>LEADER_CZECHIA</LeaderType>
 			<MinorCivApproachType>MINOR_CIV_APPROACH_BULLY</MinorCivApproachType>
 			<Bias>5</Bias>
 		</Row>
-	</Leader_MinorCivApproachBiases> 
+	</Leader_MinorCivApproachBiases>
 	
 	<Leader_Traits>
 		<Row> 
-			<LeaderType>LEADER_MUGHALS</LeaderType> 
-			<TraitType>TRAIT_MUGHALS</TraitType> 
+			<LeaderType>LEADER_CZECHIA</LeaderType> 
+			<TraitType>TRAIT_CZECHIA</TraitType> 
 		</Row>
 	</Leader_Traits>
 	
 	<Leaders> 
 		<Row>  
-			<Type>LEADER_MUGHALS</Type> 
-			<Description>TXT_KEY_LEADER_MUGHALS</Description> 
-			<Civilopedia>TXT_KEY_LEADER_MUGHALS_PEDIA</Civilopedia>
-			<CivilopediaTag>TXT_KEY_LEADER_MUGHALS_PEDIA</CivilopediaTag>
+			<Type>LEADER_CZECHIA</Type> 
+			<Description>TXT_KEY_LEADER_CZECHIA</Description> 
+			<Civilopedia>TXT_KEY_LEADER_CZECHIA_PEDIA</Civilopedia>
+			<CivilopediaTag>TXT_KEY_LEADER_CZECHIA_PEDIA</CivilopediaTag>
 			<VictoryCompetitiveness>5</VictoryCompetitiveness>
 			<WonderCompetitiveness>5</WonderCompetitiveness>
 			<MinorCivCompetitiveness>5</MinorCivCompetitiveness>
@@ -763,15 +794,15 @@
 			<Chattiness>7</Chattiness>
 			<Meanness>5</Meanness>
 			<PortraitIndex>1</PortraitIndex>
-			<IconAtlas>LEKMOD_TUNISIA_ATLAS</IconAtlas>
+			<IconAtlas>LEKMOD_CZECHIA_ATLAS</IconAtlas>
 		</Row>
 	</Leaders> 
 	
 	<Traits>
 		<Row> 
-			<Type>TRAIT_MUGHALS</Type> 
-			<Description>TXT_KEY_TRAIT_MUGHALS_DESC</Description> 
-			<ShortDescription>TXT_KEY_TRAIT_MUGHALS_SHORT_DESC</ShortDescription> 
+			<Type>TRAIT_CZECHIA</Type> 
+			<Description>TXT_KEY_TRAIT_CZECHIA_DESC</Description> 
+			<ShortDescription>TXT_KEY_TRAIT_CZECHIA_SHORT_DESC</ShortDescription> 
 			<LevelExperienceModifier>0</LevelExperienceModifier> 
 			<GreatPeopleRateModifier>0</GreatPeopleRateModifier> 
 			<GreatScientistRateModifier>0</GreatScientistRateModifier> 
@@ -864,102 +895,89 @@
 	
 	<PlayerColors> 
 		<Row>
-			<Type>PLAYERCOLOR_MUGHALS</Type>
-			<PrimaryColor>COLOR_PLAYER_MUGHALS_ICON</PrimaryColor>
-			<SecondaryColor>COLOR_PLAYER_MUGHALS_BACKGROUND</SecondaryColor>
+			<Type>PLAYERCOLOR_CZECHIA</Type>
+			<PrimaryColor>COLOR_PLAYER_CZECHIA_ICON</PrimaryColor>
+			<SecondaryColor>COLOR_PLAYER_CZECHIA_BACKGROUND</SecondaryColor>
 			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
 		</Row>
 	</PlayerColors> 
 	
 	<UnitGameplay2DScripts> 
 		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<SelectionSound>AS2D_SELECT_CANNON</SelectionSound> 
-			<FirstSelectionSound>AS2D_BIRTH_CANNON</FirstSelectionSound> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
+			<SelectionSound>AS2D_SELECT_INFANTRY</SelectionSound> 
+			<FirstSelectionSound>AS2D_BIRTH_INFANTRY</FirstSelectionSound> 
 		</Row>
 	</UnitGameplay2DScripts> 
 	
 	<Unit_AITypes>
 		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<UnitAIType>UNITAI_CITY_BOMBARD</UnitAIType> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
+			<UnitAIType>UNITAI_ATTACK</UnitAIType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<UnitAIType>UNITAI_RANGED</UnitAIType> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
+			<UnitAIType>UNITAI_DEFENSE</UnitAIType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
+			<UnitAIType>UNITAI_EXPLORE</UnitAIType> 
 		</Row>
 	</Unit_AITypes>
 	
 	<Unit_ClassUpgrades> 
 		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<UnitClassType>UNITCLASS_ARTILLERY</UnitClassType> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
+			<UnitClassType>UNITCLASS_INFANTRY</UnitClassType> 
 		</Row>
 	</Unit_ClassUpgrades> 
 	
 	<Unit_Flavors>
 		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
 			<FlavorType>FLAVOR_OFFENSE</FlavorType> 
-			<Flavor>3</Flavor> 
+			<Flavor>24</Flavor> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
 			<FlavorType>FLAVOR_DEFENSE</FlavorType> 
-			<Flavor>3</Flavor> 
-		</Row>
-		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<FlavorType>FLAVOR_RANGED</FlavorType> 
-			<Flavor>11</Flavor> 
+			<Flavor>16</Flavor> 
 		</Row>
 	</Unit_Flavors>
 	
 	<Unit_FreePromotions>
 		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
+			<PromotionType>PROMOTION_FOREIGN_LANDS</PromotionType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<PromotionType>PROMOTION_CITY_SIEGE</PromotionType> 
-		</Row>
-		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<PromotionType>PROMOTION_NO_DEFENSIVE_BONUSES</PromotionType> 
-		</Row>
-		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<PromotionType>PROMOTION_MUST_SET_UP</PromotionType> 
-		</Row>
-		<Row> 
-			<UnitType>UNIT_MUGHALS_CANNON</UnitType> 
-			<PromotionType>PROMOTION_INDIRECT_FIRE</PromotionType> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType> 
 		</Row>
 	</Unit_FreePromotions>
 	
 	<Units>
-		<Row> 
-			<Type>UNIT_MUGHALS_CANNON</Type> 
-			<Description>TXT_KEY_UNIT_MUGHALS_CANNON</Description> 
-			<Civilopedia>TXT_KEY_CIVILOPEDIA_MUGHALS_CANNON</Civilopedia> 
-			<Strategy>TXT_KEY_UNIT_MUGHALS_CANNON_STRATEGY</Strategy> 
-			<Help>TXT_KEY_UNIT_MUGHALS_CANNON_HELP</Help> 
-			<Combat>18</Combat> 
-			<RangedCombat>23</RangedCombat> 
-			<Cost>245</Cost> 
-			<FaithCost>495</FaithCost>
-			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled> 
-			<PurchaseOnly>false</PurchaseOnly> 
+		<Row>
+			<Type>UNIT_CZECHIA_LEGION</Type> 
+			<Description>TXT_KEY_UNIT_CZECHIA_LEGION</Description> 
+			<Civilopedia>TXT_KEY_CIV5_INDUSTRIAL_FOREIGNLEGION_TEXT</Civilopedia> 
+			<Strategy>TXT_KEY_UNIT_CZECHIA_LEGION_STRATEGY</Strategy> 
+			<Help>TXT_KEY_UNIT_HELP_FOREIGN_LEGION</Help> 
+			<Combat>42</Combat> 
+			<RangedCombat>0</RangedCombat> 
+			<Cost>180</Cost>
+			<FaithCost>0</FaithCost> 
+			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
+			<PurchaseOnly>true</PurchaseOnly> 
 			<MoveAfterPurchase>false</MoveAfterPurchase> 
 			<Moves>3</Moves> 
 			<Immobile>false</Immobile> 
-			<Range>2</Range> 
+			<Range>0</Range> 
 			<BaseSightRange>2</BaseSightRange> 
-			<Class>UNITCLASS_CANNON</Class> 
-			<CombatClass>UNITCOMBAT_SIEGE</CombatClass> 
+			<Class>UNITCLASS_FOREIGNLEGION</Class> 
+			<CombatClass>UNITCOMBAT_GUN</CombatClass> 
 			<Domain>DOMAIN_LAND</Domain> 
-			<DefaultUnitAI>UNITAI_CITY_BOMBARD</DefaultUnitAI> 
+			<DefaultUnitAI>UNITAI_DEFENSE</DefaultUnitAI> 
 			<Food>false</Food> 
 			<NoBadGoodies>false</NoBadGoodies> 
 			<RivalTerritory>false</RivalTerritory> 
@@ -978,11 +996,10 @@
 			<Mechanized>false</Mechanized> 
 			<Suicide>false</Suicide> 
 			<CaptureWhileEmbarked>false</CaptureWhileEmbarked> 
-			<PrereqTech>TECH_CHEMISTRY</PrereqTech> 
-			<ObsoleteTech>TECH_DYNAMITE</ObsoleteTech> 
-			<GoodyHutUpgradeUnitClass>UNITCLASS_ARTILLERY</GoodyHutUpgradeUnitClass> 
+			<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech> 
+			<GoodyHutUpgradeUnitClass>UNITCLASS_INFANTRY</GoodyHutUpgradeUnitClass> 
 			<HurryCostModifier>0</HurryCostModifier> 
-			<AdvancedStartCost>30</AdvancedStartCost> 
+			<AdvancedStartCost>35</AdvancedStartCost> 
 			<MinAreaSize>-1</MinAreaSize> 
 			<AirInterceptRange>0</AirInterceptRange> 
 			<AirUnitCap>0</AirUnitCap> 
@@ -1008,23 +1025,23 @@
 			<RangeAttackOnlyInDomain>false</RangeAttackOnlyInDomain> 
 			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS> 
 			<Trade>false</Trade> 
-			<NumExoticGoods>0</NumExoticGoods> 
+			<NumExoticGoods>0</NumExoticGoods>
 			<RangedCombatLimit>0</RangedCombatLimit> 
 			<XPValueAttack>3</XPValueAttack> 
 			<XPValueDefense>3</XPValueDefense> 
-			<Conscription>0</Conscription> 
+			<Conscription>6</Conscription> 
 			<ExtraMaintenanceCost>0</ExtraMaintenanceCost> 
 			<NoMaintenance>false</NoMaintenance> 
 			<Unhappiness>0</Unhappiness> 
-			<UnitArtInfo>ART_DEF_UNIT_CANNON</UnitArtInfo> 
+			<UnitArtInfo>ART_DEF_UNIT_U_FRENCH_FOREIGNLEGION</UnitArtInfo> 
 			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation> 
 			<UnitArtInfoEraVariation>false</UnitArtInfoEraVariation> 
 			<LeaderExperience>0</LeaderExperience> 
 			<DontShowYields>false</DontShowYields> 
 			<ShowInPedia>true</ShowInPedia> 
-			<MoveRate>ARTILLERY</MoveRate> 
-			<UnitFlagIconOffset>43</UnitFlagIconOffset> 
-			<PortraitIndex>0</PortraitIndex> 
+			<MoveRate>BIPED</MoveRate> 
+			<UnitFlagIconOffset>55</UnitFlagIconOffset> 
+			<PortraitIndex>38</PortraitIndex> 
 			<IconAtlas>UNIT_ATLAS_2</IconAtlas> 
 			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas> 
 		</Row>

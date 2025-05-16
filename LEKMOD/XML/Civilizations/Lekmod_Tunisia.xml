@@ -354,16 +354,16 @@
 	<Colors> 
 		<Row>
 			<Type>COLOR_PLAYER_TUNISIA_ICON</Type>
-			<Red>0.800</Red>
-			<Green>0.100</Green>
-			<Blue>0.900</Blue>
+			<Red>0.443137254901961</Red>
+			<Green>0.215686274509804</Green>
+			<Blue>0.752941176470588</Blue>
 			<Alpha>1</Alpha>
 		</Row>
 		<Row>
 			<Type>COLOR_PLAYER_TUNISIA_BACKGROUND</Type>
-			<Red>1.000</Red>
-			<Green>0.800</Green>
-			<Blue>0.700</Blue>
+			<Red>0.0784313725490196</Red>
+			<Green>0.556862745098039</Green>
+			<Blue>0.458823529411765</Blue>
 			<Alpha>1</Alpha>
 		</Row>
 	</Colors> 

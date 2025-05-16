@@ -2,181 +2,172 @@
 <GameData>
 
 	<Language_en_US>
-		<!-- Tunisia -->
-		<LocalizedText>
-			<Row Tag="TXT_KEY_DAWN_OF_MAN_TUNISIA_TEXT">			
-				<Text>Blessings upon you, Farhat Hached, visionary leader of Tunisia! Your people look to you for guidance in this new chapter of their storied history. From humble origins, you rose to become a champion of workers' rights and national independence, founding the powerful Tunisian General Labour Union that would challenge colonial rule. Though struck down by assassins in 1952, your martyrdom only strengthened the resolve of your people to achieve freedom. Your legacy lives on in the independent Tunisia that emerged from the struggle you helped ignite.[NEWLINE][NEWLINE]The time has come to lead your people once more - to build a civilization that will stand as a crossroads of Mediterranean culture and a beacon of reform. Will you unite your people under the banner of justice and progress? Will you build a civilization that will stand the test of time?
+		<!-- Mughals -->
+			<Row Tag="TXT_KEY_DAWN_OF_MAN_MUGHALS_TEXT">			
+				<Text>Blessings upon you, Akbar the Great, wise ruler of the Mughal Empire! Your leadership transformed a realm of disparate peoples into one of history's most powerful and prosperous empires. Your administrative brilliance and religious tolerance fostered an era of unprecedented cultural and artistic achievement. Under your reign, the Mughal Empire expanded across the Indian subcontinent through both conquest and diplomacy. Your Din-i-Ilahi faith and Sulh-i-kul policy of religious harmony helped unite a diverse population, while your patronage of the arts, literature, and architecture left a legacy that still inspires the world today.[NEWLINE][NEWLINE]O great emperor, your people call for your wisdom once more. Can you build an empire that honors diverse faiths and cultures? Can you create a civilization that will stand the test of time?
 				</Text>
 			</Row>
 			
-			<Row Tag="TXT_KEY_BUILDING_TUNISIA_CASTLE">				
-				<Text>Ribat</Text>
+			<Row Tag="TXT_KEY_BUILDING_MUGHALS_CARAVANSARY">				
+				<Text>Mansabdari Estate</Text>
 			</Row>
-			<Row Tag="TXT_KEY_BUILDING_TUNISIA_CASTLE_PEDIA">			
-				<Text>Ribats were fortified Islamic military outposts located along coastal areas to defend against naval attacks. They also served as religious centers and places for spiritual retreat. In Tunisia, ribats played a crucial role in coastal defense against Byzantine naval incursions and later European pirates. The Ribat of Monastir, built in 796 AD, is one of the oldest and most well-preserved examples, combining military defensive structures with religious functions.</Text>
+			<Row Tag="TXT_KEY_BUILDING_MUGHALS_CARAVANSARY_PEDIA">			
+				<Text>The Mansabdari system was a unique administrative structure established by Emperor Akbar that formed the backbone of the Mughal Empire's civil and military administration. Under this system, imperial officers known as mansabdars were assigned ranks (mansabs) that determined their status, responsibilities, and compensation. Each mansabdar maintained estates that served as centers of local governance and military recruitment. These estates not only strengthened imperial control but also served as cultural centers that promoted Mughal artistic and architectural styles. The system helped integrate diverse ethnic and religious groups into the empire's administrative framework, reflecting the Mughals' skill at incorporating various cultural traditions into their governance model.</Text>
 			</Row>
-			<Row Tag="TXT_KEY_BUILDING_TUNISIA_CASTLE_HELP">			
-				<Text>Tunisian replacement for the [ICON_BUILDING_CASTLE]Castle. 50% cheaper to construct. Provides +2 [ICON_GOLD] Gold, +2 [ICON_FAITH] Faith, and generates +4 [ICON_GOLDEN_AGE] Golden Age points per turn. Does not require [ICON_BUILDING_WALLS] Walls.</Text>
+			<Row Tag="TXT_KEY_BUILDING_MUGHALS_CARAVANSARY_HELP">			
+				<Text>Mughal replacement for the [ICON_BUILDING_CARAVANSARY]Caravansary. Available at Currency (vs. Horseback Riding). Provides +10 City [ICON_STRENGTH] Strength, +2 [ICON_GOLD] Gold and +3 [ICON_CULTURE] Culture if the city has a garrison.</Text>
 			</Row>
-			<Row Tag="TXT_KEY_BUILDING_TUNISIA_CASTLE_STRATEGY">			
-				<Text>The Ribat is significantly more accessible than regular Castles since it doesn't require Walls as a prerequisite and costs 50% less [ICON_PRODUCTION] Production. Beyond its defensive capabilities, it generates valuable [ICON_GOLD] Gold and [ICON_FAITH] Faith, while the +4 [ICON_GOLDEN_AGE] Golden Age points per turn help Tunisia trigger Golden Ages more frequently.</Text>
+			<Row Tag="TXT_KEY_BUILDING_MUGHALS_CARAVANSARY_STRATEGY">			
+				<Text>The Mansabdari Estate is available at a different technology than the Caravansary it replaces, requiring Currency rather than Horseback Riding. Beyond improving land trade routes, it provides significant defensive bonuses to your cities and additional [ICON_GOLD] Gold and [ICON_CULTURE] Culture when the city is garrisoned, encouraging a balanced approach to growth and defense.</Text>
 			</Row>
-			
-			<Row Tag="TXT_KEY_PROMOTION_TUNISIA_CITY_ATTACK">			
-				<Text>City Attack Movement</Text>
+			<Row Tag="TXT_KEY_CIV_MUGHALS_DESC">				
+				<Text>Mughal Empire</Text>
 			</Row>
-			<Row Tag="TXT_KEY_PROMOTION_TUNISIA_CITY_ATTACK_HELP">			
-				<Text>spend 1 less [ICON_MOVES] Movement point when attacking cities</Text>
+			<Row Tag="TXT_KEY_CIV_MUGHALS_SHORT_DESC">			
+				<Text>Mughals</Text>
 			</Row>
-			
-			<Row Tag="TXT_KEY_CIV_TUNISIA_DESC">				
-				<Text>Tunisian Republic</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CIV_TUNISIA_SHORT_DESC">			
-				<Text>Tunisia</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CIV_TUNISIA_ADJECTIVE">			
-				<Text>Tunisian</Text>
+			<Row Tag="TXT_KEY_CIV_MUGHALS_ADJECTIVE">			
+				<Text>Mughal</Text>
 			</Row>
 			
-			<Row Tag="TXT_KEY_UNIT_TUNISIA_PRIVATEER">			
-				<Text>Xebec</Text>
+			<Row Tag="TXT_KEY_UNIT_MUGHALS_CANNON">			
+				<Text>Zafarbaksh</Text>
 			</Row>
-			<Row Tag="TXT_KEY_UNIT_TUNISIA_PRIVATEER_PEDIA">			
-				<Text>The Xebec was a Mediterranean sailing ship with a distinctive hull and complex sail arrangement that made it both fast and maneuverable. It was the preferred vessel of the Barbary corsairs who operated from North Africa, including Tunisia. Tunisian corsairs used these specialized vessels to become a formidable naval power in the Mediterranean from the 16th to 19th centuries. The Xebec's shallow draft allowed it to navigate coastal waters while evading larger warships, and its speed made it perfect for capturing merchant vessels. With a combination of lateen and square sails, it could sail closer to the wind than square-rigged vessels. The Tunisian Xebecs, commanded by corsairs like Dragut and Uluj Ali, were particularly feared for their raids on European shipping and coastal settlements from Italy to Iceland.</Text>
+			<Row Tag="TXT_KEY_CIVILOPEDIA_MUGHALS_CANNON">			
+				<Text>The Zafarbaksh, meaning "victory bestower" in Persian, was an advanced artillery piece developed during the Mughal Empire's military prime. Mughal artillery benefited from a combination of Ottoman, Persian, and indigenous Indian engineering traditions, creating weapons that were both mobile and powerful. While European cannons of the period were often unwieldy in the varied terrain of the subcontinent, Mughal engineers modified their designs with lighter materials and improved carriage systems. Under Emperor Akbar's military reforms, these cannons became a cornerstone of Mughal battlefield supremacy, with specialized crews trained to rapidly deploy and reposition them during battles. The Zafarbaksh cannons were particularly feared for their effective range and mobility, allowing Mughal forces to outmaneuver opponents while maintaining superior firepower. The Mughal's mastery of metallurgy also enabled them to cast more uniform and reliable cannon barrels that could withstand repeated firing.</Text>
 			</Row>
-			<Row Tag="TXT_KEY_UNIT_TUNISIA_PRIVATEER_HELP">			
-				<Text>Tunisian replacement for the [ICON_UNIT_PRIVATEER] Privateer. Has a higher [ICON_STRENGTH] Combat Strength, may capture [COLOR_POSITIVE_TEXT]Enemy[ENDCOLOR] ships (50% chance), and spends no [ICON_MOVES] movement pilaging tiles. Is more expensive to build.</Text>
+			<Row Tag="TXT_KEY_UNIT_MUGHALS_CANNON_HELP">			
+				<Text>Mughal replacement for the [ICON_UNIT_CANNON] Cannon. Has a higher [ICON_STRENGTH] Combat Strength (18 vs 14), higher [ICON_RANGE_STRENGTH] Ranged Strength (23 vs 20), improved [ICON_MOVES] Movement (3 vs 2), and has no sight penalty, but is more costly to build.</Text>
 			</Row>
-			<Row Tag="TXT_KEY_UNIT_TUNISIA_PRIVATEER_STRATEGY">			
-				<Text>The Xebec is Tunisia's unique naval unit, replacing the Privateer. With higher combat strength and the ability to capture defeated enemy ships, the Xebec allows you to quickly build a powerful fleet. Use them to raid coastal routes and cities, as they can pillage without spending movement points. While they cost more than standard Privateers, their advantages in combat and mobility make them worthwhile investments for a naval power.</Text>
+			<Row Tag="TXT_KEY_UNIT_MUGHALS_CANNON_STRATEGY">			
+				<Text>The Zafarbaksh is a powerful and mobile siege weapon that excels at taking cities. With higher combat and ranged strength than the standard Cannon, plus an extra movement point and no sight penalties, it can position effectively for attacks. While more expensive to produce, its superior mobility and firepower make it a worthy investment for expanding your empire through conquest. Unlike other unique units however, the Zafarbaksh's special abilities do not carry over when it upgrades to Artillery.</Text>
 			</Row>
 			
-			<Row Tag="TXT_KEY_TRAIT_TUNISIA_DESC">			
-				<Text>+100% [ICON_FOOD] Food, [ICON_PRODUCTION] Production, and [ICON_GOLD] Gold from land-based [ICON_INTERNATIONAL_TRADE] Trade Routes. [COLOR_POSITIVE_TEXT]Melee[ENDCOLOR] units spend one less [ICON_MOVES] movement point when attacking a city.</Text>
+			<Row Tag="TXT_KEY_TRAIT_MUGHALS_DESC">			
+				<Text>Cities with a dominant [COLOR_POSITIVE_TEXT]Foreign[ENDCOLOR] [ICON_RELIGION] Religion yield +1 [ICON_RESEARCH] Science, +1 [ICON_CULTURE] Culture, and +1 [ICON_GOLD] Gold for every 4 [ICON_CITIZEN] Population in the city. [COLOR_POSITIVE_TEXT]Holy[ENDCOLOR] cities of [COLOR_POSITIVE_TEXT]Foreign[ENDCOLOR] [ICON_RELIGION] Religions receive the same bonus if at least one of your original cities has been converted to that [ICON_RELIGION] Religion. +2 [ICON_GOLDEN_AGE] Golden Age points from [COLOR_POSITIVE_TEXT]National[ENDCOLOR] and [COLOR_POSITIVE_TEXT]World[ENDCOLOR] Wonders.</Text>
 			</Row>
-			<Row Tag="TXT_KEY_TRAIT_TUNISIA_SHORT_DESC">			
-				<Text>Mediterranean Crossroads</Text>
+			<Row Tag="TXT_KEY_TRAIT_MUGHALS_SHORT_DESC">			
+				<Text>Diverse Administrators</Text>
 			</Row>
-			<Row Tag="TXT_KEY_LEADER_TUNISIA">			
-				<Text>Farhat Hached</Text>
+			<Row Tag="TXT_KEY_LEADER_MUGHALS">			
+				<Text>Akbar</Text>
 			</Row>
-			<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_HEADING_1">			
+			<Row Tag="TXT_KEY_LEADER_MUGHALS_PEDIA_HEADING_1">			
 				<Text>History</Text>
 			</Row>
-			<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_TEXT_1">			
-				<Text>Farhat Hached (1914-1952) was a prominent Tunisian labor leader and national independence activist. Born to a modest family in coastal Tunisia, he began working at a young age and quickly became involved in labor organizing. In 1946, he founded the powerful Tunisian General Labour Union (UGTT), which became crucial in Tunisia's independence movement. Hached transformed labor activism into a nationalist struggle, working alongside political leaders like Habib Bourguiba. His growing influence made him a target, and he was assassinated in 1952, likely by French colonial agents. His martyrdom galvanized the independence movement, and Tunisia gained independence four years after his death. Hached remains a national hero, remembered for his commitment to workers' rights and national sovereignty.</Text>
+			<Row Tag="TXT_KEY_LEADER_MUGHALS_PEDIA_TEXT_1">			
+				<Text>Jalaluddin Muhammad Akbar (1542-1605), known as Akbar the Great, was the third Mughal emperor who ruled from 1556 to 1605. Ascending the throne at just 13 years of age, Akbar transformed the Mughal Empire from a relatively small kingdom into one of the world's greatest powers. His military campaigns expanded Mughal control across most of the Indian subcontinent, but it was his administrative and cultural innovations that truly defined his reign. Akbar's most significant achievement was developing systems of governance that integrated Hindu and Muslim traditions, creating a stable foundation for a diverse empire. His policy of religious tolerance, embodied in his principle of Sulh-i-kul ("peace with all"), was revolutionary for its time. He abolished the jizya tax on non-Muslims, appointed Hindus to high government positions, and even created a syncretic religious movement called Din-i-Ilahi that borrowed elements from various faiths. Under Akbar's patronage, art, architecture, and literature flourished, creating the distinctive Indo-Islamic culture that characterizes the Mughal legacy. The Mansabdari administrative system he developed remained the backbone of Mughal governance for generations. Akbar's pragmatic policies of religious and cultural accommodation established a model of pluralistic rule that would influence Indian governance for centuries.</Text>
 			</Row>
-			<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA">			
-				<Text>Farhat Hached</Text>
+			<Row Tag="TXT_KEY_LEADER_MUGHALS_PEDIA">			
+				<Text>Akbar</Text>
 			</Row>
-			<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_NAME">			
-				<Text>Farhat Hached</Text>
+			<Row Tag="TXT_KEY_LEADER_MUGHALS_PEDIA_NAME">			
+				<Text>Akbar the Great</Text>
 			</Row>
-			<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_SUBTITLE">			
-				<Text>Founder of the Tunisian General Labour Union</Text>
+			<Row Tag="TXT_KEY_LEADER_MUGHALS_PEDIA_SUBTITLE">			
+				<Text>Emperor of the Mughal Empire</Text>
 			</Row>
-			<Row Tag="TXT_KEY_LEADER_TUNISIA_PEDIA_LIVED">			
-				<Text>1914-1952 AD</Text>
-			</Row>
-			
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_0">			
-				<Text>Tunis</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_1">			
-				<Text>Sfax</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_2">			
-				<Text>Sousse</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_3">			
-				<Text>Kairouan</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_4">			
-				<Text>Bizerte</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_5">			
-				<Text>Gabès</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_6">			
-				<Text>Ariana</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_7">			
-				<Text>Gafsa</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_8">			
-				<Text>Monastir</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_9">			
-				<Text>Kasserine</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_10">			
-				<Text>Medenine</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_11">			
-				<Text>Nabeul</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_12">			
-				<Text>Hammamet</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_13">			
-				<Text>Tataouine</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_14">			
-				<Text>Ben Arous</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_15">			
-				<Text>Zarzis</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_16">			
-				<Text>Mahdia</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_17">			
-				<Text>Jendouba</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_18">			
-				<Text>Tozeur</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_19">			
-				<Text>Kebili</Text>
-			</Row>
-			<Row Tag="TXT_KEY_CITY_NAME_TUNISIA_20">			
-				<Text>Béja</Text>
+			<Row Tag="TXT_KEY_LEADER_MUGHALS_PEDIA_LIVED">			
+				<Text>1542-1605 AD</Text>
 			</Row>
 			
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_0">			
-				<Text>Ahmed</Text>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_0">			
+				<Text>Delhi</Text>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_1">			
-				<Text>Leila</Text>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_1">			
+				<Text>Agra</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_2">			
+				<Text>Fatehpur Sikri</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_3">			
+				<Text>Lahore</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_4">			
+				<Text>Kabul</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_5">			
+				<Text>Multan</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_6">			
+				<Text>Ahmadabad</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_7">			
+				<Text>Patna</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_8">			
+				<Text>Srinagar</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_9">			
+				<Text>Dacca</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_10">			
+				<Text>Thatta</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_11">			
+				<Text>Burhanpur</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_12">			
+				<Text>Jaunpur</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_13">			
+				<Text>Aurangabad</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_14">			
+				<Text>Hyderabad</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_15">			
+				<Text>Bijapur</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_16">			
+				<Text>Ajmer</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_17">			
+				<Text>Allahabad</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_18">			
+				<Text>Lucknow</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_19">			
+				<Text>Panipat</Text>
+			</Row>
+			<Row Tag="TXT_KEY_CITY_NAME_MUGHALS_20">			
+				<Text>Peshawar</Text>
+			</Row>
+			
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_0">			
+				<Text>Birbal</Text>
+			</Row>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_1">			
+				<Text>Noorjahan</Text>
 				<Gender>feminine</Gender>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_2">			
-				<Text>Habib</Text>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_2">			
+				<Text>Todar Mal</Text>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_3">			
-				<Text>Fatima</Text>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_3">			
+				<Text>Mumtaz</Text>
 				<Gender>feminine</Gender>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_4">			
-				<Text>Youssef</Text>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_4">			
+				<Text>Jahangir</Text>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_5">			
-				<Text>Amina</Text>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_5">			
+				<Text>Roshanara</Text>
 				<Gender>feminine</Gender>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_6">			
-				<Text>Tarek</Text>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_6">			
+				<Text>Dara Shikoh</Text>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_7">			
-				<Text>Salah</Text>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_7">			
+				<Text>Aurangzeb</Text>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_8">			
-				<Text>Samira</Text>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_8">			
+				<Text>Jahanara</Text>
 				<Gender>feminine</Gender>
 			</Row>
-			<Row Tag="TXT_KEY_SPY_NAME_TUNISIA_9">			
-				<Text>Karim</Text>
+			<Row Tag="TXT_KEY_SPY_NAME_MUGHALS_9">			
+				<Text>Bairam Khan</Text>
 			</Row>
 	</Language_en_US>
 </GameData>
