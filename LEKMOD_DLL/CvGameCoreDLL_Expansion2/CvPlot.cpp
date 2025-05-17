@@ -7678,7 +7678,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			}
 		}
 	}
-#if defined(TRAITIFY) // Trait Effect on Terrain and Resource Yields
+#if defined(TRAITIFY) // Trait Effect on Terrain Yields
 	if (pWorkingCity != NULL)
 	{
 		int iTraitTerrainChange = GET_PLAYER(pWorkingCity->getOwner()).GetPlayerTraits()->GetTerrainYieldChange(getTerrainType(), eYield);
@@ -7686,21 +7686,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		{
 			iYield += iTraitTerrainChange;
 		}
-		if (eTeam != NO_TEAM)
-		{
-			eResource = getResourceType(eTeam);
-
-			if (eResource != NO_RESOURCE)
-			{
-				int iTraitResourceChange = GET_PLAYER(pWorkingCity->getOwner()).GetPlayerTraits()->GetResourceYieldChange(eResource, eYield);
-				if (iTraitResourceChange != 0)
-				{
-					iYield += iTraitResourceChange;
-				}
-			}
-		}
 	}
-
 #endif
 	if(isRiver())
 	{
@@ -8283,11 +8269,17 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 					if (pkResourceInfo->getResourceClassType() != NO_RESOURCECLASS)
 					{
 						ResourceClassTypes eResourceClass = (ResourceClassTypes)pkResourceInfo->getResourceClassType();
+#if defined(LEKMOD_v34)
+						iYield += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetPolicyResourceClassYieldChanges(eResourceClass, eYield);
+#endif
 						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceClassYieldChange(eResourceClass, eYield);
 					}
 #endif
+
 				}
 				CvPlayer &kPlayer = GET_PLAYER(ePlayer);
+				iYield += kPlayer.GetPlayerPolicies()->GetPolicyResourceYieldChanges(eResource, eYield);
+				iYield += kPlayer.GetPlayerTraits()->GetResourceYieldChange(eResource, eYield);
 				iYield += kPlayer.getResourceYieldChange(eResource, eYield);
 			}
 		}
