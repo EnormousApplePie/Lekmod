@@ -35,7 +35,7 @@ function lekmod_new_zealand_ua_award_bonus(player, other_player)
    end
 
    if player:IsHuman() and Game.GetActivePlayer() == player:GetID() then
-      local text = Locale.ConvertTextKey("TEXT_KEY_NZ_MEET_BONUS", rewards[random].reward, rewards[random].string, other_player:GetName())
+      local text = Locale.ConvertTextKey("TXT_KEY_NZ_MEET_BONUS", rewards[random].reward, rewards[random].string, other_player:GetName())
       Events.GameplayAlertMessage(text)
    end
 

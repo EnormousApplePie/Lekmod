@@ -10,29 +10,38 @@ local is_active = LekmodUtilities:is_civilization_active(this_civ)
 -- Switzerland UB: Swiss Ski Resort. Loop trough all cities with the UB. Count the mountains within 3 tiles of the city,
 -- then add the appropriate amount of mountain buildings to the city to give the bonus.
 ------------------------------------------------------------------------------------------------------------------------
-function lekmod_switzerland_ub_mountain_bonus(player_id)
+function lekmod_switzerland_ub_mountain_bonus(playerID)
+   local player = Players[playerID]
+   local skiResort = GameInfoTypes["BUILDING_SWISS_SKI_RESORT"]
+   local yieldGold = GameInfoTypes["YIELD_GOLD"]
 
-   local player = Players[player_id]
-   if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
-
-   for city in player:Cities() do
-
-      if city:IsHasBuilding(GameInfoTypes["BUILDING_SWISS_SKI_RESORT"]) then
-            local plot = city:Plot()
-            local mountain_count = 0
-            for loop_plot in PlotAreaSweepIterator(plot, 3, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
-               if loop_plot:IsMountain() and loop_plot:GetOwner() == player_id then
-                  mountain_count = mountain_count + 1
-               end
-            end
-            print(mountain_count)
-            city:SetNumRealBuilding(GameInfoTypes["BUILDING_SWISS_SKI_RESORT_MOUNTAIN_1"], mountain_count)
-      else
-         city:SetNumRealBuilding(GameInfoTypes["BUILDING_SWISS_SKI_RESORT_MOUNTAIN_1"], 0)
-      end
-
+   local bonusPerMountain = 2
+   if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then 
+      return 
    end
 
+   for city in player:Cities() do
+      local cid = city:GetID()
+      local prevBonus = previousMountainBonus[cid] or 0
+
+      if city:IsHasBuilding(skiResort) then
+         -- GetNumMountainsNearCity is a Lekmod method! Not available in the base game also passes (iRange, bRequireOwnership)
+         local mountainCount = city:GetNumMountainsNearCity(3, true)
+         local newBonus = mountainCount * bonusPerMountain
+         local delta    = newBonus - prevBonus
+
+         if delta ~= 0 then
+            city:ChangeBaseYieldRateFromBuildings(yieldGold, delta)
+            previousMountainBonus[cid] = newBonus
+         end
+      else
+         -- building gone — remove any old bonus
+         if prevBonus ~= 0 then
+            city:ChangeBaseYieldRateFromBuildings(yieldGold, -prevBonus)
+            previousMountainBonus[cid] = nil
+         end
+      end
+   end
 end
 
 function lekmod_switzerland_ub_mountain_bonus_on_construct(player_id)
