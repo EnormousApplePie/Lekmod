@@ -487,6 +487,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetNumForcedWorkingPlots);
 
 	Method(GetReligionCityRangeStrikeModifier);
+#if defined(MISC_CHANGES)
+	Method(GetNumMountainsNearCity);
+#endif
 #if defined(LEKMOD_v34)
 	Method(GetPlotValue);
 #endif
@@ -4127,6 +4130,19 @@ int CvLuaCity::lGetReligionCityRangeStrikeModifier(lua_State* L)
 
 	return 1;
 }
+#if defined(MISC_CHANGES)
+//------------------------------------------------------------------------------
+// int GetNumMountainsNearCity(int iRange, bool bReqireOwnership) const
+int CvLuaCity::lGetNumMountainsNearCity(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const int iRange = lua_tointeger(L, 2);
+	const bool bRequireOwnership = lua_toboolean(L, 3);
+	const int iResult = pkCity->GetNumMountainsNearCity(iRange, bRequireOwnership);
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif
 #if defined(LEKMOD_v34)
 //------------------------------------------------------------------------------
 // int GetPlotValue(CvPlot* pPlot, bool bUseAllowGrowthFlag)

@@ -305,6 +305,8 @@ public:
 	int GetImprovementCultureChanges(int i) const;
 #if defined(LEKMOD_v34)
 	int GetPolicyResourceQuantity(int i) const;
+	int GetPolicyResourceYieldChanges(int i, int j) const;
+	int GetPolicyResourceClassYieldChanges(int i, int j) const;
 #endif
 	int GetHurryModifier(int i) const;
 	bool IsSpecialistValid(int i) const;
@@ -595,6 +597,8 @@ private:
 	int* m_paiTourismOnUnitCreation;
 #if defined(LEKMOD_v34)
 	int* m_piPolicyResourceQuantity;
+	int** m_ppiPolicyResourceYieldChanges;
+	int** m_ppiPolicyResourceClassYieldChanges;
 #endif
 
 //	bool* m_pabHurry;
@@ -868,6 +872,8 @@ public:
 	int GetTourismFromUnitCreation(UnitClassTypes eUnitClass) const;
 #if defined(LEKMOD_v34)
 	int GetPolicyResourceQuantity(ResourceTypes eResource) const;
+	int GetPolicyResourceYieldChanges(ResourceTypes eResource, YieldTypes eYield) const;
+	int GetPolicyResourceClassYieldChanges(ResourceClassTypes eResourceClass, YieldTypes eYield) const;
 #endif
 
 	// Functions to give current player status with respect to policies
