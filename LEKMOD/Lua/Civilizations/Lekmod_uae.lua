@@ -59,7 +59,32 @@ function lekmod_uae_trade_route_gold(player_id)
 
 end
 ------------------------------------------------------------------------------------------------------------------------
+-- UAE UU. Award +15 XP and restore 2 movement when Qasimi Raider pillages.
+------------------------------------------------------------------------------------------------------------------------
+function lekmod_uae_qasimi_raider_pillage(player_id, unit_id, plot_x, plot_y)
+   local player = Players[player_id]
+   if player:GetCivilizationType() ~= this_civ then return end
+
+   local unit = player:GetUnitByID(unit_id)
+   if not unit or unit:GetUnitType() ~= GameInfoTypes.UNIT_QASIMI_RAIDER then return end
+
+   -- Award XP and movement
+   unit:ChangeExperience(15)
+   unit:ChangeMoves(200) -- Movement points are in hundredths, so 200 = 2 movement points
+
+   -- Show popup text if this is the active player
+   if player_id == Game.GetActivePlayer() then
+      local hex_position = ToHexFromGrid{x = plot_x, y = plot_y}
+      local world_position = HexToWorld(hex_position)
+      Events.AddPopupTextEvent(world_position, "[COLOR_POSITIVE_TEXT]+15 XP[ENDCOLOR]")
+      Events.AddPopupTextEvent(world_position, "[COLOR_POSITIVE_TEXT]+2 [ICON_MOVES][ENDCOLOR]")
+   end
+end
+
+------------------------------------------------------------------------------------------------------------------------
 if is_active then
    GameEvents.CityConstructed.Add(lekmod_uae_wonder_ua)
    GameEvents.PlayerDoTurn.Add(lekmod_uae_trade_route_gold)
 end
+   GameEvents.UnitPillaged.Add(lekmod_uae_qasimi_raider_pillage)
+   GameEvents.UnitPlundered.Add(lekmod_uae_qasimi_raider_pillage)

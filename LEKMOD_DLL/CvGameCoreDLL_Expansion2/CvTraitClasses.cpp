@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -1248,6 +1248,21 @@ bool CvTraitEntry::NoBuildImprovements(ImprovementTypes eImprovement)
 	}
 }
 #endif
+
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild)
+{
+	if (eBuild != NO_BUILD)
+	{
+		return m_aiBuildTimeOverride[eBuild];
+	}
+	else
+	{
+		return -1;
+	}
+}
+#endif
+
 #if defined(TRAITIFY) // Array accessors
 // Remove Terrain Requirement
 bool CvTraitEntry::IsBuildingClassRemoveRequiredTerrain(int iTrait, int iBuildingClass) const
@@ -2150,7 +2165,28 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 
 	}
 #endif
-	
+
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	// Build Improvement Build Override from the builds table
+	{
+		std::string strKey("Trait_BuildImprovementBuildTimeOverride");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "SELECT Traits.ID, Builds.ID, BuildTime FROM Trait_BuildImprovementBuildTimeOverride inner join Traits on Trait_BuildImprovementBuildTimeOverride.TraitType = Traits.Type inner join Builds on Trait_BuildImprovementBuildTimeOverride.BuildType = Builds.Type where TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const int iBuild = pResults->GetInt(1);
+			const int iBuildTime = pResults->GetInt(2);
+			m_aiBuildTimeOverride[iBuild] = iBuildTime;
+		}
+	}
+#endif
+
 	// FreeResourceXCities
 	{
 		// Init vector
@@ -2612,7 +2648,12 @@ void CvPlayerTraits::InitPlayerTraits()
 			}
 #endif
 
-			
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+			for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
+			{
+				m_aiBuildTimeOverride[iBuild] = trait->GetBuildTimeOverride((BuildTypes)iBuild);
+			}
+#endif
 
 			FreeTraitUnit traitUnit;
 #ifdef AUI_WARNING_FIXES
@@ -2665,6 +2706,9 @@ void CvPlayerTraits::Uninit()
 	m_abNoBuild.clear();
 #endif
 
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	m_aiBuildTimeOverride.clear();
+#endif
 	m_paiMovesChangeUnitCombat.clear();
 	m_paiMaintenanceModifierUnitCombat.clear();
 	m_ppaaiImprovementYieldChange.clear();
@@ -2945,6 +2989,10 @@ void CvPlayerTraits::Reset()
 	{
 		m_abNoBuild[iImprovement] = false;
 	}
+#endif
+
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	m_aiBuildTimeOverride.clear();
 #endif
 
 	m_aFreeTraitUnits.clear();
@@ -3666,6 +3714,22 @@ bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovement)
 	else
 	{
 		return false;
+	}
+}
+
+#endif
+
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+
+int CvPlayerTraits::GetBuildTimeOverride(BuildTypes eBuild)
+{
+	if (eBuild != NO_BUILD)
+	{
+		return m_aiBuildTimeOverride[eBuild];
+	}
+	else
+	{
+		return -1;
 	}
 }
 
@@ -4425,6 +4489,17 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	}
 #endif
 
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	kStream >> iNumEntries;
+	m_aiBuildTimeOverride.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		int iBuildTime;
+		kStream >> iBuildTime;
+		m_aiBuildTimeOverride.push_back(iBuildTime);
+	}
+#endif
+
 	kStream >> iNumEntries;
 	m_aFreeTraitUnits.clear();
 	for(int iI = 0; iI < iNumEntries; iI++)
@@ -4678,6 +4753,13 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	}
 #endif
 
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	kStream << m_aiBuildTimeOverride.size();
+	for (uint ui = 0; ui < m_aiBuildTimeOverride.size(); ui++)
+	{
+		kStream << m_aiBuildTimeOverride[ui];
+	}
+#endif
 	kStream << m_aFreeTraitUnits.size();
 	for(uint ui = 0; ui < m_aFreeTraitUnits.size(); ui++)
 	{

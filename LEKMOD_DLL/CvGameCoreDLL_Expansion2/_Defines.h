@@ -884,7 +884,6 @@
 // GAME OPTIONS: AI CANNOT Spread minor (city-state
 #define NQ_AI_GIMP_NO_MINOR_SPREAD
 
-
 // -------------------------------------------------------------------------------
 
 /// LEKMOD - EAP
@@ -947,8 +946,10 @@
 #define LEKMOD_NEW_ANCIENT_RUIN_REWARDS
 // Fixes a rare events where players could get the oxford university building for free with the legalism policy
 #define LEKMOD_NO_FREE_TEAM_WONDERS
-
-
+// Combat bonus against different ideology
+#define LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+// Trait Table that overrides build times for certain build actions
+#define LEKMOD_BUILD_TIME_OVERRIDE
 /// ###############################
 /// Lekmod: New Lua Events and Methods
 /// ################################
@@ -966,6 +967,12 @@
 // -------------------------------------------------------------------------------------
 // new lua event that triggers whenever a unit is healed (negative damage).
 /// " UnitHealed ". Passed parameters: playerID, unitID, unitX, unitY
+// -------------------------------------------------------------------------------------
+// new lua event that triggers whenever a unit pillages an improvement
+/// " UnitPillaged ". Passed parameters: playerID, unitID, plotX, plotY
+//---------------------------------------------------------------------------------------
+// new lua event that triggers whenever a unit plunders a trade route
+/// " UnitPlundered ". Passed parameters: playerID, unitID, plotX, plotY
 
 #define LEKMOD_NEW_LUA_METHODS
 //--------------------------------------------------------------------------------------
