@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <!-- BuildImprovementBuildTimeOverride -->
+    <!-- This table is used to override the build time of improvements for specific traits -->
+    <!-- A single trait can have multiple entries, each with a different build type and time -->
+    <!-- The ResourceClassRequired column is optional and can be used to specify a resource class required for the build time to adjust -->
+    <Table name="Trait_BuildImprovementBuildTimeOverride">
+        <Column name="TraitType" type="text" notnull="true"/>
+        <Column name="BuildType" type="text" notnull="true"/>
+        <Column name="Time" type="integer" notnull="true"/>
+        <Column name="ResourceClassRequired" type="text"/>
+    </Table>
+</Gamedata>

@@ -1250,16 +1250,47 @@ bool CvTraitEntry::NoBuildImprovements(ImprovementTypes eImprovement)
 #endif
 
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
-int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild)
+int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass)
 {
-	if (eBuild != NO_BUILD)
-	{
-		return m_aiBuildTimeOverride[eBuild];
-	}
-	else
+	if (eBuild == NO_BUILD)
 	{
 		return -1;
 	}
+
+	// First try to find a direct match for the resource class
+	int iBestTime = -1;
+	bool bFoundGenericMatch = false;
+	
+	typedef std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>::const_iterator it_type;
+	std::pair<it_type, it_type> range = m_BuildTimeOverrides.equal_range(eBuild);
+	
+	// First pass: look for exact resource class match
+	for (it_type it = range.first; it != range.second; ++it)
+	{
+		ResourceClassTypes eRequiredClass = it->second.second;
+		int iBuildTime = it->second.first;
+		
+		// Exact match for resource class
+		if (eRequiredClass == eResourceClass)
+		{
+			return iBuildTime; // Found exact match, return immediately
+		}
+		
+		// Keep track of NO_RESOURCECLASS entries for fallback
+		if (eRequiredClass == NO_RESOURCECLASS)
+		{
+			iBestTime = iBuildTime;
+			bFoundGenericMatch = true;
+		}
+	}
+	
+	// If we found a generic match, return that
+	if (bFoundGenericMatch)
+	{
+		return iBestTime;
+	}
+	
+	return -1;  // No suitable override found
 }
 #endif
 
@@ -2173,17 +2204,36 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
-			pResults = kUtility.PrepareResults(strKey, "SELECT Traits.ID, Builds.ID, BuildTime FROM Trait_BuildImprovementBuildTimeOverride inner join Traits on Trait_BuildImprovementBuildTimeOverride.TraitType = Traits.Type inner join Builds on Trait_BuildImprovementBuildTimeOverride.BuildType = Builds.Type where TraitType = ?");
+			pResults = kUtility.PrepareResults(strKey, 
+				"SELECT Traits.ID, Builds.ID, Time, ResourceClasses.ID as ResourceClassID "
+				"FROM Trait_BuildImprovementBuildTimeOverride "
+				"LEFT JOIN ResourceClasses ON Trait_BuildImprovementBuildTimeOverride.ResourceClassRequired = ResourceClasses.Type "
+				"INNER JOIN Traits ON Trait_BuildImprovementBuildTimeOverride.TraitType = Traits.Type "
+				"INNER JOIN Builds ON Trait_BuildImprovementBuildTimeOverride.BuildType = Builds.Type "
+				"WHERE TraitType = ?");
 		}
 
 		pResults->Bind(1, szTraitType);
 
-		while (pResults->Step())
-		{
-			const int iBuild = pResults->GetInt(1);
-			const int iBuildTime = pResults->GetInt(2);
-			m_aiBuildTimeOverride[iBuild] = iBuildTime;
-		}
+				while (pResults->Step())
+				{
+					const int iBuild = pResults->GetInt(1);
+					const int iBuildTime = pResults->GetInt(2);
+					ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
+
+					eResourceClass = (ResourceClassTypes)pResults->GetInt(3);
+					
+					// Add to the multimap - this allows multiple entries per build type
+					m_BuildTimeOverrides.insert(std::make_pair((BuildTypes)iBuild, std::make_pair(iBuildTime, eResourceClass)));
+
+					// Also update the vectors for backward compatibility
+					// Note: these will only keep the last entry for a given build type
+					if (iBuild >= 0 && iBuild < GC.getNumBuildInfos())
+					{
+						m_aiBuildTimeOverride[iBuild] = iBuildTime;
+						m_aiBuildTimeOverrideResourceClassRequired[iBuild] = eResourceClass;
+					}
+				}
 	}
 #endif
 
@@ -2649,10 +2699,20 @@ void CvPlayerTraits::InitPlayerTraits()
 #endif
 
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
-			for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
-			{
-				m_aiBuildTimeOverride[iBuild] = trait->GetBuildTimeOverride((BuildTypes)iBuild);
-			}
+	// Copy the backward compatibility vectors
+	for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
+	{
+		m_aiBuildTimeOverride[iBuild] = trait->GetBuildTimeOverrideVector(iBuild);
+		m_aiBuildTimeOverrideResourceClassRequired[iBuild] = trait->GetBuildTimeOverrideResourceClassRequiredVector(iBuild);
+	}
+
+	// Copy all build time overrides in the multimap
+	typedef std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>::const_iterator it_type;
+	const std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>& buildTimeOverrides = trait->GetBuildTimeOverridesMultimap();
+	for (it_type it = buildTimeOverrides.begin(); it != buildTimeOverrides.end(); ++it)
+	{
+		m_BuildTimeOverrides.insert(*it);
+	}
 #endif
 
 			FreeTraitUnit traitUnit;
@@ -2993,6 +3053,12 @@ void CvPlayerTraits::Reset()
 
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	m_aiBuildTimeOverride.clear();
+	m_aiBuildTimeOverrideResourceClassRequired.clear();
+	m_BuildTimeOverrides.clear();
+
+	// Initialize vectors for backward compatibility
+	m_aiBuildTimeOverride.resize(GC.getNumBuildInfos(), -1);
+	m_aiBuildTimeOverrideResourceClassRequired.resize(GC.getNumBuildInfos(), NO_RESOURCECLASS);
 #endif
 
 	m_aFreeTraitUnits.clear();
@@ -3720,19 +3786,48 @@ bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovement)
 #endif
 
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
-
-int CvPlayerTraits::GetBuildTimeOverride(BuildTypes eBuild)
+int CvPlayerTraits::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass)
 {
-	if (eBuild != NO_BUILD)
-	{
-		return m_aiBuildTimeOverride[eBuild];
-	}
-	else
+	if (eBuild == NO_BUILD)
 	{
 		return -1;
 	}
-}
 
+	// First try to find a direct match for the resource class
+	int iBestTime = -1;
+	bool bFoundGenericMatch = false;
+	
+	typedef std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>::const_iterator it_type;
+	std::pair<it_type, it_type> range = m_BuildTimeOverrides.equal_range(eBuild);
+	
+	// First pass: look for exact resource class match
+	for (it_type it = range.first; it != range.second; ++it)
+	{
+		ResourceClassTypes eRequiredClass = it->second.second;
+		int iBuildTime = it->second.first;
+		
+		// Exact match for resource class
+		if (eRequiredClass == eResourceClass)
+		{
+			return iBuildTime; // Found exact match, return immediately
+		}
+		
+		// Keep track of NO_RESOURCECLASS entries for fallback
+		if (eRequiredClass == NO_RESOURCECLASS)
+		{
+			iBestTime = iBuildTime;
+			bFoundGenericMatch = true;
+		}
+	}
+	
+	// If we found a generic match, return that
+	if (bFoundGenericMatch)
+	{
+		return iBestTime;
+	}
+	
+	return -1;  // No suitable override found
+}
 #endif
 
 // MAYA TRAIT SPECIAL METHODS
@@ -4918,3 +5013,4 @@ bool CvPlayerTraits::ConvertBarbarianNavalUnit(UnitHandle pUnit)
 		return false;
 	}
 }
+
