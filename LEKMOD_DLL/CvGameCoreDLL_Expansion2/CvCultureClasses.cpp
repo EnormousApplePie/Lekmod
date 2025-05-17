@@ -162,10 +162,10 @@ GreatWorkClass CvGameCulture::GetGreatWorkClass(int iIndex) const
 /// Returns UI tooltip for this Great Work
 CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) const
 {
-	CvAssertMsg (iIndex < GetNumGreatWorks(), "Bad Great Work index");
+	CvAssertMsg(iIndex < GetNumGreatWorks(), "Bad Great Work index");
 	CvString szTooltip = "";
 
-	const CvGreatWork *pWork = &m_CurrentGreatWorks[iIndex];
+	const CvGreatWork* pWork = &m_CurrentGreatWorks[iIndex];
 
 	CvString strYearString;
 	CvGameTextMgr::setDateStr(strYearString,
@@ -197,13 +197,34 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 	szTooltip += ")";
 	szTooltip += "[NEWLINE]";
 	CvString cultureString;
+#if defined(MISC_CHANGES) // Show Yields being Added to Great Works in the Hover Tooltip
+	int iFoodPerWork = 0;
+	iFoodPerWork += GET_PLAYER(eOwner).GetGreatWorkYieldChange(YIELD_FOOD);
+	int iProductionPerWork = 0;
+	iProductionPerWork += GET_PLAYER(eOwner).GetGreatWorkYieldChange(YIELD_PRODUCTION);
+	int iGoldPerWork = 0;
+	iGoldPerWork += GET_PLAYER(eOwner).GetGreatWorkYieldChange(YIELD_GOLD);
+	int iSciencePerWork = 0;
+	iSciencePerWork += GET_PLAYER(eOwner).GetGreatWorkYieldChange(YIELD_SCIENCE);
+	int iFaithPerWork = 0;
+	iFaithPerWork += GET_PLAYER(eOwner).GetGreatWorkYieldChange(YIELD_FAITH);
+#endif
 	int iCulturePerWork = GC.getBASE_CULTURE_PER_GREAT_WORK();
 	iCulturePerWork += GET_PLAYER(eOwner).GetGreatWorkYieldChange(YIELD_CULTURE);
 	int iTourismPerWork = GC.getBASE_TOURISM_PER_GREAT_WORK();
 	iTourismPerWork += GET_PLAYER(eOwner).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_EXTRA_TOURISM_PER_GREAT_WORK); // NQMP GJS - Cultural Exchange
 
-
-	cultureString.Format ("+%d [ICON_CULTURE], +%d [ICON_TOURISM]", iCulturePerWork, iTourismPerWork);
+#if !defined(MISC_CHANGES) // Build Tooltip String Dynamically
+	cultureString.Format("+%d [ICON_CULTURE], +%d [ICON_TOURISM]", iCulturePerWork, iTourismPerWork);
+#else
+	if (iFoodPerWork		!= 0) cultureString += CvString::format("+%d [ICON_FOOD] ", iFoodPerWork);
+	if (iProductionPerWork	!= 0) cultureString += CvString::format("+%d [ICON_PRODUCTION] ", iProductionPerWork);
+	if (iGoldPerWork		!= 0) cultureString += CvString::format("+%d [ICON_GOLD] ", iGoldPerWork);
+	if (iSciencePerWork		!= 0) cultureString += CvString::format("+%d [ICON_RESEARCH] ", iSciencePerWork);
+	if (iFaithPerWork		!= 0) cultureString += CvString::format("+%d [ICON_PEACE] ", iFaithPerWork);
+	if (iCulturePerWork		!= 0) cultureString += CvString::format("+%d [ICON_CULTURE] ", iCulturePerWork);
+	if (iTourismPerWork		!= 0) cultureString += CvString::format("+%d [ICON_TOURISM] ", iTourismPerWork);
+#endif
 	szTooltip += cultureString;
 
 	return szTooltip;
@@ -3663,6 +3684,9 @@ void CvPlayerCulture::DoPublicOpinion()
 			}
 #ifdef NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
 			int iUnhappinessModifier = m_pPlayer->GetPlayerPolicies()->GetNumericModifier(POLICYMOD_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER);
+#if defined(TRAITIFY) // Ideology Pressure Unhappiness Modifier from Traits
+			iUnhappinessModifier += m_pPlayer->GetPlayerTraits()->GetIdeologyPressureUnhappinessModifier();
+#endif
 			m_iOpinionUnhappiness = ComputePublicOpinionUnhappiness(iDissatisfaction, iPerCityUnhappy, iUnhappyPerXPop, iUnhappinessModifier);
 #else
 			m_iOpinionUnhappiness = ComputePublicOpinionUnhappiness(iDissatisfaction, iPerCityUnhappy, iUnhappyPerXPop);
@@ -3760,6 +3784,9 @@ void CvPlayerCulture::DoPublicOpinion()
 
 #ifdef NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
 			int iUnhappinessModifier = m_pPlayer->GetPlayerPolicies()->GetNumericModifier(POLICYMOD_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER);
+#if defined(TRAITIFY) // Ideology Pressure Unhappiness Modifier from Traits
+			iUnhappinessModifier += m_pPlayer->GetPlayerTraits()->GetIdeologyPressureUnhappinessModifier();
+#endif
 			locText = Localization::Lookup("TXT_KEY_CO_OPINION_TT_UNHAPPINESS_LINE5");
 			locText << -iUnhappinessModifier;
 			m_strOpinionUnhappinessTooltip += locText.toUTF8();
@@ -3873,6 +3900,9 @@ int CvPlayerCulture::ComputeHypotheticalPublicOpinionUnhappiness(PolicyBranchTyp
 	{
 #ifdef NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
 		int iUnhappinessModifier = m_pPlayer->GetPlayerPolicies()->GetNumericModifier(POLICYMOD_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER);
+#if defined(TRAITIFY) // Ideology Pressure Unhappiness Modifier from Traits
+		iUnhappinessModifier += m_pPlayer->GetPlayerTraits()->GetIdeologyPressureUnhappinessModifier();
+#endif
 		return ComputePublicOpinionUnhappiness(iDissatisfaction, iPerCityUnhappy, iUnhappyPerXPop, iUnhappinessModifier);
 #else
 		return ComputePublicOpinionUnhappiness(iDissatisfaction, iPerCityUnhappy, iUnhappyPerXPop);
@@ -4557,7 +4587,39 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 			}
 		}
 	}
+#if defined(MISC_CHANGES)
+	// Buildings - Without Religion
+	{
+		int iMountainCount = m_pCity->GetNumMountainsNearCity(3, true);
+		for (int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+		{
+			BuildingClassTypes eBuildingClass = (BuildingClassTypes)jJ;
+			CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+			if (!pkBuildingClassInfo)
+			{
+				continue;
+			}
 
+			CvCivilizationInfo& playerCivilizationInfo = GET_PLAYER(m_pCity->getOwner()).getCivilizationInfo();
+			BuildingTypes eBuilding = (BuildingTypes)playerCivilizationInfo.getCivilizationBuildings(eBuildingClass);
+
+			if (eBuilding != NO_BUILDING)
+			{
+				CvBuildingEntry* pkEntry = GC.getBuildingInfo(eBuilding);
+				if (pkEntry && m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+				{
+					int iTourismPerMountain = pkEntry->GetMountainTourism();
+					if (iTourismPerMountain > 0)
+					{
+						int iTotalMountainTourism = iMountainCount * iTourismPerMountain;
+
+						iBase += iTotalMountainTourism;
+					}
+				}
+			}
+		}
+	}
+#endif
 	// Tech enhanced Tourism
 #ifdef AUI_WARNING_FIXES
 	for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
@@ -4959,7 +5021,41 @@ CvString CvCityCulture::GetTourismTooltip()
 			}
 		}
 	}
+#if defined(MISC_CHANGES)
+	// Tourism Per Mountain from buildings
+	for (int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+	{
+		BuildingClassTypes eBuildingClass = (BuildingClassTypes)jJ;
 
+		CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+		if (!pkBuildingClassInfo)
+		{
+			continue;
+		}
+
+		CvCivilizationInfo& playerCivilizationInfo = GET_PLAYER(m_pCity->getOwner()).getCivilizationInfo();
+		BuildingTypes eBuilding = (BuildingTypes)playerCivilizationInfo.getCivilizationBuildings(eBuildingClass);
+
+		if (eBuilding != NO_BUILDING)
+		{
+			CvBuildingEntry* pkEntry = GC.getBuildingInfo(eBuilding);
+			if (pkEntry && m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+			{
+				int iTourismPerMountain = pkEntry->GetMountainTourism();
+				if (iTourismPerMountain > 0)
+				{
+					int iMountainCount = m_pCity->GetNumMountainsNearCity(3, true);
+					int iTotalMountainTourism = iMountainCount * iTourismPerMountain;
+					if (szRtnValue.length() > 0)
+					{
+						szRtnValue += "[NEWLINE][ICON_BULLET]";
+					}
+					szRtnValue += GetLocalizedText("TXT_KEY_CO_CITY_TOURISM_MOUNTAIN", iTotalMountainTourism, iMountainCount);
+				}
+			}
+		}
+	}
+#endif
 	int iBuildingMod = 0;
 #ifdef AUI_WARNING_FIXES
 	for (uint iBuildingClassLoop = 0; iBuildingClassLoop < GC.getNumBuildingClassInfos(); iBuildingClassLoop++)

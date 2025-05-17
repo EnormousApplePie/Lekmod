@@ -45,6 +45,10 @@ CvTechEntry::CvTechEntry(void):
 	//EAP: Civilian Embark
 	m_bAllowsEmbarkingCivilian(false),
 
+#if defined(MISC_CHANGES) // Intialize
+	m_iExtraLeagueVotes(0),
+#endif
+
 	m_bAllowsDefensiveEmbarking(false),
 	m_bEmbarkedAllWaterPassage(false),
 	m_bAllowsBarbarianBoats(false),
@@ -116,6 +120,10 @@ bool CvTechEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 
 	//EAP: Civilian Embark
 	m_bAllowsEmbarkingCivilian = kResults.GetBool("AllowsEmbarkingCivilian");
+
+#if defined(MISC_CHANGES) // xml reading for additional league votes, called AdditionalDelegates in the xml for current UI integration
+	m_iExtraLeagueVotes = kResults.GetInt("AdditionalDelegates");
+#endif
 
 	m_bAllowsDefensiveEmbarking = kResults.GetBool("AllowsDefensiveEmbarking");
 	m_bEmbarkedAllWaterPassage = kResults.GetBool("EmbarkedAllWaterPassage");
@@ -344,6 +352,14 @@ bool CvTechEntry::IsAllowsEmbarkingCivilian() const
 {
 	return m_bAllowsEmbarkingCivilian;
 }
+
+#if defined(MISC_CHANGES) // Number of additional league votes from this tech
+// Number of additional league votes from this tech
+int CvTechEntry::GetExtraLeagueVotes() const
+{
+	return m_iExtraLeagueVotes;
+}
+#endif
 
 /// Allows embarked units to defend themselves
 bool CvTechEntry::IsAllowsDefensiveEmbarking() const

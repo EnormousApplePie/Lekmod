@@ -487,6 +487,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetNumForcedWorkingPlots);
 
 	Method(GetReligionCityRangeStrikeModifier);
+#if defined(LEKMOD_v34)
+	Method(GetPlotValue);
+#endif
 }
 //------------------------------------------------------------------------------
 void CvLuaCity::HandleMissingInstance(lua_State* L)
@@ -4124,3 +4127,17 @@ int CvLuaCity::lGetReligionCityRangeStrikeModifier(lua_State* L)
 
 	return 1;
 }
+#if defined(LEKMOD_v34)
+//------------------------------------------------------------------------------
+// int GetPlotValue(CvPlot* pPlot, bool bUseAllowGrowthFlag)
+int CvLuaCity::lGetPlotValue(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	CvPlot* pPlot = CvLuaPlot::GetInstance(L, 2);
+	const bool bUseAllowGrowthFlag = lua_toboolean(L, 3);
+	const int iValue = pkCity->GetCityCitizens()->GetPlotValue(pPlot, bUseAllowGrowthFlag);
+	lua_pushinteger(L, iValue);
+	return 1;
+}
+#endif
+//------------------------------------------------------------------------------

@@ -205,6 +205,9 @@ int CvLuaEnums::pRegister(lua_State* L)
 	RegisterEnum(YIELD_SCIENCE);
 	RegisterEnum(YIELD_CULTURE);
 	RegisterEnum(YIELD_FAITH);
+#if defined(LEKMOD_v34)
+	RegisterEnum(YIELD_GOLDEN_AGE_POINTS);
+#endif
 	RegisterEnum(NUM_YIELD_TYPES);
 	EnumEnd(L);
 
@@ -867,6 +870,9 @@ int CvLuaEnums::pRegister(lua_State* L)
 	RegisterEnum(CITY_AI_FOCUS_TYPE_PROD_GROWTH);
 	RegisterEnum(CITY_AI_FOCUS_TYPE_GOLD_GROWTH);
 	RegisterEnum(CITY_AI_FOCUS_TYPE_FAITH);
+#if defined(LEKMOD_v34) // RegisterEnum(CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS);
+	RegisterEnum(CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS);
+#endif
 	RegisterEnum(NUM_CITY_AI_FOCUS_TYPES);
 	EnumEnd(L);
 

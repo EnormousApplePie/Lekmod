@@ -143,6 +143,13 @@ public:
 
 	int GetResourceExtraYield(ResourceTypes eResource, YieldTypes eYield) const;
 	void ChangeResourceExtraYield(ResourceTypes eResource, YieldTypes eYield, int iChange);
+#if defined(MISC_CHANGES) // CvCity resource class yield changes
+	void ChangeResourceClassExtraYield(ResourceClassTypes eResourceClass, YieldTypes eYield, int iChange);
+#endif
+#if defined(LEKMOD_v34)
+	int GetGarrisonYieldBonus(YieldTypes eYield) const; 
+	void ChangeGarrisonYieldBonus(YieldTypes eYield, int iAmount);
+#endif
 
 	int GetFeatureExtraYield(FeatureTypes eFeature, YieldTypes eYield) const;
 	void ChangeFeatureExtraYield(FeatureTypes eFeature, YieldTypes eYield, int iChange);
@@ -770,7 +777,9 @@ public:
 
 	int getSpecialistFreeExperience() const;
 	void changeSpecialistFreeExperience(int iChange);
-
+#if defined(MISC_CHANGES)
+	int GetNumMountainsNearCity(int iRange, bool bReqireOwnership) const;
+#endif
 	void updateStrengthValue();
 	int getStrengthValue(bool bForRangeStrike = false) const;
 	int GetPower() const;
@@ -1062,6 +1071,9 @@ protected:
 	FAutoVariable<std::vector<int>, CvCity> m_aiProductionToYieldModifier;
 	FAutoVariable<std::vector<int>, CvCity> m_aiDomainFreeExperience;
 	FAutoVariable<std::vector<int>, CvCity> m_aiDomainProductionModifier;
+#if defined(LEKMOD_v34)
+	FAutoVariable<std::vector<int>, CvCity> m_aiGarrisonYieldBonus;
+#endif
 
 	FAutoVariable<std::vector<bool>, CvCity> m_abEverOwned;
 	FAutoVariable<std::vector<bool>, CvCity> m_abRevealed;

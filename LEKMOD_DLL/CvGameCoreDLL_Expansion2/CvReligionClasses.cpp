@@ -461,7 +461,13 @@ void CvGameReligions::DoPlayerTurn(CvPlayer& kPlayer)
 #ifdef AUI_RELIGION_FIX_NO_BELIEFS_AVAILABLE_CHECK_FOR_NON_PANTHEON_MOVED
 	if (eReligionCreated > RELIGION_PANTHEON && CanAddReformationBelief(ePlayer) == FOUNDING_OK)
 #else
+#if !defined(LEKMOD_v34) // Trigger the Reformation belief.
 	if (eReligionCreated > RELIGION_PANTHEON && !HasAddedReformationBelief(ePlayer) && kPlayer.GetPlayerPolicies()->HasPolicyGrantingReformationBelief())
+#else
+	if (eReligionCreated > RELIGION_PANTHEON && // AND
+		!HasAddedReformationBelief(ePlayer) && // AND
+		(kPlayer.GetPlayerPolicies()->HasPolicyGrantingReformationBelief() || kPlayer.CanChooseReformationBelief())) //HAS EITHER OF THESE
+#endif
 #endif
 	{
 		if (!kPlayer.isHuman())
@@ -1151,7 +1157,26 @@ void CvGameReligions::EnhanceReligion(PlayerTypes ePlayer, ReligionTypes eReligi
 #ifndef AUI_WARNING_FIXES
 	it->m_bEnhanced = true;
 #endif
-
+#if defined(LEKMOD_v34)
+	// Get the player's Traits
+	CvPlayerTraits* pPlayerTraits = kPlayer.GetPlayerTraits();
+	// Now see if thier trait lets them pick a reformation belief
+	if (pPlayerTraits->IsReligionEnhanceReformation() == true)
+	{
+		// If they can, and they haven't already, give them the option to pick one
+		if (!HasAddedReformationBelief(ePlayer))
+		{
+			CvNotifications* pNotifications;
+			pNotifications = kPlayer.GetNotifications();
+			if (pNotifications)
+			{
+				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF");
+				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF");
+				pNotifications->Add(NOTIFICATION_ADD_REFORMATION_BELIEF, strBuffer, strSummary, -1, -1, -1);
+			}
+		}
+	}
+#endif
 	// Update game systems
 	UpdateAllCitiesThisReligion(eReligion);
 	kPlayer.UpdateReligion();
@@ -2272,27 +2297,39 @@ int CvGameReligions::GetAdjacentCityReligiousPressure (ReligionTypes eReligion, 
 
 #ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
 		// modifier if this religion spreads to cities owned by founder or not owned by founder
-		int iOwnedCityModifier = 0;
-		int iOwnedCityModifierPolicy = 0;
+		int iTotalSelfReligiousPressure = 0;
+		int iTotalForeignReligiousPressure = 0;
 		CvPlayer& kPlayer = GET_PLAYER(pReligion->m_eFounder);
 		if (pToCity->getOwner() == pReligion->m_eFounder)
 		{	
-			iOwnedCityModifier = pReligion->m_Beliefs.GetSpreadModifierOwnedCities();
-			iOwnedCityModifierPolicy = kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_SPREAD_MODIFIER_OWNED_CITIES);
+			int iOwnedCityModifier = pReligion->m_Beliefs.GetSpreadModifierOwnedCities();
+			iTotalSelfReligiousPressure += iOwnedCityModifier;
+			int iOwnedCityModifierPolicy = kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_SPREAD_MODIFIER_OWNED_CITIES);
+			iTotalSelfReligiousPressure += iOwnedCityModifierPolicy;
+#if defined(LEKMOD_v34) // New Effect, Self Religious Pressure.
+			int iOwnedCityModifierTrait = kPlayer.GetPlayerTraits()->GetSelfReligiousPressureModifier();
+			iTotalSelfReligiousPressure += iOwnedCityModifierTrait;
+#endif
 		}
 		else
 		{
-			iOwnedCityModifier = pReligion->m_Beliefs.GetSpreadModifierUnownedCities();
-			iOwnedCityModifierPolicy = kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_SPREAD_MODIFIER_OTHER_CITIES);
+			int iUnownedCityModifier = pReligion->m_Beliefs.GetSpreadModifierUnownedCities();
+			iTotalForeignReligiousPressure += iUnownedCityModifier;
+			int iUnownedCityModifierPolicy = kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_SPREAD_MODIFIER_OTHER_CITIES);
+			iTotalForeignReligiousPressure += iUnownedCityModifierPolicy;
+#if defined(TRAITIFY) // Foreign Religious Pressure
+			int iUnownedCityModifierTrait = kPlayer.GetPlayerTraits()->GetForeignRelgionPressureModifier();
+			iTotalForeignReligiousPressure += iUnownedCityModifierTrait;
+#endif
 		}
-		if (iOwnedCityModifier != 0)
+		if (iTotalSelfReligiousPressure != 0)
 		{
-			iPressure *= (100 + iOwnedCityModifier);
+			iPressure *= (100 + iTotalSelfReligiousPressure);
 			iPressure /= 100;
 		}
-		else if (iOwnedCityModifierPolicy != 0)
+		if (iTotalForeignReligiousPressure != 0)
 		{
-			iPressure *= (100 + iOwnedCityModifierPolicy);
+			iPressure *= (100 + iTotalForeignReligiousPressure);
 			iPressure /= 100;
 		}
 #endif

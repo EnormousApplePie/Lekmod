@@ -34,6 +34,9 @@
     <IntDir>$(SolutionDir)BuildTemp\VS2008_$(ProjectName)$(Configuration)$(Platform)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <TargetName>CvGameCore_Expansion2</TargetName>
+    <ExecutablePath>C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\PlatformSDK\bin;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>   C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\include;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\atlmfc\include;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\PlatformSDK\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>   C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\lib;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\atlmfc\lib;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\PlatformSDK\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Mod|Win32'">
     <ClCompile>
@@ -73,6 +76,11 @@
       <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
+    <PreBuildEvent>
+      <Command>   set VS90COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\
+   set VSINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio 9.0\
+   set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="_precompile.cpp">

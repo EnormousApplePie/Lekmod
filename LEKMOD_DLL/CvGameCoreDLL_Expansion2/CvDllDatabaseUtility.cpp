@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -35,9 +35,16 @@
 // include this after all other headers
 #include "LintFree.h"
 
+#include <windows.h>
 
 #define GAMEPLAYXML_PATH "Gameplay\\XML\\"
 
+#define LEKMOD_POST_DLC_DATA_LOADING
+
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+// Helper function to replace min() which might not be available in VS2008
+size_t MinValue(size_t a, size_t b);
+#endif
 
 //Just a quick utility function to save from writing lots of verbose code.
 void InsertGameDefine(Database::Results& kInsertDefine, const char* szValue, int iValue)
@@ -124,7 +131,11 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 	//TODO: Figure out how to handle cases where Validation has failed.
 	/*bSuccess &= */
 	ValidateGameDatabase();
-	//bSuccess &= PerformDatabasePostProcessing();
+	
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+	// Add our post-DLC loading here, after validation but before prefetching
+	bSuccess &= PerformPostDLCLoading();
+#endif
 
 	//HACK Legacy 'FindInfoByType' support.
 	//In order to support the legacy code still using the old infos system,
@@ -186,6 +197,11 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 bool CvDllDatabaseUtility::FlushGameDatabaseData()
 {
 	m_bGameDatabaseNeedsCaching = true;
+	
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+	this->LogMsg("[LEKMOD] Database flush requested");
+#endif
+
 	return true;
 }
 //------------------------------------------------------------------------------
@@ -1046,6 +1062,154 @@ void CvDllDatabaseUtility::orderHotkeyInfo(int** ppiSortedIndex, int* pHotkeyInd
 	}
 }
 
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+bool CvDllDatabaseUtility::PerformPostDLCLoading()
+{
+	Database::Connection* db = GC.GetGameDatabase();
+	if(!db)
+		return false;
+
+	// Begin transaction for database changes
+	db->BeginTransaction();
+	this->LogMsg("[LEKMOD] Starting XML loading process");
+
+	// Base DLC path
+	const wchar_t* wszDLCPath = L"Assets\\DLC\\";
+	
+	// Search for any folder containing "LEKMOD" in the name
+	WIN32_FIND_DATAW ffd;
+	HANDLE hFind = FindFirstFileW((std::wstring(wszDLCPath) + L"*LEKMOD*").c_str(), &ffd);
+	
+	int foldersProcessed = 0;
+	bool bSuccess = false;
+	
+	if(hFind != INVALID_HANDLE_VALUE) 
+	{
+		do {
+			// Skip if not a directory
+			if(!(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
+				continue;
+
+			// Build the XML path for this LEKMOD folder
+			std::wstring wszXMLPath = std::wstring(wszDLCPath) + ffd.cFileName + L"\\XML\\";
+			
+			// Convert to regular string for logging
+			char szFolderName[256];
+			WideCharToMultiByte(CP_UTF8, 0, ffd.cFileName, -1, szFolderName, sizeof(szFolderName), NULL, NULL);
+			
+			char szXMLPath[256];
+			WideCharToMultiByte(CP_UTF8, 0, wszXMLPath.c_str(), -1, szXMLPath, sizeof(szXMLPath), NULL, NULL);
+			this->LogMsg("[LEKMOD] Found folder: %s, checking for XML at: %s", szFolderName, szXMLPath);
+			
+			// Check if the XML subfolder exists
+			WIN32_FIND_DATAW xmlFolderData;
+			HANDLE hXmlFind = FindFirstFileW((wszXMLPath + L"*").c_str(), &xmlFolderData);
+			
+			if(hXmlFind != INVALID_HANDLE_VALUE) 
+			{
+				FindClose(hXmlFind);
+				
+				// Process XML files with standard serializer
+				this->LogMsg("[LEKMOD] Processing XML files in: %s", szXMLPath);
+				Database::XMLSerializer serializer(*db);
+				ProcessXMLFiles(wszXMLPath, serializer);
+				
+				foldersProcessed++;
+				bSuccess = true;
+			}
+			else 
+			{
+				this->LogMsg("[LEKMOD] No XML subfolder found in: %s", szFolderName);
+			}
+
+		} while(FindNextFileW(hFind, &ffd) != 0);
+		
+		FindClose(hFind);
+	}
+	else
+	{
+		this->LogMsg("[LEKMOD] No LEKMOD folders found in DLC directory");
+		db->EndTransaction();
+		return false;
+	}
+
+	// Commit transaction
+	db->EndTransaction();
+	
+	if(foldersProcessed > 0) 
+	{
+		this->LogMsg("[LEKMOD] XML loading complete - processed %d folders", foldersProcessed);
+		return bSuccess;
+	}
+	else 
+	{
+		this->LogMsg("[LEKMOD] No valid LEKMOD/XML folders were found");
+		return false;
+	}
+}
+
+// Helper function to process XML files from a folder
+void CvDllDatabaseUtility::ProcessXMLFiles(const std::wstring& wszPath, Database::XMLSerializer& serializer)
+{
+    // Find all XML files in this directory
+    WIN32_FIND_DATAW ffd;
+    HANDLE hFind = FindFirstFileW((wszPath + L"*.xml").c_str(), &ffd);
+    
+    if(hFind != INVALID_HANDLE_VALUE)
+    {
+        char szLogBuffer[256];
+        
+        do
+        {
+            std::wstring wszFile = wszPath + ffd.cFileName;
+            
+            // Log the file we're loading
+            WideCharToMultiByte(CP_UTF8, 0, wszFile.c_str(), -1, szLogBuffer, sizeof(szLogBuffer), NULL, NULL);
+            this->LogMsg("[LEKMOD] Loading XML: %s", szLogBuffer);
+            
+            // Try to load this XML file
+            if(serializer.Load(wszFile.c_str()))
+            {
+                this->LogMsg("[LEKMOD] Successfully loaded XML file");
+            }
+            else
+            {
+                this->LogMsg("[LEKMOD] Failed to load XML file - %s", serializer.ErrorMessage());
+            }
+            
+        } while(FindNextFileW(hFind, &ffd) != 0);
+        
+        FindClose(hFind);
+    }
+    
+    // Process all subdirectories
+    hFind = FindFirstFileW((wszPath + L"*").c_str(), &ffd);
+    
+    if(hFind != INVALID_HANDLE_VALUE)
+    {
+        do
+        {
+            // Skip . and .. directories and non-directories
+            if(wcscmp(ffd.cFileName, L".") == 0 || wcscmp(ffd.cFileName, L"..") == 0 || 
+              !(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
+                continue;
+                
+            // Process this subdirectory
+            ProcessXMLFiles(wszPath + ffd.cFileName + L"\\", serializer);
+            
+        } while(FindNextFileW(hFind, &ffd) != 0);
+        
+        FindClose(hFind);
+    }
+}
+
+// Helper function to replace min() which might not be available in VS2008
+size_t MinValue(size_t a, size_t b)
+{
+    return (a < b) ? a : b;
+}
+#endif
+
 //------------------------------------------------------------------------------
 //
 // PRIVATE FUNCTIONS
@@ -1066,4 +1230,6 @@ void CvDllDatabaseUtility::LogMsg(const char* format, ...) const
 
 	LOGFILEMGR.GetLog("xml.log", uiFlags)->Msg(buf);
 }
+
+
 

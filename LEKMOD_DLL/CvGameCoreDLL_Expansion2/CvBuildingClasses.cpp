@@ -134,6 +134,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_iXBuiltTriggersIdeologyChoice(0),
 	m_iGreatScientistBeakerModifier(0),
 	m_iExtraLeagueVotes(0),
+#if defined(MISC_CHANGES) // CvBuildingClasses member variables
+	m_iTourismPerMountain(0),
+#endif
 	m_iPreferredDisplayPosition(0),
 	m_iPortraitIndex(-1),
 	m_bTeamShare(false),
@@ -210,6 +213,12 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_ppiBuildingClassYieldChanges(std::pair<int**, size_t>(NULL, 0)),
 #else
 	m_ppaiResourceYieldChange(NULL),
+#if defined(MISC_CHANGES) // CvBuildingClasses arrays
+	m_ppaiResourceClassYieldChange(NULL),
+#endif
+#if defined(LEKMOD_v34)
+	m_piGarrisonYieldChange(NULL),
+#endif
 	m_ppaiFeatureYieldChange(NULL),
 	m_ppiResourceYieldChangeGlobal(),
 	m_ppaiImprovementYieldChange(NULL),
@@ -284,6 +293,12 @@ CvBuildingEntry::~CvBuildingEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges.first, m_ppiBuildingClassYieldChanges.second);
 #else
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiResourceYieldChange);
+#if defined(MISC_CHANGES) // CvBuildingClasses arrays
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiResourceClassYieldChange);
+#endif
+#if defined(LEKMOD_v34)
+	SAFE_DELETE_ARRAY(m_piGarrisonYieldChange);
+#endif
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiFeatureYieldChange);
 	m_ppiResourceYieldChangeGlobal.clear();
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiImprovementYieldChange);
@@ -432,6 +447,9 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	m_iXBuiltTriggersIdeologyChoice = kResults.GetInt("XBuiltTriggersIdeologyChoice");
 	m_iGreatScientistBeakerModifier = kResults.GetInt("GreatScientistBeakerModifier");
 	m_iExtraLeagueVotes = kResults.GetInt("ExtraLeagueVotes");
+#if defined(MISC_CHANGES) // CvBuildingClasses read XML
+	m_iTourismPerMountain = kResults.GetInt("TourismPerMountain");
+#endif
 	m_iPreferredDisplayPosition = kResults.GetInt("DisplayPosition");
 	m_iPortraitIndex = kResults.GetInt("PortraitIndex");
 
@@ -558,6 +576,9 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	kUtility.PopulateArrayByExistence(m_piPrereqAndTechs, "Technologies", "Building_TechAndPrereqs", "TechType", "BuildingType", szBuildingType);
 	kUtility.PopulateArrayByExistence(m_piLocalResourceAnds, "Resources", "Building_LocalResourceAnds", "ResourceType", "BuildingType", szBuildingType);
 	kUtility.PopulateArrayByExistence(m_piLocalResourceOrs, "Resources", "Building_LocalResourceOrs", "ResourceType", "BuildingType", szBuildingType);
+#if defined(LEKMOD_v34)
+	kUtility.SetYields(m_piGarrisonYieldChange, "Building_GarrisonYieldChanges", "BuildingType", szBuildingType);
+#endif
 
 	//ResourceYieldChanges
 	{
@@ -615,7 +636,35 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 		//Trim extra memory off container since this is mostly read-only.
 		std::map<int, std::map<int, int>>(m_ppiResourceYieldChangeGlobal).swap(m_ppiResourceYieldChangeGlobal);
 	}
+#if defined(MISC_CHANGES) // CvBuildingClasses arrays
+	{
 
+		kUtility.Initialize2DArray(m_ppaiResourceClassYieldChange, "ResourceClasses", "Yields");
+
+		std::string strKey("Building_ResourceClassYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT ResourceClasses.ID AS ResourceClassID, Yields.ID AS YieldID, Building_ResourceClassYieldChanges.Yield \
+			 FROM Building_ResourceClassYieldChanges \
+			 INNER JOIN ResourceClasses ON ResourceClasses.Type = ResourceClassType \
+			 INNER JOIN Yields ON Yields.Type = YieldType \
+			 WHERE BuildingType = ?");
+		}
+
+		pResults->Bind(1, szBuildingType);
+
+		while (pResults->Step())
+		{
+			const int iResourceClassID = pResults->GetInt(0);
+			const int iYieldID = pResults->GetInt(1);
+			const int iYield = pResults->GetInt(2);
+
+			m_ppaiResourceClassYieldChange[iResourceClassID][iYieldID] = iYield;
+		}
+	}
+#endif
 	//FeatureYieldChanges
 	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -1604,7 +1653,13 @@ int CvBuildingEntry::GetExtraLeagueVotes() const
 {
 	return m_iExtraLeagueVotes;
 }
-
+#if defined(MISC_CHANGES) // Tourism from Mountains
+/// Amount of tourism from mountaints near this city
+int CvBuildingEntry::GetMountainTourism() const
+{
+	return m_iTourismPerMountain;
+}
+#endif
 /// What ring the engine will try to display this building
 int CvBuildingEntry::GetPreferredDisplayPosition() const
 {
@@ -2223,6 +2278,26 @@ int CvBuildingEntry::GetResourceYieldChangeGlobal(int iResource, int iYieldType)
 
 	return 0;
 }
+#if defined(MISC_CHANGES) // CvBuildingEntry:: arrays
+/// Change to Yield based on ResourceClass
+int CvBuildingEntry::GetResourceClassYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumResourceClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiResourceClassYieldChange ? m_ppaiResourceClassYieldChange[i][j] : -1;
+}
+#endif
+#if defined(LEKMOD_v34)
+/// Changes Yield Based on if the City is Garrisoned
+int CvBuildingEntry::GetGarrisonYieldChange(int j) const
+{
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_piGarrisonYieldChange ? m_piGarrisonYieldChange[j] : -1;
+}
+#endif
 /// Change to Feature yield by type
 int CvBuildingEntry::GetFeatureYieldChange(int i, int j) const
 {
