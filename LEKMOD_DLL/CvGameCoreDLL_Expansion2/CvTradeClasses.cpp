@@ -724,7 +724,7 @@ int CvGameTrade::GetDomainModifierTimes100(DomainTypes eDomain) const
 int CvGameTrade::GetDomainModifierTimes100(DomainTypes eDomain)
 #endif
 {
-#if !defined(LEKMOD_v34)
+
 	if (eDomain == DOMAIN_SEA)
 	{
 		return 100;
@@ -733,22 +733,6 @@ int CvGameTrade::GetDomainModifierTimes100(DomainTypes eDomain)
 	{
 		return 0;
 	}
-#else
-	if (eDomain == DOMAIN_SEA)
-	{
-		return 100;
-	}
-	else if (eDomain == DOMAIN_LAND)
-	{
-		int iTraitBonus = GET_PLAYER(GC.getGame().getActivePlayer()).GetPlayerTraits()->GetLandTradeRouteYieldBonus();
-		// Tunisia Trait effect
-		return 0 + iTraitBonus;
-	}
-	else
-	{
-		return 0;
-	}
-#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -2799,8 +2783,24 @@ int CvPlayerTrade::GetTradeConnectionDomainValueModifierTimes100(const TradeConn
 	{
 		eYield = eYield;
 	}
-
+#if !defined(LEKMOD_v34) // Moved Tunis Trait to CvPlayerTrade::GetTradeConnectionDomainValueModifierTimes100 and not CvGameTrade::GetDomainModifierTimes100
 	return GC.getGame().GetGameTrade()->GetDomainModifierTimes100(kTradeConnection.m_eDomain);
+#else
+	if (kTradeConnection.m_eDomain == DOMAIN_LAND)
+	{
+		int iTraitBonus = m_pPlayer->GetPlayerTraits()->GetLandTradeRouteYieldBonus();
+		return GC.getGame().GetGameTrade()->GetDomainModifierTimes100(DOMAIN_LAND) + iTraitBonus;
+	}
+	else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+	{
+		return GC.getGame().GetGameTrade()->GetDomainModifierTimes100(DOMAIN_SEA);
+	}
+	else
+	{
+		CvAssertMsg(false, "CvPlayerTrade::GetTradeConnectionDomainValueModifierTimes100 - Invalid Domain Type");
+		return 0;
+	}
+#endif
 }
 
 //	--------------------------------------------------------------------------------
