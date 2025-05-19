@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -2598,6 +2598,36 @@ int CvPlot::getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer) const
 	CvAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
 
 	iTime = GC.getBuildInfo(eBuild)->getTime();
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+		// catch the base build time and override it
+		int iOverrideTime = -1;
+
+		if (ePlayer != NO_PLAYER)
+		{
+			CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+			
+			// Get the resource class if there's a resource on this plot
+			ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
+			ResourceTypes eResource = getResourceType();
+			
+			if (eResource != NO_RESOURCE)
+			{
+				CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
+				if (pResourceInfo)
+				{
+					eResourceClass = (ResourceClassTypes)pResourceInfo->getResourceClassType();
+				}
+			}
+			
+			// Pass the resource class to the GetBuildTimeOverride method
+			iOverrideTime = kPlayer.GetPlayerTraits()->GetBuildTimeOverride(eBuild, eResourceClass);
+		}
+
+	if (iOverrideTime > -1 && iOverrideTime != NULL)
+	{
+		iTime = iOverrideTime;
+	}
+#endif
 	if (ePlayer != NO_PLAYER)
 	{
 		TeamTypes eTeam = GET_PLAYER(ePlayer).getTeam();
@@ -7545,12 +7575,26 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 
 			// Some Features REPLACE the Yield of the Plot instead of adding to it
 			int iYieldChange = pFeatureInfo->getYieldChange(eYield);
-
+#if !defined(TRAITIFY)
 			// Player Trait
 			if(m_eOwner != NO_PLAYER && getImprovementType() == NO_IMPROVEMENT)
 			{
 				iYieldChange +=  GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(getFeatureType(), eYield);
 			}
+#else
+			// Player Trait
+			if (m_eOwner != NO_PLAYER)
+			{
+				// Improved or Not, change the Yield
+				iYieldChange += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(getFeatureType(), eYield);
+
+				if (getImprovementType() == NO_IMPROVEMENT)
+				{
+					// Change the Yield only if the Feature is unimproved
+					iYieldChange += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(getFeatureType(), eYield);
+				}
+			}
+#endif
 
 			// Leagues
 			if(pWorkingCity != NULL)
@@ -7664,7 +7708,16 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			}
 		}
 	}
-
+#if defined(TRAITIFY) // Trait Effect on Terrain Yields
+	if (pWorkingCity != NULL)
+	{
+		int iTraitTerrainChange = GET_PLAYER(pWorkingCity->getOwner()).GetPlayerTraits()->GetTerrainYieldChange(getTerrainType(), eYield);
+		if (iTraitTerrainChange != 0)
+		{
+			iYield += iTraitTerrainChange;
+		}
+	}
+#endif
 	if(isRiver())
 	{
 		iYield += ((bIgnoreFeature || (getFeatureType() == NO_FEATURE)) ? GC.getTerrainInfo(getTerrainType())->getRiverYieldChange(eYield) : GC.getFeatureInfo(getFeatureType())->getRiverYieldChange(eYield));
@@ -8229,9 +8282,9 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 					// Extra yield from resources
 					if(pWorkingCity != NULL)
 						iYield += pWorkingCity->GetResourceExtraYield(eResource, eYield);
-
+#if !defined(TRAITIFY) // Refactor the Yield Change based on resource usage into one function that the arraytable defines the resource type it effects instead of separate tables
 					// Extra yield from Trait
-					if(pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
+					if (pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
 					{
 						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetYieldChangeStrategicResources(eYield);
 					}
@@ -8241,8 +8294,22 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetYieldChangeLuxuryResources(eYield);
 					}
 					// NQMP GJS - New Netherlands UA END
+#else
+					//Extra yield from Trait, handles yields applied to a ResourceClass and not a specific resource for the Purposes of Russia, Jerusalem, and the Netherlands
+					if (pkResourceInfo->getResourceClassType() != NO_RESOURCECLASS)
+					{
+						ResourceClassTypes eResourceClass = (ResourceClassTypes)pkResourceInfo->getResourceClassType();
+#if defined(LEKMOD_v34)
+						iYield += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetPolicyResourceClassYieldChanges(eResourceClass, eYield);
+#endif
+						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceClassYieldChange(eResourceClass, eYield);
+					}
+#endif
+
 				}
 				CvPlayer &kPlayer = GET_PLAYER(ePlayer);
+				iYield += kPlayer.GetPlayerPolicies()->GetPolicyResourceYieldChanges(eResource, eYield);
+				iYield += kPlayer.GetPlayerTraits()->GetResourceYieldChange(eResource, eYield);
 				iYield += kPlayer.getResourceYieldChange(eResource, eYield);
 			}
 		}
@@ -11221,15 +11288,26 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 					if(pWorkingCity != NULL)
 						iYield += pWorkingCity->GetResourceExtraYield(eResource, eYield);
 
-					// Extra yield from Resources with Trait
-					if(pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
+#if !defined(TRAITIFY) // Refactor the Yield Change based on resource usage into one function that the arraytable defines the resource type it effects instead of separate tables
+					// Extra yield from Trait
+					if (pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
+					{
 						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetYieldChangeStrategicResources(eYield);
+					}
 					// NQMP GJS - New Netherlands UA BEGIN
 					else if (pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_LUXURY)
 					{
 						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetYieldChangeLuxuryResources(eYield);
 					}
 					// NQMP GJS - New Netherlands UA END
+#else
+					//Extra yield from Trait, handles yields applied to a ResourceClass and not a specific resource for the Purposes of Russia, Jerusalem, and the Netherlands
+					if (pkResourceInfo->getResourceClassType() != NO_RESOURCECLASS)
+					{
+						ResourceClassTypes eResourceClass = (ResourceClassTypes)pkResourceInfo->getResourceClassType();
+						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceClassYieldChange(eResourceClass, eYield);
+					}
+#endif
 				}
 			}
 		}

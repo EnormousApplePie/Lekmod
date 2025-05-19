@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -71,6 +71,10 @@ CvUnitEntry::CvUnitEntry(void) :
 	m_iPrereqAndTech(NO_TECH),
 	m_iObsoleteTech(NO_TECH),
 	m_iPolicyType(NO_POLICY),
+#if defined(MISC_CHANGES) // CvUnitClasses
+	m_iPolicyBranchType(NO_POLICY_BRANCH_TYPE),
+	m_bAnyIdeologyUnlock(false),
+#endif
 	m_iGoodyHutUpgradeUnitClass(NO_UNITCLASS),
 	m_iGroupSize(0),
 	m_iGroupDefinitions(0),
@@ -235,6 +239,9 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_bRangeAttackOnlyInDomain = kResults.GetBool("RangeAttackOnlyInDomain");
 	m_bTrade = kResults.GetBool("Trade");
 	m_iNumExoticGoods = kResults.GetInt("NumExoticGoods");
+#if defined(MISC_CHANGES) // CvUnitClasses
+	m_bAnyIdeologyUnlock = kResults.GetBool("AnyIdeologyUnlock");
+#endif
 
 	m_strUnitArtInfoTag = kResults.GetText("UnitArtInfo");
 	m_bUnitArtInfoCulturalVariation = kResults.GetBool("UnitArtInfoCulturalVariation");
@@ -274,7 +281,10 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 
 	szTextVal = kResults.GetText("PolicyType");
 	m_iPolicyType = GC.getInfoTypeForString(szTextVal, true);
-
+#if defined(MISC_CHANGES) // CvUnitClasses
+	szTextVal = kResults.GetText("PolicyBranchType");
+	m_iPolicyBranchType = GC.getInfoTypeForString(szTextVal, true);
+#endif
 	szTextVal = kResults.GetText("GoodyHutUpgradeUnitClass");
 	m_iGoodyHutUpgradeUnitClass = GC.getInfoTypeForString(szTextVal, true);
 
@@ -796,7 +806,18 @@ int CvUnitEntry::GetPolicyType() const
 {
 	return m_iPolicyType;
 }
-
+#if defined(MISC_CHANGES) // CvUnitClasses
+/// Policy branch required for this unit
+int CvUnitEntry::GetPolicyBranchType() const
+{
+	return m_iPolicyBranchType;
+}
+/// Is this unit unlocked by any ideology?
+bool CvUnitEntry::IsAnyIdeologyUnlock() const
+{
+	return m_bAnyIdeologyUnlock;
+}
+#endif
 /// Unitclass that replaces this Unit if the appropriate Goody is received from a Hut
 int CvUnitEntry::GetGoodyHutUpgradeUnitClass() const
 {

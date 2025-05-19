@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -30,6 +30,11 @@ public:
 
 	//! Prepares a cached result given an arbitrary string key
 	Database::Results* PrepareResults(const std::string& strKey, const char* szStmt);
+
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+	//! Fallback method to refresh language text tables
+	void RefreshLanguageTextFallback();
+#endif
 
 	//!Allocates an array to count and zero's memory.
 	void InitializeArray(int*& pArray, const size_t count, int iDefault = 0);

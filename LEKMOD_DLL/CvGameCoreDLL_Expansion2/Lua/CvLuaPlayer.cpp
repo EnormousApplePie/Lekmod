@@ -163,7 +163,17 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetResearchTurnsLeft);
 	Method(GetResearchCost);
 	Method(GetResearchProgress);
+#if defined(LEKMOD_v34) // method defines
+	Method(CanChooseReformationBelief);
+	Method(SetCanChooseReformationBelief);
 
+	Method(GetGoldenAgePointsFromCities);
+	Method(GetTotalGoldenAgePointsInEmpire);
+#endif
+#if defined(MISC_CHANGES)
+	Method(GetNumMiscTradeRoutes);
+	Method(ChangeNumMiscTradeRoutes);
+#endif
 	Method(UnitsRequiredForGoldenAge);
 	Method(UnitsGoldenAgeCapable);
 	Method(UnitsGoldenAgeReady);
@@ -2001,7 +2011,64 @@ int CvLuaPlayer::lGetResearchProgress(lua_State* L)
 	lua_pushinteger(L, iResult);
 	return 1;
 }
-
+#if defined(LEKMOD_v34) // Method implementations
+//------------------------------------------------------------------------------
+//bool CanChooseReformationBelief();
+int CvLuaPlayer::lCanChooseReformationBelief(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const bool bResult = pkPlayer->CanChooseReformationBelief();
+	lua_pushboolean(L, bResult);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//void SetCanChooseReformationBelief(int iValue);
+int CvLuaPlayer::lSetCanChooseReformationBelief(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const bool bValue = lua_toboolean(L, 2);
+	pkPlayer->SetCanChooseReformationBelief(bValue);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//int GetGoldenAgePointsFromCities()
+int CvLuaPlayer::lGetGoldenAgePointsFromCities(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const int iResult = pkPlayer->GetGoldenAgePointsFromCities();
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//int GetTotalGoldenAgePointsInEmpire()
+int CvLuaPlayer::lGetTotalGoldenAgePointsInEmpire(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const int iResult = pkPlayer->GetTotalGoldenAgePointsInEmpire();
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif
+#if defined(MISC_CHANGES) // Method implementations
+//------------------------------------------------------------------------------
+//int GetNumMiscTradeRoutes()
+int CvLuaPlayer::lGetNumMiscTradeRoutes(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const int iResult = pkPlayer->GetNumMiscTradeRoutes();
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//void ChangeNumMiscTradeRoutes(int iChange)
+int CvLuaPlayer::lChangeNumMiscTradeRoutes(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const int iValue = lua_tointeger(L, 2);
+	pkPlayer->ChangeNumMiscTradeRoutes(iValue);
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 //int unitsRequiredForGoldenAge();
 int CvLuaPlayer::lUnitsRequiredForGoldenAge(lua_State* L)

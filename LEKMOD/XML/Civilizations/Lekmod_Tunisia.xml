@@ -5,12 +5,12 @@
 		<Row>
 			<BuildingType>BUILDING_TUNISIA_CASTLE</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
-			<YieldChange>2</YieldChange>
+			<Yield>2</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_TUNISIA_CASTLE</BuildingType>
 			<YieldType>YIELD_FAITH</YieldType>
-			<YieldChange>2</YieldChange>
+			<Yield>2</Yield>
 		</Row>
 	</Building_YieldChanges>
 
@@ -142,7 +142,7 @@
 			<DisplayPosition>0</DisplayPosition> 
 			<PortraitIndex>2</PortraitIndex> 
 			<WonderSplashAnchor>R,T</WonderSplashAnchor> 
-			<IconAtlas>GEORGIA_ICON_ATLAS</IconAtlas> 
+			<IconAtlas>LEKMOD_TUNISIA_ATLAS</IconAtlas> 
 			<ArtInfoCulturalVariation>false</ArtInfoCulturalVariation> 
 			<ArtInfoEraVariation>false</ArtInfoEraVariation> 
 			<ArtInfoRandomVariation>false</ArtInfoRandomVariation> 
@@ -280,50 +280,50 @@
 	<Civilization_SpyNames>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_0</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_0</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_1</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_1</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_2</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_2</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_3</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_3</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_4</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_4</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_5</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_5</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_6</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_6</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_7</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_7</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_8</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_8</SpyName> 
 		</Row>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<SpyName>TXT_KEY_CITY_NAME_TUNISIA_9</SpyName> 
+			<SpyName>TXT_KEY_SPY_NAME_TUNISIA_9</SpyName> 
 		</Row>
 	</Civilization_SpyNames>
 	
 	<Civilization_UnitClassOverrides>
 		<Row> 
 			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
-			<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType> 
+			<UnitClassType>UNITCLASS_PRIVATEER</UnitClassType> 
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 		</Row>
 	</Civilization_UnitClassOverrides>
@@ -343,27 +343,27 @@
 			<ArtStyleSuffix>_MED</ArtStyleSuffix> 
 			<ArtStylePrefix>MEDITERRANEAN</ArtStylePrefix> 
 			<PortraitIndex>0</PortraitIndex> 
-			<IconAtlas>TUNISIA_ALPHA_ICON_ATLAS</IconAtlas> 
-			<AlphaIconAtlas>TUNISIA_FLAG</AlphaIconAtlas> 
+			<IconAtlas>LEKMOD_TUNISIA_ATLAS</IconAtlas> 
+			<AlphaIconAtlas>TUNISIA_ALPHA_ICON_ATLAS</AlphaIconAtlas> 
 			<MapImage>generic_map.dds</MapImage> 
 			<DawnOfManQuote>TXT_KEY_DAWN_OF_MAN_TUNISIA_TEXT</DawnOfManQuote> 
-			<DawnOfManImage>generic_map.dds</DawnOfManImage> 
+			<DawnOfManImage>generic_DoM.dds</DawnOfManImage> 
 		</Row>
 	</Civilizations> 
 	
 	<Colors> 
 		<Row>
 			<Type>COLOR_PLAYER_TUNISIA_ICON</Type>
-			<Red>0.800</Red>
-			<Green>0.100</Green>
-			<Blue>0.900</Blue>
+			<Red>0.443137254901961</Red>
+			<Green>0.215686274509804</Green>
+			<Blue>0.752941176470588</Blue>
 			<Alpha>1</Alpha>
 		</Row>
 		<Row>
 			<Type>COLOR_PLAYER_TUNISIA_BACKGROUND</Type>
-			<Red>1.000</Red>
-			<Green>0.800</Green>
-			<Blue>0.700</Blue>
+			<Red>0.0784313725490196</Red>
+			<Green>0.556862745098039</Green>
+			<Blue>0.458823529411765</Blue>
 			<Alpha>1</Alpha>
 		</Row>
 	</Colors> 
@@ -372,7 +372,7 @@
 		<!-- Tunisia Art -->
 
 		<Row> 
-			<Atlas>TUNISIA_PRIVATEER_FLAG</Atlas> 
+			<Atlas>LEKMOD_LEKMOD_TUNISIA_PRIVATEER_FLAG</Atlas> 
 			<IconSize>32</IconSize> 
 			<Filename>tunis_xebec_flag_32.dds</Filename> 
 			<IconsPerRow>1</IconsPerRow> 
@@ -380,35 +380,35 @@
 		</Row>
 
 		<Row>
-			<Atlas>TUNISIA_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ICON_ALPHA</Atlas>
 			<IconSize>128</IconSize>
 			<Filename>tunis_atlas_alpha_128.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ICON_ALPHA</Atlas>
 			<IconSize>64</IconSize>
 			<Filename>tunis_atlas_alpha_64.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ICON_ALPHA</Atlas>
 			<IconSize>48</IconSize>
 			<Filename>tunis_atlas_alpha_48.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ICON_ALPHA</Atlas>
 			<IconSize>32</IconSize>
 			<Filename>tunis_atlas_alpha_32.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ALPHA</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ICON_ALPHA</Atlas>
 			<IconSize>24</IconSize>
 			<Filename>tunis_atlas_alpha_24.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
@@ -416,46 +416,46 @@
 		</Row>
 
 		<Row>
-			<Atlas>TUNISIA_ICON_ATLAS</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ATLAS</Atlas>
 			<IconSize>256</IconSize>
 			<Filename>tunis_atlas_256.dds</Filename>
-			<IconsPerRow>8</IconsPerRow>
-			<IconsPerColumn>8</IconsPerColumn>
+			<IconsPerRow>2</IconsPerRow>
+			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ATLAS</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ATLAS</Atlas>
 			<IconSize>128</IconSize>
 			<Filename>tunis_atlas_128.dds</Filename>
-			<IconsPerRow>8</IconsPerRow>
-			<IconsPerColumn>8</IconsPerColumn>
+			<IconsPerRow>2</IconsPerRow>
+			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ATLAS</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ATLAS</Atlas>
 			<IconSize>80</IconSize>
 			<Filename>tunis_atlas_80.dds</Filename>
-			<IconsPerRow>8</IconsPerRow>
-			<IconsPerColumn>8</IconsPerColumn>
+			<IconsPerRow>2</IconsPerRow>
+			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ATLAS</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ATLAS</Atlas>
 			<IconSize>64</IconSize>
 			<Filename>tunis_atlas_64.dds</Filename>
-			<IconsPerRow>8</IconsPerRow>
-			<IconsPerColumn>8</IconsPerColumn>
+			<IconsPerRow>2</IconsPerRow>
+			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ATLAS</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ATLAS</Atlas>
 			<IconSize>45</IconSize>
 			<Filename>tunis_atlas_45.dds</Filename>
-			<IconsPerRow>8</IconsPerRow>
-			<IconsPerColumn>8</IconsPerColumn>
+			<IconsPerRow>2</IconsPerRow>
+			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>TUNISIA_ICON_ATLAS</Atlas>
+			<Atlas>LEKMOD_TUNISIA_ATLAS</Atlas>
 			<IconSize>32</IconSize>
 			<Filename>tunis_atlas_32.dds</Filename>
-			<IconsPerRow>8</IconsPerRow>
-			<IconsPerColumn>8</IconsPerColumn>
+			<IconsPerRow>2</IconsPerRow>
+			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 	</IconTextureAtlases>
 	
@@ -986,7 +986,7 @@
 			<ReligiousStrengthLossRivalTerritory>0</ReligiousStrengthLossRivalTerritory> 
 			<TradeMissionInfluenceModifier>0</TradeMissionInfluenceModifier> 
 			<TradeMissionGoldModifier>0</TradeMissionGoldModifier> 
-			<GoldenAgeValueFromKills>100</GoldenAgeValueFromKills> 
+			<GoldenAgeValueFromKills>0</GoldenAgeValueFromKills> 
 			<Sapper>false</Sapper> 
 			<HeavyCharge>false</HeavyCharge> 
 			<PediaType>PEDIA_ATTRIBUTES</PediaType> 
@@ -1128,15 +1128,16 @@
 			<HeavyChargeDownhill>0</HeavyChargeDownhill> 
 		</Row>
 	</UnitPromotions>
-
-	<UnitPromotions_UnitCombats>
+	<Trait_FreePromotionUnitCombats>
 		<Row> 
-			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
+			<TraitType>TRAIT_WAYFINDING</TraitType> 
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType> 
+			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 		</Row>
 		<Row> 
-			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
+			<TraitType>TRAIT_WAYFINDING</TraitType> 
 			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType> 
+			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 		</Row>
 		<Row> 
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
@@ -1158,16 +1159,28 @@
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType> 
 		</Row>
-	</UnitPromotions_UnitCombats>
+	</Trait_FreePromotionUnitCombats>
 	
 	<Unit_AITypes>
 		<Row> 
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
-			<UnitAIType>UNITAI_ATTACK</UnitAIType> 
+			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
-			<UnitAIType>UNITAI_DEFENSE</UnitAIType> 
+			<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
+			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
+			<UnitAIType>UNITAI_EXPLORE_SEA</UnitAIType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
+			<UnitAIType>UNITAI_PIRATE_SEA</UnitAIType> 
 		</Row>
 	</Unit_AITypes>
 	
@@ -1214,11 +1227,11 @@
 			<PromotionType>PROMOTION_PARTIAL_HEAL_IF_DESTROY_ENEMY</PromotionType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_PRIVATEER</UnitType> 
+			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_PRIVATEER</UnitType> 
+			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 			<PromotionType>PROMOTION_CITY_MOVEMENT_PENALTY</PromotionType> 
 		</Row>
 	</Unit_FreePromotions>
@@ -1307,10 +1320,10 @@
 			<DontShowYields>false</DontShowYields> 
 			<ShowInPedia>true</ShowInPedia> 
 			<MoveRate>WOODEN_BOAT</MoveRate> 
-			<UnitFlagIconOffset>21</UnitFlagIconOffset> 
-			<PortraitIndex>21</PortraitIndex> 
-			<IconAtlas>EXPANSION_UNIT_ATLAS_1</IconAtlas> 
-			<UnitFlagAtlas>EXPANSION_UNIT_FLAG_ATLAS</UnitFlagAtlas> 
+			<UnitFlagIconOffset>0</UnitFlagIconOffset> 
+			<PortraitIndex>3</PortraitIndex> 
+			<IconAtlas>LEKMOD_TUNISIA_ATLAS</IconAtlas> 
+			<UnitFlagAtlas>LEKMOD_TUNISIA_PRIVATEER_FLAG</UnitFlagAtlas> 
 		</Row>
 	</Units> 
 </GameData>

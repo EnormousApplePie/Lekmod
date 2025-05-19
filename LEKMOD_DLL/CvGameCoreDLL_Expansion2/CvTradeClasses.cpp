@@ -721,9 +721,10 @@ void CvGameTrade::CopyPathIntoTradeConnection (CvAStarNode* pNode, TradeConnecti
 #ifdef AUI_CONSTIFY
 int CvGameTrade::GetDomainModifierTimes100(DomainTypes eDomain) const
 #else
-int CvGameTrade::GetDomainModifierTimes100 (DomainTypes eDomain)
+int CvGameTrade::GetDomainModifierTimes100(DomainTypes eDomain)
 #endif
 {
+
 	if (eDomain == DOMAIN_SEA)
 	{
 		return 100;
@@ -738,7 +739,7 @@ int CvGameTrade::GetDomainModifierTimes100 (DomainTypes eDomain)
 #ifdef AUI_CONSTIFY
 bool CvGameTrade::IsPlayerConnectedToPlayer(PlayerTypes eFirstPlayer, PlayerTypes eSecondPlayer) const
 #else
-bool CvGameTrade::IsPlayerConnectedToPlayer (PlayerTypes eFirstPlayer, PlayerTypes eSecondPlayer)
+bool CvGameTrade::IsPlayerConnectedToPlayer(PlayerTypes eFirstPlayer, PlayerTypes eSecondPlayer)
 #endif
 {
 #ifdef AUI_ITERATORIZE
@@ -777,7 +778,7 @@ bool CvGameTrade::IsPlayerConnectedToPlayer (PlayerTypes eFirstPlayer, PlayerTyp
 #ifdef AUI_CONSTIFY
 int CvGameTrade::CountNumPlayerConnectionsToPlayer(PlayerTypes eFirstPlayer, PlayerTypes eSecondPlayer) const
 #else
-int CvGameTrade::CountNumPlayerConnectionsToPlayer (PlayerTypes eFirstPlayer, PlayerTypes eSecondPlayer)
+int CvGameTrade::CountNumPlayerConnectionsToPlayer(PlayerTypes eFirstPlayer, PlayerTypes eSecondPlayer)
 #endif
 {
 	int iCount = 0;
@@ -818,7 +819,7 @@ int CvGameTrade::CountNumPlayerConnectionsToPlayer (PlayerTypes eFirstPlayer, Pl
 #ifdef AUI_CONSTIFY
 bool CvGameTrade::IsCityConnectedToCity(const CvCity* pFirstCity, const CvCity* pSecondCity) const
 #else
-bool CvGameTrade::IsCityConnectedToCity (CvCity* pFirstCity, CvCity* pSecondCity)
+bool CvGameTrade::IsCityConnectedToCity(CvCity* pFirstCity, CvCity* pSecondCity)
 #endif
 {
 	int iFirstCityX = pFirstCity->getX();
@@ -862,7 +863,7 @@ bool CvGameTrade::IsCityConnectedToCity (CvCity* pFirstCity, CvCity* pSecondCity
 #ifdef AUI_CONSTIFY
 bool CvGameTrade::IsCityConnectedFromCityToCity(const CvCity* pOriginCity, const CvCity* pDestCity) const
 #else
-bool CvGameTrade::IsCityConnectedFromCityToCity (CvCity* pOriginCity, CvCity* pDestCity)
+bool CvGameTrade::IsCityConnectedFromCityToCity(CvCity* pOriginCity, CvCity* pDestCity)
 #endif
 {
 	int iFirstCityX = pOriginCity->getX();
@@ -902,7 +903,7 @@ bool CvGameTrade::IsCityConnectedFromCityToCity (CvCity* pOriginCity, CvCity* pD
 #ifdef AUI_CONSTIFY
 int CvGameTrade::GetNumTimesOriginCity(const CvCity* pCity, bool bOnlyInternational) const
 #else
-int CvGameTrade::GetNumTimesOriginCity (CvCity* pCity, bool bOnlyInternational)
+int CvGameTrade::GetNumTimesOriginCity(CvCity* pCity, bool bOnlyInternational)
 #endif
 {
 	int iCount = 0;
@@ -951,7 +952,7 @@ int CvGameTrade::GetNumTimesOriginCity (CvCity* pCity, bool bOnlyInternational)
 #ifdef AUI_CONSTIFY
 int CvGameTrade::GetNumTimesDestinationCity(const CvCity* pCity, bool bOnlyInternational) const
 #else
-int CvGameTrade::GetNumTimesDestinationCity (CvCity* pCity, bool bOnlyInternational)
+int CvGameTrade::GetNumTimesDestinationCity(CvCity* pCity, bool bOnlyInternational)
 #endif
 {
 	int iCount = 0;
@@ -2782,8 +2783,24 @@ int CvPlayerTrade::GetTradeConnectionDomainValueModifierTimes100(const TradeConn
 	{
 		eYield = eYield;
 	}
-
+#if !defined(LEKMOD_v34) // Moved Tunis Trait to CvPlayerTrade::GetTradeConnectionDomainValueModifierTimes100 and not CvGameTrade::GetDomainModifierTimes100
 	return GC.getGame().GetGameTrade()->GetDomainModifierTimes100(kTradeConnection.m_eDomain);
+#else
+	if (kTradeConnection.m_eDomain == DOMAIN_LAND)
+	{
+		int iTraitBonus = m_pPlayer->GetPlayerTraits()->GetLandTradeRouteYieldBonus();
+		return GC.getGame().GetGameTrade()->GetDomainModifierTimes100(DOMAIN_LAND) + iTraitBonus;
+	}
+	else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+	{
+		return GC.getGame().GetGameTrade()->GetDomainModifierTimes100(DOMAIN_SEA);
+	}
+	else
+	{
+		CvAssertMsg(false, "CvPlayerTrade::GetTradeConnectionDomainValueModifierTimes100 - Invalid Domain Type");
+		return 0;
+	}
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -2975,7 +2992,11 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100 (const TradeConnection& kTrad
 			case TRADE_CONNECTION_FOOD:
 				if (eYield == YIELD_FOOD)
 				{
+#if !defined(MISC_CHANGES) // Convert Trade Route Starting vlaues to the new global int
 					iValue = 300;
+#else
+					iValue = GC.getINTERNAL_TRADE_FOOD_BASE_TIMES100(); // Standard is 300, can be changed in global table now
+#endif
 					iValue += GC.getEraInfo(GET_PLAYER(kTradeConnection.m_eDestOwner).GetCurrentEra())->getTradeRouteFoodBonusTimes100();
 					iValue *= GC.getEraInfo(GC.getGame().getStartEra())->getGrowthPercent();
 					iValue /= 100;
@@ -2989,6 +3010,9 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100 (const TradeConnection& kTrad
 					iModifier += iDomainModifier;
 #endif
 					iModifier += GET_PLAYER(kTradeConnection.m_eDestOwner).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_INTERNAL_TRADE_MODIFIER);
+#if defined(TRAITIFY)
+					iModifier += GET_PLAYER(kTradeConnection.m_eDestOwner).GetPlayerTraits()->GetInternalTradeRouteYieldModifier();
+#endif
 					iValue *= iModifier;
 					iValue /= 100;
 #ifdef FRUITY_TRADITION_LANDED_ELITE
@@ -3007,7 +3031,11 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100 (const TradeConnection& kTrad
 			case TRADE_CONNECTION_PRODUCTION:
 				if (eYield == YIELD_PRODUCTION)
 				{
+#if !defined(MISC_CHANGES)// Convert Trade Route Starting vlaues to the new global int
 					iValue = 300;
+#else
+					iValue = GC.getINTERNAL_TRADE_PRODUCTION_BASE_TIMES100(); // Standard is 300, can be changed in global table now
+#endif
 					iValue += GC.getEraInfo(GET_PLAYER(kTradeConnection.m_eDestOwner).GetCurrentEra())->getTradeRouteProductionBonusTimes100();
 					iValue *= (GC.getEraInfo(GC.getGame().getStartEra())->getConstructPercent() + GC.getEraInfo(GC.getGame().getStartEra())->getTrainPercent()) / 2;
 					iValue /= 100;
@@ -3021,6 +3049,9 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100 (const TradeConnection& kTrad
 					iModifier += iDomainModifier;
 #endif
 					iModifier += GET_PLAYER(kTradeConnection.m_eDestOwner).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_INTERNAL_TRADE_MODIFIER);
+#if defined(TRAITIFY)
+					iModifier += GET_PLAYER(kTradeConnection.m_eDestOwner).GetPlayerTraits()->GetInternalTradeRouteYieldModifier();
+#endif
 					iValue *= iModifier;
 					iValue /= 100;
 #ifdef NQ_INTERNAL_TRADE_ROUTE_PRODUCTION_YIELD_CHANGE_FROM_POLICIES
@@ -4237,7 +4268,17 @@ uint CvPlayerTrade::GetNumTradeRoutesPossible (void)
 			}
 		}
 	}
-
+#if defined(TRAITIFY) // Add static number of trade routes from traits, GetNumTradeRoutesModifier is a percentage bonus
+	int iTraitNumRoutesBonus = m_pPlayer->GetPlayerTraits()->GetNumTradeRouteBonus();
+	iNumRoutes += iTraitNumRoutesBonus;
+#endif
+#if defined(MISC_CHANGES) // Add static number of trade routes from policies
+	int iPolicyNumRoutesBonus = m_pPlayer->GetPlayerPolicies()->GetNumericModifier(POLICYMOD_NUM_TRADE_ROUTES_BONUS);
+	iNumRoutes += iPolicyNumRoutesBonus;
+	// This is for Venice in current Use case, but could be used for other civs in the future
+	int iLuaNumRoutesBonus = m_pPlayer->GetNumMiscTradeRoutes();
+	iNumRoutes += iLuaNumRoutesBonus;
+#endif
 	int iModifier = 100 + m_pPlayer->GetPlayerTraits()->GetNumTradeRoutesModifier();
 	iNumRoutes *= iModifier;
 	iNumRoutes /= 100;

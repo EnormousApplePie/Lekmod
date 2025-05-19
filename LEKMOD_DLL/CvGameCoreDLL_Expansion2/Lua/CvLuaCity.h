@@ -496,6 +496,12 @@ protected:
 	static int lGetCultureFromSpecialist(lua_State* L);
 
 	static int lGetReligionCityRangeStrikeModifier(lua_State* L);
+#if defined(MISC_CHANGES)
+	static int GetNumMountainsNearCity(lua_State* L);
+#endif
+#if defined(LEKMOD_v34)
+	static int lGetPlotValue(lua_State* L);
+#endif
 };
 
 #endif //CVLUACITY_H

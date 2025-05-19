@@ -48,6 +48,10 @@ CvPolicyEntry::CvPolicyEntry(void):
 #ifdef NQ_EXTRA_SPIES_FROM_POLICIES
 	m_iNumExtraSpies(0),
 #endif
+#if defined(MISC_CHANGES) // Constructor
+	m_iNumExtraLeagueVotes(0),
+	m_iNumTradeRouteBonus(0),
+#endif
 	m_iMedianTechPercentChange(0),
 	m_iStrategicResourceMod(0),
 	m_iWonderProductionModifier(0),
@@ -271,6 +275,11 @@ CvPolicyEntry::CvPolicyEntry(void):
 	m_paiBuildingClassHappiness(NULL),
 	m_paiFreeUnitClasses(NULL),
 	m_paiTourismOnUnitCreation(NULL),
+#if defined(LEKMOD_v34)
+	m_piPolicyResourceQuantity(NULL),
+	m_ppiPolicyResourceYieldChanges(NULL),
+	m_ppiPolicyResourceClassYieldChanges(NULL),
+#endif
 	m_paiHurryModifier(NULL),
 	m_pabSpecialistValid(NULL),
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -319,6 +328,11 @@ CvPolicyEntry::~CvPolicyEntry(void)
 	SAFE_DELETE_ARRAY(m_paiBuildingClassHappiness);
 	SAFE_DELETE_ARRAY(m_paiFreeUnitClasses);
 	SAFE_DELETE_ARRAY(m_paiTourismOnUnitCreation);
+#if defined(LEKMOD_v34)
+	SAFE_DELETE_ARRAY(m_piPolicyResourceQuantity);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyResourceYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyResourceClassYieldChanges);
+#endif
 
 //	SAFE_DELETE_ARRAY(m_pabHurry);
 	SAFE_DELETE_ARRAY(m_paiHurryModifier);
@@ -384,6 +398,10 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iNumFreeGreatPeople = kResults.GetInt("NumFreeGreatPeople");
 #ifdef NQ_EXTRA_SPIES_FROM_POLICIES
 	m_iNumExtraSpies = kResults.GetInt("NumExtraSpies");
+#endif
+#if defined(MISC_CHANGES) // Grab from the XML
+	m_iNumExtraLeagueVotes = kResults.GetInt("NumExtraLeagueVotes");
+	m_iNumTradeRouteBonus = kResults.GetInt("NumTradeRouteBonus");
 #endif
 	m_iMedianTechPercentChange = kResults.GetInt("MedianTechPercentChange");
 	m_iStrategicResourceMod = kResults.GetInt("StrategicResourceMod");
@@ -633,6 +651,66 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 
 	kUtility.PopulateArrayByValue(m_paiFreeUnitClasses, "UnitClasses", "Policy_FreeUnitClasses", "UnitClassType", "PolicyType", szPolicyType, "Count");
 	kUtility.PopulateArrayByValue(m_paiTourismOnUnitCreation, "UnitClasses", "Policy_TourismOnUnitCreation", "UnitClassType", "PolicyType", szPolicyType, "Tourism");
+#if defined(LEKMOD_v34) // Resource quantity array
+	kUtility.PopulateArrayByValue(m_piPolicyResourceQuantity, "Resources", "Policy_ResourceQuantity", "ResourceType", "PolicyType", szPolicyType, "Quantity");
+
+	{ // Policy_ResourceClassYieldChanges
+		kUtility.Initialize2DArray(m_ppiPolicyResourceClassYieldChanges, "ResourceClasses", "Yields");
+
+		std::string strKey("Policy_ResourceClassYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT ResourceClasses.ID as ResourceClassID, Yields.ID as YieldID, YieldChange "
+				"FROM Policy_ResourceClassYieldChanges "
+				"INNER JOIN ResourceClasses ON ResourceClasses.Type = Policy_ResourceClassYieldChanges.ResourceClassType "
+				"INNER JOIN Yields ON Yields.Type = Policy_ResourceClassYieldChanges.YieldType "
+				"WHERE Policy_ResourceClassYieldChanges.PolicyType = ?");
+		}
+
+		pResults->Bind(1, szPolicyType);
+
+		while (pResults->Step())
+		{
+			const int ResourceClassID = pResults->GetInt(0);
+			const int iYieldID = pResults->GetInt(1);
+			const int iYieldChange = pResults->GetInt(2);
+
+			m_ppiPolicyResourceClassYieldChanges[ResourceClassID][iYieldID] = iYieldChange;
+		}
+
+		pResults->Reset();
+	}
+	{ // Policy_ResourceYieldChanges
+		kUtility.Initialize2DArray(m_ppiPolicyResourceYieldChanges, "Resources", "Yields");
+
+		std::string strKey("Policy_ResourceYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Resources.ID as ResourceID, Yields.ID as YieldID, YieldChange "
+				"FROM Policy_ResourceYieldChanges "
+				"INNER JOIN Resources ON Resources.Type = Policy_ResourceYieldChanges.ResourceType "
+				"INNER JOIN Yields ON Yields.Type = Policy_ResourceYieldChanges.YieldType "
+				"WHERE Policy_ResourceYieldChanges.PolicyType = ?");
+		}
+
+		pResults->Bind(1, szPolicyType);
+
+		while (pResults->Step())
+		{
+			const int iResourceID = pResults->GetInt(0);
+			const int iYieldID = pResults->GetInt(1);
+			const int iYieldChange = pResults->GetInt(2);
+
+			m_ppiPolicyResourceYieldChanges[iResourceID][iYieldID] = iYieldChange;
+		}
+
+		pResults->Reset();
+	}
+#endif
 
 	//BuildingYieldModifiers
 	{
@@ -1048,7 +1126,18 @@ int CvPolicyEntry::GetNumExtraSpies() const
 	return m_iNumExtraSpies;
 }
 #endif
-
+#if defined(MISC_CHANGES) // Accessor
+/// Number of Votes from a policy
+int CvPolicyEntry::GetNumExtraLeagueVotes() const
+{
+	return m_iNumExtraLeagueVotes;
+}
+/// Number of extra Trade Routes from a policy
+int CvPolicyEntry::GetNumTradeRouteBonus() const
+{
+	return m_iNumTradeRouteBonus;
+}
+#endif
 /// Boost to percentage of median tech awarded for research agreement
 int CvPolicyEntry::GetMedianTechPercentChange() const
 {
@@ -2253,7 +2342,25 @@ int CvPolicyEntry::GetTourismByUnitClassCreated(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_paiTourismOnUnitCreation ? m_paiTourismOnUnitCreation[i] : -1;
 }
-
+#if defined(LEKMOD_v34)
+int CvPolicyEntry::GetPolicyResourceQuantity(int i) const
+{
+	CvAssertMsg(i >= 0 && i < GC.getNumResourceInfos(), "Index out of bounds");
+	return m_piPolicyResourceQuantity ? m_piPolicyResourceQuantity[i] : 0;
+}
+int CvPolicyEntry::GetPolicyResourceClassYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i >= 0 && i < GC.getNumResourceClassInfos(), "Index out of bounds");
+	CvAssertMsg(j >= 0 && j < NUM_YIELD_TYPES, "Index out of bounds");
+	return m_ppiPolicyResourceClassYieldChanges ? m_ppiPolicyResourceClassYieldChanges[i][j] : 0;
+}
+int CvPolicyEntry::GetPolicyResourceYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i >= 0 && i < GC.getNumResourceInfos(), "Index out of bounds");
+	CvAssertMsg(j >= 0 && j < NUM_YIELD_TYPES, "Index out of bounds");
+	return m_ppiPolicyResourceYieldChanges ? m_ppiPolicyResourceYieldChanges[i][j] : 0;
+}
+#endif
 /// Is this hurry type now enabled?
 //bool CvPolicyEntry::IsHurry(int i) const
 //{
@@ -3373,6 +3480,11 @@ int CvPlayerPolicies::GetNumericModifier(PolicyModifierType eType)
 			case POLICYMOD_OPEN_BORDERS_TOURISM_MODIFIER:
 				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetOpenBordersTourismModifier();
 				break;
+#if defined(MISC_CHANGES) // PlayerPolicies::GetNumericModifier
+			case POLICYMOD_NUM_TRADE_ROUTES_BONUS:
+				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetNumTradeRouteBonus();
+				break;
+#endif
 			}
 		}
 	}
@@ -3649,7 +3761,64 @@ int CvPlayerPolicies::GetTourismFromUnitCreation(UnitClassTypes eUnitClass) cons
 
 	return iTourism;
 }
+#if defined(LEKMOD_v34)
+/// How many resources are we getting from the policy?
+int CvPlayerPolicies::GetPolicyResourceQuantity(ResourceTypes eResource) const
+{
+	int iQuantity = 0;
 
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+	{
+		// Do we have this policy?
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			CvPolicyEntry* pPolicy = m_pPolicies->GetPolicyEntry(i);
+			if (pPolicy->GetPolicyResourceQuantity(eResource) > 0)
+			{
+				iQuantity += pPolicy->GetPolicyResourceQuantity(eResource);
+			}
+		}
+	}
+	
+	return iQuantity;
+}
+/// Does this Policy change the yield of a resource?
+int CvPlayerPolicies::GetPolicyResourceYieldChanges(ResourceTypes eResource, YieldTypes eYield) const
+{
+	int iYield = 0;
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+	{
+		// Do we have this policy?
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			CvPolicyEntry* pPolicy = m_pPolicies->GetPolicyEntry(i);
+			if (pPolicy->GetPolicyResourceYieldChanges(eResource, eYield) > 0)
+			{
+				iYield += pPolicy->GetPolicyResourceYieldChanges(eResource, eYield);
+			}
+		}
+	}
+	return iYield;
+}
+/// Does this Policy change the Yield of en entire resource class?
+int CvPlayerPolicies::GetPolicyResourceClassYieldChanges(ResourceClassTypes eResourceClass, YieldTypes eYield) const
+{
+	int iYield = 0;
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+	{
+		// Do we have this policy?
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			CvPolicyEntry* pPolicy = m_pPolicies->GetPolicyEntry(i);
+			if (pPolicy->GetPolicyResourceClassYieldChanges(eResourceClass, eYield) > 0)
+			{
+				iYield += pPolicy->GetPolicyResourceClassYieldChanges(eResourceClass, eYield);
+			}
+		}
+	}
+	return iYield;
+}
+#endif
 /// How much will the next policy cost?
 int CvPlayerPolicies::GetNextPolicyCost()
 {

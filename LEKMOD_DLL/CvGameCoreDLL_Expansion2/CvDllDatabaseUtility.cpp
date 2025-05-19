@@ -35,9 +35,16 @@
 // include this after all other headers
 #include "LintFree.h"
 
+#include <windows.h>
 
 #define GAMEPLAYXML_PATH "Gameplay\\XML\\"
 
+#define LEKMOD_POST_DLC_DATA_LOADING
+
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+// Helper function to replace min() which might not be available in VS2008
+size_t MinValue(size_t a, size_t b);
+#endif
 
 //Just a quick utility function to save from writing lots of verbose code.
 void InsertGameDefine(Database::Results& kInsertDefine, const char* szValue, int iValue)
@@ -114,27 +121,19 @@ void* CvDllDatabaseUtility::operator new(size_t bytes)
 //------------------------------------------------------------------------------
 bool CvDllDatabaseUtility::CacheGameDatabaseData()
 {
-	LogMsg("LEKMOD: CacheGameDatabaseData called, m_bGameDatabaseNeedsCaching = %d", m_bGameDatabaseNeedsCaching);
-
 	//Do not cache everything if we don't need to.
 	if(m_bGameDatabaseNeedsCaching == false)
-	{
-		LogMsg("LEKMOD: Skipping cache, database already cached");
 		return true;
-	}
 
 	//The following code depends on a valid initialized database.
 	bool bSuccess = true;
 
 	//TODO: Figure out how to handle cases where Validation has failed.
 	/*bSuccess &= */
-	LogMsg("LEKMOD: Validating database");
 	ValidateGameDatabase();
 	
 #ifdef LEKMOD_POST_DLC_DATA_LOADING
-	// Add our post-DLC loading here, after validation but before any other data loading
-	// This ensures LEKMOD loads after base game DLCs but before regular mods
-	LogMsg("LEKMOD: Performing post-DLC loading");
+	// Add our post-DLC loading here, after validation but before prefetching
 	bSuccess &= PerformPostDLCLoading();
 #endif
 
@@ -142,7 +141,6 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 	//In order to support the legacy code still using the old infos system,
 	//all of the id/type pairs must be added to gc.m_infosMap
 	//I apologize for this horrendous code, please remove it in the near future.
-	LogMsg("LEKMOD: Setting up legacy info types");
 	GC.infoTypeFromStringReset();
 	Database::Results kTables("name");
 	if(DB.SelectAt(kTables, "sqlite_master", "type", "table"))
@@ -174,21 +172,15 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 		}
 	}
 
-	LogMsg("LEKMOD: Loading global defines");
 	bSuccess &= LoadGlobalDefines();
-	LogMsg("LEKMOD: Prefetching game data");
 	bSuccess &= PrefetchGameData();
-	LogMsg("LEKMOD: Updating playable civilization counts");
 	bSuccess &= UpdatePlayableCivilizationCounts();
 
-	LogMsg("LEKMOD: Acquiring types");
 	CvTypes::AcquireTypes(DB);
 
-	LogMsg("LEKMOD: Setting global action info");
 	bSuccess &= SetGlobalActionInfo();
 
 	//Clear out database cache and tune for runtime use.
-	LogMsg("LEKMOD: Clearing database cache");
 	DB.ClearCountCache();
 
 	//Log Database Memory statistics
@@ -197,25 +189,24 @@ bool CvDllDatabaseUtility::CacheGameDatabaseData()
 	CvAssertMsg(bSuccess, "Failed to load Gameplay Database Data! Not Good!");
 
 	if(bSuccess)
-	{
-		LogMsg("LEKMOD: Database caching complete, setting m_bGameDatabaseNeedsCaching = false");
 		m_bGameDatabaseNeedsCaching = false;
-	}
 
 	return bSuccess;
 }
 //------------------------------------------------------------------------------
 bool CvDllDatabaseUtility::FlushGameDatabaseData()
 {
-	LogMsg("LEKMOD: FlushGameDatabaseData called, setting m_bGameDatabaseNeedsCaching = true");
 	m_bGameDatabaseNeedsCaching = true;
+	
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+	this->LogMsg("[LEKMOD] Database flush requested");
+#endif
+
 	return true;
 }
 //------------------------------------------------------------------------------
 bool CvDllDatabaseUtility::PerformDatabasePostProcessing()
 {
-	LogMsg("LEKMOD: PerformDatabasePostProcessing called");
-
 	//Insert any database methods that you would like performed after the database
 	//has been fully loaded.  This method will execute every single time the game
 	//is run.
@@ -1071,6 +1062,154 @@ void CvDllDatabaseUtility::orderHotkeyInfo(int** ppiSortedIndex, int* pHotkeyInd
 	}
 }
 
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+bool CvDllDatabaseUtility::PerformPostDLCLoading()
+{
+	Database::Connection* db = GC.GetGameDatabase();
+	if(!db)
+		return false;
+
+	// Begin transaction for database changes
+	db->BeginTransaction();
+	this->LogMsg("[LEKMOD] Starting XML loading process");
+
+	// Base DLC path
+	const wchar_t* wszDLCPath = L"Assets\\DLC\\";
+	
+	// Search for any folder containing "LEKMOD" in the name
+	WIN32_FIND_DATAW ffd;
+	HANDLE hFind = FindFirstFileW((std::wstring(wszDLCPath) + L"*LEKMOD*").c_str(), &ffd);
+	
+	int foldersProcessed = 0;
+	bool bSuccess = false;
+	
+	if(hFind != INVALID_HANDLE_VALUE) 
+	{
+		do {
+			// Skip if not a directory
+			if(!(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
+				continue;
+
+			// Build the XML path for this LEKMOD folder
+			std::wstring wszXMLPath = std::wstring(wszDLCPath) + ffd.cFileName + L"\\XML\\";
+			
+			// Convert to regular string for logging
+			char szFolderName[256];
+			WideCharToMultiByte(CP_UTF8, 0, ffd.cFileName, -1, szFolderName, sizeof(szFolderName), NULL, NULL);
+			
+			char szXMLPath[256];
+			WideCharToMultiByte(CP_UTF8, 0, wszXMLPath.c_str(), -1, szXMLPath, sizeof(szXMLPath), NULL, NULL);
+			this->LogMsg("[LEKMOD] Found folder: %s, checking for XML at: %s", szFolderName, szXMLPath);
+			
+			// Check if the XML subfolder exists
+			WIN32_FIND_DATAW xmlFolderData;
+			HANDLE hXmlFind = FindFirstFileW((wszXMLPath + L"*").c_str(), &xmlFolderData);
+			
+			if(hXmlFind != INVALID_HANDLE_VALUE) 
+			{
+				FindClose(hXmlFind);
+				
+				// Process XML files with standard serializer
+				this->LogMsg("[LEKMOD] Processing XML files in: %s", szXMLPath);
+				Database::XMLSerializer serializer(*db);
+				ProcessXMLFiles(wszXMLPath, serializer);
+				
+				foldersProcessed++;
+				bSuccess = true;
+			}
+			else 
+			{
+				this->LogMsg("[LEKMOD] No XML subfolder found in: %s", szFolderName);
+			}
+
+		} while(FindNextFileW(hFind, &ffd) != 0);
+		
+		FindClose(hFind);
+	}
+	else
+	{
+		this->LogMsg("[LEKMOD] No LEKMOD folders found in DLC directory");
+		db->EndTransaction();
+		return false;
+	}
+
+	// Commit transaction
+	db->EndTransaction();
+	
+	if(foldersProcessed > 0) 
+	{
+		this->LogMsg("[LEKMOD] XML loading complete - processed %d folders", foldersProcessed);
+		return bSuccess;
+	}
+	else 
+	{
+		this->LogMsg("[LEKMOD] No valid LEKMOD/XML folders were found");
+		return false;
+	}
+}
+
+// Helper function to process XML files from a folder
+void CvDllDatabaseUtility::ProcessXMLFiles(const std::wstring& wszPath, Database::XMLSerializer& serializer)
+{
+    // Find all XML files in this directory
+    WIN32_FIND_DATAW ffd;
+    HANDLE hFind = FindFirstFileW((wszPath + L"*.xml").c_str(), &ffd);
+    
+    if(hFind != INVALID_HANDLE_VALUE)
+    {
+        char szLogBuffer[256];
+        
+        do
+        {
+            std::wstring wszFile = wszPath + ffd.cFileName;
+            
+            // Log the file we're loading
+            WideCharToMultiByte(CP_UTF8, 0, wszFile.c_str(), -1, szLogBuffer, sizeof(szLogBuffer), NULL, NULL);
+            this->LogMsg("[LEKMOD] Loading XML: %s", szLogBuffer);
+            
+            // Try to load this XML file
+            if(serializer.Load(wszFile.c_str()))
+            {
+                this->LogMsg("[LEKMOD] Successfully loaded XML file");
+            }
+            else
+            {
+                this->LogMsg("[LEKMOD] Failed to load XML file - %s", serializer.ErrorMessage());
+            }
+            
+        } while(FindNextFileW(hFind, &ffd) != 0);
+        
+        FindClose(hFind);
+    }
+    
+    // Process all subdirectories
+    hFind = FindFirstFileW((wszPath + L"*").c_str(), &ffd);
+    
+    if(hFind != INVALID_HANDLE_VALUE)
+    {
+        do
+        {
+            // Skip . and .. directories and non-directories
+            if(wcscmp(ffd.cFileName, L".") == 0 || wcscmp(ffd.cFileName, L"..") == 0 || 
+              !(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
+                continue;
+                
+            // Process this subdirectory
+            ProcessXMLFiles(wszPath + ffd.cFileName + L"\\", serializer);
+            
+        } while(FindNextFileW(hFind, &ffd) != 0);
+        
+        FindClose(hFind);
+    }
+}
+
+// Helper function to replace min() which might not be available in VS2008
+size_t MinValue(size_t a, size_t b)
+{
+    return (a < b) ? a : b;
+}
+#endif
+
 //------------------------------------------------------------------------------
 //
 // PRIVATE FUNCTIONS
@@ -1091,570 +1230,6 @@ void CvDllDatabaseUtility::LogMsg(const char* format, ...) const
 
 	LOGFILEMGR.GetLog("xml.log", uiFlags)->Msg(buf);
 }
-#ifdef LEKMOD_POST_DLC_DATA_LOADING
-bool CvDllDatabaseUtility::CheckXMLFileValidity(const wchar_t* wszFilePath, const char* szFilePath) const
-{
-    FILE* file = NULL;
-    _wfopen_s(&file, wszFilePath, L"r");
-    if (!file)
-    {
-        return false;
-    }
-    
-    // Read first 1024 bytes to check
-    char buffer[1025] = {0};
-    size_t bytesRead = fread(buffer, 1, 1024, file);
-    fclose(file);
-    
-    if (bytesRead == 0)
-    {
-        return false;
-    }
-    
-    // Ensure null termination
-    buffer[bytesRead] = 0;
-    
-    // If the file doesn't contain an XML declaration, log the beginning
-    if (strstr(buffer, "<?xml") == NULL)
-    {
-        // Find the first 3 newlines to print first few lines
-        const char* firstLine = buffer;
-        const char* secondLine = NULL;
-        const char* thirdLine = NULL;
-        const char* fourthLine = NULL;
-        
-        for (size_t i = 0; i < bytesRead; i++)
-        {
-            if (buffer[i] == '\n')
-            {
-                if (!secondLine)
-                {
-                    buffer[i] = '\0';
-                    secondLine = &buffer[i+1];
-                }
-                else if (!thirdLine)
-                {
-                    buffer[i] = '\0';
-                    thirdLine = &buffer[i+1];
-                }
-                else if (!fourthLine)
-                {
-                    buffer[i] = '\0';
-                    fourthLine = &buffer[i+1];
-                    break;
-                }
-            }
-        }
-        
-        // Log the first few lines of the file
-        LogMsg("LEKMOD: Invalid XML file content for %s:", szFilePath);
-        LogMsg("Line 1: %s", firstLine);
-        if (secondLine) LogMsg("Line 2: %s", secondLine);
-        if (thirdLine) LogMsg("Line 3: %s", thirdLine);
-        if (fourthLine) LogMsg("Line 4: %s", fourthLine);
-        
-        return false;
-    }
-    
-    return true;
-}
 
-bool CvDllDatabaseUtility::PerformPostDLCLoading()
-{
-	Database::Connection* db = GC.GetGameDatabase();
-	if(!db)
-	{
-		LogMsg("LEKMOD: Failed to get game database");
-		return false;
-	}
 
-	LogMsg("LEKMOD: Starting post-DLC loading transaction");
-	
-	// Begin transaction for all our changes
-	bool bSuccess = false;
-	try
-	{
-		db->BeginTransaction();
-
-		// Get the DLC path - use the game's Assets/DLC folder
-		CvString strDLCPath = "Assets\\DLC\\";
-		LogMsg("LEKMOD: Looking for mods in DLC path: %s", strDLCPath.c_str());
-		
-		// Find LEKMOD folder (with any version number)
-		WIN32_FIND_DATAW ffd;
-		wchar_t wstrDLCPath[MAX_PATH];
-		MultiByteToWideChar(CP_UTF8, 0, strDLCPath.c_str(), -1, wstrDLCPath, MAX_PATH);
-		HANDLE hFind = FindFirstFileW((std::wstring(wstrDLCPath) + L"LEKMOD*").c_str(), &ffd);
-
-		// Set to track which files we've already loaded
-		std::set<std::wstring> loadedFiles;
-		int iFilesLoaded = 0;
-
-		if(hFind != INVALID_HANDLE_VALUE)
-		{
-			do
-			{
-				if(!(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
-				{
-					// Convert wchar_t filename to char for logging
-					char szFileName[MAX_PATH];
-					WideCharToMultiByte(CP_UTF8, 0, ffd.cFileName, -1, szFileName, MAX_PATH, NULL, NULL);
-					LogMsg("LEKMOD: Found non-directory: %s", szFileName);
-					continue;
-				}
-
-				// Found a LEKMOD folder, now look for XML folder
-				std::wstring wstrModPath = std::wstring(wstrDLCPath) + ffd.cFileName + L"\\XML\\";
-				
-				// Convert wchar_t filename to char for logging
-				char szFileName[MAX_PATH];
-				WideCharToMultiByte(CP_UTF8, 0, ffd.cFileName, -1, szFileName, MAX_PATH, NULL, NULL);
-				LogMsg("LEKMOD: Found mod directory: %s", szFileName);
-				
-				// Create XML serializer
-				Database::XMLSerializer serializer(*db);
-
-				// Recursively load all XML files in the directory and its subdirectories
-				int iPreviousCount = loadedFiles.size();
-				LoadXMLFilesRecursively(wstrModPath, serializer, db, loadedFiles);
-				iFilesLoaded += (loadedFiles.size() - iPreviousCount);
-
-			} while(FindNextFileW(hFind, &ffd) != 0);
-			FindClose(hFind);
-		}
-		else
-		{
-			LogMsg("LEKMOD: No LEKMOD folders found in DLC directory");
-		}
-
-		// Commit all changes
-		LogMsg("LEKMOD: Loaded %d XML files, committing transaction...", iFilesLoaded);
-		db->EndTransaction();
-		LogMsg("LEKMOD: Transaction committed successfully");
-		bSuccess = true;
-	}
-	catch (...)
-	{
-		LogMsg("LEKMOD: Exception during post-DLC loading, rolling back transaction");
-		try
-		{
-			db->RollbackTransaction();
-		}
-		catch (...)
-		{
-			LogMsg("LEKMOD: Failed to rollback transaction");
-		}
-	}
-
-	return bSuccess;
-}
-
-// Helper function to recursively load XML files
-void CvDllDatabaseUtility::LoadXMLFilesRecursively(const std::wstring& wstrPath, Database::XMLSerializer& serializer, Database::Connection* db, std::set<std::wstring>& loadedFiles)
-{
-	// Convert wstring to string for logging
-	char szPath[MAX_PATH];
-	WideCharToMultiByte(CP_UTF8, 0, wstrPath.c_str(), -1, szPath, MAX_PATH, NULL, NULL);
-	LogMsg("LEKMOD: Searching for XML files in: %s", szPath);
-	
-	WIN32_FIND_DATAW ffd;
-	HANDLE hFind = FindFirstFileW((wstrPath + L"*").c_str(), &ffd);
-
-	if(hFind != INVALID_HANDLE_VALUE)
-	{
-		do
-		{
-			if(ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
-			{
-				// Skip . and .. directories
-				if(wcscmp(ffd.cFileName, L".") == 0 || wcscmp(ffd.cFileName, L"..") == 0)
-					continue;
-
-				// Recursively process subdirectory
-				LoadXMLFilesRecursively(wstrPath + ffd.cFileName + L"\\", serializer, db, loadedFiles);
-			}
-			else
-			{
-				// Check if this is an XML file
-				wchar_t* pExtension = wcsrchr(ffd.cFileName, L'.');
-				if (pExtension && _wcsicmp(pExtension, L".xml") == 0)
-				{
-					// Get the full file path
-					std::wstring wstrFilePath = wstrPath + ffd.cFileName;
-					
-					// Convert wstring to string for logging
-					char szFilePath[MAX_PATH];
-					WideCharToMultiByte(CP_UTF8, 0, wstrFilePath.c_str(), -1, szFilePath, MAX_PATH, NULL, NULL);
-					
-					// Check if this file has already been loaded
-					if (loadedFiles.find(wstrFilePath) == loadedFiles.end())
-					{
-						bool bSuccess = false;
-						
-						try
-						{
-							bSuccess = serializer.Load(wstrFilePath.c_str());
-							if (bSuccess)
-							{
-								LogMsg("LEKMOD: Successfully loaded XML file: %s", szFilePath);
-								loadedFiles.insert(wstrFilePath);
-							}
-							else
-							{
-								LogMsg("LEKMOD: Failed to load XML file with serializer, trying direct method: %s", szFilePath);
-								
-								// Try fallback method
-								if (TryDirectSQLFromXML(db, wstrFilePath.c_str(), szFilePath))
-								{
-									LogMessageToFile("LEKMOD: Successfully loaded XML file using direct SQL: %s", szFilePath);
-									loadedFiles.insert(wstrFilePath);
-									bSuccess = true;
-								}
-								else
-								{
-									LogMessageToFile("LEKMOD: All methods failed for XML file: %s", szFilePath);
-								}
-							}
-						}
-						catch (...)
-						{
-							LogMsg("LEKMOD: Exception while loading XML file: %s", szFilePath);
-							
-							// Try fallback method after exception
-							if (TryDirectSQLFromXML(db, wstrFilePath.c_str(), szFilePath))
-							{
-								LogMessageToFile("LEKMOD: Successfully loaded XML file using direct SQL after exception: %s", szFilePath);
-								loadedFiles.insert(wstrFilePath);
-							}
-						}
-					}
-					else
-					{
-						LogMsg("LEKMOD: Skipping already loaded file: %s", szFilePath);
-					}
-				}
-			}
-		} while(FindNextFileW(hFind, &ffd) != 0);
-		FindClose(hFind);
-	}
-	else
-	{
-		char szPath[MAX_PATH];
-		WideCharToMultiByte(CP_UTF8, 0, wstrPath.c_str(), -1, szPath, MAX_PATH, NULL, NULL);
-		LogMsg("LEKMOD: No files found in directory: %s", szPath);
-	}
-}
-
-// Global logging helper function for free functions 
-void LogMessageToFile(const char* format, ...)
-{
-    const size_t kBuffSize = 1024;
-    static char buf[kBuffSize];
-    const uint uiFlags = 0;  // Default (0) is to not write to console and to time stamp
-
-    va_list vl;
-    va_start(vl, format);
-    vsprintf_s(buf, format, vl);
-    va_end(vl);
-
-    LOGFILEMGR.GetLog("xml.log", uiFlags)->Msg(buf);
-}
-
-// Helper function to try loading an XML file using direct SQL execution
-bool TryDirectSQLFromXML(Database::Connection* db, const wchar_t* wszFilePath, const char* szFilePath)
-{
-    // This is a fallback method to try processing simple XML files directly
-    // For simple XML files containing SQL statements
-    
-    FILE* file = NULL;
-    _wfopen_s(&file, wszFilePath, L"r");
-    if (!file)
-    {
-        return false;
-    }
-    
-    // Read file contents
-    fseek(file, 0, SEEK_END);
-    long fileSize = ftell(file);
-    rewind(file);
-    
-    if (fileSize <= 0)
-    {
-        fclose(file);
-        return false;
-    }
-    
-    char* buffer = (char*)malloc(fileSize + 1);
-    if (!buffer)
-    {
-        fclose(file);
-        return false;
-    }
-    
-    size_t bytesRead = fread(buffer, 1, fileSize, file);
-    fclose(file);
-    
-    if (bytesRead == 0)
-    {
-        free(buffer);
-        return false;
-    }
-    
-    buffer[bytesRead] = 0;
-    
-    // Look for SQL statements in the XML
-    const char* pInsert = strstr(buffer, "INSERT INTO");
-    const char* pUpdate = strstr(buffer, "UPDATE ");
-    
-    // Also look for XML Update structures
-    const char* pXmlUpdate = strstr(buffer, "<Update>");
-    
-    bool bSuccess = false;
-    
-    if (pInsert || pUpdate)
-    {
-        // Found possible SQL, try to execute it directly
-        try
-        {
-            bSuccess = db->Execute(buffer);
-        }
-        catch (...)
-        {
-            // Ignore errors
-        }
-    }
-    else if (pXmlUpdate)
-    {
-        // Process the XML update structure
-        // Find all tables inside the Update tag
-        const char* pUpdateStart = pXmlUpdate + 8; // Skip "<Update>"
-        const char* pUpdateEnd = strstr(pUpdateStart, "</Update>");
-        
-        if (!pUpdateEnd) {
-            free(buffer);
-            return false;
-        }
-        
-        // Extract the Update content
-        size_t updateContentLen = pUpdateEnd - pUpdateStart;
-        char* updateContent = (char*)malloc(updateContentLen + 1);
-        if (!updateContent) {
-            free(buffer);
-            return false;
-        }
-        
-        strncpy_s(updateContent, updateContentLen + 1, pUpdateStart, updateContentLen);
-        updateContent[updateContentLen] = 0;
-        
-        // Process each table update
-        const char* pTableStart = updateContent;
-        bool anyTableSuccess = false;
-        
-        while ((pTableStart = strstr(pTableStart, "<")) != NULL) {
-            // Find the table name
-            pTableStart++; // Skip "<"
-            const char* pTableNameEnd = strstr(pTableStart, ">");
-            if (!pTableNameEnd) break;
-            
-            int tableNameLen = pTableNameEnd - pTableStart;
-            char* tableName = (char*)malloc(tableNameLen + 1);
-            if (!tableName) break;
-            
-            strncpy_s(tableName, tableNameLen + 1, pTableStart, tableNameLen);
-            tableName[tableNameLen] = 0;
-            
-            // Skip to the table content
-            const char* pTableContentStart = pTableNameEnd + 1;
-            
-            // Find the end of this table section
-            char closeTag[256];
-            sprintf_s(closeTag, sizeof(closeTag), "</%s>", tableName);
-            const char* pTableContentEnd = strstr(pTableContentStart, closeTag);
-            if (!pTableContentEnd) {
-                free(tableName);
-                break;
-            }
-            
-            // Extract the table content
-            size_t tableContentLen = pTableContentEnd - pTableContentStart;
-            char* tableContent = (char*)malloc(tableContentLen + 1);
-            if (!tableContent) {
-                free(tableName);
-                break;
-            }
-            
-            strncpy_s(tableContent, tableContentLen + 1, pTableContentStart, tableContentLen);
-            tableContent[tableContentLen] = 0;
-            
-            // Process all Update commands for this table
-            const char* pUpdateCmdStart = tableContent;
-            bool tableSuccess = false;
-            
-            while ((pUpdateCmdStart = strstr(pUpdateCmdStart, "<Update>")) != NULL) {
-                pUpdateCmdStart += 8; // Skip "<Update>"
-                
-                // Find the end of this update command
-                const char* pUpdateCmdEnd = strstr(pUpdateCmdStart, "</Update>");
-                if (!pUpdateCmdEnd) break;
-                
-                // Extract update command content
-                size_t updateCmdLen = pUpdateCmdEnd - pUpdateCmdStart;
-                char* updateCmd = (char*)malloc(updateCmdLen + 1);
-                if (!updateCmd) break;
-                
-                strncpy_s(updateCmd, updateCmdLen + 1, pUpdateCmdStart, updateCmdLen);
-                updateCmd[updateCmdLen] = 0;
-                
-                // Find Set and Where parts
-                const char* pSetStart = strstr(updateCmd, "<Set");
-                const char* pWhereStart = strstr(updateCmd, "<Where");
-                
-                if (pSetStart && pWhereStart) {
-                    // Extract Set values
-                    char setClause[1024] = {0};
-                    const char* pSetTagEnd = strstr(pSetStart, ">");
-                    if (!pSetTagEnd) {
-                        free(updateCmd);
-                        pUpdateCmdStart = pUpdateCmdEnd + 9; // Skip "</Update>"
-                        continue;
-                    }
-                    
-                    // Extract values from Set tag attributes
-                    const char* pSetAttrStart = pSetStart + 4; // Skip "<Set"
-                    while (pSetAttrStart < pSetTagEnd) {
-                        // Skip whitespace
-                        while (pSetAttrStart < pSetTagEnd && isspace(*pSetAttrStart)) 
-                            pSetAttrStart++;
-                        
-                        if (pSetAttrStart >= pSetTagEnd) break;
-                        
-                        // Find attribute name end
-                        const char* pSetAttrNameEnd = strpbrk(pSetAttrStart, "= \t\r\n");
-                        if (!pSetAttrNameEnd || pSetAttrNameEnd >= pSetTagEnd) break;
-                        
-                        // Extract attribute name
-                        int attrNameLen = pSetAttrNameEnd - pSetAttrStart;
-                        char attrName[256] = {0};
-                        strncpy_s(attrName, sizeof(attrName), pSetAttrStart, attrNameLen);
-                        
-                        // Find attribute value
-                        const char* pSetAttrValueStart = strchr(pSetAttrNameEnd, '"');
-                        if (!pSetAttrValueStart || pSetAttrValueStart >= pSetTagEnd) break;
-                        pSetAttrValueStart++; // Skip "
-                        
-                        const char* pSetAttrValueEnd = strchr(pSetAttrValueStart, '"');
-                        if (!pSetAttrValueEnd || pSetAttrValueEnd >= pSetTagEnd) break;
-                        
-                        // Extract attribute value
-                        int attrValueLen = pSetAttrValueEnd - pSetAttrValueStart;
-                        char attrValue[256] = {0};
-                        strncpy_s(attrValue, sizeof(attrValue), pSetAttrValueStart, attrValueLen);
-                        
-                        // Add to SET clause
-                        if (setClause[0] == 0) {
-                            sprintf_s(setClause, sizeof(setClause), "%s = '%s'", attrName, attrValue);
-                        } else {
-                            char temp[1024];
-                            sprintf_s(temp, sizeof(temp), ", %s = '%s'", attrName, attrValue);
-                            strcat_s(setClause, sizeof(setClause), temp);
-                        }
-                        
-                        // Move to next attribute
-                        pSetAttrStart = pSetAttrValueEnd + 1;
-                    }
-                    
-                    // Extract Where values
-                    char whereClause[1024] = {0};
-                    const char* pWhereTagEnd = strstr(pWhereStart, ">");
-                    if (!pWhereTagEnd) {
-                        free(updateCmd);
-                        pUpdateCmdStart = pUpdateCmdEnd + 9; // Skip "</Update>"
-                        continue;
-                    }
-                    
-                    // Extract values from Where tag attributes
-                    const char* pWhereAttrStart = pWhereStart + 6; // Skip "<Where"
-                    while (pWhereAttrStart < pWhereTagEnd) {
-                        // Skip whitespace
-                        while (pWhereAttrStart < pWhereTagEnd && isspace(*pWhereAttrStart)) 
-                            pWhereAttrStart++;
-                        
-                        if (pWhereAttrStart >= pWhereTagEnd) break;
-                        
-                        // Find attribute name end
-                        const char* pWhereAttrNameEnd = strpbrk(pWhereAttrStart, "= \t\r\n");
-                        if (!pWhereAttrNameEnd || pWhereAttrNameEnd >= pWhereTagEnd) break;
-                        
-                        // Extract attribute name
-                        int attrNameLen = pWhereAttrNameEnd - pWhereAttrStart;
-                        char attrName[256] = {0};
-                        strncpy_s(attrName, sizeof(attrName), pWhereAttrStart, attrNameLen);
-                        
-                        // Find attribute value
-                        const char* pWhereAttrValueStart = strchr(pWhereAttrNameEnd, '"');
-                        if (!pWhereAttrValueStart || pWhereAttrValueStart >= pWhereTagEnd) break;
-                        pWhereAttrValueStart++; // Skip "
-                        
-                        const char* pWhereAttrValueEnd = strchr(pWhereAttrValueStart, '"');
-                        if (!pWhereAttrValueEnd || pWhereAttrValueEnd >= pWhereTagEnd) break;
-                        
-                        // Extract attribute value
-                        int attrValueLen = pWhereAttrValueEnd - pWhereAttrValueStart;
-                        char attrValue[256] = {0};
-                        strncpy_s(attrValue, sizeof(attrValue), pWhereAttrValueStart, attrValueLen);
-                        
-                        // Add to WHERE clause
-                        if (whereClause[0] == 0) {
-                            sprintf_s(whereClause, sizeof(whereClause), "%s = '%s'", attrName, attrValue);
-                        } else {
-                            char temp[1024];
-                            sprintf_s(temp, sizeof(temp), " AND %s = '%s'", attrName, attrValue);
-                            strcat_s(whereClause, sizeof(whereClause), temp);
-                        }
-                        
-                        // Move to next attribute
-                        pWhereAttrStart = pWhereAttrValueEnd + 1;
-                    }
-                    
-                    // Build and execute SQL update statement
-                    if (setClause[0] != 0 && whereClause[0] != 0) {
-                        char sqlStatement[4096];
-                        sprintf_s(sqlStatement, sizeof(sqlStatement), "UPDATE %s SET %s WHERE %s", 
-                                 tableName, setClause, whereClause);
-                        
-                        try {
-                            LogMessageToFile("LEKMOD: Executing SQL from XML Update: %s", sqlStatement);
-                            bool cmdSuccess = db->Execute(sqlStatement);
-                            if (cmdSuccess) {
-                                tableSuccess = true;
-                            }
-                        } catch (...) {
-                            LogMessageToFile("LEKMOD: Failed to execute SQL from XML Update: %s", sqlStatement);
-                        }
-                    }
-                }
-                
-                free(updateCmd);
-                pUpdateCmdStart = pUpdateCmdEnd + 9; // Skip "</Update>"
-            }
-            
-            if (tableSuccess) {
-                anyTableSuccess = true;
-            }
-            
-            free(tableContent);
-            free(tableName);
-            
-            // Move to next table
-            pTableStart = pTableContentEnd + strlen(closeTag);
-        }
-        
-        free(updateContent);
-        bSuccess = anyTableSuccess;
-    }
-    
-    free(buffer);
-    return bSuccess;
-}
-#endif
 

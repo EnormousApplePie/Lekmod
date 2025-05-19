@@ -7125,6 +7125,24 @@ bool CvUnit::plunderTradeRoute()
 		return false;
 	}
 
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+
+		args->Push(m_eOwner);
+		args->Push(GetID());
+		args->Push(pPlot->getX());
+		args->Push(pPlot->getY());
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "UnitPlundered", args.get(), bResult);
+	}
+#endif
+
 	// right now, plunder the first unit
 	pTrade->PlunderTradeRoute(aiTradeUnitsAtPlot[0]);
 	return true;
@@ -7852,7 +7870,23 @@ bool CvUnit::pillage()
 			changeDamage(-iHealAmount);
 		}
 	}
+#ifdef LEKMOD_NEW_LUA_EVENTS
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
 
+		args->Push(eOwner);
+		args->Push(GetID());
+		args->Push(plot()->getX());
+		args->Push(plot()->getY());
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "UnitPillaged", args.get(), bResult);
+	}
+#endif
 	return true;
 }
 
@@ -12535,6 +12569,17 @@ int CvUnit::GetMaxAttackStrength(const CvPlot* pFromPlot, const CvPlot* pToPlot,
 		// Bonus VS wounded
 		if(pDefender->getDamage() > 0)
 			iModifier += attackWoundedModifier();
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+		// Bonus VS different ideology
+		if(pDefender->getOwner() != getOwner())
+		{
+			// Get the ideology policy branch of the defender
+			if(isUnitDifferentIdeology(pDefender))
+			{
+				iModifier += pDefender->GetCombatBonusVsDifferentIdeologyModifier();
+			}
+		}
+#endif
 	}
 
 	// Unit can't drop below 10% strength
@@ -12670,6 +12715,17 @@ int CvUnit::GetMaxDefenseStrength(const CvPlot* pInPlot, const CvUnit* pAttacker
 		// Unit Class Defense Modifier
 		iTempModifier = unitClassDefenseModifier(pAttacker->getUnitClassType());
 		iModifier += iTempModifier;
+
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+		// Bonus VS different ideology
+		if(pAttacker->getOwner() != getOwner())
+		{
+			if(isUnitDifferentIdeology(pAttacker))
+			{
+				iModifier += pAttacker->GetCombatBonusVsDifferentIdeologyModifier();
+			}
+		}
+#endif
 	}
 
 	// Unit can't drop below 10% strength
@@ -14905,6 +14961,15 @@ int CvUnit::heavyChargeDownhillModifier() const
 {
 	VALIDATE_OBJECT
 	return (GetHeavyChargeDownhill());
+}
+#endif
+
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+//	--------------------------------------------------------------------------------
+int CvUnit::combatBonusVsDifferentIdeologyModifier() const
+{
+	VALIDATE_OBJECT
+	return (GetCombatBonusVsDifferentIdeologyModifier());
 }
 #endif
 
@@ -19005,6 +19070,46 @@ void CvUnit::ChangeHeavyChargeDownhill(int iChange)
 }
 #endif
 
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+//	--------------------------------------------------------------------------------
+int CvUnit::GetCombatBonusVsDifferentIdeologyModifier() const
+{
+	VALIDATE_OBJECT
+	return m_iCombatBonusVsDifferentIdeologyModifier;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::changeCombatBonusVsDifferentIdeologyModifier(int iChange)
+{
+	VALIDATE_OBJECT
+	if(iChange != 0)
+	{
+		m_iCombatBonusVsDifferentIdeologyModifier += iChange;
+	}
+}
+
+bool CvUnit::isUnitDifferentIdeology(const CvUnit* pOtherUnit) const
+{
+	VALIDATE_OBJECT
+	if (!pOtherUnit)
+		return false;
+
+	PlayerTypes eOtherPlayer = pOtherUnit->getOwner();
+	PlayerTypes eThisPlayer = getOwner();
+
+	if (eOtherPlayer == NO_PLAYER || eThisPlayer == NO_PLAYER)
+		return false;
+
+	PolicyBranchTypes eOtherIdeology = GET_PLAYER(eOtherPlayer).GetPlayerPolicies()->GetLateGamePolicyTree();
+	PolicyBranchTypes eThisIdeology = GET_PLAYER(eThisPlayer).GetPlayerPolicies()->GetLateGamePolicyTree();
+
+	if (eOtherIdeology == NO_POLICY_BRANCH_TYPE || eThisIdeology == NO_POLICY_BRANCH_TYPE)
+		return false;
+
+	return eOtherIdeology != eThisIdeology;
+}
+#endif
+
 //	--------------------------------------------------------------------------------
 int CvUnit::getFriendlyLandsModifier() const
 {
@@ -20583,6 +20688,9 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		ChangeCanHeavyChargeCount((thisPromotion.IsCanHeavyCharge()) ? iChange : 0);
 #ifdef NQ_HEAVY_CHARGE_DOWNHILL
 		ChangeHeavyChargeDownhill((thisPromotion.GetHeavyChargeDownhill()) * iChange);
+#endif
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+		changeCombatBonusVsDifferentIdeologyModifier((thisPromotion.GetCombatDifferentIdeology()) * iChange);
 #endif
 
 		ChangeEmbarkExtraVisibility((thisPromotion.GetEmbarkExtraVisibility()) * iChange);

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Add CombatDifferentIdeology attribute to UnitPromotions -->
+	<UnitPromotions>
+		<Update>
+			<Set CombatDifferentIdeology="0"/>
+			<Where Type="PROMOTION_EMBARKATION"/>
+		</Update>
+		
+		<!-- Example promotion with combat bonus against different ideology -->
+		<Row>
+			<Type>PROMOTION_IDEOLOGY_ZEALOT</Type>
+			<Description>TXT_KEY_PROMOTION_IDEOLOGY_ZEALOT</Description>
+			<Help>TXT_KEY_PROMOTION_IDEOLOGY_ZEALOT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<CombatDifferentIdeology>33</CombatDifferentIdeology>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_IDEOLOGY_ZEALOT</PediaEntry>
+		</Row>
+	</UnitPromotions>
+	
+	<!-- Add text for the new promotion -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_PROMOTION_IDEOLOGY_ZEALOT">
+			<Text>Ideology Zealot</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_IDEOLOGY_ZEALOT_HELP">
+			<Text>+33% [ICON_STRENGTH] Combat Strength against units owned by civilizations with a different [COLOR_POSITIVE_TEXT]Ideology[ENDCOLOR].</Text>
+		</Row>
+	</Language_en_US>
+</GameData> 

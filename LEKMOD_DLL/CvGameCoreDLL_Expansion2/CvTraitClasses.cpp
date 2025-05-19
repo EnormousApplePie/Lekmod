@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -72,6 +72,32 @@ CvTraitEntry::CvTraitEntry() :
 	m_iNaturalWonderFirstFinderGold(0),
 	m_iNaturalWonderSubsequentFinderGold(0),
 
+#if defined(TRAITIFY) // Constructor, int and bools
+	m_bHalfMoreSpecialistUnhappiness(false),
+
+	m_iGoldenAgeCultureModifier(0),
+	m_iNumExtraLeagueVotes(0),
+	m_iNumTradeRouteBonus(0),
+	m_iMinorFriendshipMinimum(0),
+	m_iGreatEngineerRateModifier(0),
+	m_iGreatMerchantRateModifier(0),
+	m_iMinorBullyModifier(0),
+	m_iExtraPopulation(0),
+	m_iInternationalRouteGrowthModifier(0),
+	m_iLocalHappinessPerCity(0),
+	m_iInternalTradeRouteYieldModifier(0),
+	m_iUnhappinessModifierForPuppetedCities(0),
+	m_iFaithCostModifier(0),
+	m_iIdeologyPressureUnhappinessModifier(0),
+	m_iForeignRelgionPressureModifier(0),
+#endif
+#if defined(LEKMOD_v34)
+	m_bReligionEnhanceReformation(false),
+
+	m_iSelfReligiousPressureModifier(0),
+	m_iLandTradeRouteYieldBonus(0),
+#endif
+
 	//EAP: Natural wonder faith for the finder
 	m_iNaturalWonderFirstFinderFaith(0),
 	m_iNaturalWonderSubsequentFinderFaith(0),
@@ -136,6 +162,24 @@ CvTraitEntry::CvTraitEntry() :
 	m_bTechFromCityConquer(false),
 	m_bUniqueLuxuryRequiresNewArea(false),
 
+#if defined(TRAITIFY) // Constructor, Arrays
+	m_ppiBuildingCostOverride(NULL),
+	m_ppiUnitClassForceSpawnCapital(NULL),
+	m_ppiBuildingClassYieldChanges(NULL),
+	m_ppiBuildingClassRemoveRequiredTerrain(NULL),
+	m_piPuppetYieldModifiers(NULL),
+	m_ppiResourceClassYieldChanges(NULL),
+	m_ppiFeatureYieldChanges(NULL),
+	m_ppiTerrainYieldChanges(NULL),
+	m_ppiResourceYieldChanges(NULL),
+
+	m_paiBuildingClassGlobalHappiness(NULL),
+	m_paiBuildingClassHappiness(NULL),
+#endif
+#if defined(LEKMOD_v34)
+	m_paiYieldPerPopulation(NULL),
+	m_paiYieldPerPopulationForeignReligion(NULL),
+#endif
 	m_paiExtraYieldThreshold(NULL),
 	m_paiYieldChange(NULL),
 	m_paiYieldChangeStrategicResources(NULL),
@@ -183,6 +227,23 @@ CvTraitEntry::~CvTraitEntry()
 #else
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiImprovementYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiSpecialistYieldChanges);
+#if defined(TRAITIFY) // Destructor, Arrays
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassRemoveRequiredTerrain);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiUnitClassForceSpawnCapital);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingCostOverride);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiResourceClassYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiFeatureYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiResourceYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiTerrainYieldChanges);
+	SAFE_DELETE_ARRAY(m_piPuppetYieldModifiers);
+	SAFE_DELETE_ARRAY(m_paiBuildingClassGlobalHappiness);
+	SAFE_DELETE_ARRAY(m_paiBuildingClassHappiness);
+#endif
+#if defined(LEKMOD_v34)
+	SAFE_DELETE_ARRAY(m_paiYieldPerPopulation);
+	SAFE_DELETE_ARRAY(m_paiYieldPerPopulationForeignReligion);
+#endif
 #ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiAnySpecificSpecialistYieldChanges);
 #endif
@@ -469,6 +530,105 @@ int CvTraitEntry::GetNaturalWonderSubsequentFinderGold() const
 	return m_iNaturalWonderSubsequentFinderGold;
 }
 
+#if defined(TRAITIFY) // Int and Bool Accessors
+/// Accessor:: whether this trait has a half more specialist unhappiness
+bool CvTraitEntry::IsHalfMoreSpecialistUnhappiness() const
+{
+	return m_bHalfMoreSpecialistUnhappiness;
+}
+/// Accessor:: does this trait give a culture modifier during golden ages?
+int CvTraitEntry::GetGoldenAgeCultureModifier() const
+{
+	return m_iGoldenAgeCultureModifier;
+}
+/// Accessor:: does this trait give extra league votes?
+int CvTraitEntry::GetNumExtraLeagueVotes() const
+{
+	return m_iNumExtraLeagueVotes;
+}
+/// Accessor:: does this trait give more trade routes?
+int CvTraitEntry::GetNumTradeRouteBonus() const
+{
+	return m_iNumTradeRouteBonus;
+}
+/// Accessor:: does this trait increase the minimum friendship with city states?
+int CvTraitEntry::GetMinorFriendshipMinimum() const
+{
+	return m_iMinorFriendshipMinimum;
+}
+/// Accessor:: does this trait give a bonus to great engineer points?
+int CvTraitEntry::GetGreatEngineerRateModifier() const
+{
+	return m_iGreatEngineerRateModifier;
+}
+/// Accessor:: does this trait give a bonus to great merchant points?
+int CvTraitEntry::GetGreatMerchantRateModifier() const
+{
+	return m_iGreatMerchantRateModifier;
+}
+/// Accessor:: does this trait give a bonus to tributing city states?
+int CvTraitEntry::GetMinorBullyModifier() const
+{
+	return m_iMinorBullyModifier;
+}
+/// Accessor:: does this trait give extra population?
+int CvTraitEntry::GetExtraPopulation() const
+{
+	return m_iExtraPopulation;
+}
+/// Accessor:: does this trait give a bonus to international trade routes?
+int CvTraitEntry::GetInternationalRouteGrowthModifier() const
+{
+	return m_iInternationalRouteGrowthModifier;
+}
+/// Accessor:: does this trait give a bonus to local happiness per city?
+int CvTraitEntry::GetLocalHappinessPerCity() const
+{
+	return m_iLocalHappinessPerCity;
+}
+/// Accessor:: does this trait give a bonus to internal trade route yield?
+int CvTraitEntry::GetInternalTradeRouteYieldModifier() const
+{
+	return m_iInternalTradeRouteYieldModifier;
+}
+/// Accessor:: does this trait give a bonus to unhappiness from puppeted cities?
+int CvTraitEntry::GetUnhappinessModifierForPuppetedCities() const
+{
+	return m_iUnhappinessModifierForPuppetedCities;
+}
+/// Accessor:: does this trait give a discount/increase to faith cost?
+int CvTraitEntry::GetFaithCostModifier() const
+{
+	return m_iFaithCostModifier;
+}
+/// Accessor:: does this trait give a bonus to ideology pressure unhappiness?
+int CvTraitEntry::GetIdeologyPressureUnhappinessModifier() const
+{
+	return m_iIdeologyPressureUnhappinessModifier;
+}
+/// Accessor:: does this trait give a bonus to foreign religion pressure?
+int CvTraitEntry::GetForeignRelgionPressureModifier() const
+{
+	return m_iForeignRelgionPressureModifier;
+}
+#endif
+#if defined(LEKMOD_v34)
+/// Accessor:: does this trait give a bonus to religious reformation?
+bool CvTraitEntry::IsReligionEnhanceReformation() const
+{
+	return m_bReligionEnhanceReformation;
+}
+/// Accessor:: does this trait give a bonus to self religious pressure?
+int CvTraitEntry::GetSelfReligiousPressureModifier() const
+{
+	return m_iSelfReligiousPressureModifier;
+}
+/// Accessor:: does this trait give a land trade route yield bonus?
+int CvTraitEntry::GetLandTradeRouteYieldBonus() const
+{
+	return m_iLandTradeRouteYieldBonus;
+}
+#endif
 ///////////////////
 //EAP: Faith for finding a Natural Wonder
 // Accessor:: bonus faith for being first to find a natural wonder
@@ -1089,6 +1249,152 @@ bool CvTraitEntry::NoBuildImprovements(ImprovementTypes eImprovement)
 }
 #endif
 
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass)
+{
+	if (eBuild == NO_BUILD)
+	{
+		return -1;
+	}
+
+	// First try to find a direct match for the resource class
+	int iBestTime = -1;
+	bool bFoundGenericMatch = false;
+	
+	typedef std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>::const_iterator it_type;
+	std::pair<it_type, it_type> range = m_BuildTimeOverrides.equal_range(eBuild);
+	
+	// First pass: look for exact resource class match
+	for (it_type it = range.first; it != range.second; ++it)
+	{
+		ResourceClassTypes eRequiredClass = it->second.second;
+		int iBuildTime = it->second.first;
+		
+		// Exact match for resource class
+		if (eRequiredClass == eResourceClass)
+		{
+			return iBuildTime; // Found exact match, return immediately
+		}
+		
+		// Keep track of NO_RESOURCECLASS entries for fallback
+		if (eRequiredClass == NO_RESOURCECLASS)
+		{
+			iBestTime = iBuildTime;
+			bFoundGenericMatch = true;
+		}
+	}
+	
+	// If we found a generic match, return that
+	if (bFoundGenericMatch)
+	{
+		return iBestTime;
+	}
+	
+	return -1;  // No suitable override found
+}
+#endif
+
+#if defined(TRAITIFY) // Array accessors
+// Remove Terrain Requirement
+bool CvTraitEntry::IsBuildingClassRemoveRequiredTerrain(int iTrait, int iBuildingClass) const
+{
+	return (m_ppiBuildingClassRemoveRequiredTerrain != NULL && m_ppiBuildingClassRemoveRequiredTerrain[iTrait][iBuildingClass] == 1);
+}
+// Make Defined UnitClasses spawn in the Capital when given by traits
+bool CvTraitEntry::IsUnitClassForceSpawnCapital(int iTrait, int iUnitClass) const
+{
+	return (m_ppiUnitClassForceSpawnCapital != NULL && m_ppiUnitClassForceSpawnCapital[iTrait][iUnitClass] == 1);
+}
+// Change Yield based on ResourceClassType (Netherlands, Russia and Jerusalem)
+int CvTraitEntry::GetResourceClassYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumResourceClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiResourceClassYieldChanges ? m_ppiResourceClassYieldChanges[i][j] : -1;
+}
+// Change the Local happiness of a building
+int CvTraitEntry::GetBuildingClassHappiness(int i) const
+{
+	CvAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_paiBuildingClassHappiness ? m_paiBuildingClassHappiness[i] : -1;
+}
+// Change the Global happiness of a building
+int CvTraitEntry::GetBuildingClassGlobalHappiness(int i) const
+{
+	CvAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_paiBuildingClassGlobalHappiness ? m_paiBuildingClassGlobalHappiness[i] : -1;
+}
+// Override prod/gold/faith cost of buildings
+int CvTraitEntry::GetBuildingCostOverride(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumBuildingInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiBuildingCostOverride[i][j];
+}
+// Change the yield of a building when a trait is active
+int CvTraitEntry::GetBuildingClassYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiBuildingClassYieldChanges[i][j];
+}
+// Puppet City Yield Modifiers
+int CvTraitEntry::GetPuppetYieldModifiers(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piPuppetYieldModifiers ? m_piPuppetYieldModifiers[i] : -1;
+}
+// Feature Yield Changes
+int CvTraitEntry::GetFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const
+{
+	CvAssertMsg(i < GC.getNumFeatureInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiFeatureYieldChanges ? m_ppiFeatureYieldChanges[eIndex1][eIndex2] : 0;
+}
+// Terrain Yield Changes
+int CvTraitEntry::GetTerrainYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumTerrainInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiTerrainYieldChanges ? m_ppiTerrainYieldChanges[i][j] : 0;
+}
+// Resource Yield Changes
+int CvTraitEntry::GetResourceYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumResourceInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiResourceYieldChanges ? m_ppiResourceYieldChanges[i][j] : 0;
+}
+// Yield Per Population
+int CvTraitEntry::GetYieldPerPopulation(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_paiYieldPerPopulation ? m_paiYieldPerPopulation[i] : -1;
+}
+// Yield per Population, with Foreign Relgion switch
+int CvTraitEntry::GetYieldPerPopulationForeignReligion(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_paiYieldPerPopulationForeignReligion ? m_paiYieldPerPopulationForeignReligion[i] : -1;
+}
+#endif
 /// Load XML data
 bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
 {
@@ -1147,6 +1453,30 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_iNaturalWonderFirstFinderGold         = kResults.GetInt("NaturalWonderFirstFinderGold");
 	m_iNaturalWonderSubsequentFinderGold    = kResults.GetInt("NaturalWonderSubsequentFinderGold");
 
+#if defined(TRAITIFY) // CvTraitEntry::CacheResults, int and bool
+	m_bHalfMoreSpecialistUnhappiness		= kResults.GetBool("HalfMoreSpecialistUnhappiness");
+
+	m_iGoldenAgeCultureModifier				= kResults.GetInt("GoldenAgeCultureModifier");
+	m_iNumExtraLeagueVotes					= kResults.GetInt("NumExtraLeagueVotes");
+	m_iNumTradeRouteBonus					= kResults.GetInt("NumTradeRouteBonus");
+	m_iMinorFriendshipMinimum				= kResults.GetInt("MinorFriendshipMinimum");
+	m_iGreatEngineerRateModifier			= kResults.GetInt("GreatEngineerRateModifier");
+	m_iGreatMerchantRateModifier			= kResults.GetInt("GreatMerchantRateModifier");
+	m_iMinorBullyModifier					= kResults.GetInt("MinorBullyModifier");
+	m_iInternationalRouteGrowthModifier		= kResults.GetInt("InternationalRouteGrowthModifier");
+	m_iLocalHappinessPerCity				= kResults.GetInt("LocalHappinessPerCity");
+	m_iInternalTradeRouteYieldModifier		= kResults.GetInt("InternalTradeRouteYieldModifier");
+	m_iUnhappinessModifierForPuppetedCities = kResults.GetInt("UnhappinessModifierForPuppetedCities");
+	m_iExtraPopulation						= kResults.GetInt("ExtraPopulation");
+	m_iFaithCostModifier					= kResults.GetInt("FaithCostModifier");
+	m_iIdeologyPressureUnhappinessModifier  = kResults.GetInt("IdeologyPressureUnhappinessModifier");
+	m_iForeignRelgionPressureModifier		= kResults.GetInt("ForeignRelgionPressureModifier");
+#endif
+#if defined(LEKMOD_v34)
+	m_bReligionEnhanceReformation			= kResults.GetBool("ReligionEnhanceReformation");
+	m_iSelfReligiousPressureModifier		= kResults.GetInt("SelfReligiousPressureModifier");
+	m_iLandTradeRouteYieldBonus				= kResults.GetInt("LandTradeRouteYieldBonus");
+#endif
 	//EAP: Faith for the Natural wonder findor
 	m_iNaturalWonderFirstFinderFaith         = kResults.GetInt("NaturalWonderFirstFinderFaith");
 	m_iNaturalWonderSubsequentFinderFaith    = kResults.GetInt("NaturalWonderSubsequentFinderFaith");
@@ -1281,7 +1611,260 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	kUtility.SetYields(m_paiYieldModifier, "Trait_YieldModifiers", "TraitType", szTraitType);
 
 	const int iNumTerrains = GC.getNumTerrainInfos();
+#if defined(BENCHED)
+	{
+		kUtility.InitializeArray(m_paiYieldPerPopulation, "Trait_YieldPerPopulation", 0);
+		kUtility.InitializeArray(m_paiYieldPerPopulationForeignReligion, "Trait_YieldPerPopulationForeignReligion", 0);
 
+		std::string strKey("Trait_YieldPerPopulation");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Yields.ID AS YieldID, Trait_YieldPerPopulation.YieldTimes100, Trait_YieldPerPopulation.ForeignReligion"
+				"FROM Trait_YieldPerPopulation"
+				"INNER JOIN Yields ON Yields.Type = Trait_YieldPerPopulation.YieldType"
+				"WHERE Trait_YieldPerPopulation.TraitType = ?");
+		}
+		pResults->Bind(1, szTraitType);
+		while (pResults->Step())
+		{
+			const int YieldID = pResults->GetInt(0);
+			const int yield = pResults->GetInt(1);
+			const bool ForeignReligion = pResults->GetBool(2);
+
+			if (ForeignReligion)
+			{
+				m_paiYieldPerPopulationForeignReligion[YieldID] = yield;
+			}
+			else
+			{
+				m_paiYieldPerPopulation[YieldID] = yield;
+			}
+		}
+		pResults->Reset();
+	}
+#endif
+#if defined(TRAITIFY) // CvTraitEntry::CacheResults, ARRAY
+	kUtility.SetYields(m_piPuppetYieldModifiers, "Trait_PuppetYieldModifiers", "TraitType", szTraitType);
+
+	// Trait_BuildingClassRequiredTerrainRemoval
+	{
+		kUtility.Initialize2DArray(m_ppiBuildingClassRemoveRequiredTerrain, "Traits", "BuildingClasses");
+
+		std::string strKey("Trait_BuildingClassRequiredTerrainRemoval");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Traits.ID as TraitID, BuildingClasses.ID as BuildingClassID FROM Trait_BuildingClassRequiredTerrainRemoval \
+             INNER JOIN Traits ON Traits.Type = TraitType \
+             INNER JOIN BuildingClasses ON BuildingClasses.Type = BuildingClassType");
+		}
+
+		while (pResults->Step())
+		{
+			const int TraitID = pResults->GetInt(0);
+			const int BuildingClassID = pResults->GetInt(1);
+
+			CvAssert(TraitID >= 0);
+			CvAssert(BuildingClassID >= 0);
+
+			m_ppiBuildingClassRemoveRequiredTerrain[TraitID][BuildingClassID] = 1; // Mark as allowed
+		}
+
+		pResults->Reset();
+	}
+	// Trait_UnitClassForceCapitalSpawn
+	{
+		kUtility.Initialize2DArray(m_ppiUnitClassForceSpawnCapital, "Traits", "UnitClasses");
+
+		std::string strKey("Trait_UnitClassForceCapitalSpawn");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Traits.ID as TraitID, UnitClasses.ID as UnitClassID FROM Trait_UnitClassForceCapitalSpawn \
+             INNER JOIN Traits ON Traits.Type = TraitType \
+             INNER JOIN UnitClasses ON UnitClasses.Type = UnitClassType");
+		}
+
+		while (pResults->Step())
+		{
+			const int TraitID = pResults->GetInt(0);
+			const int UnitClassID = pResults->GetInt(1);
+
+			CvAssert(TraitID >= 0);
+			CvAssert(UnitClassID >= 0);
+
+			m_ppiUnitClassForceSpawnCapital[TraitID][UnitClassID] = 1; // Mark as allowed
+		}
+
+		pResults->Reset();
+	}
+	{
+		kUtility.Initialize2DArray(m_ppiResourceClassYieldChanges, "ResourceClasses", "Yields");
+
+		std::string strKey("Trait_ResourceClassYieldChange");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT ResourceClasses.ID AS ResourceClassID, Yields.ID AS YieldID, Trait_ResourceClassYieldChange.Yield \
+			 FROM Trait_ResourceClassYieldChange \
+			 INNER JOIN ResourceClasses ON ResourceClasses.Type = Trait_ResourceClassYieldChange.ResourceClassType \
+			 INNER JOIN Yields ON Yields.Type = Trait_ResourceClassYieldChange.YieldType \
+			 WHERE Trait_ResourceClassYieldChange.TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const int ResourceClassID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
+			m_ppiResourceClassYieldChanges[ResourceClassID][YieldID] = yield;
+		}
+
+		pResults->Reset();
+	}
+	// BuildingClassHappiness + Global
+	{
+		{
+			const int iNumBuildingClasses = GC.getNumBuildingClassInfos();
+
+			kUtility.InitializeArray(m_paiBuildingClassHappiness, iNumBuildingClasses, 0);
+			kUtility.InitializeArray(m_paiBuildingClassGlobalHappiness, iNumBuildingClasses, 0);
+
+			std::string strKey("Trait_BuildingClassHappinessChanges");
+			Database::Results* pResults = kUtility.GetResults(strKey);
+			if (pResults == NULL)
+			{
+				pResults = kUtility.PrepareResults(strKey,
+					"SELECT BuildingClasses.ID AS BuildingClassID, Trait_BuildingClassHappinessChanges.Happiness, Trait_BuildingClassHappinessChanges.GlobalHappiness "
+					"FROM Trait_BuildingClassHappinessChanges "
+					"INNER JOIN BuildingClasses ON BuildingClasses.Type = Trait_BuildingClassHappinessChanges.BuildingClassType "
+					"WHERE Trait_BuildingClassHappinessChanges.TraitType = ?");
+			}
+
+			pResults->Bind(1, szTraitType);
+
+			while (pResults->Step())
+			{
+				const int iBuildingClassID = pResults->GetInt(0);
+				const int iHappiness = pResults->GetInt(1);
+				const bool bGlobal = pResults->GetBool(2);
+
+				if (bGlobal)
+				{
+					m_paiBuildingClassGlobalHappiness[iBuildingClassID] = iHappiness;
+				}
+				else
+				{
+					m_paiBuildingClassHappiness[iBuildingClassID] = iHappiness;
+				}
+			}
+		}
+	}
+	//BuildingYieldChanges
+	{
+		kUtility.Initialize2DArray(m_ppiBuildingClassYieldChanges, "BuildingClasses", "Yields");
+
+		std::string strKey("Trait_BuildingClassYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"select BuildingClasses.ID as BuildingClassID, Yields.ID as YieldID, Yield from Trait_BuildingClassYieldChanges \
+inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner join Yields on Yields.Type = YieldType where TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const int BuildingClassID = pResults->GetInt(0);
+			const int iYieldID = pResults->GetInt(1);
+			const int iYieldChange = pResults->GetInt(2);
+
+			m_ppiBuildingClassYieldChanges[BuildingClassID][iYieldID] = iYieldChange;
+		}
+	}
+	//Building Cost Override
+	{
+		kUtility.Initialize2DArray(m_ppiBuildingCostOverride, "Buildings", "Yields");
+
+		std::string strKey("Trait_BuildingCostOverride");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Buildings.ID AS BuildingID, Yields.ID AS YieldID, Trait_BuildingCostOverride.Cost "
+				"FROM Trait_BuildingCostOverride "
+				"INNER JOIN Buildings ON Buildings.Type = Trait_BuildingCostOverride.BuildingType "
+				"INNER JOIN Yields ON Yields.Type = Trait_BuildingCostOverride.YieldType "
+				"WHERE Trait_BuildingCostOverride.TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const int iBuildingID = pResults->GetInt(0);
+			const int iYieldID = pResults->GetInt(1);
+			const int iCost = pResults->GetInt(2);
+
+			m_ppiBuildingCostOverride[iBuildingID][iYieldID] = iCost;
+		}
+	}
+	//Trait_ResourceYieldChanges
+	{
+		kUtility.Initialize2DArray(m_ppiResourceYieldChanges, "Resources", "Yields");
+
+		std::string strKey("Trait_ResourceYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select Resources.ID as ResourceID, Yields.ID as YieldID, Yield from Trait_ResourceYieldChanges\
+ inner join Resources on Resources.Type = ResourceType inner join Yields on Yields.Type = YieldType where TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const int ResourceID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
+
+			m_ppiResourceYieldChanges[ResourceID][YieldID] = yield;
+		}
+	}
+	//Trait_TerrainYieldChanges
+	{
+		kUtility.Initialize2DArray(m_ppiTerrainYieldChanges, "Terrains", "Yields");
+
+		std::string strKey("Trait_TerrainYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select Terrains.ID as TerrainID, Yields.ID as YieldID, Yield from Trait_TerrainYieldChanges\
+ inner join Terrains on Terrains.Type = TerrainType inner join Yields on Yields.Type = YieldType where TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const int TerrainID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
+
+			m_ppiTerrainYieldChanges[TerrainID][YieldID] = yield;
+		}
+	}
+#endif
 	//Trait_Terrains
 	{
 		kUtility.InitializeArray(m_piStrategicResourceQuantityModifier, iNumTerrains, 0);
@@ -1489,6 +2072,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 		}
 	}
 #endif
+#if !defined(TRAITIFY) // Altering the UnimprovedFeatureYieldChanges to also include improved features, optionally
 	//UnimprovedFeatureYieldChanges
 	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -1520,6 +2104,44 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 #endif
 		}
 	}
+#else
+	{
+		const int iNumFeatures = kUtility.MaxRows("Features");
+		const int iNumYields = kUtility.MaxRows("Yields");
+
+		kUtility.Initialize2DArray(m_ppiUnimprovedFeatureYieldChanges, iNumFeatures, iNumYields);
+		kUtility.Initialize2DArray(m_ppiFeatureYieldChanges, iNumFeatures, iNumYields);
+
+		std::string strKey("Trait_FeatureYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "SELECT AllowImprovement, Features.ID as FeatureID, Yields.ID as YieldID, Yield FROM Trait_FeatureYieldChanges INNER JOIN Features ON Features.Type = FeatureType INNER JOIN Yields ON Yields.Type = YieldType WHERE TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const bool bAllowImprovement = pResults->GetBool(0);
+			const int iFeatureType = pResults->GetInt(1);
+			const int iYieldType = pResults->GetInt(2);
+			const int iYield = pResults->GetInt(3);
+
+			if (bAllowImprovement)
+			{
+				m_ppiFeatureYieldChanges[iFeatureType][iYieldType] = iYield;
+			}
+			else
+			{
+				m_ppiUnimprovedFeatureYieldChanges[iFeatureType][iYieldType] = iYield;
+			}
+		}
+
+		pResults->Reset();
+	}
+
+#endif
 
 	// NoTrain
 	{
@@ -1574,7 +2196,47 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 
 	}
 #endif
-	
+
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	// Build Improvement Build Override from the builds table
+	{
+		std::string strKey("Trait_BuildImprovementBuildTimeOverride");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, 
+				"SELECT Traits.ID, Builds.ID, Time, ResourceClasses.ID as ResourceClassID "
+				"FROM Trait_BuildImprovementBuildTimeOverride "
+				"LEFT JOIN ResourceClasses ON Trait_BuildImprovementBuildTimeOverride.ResourceClassRequired = ResourceClasses.Type "
+				"INNER JOIN Traits ON Trait_BuildImprovementBuildTimeOverride.TraitType = Traits.Type "
+				"INNER JOIN Builds ON Trait_BuildImprovementBuildTimeOverride.BuildType = Builds.Type "
+				"WHERE TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+				while (pResults->Step())
+				{
+					const int iBuild = pResults->GetInt(1);
+					const int iBuildTime = pResults->GetInt(2);
+					ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
+
+					eResourceClass = (ResourceClassTypes)pResults->GetInt(3);
+					
+					// Add to the multimap - this allows multiple entries per build type
+					m_BuildTimeOverrides.insert(std::make_pair((BuildTypes)iBuild, std::make_pair(iBuildTime, eResourceClass)));
+
+					// Also update the vectors for backward compatibility
+					// Note: these will only keep the last entry for a given build type
+					if (iBuild >= 0 && iBuild < GC.getNumBuildInfos())
+					{
+						m_aiBuildTimeOverride[iBuild] = iBuildTime;
+						m_aiBuildTimeOverrideResourceClassRequired[iBuild] = eResourceClass;
+					}
+				}
+	}
+#endif
+
 	// FreeResourceXCities
 	{
 		// Init vector
@@ -1769,7 +2431,30 @@ void CvPlayerTraits::InitPlayerTraits()
 			m_iExtraEmbarkMoves += trait->GetExtraEmbarkMoves();
 			m_iNaturalWonderFirstFinderGold += trait->GetNaturalWonderFirstFinderGold();
 			m_iNaturalWonderSubsequentFinderGold += trait->GetNaturalWonderSubsequentFinderGold();
-		
+#if defined(TRAITIFY) // CvPlayerTraits::InitPlayerTraits
+			m_bHalfMoreSpecialistUnhappiness = trait->IsHalfMoreSpecialistUnhappiness();
+
+			m_iGoldenAgeCultureModifier += trait->GetGoldenAgeCultureModifier();
+			m_iNumExtraLeagueVotes += trait->GetNumExtraLeagueVotes();
+			m_iNumTradeRouteBonus += trait->GetNumTradeRouteBonus();
+			m_iMinorFriendshipMinimum += trait->GetMinorFriendshipMinimum();
+			m_iGreatEngineerRateModifier += trait->GetGreatEngineerRateModifier();
+			m_iGreatMerchantRateModifier += trait->GetGreatMerchantRateModifier();
+			m_iMinorBullyModifier += trait->GetMinorBullyModifier();
+			m_iInternationalRouteGrowthModifier += trait->GetInternationalRouteGrowthModifier();
+			m_iLocalHappinessPerCity += trait->GetLocalHappinessPerCity();
+			m_iInternalTradeRouteYieldModifier += trait->GetInternalTradeRouteYieldModifier();
+			m_iUnhappinessModifierForPuppetedCities += trait->GetUnhappinessModifierForPuppetedCities();
+			m_iExtraPopulation += trait->GetExtraPopulation();
+			m_iFaithCostModifier += trait->GetFaithCostModifier();
+			m_iIdeologyPressureUnhappinessModifier += trait->GetIdeologyPressureUnhappinessModifier();
+			m_iForeignRelgionPressureModifier += trait->GetForeignRelgionPressureModifier();
+#endif
+#if defined(LEKMOD_v34)
+			m_bReligionEnhanceReformation = trait->IsReligionEnhanceReformation();
+			m_iSelfReligiousPressureModifier += trait->GetSelfReligiousPressureModifier();
+			m_iLandTradeRouteYieldBonus += trait->GetLandTradeRouteYieldBonus();
+#endif
 			//EAP: Natural wonder faith for the finder
 			m_iNaturalWonderFirstFinderFaith += trait->GetNaturalWonderFirstFinderFaith();
 			m_iNaturalWonderSubsequentFinderFaith += trait->GetNaturalWonderSubsequentFinderFaith();
@@ -1806,7 +2491,7 @@ void CvPlayerTraits::InitPlayerTraits()
 			{
 				m_bFightWellDamaged = true;
 				// JON: Changing the way this works. Above line can/should probably be removed at some point
-				int iWoundedUnitDamageMod = /*-50*/ GC.getTRAIT_WOUNDED_DAMAGE_MOD();
+				int iWoundedUnitDamageMod = /*-33*/ GC.getTRAIT_WOUNDED_DAMAGE_MOD();
 				m_pPlayer->ChangeWoundedUnitDamageMod(iWoundedUnitDamageMod);
 			}
 			if(trait->IsMoveFriendlyWoodsAsRoad())
@@ -1911,17 +2596,29 @@ void CvPlayerTraits::InitPlayerTraits()
 #ifdef AUI_WARNING_FIXES
 				for (uint iFeatureLoop = 0; iFeatureLoop < GC.getNumFeatureInfos(); iFeatureLoop++)
 #else
-				for(int iFeatureLoop = 0; iFeatureLoop < GC.getNumFeatureInfos(); iFeatureLoop++)
+				for (int iFeatureLoop = 0; iFeatureLoop < GC.getNumFeatureInfos(); iFeatureLoop++)
 #endif
 				{
 					int iChange = trait->GetUnimprovedFeatureYieldChanges((FeatureTypes)iFeatureLoop, (YieldTypes)iYield);
-					if(iChange > 0)
+					if (iChange > 0)
 					{
 						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiUnimprovedFeatureYieldChange[iFeatureLoop];
 						yields[iYield] = (m_ppaaiUnimprovedFeatureYieldChange[iFeatureLoop][iYield] + iChange);
 						m_ppaaiUnimprovedFeatureYieldChange[iFeatureLoop] = yields;
 					}
 				}
+#if defined(TRAITIFY) // Altering the UnimprovedFeatureYieldChanges to also include improved features, optionally
+				for (int iFeatureLoop = 0; iFeatureLoop < GC.getNumFeatureInfos(); iFeatureLoop++)
+				{
+					int iChange = trait->GetFeatureYieldChanges((FeatureTypes)iFeatureLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiFeatureYieldChange[iFeatureLoop];
+						yields[iYield] = (m_ppaaiFeatureYieldChange[iFeatureLoop][iYield] + iChange);
+						m_ppaaiFeatureYieldChange[iFeatureLoop] = yields;
+					}
+				}
+#endif
 
 #ifdef AUI_WARNING_FIXES
 				for (uint iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
@@ -2001,7 +2698,22 @@ void CvPlayerTraits::InitPlayerTraits()
 			}
 #endif
 
-			
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	// Copy the backward compatibility vectors
+	for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
+	{
+		m_aiBuildTimeOverride[iBuild] = trait->GetBuildTimeOverrideVector(iBuild);
+		m_aiBuildTimeOverrideResourceClassRequired[iBuild] = trait->GetBuildTimeOverrideResourceClassRequiredVector(iBuild);
+	}
+
+	// Copy all build time overrides in the multimap
+	typedef std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>::const_iterator it_type;
+	const std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>& buildTimeOverrides = trait->GetBuildTimeOverridesMultimap();
+	for (it_type it = buildTimeOverrides.begin(); it != buildTimeOverrides.end(); ++it)
+	{
+		m_BuildTimeOverrides.insert(*it);
+	}
+#endif
 
 			FreeTraitUnit traitUnit;
 #ifdef AUI_WARNING_FIXES
@@ -2054,6 +2766,9 @@ void CvPlayerTraits::Uninit()
 	m_abNoBuild.clear();
 #endif
 
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	m_aiBuildTimeOverride.clear();
+#endif
 	m_paiMovesChangeUnitCombat.clear();
 	m_paiMaintenanceModifierUnitCombat.clear();
 	m_ppaaiImprovementYieldChange.clear();
@@ -2064,6 +2779,9 @@ void CvPlayerTraits::Uninit()
 #endif
 
 	m_ppaaiUnimprovedFeatureYieldChange.clear();
+#if defined(TRAITIFY) // CvPlayerTraits::Uninit
+	m_ppaaiFeatureYieldChange.clear();
+#endif
 	m_aFreeResourceXCities.clear();
 }
 
@@ -2124,7 +2842,30 @@ void CvPlayerTraits::Reset()
 	m_iExtraEmbarkMoves = 0;
 	m_iNaturalWonderFirstFinderGold = 0;
 	m_iNaturalWonderSubsequentFinderGold = 0;
+#if defined(TRAITIFY) // CvPlayerTraits::Reset
+	m_bHalfMoreSpecialistUnhappiness = false;
 
+	m_iGoldenAgeCultureModifier = 0;
+	m_iNumExtraLeagueVotes = 0;
+	m_iNumTradeRouteBonus = 0;
+	m_iMinorFriendshipMinimum = 0;
+	m_iGreatEngineerRateModifier = 0;
+	m_iGreatMerchantRateModifier = 0;
+	m_iMinorBullyModifier = 0;
+	m_iInternationalRouteGrowthModifier = 0;
+	m_iLocalHappinessPerCity = 0;
+	m_iInternalTradeRouteYieldModifier = 0;
+	m_iUnhappinessModifierForPuppetedCities = 0;
+	m_iExtraPopulation = 0;
+	m_iFaithCostModifier = 0; 
+	m_iIdeologyPressureUnhappinessModifier = 0;
+	m_iForeignRelgionPressureModifier = 0;
+#endif
+#if defined(LEKMOD_v34)
+	m_bReligionEnhanceReformation = false;
+	m_iSelfReligiousPressureModifier = 0;
+	m_iLandTradeRouteYieldBonus = 0;
+#endif
 	//EAP: Natural wonder faith for the finder
 	m_iNaturalWonderFirstFinderFaith = 0;
 	m_iNaturalWonderSubsequentFinderFaith = 0;
@@ -2204,7 +2945,11 @@ void CvPlayerTraits::Reset()
 
 	m_ppaaiUnimprovedFeatureYieldChange.clear();
 	m_ppaaiUnimprovedFeatureYieldChange.resize(GC.getNumFeatureInfos());
-
+#if defined(TRAITIFY) // CvPlayerTraits::Reset
+	m_ppaaiFeatureYieldChange.clear();
+	m_ppaaiFeatureYieldChange.resize(GC.getNumFeatureInfos());
+#endif
+	
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
 	for(unsigned int j = 0; j < NUM_YIELD_TYPES; ++j)
 	{
@@ -2247,11 +2992,18 @@ void CvPlayerTraits::Reset()
 			m_ppaaiAnySpecificSpecialistYieldChange[iSpecialist] = yield;
 		}
 #endif
-		for(int iFeature = 0; iFeature < GC.getNumFeatureInfos(); iFeature++)
+		for (int iFeature = 0; iFeature < GC.getNumFeatureInfos(); iFeature++)
 #endif
 		{
 			m_ppaaiUnimprovedFeatureYieldChange[iFeature] = yield;
 		}
+#if defined(TRAITIFY) // CvPlayerTraits::Reset
+		for (int iFeature = 0; iFeature < GC.getNumFeatureInfos(); iFeature++)
+		{
+			m_ppaaiFeatureYieldChange[iFeature] = yield;
+		}
+#endif
+		
 	}
 
 #ifdef AUI_WARNING_FIXES
@@ -2297,6 +3049,16 @@ void CvPlayerTraits::Reset()
 	{
 		m_abNoBuild[iImprovement] = false;
 	}
+#endif
+
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	m_aiBuildTimeOverride.clear();
+	m_aiBuildTimeOverrideResourceClassRequired.clear();
+	m_BuildTimeOverrides.clear();
+
+	// Initialize vectors for backward compatibility
+	m_aiBuildTimeOverride.resize(GC.getNumBuildInfos(), -1);
+	m_aiBuildTimeOverrideResourceClassRequired.resize(GC.getNumBuildInfos(), NO_RESOURCECLASS);
 #endif
 
 	m_aFreeTraitUnits.clear();
@@ -2491,7 +3253,7 @@ int CvPlayerTraits::GetAnySpecificSpecialistYieldChange(SpecialistTypes eSpecial
 /// Extra yield from a feature without improvement
 int CvPlayerTraits::GetUnimprovedFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield) const
 {
-	CvAssertMsg(eFeature < GC.getNumFeatureInfos(),  "Invalid eImprovement parameter in call to CvPlayerTraits::GetUnimprovedFeatureYieldChange()");
+	CvAssertMsg(eFeature < GC.getNumFeatureInfos(),  "Invalid eFeature parameter in call to CvPlayerTraits::GetUnimprovedFeatureYieldChange()");
 	CvAssertMsg(eYield < NUM_YIELD_TYPES,  "Invalid eYield parameter in call to CvPlayerTraits::GetUnimprovedFeatureYieldChange()");
 
 	if(eFeature == NO_FEATURE)
@@ -2583,7 +3345,201 @@ BuildingTypes CvPlayerTraits::GetFreeBuildingOnConquest() const
 
 	return NO_BUILDING;
 }
+#if defined(TRAITIFY) // CvPlayerTraits:: ARRAYS
+/// Does this trait remove a building's requirement for terrain
+bool CvPlayerTraits::IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass)
+{
+	bool rtnValue = false;
 
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		TraitTypes eTrait = (TraitTypes)i;
+
+		if (HasTrait(eTrait))
+		{
+			CvTraitEntry* pTrait = GC.getTraitInfo(eTrait);
+			if (pTrait)
+			{
+				if (pTrait->IsBuildingClassRemoveRequiredTerrain(eTrait, eBuildingClass))
+				{
+					rtnValue = true;
+					break;
+				}
+			}
+		}
+	}
+	return rtnValue;
+}
+// Force Spawn UnitClass is Capital
+bool CvPlayerTraits::IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass)
+{
+	bool rtnValue = false;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		TraitTypes eTrait = (TraitTypes)i;
+		if (HasTrait(eTrait))
+		{
+			CvTraitEntry* pTrait = GC.getTraitInfo(eTrait);
+			if (pTrait)
+			{
+				if (pTrait->IsUnitClassForceSpawnCapital(eTrait, eUnitClass))
+				{
+					rtnValue = true;
+					break;
+				}
+			}
+		}
+	}
+	return rtnValue;
+}
+// Change the Yield of a ResourceClass
+int CvPlayerTraits::GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYieldType)
+{
+	int rtnValue = 0;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetResourceClassYieldChanges(eResourceClass, eYieldType);
+		}
+	}
+	return rtnValue;
+}
+// Building Cost Override (Gold Faith and Production)
+int CvPlayerTraits::GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType)
+{
+	int rtnValue = 0;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetBuildingCostOverride(eBuilding, eYieldType);
+		}
+	}
+	return rtnValue;
+}
+// Feature Yield Changes
+int CvPlayerTraits::GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield) const
+{
+	CvAssertMsg(eFeature < GC.getNumFeatureInfos(), "Invalid eImprovement parameter in call to CvPlayerTraits::GetFeatureYieldChange()");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "Invalid eYield parameter in call to CvPlayerTraits::GetFeatureYieldChange()");
+
+	if (eFeature == NO_FEATURE)
+	{
+		return 0;
+	}
+
+	return m_ppaaiFeatureYieldChange[(int)eFeature][(int)eYield];
+}
+// Puppet City Yield Mods
+int CvPlayerTraits::GetPuppetYieldModifier(YieldTypes eYieldType)
+{
+	int rtnValue = 0;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetPuppetYieldModifiers(eYieldType);
+		}
+	}
+	return rtnValue;
+}
+//Yield Per Pop
+int CvPlayerTraits::GetYieldPerPopulation(YieldTypes eYieldType)
+{
+	int rtnValue = 0;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetYieldPerPopulation(eYieldType);
+		}
+	}
+	return rtnValue;
+}
+// Yield Per Population, Foreign Religon
+int CvPlayerTraits::GetYieldPerPopulationForeignReligion(YieldTypes eYieldType)
+{
+	int rtnValue = 0;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetYieldPerPopulationForeignReligion(eYieldType);
+		}
+	}
+	return rtnValue;
+}
+// Building Class Happiness
+int CvPlayerTraits::GetBuildingClassHappiness(BuildingClassTypes eBuildingClass)
+{
+	int rtnValue = 0;
+
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetBuildingClassHappiness(eBuildingClass);
+		}
+	}
+
+	return rtnValue;
+}
+//Building Class Global Happiness
+int CvPlayerTraits::GetBuildingClassGlobalHappiness(BuildingClassTypes eBuildingClass)
+{
+	int rtnValue = 0;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetBuildingClassGlobalHappiness(eBuildingClass);
+		}
+	}
+	return rtnValue;
+}
+///Get Yield Change from Trait for a specific building class
+int CvPlayerTraits::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType)
+{
+	int rtnValue = 0;
+
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetBuildingClassYieldChanges(eBuildingClass, eYieldType);
+		}
+	}
+
+	return rtnValue;
+}
+// Get the Yield Change from Trait for a Specific Terrain type
+int CvPlayerTraits::GetTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYieldType)
+{
+	int rtnValue = 0;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetTerrainYieldChanges(eTerrain, eYieldType);
+		}
+	}
+	return rtnValue;
+}
+// Get the Yield change from Trait for a Specific Resource type
+int CvPlayerTraits::GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYieldType)
+{
+	int rtnValue = 0;
+	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	{
+		if (HasTrait((TraitTypes)i))
+		{
+			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetResourceYieldChanges(eResource, eYieldType);
+		}
+	}
+	return rtnValue;
+}
+#endif
 /// Should unique luxuries appear beneath this tile?
 void CvPlayerTraits::AddUniqueLuxuries(CvCity *pCity)
 {
@@ -2827,6 +3783,51 @@ bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovement)
 	}
 }
 
+#endif
+
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+int CvPlayerTraits::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass)
+{
+	if (eBuild == NO_BUILD)
+	{
+		return -1;
+	}
+
+	// First try to find a direct match for the resource class
+	int iBestTime = -1;
+	bool bFoundGenericMatch = false;
+	
+	typedef std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>::const_iterator it_type;
+	std::pair<it_type, it_type> range = m_BuildTimeOverrides.equal_range(eBuild);
+	
+	// First pass: look for exact resource class match
+	for (it_type it = range.first; it != range.second; ++it)
+	{
+		ResourceClassTypes eRequiredClass = it->second.second;
+		int iBuildTime = it->second.first;
+		
+		// Exact match for resource class
+		if (eRequiredClass == eResourceClass)
+		{
+			return iBuildTime; // Found exact match, return immediately
+		}
+		
+		// Keep track of NO_RESOURCECLASS entries for fallback
+		if (eRequiredClass == NO_RESOURCECLASS)
+		{
+			iBestTime = iBuildTime;
+			bFoundGenericMatch = true;
+		}
+	}
+	
+	// If we found a generic match, return that
+	if (bFoundGenericMatch)
+	{
+		return iBestTime;
+	}
+	
+	return -1;  // No suitable override found
+}
 #endif
 
 // MAYA TRAIT SPECIAL METHODS
@@ -3278,7 +4279,30 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_iNaturalWonderFirstFinderGold;
 
 	kStream >> m_iNaturalWonderSubsequentFinderGold;
+#if defined(TRAITIFY) // CvPlayerTraits::Read
+	kStream >> m_bHalfMoreSpecialistUnhappiness;
 
+	kStream >> m_iGoldenAgeCultureModifier;
+	kStream >> m_iNumExtraLeagueVotes;
+	kStream >> m_iNumTradeRouteBonus;
+	kStream >> m_iMinorFriendshipMinimum;
+	kStream >> m_iGreatEngineerRateModifier;
+	kStream >> m_iGreatMerchantRateModifier;
+	kStream >> m_iMinorBullyModifier;
+	kStream >> m_iInternationalRouteGrowthModifier;
+	kStream >> m_iLocalHappinessPerCity;
+	kStream >> m_iInternalTradeRouteYieldModifier;
+	kStream >> m_iUnhappinessModifierForPuppetedCities;
+	kStream >> m_iExtraPopulation;
+	kStream >> m_iFaithCostModifier;
+	kStream >> m_iIdeologyPressureUnhappinessModifier;
+	kStream >> m_iForeignRelgionPressureModifier;
+#endif
+#if defined(LEKMOD_v34)
+	kStream >> m_bReligionEnhanceReformation;
+	kStream >> m_iSelfReligiousPressureModifier;
+	kStream >> m_iLandTradeRouteYieldBonus;
+#endif
 
 	//EAP: Natural wonder faith for the finder:
 
@@ -3560,6 +4584,17 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	}
 #endif
 
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	kStream >> iNumEntries;
+	m_aiBuildTimeOverride.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		int iBuildTime;
+		kStream >> iBuildTime;
+		m_aiBuildTimeOverride.push_back(iBuildTime);
+	}
+#endif
+
 	kStream >> iNumEntries;
 	m_aFreeTraitUnits.clear();
 	for(int iI = 0; iI < iNumEntries; iI++)
@@ -3598,6 +4633,9 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_ppaaiAnySpecificSpecialistYieldChange;
 #endif
 	kStream >> m_ppaaiUnimprovedFeatureYieldChange;
+#if defined(TRAITIFY)
+	kStream >> m_ppaaiFeatureYieldChange;
+#endif
 
 	if (uiVersion >= 11)
 	{
@@ -3675,7 +4713,30 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_iExtraEmbarkMoves;
 	kStream << m_iNaturalWonderFirstFinderGold;
 	kStream << m_iNaturalWonderSubsequentFinderGold;
-	
+#if defined(TRAITIFY) // CvPlayerTraits::Write
+	kStream << m_bHalfMoreSpecialistUnhappiness;
+
+	kStream << m_iGoldenAgeCultureModifier;
+	kStream << m_iNumExtraLeagueVotes;
+	kStream << m_iNumTradeRouteBonus;
+	kStream << m_iMinorFriendshipMinimum;
+	kStream << m_iGreatEngineerRateModifier;
+	kStream << m_iGreatMerchantRateModifier;
+	kStream << m_iMinorBullyModifier;
+	kStream << m_iInternationalRouteGrowthModifier;
+	kStream << m_iLocalHappinessPerCity;
+	kStream << m_iInternalTradeRouteYieldModifier;
+	kStream << m_iUnhappinessModifierForPuppetedCities;
+	kStream << m_iExtraPopulation;
+	kStream << m_iFaithCostModifier;
+	kStream << m_iIdeologyPressureUnhappinessModifier;
+	kStream << m_iForeignRelgionPressureModifier;
+#endif
+#if defined(LEKMOD_v34)
+	kStream << m_bReligionEnhanceReformation;
+	kStream << m_iSelfReligiousPressureModifier;
+	kStream << m_iLandTradeRouteYieldBonus;
+#endif
 	//EAP: Natural wonder faith for the finder
 	
 	kStream << m_iNaturalWonderFirstFinderFaith;
@@ -3787,6 +4848,13 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	}
 #endif
 
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	kStream << m_aiBuildTimeOverride.size();
+	for (uint ui = 0; ui < m_aiBuildTimeOverride.size(); ui++)
+	{
+		kStream << m_aiBuildTimeOverride[ui];
+	}
+#endif
 	kStream << m_aFreeTraitUnits.size();
 	for(uint ui = 0; ui < m_aFreeTraitUnits.size(); ui++)
 	{
@@ -3811,6 +4879,9 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_ppaaiAnySpecificSpecialistYieldChange;
 #endif
 	kStream << m_ppaaiUnimprovedFeatureYieldChange;
+#if defined(TRAITIFY)
+	kStream << m_ppaaiFeatureYieldChange;
+#endif
 
 	kStream << (int)m_aUniqueLuxuryAreas.size();
 	for (unsigned int iI = 0; iI < m_aUniqueLuxuryAreas.size(); iI++)
@@ -3942,3 +5013,4 @@ bool CvPlayerTraits::ConvertBarbarianNavalUnit(UnitHandle pUnit)
 		return false;
 	}
 }
+

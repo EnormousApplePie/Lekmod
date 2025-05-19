@@ -18,7 +18,9 @@ enum YieldTypes
     YIELD_SCIENCE,
     YIELD_CULTURE,
     YIELD_FAITH,
-
+#if defined(LEKMOD_v34)
+	YIELD_GOLDEN_AGE_POINTS,
+#endif
     NUM_YIELD_TYPES
 };
 
