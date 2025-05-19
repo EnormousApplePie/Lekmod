@@ -949,7 +949,7 @@
 // Combat bonus against different ideology
 #define LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
 // Trait Table that overrides build times for certain build actions
-#define LEKMOD_BUILD_TIME_OVERRIDE
+//#define LEKMOD_BUILD_TIME_OVERRIDE
 /// ###############################
 /// Lekmod: New Lua Events and Methods
 /// ################################

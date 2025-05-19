@@ -7876,7 +7876,7 @@ bool CvUnit::pillage()
 	{
 		CvLuaArgsHandle args;
 
-		args->Push(eOwner);
+		args->Push(getOwner());
 		args->Push(GetID());
 		args->Push(plot()->getX());
 		args->Push(plot()->getY());
