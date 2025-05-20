@@ -1069,6 +1069,8 @@ function OnCityViewUpdate()
 				Controls.GPFocusButton:SetCheck( true );
 			elseif focusType == CityAIFocusTypes.CITY_AI_FOCUS_TYPE_FAITH then
 				Controls.FaithFocusButton:SetCheck( true );
+			elseif focusType == CityAIFocusTypes.CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS then -- v34
+				Controls.GoldenAgePointsFocusButton:SetCheck( true );
 			else
 				Controls.BalancedFocusButton:SetCheck( true );
 			end
@@ -1658,6 +1660,9 @@ function OnCityViewUpdate()
 			local iFaithPerTurn = pCity:GetFaithPerTurn();
 			Controls.FaithPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iFaithPerTurn) );
 		end
+		-- v34 Golden Age Points
+		local iGoldenAgePointsPerTurn = pCity:GetYieldRateTimes100(YieldTypes.YIELD_GOLDEN_AGE_POINTS) / 100;
+		Controls.GoldenAgePointsPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iGoldenAgePointsPerTurn) );
 		
 		local iTourismPerTurn = pCity:GetBaseTourism();
 		Controls.TourismPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iTourismPerTurn) );
@@ -1702,6 +1707,7 @@ function OnCityViewUpdate()
 			Controls.CultureFocusButton:SetDisabled( true );
 			Controls.GPFocusButton:SetDisabled( true );
 			Controls.FaithFocusButton:SetDisabled( true );
+			Controls.GoldenAgePointsFocusButton:SetDisabled( true ); -- v34
 			Controls.AvoidGrowthButton:SetDisabled( true );
 			Controls.ResetButton:SetDisabled( true );
 			
@@ -1730,6 +1736,7 @@ function OnCityViewUpdate()
 			Controls.CultureFocusButton:SetDisabled( false );
 			Controls.GPFocusButton:SetDisabled( false );
 			Controls.FaithFocusButton:SetDisabled( false );
+			Controls.GoldenAgePointsFocusButton:SetDisabled( false ); -- v34
 			Controls.AvoidGrowthButton:SetDisabled( false );
 			Controls.ResetButton:SetDisabled( false );
 			
@@ -1952,6 +1959,9 @@ function DoUpdateUpperLeftTooltips()
 	
 	local strFaithToolTip = GetFaithTooltip(pCity);
 	Controls.FaithBox:SetToolTipString(strFaithToolTip);
+
+	local strGoldenAgePointsToolTip = GetGoldenAgePointsTooltip(pCity);
+	Controls.GoldenAgePointsBox:SetToolTipString(strGoldenAgePointsToolTip);
 	
 	local strTourismToolTip = GetTourismTooltip(pCity);
 	Controls.TourismBox:SetToolTipString(strTourismToolTip);
@@ -2596,6 +2606,9 @@ Controls.GPFocusButton:RegisterCallback( Mouse.eLClick, FocusChanged );
 
 Controls.FaithFocusButton:SetVoid1( CityAIFocusTypes.CITY_AI_FOCUS_TYPE_FAITH );
 Controls.FaithFocusButton:RegisterCallback( Mouse.eLClick, FocusChanged );
+-- v34 Golden Age Points
+Controls.GoldenAgePointsFocusButton:SetVoid1( CityAIFocusTypes.CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS );
+Controls.GoldenAgePointsFocusButton:RegisterCallback( Mouse.eLClick, FocusChanged );
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------

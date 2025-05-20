@@ -1863,6 +1863,16 @@ void CvCity::doTurn()
 			iHitsHealed++;
 		}
 		int iBuildingDefense = m_pCityBuildings->GetBuildingDefense();
+#if defined(LEKMOD_v34) // CvCity::doTurn - add garrisoned unit defense
+		if (GetGarrisonedUnit())
+		{
+			int iBonusDefense = m_pCityBuildings->GetGarrisonStrengthBonus();
+			if (iBonusDefense > 0)
+			{
+				iBuildingDefense += iBonusDefense;
+			}
+		}
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 		// add in defense per citizen here
 		iBuildingDefense += (m_pCityBuildings->GetBuildingDefensePerCitizen() * getPopulation());
@@ -7745,6 +7755,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 	if(!bObsolete)
 	{
 		m_pCityBuildings->ChangeBuildingDefense(pBuildingInfo->GetDefenseModifier() * iChange);
+#if defined(LEKMOD_v34) // Add the garrison strength bonus NOTE: this is not inside of a if(GetGarrisonedUnit()) since that would make it only apply if the city is garrisoned on construction
+		m_pCityBuildings->ChangeGarrisonStrengthBonus(pBuildingInfo->GetGarrisonStrengthBonus()* iChange);
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 		m_pCityBuildings->ChangeBuildingDefensePerCitizen(pBuildingInfo->GetDefensePerCitizen() * iChange);
 #endif
@@ -12590,7 +12603,16 @@ void CvCity::updateStrengthValue()
 	if(pGarrisonedUnit)
 	{
 		int iMaxHits = GC.getMAX_HIT_POINTS();
+#if defined(LEKMOD_v34) // Add a raw amount of strength from garrisoned units, if the city has a building that does that
+		int iRawStrengthFromGarrison = m_pCityBuildings->GetGarrisonStrengthBonus();
+		if (iRawStrengthFromGarrison > 0)
+		{
+			// Add directly to the strength value, to skip the getCITY_STRENGTH_UNIT_DIVISOR calculation
+			iStrengthValue += iRawStrengthFromGarrison;
+		}
+#endif
 		iStrengthFromUnits = pGarrisonedUnit->GetBaseCombatStrength() * 100 * (iMaxHits - pGarrisonedUnit->getDamage()) / iMaxHits;
+
 	}
 
 	iStrengthValue += ((iStrengthFromUnits * 100) / /*300*/ GC.getCITY_STRENGTH_UNIT_DIVISOR());
@@ -12648,6 +12670,12 @@ int CvCity::getStrengthValue(bool bForRangeStrike) const
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 		// subtract defense per citizen here as well (city strikes don't use defense values)
 		iValue -= (m_pCityBuildings->GetBuildingDefensePerCitizen() * getPopulation());
+#endif
+#if defined(LEKMOD_v34) // Subtract the raw amount of strength from garrisoned units, (city strikes don't use defense values)
+		if (GetGarrisonedUnit()) // a bit of a duplication, but I wanted to subtract it above getCITY_RANGED_ATTACK_STRENGTH_MULTIPLIER for consistency
+		{
+			iValue -= m_pCityBuildings->GetGarrisonStrengthBonus();
+		}
 #endif
 
 		CvAssertMsg(iValue > 0, "City strength should always be greater than zero. Please show Jon this and send your last 5 autosaves.");
