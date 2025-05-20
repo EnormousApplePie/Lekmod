@@ -189,9 +189,9 @@
 			<ExtraLeagueVotes>0</ExtraLeagueVotes> 
 			<CityWall>false</CityWall> 
 			<DisplayPosition>0</DisplayPosition> 
-			<PortraitIndex>34</PortraitIndex> 
+			<PortraitIndex>2</PortraitIndex> 
 			<WonderSplashAnchor>R,T</WonderSplashAnchor> 
-			<IconAtlas>BW_ATLAS_1</IconAtlas> 
+			<IconAtlas>LEKMOD_CZECHIA_ATLAS</IconAtlas> 
 			<ArtInfoCulturalVariation>false</ArtInfoCulturalVariation> 
 			<ArtInfoEraVariation>false</ArtInfoEraVariation> 
 			<ArtInfoRandomVariation>false</ArtInfoRandomVariation> 
@@ -431,35 +431,35 @@
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>128</IconSize>
-			<Filename>czechia_atlas_alpha_128.dds</Filename>
+			<Filename>czech_atlas_alpha_128.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>64</IconSize>
-			<Filename>czechia_atlas_alpha_64.dds</Filename>
+			<Filename>czech_atlas_alpha_64.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>48</IconSize>
-			<Filename>czechia_atlas_alpha_48.dds</Filename>
+			<Filename>czech_atlas_alpha_48.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>32</IconSize>
-			<Filename>czechia_atlas_alpha_32.dds</Filename>
+			<Filename>czech_atlas_alpha_32.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ICON_ALPHA</Atlas>
 			<IconSize>24</IconSize>
-			<Filename>czechia_atlas_alpha_24.dds</Filename>
+			<Filename>czech_atlas_alpha_24.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
@@ -467,42 +467,42 @@
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>256</IconSize>
-			<Filename>czechia_atlas_256.dds</Filename>
+			<Filename>czech_atlas_256.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>128</IconSize>
-			<Filename>czechia_atlas_128.dds</Filename>
+			<Filename>czech_atlas_128.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>80</IconSize>
-			<Filename>czechia_atlas_80.dds</Filename>
+			<Filename>czech_atlas_80.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>64</IconSize>
-			<Filename>czechia_atlas_64.dds</Filename>
+			<Filename>czech_atlas_64.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>45</IconSize>
-			<Filename>czechia_atlas_45.dds</Filename>
+			<Filename>czech_atlas_45.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
 		<Row>
 			<Atlas>LEKMOD_CZECHIA_ATLAS</Atlas>
 			<IconSize>32</IconSize>
-			<Filename>czechia_atlas_32.dds</Filename>
+			<Filename>czech_atlas_32.dds</Filename>
 			<IconsPerRow>2</IconsPerRow>
 			<IconsPerColumn>2</IconsPerColumn>
 		</Row>
@@ -890,6 +890,8 @@
 			<ExtraHappinessPerLuxury>0</ExtraHappinessPerLuxury> 
 			<HappinessPerReligion>0</HappinessPerReligion> 
 			<SciencePerGreatPersonBorn>0</SciencePerGreatPersonBorn>
+			<SelfReligiousPressureModifier>100</SelfReligiousPressureModifier>
+			<ReligionEnhanceReformation>true</ReligionEnhanceReformation>
 		</Row>
 	</Traits> 
 	
@@ -954,7 +956,147 @@
 			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
 			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType> 
 		</Row>
+		<Row> 
+			<UnitType>UNIT_CZECHIA_LEGION</UnitType> 
+			<PromotionType>PROMOTION_IDEOLOGY_COMBAT</PromotionType> 
+		</Row>
 	</Unit_FreePromotions>
+
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_IDEOLOGY_COMBAT</Type> 
+			<Description>TXT_KEY_PROMOTION_IDEOLOGY_COMBAT</Description> 
+			<Help>TXT_KEY_PROMOTION_IDEOLOGY_COMBAT_HELP</Help> 
+			<PortraitIndex>59</PortraitIndex> 
+			<IconAtlas>ABILITY_ATLAS</IconAtlas> 
+			<HotKeyPriority>0</HotKeyPriority> 
+			<HotKeyPriorityAlt>0</HotKeyPriorityAlt> 
+			<OrderPriority>0</OrderPriority> 
+			<AltDown>false</AltDown> 
+			<AltDownAlt>false</AltDownAlt> 
+			<ShiftDown>false</ShiftDown> 
+			<ShiftDownAlt>false</ShiftDownAlt> 
+			<CtrlDown>false</CtrlDown> 
+			<CtrlDownAlt>false</CtrlDownAlt> 
+			<Sound>AS2D_IF_LEVELUP</Sound> 
+			<CannotBeChosen>false</CannotBeChosen> 
+			<LostWithUpgrade>false</LostWithUpgrade> 
+			<NotWithUpgrade>false</NotWithUpgrade> 
+			<InstaHeal>false</InstaHeal> 
+			<Leader>false</Leader> 
+			<Blitz>false</Blitz> 
+			<Amphib>false</Amphib> 
+			<River>false</River> 
+			<EnemyRoute>false</EnemyRoute> 
+			<RivalTerritory>false</RivalTerritory> 
+			<MustSetUpToRangedAttack>false</MustSetUpToRangedAttack> 
+			<RangedSupportFire>false</RangedSupportFire> 
+			<CanMoveAfterAttacking>false</CanMoveAfterAttacking> 
+			<AlwaysHeal>false</AlwaysHeal> 
+			<HealOutsideFriendly>false</HealOutsideFriendly> 
+			<HillsDoubleMove>false</HillsDoubleMove> 
+			<RoughTerrainEndsTurn>false</RoughTerrainEndsTurn> 
+			<IgnoreTerrainCost>false</IgnoreTerrainCost> 
+			<HoveringUnit>false</HoveringUnit> 
+			<FlatMovementCost>false</FlatMovementCost> 
+			<CanMoveImpassable>false</CanMoveImpassable> 
+			<NoCapture>false</NoCapture> 
+			<OnlyDefensive>false</OnlyDefensive> 
+			<NoDefensiveBonus>false</NoDefensiveBonus> 
+			<NukeImmune>false</NukeImmune> 
+			<HiddenNationality>false</HiddenNationality> 
+			<AlwaysHostile>false</AlwaysHostile> 
+			<NoRevealMap>false</NoRevealMap> 
+			<Recon>false</Recon> 
+			<CanMoveAllTerrain>false</CanMoveAllTerrain> 
+			<FreePillageMoves>false</FreePillageMoves> 
+			<AirSweepCapable>false</AirSweepCapable> 
+			<AllowsEmbarkation>false</AllowsEmbarkation> 
+			<EmbarkedAllWater>false</EmbarkedAllWater> 
+			<HealIfDestroyExcludesBarbarians>false</HealIfDestroyExcludesBarbarians> 
+			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS> 
+			<CityAttackOnly>false</CityAttackOnly> 
+			<CaptureDefeatedEnemy>false</CaptureDefeatedEnemy> 
+			<HealOnPillage>false</HealOnPillage> 
+			<IgnoreGreatGeneralBenefit>false</IgnoreGreatGeneralBenefit> 
+			<IgnoreZOC>false</IgnoreZOC> 
+			<HasPostCombatPromotions>false</HasPostCombatPromotions> 
+			<PostCombatPromotionsExclusive>false</PostCombatPromotionsExclusive> 
+			<RangedAttackModifier>0</RangedAttackModifier> 
+			<InterceptionCombatModifier>0</InterceptionCombatModifier> 
+			<InterceptionDefenseDamageModifier>0</InterceptionDefenseDamageModifier> 
+			<AirSweepCombatModifier>0</AirSweepCombatModifier> 
+			<ExtraAttacks>0</ExtraAttacks> 
+			<ExtraNavalMovement>0</ExtraNavalMovement> 
+			<VisibilityChange>0</VisibilityChange> 
+			<MovesChange>0</MovesChange> 
+			<MoveDiscountChange>0</MoveDiscountChange> 
+			<RangeChange>0</RangeChange> 
+			<InterceptChanceChange>0</InterceptChanceChange> 
+			<NumInterceptionChange>0</NumInterceptionChange> 
+			<EvasionChange>0</EvasionChange> 
+			<CargoChange>0</CargoChange> 
+			<EnemyHealChange>0</EnemyHealChange> 
+			<NeutralHealChange>0</NeutralHealChange> 
+			<FriendlyHealChange>0</FriendlyHealChange> 
+			<SameTileHealChange>0</SameTileHealChange> 
+			<AdjacentTileHealChange>0</AdjacentTileHealChange> 
+			<EnemyDamageChance>0</EnemyDamageChance> 
+			<NeutralDamageChance>0</NeutralDamageChance> 
+			<EnemyDamage>0</EnemyDamage> 
+			<NeutralDamage>0</NeutralDamage> 
+			<CombatPercent>0</CombatPercent> 
+			<CityAttack>0</CityAttack> 
+			<CityDefense>0</CityDefense> 
+			<RangedDefenseMod>0</RangedDefenseMod> 
+			<HillsAttack>0</HillsAttack> 
+			<HillsDefense>0</HillsDefense> 
+			<OpenAttack>0</OpenAttack> 
+			<OpenRangedAttackMod>0</OpenRangedAttackMod> 
+			<OpenDefense>0</OpenDefense> 
+			<RoughAttack>0</RoughAttack> 
+			<RoughRangedAttackMod>0</RoughRangedAttackMod> 
+			<RoughDefense>0</RoughDefense> 
+			<AttackFortifiedMod>0</AttackFortifiedMod> 
+			<AttackWoundedMod>0</AttackWoundedMod> 
+			<FlankAttackModifier>0</FlankAttackModifier> 
+			<NearbyEnemyCombatMod>0</NearbyEnemyCombatMod> 
+			<NearbyEnemyCombatRange>0</NearbyEnemyCombatRange> 
+			<UpgradeDiscount>0</UpgradeDiscount> 
+			<ExperiencePercent>0</ExperiencePercent> 
+			<AdjacentMod>0</AdjacentMod> 
+			<AttackMod>0</AttackMod> 
+			<DefenseMod>0</DefenseMod> 
+			<DropRange>0</DropRange> 
+			<GreatGeneral>false</GreatGeneral> 
+			<GreatAdmiral>false</GreatAdmiral> 
+			<GreatGeneralModifier>0</GreatGeneralModifier> 
+			<GreatGeneralReceivesMovement>false</GreatGeneralReceivesMovement> 
+			<GreatGeneralCombatModifier>0</GreatGeneralCombatModifier> 
+			<FriendlyLandsModifier>0</FriendlyLandsModifier> 
+			<FriendlyLandsAttackModifier>0</FriendlyLandsAttackModifier> 
+			<OutsideFriendlyLandsModifier>0</OutsideFriendlyLandsModifier> 
+			<HPHealedIfDestroyEnemy>0</HPHealedIfDestroyEnemy> 
+			<ExtraWithdrawal>0</ExtraWithdrawal> 
+			<EmbarkExtraVisibility>0</EmbarkExtraVisibility> 
+			<EmbarkDefenseModifier>0</EmbarkDefenseModifier> 
+			<CapitalDefenseModifier>0</CapitalDefenseModifier> 
+			<CapitalDefenseFalloff>0</CapitalDefenseFalloff> 
+			<CityAttackPlunderModifier>0</CityAttackPlunderModifier> 
+			<ReligiousStrengthLossRivalTerritory>0</ReligiousStrengthLossRivalTerritory> 
+			<TradeMissionInfluenceModifier>0</TradeMissionInfluenceModifier> 
+			<TradeMissionGoldModifier>0</TradeMissionGoldModifier> 
+			<GoldenAgeValueFromKills>0</GoldenAgeValueFromKills> 
+			<Sapper>false</Sapper> 
+			<HeavyCharge>false</HeavyCharge> 
+			<PediaType>PEDIA_ATTRIBUTES</PediaType> 
+			<PediaEntry>TXT_KEY_PEDIA_PROMOTION_IDEOLOGY_COMBAT</PediaEntry> 
+			<GreatGeneralOnOrAdjacentConfersMovement>0</GreatGeneralOnOrAdjacentConfersMovement> 
+			<EmbarkedUnitReceivesMovement>false</EmbarkedUnitReceivesMovement> 
+			<HeavyChargeDownhill>0</HeavyChargeDownhill>
+			<CombatDifferentIdeology>33</CombatDifferentIdeology> 
+		</Row>
+	</UnitPromotions>
 	
 	<Units>
 		<Row>
@@ -1040,10 +1182,10 @@
 			<DontShowYields>false</DontShowYields> 
 			<ShowInPedia>true</ShowInPedia> 
 			<MoveRate>BIPED</MoveRate> 
-			<UnitFlagIconOffset>55</UnitFlagIconOffset> 
-			<PortraitIndex>38</PortraitIndex> 
-			<IconAtlas>UNIT_ATLAS_2</IconAtlas> 
-			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas> 
+			<UnitFlagIconOffset>0</UnitFlagIconOffset> 
+			<PortraitIndex>3</PortraitIndex> 
+			<IconAtlas>LEKMOD_CZECHIA_ATLAS</IconAtlas> 
+			<UnitFlagAtlas>LEKMOD_CZECHIA_FOREIGN_LEGION_FLAG</UnitFlagAtlas> 
 		</Row>
 	</Units> 
 </GameData>

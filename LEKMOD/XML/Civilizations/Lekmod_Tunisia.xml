@@ -841,6 +841,7 @@
 			<ExtraHappinessPerLuxury>0</ExtraHappinessPerLuxury> 
 			<HappinessPerReligion>0</HappinessPerReligion> 
 			<SciencePerGreatPersonBorn>0</SciencePerGreatPersonBorn>
+			<LandTradeRouteYieldBonus>100</LandTradeRouteYieldBonus>
 		</Row>
 	</Traits> 
 	

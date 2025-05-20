@@ -32,6 +32,19 @@
 		</Row>
 	</Building_Flavors>
 
+	<Building_GarrisonYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_MUGHALS_CARAVANSARY</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MUGHALS_CARAVANSARY</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>3</Yield>
+		</Row>
+	</Building_GarrisonYieldChanges>
+
 	<Buildings>
 		<Row> 
 			<Type>BUILDING_MUGHALS_CARAVANSARY</Type> 
@@ -158,9 +171,9 @@
 			<ExtraLeagueVotes>0</ExtraLeagueVotes> 
 			<CityWall>false</CityWall> 
 			<DisplayPosition>0</DisplayPosition> 
-			<PortraitIndex>8</PortraitIndex> 
+			<PortraitIndex>2</PortraitIndex> 
 			<WonderSplashAnchor>R,T</WonderSplashAnchor> 
-			<IconAtlas>EXPANSION2_BUILDING_ATLAS</IconAtlas> 
+			<IconAtlas>LEKMOD_MUGHALS_ATLAS</IconAtlas> 
 			<ArtInfoCulturalVariation>false</ArtInfoCulturalVariation> 
 			<ArtInfoEraVariation>true</ArtInfoEraVariation> 
 			<ArtInfoRandomVariation>false</ArtInfoRandomVariation> 
@@ -362,7 +375,7 @@
 			<ArtStylePrefix>MEDITERRANEAN</ArtStylePrefix> 
 			<PortraitIndex>0</PortraitIndex> 
 			<IconAtlas>LEKMOD_MUGHALS_ATLAS</IconAtlas> 
-			<AlphaIconAtlas>MUGHALS_ALPHA_ICON_ATLAS</AlphaIconAtlas> 
+			<AlphaIconAtlas>LEKMOD_MUGHALS_ICON_ALPHA</AlphaIconAtlas> 
 			<MapImage>generic_map.dds</MapImage> 
 			<DawnOfManQuote>TXT_KEY_DAWN_OF_MAN_MUGHALS_TEXT</DawnOfManQuote> 
 			<DawnOfManImage>generic_DoM.dds</DawnOfManImage> 
@@ -373,8 +386,8 @@
 		<Row>
 			<Type>COLOR_PLAYER_MUGHALS_ICON</Type>
 			<Red>0.129411764705882</Red>
-			<Green>0.423529411764706</Green>
-			<Blue>0.372549019607843</Blue>
+			<Green>0.168627450980392</Green>
+			<Blue>0.423529411764706</Blue>
 			<Alpha>1</Alpha>
 		</Row>
 		<Row>
@@ -392,7 +405,7 @@
 		<Row> 
 			<Atlas>LEKMOD_MUGHALS_CANNON_FLAG</Atlas> 
 			<IconSize>32</IconSize> 
-			<Filename>xebec_flag_32.dds</Filename> 
+			<Filename>mughals_cannon_flag_32.dds</Filename> 
 			<IconsPerRow>1</IconsPerRow> 
 			<IconsPerColumn>1</IconsPerColumn> 
 		</Row>
@@ -1023,10 +1036,10 @@
 			<DontShowYields>false</DontShowYields> 
 			<ShowInPedia>true</ShowInPedia> 
 			<MoveRate>ARTILLERY</MoveRate> 
-			<UnitFlagIconOffset>43</UnitFlagIconOffset> 
-			<PortraitIndex>0</PortraitIndex> 
-			<IconAtlas>UNIT_ATLAS_2</IconAtlas> 
-			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas> 
+			<UnitFlagIconOffset>0</UnitFlagIconOffset> 
+			<PortraitIndex>3</PortraitIndex> 
+			<IconAtlas>LEKMOD_MUGHALS_ATLAS</IconAtlas> 
+			<UnitFlagAtlas>LEKMOD_MUGHALS_CANNON_FLAG</UnitFlagAtlas> 
 		</Row>
 	</Units> 
 </GameData>
