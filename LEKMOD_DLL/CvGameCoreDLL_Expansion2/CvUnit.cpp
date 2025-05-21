@@ -185,7 +185,9 @@ CvUnit::CvUnit() :
 #ifdef NQ_HEAVY_CHARGE_DOWNHILL
 	, m_iHeavyChargeDownhill(0)
 #endif
-
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+	, m_iCombatBonusVsDifferentIdeologyModifier(0)
+#endif
 	, m_iNumExoticGoods(0)
 	, m_iAdjacentModifier("CvUnit::m_iAdjacentModifier", m_syncArchive)
 	, m_iRangedAttackModifier("CvUnit::m_iRangedAttackModifier", m_syncArchive)
@@ -12571,14 +12573,16 @@ int CvUnit::GetMaxAttackStrength(const CvPlot* pFromPlot, const CvPlot* pToPlot,
 			iModifier += attackWoundedModifier();
 #ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
 		// Bonus VS different ideology
-		if(pDefender->getOwner() != getOwner())
+		iTempModifier = GetCombatBonusVsDifferentIdeologyModifier();
+		if(iTempModifier != 0)
 		{
 			// Get the ideology policy branch of the defender
 			if(isUnitDifferentIdeology(pDefender))
 			{
-				iModifier += pDefender->GetCombatBonusVsDifferentIdeologyModifier();
+				iModifier += iTempModifier;
 			}
 		}
+		
 #endif
 	}
 
@@ -12718,11 +12722,13 @@ int CvUnit::GetMaxDefenseStrength(const CvPlot* pInPlot, const CvUnit* pAttacker
 
 #ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
 		// Bonus VS different ideology
-		if(pAttacker->getOwner() != getOwner())
+		iTempModifier = GetCombatBonusVsDifferentIdeologyModifier();
+		if(iTempModifier != 0)
 		{
+			// Get the ideology policy branch of the attacker
 			if(isUnitDifferentIdeology(pAttacker))
 			{
-				iModifier += pAttacker->GetCombatBonusVsDifferentIdeologyModifier();
+				iModifier += iTempModifier;
 			}
 		}
 #endif
@@ -12970,6 +12976,17 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 				iModifier += attackFortifiedModifier();
 #endif
 
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+			iTempModifier = GetCombatBonusVsDifferentIdeologyModifier();
+			if(iTempModifier != 0)
+			{
+				// Get the ideology policy branch of the attacker
+				if(isUnitDifferentIdeology(pOtherUnit))
+				{
+					iModifier += iTempModifier;
+				}
+			}
+#endif
 #ifdef AUI_UNIT_FIX_BAD_BONUS_STACKS
 		}
 		// Ranged DEFENSE
@@ -13087,6 +13104,19 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 
 			// Unit Class Defense Mod
 			iModifier += unitClassDefenseModifier(pOtherUnit->getUnitClassType());
+#endif
+
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+		iTempModifier = GetCombatBonusVsDifferentIdeologyModifier();
+		if(iTempModifier != 0)
+		{
+			// Get the ideology policy branch of the defender
+			if(isUnitDifferentIdeology(pOtherUnit))
+			{
+				iModifier += iTempModifier;
+			}
+		
+		}
 #endif
 		}
 	}
