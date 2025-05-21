@@ -8235,12 +8235,13 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 			if (m_eOwner != NO_PLAYER)
 			{
 				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
+				if (eImprovement == NO_IMPROVEMENT)
+				{
+					// Shouldn't be possible today but who knows about tomorrow...
+					iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
+				}
 			}
-			if (eImprovement == NO_IMPROVEMENT)
-			{
-				// Shouldn't be possible today but who knows about tomorrow...
-				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
-			}
+			
 		}
 #endif
 
