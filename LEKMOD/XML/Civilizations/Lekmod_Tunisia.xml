@@ -12,6 +12,11 @@
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>2</Yield>
 		</Row>
+		<Row>
+			<BuildingType>BUILDING_TUNISIA_CASTLE</BuildingType>
+			<YieldType>YIELD_GOLDEN_AGE_POINTS</YieldType>
+			<Yield>4</Yield>
+		</Row>
 	</Building_YieldChanges>
 
 	<Buildings>
@@ -1131,32 +1136,37 @@
 	</UnitPromotions>
 	<Trait_FreePromotionUnitCombats>
 		<Row> 
-			<TraitType>TRAIT_WAYFINDING</TraitType> 
+			<TraitType>TRAIT_TUNISIA</TraitType> 
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType> 
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 		</Row>
 		<Row> 
-			<TraitType>TRAIT_WAYFINDING</TraitType> 
+			<TraitType>TRAIT_TUNISIA</TraitType> 
 			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType> 
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 		</Row>
-		<Row> 
+		<Row>
+			<TraitType>TRAIT_TUNISIA</TraitType> 
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType> 
 		</Row>
 		<Row> 
+			<TraitType>TRAIT_TUNISIA</TraitType> 
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType> 
 		</Row>
 		<Row> 
+			<TraitType>TRAIT_TUNISIA</TraitType> 
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType> 
 		</Row>
 		<Row> 
+			<TraitType>TRAIT_TUNISIA</TraitType> 
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType> 
 		</Row>
 		<Row> 
+			<TraitType>TRAIT_TUNISIA</TraitType> 
 			<PromotionType>PROMOTION_TUNISIA_CITY_ATTACK</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType> 
 		</Row>
