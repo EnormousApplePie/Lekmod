@@ -260,6 +260,9 @@ int CvLuaEnums::pRegister(lua_State* L)
 	RegisterEnum(FEATURE_FLOOD_PLAINS);
 	RegisterEnum(FEATURE_FOREST);
 	RegisterEnum(FEATURE_FALLOUT);
+#if defined(TRAITIFY)
+	RegisterEnum(FEATURE_ARARAT_MOUNTAIN);
+#endif
 	RegisterEnum(NUM_FEATURE_TYPES);
 	EnumEnd(L);
 
