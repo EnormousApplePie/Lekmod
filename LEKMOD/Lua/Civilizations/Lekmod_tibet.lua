@@ -26,7 +26,7 @@ end
 function lekmod_tibet_ua_on_era(team_id)
 
    for _, player in pairs(Players) do
-      if player:GetTeam() == team_id then lekmod_tibet_add_building(player) end
+      if player:GetTeam() == team_id then add_building(player) end
    end
 
 end
