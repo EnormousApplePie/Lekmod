@@ -7565,6 +7565,18 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			}
 		}
 #endif
+#if defined(TRAITIFY) // Use Ice as a reference for the Lake feature, since its not a real feature
+		if (m_eOwner != NO_PLAYER)
+		{
+			// Improved or Not, change the Yield
+			iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(FEATURE_ICE, eYield);
+			if (getImprovementType() == NO_IMPROVEMENT)
+			{
+				// Change the Yield only if the Feature is unimproved
+				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(FEATURE_ICE, eYield);
+			}
+		}
+#endif
 	}
 
 	if(!bIgnoreFeature)
@@ -8224,6 +8236,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 				{
 					iYield += pWorkingCity->getMountainScienceYield();
 				}
+
 			}
 		}
 		// NQMP GJS - mountain science yield end
@@ -8246,6 +8259,21 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 				iYield += pWorkingCity->GetFeatureExtraYield(getFeatureType(), eYield);
 			}
 		}
+#if defined(TRAITIFY) // Special case for Armenia 
+		if(getFeatureType() == FEATURE_ARARAT_MOUNTAIN)
+		{
+			if (m_eOwner != NO_PLAYER)
+			{
+				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
+				if (eImprovement == NO_IMPROVEMENT)
+				{
+					// Shouldn't be possible today but who knows about tomorrow...
+					iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
+				}
+			}
+			
+		}
+#endif
 
 		if (eImprovement != NO_IMPROVEMENT && !IsImprovementPillaged())
 		{

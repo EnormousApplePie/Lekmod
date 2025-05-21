@@ -70,6 +70,7 @@ local GetScienceTooltip = EUI.GetScienceTooltip
 local GetProductionTooltip = EUI.GetProductionTooltip
 local GetCultureTooltip = EUI.GetCultureTooltip
 local GetFaithTooltip = EUI.GetFaithTooltip
+local GetGoldenAgePointsTooltip = EUI.GetGoldenAgePointsTooltip -- v34
 local GetTourismTooltip = EUI.GetTourismTooltip
 
 include( "SupportFunctions" )
@@ -1556,7 +1557,7 @@ local function UpdateCityViewNow()
 		end
 
 		-------------------------------------------
-		-- City Banner
+		-- City BannerFoodPerTurnLabel
 		-------------------------------------------
 
 		-- Update capital icon
@@ -1662,6 +1663,8 @@ local function UpdateCityViewNow()
 			Controls.GPFocusButton:SetCheck( true )
 		elseif gk_mode and focusType == CityAIFocusTypes.CITY_AI_FOCUS_TYPE_FAITH then
 			Controls.FaithFocusButton:SetCheck( true )
+		elseif focusType == CityAIFocusTypes.CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS then -- v34
+			Controls.GoldenAgeFocusButton:SetCheck( true ) 
 		else
 			Controls.BalancedFocusButton:SetCheck( true )
 		end
@@ -2015,6 +2018,10 @@ local function UpdateCityViewNow()
 			Controls.FaithFocusButton:SetDisabled( g_isViewingMode )
 		end
 
+		-- Display Golden Age Points v34
+		local iGoldenAgePointsPerTurn = city:GetYieldRateTimes100(YieldTypes.YIELD_GOLDEN_AGE_POINTS) / 100
+		Controls.GoldenAgePointsPerTurnLabel:LocalizeAndSetText( "TXT_KEY_CITYVIEW_PERTURN_TEXT", iGoldenAgePointsPerTurn )
+
 		local cityGrowth = city:GetFoodTurnsLeft()
 		local foodPerTurnTimes100 = city:FoodDifferenceTimes100()
 		if city:IsFoodProduction() or foodPerTurnTimes100 == 0 then
@@ -2041,6 +2048,7 @@ local function UpdateCityViewNow()
 		Controls.ResearchFocusButton:SetDisabled( g_isViewingMode )
 		Controls.CultureFocusButton:SetDisabled( g_isViewingMode )
 		Controls.GPFocusButton:SetDisabled( g_isViewingMode )
+		Controls.GoldenAgeFocusButton:SetDisabled( g_isViewingMode ) -- v34
 
 		Controls.AvoidGrowthButton:SetDisabled( g_isViewingMode )
 		Controls.ResetButton:SetDisabled( g_isViewingMode )
@@ -2118,6 +2126,9 @@ local g_toolTips = {
 	FaithBox = function()
 		return SetToolTipString( GetFaithTooltip )
 	end,
+	GoldenAgeBox = function() -- v34
+		return SetToolTipString( GetGoldenAgePointsTooltip )
+	end,
 	TourismBox = function()
 		return SetToolTipString( GetTourismTooltip )
 	end,
@@ -2163,6 +2174,7 @@ local g_callBacks = {
 	CultureFocusButton = FocusButtonBehavior,
 	GPFocusButton = FocusButtonBehavior,
 	FaithFocusButton = FocusButtonBehavior,
+	GoldenAgeFocusButton = FocusButtonBehavior,-- v34
 
 	AvoidGrowthButton = {
 		[Mouse.eLClick] = function()
@@ -2244,6 +2256,7 @@ Controls.GPFocusButton:SetVoid1( CityAIFocusTypes.CITY_AI_FOCUS_TYPE_GREAT_PEOPL
 if gk_mode then
 	Controls.FaithFocusButton:SetVoid1( CityAIFocusTypes.CITY_AI_FOCUS_TYPE_FAITH )
 end
+Controls.GoldenAgeFocusButton:SetVoid1( CityAIFocusTypes.CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS ) -- v34
 Controls.GPFocusButton:SetHide( civBE_mode )
 Controls.FaithBox:SetHide( civBE_mode or not gk_mode )
 Controls.FaithFocusButton:SetHide( civBE_mode or not gk_mode )

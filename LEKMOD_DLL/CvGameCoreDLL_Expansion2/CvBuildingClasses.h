@@ -213,6 +213,9 @@ public:
 #if defined(MISC_CHANGES) // CvBuildingClasses Getters
 	int GetMountainTourism() const;
 #endif
+#if defined(LEKMOD_v34)
+	int GetGarrisonStrengthBonus() const;
+#endif
 	int GetPreferredDisplayPosition() const;
 	int GetPortraitIndex() const;
 	bool IsTeamShare() const;
@@ -468,6 +471,9 @@ private:
 	int m_iExtraLeagueVotes;
 #if defined(MISC_CHANGES) // CvBuildingClasses member variables
 	int m_iTourismPerMountain;
+#endif
+#if defined(LEKMOD_v34)
+	int m_iGarrisonStrengthBonus;
 #endif
 	int m_iPreferredDisplayPosition;
 	int m_iPortraitIndex;
@@ -742,6 +748,10 @@ public:
 
 	int GetBuildingDefense() const;
 	void ChangeBuildingDefense(int iChange);
+#if defined(LEKMOD_v34)
+	int GetGarrisonStrengthBonus() const;
+	void ChangeGarrisonStrengthBonus(int iChange);
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 	int GetBuildingDefensePerCitizen() const;
 	void ChangeBuildingDefensePerCitizen(int iChange);
@@ -766,6 +776,9 @@ private:
 	int m_iNumBuildings;
 	int m_iBuildingProductionModifier;
 	int m_iBuildingDefense;
+#if defined(LEKMOD_v34)
+	int m_iBuildingGarrisonStrengthBonus;
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 	int m_iBuildingDefensePerCitizen;
 #endif

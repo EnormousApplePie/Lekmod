@@ -137,6 +137,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 #if defined(MISC_CHANGES) // CvBuildingClasses member variables
 	m_iTourismPerMountain(0),
 #endif
+#if defined(LEKMOD_v34)
+	m_iGarrisonStrengthBonus(0),
+#endif
 	m_iPreferredDisplayPosition(0),
 	m_iPortraitIndex(-1),
 	m_bTeamShare(false),
@@ -449,6 +452,9 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	m_iExtraLeagueVotes = kResults.GetInt("ExtraLeagueVotes");
 #if defined(MISC_CHANGES) // CvBuildingClasses read XML
 	m_iTourismPerMountain = kResults.GetInt("TourismPerMountain");
+#endif
+#if defined(LEKMOD_v34)
+	m_iGarrisonStrengthBonus = kResults.GetInt("GarrisonStrengthBonus");
 #endif
 	m_iPreferredDisplayPosition = kResults.GetInt("DisplayPosition");
 	m_iPortraitIndex = kResults.GetInt("PortraitIndex");
@@ -1660,6 +1666,13 @@ int CvBuildingEntry::GetMountainTourism() const
 	return m_iTourismPerMountain;
 }
 #endif
+#if defined(LEKMOD_v34)
+/// Amount of Extra strenght a city gets for having a Garrisoned unit
+int CvBuildingEntry::GetGarrisonStrengthBonus() const
+{
+	return m_iGarrisonStrengthBonus;
+}
+#endif
 /// What ring the engine will try to display this building
 int CvBuildingEntry::GetPreferredDisplayPosition() const
 {
@@ -2561,6 +2574,9 @@ CvCityBuildings::CvCityBuildings():
 	m_iNumBuildings(0),
 	m_iBuildingProductionModifier(0),
 	m_iBuildingDefense(0),
+#if defined(LEKMOD_v34)
+	m_iBuildingGarrisonStrengthBonus(0),
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 	m_iBuildingDefensePerCitizen(0),
 #endif
@@ -2644,6 +2660,9 @@ void CvCityBuildings::Reset()
 	m_iNumBuildings = 0;
 	m_iBuildingProductionModifier = 0;
 	m_iBuildingDefense = 0;
+#if defined(LEKMOD_v34)
+	m_iBuildingGarrisonStrengthBonus = 0;
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 	m_iBuildingDefensePerCitizen = 0;
 #endif
@@ -2680,6 +2699,9 @@ void CvCityBuildings::Read(FDataStream& kStream)
 	kStream >> m_iNumBuildings;
 	kStream >> m_iBuildingProductionModifier;
 	kStream >> m_iBuildingDefense;
+#if defined(LEKMOD_v34)
+	kStream >> m_iBuildingGarrisonStrengthBonus;
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 	kStream >> m_iBuildingDefensePerCitizen;
 #endif
@@ -2713,6 +2735,9 @@ void CvCityBuildings::Write(FDataStream& kStream)
 	kStream << m_iNumBuildings;
 	kStream << m_iBuildingProductionModifier;
 	kStream << m_iBuildingDefense;
+#if defined(LEKMOD_v34)
+	kStream << m_iBuildingGarrisonStrengthBonus;
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 	kStream << m_iBuildingDefensePerCitizen;
 #endif
@@ -4041,6 +4066,25 @@ void CvCityBuildings::ChangeBuildingDefense(int iChange)
 		m_pCity->plot()->plotAction(PUF_makeInfoBarDirty);
 	}
 }
+#if defined(LEKMOD_v34)
+/// Accessor: Get the Current bonus Strength from Garrisons
+int CvCityBuildings::GetGarrisonStrengthBonus() const
+{
+	return m_iBuildingGarrisonStrengthBonus;
+}
+
+/// Accessor: Change the Current bonus Strength from Garrisons
+void CvCityBuildings::ChangeGarrisonStrengthBonus(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iBuildingGarrisonStrengthBonus = (m_iBuildingGarrisonStrengthBonus + iChange);
+		CvAssert(GetGarrisonStrengthBonus() >= 0);
+
+		m_pCity->plot()->plotAction(PUF_makeInfoBarDirty);
+	}
+}
+#endif
 
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 /// Accessor: Get current defense boost from buildings

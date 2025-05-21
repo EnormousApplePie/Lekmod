@@ -72,7 +72,7 @@ local g_dealDuration = Game and Game.GetDealDuration()
 
 local g_isScienceEnabled = not Game or not Game.IsOption(GameOptionTypes.GAMEOPTION_NO_SCIENCE)
 local g_isPoliciesEnabled = not Game or not Game.IsOption(GameOptionTypes.GAMEOPTION_NO_POLICIES)
---local g_isHappinessEnabled = not Game or not Game.IsOption(GameOptionTypes.GAMEOPTION_NO_HAPPINESS)
+local g_isHappinessEnabled = not Game or not Game.IsOption(GameOptionTypes.GAMEOPTION_NO_HAPPINESS) -- uncomment in v34
 local g_isReligionEnabled = civ5gk_mode and (not Game or not Game.IsOption(GameOptionTypes.GAMEOPTION_NO_RELIGION))
 
 local function GetCivUnit( civilizationType, unitClassType )
@@ -1602,6 +1602,8 @@ local function GetYieldTooltip( city, yieldID, baseYield, totalYield, yieldIconS
 	-- Base Yield from Population
 	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_POP_EXTRA", city:GetYieldPerPopTimes100( yieldID ) * city:GetPopulation() / 100, yieldIconString )
 
+	-- Base Yield from Other Capitals -- v34
+
 	-- Base Yield from Religion
 	if gk_mode then
 		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_RELIGION", city:GetBaseYieldRateFromReligion( yieldID ), yieldIconString )
@@ -1737,6 +1739,17 @@ local function GetScienceTooltip( city )
 		return L"TXT_KEY_TOP_PANEL_SCIENCE_OFF_TOOLTIP"
 	end
 end
+
+-- Golden Age Points 
+local function GetGoldenAgePointsTooltip( city )
+
+	if civ5_mode and OptionsManager.IsNoBasicHelp() then
+		return GetYieldTooltipHelper( city, YieldTypes.YIELD_GOLDEN_AGE_POINTS) 
+	else
+		return L"TXT_KEY_GOLDEN_AGE_POINTS_HELP_INFO" .. "[NEWLINE][NEWLINE]" .. GetYieldTooltipHelper( city, YieldTypes.YIELD_GOLDEN_AGE_POINTS) 
+	end
+end
+
 
 -- PRODUCTION
 local function GetProductionTooltip( city )
@@ -2674,6 +2687,7 @@ function TT.GetScienceTooltip( ... ) return select(2, pcall( GetScienceTooltip, 
 function TT.GetProductionTooltip( ... ) return select(2, pcall( GetProductionTooltip, ... ) ) end
 function TT.GetCultureTooltip( ... ) return select(2, pcall( GetCultureTooltip, ... ) ) end
 function TT.GetFaithTooltip( ... ) return select(2, pcall( GetFaithTooltip, ... ) ) end
+function TT.GetGoldenAgePointsTooltip( ... ) return select(2, pcall( GetGoldenAgePointsTooltip, ... ) ) end --v34
 function TT.GetTourismTooltip( ... ) return select(2, pcall( GetTourismTooltip, ... ) ) end
 function TT.GetYieldTooltipHelper( ... ) return select(2, pcall( GetYieldTooltipHelper, ... ) ) end
 function TT.GetYieldTooltip( ... ) return select(2, pcall( GetYieldTooltip, ... ) ) end

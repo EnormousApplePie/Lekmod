@@ -1603,8 +1603,10 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	kUtility.SetYields(m_paiExtraYieldThreshold, "Trait_ExtraYieldThresholds", "TraitType", szTraitType);
 
 	kUtility.SetYields(m_paiYieldChange, "Trait_YieldChanges", "TraitType", szTraitType);
+#if !defined(LEKMOD_v34)
 	kUtility.SetYields(m_paiYieldChangeStrategicResources, "Trait_YieldChangesStrategicResources", "TraitType", szTraitType);
 	kUtility.SetYields(m_paiYieldChangeLuxuryResources, "Trait_YieldChangesLuxuryResources", "TraitType", szTraitType); // NQMP GJS - New Netherlands UA
+#endif
 	kUtility.SetYields(m_paiYieldChangeNaturalWonder, "Trait_YieldChangesNaturalWonder", "TraitType", szTraitType);
 	kUtility.SetYields(m_paiYieldChangePerTradePartner, "Trait_YieldChangesPerTradePartner", "TraitType", szTraitType);
 	kUtility.SetYields(m_paiYieldChangeIncomingTradeRoute, "Trait_YieldChangesIncomingTradeRoute", "TraitType", szTraitType);
@@ -2106,17 +2108,20 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 	}
 #else
 	{
-		const int iNumFeatures = kUtility.MaxRows("Features");
-		const int iNumYields = kUtility.MaxRows("Yields");
 
-		kUtility.Initialize2DArray(m_ppiUnimprovedFeatureYieldChanges, iNumFeatures, iNumYields);
-		kUtility.Initialize2DArray(m_ppiFeatureYieldChanges, iNumFeatures, iNumYields);
+		kUtility.Initialize2DArray(m_ppiUnimprovedFeatureYieldChanges, "Features", "Yields");
+		kUtility.Initialize2DArray(m_ppiFeatureYieldChanges, "Features", "Yields");
 
 		std::string strKey("Trait_FeatureYieldChanges");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
-			pResults = kUtility.PrepareResults(strKey, "SELECT AllowImprovement, Features.ID as FeatureID, Yields.ID as YieldID, Yield FROM Trait_FeatureYieldChanges INNER JOIN Features ON Features.Type = FeatureType INNER JOIN Yields ON Yields.Type = YieldType WHERE TraitType = ?");
+			pResults = kUtility.PrepareResults(strKey, 
+				"SELECT AllowImprovement, Features.ID as FeatureID, Yields.ID as YieldID, Yield "
+				"FROM Trait_FeatureYieldChanges "
+				"INNER JOIN Features ON Features.Type = FeatureType "
+				"INNER JOIN Yields ON Yields.Type = YieldType " 
+				"WHERE TraitType = ? ");
 		}
 
 		pResults->Bind(1, szTraitType);
@@ -2138,7 +2143,6 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 			}
 		}
 
-		pResults->Reset();
 	}
 
 #endif
