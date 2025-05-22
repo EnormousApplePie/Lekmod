@@ -42,6 +42,7 @@ FIND %text% "%euifolder%\CityView\CityView.lua" > nul 2>&1 && (
 )
 IF NOT EXIST "%euifolder%\CityView\ProductionPopup.lua" (
   copy /y "%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.lua.ignore" "%patchfolder%\Lua\UI\ProductionPopup.lua" > nul
+  copy /y "%patchfolder%\Lua\tmp\ui\CityView\ProductionPopup.xml.ignore" "%patchfolder%\Lua\UI\ProductionPopup.xml" > nul
 )
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%euifolder%\Core\CityStateStatusHelper.lua" (
