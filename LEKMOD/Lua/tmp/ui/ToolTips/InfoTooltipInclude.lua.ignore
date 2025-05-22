@@ -222,6 +222,23 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
 	if (iGold ~= nil and iGold ~= 0) then
 		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_GOLD_CHANGE", iGold));
 	end
+
+	-- Golden Age Points Change
+	local iGoldenAgePoints = Game.GetBuildingYieldChange(iBuildingID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
+	if (pCity ~= nil) then
+		iGoldenAgePoints = iGoldenAgePoints + pCity:GetReligionBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLDEN_AGE_POINTS) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
+		iGoldenAgePoints = iGoldenAgePoints + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
+	end
+	if (iGoldenAgePoints ~= nil and iGoldenAgePoints ~= 0) then
+		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_GOLDEN_AGE_POINTS_CHANGE", iGoldenAgePoints));
+	end
+
+	iGoldenAgePoints = Game.GetBuildingYieldModifier(iBuildingID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
+	iGoldenAgePoints = iGoldenAgePoints + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
+
+	if (iGoldenAgePoints ~= nil and iGoldenAgePoints ~= 0) then
+		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_GOLDEN_AGE_POINTS", iGoldenAgePoints));
+	end
 	
 	-- Science
 	local iScience = Game.GetBuildingYieldModifier(iBuildingID, YieldTypes.YIELD_SCIENCE);
@@ -755,6 +772,23 @@ function GetFaithTooltip(pCity)
 	
 	local strFaithToolTip = table.concat(faithTips, "[NEWLINE]");
 	return strFaithToolTip;
+end
+
+-- v34 Golden Age Points
+function GetGoldenAgePointsTooltip(pCity)
+
+	local strGoldenAgePointsToolTip = "";
+
+	local iYieldType = YieldTypes.YIELD_GOLDEN_AGE_POINTS;
+
+	if (not OptionsManager.IsNoBasicHelp()) then
+		strGoldenAgePointsToolTip = strGoldenAgePointsToolTip .. Locale.ConvertTextKey("TXT_KEY_GOLDEN_AGE_POINTS_HELP_INFO");
+		strGoldenAgePointsToolTip = strGoldenAgePointsToolTip .. "[NEWLINE][NEWLINE]";
+	end
+
+	strGoldenAgePointsToolTip = strGoldenAgePointsToolTip .. GetYieldTooltipHelper(pCity, iYieldType, "[ICON_GOLDEN_AGE_POINTS]");
+	
+	return strGoldenAgePointsToolTip;
 end
 
 -- TOURISM

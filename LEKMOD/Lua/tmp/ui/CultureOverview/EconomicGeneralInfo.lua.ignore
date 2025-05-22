@@ -178,6 +178,9 @@ function UpdateDisplay()
 			instance.Faith:SetText(sortEntry.Faith);
 			instance.FaithBox:SetHide(false);   
         end
+		-- v34 Golden Age Points
+		sortEntry.GoldenAge = pCity:GetYieldRate( YieldTypes.YIELD_GOLDEN_AGE_POINTS );
+		instance.GoldenAge:SetText( sortEntry.GoldenAge );
     end
     
     Controls.MainStack:CalculateSize();
