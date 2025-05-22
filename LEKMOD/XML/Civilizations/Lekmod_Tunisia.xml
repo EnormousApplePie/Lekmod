@@ -333,6 +333,13 @@
 		</Row>
 	</Civilization_UnitClassOverrides>
 	
+	<Civilization_Start_Along_Ocean>
+		<Row> 
+			<CivilizationType>CIVILIZATION_TUNISIA</CivilizationType> 
+			<StartAlongOcean>true</StartAlongOcean> 
+		</Row>
+	</Civilization_Start_Along_Ocean>
+
 	<Civilizations> 
 		<Row>
 			<Playable>true</Playable>
@@ -366,7 +373,7 @@
 		</Row>
 		<Row>
 			<Type>COLOR_PLAYER_TUNISIA_BACKGROUND</Type>
-			<Red>0.0784313725490196</Red>
+			<Red>0.803921568627451</Red>
 			<Green>0.556862745098039</Green>
 			<Blue>0.458823529411765</Blue>
 			<Alpha>1</Alpha>
