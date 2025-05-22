@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -344,4 +344,46 @@ const char* CvDatabaseUtility::GetErrorMessage() const
 {
 	return DB.ErrorMessage();
 }
+//------------------------------------------------------------------------------
+#ifdef LEKMOD_POST_DLC_DATA_LOADING
+//! Fallback method to refresh language text tables
+void CvDatabaseUtility::RefreshLanguageTextFallback()
+{
+    // A more direct approach - use SQL to refresh all language tables
+    Database::Connection* db = GC.GetGameDatabase();
+    if(!db) return;
+    
+    // Force text reload by reading all language tables
+    Database::Results tables;
+    if(db->Execute(tables, "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'Language_%'"))
+    {
+        while(tables.Step())
+        {
+            const char* tableName = tables.GetText(0);
+            if(tableName)
+            {
+                // Force a full scan of each table to ensure it's loaded in memory
+                std::string query = "SELECT COUNT(*) FROM ";
+                query += tableName;
+                db->Execute(query.c_str());
+                
+                // Force a cache refresh of a few entries
+                query = "SELECT * FROM ";
+                query += tableName;
+                query += " LIMIT 100";
+                db->Execute(query.c_str());
+            }
+        }
+    }
+}
+#endif
+
+//------------------------------------------------------------------------------
+// Tables in Civ5 commonly have a Yields array.
+// This method fetches that yield data into an integer array.
+// CONDITIONS:
+//	*'Yields' table must exist.
+//	*YieldTable must have a 'YieldType' column.
+// RETURNS:
+//	True on success.
 //------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -247,6 +247,10 @@ public:
 	bool IsPostCombatRandomPromotion(int i) const;
 #endif
 
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+	int GetCombatDifferentIdeology() const;
+#endif
+
 protected:
 	int m_iLayerAnimationPath;
 	int m_iPrereqPromotion;
@@ -399,6 +403,9 @@ protected:
 	bool m_bCanHeavyCharge;
 #ifdef NQ_HEAVY_CHARGE_DOWNHILL
 	int m_iHeavyChargeDownhill;
+#endif
+#ifdef	LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+	int m_iCombatDifferentIdeology;
 #endif
 
 	CvString m_strSound;

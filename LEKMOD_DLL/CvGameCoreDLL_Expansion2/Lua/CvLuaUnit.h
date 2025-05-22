@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -277,6 +277,9 @@ protected:
 	static int lHillsAttackModifier(lua_State* L);
 #ifdef NQ_HEAVY_CHARGE_DOWNHILL
 	static int lHeavyChargeDownhillModifier(lua_State* L);
+#endif
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+	static int lGetCombatBonusVsDifferentIdeologyModifier(lua_State* L);
 #endif
 	static int lHillsDefenseModifier(lua_State* L);
 	static int lOpenAttackModifier(lua_State* L);

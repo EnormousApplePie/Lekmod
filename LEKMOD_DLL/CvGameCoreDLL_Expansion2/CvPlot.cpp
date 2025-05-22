@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -2598,6 +2598,36 @@ int CvPlot::getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer) const
 	CvAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
 
 	iTime = GC.getBuildInfo(eBuild)->getTime();
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+		// catch the base build time and override it
+		int iOverrideTime = -1;
+
+		if (ePlayer != NO_PLAYER)
+		{
+			CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+			
+			// Get the resource class if there's a resource on this plot
+			ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
+			ResourceTypes eResource = getResourceType();
+			
+			if (eResource != NO_RESOURCE)
+			{
+				CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
+				if (pResourceInfo)
+				{
+					eResourceClass = (ResourceClassTypes)pResourceInfo->getResourceClassType();
+				}
+			}
+			
+			// Pass the resource class to the GetBuildTimeOverride method
+			iOverrideTime = kPlayer.GetPlayerTraits()->GetBuildTimeOverride(eBuild, eResourceClass);
+		}
+
+	if (iOverrideTime > -1 && iOverrideTime != NULL)
+	{
+		iTime = iOverrideTime;
+	}
+#endif
 	if (ePlayer != NO_PLAYER)
 	{
 		TeamTypes eTeam = GET_PLAYER(ePlayer).getTeam();

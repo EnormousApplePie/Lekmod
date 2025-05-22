@@ -884,7 +884,6 @@
 // GAME OPTIONS: AI CANNOT Spread minor (city-state
 #define NQ_AI_GIMP_NO_MINOR_SPREAD
 
-
 // -------------------------------------------------------------------------------
 
 /// LEKMOD - EAP
@@ -947,8 +946,10 @@
 #define LEKMOD_NEW_ANCIENT_RUIN_REWARDS
 // Fixes a rare events where players could get the oxford university building for free with the legalism policy
 #define LEKMOD_NO_FREE_TEAM_WONDERS
-
-
+// Combat bonus against different ideology
+#define LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+// Trait Table that overrides build times for certain build actions
+//#define LEKMOD_BUILD_TIME_OVERRIDE
 /// ###############################
 /// Lekmod: New Lua Events and Methods
 /// ################################
@@ -966,6 +967,12 @@
 // -------------------------------------------------------------------------------------
 // new lua event that triggers whenever a unit is healed (negative damage).
 /// " UnitHealed ". Passed parameters: playerID, unitID, unitX, unitY
+// -------------------------------------------------------------------------------------
+// new lua event that triggers whenever a unit pillages an improvement
+/// " UnitPillaged ". Passed parameters: playerID, unitID, plotX, plotY
+//---------------------------------------------------------------------------------------
+// new lua event that triggers whenever a unit plunders a trade route
+/// " UnitPlundered ". Passed parameters: playerID, unitID, plotX, plotY
 
 #define LEKMOD_NEW_LUA_METHODS
 //--------------------------------------------------------------------------------------
@@ -1240,7 +1247,7 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 #define BUILDINGS_DESTROY_ONCE_PER_TURN
 // Fixed a bug due to which in some cases the cost of technologies could decrease when annexing a city
 #define FIX_MAX_EFFECTIVE_CITIES
-// “Instant heals” cannot be taken on built or purchased units that have available promotions or after durationing promotion
+// "Instant heals" cannot be taken on built or purchased units that have available promotions or after durationing promotion
 #define PROMOTION_INSTA_HEAL_LOCKED
 /// Gifted units can't attack if they have already attacked this turn
 #define GIFTED_UNITS_ATTACK
@@ -1253,7 +1260,7 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 #define DISABLE_AUTOMOVES
 // Prevent timer mid-turn fluctuations - update it once per turn
 #define GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
-// Can’t declare war after allying enemy css for CS_ALLYING_WAR_RESCTRICTION_TIMER seconds
+// Can't declare war after allying enemy css for CS_ALLYING_WAR_RESCTRICTION_TIMER seconds
 // #define CS_ALLYING_WAR_RESCTRICTION
 #ifdef CS_ALLYING_WAR_RESCTRICTION
 #define CS_ALLYING_WAR_RESCTRICTION_TIMER 120.f
@@ -1280,6 +1287,9 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 #define LUA_METHOD_IS_INDUSTRIAL_ROUTE_TO_CAPITAL
 /// Fix Military Caste culture when units stacking in city
 #define FIX_POLICY_CULTURE_PER_GARRISONED_UNIT
+
+/// Loads XML files after DLC loading but before regular mod loading, support for seperating xml files.
+#define LEKMOD_POST_DLC_DATA_LOADING
 
 
 /*REPLAY EVENTS CHANGES START*/
@@ -1322,3 +1332,4 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 //#define NO_LEADER_SCREEN
 // Also adds a new leader screen exit lua method called with Game.ExitLeaderScreen. This will run lExitLeaderscreen in here.
 //#define LUAAPIEXTN(method, type, ...) static int l##method(lua_State* L)
+

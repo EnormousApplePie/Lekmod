@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "Lua.diagnostics.globals": [
+    "Game",
+    "Map",
+    "Players",
+    "Teams",
+    "GameInfoTypes",
+    "GameEvents",
+    "include",
+    "GameDefines",
+    "PlotAreaSweepIterator",
+    "SECTOR_NORTH",
+    "DIRECTION_CLOCKWISE",
+    "DIRECTION_OUTWARDS",
+    "CENTRE_EXCLUDE"
+  ],
+  "Lua.diagnostics.disable": [
+    "undefined-global",
+    "undefined-field",
+    "lowercase-global"
+  ],
+  "Lua.workspace.ignoreDir": [
+    ".vscode"
+  ],
+  "Lua.workspace.library": [],
+  "Lua.workspace.checkThirdParty": false,
+  "Lua.runtime.version": "Lua 5.1"
+} 
