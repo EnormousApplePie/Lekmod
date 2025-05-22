@@ -1,0 +1,74 @@
+name: CI Pipeline
+
+run-name: "CI: ${{ github.event_name != 'pull_request' && github.event.head_commit.message || github.event.pull_request.title }}"
+
+on: 
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build from source
+    strategy:
+      matrix:
+        config: [Debug, Release]
+    env:
+      vs_url: https://archive.org/download/vs-2008-express-w-sp-1/VS2008-Express-w-SP1.ISO
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            LEKMOD/
+            !LEKMOD/*.dll
+            LEKMOD_DLL/
+            !**/BuildOutput/
+            !**/BuildTemp/
+          sparse-checkout-cone-mode: false
+
+      - name: Cache Visual Studio 2008 Installer
+        id: cache-vs2008-install
+        uses: actions/cache@v4
+        with:
+          path: vs2008
+          key: ${{ runner.os }}-vs2008-install
+
+      - name: Download Visual Studio 2008 Installer
+        if: steps.cache-vs2008-install.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: |
+          choco install 7zip.install
+          Invoke-WebRequest "$($Env:vs_url)" -OutFile vs2008.iso
+          7z.exe x -y -o".\vs2008" vs2008.iso
+
+      - name: Install Visual C++ 2008
+        shell: pwsh
+        run: |
+          Start-Process -FilePath ".\vs2008\VCExpress\setup.exe" -ArgumentList "/q" -Wait
+          Get-Content -Path "$([System.IO.Path]::GetTempPath())VSMsi*.txt" -ErrorAction SilentlyContinue
+
+      - name: Build Project
+        shell: pwsh
+        run: |
+          C:\Program` Files` `(x86`)\Microsoft` Visual` Studio` 9.0\VC\vcpackages\vcbuild.exe "LEKMOD_DLL\CvGameCoreDLL_Expansion2\CvGameCoreDLL_Expansion2.vcproj" ${{ matrix.config }}
+
+      - name: Prepare Artifact
+        if: ${{ github.event_name != 'pull_request' }}
+        shell: pwsh
+        run: |
+          Copy-Item "LEKMOD_DLL\CvGameCoreDLL_Expansion2\BuildOutput\VS2008_${{ matrix.config }}Win32\CvGameCore_Expansion2.dll" -Destination LEKMOD
+          if ("${{ matrix.config }}" -eq "Debug") {
+            Copy-Item "LEKMOD_DLL\CvGameCoreDLL_Expansion2\BuildOutput\VS2008_${{ matrix.config }}Win32\CvGameCore_Expansion2.*" -Destination LEKMOD
+          }
+          mkdir artifact
+          Move-Item -Path LEKMOD -Destination artifact
+
+      - name: Upload Artifact
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lekmod-CI-Win32-${{ matrix.config }}
+          path: artifact
