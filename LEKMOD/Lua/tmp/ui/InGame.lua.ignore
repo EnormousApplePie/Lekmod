@@ -1317,3 +1317,6 @@ ContextPtr:LoadNewContext("Lekmod_mexico")
 ContextPtr:LoadNewContext("Lekmod_vatican")
 ContextPtr:LoadNewContext("Lekmod_georgia")
 ContextPtr:LoadNewContext("Lekmod_arabia")
+ContextPtr:LoadNewContext("Lekmod_mughals")
+ContextPtr:LoadNewContext("Lekmod_macedonia")
+

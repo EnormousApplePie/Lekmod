@@ -949,7 +949,11 @@
 // Combat bonus against different ideology
 #define LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
 // Trait Table that overrides build times for certain build actions
-//#define LEKMOD_BUILD_TIME_OVERRIDE
+#define LEKMOD_BUILD_TIME_OVERRIDE
+// Global move change from policies
+#define LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+// No Combat Randomness Game Option
+#define LEKMOD_NO_COMBAT_RANDOMNESS
 /// ###############################
 /// Lekmod: New Lua Events and Methods
 /// ################################

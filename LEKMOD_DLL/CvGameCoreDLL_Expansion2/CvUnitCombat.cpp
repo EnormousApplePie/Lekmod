@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -116,8 +116,14 @@ void CvUnitCombat::GenerateMeleeCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender
 		int iAttackerStrength = kAttacker.GetMaxAttackStrength(kAttacker.plot(), &plot, NULL);
 		int iDefenderStrength = pkCity->getStrengthValue();
 
+#ifdef LEKMOD_NO_COMBAT_RANDOMNESS
+		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
+		int iAttackerDamageInflicted = kAttacker.getCombatDamage(iAttackerStrength, iDefenderStrength, kAttacker.getDamage(), bIncludeRand, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ true);
+		int iDefenderDamageInflicted = kAttacker.getCombatDamage(iDefenderStrength, iAttackerStrength, pkCity->getDamage(), bIncludeRand, /*bAttackerIsCity*/ true, /*bDefenderIsCity*/ false);
+#else
 		int iAttackerDamageInflicted = kAttacker.getCombatDamage(iAttackerStrength, iDefenderStrength, kAttacker.getDamage(), /*bIncludeRand*/ true, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ true);
 		int iDefenderDamageInflicted = kAttacker.getCombatDamage(iDefenderStrength, iAttackerStrength, pkCity->getDamage(), /*bIncludeRand*/ true, /*bAttackerIsCity*/ true, /*bDefenderIsCity*/ false);
+#endif
 
 		int iAttackerTotalDamageInflicted = iAttackerDamageInflicted + pkCity->getDamage();
 		int iDefenderTotalDamageInflicted = iDefenderDamageInflicted + kAttacker.getDamage();
@@ -155,6 +161,11 @@ void CvUnitCombat::GenerateMeleeCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender
 		pkCombatInfo->setInBorders(BATTLE_UNIT_ATTACKER, plot.getOwner() == pkCity->getOwner());
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 		bool bIsGlobalXPAwarded = !kAttacker.isBarbarian() && !GET_PLAYER(kAttacker.getOwner()).isMinorCiv() && !pkCity->isBarbarian() && !GET_PLAYER(pkCity->getOwner()).isMinorCiv();
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			bIsGlobalXPAwarded = bIsGlobalXPAwarded && (GET_PLAYER(pkCity->getOwner()).isHuman());
+		}
+
 		pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, bIsGlobalXPAwarded);
 #else
 		pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, !kAttacker.isBarbarian());
@@ -215,9 +226,14 @@ void CvUnitCombat::GenerateMeleeCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender
 #endif
 #endif
 
+#ifdef LEKMOD_NO_COMBAT_RANDOMNESS
+		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
+		int iAttackerDamageInflicted = kAttacker.getCombatDamage(iAttackerStrength, iDefenderStrength, kAttacker.getDamage(), bIncludeRand, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
+		int iDefenderDamageInflicted = kAttacker.getCombatDamage(iDefenderStrength, iAttackerStrength, pkDefender->getDamage(), bIncludeRand, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
+#else
 		int iAttackerDamageInflicted = kAttacker.getCombatDamage(iAttackerStrength, iDefenderStrength, kAttacker.getDamage(), /*bIncludeRand*/ true, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
 		int iDefenderDamageInflicted = pkDefender->getCombatDamage(iDefenderStrength, iAttackerStrength, pkDefender->getDamage(), /*bIncludeRand*/ true, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
-
+#endif
 		if(kAttacker.getDomainType() == DOMAIN_AIR && pkDefender->getDomainType() != DOMAIN_AIR)
 		{
 			iAttackerDamageInflicted /= 2;
@@ -667,7 +683,13 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvUnit& kAttacker, CvUnit* pkDefende
 
 		//CvAssert(pkDefender->IsCanDefend());
 
+#ifdef LEKMOD_NO_COMBAT_RANDOMNESS
+		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
+		iDamage = kAttacker.GetRangeCombatDamage(pkDefender, /*pCity*/ NULL, bIncludeRand);
+#else
 		iDamage = kAttacker.GetRangeCombatDamage(pkDefender, /*pCity*/ NULL, /*bIncludeRand*/ true);
+#endif
+
 #ifdef DEL_RANGED_COUNTERATTACKS
 		iTotalDamage = pkDefender->getDamage() + iDamage;
 
@@ -751,7 +773,12 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvUnit& kAttacker, CvUnit* pkDefende
 		iMaxXP = (GET_PLAYER(pCity->getOwner()).isMinorCiv()) ? 30 : 1000; // NQMP GJS - cap XP from fighting CS to 30
 #endif
 
+#ifdef LEKMOD_NO_COMBAT_RANDOMNESS
+		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
+		iDamage = kAttacker.GetRangeCombatDamage(/*pDefender*/ NULL, pCity, bIncludeRand);
+#else
 		iDamage = kAttacker.GetRangeCombatDamage(/*pDefender*/ NULL, pCity, /*bIncludeRand*/ true);
+#endif
 
 		// Cities can't be knocked to less than 1 HP
 		if(iDamage + pCity->getDamage() >= pCity->GetMaxHitPoints())
@@ -1683,8 +1710,12 @@ void CvUnitCombat::GenerateAirCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender, 
 			bBarbarian = true;
 		iMaxXP = pkDefender->maxXPValue();
 
-		// Calculate attacker damage
+#ifdef LEKMOD_NO_COMBAT_RANDOMNESS
+		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
+		iAttackerDamageInflicted = kAttacker.GetAirCombatDamage(pkDefender, /*pCity*/ NULL, bIncludeRand, iInterceptionDamage);
+#else
 		iAttackerDamageInflicted = kAttacker.GetAirCombatDamage(pkDefender, /*pCity*/ NULL, /*bIncludeRand*/ true, iInterceptionDamage);
+#endif
 
 		if(iAttackerDamageInflicted + pkDefender->getDamage() > GC.getMAX_HIT_POINTS())
 		{
@@ -1732,7 +1763,13 @@ void CvUnitCombat::GenerateAirCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender, 
 #else
 		iMaxXP = (GET_PLAYER(pCity->getOwner()).isMinorCiv()) ? 30 : 1000; // NQMP GJS - cap XP from fighting CS to 30
 #endif
+
+#ifdef LEKMOD_NO_COMBAT_RANDOMNESS
+		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
+		iAttackerDamageInflicted = kAttacker.GetAirCombatDamage(/*pUnit*/ NULL, pCity, bIncludeRand, iInterceptionDamage);
+#else
 		iAttackerDamageInflicted = kAttacker.GetAirCombatDamage(/*pUnit*/ NULL, pCity, /*bIncludeRand*/ true, iInterceptionDamage);
+#endif
 
 		// Cities can't be knocked to less than 1 HP
 		if(iAttackerDamageInflicted + pCity->getDamage() >= pCity->GetMaxHitPoints())
@@ -2179,9 +2216,14 @@ void CvUnitCombat::GenerateAirSweepCombatInfo(CvUnit& kAttacker, CvUnit* pkDefen
 	{
 		iDefenderStrength = pkDefender->GetMaxRangedCombatStrength(&kAttacker, /*pCity*/ NULL, false, false);
 
+#ifdef LEKMOD_NO_COMBAT_RANDOMNESS
+		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
+		int iAttackerDamageInflicted = kAttacker.getCombatDamage(iAttackerStrength, iDefenderStrength, kAttacker.getDamage(), bIncludeRand, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
+		int iDefenderDamageInflicted = kAttacker.getCombatDamage(iDefenderStrength, iAttackerStrength, pkDefender->getDamage(), bIncludeRand, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
+#else
 		int iAttackerDamageInflicted = kAttacker.getCombatDamage(iAttackerStrength, iDefenderStrength, kAttacker.getDamage(), /*bIncludeRand*/ true, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
 		int iDefenderDamageInflicted = pkDefender->getCombatDamage(iDefenderStrength, iAttackerStrength, pkDefender->getDamage(), /*bIncludeRand*/ true, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
-
+#endif
 		int iAttackerTotalDamageInflicted = iAttackerDamageInflicted + pkDefender->getDamage();
 		int iDefenderTotalDamageInflicted = iDefenderDamageInflicted + kAttacker.getDamage();
 

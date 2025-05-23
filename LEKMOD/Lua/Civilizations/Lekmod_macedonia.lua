@@ -72,5 +72,7 @@ end
 -------------------------------------------------------------------------------------------------------------------------
 if is_active then
     GameEvents.PlayerDoTurn.Add(lekmod_macedonia_hetairoi_era_scaling)
+    -- UnitCreated is lekmod specific event
     GameEvents.UnitCreated.Add(lekmod_macedonia_hetairoi_created)
+    GameEvents.TeamTechResearched.Add(lekmod_macedonia_hetairoi_era_scaling)
 end
