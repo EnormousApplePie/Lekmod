@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -301,10 +301,15 @@ CvPolicyEntry::CvPolicyEntry(void):
 	m_piImprovementCultureChange(NULL),
 #endif
 	m_piFlavorValue(NULL),
-	m_eFreeBuildingOnConquest(NO_BUILDING)
+	m_eFreeBuildingOnConquest(NO_BUILDING),
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+	m_iGlobalMoveChange(0),
+	m_iGlobalMoveChangeFriendly(0),
+	m_iGlobalMoveChangeEnemy(0)
+#endif
 {
-}
 
+}
 /// Destructor
 CvPolicyEntry::~CvPolicyEntry(void)
 {
@@ -510,7 +515,11 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iSeaTradeRouteGoldChange = kResults.GetInt("SeaTradeRouteGoldChange");
 	m_iInternalTradeRouteGoldChange = kResults.GetInt("InternalTradeRouteGoldChange"); // NQMP GJS - Silk Road
 	m_iSharedIdeologyTradeGoldChange = kResults.GetInt("SharedIdeologyTradeGoldChange");
-
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+	m_iGlobalMoveChange = kResults.GetInt("GlobalMoveChange");
+	m_iGlobalMoveChangeFriendly = kResults.GetInt("GlobalMoveChangeFriendly");
+	m_iGlobalMoveChangeEnemy = kResults.GetInt("GlobalMoveChangeEnemy");
+#endif
 	m_iRiggingElectionModifier = kResults.GetInt("RiggingElectionModifier");
 	m_iMilitaryUnitGiftExtraInfluence = kResults.GetInt("MilitaryUnitGiftExtraInfluence");
 	m_iProtectedMinorPerTurnInfluence = kResults.GetInt("ProtectedMinorPerTurnInfluence");
@@ -3485,6 +3494,17 @@ int CvPlayerPolicies::GetNumericModifier(PolicyModifierType eType)
 				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetNumTradeRouteBonus();
 				break;
 #endif
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+			case POLICYMOD_GLOBAL_MOVE_CHANGE:
+				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetGlobalMoveChange();
+				break;
+			case POLICYMOD_GLOBAL_MOVE_CHANGE_FRIENDLY:
+				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetGlobalMoveChangeFriendly();
+				break;
+			case POLICYMOD_GLOBAL_MOVE_CHANGE_ENEMY:
+				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetGlobalMoveChangeEnemy();
+				break;
+#endif
 			}
 		}
 	}
@@ -5318,3 +5338,23 @@ int PolicyHelpers::GetNumFreePolicies(PolicyBranchTypes eBranch)
 
 	return iFreePolicies;
 }
+
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+/// Global movement change for all units
+int CvPolicyEntry::GetGlobalMoveChange() const
+{
+	return m_iGlobalMoveChange;
+}
+
+/// Global movement change for units in friendly territory
+int CvPolicyEntry::GetGlobalMoveChangeFriendly() const
+{
+	return m_iGlobalMoveChangeFriendly;
+}
+
+/// Global movement change for units in enemy territory
+int CvPolicyEntry::GetGlobalMoveChangeEnemy() const
+{
+	return m_iGlobalMoveChangeEnemy;
+}
+#endif

@@ -249,6 +249,12 @@ CvTraitEntry::~CvTraitEntry()
 #endif
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiUnimprovedFeatureYieldChanges);
 #endif
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	// Clean up build time override arrays
+	m_aiBuildTimeOverride.clear();
+	m_aiBuildTimeOverrideResourceClassRequired.clear();
+	m_BuildTimeOverrides.clear();
+#endif
 #ifdef AUI_WARNING_FIXES
 	SAFE_DELETE_ARRAY(m_paiExtraYieldThreshold);
 	SAFE_DELETE_ARRAY(m_paiYieldChange);
@@ -2204,12 +2210,20 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	// Build Improvement Build Override from the builds table
 	{
+		// Initialize the backward compatibility vectors
+		const int iNumBuilds = kUtility.MaxRows("Builds");
+		kUtility.InitializeArray(m_aiBuildTimeOverride, iNumBuilds, -1);
+		kUtility.InitializeArray(m_aiBuildTimeOverrideResourceClassRequired, iNumBuilds, NO_RESOURCECLASS);
+
+		// Clear the multimap
+		m_BuildTimeOverrides.clear();
+
 		std::string strKey("Trait_BuildImprovementBuildTimeOverride");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
 			pResults = kUtility.PrepareResults(strKey, 
-				"SELECT Traits.ID, Builds.ID, Time, ResourceClasses.ID as ResourceClassID "
+				"SELECT Builds.ID as BuildID, Time, ResourceClasses.ID as ResourceClassID "
 				"FROM Trait_BuildImprovementBuildTimeOverride "
 				"LEFT JOIN ResourceClasses ON Trait_BuildImprovementBuildTimeOverride.ResourceClassRequired = ResourceClasses.Type "
 				"INNER JOIN Traits ON Trait_BuildImprovementBuildTimeOverride.TraitType = Traits.Type "
@@ -2219,25 +2233,32 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 
 		pResults->Bind(1, szTraitType);
 
-				while (pResults->Step())
-				{
-					const int iBuild = pResults->GetInt(1);
-					const int iBuildTime = pResults->GetInt(2);
-					ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
+		while (pResults->Step())
+		{
+			const int iBuildID = pResults->GetInt(0);
+			const int iBuildTime = pResults->GetInt(1);
+			ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
 
-					eResourceClass = (ResourceClassTypes)pResults->GetInt(3);
-					
-					// Add to the multimap - this allows multiple entries per build type
-					m_BuildTimeOverrides.insert(std::make_pair((BuildTypes)iBuild, std::make_pair(iBuildTime, eResourceClass)));
+			if (!pResults->IsNull(2))
+			{
+				eResourceClass = (ResourceClassTypes)pResults->GetInt(2);
+			}
+			
+			// Add to the multimap - this allows multiple entries per build type
+			m_BuildTimeOverrides.insert(std::make_pair((BuildTypes)iBuildID, std::make_pair(iBuildTime, eResourceClass)));
 
-					// Also update the vectors for backward compatibility
-					// Note: these will only keep the last entry for a given build type
-					if (iBuild >= 0 && iBuild < GC.getNumBuildInfos())
-					{
-						m_aiBuildTimeOverride[iBuild] = iBuildTime;
-						m_aiBuildTimeOverrideResourceClassRequired[iBuild] = eResourceClass;
-					}
-				}
+			// Also update the vectors for backward compatibility (keep the last entry)
+			if (iBuildID >= 0 && iBuildID < iNumBuilds)
+			{
+				m_aiBuildTimeOverride[iBuildID] = iBuildTime;
+				m_aiBuildTimeOverrideResourceClassRequired[iBuildID] = eResourceClass;
+			}
+		}
+
+		pResults->Reset();
+
+		//Trim extra memory off container since this is mostly read-only.
+		std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>(m_BuildTimeOverrides).swap(m_BuildTimeOverrides);
 	}
 #endif
 

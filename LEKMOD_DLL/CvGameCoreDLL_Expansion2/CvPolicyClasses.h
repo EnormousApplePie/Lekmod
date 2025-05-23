@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -49,6 +49,11 @@ public:
 	int GetGoldFromKills() const;
 	int GetScienceFromKills() const; // NQMP GJS - Honor Finisher
 	int GetEmbarkedExtraMoves() const;
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+	int GetGlobalMoveChange() const;
+	int GetGlobalMoveChangeFriendly() const;
+	int GetGlobalMoveChangeEnemy() const;
+#endif
 	int GetAttackBonusTurns() const;
 	int GetGoldenAgeTurns() const;
 	int GetGoldenAgeMeterMod() const;
@@ -341,8 +346,13 @@ private:
 	int m_iCultureFromKills;
 	int m_iCultureFromBarbarianKills;
 	int m_iGoldFromKills;
-	int m_iScienceFromKills; // NQMP GJS - Honor Finisher
+	int m_iScienceFromKills; // NQMP GJS - Honor Finisher	
 	int m_iEmbarkedExtraMoves;
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+	int m_iGlobalMoveChange;
+	int m_iGlobalMoveChangeFriendly;
+	int m_iGlobalMoveChangeEnemy;
+#endif
 	int m_iAttackBonusTurns;
 	int m_iGoldenAgeTurns;
 	int m_iGoldenAgeMeterMod;
@@ -819,6 +829,11 @@ enum PolicyModifierType
 	POLICYMOD_INTERNAL_TRADE_GOLD_CHANGE, // NQMP GJS - Silk Road
 #if defined(MISC_CHANGES) // POLICYMOD enum
 	POLICYMOD_NUM_TRADE_ROUTES_BONUS,
+#endif
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+	POLICYMOD_GLOBAL_MOVE_CHANGE,
+	POLICYMOD_GLOBAL_MOVE_CHANGE_FRIENDLY,
+	POLICYMOD_GLOBAL_MOVE_CHANGE_ENEMY,
 #endif
 };
 

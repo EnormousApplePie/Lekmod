@@ -11477,6 +11477,8 @@ int CvUnit::baseMoves(DomainTypes eIntoDomain /* = NO_DOMAIN */) const
 
 	int iExtraUnitCombatTypeMoves = pTraits->GetMovesChangeUnitCombat((UnitCombatTypes)(m_pUnitInfo->GetUnitCombatType()));
 
+
+
 #ifdef NQ_ART_OF_WAR_PROMOTION
 	if (plot() && eDomain == DOMAIN_LAND && !isEmbarked() && GetGreatGeneralOnOrAdjacentConfersMovement() > 0)
 	{
@@ -11512,10 +11514,36 @@ int CvUnit::baseMoves(DomainTypes eIntoDomain /* = NO_DOMAIN */) const
 	}
 #endif
 
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+	int iExtraGlobalMoveChange = pPolicies->GetGlobalMoveChange();
+
+	int iExtraGlobalMoveChangeFriendly = pPolicies->GetGlobalMoveChangeFriendly();
+
+	if (plot() && plot()->IsFriendlyTerritory(getOwner()))
+	{
+		iExtraGlobalMoveChange += iExtraGlobalMoveChangeFriendly;
+	}
+
+	int iExtraGlobalMoveChangeEnemy = pPolicies->GetGlobalMoveChangeEnemy();
+
+	if (plot() && !plot()->IsFriendlyTerritory(getOwner()))
+	{
+		CvPlot* pPlot = plot();
+		if(isEnemy(pPlot->getTeam(), pPlot))
+		{
+			iExtraGlobalMoveChange += iExtraGlobalMoveChangeEnemy;
+		}
+	}
+	
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
+
+#else
+
 #ifdef AUI_WARNING_FIXES
 	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves);
 #else
 	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + m_iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves);
+#endif
 #endif
 }
 
