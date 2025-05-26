@@ -1059,10 +1059,11 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 ✓ SelfRelgiousPressureBonus
 ✓ Lua Exports for activating the new Reformation effect, also just a new bool value since the Lua was delayed a turn for some reason. and made it happen twice.
 ✓ New Golden Age Points as a Yield w/ Lua Exports
+✓ New building integer, GarrisonStrengthBonus gives a Flat bonus to the strength of a city with a garrison.
 
-Building_GarrisonCityYield
+✓ Building_GarrisonCityYield
 Trait_NearbyResouceBuildingClassYieldChange gave up
-Mughals Trait was quite specific and the behavoir of the code was buggy, so I elected to not use it iin the dll for now.
+Mughals Trait was quite specific and the behavoir of the code was buggy, so I elected to not use it in the dll for now.
 ✓ Policy_FreeStrategicResources
 */
 

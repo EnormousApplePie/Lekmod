@@ -85,9 +85,11 @@
 
 		<!-- Happy & Golden Age --> <!-- Golden Age Points v34 -->
 		<TextButton ID="HappinessString" Anchor="L,T" String="TXT_KEY_TOP_PANEL_HAPPINESS_OFF" ColorLayer0="255,255,200,255" ToolTipType="TooltipTypeTopPanel"/>
-		<TextButton ID="GoldenAgeString" String="TXT_KEY_TOP_PANEL_GOLDEN_AGES_OFF" Anchor="L,T" ColorLayer0="255,255,255,255" ToolTipType="TooltipTypeTopPanel" >
+		<TextButton ID="GoldenAgeString" String="TXT_KEY_TOP_PANEL_GOLDEN_AGES_OFF" Anchor="L,T" ColorLayer0="255,255,255,255" ToolTipType="TooltipTypeTopPanel" />
+		<TextButton ID="GoldenAgeIcon" Hidden="1" String="[ICON_GOLDEN_AGE]" Anchor="L,T" ColorLayer0="255,255,255,255" ToolTipType="TooltipTypeTopPanel">
 			<AlphaAnim ID="GoldenAgeAnim" Hidden="1" Anchor="C,C" Offset="0,1" Size="48,48" Texture="TopPanelGoldenAge.dds" Sampler="Linear" Pause="0" Cycle="Bounce" Speed="1" AlphaStart="0" AlphaEnd="1" />
 		</TextButton>
+			
 		<Label ID="HappyTurns" Anchor="L,T" Offset="0,9" Color0="White,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
 		<Box ID="HappyBox" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
 			<Bar ID="HappyBarShadow" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="White,128" Direction="Up"/>
