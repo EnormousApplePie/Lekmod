@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -259,6 +259,16 @@ public:
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	bool NoBuildImprovements(ImprovementTypes eImprovement);
 #endif
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	int GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass = NO_RESOURCECLASS);
+	
+	// Add accessor methods for direct access to the vectors
+	int GetBuildTimeOverrideVector(int iBuild) const { return m_aiBuildTimeOverride[iBuild]; }
+	ResourceClassTypes GetBuildTimeOverrideResourceClassRequiredVector(int iBuild) const { return m_aiBuildTimeOverrideResourceClassRequired[iBuild]; }
+	
+	// Add accessor method for the multimap
+	const std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>& GetBuildTimeOverridesMultimap() const { return m_BuildTimeOverrides; }
+#endif
 
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
@@ -468,6 +478,12 @@ protected:
 
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	std::vector<bool> m_abNoBuildImprovements;
+#endif
+
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	std::vector<int> m_aiBuildTimeOverride;
+	std::vector<ResourceClassTypes> m_aiBuildTimeOverrideResourceClassRequired;
+	std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>> m_BuildTimeOverrides;
 #endif
 
 private:
@@ -1126,6 +1142,9 @@ public:
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	bool NoBuild(ImprovementTypes eImprovement);
 #endif
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	int GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass = NO_RESOURCECLASS);
+#endif
 #if defined(TRAITIFY) //Array members
 	bool IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass);
 	bool IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass);
@@ -1339,6 +1358,11 @@ private:
 
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	std::vector<bool> m_abNoBuild;
+#endif
+#ifdef LEKMOD_BUILD_TIME_OVERRIDE
+	std::vector<int> m_aiBuildTimeOverride;
+	std::vector<ResourceClassTypes> m_aiBuildTimeOverrideResourceClassRequired;
+	std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>> m_BuildTimeOverrides;
 #endif
 
 	FStaticVector<FreeTraitUnit, SAFE_ESTIMATE_NUM_FREE_UNITS, true, c_eCiv5GameplayDLL, 0> m_aFreeTraitUnits;

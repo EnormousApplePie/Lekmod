@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -74,6 +74,9 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iGreatGeneralModifier(0),
 	m_bGreatGeneralReceivesMovement(false),
 	m_bEmbarkedUnitReceivesMovement(false), // NQMP GJS - Danish Longship
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+	m_iCombatDifferentIdeology(0),
+#endif
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	m_bLandUnitReceivesMovement(false),
 #endif
@@ -276,6 +279,9 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_bCanHeavyCharge = kResults.GetBool("HeavyCharge");
 #ifdef NQ_HEAVY_CHARGE_DOWNHILL
 	m_iHeavyChargeDownhill = kResults.GetInt("HeavyChargeDownhill");
+#endif
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+	m_iCombatDifferentIdeology = kResults.GetInt("CombatDifferentIdeology");
 #endif
 
 	m_iVisibilityChange = kResults.GetInt("VisibilityChange");
@@ -1558,6 +1564,14 @@ bool CvPromotionEntry::IsCanHeavyCharge() const
 int CvPromotionEntry::GetHeavyChargeDownhill() const
 {
 	return m_iHeavyChargeDownhill;
+}
+#endif
+
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+//	--------------------------------------------------------------------------------
+int CvPromotionEntry::GetCombatDifferentIdeology() const
+{
+	return m_iCombatDifferentIdeology;
 }
 #endif
 

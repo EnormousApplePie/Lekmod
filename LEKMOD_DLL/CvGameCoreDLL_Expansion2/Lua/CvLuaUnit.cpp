@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -268,6 +268,9 @@ void CvLuaUnit::PushMethods(lua_State* L, int t)
 	Method(HillsAttackModifier);
 #ifdef NQ_HEAVY_CHARGE_DOWNHILL
 	Method(HeavyChargeDownhillModifier);
+#endif
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+	Method(GetCombatBonusVsDifferentIdeologyModifier);
 #endif
 	Method(HillsDefenseModifier);
 	Method(RoughAttackModifier);
@@ -2720,6 +2723,16 @@ int CvLuaUnit::lHeavyChargeDownhillModifier(lua_State* L)
 	CvUnit* pkUnit = GetInstance(L);
 
 	const int iResult = pkUnit->heavyChargeDownhillModifier();
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif
+#ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+int CvLuaUnit::lGetCombatBonusVsDifferentIdeologyModifier(lua_State* L)
+{
+	CvUnit* pkUnit = GetInstance(L);
+
+	const int iResult = pkUnit->combatBonusVsDifferentIdeologyModifier();
 	lua_pushinteger(L, iResult);
 	return 1;
 }
