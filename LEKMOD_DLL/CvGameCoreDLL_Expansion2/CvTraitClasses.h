@@ -121,6 +121,7 @@ public:
 	int GetFaithCostModifier() const; 
 	int GetIdeologyPressureUnhappinessModifier() const;
 	int GetForeignRelgionPressureModifier() const;
+	int GetFriendlyLandsCitizenMoveChange() const;
 #endif
 #if defined(LEKMOD_v34)
 	bool IsReligionEnhanceReformation() const;
@@ -344,6 +345,7 @@ protected:
 	int m_iFaithCostModifier;
 	int m_iIdeologyPressureUnhappinessModifier;
 	int m_iForeignRelgionPressureModifier;
+	int m_iFriendlyLandsCitizenMoveChange;
 #endif
 #if defined(LEKMOD_v34)
 	bool m_bReligionEnhanceReformation;
@@ -783,6 +785,10 @@ public:
 	int GetForeignRelgionPressureModifier() const
 	{
 		return m_iForeignRelgionPressureModifier;
+	};
+	int GetFriendlyLandsCitizenMoveChange() const
+	{
+		return m_iFriendlyLandsCitizenMoveChange;
 	};
 #endif
 #if defined(LEKMOD_v34)
@@ -1260,6 +1266,7 @@ private:
 	int m_iFaithCostModifier;
 	int m_iIdeologyPressureUnhappinessModifier;
 	int m_iForeignRelgionPressureModifier;
+	int m_iFriendlyLandsCitizenMoveChange;
 #endif
 #if defined(LEKMOD_v34)
 	bool m_bReligionEnhanceReformation;

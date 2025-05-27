@@ -2615,7 +2615,11 @@ int CvPlot::getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer) const
 				CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
 				if (pResourceInfo)
 				{
-					eResourceClass = (ResourceClassTypes)pResourceInfo->getResourceClassType();
+					// Only consider the resource if it's revealed to the player
+					if (GET_TEAM(kPlayer.getTeam()).GetTeamTechs()->HasTech((TechTypes)pResourceInfo->getTechReveal()))
+					{
+						eResourceClass = (ResourceClassTypes)pResourceInfo->getResourceClassType();
+					}
 				}
 			}
 			
@@ -2623,10 +2627,11 @@ int CvPlot::getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer) const
 			iOverrideTime = kPlayer.GetPlayerTraits()->GetBuildTimeOverride(eBuild, eResourceClass);
 		}
 
-	if (iOverrideTime > -1 && iOverrideTime != NULL)
-	{
-		iTime = iOverrideTime;
-	}
+		// Check if override time is valid (>= 0) instead of > -1
+		if (iOverrideTime >= 0)
+		{
+			iTime = iOverrideTime;
+		}
 #endif
 	if (ePlayer != NO_PLAYER)
 	{

@@ -90,6 +90,7 @@ CvTraitEntry::CvTraitEntry() :
 	m_iFaithCostModifier(0),
 	m_iIdeologyPressureUnhappinessModifier(0),
 	m_iForeignRelgionPressureModifier(0),
+	m_iFriendlyLandsCitizenMoveChange(0),
 #endif
 #if defined(LEKMOD_v34)
 	m_bReligionEnhanceReformation(false),
@@ -616,6 +617,11 @@ int CvTraitEntry::GetIdeologyPressureUnhappinessModifier() const
 int CvTraitEntry::GetForeignRelgionPressureModifier() const
 {
 	return m_iForeignRelgionPressureModifier;
+}
+/// Accessor:: does this trait give additional movement to civilian units in friendly lands?
+int CvTraitEntry::GetFriendlyLandsCitizenMoveChange() const
+{
+	return m_iFriendlyLandsCitizenMoveChange;
 }
 #endif
 #if defined(LEKMOD_v34)
@@ -1362,10 +1368,10 @@ int CvTraitEntry::GetPuppetYieldModifiers(int i) const
 // Feature Yield Changes
 int CvTraitEntry::GetFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const
 {
-	CvAssertMsg(i < GC.getNumFeatureInfos(), "Index out of bounds");
-	CvAssertMsg(i > -1, "Index out of bounds");
-	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
-	CvAssertMsg(j > -1, "Index out of bounds");
+	CvAssertMsg(eIndex1 < GC.getNumFeatureInfos(), "Index out of bounds");
+	CvAssertMsg(eIndex1 > -1, "Index out of bounds");
+	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(eIndex2 > -1, "Index out of bounds");
 	return m_ppiFeatureYieldChanges ? m_ppiFeatureYieldChanges[eIndex1][eIndex2] : 0;
 }
 // Terrain Yield Changes
@@ -1477,6 +1483,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_iFaithCostModifier					= kResults.GetInt("FaithCostModifier");
 	m_iIdeologyPressureUnhappinessModifier  = kResults.GetInt("IdeologyPressureUnhappinessModifier");
 	m_iForeignRelgionPressureModifier		= kResults.GetInt("ForeignRelgionPressureModifier");
+	m_iFriendlyLandsCitizenMoveChange		= kResults.GetInt("FriendlyLandsCitizenMoveChange");
 #endif
 #if defined(LEKMOD_v34)
 	m_bReligionEnhanceReformation			= kResults.GetBool("ReligionEnhanceReformation");
@@ -2212,8 +2219,11 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 	{
 		// Initialize the backward compatibility vectors
 		const int iNumBuilds = kUtility.MaxRows("Builds");
-		kUtility.InitializeArray(m_aiBuildTimeOverride, iNumBuilds, -1);
-		kUtility.InitializeArray(m_aiBuildTimeOverrideResourceClassRequired, iNumBuilds, NO_RESOURCECLASS);
+		if (iNumBuilds > 0)
+		{
+			m_aiBuildTimeOverride.resize(iNumBuilds, -1);
+			m_aiBuildTimeOverrideResourceClassRequired.resize(iNumBuilds, NO_RESOURCECLASS);
+		}
 
 		// Clear the multimap
 		m_BuildTimeOverrides.clear();
@@ -2223,7 +2233,7 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 		if (pResults == NULL)
 		{
 			pResults = kUtility.PrepareResults(strKey, 
-				"SELECT Builds.ID as BuildID, Time, ResourceClasses.ID as ResourceClassID "
+				"SELECT Builds.ID as BuildID, Trait_BuildImprovementBuildTimeOverride.Time, COALESCE(ResourceClasses.ID, -1) as ResourceClassID "
 				"FROM Trait_BuildImprovementBuildTimeOverride "
 				"LEFT JOIN ResourceClasses ON Trait_BuildImprovementBuildTimeOverride.ResourceClassRequired = ResourceClasses.Type "
 				"INNER JOIN Traits ON Trait_BuildImprovementBuildTimeOverride.TraitType = Traits.Type "
@@ -2231,31 +2241,35 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 				"WHERE TraitType = ?");
 		}
 
-		pResults->Bind(1, szTraitType);
-
-		while (pResults->Step())
+		if (pResults != NULL)
 		{
-			const int iBuildID = pResults->GetInt(0);
-			const int iBuildTime = pResults->GetInt(1);
-			ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
+			pResults->Bind(1, szTraitType);
 
-			if (!pResults->IsNull(2))
+			while (pResults->Step())
 			{
-				eResourceClass = (ResourceClassTypes)pResults->GetInt(2);
-			}
-			
-			// Add to the multimap - this allows multiple entries per build type
-			m_BuildTimeOverrides.insert(std::make_pair((BuildTypes)iBuildID, std::make_pair(iBuildTime, eResourceClass)));
+				const int iBuildID = pResults->GetInt(0);
+				const int iBuildTime = pResults->GetInt(1);
+				const int iResourceClassID = pResults->GetInt(2);
+				ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
 
-			// Also update the vectors for backward compatibility (keep the last entry)
-			if (iBuildID >= 0 && iBuildID < iNumBuilds)
-			{
-				m_aiBuildTimeOverride[iBuildID] = iBuildTime;
-				m_aiBuildTimeOverrideResourceClassRequired[iBuildID] = eResourceClass;
+				if (iResourceClassID != -1)
+				{
+					eResourceClass = (ResourceClassTypes)iResourceClassID;
+				}
+				
+				// Add to the multimap - this allows multiple entries per build type
+				m_BuildTimeOverrides.insert(std::make_pair((BuildTypes)iBuildID, std::make_pair(iBuildTime, eResourceClass)));
+
+				// Also update the vectors for backward compatibility (keep the last entry)
+				if (iBuildID >= 0 && iBuildID < iNumBuilds)
+				{
+					m_aiBuildTimeOverride[iBuildID] = iBuildTime;
+					m_aiBuildTimeOverrideResourceClassRequired[iBuildID] = eResourceClass;
+				}
 			}
+
+			pResults->Reset();
 		}
-
-		pResults->Reset();
 
 		//Trim extra memory off container since this is mostly read-only.
 		std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>(m_BuildTimeOverrides).swap(m_BuildTimeOverrides);
@@ -2474,6 +2488,7 @@ void CvPlayerTraits::InitPlayerTraits()
 			m_iFaithCostModifier += trait->GetFaithCostModifier();
 			m_iIdeologyPressureUnhappinessModifier += trait->GetIdeologyPressureUnhappinessModifier();
 			m_iForeignRelgionPressureModifier += trait->GetForeignRelgionPressureModifier();
+			m_iFriendlyLandsCitizenMoveChange += trait->GetFriendlyLandsCitizenMoveChange();
 #endif
 #if defined(LEKMOD_v34)
 			m_bReligionEnhanceReformation = trait->IsReligionEnhanceReformation();
@@ -2885,6 +2900,7 @@ void CvPlayerTraits::Reset()
 	m_iFaithCostModifier = 0; 
 	m_iIdeologyPressureUnhappinessModifier = 0;
 	m_iForeignRelgionPressureModifier = 0;
+	m_iFriendlyLandsCitizenMoveChange = 0;
 #endif
 #if defined(LEKMOD_v34)
 	m_bReligionEnhanceReformation = false;
@@ -4322,6 +4338,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_iFaithCostModifier;
 	kStream >> m_iIdeologyPressureUnhappinessModifier;
 	kStream >> m_iForeignRelgionPressureModifier;
+	kStream >> m_iFriendlyLandsCitizenMoveChange;
 #endif
 #if defined(LEKMOD_v34)
 	kStream >> m_bReligionEnhanceReformation;
@@ -4756,6 +4773,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_iFaithCostModifier;
 	kStream << m_iIdeologyPressureUnhappinessModifier;
 	kStream << m_iForeignRelgionPressureModifier;
+	kStream << m_iFriendlyLandsCitizenMoveChange;
 #endif
 #if defined(LEKMOD_v34)
 	kStream << m_bReligionEnhanceReformation;

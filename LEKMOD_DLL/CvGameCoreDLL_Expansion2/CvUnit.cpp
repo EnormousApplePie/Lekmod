@@ -11438,10 +11438,10 @@ int CvUnit::baseMoves(DomainTypes eIntoDomain /* = NO_DOMAIN */) const
 	CvPlayer& thisPlayer = GET_PLAYER(getOwner());
 	CvPlayerTraits* pTraits = thisPlayer.GetPlayerTraits();
 	DomainTypes eDomain = getDomainType();
+	CvPlayerPolicies *pPolicies = thisPlayer.GetPlayerPolicies();
 
 	if((eIntoDomain == DOMAIN_SEA && CanEverEmbark()) || (eIntoDomain == NO_DOMAIN && isEmbarked()))
 	{
-		CvPlayerPolicies* pPolicies = thisPlayer.GetPlayerPolicies();
 		return GC.getEMBARKED_UNIT_MOVEMENT() + getExtraNavalMoves() + thisTeam.getEmbarkedExtraMoves() + thisTeam.getExtraMoves(eDomain) + pTraits->GetExtraEmbarkMoves() + pPolicies->GetNumericModifier(POLICYMOD_EMBARKED_EXTRA_MOVES);
 	}
 
@@ -11514,17 +11514,27 @@ int CvUnit::baseMoves(DomainTypes eIntoDomain /* = NO_DOMAIN */) const
 	}
 #endif
 
-#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
-	int iExtraGlobalMoveChange = pPolicies->GetGlobalMoveChange();
+#ifdef TRAITIFY
+	int iExtraGlobalMoveChangeFriendlyCivilian = 0;
 
-	int iExtraGlobalMoveChangeFriendly = pPolicies->GetGlobalMoveChangeFriendly();
+	if (plot() && plot()->IsFriendlyTerritory(getOwner()) && GetBaseCombatStrength() == 0)
+	{
+		iExtraGlobalMoveChangeFriendlyCivilian += thisPlayer.GetPlayerTraits()->GetFriendlyLandsCitizenMoveChange();
+	}
+#endif
+
+#ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+
+	int iExtraGlobalMoveChange = thisPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_GLOBAL_MOVE_CHANGE);
+
+	int iExtraGlobalMoveChangeFriendly = thisPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_GLOBAL_MOVE_CHANGE_FRIENDLY);
 
 	if (plot() && plot()->IsFriendlyTerritory(getOwner()))
 	{
 		iExtraGlobalMoveChange += iExtraGlobalMoveChangeFriendly;
 	}
 
-	int iExtraGlobalMoveChangeEnemy = pPolicies->GetGlobalMoveChangeEnemy();
+	int iExtraGlobalMoveChangeEnemy = thisPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_GLOBAL_MOVE_CHANGE_ENEMY);
 
 	if (plot() && !plot()->IsFriendlyTerritory(getOwner()))
 	{
@@ -11534,15 +11544,19 @@ int CvUnit::baseMoves(DomainTypes eIntoDomain /* = NO_DOMAIN */) const
 			iExtraGlobalMoveChange += iExtraGlobalMoveChangeEnemy;
 		}
 	}
-	
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
+
+#ifdef TRAITIFY
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange + iExtraGlobalMoveChangeFriendlyCivilian);
+#else
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
+#endif
 
 #else
 
 #ifdef AUI_WARNING_FIXES
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves);
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves);
 #else
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + m_iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves);
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves);
 #endif
 #endif
 }

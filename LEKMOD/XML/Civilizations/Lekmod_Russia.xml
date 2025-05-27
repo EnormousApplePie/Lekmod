@@ -15,7 +15,13 @@
         </Row>
         <Row>
             <TraitType>TRAIT_STRATEGIC_RICHES</TraitType>
-            <BuildType>BUILD_OIL_WELL</BuildType>
+            <BuildType>BUILD_WELL</BuildType>
+            <Time>0</Time>
+            <ResourceClassRequired>RESOURCECLASS_MODERN</ResourceClassRequired>
+        </Row>
+        <Row>
+            <TraitType>TRAIT_STRATEGIC_RICHES</TraitType>
+            <BuildType>BUILD_OFFSHORE_PLATFORM</BuildType>
             <Time>0</Time>
             <ResourceClassRequired>RESOURCECLASS_MODERN</ResourceClassRequired>
         </Row>

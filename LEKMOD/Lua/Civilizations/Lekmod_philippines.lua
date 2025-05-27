@@ -25,33 +25,6 @@ function lekmod_philippine_expand_population(player_id, iX, iY)
    end
 end
 ------------------------------------------------------------------------------------------------------------------------
--- Philippines UA. Give civilian units +2 movement inside owned territory.
-------------------------------------------------------------------------------------------------------------------------
-function lekmod_philippine_movement_bonus(player_id, unit_id)
-
-   local movement_promotion = GameInfoTypes["PROMOTION_GOOD_FIGHT"]
-	local player = Players[player_id]
-	if player:GetCivilizationType() ~= this_civ or not player:IsAlive() then return end
-
-   local in_owned_territory = false
-   local unit = player:GetUnitByID(unit_id)
-   local plot = Map.GetPlot(unit:GetX(), unit:GetY())
-   if plot == nil then return end
-   if not unit:IsDead() and unit ~= nil
-      and not unit:IsCombatUnit()
-      and plot:GetOwner() == player_id then
-      in_owned_territory = true
-   end
-
-   if not unit:IsHasPromotion(movement_promotion) and in_owned_territory then
-      unit:SetHasPromotion(movement_promotion, true)
-   elseif unit:IsHasPromotion(movement_promotion) and not in_owned_territory then
-      unit:SetHasPromotion(movement_promotion, false)
-   end
-
-end
-------------------------------------------------------------------------------------------------------------------------
 if is_active then
    GameEvents.PlayerCityFounded.Add(lekmod_philippine_expand_population)
-   GameEvents.UnitSetXY.Add(lekmod_philippine_movement_bonus)
 end

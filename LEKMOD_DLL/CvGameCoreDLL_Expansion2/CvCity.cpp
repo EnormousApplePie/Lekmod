@@ -2988,26 +2988,10 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		return false;
 	}
 
-#if !defined(TRAITIFY) // New method of telling if a building can be made in a city based on the cities terrain, now accounts for Trait based exceptions.
 	if (!isValidBuildingLocation(eBuilding))
 	{
 		return false;
 	}
-#else
-	// Check if the building normally has terrain restrictions
-	if (!isValidBuildingLocation(eBuilding))
-	{
-		// Get the player's traits
-		CvPlayerTraits* pPlayerTraits = GET_PLAYER(getOwner()).GetPlayerTraits();
-		BuildingClassTypes eBuildingClass = (BuildingClassTypes)GC.getBuildingInfo(eBuilding)->GetBuildingClassType();
-
-		// If the player's trait allows bypassing terrain restrictions, SKIP this check
-		if (!pPlayerTraits->IsBuildingClassRemoveRequiredTerrain(eBuildingClass))
-		{
-			return false;
-		}
-	}
-#endif
 
 	// Local Resource requirements met?
 	if(!IsBuildingLocalResourceValid(eBuilding, bTestVisible, toolTipSink))
@@ -3022,7 +3006,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	}
 #if defined(TRAITIFY) // Religious Majority requirement for canConstruct (Used for Georgia)
 
-	bool bRequiresReligion = pkBuildingInfo->IsUnlockedByBelief();
+	bool bRequiresReligion = pkBuildingInfo->IsReligious();
 	ReligionTypes eMajority = GetCityReligions()->GetReligiousMajority();
 	// If the building requires religion, apply the restriction
 	if (bRequiresReligion)
@@ -17100,6 +17084,17 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 	if(pkBuildingInfo == NULL)
 		return false;
 
+#ifdef TRAITIFY
+	// Get the player's traits
+	CvPlayerTraits* pPlayerTraits = GET_PLAYER(getOwner()).GetPlayerTraits();
+	BuildingClassTypes eBuildingClass = (BuildingClassTypes)GC.getBuildingInfo(eBuilding)->GetBuildingClassType();
+
+	// If the player's trait allows bypassing terrain restrictions, return true.
+	if (pPlayerTraits->IsBuildingClassRemoveRequiredTerrain(eBuildingClass))
+	{
+		return true;
+	}
+#endif
 	// Requires coast
 	if(pkBuildingInfo->IsWater())
 	{

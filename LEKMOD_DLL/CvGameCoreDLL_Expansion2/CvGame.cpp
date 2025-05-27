@@ -8339,7 +8339,9 @@ void CvGame::doTurn()
 	updateScore();
 
 #ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+#ifndef LEKMOD_v34
 	m_kGameDeals.DoTurn();
+#endif
 #endif
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)

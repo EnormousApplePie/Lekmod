@@ -6,7 +6,7 @@ include("PlotIterators.lua")
 local this_civ = GameInfoTypes["CIVILIZATION_MUGHALS"]
 local is_active = LekmodUtilities:is_civilization_active(this_civ)
 
-local DUMMY_BUILDING = "BUILDING_TRAIT_MUGHALS"
+local DUMMY_BUILDING = "BUILDING_DUMMY_MUGHALS"
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Mughal UA: Foreign religions give benefits to both the Mughal city and the religion's holy city
