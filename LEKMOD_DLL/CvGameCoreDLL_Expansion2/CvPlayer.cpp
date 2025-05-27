@@ -5362,6 +5362,7 @@ void CvPlayer::doTurnPostDiplomacy()
 #endif
 #if defined(LEKMOD_v34) // Move GetTrade()->DoTurn() to the end of doTurnPostDiplomacy instead of inside doTurn() so that they end after all Yields are calculated
 	GetTrade()->DoTurn();
+	GC.getGame().GetGameDeals()->DoTurn();
 #endif
 	const int iGameTurn = kGame.getGameTurn();
 

@@ -203,8 +203,8 @@ copy /y "%patchfolder%\Lua\tmp\ui\mountain.lua.ignore" "%patchfolder%\Lua\UI\mou
 REM --------------------------------------------------------------------------------------------------
 copy /y "%patchfolder%\Lua\tmp\ui\prophetreplace.lua.ignore" "%patchfolder%\Lua\UI\prophetreplace.lua" > nul
 REM --------------------------------------------------------------------------------------------------
-IF NOT EXIST "%euifolder%\YieldIconManager\YieldIconManager.lua" (
-  copy /y "%patchfolder%\Lua\tmp\ui\YieldIconManager.lua.ignore" "%patchfolder%\Lua\UI\YieldIconManager.lua" > nul
+IF NOT EXIST "%euifolder%\Improvements\YieldIconManager.lua" (
+  copy /y "%patchfolder%\Lua\tmp\ui\Improvements\YieldIconManager.lua.ignore" "%patchfolder%\Lua\UI\YieldIconManager.lua" > nul
 ) ELSE (
   copy /y "%patchfolder%\Lua\tmp\eui\Improvements\YieldIconManager.lua.ignore" "%patchfolder%\Lua\UI\YieldIconManager.lua" > nul
 )
