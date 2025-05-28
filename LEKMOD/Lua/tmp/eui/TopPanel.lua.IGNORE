@@ -428,10 +428,14 @@ local function UpdateTopPanelNow()
 			local happyProgressNext = happyProgress + totalGAP -- v34
 
 			if goldenAgeTurns > 0 then
+				Controls.GoldenAgeString:SetHide(true)
+				Controls.GoldenAgeIcon:SetHide(false)
 				Controls.GoldenAgeAnim:SetHide(false)
 				Controls.HappyBox:SetHide(true)
 				turnsRemaining = goldenAgeTurns
 			else
+				Controls.GoldenAgeString:SetHide(false)
+				Controls.GoldenAgeIcon:SetHide(true)
 				Controls.GoldenAgeAnim:SetHide(true)
 				if happyNeeded > 0 then
 					Controls.HappyBar:SetPercent( happyProgress / happyNeeded )
@@ -1462,6 +1466,7 @@ if civ5_mode then
 	-- Golden Age Tooltip
 	-------------------------------------------------
 	g_toolTipHandler.GoldenAgeString = function()-- control )
+		g_toolTipHandler.GoldenAgeIcon = g_toolTipHandler.GoldenAgeString
 
 		if g_isHappinessEnabled then
 
@@ -1524,6 +1529,7 @@ if civ5_mode then
 			return setTextToolTip( L"TXT_KEY_TOP_PANEL_HAPPINESS_OFF_TOOLTIP" )
 		end
 	end
+	Controls.GoldenAgeIcon:SetToolTipCallback( requestTextToolTip )
 	Controls.GoldenAgeString:SetToolTipCallback( requestTextToolTip )
 
 	-------------------------------------------------
