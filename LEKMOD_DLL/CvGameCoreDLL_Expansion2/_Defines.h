@@ -954,6 +954,10 @@
 #define LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
 // No Combat Randomness Game Option
 #define LEKMOD_NO_COMBAT_RANDOMNESS
+// Additional plot influence modifiers
+#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
+
+
 /// ###############################
 /// Lekmod: New Lua Events and Methods
 /// ################################

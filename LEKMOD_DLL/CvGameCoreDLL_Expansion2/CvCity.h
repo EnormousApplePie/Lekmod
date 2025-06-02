@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -831,6 +831,7 @@ public:
 	CvPlot* GetNextBuyablePlot();
 	void GetBuyablePlotList(std::vector<int>& aiPlotList);
 	int GetBuyPlotCost(int iPlotX, int iPlotY) const;
+	int getAdditionalPlotInfluenceModifiers(CvPlot* pPlot);
 	void BuyPlot(int iPlotX, int iPlotY);
 	void DoAcquirePlot(int iPlotX, int iPlotY);
 #ifdef AUI_CONSTIFY
