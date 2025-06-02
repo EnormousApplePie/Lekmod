@@ -364,6 +364,372 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	uint iI;
 #else
 	int iI;
+/*	-------------------------------------------------------------------------------------------------------
+	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
+	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
+	All other marks and trademarks are the property of their respective owners.  
+	All rights reserved. 
+	------------------------------------------------------------------------------------------------------- */
+
+#include "CvGameCoreDLLPCH.h"
+#include "CvGlobals.h"
+#include "CvCity.h"
+#include "CvArea.h"
+#include "CvMap.h"
+#include "CvPlot.h"
+#include "CvTeam.h"
+#include "CvGameCoreUtils.h"
+#include "CvInternalGameCoreUtils.h"
+#include "CvPlayerAI.h"
+#include "CvUnit.h"
+#include "CvInfos.h"
+#include "CvRandom.h"
+#include "CvImprovementClasses.h"
+#include "CvCitySpecializationAI.h"
+#include "CvEconomicAI.h"
+#include "CvMilitaryAI.h"
+#include "CvNotifications.h"
+#include "CvUnitCombat.h"
+#include "CvTypes.h"
+
+// interfaces used
+#include "CvEnumSerialization.h"
+#include "CvDiplomacyAI.h"
+#include "CvWonderProductionAI.h"
+
+#include "CvDllCity.h"
+#include "CvDllCombatInfo.h"
+#include "CvDllPlot.h"
+#include "CvDllUnit.h"
+#include "CvGameQueries.h"
+
+#include "CvInfosSerializationHelper.h"
+#include "cvStopWatch.h"
+#include "CvCityManager.h"
+
+// include after all other headers
+#include "LintFree.h"
+
+OBJECT_VALIDATE_DEFINITION(CvCity)
+
+namespace
+{
+// debugging
+YieldTypes s_lastYieldUsedToUpdateRateFromTerrain;
+int        s_changeYieldFromTerreain;
+}
+
+//	--------------------------------------------------------------------------------
+namespace FSerialization
+{
+std::set<CvCity*> citiesToCheck;
+void SyncCities()
+{
+	if(GC.getGame().isNetworkMultiPlayer())
+	{
+		PlayerTypes authoritativePlayer = GC.getGame().getActivePlayer();
+
+		std::set<CvCity*>::const_iterator i;
+		for(i = citiesToCheck.begin(); i != citiesToCheck.end(); ++i)
+		{
+			const CvCity* city = *i;
+
+			if(city)
+			{
+				const CvPlayer& player = GET_PLAYER(city->getOwner());
+				if(city->getOwner() == authoritativePlayer || (gDLL->IsHost() && !player.isHuman() && player.isAlive()))
+				{
+					const FAutoArchive& archive = city->getSyncArchive();
+					if(archive.hasDeltas())
+					{
+						FMemoryStream memoryStream;
+						std::vector<std::pair<std::string, std::string> > callStacks;
+						archive.saveDelta(memoryStream, callStacks);
+						gDLL->sendCitySyncCheck(city->getOwner(), city->GetID(), memoryStream, callStacks);
+					}
+				}
+			}
+		}
+	}
+}
+
+//	--------------------------------------------------------------------------------
+// clears ALL deltas for ALL units
+void ClearCityDeltas()
+{
+	std::set<CvCity*>::iterator i;
+	for(i = citiesToCheck.begin(); i != citiesToCheck.end(); ++i)
+	{
+		CvCity* city = *i;
+
+		if(city)
+		{
+			FAutoArchive& archive = city->getSyncArchive();
+			archive.clearDelta();
+		}
+	}
+}
+}
+
+template <typename T>
+bool ModifierUpdateInsertRemove(vector<pair<T, int>>& container, T key, int value, bool modifyExisting)
+{
+	for (vector<pair<T, int>>::iterator it = container.begin(); it != container.end(); ++it)
+	{
+		if (it->first == key)
+		{
+			if (modifyExisting && value != 0)
+			{
+				it->second += value;
+				if (it->second == 0)
+					container.erase(it);
+				return true; //update was made
+			}
+		
+			if (!modifyExisting && value != it->second)
+			{
+				it->second = value;
+				if (it->second == 0)
+					container.erase(it);
+				return true; //update was made
+			}
+
+			return false; //no change
+		}
+	}
+
+	//if we're here we don't have an entry yet
+	if (value != 0)
+	{
+		container.push_back(make_pair(key, value));
+		return true; //update was made
+	}
+
+	return false;
+}
+
+template <typename T>
+int ModifierLookup(const vector<pair<T, int>>& container, T key)
+{
+	for (vector<pair<T, int>>::const_iterator it = container.begin(); it != container.end(); ++it)
+		if (it->first == key)
+			return it->second;
+
+	return 0;
+}
+
+
+//	--------------------------------------------------------------------------------
+// Public Functions...
+CvCity::CvCity() :
+	m_syncArchive(*this)
+	, m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility("CvCity::m_strName", m_syncArchive, "")
+	, m_eOwner("CvCity::m_eOwner", m_syncArchive, NO_PLAYER)
+	, m_iX("CvCity::m_iX", m_syncArchive)
+	, m_iY("CvCity::m_iY", m_syncArchive)
+	, m_iID("CvCity::m_iID", m_syncArchive)
+	, m_iRallyX("CvCity::m_iRallyX", m_syncArchive)
+	, m_iRallyY("CvCity::m_iRallyY", m_syncArchive)
+	, m_iGameTurnFounded("CvCity::m_iGameTurnFounded", m_syncArchive)
+	, m_iGameTurnAcquired("CvCity::m_iGameTurnAcquired", m_syncArchive)
+	, m_iGameTurnLastExpanded("CvCity::m_iGameTurnLastExpanded", m_syncArchive)
+	, m_iPopulation("CvCity::m_iPopulation", m_syncArchive)
+	, m_iHighestPopulation("CvCity::m_iHighestPopulation", m_syncArchive)
+	, m_iExtraHitPoints(0)
+	, m_iNumGreatPeople("CvCity::m_iNumGreatPeople", m_syncArchive)
+	, m_iBaseGreatPeopleRate("CvCity::m_iBaseGreatPeopleRate", m_syncArchive)
+	, m_iGreatPeopleRateModifier("CvCity::m_iGreatPeopleRateModifier", m_syncArchive)
+#ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
+	, m_iJONSCultureStoredT100("CvCity::m_iJONSCultureT100Stored", m_syncArchive, true)
+#else
+	, m_iJONSCultureStored("CvCity::m_iJONSCultureStored", m_syncArchive, true)
+#endif
+	, m_iJONSCultureLevel("CvCity::m_iJONSCultureLevel", m_syncArchive)
+	, m_iJONSCulturePerTurnFromBuildings("CvCity::m_iJONSCulturePerTurnFromBuildings", m_syncArchive)
+	, m_iJONSCulturePerTurnFromPolicies("CvCity::m_iJONSCulturePerTurnFromPolicies", m_syncArchive)
+	, m_iJONSCulturePerTurnFromSpecialists("CvCity::m_iJONSCulturePerTurnFromSpecialists", m_syncArchive)
+	, m_iJONSCulturePerTurnFromReligion("CvCity::m_iJONSCulturePerTurnFromReligion", m_syncArchive)
+	, m_iFaithPerTurnFromBuildings(0)
+	, m_iFaithPerTurnFromPolicies(0)
+	, m_iFaithPerTurnFromReligion(0)
+	, m_iCultureRateModifier("CvCity::m_iCultureRateModifier", m_syncArchive)
+	, m_iNumWorldWonders("CvCity::m_iNumWorldWonders", m_syncArchive)
+	, m_iNumTeamWonders("CvCity::m_iNumTeamWonders", m_syncArchive)
+	, m_iNumNationalWonders("CvCity::m_iNumNationalWonders", m_syncArchive)
+	, m_iWonderProductionModifier("CvCity::m_iWonderProductionModifier", m_syncArchive)
+	, m_iCapturePlunderModifier("CvCity::m_iCapturePlunderModifier", m_syncArchive)
+	, m_iPlotCultureCostModifier("CvCity::m_iPlotCultureCostModifier", m_syncArchive)
+	, m_iPlotBuyCostModifier(0)
+	, m_iMaintenance("CvCity::m_iMaintenance", m_syncArchive)
+	, m_iHealRate("CvCity::m_iHealRate", m_syncArchive)
+	, m_iNoOccupiedUnhappinessCount("CvCity::m_iNoOccupiedUnhappinessCount", m_syncArchive)
+	, m_iFood("CvCity::m_iFood", m_syncArchive)
+	, m_iFoodKept("CvCity::m_iFoodKept", m_syncArchive)
+	, m_iMaxFoodKeptPercent("CvCity::m_iMaxFoodKeptPercent", m_syncArchive)
+	, m_iOverflowProduction("CvCity::m_iOverflowProduction", m_syncArchive)
+	, m_iFeatureProduction("CvCity::m_iFeatureProduction", m_syncArchive)
+	, m_iMilitaryProductionModifier("CvCity::m_iMilitaryProductionModifier", m_syncArchive)
+	, m_iSpaceProductionModifier("CvCity::m_iSpaceProductionModifier", m_syncArchive)
+	, m_iFreeExperience("CvCity::m_iFreeExperience", m_syncArchive)
+	, m_iCurrAirlift("CvCity::m_iCurrAirlift", m_syncArchive) // unused
+	, m_iMaxAirUnits("CvCity::m_iMaxAirUnits", m_syncArchive)
+	, m_iAirModifier("CvCity::m_iAirModifier", m_syncArchive) // unused
+	, m_iNukeModifier("CvCity::m_iNukeModifier", m_syncArchive)
+	, m_iCultureUpdateTimer("CvCity::m_iCultureUpdateTimer", m_syncArchive)	// unused
+	, m_iCitySizeBoost("CvCity::m_iCitySizeBoost", m_syncArchive)
+	, m_iSpecialistFreeExperience("CvCity::m_iSpecialistFreeExperience", m_syncArchive)
+	, m_iStrengthValue("CvCity::m_iStrengthValue", m_syncArchive, true)
+	, m_iDamage("CvCity::m_iDamage", m_syncArchive)
+	, m_iThreatValue("CvCity::m_iThreatValue", m_syncArchive, true)
+	, m_iGarrisonedUnit("CvCity::m_iGarrisonedUnit", m_syncArchive)   // unused
+	, m_iResourceDemanded("CvCity::m_iResourceDemanded", m_syncArchive)
+	, m_iWeLoveTheKingDayCounter("CvCity::m_iWeLoveTheKingDayCounter", m_syncArchive)
+	, m_iLastTurnGarrisonAssigned("CvCity::m_iLastTurnGarrisonAssigned", m_syncArchive)
+	, m_iThingsProduced("CvCity::m_iThingsProduced", m_syncArchive)
+	, m_iDemandResourceCounter("CvCity::m_iDemandResourceCounter", m_syncArchive, true)
+	, m_iResistanceTurns("CvCity::m_iResistanceTurns", m_syncArchive)
+	, m_iRazingTurns("CvCity::m_iRazingTurns", m_syncArchive)
+	, m_iCountExtraLuxuries("CvCity::m_iCountExtraLuxuries", m_syncArchive)
+	, m_iCheapestPlotInfluence("CvCity::m_iCheapestPlotInfluence", m_syncArchive)
+	, m_iEspionageModifier(0)
+	, m_iTradeRouteRecipientBonus(0)
+	, m_iTradeRouteTargetBonus(0)
+	, m_unitBeingBuiltForOperation()
+	, m_bNeverLost("CvCity::m_bNeverLost", m_syncArchive)
+	, m_bDrafted("CvCity::m_bDrafted", m_syncArchive)
+	, m_bAirliftTargeted("CvCity::m_bAirliftTargeted", m_syncArchive)   // unused
+	, m_bProductionAutomated("CvCity::m_bProductionAutomated", m_syncArchive)
+	, m_bLayoutDirty("CvCity::m_bLayoutDirty", m_syncArchive)
+	, m_bMadeAttack("CvCity::m_bMadeAttack", m_syncArchive)
+	, m_bOccupied("CvCity::m_bOccupied", m_syncArchive)
+	, m_bPuppet("CvCity::m_bPuppet", m_syncArchive)
+	, m_bEverCapital("CvCity::m_bEverCapital", m_syncArchive)
+	, m_bIndustrialRouteToCapital("CvCity::m_bIndustrialRouteToCapital", m_syncArchive)
+	, m_bFeatureSurrounded("CvCity::m_bFeatureSurrounded", m_syncArchive)
+	, m_ePreviousOwner("CvCity::m_ePreviousOwner", m_syncArchive)
+	, m_eOriginalOwner("CvCity::m_eOriginalOwner", m_syncArchive)
+	, m_ePlayersReligion("CvCity::m_ePlayersReligion", m_syncArchive)
+	, m_aiSeaPlotYield("CvCity::m_aiSeaPlotYield", m_syncArchive)
+	, m_iMountainScienceYield("CvCity::m_iMountainScienceYield", m_syncArchive) // NQMP GJS - mountain science yield
+	, m_aiRiverPlotYield("CvCity::m_aiRiverPlotYield", m_syncArchive)
+	, m_aiLakePlotYield("CvCity::m_aiLakePlotYield", m_syncArchive)
+	, m_aiSeaResourceYield("CvCity::m_aiSeaResourceYield", m_syncArchive)
+	, m_aiBaseYieldRateFromTerrain("CvCity::m_aiBaseYieldRateFromTerrain", m_syncArchive, true)
+	, m_aiBaseYieldRateFromBuildings("CvCity::m_aiBaseYieldRateFromBuildings", m_syncArchive)
+	, m_aiBaseYieldRateFromSpecialists("CvCity::m_aiBaseYieldRateFromSpecialists", m_syncArchive)
+	, m_aiBaseYieldRateFromMisc("CvCity::m_aiBaseYieldRateFromMisc", m_syncArchive)
+	, m_aiYieldRateModifier("CvCity::m_aiYieldRateModifier", m_syncArchive)
+	, m_aiYieldPerPop("CvCity::m_aiYieldPerPop", m_syncArchive)
+#if defined(LEKMOD_v34)
+	, m_aiGarrisonYieldBonus("CvCity::m_aiGarrisonYieldBonus", m_syncArchive)
+#endif
+	, m_aiPowerYieldRateModifier("CvCity::m_aiPowerYieldRateModifier", m_syncArchive)
+	, m_aiResourceYieldRateModifier("CvCity::m_aiResourceYieldRateModifier", m_syncArchive)
+	, m_aiExtraSpecialistYield("CvCity::m_aiExtraSpecialistYield", m_syncArchive)
+	, m_aiProductionToYieldModifier("CvCity::m_aiProductionToYieldModifier", m_syncArchive)
+	, m_aiDomainFreeExperience("CvCity::m_aiDomainFreeExperience", m_syncArchive)
+	, m_aiDomainProductionModifier("CvCity::m_aiDomainProductionModifier", m_syncArchive)
+	, m_abEverOwned("CvCity::m_abEverOwned", m_syncArchive)
+	, m_abRevealed("CvCity::m_abRevealed", m_syncArchive, true)
+	, m_strScriptData("CvCity::m_strScriptData", m_syncArchive)
+	, m_paiNoResource("CvCity::m_paiNoResource", m_syncArchive)
+	, m_paiFreeResource("CvCity::m_paiFreeResource", m_syncArchive)
+	, m_paiNumResourcesLocal("CvCity::m_paiNumResourcesLocal", m_syncArchive)
+	, m_paiProjectProduction("CvCity::m_paiProjectProduction", m_syncArchive)
+	, m_paiSpecialistProduction("CvCity::m_paiSpecialistProduction", m_syncArchive)
+	, m_paiUnitProduction("CvCity::m_paiUnitProduction", m_syncArchive)
+	, m_paiUnitProductionTime("CvCity::m_paiUnitProductionTime", m_syncArchive)
+	, m_paiSpecialistCount("CvCity::m_paiSpecialistCount", m_syncArchive)
+	, m_paiMaxSpecialistCount("CvCity::m_paiMaxSpecialistCount", m_syncArchive)
+	, m_paiForceSpecialistCount("CvCity::m_paiForceSpecialistCount", m_syncArchive)
+	, m_paiFreeSpecialistCount("CvCity::m_paiFreeSpecialistCount", m_syncArchive)
+	, m_paiImprovementFreeSpecialists("CvCity::m_paiImprovementFreeSpecialists", m_syncArchive)
+	, m_paiUnitCombatFreeExperience("CvCity::m_paiUnitCombatFreeExperience", m_syncArchive)
+	, m_paiUnitCombatProductionModifier("CvCity::m_paiUnitCombatProductionModifier", m_syncArchive)
+	, m_paiFreePromotionCount("CvCity::m_paiFreePromotionCount", m_syncArchive)
+	, m_iBaseHappinessFromBuildings(0)
+	, m_iUnmoddedHappinessFromBuildings(0)
+	, m_bRouteToCapitalConnectedLastTurn(false)
+	, m_bRouteToCapitalConnectedThisTurn(false)
+#ifdef PRODUCTION_TO_YIELD_FIX
+	, m_bFinishedOrderThisTurn(false)
+#endif
+	, m_strName("")
+	, m_orderQueue()
+	, m_yieldChanges( NUM_YIELD_TYPES )
+	, m_aaiBuildingSpecialistUpgradeProgresses(0)
+	, m_ppaiResourceYieldChange(0)
+	, m_ppaiFeatureYieldChange(0)
+	, m_ppaiTerrainYieldChange(0)
+#ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+	, m_iCachedFoodT100ForThisTurn(0)
+	, m_iCachedProductionT100ForThisTurn(0)
+	, m_iCachedCultureT100ForThisTurn(0)
+#endif
+#ifdef AUI_CITY_FIX_COMPONENT_CONSTRUCTORS_CONTAIN_POINTERS
+	, m_pCityBuildings(FNEW(CvCityBuildings, c_eCiv5GameplayDLL, 0) (this))
+	, m_pCityStrategyAI(FNEW(CvCityStrategyAI, c_eCiv5GameplayDLL, 0) (this))
+	, m_pCityCitizens(FNEW(CvCityCitizens, c_eCiv5GameplayDLL, 0) (this))
+	, m_pCityReligions(FNEW(CvCityReligions, c_eCiv5GameplayDLL, 0) (this))
+	, m_pEmphases(FNEW(CvCityEmphases, c_eCiv5GameplayDLL, 0) (this))
+	, m_pCityEspionage(FNEW(CvCityEspionage, c_eCiv5GameplayDLL, 0) (this))
+	, m_pCityCulture(FNEW(CvCityCulture, c_eCiv5GameplayDLL, 0) (this))
+#else
+	, m_pCityBuildings(FNEW(CvCityBuildings, c_eCiv5GameplayDLL, 0))
+	, m_pCityStrategyAI(FNEW(CvCityStrategyAI, c_eCiv5GameplayDLL, 0))
+	, m_pCityCitizens(FNEW(CvCityCitizens, c_eCiv5GameplayDLL, 0))
+	, m_pCityReligions(FNEW(CvCityReligions, c_eCiv5GameplayDLL, 0))
+	, m_pEmphases(FNEW(CvCityEmphases, c_eCiv5GameplayDLL, 0))
+	, m_pCityEspionage(FNEW(CvCityEspionage, c_eCiv5GameplayDLL, 0))
+	, m_pCityCulture(FNEW(CvCityCulture, c_eCiv5GameplayDLL, 0))
+#endif
+	, m_bombardCheckTurn(0)
+	, m_iPopulationRank(0)
+	, m_bPopulationRankValid(false)
+	, m_aiBaseYieldRank("CvCity::m_aiBaseYieldRank", m_syncArchive)
+	, m_abBaseYieldRankValid("CvCity::m_abBaseYieldRankValid", m_syncArchive)
+	, m_aiYieldRank("CvCity::m_aiYieldRank", m_syncArchive)
+	, m_abYieldRankValid("CvCity::m_abYieldRankValid", m_syncArchive)
+	, m_bOwedCultureBuilding(false)
+{
+	OBJECT_ALLOCATED
+	FSerialization::citiesToCheck.insert(this);
+
+	reset(0, NO_PLAYER, 0, 0, true);
+}
+
+//	--------------------------------------------------------------------------------
+CvCity::~CvCity()
+{
+	CvCityManager::OnCityDestroyed(this);
+	FSerialization::citiesToCheck.erase(this);
+
+	uninit();
+
+	delete m_pCityBuildings;
+	delete m_pCityStrategyAI;
+	delete m_pCityCitizens;
+	delete m_pCityReligions;
+	delete m_pEmphases;
+	delete m_pCityEspionage;
+	delete m_pCityCulture;
+
+	OBJECT_DESTROYED
+}
+
+
+//	--------------------------------------------------------------------------------
+void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, bool bInitialFounding)
+{
+	VALIDATE_OBJECT
+	//CvPlot* pAdjacentPlot;
+	CvPlot* pPlot;
+	BuildingTypes eLoopBuilding;
+#ifdef AUI_WARNING_FIXES
+	uint iI;
+#else
+	int iI;
 #endif
 
 	pPlot = GC.getMap().plot(iX, iY);
@@ -13315,7 +13681,20 @@ void CvCity::GetBuyablePlotList(std::vector<int>& aiPlotList)
 					{
 						iInfluenceCost += (iPLOT_INFLUENCE_YIELD_POINT_COST * pLoopPlot->getYield((YieldTypes) iYieldLoop));
 					}
+
 #endif
+
+#ifdef LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
+					// additional function that includes yield modifiers from unique improvements, extra yields from plots from traits, etc.
+					// Only apply additional modifiers for plots within 3rd ring
+					int iPlotDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
+					if (iPlotDistance <= 3)
+					{
+						iInfluenceCost += getAdditionalPlotInfluenceModifiers(pLoopPlot);
+					}
+
+#endif
+
 
 					// all other things being equal move towards unclaimed resources
 #ifndef AUI_CITY_GET_BUYABLE_PLOT_LIST_RESOURCE_NW_OSMOSIS
@@ -13560,6 +13939,188 @@ void CvCity::GetBuyablePlotList(std::vector<int>& aiPlotList)
 		}
 	}
 }
+#ifdef LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
+// ---------------------------------------------------------------------------------------------------------------------
+// LEKMOD: Additional Plot Influence Modifiers
+// ---------------------------------------------------------------------------------------------------------------------
+int CvCity::getAdditionalPlotInfluenceModifiers(const CvPlot* pPlot) const
+{
+	if (!pPlot)
+	{
+		return 0;
+	}
+
+	
+	int iInfluenceReduction = 0;
+	int iInfluenceModCost = -110;
+	CvPlayer* pPlayer = &GET_PLAYER(getOwner());
+	TeamTypes eTeam = pPlayer->getTeam();
+	CvPlayerTraits* pTraits = pPlayer->GetPlayerTraits();
+	
+	// Check all possible improvements on this plot
+	for (int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
+	{
+		ImprovementTypes eImprovement = (ImprovementTypes)iImprovementLoop;
+		CvImprovementEntry* pImprovementInfo = GC.getImprovementInfo(eImprovement);
+		if (!pImprovementInfo)
+			continue;
+
+		// Check if we can build this improvement on this plot (ignore territory ownership)
+		if (!pPlot->canBuild(eImprovement, getOwner(), false, true)) // bIgnoreLocation = true to ignore territory
+			continue;
+
+		bool bHasSynergy = false;
+
+		// 1. Check if this is a unique improvement for our civ
+		CivTypes eCiv = pPlayer->getCivilizationType();
+		if (pImprovementInfo->IsSpecificCivRequired() && pImprovementInfo->GetRequiredCivilization() == eCiv)
+		{
+			iInfluenceReduction += iInfluenceModCost;
+			bHasSynergy = true;
+		}
+
+
+		// 2. Check if our traits improve this improvement
+		for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+		{
+			if (pTraits->GetImprovementYieldChange(eImprovement, (YieldTypes)iYieldLoop) > 0)
+			{
+				iInfluenceReduction += iInfluenceModCost;
+				bHasSynergy = true;
+				break;
+			}
+		}
+
+		// If we found synergy with this improvement, we don't need to check others on the same plot
+		if (bHasSynergy)
+			break;
+	}
+
+	// 3. Check if plot's feature is improved by our buildings or traits
+	FeatureTypes eFeature = pPlot->getFeatureType();
+	if (eFeature != NO_FEATURE)
+	{
+		// Check buildings in all our cities for feature yield bonuses
+		int iLoop;
+		for (CvCity* pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pPlayer->nextCity(&iLoop))
+		{
+			for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+				if (!pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding))
+					continue;
+
+				CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
+				if (!pBuildingInfo)
+					continue;
+
+				for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+				{
+					if (pBuildingInfo->GetFeatureYieldChange(eFeature, iYieldLoop) > 0)
+					{
+						iInfluenceReduction += iInfluenceModCost;
+						goto check_terrain; // Break out of nested loops
+					}
+				}
+			}
+		}
+
+		// Check traits for feature yield bonuses
+		for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+		{
+			if (pTraits->GetFeatureYieldChange(eFeature, (YieldTypes)iYieldLoop) > 0)
+			{
+				iInfluenceReduction += iInfluenceModCost;
+				break;
+			}
+		}
+	}
+
+check_terrain:
+	// 4. Check if plot's terrain is improved by our buildings
+	TerrainTypes eTerrain = pPlot->getTerrainType();
+	if (eTerrain != NO_TERRAIN)
+	{
+		int iLoop;
+		for (CvCity* pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pPlayer->nextCity(&iLoop))
+		{
+			for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+				if (!pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding))
+					continue;
+
+				CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
+				if (!pBuildingInfo)
+					continue;
+
+				for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+				{
+					if (pBuildingInfo->GetTerrainYieldChange(eTerrain, iYieldLoop) > 0)
+					{
+						// Skip if coast tile with no resources if the building is lighthouse or great lighthouse
+						if (eTerrain == TERRAIN_COAST && eResource == NO_RESOURCE &&
+							(eBuilding == GC.getInfoTypeForString("BUILDING_LIGHTHOUSE") ||
+							eBuilding == GC.getInfoTypeForString("BUILDING_GREAT_LIGHTHOUSE"))
+						)
+							continue;
+							
+						// Skip if flat land with no features or resources
+						if (pPlot->getFeatureType() == NO_FEATURE && eResource == NO_RESOURCE && pPlot->isHills() == false)
+							continue;
+						iInfluenceReduction += iInfluenceModCost;
+						goto check_resource; // Break out of nested loops
+					}
+				}
+			}
+		}
+	}
+
+check_resource:
+	// 5. Check if plot's resource is improved by buildings or traits
+	ResourceTypes eResource = pPlot->getResourceType(eTeam);
+	if (eResource != NO_RESOURCE)
+	{
+		// Check buildings for resource yield bonuses
+		int iLoop;
+		for (CvCity* pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pPlayer->nextCity(&iLoop))
+		{
+			for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+				if (!pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding))
+					continue;
+
+				CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
+				if (!pBuildingInfo)
+					continue;
+
+				for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+				{
+					if (pBuildingInfo->GetResourceYieldChange(eResource, iYieldLoop) > 0)
+					{
+						iInfluenceReduction += iInfluenceModCost;
+						break;
+					}
+				}
+			}
+		}
+
+		// Check traits for resource bonuses
+		for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+		{
+			if (pTraits->GetResourceYieldChange(eResource, (YieldTypes)iYieldLoop) > 0)
+			{
+				iInfluenceReduction += iInfluenceModCost;
+				break;
+			}
+		}
+	}
+
+	// Return negative value since this reduces influence cost
+	return iInfluenceReduction
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 /// How much will purchasing this plot cost -- (-1,-1) will return the generic price
