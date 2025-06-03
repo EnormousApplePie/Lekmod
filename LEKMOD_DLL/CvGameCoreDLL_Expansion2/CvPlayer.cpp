@@ -459,6 +459,10 @@ CvPlayer::CvPlayer() :
 #ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
 	, m_paiUnitCombatFreePromotionCount("CvPlayer::m_paiFreeUnitCombatPromotionCount", m_syncArchive)
 #endif
+#ifdef LEKMOD_v34
+	, m_aiSameLandMassYieldChange("CvPlayer::m_aiSameLandMassYieldChange", m_syncArchive)
+    , m_aiDifferentLandMassYieldChange("CvPlayer::m_aiDifferentLandMassYieldChange", m_syncArchive)
+#endif
 	, m_paiUnitCombatProductionModifiers("CvPlayer::m_paiUnitCombatProductionModifiers", m_syncArchive)
 	, m_paiUnitCombatFreeExperiences("CvPlayer::m_paiUnitCombatFreeExperiences", m_syncArchive)
 	, m_paiUnitClassCount("CvPlayer::m_paiUnitClassCount", m_syncArchive, true)
@@ -10670,6 +10674,31 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 				}
 			}
 		}
+#ifdef LEKMOD_v34
+	// Apply landmass-based yield changes to player modifiers
+		if(pBuildingInfo)
+		{
+			for(int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+			{
+				YieldTypes eYield = (YieldTypes)iYield;
+				
+				// Same landmass yield changes
+				int iSameYieldChange = pBuildingInfo->GetSameLandMassYieldChange(eBuilding, eYield);
+				if(iSameYieldChange != 0)
+				{
+					ChangeSameLandMassYieldChange(eYield, iSameYieldChange * iChange);
+				}
+				
+				// Different landmass yield changes  
+				int iDiffYieldChange = pBuildingInfo->GetDifferentLandMassYieldChange(eBuilding, eYield);
+				if(iDiffYieldChange != 0)
+				{
+					ChangeDifferentLandMassYieldChange(eYield, iDiffYieldChange * iChange);
+					}
+				}
+			}
+		}
+#endif
 	}
 }
 
@@ -21179,7 +21208,62 @@ void CvPlayer::changeCapitalYieldRateModifier(YieldTypes eIndex, int iChange)
 	}
 }
 
+#if defined(LEKMOD_v34)
+//	--------------------------------------------------------------------------------
+int CvPlayer::GetSameLandMassYieldChange(YieldTypes eIndex) const
+{
+    CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+    CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+    if(eIndex >= 0 && eIndex < NUM_YIELD_TYPES && (int)m_aiSameLandMassYieldChange.size() > eIndex)
+    {
+        return m_aiSameLandMassYieldChange[eIndex];
+    }
+    return 0;
+}
 
+void CvPlayer::ChangeSameLandMassYieldChange(YieldTypes eIndex, int iChange)
+{
+    CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+    CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+
+    if(iChange != 0)
+    {
+        if((int)m_aiSameLandMassYieldChange.size() <= eIndex)
+        {
+            m_aiSameLandMassYieldChange.resize(eIndex + 1, 0);
+        }
+        m_aiSameLandMassYieldChange[eIndex] = (m_aiSameLandMassYieldChange[eIndex] + iChange);
+        updateYield();
+    }
+}
+
+int CvPlayer::GetDifferentLandMassYieldChange(YieldTypes eIndex) const
+{
+    CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+    CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+    if(eIndex >= 0 && eIndex < NUM_YIELD_TYPES && (int)m_aiDifferentLandMassYieldChange.size() > eIndex)
+    {
+        return m_aiDifferentLandMassYieldChange[eIndex];
+    }
+    return 0;
+}
+
+void CvPlayer::ChangeDifferentLandMassYieldChange(YieldTypes eIndex, int iChange)
+{
+    CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+    CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+
+    if(iChange != 0)
+    {
+        if((int)m_aiDifferentLandMassYieldChange.size() <= eIndex)
+        {
+            m_aiDifferentLandMassYieldChange.resize(eIndex + 1, 0);
+        }
+        m_aiDifferentLandMassYieldChange[eIndex] = (m_aiDifferentLandMassYieldChange[eIndex] + iChange);
+        updateYield();
+    }
+}
+#endif
 //	--------------------------------------------------------------------------------
 int CvPlayer::getExtraYieldThreshold(YieldTypes eIndex) const
 {

@@ -11,14 +11,14 @@ function lekmod_macedonia_hetairoi_era_scaling(player_id)
 
     local current_era = player:GetCurrentEra()
     local era_types = {
-        [GameInfoTypes["ERA_ANCIENT"]] = 10,
-        [GameInfoTypes["ERA_CLASSICAL"]] = 15,
-        [GameInfoTypes["ERA_MEDIEVAL"]] = 22,
+        [GameInfoTypes["ERA_ANCIENT"]] = 12,
+        [GameInfoTypes["ERA_CLASSICAL"]] = 16,
+        [GameInfoTypes["ERA_MEDIEVAL"]] = 23,
         [GameInfoTypes["ERA_RENAISSANCE"]] = 30,
-        [GameInfoTypes["ERA_INDUSTRIAL"]] = 38,
-        [GameInfoTypes["ERA_MODERN"]] = 50,
-        [GameInfoTypes["ERA_ATOMIC"]] = 60,
-        [GameInfoTypes["ERA_INFORMATION"]] = 80
+        [GameInfoTypes["ERA_INDUSTRIAL"]] = 40,
+        [GameInfoTypes["ERA_MODERN"]] = 65,
+        [GameInfoTypes["ERA_ATOMIC"]] = 80,
+        [GameInfoTypes["ERA_INFORMATION"]] = 100
     }
 
     for unit in player:Units() do

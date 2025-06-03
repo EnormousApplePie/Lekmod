@@ -1,0 +1,268 @@
+int CvCity::getAdditionalPlotInfluenceModifiers(CvPlot* pPlot)
+{
+	if (!pPlot)
+	{
+		return 0;
+	}
+
+	int iInfluenceReduction = 0;
+	int iInfluenceModCost = -110;
+	CvPlayer* pPlayer = &GET_PLAYER(getOwner());
+	TeamTypes eTeam = pPlayer->getTeam();
+	CvPlayerTraits* pTraits = pPlayer->GetPlayerTraits();
+	
+	// Declare eResource early to avoid undeclared identifier errors later
+	ResourceTypes eResource = pPlot->getResourceType(eTeam);
+	
+	// Check all possible improvements on this plot
+	for (int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
+	{
+		ImprovementTypes eImprovement = (ImprovementTypes)iImprovementLoop;
+		CvImprovementEntry* pImprovementInfo = GC.getImprovementInfo(eImprovement);
+		if (!pImprovementInfo)
+			continue;
+
+		// Check if we can build this improvement on this plot (ignore territory ownership)
+		BuildTypes eBuild = NO_BUILD;
+		for (int iBuildIndex = 0; iBuildIndex < GC.getNumBuildInfos(); iBuildIndex++)
+		{
+			BuildTypes eTempBuild = (BuildTypes)iBuildIndex;
+			CvBuildInfo* pkBuild = GC.getBuildInfo(eTempBuild);
+			if (pkBuild && eImprovement == (ImprovementTypes)pkBuild->getImprovement())
+			{
+				eBuild = eTempBuild;
+				break;
+			}
+		}
+		
+		if (eBuild == NO_BUILD || !pPlot->canBuild(eBuild, pPlayer->GetID(), false, true)) // bIgnoreLocation = true to ignore territory
+			continue;
+
+		bool bHasSynergy = false;
+
+		// 1. Check if this is a unique improvement for our civ
+		CivilizationTypes eCiv = pPlayer->getCivilizationType();
+		if (pImprovementInfo->IsSpecificCivRequired() && pImprovementInfo->GetRequiredCivilization() == eCiv)
+		{
+			iInfluenceReduction += (iInfluenceModCost - 5); // Unique Improvements should be preferred even more
+			bHasSynergy = true;
+		}
+
+		// 2. Check if our traits improve this improvement
+		int iTotalTraitYields = 0;
+		for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+		{
+			int iYieldChange = pTraits->GetImprovementYieldChange(eImprovement, (YieldTypes)iYieldLoop);
+			if (iYieldChange > 0)
+			{
+				iTotalTraitYields += iYieldChange;
+				bHasSynergy = true;
+			}
+		}
+		
+		if (iTotalTraitYields > 0)
+		{
+			int iModifier = iInfluenceModCost;
+			if (iTotalTraitYields > 1)
+			{
+				iModifier += (iTotalTraitYields - 1); // Additional -1 for each yield past 1
+			}
+			iInfluenceReduction += iModifier;
+		}
+
+		// If we found synergy with this improvement, we don't need to check others on the same plot
+		if (bHasSynergy)
+			break;
+	}
+
+	// 3. Check if plot's feature is improved by our buildings or traits
+	FeatureTypes eFeature = pPlot->getFeatureType();
+	if (eFeature != NO_FEATURE)
+	{
+		bool bFoundFeatureBonus = false;
+		
+		// Check buildings in all our cities for feature yield bonuses
+		int iLoop;
+		for (CvCity* pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL && !bFoundFeatureBonus; pLoopCity = pPlayer->nextCity(&iLoop))
+		{
+			for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos() && !bFoundFeatureBonus; iBuildingLoop++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+				if (!pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding))
+					continue;
+
+				CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
+				if (!pBuildingInfo)
+					continue;
+
+				int iTotalBuildingFeatureYields = 0;
+				for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+				{
+					int iYieldChange = pBuildingInfo->GetFeatureYieldChange(eFeature, iYieldLoop);
+					if (iYieldChange > 0)
+					{
+						iTotalBuildingFeatureYields += iYieldChange;
+					}
+				}
+				
+				if (iTotalBuildingFeatureYields > 0)
+				{
+					int iModifier = iInfluenceModCost;
+					if (iTotalBuildingFeatureYields > 1)
+					{
+						iModifier += (iTotalBuildingFeatureYields - 1); // Additional -1 for each yield past 1
+					}
+					iInfluenceReduction += iModifier;
+					bFoundFeatureBonus = true;
+				}
+			}
+		}
+
+		// Check traits for feature yield bonuses
+		if (!bFoundFeatureBonus)
+		{
+			int iTotalTraitFeatureYields = 0;
+			for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+			{
+				int iYieldChange = pTraits->GetFeatureYieldChange(eFeature, (YieldTypes)iYieldLoop);
+				if (iYieldChange > 0)
+				{
+					iTotalTraitFeatureYields += iYieldChange;
+				}
+			}
+			
+			if (iTotalTraitFeatureYields > 0)
+			{
+				int iModifier = iInfluenceModCost;
+				if (iTotalTraitFeatureYields > 1)
+				{
+					iModifier += (iTotalTraitFeatureYields - 1); // Additional -1 for each yield past 1
+				}
+				iInfluenceReduction += iModifier;
+			}
+		}
+	}
+
+	// 4. Check if plot's terrain is improved by our buildings
+	TerrainTypes eTerrain = pPlot->getTerrainType();
+	if (eTerrain != NO_TERRAIN)
+	{
+		bool bFoundTerrainBonus = false;
+		int iLoop;
+		for (CvCity* pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL && !bFoundTerrainBonus; pLoopCity = pPlayer->nextCity(&iLoop))
+		{
+			for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos() && !bFoundTerrainBonus; iBuildingLoop++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+				if (!pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding))
+					continue;
+
+				CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
+				if (!pBuildingInfo)
+					continue;
+
+				int iTotalBuildingTerrainYields = 0;
+				for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+				{
+					int iYieldChange = pBuildingInfo->GetTerrainYieldChange(eTerrain, iYieldLoop);
+					if (iYieldChange > 0)
+					{
+						iTotalBuildingTerrainYields += iYieldChange;
+					}
+				}
+				
+				if (iTotalBuildingTerrainYields > 0)
+				{
+					// Skip if coast tile with no resources if the building is lighthouse or great lighthouse
+					if (eTerrain == TERRAIN_COAST && eResource == NO_RESOURCE &&
+						(eBuilding == GC.getInfoTypeForString("BUILDING_LIGHTHOUSE") ||
+						eBuilding == GC.getInfoTypeForString("BUILDING_GREAT_LIGHTHOUSE"))
+					)
+						continue;
+						
+					// Skip if flat land with no features or resources
+					if (pPlot->getFeatureType() == NO_FEATURE && eResource == NO_RESOURCE && pPlot->isHills() == false)
+						continue;
+						
+					int iModifier = iInfluenceModCost;
+					if (iTotalBuildingTerrainYields > 1)
+					{
+						iModifier += (iTotalBuildingTerrainYields - 1); // Additional -1 for each yield past 1
+					}
+					iInfluenceReduction += iModifier;
+					bFoundTerrainBonus = true;
+				}
+			}
+		}
+	}
+
+	// 5. Check if plot's resource is improved by buildings or traits
+	if (eResource != NO_RESOURCE)
+	{
+		bool bFoundResourceBonus = false;
+		
+		// Check buildings for resource yield bonuses
+		int iLoop;
+		for (CvCity* pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL && !bFoundResourceBonus; pLoopCity = pPlayer->nextCity(&iLoop))
+		{
+			for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos() && !bFoundResourceBonus; iBuildingLoop++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+				if (!pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding))
+					continue;
+
+				CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
+				if (!pBuildingInfo)
+					continue;
+
+				int iTotalBuildingResourceYields = 0;
+				for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+				{
+					int iYieldChange = pBuildingInfo->GetResourceYieldChange(eResource, iYieldLoop);
+					if (iYieldChange > 0)
+					{
+						iTotalBuildingResourceYields += iYieldChange;
+					}
+				}
+				
+				if (iTotalBuildingResourceYields > 0)
+				{
+					int iModifier = iInfluenceModCost;
+					if (iTotalBuildingResourceYields > 1)
+					{
+						iModifier += (iTotalBuildingResourceYields - 1); // Additional -1 for each yield past 1
+					}
+					iInfluenceReduction += iModifier;
+					bFoundResourceBonus = true;
+				}
+			}
+		}
+
+		// Check traits for resource bonuses
+		if (!bFoundResourceBonus)
+		{
+			int iTotalTraitResourceYields = 0;
+			for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+			{
+				int iYieldChange = pTraits->GetResourceYieldChange(eResource, (YieldTypes)iYieldLoop);
+				if (iYieldChange > 0)
+				{
+					iTotalTraitResourceYields += iYieldChange;
+				}
+			}
+			
+			if (iTotalTraitResourceYields > 0)
+			{
+				int iModifier = iInfluenceModCost;
+				if (iTotalTraitResourceYields > 1)
+				{
+					iModifier += (iTotalTraitResourceYields - 1); // Additional -1 for each yield past 1
+				}
+				iInfluenceReduction += iModifier;
+			}
+		}
+	}
+
+	// Return negative value since this reduces influence cost
+	return iInfluenceReduction;
+} 

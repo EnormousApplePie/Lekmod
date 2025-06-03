@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -139,6 +139,13 @@ CvBuildingEntry::CvBuildingEntry(void):
 #endif
 #if defined(LEKMOD_v34)
 	m_iGarrisonStrengthBonus(0),
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+    m_ppaiSameLandMassYieldChange(std::pair<int**, size_t>(NULL, 0)),
+    m_ppaiDifferentLandMassYieldChange(std::pair<int**, size_t>(NULL, 0)),
+#else
+    m_ppaiSameLandMassYieldChange(NULL),
+    m_ppaiDifferentLandMassYieldChange(NULL),
+#endif
 #endif
 	m_iPreferredDisplayPosition(0),
 	m_iPortraitIndex(-1),
@@ -779,6 +786,71 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 		}
 	}
 
+#if defined(LEKMOD_v34)
+    //SameLandMassYieldChanges
+    {
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+        kUtility.Initialize2DArray(m_ppaiSameLandMassYieldChange.first, "Buildings", "Yields");
+        m_ppaiSameLandMassYieldChange.second = kUtility.MaxRows("Buildings");
+#else
+        kUtility.Initialize2DArray(m_ppaiSameLandMassYieldChange, "Buildings", "Yields");
+#endif
+
+        std::string strKey("Building_SameLandMassYieldChanges");
+        Database::Results* pResults = kUtility.GetResults(strKey);
+        if(pResults == NULL)
+        {
+            pResults = kUtility.PrepareResults(strKey, "select Buildings.ID as BuildingID, Yields.ID as YieldID, Yield from Building_SameLandMassYieldChanges inner join Buildings on Buildings.Type = BuildingType inner join Yields on Yields.Type = YieldType where BuildingType = ?");
+        }
+
+        pResults->Bind(1, szBuildingType);
+
+        while(pResults->Step())
+        {
+            const int BuildingID = pResults->GetInt(0);
+            const int YieldID = pResults->GetInt(1);
+            const int yield = pResults->GetInt(2);
+
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+            m_ppaiSameLandMassYieldChange.first[BuildingID][YieldID] = yield;
+#else
+            m_ppaiSameLandMassYieldChange[BuildingID][YieldID] = yield;
+#endif
+        }
+    }
+
+    //DifferentLandMassYieldChanges
+    {
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+        kUtility.Initialize2DArray(m_ppaiDifferentLandMassYieldChange.first, "Buildings", "Yields");
+        m_ppaiDifferentLandMassYieldChange.second = kUtility.MaxRows("Buildings");
+#else
+        kUtility.Initialize2DArray(m_ppaiDifferentLandMassYieldChange, "Buildings", "Yields");
+#endif
+
+        std::string strKey("Building_DifferentLandMassYieldChanges");
+        Database::Results* pResults = kUtility.GetResults(strKey);
+        if(pResults == NULL)
+        {
+            pResults = kUtility.PrepareResults(strKey, "select Buildings.ID as BuildingID, Yields.ID as YieldID, Yield from Building_DifferentLandMassYieldChanges inner join Buildings on Buildings.Type = BuildingType inner join Yields on Yields.Type = YieldType where BuildingType = ?");
+        }
+
+        pResults->Bind(1, szBuildingType);
+
+        while(pResults->Step())
+        {
+            const int BuildingID = pResults->GetInt(0);
+            const int YieldID = pResults->GetInt(1);
+            const int yield = pResults->GetInt(2);
+
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+            m_ppaiDifferentLandMassYieldChange.first[BuildingID][YieldID] = yield;
+#else
+            m_ppaiDifferentLandMassYieldChange[BuildingID][YieldID] = yield;
+#endif
+        }
+    }
+#endif
 	//SpecialistYieldChanges
 	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -2469,6 +2541,35 @@ int CvBuildingEntry::GetBuildingClassYieldChange(int i, int j) const
 #endif
 }
 
+#if defined(LEKMOD_v34)
+/// Yield change for same landmass cities by yield type
+int CvBuildingEntry::GetSameLandMassYieldChange(int i, int j) const
+{
+    CvAssertMsg(i < GC.getNumBuildingInfos(), "Index out of bounds");
+    CvAssertMsg(i > -1, "Index out of bounds");
+    CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+    CvAssertMsg(j > -1, "Index out of bounds");
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+    return m_ppaiSameLandMassYieldChange.first ? m_ppaiSameLandMassYieldChange.first[i][j] : 0;
+#else
+    return m_ppaiSameLandMassYieldChange[i][j];
+#endif
+}
+
+/// Yield change for different landmass cities by yield type
+int CvBuildingEntry::GetDifferentLandMassYieldChange(int i, int j) const
+{
+    CvAssertMsg(i < GC.getNumBuildingInfos(), "Index out of bounds");
+    CvAssertMsg(i > -1, "Index out of bounds");
+    CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+    CvAssertMsg(j > -1, "Index out of bounds");
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+    return m_ppaiDifferentLandMassYieldChange.first ? m_ppaiDifferentLandMassYieldChange.first[i][j] : 0;
+#else
+    return m_ppaiDifferentLandMassYieldChange[i][j];
+#endif
+}
+#endif
 #ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
 
 ///Yield for expending a Great Person
