@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -312,7 +312,15 @@ public:
 #endif
 #if defined(LEKMOD_v34)
 	int GetGarrisonYieldChange(int j) const;
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+    std::pair<int**, size_t> m_ppaiSameLandMassYieldChange;
+    std::pair<int**, size_t> m_ppaiDifferentLandMassYieldChange;
+#else
+    int** m_ppaiSameLandMassYieldChange;
+    int** m_ppaiDifferentLandMassYieldChange;
 #endif
+#endif
+
 	int GetResourceYieldChange(int i, int j) const;
 	int* GetResourceYieldChangeArray(int i) const;
 	int GetFeatureYieldChange(int i, int j) const;
@@ -336,6 +344,10 @@ public:
 	int GetBuildingClassYieldChange(int i, int j) const;
 #ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
 	int GetGreatPersonExpendYield(int i) const;
+#endif
+#if defined(LEKMOD_v34)
+	int GetSameLandMassYieldChange(int i, int j) const;
+    int GetDifferentLandMassYieldChange(int i, int j) const;
 #endif
 	int GetBuildingClassHappiness(int i) const;
 

@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -746,6 +746,10 @@ public:
 #if defined(LEKMOD_v34) // Some Support for Golden Age Points being handled liike yields. Some.
 	int GetGoldenAgePointsFromCities();
 	int GetTotalGoldenAgePointsInEmpire();
+	int GetSameLandMassYieldChange(YieldTypes eIndex) const;
+    void ChangeSameLandMassYieldChange(YieldTypes eIndex, int iChange);
+    int GetDifferentLandMassYieldChange(YieldTypes eIndex) const;
+    void ChangeDifferentLandMassYieldChange(YieldTypes eIndex, int iChange);
 #endif
 
 	// Golden Age Stuff
@@ -2256,6 +2260,11 @@ protected:
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiMinorFriendshipAnchors; // DEPRECATED
 	std::vector<int> m_aiSiphonLuxuryCount;
 	std::vector<int> m_aiGreatWorkYieldChange;
+
+#ifdef LEKMOD_v34
+	FAutoVariable<std::vector<int>, CvPlayer> m_aiSameLandMassYieldChange;
+	FAutoVariable<std::vector<int>, CvPlayer> m_aiDifferentLandMassYieldChange;
+#endif
 
 #ifdef AUI_WARNING_FIXES
 	typedef std::pair<int, int> PlayerOptionEntry;
