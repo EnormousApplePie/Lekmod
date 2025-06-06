@@ -112,6 +112,9 @@ public:
 	int GetGreatWorkCount() const;
 #endif
 	GreatWorkType GetFreeGreatWork() const;
+#ifdef LEKMOD_V34
+	int GetFreeGreatWorkCount() const;
+#endif
 	int GetFreeBuildingClass() const;
 	int GetFreeBuildingThisCity() const;
 	int GetFreePromotion() const;
@@ -382,6 +385,9 @@ private:
 	int m_iGreatWorkCount;
 #endif
 	GreatWorkType m_eFreeGreatWork;
+#ifdef LEKMOD_V34
+	int m_iFreeGreatWorkCount;
+#endif
 	int m_iFreeBuildingClass;
 	int m_iFreeBuildingThisCity;
 	int m_iFreePromotion;

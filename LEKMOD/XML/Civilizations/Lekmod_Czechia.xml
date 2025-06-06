@@ -393,7 +393,7 @@
 			<ArtStylePrefix>MEDITERRANEAN</ArtStylePrefix> 
 			<PortraitIndex>0</PortraitIndex> 
 			<IconAtlas>LEKMOD_CZECHIA_ATLAS</IconAtlas> 
-			<AlphaIconAtlas>CZECHIA_ALPHA_ICON_ATLAS</AlphaIconAtlas> 
+			<AlphaIconAtlas>LEKMOD_CZECHIA_ICON_ALPHA</AlphaIconAtlas> 
 			<MapImage>generic_map.dds</MapImage> 
 			<DawnOfManQuote>TXT_KEY_DAWN_OF_MAN_CZECHIA_TEXT</DawnOfManQuote> 
 			<DawnOfManImage>generic_DoM.dds</DawnOfManImage> 

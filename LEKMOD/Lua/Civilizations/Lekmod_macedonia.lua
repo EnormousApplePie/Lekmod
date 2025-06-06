@@ -7,7 +7,6 @@ include("Lekmod_utilities.lua")
 -------------------------------------------------------------------------------------------------------------------------
 function lekmod_macedonia_hetairoi_era_scaling(player_id)
     local player = Players[player_id]
-    if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
 
     local current_era = player:GetCurrentEra()
     local era_types = {
@@ -34,7 +33,6 @@ end
 
 function lekmod_macedonia_hetairoi_created(player_id, unit_id)
     local player = Players[player_id]
-    if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
     
     local unit = player:GetUnitByID(unit_id)
     if not unit or unit:GetUnitType() ~= GameInfoTypes["UNIT_HETAIROI"] then return end

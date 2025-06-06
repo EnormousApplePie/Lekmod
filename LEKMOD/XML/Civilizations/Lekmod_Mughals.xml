@@ -179,7 +179,8 @@
 			<ArtInfoRandomVariation>false</ArtInfoRandomVariation> 
 			<MountainScienceYield>0</MountainScienceYield> 
 			<CityStateTradeRouteGoldModifier>0</CityStateTradeRouteGoldModifier> 
-			<FreeFlatFaith>0</FreeFlatFaith> 
+			<FreeFlatFaith>0</FreeFlatFaith>
+			<GarrisonStrengthBonus>10</GarrisonStrengthBonus> 
 		</Row>
 	</Buildings>
 	
