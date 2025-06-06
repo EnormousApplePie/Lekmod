@@ -7235,6 +7235,52 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				int iGWindex = 	GC.getGame().GetGameCulture()->CreateGreatWork(eGWType, eClass, m_eOwner, owningPlayer.GetCurrentEra(), pBuildingInfo->GetDescription());
 				m_pCityBuildings->SetBuildingGreatWork(eBuildingClass, 0, iGWindex);
 			}
+			
+#ifdef LEKMOD_V34
+			// v34: Add support for auto-filling great work slots
+			else if (pBuildingInfo->GetFreeGreatWorkCount() > 0 && pBuildingInfo->GetFreeGreatWork() == NO_GREAT_WORK)
+			{
+				// If no specific great work type is set but the building has free great works,
+				// check what type of slots it has and fill them appropriately
+				GreatWorkSlotType eBuildingSlotType = pBuildingInfo->GetGreatWorkSlotType();
+				if (eBuildingSlotType != NO_GREAT_WORK_SLOT)
+				{
+					int iSlotsToFill = std::min(pBuildingInfo->GetFreeGreatWorkCount(), 
+												m_pCityBuildings->GetNumAvailableGreatWorkSlots(eBuildingSlotType));
+					
+					// Determine the great work type to create based on slot type
+					GreatWorkType eCreatedGWType = NO_GREAT_WORK;
+					GreatWorkClass eCreatedGWClass = NO_GREAT_WORK_CLASS;
+					
+					if (eBuildingSlotType == CvTypes::getGREAT_WORK_SLOT_ART_ARTIFACT())
+					{
+						// If building has both art and artifact slots, prefer art
+						eCreatedGWType = (GreatWorkType)GC.getInfoTypeForString("GREAT_WORK_PAINTING_1");
+						eCreatedGWClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_ART");
+					}
+					else if (eBuildingSlotType == CvTypes::getGREAT_WORK_SLOT_MUSIC())
+					{
+						eCreatedGWType = (GreatWorkType)GC.getInfoTypeForString("GREAT_WORK_MUSIC_1");
+						eCreatedGWClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_MUSIC");
+					}
+					else if (eBuildingSlotType == CvTypes::getGREAT_WORK_SLOT_LITERATURE())
+					{
+						eCreatedGWType = (GreatWorkType)GC.getInfoTypeForString("GREAT_WORK_WRITING_1");
+						eCreatedGWClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_LITERATURE");
+					}
+					
+					// Create and place the great works
+					for (int i = 0; i < iSlotsToFill; i++)
+					{
+						if (eCreatedGWType != NO_GREAT_WORK && eCreatedGWClass != NO_GREAT_WORK_CLASS)
+						{
+							int iGWindex = GC.getGame().GetGameCulture()->CreateGreatWork(eCreatedGWType, eCreatedGWClass, m_eOwner, owningPlayer.GetCurrentEra(), pBuildingInfo->GetDescription());
+							m_pCityBuildings->SetBuildingGreatWork(eBuildingClass, i, iGWindex);
+						}
+					}
+				}
+			}
+#endif
 
 #ifdef NQ_CHEAT_FIRST_ROYAL_LIBRARY_COMES_WITH_GREAT_WORK
 			// This is going to be really ugly. May Google forgive my eSoul. You should get a free great work with your first Royal Library.
@@ -11486,6 +11532,58 @@ int CvCity::getYieldRateTimes100(YieldTypes eIndex, bool bIgnoreTrade) const
 	if (isCapital())
 	{
 		iBaseYield += GET_PLAYER(getOwner()).GetCapitalYieldChange(eIndex);
+	}
+#endif
+
+#ifdef LEKMOD_v34
+	// Apply landmass-based yield changes from buildings
+	CvPlayer& kPlayer = GET_PLAYER(getOwner());
+	int iCityLandmass = plot()->getLandmass();
+
+	// Check if player has any landmass-based building bonuses
+	int iSameLandmassBonus = kPlayer.GetSameLandMassYieldChange(eIndex);
+	int iDifferentLandmassBonus = kPlayer.GetDifferentLandMassYieldChange(eIndex);
+
+	if(iSameLandmassBonus != 0 || iDifferentLandmassBonus != 0)
+	{
+		// Check all player cities to see if any have buildings that affect this city
+		int iLoop;
+		CvCity* pLoopCity;
+		for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+		{
+			int iBuildingLandmass = pLoopCity->plot()->getLandmass();
+			
+			// Check all buildings in this city
+			for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+				if(pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+				{
+					CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
+					if(pBuildingInfo)
+					{
+						if(iCityLandmass == iBuildingLandmass)
+						{
+							// Same landmass
+							int iSameYieldChange = pBuildingInfo->GetSameLandMassYieldChange(eBuilding, eIndex);
+							if(iSameYieldChange != 0)
+							{
+								iBaseYield += iSameYieldChange * 100; // Convert to times 100 format
+							}
+						}
+						else
+						{
+							// Different landmass
+							int iDiffYieldChange = pBuildingInfo->GetDifferentLandMassYieldChange(eBuilding, eIndex);
+							if(iDiffYieldChange != 0)
+							{
+								iBaseYield += iDiffYieldChange * 100; // Convert to times 100 format
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 #endif
 	iBaseYield += (GetYieldPerPopTimes100(eIndex) * getPopulation());

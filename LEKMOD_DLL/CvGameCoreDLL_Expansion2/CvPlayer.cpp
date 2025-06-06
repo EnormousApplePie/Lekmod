@@ -10675,7 +10675,7 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 			}
 		}
 #ifdef LEKMOD_v34
-	// Apply landmass-based yield changes to player modifiers
+		// Apply landmass-based yield changes to player modifiers
 		if(pBuildingInfo)
 		{
 			for(int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
@@ -10694,7 +10694,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 				if(iDiffYieldChange != 0)
 				{
 					ChangeDifferentLandMassYieldChange(eYield, iDiffYieldChange * iChange);
-					}
 				}
 			}
 		}
@@ -10902,7 +10901,7 @@ bool CvPlayer::canBuildNoTech(const CvPlot* pPlot, BuildTypes eBuild, bool bTest
 #endif
 
 		return true;
-	}
+}
 #endif
 
 //	--------------------------------------------------------------------------------
@@ -15168,7 +15167,7 @@ int CvPlayer::GetUnhappinessFromCitySpecialists(CvCity* pAssumeCityAnnexed, CvCi
 			if(isHalfMoreSpecialistUnhappiness())
 			{
 				iPopulation++; // Round up
-				iPopulation *= 0.5;
+				iPopulation = static_cast<int>(iPopulation * 0.5);
 			}
 
 			iUnhappinessFromThisCity = iPopulation * iUnhappinessPerPop;
@@ -21232,7 +21231,7 @@ void CvPlayer::ChangeSameLandMassYieldChange(YieldTypes eIndex, int iChange)
         {
             m_aiSameLandMassYieldChange.resize(eIndex + 1, 0);
         }
-        m_aiSameLandMassYieldChange[eIndex] = (m_aiSameLandMassYieldChange[eIndex] + iChange);
+        m_aiSameLandMassYieldChange.setAt(eIndex, m_aiSameLandMassYieldChange[eIndex] + iChange);
         updateYield();
     }
 }
@@ -21259,7 +21258,7 @@ void CvPlayer::ChangeDifferentLandMassYieldChange(YieldTypes eIndex, int iChange
         {
             m_aiDifferentLandMassYieldChange.resize(eIndex + 1, 0);
         }
-        m_aiDifferentLandMassYieldChange[eIndex] = (m_aiDifferentLandMassYieldChange[eIndex] + iChange);
+        m_aiDifferentLandMassYieldChange.setAt(eIndex, m_aiDifferentLandMassYieldChange[eIndex] + iChange);
         updateYield();
     }
 }
