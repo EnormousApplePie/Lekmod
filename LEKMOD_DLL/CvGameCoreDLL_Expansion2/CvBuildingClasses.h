@@ -292,6 +292,10 @@ public:
 	int GetFreeSpecialistCount(int i) const;
 	int GetUnitCombatFreeExperience(int i) const;
 	int GetUnitCombatProductionModifier(int i) const;
+#ifdef LEKMOD_v34
+	int GetUnitCombatProductionCostModifier(int i) const;
+	int GetUnitCombatExtraProduction(int i) const;
+#endif
 	int GetDomainFreeExperience(int i) const;
 	int GetDomainFreeExperiencePerGreatWork(int i) const;
 	int GetDomainProductionModifier(int i) const;
@@ -315,13 +319,8 @@ public:
 #endif
 #if defined(LEKMOD_v34)
 	int GetGarrisonYieldChange(int j) const;
-#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
-    std::pair<int**, size_t> m_ppaiSameLandMassYieldChange;
-    std::pair<int**, size_t> m_ppaiDifferentLandMassYieldChange;
-#else
-    int** m_ppaiSameLandMassYieldChange;
-    int** m_ppaiDifferentLandMassYieldChange;
-#endif
+	int GetSameLandMassYieldChange(int iBuildingID, int iYieldID) const;
+	int GetDifferentLandMassYieldChange(int iBuildingID, int iYieldID) const;
 #endif
 
 	int GetResourceYieldChange(int i, int j) const;
@@ -347,10 +346,6 @@ public:
 	int GetBuildingClassYieldChange(int i, int j) const;
 #ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
 	int GetGreatPersonExpendYield(int i) const;
-#endif
-#if defined(LEKMOD_v34)
-	int GetSameLandMassYieldChange(int i, int j) const;
-    int GetDifferentLandMassYieldChange(int i, int j) const;
 #endif
 	int GetBuildingClassHappiness(int i) const;
 
@@ -559,6 +554,10 @@ private:
 	int* m_piTechEnhancedYieldChange;
 	int* m_piUnitCombatFreeExperience;
 	int* m_piUnitCombatProductionModifiers;
+#ifdef LEKMOD_v34
+	int* m_piUnitCombatProductionCostModifiers;
+	int* m_piUnitCombatExtraProduction;
+#endif
 	int* m_piDomainFreeExperience;
 	int* m_piDomainFreeExperiencePerGreatWork;
 	int* m_piDomainProductionModifier;
@@ -585,6 +584,13 @@ private:
 #endif
 #if defined(LEKMOD_v34)
 	int* m_piGarrisonYieldChange;
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	std::pair<int **, size_t> m_ppaiSameLandMassYieldChange;
+	std::pair<int **, size_t> m_ppaiDifferentLandMassYieldChange;
+#else
+	int** m_ppaiSameLandMassYieldChange;
+	int** m_ppaiDifferentLandMassYieldChange;
+#endif
 #endif
 	int** m_ppaiFeatureYieldChange;
 	std::map<int, std::map<int, int>> m_ppiResourceYieldChangeGlobal;

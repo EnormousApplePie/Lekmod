@@ -142,13 +142,6 @@ CvBuildingEntry::CvBuildingEntry(void):
 #endif
 #if defined(LEKMOD_v34)
 	m_iGarrisonStrengthBonus(0),
-#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
-    m_ppaiSameLandMassYieldChange(std::pair<int**, size_t>(NULL, 0)),
-    m_ppaiDifferentLandMassYieldChange(std::pair<int**, size_t>(NULL, 0)),
-#else
-    m_ppaiSameLandMassYieldChange(NULL),
-    m_ppaiDifferentLandMassYieldChange(NULL),
-#endif
 #endif
 	m_iPreferredDisplayPosition(0),
 	m_iPortraitIndex(-1),
@@ -204,6 +197,10 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_piTechEnhancedYieldChange(NULL),
 	m_piUnitCombatFreeExperience(NULL),
 	m_piUnitCombatProductionModifiers(NULL),
+#ifdef LEKMOD_v34
+	m_piUnitCombatProductionCostModifiers(NULL),
+	m_piUnitCombatExtraProduction(NULL),
+#endif
 	m_piDomainFreeExperience(NULL),
 	m_piDomainFreeExperiencePerGreatWork(NULL),
 	m_piDomainProductionModifier(NULL),
@@ -231,6 +228,13 @@ CvBuildingEntry::CvBuildingEntry(void):
 #endif
 #if defined(LEKMOD_v34)
 	m_piGarrisonYieldChange(NULL),
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	m_ppaiSameLandMassYieldChange(NULL, 0),
+	m_ppaiDifferentLandMassYieldChange(NULL, 0),
+#else
+	m_ppaiSameLandMassYieldChange(NULL),
+	m_ppaiDifferentLandMassYieldChange(NULL),
+#endif
 #endif
 	m_ppaiFeatureYieldChange(NULL),
 	m_ppiResourceYieldChangeGlobal(),
@@ -284,6 +288,10 @@ CvBuildingEntry::~CvBuildingEntry(void)
 	SAFE_DELETE_ARRAY(m_piTechEnhancedYieldChange);
 	SAFE_DELETE_ARRAY(m_piUnitCombatFreeExperience);
 	SAFE_DELETE_ARRAY(m_piUnitCombatProductionModifiers);
+#ifdef LEKMOD_v34
+	SAFE_DELETE_ARRAY(m_piUnitCombatProductionCostModifiers);
+	SAFE_DELETE_ARRAY(m_piUnitCombatExtraProduction);
+#endif
 	SAFE_DELETE_ARRAY(m_piDomainFreeExperience);
 	SAFE_DELETE_ARRAY(m_piDomainFreeExperiencePerGreatWork);
 	SAFE_DELETE_ARRAY(m_piDomainProductionModifier);
@@ -311,6 +319,22 @@ CvBuildingEntry::~CvBuildingEntry(void)
 #endif
 #if defined(LEKMOD_v34)
 	SAFE_DELETE_ARRAY(m_piGarrisonYieldChange);
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	if (m_ppaiSameLandMassYieldChange.first)
+	{
+		for (int i = 0; i < (int)m_ppaiSameLandMassYieldChange.second; i++)
+			SAFE_DELETE_ARRAY(m_ppaiSameLandMassYieldChange.first[i]);
+		SAFE_DELETE_ARRAY(m_ppaiSameLandMassYieldChange.first);
+	}
+	if (m_ppaiDifferentLandMassYieldChange.first)
+	{
+		for (int i = 0; i < (int)m_ppaiDifferentLandMassYieldChange.second; i++)
+			SAFE_DELETE_ARRAY(m_ppaiDifferentLandMassYieldChange.first[i]);
+		SAFE_DELETE_ARRAY(m_ppaiDifferentLandMassYieldChange.first);
+	}
+#else
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiSameLandMassYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiDifferentLandMassYieldChange);
 #endif
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiFeatureYieldChange);
 	m_ppiResourceYieldChangeGlobal.clear();
@@ -320,6 +344,7 @@ CvBuildingEntry::~CvBuildingEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiResourceYieldModifier);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiTerrainYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges);
+#endif
 #endif
 #ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
 	SAFE_DELETE_ARRAY(m_piGreatPersonExpendYield);
@@ -793,69 +818,66 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	}
 
 #if defined(LEKMOD_v34)
-    //SameLandMassYieldChanges
-    {
+	// SameLandMassYieldChanges
+	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
-        kUtility.Initialize2DArray(m_ppaiSameLandMassYieldChange.first, "Buildings", "Yields");
-        m_ppaiSameLandMassYieldChange.second = kUtility.MaxRows("Buildings");
+		kUtility.Initialize2DArray(m_ppaiSameLandMassYieldChange.first, "Buildings", "Yields");
+		m_ppaiSameLandMassYieldChange.second = kUtility.MaxRows("Buildings");
 #else
-        kUtility.Initialize2DArray(m_ppaiSameLandMassYieldChange, "Buildings", "Yields");
+		kUtility.Initialize2DArray(m_ppaiSameLandMassYieldChange, "Buildings", "Yields");
 #endif
 
-        std::string strKey("Building_SameLandMassYieldChanges");
-        Database::Results* pResults = kUtility.GetResults(strKey);
-        if(pResults == NULL)
-        {
-            pResults = kUtility.PrepareResults(strKey, "select Buildings.ID as BuildingID, Yields.ID as YieldID, Yield from Building_SameLandMassYieldChanges inner join Buildings on Buildings.Type = BuildingType inner join Yields on Yields.Type = YieldType where BuildingType = ?");
-        }
+		std::string strKey("Building_SameLandMassYieldChanges");
+		Database::Results *pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select Buildings.ID as BuildingID, Yields.ID as YieldID, Yield from Building_SameLandMassYieldChanges inner join Buildings on Buildings.Type = BuildingType inner join Yields on Yields.Type = YieldType");
+		}
 
-        pResults->Bind(1, szBuildingType);
-
-        while(pResults->Step())
-        {
-            const int BuildingID = pResults->GetInt(0);
-            const int YieldID = pResults->GetInt(1);
-            const int yield = pResults->GetInt(2);
+		while (pResults->Step())
+		{
+			const int BuildingID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
 
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
-            m_ppaiSameLandMassYieldChange.first[BuildingID][YieldID] = yield;
+			m_ppaiSameLandMassYieldChange.first[BuildingID][YieldID] = yield;
 #else
-            m_ppaiSameLandMassYieldChange[BuildingID][YieldID] = yield;
+			m_ppaiSameLandMassYieldChange[BuildingID][YieldID] = yield;
 #endif
-        }
-    }
+		}
+	}
 
-    //DifferentLandMassYieldChanges
-    {
+	// DifferentLandMassYieldChanges
+	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
-        kUtility.Initialize2DArray(m_ppaiDifferentLandMassYieldChange.first, "Buildings", "Yields");
-        m_ppaiDifferentLandMassYieldChange.second = kUtility.MaxRows("Buildings");
+		kUtility.Initialize2DArray(m_ppaiDifferentLandMassYieldChange.first, "Buildings", "Yields");
+		m_ppaiDifferentLandMassYieldChange.second = kUtility.MaxRows("Buildings");
 #else
-        kUtility.Initialize2DArray(m_ppaiDifferentLandMassYieldChange, "Buildings", "Yields");
+		kUtility.Initialize2DArray(m_ppaiDifferentLandMassYieldChange, "Buildings", "Yields");
 #endif
 
-        std::string strKey("Building_DifferentLandMassYieldChanges");
-        Database::Results* pResults = kUtility.GetResults(strKey);
-        if(pResults == NULL)
-        {
-            pResults = kUtility.PrepareResults(strKey, "select Buildings.ID as BuildingID, Yields.ID as YieldID, Yield from Building_DifferentLandMassYieldChanges inner join Buildings on Buildings.Type = BuildingType inner join Yields on Yields.Type = YieldType where BuildingType = ?");
-        }
+		std::string strKey("Building_DifferentLandMassYieldChanges");
+		Database::Results *pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select Buildings.ID as BuildingID, Yields.ID as YieldID, Yield from Building_DifferentLandMassYieldChanges inner join Buildings on Buildings.Type = BuildingType inner join Yields on Yields.Type = YieldType");
+		}
 
-        pResults->Bind(1, szBuildingType);
-
-        while(pResults->Step())
-        {
-            const int BuildingID = pResults->GetInt(0);
-            const int YieldID = pResults->GetInt(1);
-            const int yield = pResults->GetInt(2);
+		while (pResults->Step())
+		{
+			const int BuildingID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
 
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
-            m_ppaiDifferentLandMassYieldChange.first[BuildingID][YieldID] = yield;
+			m_ppaiDifferentLandMassYieldChange.first[BuildingID][YieldID] = yield;
 #else
-            m_ppaiDifferentLandMassYieldChange[BuildingID][YieldID] = yield;
+			m_ppaiDifferentLandMassYieldChange[BuildingID][YieldID] = yield;
 #endif
-        }
-    }
+		}
+	}
+
 #endif
 	//SpecialistYieldChanges
 	{
@@ -1020,6 +1042,52 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 		m_iNumThemingBonuses = idx;
 		pResourceTypes->Reset();
 	}
+
+#ifdef LEKMOD_v34
+	// Load Building_UnitCombatProductionCostModifiers
+	{
+		kUtility.InitializeArray(m_piUnitCombatProductionCostModifiers, "UnitCombatInfos");
+
+		std::string strKey = "Building_UnitCombatProductionCostModifiers";
+		Database::Results *pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "SELECT UnitCombatInfos.ID as UnitCombatID, CostModifier FROM Building_UnitCombatProductionCostModifiers INNER JOIN UnitCombatInfos ON UnitCombatInfos.Type = UnitCombatType WHERE BuildingType = ?");
+		}
+
+		pResults->Bind(1, szBuildingType);
+
+		while (pResults->Step())
+		{
+			const int iUnitCombatID = pResults->GetInt("UnitCombatID");
+			const int iCostModifier = pResults->GetInt("CostModifier");
+
+			m_piUnitCombatProductionCostModifiers[iUnitCombatID] = iCostModifier;
+		}
+	}
+
+	// Load Building_UnitCombatExtraProduction
+	{
+		kUtility.InitializeArray(m_piUnitCombatExtraProduction, "UnitCombatInfos");
+
+		std::string strKey = "Building_UnitCombatExtraProduction";
+		Database::Results *pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "SELECT UnitCombatInfos.ID as UnitCombatID, ExtraProduction FROM Building_UnitCombatExtraProduction INNER JOIN UnitCombatInfos ON UnitCombatInfos.Type = UnitCombatType WHERE BuildingType = ?");
+		}
+
+		pResults->Bind(1, szBuildingType);
+
+		while (pResults->Step())
+		{
+			const int iUnitCombatID = pResults->GetInt("UnitCombatID");
+			const int iExtraProduction = pResults->GetInt("ExtraProduction");
+
+			m_piUnitCombatExtraProduction[iUnitCombatID] = iExtraProduction;
+		}
+	}
+#endif
 
 	return true;
 }
@@ -2556,34 +2624,38 @@ int CvBuildingEntry::GetBuildingClassYieldChange(int i, int j) const
 }
 
 #if defined(LEKMOD_v34)
-/// Yield change for same landmass cities by yield type
-int CvBuildingEntry::GetSameLandMassYieldChange(int i, int j) const
+/// Yield change for same landmass cities by building and yield type
+int CvBuildingEntry::GetSameLandMassYieldChange(int iBuildingID, int iYieldID) const
 {
-    CvAssertMsg(i < GC.getNumBuildingInfos(), "Index out of bounds");
-    CvAssertMsg(i > -1, "Index out of bounds");
-    CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
-    CvAssertMsg(j > -1, "Index out of bounds");
+	CvAssertMsg(iBuildingID < GC.getNumBuildingInfos(), "Index out of bounds");
+	CvAssertMsg(iBuildingID > -1, "Index out of bounds");
+	CvAssertMsg(iYieldID < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(iYieldID > -1, "Index out of bounds");
+
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
-    return m_ppaiSameLandMassYieldChange.first ? m_ppaiSameLandMassYieldChange.first[i][j] : 0;
+	return m_ppaiSameLandMassYieldChange.first ? m_ppaiSameLandMassYieldChange.first[iBuildingID][iYieldID] : 0;
 #else
-    return m_ppaiSameLandMassYieldChange[i][j];
+	return m_ppaiSameLandMassYieldChange ? m_ppaiSameLandMassYieldChange[iBuildingID][iYieldID] : 0;
 #endif
 }
 
-/// Yield change for different landmass cities by yield type
-int CvBuildingEntry::GetDifferentLandMassYieldChange(int i, int j) const
+/// Yield change for different landmass cities by building and yield type
+int CvBuildingEntry::GetDifferentLandMassYieldChange(int iBuildingID, int iYieldID) const
 {
-    CvAssertMsg(i < GC.getNumBuildingInfos(), "Index out of bounds");
-    CvAssertMsg(i > -1, "Index out of bounds");
-    CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
-    CvAssertMsg(j > -1, "Index out of bounds");
+	CvAssertMsg(iBuildingID < GC.getNumBuildingInfos(), "Index out of bounds");
+	CvAssertMsg(iBuildingID > -1, "Index out of bounds");
+	CvAssertMsg(iYieldID < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(iYieldID > -1, "Index out of bounds");
+
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
-    return m_ppaiDifferentLandMassYieldChange.first ? m_ppaiDifferentLandMassYieldChange.first[i][j] : 0;
+	return m_ppaiDifferentLandMassYieldChange.first ? m_ppaiDifferentLandMassYieldChange.first[iBuildingID][iYieldID] : 0;
 #else
-    return m_ppaiDifferentLandMassYieldChange[i][j];
+	return m_ppaiDifferentLandMassYieldChange ? m_ppaiDifferentLandMassYieldChange[iBuildingID][iYieldID] : 0;
 #endif
 }
 #endif
+
+
 #ifdef LEKMOD_BUILDING_GP_EXPEND_YIELD
 
 ///Yield for expending a Great Person
@@ -2618,6 +2690,24 @@ CvThemingBonusInfo *CvBuildingEntry::GetThemingBonusInfo(int i) const
 		return &m_paThemingBonusInfo[i];
 	}
 }
+
+#ifdef LEKMOD_v34
+/// Get unit combat production cost modifier
+int CvBuildingEntry::GetUnitCombatProductionCostModifier(int i) const
+{
+	CvAssertMsg(i < GC.getNumUnitCombatClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piUnitCombatProductionCostModifiers ? m_piUnitCombatProductionCostModifiers[i] : 0;
+}
+
+/// Get unit combat extra production
+int CvBuildingEntry::GetUnitCombatExtraProduction(int i) const
+{
+	CvAssertMsg(i < GC.getNumUnitCombatClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piUnitCombatExtraProduction ? m_piUnitCombatExtraProduction[i] : 0;
+}
+#endif
 
 //=====================================
 // CvBuildingXMLEntries
