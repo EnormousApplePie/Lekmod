@@ -8380,6 +8380,48 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 			iYield += iPerPopYield;
 		}
 
+#ifdef LEKMOD_v34
+		// Landmass yields from buildings
+		if (pCity != NULL)
+		{
+			int iCityLandmass = pCity->plot()->getLandmass();
+			CvPlayer &kPlayer = GET_PLAYER(getOwner());
+
+			// Check all player cities to see if any have buildings that affect this city's yield
+			int iLoop;
+			CvCity *pLoopCity;
+			for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+			{
+				int iBuildingLandmass = pLoopCity->plot()->getLandmass();
+
+				// Check all buildings in this city
+				for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+				{
+					BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+					if (pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+					{
+						CvBuildingEntry *buildingEntry = GC.getBuildingInfo(eBuilding);
+						if (buildingEntry)
+						{
+							if (iCityLandmass == iBuildingLandmass)
+							{
+								// Same landmass
+								int iSameYield = buildingEntry->GetSameLandMassYieldChange(eBuilding, eYield);
+								iYield += iSameYield;
+							}
+							else
+							{
+								// Different landmass
+								int iDiffYield = buildingEntry->GetDifferentLandMassYieldChange(eBuilding, eYield);
+								iYield += iDiffYield;
+							}
+						}
+					}
+				}
+			}
+		}
+#endif
+
 		iYield += (iTemp / 100);
 #endif
 	}

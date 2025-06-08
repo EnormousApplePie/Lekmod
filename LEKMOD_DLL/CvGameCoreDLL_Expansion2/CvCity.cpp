@@ -5125,6 +5125,26 @@ int CvCity::getProductionNeeded(UnitTypes eUnit) const
 			}
 		}
 
+#ifdef LEKMOD_v34
+		// Building-based unit combat production cost modifiers
+		if(eUnitCombat != NO_UNITCOMBAT)
+		{
+			for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+			{
+				const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
+				
+				if (GetCityBuildings()->GetNumActiveBuilding(eBuilding) > 0)
+				{
+					CvBuildingEntry* pkBuilding = GC.getBuildingInfo(eBuilding);
+					if (pkBuilding)
+					{
+						iCostMod += pkBuilding->GetUnitCombatProductionCostModifier((int)eUnitCombat);
+					}
+				}
+			}
+		}
+#endif
+
 		// Cost modifiers must be applied before the investment code
 		iNumProductionNeeded *= (iCostMod + 100);
 		iNumProductionNeeded /= 100;
@@ -6098,6 +6118,7 @@ int CvCity::getProductionModifier(UnitTypes eUnit, CvString* toolTipSink) const
 			}
 		}
 	}
+
 	if(iBuildingMod != 0)
 	{
 		iMultiplier += iBuildingMod;
@@ -11535,57 +11556,6 @@ int CvCity::getYieldRateTimes100(YieldTypes eIndex, bool bIgnoreTrade) const
 	}
 #endif
 
-#ifdef LEKMOD_v34
-	// Apply landmass-based yield changes from buildings
-	CvPlayer& kPlayer = GET_PLAYER(getOwner());
-	int iCityLandmass = plot()->getLandmass();
-
-	// Check if player has any landmass-based building bonuses
-	int iSameLandmassBonus = kPlayer.GetSameLandMassYieldChange(eIndex);
-	int iDifferentLandmassBonus = kPlayer.GetDifferentLandMassYieldChange(eIndex);
-
-	if(iSameLandmassBonus != 0 || iDifferentLandmassBonus != 0)
-	{
-		// Check all player cities to see if any have buildings that affect this city
-		int iLoop;
-		CvCity* pLoopCity;
-		for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
-		{
-			int iBuildingLandmass = pLoopCity->plot()->getLandmass();
-			
-			// Check all buildings in this city
-			for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
-			{
-				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
-				if(pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
-				{
-					CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
-					if(pBuildingInfo)
-					{
-						if(iCityLandmass == iBuildingLandmass)
-						{
-							// Same landmass
-							int iSameYieldChange = pBuildingInfo->GetSameLandMassYieldChange(eBuilding, eIndex);
-							if(iSameYieldChange != 0)
-							{
-								iBaseYield += iSameYieldChange * 100; // Convert to times 100 format
-							}
-						}
-						else
-						{
-							// Different landmass
-							int iDiffYieldChange = pBuildingInfo->GetDifferentLandMassYieldChange(eBuilding, eIndex);
-							if(iDiffYieldChange != 0)
-							{
-								iBaseYield += iDiffYieldChange * 100; // Convert to times 100 format
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-#endif
 	iBaseYield += (GetYieldPerPopTimes100(eIndex) * getPopulation());
 	iBaseYield += (GetYieldPerReligionTimes100(eIndex) * GetCityReligions()->GetNumReligionsWithFollowers());
 
@@ -13690,69 +13660,8 @@ int CvCity::getAdditionalPlotInfluenceModifiers(CvPlot* pPlot)
 	
 	// Declare eResource early to avoid undeclared identifier errors later
 	ResourceTypes eResource = pPlot->getResourceType(eTeam);
-	
-	// Check all possible improvements on this plot
-	for (int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
-	{
-		ImprovementTypes eImprovement = (ImprovementTypes)iImprovementLoop;
-		CvImprovementEntry* pImprovementInfo = GC.getImprovementInfo(eImprovement);
-		if (!pImprovementInfo)
-			continue;
 
-		// Check if we can build this improvement on this plot (ignore territory ownership)
-		BuildTypes eBuild = NO_BUILD;
-		for (int iBuildIndex = 0; iBuildIndex < GC.getNumBuildInfos(); iBuildIndex++)
-		{
-			BuildTypes eTempBuild = (BuildTypes)iBuildIndex;
-			CvBuildInfo* pkBuild = GC.getBuildInfo(eTempBuild);
-			if (pkBuild && eImprovement == (ImprovementTypes)pkBuild->getImprovement())
-			{
-				eBuild = eTempBuild;
-				break;
-			}
-		}
-		
-		if (eBuild == NO_BUILD || !pPlot->canBuild(eBuild, pPlayer->GetID(), false, true)) // bIgnoreLocation = true to ignore territory
-			continue;
-
-		bool bHasSynergy = false;
-
-		// 1. Check if this is a unique improvement for our civ
-		CivilizationTypes eCiv = pPlayer->getCivilizationType();
-		if (pImprovementInfo->IsSpecificCivRequired() && pImprovementInfo->GetRequiredCivilization() == eCiv)
-		{
-			iInfluenceReduction += (iInfluenceModCost - 5); // Unique Improvements should be preferred even more
-			bHasSynergy = true;
-		}
-
-		// 2. Check if our traits improve this improvement
-		int iTotalTraitYields = 0;
-		for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
-		{
-			int iYieldChange = pTraits->GetImprovementYieldChange(eImprovement, (YieldTypes)iYieldLoop);
-			if (iYieldChange > 0)
-			{
-				iTotalTraitYields += iYieldChange;
-				bHasSynergy = true;
-			}
-		}
-		
-		if (iTotalTraitYields > 0)
-		{
-			int iModifier = iInfluenceModCost;
-			if (iTotalTraitYields > 1)
-			{
-				iModifier -= (iTotalTraitYields - 1); // Additional penalty for each yield past 1
-			}
-			iInfluenceReduction += iModifier;
-		}
-
-		// If we found synergy with this improvement, we don't need to check others on the same plot
-		if (bHasSynergy)
-			break;
-	}
-
-	// 3. Check if plot's feature is improved by our buildings or traits
+	// Check if plot's feature is improved by our buildings or traits
 	FeatureTypes eFeature = pPlot->getFeatureType();
 	if (eFeature != NO_FEATURE)
 	{
@@ -13820,7 +13729,7 @@ int CvCity::getAdditionalPlotInfluenceModifiers(CvPlot* pPlot)
 		}
 	}
 
-	// 4. Check if plot's terrain is improved by our buildings
+	// Check if plot's terrain is improved by our buildings
 	TerrainTypes eTerrain = pPlot->getTerrainType();
 	if (eTerrain != NO_TERRAIN)
 	{
@@ -13873,7 +13782,7 @@ int CvCity::getAdditionalPlotInfluenceModifiers(CvPlot* pPlot)
 		}
 	}
 
-	// 5. Check if plot's resource is improved by buildings or traits
+	// Check if plot's resource is improved by buildings or traits
 	if (eResource != NO_RESOURCE)
 	{
 		bool bFoundResourceBonus = false;
@@ -14621,11 +14530,44 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			int iResult = CreateUnit(eTrainUnit, eTrainAIUnit);
 			if(iResult != FFreeList::INVALID_INDEX)
 			{
+#ifdef LEKMOD_v34
+				CvUnitEntry *pkUnitInfo = GC.getUnitInfo(eTrainUnit);
+#endif
 #ifdef NQ_PATRIOTIC_WAR
 				if (GET_PLAYER(getOwner()).IsDoubleTrainedMilitaryLandUnit())
 				{
+#ifndef LEKMOD_v34
 					CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eTrainUnit);
+#endif
 					if (pkUnitInfo->GetDomainType() == DOMAIN_LAND && pkUnitInfo->GetCombat() > 0)
+					{
+						CreateUnit(eTrainUnit, eTrainAIUnit);
+					}
+				}
+#endif
+#ifdef LEKMOD_v34
+				// Building-based extra unit production
+				UnitCombatTypes eUnitCombat = (UnitCombatTypes)pkUnitInfo->GetUnitCombatType();
+				if(eUnitCombat != NO_UNITCOMBAT)
+				{
+					int iTotalExtraProduction = 0;
+					
+					for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+					{
+						const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
+						
+						if (GetCityBuildings()->GetNumActiveBuilding(eBuilding) > 0)
+						{
+							CvBuildingEntry* pkBuilding = GC.getBuildingInfo(eBuilding);
+							if (pkBuilding)
+							{
+								iTotalExtraProduction += pkBuilding->GetUnitCombatExtraProduction((int)eUnitCombat);
+							}
+						}
+					}
+					
+					// Create extra units
+					for(int i = 0; i < iTotalExtraProduction; i++)
 					{
 						CreateUnit(eTrainUnit, eTrainAIUnit);
 					}

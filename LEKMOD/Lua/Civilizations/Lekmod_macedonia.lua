@@ -16,8 +16,8 @@ function lekmod_macedonia_hetairoi_era_scaling(player_id)
         [GameInfoTypes["ERA_RENAISSANCE"]] = 30,
         [GameInfoTypes["ERA_INDUSTRIAL"]] = 40,
         [GameInfoTypes["ERA_MODERN"]] = 65,
-        [GameInfoTypes["ERA_ATOMIC"]] = 80,
-        [GameInfoTypes["ERA_INFORMATION"]] = 100
+        [GameInfoTypes["ERA_POSTMODERN"]] = 80,
+        [GameInfoTypes["ERA_FUTURE"]] = 100
     }
 
     for unit in player:Units() do
@@ -26,7 +26,9 @@ function lekmod_macedonia_hetairoi_era_scaling(player_id)
             unit:SetBaseCombatStrength(era_types[current_era])
             unit:SetHasPromotion(GameInfoTypes["PROMOTION_MARCH"], current_era >= GameInfoTypes["ERA_INDUSTRIAL"])
             unit:SetHasPromotion(GameInfoTypes["PROMOTION_ARMOR_VS_LAND"], current_era >= GameInfoTypes["ERA_MODERN"])
-            unit:SetHasPromotion(GameInfoTypes["PROMOTION_MOVEMENT_1"], current_era >= GameInfoTypes["ERA_ATOMIC"])
+            unit:SetHasPromotion(GameInfoTypes["PROMOTION_EXTRA_MOVES_I"], current_era >= GameInfoTypes["ERA_POSTMODERN"])
+            -- Refresh movement points to apply movement bonuses immediately
+            unit:SetMoves(unit:MaxMoves())
         end
     end
 end
@@ -41,19 +43,22 @@ function lekmod_macedonia_hetairoi_created(player_id, unit_id)
     
     -- Set initial combat strength based on era
     local era_types = {
-        [GameInfoTypes["ERA_ANCIENT"]] = {strength = 10, xp = 15},
-        [GameInfoTypes["ERA_CLASSICAL"]] = {strength = 15, xp = 15},
-        [GameInfoTypes["ERA_MEDIEVAL"]] = {strength = 22, xp = 15},
+        [GameInfoTypes["ERA_ANCIENT"]] = {strength = 12, xp = 15},
+        [GameInfoTypes["ERA_CLASSICAL"]] = {strength = 16, xp = 15},
+        [GameInfoTypes["ERA_MEDIEVAL"]] = {strength = 23, xp = 15},
         [GameInfoTypes["ERA_RENAISSANCE"]] = {strength = 30, xp = 30},
-        [GameInfoTypes["ERA_INDUSTRIAL"]] = {strength = 38, xp = 30},
-        [GameInfoTypes["ERA_MODERN"]] = {strength = 50, xp = 30},
-        [GameInfoTypes["ERA_ATOMIC"]] = {strength = 60, xp = 30},
-        [GameInfoTypes["ERA_INFORMATION"]] = {strength = 80, xp = 60}
+        [GameInfoTypes["ERA_INDUSTRIAL"]] = {strength = 40, xp = 30},
+        [GameInfoTypes["ERA_MODERN"]] = {strength = 65, xp = 30},
+        [GameInfoTypes["ERA_POSTMODERN"]] = {strength = 80, xp = 30},
+        [GameInfoTypes["ERA_FUTURE"]] = {strength = 100, xp = 60}
     }
 
     -- Set initial strength and award XP
     unit:SetBaseCombatStrength(era_types[current_era].strength)
     unit:ChangeExperience(era_types[current_era].xp)
+    -- Check if unit is promotion ready
+    unit:SetPromotionReady(true)
+   
 
     -- Set era-based promotions
     if current_era >= GameInfoTypes["ERA_INDUSTRIAL"] then
@@ -62,8 +67,10 @@ function lekmod_macedonia_hetairoi_created(player_id, unit_id)
     if current_era >= GameInfoTypes["ERA_MODERN"] then
         unit:SetHasPromotion(GameInfoTypes["PROMOTION_ARMOR_VS_LAND"], true)
     end
-    if current_era >= GameInfoTypes["ERA_ATOMIC"] then
-        unit:SetHasPromotion(GameInfoTypes["PROMOTION_MOVEMENT_1"], true)
+    if current_era >= GameInfoTypes["ERA_POSTMODERN"] then
+        unit:SetHasPromotion(GameInfoTypes["PROMOTION_EXTRA_MOVES_I"], true)
+        -- Refresh movement points to apply movement bonuses immediately
+        unit:SetMoves(unit:MaxMoves())
     end
 end
 
@@ -71,4 +78,4 @@ end
 GameEvents.PlayerDoTurn.Add(lekmod_macedonia_hetairoi_era_scaling)
 -- UnitCreated is lekmod specific event
 GameEvents.UnitCreated.Add(lekmod_macedonia_hetairoi_created)
-GameEvents.TeamTechResearched.Add(lekmod_macedonia_hetairoi_era_scaling)
+GameEvents.TeamSetHasTech.Add(lekmod_macedonia_hetairoi_era_scaling)

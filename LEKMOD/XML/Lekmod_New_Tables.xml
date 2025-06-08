@@ -25,4 +25,27 @@
         <Column name="YieldType" type="text" reference="Yields(Type)"/>
         <Column name="Yield" type="integer" default="0"/>
     </Table>
+
+    <!-- Building_UnitCombatProductionCostModifiers -->
+    <!-- This table is used for buildings that change the base production cost of a unit class -->
+    <Table name="Building_UnitCombatProductionCostModifiers">
+		<Column name="BuildingType" type="text" reference="Buildings(Type)"/>
+		<Column name="UnitCombatType" type="text" reference="UnitCombatInfos(Type)"/>
+		<Column name="CostModifier" type="integer" default="0"/>
+	</Table>
+
+    <Language_en_US>
+        <Row Tag="TXT_KEY_PRODMOD_UNIT_COMBAT_COST">
+            <Text>{1_Num}% production cost from {2_BuildingName}</Text>
+        </Row>
+    </Language_en_US>
+
+    <!-- Building_UnitCombatExtraProduction -->
+    <!-- This table is used for buildings that generate extra units for every unit produced, applied to specific unit classes -->
+	<Table name="Building_UnitCombatExtraProduction">
+		<Column name="BuildingType" type="text" reference="Buildings(Type)"/>
+		<Column name="UnitCombatType" type="text" reference="UnitCombatInfos(Type)"/>
+		<Column name="ExtraProduction" type="integer" default="0"/>
+	</Table>
+
 </Gamedata>

@@ -958,6 +958,25 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 		tips:insertIf( item and (row.Modifier or 0)~=0 and S( "%s %+i%%[ICON_PRODUCTION]", L(item.Description), row.Modifier ) )
 	end
 
+-- Lekmodv34 START
+	-- Unit combat production cost modifiers
+	for row in GameInfo.Building_UnitCombatProductionCostModifiers( thisBuildingType ) do
+		item = GameInfo.UnitCombatInfos[ row.UnitCombatType ]
+		tips:insertIf( item and (row.CostModifier or 0)~=0 and S( "%s %+i%% [ICON_PRODUCTION] Cost", L(item.Description), row.CostModifier ) )
+	end
+
+	-- Unit combat extra production
+	for row in GameInfo.Building_UnitCombatExtraProduction( thisBuildingType ) do
+		item = GameInfo.UnitCombatInfos[ row.UnitCombatType ]
+		if item and (row.ExtraProduction or 0) > 0 then
+			if row.ExtraProduction == 1 then
+				tips:insert( S( "%s: Produces 1 extra unit", L(item.Description) ) )
+			else
+				tips:insert( S( "%s: Produces %i extra units", L(item.Description), row.ExtraProduction ) )
+			end
+		end
+	end
+-- Lekmod v34 END
 	-- free experience
 	for row in GameInfo.Building_DomainFreeExperiences( thisBuildingType ) do
 		item = GameInfo.Domains[ row.DomainType ]

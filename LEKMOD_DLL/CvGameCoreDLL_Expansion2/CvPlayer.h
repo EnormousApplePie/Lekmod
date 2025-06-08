@@ -743,13 +743,9 @@ public:
 	int GetTourismBonusTurns() const;
 	void ChangeTourismBonusTurns(int iChange);
 
-#if defined(LEKMOD_v34) // Some Support for Golden Age Points being handled liike yields. Some.
+#if defined(LEKMOD_v34) // Some Support for Golden Age Points being handled like yields. Some.
 	int GetGoldenAgePointsFromCities();
 	int GetTotalGoldenAgePointsInEmpire();
-	int GetSameLandMassYieldChange(YieldTypes eIndex) const;
-    void ChangeSameLandMassYieldChange(YieldTypes eIndex, int iChange);
-    int GetDifferentLandMassYieldChange(YieldTypes eIndex) const;
-    void ChangeDifferentLandMassYieldChange(YieldTypes eIndex, int iChange);
 #endif
 
 	// Golden Age Stuff
