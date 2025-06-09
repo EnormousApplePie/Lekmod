@@ -824,26 +824,26 @@ function GoldenAgeTipHandler( control )
 	
 		if (pPlayer:GetGoldenAgeTurns() > 0) then
 			strText = Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_NOW", pPlayer:GetGoldenAgeTurns());
-		else
-			local iHappiness = pPlayer:GetExcessHappiness();
-			local iGoldenAgePointsFromCities = pPlayer:GetGoldenAgePointsFromCities(); -- v34
-
-			strText = Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_PROGRESS", pPlayer:GetGoldenAgeProgressMeter(), pPlayer:GetGoldenAgeProgressThreshold());
-			strText = strText .. "[NEWLINE]";
+		end
 		
-			if (iHappiness >= 0) then
-				strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_ADDITION_HAPPINESS", iHappiness);
-			else
-				strText = strText .. "[COLOR_WARNING_TEXT]" .. Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_LOSS_UNHAPPINESS", -iHappiness) .. "[ENDCOLOR]";
-			end
+		local iHappiness = pPlayer:GetExcessHappiness();
+		local iGoldenAgePointsFromCities = pPlayer:GetGoldenAgePointsFromCities(); -- v34
 
-			if (iGoldenAgePointsFromCities >= 0) then -- v34
-				strText = strText .. "[NEWLINE]";
-				strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_ADDITION_CITIES", iGoldenAgePointsFromCities);
-			else 
-				strText = strText .. "[NEWLINE]";
-				strText = strText .. "[COLOR_WARNING_TEXT]" .. Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_LOSS_CITIES", -iGoldenAgePointsFromCities) .. "[ENDCOLOR]";
-			end
+		strText = Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_PROGRESS", pPlayer:GetGoldenAgeProgressMeter(), pPlayer:GetGoldenAgeProgressThreshold());
+		strText = strText .. "[NEWLINE]";
+	
+		if (iHappiness >= 0) then
+			strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_ADDITION_HAPPINESS", iHappiness);
+		else
+			strText = strText .. "[COLOR_WARNING_TEXT]" .. Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_LOSS_UNHAPPINESS", -iHappiness) .. "[ENDCOLOR]";
+		end
+
+		if (iGoldenAgePointsFromCities >= 0) then -- v34
+			strText = strText .. "[NEWLINE]";
+			strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_ADDITION_CITIES", iGoldenAgePointsFromCities);
+		else 
+			strText = strText .. "[NEWLINE]";
+			strText = strText .. "[COLOR_WARNING_TEXT]" .. Locale.ConvertTextKey("TXT_KEY_TP_GOLDEN_AGE_LOSS_CITIES", -iGoldenAgePointsFromCities) .. "[ENDCOLOR]";
 		end
 	
 		strText = strText .. "[NEWLINE][NEWLINE]";

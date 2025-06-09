@@ -1073,6 +1073,7 @@ Trait_NearbyResouceBuildingClassYieldChange gave up
 Mughals Trait was quite specific and the behavoir of the code was buggy, so I elected to not use it in the dll for now.
 ✓ Policy_FreeStrategicResources
 */
+#define GAMEOPTION_GOLDENAGE_ALT
 
 ////////////////////////
 //Benched or not working

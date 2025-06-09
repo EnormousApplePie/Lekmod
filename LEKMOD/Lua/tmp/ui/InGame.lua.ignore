@@ -1273,20 +1273,14 @@ end
 -----------------------------------------------------------------------------------------
 
 -- From NQ
-ContextPtr:LoadNewContext("Aesthetics0_OpenerAndFinisher")
-ContextPtr:LoadNewContext("Commerce4_Entrepreneurship")
 ContextPtr:LoadNewContext("Exploration1_Colonialism")
 ContextPtr:LoadNewContext("Exploration5_TreasureFleets")
 ContextPtr:LoadNewContext("GreatWallChanges")
-ContextPtr:LoadNewContext("Patronage5_Consulates")
-ContextPtr:LoadNewContext("T1_CovertAction")
-ContextPtr:LoadNewContext("T1_EconomicUnion")
 
 -- General Lekmod files
 ContextPtr:LoadNewContext("prophetreplace")
 ContextPtr:LoadNewContext("Lekmod_global_dummies")
 ContextPtr:LoadNewContext("Lekmod_utilities")
-ContextPtr:LoadNewContext("Lekmod_technologies")
 ContextPtr:LoadNewContext("Lekmod_units")
 ContextPtr:LoadNewContext("Lekmod_policies")
 ContextPtr:LoadNewContext("Lekmod_improvements")

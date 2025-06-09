@@ -1474,7 +1474,7 @@ if civ5_mode then
 			local goldenAgeTurns = g_activePlayer:GetGoldenAgeTurns()
 			local happyProgress = g_activePlayer:GetGoldenAgeProgressMeter()
 			local happyNeeded = g_activePlayer:GetGoldenAgeProgressThreshold()
-
+			
 			if goldenAgeTurns > 0 then
 				if bnw_mode and g_activePlayer:GetGoldenAgeTourismModifier() > 0 then
 					tips:insert( Locale.ToUpper"TXT_KEY_UNIQUE_GOLDEN_AGE_ANNOUNCE" )
@@ -1482,33 +1482,29 @@ if civ5_mode then
 					tips:insert( Locale.ToUpper"TXT_KEY_GOLDEN_AGE_ANNOUNCE" )
 				end
 				tips:insert( L( "TXT_KEY_TP_GOLDEN_AGE_NOW", goldenAgeTurns ) )
-			else
-				local excessHappiness = g_activePlayer:GetExcessHappiness()
-				local cityGAP = g_activePlayer:GetGoldenAgePointsFromCities() -- v34
-				local totalGAP = g_activePlayer:GetTotalGoldenAgePointsInEmpire() -- v34
-				tips:insert( L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YELLOW]"
-					.. Locale.ToUpper( "TXT_KEY_SPECIALISTSANDGP_GOLDENAGE_HEADING4_TITLE" )
-					.. "[ENDCOLOR]" ) .. " " .. happyProgress .. " / " .. happyNeeded )
-				-- Show estimated turns only if totalGAP > 0 -- v34
-				if totalGAP > 0 then
-					turnsRemaining = math_ceil((happyNeeded - happyProgress) / totalGAP)
-					tips:insert( L("TXT_KEY_MISSION_START_GOLDENAGE") .. ": [COLOR_YELLOW]"
-						.. Locale.ToUpper( L("TXT_KEY_STR_TURNS", turnsRemaining) )
-						.. "[ENDCOLOR]" )
-				end
+			end
 
-				-- Always show GAP sources independently
-				if excessHappiness >= 0 then
-					tips:insert( L("TXT_KEY_TP_GOLDEN_AGE_ADDITION_HAPPINESS", excessHappiness) )
-				elseif excessHappiness < 0 then
-					tips:insert( "[COLOR_WARNING_TEXT]" .. L("TXT_KEY_TP_GOLDEN_AGE_LOSS_UNHAPPINESS", -excessHappiness) .. "[ENDCOLOR]" )
-				end
+			local excessHappiness = g_activePlayer:GetExcessHappiness()
+			local cityGAP = g_activePlayer:GetGoldenAgePointsFromCities() -- v34
+			local totalGAP = g_activePlayer:GetTotalGoldenAgePointsInEmpire() -- v34
+			tips:insert( L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YELLOW]" .. Locale.ToUpper( "TXT_KEY_SPECIALISTSANDGP_GOLDENAGE_HEADING4_TITLE" ) .. "[ENDCOLOR]" ) .. " " .. happyProgress .. " / " .. happyNeeded )
+			-- Show estimated turns only if totalGAP > 0 -- v34
+			if totalGAP > 0 then
+				local turnsRemaining = math_ceil((happyNeeded - happyProgress) / totalGAP)
+				tips:insert( L("TXT_KEY_MISSION_START_GOLDENAGE") .. ": [COLOR_YELLOW]" .. Locale.ToUpper( L("TXT_KEY_STR_TURNS", turnsRemaining) ) .. "[ENDCOLOR]" )
+			end
 
-				if cityGAP >= 0 then
-					tips:insert( L("TXT_KEY_TP_GOLDEN_AGE_ADDITION_CITIES", cityGAP) )
-				elseif cityGAP < 0 then
-					tips:insert( "[COLOR_WARNING_TEXT]" .. L("TXT_KEY_TP_GOLDEN_AGE_LOSS_CITIES", -cityGAP) .. "[ENDCOLOR]" )
-				end
+			-- Always show GAP sources independently
+			if excessHappiness >= 0 then
+				tips:insert( L("TXT_KEY_TP_GOLDEN_AGE_ADDITION_HAPPINESS", excessHappiness) )
+			elseif excessHappiness < 0 then
+				tips:insert( "[COLOR_WARNING_TEXT]" .. L("TXT_KEY_TP_GOLDEN_AGE_LOSS_UNHAPPINESS", -excessHappiness) .. "[ENDCOLOR]" )
+			end
+
+			if cityGAP >= 0 then
+				tips:insert( L("TXT_KEY_TP_GOLDEN_AGE_ADDITION_CITIES", cityGAP) )
+			elseif cityGAP < 0 then
+				tips:insert( "[COLOR_WARNING_TEXT]" .. L("TXT_KEY_TP_GOLDEN_AGE_LOSS_CITIES", -cityGAP) .. "[ENDCOLOR]" )
 			end
 
 			if g_isBasicHelp then
