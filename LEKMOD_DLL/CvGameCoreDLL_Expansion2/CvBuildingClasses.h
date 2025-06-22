@@ -112,7 +112,7 @@ public:
 	int GetGreatWorkCount() const;
 #endif
 	GreatWorkType GetFreeGreatWork() const;
-#ifdef LEKMOD_V34
+#ifdef LEKMOD_v34
 	int GetFreeGreatWorkCount() const;
 #endif
 	int GetFreeBuildingClass() const;
@@ -380,7 +380,7 @@ private:
 	int m_iGreatWorkCount;
 #endif
 	GreatWorkType m_eFreeGreatWork;
-#ifdef LEKMOD_V34
+#ifdef LEKMOD_v34
 	int m_iFreeGreatWorkCount;
 #endif
 	int m_iFreeBuildingClass;

@@ -260,17 +260,6 @@
 	</IconTextureAtlases>
 
     <Language_en_US>
-		<Row Tag="TXT_KEY_BUILDING_TOWER_OF_BELEM">
-			<Text>Tower of Belém</Text>
-		</Row>
-		<Row Tag="TXT_KEY_WONDER_TOWER_OF_BELEM_HELP">
-			<Text>Cities settled on the same landmass where this Wonder has been built receive +1 [ICON_PRODUCTION] Production and +1 [ICON_GOLD] Gold. Cities settled on different landmasses receive +2 [ICON_GOLDEN_AGE] Golden Age Points.[NEWLINE][NEWLINE]Unlocked with the [COLOR_POSITIVE_TEXT]Exploration Policy Tree[ENDCOLOR].</Text>
-		</Row>
-		<Row Tag="TXT_KEY_WONDER_TOWER_OF_BELEM_DESC">
-			<Text>The Tower of Belém (Portuguese: Torre de Belém) stands as one of Portugal's most iconic monuments, situated at the mouth of the Tagus River in Lisbon. Built between 1514 and 1520 during the reign of Manuel I, the tower was commissioned both as a fortress to guard the city's harbor and as a ceremonial gateway to Lisbon.[NEWLINE][NEWLINE]The tower exemplifies Manueline architecture, a distinctly Portuguese late Gothic style that incorporates maritime elements and discoveries from the Age of Discovery. Its intricate stonework features nautical themes, including twisted rope, armillary spheres, and exotic plants. The structure combines military practicality with artistic beauty, featuring both defensive battlements and ornate decorative elements.[NEWLINE][NEWLINE]Originally built on a small island near the Tagus River's bank, the tower now sits close to the shore due to changes in the river's flow over centuries. Its strategic position allowed it to work in tandem with other fortifications to defend Lisbon's maritime entrance.[NEWLINE][NEWLINE]The Tower of Belém has served various purposes throughout its history - from a fortress and customs house to a lighthouse and political prison. Today, it stands as a UNESCO World Heritage site, symbolizing Portugal's maritime power during the Age of Discovery and the architectural splendor of the Manueline style.</Text>
-		</Row>
-        <Row Tag="TXT_KEY_WONDER_TOWER_OF_BELEM_QUOTE">
-			<Text>[NEWLINE][TAB][TAB]"From this tower, brave souls departed to discover new worlds, and here they returned with the treasures of distant lands."[NEWLINE][TAB][TAB] - Chronicle of Portuguese Discoveries[NEWLINE][TAB]</Text>
-		</Row>
+		
 	</Language_en_US>
 </GameData>

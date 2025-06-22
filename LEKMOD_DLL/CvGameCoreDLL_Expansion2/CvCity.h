@@ -831,7 +831,9 @@ public:
 	CvPlot* GetNextBuyablePlot();
 	void GetBuyablePlotList(std::vector<int>& aiPlotList);
 	int GetBuyPlotCost(int iPlotX, int iPlotY) const;
+#ifdef LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 	int getAdditionalPlotInfluenceModifiers(CvPlot* pPlot);
+#endif
 	void BuyPlot(int iPlotX, int iPlotY);
 	void DoAcquirePlot(int iPlotX, int iPlotY);
 #ifdef AUI_CONSTIFY

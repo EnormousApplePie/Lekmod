@@ -955,7 +955,7 @@
 // No Combat Randomness Game Option
 #define LEKMOD_NO_COMBAT_RANDOMNESS
 // Additional plot influence modifiers
-#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
+//#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 
 
 /// ###############################
