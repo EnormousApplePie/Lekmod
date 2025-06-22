@@ -119,11 +119,12 @@
 			<ArtDefineTag>THE COLOSSUS</ArtDefineTag> 
 			<MaxStartEra>ERA_MODERN</MaxStartEra> 
 			<TechEnhancedTourism>0</TechEnhancedTourism>
-			<PrereqTech>TECH_NAVIGATION</PrereqTech> 
+			<PrereqTech>TECH_NAVIGATION</PrereqTech>
+            <SpecialistType>SPECIALIST_ENGINEER</SpecialistType> 
 			<SpecialistCount>0</SpecialistCount> 
 			<GreatWorkCount>0</GreatWorkCount> 
 			<SpecialistExtraCulture>0</SpecialistExtraCulture> 
-			<GreatPeopleRateChange>0</GreatPeopleRateChange> 
+			<GreatPeopleRateChange>2</GreatPeopleRateChange> 
 			<ExtraLeagueVotes>0</ExtraLeagueVotes> 
 			<CityWall>false</CityWall> 
 			<DisplayPosition>8</DisplayPosition> 
@@ -225,11 +226,6 @@
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>3</Yield> 
 		</Row>
-        <Row> 
-			<BuildingType>BUILDING_ARSENAL_OF_VENICE</BuildingType> 
-			<YieldType>YIELD_GOLDEN_AGE_POINTS</YieldType> 
-			<Yield>2</Yield> 
-		</Row>
     </Building_YieldChanges>
 
     <Civilization_BuildingClassOverrides>
@@ -291,17 +287,6 @@
 	</IconTextureAtlases>
 
     <Language_en_US>
-		<Row Tag="TXT_KEY_BUILDING_ARSENAL_OF_VENICE">
-			<Text>Arsenal of Venice</Text>
-		</Row>
-		<Row Tag="TXT_KEY_WONDER_ARSENAL_OF_VENICE_HELP">
-			<Text>[COLOR_POSITIVE_TEXT]Naval Units[ENDCOLOR] cost 33% more [ICON_PRODUCTION] Production. Produces 1 extra copy of every [COLOR_POSITIVE_TEXT]Naval Unit[ENDCOLOR] built in the city using [ICON_PRODUCTION] Production.[NEWLINE][NEWLINE]City must be built on the coast.</Text>
-		</Row>
-		<Row Tag="TXT_KEY_WONDER_ARSENAL_OF_VENICE_DESC">
-			<Text>The Arsenal of Venice (Italian: Arsenale di Venezia) was one of the most important naval complexes in European history, serving as the heart of Venice's maritime empire from the 12th to 18th centuries. Located in the Castello district of Venice, this vast shipyard complex revolutionized naval construction and became a symbol of Venetian industrial might.[NEWLINE][NEWLINE]At its peak during the Renaissance, the Arsenal employed over 16,000 workers and could produce a complete warship in a single day using revolutionary assembly-line techniques that would later inspire modern industrial production. The complex covered about 15% of Venice's total area and was protected by high walls and fortifications, making it both a center of production and a fortress.[NEWLINE][NEWLINE]The Arsenal's innovative production methods included standardized parts, specialized workers, and efficient logistics systems. Different areas of the complex were dedicated to specific tasks: rope-making, sail production, cannon casting, and hull construction. Ships would move through the Arsenal along a canal system, with workers adding components at each station.[NEWLINE][NEWLINE]The Arsenal's military and economic importance made it one of the most closely guarded secrets of the Venetian Republic. Foreign visitors were rarely allowed inside, and workers were sworn to secrecy about the techniques employed. This industrial complex enabled Venice to maintain naval supremacy in the Mediterranean for centuries and played a crucial role in the city's transformation from a small trading post to a major European power.[NEWLINE][NEWLINE]Today, parts of the Arsenal house the Venice Biennale art exhibition, while other sections serve as a naval base. The iconic gateway, built in 1460, remains one of Venice's most recognizable landmarks and a testament to the Republic's former glory.</Text>
-		</Row>
-        <Row Tag="TXT_KEY_WONDER_ARSENAL_OF_VENICE_QUOTE">
-			<Text>[NEWLINE][TAB][TAB]"As in the arsenal of the Venetians, all winter long a stew of sticky pitch boils up to patch their sick and tattered ships that cannot sail (instead of voyaging, some build new keels, some tow and tar the ribs of hulls worn out by too much journeying; some hammer at the prow, some at the stern, and some make oars, and some braid ropes and cords; one mends the jib, another, the mainsail);"[NEWLINE][TAB][TAB] - Dante Alighieri[NEWLINE][TAB]</Text>
-		</Row>
+		
 	</Language_en_US>
 </GameData>

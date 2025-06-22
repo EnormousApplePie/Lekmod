@@ -7256,46 +7256,80 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				int iGWindex = 	GC.getGame().GetGameCulture()->CreateGreatWork(eGWType, eClass, m_eOwner, owningPlayer.GetCurrentEra(), pBuildingInfo->GetDescription());
 				m_pCityBuildings->SetBuildingGreatWork(eBuildingClass, 0, iGWindex);
 			}
-			
-#ifdef LEKMOD_V34
+
+#ifdef LEKMOD_v34
 			// v34: Add support for auto-filling great work slots
-			else if (pBuildingInfo->GetFreeGreatWorkCount() > 0 && pBuildingInfo->GetFreeGreatWork() == NO_GREAT_WORK)
+			else if (pBuildingInfo->GetFreeGreatWorkCount() > 0)
 			{
-				// If no specific great work type is set but the building has free great works,
-				// check what type of slots it has and fill them appropriately
-				GreatWorkSlotType eBuildingSlotType = pBuildingInfo->GetGreatWorkSlotType();
-				if (eBuildingSlotType != NO_GREAT_WORK_SLOT)
+				// Check how many slots are available in this specific building
+				int iAvailableSlots = m_pCityBuildings->GetNumAvailableGreatWorkSlots(pBuildingInfo->GetGreatWorkSlotType());
+				int iSlotsToFill = std::min(pBuildingInfo->GetFreeGreatWorkCount(), iAvailableSlots);
+
+				for (int i = 0; i < iSlotsToFill; i++)
 				{
-					int iSlotsToFill = std::min(pBuildingInfo->GetFreeGreatWorkCount(), 
-												m_pCityBuildings->GetNumAvailableGreatWorkSlots(eBuildingSlotType));
-					
-					// Determine the great work type to create based on slot type
-					GreatWorkType eCreatedGWType = NO_GREAT_WORK;
-					GreatWorkClass eCreatedGWClass = NO_GREAT_WORK_CLASS;
-					
-					if (eBuildingSlotType == CvTypes::getGREAT_WORK_SLOT_ART_ARTIFACT())
+					// Determine slot type and great work class in priority order: Literature → Art → Music
+					GreatWorkSlotType eSlotType = pBuildingInfo->GetGreatWorkSlotType();
+					GreatWorkClass eGreatWorkClass = NO_GREAT_WORK_CLASS;
+					UnitTypes eUnitType = NO_UNIT;
+
+					if (eSlotType == CvTypes::getGREAT_WORK_SLOT_LITERATURE())
 					{
-						// If building has both art and artifact slots, prefer art
-						eCreatedGWType = (GreatWorkType)GC.getInfoTypeForString("GREAT_WORK_PAINTING_1");
-						eCreatedGWClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_ART");
+						eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_LITERATURE");
+						eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_WRITER");
 					}
-					else if (eBuildingSlotType == CvTypes::getGREAT_WORK_SLOT_MUSIC())
+					else if (eSlotType == CvTypes::getGREAT_WORK_SLOT_ART_ARTIFACT())
 					{
-						eCreatedGWType = (GreatWorkType)GC.getInfoTypeForString("GREAT_WORK_MUSIC_1");
-						eCreatedGWClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_MUSIC");
+						eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_ART");
+						eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST");
 					}
-					else if (eBuildingSlotType == CvTypes::getGREAT_WORK_SLOT_LITERATURE())
+					else if (eSlotType == CvTypes::getGREAT_WORK_SLOT_MUSIC())
 					{
-						eCreatedGWType = (GreatWorkType)GC.getInfoTypeForString("GREAT_WORK_WRITING_1");
-						eCreatedGWClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_LITERATURE");
+						eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_MUSIC");
+						eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_MUSICIAN");
 					}
-					
-					// Create and place the great works
-					for (int i = 0; i < iSlotsToFill; i++)
+
+					if (eSlotType != NO_GREAT_WORK_SLOT && eUnitType != NO_UNIT)
 					{
-						if (eCreatedGWType != NO_GREAT_WORK && eCreatedGWClass != NO_GREAT_WORK_CLASS)
+						// Get the great work type with proper naming
+						GreatWorkType eGreatWorkType = NO_GREAT_WORK;
+						CvString strName;
+						CvUnitEntry *pkUnitEntry = GC.getUnitInfo(eUnitType);
+						if (pkUnitEntry)
 						{
-							int iGWindex = GC.getGame().GetGameCulture()->CreateGreatWork(eCreatedGWType, eCreatedGWClass, m_eOwner, owningPlayer.GetCurrentEra(), pBuildingInfo->GetDescription());
+							int iNumUnitCreated = GC.getGame().getUnitCreatedCount(eUnitType);
+							int iNumNames = pkUnitEntry->GetNumUnitNames();
+							if (iNumUnitCreated < iNumNames)
+							{
+								int iNameOffset = GC.getGame().getJonRandNum(iNumNames, "Unit name selection");
+								for (int iI = 0; iI < iNumNames; iI++)
+								{
+									int iIndex = (iNameOffset + iI) % iNumNames;
+									strName = pkUnitEntry->GetUnitNames(iIndex);
+									if (!GC.getGame().isGreatPersonBorn(strName))
+									{
+										eGreatWorkType = pkUnitEntry->GetGreatWorks(iIndex);
+										GC.getGame().addGreatPersonBornName(strName);
+										break;
+									}
+								}
+							}
+						}
+
+						// Create and place the great work in this building
+						if (eGreatWorkType != NO_GREAT_WORK)
+						{
+							CvString strBuffer;
+							if (!strName.empty() && pkUnitEntry)
+							{
+								Localization::String name = Localization::Lookup(strName);
+								strBuffer.Format("%s (%s)", name.toUTF8(), pkUnitEntry->GetDescription());
+							}
+							else
+							{
+								strBuffer = pBuildingInfo->GetDescription();
+							}
+
+							int iGWindex = GC.getGame().GetGameCulture()->CreateGreatWork(eGreatWorkType, eGreatWorkClass, m_eOwner, owningPlayer.GetCurrentEra(), strBuffer);
 							m_pCityBuildings->SetBuildingGreatWork(eBuildingClass, i, iGWindex);
 						}
 					}

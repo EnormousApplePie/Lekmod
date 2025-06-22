@@ -44,7 +44,7 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_eGreatWorkSlotType(NO_GREAT_WORK_SLOT),
 	m_iGreatWorkCount(0),
 	m_eFreeGreatWork(NO_GREAT_WORK),
-#ifdef LEKMOD_V34
+#ifdef LEKMOD_v34
 	m_iFreeGreatWorkCount(0),
 #endif
 	m_iFreeBuildingClass(NO_BUILDINGCLASS),
@@ -574,7 +574,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	m_iGreatWorkCount = kResults.GetInt("GreatWorkCount");
 	szTextVal = kResults.GetText("FreeGreatWork");
 	m_eFreeGreatWork = (GreatWorkType)GC.getInfoTypeForString(szTextVal, true);
-#ifdef LEKMOD_V34
+#ifdef LEKMOD_v34
 	m_iFreeGreatWorkCount = kResults.GetInt("FreeGreatWorkCount");
 #endif
 
@@ -1251,7 +1251,7 @@ GreatWorkType CvBuildingEntry::GetFreeGreatWork() const
 	return m_eFreeGreatWork;
 }
 
-#ifdef LEKMOD_V34
+#ifdef LEKMOD_v34
 /// How many free great works does this building come with?
 int CvBuildingEntry::GetFreeGreatWorkCount() const
 {
