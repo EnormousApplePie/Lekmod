@@ -1409,7 +1409,11 @@ void CvUnitCombat::ResolveRangedCityVsUnitCombat(const CvCombatInfo& kCombatInfo
 
 						// Earn bonuses for kills?
 						CvPlayer& kAttackingPlayer = GET_PLAYER(pkAttacker->getOwner());
+#if !defined(FULL_YIELD_FROM_KILLS)
 						kAttackingPlayer.DoYieldsFromKill(NO_UNIT, pkDefender->getUnitType(), pkDefender->getX(), pkDefender->getY(), pkDefender->isBarbarian(), 0);
+#else // Pass a null pointer, function handles it safely and is pretty much the same as above. Might make a city compatible one? idk.
+						kAttackingPlayer.DoYieldsFromKill(NULL, pkDefender, pkDefender->getX(), pkDefender->getY(), pkDefender->isBarbarian(), 0);
+#endif
 					}
 
 					//set damage but don't update entity damage visibility
@@ -3894,19 +3898,21 @@ void CvUnitCombat::ApplyPostCombatTraitEffects(CvUnit* pkWinner, CvUnit* pkLoser
 	}
 
 	CvPlayer& kPlayer = GET_PLAYER(pkWinner->getOwner());
+	// Moved the old Promotion for GAP, as its now being hooked up with all the rest, if v34 is not defined then FULL_YIELD_FROM_KILLS does not support GAP from Kills
+#if !defined(FULL_YIELD_FROM_KILLS) || !defined(LEKMOD_v34)
 	if (pkWinner->GetGoldenAgeValueFromKills() > 0)
 	{
 		int iCombatStrength = max(pkLoser->getUnitInfo().GetCombat(), pkLoser->getUnitInfo().GetRangedCombat());
-		if(iCombatStrength > 0)
+		if (iCombatStrength > 0)
 		{
 			int iValue = iCombatStrength * pkWinner->GetGoldenAgeValueFromKills() / 100;
 			kPlayer.ChangeGoldenAgeProgressMeter(iValue);
 
 			CvString yieldString = "[COLOR_WHITE]+%d[ENDCOLOR][ICON_GOLDEN_AGE]";
 
-			if(pkWinner->getOwner() == GC.getGame().getActivePlayer())
+			if (pkWinner->getOwner() == GC.getGame().getActivePlayer())
 			{
-				char text[256] = {0};
+				char text[256] = { 0 };
 				float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 1.5f;
 				sprintf_s(text, yieldString, iValue);
 				GC.GetEngineUserInterface()->AddPopupText(pkLoser->getX(), pkLoser->getY(), text, fDelay);
@@ -3915,9 +3921,14 @@ void CvUnitCombat::ApplyPostCombatTraitEffects(CvUnit* pkWinner, CvUnit* pkLoser
 			}
 		}
 	}
-
+#endif
 	// Earn bonuses for kills?
+#if !defined(FULL_YIELD_FROM_KILLS)
 	kPlayer.DoYieldsFromKill(pkWinner->getUnitType(), pkLoser->getUnitType(), pkLoser->getX(), pkLoser->getY(), pkLoser->isBarbarian(), iExistingDelay);
+#else
+	// This now directly passes the Unit Pointers into the function chain so the Yield From Kills can be given from promotions
+	kPlayer.DoYieldsFromKill(pkWinner, pkLoser, pkLoser->getX(), pkLoser->getY(), pkLoser->isBarbarian(), iExistingDelay);
+#endif
 
 	//Achievements and Stats
 	if(pkWinner->isHuman() && !GC.getGame().isGameMultiPlayer())

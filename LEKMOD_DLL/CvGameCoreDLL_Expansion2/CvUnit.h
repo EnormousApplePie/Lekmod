@@ -745,7 +745,9 @@ public:
 	int getExperience() const;
 	void setExperience(int iNewValue, int iMax = -1);
 	void changeExperience(int iChange, int iMax = -1, bool bFromCombat = false, bool bInBorders = false, bool bUpdateGlobal = false);
-
+#if defined(DISPLAY_GENERAL_ADMIRAL_POINTS)
+	void ReportGGPoints(int iPoints, bool bAdmiral);
+#endif
 	int getLevel() const;
 	void setLevel(int iNewValue);
 	void changeLevel(int iChange);
@@ -1131,7 +1133,10 @@ public:
 #endif
 	int getScenarioData() const;
 	void setScenarioData(int iNewValue);
-
+#if defined(FULL_YIELD_FROM_KILLS)
+	int GetYieldFromKills(YieldTypes eYield) const;
+	void ChangeYieldFromKills(YieldTypes eYield, int iChange);
+#endif
 	int getTerrainDoubleMoveCount(TerrainTypes eIndex) const;
 	bool isTerrainDoubleMove(TerrainTypes eIndex) const;
 	void changeTerrainDoubleMoveCount(TerrainTypes eIndex, int iChange);
@@ -1603,7 +1608,9 @@ protected:
 
 	CvUnitPromotions  m_Promotions;
 	CvUnitReligion* m_pReligion;
-
+#if defined(FULL_YIELD_FROM_KILLS)
+	FAutoVariable<std::vector<int>, CvUnit> m_iYieldFromKills;
+#endif
 	FAutoVariable<std::vector<int>, CvUnit> m_terrainDoubleMoveCount;
 	FAutoVariable<std::vector<int>, CvUnit> m_featureDoubleMoveCount;
 	FAutoVariable<std::vector<int>, CvUnit> m_terrainImpassableCount;

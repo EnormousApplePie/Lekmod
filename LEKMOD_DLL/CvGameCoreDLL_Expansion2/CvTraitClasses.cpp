@@ -165,9 +165,7 @@ CvTraitEntry::CvTraitEntry() :
 
 #if defined(TRAITIFY) // Constructor, Arrays
 	m_ppiBuildingCostOverride(NULL),
-	m_ppiUnitClassForceSpawnCapital(NULL),
 	m_ppiBuildingClassYieldChanges(NULL),
-	m_ppiBuildingClassRemoveRequiredTerrain(NULL),
 	m_piPuppetYieldModifiers(NULL),
 	m_ppiResourceClassYieldChanges(NULL),
 	m_ppiFeatureYieldChanges(NULL),
@@ -180,6 +178,9 @@ CvTraitEntry::CvTraitEntry() :
 #if defined(LEKMOD_v34)
 	m_paiYieldPerPopulation(NULL),
 	m_paiYieldPerPopulationForeignReligion(NULL),
+#endif
+#if defined(FULL_YIELD_FROM_KILLS)
+	m_paiYieldFromKills(NULL),
 #endif
 	m_paiExtraYieldThreshold(NULL),
 	m_paiYieldChange(NULL),
@@ -230,8 +231,6 @@ CvTraitEntry::~CvTraitEntry()
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiSpecialistYieldChanges);
 #if defined(TRAITIFY) // Destructor, Arrays
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges);
-	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassRemoveRequiredTerrain);
-	CvDatabaseUtility::SafeDelete2DArray(m_ppiUnitClassForceSpawnCapital);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingCostOverride);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiResourceClassYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiFeatureYieldChanges);
@@ -240,6 +239,9 @@ CvTraitEntry::~CvTraitEntry()
 	SAFE_DELETE_ARRAY(m_piPuppetYieldModifiers);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassGlobalHappiness);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassHappiness);
+#endif
+#if defined(FULL_YIELD_FROM_KILLS)
+	SAFE_DELETE_ARRAY(m_paiYieldFromKills);
 #endif
 #if defined(LEKMOD_v34)
 	SAFE_DELETE_ARRAY(m_paiYieldPerPopulation);
@@ -1058,7 +1060,13 @@ int CvTraitEntry::GetYieldChangeNaturalWonder(int i) const
 {
 	return m_paiYieldChangeNaturalWonder ? m_paiYieldChangeNaturalWonder[i] : -1;
 }
-
+#if defined(FULL_YIELD_FROM_KILLS) // Accessors, Arrays
+/// Accessor:: Get Yield from Killing Units
+int CvTraitEntry::GetYieldFromKills(int i) const
+{
+	return m_paiYieldFromKills ? m_paiYieldFromKills[i] : -1;
+}
+#endif
 /// Accessor:: Extra yield from trade partners
 int CvTraitEntry::GetYieldChangePerTradePartner(int i) const
 {
@@ -1308,14 +1316,28 @@ int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eRe
 
 #if defined(TRAITIFY) // Array accessors
 // Remove Terrain Requirement
-bool CvTraitEntry::IsBuildingClassRemoveRequiredTerrain(int iTrait, int iBuildingClass) const
+bool CvTraitEntry::IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass) const
 {
-	return (m_ppiBuildingClassRemoveRequiredTerrain != NULL && m_ppiBuildingClassRemoveRequiredTerrain[iTrait][iBuildingClass] == 1);
+	if (eBuildingClass != NO_BUILDINGCLASS)
+	{
+		return m_abBuildingClassRemoveRequiredTerrain[eBuildingClass];
+	}
+	else
+	{
+		return false;
+	}
 }
 // Make Defined UnitClasses spawn in the Capital when given by traits
-bool CvTraitEntry::IsUnitClassForceSpawnCapital(int iTrait, int iUnitClass) const
+bool CvTraitEntry::IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass) const
 {
-	return (m_ppiUnitClassForceSpawnCapital != NULL && m_ppiUnitClassForceSpawnCapital[iTrait][iUnitClass] == 1);
+	if (eUnitClass != NO_UNITCLASS)
+	{
+		return m_abUnitClassForceSpawnCapital[eUnitClass];
+	}
+	else
+	{
+		return false;
+	}
 }
 // Change Yield based on ResourceClassType (Netherlands, Russia and Jerusalem)
 int CvTraitEntry::GetResourceClassYieldChanges(int i, int j) const
@@ -1620,6 +1642,9 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	kUtility.SetYields(m_paiYieldChangeStrategicResources, "Trait_YieldChangesStrategicResources", "TraitType", szTraitType);
 	kUtility.SetYields(m_paiYieldChangeLuxuryResources, "Trait_YieldChangesLuxuryResources", "TraitType", szTraitType); // NQMP GJS - New Netherlands UA
 #endif
+#if defined(FULL_YIELD_FROM_KILLS)
+	kUtility.SetYields(m_paiYieldFromKills, "Trait_YieldFromKills", "TraitType", szTraitType);
+#endif
 	kUtility.SetYields(m_paiYieldChangeNaturalWonder, "Trait_YieldChangesNaturalWonder", "TraitType", szTraitType);
 	kUtility.SetYields(m_paiYieldChangePerTradePartner, "Trait_YieldChangesPerTradePartner", "TraitType", szTraitType);
 	kUtility.SetYields(m_paiYieldChangeIncomingTradeRoute, "Trait_YieldChangesIncomingTradeRoute", "TraitType", szTraitType);
@@ -1665,57 +1690,55 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 
 	// Trait_BuildingClassRequiredTerrainRemoval
 	{
-		kUtility.Initialize2DArray(m_ppiBuildingClassRemoveRequiredTerrain, "Traits", "BuildingClasses");
+		int BuildingClassLoop;
+		for (BuildingClassLoop = 0; BuildingClassLoop < GC.getNumBuildingClassInfos(); BuildingClassLoop++)
+		{
+			m_abBuildingClassRemoveRequiredTerrain.push_back(false);
+		}
 
 		std::string strKey("Trait_BuildingClassRequiredTerrainRemoval");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
 			pResults = kUtility.PrepareResults(strKey,
-				"SELECT Traits.ID as TraitID, BuildingClasses.ID as BuildingClassID FROM Trait_BuildingClassRequiredTerrainRemoval \
-             INNER JOIN Traits ON Traits.Type = TraitType \
-             INNER JOIN BuildingClasses ON BuildingClasses.Type = BuildingClassType");
+				"SELECT Traits.ID, BuildingClasses.ID FROM Trait_BuildingClassRequiredTerrainRemoval "
+				"INNER JOIN Traits on Trait_BuildingClassRequiredTerrainRemoval.TraitType = Traits.Type "
+				"INNER JOIN BuildingClasses on Trait_BuildingClassRequiredTerrainRemoval.BuildingClassType = BuildingClasses.Type "
+				"WHERE TraitType = ?");
 		}
 
 		while (pResults->Step())
 		{
-			const int TraitID = pResults->GetInt(0);
 			const int BuildingClassID = pResults->GetInt(1);
 
-			CvAssert(TraitID >= 0);
-			CvAssert(BuildingClassID >= 0);
-
-			m_ppiBuildingClassRemoveRequiredTerrain[TraitID][BuildingClassID] = 1; // Mark as allowed
+			m_abBuildingClassRemoveRequiredTerrain[BuildingClassID] = true; // Mark as allowed
 		}
-
-		pResults->Reset();
 	}
 	// Trait_UnitClassForceCapitalSpawn
 	{
-		kUtility.Initialize2DArray(m_ppiUnitClassForceSpawnCapital, "Traits", "UnitClasses");
+		int iUnitClassLoop;
+		for (iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
+		{
+			m_abUnitClassForceSpawnCapital.push_back(false);
+		}
 
 		std::string strKey("Trait_UnitClassForceCapitalSpawn");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
 			pResults = kUtility.PrepareResults(strKey,
-				"SELECT Traits.ID as TraitID, UnitClasses.ID as UnitClassID FROM Trait_UnitClassForceCapitalSpawn \
-             INNER JOIN Traits ON Traits.Type = TraitType \
-             INNER JOIN UnitClasses ON UnitClasses.Type = UnitClassType");
+				"SELECT Traits.ID as TraitID, UnitClasses.ID as UnitClassID FROM Trait_UnitClassForceCapitalSpawn "
+				"INNER JOIN Traits ON Trait_UnitClassForceCapitalSpawn.TraitType = TraitType "
+				"INNER JOIN UnitClasses on Trait_UnitClassForceCapitalSpawn.UnitClassType = UnitClasses.Type "
+				"WHERE TraitType = ?");
 		}
 
 		while (pResults->Step())
 		{
-			const int TraitID = pResults->GetInt(0);
 			const int UnitClassID = pResults->GetInt(1);
 
-			CvAssert(TraitID >= 0);
-			CvAssert(UnitClassID >= 0);
-
-			m_ppiUnitClassForceSpawnCapital[TraitID][UnitClassID] = 1; // Mark as allowed
+			m_abUnitClassForceSpawnCapital[UnitClassID] = true; // Mark as allowed
 		}
-
-		pResults->Reset();
 	}
 	{
 		kUtility.Initialize2DArray(m_ppiResourceClassYieldChanges, "ResourceClasses", "Yields");
@@ -2632,6 +2655,12 @@ void CvPlayerTraits::InitPlayerTraits()
 				m_iYieldChangePerTradePartner[iYield] = trait->GetYieldChangePerTradePartner(iYield);
 				m_iYieldChangeIncomingTradeRoute[iYield] = trait->GetYieldChangeIncomingTradeRoute(iYield);
 				m_iYieldRateModifier[iYield] = trait->GetYieldModifier(iYield);
+#if defined(FULL_YIELD_FROM_KILLS) // CvPlayerTraits::InitPlayerTraits, Arrays
+				m_iYieldFromKills[iYield] = trait->GetYieldFromKills(iYield);
+#endif
+#if defined(TRAITIFY)
+				m_iPuppetYieldModifiers[iYield] = trait->GetPuppetYieldModifiers(iYield);
+#endif
 
 #ifdef AUI_WARNING_FIXES
 				for (uint iFeatureLoop = 0; iFeatureLoop < GC.getNumFeatureInfos(); iFeatureLoop++)
@@ -2646,16 +2675,59 @@ void CvPlayerTraits::InitPlayerTraits()
 						yields[iYield] = (m_ppaaiUnimprovedFeatureYieldChange[iFeatureLoop][iYield] + iChange);
 						m_ppaaiUnimprovedFeatureYieldChange[iFeatureLoop] = yields;
 					}
-				}
-#if defined(TRAITIFY) // Altering the UnimprovedFeatureYieldChanges to also include improved features, optionally
-				for (int iFeatureLoop = 0; iFeatureLoop < GC.getNumFeatureInfos(); iFeatureLoop++)
-				{
-					int iChange = trait->GetFeatureYieldChanges((FeatureTypes)iFeatureLoop, (YieldTypes)iYield);
+#if defined(TRAITIFY) // Load CvTraitEntry arrays into CvPlayerTraitArrays
+					// This one allows Improvements on Features in CvPlot.cpp
+					iChange = trait->GetFeatureYieldChanges((FeatureTypes)iFeatureLoop, (YieldTypes)iYield);
 					if (iChange > 0)
 					{
 						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiFeatureYieldChange[iFeatureLoop];
 						yields[iYield] = (m_ppaaiFeatureYieldChange[iFeatureLoop][iYield] + iChange);
 						m_ppaaiFeatureYieldChange[iFeatureLoop] = yields;
+					}
+#endif
+				}
+#if defined(TRAITIFY) // Load CvTraitEntry arrays into CvPlayerTraitArrays
+				// Terrain Yield Changes
+				for (int iTerrainLoop = 0; iTerrainLoop < GC.getNumTerrainInfos(); iTerrainLoop++)
+				{
+					int iChange = trait->GetTerrainYieldChanges((TerrainTypes)iTerrainLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiTerrainYieldChange[iTerrainLoop];
+						yields[iYield] = (m_ppaaiTerrainYieldChange[iTerrainLoop][iYield] + iChange);
+						m_ppaaiTerrainYieldChange[iTerrainLoop] = yields;
+					}
+				}
+				// Resource Yield Changes
+				for (int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+				{
+					int iChange = trait->GetResourceYieldChanges((ResourceTypes)iResourceLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiResourceYieldChange[iResourceLoop];
+						yields[iYield] = (m_ppaaiResourceYieldChange[iResourceLoop][iYield] + iChange);
+						m_ppaaiResourceYieldChange[iResourceLoop] = yields;
+					}
+				}
+				// ResourceClass Yield Changes
+				for (int iResourceClassLoop = 0; iResourceClassLoop < GC.getNumResourceClassInfos(); iResourceClassLoop++)
+				{
+					int iChange = trait->GetResourceClassYieldChanges((ResourceClassTypes)iResourceClassLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiResourceClassYieldChange[iResourceClassLoop];
+						yields[iYield] = (m_ppaaiResourceClassYieldChange[iResourceClassLoop][iYield] + iChange);
+						m_ppaaiResourceClassYieldChange[iResourceClassLoop] = yields;
+					}
+				}
+				for (int iBuildingClassLoop = 0; iBuildingClassLoop < GC.getNumBuildingClassInfos(); iBuildingClassLoop++)
+				{
+					int iChange = trait->GetBuildingClassYieldChanges((BuildingClassTypes)iBuildingClassLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiBuildingClassYieldChange[iBuildingClassLoop];
+						yields[iYield] = (m_ppaaiBuildingClassYieldChange[iBuildingClassLoop][iYield] + iChange);
+						m_ppaaiBuildingClassYieldChange[iBuildingClassLoop] = yields;
 					}
 				}
 #endif
@@ -2704,6 +2776,14 @@ void CvPlayerTraits::InitPlayerTraits()
 #endif
 			}
 			CvAssert(GC.getNumTerrainInfos() <= NUM_TERRAIN_TYPES);
+#if defined(TRAITIFY) // Building Class Loop for non Yield Arrays
+			for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
+			{
+				m_aiBuildingClassHappiness[iBuildingClass] = trait->GetBuildingClassHappiness((BuildingClassTypes)iBuildingClass);
+				m_aiBuildingClassGlobalHappiness[iBuildingClass] = trait->GetBuildingClassGlobalHappiness((BuildingClassTypes)iBuildingClass);
+				m_abRemoveRequiredTerrain[iBuildingClass] = trait->IsBuildingClassRemoveRequiredTerrain((BuildingClassTypes)iBuildingClass);
+			}
+#endif
 #ifdef AUI_WARNING_FIXES
 			for (uint iTerrain = 0; iTerrain < GC.getNumTerrainInfos(); iTerrain++)
 #else
@@ -2729,6 +2809,9 @@ void CvPlayerTraits::InitPlayerTraits()
 #endif
 			{
 				m_abNoTrain[iUnitClass] = trait->NoTrain((UnitClassTypes)iUnitClass);
+#if defined(TRAITIFY) // UnitClassForceSpawnCapital insert
+				m_abForceSpawnCapital[iUnitClass] = trait->IsUnitClassForceSpawnCapital((UnitClassTypes)iUnitClass);
+#endif
 			}
 
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
@@ -2820,7 +2903,15 @@ void CvPlayerTraits::Uninit()
 
 	m_ppaaiUnimprovedFeatureYieldChange.clear();
 #if defined(TRAITIFY) // CvPlayerTraits::Uninit
+	m_abForceSpawnCapital.clear();
+	m_abRemoveRequiredTerrain.clear();
+	m_aiBuildingClassHappiness.clear();
+	m_aiBuildingClassGlobalHappiness.clear();
+	m_ppaaiBuildingClassYieldChange.clear();
 	m_ppaaiFeatureYieldChange.clear();
+	m_ppaaiTerrainYieldChange.clear();
+	m_ppaaiResourceYieldChange.clear();
+	m_ppaaiResourceClassYieldChange.clear();
 #endif
 	m_aFreeResourceXCities.clear();
 }
@@ -2986,9 +3077,25 @@ void CvPlayerTraits::Reset()
 
 	m_ppaaiUnimprovedFeatureYieldChange.clear();
 	m_ppaaiUnimprovedFeatureYieldChange.resize(GC.getNumFeatureInfos());
-#if defined(TRAITIFY) // CvPlayerTraits::Reset
+#if defined(TRAITIFY) // CvPlayerTraits::Reset, for CvPlayerTrait arrays
+	m_abForceSpawnCapital.clear();
+	m_abForceSpawnCapital.resize(GC.getNumUnitClassInfos());
+	m_abRemoveRequiredTerrain.clear();
+	m_abRemoveRequiredTerrain.resize(GC.getNumBuildingClassInfos());
+	m_aiBuildingClassHappiness.clear();
+	m_aiBuildingClassHappiness.resize(GC.getNumBuildingClassInfos());
+	m_aiBuildingClassGlobalHappiness.clear();
+	m_aiBuildingClassGlobalHappiness.resize(GC.getNumBuildingClassInfos());
+	m_ppaaiBuildingClassYieldChange.clear();
+	m_ppaaiBuildingClassYieldChange.resize(GC.getNumBuildingClassInfos());
 	m_ppaaiFeatureYieldChange.clear();
 	m_ppaaiFeatureYieldChange.resize(GC.getNumFeatureInfos());
+	m_ppaaiTerrainYieldChange.clear();
+	m_ppaaiTerrainYieldChange.resize(GC.getNumTerrainInfos());
+	m_ppaaiResourceYieldChange.clear();
+	m_ppaaiResourceYieldChange.resize(GC.getNumResourceInfos());
+	m_ppaaiResourceClassYieldChange.clear();
+	m_ppaaiResourceClassYieldChange.resize(GC.getNumResourceClassInfos());
 #endif
 	
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
@@ -3007,6 +3114,12 @@ void CvPlayerTraits::Reset()
 		m_iYieldChangePerTradePartner[iYield] = 0;
 		m_iYieldChangeIncomingTradeRoute[iYield] = 0;
 		m_iYieldRateModifier[iYield] = 0;
+#if defined(FULL_YIELD_FROM_KILLS) // CvPlayerTraits::Reset, Arrays
+		m_iYieldFromKills[iYield] = 0;
+#endif
+#if defined(TRAITIFY)
+		m_iPuppetYieldModifiers[iYield] = 0;
+#endif
 
 #ifdef AUI_WARNING_FIXES
 		for (uint iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
@@ -3037,11 +3150,28 @@ void CvPlayerTraits::Reset()
 #endif
 		{
 			m_ppaaiUnimprovedFeatureYieldChange[iFeature] = yield;
+#if !defined(TRAITIFY) // CvPlayerTraits::Reset
 		}
-#if defined(TRAITIFY) // CvPlayerTraits::Reset
-		for (int iFeature = 0; iFeature < GC.getNumFeatureInfos(); iFeature++)
-		{
+#else 
 			m_ppaaiFeatureYieldChange[iFeature] = yield;
+		}
+#endif
+#if defined(TRAITIFY) // CvPlayerTraits::Reset, in NUM_YIELD_TYPE loop
+		for (int iTerrain = 0; iTerrain < GC.getNumTerrainInfos(); iTerrain++)
+		{
+			m_ppaaiTerrainYieldChange[iTerrain] = yield;
+		}
+		for (int iResource = 0; iResource < GC.getNumResourceInfos(); iResource++)
+		{
+			m_ppaaiResourceYieldChange[iResource] = yield;
+		}
+		for (int iResourceClass = 0; iResourceClass < GC.getNumResourceClassInfos(); iResourceClass++)
+		{
+			m_ppaaiResourceClassYieldChange[iResourceClass] = yield;
+		}
+		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
+		{
+			m_ppaaiBuildingClassYieldChange[iBuildingClass] = yield;
 		}
 #endif
 		
@@ -3055,7 +3185,14 @@ void CvPlayerTraits::Reset()
 	{
 		m_iStrategicResourceQuantityModifier[iTerrain] = 0;
 	}
-
+#if defined(TRAITIFY) // BuildingClassLoop for non Yield Arrays
+	for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
+	{
+		m_aiBuildingClassHappiness[iBuildingClass] = 0;
+		m_aiBuildingClassGlobalHappiness[iBuildingClass] = 0;
+		m_abRemoveRequiredTerrain[iBuildingClass] = false;
+	}
+#endif
 	m_aiResourceQuantityModifier.clear();
 	m_aiResourceQuantityModifier.resize(GC.getNumResourceInfos());
 
@@ -3080,6 +3217,9 @@ void CvPlayerTraits::Reset()
 #endif
 	{
 		m_abNoTrain[iUnitClass] = false;
+#if defined(TRAITIFY) // UnitClassForceSpawnCapital insert
+		m_abForceSpawnCapital[iUnitClass] = false;
+#endif
 	}
 
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
@@ -3390,61 +3530,26 @@ BuildingTypes CvPlayerTraits::GetFreeBuildingOnConquest() const
 /// Does this trait remove a building's requirement for terrain
 bool CvPlayerTraits::IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass)
 {
-	bool rtnValue = false;
-
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	if (eBuildingClass != NO_BUILDINGCLASS)
 	{
-		TraitTypes eTrait = (TraitTypes)i;
-
-		if (HasTrait(eTrait))
-		{
-			CvTraitEntry* pTrait = GC.getTraitInfo(eTrait);
-			if (pTrait)
-			{
-				if (pTrait->IsBuildingClassRemoveRequiredTerrain(eTrait, eBuildingClass))
-				{
-					rtnValue = true;
-					break;
-				}
-			}
-		}
+		return m_abRemoveRequiredTerrain[eBuildingClass];
 	}
-	return rtnValue;
+	else
+	{
+		return false;
+	}
 }
 // Force Spawn UnitClass is Capital
 bool CvPlayerTraits::IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass)
 {
-	bool rtnValue = false;
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	if (eUnitClass != NO_UNITCLASS)
 	{
-		TraitTypes eTrait = (TraitTypes)i;
-		if (HasTrait(eTrait))
-		{
-			CvTraitEntry* pTrait = GC.getTraitInfo(eTrait);
-			if (pTrait)
-			{
-				if (pTrait->IsUnitClassForceSpawnCapital(eTrait, eUnitClass))
-				{
-					rtnValue = true;
-					break;
-				}
-			}
-		}
+		return m_abForceSpawnCapital[eUnitClass];
 	}
-	return rtnValue;
-}
-// Change the Yield of a ResourceClass
-int CvPlayerTraits::GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYieldType)
-{
-	int rtnValue = 0;
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	else
 	{
-		if (HasTrait((TraitTypes)i))
-		{
-			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetResourceClassYieldChanges(eResourceClass, eYieldType);
-		}
+		return false;
 	}
-	return rtnValue;
 }
 // Building Cost Override (Gold Faith and Production)
 int CvPlayerTraits::GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType)
@@ -3462,7 +3567,7 @@ int CvPlayerTraits::GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes 
 // Feature Yield Changes
 int CvPlayerTraits::GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield) const
 {
-	CvAssertMsg(eFeature < GC.getNumFeatureInfos(), "Invalid eImprovement parameter in call to CvPlayerTraits::GetFeatureYieldChange()");
+	CvAssertMsg(eFeature < GC.getNumFeatureInfos(), "Invalid eFeature parameter in call to CvPlayerTraits::GetFeatureYieldChange()");
 	CvAssertMsg(eYield < NUM_YIELD_TYPES, "Invalid eYield parameter in call to CvPlayerTraits::GetFeatureYieldChange()");
 
 	if (eFeature == NO_FEATURE)
@@ -3472,18 +3577,78 @@ int CvPlayerTraits::GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYie
 
 	return m_ppaaiFeatureYieldChange[(int)eFeature][(int)eYield];
 }
-// Puppet City Yield Mods
-int CvPlayerTraits::GetPuppetYieldModifier(YieldTypes eYieldType)
+// Get the Yield Change from Trait for a Specific Terrain type
+int CvPlayerTraits::GetTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYieldType)
 {
-	int rtnValue = 0;
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	CvAssertMsg(eTerrain < GC.getNumTerrainInfos(), "Invalid eTerrain parameter in call to CvPlayerTraits::GetTerrainYieldChange()");
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYield parameter in call to CvPlayerTraits::GetTerrainYieldChange()");
+
+	if (eTerrain == NO_TERRAIN)
 	{
-		if (HasTrait((TraitTypes)i))
-		{
-			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetPuppetYieldModifiers(eYieldType);
-		}
+		return 0;
 	}
-	return rtnValue;
+
+	return m_ppaaiTerrainYieldChange[(int)eTerrain][(int)eYieldType];
+}
+// Get the Yield change from Trait for a Specific Resource type
+int CvPlayerTraits::GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYieldType)
+{
+	CvAssertMsg(eResource < GC.getNumResourceInfos(), "Invalid eResource parameter in call to CvPlayerTraits::GetResourceYieldChange()");
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetResourceYieldChange()");
+
+	if (eResource == NO_RESOURCE)
+	{
+		return 0;
+	}
+
+	return m_ppaaiResourceYieldChange[(int)eResource][(int)eYieldType];
+}
+// Change the Yield of a ResourceClass
+int CvPlayerTraits::GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYieldType)
+{
+	CvAssertMsg(eResourceClass < GC.getNumResourceClassInfos(), "Invalid eResourceClass parameter in call to CvPlayerTraits::GetResourceClassYieldChange()");
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetResourceClassYieldChange()");
+
+	if (eResourceClass == NO_RESOURCECLASS)
+	{
+		return 0;
+	}
+
+	return m_ppaaiResourceClassYieldChange[(int)eResourceClass][(int)eYieldType];
+}
+// Building Class Happiness
+int CvPlayerTraits::GetBuildingClassHappiness(BuildingClassTypes eBuildingClass)
+{
+	CvAssertMsg(eBuildingClass < GC.getNumBuildingClassInfos(), "Invalid eBuildingClass parameter in call to CvPlayerTraits::GetBuildingClassHappiness()");
+	if (eBuildingClass == NO_BUILDINGCLASS)
+	{
+		return 0;
+	}
+
+	return m_aiBuildingClassHappiness[(int)eBuildingClass];
+}
+//Building Class Global Happiness
+int CvPlayerTraits::GetBuildingClassGlobalHappiness(BuildingClassTypes eBuildingClass)
+{
+	CvAssertMsg(eBuildingClass < GC.getNumBuildingClassInfos(), "Invalid eBuildingClass parameter in call to CvPlayerTraits::GetBuildingClassGlobalHappiness()");
+	if (eBuildingClass == NO_BUILDINGCLASS)
+	{
+		return 0;
+	}
+
+	return m_aiBuildingClassGlobalHappiness[(int)eBuildingClass];
+}
+///Get Yield Change from Trait for a specific building class
+int CvPlayerTraits::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType)
+{
+	CvAssertMsg(eBuildingClass < GC.getNumBuildingClassInfos(), "Invalid eBuildingClass parameter in call to CvPlayerTraits::GetBuildingClassYieldChange()");
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetBuildingClassYieldChange()");
+	if (eBuildingClass == NO_BUILDINGCLASS)
+	{
+		return 0;
+	}
+
+	return m_ppaaiBuildingClassYieldChange[(int)eBuildingClass][(int)eYieldType];
 }
 //Yield Per Pop
 int CvPlayerTraits::GetYieldPerPopulation(YieldTypes eYieldType)
@@ -3507,75 +3672,6 @@ int CvPlayerTraits::GetYieldPerPopulationForeignReligion(YieldTypes eYieldType)
 		if (HasTrait((TraitTypes)i))
 		{
 			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetYieldPerPopulationForeignReligion(eYieldType);
-		}
-	}
-	return rtnValue;
-}
-// Building Class Happiness
-int CvPlayerTraits::GetBuildingClassHappiness(BuildingClassTypes eBuildingClass)
-{
-	int rtnValue = 0;
-
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
-	{
-		if (HasTrait((TraitTypes)i))
-		{
-			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetBuildingClassHappiness(eBuildingClass);
-		}
-	}
-
-	return rtnValue;
-}
-//Building Class Global Happiness
-int CvPlayerTraits::GetBuildingClassGlobalHappiness(BuildingClassTypes eBuildingClass)
-{
-	int rtnValue = 0;
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
-	{
-		if (HasTrait((TraitTypes)i))
-		{
-			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetBuildingClassGlobalHappiness(eBuildingClass);
-		}
-	}
-	return rtnValue;
-}
-///Get Yield Change from Trait for a specific building class
-int CvPlayerTraits::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType)
-{
-	int rtnValue = 0;
-
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
-	{
-		if (HasTrait((TraitTypes)i))
-		{
-			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetBuildingClassYieldChanges(eBuildingClass, eYieldType);
-		}
-	}
-
-	return rtnValue;
-}
-// Get the Yield Change from Trait for a Specific Terrain type
-int CvPlayerTraits::GetTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYieldType)
-{
-	int rtnValue = 0;
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
-	{
-		if (HasTrait((TraitTypes)i))
-		{
-			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetTerrainYieldChanges(eTerrain, eYieldType);
-		}
-	}
-	return rtnValue;
-}
-// Get the Yield change from Trait for a Specific Resource type
-int CvPlayerTraits::GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYieldType)
-{
-	int rtnValue = 0;
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
-	{
-		if (HasTrait((TraitTypes)i))
-		{
-			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetResourceYieldChanges(eResource, eYieldType);
 		}
 	}
 	return rtnValue;
@@ -4584,6 +4680,15 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	ArrayWrapper<int> kYieldChangeNaturalWonderWrapper(NUM_YIELD_TYPES, m_iYieldChangeNaturalWonder);
 	kStream >> kYieldChangeNaturalWonderWrapper;
 
+#if defined(FULL_YIELD_FROM_KILLS) // CvPlayerTraits::Read (for CvPlayerTraits Arrays)
+	ArrayWrapper<int> kYieldFromKillsWrapper(NUM_YIELD_TYPES, m_iYieldFromKills);
+	kStream >> kYieldFromKillsWrapper;
+#endif
+#if defined(TRAITIFY) // CvPlayerTraits::Read (for CvPlayerTraits Arrays)
+	ArrayWrapper<int> kPuppetYieldModifiersWrapper(NUM_YIELD_TYPES, m_iPuppetYieldModifiers);
+	kStream >> kPuppetYieldModifiersWrapper;
+#endif
+
 	if (uiVersion >= 7)
 	{
 		ArrayWrapper<int> kYieldChangePerTradePartnerWrapper(NUM_YIELD_TYPES, m_iYieldChangePerTradePartner);
@@ -4605,7 +4710,28 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, &m_iStrategicResourceQuantityModifier[0], GC.getNumTerrainInfos());
 
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiResourceQuantityModifier);
+#if defined(TRAITIFY)
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiBuildingClassGlobalHappiness);
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiBuildingClassHappiness);
 
+	kStream >> iNumEntries;
+	m_abRemoveRequiredTerrain.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_abRemoveRequiredTerrain.push_back(bValue);
+	}
+
+	kStream >> iNumEntries;
+	m_abForceSpawnCapital.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_abForceSpawnCapital.push_back(bValue);
+	}
+#endif
 	kStream >> iNumEntries;
 	m_abNoTrain.clear();
 	for (int i = 0; i < iNumEntries; i++)
@@ -4675,8 +4801,12 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_ppaaiAnySpecificSpecialistYieldChange;
 #endif
 	kStream >> m_ppaaiUnimprovedFeatureYieldChange;
-#if defined(TRAITIFY)
+#if defined(TRAITIFY) // CvPlayerTraits::Read (for CvPlayerTraits Arrays)
+	kStream >> m_ppaaiBuildingClassYieldChange;
 	kStream >> m_ppaaiFeatureYieldChange;
+	kStream >> m_ppaaiTerrainYieldChange;
+	kStream >> m_ppaaiResourceClassYieldChange;
+	kStream >> m_ppaaiResourceYieldChange;
 #endif
 
 	if (uiVersion >= 11)
@@ -4873,9 +5003,32 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeNaturalWonder);
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangePerTradePartner);
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeIncomingTradeRoute);
+
+#if defined(FULL_YIELD_FROM_KILLS) // CvPlayerTraits::Write (for CvPlayerTraits Arrays)
+	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldFromKills);
+#endif
+#if defined(TRAITIFY)
+	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iPuppetYieldModifiers);
+#endif
 	
 	CvInfosSerializationHelper::WriteHashedDataArray<TerrainTypes>(kStream, &m_iStrategicResourceQuantityModifier[0], GC.getNumTerrainInfos());
 	CvInfosSerializationHelper::WriteHashedDataArray<ResourceTypes>(kStream, m_aiResourceQuantityModifier);
+#if defined(TRAITIFY)
+	CvInfosSerializationHelper::WriteHashedDataArray<BuildingClassTypes, int>(kStream, m_aiBuildingClassGlobalHappiness);
+	CvInfosSerializationHelper::WriteHashedDataArray<BuildingClassTypes, int>(kStream, m_aiBuildingClassHappiness);
+
+	kStream << m_abRemoveRequiredTerrain.size();
+	for (uint ui = 0; ui < m_abRemoveRequiredTerrain.size(); ui++)
+	{
+		kStream << m_abRemoveRequiredTerrain[ui];
+	}
+
+	kStream << m_abForceSpawnCapital.size();
+	for (uint ui = 0; ui < m_abForceSpawnCapital.size(); ui++)
+	{
+		kStream << m_abForceSpawnCapital[ui];
+	}
+#endif
 
 	kStream << m_abNoTrain.size();
 	for (uint ui = 0; ui < m_abNoTrain.size(); ui++)
@@ -4922,8 +5075,12 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_ppaaiAnySpecificSpecialistYieldChange;
 #endif
 	kStream << m_ppaaiUnimprovedFeatureYieldChange;
-#if defined(TRAITIFY)
+#if defined(TRAITIFY) // CvPlayerTraits::Write (for CvPlayerTraits Arrays)
+	kStream << m_ppaaiBuildingClassYieldChange;
 	kStream << m_ppaaiFeatureYieldChange;
+	kStream << m_ppaaiTerrainYieldChange;
+	kStream << m_ppaaiResourceClassYieldChange;
+	kStream << m_ppaaiResourceYieldChange;
 #endif
 
 	kStream << (int)m_aUniqueLuxuryAreas.size();

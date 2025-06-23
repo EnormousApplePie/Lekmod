@@ -1081,6 +1081,13 @@ Trait_NearbyResouceBuildingClassYieldChange gave up
 Mughals Trait was quite specific and the behavoir of the code was buggy, so I elected to not use it in the dll for now.
 ✓ Policy_FreeStrategicResources
 */
+// 3 more defines!
+// DLL code the Huey lake Req
+#define LEKMOD_BUILDING_LAKE_REQ
+// Fully fleshout the Yield From Kills system for Traits, Policies and Promotions.
+#define FULL_YIELD_FROM_KILLS
+// Display the General and Admiral Points earned from Combat.
+#define DISPLAY_GENERAL_ADMIRAL_POINTS
 
 ////////////////////////
 //Benched or not working

@@ -275,6 +275,9 @@ CvPolicyEntry::CvPolicyEntry(void):
 	m_paiBuildingClassHappiness(NULL),
 	m_paiFreeUnitClasses(NULL),
 	m_paiTourismOnUnitCreation(NULL),
+#if defined(FULL_YIELD_FROM_KILLS)
+	m_paiYieldFromKills(NULL),
+#endif
 #if defined(LEKMOD_v34)
 	m_piPolicyResourceQuantity(NULL),
 	m_ppiPolicyResourceYieldChanges(NULL),
@@ -333,6 +336,9 @@ CvPolicyEntry::~CvPolicyEntry(void)
 	SAFE_DELETE_ARRAY(m_paiBuildingClassHappiness);
 	SAFE_DELETE_ARRAY(m_paiFreeUnitClasses);
 	SAFE_DELETE_ARRAY(m_paiTourismOnUnitCreation);
+#if defined(FULL_YIELD_FROM_KILLS)
+	SAFE_DELETE_ARRAY(m_paiYieldFromKills);
+#endif
 #if defined(LEKMOD_v34)
 	SAFE_DELETE_ARRAY(m_piPolicyResourceQuantity);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyResourceYieldChanges);
@@ -660,6 +666,9 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 
 	kUtility.PopulateArrayByValue(m_paiFreeUnitClasses, "UnitClasses", "Policy_FreeUnitClasses", "UnitClassType", "PolicyType", szPolicyType, "Count");
 	kUtility.PopulateArrayByValue(m_paiTourismOnUnitCreation, "UnitClasses", "Policy_TourismOnUnitCreation", "UnitClassType", "PolicyType", szPolicyType, "Tourism");
+#if defined(FULL_YIELD_FROM_KILLS)
+	kUtility.SetYields(m_paiYieldFromKills, "Policy_YieldFromKills", "PolicyType", szPolicyType);
+#endif
 #if defined(LEKMOD_v34) // Resource quantity array
 	kUtility.PopulateArrayByValue(m_piPolicyResourceQuantity, "Resources", "Policy_ResourceQuantity", "ResourceType", "PolicyType", szPolicyType, "Quantity");
 
@@ -2351,6 +2360,15 @@ int CvPolicyEntry::GetTourismByUnitClassCreated(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_paiTourismOnUnitCreation ? m_paiTourismOnUnitCreation[i] : -1;
 }
+#if defined(FULL_YIELD_FROM_KILLS)
+/// Instant Yield from Killing Units
+int CvPolicyEntry::GetYieldFromKills(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_paiYieldFromKills ? m_paiYieldFromKills[i] : -1;
+}
+#endif
 #if defined(LEKMOD_v34)
 int CvPolicyEntry::GetPolicyResourceQuantity(int i) const
 {
@@ -3781,6 +3799,28 @@ int CvPlayerPolicies::GetTourismFromUnitCreation(UnitClassTypes eUnitClass) cons
 
 	return iTourism;
 }
+#if defined(FULL_YIELD_FROM_KILLS)
+/// How much of a Yield are we getting from killing?
+int CvPlayerPolicies::GetYieldFromKills(YieldTypes eYield) const
+{
+	int iYield = 0;
+
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+	{
+		// Do we have this policy?
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			CvPolicyEntry* pPolicy = m_pPolicies->GetPolicyEntry(i);
+			if (pPolicy->GetYieldFromKills(eYield) > 0)
+			{
+				iYield += pPolicy->GetYieldFromKills(eYield);
+			}
+		}
+	}
+
+	return iYield;
+}
+#endif
 #if defined(LEKMOD_v34)
 /// How many resources are we getting from the policy?
 int CvPlayerPolicies::GetPolicyResourceQuantity(ResourceTypes eResource) const

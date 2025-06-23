@@ -308,6 +308,9 @@ public:
 	int GetNumFreeUnitsByClass(int i) const;
 	int GetTourismByUnitClassCreated(int i) const;
 	int GetImprovementCultureChanges(int i) const;
+#if defined(FULL_YIELD_FROM_KILLS)
+	int GetYieldFromKills(int i) const;
+#endif
 #if defined(LEKMOD_v34)
 	int GetPolicyResourceQuantity(int i) const;
 	int GetPolicyResourceYieldChanges(int i, int j) const;
@@ -605,6 +608,9 @@ private:
 	int* m_paiBuildingClassHappiness;
 	int* m_paiFreeUnitClasses;
 	int* m_paiTourismOnUnitCreation;
+#if defined(FULL_YIELD_FROM_KILLS)
+	int* m_paiYieldFromKills;
+#endif
 #if defined(LEKMOD_v34)
 	int* m_piPolicyResourceQuantity;
 	int** m_ppiPolicyResourceYieldChanges;
@@ -885,6 +891,9 @@ public:
 	CvString GetWeLoveTheKingString();
 	std::vector<BuildingTypes> GetFreeBuildingsOnConquest();
 	int GetTourismFromUnitCreation(UnitClassTypes eUnitClass) const;
+#if defined(FULL_YIELD_FROM_KILLS)
+	int GetYieldFromKills(YieldTypes eYield) const;
+#endif
 #if defined(LEKMOD_v34)
 	int GetPolicyResourceQuantity(ResourceTypes eResource) const;
 	int GetPolicyResourceYieldChanges(ResourceTypes eResource, YieldTypes eYield) const;
