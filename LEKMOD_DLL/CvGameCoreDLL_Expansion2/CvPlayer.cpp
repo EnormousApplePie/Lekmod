@@ -16251,22 +16251,150 @@ int CvPlayer::GetTotalGoldenAgePointsInEmpire()
 	return iGoldenAgePoints;
 }
 #endif
+#if defined(GAMEOPTION_GOLDENAGE_ALT) // Allow Golden Age points to be Collected while the player is in a Golden Age via Game Option
 //	--------------------------------------------------------------------------------
 /// Update all Golden-Age related stuff
 void CvPlayer::DoProcessGoldenAge()
 {
-	if(GC.getGame().isOption(GAMEOPTION_NO_HAPPINESS))
+	if (GC.getGame().isOption(GAMEOPTION_NO_HAPPINESS))
+	{
+		return;
+	}
+
+	if (GC.getGame().isOption("GAMEOPTION_GOLDENAGE_ALT"))
+	{
+		// Minors and Barbs can't get GAs
+		if (!isMinorCiv() && !isBarbarian())
+		{
+			// Already in a GA 
+			if (getGoldenAgeTurns() > 0)
+			{
+				//don't decrement counter while in Anarchy
+				if (!IsAnarchy())
+				{
+					changeGoldenAgeTurns(-1);
+				}
+				// Note: This will actually REDUCE the GA meter if the player is running in the red
+#if defined(LEKMOD_v34) // For Non GA as Yield compatability for whatever reason.
+				ChangeGoldenAgeProgressMeter(GetTotalGoldenAgePointsInEmpire());
+#else
+				ChangeGoldenAgeProgressMeter(GetExcessHappiness());
+#endif
+				// Enough GA Progress to trigger new GA ?
+				if (GetGoldenAgeProgressMeter() >= GetGoldenAgeProgressThreshold())
+				{
+					int iOverflow = GetGoldenAgeProgressMeter() - GetGoldenAgeProgressThreshold();
+
+					SetGoldenAgeProgressMeter(iOverflow);
+
+					int iLength = getGoldenAgeLength();
+					changeGoldenAgeTurns(iLength);
+
+					// If it's the active player then show the popup
+					if (GetID() == GC.getGame().getActivePlayer())
+					{
+						// Don't show in MP
+						if (!GC.getGame().isNetworkMultiPlayer())	// KWG: Candidate for !GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)
+						{
+							CvPopupInfo kPopupInfo(BUTTONPOPUP_GOLDEN_AGE_REWARD);
+							GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
+						}
+					}
+				}
+			}
+			else // NOT in a Golden Age
+			{
+				ChangeGoldenAgeProgressMeter(GetTotalGoldenAgePointsInEmpire());
+
+				// Enough GA Progress to trigger new GA?
+				if (GetGoldenAgeProgressMeter() >= GetGoldenAgeProgressThreshold())
+				{
+					int iOverflow = GetGoldenAgeProgressMeter() - GetGoldenAgeProgressThreshold();
+
+					SetGoldenAgeProgressMeter(iOverflow);
+
+					int iLength = getGoldenAgeLength();
+					changeGoldenAgeTurns(iLength);
+
+					// If it's the active player then show the popup
+					if (GetID() == GC.getGame().getActivePlayer())
+					{
+						// Don't show in MP
+						if (!GC.getGame().isNetworkMultiPlayer())	// KWG: Candidate for !GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)
+						{
+							CvPopupInfo kPopupInfo(BUTTONPOPUP_GOLDEN_AGE_REWARD);
+							GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
+						}
+					}
+				}
+			}
+		}
+	}
+	else // !GC.getGame().isOption("GAMEOPTION_GOLDENAGE_ALT")
+	{
+		// Minors and Barbs can't get GAs
+		if (!isMinorCiv() && !isBarbarian())
+		{
+			// Already in a GA - don't decrement counter while in Anarchy
+			if (getGoldenAgeTurns() > 0)
+			{
+				if (!IsAnarchy())
+				{
+					changeGoldenAgeTurns(-1);
+				}
+			}
+
+			// Not in GA
+			else
+			{
+				// Note: This will actually REDUCE the GA meter if the player is running in the red
+#if !defined(LEKMOD_v34)
+				ChangeGoldenAgeProgressMeter(GetExcessHappiness());
+#else
+				ChangeGoldenAgeProgressMeter(GetTotalGoldenAgePointsInEmpire());
+#endif
+				// Enough GA Progress to trigger new GA?
+				if (GetGoldenAgeProgressMeter() >= GetGoldenAgeProgressThreshold())
+				{
+					int iOverflow = GetGoldenAgeProgressMeter() - GetGoldenAgeProgressThreshold();
+
+					SetGoldenAgeProgressMeter(iOverflow);
+
+					int iLength = getGoldenAgeLength();
+					changeGoldenAgeTurns(iLength);
+
+					// If it's the active player then show the popup
+					if (GetID() == GC.getGame().getActivePlayer())
+					{
+						// Don't show in MP
+						if (!GC.getGame().isNetworkMultiPlayer())	// KWG: Candidate for !GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)
+						{
+							CvPopupInfo kPopupInfo(BUTTONPOPUP_GOLDEN_AGE_REWARD);
+							GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#else // Standard Golden Age
+//	--------------------------------------------------------------------------------
+/// Update all Golden-Age related stuff
+void CvPlayer::DoProcessGoldenAge()
+{
+	if (GC.getGame().isOption(GAMEOPTION_NO_HAPPINESS))
 	{
 		return;
 	}
 
 	// Minors and Barbs can't get GAs
-	if(!isMinorCiv() && !isBarbarian())
+	if (!isMinorCiv() && !isBarbarian())
 	{
 		// Already in a GA - don't decrement counter while in Anarchy
-		if(getGoldenAgeTurns() > 0)
+		if (getGoldenAgeTurns() > 0)
 		{
-			if(!IsAnarchy())
+			if (!IsAnarchy())
 			{
 				changeGoldenAgeTurns(-1);
 			}
@@ -16287,20 +16415,20 @@ void CvPlayer::DoProcessGoldenAge()
 #endif
 
 			// Enough GA Progress to trigger new GA?
-			if(GetGoldenAgeProgressMeter() >= GetGoldenAgeProgressThreshold())
+			if (GetGoldenAgeProgressMeter() >= GetGoldenAgeProgressThreshold())
 			{
 				int iOverflow = GetGoldenAgeProgressMeter() - GetGoldenAgeProgressThreshold();
 
 				SetGoldenAgeProgressMeter(iOverflow);
-				
+
 				int iLength = getGoldenAgeLength();
 				changeGoldenAgeTurns(iLength);
 
 				// If it's the active player then show the popup
-				if(GetID() == GC.getGame().getActivePlayer())
+				if (GetID() == GC.getGame().getActivePlayer())
 				{
 					// Don't show in MP
-					if(!GC.getGame().isNetworkMultiPlayer())	// KWG: Candidate for !GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)
+					if (!GC.getGame().isNetworkMultiPlayer())	// KWG: Candidate for !GC.getGame().isOption(GAMEOPTION_SIMULTANEOUS_TURNS)
 					{
 						CvPopupInfo kPopupInfo(BUTTONPOPUP_GOLDEN_AGE_REWARD);
 						GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
@@ -16310,7 +16438,7 @@ void CvPlayer::DoProcessGoldenAge()
 		}
 	}
 }
-
+#endif
 //	--------------------------------------------------------------------------------
 /// How much do we need in the GA meter to trigger the next one?
 int CvPlayer::GetGoldenAgeProgressThreshold() const
