@@ -9310,6 +9310,7 @@ int CvCity::getJONSCulturePerTurnTimes100() const
 #if defined(MISC_CHANGES) // Trade routes providing culture
 	// Finally adding support for Trade routes providing culture
 	int iTradeYield = GET_PLAYER(m_eOwner).GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_CULTURE);
+	iTradeYield /= 100;
 	iCulture += iTradeYield;
 #endif
 
@@ -9488,6 +9489,7 @@ int CvCity::GetFaithPerTurn() const
 #if defined(MISC_CHANGES) // Trade routes providing faith
 	// Finally adding support for Trade routes providing faith
 	int iTradeYield = GET_PLAYER(m_eOwner).GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_FAITH);
+	iTradeYield /= 100;
 	iFaith += iTradeYield;
 #endif
 #ifdef AUI_CITY_FIX_VENICE_PUPPETS_GET_NO_YIELD_PENALTIES_BESIDES_CULTURE
