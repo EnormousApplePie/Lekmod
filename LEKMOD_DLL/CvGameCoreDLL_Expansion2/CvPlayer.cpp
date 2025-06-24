@@ -12807,7 +12807,7 @@ void CvPlayer::ChangeAllCityFreeBuilding(BuildingClassTypes eBuildingClass, bool
 {
 	m_pabAllCityFreeBuilding.setAt(eBuildingClass, bValue);
 }
-
+#if !defined(FULL_YIELD_FROM_KILLS) // Replace functions with new pointer based ones.
 //	--------------------------------------------------------------------------------
 /// Handle earning yields from a combat win
 void CvPlayer::DoYieldsFromKill(UnitTypes eAttackingUnitType, UnitTypes eKilledUnitType, int iX, int iY, bool bWasBarbarian, int iExistingDelay)
@@ -12952,7 +12952,194 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, UnitTypes eAttackingUnitT
 		}
 	}
 }
+#else
+// Calls DoYieldBonusFromKill, and loops through the Yield types.
+void CvPlayer::DoYieldsFromKill(CvUnit* pAttackingUnit, CvUnit* pKilledUnit, int iX, int iY, bool bWasBarbarian, int iExistingDelay)
+{
+	int iNumBonuses = iExistingDelay; // Passed by reference below, incremented to stagger floating text in UI
+	CvAssertMsg(pKilledUnit != NULL, "Killed Unit is NULL, Please Report.");
+	if (pKilledUnit != NULL)
+	{
+		UnitTypes eKilledUnitType = pKilledUnit->getUnitType();
+		DoUnresearchedTechBonusFromKill(eKilledUnitType, iX, iY, iNumBonuses);
 
+		for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+		{
+			DoYieldBonusFromKill((YieldTypes)iYield, pAttackingUnit, pKilledUnit, iX, iY, bWasBarbarian, iNumBonuses);
+		}
+	}
+	
+}
+void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, CvUnit* pKilledUnit, int iX, int iY, bool bWasBarbarian, int& iNumBonuses)
+{
+#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+	CvGame& kGame = GC.getGame();
+#endif
+	// KilledUnit Null safety block. This should never happen, but just in case.
+	CvAssertMsg(pKilledUnit != NULL, "Killed Unit is NULL, Please Report.");
+	if (pKilledUnit == NULL) return;
+	UnitTypes eKilledUnitType = pKilledUnit->getUnitType();
+	CvAssertMsg(eKilledUnitType != NO_UNIT, "Killed unit's type is NO_TYPE. Please Report.");
+	if (eKilledUnitType == NO_UNIT) return; // No Unit Type, so no yields to give
+	CvUnitEntry* pkKilledUnitInfo = GC.getUnitInfo(eKilledUnitType); // Passed Null safety.
+	// the AttackingUnit can be NULL, as Cities can kill. This is used in that case and sets eAttackingUnitType to NO_UNIT, Promotion and UnitEntry Data elements are skipped as expected.
+	UnitTypes eAttackingUnitType = NO_UNIT;
+	if (pAttackingUnit)
+		eAttackingUnitType = pAttackingUnit->getUnitType();
+
+	if (pkKilledUnitInfo)
+	{
+		int iCombatStrength = max(pkKilledUnitInfo->GetCombat(), pkKilledUnitInfo->GetRangedCombat());
+		if (iCombatStrength > 0)
+		{
+			int iPolicyValue = 0;
+			int iTraitValue = 0;
+			int iBeliefValue = 0;
+			int iPromotionValue = 0;
+			int iUnitValue = 0;
+			//ok, Keep this switch case to Support Legacy Values
+			switch (eYield)
+			{
+				//case YIELD_FOOD: Not supported, local to a city
+				//case YIELD_PRODUCTION: Not supported, local to a city
+			case YIELD_GOLD:
+				iPolicyValue += GetPlayerPolicies()->GetNumericModifier(POLICYMOD_GOLD_FROM_KILLS);
+				break;
+			case YIELD_SCIENCE:
+				iPolicyValue += GetPlayerPolicies()->GetNumericModifier(POLICYMOD_SCIENCE_FROM_KILLS);
+				break;
+			case YIELD_CULTURE:
+				iPolicyValue += GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CULTURE_FROM_KILLS);
+				iTraitValue += GetPlayerTraits()->GetCultureFromKills();
+				// Do we get it for barbarians?
+				if (bWasBarbarian)
+					iPolicyValue += GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CULTURE_FROM_BARBARIAN_KILLS);
+				break;
+			case YIELD_FAITH:
+				iTraitValue += GetPlayerTraits()->GetFaithFromKills();
+				if (kGame.isOption(GAMEOPTION_NO_RELIGION))
+					return; // No Faith in this game, so no support for it
+				break;
+#if defined(LEKMOD_v34) // YIELD_GOLDEN_AGE_POINTS doesn't exist without v34.
+			case YIELD_GOLDEN_AGE_POINTS:
+				if (pAttackingUnit != NULL) // This was in CvUnitCombat, now moved here to prevent 2 GAP values.
+					iPromotionValue += pAttackingUnit->GetGoldenAgeValueFromKills();
+
+				if (kGame.isOption(GAMEOPTION_NO_HAPPINESS))
+					return; // No Golden Ages in this game, so no support for it
+				break;
+#endif
+			}
+
+			iPolicyValue += GetPlayerPolicies()->GetYieldFromKills(eYield); // This is Policy_YieldFromKills
+			iTraitValue += GetPlayerTraits()->GetYieldFromKills(eYield); // This is Trait_YieldFromKills
+			iBeliefValue += kGame.GetGameReligions()->GetBeliefYieldForKill(eYield, iX, iY, GetID()); // Untouched, but is Unused for now.
+
+			if (eAttackingUnitType != NO_UNIT)
+			{
+				CvUnitEntry* pkAttackingUnitInfo = GC.getUnitInfo(eAttackingUnitType);
+				if (pkAttackingUnitInfo)
+					iUnitValue += pkAttackingUnitInfo->GetYieldFromKills(eYield); // This is Unit_YieldFromKills
+			}
+			if (pAttackingUnit != NULL)
+				iPromotionValue += pAttackingUnit->GetYieldFromKills(eYield); // This is UnitPromotions_YieldFromKills
+
+			int iPolicyCap = GC.getPOLICY_YIELD_CAP();
+			int iTraitCap = GC.getTRAIT_YIELD_CAP();
+			int iBeliefCap = GC.getBELIEF_YIELD_CAP();
+			int iPromotionCap = GC.getPROMOTION_YIELD_CAP();
+			int iUnitCap = GC.getUNIT_YIELD_CAP();
+
+			// NQMP GJS - Cap Yields from kills to 30 per type (policy/trait/belief/other)
+			// Expanding on GJS's cap. Make them Global Integers, and use them to cap the values. Set to -1 to do Uncapped values.
+			if (iPolicyCap > 0)
+				iPolicyValue = min((iPolicyValue * iCombatStrength) / 100, iPolicyCap);
+			else 
+				iPolicyValue = (iPolicyValue * iCombatStrength) / 100;
+			if (iTraitCap > 0)
+				iTraitValue = min((iTraitValue * iCombatStrength) / 100, iTraitCap);
+			else
+				iTraitValue = (iTraitValue * iCombatStrength) / 100;
+			if (iBeliefCap > 0)
+				iBeliefValue = min((iBeliefValue * iCombatStrength) / 100, iBeliefCap);
+			else
+				iBeliefValue = (iBeliefValue * iCombatStrength) / 100;
+			if (iPromotionCap > 0)
+				iPromotionValue = min((iPromotionValue * iCombatStrength) / 100, iPromotionCap);
+			else
+				iPromotionValue = (iPromotionValue * iCombatStrength) / 100;
+			if (iUnitCap > 0)
+				iUnitValue = min((iUnitValue * iCombatStrength) / 100, iUnitCap);
+			else
+				iUnitValue = (iUnitValue * iCombatStrength) / 100;
+			
+			int iTotalValue = iPolicyValue + iTraitValue + iBeliefValue + iPromotionValue + iUnitValue;
+
+			if (iTotalValue > 0)
+			{
+				switch (eYield)
+				{
+					// Food and Production are pretty non sensical without a Unit Tracking its home city or returning to the capital for some reason.
+					//case YIELD_FOOD:
+					//case YIELD_PRODUCTION:
+				case YIELD_GOLD:
+					GetTreasury()->ChangeGold(iTotalValue);
+					break;
+				case YIELD_CULTURE:
+					changeJONSCulture(iTotalValue);
+
+#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+					// if this is the human player, have the popup come up so that he can choose a new policy
+					if (isAlive() && isHuman() && getNumCities() > 0)
+					{
+						if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
+						{
+							if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
+							{
+								CvNotifications* pNotifications = GetNotifications();
+								if (pNotifications)
+								{
+									CvString strBuffer;
+
+									if (kGame.isOption(GAMEOPTION_POLICY_SAVING))
+										strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
+									else
+										strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
+
+									CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
+									pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
+								}
+							}
+						}
+					}
+#endif
+					break;
+				case YIELD_FAITH:
+					ChangeFaith(iTotalValue);
+					break;
+				case YIELD_SCIENCE:
+				{
+					TechTypes eCurrentTech = GetPlayerTechs()->GetCurrentResearch();
+					if (eCurrentTech == NO_TECH)
+						changeOverflowResearch(iTotalValue);
+					else
+						GET_TEAM(getTeam()).GetTeamTechs()->ChangeResearchProgress(eCurrentTech, iTotalValue, GetID());
+				}
+				break;
+#if defined(LEKMOD_v34) // YIELD_GOLDEN_AGE_POINTS doesn't exist without v34.
+				case YIELD_GOLDEN_AGE_POINTS:
+					ChangeGoldenAgeProgressMeter(iTotalValue);
+					// Consider making this push us into a GA if we reach the Threshold, but Currently that is just worse than waiting.
+					break;
+				}
+#endif
+				iNumBonuses++;
+				ReportYieldFromKill(eYield, iTotalValue, iX, iY, iNumBonuses);
+			}
+		}
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Apply and show a bonus towards unresearched tech when we defeat a unit of that tech
 /// If a bonus is applied, iNumBonuses must be incremented to stagger the UI text with other bonuses
@@ -13023,6 +13210,11 @@ void CvPlayer::ReportYieldFromKill(YieldTypes eYield, int iValue, int iX, int iY
 		case YIELD_SCIENCE:
 			yieldString = "[COLOR_BLUE]+%d[ENDCOLOR][ICON_RESEARCH]";
 			break;
+#if defined(FULL_YIELD_FROM_KILLS) // Add Golden Age points for Kills
+		case YIELD_GOLDEN_AGE_POINTS:
+			yieldString = "[COLOR_WHITE]+%d[ENDCOLOR][ICON_GOLDEN_AGE]";
+			break;
+#endif
 		default:
 			// Not supported
 			return;
@@ -13031,7 +13223,11 @@ void CvPlayer::ReportYieldFromKill(YieldTypes eYield, int iValue, int iX, int iY
 		if(GetID() == GC.getGame().getActivePlayer())
 		{
 			char text[256] = {0};
+#if !defined(DISPLAY_GENERAL_ADMIRAL_POINTS) // Delay the Yield From Kills display by .5 for General/Admiral points
 			float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * (1 + ((float)iDelay * 0.5f)); // 1 is added to avoid overlapping with XP text
+#else
+			float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * (1.5f + ((float)iDelay * 0.5f)); // 1.5 is added to avoid overlapping with XP + Gen./Admr. text
+#endif
 			sprintf_s(text, yieldString, iValue);
 			GC.GetEngineUserInterface()->AddPopupText(iX, iY, text, fDelay);
 		}

@@ -170,6 +170,9 @@ CvPromotionEntry::CvPromotionEntry():
 #ifdef NQ_HEAVY_CHARGE_DOWNHILL
 	m_iHeavyChargeDownhill(0),
 #endif
+#if defined(FULL_YIELD_FROM_KILLS)
+	m_paiYieldFromKills(NULL),
+#endif
 	m_piTerrainAttackPercent(NULL),
 	m_piTerrainDefensePercent(NULL),
 	m_piFeatureAttackPercent(NULL),
@@ -423,6 +426,9 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 
 	const char* szPromotionType = GetType();
 
+#if defined(FULL_YIELD_FROM_KILLS)
+	kUtility.SetYields(m_paiYieldFromKills, "UnitPromotions_YieldFromKills", "PromotionType", szPromotionType);
+#endif
 	//UnitPromotions_Terrains
 	{
 		kUtility.InitializeArray(m_piTerrainAttackPercent, iNumTerrains, 0);
@@ -1600,7 +1606,19 @@ void CvPromotionEntry::SetSound(const char* szVal)
 }
 
 // ARRAYS
-
+// Returns an array of yields gained from killing other units
+#if defined(FULL_YIELD_FROM_KILLS)
+int CvPromotionEntry::GetYieldFromKills(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	if (i > -1 && i < NUM_YIELD_TYPES && m_paiYieldFromKills)
+	{
+		return m_paiYieldFromKills[i];
+	}
+	return 0;
+}
+#endif
 /// Returns an array of bonuses when attacking a tile of a given terrain
 #ifdef AUI_WARNING_FIXES
 int CvPromotionEntry::GetTerrainAttackPercent(uint i) const

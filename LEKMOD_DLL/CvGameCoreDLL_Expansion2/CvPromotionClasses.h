@@ -246,7 +246,9 @@ public:
 	bool GetCivilianUnitType(int i) const;
 	bool IsPostCombatRandomPromotion(int i) const;
 #endif
-
+#if defined(FULL_YIELD_FROM_KILLS)
+	int GetYieldFromKills(int i) const;
+#endif
 #ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
 	int GetCombatDifferentIdeology() const;
 #endif
@@ -411,6 +413,9 @@ protected:
 	CvString m_strSound;
 
 	// Arrays
+#if defined(FULL_YIELD_FROM_KILLS)
+	int* m_paiYieldFromKills;
+#endif
 	int* m_piTerrainAttackPercent;
 	int* m_piTerrainDefensePercent;
 	int* m_piFeatureAttackPercent;

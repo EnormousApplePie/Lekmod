@@ -319,6 +319,9 @@ CvUnit::CvUnit() :
 	, m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility("CvUnit::m_strNameIAmNotSupposedToBeUsedAnyMoreBecauseThisShouldNotBeCheckedAndWeNeedToPreserveSaveGameCompatibility", m_syncArchive, "")
 	, m_strScriptData("CvUnit::m_szScriptData", m_syncArchive)
 	, m_iScenarioData(0)
+#if defined(FULL_YIELD_FROM_KILLS)
+	, m_iYieldFromKills("CvUnit::m_iYieldFromKills", m_syncArchive)
+#endif
 	, m_terrainDoubleMoveCount("CvUnit::m_terrainDoubleMoveCount", m_syncArchive)
 	, m_featureDoubleMoveCount("CvUnit::m_featureDoubleMoveCount", m_syncArchive)
 	, m_terrainImpassableCount("CvUnit::m_terrainImpassableCount", m_syncArchive)
@@ -730,7 +733,7 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 		kPlayer.GetCulture()->AddTourismAllKnownCivs(iTourism);
 	}
 
-#ifdef NQ_SCIENCE_PER_GREAT_PERSON_BORN || NQ_SCIENCE_PER_GREAT_PERSON_BORN_FROM_POLICIES || NQ_INFLUENCE_BOOST_PER_GREAT_PERSON_BORN_FROM_POLICIES
+#if defined(NQ_SCIENCE_PER_GREAT_PERSON_BORN) || defined(NQ_SCIENCE_PER_GREAT_PERSON_BORN_FROM_POLICIES) || defined(NQ_INFLUENCE_BOOST_PER_GREAT_PERSON_BORN_FROM_POLICIES)
 	if (IsGreatPerson())
 	{
 		int iScienceBonus = 0;
@@ -1175,6 +1178,14 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 		m_terrainImpassableCount.resize(GC.getNumTerrainInfos());
 		m_extraTerrainAttackPercent.resize(GC.getNumTerrainInfos());
 		m_extraTerrainDefensePercent.resize(GC.getNumTerrainInfos());
+#if defined(FULL_YIELD_FROM_KILLS) // Clear, Resize and Set m_iYieldFromKills array
+		m_iYieldFromKills.clear();
+		m_iYieldFromKills.resize(NUM_YIELD_TYPES);
+		for (int i = 0; i < NUM_YIELD_TYPES; i++)
+		{
+			m_iYieldFromKills.setAt(i, 0);
+		}
+#endif
 
 #ifdef AUI_WARNING_FIXES
 		for (uint i = 0; i < GC.getNumTerrainInfos(); i++)
@@ -15522,7 +15533,11 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 									}
 									else
 									{
+#if defined(FULL_YIELD_FROM_KILLS) // Use the Unit pointers ~
+										kPlayer.DoYieldsFromKill(this, pLoopUnit, iX, iY, pLoopUnit->isBarbarian(), 0);
+#else
 										kPlayer.DoYieldsFromKill(getUnitType(), pLoopUnit->getUnitType(), iX, iY, pLoopUnit->isBarbarian(), 0);
+#endif
 										pLoopUnit->kill(false, getOwner());
 									}
 								}
@@ -15588,7 +15603,11 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 											strMessage = Localization::Lookup("TXT_KEY_UNIT_LOST");
 											strSummary = strMessage;
 
+#if defined(FULL_YIELD_FROM_KILLS) // Use the Unit pointers ~
+											kPlayer.DoYieldsFromKill(this, pLoopUnit, iX, iY, pLoopUnit->isBarbarian(), 0);
+#else
 											kPlayer.DoYieldsFromKill(getUnitType(), pLoopUnit->getUnitType(), iX, iY, pLoopUnit->isBarbarian(), 0);
+#endif
 											kPlayer.DoUnitKilledCombat(pLoopUnit->getOwner(), pLoopUnit->getUnitType());
 										}
 
@@ -17037,10 +17056,16 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 				if(getDomainType() == DOMAIN_SEA)
 				{
 					kPlayer.changeNavalCombatExperience((iChange * iCombatExperienceMod) / 100);
+#if defined(DISPLAY_GENERAL_ADMIRAL_POINTS)
+					ReportGGPoints((iChange * iCombatExperienceMod) / 100, true /*bAdmiral*/);
+#endif
 				}
 				else
 				{
 					kPlayer.changeCombatExperience((iChange * iCombatExperienceMod) / 100);
+#if defined(DISPLAY_GENERAL_ADMIRAL_POINTS)
+					ReportGGPoints((iChange * iCombatExperienceMod) / 100, false /*bAdmiral*/);
+#endif
 				}
 			}
 			else
@@ -17051,10 +17076,16 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 					if(getDomainType() == DOMAIN_SEA)
 					{
 						kPlayer.changeNavalCombatExperience((iModdedChange * iCombatExperienceMod) / 100);
+#if defined(DISPLAY_GENERAL_ADMIRAL_POINTS)
+						ReportGGPoints((iModdedChange* iCombatExperienceMod) / 100, true /*bAdmiral*/);
+#endif
 					}
 					else
 					{
 						kPlayer.changeCombatExperience((iModdedChange * iCombatExperienceMod) / 100);
+#if defined(DISPLAY_GENERAL_ADMIRAL_POINTS)
+						ReportGGPoints((iModdedChange * iCombatExperienceMod) / 100, false /*bAdmiral*/);
+#endif
 					}
 				}
 			}
@@ -17069,8 +17100,37 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 
 	setExperience((getExperience() + iUnitExperience), iMax);
 }
+#if defined(DISPLAY_GENERAL_ADMIRAL_POINTS)
+void CvUnit::ReportGGPoints(int iPoints, bool bAdmiral)
+{
+	if (iPoints > 0 && getOwner() == GC.getGame().getActivePlayer())
+	{
+		Localization::String localizedText;
+		if (bAdmiral)
+			localizedText = Localization::Lookup("TXT_KEY_GREAT_ADMIRAL_POINTS_GAINED");
+		else
+			localizedText = Localization::Lookup("TXT_KEY_GREAT_GENERAL_POINTS_GAINED");
+		localizedText << iPoints;
 
-
+		int iX = m_iX;
+		int iY = m_iY;
+		const MissionData* pkMissionData = GetHeadMissionData();
+		if (pkMissionData != NULL && pkMissionData->eMissionType == CvTypes::getMISSION_MOVE_TO())
+		{
+			int iTempX = pkMissionData->iData1;
+			int iTempY = pkMissionData->iData2;
+			if (GC.getMap().plot(iTempX, iTempY)->getNumVisibleEnemyDefenders(this) == 0)
+			{
+				iX = iTempX;
+				iY = iTempY;
+			}
+		}
+		// Pop it up just after the XP text
+		float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() + 0.5f;
+		DLLUI->AddPopupText(iX, iY, localizedText.toUTF8(), fDelay);
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 int CvUnit::getLevel() const
 {
@@ -19030,7 +19090,7 @@ bool CvUnit::IsNearFeatureType(FeatureTypes eFeature, int iRange, bool bSameOwne
 {
 	VALIDATE_OBJECT
 	CvAssertMsg(eFeature > 0, "eFeature is expected to be non-negative (invalid eFeature)");
-	CvAssertMsg(eFeature < GC.getNumFeatureInfos() "eFeature is expected to be within maximum bounds (invalid eFeature)");
+	CvAssertMsg(eFeature < GC.getNumFeatureInfos(), "eFeature is expected to be within maximum bounds (invalid eFeature)");
 
 	if (eFeature < 0 || eFeature > GC.getNumFeatureInfos() || iRange <= 0)
 	{
@@ -20148,7 +20208,23 @@ void CvUnit::setScenarioData(int iNewValue)
 	VALIDATE_OBJECT
 	m_iScenarioData = iNewValue;
 }
-
+#if defined(FULL_YIELD_FROM_KILLS)
+int CvUnit::GetYieldFromKills(YieldTypes eYield) const
+{
+	VALIDATE_OBJECT
+		CvAssertMsg(eYield >= 0, "eYield is expected to be non-negative (invalid Yield)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eYield is expected to be within maximum bounds (invalid Yield)");
+	return m_iYieldFromKills[eYield];
+}
+void CvUnit::ChangeYieldFromKills(YieldTypes eYield, int iChange)
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eYield >= 0, "eYield is expected to be non-negative (invalid Yield)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eYield is expected to be within maximum bounds (invalid Yield)");
+	m_iYieldFromKills.setAt(eYield, m_iYieldFromKills[eYield] + iChange);
+	CvAssert(GetYieldFromKills(eYield) >= 0);
+}
+#endif
 //	--------------------------------------------------------------------------------
 int CvUnit::getTerrainDoubleMoveCount(TerrainTypes eIndex) const
 {
@@ -20854,7 +20930,12 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeUpgradeDiscount(thisPromotion.GetUpgradeDiscount() * iChange);
 		changeExperiencePercent(thisPromotion.GetExperiencePercent() * iChange);
 		changeCargoSpace(thisPromotion.GetCargoChange() * iChange);
-
+#if defined(FULL_YIELD_FROM_KILLS)
+		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
+		{
+			ChangeYieldFromKills((YieldTypes)iI, (thisPromotion.GetYieldFromKills(iI) * iChange));
+		}
+#endif
 		for(iI = 0; iI < GC.getNumTerrainInfos(); iI++)
 		{
 			changeExtraTerrainAttackPercent(((TerrainTypes)iI), (thisPromotion.GetTerrainAttackPercent(iI) * iChange));

@@ -1082,6 +1082,13 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 ✓ Policy_FreeStrategicResources
 */
 #define GAMEOPTION_GOLDENAGE_ALT
+// 3 more defines!
+// DLL code the Huey lake Req
+#define LEKMOD_BUILDING_LAKE_REQ
+// Fully fleshout the Yield From Kills system for Traits, Policies and Promotions.
+#define FULL_YIELD_FROM_KILLS
+// Display the General and Admiral Points earned from Combat.
+#define DISPLAY_GENERAL_ADMIRAL_POINTS
 
 ////////////////////////
 //Benched or not working

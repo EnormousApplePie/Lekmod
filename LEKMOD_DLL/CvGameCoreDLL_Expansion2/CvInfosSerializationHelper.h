@@ -764,6 +764,9 @@ DECLARE_SERIALIZATION_INFO_TYPE_HELPER(RouteTypes);
 DECLARE_SERIALIZATION_INFO_TYPE_HELPER(BuildTypes);
 DECLARE_SERIALIZATION_INFO_TYPE_HELPER(ProcessTypes);
 DECLARE_SERIALIZATION_INFO_TYPE_HELPER(ImprovementTypes);
+#if defined(TRAITIFY)
+DECLARE_SERIALIZATION_INFO_TYPE_HELPER(BuildingClassTypes);
+#endif
 // Can't use this because nothing ever respects the values.  They are all hard-coded in the enum
 //DECLARE_SERIALIZATION_INFO_TYPE_HELPER(UnitAITypes);
 

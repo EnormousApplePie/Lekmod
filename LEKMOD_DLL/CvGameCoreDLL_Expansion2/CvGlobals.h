@@ -1784,6 +1784,28 @@ public:
 	{
 		return m_iMINOR_BULLY_GOLD;
 	}
+#if defined(FULL_YIELD_FROM_KILLS)
+	inline int getPOLICY_YIELD_CAP()
+	{
+		return m_iPOLICY_YIELD_CAP;
+	}
+	inline int getTRAIT_YIELD_CAP()
+	{
+		return m_iTRAIT_YIELD_CAP;
+	}
+	inline int getBELIEF_YIELD_CAP()
+	{
+		return m_iBELIEF_YIELD_CAP;
+	}
+	inline int getPROMOTION_YIELD_CAP()
+	{
+		return m_iPROMOTION_YIELD_CAP;
+	}
+	inline int getUNIT_YIELD_CAP()
+	{
+		return m_iUNIT_YIELD_CAP;
+	}
+#endif
 #if defined(MISC_CHANGES) // New Global Values
 	inline int getBULLY_GOLD_GROWTH_FACTOR()
 	{
@@ -8248,6 +8270,13 @@ protected:
 	int m_iAI_DIPLO_LAND_DISPUTE_WEIGHT_STRONG;
 	int m_iAI_DIPLO_LAND_DISPUTE_WEIGHT_FIERCE;
 	int m_iMINOR_BULLY_GOLD;
+#if defined(FULL_YIELD_FROM_KILLS)
+	int m_iPOLICY_YIELD_CAP;
+	int m_iTRAIT_YIELD_CAP;
+	int m_iBELIEF_YIELD_CAP;
+	int m_iPROMOTION_YIELD_CAP;
+	int m_iUNIT_YIELD_CAP;
+#endif
 #if defined(MISC_CHANGES) // New Global Values
 	int m_iBULLY_GOLD_GROWTH_FACTOR;
 	int m_iINTERNAL_TRADE_FOOD_BASE_TIMES100;

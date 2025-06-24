@@ -211,8 +211,8 @@ public:
 
 	// Arrays
 #if defined(TRAITIFY) //Arrays
-	bool IsBuildingClassRemoveRequiredTerrain(int i, int j) const;
-	bool IsUnitClassForceSpawnCapital(int i, int j) const;
+	bool IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass) const;
+	bool IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass) const;
 
 	int GetResourceYieldChanges(int i, int j) const;
 	int GetTerrainYieldChanges(int i, int j) const;
@@ -227,6 +227,9 @@ public:
 #if defined(LEKMOD_v34)
 	int GetYieldPerPopulation(int i) const;
 	int GetYieldPerPopulationForeignReligion(int i) const;
+#endif
+#if defined(FULL_YIELD_FROM_KILLS)
+	int GetYieldFromKills(int i) const;
 #endif
 	int GetExtraYieldThreshold(int i) const;
 	int GetYieldChange(int i) const;
@@ -429,8 +432,8 @@ protected:
 
 	// Arrays
 #if defined(TRAITIFY) //Array members
-	int** m_ppiBuildingClassRemoveRequiredTerrain;
-	int** m_ppiUnitClassForceSpawnCapital;
+	std::vector<bool> m_abBuildingClassRemoveRequiredTerrain;
+	std::vector<bool> m_abUnitClassForceSpawnCapital;
 	int** m_ppiBuildingCostOverride;
 	int** m_ppiBuildingClassYieldChanges;
 	int** m_ppiResourceClassYieldChanges;
@@ -445,6 +448,9 @@ protected:
 #if defined(LEKMOD_v34)
 	int* m_paiYieldPerPopulation;
 	int* m_paiYieldPerPopulationForeignReligion;
+#endif
+#if defined(FULL_YIELD_FROM_KILLS)
+	int* m_paiYieldFromKills;
 #endif
 	int* m_paiExtraYieldThreshold;
 	int* m_paiYieldChange;
@@ -1074,6 +1080,18 @@ public:
 	{
 		return m_iYieldChangeNaturalWonder[(int)eYield];
 	};
+#if defined(FULL_YIELD_FROM_KILLS)
+	int GetYieldFromKills(YieldTypes eYield) const
+	{
+		return m_iYieldFromKills[(int)eYield];
+	};
+#endif
+#if defined(TRAITIFY)
+	int GetPuppetYieldModifier(YieldTypes eYield) const
+	{
+		return m_iPuppetYieldModifiers[(int)eYield];
+	};
+#endif
 	int GetYieldChangePerTradePartner(YieldTypes eYield) const
 	{
 		return m_iYieldChangePerTradePartner[(int)eYield];
@@ -1163,7 +1181,6 @@ public:
 	int GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYieldType);
 	int GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYieldType) const;
 	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType);
-	int GetPuppetYieldModifier(YieldTypes eYield);
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
 #endif
 #if defined(LEKMOD_v34)
@@ -1350,7 +1367,9 @@ private:
 	
 
 	BuildingTypes m_eFreeBuildingOnConquest;
-
+#if defined(FULL_YIELD_FROM_KILLS)
+	int m_iYieldFromKills[NUM_YIELD_TYPES];
+#endif
 	int m_iExtraYieldThreshold[NUM_YIELD_TYPES];
 	int m_iFreeCityYield[NUM_YIELD_TYPES];
 	int m_iYieldChangeStrategicResources[NUM_YIELD_TYPES];
@@ -1395,7 +1414,16 @@ private:
 
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiUnimprovedFeatureYieldChange;
 #if defined(TRAITIFY)
+	int m_iPuppetYieldModifiers[NUM_YIELD_TYPES];
+	std::vector<bool> m_abRemoveRequiredTerrain;
+	std::vector<bool> m_abForceSpawnCapital;
+	std::vector<int> m_aiBuildingClassHappiness;
+	std::vector<int> m_aiBuildingClassGlobalHappiness;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiBuildingClassYieldChange;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiFeatureYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTerrainYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiResourceYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiResourceClassYieldChange;
 #endif
 
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;
