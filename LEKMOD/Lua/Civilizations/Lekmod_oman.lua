@@ -43,7 +43,7 @@ function lekmod_oman_building_production(player_id)
 	if player:GetCivilizationType() == this_civ and player:IsAlive() then
 		for city in player:Cities() do
 			if city:IsHasBuilding(GameInfoTypes["BUILDING_MC_OMANI_MINAA"]) then
-				local number_of_routes = LekmodUtilities:get_number_trade_routes_from_city(player, city)
+				local number_of_routes = LekmodUtilities:get_number_trade_routes_from_city(player, city, false, false)
 				if city and city:IsHasBuilding(GameInfoTypes["BUILDING_MC_OMANI_MINAA"]) then
 					city:SetNumRealBuilding(GameInfoTypes["BUILDING_OMAN_TRAIT"], number_of_routes)
 				end

@@ -5,14 +5,14 @@ local this_civ = GameInfoTypes["CIVILIZATION_KILWA"]
 local is_active = LekmodUtilities:is_civilization_active(this_civ)
 
 ------------------------------------------------------------------------------------------------------------------------
--- Kilwa UB. Add a dummy building that gives 5% food for each outgoing trade route in the city.
+-- Kilwa UB. Add a dummy building that gives 5% food for each outgoing international trade route in the city.
 ------------------------------------------------------------------------------------------------------------------------
 function lekmod_kilwa_ua_food(player_id)
 
 	local player = Players[player_id]
 	if player:GetCivilizationType() ~= this_civ or not player:IsAlive() then return end
     for city in player:Cities() do
-        local number_of_routes = LekmodUtilities:get_number_trade_routes_from_city(player, city)
+        local number_of_routes = LekmodUtilities:get_number_trade_routes_from_city(player, city, true, false)
         if city then
             city:SetNumRealBuilding(GameInfoTypes["BUILDING_KILWA_TRAIT"], number_of_routes)
         end

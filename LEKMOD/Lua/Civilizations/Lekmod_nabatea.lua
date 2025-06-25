@@ -60,7 +60,7 @@ function lekmod_nabatea_building_food(player_id)
 	if player:GetCivilizationType() ~= this_civ or not player:IsAlive() then return end
 	for city in player:Cities() do
 		if city:IsHasBuilding(GameInfoTypes["BUILDING_MC_KOKH"]) then
-			local number_of_routes = LekmodUtilities:get_number_trade_routes_from_city(player, city)
+			local number_of_routes = LekmodUtilities:get_number_trade_routes_from_city(player, city, false, false)
 			if city then
 				city:SetNumRealBuilding(GameInfoTypes["BUILDING_NABATEA_TRAIT"], number_of_routes)
 			end

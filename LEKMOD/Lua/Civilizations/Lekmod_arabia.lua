@@ -32,15 +32,14 @@ function lekmod_arabian_dummy_resource_yields(player_id)
 		circus = {
 			building = GameInfoTypes["BUILDING_CIRCUS"],
 			luxuryType = "circus"
+		},
+		factory = {
+			building = GameInfoTypes["BUILDING_FACTORY"],
+			luxuryType = "factory"
 		}
 	}
 
-	local building_yield_change = {
-		
-		[GameInfoTypes["YIELD_CULTURE"]] = 1,
-		[GameInfoTypes["YIELD_GOLD"]] = 1
-		
-	}
+	local building_dummy = GameInfoTypes["BUILDING_DUMMY_ARABIA"]
 
 	local luxury_resources = {
 		sea = {
@@ -55,16 +54,17 @@ function lekmod_arabian_dummy_resource_yields(player_id)
 		},
 		circus = {
 			[GameInfoTypes["RESOURCE_IVORY"]] = true
+		},
+		factory = {
+			[GameInfoTypes["RESOURCE_RUBBER"]] = true
 		}
 	}
 
 	for city in player:Cities() do
-		local city_id = city:GetID()
-		
-		-- Initialize city tracker if it doesn't exist
-		if not arabian_bonus_tracker[player_id][city_id] then
-			arabian_bonus_tracker[player_id][city_id] = {}
-		end
+
+		-- Count how many luxury categories are present in this city
+		local luxury_categories_found = 0
+		local active_categories = {}
 		
 		for building, data in pairs(buildings) do
 			local building_type = data.building
@@ -80,37 +80,19 @@ function lekmod_arabian_dummy_resource_yields(player_id)
 				end
 				
 				if has_required_luxury then
-					-- Check if we've already added the bonus for this building in this city
-					if not arabian_bonus_tracker[player_id][city_id][building_type] then
-						local building_class = GameInfo.Buildings[building_type].BuildingClass
-						for yield_type, amount in pairs(building_yield_change) do
-							local current_yield = city:getBuildingYieldChange(GameInfoTypes[building_class], yield_type)
-							-- Add the bonus on top of existing yields
-							city:setBuildingYieldChange(GameInfoTypes[building_class], yield_type, current_yield + amount)
-						end
-						-- Mark this building as having received the bonus
-						arabian_bonus_tracker[player_id][city_id][building_type] = true
-					end
-				else
-					-- If the city no longer has the required luxury, remove the bonus and reset tracker
-					if arabian_bonus_tracker[player_id][city_id][building_type] then
-						local building_class = GameInfo.Buildings[building_type].BuildingClass
-						for yield_type, amount in pairs(building_yield_change) do
-							local current_yield = city:getBuildingYieldChange(GameInfoTypes[building_class], yield_type)
-							-- Remove the bonus
-							city:setBuildingYieldChange(GameInfoTypes[building_class], yield_type, math.max(0, current_yield - amount))
-						end
-						-- Reset the tracker
-						arabian_bonus_tracker[player_id][city_id][building_type] = false
-					end
-				end
-			else
-				-- If the building is no longer present, reset the tracker
-				if arabian_bonus_tracker[player_id][city_id][building_type] then
-					arabian_bonus_tracker[player_id][city_id][building_type] = false
+					luxury_categories_found = luxury_categories_found + 1
+					active_categories[data.luxuryType] = true
 				end
 			end
 		end
+		
+		-- Set the number of dummy buildings based on luxury categories found
+		if luxury_categories_found > 0 then
+			city:SetNumRealBuilding(building_dummy, luxury_categories_found)
+		else
+			city:SetNumRealBuilding(building_dummy, 0)
+		end
+		
 	end
 end
 

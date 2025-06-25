@@ -30,18 +30,27 @@ function LekmodUtilities:get_round(number, idp)
 
 end
 ------------------------------------------------------------------------------------------------------------------------
-function LekmodUtilities:get_number_trade_routes_from_city(player, city, domain)
+function LekmodUtilities:get_number_trade_routes_from_city(player, city, is_international, is_internal, domain)
 
 	local trade_routes = player:GetTradeRoutes()
 	local routes_amount = 0
 	for _, trade_route in ipairs(trade_routes) do
-
       local domain_type = trade_route.Domain
 		local originating_city = trade_route.FromCity
 		local target_city = trade_route.ToCity
       if domain ~= nil and domain ~= domain_type then -- skip
       elseif target_city and originating_city == city then
-         routes_amount = routes_amount + 1
+         if is_international then
+            if trade_route.ToCity:GetOwner() ~= player:GetID() then
+               routes_amount = routes_amount + 1
+            end
+         elseif is_internal then
+            if trade_route.ToCity:GetOwner() == player:GetID() then
+               routes_amount = routes_amount + 1
+            end
+         else
+            routes_amount = routes_amount + 1
+         end
       end
 
 	end
