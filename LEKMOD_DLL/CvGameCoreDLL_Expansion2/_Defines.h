@@ -1088,6 +1088,8 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 #define FULL_YIELD_FROM_KILLS
 // Display the General and Admiral Points earned from Combat.
 #define DISPLAY_GENERAL_ADMIRAL_POINTS
+// Units now remember their Home city. Want to make more than Religious Unit remember home city Religion on Trained. This also makes Death yields pretty simple, now that I think about it.
+//#define UNITS_REMEMBER_HOME
 
 ////////////////////////
 //Benched or not working
@@ -1205,7 +1207,7 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 // -- Debug minidump
 
 #define AUI_MINIDUMPS
-
+#define MINIDUMP_ADDITIONAL_INFOS
 //Firstmove fix, still allowing 1 move on turn load. Immos version of LEKMOD_FIRSTMOVE_FIX
 
 #define GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING

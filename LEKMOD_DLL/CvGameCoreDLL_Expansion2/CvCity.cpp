@@ -6031,7 +6031,24 @@ int CvCity::getProductionModifier(UnitTypes eUnit, CvString* toolTipSink) const
 	iMultiplier += thisPlayer.getProductionModifier(eUnit, toolTipSink);
 
 	int iTempMod;
-
+#if defined(LEKMOD_v34) // Display the city's Unit Production Cost reduction.
+	// Player Unit Cost (This adjusts based on game info instead of pkUnitInfo which is just the database value)
+	// Which means we wont see the GameSpeed, StartEra and oter such costs encounter here which is desired.
+	int iPlayerCost = GET_PLAYER(getOwner()).getProductionNeeded(eUnit);
+	// This city's Cost for Unit
+	int iCityCost = this->getProductionNeeded(eUnit);
+	// Find the % that this city's cost is of the true cost
+	float fUnitCostReduction = 100.0f * (iCityCost - iPlayerCost) / iPlayerCost;
+	if (fUnitCostReduction != 0.0f)
+	{
+		// DOES NOT ADD TO iMultiplier, THAT WOULD MAKE IT ACTUALLY DO THINGS AND THIS IS JUST A DISPLAY.
+		iTempMod = (int)fUnitCostReduction;
+		if (toolTipSink && iTempMod)
+		{
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_UNIT_COST_MODIFIER", iTempMod);
+		}
+	}
+#endif
 	// Capital Settler bonus
 	if(isCapital() && pkUnitInfo->IsFound())
 	{

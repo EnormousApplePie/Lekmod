@@ -2293,25 +2293,7 @@ void CvPlayerCulture::DoArchaeologyChoice (ArchaeologyChoiceType eChoice)
 				// if this is the human player, have the popup come up so that he can choose a new policy
 				if (m_pPlayer->isAlive() && m_pPlayer->isHuman() && m_pPlayer->getNumCities() > 0)
 				{
-					if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
-					{
-						if (m_pPlayer->getNextPolicyCost() <= m_pPlayer->getJONSCulture() && m_pPlayer->GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
-						{
-							CvNotifications* pNotifications = m_pPlayer->GetNotifications();
-							if (pNotifications)
-							{
-								CvString strBuffer;
-
-								if (GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
-									strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
-								else
-									strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
-
-								CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
-								pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
-							}
-						}
-					}
+					m_pPlayer->TestMidTurnPolicyNotification();
 				}
 #endif
 

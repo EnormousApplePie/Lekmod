@@ -155,32 +155,12 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
 	if (iHappiness ~= nil) then
 		iHappinessTotal = iHappinessTotal + iHappiness;
 	end
-	iHappinessTotal = iHappinessTotal + pActivePlayer:GetExtraBuildingHappinessFromPolicies(iBuildingID);
+	iHappinessTotal = iHappinessTotal + pActivePlayer:GetExtraBuildingHappinessFromPolicies(iBuildingID) + pActivePlayer:GetTraitBuildingClassHappiness(iBuildingID);
 	if (pCity ~= nil) then
 		iHappinessTotal = iHappinessTotal + pCity:GetReligionBuildingClassHappiness(buildingClassID) + pActivePlayer:GetPlayerBuildingClassHappiness(buildingClassID);
 	end
 	if (iHappinessTotal ~= 0) then
 		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_HAPPINESS", iHappinessTotal));
-	end
-	
-	-- Culture
-	local iCulture = Game.GetBuildingYieldChange(iBuildingID, YieldTypes.YIELD_CULTURE);
-	if (pCity ~= nil) then
-		iCulture = iCulture + pCity:GetReligionBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_CULTURE) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_CULTURE);
-		iCulture = iCulture + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_CULTURE);
-	end
-	if (iCulture ~= nil and iCulture ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_CULTURE", iCulture));
-	end
-
-	-- Faith
-	local iFaith = Game.GetBuildingYieldChange(iBuildingID, YieldTypes.YIELD_FAITH);
-	if (pCity ~= nil) then
-		iFaith = iFaith + pCity:GetReligionBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_FAITH) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_FAITH);
-		iFaith = iFaith + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_FAITH);
-	end
-	if (iFaith ~= nil and iFaith ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_FAITH", iFaith));
 	end
 	
 	-- Defense
@@ -194,86 +174,46 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
 	if (iHitPoints ~= nil and iHitPoints ~= 0) then
 		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_HITPOINTS", iHitPoints));
 	end
-	
-	-- Food
-	local iFood = Game.GetBuildingYieldChange(iBuildingID, YieldTypes.YIELD_FOOD);
-	if (pCity ~= nil) then
-		iFood = iFood + pCity:GetReligionBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_FOOD) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_FOOD);
-		iFood = iFood + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_FOOD);
-	end
-	if (iFood ~= nil and iFood ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_FOOD", iFood));
-	end
-	
-	-- Gold Mod
-	local iGold = Game.GetBuildingYieldModifier(iBuildingID, YieldTypes.YIELD_GOLD);
-	iGold = iGold + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, YieldTypes.YIELD_GOLD);
-	
-	if (iGold ~= nil and iGold ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_GOLD", iGold));
-	end
-	
-	-- Gold Change
-	iGold = Game.GetBuildingYieldChange(iBuildingID, YieldTypes.YIELD_GOLD);
-	if (pCity ~= nil) then
-		iGold = iGold + pCity:GetReligionBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLD) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLD);
-		iGold = iGold + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLD);
-	end
-	if (iGold ~= nil and iGold ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_GOLD_CHANGE", iGold));
-	end
+-- START Yields, this should support all yields, including modded Yields as long as they are defined in the XML
+	for Yields in GameInfo.Yields() do
+    	local iYieldType          = Yields.ID
+    	local iYieldChange        = 0
+    	local iYieldModifier      = 0
+    	local fYieldChangePerPop  = 0
+		local strYieldName 		  = Locale.ConvertTextKey( Yields.Description )
+    	local strYieldIcon        = Yields.IconString
 
-	-- Golden Age Points Change
-	local iGoldenAgePoints = Game.GetBuildingYieldChange(iBuildingID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
-	if (pCity ~= nil) then
-		iGoldenAgePoints = iGoldenAgePoints + pCity:GetReligionBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLDEN_AGE_POINTS) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
-		iGoldenAgePoints = iGoldenAgePoints + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
-	end
-	if (iGoldenAgePoints ~= nil and iGoldenAgePoints ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_GOLDEN_AGE_POINTS_CHANGE", iGoldenAgePoints));
-	end
+    iYieldChange = iYieldChange + Game.GetBuildingYieldChange(iBuildingID, iYieldType) + pActivePlayer:GetPolicyBuildingClassYieldChange(buildingClassID, iYieldType) + pActivePlayer:GetTraitBuildingClassYieldChange(buildingClassID, iYieldType) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, iYieldType)
+    if pCity ~= nil then
+        iYieldChange = iYieldChange + pCity:GetReligionBuildingClassYieldChange(buildingClassID, iYieldType) + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, iYieldType)
+    end
 
-	iGoldenAgePoints = Game.GetBuildingYieldModifier(iBuildingID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
-	iGoldenAgePoints = iGoldenAgePoints + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, YieldTypes.YIELD_GOLDEN_AGE_POINTS);
+    iYieldModifier = iYieldModifier + Game.GetBuildingYieldModifier(iBuildingID, iYieldType) + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, iYieldType)
 
-	if (iGoldenAgePoints ~= nil and iGoldenAgePoints ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_GOLDEN_AGE_POINTS", iGoldenAgePoints));
+    for row in GameInfo.Building_YieldChangesPerPop{ BuildingType = pBuildingInfo.Type, YieldType = Yields.Type } do
+        fYieldChangePerPop = fYieldChangePerPop + (row.Yield or 0)
+    end
+-- I'll get Firaxis for this later....
+	if Yields.Type == "YIELD_CULTURE" then
+		-- Culture is special, for better or worse
+		local iBuildingCultureModifier = pBuildingInfo.CultureRateModifier + pBuildingInfo.GlobalCultureRateModifier
+		if iBuildingCultureModifier ~= 0 then
+			iYieldModifier = iYieldModifier + iBuildingCultureModifier
+		end
 	end
-	
-	-- Science
-	local iScience = Game.GetBuildingYieldModifier(iBuildingID, YieldTypes.YIELD_SCIENCE);
-	iScience = iScience + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, YieldTypes.YIELD_SCIENCE);
-	if (iScience ~= nil and iScience ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_SCIENCE", iScience));
-	end
-	
-	-- Science
-	local iScienceChange = Game.GetBuildingYieldChange(iBuildingID, YieldTypes.YIELD_SCIENCE) + pActivePlayer:GetPolicyBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_SCIENCE);
-	if (pCity ~= nil) then
-		iScienceChange = iScienceChange + pCity:GetReligionBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_SCIENCE) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_SCIENCE);
-		iScienceChange = iScienceChange + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_SCIENCE);
-	end
-	if (iScienceChange ~= nil and iScienceChange ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_SCIENCE_CHANGE", iScienceChange));
-	end
-	
-	-- Production
-	local iProduction = Game.GetBuildingYieldModifier(iBuildingID, YieldTypes.YIELD_PRODUCTION);
-	iProduction = iProduction + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, YieldTypes.YIELD_PRODUCTION);
-	if (iProduction ~= nil and iProduction ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_PRODUCTION", iProduction));
-	end
+	-- This Creates a new line for each yield application type, since stacking them up looks bad
+    if iYieldChange ~= 0 then
+        table.insert(lines, strYieldIcon .. " " .. strYieldName .. string.format(": %+i", iYieldChange))
+    end
+    if iYieldModifier ~= 0 then
+        table.insert(lines, strYieldIcon .. " " .. strYieldName .. string.format(": %+i%%", iYieldModifier))
+    end
+    if fYieldChangePerPop ~= 0 then
+		fYieldChangePerPop = fYieldChangePerPop / 100
+        table.insert(lines, strYieldIcon .. " " .. strYieldName .. string.format(": %+g[ICON_CITIZEN]", fYieldChangePerPop))
+    end
+end -- END Yields
 
-	-- Production Change
-	local iProd = Game.GetBuildingYieldChange(iBuildingID, YieldTypes.YIELD_PRODUCTION);
-	if (pCity ~= nil) then
-		iProd = iProd + pCity:GetReligionBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_PRODUCTION) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_PRODUCTION);
-		iProd = iProd + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, YieldTypes.YIELD_PRODUCTION);
-	end
-	if (iProd ~= nil and iProd ~= 0) then
-		table.insert(lines, Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_PRODUCTION_CHANGE", iProd));
-	end
-	
 	-- Great People
 	local specialistType = pBuildingInfo.SpecialistType;
 	if specialistType ~= nil then

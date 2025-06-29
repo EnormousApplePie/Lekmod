@@ -1966,7 +1966,7 @@ CvGlobals::~CvGlobals()
 {
 }
 
-#ifdef AUI_MINIDUMPS
+#ifdef AUI_MINIDUMPS // Altered to work, and be more helpful like VP's
 /************************************************************************************************/
 /* MINIDUMP_MOD                           04/10/11                                terkhen       */
 /*                                                                                              */
@@ -1978,14 +1978,27 @@ CvGlobals::~CvGlobals()
 
 void CreateMiniDump(EXCEPTION_POINTERS *pep)
 {
-	/* Open a file to store the minidump. */
-	HANDLE hFile = CreateFile(_T("CvMiniDump.dmp"),
-							  GENERIC_READ | GENERIC_WRITE,
-							  0,
-							  NULL,
-							  CREATE_ALWAYS,
-							  FILE_ATTRIBUTE_NORMAL,
-							  NULL);
+	// Initialize debug symbols
+	HANDLE hProcess = GetCurrentProcess();
+	SymInitialize(hProcess, NULL, TRUE);
+	// Time Stamp, since it make sense SMH
+
+	SYSTEMTIME st;
+	GetLocalTime(&st);
+	TCHAR szDumpPath[MAX_PATH];
+	_stprintf_s(szDumpPath, MAX_PATH,
+		_T("CvMiniDump_%04d%02d%02d_%02d%02d%02d_LEKMOD.dmp"),
+		st.wYear, st.wMonth, st.wDay,
+		st.wHour, st.wMinute, st.wSecond);
+
+	// Open the file
+	HANDLE hFile = CreateFile(
+		szDumpPath,
+		GENERIC_READ | GENERIC_WRITE,
+		0, NULL,
+		CREATE_ALWAYS,
+		FILE_ATTRIBUTE_NORMAL,
+		NULL);
 
 	if ((hFile != NULL) && (hFile != INVALID_HANDLE_VALUE))
 	{
@@ -1996,8 +2009,32 @@ void CreateMiniDump(EXCEPTION_POINTERS *pep)
 		mdei.ExceptionPointers	= pep;
 		mdei.ClientPointers		= FALSE;
 
-		// Delnar: MiniDumpNormal doesn't always provide enough info, especially if crashes are with an older version
-		MINIDUMP_TYPE mdt = MiniDumpWithPrivateReadWriteMemory;
+		MINIDUMP_TYPE mdt;
+#if defined(MINIDUMP_ADDITIONAL_INFOS) // Taken from VP, since I don't have any idea what is useful.
+		mdt = (MINIDUMP_TYPE)(
+			MiniDumpWithFullMemory |             // Complete memory snapshot
+			MiniDumpWithFullMemoryInfo |         // Memory state information
+			MiniDumpWithHandleData |             // Handle usage
+			MiniDumpWithUnloadedModules |        // Track unloaded DLLs
+			MiniDumpWithThreadInfo |             // Extended thread information
+			MiniDumpWithProcessThreadData |      // Process thread data
+			MiniDumpWithCodeSegs |               // Code segments
+			MiniDumpWithDataSegs |               // Data segments
+			MiniDumpWithPrivateReadWriteMemory | // Private memory
+			MiniDumpWithFullAuxiliaryState |     // Auxiliary state (handles, GDI objects)
+			MINIDUMP_TYPE(0x00000040) |          // MiniDumpWithTokenInformation
+			MINIDUMP_TYPE(0x00000400) |          // MiniDumpWithPrivateWriteCopyMemory
+			MINIDUMP_TYPE(0x00020000) |          // MiniDumpIgnoreInaccessibleMemory
+			MiniDumpWithIndirectlyReferencedMemory | // Memory referenced by locals
+			MINIDUMP_TYPE(0x00000800)            // MiniDumpWithModuleHeaders
+			);
+#else
+		mdt = (MINIDUMP_TYPE)(
+			MiniDumpNormal |                    // Basic info
+			MiniDumpWithThreadInfo |            // Thread information
+			MINIDUMP_TYPE(0x00020000)           // MiniDumpIgnoreInaccessibleMemory
+			);
+#endif
 
 		BOOL result = MiniDumpWriteDump(GetCurrentProcess(),
 										 GetCurrentProcessId(),
@@ -2021,7 +2058,6 @@ void CreateMiniDump(EXCEPTION_POINTERS *pep)
 		return;
 	}
 }
-
 LONG WINAPI CustomFilter(EXCEPTION_POINTERS *ExceptionInfo)
 {
 	CreateMiniDump(ExceptionInfo);
@@ -2038,6 +2074,9 @@ LONG WINAPI CustomFilter(EXCEPTION_POINTERS *ExceptionInfo)
 //
 void CvGlobals::init()
 {
+#if defined(AUI_MINIDUMPS)
+	SetUnhandledExceptionFilter(CustomFilter);
+#endif
 	//
 	// These vars are used to initialize the globals.
 	//

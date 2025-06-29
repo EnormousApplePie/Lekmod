@@ -441,7 +441,11 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 		if(pResults == NULL)
 		{
-			const char* szSQL = "select Terrains.ID as TerrainID, coalesce(Technologies.ID, -1) as PassableTechID, UnitPromotions_Terrains.* from UnitPromotions_Terrains inner join Terrains on TerrainType = Terrains.Type left join Technologies on PassableTech = Technologies.Type where PromotionType = ?";
+			const char* szSQL = 
+				"select Terrains.ID as TerrainID, coalesce(Technologies.ID, -1) as PassableTechID, UnitPromotions_Terrains.* from UnitPromotions_Terrains "
+				"inner join Terrains on TerrainType = Terrains.Type "
+				"left join Technologies on PassableTech = Technologies.Type "
+				"where PromotionType = ?";
 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 		}
 
