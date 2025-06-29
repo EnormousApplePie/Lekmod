@@ -2443,25 +2443,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 			// if this is the human player, have the popup come up so that he can choose a new policy
 			if (isAlive() && isHuman() && getNumCities() > 0)
 			{
-				if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
-				{
-					if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
-					{
-						CvNotifications* pNotifications = GetNotifications();
-						if (pNotifications)
-						{
-							CvString strBuffer;
-
-							if (GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
-								strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
-							else
-								strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
-
-							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
-							pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
-						}
-					}
-				}
+				TestMidTurnPolicyNotification();
 			}
 #endif
 		}
@@ -5276,16 +5258,17 @@ void CvPlayer::doTurnPostDiplomacy()
 	// if this is the human player, have the popup come up so that he can choose a new policy
 	if(isAlive() && isHuman() && getNumCities() > 0)
 	{
-		if(!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
+		if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
 		{
-			if(getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
+#if !defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN)
+			if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
 			{
 				CvNotifications* pNotifications = GetNotifications();
-				if(pNotifications)
+				if (pNotifications)
 				{
 					CvString strBuffer;
 
-					if(kGame.isOption(GAMEOPTION_POLICY_SAVING))
+					if (kGame.isOption(GAMEOPTION_POLICY_SAVING))
 						strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
 					else
 						strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
@@ -5295,6 +5278,10 @@ void CvPlayer::doTurnPostDiplomacy()
 				}
 			}
 		}
+#else
+			TestMidTurnPolicyNotification();
+		}
+#endif
 
 		if (GetPlayerPolicies()->IsTimeToChooseIdeology() && GetPlayerPolicies()->GetLateGamePolicyTree() == NO_POLICY_BRANCH_TYPE)
 		{
@@ -7370,9 +7357,6 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 //	--------------------------------------------------------------------------------
 void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 {
-#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
-	CvGame& kGame = GC.getGame();
-#endif
 	CvPlot* pLoopPlot;
 	CvPlot* pBestPlot = NULL;
 	CvString strBuffer;
@@ -7479,29 +7463,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 				}
 
 
-				while (pBestCity->getFood() >= pBestCity->growthThreshold())
-				{
-					pBestCity->changeFood(-(std::max(0, (pBestCity->growthThreshold() - pBestCity->getFoodKept()))));
-					pBestCity->changePopulation(1);
-
-#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
-					// Only show notification if the city is small
-					if (pBestCity->getPopulation() <= 5)
-					{
-#endif
-						CvNotifications* pNotifications = GET_PLAYER(pBestCity->getOwner()).GetNotifications();
-						if (pNotifications)
-						{
-							Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_CITY_GROWTH");
-							localizedText << pBestCity->getNameKey() << pBestCity->getPopulation();
-							Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_CITY_GROWTH");
-							localizedSummary << pBestCity->getNameKey();
-							pNotifications->Add(NOTIFICATION_CITY_GROWTH, localizedText.toUTF8(), localizedSummary.toUTF8(), pBestCity->getX(), pBestCity->getY(), pBestCity->GetID());
-						}
-#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
-					}
-#endif
-				}
+				TestMidTurnPopGrowth(pBestCity, true /*bAlwaysShowNotification*/);
 			}
 		}
 	}
@@ -7731,25 +7693,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		// if this is the human player, have the popup come up so that he can choose a new policy
 		if (isAlive() && isHuman() && getNumCities() > 0)
 		{
-			if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
-			{
-				if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
-				{
-					CvNotifications* pNotifications = GetNotifications();
-					if (pNotifications)
-					{
-						CvString strBuffer;
-
-						if (kGame.isOption(GAMEOPTION_POLICY_SAVING))
-							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
-						else
-							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
-
-						CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
-						pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
-					}
-				}
-			}
+			TestMidTurnPolicyNotification();
 		}
 #endif
 #ifdef AUI_PLAYER_FIX_RECEIVE_GOODY_MESSAGE
@@ -12972,9 +12916,7 @@ void CvPlayer::DoYieldsFromKill(CvUnit* pAttackingUnit, CvUnit* pKilledUnit, int
 }
 void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, CvUnit* pKilledUnit, int iX, int iY, bool bWasBarbarian, int& iNumBonuses)
 {
-#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
 	CvGame& kGame = GC.getGame();
-#endif
 	// KilledUnit Null safety block. This should never happen, but just in case.
 	CvAssertMsg(pKilledUnit != NULL, "Killed Unit is NULL, Please Report.");
 	if (pKilledUnit == NULL) return;
@@ -12984,9 +12926,25 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 	CvUnitEntry* pkKilledUnitInfo = GC.getUnitInfo(eKilledUnitType); // Passed Null safety.
 	// the AttackingUnit can be NULL, as Cities can kill. This is used in that case and sets eAttackingUnitType to NO_UNIT, Promotion and UnitEntry Data elements are skipped as expected.
 	UnitTypes eAttackingUnitType = NO_UNIT;
-	if (pAttackingUnit)
+#if !defined(UNITS_REMEMBER_HOME) // Hmm, should I assume a city killed if pAttackingUnit is NULL? and allow food/production to go to it? seems unsafe so ill nix the idea for now.
+	if (pAttackingUnit != NULL)
 		eAttackingUnitType = pAttackingUnit->getUnitType();
-
+#else
+	// Set the Home City to NULL, for Init purposes. When NULL, just skips stuff like Food, Production and some other stuff I have the Idea for.
+	CvCity* pAttackerHomeCity = NULL;
+	if (pAttackingUnit != NULL)
+	{
+		eAttackingUnitType = pAttackingUnit->getUnitType();
+		pAttackerHomeCity = pAttackingUnit->GetHomeCity();
+		// If the attacking Unit Owner and Home City Owner are different, then we dont give Yields to the Home City.
+		// Possible Edge Case: units gifted by an allied Player, this could be accounted for by making some kind of team check.
+		if (pAttackerHomeCity != NULL)
+		{
+			if (pAttackingUnit->getOwner() != pAttackerHomeCity->getOwner())
+				pAttackerHomeCity = NULL;
+		}
+	}
+#endif
 	if (pkKilledUnitInfo)
 	{
 		int iCombatStrength = max(pkKilledUnitInfo->GetCombat(), pkKilledUnitInfo->GetRangedCombat());
@@ -12999,9 +12957,7 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 			int iUnitValue = 0;
 			//ok, Keep this switch case to Support Legacy Values
 			switch (eYield)
-			{
-				//case YIELD_FOOD: Not supported, local to a city
-				//case YIELD_PRODUCTION: Not supported, local to a city
+			{ 
 			case YIELD_GOLD:
 				iPolicyValue += GetPlayerPolicies()->GetNumericModifier(POLICYMOD_GOLD_FROM_KILLS);
 				break;
@@ -13049,7 +13005,7 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 			int iBeliefCap = GC.getBELIEF_YIELD_CAP();
 			int iPromotionCap = GC.getPROMOTION_YIELD_CAP();
 			int iUnitCap = GC.getUNIT_YIELD_CAP();
-
+			// Ok so EAP has requested a different System. 
 			// NQMP GJS - Cap Yields from kills to 30 per type (policy/trait/belief/other)
 			// Expanding on GJS's cap. Make them Global Integers, and use them to cap the values. Set to -1 to do Uncapped values.
 			if (iPolicyCap > 0)
@@ -13080,38 +13036,54 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 				switch (eYield)
 				{
 					// Food and Production are pretty non sensical without a Unit Tracking its home city or returning to the capital for some reason.
-					//case YIELD_FOOD:
-					//case YIELD_PRODUCTION:
+#if defined(UNITS_REMEMBER_HOME)// Units now Track the Home City, so Food and Production are on the Table ~ YAY
+				case YIELD_FOOD:
+				{
+					if (pAttackerHomeCity != NULL)
+					{
+						// Set the XY for this function to the City, so the ReportYieldFromKill displays on city plot.
+						iX = pAttackerHomeCity->getX();
+						iY = pAttackerHomeCity->getY();
+
+						pAttackerHomeCity->changeFood(iTotalValue);
+						TestMidTurnPopGrowth(pAttackerHomeCity, true/*bAlwaysShowNotification*/);
+					}
+					else
+					{
+						// If the City is NULL, then just exit out of the YIELD_FOOD part of the loop without calling ReportYieldFromKill
+						return;
+					}
+				}
+				break;
+				case YIELD_PRODUCTION:
+				{
+					if (pAttackerHomeCity != NULL)
+					{
+						// Set the XY for this function to the City, so the ReportYieldFromKill displays on city plot.
+						iX = pAttackerHomeCity->getX();
+						iY = pAttackerHomeCity->getY();
+
+						if (pAttackerHomeCity->isProductionProcess()) //check if we are currently having anything in the queue
+							pAttackerHomeCity->changeProduction(iTotalValue);
+						else //if not, add it to the overflow
+							pAttackerHomeCity->setOverflowProduction(pAttackerHomeCity->getOverflowProduction() + iTotalValue);
+					}
+					else
+					{
+						// If the City is NULL, then just exit out of the YIELD_PRODUCTION part of the loop without calling ReportYieldFromKill
+						return;
+					}
+				}
+				break;
+#endif
 				case YIELD_GOLD:
 					GetTreasury()->ChangeGold(iTotalValue);
 					break;
 				case YIELD_CULTURE:
 					changeJONSCulture(iTotalValue);
-
-#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
-					// if this is the human player, have the popup come up so that he can choose a new policy
+#if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN) // if this is the human player, have the popup come up so that he can choose a new policy
 					if (isAlive() && isHuman() && getNumCities() > 0)
-					{
-						if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
-						{
-							if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
-							{
-								CvNotifications* pNotifications = GetNotifications();
-								if (pNotifications)
-								{
-									CvString strBuffer;
-
-									if (kGame.isOption(GAMEOPTION_POLICY_SAVING))
-										strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
-									else
-										strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
-
-									CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
-									pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
-								}
-							}
-						}
-					}
+						TestMidTurnPolicyNotification();
 #endif
 					break;
 				case YIELD_FAITH:
@@ -13198,6 +13170,14 @@ void CvPlayer::ReportYieldFromKill(YieldTypes eYield, int iValue, int iX, int iY
 	{
 		switch(eYield)
 		{
+#if defined(UNITS_REMEMBER_HOME) // Food and Production are only supported with Units that remember their Home City.
+		case YIELD_FOOD:
+			yieldString = "[COLOR_GREEN]+%d[ENDCOLOR][ICON_FOOD]";
+			break;
+		case YIELD_PRODUCTION:
+			yieldString = "[COLOR_ORANGE]+%d[ENDCOLOR][ICON_PRODUCTION]";
+			break;
+#endif
 		case YIELD_GOLD:
 			yieldString = "[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]";
 			break;
@@ -13233,7 +13213,64 @@ void CvPlayer::ReportYieldFromKill(YieldTypes eYield, int iValue, int iX, int iY
 		}
 	}
 }
+#if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN) // Create Helper, since it is used in multiple places.
+void CvPlayer::TestMidTurnPolicyNotification()
+{
+	if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
+	{
+		if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
+		{
+			CvNotifications* pNotifications = GetNotifications();
+			if (pNotifications)
+			{
+				CvString strBuffer;
 
+				if (GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
+					strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
+				else
+					strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
+
+				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
+				pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
+			}
+		}
+	}
+}
+#endif
+void CvPlayer::TestMidTurnPopGrowth(CvCity* pCity, bool bAlwaysShowNotification)
+{
+	CvAssertMsg(pCity != NULL, "pCity in CvPlayer::TestMidTurnPopGrowth is not assigned a valid value");
+	if (pCity != NULL)
+	{
+		// While is used here so if we get a ton of food we grow as many times as needed to get to below the growth Threshold.
+		while ((pCity->getFood()) >= pCity->growthThreshold())
+		{
+			if (pCity->GetCityCitizens()->IsForcedAvoidGrowth())
+			{
+				pCity->setFood(pCity->growthThreshold());
+			}
+			else
+			{
+				pCity->changeFood(-(std::max(0, (pCity->growthThreshold() - pCity->getFoodKept()))));
+				pCity->changePopulation(1);
+
+				// Only show notification if the city is small and if bAlwaysShowNotification is false
+				if (pCity->getPopulation() <= 5 && !bAlwaysShowNotification)
+				{
+					CvNotifications* pNotifications = GetNotifications();
+					if (pNotifications)
+					{
+						Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_CITY_GROWTH");
+						localizedText << pCity->getNameKey() << pCity->getPopulation();
+						Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_CITY_GROWTH");
+						localizedSummary << pCity->getNameKey();
+						pNotifications->Add(NOTIFICATION_CITY_GROWTH, localizedText.toUTF8(), localizedSummary.toUTF8(), pCity->getX(), pCity->getY(), pCity->GetID());
+					}
+				}
+			}
+		}
+	}
+}
 #ifdef NQ_BELIEF_TOGGLE_ALLOW_FAITH_GIFTS_TO_MINORS
 bool CvPlayer::CanFaithGiftMinors()
 {
@@ -17178,35 +17215,9 @@ void CvPlayer::DoGreatPersonExpended(UnitTypes eGreatPersonUnit)
 						{
 						case YIELD_FOOD:
 						{
-							
-
 							pCity->changeFood(iYieldAmount);
 							//if the food added is enough to grow, grow the city. Do until the city is no longer able to grow in case of large food yields
-							while (pCity->getFood() >= pCity->growthThreshold())
-							{
-								pCity->changeFood(-(std::max(0, (pCity->growthThreshold() - pCity->getFoodKept()))));
-								pCity->changePopulation(1);
-
-#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
-								// Only show notification if the city is small
-								if (pCity->getPopulation() <= 5)
-								{
-#endif
-									CvNotifications* pNotifications = GET_PLAYER(pCity->getOwner()).GetNotifications();
-									if (pNotifications)
-									{
-										Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_CITY_GROWTH");
-										localizedText << pCity->getNameKey() << pCity->getPopulation();
-										Localization::String localizedSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_CITY_GROWTH");
-										localizedSummary << pCity->getNameKey();
-										pNotifications->Add(NOTIFICATION_CITY_GROWTH, localizedText.toUTF8(), localizedSummary.toUTF8(), pCity->getX(), pCity->getY(), pCity->GetID());
-									}
-#ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
-								}
-#endif
-							}
-							
-
+							TestMidTurnPopGrowth(pCity, true/*bAlwaysShowNotification*/);
 						}
 						break;
 						case YIELD_PRODUCTION:

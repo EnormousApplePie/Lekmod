@@ -957,7 +957,11 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetPolicyBuildingClassYieldChange);
 	Method(GetPolicyEspionageModifier);
 	Method(GetPolicyEspionageCatchSpiesModifier);
-
+#if defined(TRAITIFY)
+	Method(GetTraitBuildingClassYieldChange);
+	Method(GetTraitBuildingClassHappiness);
+	//Method(GetTraitBuildingClassGlobalHappiness);
+#endif
 	Method(GetPlayerBuildingClassYieldChange);
 	Method(GetPlayerBuildingClassHappiness);
 
@@ -9847,7 +9851,60 @@ int CvLuaPlayer::lGetPolicyEspionageCatchSpiesModifier(lua_State* L)
 	lua_pushinteger(L, pkPolicyInfo->GetCatchSpiesModifier());
 	return 1;
 }
+#if defined(TRAITIFY)
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lGetTraitBuildingClassYieldChange(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	const YieldTypes eYieldType = (YieldTypes)luaL_checkint(L, 3);
 
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int Change = pkPlayer->GetPlayerTraits()->GetBuildingClassYieldChange(eBuildingClass, eYieldType);
+		lua_pushinteger(L, Change);
+
+		return 1;
+	}
+
+	return 0;
+}
+int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
+{
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		const BuildingTypes eBuilding = (BuildingTypes)lua_tointeger(L, 2);
+		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+		if (pkBuildingInfo)
+		{
+			BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingInfo->GetBuildingClassType();
+	
+			int iExtraHappiness = 0;
+	
+			for (int iTraitLoop = 0; iTraitLoop < GC.getNumTraitInfos(); iTraitLoop++)
+			{
+				const TraitTypes eTrait = static_cast<TraitTypes>(iTraitLoop);
+				CvTraitEntry* pkTraitInfo = GC.getTraitInfo(eTrait);
+				if (pkTraitInfo)
+				{
+					if (pkPlayer->GetPlayerTraits()->HasTrait(eTrait))
+					{
+						iExtraHappiness += pkTraitInfo->GetBuildingClassHappiness(eBuildingClass);
+						iExtraHappiness += pkTraitInfo->GetBuildingClassGlobalHappiness(eBuildingClass);
+					}
+				}
+			}
+			lua_pushinteger(L, iExtraHappiness);
+			return 1;
+		}
+	}
+	
+	//BUG: This can't be right...
+	lua_pushinteger(L, -1);
+	return 0;
+}
+#endif
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetPlayerBuildingClassYieldChange(lua_State* L)
 {

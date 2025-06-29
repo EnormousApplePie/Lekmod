@@ -954,7 +954,11 @@ protected:
 	static int lGetPolicyBuildingClassYieldChange(lua_State* L);
 	static int lGetPolicyEspionageModifier(lua_State* L);
 	static int lGetPolicyEspionageCatchSpiesModifier(lua_State* L);
-
+#if defined(TRAITIFY)
+	static int lGetTraitBuildingClassYieldChange(lua_State* L);
+	static int lGetTraitBuildingClassHappiness(lua_State* L);
+	//static int lGetTraitBuildingClassGlobalHappiness(lua_State* L);
+#endif
 	static int lGetPlayerBuildingClassYieldChange(lua_State* L);
 	static int lGetPlayerBuildingClassHappiness(lua_State* L);
 

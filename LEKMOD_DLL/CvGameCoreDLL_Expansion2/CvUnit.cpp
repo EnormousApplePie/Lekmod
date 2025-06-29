@@ -128,6 +128,9 @@ CvUnit::CvUnit() :
 	, m_iLastMoveTurn(0)
 	, m_iCycleOrder(-1)
 	, m_iDeployFromOperationTurn("CvUnit::DeployFromOperationTurn", m_syncArchive)
+#if defined(UNITS_REMEMBER_HOME)
+	, m_iHomeCity("CvUnit::m_iHomeCity", m_syncArchive)
+#endif
 	, m_iReconX("CvUnit::m_iReconX", m_syncArchive)
 	, m_iReconY("CvUnit::m_iReconY", m_syncArchive)
 	, m_iReconCount("CvUnit::m_iReconCount", m_syncArchive)
@@ -669,11 +672,23 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 	}
 
 	setMoves(maxMoves());
-
+#if defined(UNITS_REMEMBER_HOME)
+	
+	if (pPlotCity)
+	{
+		SetHomeCity(pPlotCity->GetID());
+		if (!getUnitInfo().IsSpreadReligion() || !getUnitInfo().IsRemoveHeresy())
+		{
+			// Now we can set the Home Religion of units
+		}
+	}
+#endif
 	// Religious unit? If so takes religion from city
 	if (getUnitInfo().IsSpreadReligion() || getUnitInfo().IsRemoveHeresy())
 	{
-		CvCity *pPlotCity = plot()->getPlotCity();
+		#if !defined(UNITS_REMEMBER_HOME)
+		CvCity* pPlotCity = plot()->getPlotCity();
+		#endif
 		if (pPlotCity)
 		{
 			ReligionTypes eReligion = pPlotCity->GetCityReligions()->GetReligiousMajority();
@@ -943,6 +958,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iLastMoveTurn = 0;
 	m_iCycleOrder = -1;
 	m_iDeployFromOperationTurn = -100;
+#if defined(UNITS_REMEMBER_HOME)
+	m_iHomeCity = -1; 
+#endif
 	m_iReconX = INVALID_PLOT_COORD;
 	m_iReconY = INVALID_PLOT_COORD;
 	m_iReconCount = 0;
@@ -7426,7 +7444,26 @@ bool CvUnit::sellExoticGoods()
 	}
 	return false;
 }
+#if defined(UNITS_REMEMBER_HOME)
+CvCity* CvUnit::GetHomeCity() const
+{
+	VALIDATE_OBJECT
+	// Unit must be owned by a Player.
+	if (getOwner() == NO_PLAYER)
+		return NULL;
 
+	if (m_iHomeCity == -1)
+		return NULL;
+
+	return GET_PLAYER(getOwner()).getCity(m_iHomeCity);
+}
+void CvUnit::SetHomeCity(int iNewCity)
+{
+	VALIDATE_OBJECT
+	m_iHomeCity = iNewCity;
+}
+
+#endif
 //	--------------------------------------------------------------------------------
 bool CvUnit::canRebase(const CvPlot* /*pPlot*/) const
 {
@@ -10145,25 +10182,7 @@ bool CvUnit::givePolicies()
 		// if this is the human player, have the popup come up so that he can choose a new policy
 		if (kPlayer.isAlive() && kPlayer.isHuman() && kPlayer.getNumCities() > 0)
 		{
-			if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
-			{
-				if (kPlayer.getNextPolicyCost() <= kPlayer.getJONSCulture() && kPlayer.GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
-				{
-					CvNotifications* pNotifications = kPlayer.GetNotifications();
-					if (pNotifications)
-					{
-						CvString strBuffer;
-
-						if (GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
-							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
-						else
-							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
-
-						CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
-						pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
-					}
-				}
-			}
+			kPlayer.TestMidTurnPolicyNotification();
 		}
 #endif
 	}
@@ -21203,7 +21222,7 @@ void CvUnit::read(FDataStream& kStream)
 
 	// anything not in m_syncArchive needs to be explicitly
 	// read
-
+	
 	// The 'automagic' sync archive saves out the unit type index, which is bad since that can change.
 	// Read in the hash and update the value.
 	{
