@@ -173,6 +173,8 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 #if defined(MISC_CHANGES)
 	Method(GetNumMiscTradeRoutes);
 	Method(ChangeNumMiscTradeRoutes);
+	Method(GetNumPolicyLeagueVotes);
+	Method(ChangeNumPolicyLeagueVotes);
 #endif
 	Method(UnitsRequiredForGoldenAge);
 	Method(UnitsGoldenAgeCapable);
@@ -2070,6 +2072,24 @@ int CvLuaPlayer::lChangeNumMiscTradeRoutes(lua_State* L)
 	CvPlayerAI* pkPlayer = GetInstance(L);
 	const int iValue = lua_tointeger(L, 2);
 	pkPlayer->ChangeNumMiscTradeRoutes(iValue);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//int GetNumPolicyLeagueVotes()
+int CvLuaPlayer::lGetNumPolicyLeagueVotes(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const int iResult = pkPlayer->GetPolicyExtraLeagueVotes();
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//void ChangeNumPolicyLeagueVotes(int iChange)
+int CvLuaPlayer::lChangeNumPolicyLeagueVotes(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const int iValue = lua_tointeger(L, 2);
+	pkPlayer->ChangePolicyExtraLeagueVotes(iValue);
 	return 1;
 }
 #endif

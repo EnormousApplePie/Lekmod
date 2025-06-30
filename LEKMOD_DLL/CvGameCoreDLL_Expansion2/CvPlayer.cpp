@@ -26223,8 +26223,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 		if(iMod != 0)
 			changeSpecialistExtraYield(eYield, iMod);
 	}
-#if defined(LEKMOD_v34)
-	// Grant free resources from this policy
+#if defined(LEKMOD_v34) // Grant free resources from this policy
 	for (int i = 0; i < GC.getNumResourceInfos(); ++i)
 	{
 		int iAmount = pPolicy->GetPolicyResourceQuantity(i);
@@ -26233,7 +26232,6 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			changeNumResourceTotal((ResourceTypes)i, iAmount * iChange);
 		}
 	}
-
 #endif
 	for(iI = 0; iI < GC.getNumUnitCombatClassInfos(); iI++)
 	{
@@ -26349,7 +26347,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	int iBuildingCount;
 	int iYieldMod;
 	int iYieldChange;
-
+	// God I fucking hate this function... I should try and fix it...
 	// How many cities get free buildings?
 	int iNumCitiesFreeAestheticsSchools = pPolicy->GetNumCitiesFreeAestheticsSchools(); // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	int iNumCitiesFreePietyGardens = pPolicy->GetNumCitiesFreePietyGardens();

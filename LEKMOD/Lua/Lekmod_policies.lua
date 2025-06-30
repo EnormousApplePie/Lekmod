@@ -61,3 +61,37 @@ end
 GameEvents.PlayerAdoptPolicy.Add(lekmod_policy_free_promotion_unit_combats_on_adopt)
 GameEvents.UnitCreated.Add(lekmod_policy_free_promotion_unit_combats)
 ------------------------------------------------------------------------------------------------------------------------
+local function AwardConsulatesVotesForEra(player, eraID)
+    if eraID >= GameInfoTypes["ERA_INDUSTRIAL"] then   player:ChangeNumPolicyLeagueVotes(1) end
+    if eraID >= GameInfoTypes["ERA_MODERN"] then       player:ChangeNumPolicyLeagueVotes(1) end
+    if eraID >= GameInfoTypes["ERA_POSTMODERN"] then   player:ChangeNumPolicyLeagueVotes(1) end
+    if eraID >= GameInfoTypes["ERA_FUTURE"] then       player:ChangeNumPolicyLeagueVotes(1) end
+end
+-- 1) On policy adoption: backfill votes for all eras you've already passed if applicable
+function Lekmod_OnAdoptConsulates(playerID, policyID)
+    if policyID ~= GameInfoTypes["POLICY_CONSULATES"] then return end
+    local player = Players[playerID]
+    if not player:IsAlive() then return end
+
+    local currentEra = player:GetCurrentEra()
+    AwardConsulatesVotesForEra(player, currentEra)
+    GameEvents.PlayerAdoptPolicy.Remove(Lekmod_OnAdoptConsulates) -- This is a one-time event, so we remove it after processing
+end
+-- 2) On era change: if you already have Consulates, give +1 vote for that new era
+function Lekmod_OnEraChangeGiveConsulatesVote(playerID, newEraID)
+    local player = Players[playerID]
+    if not player:IsAlive() then return end
+    if not player:HasPolicy(GameInfoTypes["POLICY_CONSULATES"]) then return end
+
+    -- Only give the incremental vote for the *new* era
+    if     newEraID == GameInfoTypes["ERA_INDUSTRIAL"]
+        or newEraID == GameInfoTypes["ERA_MODERN"]
+        or newEraID == GameInfoTypes["ERA_POSTMODERN"]
+        or newEraID == GameInfoTypes["ERA_FUTURE"]
+    then
+        player:ChangeNumPolicyLeagueVotes(1)
+    end
+end
+
+GameEvents.PlayerAdoptPolicy.Add(Lekmod_OnAdoptConsulates)
+GameEvents.TeamSetEra.Add(Lekmod_OnEraChangeGiveConsulatesVote)

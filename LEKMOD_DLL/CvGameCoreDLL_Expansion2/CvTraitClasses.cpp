@@ -2730,6 +2730,16 @@ void CvPlayerTraits::InitPlayerTraits()
 						m_ppaaiBuildingClassYieldChange[iBuildingClassLoop] = yields;
 					}
 				}
+				for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+				{
+					int iChange = trait->GetBuildingCostOverride((BuildingTypes)iBuildingLoop, (YieldTypes)iYield);
+					if (iChange != 0) // 0 is not allowed, but negatives are.
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiBuildingCostOverride[iBuildingLoop];
+						yields[iYield] = (m_ppaaiBuildingCostOverride[iBuildingLoop][iYield] + iChange);
+						m_ppaaiBuildingCostOverride[iBuildingLoop] = yields;
+					}
+				}
 #endif
 
 #ifdef AUI_WARNING_FIXES
@@ -2912,6 +2922,7 @@ void CvPlayerTraits::Uninit()
 	m_ppaaiTerrainYieldChange.clear();
 	m_ppaaiResourceYieldChange.clear();
 	m_ppaaiResourceClassYieldChange.clear();
+	m_ppaaiBuildingCostOverride.clear();
 #endif
 	m_aFreeResourceXCities.clear();
 }
@@ -3096,6 +3107,8 @@ void CvPlayerTraits::Reset()
 	m_ppaaiResourceYieldChange.resize(GC.getNumResourceInfos());
 	m_ppaaiResourceClassYieldChange.clear();
 	m_ppaaiResourceClassYieldChange.resize(GC.getNumResourceClassInfos());
+	m_ppaaiBuildingCostOverride.clear();
+	m_ppaaiBuildingCostOverride.resize(GC.getNumBuildingInfos());
 #endif
 	
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
@@ -3172,6 +3185,10 @@ void CvPlayerTraits::Reset()
 		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
 		{
 			m_ppaaiBuildingClassYieldChange[iBuildingClass] = yield;
+		}
+		for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
+		{
+			m_ppaaiBuildingCostOverride[iBuilding] = yield;
 		}
 #endif
 		
@@ -3554,15 +3571,15 @@ bool CvPlayerTraits::IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass)
 // Building Cost Override (Gold Faith and Production)
 int CvPlayerTraits::GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType)
 {
-	int rtnValue = 0;
-	for (int i = 0; i < GC.getNumTraitInfos(); i++)
+	CvAssertMsg(eBuilding < GC.getNumBuildingInfos(), "Invalid eBuilding parameter in call to CvPlayerTraits::GetBuildingCostOverride()");
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetBuildingCostOverride()");
+
+	if (eBuilding == NO_BUILDING)
 	{
-		if (HasTrait((TraitTypes)i))
-		{
-			rtnValue += GC.getTraitInfo((TraitTypes)i)->GetBuildingCostOverride(eBuilding, eYieldType);
-		}
+		return 0;
 	}
-	return rtnValue;
+
+	return m_ppaaiBuildingCostOverride[(int)eBuilding][(int)eYieldType];
 }
 // Feature Yield Changes
 int CvPlayerTraits::GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield) const
@@ -4807,6 +4824,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_ppaaiTerrainYieldChange;
 	kStream >> m_ppaaiResourceClassYieldChange;
 	kStream >> m_ppaaiResourceYieldChange;
+	kStream >> m_ppaaiBuildingCostOverride;
 #endif
 
 	if (uiVersion >= 11)
@@ -5081,6 +5099,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_ppaaiTerrainYieldChange;
 	kStream << m_ppaaiResourceClassYieldChange;
 	kStream << m_ppaaiResourceYieldChange;
+	kStream << m_ppaaiBuildingCostOverride;
 #endif
 
 	kStream << (int)m_aUniqueLuxuryAreas.size();

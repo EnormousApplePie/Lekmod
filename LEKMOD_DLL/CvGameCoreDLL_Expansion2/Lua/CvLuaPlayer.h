@@ -166,6 +166,8 @@ protected:
 #if defined(MISC_CHANGES)
 	static int lGetNumMiscTradeRoutes(lua_State* L);
 	static int lChangeNumMiscTradeRoutes(lua_State* L);
+	static int lGetNumPolicyLeagueVotes(lua_State* L);
+	static int lChangeNumPolicyLeagueVotes(lua_State* L);
 #endif
 	static int lUnitsRequiredForGoldenAge(lua_State* L);
 	static int lUnitsGoldenAgeCapable(lua_State* L);
@@ -958,6 +960,8 @@ protected:
 	static int lGetTraitBuildingClassYieldChange(lua_State* L);
 	static int lGetTraitBuildingClassHappiness(lua_State* L);
 	//static int lGetTraitBuildingClassGlobalHappiness(lua_State* L);
+	static int lGetPolicyExtraLeagueVotes(lua_State* L);
+	static int lChangePolicyExtraLeagueVotes(lua_State* L);
 #endif
 	static int lGetPlayerBuildingClassYieldChange(lua_State* L);
 	static int lGetPlayerBuildingClassHappiness(lua_State* L);
