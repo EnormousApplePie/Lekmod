@@ -3411,11 +3411,16 @@ void CvCity::ChangeResourceClassExtraYield(ResourceClassTypes eClass, YieldTypes
 
 	if (iChange != 0)
 	{
+		ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+		ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
 		for (int i = 0; i < GC.getNumResourceInfos(); ++i)
 		{
 			ResourceTypes eResource = (ResourceTypes)i;
 			const CvResourceInfo* pResource = GC.getResourceInfo(eResource);
-			if (pResource && pResource->getResourceClassType() == eClass)
+			if (!pResource)
+				continue;
+			// Always Skip Hidden Artifacts and Artifacts
+			if (pResource->getResourceClassType() == eClass && eResource != eHiddenArtifacts && eResource != eArtifacts)
 			{
 				m_ppaiResourceYieldChange[eResource][eYield] += iChange;
 			}
@@ -17492,7 +17497,31 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 		if(!plot()->isFreshWater())
 			return false;
 	}
+#if defined(LEKMOD_BUILDING_LAKE_REQ) // Check for adjacent lakes and Lake Victoria.
+	if (pkBuildingInfo->IsLake())
+	{
+		bool bFoundLake = false;
+		
+		CvPlot* pAdjacentPlot;
+		for (int iDirectionLoop = 0; iDirectionLoop < NUM_DIRECTION_TYPES; iDirectionLoop++)
+		{
+			FeatureTypes eLakeVictoria = (FeatureTypes)GC.getInfoTypeForString("FEATURE_LAKE_VICTORIA");
+			pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iDirectionLoop));
 
+			if (pAdjacentPlot != NULL)
+			{
+				if (pAdjacentPlot->isLake() || pAdjacentPlot->getFeatureType() == eLakeVictoria)
+				{
+					bFoundLake = true;
+					break;
+				}
+			}
+		}
+
+		if (!bFoundLake)
+			return false;
+	}
+#endif
 	// Requires adjacent Mountain
 	if(pkBuildingInfo->IsMountain())
 	{
