@@ -2355,25 +2355,7 @@ void CvTeamTechs::SetResearchProgressTimes100(TechTypes eIndex, int iNewValue, P
 						// if this is the human player, have the popup come up so that he can choose a new policy
 						if (kLoopPlayer.isAlive() && kLoopPlayer.isHuman() && kLoopPlayer.getNumCities() > 0)
 						{
-							if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
-							{
-								if (kLoopPlayer.getNextPolicyCost() <= kLoopPlayer.getJONSCulture() && kLoopPlayer.GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
-								{
-									CvNotifications* pNotifications = kLoopPlayer.GetNotifications();
-									if (pNotifications)
-									{
-										CvString strBuffer;
-
-										if (GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
-											strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
-										else
-											strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
-
-										CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
-										pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
-									}
-								}
-							}
+							kLoopPlayer.TestMidTurnPolicyNotification();
 						}
 #endif
 					}

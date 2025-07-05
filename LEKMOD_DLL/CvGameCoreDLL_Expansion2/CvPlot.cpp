@@ -8328,8 +8328,11 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 					}
 					// NQMP GJS - New Netherlands UA END
 #else
+					ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+					ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
+
 					//Extra yield from Trait, handles yields applied to a ResourceClass and not a specific resource for the Purposes of Russia, Jerusalem, and the Netherlands
-					if (pkResourceInfo->getResourceClassType() != NO_RESOURCECLASS)
+					if (pkResourceInfo->getResourceClassType() != NO_RESOURCECLASS && eResource != eArtifacts && eResource != eHiddenArtifacts)
 					{
 						ResourceClassTypes eResourceClass = (ResourceClassTypes)pkResourceInfo->getResourceClassType();
 #if defined(LEKMOD_v34)

@@ -3,7 +3,7 @@
 include("PlotIterators.lua")
 
 ------------------------------------------------------------------------------------------------------------------------
--- Huey Teocalli requires a lake nearby.
+--[[ Huey Teocalli requires a lake nearby. This has been deprecated in favor of a DLL implementation.
 ------------------------------------------------------------------------------------------------------------------------
 local lake_wonder_id = GameInfoTypes["BUILDING_LAKE_WONDER"]
 
@@ -32,4 +32,4 @@ function lekmod_huey_lake_check(player_id, city_id, building_id)
 
 return true end
 GameEvents.CityCanConstruct.Add(lekmod_huey_lake_check)
-------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------]]

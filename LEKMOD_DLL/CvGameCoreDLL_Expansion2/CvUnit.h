@@ -312,6 +312,10 @@ public:
 	int getExoticGoodsGoldAmount();
 	int getExoticGoodsXPAmount();
 	bool sellExoticGoods();
+#if defined(UNITS_REMEMBER_HOME)
+	CvCity* GetHomeCity() const;
+	void SetHomeCity(int iNewCity);
+#endif
 
 	bool canRebase(const CvPlot* pPlot) const;
 	bool canRebaseAt(const CvPlot* pPlot, int iX, int iY) const;
@@ -1419,6 +1423,9 @@ protected:
 	int m_iCycleOrder;
 #else
 	short m_iCycleOrder;
+#endif
+#if defined(UNITS_REMEMBER_HOME)
+	FAutoVariable<int, CvUnit> m_iHomeCity;
 #endif
 	FAutoVariable<int, CvUnit> m_iReconX;
 	FAutoVariable<int, CvUnit> m_iReconY;

@@ -225,6 +225,9 @@ public:
 	bool IsWater() const;
 	bool IsRiver() const;
 	bool IsFreshWater() const;
+#if defined(LEKMOD_BUILDING_LAKE_REQ)
+	bool IsLake() const;
+#endif
 	bool IsMountain() const;
 	bool IsHill() const;
 	bool IsFlat() const;
@@ -495,6 +498,9 @@ private:
 	bool m_bWater;
 	bool m_bRiver;
 	bool m_bFreshWater;
+#if defined(LEKMOD_BUILDING_LAKE_REQ)
+	bool m_bLake;
+#endif
 	bool m_bMountain;
 	bool m_bHill;
 	bool m_bFlat;

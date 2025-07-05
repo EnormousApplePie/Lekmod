@@ -1,56 +1,42 @@
--- Author: EnormousApplePie & 404NotFound
+-- Author: EnormousApplePie & 404NotFound & Loup fixing Loup's fuckups ~~
 
 include("Lekmod_utilities.lua")
 include("PlotIterators.lua")
 
 local this_civ = GameInfoTypes["CIVILIZATION_SWISS"]
 local is_active = LekmodUtilities:is_civilization_active(this_civ)
-
-------------------------------------------------------------------------------------------------------------------------
--- Switzerland UB: Swiss Ski Resort. Loop trough all cities with the UB. Count the mountains within 3 tiles of the city,
--- then add the appropriate amount of mountain buildings to the city to give the bonus.
-------------------------------------------------------------------------------------------------------------------------
-function lekmod_switzerland_ub_mountain_bonus(playerID)
+-----------------------------------------------------------------------------------------------------------------------
+-- Switzerland UB: Ski Resort. If the city has a Ski Resort, give it a bonus for each mountain tile within 3 tiles.
+local function lekmod_switzerland_ub_mountain_bonus(playerID)
    local player = Players[playerID]
-   local skiResort = GameInfoTypes["BUILDING_SWISS_SKI_RESORT"]
-   local yieldGold = GameInfoTypes["YIELD_GOLD"]
-
-   local bonusPerMountain = 2
-   if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then 
-      return 
-   end
+   if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
 
    for city in player:Cities() do
-      local cid = city:GetID()
-      local prevBonus = previousMountainBonus[cid] or 0
-
-      if city:IsHasBuilding(skiResort) then
-         -- GetNumMountainsNearCity is a Lekmod method! Not available in the base game also passes (iRange, bRequireOwnership)
-         local mountainCount = city:GetNumMountainsNearCity(3, true)
-         local newBonus = mountainCount * bonusPerMountain
-         local delta    = newBonus - prevBonus
-
-         if delta ~= 0 then
-            city:ChangeBaseYieldRateFromBuildings(yieldGold, delta)
-            previousMountainBonus[cid] = newBonus
-         end
+      if city:IsHasBuilding(GameInfoTypes["BUILDING_SWISS_SKI_RESORT"]) then
+            local plot = city:Plot()
+            local mountain_count = 0
+            mountain_count = city:GetNumMountainsNearCity(3, true) -- Range, RequireOwnership
+            city:SetNumRealBuilding(GameInfoTypes["BUILDING_SKI_GOLD"], mountain_count)
       else
-         -- building gone — remove any old bonus
-         if prevBonus ~= 0 then
-            city:ChangeBaseYieldRateFromBuildings(yieldGold, -prevBonus)
-            previousMountainBonus[cid] = nil
-         end
+         city:SetNumRealBuilding(GameInfoTypes["BUILDING_SKI_GOLD"], 0)
       end
    end
 end
+   
+-- When you build a Ski Resort, just rescan that one player
+function lekmod_switzerland_ub_mountain_bonus_on_construct(playerID, cityID, buildingID)
+    if buildingID == GameInfoTypes["BUILDING_SWISS_SKI_RESORT"] then
+        lekmod_switzerland_ub_mountain_bonus(playerID)
+    end
+end
 
-function lekmod_switzerland_ub_mountain_bonus_on_construct(player_id)
-   lekmod_switzerland_ub_mountain_bonus(player_id)
+-- When a city changes hands, rescan the new owner
+function lekmod_switzerland_ub_mountain_bonus_on_conquest(oldOwner, isConquest, x, y, newOwner)
+    lekmod_switzerland_ub_mountain_bonus(newOwner)
 end
-function lekmod_switzerland_ub_mountain_bonus_on_conquest(_, _, _, _, new_player_id)
-   lekmod_switzerland_ub_mountain_bonus(new_player_id)
-end
-------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------------------------------
 -- Switzerland UU: Reislaufer. Check if the unit that just moved is a reislaufer and if it is near a mountain. If it is,
 -- give it the active promotion. If it is not, remove the active promotion.
 ------------------------------------------------------------------------------------------------------------------------

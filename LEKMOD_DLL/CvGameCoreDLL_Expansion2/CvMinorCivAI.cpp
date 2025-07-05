@@ -7719,7 +7719,7 @@ void CvMinorCivAI::SetUnitSpawningDisabled(PlayerTypes ePlayer, bool bValue)
 
 	m_abUnitSpawningDisabled[ePlayer] = bValue;
 }
-
+// POTENTIAL SPOT FOR UNITS_REMEMBER_HOME stuff, so CS gifts remember the CS city, and later relgion?
 /// Create a unit
 void CvMinorCivAI::DoSpawnUnit(PlayerTypes eMajor)
 {

@@ -149,6 +149,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_bWater(false),
 	m_bRiver(false),
 	m_bFreshWater(false),
+#if defined(LEKMOD_BUILDING_LAKE_REQ)
+	m_bLake(false),
+#endif
 	m_bMountain(false),
 	m_bHill(false),
 	m_bFlat(false),
@@ -364,6 +367,9 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	m_bWater = kResults.GetBool("Water");
 	m_bRiver = kResults.GetBool("River");
 	m_bFreshWater = kResults.GetBool("FreshWater");
+#if defined(LEKMOD_BUILDING_LAKE_REQ)
+	m_bLake = kResults.GetBool("Lake");
+#endif
 	m_bMountain = kResults.GetBool("Mountain");
 	m_bHill = kResults.GetBool("Hill");
 	m_bFlat = kResults.GetBool("Flat");
@@ -1862,7 +1868,12 @@ bool CvBuildingEntry::IsFreshWater() const
 {
 	return m_bFreshWater;
 }
-
+#if defined(LEKMOD_BUILDING_LAKE_REQ)
+bool CvBuildingEntry::IsLake() const
+{
+	return m_bLake;
+}
+#endif
 /// Must this be built in a city next to Mountain?
 bool CvBuildingEntry::IsMountain() const
 {
