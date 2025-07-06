@@ -7280,83 +7280,100 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			}
 
 #ifdef LEKMOD_v34
+#ifdef LEKMOD_v34
 			// v34: Add support for auto-filling great work slots
 			else if (pBuildingInfo->GetFreeGreatWorkCount() > 0)
 			{
-				// Check how many slots are available in this specific building
-				int iAvailableSlots = m_pCityBuildings->GetNumAvailableGreatWorkSlots(pBuildingInfo->GetGreatWorkSlotType());
-				int iSlotsToFill = std::min(pBuildingInfo->GetFreeGreatWorkCount(), iAvailableSlots);
-
-				for (int i = 0; i < iSlotsToFill; i++)
+				CvGameCulture *pCulture = GC.getGame().GetGameCulture();
+				if (pCulture == NULL)
 				{
-					// Determine slot type and great work class in priority order: Literature → Art → Music
-					GreatWorkSlotType eSlotType = pBuildingInfo->GetGreatWorkSlotType();
-					GreatWorkClass eGreatWorkClass = NO_GREAT_WORK_CLASS;
-					UnitTypes eUnitType = NO_UNIT;
+					CvAssertMsg(pCulture != NULL, "This should never happen.");
+				}
+				else
+				{
 
-					if (eSlotType == CvTypes::getGREAT_WORK_SLOT_LITERATURE())
-					{
-						eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_LITERATURE");
-						eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_WRITER");
-					}
-					else if (eSlotType == CvTypes::getGREAT_WORK_SLOT_ART_ARTIFACT())
-					{
-						eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_ART");
-						eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST");
-					}
-					else if (eSlotType == CvTypes::getGREAT_WORK_SLOT_MUSIC())
-					{
-						eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_MUSIC");
-						eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_MUSICIAN");
-					}
+					// Check how many slots are available in this specific building
+					int iAvailableSlots = m_pCityBuildings->GetNumAvailableGreatWorkSlots(pBuildingInfo->GetGreatWorkSlotType());
+					int iSlotsToFill = std::min(pBuildingInfo->GetFreeGreatWorkCount(), iAvailableSlots);
 
-					if (eSlotType != NO_GREAT_WORK_SLOT && eUnitType != NO_UNIT)
+					for (int i = 0; i < iSlotsToFill; i++)
 					{
-						// Get the great work type with proper naming
-						GreatWorkType eGreatWorkType = NO_GREAT_WORK;
-						CvString strName;
-						CvUnitEntry *pkUnitEntry = GC.getUnitInfo(eUnitType);
-						if (pkUnitEntry)
+						// Determine slot type and great work class
+						GreatWorkSlotType eSlotType = pBuildingInfo->GetGreatWorkSlotType();
+						GreatWorkClass eGreatWorkClass = NO_GREAT_WORK_CLASS;
+						UnitTypes eUnitType = NO_UNIT;
+
+						if (eSlotType == CvTypes::getGREAT_WORK_SLOT_LITERATURE())
 						{
-							int iNumUnitCreated = GC.getGame().getUnitCreatedCount(eUnitType);
-							int iNumNames = pkUnitEntry->GetNumUnitNames();
-							if (iNumUnitCreated < iNumNames)
+							eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_LITERATURE");
+							eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_WRITER");
+						}
+						else if (eSlotType == CvTypes::getGREAT_WORK_SLOT_ART_ARTIFACT())
+						{
+							eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_ART");
+							eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST");
+						}
+						else if (eSlotType == CvTypes::getGREAT_WORK_SLOT_MUSIC())
+						{
+							eGreatWorkClass = (GreatWorkClass)GC.getInfoTypeForString("GREAT_WORK_MUSIC");
+							eUnitType = (UnitTypes)GC.getInfoTypeForString("UNIT_MUSICIAN");
+						}
+
+						if (eSlotType != NO_GREAT_WORK_SLOT && eUnitType != NO_UNIT)
+						{
+
+							// Get the great work type with proper naming
+							GreatWorkType eGreatWorkType = NO_GREAT_WORK;
+							CvString strName;
+							CvUnitEntry *pkUnitEntry = GC.getUnitInfo(eUnitType);
+							if (pkUnitEntry)
 							{
-								int iNameOffset = GC.getGame().getJonRandNum(iNumNames, "Unit name selection");
-								for (int iI = 0; iI < iNumNames; iI++)
+								int iNumUnitCreated = GC.getGame().getUnitCreatedCount(eUnitType);
+								int iNumNames = pkUnitEntry->GetNumUnitNames();
+
+
+								if (iNumUnitCreated < iNumNames)
 								{
-									int iIndex = (iNameOffset + iI) % iNumNames;
-									strName = pkUnitEntry->GetUnitNames(iIndex);
-									if (!GC.getGame().isGreatPersonBorn(strName))
+									int iNameOffset = GC.getGame().getJonRandNum(iNumNames, "Unit name selection");
+									for (int iI = 0; iI < iNumNames; iI++)
 									{
-										eGreatWorkType = pkUnitEntry->GetGreatWorks(iIndex);
-										GC.getGame().addGreatPersonBornName(strName);
-										break;
+										int iIndex = (iNameOffset + iI) % iNumNames;
+										strName = pkUnitEntry->GetUnitNames(iIndex);
+										if (!GC.getGame().isGreatPersonBorn(strName))
+										{
+											eGreatWorkType = pkUnitEntry->GetGreatWorks(iIndex);
+											GC.getGame().addGreatPersonBornName(strName);
+
+											// Debug: Log selected name
+											break;
+										}
 									}
 								}
 							}
-						}
 
-						// Create and place the great work in this building
-						if (eGreatWorkType != NO_GREAT_WORK)
-						{
-							CvString strBuffer;
-							if (!strName.empty() && pkUnitEntry)
+							// Create and place the great work in this building
+							if (eGreatWorkType != NO_GREAT_WORK)
 							{
-								Localization::String name = Localization::Lookup(strName);
-								strBuffer.Format("%s (%s)", name.toUTF8(), pkUnitEntry->GetDescription());
-							}
-							else
-							{
-								strBuffer = pBuildingInfo->GetDescription();
-							}
+								CvString strBuffer;
+								if (!strName.empty() && pkUnitEntry)
+								{
+									Localization::String name = Localization::Lookup(strName);
+									strBuffer.Format("%s (%s)", name.toUTF8(), pkUnitEntry->GetDescription());
+								}
+								else
+								{
+									strBuffer = pBuildingInfo->GetDescription();
+								}
 
-							int iGWindex = GC.getGame().GetGameCulture()->CreateGreatWork(eGreatWorkType, eGreatWorkClass, m_eOwner, owningPlayer.GetCurrentEra(), strBuffer);
-							m_pCityBuildings->SetBuildingGreatWork(eBuildingClass, i, iGWindex);
+								int iGWindex = pCulture->CreateGreatWork(eGreatWorkType, eGreatWorkClass, m_eOwner, owningPlayer.GetCurrentEra(), strBuffer);
+								m_pCityBuildings->SetBuildingGreatWork(eBuildingClass, i, iGWindex);
+
+							}
 						}
 					}
 				}
 			}
+#endif
 #endif
 
 #ifdef NQ_CHEAT_FIRST_ROYAL_LIBRARY_COMES_WITH_GREAT_WORK
@@ -9371,6 +9388,11 @@ int CvCity::GetBaseJONSCulturePerTurn() const
 	iCulturePerTurn += GetJONSCulturePerTurnFromTraits();
 	iCulturePerTurn += GetJONSCulturePerTurnFromReligion();
 	iCulturePerTurn += GetJONSCulturePerTurnFromLeagues();
+
+#ifdef LEKMOD_CULTURE_PER_POP_FROM_BUILDINGS
+	// Add per-population culture yields from the regular yield system
+    iCulturePerTurn += (GetYieldPerPopTimes100(YIELD_CULTURE) * getPopulation()) / 100;
+#endif
 
 	return iCulturePerTurn;
 }

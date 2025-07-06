@@ -39,8 +39,6 @@
 
 #define GAMEPLAYXML_PATH "Gameplay\\XML\\"
 
-#define LEKMOD_POST_DLC_DATA_LOADING
-
 #ifdef LEKMOD_POST_DLC_DATA_LOADING
 // Helper function to replace min() which might not be available in VS2008
 size_t MinValue(size_t a, size_t b);

@@ -677,6 +677,26 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 					yieldChange = yieldChange + city:GetLeagueBuildingClassYieldChange( buildingClassID, yieldID )
 				end
 			end
+
+			-- MOD.EAP START
+			-- Tech Enhanced Yield support
+			for row in GameInfo.Building_TechEnhancedYieldChanges( thisBuildingAndYieldTypes ) do
+				local techEnhancedYield = row.Yield or 0
+				-- Check if the team has the required tech instead of the player
+				local teamHasTech = false
+				if building.EnhancedYieldTech then
+					local techID = GameInfoTypes[building.EnhancedYieldTech]
+					if techID then
+						teamHasTech = Teams[activePlayer:GetTeam()]:IsHasTech(techID)
+					end
+				end
+				
+				if techEnhancedYield ~= 0 and teamHasTech then
+					yieldChange = yieldChange + techEnhancedYield
+				end
+			end
+			-- MOD.EAP END
+			
 		else -- not Game
 			for row in GameInfo.Building_YieldChanges( thisBuildingAndYieldTypes ) do
 				yieldChange = yieldChange + (row.Yield or 0)
@@ -1950,6 +1970,11 @@ local function GetCultureTooltip( city )
 
 	-- Culture from Traits
 	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_TRAITS", cultureFromTraits )
+	
+	-- Culture from Per-Population Yields
+	local culturePerPop = city:GetYieldPerPopTimes100(YieldTypes.YIELD_CULTURE) * city:GetPopulation() / 100
+	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_POP_EXTRA", culturePerPop, "[ICON_CULTURE]" )
+	
 	-- Base Total
 	if baseCulturePerTurn ~= culturePerTurn then
 		tips:insert( "----------------" )

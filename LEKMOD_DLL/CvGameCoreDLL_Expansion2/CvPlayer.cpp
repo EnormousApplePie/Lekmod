@@ -432,7 +432,7 @@ CvPlayer::CvPlayer() :
 	, m_aiCityYieldChange("CvPlayer::m_aiCityYieldChange", m_syncArchive)
 	, m_aiCoastalCityYieldChange("CvPlayer::m_aiCoastalCityYieldChange", m_syncArchive)
 	, m_aiCapitalYieldChange("CvPlayer::m_aiCapitalYieldChange", m_syncArchive)
-	, m_aiCapitalYieldPerPopChange("CvPlayer::m_aiCapitalYieldPerPopChange", m_syncArchive)
+	, m_aiCapitalChange("CvPlayer::m_aiCapitalYieldPerPopChange", m_syncArchive)
 	, m_aiSeaPlotYield("CvPlayer::m_aiSeaPlotYield", m_syncArchive)
 	, m_aiYieldRateModifier("CvPlayer::m_aiYieldRateModifier", m_syncArchive)
 	, m_aiCapitalYieldRateModifier("CvPlayer::m_aiCapitalYieldRateModifier", m_syncArchive)
@@ -1260,7 +1260,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_aiCapitalYieldChange.resize(NUM_YIELD_TYPES, 0);
 
 	m_aiCapitalYieldPerPopChange.clear();
-	m_aiCapitalYieldPerPopChange.resize(NUM_YIELD_TYPES, 0);
+	m_aiCapitalChange.resize(NUM_YIELD_TYPES, 0);
 
 	m_aiSeaPlotYield.clear();
 	m_aiSeaPlotYield.resize(NUM_YIELD_TYPES, 0);

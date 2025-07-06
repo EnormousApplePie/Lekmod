@@ -956,6 +956,8 @@
 #define LEKMOD_NO_COMBAT_RANDOMNESS
 // Additional plot influence modifiers
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
+// Culture per pop from buildings
+#define LEKMOD_CULTURE_PER_POP_FROM_BUILDINGS
 
 
 /// ###############################
@@ -1308,7 +1310,7 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 #define FIX_POLICY_CULTURE_PER_GARRISONED_UNIT
 
 /// Loads XML files after DLC loading but before regular mod loading, support for seperating xml files.
-#define LEKMOD_POST_DLC_DATA_LOADING
+// #define LEKMOD_POST_DLC_DATA_LOADING
 
 
 /*REPLAY EVENTS CHANGES START*/

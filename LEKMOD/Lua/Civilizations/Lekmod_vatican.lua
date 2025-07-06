@@ -17,7 +17,8 @@ function lekmod_ua_courthouse(player_id, _ , x, y)
 	if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
 
    if not (city:IsOccupied() or city:IsPuppet()) 
-   or city:GetReligiousMajority() ~= player_religion then return end
+   or city:GetReligiousMajority() ~= player_religion
+   or city:GetReligiousMajority() == -1 then return end
 
    city:SetNumRealBuilding(GameInfoTypes["BUILDING_COURTHOUSE"], 1);
 

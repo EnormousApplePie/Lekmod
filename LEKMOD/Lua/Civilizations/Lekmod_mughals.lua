@@ -40,23 +40,31 @@ function lekmod_ua_mughals_foreign_religion_check(player_id)
       end
    end
 
-   -- Process current cities
+  -- Process current cities
    for city in player:Cities() do
       local city_religion = city:GetReligiousMajority()
 
       -- Check if city has a proper religion (not just pantheon) and it's foreign
-      if city_religion > 0 and city_religion ~= mughal_religion then
+      if city_religion ~= ReligionTypes.RELIGION_PANTHEON and city_religion ~= -1 and city_religion ~= mughal_religion then
+
          -- Add the dummy building to this city
          city:SetNumRealBuilding(dummy_building_id, 1)
 
-         -- Find the holy city for this religion and give it the dummy building too
-         local holy_city_player_id = Game.GetFounder(city_religion)
-         if holy_city_player_id >= 0 and holy_city_player_id < GameDefines.MAX_MAJOR_CIVS then
-            local holy_city_player = Players[holy_city_player_id]
-            if holy_city_player and holy_city_player:IsAlive() then
-               local holy_city = Game.GetHolyCityForReligion(city_religion, holy_city_player_id)
-               if holy_city and holy_city:GetOwner() == holy_city_player_id then
-                  holy_city:SetNumRealBuilding(dummy_building_id, 1)
+         -- Check all other players' cities for holy cities with this religion
+         for other_player_id = 0, GameDefines.MAX_MAJOR_CIVS - 1 do
+            local other_player = Players[other_player_id]
+            
+            -- Skip if it's the Mughal player or if player doesn't exist/isn't alive
+            if other_player and other_player:IsAlive() and other_player_id ~= player_id then
+               
+               for other_city in other_player:Cities() do
+                  -- Check if this city is a holy city and if its religion matches the foreign religion in Mughal city
+                  if other_city:IsHolyCityForReligion(city_religion) then
+                     -- Add the dummy building to this holy city if it doesn't already have it
+                     if not other_city:IsHasBuilding(dummy_building_id) then
+                        other_city:SetNumRealBuilding(dummy_building_id, 1)
+                     end
+                  end
                end
             end
          end

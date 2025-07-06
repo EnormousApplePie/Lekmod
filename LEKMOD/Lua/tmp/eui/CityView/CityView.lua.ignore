@@ -854,6 +854,28 @@ local function SetupBuildingList( city, buildings, buildingIM )
 			end
 			buildingYieldRate = buildingYieldRate + buildingYieldPerPop * population / 100
 
+			-- MOD.EAP START
+			-- Tech Enhanced Yield support
+
+			for row in GameInfo.Building_TechEnhancedYieldChanges( thisBuildingAndYieldTypes ) do
+				local techEnhancedYield = row.Yield or 0
+
+				-- Check if the team has the required tech instead of the player
+				local teamHasTech = false
+				if building.EnhancedYieldTech then
+					local techID = GameInfoTypes[building.EnhancedYieldTech]
+					if techID then
+						teamHasTech = Teams[cityOwner:GetTeam()]:IsHasTech(techID)
+					end
+				end
+				
+				if techEnhancedYield ~= 0 and teamHasTech then
+					buildingYieldRate = buildingYieldRate + techEnhancedYield
+				end
+			end
+
+			-- MOD.EAP END
+
 			buildingYieldRate = buildingYieldRate * cityYieldRateModifier + ( cityYieldRate - buildingYieldRate ) * buildingYieldModifier
 			tips:insertIf( isProducing and buildingYieldRate ~= 0 and buildingYieldRate / 100 .. tostring(YieldIcons[ yieldID ]) )
 		end
