@@ -522,6 +522,9 @@ void CvPlayerEspionage::ProcessSpy(uint uiSpyIndex)
 				// iCounterspyRank += GET_PLAYER(pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CATCH_SPIES_MODIFIER) / 100;
 				if (pCity->GetCityBuildings()->GetNumBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_CONSTABLE")) >= GC.getCITY_MAX_NUM_BUILDINGS())
 					iCounterspyRank++;
+				//Hardcode the Aussie one too for now, since you shouldnt have both at the same time anyways
+				if (pCity->GetCityBuildings()->GetNumBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_AUSTRALIA_CONSTABULARY")) >= GC.getCITY_MAX_NUM_BUILDINGS())
+					iCounterspyRank++;
 				if (pCity->GetCityBuildings()->GetNumBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_INTELLIGENCE_AGENCY")) >= GC.getCITY_MAX_NUM_BUILDINGS())
 					iCounterspyRank++;
 				iCounterspyRank++;

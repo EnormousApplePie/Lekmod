@@ -179,8 +179,14 @@ function UpdateDisplay()
 			instance.FaithBox:SetHide(false);   
         end
 		-- v34 Golden Age Points
-		sortEntry.GoldenAge = pCity:GetYieldRate( YieldTypes.YIELD_GOLDEN_AGE_POINTS );
-		instance.GoldenAge:SetText( sortEntry.GoldenAge );
+		if(Game.IsOption(GameOptionTypes.GAMEOPTION_NO_HAPPINESS)) then
+			instance.GoldenAgeBox:SetHide(true);
+		else
+			sortEntry.GoldenAge = pCity:GetYieldRate( YieldTypes.YIELD_GOLDEN_AGE_POINTS );
+			instance.GoldenAge:SetText( sortEntry.GoldenAge );
+			instance.GoldenAgeBox:SetHide(false);
+		end
+		
     end
     
     Controls.MainStack:CalculateSize();
@@ -509,6 +515,9 @@ function SortFunction( a, b )
 		elseif( m_SortMode == eFaith ) then
 			valueA = entryA.Faith;
 			valueB = entryB.Faith;
+		elseif( m_SortMode == eGoldenAge ) then
+			valueA = entryA.GoldenAge;
+			valueB = entryB.GoldenAge;
 		else -- SortProduction
 			valueA = entryA.Production;
 			valueB = entryB.Production;
@@ -575,6 +584,10 @@ else
 	Controls.SortFaith:SetHide(false);
 	Controls.ReligionIncome:SetHide(false);
 end
+
+Controls.SortGoldenAge:RegisterCallback(Mouse.eLClick, OnSort);
+Controls.SortGoldenAge:SetVoid1(eGoldenAge);
+
 
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------

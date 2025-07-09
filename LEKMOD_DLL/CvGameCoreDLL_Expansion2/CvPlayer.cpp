@@ -432,7 +432,7 @@ CvPlayer::CvPlayer() :
 	, m_aiCityYieldChange("CvPlayer::m_aiCityYieldChange", m_syncArchive)
 	, m_aiCoastalCityYieldChange("CvPlayer::m_aiCoastalCityYieldChange", m_syncArchive)
 	, m_aiCapitalYieldChange("CvPlayer::m_aiCapitalYieldChange", m_syncArchive)
-	, m_aiCapitalChange("CvPlayer::m_aiCapitalYieldPerPopChange", m_syncArchive)
+	, m_aiCapitalYieldPerPopChange("CvPlayer::m_aiCapitalYieldPerPopChange", m_syncArchive)
 	, m_aiSeaPlotYield("CvPlayer::m_aiSeaPlotYield", m_syncArchive)
 	, m_aiYieldRateModifier("CvPlayer::m_aiYieldRateModifier", m_syncArchive)
 	, m_aiCapitalYieldRateModifier("CvPlayer::m_aiCapitalYieldRateModifier", m_syncArchive)
@@ -1260,7 +1260,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_aiCapitalYieldChange.resize(NUM_YIELD_TYPES, 0);
 
 	m_aiCapitalYieldPerPopChange.clear();
-	m_aiCapitalChange.resize(NUM_YIELD_TYPES, 0);
+	m_aiCapitalYieldPerPopChange.resize(NUM_YIELD_TYPES, 0);
 
 	m_aiSeaPlotYield.clear();
 	m_aiSeaPlotYield.resize(NUM_YIELD_TYPES, 0);
@@ -11610,7 +11610,7 @@ int CvPlayer::greatAdmiralThreshold() const
 
 	return std::max(1, iThreshold);
 }
-
+#if !defined(TRAITIFY)
 //	--------------------------------------------------------------------------------
 int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) const
 {
@@ -11626,18 +11626,40 @@ int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) co
 #else
 	int iRtnValue = pkSpecialistInfo->getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield) + GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eYield) + GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, eYield);
 #endif
-#if !defined(TRAITIFY) // Allow the SPECIALIST_CITIZEN to be effected by Specialist Yield Changes
-	if (eSpecialist != GC.getDEFAULT_SPECIALIST())
-#else
-	if(eSpecialist != NO_SPECIALIST)
-#endif
+	if (eSpecialist != /*NO_SPECIALIST*/GC.getDEFAULT_SPECIALIST())
 	{
 		iRtnValue += getSpecialistExtraYield(eYield);
 	}
 	return (iRtnValue);
 }
-
-
+#else 
+//	--------------------------------------------------------------------------------
+int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield, bool bExtraOnly) const
+{
+	CvSpecialistInfo* pkSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+	if (pkSpecialistInfo == NULL)
+	{
+		//This function REQUIRES a valid specialist info.
+		CvAssert(pkSpecialistInfo);
+		return 0;
+	}
+	int iRtnValue = 0;
+	if(!bExtraOnly)
+	{
+		iRtnValue = pkSpecialistInfo->getYieldChange(eYield);
+	}
+#ifndef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	iRtnValue += getSpecialistExtraYield(eSpecialist, eYield) + GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eYield);
+#else
+	iRtnValue += getSpecialistExtraYield(eSpecialist, eYield) + GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eYield) + GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, eYield);
+#endif
+	if (eSpecialist != /*NO_SPECIALIST*/GC.getDEFAULT_SPECIALIST())
+	{
+		iRtnValue += getSpecialistExtraYield(eYield);
+	}
+	return (iRtnValue);
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// How much additional Yield does every City produce?
 int CvPlayer::GetCityYieldChange(YieldTypes eYield) const
