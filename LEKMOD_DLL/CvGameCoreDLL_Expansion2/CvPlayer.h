@@ -376,9 +376,11 @@ public:
 
 	int greatGeneralThreshold() const;
 	int greatAdmiralThreshold() const;
-
+#if !defined(TRAITIFY)
 	int specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) const;
-
+#else
+	int specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield, bool bExtraOnly = false) const;
+#endif
 	int GetCityYieldChange(YieldTypes eYield) const;
 	void ChangeCityYieldChange(YieldTypes eYield, int iChange);
 
