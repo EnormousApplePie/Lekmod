@@ -4880,7 +4880,12 @@ BuildingTypes CvMinorCivAI::GetBestWonderForQuest(PlayerTypes ePlayer)
 		{
 			continue;
 		}
-
+#if defined(TRAITIFY) // banish the ISS from CS quest.
+		if (pkBuildingInfo->GetBuildingClassType() == GC.getInfoTypeForString("BUILDINGCLASS_INTERNATIONAL_SPACE_STATION"))
+		{
+			continue;
+		}
+#endif
 		// Someone CAN be building this wonder right now, but they can't be more than a certain % of the way done (25% by default)
 		for(iWorldPlayerLoop = 0; iWorldPlayerLoop < MAX_MAJOR_CIVS; iWorldPlayerLoop++)
 		{

@@ -1275,7 +1275,6 @@ end
 -- From NQ
 ContextPtr:LoadNewContext("Exploration1_Colonialism")
 ContextPtr:LoadNewContext("Exploration5_TreasureFleets")
-ContextPtr:LoadNewContext("GreatWallChanges")
 
 -- General Lekmod files
 ContextPtr:LoadNewContext("prophetreplace")

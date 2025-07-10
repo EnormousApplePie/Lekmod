@@ -9383,6 +9383,9 @@ int CvCity::GetBaseJONSCulturePerTurn() const
 	iCulturePerTurn += GetJONSCulturePerTurnFromBuildings();
 	iCulturePerTurn += GetJONSCulturePerTurnFromPolicies();
 	iCulturePerTurn += GetJONSCulturePerTurnFromSpecialists();
+#if defined(TRAITIFY) // I HATE CULTUREOAKNDJFCVOA:UQJWDBHVFQIADEWJVBs
+	iCulturePerTurn += GetBaseYieldRateFromSpecialists(YIELD_CULTURE);
+#endif
 	iCulturePerTurn += GetJONSCulturePerTurnFromGreatWorks();
 	iCulturePerTurn += GetBaseYieldRateFromTerrain(YIELD_CULTURE);
 	iCulturePerTurn += GetJONSCulturePerTurnFromTraits();
@@ -9526,6 +9529,9 @@ int CvCity::GetFaithPerTurn() const
 	iFaith += GetBaseYieldRateFromTerrain(YIELD_FAITH);
 	iFaith += GetFaithPerTurnFromPolicies();
 	iFaith += GetFaithPerTurnFromTraits();
+#if defined(TRAITIFY)
+	iFaith += GetBaseYieldRateFromSpecialists(YIELD_FAITH);
+#endif
 	iFaith += GetFaithPerTurnFromReligion();
 
 	// Puppet?
@@ -11999,19 +12005,23 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 	CvAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	CvAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
-
-#if !defined(TRAITIFY) // Allow the SPECIALIST_CITIZEN to be effected by Specialist Yield Changes
-	if (eSpecialist != GC.getDEFAULT_SPECIALIST())
-#else
-	if (eSpecialist != NO_SPECIALIST)
-#endif
+#if !defined(TRAITIFY)
+	if (eSpecialist == GC.getDEFAULT_SPECIALIST())
 	{
 		return 0;
 	}
 
 	int iYieldMultiplier = GET_PLAYER(getOwner()).getSpecialistExtraYield(eSpecialist, eIndex) +
-	                       GET_PLAYER(getOwner()).getSpecialistExtraYield(eIndex) +
-	                       GET_PLAYER(getOwner()).GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eIndex);
+		GET_PLAYER(getOwner()).getSpecialistExtraYield(eIndex) +
+		GET_PLAYER(getOwner()).GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eIndex);
+#else
+	if (eSpecialist == NO_SPECIALIST)
+	{
+		return 0;
+	}
+
+	int iYieldMultiplier = GET_PLAYER(getOwner()).specialistYield(eSpecialist, eIndex, true /*bExtraOnly*/); // This calls only the extra yields like the above
+#endif
 #ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
 						   GET_PLAYER(getOwner()).GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, eIndex);
 #endif
@@ -17010,10 +17020,11 @@ void CvCity::read(FDataStream& kStream)
 	kStream >> m_aiBaseYieldRateFromSpecialists;
 	kStream >> m_aiBaseYieldRateFromMisc;
 	kStream >> m_aiBaseYieldRateFromReligion;
-	kStream >> m_aiYieldPerPop;
 #if defined(LEKMOD_v34)
 	kStream >> m_aiGarrisonYieldBonus;
 #endif
+	kStream >> m_aiYieldPerPop;
+
 	if (uiVersion >= 4)
 	{
 		kStream >> m_aiYieldPerReligion;
