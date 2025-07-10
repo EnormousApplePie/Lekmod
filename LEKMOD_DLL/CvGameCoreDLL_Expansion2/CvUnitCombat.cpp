@@ -286,6 +286,12 @@ void CvUnitCombat::GenerateMeleeCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender
 		pkCombatInfo->setInBorders(BATTLE_UNIT_DEFENDER, plot.getOwner() == pkDefender->getOwner());
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 		bool bIsGlobalXPAwarded = !kAttacker.isBarbarian() && !GET_PLAYER(kAttacker.getOwner()).isMinorCiv() && !pkDefender->isBarbarian() && !GET_PLAYER(pkDefender->getOwner()).isMinorCiv();
+#ifdef LEKMOD_AI_XP_CAP
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			bIsGlobalXPAwarded = bIsGlobalXPAwarded && (GET_PLAYER(kAttacker.getOwner()).isHuman()) && (GET_PLAYER(pkDefender->getOwner()).isHuman());
+		}
+#endif
 		pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_DEFENDER, bIsGlobalXPAwarded);
 #else
 		pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_DEFENDER, !kAttacker.isBarbarian());
@@ -295,7 +301,20 @@ void CvUnitCombat::GenerateMeleeCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender
 		//iExperience = range(iExperience, GC.getMIN_EXPERIENCE_PER_COMBAT(), GC.getMAX_EXPERIENCE_PER_COMBAT());
 		iExperience = /*6*/ GC.getEXPERIENCE_ATTACKING_UNIT_MELEE();
 		pkCombatInfo->setExperience(BATTLE_UNIT_ATTACKER, iExperience);
+#ifdef LEKMOD_AI_XP_CAP
+		int iMaxExperience;
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			iMaxExperience = (!GET_PLAYER(pkDefender->getOwner()).isHuman()) ? 30 : pkDefender->maxXPValue();
+		}
+		else
+		{
+			iMaxExperience = pkDefender->maxXPValue();
+		}
+		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, iMaxExperience);
+#else
 		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, pkDefender->maxXPValue());
+#endif
 		pkCombatInfo->setInBorders(BATTLE_UNIT_ATTACKER, plot.getOwner() == kAttacker.getOwner());
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 		pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, bIsGlobalXPAwarded);
@@ -679,9 +698,20 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvUnit& kAttacker, CvUnit* pkDefende
 		iExperience = /*2*/ GC.getEXPERIENCE_ATTACKING_UNIT_RANGED();
 		if(pkDefender->isBarbarian())
 			bBarbarian = true;
-		iMaxXP = pkDefender->maxXPValue();
-
 		//CvAssert(pkDefender->IsCanDefend());
+
+#ifdef LEKMOD_AI_XP_CAP
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			iMaxXP = (!GET_PLAYER(pkDefender->getOwner()).isHuman()) ? 30 : 1000;
+		}
+		else
+		{
+			iMaxXP = (GET_PLAYER(pkDefender->getOwner()).isMinorCiv()) ? 30 : 1000; // NQMP GJS - cap XP from fighting CS to 30
+		}
+#else
+		iMaxXP = (GET_PLAYER(pkDefender->getOwner()).isMinorCiv()) ? 30 : 1000; // NQMP GJS - cap XP from fighting CS to 30
+#endif
 
 #ifdef LEKMOD_NO_COMBAT_RANDOMNESS
 		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
@@ -822,12 +852,30 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvUnit& kAttacker, CvUnit* pkDefende
 	// pkCombatInfo->setFearDamageInflicted( BATTLE_UNIT_DEFENDER, 0 );
 
 	pkCombatInfo->setExperience(BATTLE_UNIT_ATTACKER, iExperience);
+
+#ifdef LEKMOD_AI_XP_CAP
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, iMaxXP);
+	}
+	else
+	{
+		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, iMaxXP);
+	}
+#else
 	pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, iMaxXP);
+#endif
 	pkCombatInfo->setInBorders(BATTLE_UNIT_ATTACKER, plot.getOwner() == eDefenderOwner);
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 	bool bIsGlobalXPAwarded = !kAttacker.isBarbarian() && !GET_PLAYER(kAttacker.getOwner()).isMinorCiv() && 
 		(plot.isCity() || (!pkDefender->isBarbarian() && !GET_PLAYER(pkDefender->getOwner()).isMinorCiv())) &&
 		(!plot.isCity() || (!plot.getPlotCity()->isBarbarian() && !GET_PLAYER(plot.getPlotCity()->getOwner()).isMinorCiv()));
+#ifdef LEKMOD_AI_XP_CAP
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		bIsGlobalXPAwarded = bIsGlobalXPAwarded && (GET_PLAYER(kAttacker.getOwner()).isHuman()) && (plot.isCity() ? (GET_PLAYER(eDefenderOwner).isHuman()) : (GET_PLAYER(pkDefender->getOwner()).isHuman()));
+	}
+#endif
 	pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, bIsGlobalXPAwarded);
 #else
 	pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, !kAttacker.isBarbarian());
@@ -970,6 +1018,13 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvCity& kAttacker, CvUnit* pkDefende
 	pkCombatInfo->setInBorders(BATTLE_UNIT_ATTACKER, plot.getOwner() == eDefenderOwner);
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 	bool bIsGlobalXPAwarded = !kAttacker.isBarbarian() && !GET_PLAYER(kAttacker.getOwner()).isMinorCiv() && !pkDefender->isBarbarian() && !GET_PLAYER(pkDefender->getOwner()).isMinorCiv();
+	
+#ifdef LEKMOD_AI_XP_CAP
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		bIsGlobalXPAwarded = bIsGlobalXPAwarded && (GET_PLAYER(kAttacker.getOwner()).isHuman()) && (GET_PLAYER(pkDefender->getOwner()).isHuman());
+	}
+#endif
 	pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, bIsGlobalXPAwarded);
 #else
 	pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, !kAttacker.isBarbarian());
@@ -978,20 +1033,19 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvCity& kAttacker, CvUnit* pkDefende
 	int iExperience = /*2*/ GC.getEXPERIENCE_DEFENDING_UNIT_RANGED();
 	pkCombatInfo->setExperience(BATTLE_UNIT_DEFENDER, iExperience);
 #ifdef LEKMOD_AI_XP_CAP
-	int iMaxExperience;
-	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
-	{
-		iMaxExperience = (!GET_PLAYER(kAttacker.getOwner()).isHuman()) ? 30 : MAX_INT;
-	}
-	else
-	{
-		iMaxExperience = (GET_PLAYER(kAttacker.getOwner()).isMinorCiv()) ? 30 : MAX_INT; // NQMP GJS - cap XP from fighting CS to 30
-	}
+int iDefenderMaxExperience;
+if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+{
+	iDefenderMaxExperience = (!GET_PLAYER(kAttacker.getOwner()).isHuman()) ? 30 : MAX_INT;
+}
+else
+{
+	iDefenderMaxExperience = (GET_PLAYER(kAttacker.getOwner()).isMinorCiv()) ? 30 : MAX_INT; // NQMP GJS - cap XP from fighting CS to 30
+}
+pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_DEFENDER, iDefenderMaxExperience);
 #else
-	int iMaxExperience = (GET_PLAYER(kAttacker.getOwner()).isMinorCiv()) ? 30 : MAX_INT; // NQMP GJS - cap XP from fighting CS to 30
+pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_DEFENDER, (GET_PLAYER(kAttacker.getOwner()).isMinorCiv()) ? 30 : MAX_INT);
 #endif
-	
-	pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_DEFENDER, iMaxExperience);
 	pkCombatInfo->setInBorders(BATTLE_UNIT_DEFENDER, plot.getOwner() == kAttacker.getOwner());
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 	pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_DEFENDER, bIsGlobalXPAwarded);
@@ -1815,12 +1869,25 @@ void CvUnitCombat::GenerateAirCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender, 
 	// pkCombatInfo->setFearDamageInflicted( BATTLE_UNIT_DEFENDER, 0 );
 
 	pkCombatInfo->setExperience(BATTLE_UNIT_ATTACKER, iExperience);
+#ifdef LEKMOD_AI_XP_CAP
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		iMaxXP = (GET_PLAYER(kAttacker.getOwner()).isHuman()) ? 30 : 1000;
+	}
 	pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, iMaxXP);
+#endif
+
 	pkCombatInfo->setInBorders(BATTLE_UNIT_ATTACKER, plot.getOwner() == eDefenderOwner);
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 	bool bIsGlobalXPAwarded = !kAttacker.isBarbarian() && !GET_PLAYER(kAttacker.getOwner()).isMinorCiv() &&
 		(plot.isCity() || (!pkDefender->isBarbarian() && !GET_PLAYER(pkDefender->getOwner()).isMinorCiv())) &&
 		(!plot.isCity() || (!plot.getPlotCity()->isBarbarian() && !GET_PLAYER(plot.getPlotCity()->getOwner()).isMinorCiv()));
+#ifdef LEKMOD_AI_XP_CAP
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		bIsGlobalXPAwarded = bIsGlobalXPAwarded && (GET_PLAYER(kAttacker.getOwner()).isHuman()) && (plot.isCity() ? (GET_PLAYER(eDefenderOwner).isHuman()) : (GET_PLAYER(pkDefender->getOwner()).isHuman()));
+	}
+#endif
 	pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, bIsGlobalXPAwarded);
 #else
 	pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, !kAttacker.isBarbarian());
@@ -1840,7 +1907,18 @@ void CvUnitCombat::GenerateAirCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender, 
 	{
 		iExperience = /*2*/ GC.getEXPERIENCE_DEFENDING_AIR_SWEEP_GROUND();
 		pkCombatInfo->setExperience( BATTLE_UNIT_INTERCEPTOR, iExperience );
+#ifdef LEKMOD_AI_XP_CAP
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			pkCombatInfo->setMaxExperienceAllowed( BATTLE_UNIT_INTERCEPTOR, iMaxXP );
+		}
+		else
+		{
+			pkCombatInfo->setMaxExperienceAllowed( BATTLE_UNIT_INTERCEPTOR, MAX_INT );
+		}
+#else
 		pkCombatInfo->setMaxExperienceAllowed( BATTLE_UNIT_INTERCEPTOR, MAX_INT );
+#endif
 		pkCombatInfo->setInBorders( BATTLE_UNIT_INTERCEPTOR, plot.getOwner() == kAttacker.getOwner() );
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 		pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_INTERCEPTOR, bIsGlobalXPAwarded);
@@ -2176,6 +2254,12 @@ void CvUnitCombat::GenerateAirSweepCombatInfo(CvUnit& kAttacker, CvUnit* pkDefen
 	int iDefenderExperience = 0;
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 	bool bIsGlobalXPAwarded = !kAttacker.isBarbarian() && !GET_PLAYER(kAttacker.getOwner()).isMinorCiv() && !pkDefender->isBarbarian() && !GET_PLAYER(pkDefender->getOwner()).isMinorCiv();
+#ifdef LEKMOD_AI_XP_CAP
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		bIsGlobalXPAwarded = bIsGlobalXPAwarded && (GET_PLAYER(kAttacker.getOwner()).isHuman()) && (GET_PLAYER(pkDefender->getOwner()).isHuman());
+	}
+#endif
 #endif
 
 	// Ground AA interceptor
@@ -2271,7 +2355,19 @@ void CvUnitCombat::GenerateAirSweepCombatInfo(CvUnit& kAttacker, CvUnit* pkDefen
 		//iExperience = ((iExperience * iAttackerEffectiveStrength) / iDefenderEffectiveStrength); // is this right? looks like more for less [Jon: Yes, it's XP for the defender]
 		//iExperience = range(iExperience, GC.getMIN_EXPERIENCE_PER_COMBAT(), GC.getMAX_EXPERIENCE_PER_COMBAT());
 		pkCombatInfo->setExperience(BATTLE_UNIT_DEFENDER, iDefenderExperience);
-		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, pkDefender->maxXPValue());
+#ifdef LEKMOD_AI_XP_CAP
+		int iDefenderMaxXP;
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			iDefenderMaxXP = (!GET_PLAYER(kAttacker.getOwner()).isHuman()) ? 30 : pkDefender->maxXPValue();
+		}
+		else
+		{
+			iDefenderMaxXP = pkDefender->maxXPValue();
+		}
+#else		
+		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, iDefenderMaxXP);
+#endif
 		pkCombatInfo->setInBorders(BATTLE_UNIT_ATTACKER, plot.getOwner() == pkDefender->getOwner());
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 		pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_ATTACKER, bIsGlobalXPAwarded);
@@ -2283,7 +2379,20 @@ void CvUnitCombat::GenerateAirSweepCombatInfo(CvUnit& kAttacker, CvUnit* pkDefen
 		//iExperience = range(iExperience, GC.getMIN_EXPERIENCE_PER_COMBAT(), GC.getMAX_EXPERIENCE_PER_COMBAT());
 		int iExperience = /*6*/ GC.getEXPERIENCE_ATTACKING_AIR_SWEEP();
 		pkCombatInfo->setExperience(BATTLE_UNIT_ATTACKER, iExperience);
+#ifdef LEKMOD_AI_XP_CAP
+		int iAttackerMaxXP;
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			iAttackerMaxXP = (!GET_PLAYER(kAttacker.getOwner()).isHuman()) ? 30 : kAttacker.maxXPValue();
+		}
+		else
+		{
+			iAttackerMaxXP = kAttacker.maxXPValue();
+		}
+		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_DEFENDER, iAttackerMaxXP);
+#else
 		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_DEFENDER, kAttacker.maxXPValue());
+#endif
 		pkCombatInfo->setInBorders(BATTLE_UNIT_DEFENDER, plot.getOwner() == kAttacker.getOwner());
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
 		pkCombatInfo->setUpdateGlobal(BATTLE_UNIT_DEFENDER, bIsGlobalXPAwarded);

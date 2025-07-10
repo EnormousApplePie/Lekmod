@@ -58,10 +58,12 @@ copy /y "%patchfolder%\Lua\tmp\ui\Core\IconSupport.lua.ignore" "%patchfolder%\Lu
 REM --------------------------------------------------------------------------------------------------
 copy /y "%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.lua.ignore" "%patchfolder%\Lua\UI\CultureOverview.lua" > nul
 copy /y "%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.xml.ignore" "%patchfolder%\Lua\UI\CultureOverview.xml" > nul
-IF NOT EXIST "%euifolder%\CultureOverview\EconomicGeneralInfo.lua" (
+IF NOT EXIST "%euifolder%\EconomicGeneralInfo.lua" (
   copy /y "%patchfolder%\Lua\tmp\ui\CultureOverview\EconomicGeneralInfo.lua.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.lua" > nul
+  copy /y "%patchfolder%\Lua\tmp\ui\CultureOverview\EconomicGeneralInfo.xml.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.xml" > nul
 ) ELSE (
-  copy /y "%patchfolder%\Lua\tmp\eui\CultureOverview\EconomicGeneralInfo.lua.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.lua" > nul
+  copy /y "%patchfolder%\Lua\tmp\eui\EconomicGeneralInfo.lua.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.lua" > nul
+  copy /y "%patchfolder%\Lua\tmp\eui\EconomicGeneralInfo.xml.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.xml" > nul
 )
 REM --------------------------------------------------------------------------------------------------
 copy /y "%patchfolder%\Lua\tmp\ui\FrontEnd\EULA.lua.ignore" "%patchfolder%\Lua\UI\EULA.lua" > nul

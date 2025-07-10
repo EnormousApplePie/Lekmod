@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -1220,6 +1220,7 @@ bool CvMinorCivQuest::DoFinishQuest()
 	bool bWasAllies = pMinor->GetMinorCivAI()->IsAllies(m_eAssignedPlayer);
 	PlayerTypes eOldAlly = pMinor->GetMinorCivAI()->GetAlly();
 	int iOldInf = pMinor->GetMinorCivAI()->GetEffectiveFriendshipWithMajor(m_eAssignedPlayer);
+
 
 	pMinor->GetMinorCivAI()->ChangeFriendshipWithMajor(m_eAssignedPlayer, GetInfluenceReward(), /*bFromQuest*/ true);
 	
@@ -4880,12 +4881,7 @@ BuildingTypes CvMinorCivAI::GetBestWonderForQuest(PlayerTypes ePlayer)
 		{
 			continue;
 		}
-#if defined(TRAITIFY) // banish the ISS from CS quest.
-		if (pkBuildingInfo->GetBuildingClassType() == GC.getInfoTypeForString("BUILDINGCLASS_INTERNATIONAL_SPACE_STATION"))
-		{
-			continue;
-		}
-#endif
+
 		// Someone CAN be building this wonder right now, but they can't be more than a certain % of the way done (25% by default)
 		for(iWorldPlayerLoop = 0; iWorldPlayerLoop < MAX_MAJOR_CIVS; iWorldPlayerLoop++)
 		{
@@ -5460,6 +5456,10 @@ void CvMinorCivAI::SetFriendshipWithMajorTimes100(PlayerTypes ePlayer, int iNum,
 	CvAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative (invalid Index)");
 	CvAssertMsg(ePlayer < MAX_MAJOR_CIVS, "ePlayer is expected to be within maximum bounds (invalid Index)");
 	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return;
+#ifdef AI_CANT_COUP
+	if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_COUP") && !GET_PLAYER(ePlayer).isHuman())
+		return;
+#endif
 
 	int iOldEffectiveFriendship = GetEffectiveFriendshipWithMajorTimes100(ePlayer);
 
