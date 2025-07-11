@@ -17499,7 +17499,7 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 	if(pkBuildingInfo == NULL)
 		return false;
 
-#ifdef TRAITIFY
+#if defined(TRAITIFY)
 	// Get the player's traits
 	CvPlayerTraits* pPlayerTraits = GET_PLAYER(getOwner()).GetPlayerTraits();
 	BuildingClassTypes eBuildingClass = (BuildingClassTypes)GC.getBuildingInfo(eBuilding)->GetBuildingClassType();
