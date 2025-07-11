@@ -1707,6 +1707,8 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 				"WHERE TraitType = ?");
 		}
 
+		pResults->Bind(1, szTraitType);
+
 		while (pResults->Step())
 		{
 			const int BuildingClassID = pResults->GetInt(1);

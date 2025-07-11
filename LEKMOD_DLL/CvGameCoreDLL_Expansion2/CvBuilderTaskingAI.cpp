@@ -1107,7 +1107,19 @@ void CvBuilderTaskingAI::AddImprovingResourcesDirectives(CvUnit* pUnit, CvPlot* 
 		{
 			continue;
 		}
-
+#if defined(LEKMOD_v34) // Moai and Brazilwoods can now connect resources, this can mess with other civs that cannot make this improvement when it comes to BuilderAI
+		// So add a check to see if we can even make the Improvement the Build Requires. if not, then continue looping.
+		CivilizationTypes eImprovementCiv = pkImprovementInfo->GetRequiredCivilization();
+		if (eImprovementCiv != NO_CIVILIZATION && eImprovementCiv != m_pPlayer->getCivilizationType())
+		{
+			continue;
+		}
+		// Check if the plot can even have this improvement. If not then continue looping.
+		if(!pPlot->canHaveImprovement(eImprovement))
+		{
+			continue;
+		}
+#endif
 		if(eImprovement == eExistingPlotImprovement)
 		{
 			if(pPlot->IsImprovementPillaged())
