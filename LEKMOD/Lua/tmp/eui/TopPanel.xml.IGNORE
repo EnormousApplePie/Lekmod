@@ -82,6 +82,65 @@
 		</Box>
 		<Button ID="GpIcon" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
 		<Container Size="10,1" />
+				<Label ID="GpTurns_UNITCLASS_SCIENTIST" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="GpBox_UNITCLASS_SCIENTIST" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="GpBarShadow_UNITCLASS_SCIENTIST" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="GpBar_UNITCLASS_SCIENTIST" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="GpIcon_UNITCLASS_SCIENTIST" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<Container Size="10,1" />
+
+		<Label ID="GpTurns_UNITCLASS_ENGINEER" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="GpBox_UNITCLASS_ENGINEER" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="GpBarShadow_UNITCLASS_ENGINEER" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="GpBar_UNITCLASS_ENGINEER" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="GpIcon_UNITCLASS_ENGINEER" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<Container Size="10,1" />
+
+		<Label ID="GpTurns_UNITCLASS_MERCHANT" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="GpBox_UNITCLASS_MERCHANT" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="GpBarShadow_UNITCLASS_MERCHANT" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="GpBar_UNITCLASS_MERCHANT" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="GpIcon_UNITCLASS_MERCHANT" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<Container Size="10,1" />
+
+		<Label ID="GpTurns_UNITCLASS_ARTIST" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="GpBox_UNITCLASS_ARTIST" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="GpBarShadow_UNITCLASS_ARTIST" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="GpBar_UNITCLASS_ARTIST" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="GpIcon_UNITCLASS_ARTIST" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<Container Size="10,1" />
+
+		<Label ID="GpTurns_UNITCLASS_WRITER" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="GpBox_UNITCLASS_WRITER" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="GpBarShadow_UNITCLASS_WRITER" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="GpBar_UNITCLASS_WRITER" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="GpIcon_UNITCLASS_WRITER" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<Container Size="10,1" />
+
+		<Label ID="GpTurns_UNITCLASS_MUSICIAN" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="GpBox_UNITCLASS_MUSICIAN" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="GpBarShadow_UNITCLASS_MUSICIAN" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="GpBar_UNITCLASS_MUSICIAN" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="GpIcon_UNITCLASS_MUSICIAN" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<Container Size="10,1" />
 
 		<!-- Happy & Golden Age --> <!-- Golden Age Points v34 -->
 		<TextButton ID="HappinessString" Anchor="L,T" String="TXT_KEY_TOP_PANEL_HAPPINESS_OFF" ColorLayer0="255,255,200,255" ToolTipType="TooltipTypeTopPanel"/>

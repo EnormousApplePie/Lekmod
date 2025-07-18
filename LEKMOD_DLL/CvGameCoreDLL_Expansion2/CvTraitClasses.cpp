@@ -167,6 +167,7 @@ CvTraitEntry::CvTraitEntry() :
 	m_ppiBuildingCostOverride(NULL),
 	m_ppiBuildingClassYieldChanges(NULL),
 	m_piPuppetYieldModifiers(NULL),
+	m_paiRouteMovementChange(NULL),
 	m_ppiResourceClassYieldChanges(NULL),
 	m_ppiFeatureYieldChanges(NULL),
 	m_ppiTerrainYieldChanges(NULL),
@@ -237,6 +238,7 @@ CvTraitEntry::~CvTraitEntry()
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiResourceYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiTerrainYieldChanges);
 	SAFE_DELETE_ARRAY(m_piPuppetYieldModifiers);
+	SAFE_DELETE_ARRAY(m_paiRouteMovementChange);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassGlobalHappiness);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassHappiness);
 #endif
@@ -1280,22 +1282,22 @@ int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eRe
 	// First try to find a direct match for the resource class
 	int iBestTime = -1;
 	bool bFoundGenericMatch = false;
-	
+
 	typedef std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>::const_iterator it_type;
 	std::pair<it_type, it_type> range = m_BuildTimeOverrides.equal_range(eBuild);
-	
+
 	// First pass: look for exact resource class match
 	for (it_type it = range.first; it != range.second; ++it)
 	{
 		ResourceClassTypes eRequiredClass = it->second.second;
 		int iBuildTime = it->second.first;
-		
+
 		// Exact match for resource class
 		if (eRequiredClass == eResourceClass)
 		{
 			return iBuildTime; // Found exact match, return immediately
 		}
-		
+
 		// Keep track of NO_RESOURCECLASS entries for fallback
 		if (eRequiredClass == NO_RESOURCECLASS)
 		{
@@ -1303,13 +1305,13 @@ int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eRe
 			bFoundGenericMatch = true;
 		}
 	}
-	
+
 	// If we found a generic match, return that
 	if (bFoundGenericMatch)
 	{
 		return iBestTime;
 	}
-	
+
 	return -1;  // No suitable override found
 }
 #endif
@@ -1386,6 +1388,13 @@ int CvTraitEntry::GetPuppetYieldModifiers(int i) const
 	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piPuppetYieldModifiers ? m_piPuppetYieldModifiers[i] : -1;
+}
+// Route Movement Change
+int CvTraitEntry::GetRouteMovementChange(int i) const
+{
+	CvAssertMsg(i < GC.getNumRouteInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_paiRouteMovementChange ? m_paiRouteMovementChange[i] : 0;
 }
 // Feature Yield Changes
 int CvTraitEntry::GetFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const
@@ -1687,7 +1696,29 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 #endif
 #if defined(TRAITIFY) // CvTraitEntry::CacheResults, ARRAY
 	kUtility.SetYields(m_piPuppetYieldModifiers, "Trait_PuppetYieldModifiers", "TraitType", szTraitType);
+	// Route Movement Change.
+	{
+		kUtility.InitializeArray(m_paiRouteMovementChange, "Routes", 0);
 
+		std::string strKey("Trait_RouteMovementChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Routes.ID, Trait_RouteMovementChanges.MovementChange "
+				"FROM Trait_RouteMovementChanges "
+				"INNER JOIN Routes ON Trait_RouteMovementChanges.RouteType = Routes.Type "
+				"WHERE Trait_RouteMovementChanges.TraitType = ?");
+		}
+		pResults->Bind(1, szTraitType);
+		while (pResults->Step())
+		{
+			const int RouteID = pResults->GetInt(0);
+			const int MovementChange = pResults->GetInt(1);
+			m_paiRouteMovementChange[RouteID] = MovementChange;
+		}
+		pResults->Reset();
+	}
 	// Trait_BuildingClassRequiredTerrainRemoval
 	{
 		int BuildingClassLoop;
@@ -2786,7 +2817,7 @@ void CvPlayerTraits::InitPlayerTraits()
 					}
 				}
 #endif
-			}
+			} // END NUM_YIELD_TYPES loop
 			CvAssert(GC.getNumTerrainInfos() <= NUM_TERRAIN_TYPES);
 #if defined(TRAITIFY) // Building Class Loop for non Yield Arrays
 			for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
@@ -2794,6 +2825,10 @@ void CvPlayerTraits::InitPlayerTraits()
 				m_aiBuildingClassHappiness[iBuildingClass] = trait->GetBuildingClassHappiness((BuildingClassTypes)iBuildingClass);
 				m_aiBuildingClassGlobalHappiness[iBuildingClass] = trait->GetBuildingClassGlobalHappiness((BuildingClassTypes)iBuildingClass);
 				m_abRemoveRequiredTerrain[iBuildingClass] = trait->IsBuildingClassRemoveRequiredTerrain((BuildingClassTypes)iBuildingClass);
+			}
+			for (int iRouteType = 0; iRouteType < NUM_ROUTE_TYPES; iRouteType++)
+			{
+				m_iRouteMovementChange[iRouteType] = trait->GetRouteMovementChange((RouteTypes)iRouteType);
 			}
 #endif
 #ifdef AUI_WARNING_FIXES
@@ -3210,6 +3245,10 @@ void CvPlayerTraits::Reset()
 		m_aiBuildingClassHappiness[iBuildingClass] = 0;
 		m_aiBuildingClassGlobalHappiness[iBuildingClass] = 0;
 		m_abRemoveRequiredTerrain[iBuildingClass] = false;
+	}
+	for (int iRouteType = 0; iRouteType < NUM_ROUTE_TYPES; iRouteType++)
+	{
+		m_iRouteMovementChange[iRouteType] = 0;
 	}
 #endif
 	m_aiResourceQuantityModifier.clear();
@@ -3944,45 +3983,26 @@ bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovement)
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 int CvPlayerTraits::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass)
 {
-	if (eBuild == NO_BUILD)
+	CvAssertMsg(eBuild < GC.getNumBuildInfos(), "Invalid eBuild parameter in call to CvPlayerTraits::GetBuildTimeOverride()");
+
+	for (int iI = 0; iI < GC.getNumTraitInfos(); iI++)
 	{
-		return -1;
+		TraitTypes eTrait = static_cast<TraitTypes>(iI);
+		if (!HasTrait(eTrait))
+			continue;
+
+		CvTraitEntry* pkTraitInfo = GC.getTraitInfo(eTrait);
+		if (!pkTraitInfo)
+			continue;
+
+		int iOverride = pkTraitInfo->GetBuildTimeOverride(eBuild, eResourceClass);
+		if (iOverride > -1) // 0 is valid, below that is not I guess? wouldn't make sense
+		{
+			return iOverride;
+		}
 	}
 
-	// First try to find a direct match for the resource class
-	int iBestTime = -1;
-	bool bFoundGenericMatch = false;
-	
-	typedef std::multimap<BuildTypes, std::pair<int, ResourceClassTypes>>::const_iterator it_type;
-	std::pair<it_type, it_type> range = m_BuildTimeOverrides.equal_range(eBuild);
-	
-	// First pass: look for exact resource class match
-	for (it_type it = range.first; it != range.second; ++it)
-	{
-		ResourceClassTypes eRequiredClass = it->second.second;
-		int iBuildTime = it->second.first;
-		
-		// Exact match for resource class
-		if (eRequiredClass == eResourceClass)
-		{
-			return iBuildTime; // Found exact match, return immediately
-		}
-		
-		// Keep track of NO_RESOURCECLASS entries for fallback
-		if (eRequiredClass == NO_RESOURCECLASS)
-		{
-			iBestTime = iBuildTime;
-			bFoundGenericMatch = true;
-		}
-	}
-	
-	// If we found a generic match, return that
-	if (bFoundGenericMatch)
-	{
-		return iBestTime;
-	}
-	
-	return -1;  // No suitable override found
+	return -1; // No trait had an override
 }
 #endif
 
@@ -4338,7 +4358,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	int iNumEntries;
 
 	// Version number to maintain backwards compatibility
-	uint uiVersion;
+	uint uiVersion; // 19
 	kStream >> uiVersion;
 
 	// precompute the traits our leader has
@@ -4706,6 +4726,8 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 #if defined(TRAITIFY) // CvPlayerTraits::Read (for CvPlayerTraits Arrays)
 	ArrayWrapper<int> kPuppetYieldModifiersWrapper(NUM_YIELD_TYPES, m_iPuppetYieldModifiers);
 	kStream >> kPuppetYieldModifiersWrapper;
+	ArrayWrapper<int> kRouteMovementChangeWrapper(NUM_ROUTE_TYPES, m_iRouteMovementChange);
+	kStream >> kRouteMovementChangeWrapper;
 #endif
 
 	if (uiVersion >= 7)
@@ -5021,15 +5043,17 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeLuxuryResources); // NQMP GJS - New Netherlands UA
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldRateModifier);
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeNaturalWonder);
-	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangePerTradePartner);
-	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeIncomingTradeRoute);
-
 #if defined(FULL_YIELD_FROM_KILLS) // CvPlayerTraits::Write (for CvPlayerTraits Arrays)
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldFromKills);
 #endif
 #if defined(TRAITIFY)
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iPuppetYieldModifiers);
+	kStream << ArrayWrapper<int>(NUM_ROUTE_TYPES, m_iRouteMovementChange);
 #endif
+	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangePerTradePartner);
+	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeIncomingTradeRoute);
+
+
 	
 	CvInfosSerializationHelper::WriteHashedDataArray<TerrainTypes>(kStream, &m_iStrategicResourceQuantityModifier[0], GC.getNumTerrainInfos());
 	CvInfosSerializationHelper::WriteHashedDataArray<ResourceTypes>(kStream, m_aiResourceQuantityModifier);

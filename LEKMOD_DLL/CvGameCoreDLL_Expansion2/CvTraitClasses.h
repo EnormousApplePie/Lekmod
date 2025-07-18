@@ -223,6 +223,7 @@ public:
 	int GetPuppetYieldModifiers(int i) const;
 	int GetBuildingClassYieldChanges(int i, int j) const;
 	int GetFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const;
+	int GetRouteMovementChange(int i) const;
 #endif
 #if defined(LEKMOD_v34)
 	int GetYieldPerPopulation(int i) const;
@@ -441,6 +442,7 @@ protected:
 	int** m_ppiResourceYieldChanges;
 	int** m_ppiTerrainYieldChanges;
 
+	int* m_paiRouteMovementChange;
 	int* m_paiBuildingClassHappiness;
 	int* m_paiBuildingClassGlobalHappiness;
 	int* m_piPuppetYieldModifiers;
@@ -1091,6 +1093,10 @@ public:
 	{
 		return m_iPuppetYieldModifiers[(int)eYield];
 	};
+	int GetRouteMovementChange(RouteTypes eRoute) const
+	{
+		return m_iRouteMovementChange[(int)eRoute];
+	};
 #endif
 	int GetYieldChangePerTradePartner(YieldTypes eYield) const
 	{
@@ -1172,7 +1178,6 @@ public:
 #if defined(TRAITIFY) //Array members
 	bool IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass);
 	bool IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass);
-
 
 	int GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYield);
 	int GetTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYield);
@@ -1414,6 +1419,7 @@ private:
 
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiUnimprovedFeatureYieldChange;
 #if defined(TRAITIFY)
+	int m_iRouteMovementChange[NUM_ROUTE_TYPES];
 	int m_iPuppetYieldModifiers[NUM_YIELD_TYPES];
 	std::vector<bool> m_abRemoveRequiredTerrain;
 	std::vector<bool> m_abForceSpawnCapital;
