@@ -6453,7 +6453,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 			if(oldImprovementEntry.GetCultureAdjacentSameType() > 0)
 #else
 			// If this improvement can add yields to nearby improvements, update them as well
-			if (oldImprovementEntry.GetCultureAdjacentSameType() > 0 && oldImprovementEntry.HasAnyAdjacencyYieldBonus())
+			if (oldImprovementEntry.GetCultureAdjacentSameType() > 0 || oldImprovementEntry.HasAnyAdjacencyYieldBonus())
 #endif
 			{
 				for(iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
@@ -6567,7 +6567,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 			if(newImprovementEntry.GetCultureAdjacentSameType() > 0)
 #else
 			// If this improvement can add yields to nearby improvements, update them as well
-			if (newImprovementEntry.GetCultureAdjacentSameType() > 0 && newImprovementEntry.HasAnyAdjacencyYieldBonus())
+			if (newImprovementEntry.GetCultureAdjacentSameType() > 0 || newImprovementEntry.HasAnyAdjacencyYieldBonus())
 #endif
 			{
 				for(iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
@@ -6724,7 +6724,6 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 				}
 			}
 		}
-
 		updateYield();
 
 		// Update the amount of a Resource used up by this Improvement
@@ -8269,10 +8268,10 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		{
 			if (m_eOwner != NO_PLAYER)
 			{
+				// Shouldn't be possible today but who knows about tomorrow...
 				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
 				if (eImprovement == NO_IMPROVEMENT)
 				{
-					// Shouldn't be possible today but who knows about tomorrow...
 					iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
 				}
 			}
