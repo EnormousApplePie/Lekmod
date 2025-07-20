@@ -9118,22 +9118,22 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 #else
 	if (!bIgnoreCost)
 	{
-		// Get the base production cost and any trait-based override
-		int iBaseCost = pBuildingInfo.GetProductionCost();
-		int iOverrideCost = GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
+    // Get the base production cost and any trait-based override
+    int iBaseCost = pBuildingInfo.GetProductionCost();
+    int iOverrideCost = GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
 
-		// Block buildings that have a base production cost of -1 and no valid override
-		if (iBaseCost == -1 && iOverrideCost < 0)
-		{
-			return false;
-		}
+    // Block buildings that have a base production cost of -1 and no valid override (0 = no override)
+    if (iBaseCost == -1 && iOverrideCost <= 0)
+    {
+        return false;
+    }
 
-		// Block buildings that have a valid production cost but an override setting them to -1
-		if (iBaseCost > -1 && iOverrideCost == -1)
-		{
-			return false;
-		}
-		// Let buildings with no override and vaild production cost through, and those with a valid override
+    // Block buildings that have a valid production cost but an override setting them to -1
+    if (iBaseCost > -1 && iOverrideCost == -1)
+    {
+        return false;
+    }
+
 	}
 #endif
 

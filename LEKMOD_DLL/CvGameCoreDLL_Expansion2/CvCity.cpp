@@ -3068,8 +3068,12 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	int iOverrideProductionCost = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
 	int iOverrideGoldCost = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_GOLD);
 
-	// If both base cost and override are <= 0, but has a gold cost?
-	if (iBaseProductionCost <= 0 && iOverrideProductionCost <= 0 && pkBuildingInfo->GetGoldCost() <= 0 && iOverrideGoldCost <= 0)
+	// Determine effective costs (use override if > 0, otherwise use base)
+	int iEffectiveProductionCost = (iOverrideProductionCost > 0) ? iOverrideProductionCost : iBaseProductionCost;
+	int iEffectiveGoldCost = (iOverrideGoldCost > 0) ? iOverrideGoldCost : pkBuildingInfo->GetGoldCost();
+
+	// Block only if we have no valid way to obtain the building
+	if (iEffectiveProductionCost <= 0 && iEffectiveGoldCost <= 0)
 	{
 		if (!bIgnoreCost)
 		{
