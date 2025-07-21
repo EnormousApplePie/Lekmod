@@ -723,6 +723,10 @@ void CvPlayer::init(PlayerTypes eID)
 		ChangeTraitExtraLeagueVotes(GetPlayerTraits()->GetNumExtraLeagueVotes()); // Vatican Trait
 		changeHalfMoreSpecialistUnhappinessCount(GetPlayerTraits()->IsHalfMoreSpecialistUnhappiness()); // Mysore Trait
 		ChangeMinorFriendshipAnchorMod(GetPlayerTraits()->GetMinorFriendshipMinimum()); // Tonga Trait
+		for (int iR = 0; iR < GC.getNumRouteInfos(); iR++)
+		{
+			GET_TEAM(getTeam()).changeRouteChange(((RouteTypes)iR), GetPlayerTraits()->GetRouteMovementChange((RouteTypes)iR)); // Franks Trait
+		}
 #endif
 
 		for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
@@ -13212,7 +13216,7 @@ void CvPlayer::ReportYieldFromKill(YieldTypes eYield, int iValue, int iX, int iY
 		case YIELD_SCIENCE:
 			yieldString = "[COLOR_BLUE]+%d[ENDCOLOR][ICON_RESEARCH]";
 			break;
-#if defined(FULL_YIELD_FROM_KILLS) // Add Golden Age points for Kills
+#if defined(FULL_YIELD_FROM_KILLS) && defined(LEKMOD_v34) // Add Golden Age points for Kills, GAP is only a Yield if v34 is defined
 		case YIELD_GOLDEN_AGE_POINTS:
 			yieldString = "[COLOR_WHITE]+%d[ENDCOLOR][ICON_GOLDEN_AGE]";
 			break;

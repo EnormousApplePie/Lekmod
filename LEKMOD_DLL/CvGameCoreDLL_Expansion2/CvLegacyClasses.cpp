@@ -1,0 +1,237 @@
+/*  -------------------------------------------------------------------------------------------------------
+This is an experimental system to spice up the game without touching the core of civilizations.
+It allows for the addition of "legacies" that can be granted to civilizations, providing unique bonuses or abilities based on historical or thematic elements.
+This is mimicking the policy system in implementation, so reference that.
+	------------------------------------------------------------------------------------------------------- */
+#include "CvGameCoreDLLPCH.h"
+#include "CvGameCoreDLLUtil.h"
+#include "CvLegacyAI.h"
+#include "CvFlavorManager.h"
+#include "ICvDLLUserInterface.h"
+#include "CvGameCoreUtils.h"
+#include "CvEconomicAI.h"
+#include "CvGrandStrategyAI.h"
+#include "CvInfosSerializationHelper.h"
+
+#include "LintFree.h"
+
+// Constructor
+CvLegacyEntry::CvLegacyEntry(void) :
+	m_eCivilization(NO_CIVILIZATION),
+	m_eEraOffered(NO_ERA)
+{
+}
+// Destructor
+CvLegacyEntry::~CvLegacyEntry(void)
+{
+}
+
+// Cache results from the database
+bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
+{
+	// Base info consists of ID, Type, Text, Civilopedia, Strategy, Help, DisabledHelp, Description.
+	if (!CvBaseInfo::CacheResults(kResults, kUtility))
+		return false;
+
+
+	m_eCivilization = (CivilizationTypes)kResults.GetInt("CivilizationType");
+	m_eEraOffered = (EraTypes)kResults.GetInt("EraOffered");
+
+	const char* szLegacyType = GetType();
+
+	// Return true at the very end.
+	return true;
+}
+// What civilization is the legacy offered to?
+CivilizationTypes CvLegacyEntry::GetCivilization() const
+{
+	return m_eCivilization;
+}
+// At what era is this Legacy offered to the player?
+EraTypes CvLegacyEntry::GetEraOffered() const
+{
+	return m_eEraOffered;
+}
+
+//=====================================
+// CvLegacyXMLEntries
+//=====================================
+/// Constructor
+CvLegacyXMLEntries::CvLegacyXMLEntries(void)
+{
+}
+
+/// Destructor
+CvLegacyXMLEntries::~CvLegacyXMLEntries(void)
+{
+	DeleteLegacyArray();
+}
+
+// Get the vector of legacy entries
+std::vector<CvLegacyEntry*>& CvLegacyXMLEntries::GetLegacyEntries()
+{
+	return m_paLegacyEntries;
+}
+
+// Get the number of legacies
+int CvLegacyXMLEntries::GetNumLegacies()
+{
+	return m_paLegacyEntries.size();
+}
+
+void CvLegacyXMLEntries::DeleteLegacyArray()
+{
+	for (std::vector<CvLegacyEntry*>::iterator it = m_paLegacyEntries.begin(); it != m_paLegacyEntries.end(); ++it)
+	{
+		SAFE_DELETE(*it);
+	}
+
+	m_paLegacyEntries.clear();
+}
+
+CvLegacyEntry* CvLegacyXMLEntries::GetLegacyEntry(int iIndex)
+{
+	return m_paLegacyEntries[iIndex];
+}
+
+//=====================================
+// CvPlayerLegacies
+// //=====================================
+/// Constructor
+CvPlayerLegacies::CvPlayerLegacies(void):
+	m_pabHasLegacy(NULL),
+	m_pLegacies(NULL),
+	m_pLegacyAI(NULL),
+	m_pPlayer(NULL)
+{
+}
+// Destructor
+CvPlayerLegacies::~CvPlayerLegacies(void)
+{
+}
+// Initialization
+void CvPlayerLegacies::Init(CvLegacyXMLEntries* pLegacies, CvPlayer* pPlayer)
+{
+	// Store Pointers.
+	m_pLegacies = pLegacies;
+	m_pPlayer = pPlayer;
+
+	// Allocate memory.
+	m_pabHasLegacy = FNEW(bool[m_pLegacies->GetNumLegacies()], c_eCiv5GameplayDLL, 0);
+	m_pLegacyAI = FNEW(CvLegacyAI(this), c_eCiv5GameplayDLL, 0);
+
+	Reset();
+
+	m_vCivHasLegacy.resize(GC.getNumLegacyInfos(), false);
+}
+// Uninitialization
+void CvPlayerLegacies::Uninit()
+{
+	SAFE_DELETE_ARRAY(m_pabHasLegacy);
+	SAFE_DELETE(m_pLegacyAI);
+}
+// Reset
+void CvPlayerLegacies::Reset()
+{
+	m_vCivHasLegacy.resize(GC.getNumLegacyInfos(), false);
+	m_vPotentiallyActiveCivLegacies.clear();
+
+	if (m_pabHasLegacy)
+	{
+		for (int i = 0; i < m_pLegacies->GetNumLegacies(); i++)
+		{
+			m_pabHasLegacy[i] = false;
+		}
+	}
+
+	m_pLegacyAI->Reset();
+}
+// Read
+void CvPlayerLegacies::Read(FDataStream& kStream)
+{
+	// Read the data from the stream
+	CvAssertMsg(m_pLegacies != NULL && GC.getNumLegacyInfos() > 0, "Number of legacies to serialize is expected to greater than 0");
+	uint uiLegacyCount = 0;
+	if (m_pLegacies)
+	{
+		uiLegacyCount = m_pLegacies->GetNumLegacies();
+	}
+
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabHasLegacy, uiLegacyCount);
+
+	m_pLegacyAI->Read(kStream);
+}
+// Write
+void CvPlayerLegacies::Write(FDataStream& kStream) const
+{
+	// Write the data to the stream
+	CvAssertMsg(m_pLegacies != NULL && GC.getNumLegacyInfos() > 0, "Number of legacies to serialize is expected to greater than 0");
+	uint uiLegacyCount = 0;
+	if (m_pLegacies)
+	{
+		uiLegacyCount = m_pLegacies->GetNumLegacies();
+	}
+
+	CvInfosSerializationHelper::WriteHashedDataArray<LegacyTypes>(kStream, m_pabHasLegacy, uiLegacyCount);
+	m_pLegacyAI->Write(kStream);
+}
+// Accessors
+// Get the player
+CvPlayer* CvPlayerLegacies::GetPlayer() const
+{
+	return m_pPlayer;
+}
+// Check if the player has a specific legacy
+bool CvPlayerLegacies::HasLegacy(LegacyTypes eIndex) const
+{
+	CvAssertMsg(eIndex >= 0 && eIndex < GC.getNumLegacyInfos(), "Legacy index out of bounds");
+	return m_pabHasLegacy[eIndex];
+}
+// Set a legacy for the player
+void CvPlayerLegacies::SetLegacy(LegacyTypes eIndex, bool bNewValue)
+{
+	CvAssertMsg(eIndex >= 0 && eIndex < GC.getNumLegacyInfos(), "Legacy index out of bounds");
+	CvLegacyEntry* pkLegacy = m_pLegacies->GetLegacyEntry(eIndex);
+	if (pkLegacy == NULL)
+		return;
+
+	if (HasLegacy(eIndex) != bNewValue)
+	{
+		m_pabHasLegacy[eIndex] = bNewValue;
+	}
+}
+// Get Legacy data from the XML
+CvLegacyXMLEntries* CvPlayerLegacies::GetLegacies() const
+{
+	return m_pLegacies;
+}
+// Get the Legacies for this civ that have not been chosen.
+std::vector<LegacyTypes> CvPlayerLegacies::GetPotentialCivLegacies() const
+{
+	std::vector<LegacyTypes> result;
+	for (int iLegacy = 0; iLegacy < GC.getNumLegacyInfos(); iLegacy++)
+	{
+		CvLegacyEntry* pkLegacy = m_pLegacies->GetLegacyEntry(iLegacy);
+		if (pkLegacy && pkLegacy->GetCivilization() == m_pPlayer->getCivilizationType() && !HasLegacy((LegacyTypes)iLegacy))
+		{
+			result.push_back((LegacyTypes)iLegacy);
+		}
+	}
+	return result;
+}
+// Check if it's time to choose a legacy
+bool CvPlayerLegacies::IsTimeToChooseLegacy() const
+{
+	if (m_pLegacies == NULL)
+		return false;
+	EraTypes eCurrentEra = m_pPlayer->GetCurrentEra();
+	for (int i = 0; i < m_pLegacies->GetNumLegacies(); i++)
+	{
+		CvLegacyEntry* pkLegacy = m_pLegacies->GetLegacyEntry(i);
+		if (pkLegacy && pkLegacy->GetCivilization() == m_pPlayer->getCivilizationType() && pkLegacy->GetEraOffered() == eCurrentEra)
+		{
+			return true;
+		}
+	}
+	return false;
+}
