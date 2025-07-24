@@ -4,7 +4,7 @@
 
 
 -- UNIT
-function GetHelpTextForUnit(iUnitID, bIncludeRequirementsInfo)
+function GetHelpTextForUnit(iUnitID, bIncludeRequirementsInfo, pCity)
 	local pUnitInfo = GameInfo.Units[iUnitID];
 	
 	local pActivePlayer = Players[Game.GetActivePlayer()];
@@ -20,7 +20,11 @@ function GetHelpTextForUnit(iUnitID, bIncludeRequirementsInfo)
 	
 	-- Skip cost if it's 0
 	if(pUnitInfo.Cost > 0) then
-		strHelpText = strHelpText .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_COST", pActivePlayer:GetUnitProductionNeeded(iUnitID));
+		if pCity then
+			strHelpText = strHelpText .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_COST", pCity:GetUnitProductionNeeded(iUnitID));
+		else
+			strHelpText = strHelpText .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_COST", pActivePlayer:GetUnitProductionNeeded(iUnitID));
+		end
 	end
 	
 	-- Moves

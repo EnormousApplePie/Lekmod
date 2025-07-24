@@ -6645,31 +6645,6 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 	{
 		changeRouteChange(((RouteTypes)iI), (GC.getRouteInfo((RouteTypes) iI)->getTechMovementChange(eTech) * iChange));
 	}
-#if defined(TRAITIFY) // Extra Route Movement for Traits
-	for (int iI = 0; iI < GC.getNumRouteInfos(); iI++)
-	{
-		for (int iPlayer = 0; iPlayer < MAX_PLAYERS; iPlayer++)
-		{
-			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
-			if (kPlayer.isAlive() && kPlayer.getTeam() == GetID()) // Ensure the player is on this team
-			{
-				// Loop through all traits the player has
-				for (int iTrait = 0; iTrait < GC.getNumTraitInfos(); iTrait++)
-				{
-					if (kPlayer.GetPlayerTraits()->HasTrait((TraitTypes)iTrait))
-					{
-						int iTraitBonus = GC.getRouteInfo((RouteTypes)iI)->getTraitMovementChange(iTrait);
-
-						if (iTraitBonus != 0)
-						{
-							changeRouteChange((RouteTypes)iI, iTraitBonus * iChange);
-						}
-					}
-				}
-			}
-		}
-	}
-#endif
 
 #ifdef AUI_WARNING_FIXES
 	for (uint i = 0; i < GC.getNumBuildInfos(); i++)

@@ -1320,9 +1320,6 @@ public:
 	// Arrays
 	int getYieldChange(int i) const;
 	int getTechMovementChange(int i) const;
-#if defined(TRAITIFY)
-	int getTraitMovementChange(int i) const;
-#endif
 	int getResourceQuantityRequirement(int i) const;
 
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
@@ -1339,9 +1336,6 @@ protected:
 	// Arrays
 	int* m_piYieldChange;
 	int* m_piTechMovementChange;
-#if defined(TRAITIFY)
-	int* m_piTraitMovementChange;
-#endif
 	int* m_piResourceQuantityRequirements;
 
 private:

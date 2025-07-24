@@ -723,6 +723,10 @@ void CvPlayer::init(PlayerTypes eID)
 		ChangeTraitExtraLeagueVotes(GetPlayerTraits()->GetNumExtraLeagueVotes()); // Vatican Trait
 		changeHalfMoreSpecialistUnhappinessCount(GetPlayerTraits()->IsHalfMoreSpecialistUnhappiness()); // Mysore Trait
 		ChangeMinorFriendshipAnchorMod(GetPlayerTraits()->GetMinorFriendshipMinimum()); // Tonga Trait
+		for (int iR = 0; iR < GC.getNumRouteInfos(); iR++)
+		{
+			GET_TEAM(getTeam()).changeRouteChange(((RouteTypes)iR), GetPlayerTraits()->GetRouteMovementChange((RouteTypes)iR)); // Franks Trait
+		}
 #endif
 
 		for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)

@@ -190,6 +190,7 @@
 					<CheckBox ID="ClockCheckbox" String="12:34" LeadingOffset="-10" WrapWidth="450" Anchor="R,C" Offset="-30.0"/>
 				</Image>
 				<CheckBox ID="LRAnchorToggleCheckbox" Anchor="R,C" String="TXT_KEY_DIPLOSTACK_LR_SWITCH_OPTION" LeadingOffset="-10" WrapWidth="450"/>
+				<CheckBox ID="DisplayAllGreatPeople" Anchor="R,C" String="TXT_KEY_OPSCREEN_DISPLAY_ALL_GREAT_PEOPLE" LeadingOffset="-10" WrapWidth="450" />
 			</Stack>
 
 			<Stack Anchor="R,T" Offset="110,50" Padding="10" >

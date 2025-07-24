@@ -3054,7 +3054,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 #ifdef LEKMOD_BUILDING_GOLD_COST
-#ifndef TRAITIFY // Added support to allow a building that can not normally be made, and has an override value that would make it so, able to be made.
+#if !defined(TRAITIFY) // Added support to allow a building that can not normally be made, and has an override value that would make it so, able to be made.
 	// Does this building have no production cost, but has a gold cost?
 	if (pkBuildingInfo->GetProductionCost() <= 0 && pkBuildingInfo->GetGoldCost() <= 0)
 	{
@@ -5683,7 +5683,6 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 		return -1;
 	if (iCost == 0)
 	{
-	
 		iCost = GetPurchaseCostFromProduction(getProductionNeeded(eBuilding));
 		iCost *= (100 + iModifier);
 		iCost /= 100;
@@ -5701,9 +5700,6 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 		
 		iCost *= GC.getGame().getGameSpeedInfo().getConstructPercent();
 		iCost /= 100;
-
-		
-
 	}
 #else
 	int iModifier = pkBuildingInfo->GetHurryCostModifier();
@@ -5776,8 +5772,8 @@ int CvCity::GetFaithPurchaseCost(BuildingTypes eBuilding)
 	// Make the number not be funky
 #if !defined(MISC_CHANGES) // new Global value for FAITH_PURCHASE_VISIBLE_DIVISOR
 	int iDivisor = /*10*/ GC.getGOLD_PURCHASE_VISIBLE_DIVISOR();
-#else
-	int iDivisor = /*5*/ GC.getFAITH_PURCHASE_VISIBLE_DIVISOR(); // This has been put into XML, as FAITH_PURCHASE_VISIBLE_DIVISOR();
+#else // multipies by 2 for Buildings
+	int iDivisor = /*5*/ GC.getFAITH_PURCHASE_VISIBLE_DIVISOR() * 2; // This has been put into XML, as FAITH_PURCHASE_VISIBLE_DIVISOR();
 #endif
 	iCost /= iDivisor;
 	iCost *= iDivisor;
