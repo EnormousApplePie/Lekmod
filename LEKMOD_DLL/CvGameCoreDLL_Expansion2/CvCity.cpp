@@ -15563,7 +15563,7 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 				return false;
 			}
 #if defined(TRAITIFY) // Setting a Building to be unpurchaseable via gold. 
-			if (GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuildingType, YIELD_GOLD) < 0)
+			else if (GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuildingType, YIELD_GOLD) < 0)
 			{
 				//Can't Purchase if the trait says so
 				return false;
