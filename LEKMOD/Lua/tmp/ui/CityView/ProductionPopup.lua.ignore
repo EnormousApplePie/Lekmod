@@ -820,7 +820,7 @@ function UpdateWindow( city )
 			Controls.ProductionPortrait:SetHide( false );
 			
 			-- Info for this thing
-			strToolTip = Locale.ConvertTextKey(GetHelpTextForUnit(unitProduction, true)) .. "[NEWLINE][NEWLINE]" .. strToolTip;
+			strToolTip = Locale.ConvertTextKey(GetHelpTextForUnit(unitProduction, true, city)) .. "[NEWLINE][NEWLINE]" .. strToolTip;
 			
 		else
 			Controls.ProductionPortrait:SetHide( true );
@@ -1232,7 +1232,7 @@ function AddProductionButton( id, description, orderType, turnsLeft, column, isD
 		
 		-- Tooltip
 		local bIncludeRequirementsInfo = false;
-		local strToolTip = Locale.ConvertTextKey(GetHelpTextForUnit(id, bIncludeRequirementsInfo));
+		local strToolTip = Locale.ConvertTextKey(GetHelpTextForUnit(id, bIncludeRequirementsInfo, pCity));
 		
 		-- Disabled help text
 		if (isDisabled) then

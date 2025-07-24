@@ -356,17 +356,20 @@ local function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 	-- Cost:
 	local costTip
 	if productionCost > 1 then -- Production cost
-		if not unit.PurchaseOnly then
-			costTip = productionCost .. "[ICON_PRODUCTION]"
-		end
 		local goldCost = 0
 		if city then
+			productionCost = city:GetUnitProductionNeeded( unitID )
 			goldCost = city:GetUnitPurchaseCost( unitID )
 		elseif (unit.HurryCostModifier or 0) > 0 then
 			goldCost = (productionCost * GameDefines.GOLD_PURCHASE_GOLD_PER_PRODUCTION ) ^ GameDefines.HURRY_GOLD_PRODUCTION_EXPONENT
 			goldCost = (unit.HurryCostModifier + 100) * goldCost / 100
 			goldCost = goldCost - ( goldCost % GameDefines.GOLD_PURCHASE_VISIBLE_DIVISOR )
 		end
+		-- Add Production to the CostTip if not PurchaseOnly
+		if not unit.PurchaseOnly then
+			costTip = productionCost .. "[ICON_PRODUCTION]"
+		end
+		-- Add Gold to the CostTip if > 0
 		if goldCost > 0 then
 			if costTip then
 				costTip = costTip .. ("(%i%%)"):format(productionCost*100/goldCost)
@@ -379,7 +382,7 @@ local function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 				costTip = goldCost .. g_currencyIcon
 			end
 		end
-	end -- production cost
+	end -- production & Gold cost
 	if g_isReligionEnabled then -- Faith cost
 		local faithCost = 0
 		if city then
