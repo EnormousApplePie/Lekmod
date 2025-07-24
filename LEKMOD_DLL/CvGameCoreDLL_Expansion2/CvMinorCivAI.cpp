@@ -5456,10 +5456,6 @@ void CvMinorCivAI::SetFriendshipWithMajorTimes100(PlayerTypes ePlayer, int iNum,
 	CvAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative (invalid Index)");
 	CvAssertMsg(ePlayer < MAX_MAJOR_CIVS, "ePlayer is expected to be within maximum bounds (invalid Index)");
 	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return;
-#ifdef AI_CANT_COUP
-	if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_COUP") && !GET_PLAYER(ePlayer).isHuman())
-		return;
-#endif
 
 	int iOldEffectiveFriendship = GetEffectiveFriendshipWithMajorTimes100(ePlayer);
 
@@ -5502,7 +5498,15 @@ void CvMinorCivAI::ChangeFriendshipWithMajorTimes100(PlayerTypes ePlayer, int iC
 				iChange /= 100;
 			}
 		}
-
+#ifdef AI_CANT_COUP
+		if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_COUP") && !GET_PLAYER(ePlayer).isHuman())
+		{
+			if (iChange > 0)
+			{
+				iChange = 0;
+			}
+		}
+#endif
 		SetFriendshipWithMajorTimes100(ePlayer, GetBaseFriendshipWithMajorTimes100(ePlayer) + iChange, bFromQuest);
 	}
 }

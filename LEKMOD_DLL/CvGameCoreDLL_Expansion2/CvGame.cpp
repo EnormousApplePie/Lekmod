@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -8339,7 +8339,7 @@ void CvGame::doTurn()
 	updateScore();
 
 #ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
-#ifndef LEKMOD_v34
+#ifndef LEKMOD_v34 // Process deals after happiness is applied.
 	m_kGameDeals.DoTurn();
 #endif
 #endif
@@ -8466,6 +8466,12 @@ void CvGame::doTurn()
 			}
 		}
 	}
+#endif
+
+#ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+#ifdef LEKMOD_v34 // Process deals after happiness is applied.
+	m_kGameDeals.DoTurn();
+#endif
 #endif
 
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
