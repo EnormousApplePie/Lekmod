@@ -1872,7 +1872,7 @@ void CvUnitCombat::GenerateAirCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender, 
 #ifdef LEKMOD_AI_XP_CAP
 	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
 	{
-		iMaxXP = (GET_PLAYER(kAttacker.getOwner()).isHuman()) ? 30 : 1000;
+		iMaxXP = (!GET_PLAYER(kAttacker.getOwner()).isHuman()) ? 30 : 1000;
 	}
 	pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, iMaxXP);
 #endif
