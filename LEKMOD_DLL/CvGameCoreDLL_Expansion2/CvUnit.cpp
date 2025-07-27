@@ -11576,9 +11576,9 @@ int CvUnit::baseMoves(DomainTypes eIntoDomain /* = NO_DOMAIN */) const
 	}
 
 #ifdef TRAITIFY
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange + iExtraGlobalMoveChangeFriendlyCivilian);
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + m_iExtraNavalMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange + iExtraGlobalMoveChangeFriendlyCivilian);
 #else
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + m_iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
 #endif
 
 #else
