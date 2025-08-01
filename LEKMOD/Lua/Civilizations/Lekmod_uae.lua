@@ -51,7 +51,7 @@ function lekmod_uae_trade_route_gold(player_id)
             print("popup text")
             local hex_position = ToHexFromGrid{x = unit_plot:GetX(), y = unit_plot:GetY()}
             local world_position = HexToWorld(hex_position)
-            Events.AddPopupTextEvent(world_position, "[COLOR_YIELD_GOLD]+3 [ICON_GOLD] Gold[ENDCOLOR]")
+            Events.AddPopupTextEvent(world_position, "[COLOR_YIELD_GOLD]+3 [ICON_GOLD][ENDCOLOR]")
          end
       end
 

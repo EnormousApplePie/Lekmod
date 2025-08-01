@@ -76,7 +76,7 @@ local Teams = Teams
 local TradeableItems = TradeableItems
 local UI = UI
 local YieldTypes = YieldTypes
-local gp_keys = {"UNITCLASS_SCIENTIST","UNITCLASS_ENGINEER","UNITCLASS_MERCHANT","UNITCLASS_ARTIST","UNITCLASS_WRITER","UNITCLASS_MUSICIAN"}
+
 -------------------------------
 -- Globals
 -------------------------------
@@ -168,8 +168,7 @@ end
 
 -- TODO: optimize loop, add capability for several simultaneous gp's
 local function ScanGP( player )
-	local gps = {}
-	--local gp = nil
+	local gp = nil
 	for city in player:Cities() do
 
 		for specialist in GameInfo.Specialists() do
@@ -262,9 +261,8 @@ local function ScanGP( player )
 
 				if gpChange > 0 then
 					local gpTurns = math_ceil( (gpThreshold - gpProgress) / gpChange )
-					gp = gps[gpuClass] 
 					if not gp or gpTurns < gp.Turns then
-						gps[gpuClass] = {
+						gp = {
 							Turns = gpTurns,
 							City = city,
 							Class = unitClass,
@@ -278,9 +276,10 @@ local function ScanGP( player )
 			end -- unitClass
 		end -- specialist
 	end -- city
-	return gps
+	return gp
 end
-local function ScanSingleGP( player )
+
+local function ScanScientist( player )
 	local gp = nil
 	for city in player:Cities() do
 
@@ -288,7 +287,567 @@ local function ScanSingleGP( player )
 
 			local gpuClass = specialist.GreatPeopleUnitClass	-- nil / UNITCLASS_ARTIST / UNITCLASS_SCIENTIST / UNITCLASS_MERCHANT / UNITCLASS_ENGINEER ...
 			local unitClass = gpuClass and GameInfo.UnitClasses[gpuClass]
-			if unitClass then
+			if unitClass and gpuClass == "UNITCLASS_SCIENTIST" then
+				local gpThreshold = city:GetSpecialistUpgradeThreshold(unitClass.ID)
+				local gpProgress = city:GetSpecialistGreatPersonProgressTimes100(specialist.ID) / 100
+				local gpChange = specialist.GreatPeopleRateChange * city:GetSpecialistCount( specialist.ID )
+				for building in GameInfo.Buildings{ SpecialistType = specialist.Type } do
+					if city:IsHasBuilding(building.ID) then
+						gpChange = gpChange + building.GreatPeopleRateChange
+					end
+				end
+
+				local gpChangePlayerMod = player:GetGreatPeopleRateModifier()
+				local gpChangeCityMod = city:GetGreatPeopleRateModifier()
+				local gpChangePolicyMod = 0
+				local gpChangeWorldCongressMod = 0
+				local gpChangeGoldenAgeMod = 0
+				local isGoldenAge = player:GetGoldenAgeTurns() > 0
+
+				if bnw_mode then
+					-- Generic GP mods
+
+					gpChangePolicyMod = player:GetPolicyGreatPeopleRateModifier()
+
+					local worldCongress = (Game.GetNumActiveLeagues() > 0) and Game.GetActiveLeague()
+
+					-- GP mods by type
+					if specialist.GreatPeopleUnitClass == "UNITCLASS_WRITER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatWriterRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatWriterRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatWriterRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatWriterRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ARTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatArtistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatArtistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatArtistRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatArtistRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MUSICIAN" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMusicianRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMusicianRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatMusicianRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatMusicianRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_SCIENTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatScientistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatScientistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MERCHANT" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMerchantRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMerchantRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ENGINEER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatEngineerRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatEngineerRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					end
+
+					-- Player mod actually includes policy mod and World Congress mod, so separate them for tooltip
+
+					gpChangePlayerMod = gpChangePlayerMod - gpChangePolicyMod - gpChangeWorldCongressMod
+
+				elseif gpuClass == "UNITCLASS_SCIENTIST" then
+
+					gpChangePlayerMod = gpChangePlayerMod + player:GetTraitGreatScientistRateModifier()
+
+				end
+
+				gpChange = gpChange * (1 + (gpChangePlayerMod + gpChangePolicyMod + gpChangeWorldCongressMod + gpChangeCityMod + gpChangeGoldenAgeMod) / 100)
+
+				if gpChange > 0 then
+					local gpTurns = math_ceil( (gpThreshold - gpProgress) / gpChange )
+					if not gp or gpTurns < gp.Turns then
+						gp = {
+							Turns = gpTurns,
+							City = city,
+							Class = unitClass,
+							Progress = gpProgress,
+							Threshold = gpThreshold,
+							Change = gpChange,
+						}
+					end
+				end
+
+			end -- unitClass
+		end -- specialist
+	end -- city
+	return gp
+end
+
+local function ScanEngineer( player )
+	local gp = nil
+	for city in player:Cities() do
+
+		for specialist in GameInfo.Specialists() do
+
+			local gpuClass = specialist.GreatPeopleUnitClass	-- nil / UNITCLASS_ARTIST / UNITCLASS_SCIENTIST / UNITCLASS_MERCHANT / UNITCLASS_ENGINEER ...
+			local unitClass = gpuClass and GameInfo.UnitClasses[gpuClass]
+			if unitClass and gpuClass == "UNITCLASS_ENGINEER" then
+				local gpThreshold = city:GetSpecialistUpgradeThreshold(unitClass.ID)
+				local gpProgress = city:GetSpecialistGreatPersonProgressTimes100(specialist.ID) / 100
+				local gpChange = specialist.GreatPeopleRateChange * city:GetSpecialistCount( specialist.ID )
+				for building in GameInfo.Buildings{ SpecialistType = specialist.Type } do
+					if city:IsHasBuilding(building.ID) then
+						gpChange = gpChange + building.GreatPeopleRateChange
+					end
+				end
+
+				local gpChangePlayerMod = player:GetGreatPeopleRateModifier()
+				local gpChangeCityMod = city:GetGreatPeopleRateModifier()
+				local gpChangePolicyMod = 0
+				local gpChangeWorldCongressMod = 0
+				local gpChangeGoldenAgeMod = 0
+				local isGoldenAge = player:GetGoldenAgeTurns() > 0
+
+				if bnw_mode then
+					-- Generic GP mods
+
+					gpChangePolicyMod = player:GetPolicyGreatPeopleRateModifier()
+
+					local worldCongress = (Game.GetNumActiveLeagues() > 0) and Game.GetActiveLeague()
+
+					-- GP mods by type
+					if specialist.GreatPeopleUnitClass == "UNITCLASS_WRITER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatWriterRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatWriterRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatWriterRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatWriterRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ARTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatArtistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatArtistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatArtistRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatArtistRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MUSICIAN" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMusicianRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMusicianRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatMusicianRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatMusicianRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_SCIENTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatScientistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatScientistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MERCHANT" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMerchantRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMerchantRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ENGINEER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatEngineerRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatEngineerRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					end
+
+					-- Player mod actually includes policy mod and World Congress mod, so separate them for tooltip
+
+					gpChangePlayerMod = gpChangePlayerMod - gpChangePolicyMod - gpChangeWorldCongressMod
+
+				elseif gpuClass == "UNITCLASS_SCIENTIST" then
+
+					gpChangePlayerMod = gpChangePlayerMod + player:GetTraitGreatScientistRateModifier()
+
+				end
+
+				gpChange = gpChange * (1 + (gpChangePlayerMod + gpChangePolicyMod + gpChangeWorldCongressMod + gpChangeCityMod + gpChangeGoldenAgeMod) / 100)
+
+				if gpChange > 0 then
+					local gpTurns = math_ceil( (gpThreshold - gpProgress) / gpChange )
+					if not gp or gpTurns < gp.Turns then
+						gp = {
+							Turns = gpTurns,
+							City = city,
+							Class = unitClass,
+							Progress = gpProgress,
+							Threshold = gpThreshold,
+							Change = gpChange,
+						}
+					end
+				end
+
+			end -- unitClass
+		end -- specialist
+	end -- city
+	return gp
+end
+
+local function ScanMerchant( player )
+	local gp = nil
+	for city in player:Cities() do
+
+		for specialist in GameInfo.Specialists() do
+
+			local gpuClass = specialist.GreatPeopleUnitClass	-- nil / UNITCLASS_ARTIST / UNITCLASS_SCIENTIST / UNITCLASS_MERCHANT / UNITCLASS_ENGINEER ...
+			local unitClass = gpuClass and GameInfo.UnitClasses[gpuClass]
+			if unitClass and gpuClass == "UNITCLASS_MERCHANT" then
+				local gpThreshold = city:GetSpecialistUpgradeThreshold(unitClass.ID)
+				local gpProgress = city:GetSpecialistGreatPersonProgressTimes100(specialist.ID) / 100
+				local gpChange = specialist.GreatPeopleRateChange * city:GetSpecialistCount( specialist.ID )
+				for building in GameInfo.Buildings{ SpecialistType = specialist.Type } do
+					if city:IsHasBuilding(building.ID) then
+						gpChange = gpChange + building.GreatPeopleRateChange
+					end
+				end
+
+				local gpChangePlayerMod = player:GetGreatPeopleRateModifier()
+				local gpChangeCityMod = city:GetGreatPeopleRateModifier()
+				local gpChangePolicyMod = 0
+				local gpChangeWorldCongressMod = 0
+				local gpChangeGoldenAgeMod = 0
+				local isGoldenAge = player:GetGoldenAgeTurns() > 0
+
+				if bnw_mode then
+					-- Generic GP mods
+
+					gpChangePolicyMod = player:GetPolicyGreatPeopleRateModifier()
+
+					local worldCongress = (Game.GetNumActiveLeagues() > 0) and Game.GetActiveLeague()
+
+					-- GP mods by type
+					if specialist.GreatPeopleUnitClass == "UNITCLASS_WRITER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatWriterRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatWriterRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatWriterRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatWriterRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ARTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatArtistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatArtistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatArtistRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatArtistRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MUSICIAN" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMusicianRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMusicianRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatMusicianRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatMusicianRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_SCIENTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatScientistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatScientistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MERCHANT" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMerchantRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMerchantRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ENGINEER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatEngineerRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatEngineerRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					end
+
+					-- Player mod actually includes policy mod and World Congress mod, so separate them for tooltip
+
+					gpChangePlayerMod = gpChangePlayerMod - gpChangePolicyMod - gpChangeWorldCongressMod
+
+				elseif gpuClass == "UNITCLASS_SCIENTIST" then
+
+					gpChangePlayerMod = gpChangePlayerMod + player:GetTraitGreatScientistRateModifier()
+
+				end
+
+				gpChange = gpChange * (1 + (gpChangePlayerMod + gpChangePolicyMod + gpChangeWorldCongressMod + gpChangeCityMod + gpChangeGoldenAgeMod) / 100)
+
+				if gpChange > 0 then
+					local gpTurns = math_ceil( (gpThreshold - gpProgress) / gpChange )
+					if not gp or gpTurns < gp.Turns then
+						gp = {
+							Turns = gpTurns,
+							City = city,
+							Class = unitClass,
+							Progress = gpProgress,
+							Threshold = gpThreshold,
+							Change = gpChange,
+						}
+					end
+				end
+
+			end -- unitClass
+		end -- specialist
+	end -- city
+	return gp
+end
+
+local function ScanWriter( player )
+	local gp = nil
+	for city in player:Cities() do
+
+		for specialist in GameInfo.Specialists() do
+
+			local gpuClass = specialist.GreatPeopleUnitClass	-- nil / UNITCLASS_ARTIST / UNITCLASS_SCIENTIST / UNITCLASS_MERCHANT / UNITCLASS_ENGINEER ...
+			local unitClass = gpuClass and GameInfo.UnitClasses[gpuClass]
+			if unitClass and gpuClass == "UNITCLASS_WRITER" then
+				local gpThreshold = city:GetSpecialistUpgradeThreshold(unitClass.ID)
+				local gpProgress = city:GetSpecialistGreatPersonProgressTimes100(specialist.ID) / 100
+				local gpChange = specialist.GreatPeopleRateChange * city:GetSpecialistCount( specialist.ID )
+				for building in GameInfo.Buildings{ SpecialistType = specialist.Type } do
+					if city:IsHasBuilding(building.ID) then
+						gpChange = gpChange + building.GreatPeopleRateChange
+					end
+				end
+
+				local gpChangePlayerMod = player:GetGreatPeopleRateModifier()
+				local gpChangeCityMod = city:GetGreatPeopleRateModifier()
+				local gpChangePolicyMod = 0
+				local gpChangeWorldCongressMod = 0
+				local gpChangeGoldenAgeMod = 0
+				local isGoldenAge = player:GetGoldenAgeTurns() > 0
+
+				if bnw_mode then
+					-- Generic GP mods
+
+					gpChangePolicyMod = player:GetPolicyGreatPeopleRateModifier()
+
+					local worldCongress = (Game.GetNumActiveLeagues() > 0) and Game.GetActiveLeague()
+
+					-- GP mods by type
+					if specialist.GreatPeopleUnitClass == "UNITCLASS_WRITER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatWriterRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatWriterRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatWriterRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatWriterRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ARTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatArtistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatArtistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatArtistRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatArtistRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MUSICIAN" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMusicianRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMusicianRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatMusicianRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatMusicianRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_SCIENTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatScientistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatScientistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MERCHANT" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMerchantRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMerchantRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ENGINEER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatEngineerRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatEngineerRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					end
+
+					-- Player mod actually includes policy mod and World Congress mod, so separate them for tooltip
+
+					gpChangePlayerMod = gpChangePlayerMod - gpChangePolicyMod - gpChangeWorldCongressMod
+
+				elseif gpuClass == "UNITCLASS_SCIENTIST" then
+
+					gpChangePlayerMod = gpChangePlayerMod + player:GetTraitGreatScientistRateModifier()
+
+				end
+
+				gpChange = gpChange * (1 + (gpChangePlayerMod + gpChangePolicyMod + gpChangeWorldCongressMod + gpChangeCityMod + gpChangeGoldenAgeMod) / 100)
+
+				if gpChange > 0 then
+					local gpTurns = math_ceil( (gpThreshold - gpProgress) / gpChange )
+					if not gp or gpTurns < gp.Turns then
+						gp = {
+							Turns = gpTurns,
+							City = city,
+							Class = unitClass,
+							Progress = gpProgress,
+							Threshold = gpThreshold,
+							Change = gpChange,
+						}
+					end
+				end
+
+			end -- unitClass
+		end -- specialist
+	end -- city
+	return gp
+end
+
+local function ScanArtist( player )
+	local gp = nil
+	for city in player:Cities() do
+
+		for specialist in GameInfo.Specialists() do
+
+			local gpuClass = specialist.GreatPeopleUnitClass	-- nil / UNITCLASS_ARTIST / UNITCLASS_SCIENTIST / UNITCLASS_MERCHANT / UNITCLASS_ENGINEER ...
+			local unitClass = gpuClass and GameInfo.UnitClasses[gpuClass]
+			if unitClass and gpuClass == "UNITCLASS_ARTIST" then
+				local gpThreshold = city:GetSpecialistUpgradeThreshold(unitClass.ID)
+				local gpProgress = city:GetSpecialistGreatPersonProgressTimes100(specialist.ID) / 100
+				local gpChange = specialist.GreatPeopleRateChange * city:GetSpecialistCount( specialist.ID )
+				for building in GameInfo.Buildings{ SpecialistType = specialist.Type } do
+					if city:IsHasBuilding(building.ID) then
+						gpChange = gpChange + building.GreatPeopleRateChange
+					end
+				end
+
+				local gpChangePlayerMod = player:GetGreatPeopleRateModifier()
+				local gpChangeCityMod = city:GetGreatPeopleRateModifier()
+				local gpChangePolicyMod = 0
+				local gpChangeWorldCongressMod = 0
+				local gpChangeGoldenAgeMod = 0
+				local isGoldenAge = player:GetGoldenAgeTurns() > 0
+
+				if bnw_mode then
+					-- Generic GP mods
+
+					gpChangePolicyMod = player:GetPolicyGreatPeopleRateModifier()
+
+					local worldCongress = (Game.GetNumActiveLeagues() > 0) and Game.GetActiveLeague()
+
+					-- GP mods by type
+					if specialist.GreatPeopleUnitClass == "UNITCLASS_WRITER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatWriterRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatWriterRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatWriterRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatWriterRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ARTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatArtistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatArtistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatArtistRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatArtistRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MUSICIAN" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMusicianRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMusicianRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetArtsyGreatPersonRateModifier()
+						end
+						if isGoldenAge and player:GetGoldenAgeGreatMusicianRateModifier() > 0 then
+							gpChangeGoldenAgeMod = gpChangeGoldenAgeMod + player:GetGoldenAgeGreatMusicianRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_SCIENTIST" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatScientistRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatScientistRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_MERCHANT" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatMerchantRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatMerchantRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					elseif specialist.GreatPeopleUnitClass == "UNITCLASS_ENGINEER" then
+						gpChangePlayerMod = gpChangePlayerMod + player:GetGreatEngineerRateModifier()
+						gpChangePolicyMod = gpChangePolicyMod + player:GetPolicyGreatEngineerRateModifier()
+						if worldCongress then
+							gpChangeWorldCongressMod = gpChangeWorldCongressMod + worldCongress:GetScienceyGreatPersonRateModifier()
+						end
+					end
+
+					-- Player mod actually includes policy mod and World Congress mod, so separate them for tooltip
+
+					gpChangePlayerMod = gpChangePlayerMod - gpChangePolicyMod - gpChangeWorldCongressMod
+
+				elseif gpuClass == "UNITCLASS_SCIENTIST" then
+
+					gpChangePlayerMod = gpChangePlayerMod + player:GetTraitGreatScientistRateModifier()
+
+				end
+
+				gpChange = gpChange * (1 + (gpChangePlayerMod + gpChangePolicyMod + gpChangeWorldCongressMod + gpChangeCityMod + gpChangeGoldenAgeMod) / 100)
+
+				if gpChange > 0 then
+					local gpTurns = math_ceil( (gpThreshold - gpProgress) / gpChange )
+					if not gp or gpTurns < gp.Turns then
+						gp = {
+							Turns = gpTurns,
+							City = city,
+							Class = unitClass,
+							Progress = gpProgress,
+							Threshold = gpThreshold,
+							Change = gpChange,
+						}
+					end
+				end
+
+			end -- unitClass
+		end -- specialist
+	end -- city
+	return gp
+end
+
+local function ScanMusician( player )
+	local gp = nil
+	for city in player:Cities() do
+
+		for specialist in GameInfo.Specialists() do
+
+			local gpuClass = specialist.GreatPeopleUnitClass	-- nil / UNITCLASS_ARTIST / UNITCLASS_SCIENTIST / UNITCLASS_MERCHANT / UNITCLASS_ENGINEER ...
+			local unitClass = gpuClass and GameInfo.UnitClasses[gpuClass]
+			if unitClass and gpuClass == "UNITCLASS_MUSICIAN" then
 				local gpThreshold = city:GetSpecialistUpgradeThreshold(unitClass.ID)
 				local gpProgress = city:GetSpecialistGreatPersonProgressTimes100(specialist.ID) / 100
 				local gpChange = specialist.GreatPeopleRateChange * city:GetSpecialistCount( specialist.ID )
@@ -636,56 +1195,126 @@ local function UpdateTopPanelNow()
 		-----------------------------
 		-- Update Great People
 		-----------------------------
-		local EUI_options = Modding.OpenUserData( "Enhanced User Interface Options", 1);
-		local bDisplayAllGP = EUI_options.GetValue("DB_bDisplayAllGreatPeople") or 0;
-		if bDisplayAllGP > 0 then
-			local gps = ScanGP( g_activePlayer )
-			--print("enumming gps")
-			--for k, v in pairs(gps) do
-			--	print(k,v)
-			--end
-			Controls.GpBox:SetHide(true)
-			Controls.GpIcon:SetHide(true)
-			Controls.GpTurns:SetText("")
-			for key,v in pairs(gp_keys) do
-				k = v	
-				gp = gps[k]
-				if gp then
-					Controls["GpBar_"..k]:SetPercent( gp.Progress / gp.Threshold )
-					Controls["GpBarShadow_"..k]:SetPercent( (gp.Progress+gp.Change) / gp.Threshold )
-					Controls["GpTurns_"..k]:SetText(gp.Turns)
-					Controls["GpBox_"..k]:SetHide(false)
-					local gpUnit = GameInfo.Units[ gp.Class.DefaultUnit ]
-					Controls["GpIcon_"..k]:SetHide(not (gpUnit and IconHookup(gpUnit.PortraitIndex, 45, gpUnit.IconAtlas, Controls["GpIcon_"..k])))
-				else
-					Controls["GpBox_"..k]:SetHide(true)
-					Controls["GpIcon_"..k]:SetHide(true)
-					Controls["GpTurns_"..k]:SetText("")
-				end
+		local EUI_options    = Modding.OpenUserData("Enhanced User Interface Options", 1)
+		local bDisplayAllGP  = (EUI_options.GetValue("DB_bDisplayAllGreatPeople") == 1)
+		local gp;
 
-			end
+		if bDisplayAllGP then
+		    Controls.GpBox:      SetHide(true)
+		    Controls.GpIcon:     SetHide(true)
+		    Controls.GpTurns:    SetText("")
+		
+		    -- Scientist
+		    gp = ScanScientist(g_activePlayer)
+		    if gp then
+		        Controls.ScientistBar:       SetPercent( gp.Progress   / gp.Threshold )
+		        Controls.ScientistBarShadow: SetPercent((gp.Progress + gp.Change) / gp.Threshold)
+		        Controls.ScientistTurns:     SetText( gp.Turns )
+		        Controls.ScientistBox:       SetHide(false)
+		        local u = GameInfo.Units[ gp.Class.DefaultUnit ]
+		        Controls.ScientistIcon:SetHide(not (u and IconHookup(u.PortraitIndex,45,u.IconAtlas,Controls.ScientistIcon)))
+		    else
+		        Controls.ScientistBox:   SetHide(true)
+		        Controls.ScientistIcon:  SetHide(true)
+		        Controls.ScientistTurns: SetText("")
+		    end
+		
+		    -- Engineer
+		    gp = ScanEngineer(g_activePlayer)
+		    if gp then
+		        Controls.EngineerBar:       SetPercent( gp.Progress   / gp.Threshold )
+		        Controls.EngineerBarShadow: SetPercent((gp.Progress + gp.Change) / gp.Threshold)
+		        Controls.EngineerTurns:     SetText( gp.Turns )
+		        Controls.EngineerBox:       SetHide(false)
+		        local u = GameInfo.Units[ gp.Class.DefaultUnit ]
+		        Controls.EngineerIcon:SetHide(not (u and IconHookup(u.PortraitIndex,45,u.IconAtlas,Controls.EngineerIcon)))
+		    else
+		        Controls.EngineerBox:    SetHide(true)
+		        Controls.EngineerIcon:   SetHide(true)
+		        Controls.EngineerTurns:  SetText("")
+		    end
+		
+		    -- Merchant
+		    gp = ScanMerchant(g_activePlayer)
+		    if gp then
+		        Controls.MerchantBar:       SetPercent( gp.Progress   / gp.Threshold )
+		        Controls.MerchantBarShadow: SetPercent((gp.Progress + gp.Change) / gp.Threshold)
+		        Controls.MerchantTurns:     SetText( gp.Turns )
+		        Controls.MerchantBox:       SetHide(false)
+		        local u = GameInfo.Units[ gp.Class.DefaultUnit ]
+		        Controls.MerchantIcon:SetHide(not (u and IconHookup(u.PortraitIndex,45,u.IconAtlas,Controls.MerchantIcon)))
+		    else
+		        Controls.MerchantBox:    SetHide(true)
+		        Controls.MerchantIcon:   SetHide(true)
+		        Controls.MerchantTurns:  SetText("")
+		    end
+		
+		    -- Writer
+		    gp = ScanWriter(g_activePlayer)
+		    if gp then
+		        Controls.WriterBar:       SetPercent( gp.Progress   / gp.Threshold )
+		        Controls.WriterBarShadow: SetPercent((gp.Progress + gp.Change) / gp.Threshold)
+		        Controls.WriterTurns:     SetText( gp.Turns )
+		        Controls.WriterBox:       SetHide(false)
+		        local u = GameInfo.Units[ gp.Class.DefaultUnit ]
+		        Controls.WriterIcon:SetHide(not (u and IconHookup(u.PortraitIndex,45,u.IconAtlas,Controls.WriterIcon)))
+		    else
+		        Controls.WriterBox:      SetHide(true)
+		        Controls.WriterIcon:     SetHide(true)
+		        Controls.WriterTurns:   SetText("")
+		    end
+		
+		    -- Artist
+		    gp = ScanArtist(g_activePlayer)
+		    if gp then
+		        Controls.ArtistBar:       SetPercent( gp.Progress   / gp.Threshold )
+		        Controls.ArtistBarShadow: SetPercent((gp.Progress + gp.Change) / gp.Threshold)
+		        Controls.ArtistTurns:     SetText( gp.Turns )
+		        Controls.ArtistBox:       SetHide(false)
+		        local u = GameInfo.Units[ gp.Class.DefaultUnit ]
+		        Controls.ArtistIcon:SetHide(not (u and IconHookup(u.PortraitIndex,45,u.IconAtlas,Controls.ArtistIcon)))
+		    else
+		        Controls.ArtistBox:      SetHide(true)
+		        Controls.ArtistIcon:     SetHide(true)
+		        Controls.ArtistTurns:   SetText("")
+		    end
+		
+		    -- Musician
+		    gp = ScanMusician(g_activePlayer)
+		    if gp then
+		        Controls.MusicianBar:       SetPercent( gp.Progress   / gp.Threshold )
+		        Controls.MusicianBarShadow: SetPercent((gp.Progress + gp.Change) / gp.Threshold)
+		        Controls.MusicianTurns:     SetText( gp.Turns )
+		        Controls.MusicianBox:       SetHide(false)
+		        local u = GameInfo.Units[ gp.Class.DefaultUnit ]
+		        Controls.MusicianIcon:SetHide(not (u and IconHookup(u.PortraitIndex,45,u.IconAtlas,Controls.MusicianIcon)))
+		    else
+		        Controls.MusicianBox:    SetHide(true)
+		        Controls.MusicianIcon:   SetHide(true)
+		        Controls.MusicianTurns:  SetText("")
+		    end
+		
 		else
-			local gp = ScanSingleGP( g_activePlayer )
-			if gp then
-				Controls.GpBar:SetPercent( gp.Progress / gp.Threshold )
-				Controls.GpBarShadow:SetPercent( (gp.Progress+gp.Change) / gp.Threshold )
-				Controls.GpTurns:SetText(gp.Turns)
-				Controls.GpBox:SetHide(false)
-				local gpUnit = GameInfo.Units[ gp.Class.DefaultUnit ]
-				Controls.GpIcon:SetHide(not (gpUnit and IconHookup(gpUnit.PortraitIndex, 45, gpUnit.IconAtlas, Controls.GpIcon)))
-			else
-				Controls.GpBox:SetHide(true)
-				Controls.GpIcon:SetHide(true)
-				Controls.GpTurns:SetText("")
-			end
-			local gps = ScanGP( g_activePlayer )
-			for key,v in pairs(gp_keys) do
-				k = v	
-				gp = gps[k]
-				Controls["GpBox_"..k]:SetHide(true)
-				Controls["GpIcon_"..k]:SetHide(true)
-				Controls["GpTurns_"..k]:SetText("")
-			end
+		    Controls.ScientistBox:   SetHide(true); Controls.ScientistIcon:  SetHide(true); Controls.ScientistTurns: SetText("")
+		    Controls.EngineerBox:    SetHide(true); Controls.EngineerIcon:   SetHide(true); Controls.EngineerTurns:  SetText("")
+		    Controls.MerchantBox:    SetHide(true); Controls.MerchantIcon:   SetHide(true); Controls.MerchantTurns:  SetText("")
+		    Controls.WriterBox:      SetHide(true); Controls.WriterIcon:     SetHide(true); Controls.WriterTurns:    SetText("")
+		    Controls.ArtistBox:      SetHide(true); Controls.ArtistIcon:     SetHide(true); Controls.ArtistTurns:    SetText("")
+		    Controls.MusicianBox:    SetHide(true); Controls.MusicianIcon:   SetHide(true); Controls.MusicianTurns:  SetText("")
+		
+		    gp = ScanGP(g_activePlayer)
+		    if gp then
+		        Controls.GpBar:       SetPercent( gp.Progress   / gp.Threshold )
+		        Controls.GpBarShadow: SetPercent((gp.Progress + gp.Change) / gp.Threshold)
+		        Controls.GpTurns:     SetText( gp.Turns )
+		        Controls.GpBox:       SetHide(false)
+		        local u = GameInfo.Units[ gp.Class.DefaultUnit ]
+		        Controls.GpIcon:SetHide(not (u and IconHookup(u.PortraitIndex,45,u.IconAtlas,Controls.GpIcon)))
+		    else
+		        Controls.GpBox:    SetHide(true)
+		        Controls.GpIcon:   SetHide(true)
+		        Controls.GpTurns:  SetText("")
+		    end
 		end
 		-----------------------------
 		-- Update Alerts
@@ -1224,24 +1853,23 @@ if civ5_mode then
 	-------------------------------------------------
 	-- Great People Tooltip & Click Actions
 	-------------------------------------------------
-	-- SINGLE “NEXT GP” ICON
 	Controls.GpIcon:RegisterCallback( Mouse.eLClick,
 	function()
-		local gp = ScanSingleGP( Players[Game.GetActivePlayer()] )
+		local gp = ScanGP( Players[Game.GetActivePlayer()] )
 		if gp then
 			return UI.DoSelectCityAtPlot( gp.City:Plot() )
 		end
 	end)
 	Controls.GpIcon:RegisterCallback( Mouse.eRClick,
 	function()
-		local gp = ScanSingleGP( Players[Game.GetActivePlayer()] )
+		local gp = ScanGP( Players[Game.GetActivePlayer()] )
 		if gp then
 			return GamePedia( GameInfo.Units[ gp.Class.DefaultUnit ].Description )
 		end
 	end)
 	g_toolTipHandler.GpIcon = function()-- control )
 		local tipText = ""
-		local gp = ScanSingleGP( Players[Game.GetActivePlayer()] )
+		local gp = ScanGP( Players[Game.GetActivePlayer()] )
 		if gp then
 			local icon = GreatPeopleIcon( gp.Class.Type )
 			tipText = L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YIELD_FOOD]" .. Locale.ToUpper( gp.Class.Description ) .. "[ENDCOLOR]" )
@@ -1254,9 +1882,187 @@ if civ5_mode then
 		return setTextToolTip( tipText )
 	end
 	Controls.GpIcon:SetToolTipCallback( requestTextToolTip )
+
+	Controls.ScientistIcon:RegisterCallback( Mouse.eLClick,
+	function()
+		local gp = ScanScientist( Players[Game.GetActivePlayer()] )
+		if gp then
+			return UI.DoSelectCityAtPlot( gp.City:Plot() )
+		end
+	end)
+	Controls.ScientistIcon:RegisterCallback( Mouse.eRClick,
+	function()
+		local gp = ScanScientist( Players[Game.GetActivePlayer()] )
+		if gp then
+			return GamePedia( GameInfo.Units[ gp.Class.DefaultUnit ].Description )
+		end
+	end)
+	g_toolTipHandler.ScientistIcon = function()-- control )
+		local tipText = ""
+		local gp = ScanScientist( Players[Game.GetActivePlayer()] )
+		if gp then
+			local icon = GreatPeopleIcon( gp.Class.Type )
+			tipText = L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YIELD_FOOD]" .. Locale.ToUpper( gp.Class.Description ) .. "[ENDCOLOR]" )
+				.. " " .. gp.Progress .. icon .. " / " .. gp.Threshold .. icon .. "[NEWLINE]"
+				.. gp.City:GetName() .. S( " %+g", gp.Change ) .. icon .. " " .. L"TXT_KEY_GOLD_PERTURN_HEADING4_TITLE"
+				.. " [COLOR_YIELD_FOOD]" .. Locale.ToUpper( L( "TXT_KEY_STR_TURNS", gp.Turns ) ) .. "[ENDCOLOR]"
+		else
+			tipText = "No GP..."
+		end
+		return setTextToolTip( tipText )
+	end
+	Controls.ScientistIcon:SetToolTipCallback( requestTextToolTip )
+
+	Controls.EngineerIcon:RegisterCallback( Mouse.eLClick,
+	function()
+		local gp = ScanEngineer( Players[Game.GetActivePlayer()] )
+		if gp then
+			return UI.DoSelectCityAtPlot( gp.City:Plot() )
+		end
+	end)
+	Controls.EngineerIcon:RegisterCallback( Mouse.eRClick,
+	function()
+		local gp = ScanEngineer( Players[Game.GetActivePlayer()] )
+		if gp then
+			return GamePedia( GameInfo.Units[ gp.Class.DefaultUnit ].Description )
+		end
+	end)
+	g_toolTipHandler.EngineerIcon = function()-- control )
+		local tipText = ""
+		local gp = ScanEngineer( Players[Game.GetActivePlayer()] )
+		if gp then
+			local icon = GreatPeopleIcon( gp.Class.Type )
+			tipText = L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YIELD_FOOD]" .. Locale.ToUpper( gp.Class.Description ) .. "[ENDCOLOR]" )
+				.. " " .. gp.Progress .. icon .. " / " .. gp.Threshold .. icon .. "[NEWLINE]"
+				.. gp.City:GetName() .. S( " %+g", gp.Change ) .. icon .. " " .. L"TXT_KEY_GOLD_PERTURN_HEADING4_TITLE"
+				.. " [COLOR_YIELD_FOOD]" .. Locale.ToUpper( L( "TXT_KEY_STR_TURNS", gp.Turns ) ) .. "[ENDCOLOR]"
+		else
+			tipText = "No GP..."
+		end
+		return setTextToolTip( tipText )
+	end
+	Controls.EngineerIcon:SetToolTipCallback( requestTextToolTip )
+
+	Controls.MerchantIcon:RegisterCallback( Mouse.eLClick,
+	function()
+		local gp = ScanMerchant( Players[Game.GetActivePlayer()] )
+		if gp then
+			return UI.DoSelectCityAtPlot( gp.City:Plot() )
+		end
+	end)
+	Controls.MerchantIcon:RegisterCallback( Mouse.eRClick,
+	function()
+		local gp = ScanMerchant( Players[Game.GetActivePlayer()] )
+		if gp then
+			return GamePedia( GameInfo.Units[ gp.Class.DefaultUnit ].Description )
+		end
+	end)
+	g_toolTipHandler.MerchantIcon = function()-- control )
+		local tipText = ""
+		local gp = ScanMerchant( Players[Game.GetActivePlayer()] )
+		if gp then
+			local icon = GreatPeopleIcon( gp.Class.Type )
+			tipText = L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YIELD_FOOD]" .. Locale.ToUpper( gp.Class.Description ) .. "[ENDCOLOR]" )
+				.. " " .. gp.Progress .. icon .. " / " .. gp.Threshold .. icon .. "[NEWLINE]"
+				.. gp.City:GetName() .. S( " %+g", gp.Change ) .. icon .. " " .. L"TXT_KEY_GOLD_PERTURN_HEADING4_TITLE"
+				.. " [COLOR_YIELD_FOOD]" .. Locale.ToUpper( L( "TXT_KEY_STR_TURNS", gp.Turns ) ) .. "[ENDCOLOR]"
+		else
+			tipText = "No GP..."
+		end
+		return setTextToolTip( tipText )
+	end
+	Controls.MerchantIcon:SetToolTipCallback( requestTextToolTip )
+
+	Controls.WriterIcon:RegisterCallback( Mouse.eLClick,
+	function()
+		local gp = ScanWriter( Players[Game.GetActivePlayer()] )
+		if gp then
+			return UI.DoSelectCityAtPlot( gp.City:Plot() )
+		end
+	end)
+	Controls.WriterIcon:RegisterCallback( Mouse.eRClick,
+	function()
+		local gp = ScanWriter( Players[Game.GetActivePlayer()] )
+		if gp then
+			return GamePedia( GameInfo.Units[ gp.Class.DefaultUnit ].Description )
+		end
+	end)
+	g_toolTipHandler.WriterIcon = function()-- control )
+		local tipText = ""
+		local gp = ScanWriter( Players[Game.GetActivePlayer()] )
+		if gp then
+			local icon = GreatPeopleIcon( gp.Class.Type )
+			tipText = L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YIELD_FOOD]" .. Locale.ToUpper( gp.Class.Description ) .. "[ENDCOLOR]" )
+				.. " " .. gp.Progress .. icon .. " / " .. gp.Threshold .. icon .. "[NEWLINE]"
+				.. gp.City:GetName() .. S( " %+g", gp.Change ) .. icon .. " " .. L"TXT_KEY_GOLD_PERTURN_HEADING4_TITLE"
+				.. " [COLOR_YIELD_FOOD]" .. Locale.ToUpper( L( "TXT_KEY_STR_TURNS", gp.Turns ) ) .. "[ENDCOLOR]"
+		else
+			tipText = "No GP..."
+		end
+		return setTextToolTip( tipText )
+	end
+	Controls.WriterIcon:SetToolTipCallback( requestTextToolTip )
+
+	Controls.ArtistIcon:RegisterCallback( Mouse.eLClick,
+	function()
+		local gp = ScanArtist( Players[Game.GetActivePlayer()] )
+		if gp then
+			return UI.DoSelectCityAtPlot( gp.City:Plot() )
+		end
+	end)
+	Controls.ArtistIcon:RegisterCallback( Mouse.eRClick,
+	function()
+		local gp = ScanArtist( Players[Game.GetActivePlayer()] )
+		if gp then
+			return GamePedia( GameInfo.Units[ gp.Class.DefaultUnit ].Description )
+		end
+	end)
+	g_toolTipHandler.ArtistIcon = function()-- control )
+		local tipText = ""
+		local gp = ScanArtist( Players[Game.GetActivePlayer()] )
+		if gp then
+			local icon = GreatPeopleIcon( gp.Class.Type )
+			tipText = L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YIELD_FOOD]" .. Locale.ToUpper( gp.Class.Description ) .. "[ENDCOLOR]" )
+				.. " " .. gp.Progress .. icon .. " / " .. gp.Threshold .. icon .. "[NEWLINE]"
+				.. gp.City:GetName() .. S( " %+g", gp.Change ) .. icon .. " " .. L"TXT_KEY_GOLD_PERTURN_HEADING4_TITLE"
+				.. " [COLOR_YIELD_FOOD]" .. Locale.ToUpper( L( "TXT_KEY_STR_TURNS", gp.Turns ) ) .. "[ENDCOLOR]"
+		else
+			tipText = "No GP..."
+		end
+		return setTextToolTip( tipText )
+	end
+	Controls.ArtistIcon:SetToolTipCallback( requestTextToolTip )
+
+	Controls.MusicianIcon:RegisterCallback( Mouse.eLClick,
+	function()
+		local gp = ScanMusician( Players[Game.GetActivePlayer()] )
+		if gp then
+			return UI.DoSelectCityAtPlot( gp.City:Plot() )
+		end
+	end)
+	Controls.MusicianIcon:RegisterCallback( Mouse.eRClick,
+	function()
+		local gp = ScanMusician( Players[Game.GetActivePlayer()] )
+		if gp then
+			return GamePedia( GameInfo.Units[ gp.Class.DefaultUnit ].Description )
+		end
+	end)
+	g_toolTipHandler.MusicianIcon = function()-- control )
+		local tipText = ""
+		local gp = ScanMusician( Players[Game.GetActivePlayer()] )
+		if gp then
+			local icon = GreatPeopleIcon( gp.Class.Type )
+			tipText = L( "TXT_KEY_PROGRESS_TOWARDS", "[COLOR_YIELD_FOOD]" .. Locale.ToUpper( gp.Class.Description ) .. "[ENDCOLOR]" )
+				.. " " .. gp.Progress .. icon .. " / " .. gp.Threshold .. icon .. "[NEWLINE]"
+				.. gp.City:GetName() .. S( " %+g", gp.Change ) .. icon .. " " .. L"TXT_KEY_GOLD_PERTURN_HEADING4_TITLE"
+				.. " [COLOR_YIELD_FOOD]" .. Locale.ToUpper( L( "TXT_KEY_STR_TURNS", gp.Turns ) ) .. "[ENDCOLOR]"
+		else
+			tipText = "No GP..."
+		end
+		return setTextToolTip( tipText )
+	end
+	Controls.MusicianIcon:SetToolTipCallback( requestTextToolTip )
 	
-
-
 	-------------------------------------------------
 	-- Happiness Tooltip & Click Actions
 	-------------------------------------------------

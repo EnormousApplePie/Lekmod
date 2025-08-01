@@ -524,7 +524,9 @@ public:
 	int attackXPValue() const;
 	int defenseXPValue() const;
 	int maxXPValue() const;
-
+#if defined(NQ_NO_GG_POINTS_FROM_CS_OR_BARBS)
+	bool canEarnGlobalXP() const;
+#endif
 	int firstStrikes() const;
 	int chanceFirstStrikes() const;
 	int maxFirstStrikes() const;
