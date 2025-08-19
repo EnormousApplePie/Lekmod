@@ -1091,6 +1091,8 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 #define FULL_YIELD_FROM_KILLS
 // Display the General and Admiral Points earned from Combat.
 #define DISPLAY_GENERAL_ADMIRAL_POINTS
+// Yield Changes apply to all buildings of a Class, instead of just the civ's building for that class. Used in cases when civs can get a Unique Building of another civ, or the basic building while having a Unique.
+#define LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
 // Units now remember their Home city. Want to make more than Religious Unit remember home city Religion on Trained. This also makes Death yields pretty simple, now that I think about it.
 //#define UNITS_REMEMBER_HOME
 

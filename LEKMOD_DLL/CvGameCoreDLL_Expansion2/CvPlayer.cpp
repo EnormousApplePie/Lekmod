@@ -10561,6 +10561,7 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 	{
 		// Building modifiers
 		BuildingClassTypes eBuildingClass;
+#if !defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 		for(iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 		{
 			eBuildingClass = (BuildingClassTypes) iI;
@@ -10619,6 +10620,60 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 				}
 			}
 		}
+#else
+		for (int jJ = 0; jJ < GC.getNumBuildingInfos(); jJ++)
+		{
+			eBuilding = (BuildingTypes)jJ;
+			if (eBuilding == NO_BUILDING)
+				continue;
+			CvBuildingEntry* pkBuilding = GC.getBuildingInfo(eBuilding);
+			if (!pkBuilding)
+				continue;
+			eBuildingClass = (BuildingClassTypes)pkBuilding->GetBuildingClassType();
+			if (eBuildingClass == NO_BUILDINGCLASS)
+				continue;
+			CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+			if (!pkBuildingClassInfo)
+				continue;
+#ifdef LEKMOD_FREE_BUILDING_FIX
+			iBuildingCount = pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding);
+#else
+			iBuildingCount = pLoopCity->GetCityBuildings()->GetNumRealBuilding(eBuilding);
+#endif
+			if (iBuildingCount > 0)
+			{
+				// GJS - changed how culture accumulates for buildings
+				pLoopCity->ChangeJONSCulturePerTurnFromBuildings(pBuildingInfo->GetBuildingClassYieldChange(eBuildingClass, YIELD_CULTURE) * iBuildingCount * iChange);
+
+				// Building Class Yield Stuff
+				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					switch (iJ)
+					{
+					case YIELD_CULTURE:
+					{
+						// Skip, handled above
+						break;
+					}
+					case YIELD_FAITH:
+					{
+						pLoopCity->ChangeFaithPerTurnFromBuildings(pBuildingInfo->GetBuildingClassYieldChange(eBuildingClass, iJ) * iBuildingCount * iChange);
+						break;
+					}
+					default:
+					{
+						YieldTypes eYield = (YieldTypes)iJ;
+						int iYieldChange = pBuildingInfo->GetBuildingClassYieldChange(eBuildingClass, eYield);
+						if (iYieldChange > 0)
+							pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
+					}
+					}
+				}
+				
+			}
+		}
+#endif
+
 	}
 }
 
@@ -12011,7 +12066,7 @@ int CvPlayer::GetTotalJONSCulturePerTurnTimes100() const
 	CvPlayerTraits* pPlayerTraits = GetPlayerTraits();
 	if (isGoldenAge() && !IsGoldenAgeCultureBonusDisabled())
 	{
-		iCulturePerTurn += ((iCulturePerTurn * (GC.getGOLDEN_AGE_CULTURE_MODIFIER()) + pPlayerTraits->GetGoldenAgeCultureModifier()) / 100);
+		iCulturePerTurn += ((iCulturePerTurn * (GC.getGOLDEN_AGE_CULTURE_MODIFIER() + pPlayerTraits->GetGoldenAgeCultureModifier())) / 100);
 	}
 #endif
 	return iCulturePerTurn;
@@ -26529,7 +26584,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 #endif
 		}
 		pLoopCity->ChangeJONSCulturePerTurnFromPolicies(iCityCultureChange);
-
+#if !defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 		// Building modifiers
 		for(iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 		{
@@ -26586,6 +26641,56 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 				}
 			}
 		}
+#else
+		for (int jJ = 0; jJ < GC.getNumBuildingInfos(); jJ++)
+		{
+			eBuilding = (BuildingTypes)jJ;
+			if (eBuilding == NO_BUILDING)
+				continue;
+			CvBuildingEntry* pkBuilding = GC.getBuildingInfo(eBuilding);
+			if(!pkBuilding)
+				continue;
+			eBuildingClass = (BuildingClassTypes)pkBuilding->GetBuildingClassType();
+			if (eBuildingClass == NO_BUILDINGCLASS)
+				continue;
+			CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+			if(!pkBuildingClassInfo)
+				continue;
+			iBuildingCount = pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding);
+			if (iBuildingCount > 0)
+			{
+				// GJS - changed how culture accumulates for buildings
+				pLoopCity->ChangeJONSCulturePerTurnFromPolicies(pPolicy->GetBuildingClassCultureChange(eBuildingClass) * iBuildingCount * iChange);
+				// Building Class Yield Stuff
+				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					switch(iJ)
+					{
+					case YIELD_CULTURE:
+						// Skip, handled above
+						break;
+					case YIELD_FAITH:
+						pLoopCity->ChangeFaithPerTurnFromPolicies(pPolicy->GetBuildingClassYieldChanges(eBuildingClass, iJ) * iBuildingCount * iChange);
+						break;
+					default:
+						{
+							eYield = (YieldTypes)iJ;
+							iYieldMod = pPolicy->GetBuildingClassYieldModifiers(eBuildingClass, eYield);
+							if (iYieldMod > 0)
+							{
+								pLoopCity->changeYieldRateModifier(eYield, iYieldMod * iBuildingCount * iChange);
+							}
+							iYieldChange = pPolicy->GetBuildingClassYieldChanges(eBuildingClass, eYield);
+							if (iYieldChange != 0)
+							{
+								pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
+							}
+						}
+					}
+				}
+			}
+		}
+#endif
 	}
 
 	// Store off number of newly built cities that will get a free building

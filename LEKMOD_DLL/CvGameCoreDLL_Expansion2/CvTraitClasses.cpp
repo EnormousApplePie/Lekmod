@@ -3679,9 +3679,7 @@ int CvPlayerTraits::GetBuildingClassHappiness(BuildingClassTypes eBuildingClass)
 {
 	CvAssertMsg(eBuildingClass < GC.getNumBuildingClassInfos(), "Invalid eBuildingClass parameter in call to CvPlayerTraits::GetBuildingClassHappiness()");
 	if (eBuildingClass == NO_BUILDINGCLASS)
-	{
 		return 0;
-	}
 
 	return m_aiBuildingClassHappiness[(int)eBuildingClass];
 }
