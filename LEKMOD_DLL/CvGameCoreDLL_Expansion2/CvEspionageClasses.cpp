@@ -2272,7 +2272,7 @@ bool CvPlayerEspionage::AttemptCoup(uint uiSpyIndex)
 	}
 
 #ifdef AI_CANT_COUP
-	if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_COUP") && !GET_PLAYER(eCityOwner).isHuman())
+	if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_COUP") && !GET_PLAYER(m_pPlayer->GetID()).isHuman())
 	{
 		if (aiNewInfluenceValueTimes100[m_pPlayer->GetID()] > 0)
 		{

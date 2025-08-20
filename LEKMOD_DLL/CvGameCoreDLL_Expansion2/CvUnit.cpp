@@ -8,7 +8,7 @@
 
 #include "CvGameCoreDLLPCH.h"
 #include "CvUnit.h"
-#include "CvArea.h"
+#include "CvArea.h" 
 #include "CvPlot.h"
 #include "CvCity.h"
 #include "CvGlobals.h"
@@ -11576,9 +11576,9 @@ int CvUnit::baseMoves(DomainTypes eIntoDomain /* = NO_DOMAIN */) const
 	}
 
 #ifdef TRAITIFY
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange + iExtraGlobalMoveChangeFriendlyCivilian);
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + m_iExtraNavalMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange + iExtraGlobalMoveChangeFriendlyCivilian);
 #else
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + m_iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
 #endif
 
 #else
@@ -14074,15 +14074,38 @@ int CvUnit::maxXPValue() const
 
 	iMaxValue = INT_MAX;
 
-	if(isBarbarian() || 
-		GET_PLAYER(this->getOwner()).isMinorCiv()) // NQMP GJS: city states give max 30 XP
+	if(isBarbarian() || GET_PLAYER(getOwner()).isMinorCiv()) // NQMP GJS: city states give max 30 XP
 	{
 		iMaxValue = std::min(iMaxValue, GC.getBARBARIAN_MAX_XP_VALUE());
 	}
-
+#if defined(LEKMOD_AI_XP_CAP)
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		if (!GET_PLAYER(getOwner()).isHuman())
+		{
+			iMaxValue = std::min(iMaxValue, GC.getBARBARIAN_MAX_XP_VALUE());
+		}
+	}
+#endif
 	return iMaxValue;
 }
-
+#if defined(NQ_NO_GG_POINTS_FROM_CS_OR_BARBS)
+bool CvUnit::canEarnGlobalXP() const
+{
+	VALIDATE_OBJECT
+	CvPlayer& kPlayer = GET_PLAYER(getOwner());
+	if (isBarbarian() || kPlayer.isMinorCiv())
+		return false;
+#if defined(LEKMOD_AI_XP_CAP)
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		if (!kPlayer.isHuman())
+			return false;
+	}
+#endif
+	return true;
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 int CvUnit::firstStrikes() const
