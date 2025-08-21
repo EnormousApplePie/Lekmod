@@ -891,6 +891,9 @@ public:
 	CvString GetWeLoveTheKingString();
 	std::vector<BuildingTypes> GetFreeBuildingsOnConquest();
 	int GetTourismFromUnitCreation(UnitClassTypes eUnitClass) const;
+#if defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
+	int GetBuildingClassHappiness(BuildingClassTypes eBuildingClass) const;
+#endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	int GetYieldFromKills(YieldTypes eYield) const;
 #endif

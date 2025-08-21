@@ -6118,21 +6118,21 @@ int CvCity::getProductionModifier(UnitTypes eUnit, CvString* toolTipSink) const
 #ifdef AUI_WARNING_FIXES
 	for (uint iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 #else
-	for(int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 #endif
 	{
-		eBuilding = (BuildingTypes) iI;
+		eBuilding = (BuildingTypes)iI;
 		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
-		if(pkBuildingInfo)
+		if (pkBuildingInfo)
 		{
-			if(GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+			if (GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 			{
 				iTempMod = pkUnitInfo->GetBuildingProductionModifier(eBuilding);
 
-				if(iTempMod != 0)
+				if (iTempMod != 0)
 				{
 					iBuildingMod += iTempMod;
-					if(toolTipSink && iTempMod)
+					if (toolTipSink && iTempMod)
 					{
 						GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_UNIT_WITH_BUILDING", iTempMod, pkBuildingInfo->GetDescription());
 					}
@@ -7723,20 +7723,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			}
 #endif
 #if defined(LEKMOD_v34)
-			// If we have a buildiing that gives a yield bonus to garrisoned cities, load it here
-			if (eYield == YIELD_CULTURE)
-			{
-				ChangeGarrisonYieldBonus(eYield, pBuildingInfo->GetGarrisonYieldChange(eYield)* iChange);
-			}
-			else if (eYield == YIELD_FAITH)
-			{
-				ChangeGarrisonYieldBonus(eYield, pBuildingInfo->GetGarrisonYieldChange(eYield) * iChange);
-			}
-			else
-			{
-				ChangeGarrisonYieldBonus(eYield, pBuildingInfo->GetGarrisonYieldChange(eYield) * iChange);
-			}
-			
+			ChangeGarrisonYieldBonus(eYield, pBuildingInfo->GetGarrisonYieldChange(eYield)* iChange);		
 #endif
 
 #ifdef AUI_WARNING_FIXES
@@ -8045,7 +8032,57 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 						break;
 					}
 				}
+#if defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
+				for (int jJ = 0; jJ < GC.getNumBuildingInfos(); jJ++)
+				{
+					BuildingTypes eBuilding = (BuildingTypes)jJ;
+					if(eBuilding == NO_BUILDING)
+						continue;
+					CvBuildingEntry* pkBuildingEntry = GC.getBuildingInfo(eBuilding);
+					if(!pkBuildingEntry)
+						continue;
+					BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingEntry->GetBuildingClassType();
+					if(eBuildingClass == NO_BUILDINGCLASS)
+						continue;
+					CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+					if(!pkBuildingClassInfo)
+						continue;
 
+					if (GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+					{
+						int iYieldFromBuilding = pReligion->m_Beliefs.GetBuildingClassYieldChange(eBuildingClass, (YieldTypes)iYield, iFollowers);
+
+						if (isWorldWonderClass(*pkBuildingClassInfo))
+						{
+							iYieldFromBuilding += pReligion->m_Beliefs.GetYieldChangeWorldWonder((YieldTypes)iYield);
+						}
+
+#ifdef NQ_CHEAT_SACRED_SITES_AFFECTS_GOLD
+						if (iYield == YIELD_GOLD || iYield == YIELD_FAITH) // and now also faith ... man this is getting ugly
+						{
+							CvBuildingEntry* pkEntry = GC.getBuildingInfo(eBuilding);
+							if (pkEntry && pkEntry->GetFaithCost() > 0 && pkEntry->IsUnlockedByBelief() && pkEntry->GetProductionCost() == -1)
+							{
+								iYieldFromBuilding += pReligion->m_Beliefs.GetFaithBuildingTourism(); // ... super ugly...
+							}
+						} // ... may Google forgive my eSoul...
+#endif
+						switch (iYield)
+						{
+						case YIELD_CULTURE:
+							ChangeJONSCulturePerTurnFromReligion(iYieldFromBuilding);
+							break;
+						case YIELD_FAITH:
+							ChangeFaithPerTurnFromReligion(iYieldFromBuilding);
+							break;
+						default:
+							ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iYieldFromBuilding);
+							break;
+						}
+						
+					}
+				}
+#else
 				// Buildings
 #ifdef AUI_WARNING_FIXES
 				for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
@@ -8100,6 +8137,7 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 						}
 					}
 				}
+#endif
 			}
 		}
 	}
@@ -8342,7 +8380,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 	if(iDifference > 0)
 	{
 		int iTotalMod = 100;
-
+		int iMod;
 		// Capital Mod for player. Used for Policies and such
 		if(isCapital())
 		{
@@ -8389,7 +8427,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 		if(GET_PLAYER(getOwner()).IsEmpireVeryUnhappy())
 #endif
 		{
-			int iMod = /*-100*/ GC.getVERY_UNHAPPY_GROWTH_PENALTY();
+			iMod = /*-100*/ GC.getVERY_UNHAPPY_GROWTH_PENALTY();
 			iTotalMod += iMod;
 			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_FOODMOD_UNHAPPY", iMod);
 		}
@@ -8400,14 +8438,14 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 		else if(GET_PLAYER(getOwner()).IsEmpireUnhappy())
 #endif
 		{
-			int iMod = /*-75*/ GC.getUNHAPPY_GROWTH_PENALTY();
+			iMod = /*-75*/ GC.getUNHAPPY_GROWTH_PENALTY();
 			iTotalMod += iMod;
 			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_FOODMOD_UNHAPPY", iMod);
 		}
 		// WLTKD Growth Bonus
 		else if(GetWeLoveTheKingDayCounter() > 0)
 		{
-			int iMod = /*25*/ GC.getWLTKD_GROWTH_MULTIPLIER();
+			iMod = /*25*/ GC.getWLTKD_GROWTH_MULTIPLIER();
 			iTotalMod += iMod;
 			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_FOODMOD_WLTKD", iMod);
 		}
@@ -10567,14 +10605,20 @@ int CvCity::GetLocalHappiness() const
 	CvPlayer& kPlayer = GET_PLAYER(m_eOwner);
 
 	int iLocalHappiness = GetBaseHappinessFromBuildings();
-
+	int iLocalHappinessCap = getPopulation();
+#if defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
+	int iBuildingLoop;
+	int iNumBuildingInfos = GC.getNumBuildingInfos();
+	int iPolicyBuildingHappiness = 0;
+#if defined(TRAITIFY)
+	int iTraitBuildingHappiness = 0;
+#endif // TRAITIFY
+#endif // LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
 	int iHappinessPerGarrison = kPlayer.GetHappinessPerGarrisonedUnit();
 	if(iHappinessPerGarrison > 0)
 	{
 		if(GetGarrisonedUnit() != NULL)
-		{
 			iLocalHappiness++;
-		}
 	}
 	
 	// NQMP GJS - New Ottoman UA begin
@@ -10596,18 +10640,15 @@ int CvCity::GetLocalHappiness() const
 		{
 			iHappinessFromReligion += pReligion->m_Beliefs.GetHappinessPerCity(getPopulation());
 			if (eSecondaryPantheon != NO_BELIEF && getPopulation() >= GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetMinPopulation())
-			{
 				iHappinessFromReligion += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetHappinessPerCity();
-			}
+
 			if(plot()->isRiver())
 			{
 				iHappinessFromReligion += pReligion->m_Beliefs.GetRiverHappiness();
 				if (eSecondaryPantheon != NO_BELIEF)
-				{
 					iHappinessFromReligion += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetRiverHappiness();
-				}
 			}
-
+#if !defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 			// Buildings
 #ifdef AUI_WARNING_FIXES
 			for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
@@ -10634,10 +10675,32 @@ int CvCity::GetLocalHappiness() const
 					}
 				}
 			}
+#else
+			// Buildings
+			for (iBuildingLoop = 0; iBuildingLoop < iNumBuildingInfos; iBuildingLoop++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+				if (eBuilding == NO_BUILDING)
+					continue;
+				CvBuildingEntry* pkBuildingEntry = GC.getBuildingInfo(eBuilding);
+				if (!pkBuildingEntry)
+					continue;
+				BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingEntry->GetBuildingClassType();
+				if (eBuildingClass == NO_BUILDINGCLASS)
+					continue;
+				CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+				if (!pkBuildingClassInfo)
+					continue;
+				if (GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+				{
+					iHappinessFromReligion += pReligion->m_Beliefs.GetBuildingClassHappiness(eBuildingClass, iFollowers);
+				}
+			}
+#endif
 		}
 		iLocalHappiness += iHappinessFromReligion;
 	}
-
+#if !defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 	// Policy Building Mods
 	int iSpecialPolicyBuildingHappiness = 0;
 #ifdef AUI_WARNING_FIXES
@@ -10714,26 +10777,48 @@ int CvCity::GetLocalHappiness() const
 	}
 	iLocalHappiness += iSpecialTraitBuildingHappiness;
 #endif
-
 	iLocalHappiness += iSpecialPolicyBuildingHappiness;
-	int iLocalHappinessCap = getPopulation();
+#else // LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
+	// This differs from the above as it counts all buildings, not just those assigned to the civ via building class. This is relevant if you have a civ being given a building
+	// That is unique to another civ. Buildings unique to a civ do not block your own building for that class and the intent in the case of current Ayyubids is doubled yields which this allows.
+	for (iBuildingLoop = 0; iBuildingLoop < iNumBuildingInfos; iBuildingLoop++)
+	{
+		BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+		if (eBuilding == NO_BUILDING)
+			continue;
+		CvBuildingEntry* pkBuildingEntry = GC.getBuildingInfo(eBuilding);
+		if (!pkBuildingEntry)
+			continue;
+		BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingEntry->GetBuildingClassType();
+		if (eBuildingClass == NO_BUILDINGCLASS)
+			continue;
+		CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+		if (!pkBuildingClassInfo)
+			continue;
+		if (GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+		{
+			iPolicyBuildingHappiness += kPlayer.GetPlayerPolicies()->GetBuildingClassHappiness(eBuildingClass);
+#if defined(TRAITIFY)
+			iTraitBuildingHappiness += kPlayer.GetPlayerTraits()->GetBuildingClassHappiness(eBuildingClass);
+#endif // TRAITIFY
+		}
+	}
+	iLocalHappiness += iPolicyBuildingHappiness;
+#if defined(TRAITIFY)
+	iLocalHappiness += iTraitBuildingHappiness;
+#endif // TRAITIFY
+#endif // LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
+
 
 	// India has unique way to compute local happiness cap
-	if(kPlayer.GetPlayerTraits()->GetCityUnhappinessModifier() != 0)
+	if(kPlayer.GetPlayerTraits()->GetPopulationUnhappinessModifier() != 0)
 	{
 		// 0.67 per population, rounded up
 		iLocalHappinessCap = (iLocalHappinessCap * 20) + 15;
 		iLocalHappinessCap /= 30;
 	}
 
-	if(iLocalHappinessCap < iLocalHappiness)
-	{
-		return iLocalHappinessCap;
-	}
-	else
-	{
-		return iLocalHappiness;
-	}
+	return std::min(iLocalHappinessCap, iLocalHappiness);
 }
 
 //	--------------------------------------------------------------------------------
@@ -18074,6 +18159,9 @@ int CvCity::rangeCombatDamage(const CvUnit* pDefender, CvCity* pCity, bool bIncl
 	int iAttackerDamage = /*250*/ GC.getRANGE_ATTACK_SAME_STRENGTH_MIN_DAMAGE();
 
 	int iAttackerRoll = 0;
+#if defined(LEKMOD_v34)
+
+#endif
 	if(bIncludeRand)
 	{
 #ifdef NQM_COMBAT_RNG_USE_BINOM_RNG_OPTION
@@ -18122,8 +18210,8 @@ int CvCity::rangeCombatDamage(const CvUnit* pDefender, CvCity* pCity, bool bIncl
 	// Bring it back out of hundreds
 	iAttackerDamage /= 100;
 
-	// Always do at least 1 damage
-	int iMinDamage = /*1*/ GC.getMIN_CITY_STRIKE_DAMAGE();
+	// Always do at least 10 damage
+	int iMinDamage = /*10*/ GC.getMIN_CITY_STRIKE_DAMAGE();
 	if(iAttackerDamage < iMinDamage)
 		iAttackerDamage = iMinDamage;
 

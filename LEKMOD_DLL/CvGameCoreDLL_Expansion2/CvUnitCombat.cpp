@@ -900,8 +900,13 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvCity& kAttacker, CvUnit* pkDefende
 			bBarbarian = true;
 
 		//CvAssert(pkDefender->IsCanDefend());
-
+#if defined(LEKMOD_NO_COMBAT_RANDOMNESS) // City Ranged Strike
+		bool bIncludeRand = !GC.getGame().isOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS");
+		// Pass NULL since I think that is for if the city is attacking another city?
+		iDamage = kAttacker.rangeCombatDamage(pkDefender, NULL, bIncludeRand);
+#else
 		iDamage = kAttacker.rangeCombatDamage(pkDefender);
+#endif	
 
 #ifdef DEL_RANGED_COUNTERATTACKS
 		iTotalDamage = pkDefender->getDamage() + iDamage;

@@ -3774,7 +3774,27 @@ std::vector<BuildingTypes> CvPlayerPolicies::GetFreeBuildingsOnConquest()
 	}
 	return freeBuildings;
 }
+#if defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
+int CvPlayerPolicies::GetBuildingClassHappiness(BuildingClassTypes eBuildingClass) const
+{
+	int iHappiness = 0;
 
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+	{
+		// Do we have this policy?
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			CvPolicyEntry* pPolicy = m_pPolicies->GetPolicyEntry(i);
+			if (pPolicy->GetBuildingClassHappiness(eBuildingClass) > 0)
+			{
+				iHappiness += pPolicy->GetBuildingClassHappiness(eBuildingClass);
+			}
+		}
+	}
+
+	return iHappiness;
+}
+#endif
 /// How much free tourism is created when we create a unit?
 int CvPlayerPolicies::GetTourismFromUnitCreation(UnitClassTypes eUnitClass) const
 {
