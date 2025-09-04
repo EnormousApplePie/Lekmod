@@ -1655,6 +1655,12 @@ public:
 	int getGoldenAgeYield() const;
 	int getGoldenAgeYieldThreshold() const;
 	int getGoldenAgeYieldMod() const;
+#if defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
+	int getPlayerGoldenAgeYieldMod() const;
+#endif
+#if defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
+	int getPuppetYieldModifier() const;
+#endif
 	int getAIWeightPercent() const;
 
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
@@ -1673,6 +1679,12 @@ protected:
 	int m_iGoldenAgeYield;
 	int m_iGoldenAgeYieldThreshold;
 	int m_iGoldenAgeYieldMod;
+#if defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
+	int m_iPlayerGoldenAgeYieldMod;
+#endif
+#if defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
+	int m_iPuppetYieldMod;
+#endif
 	int m_iAIWeightPercent;
 };
 

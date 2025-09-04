@@ -1176,7 +1176,6 @@ enum FeatureTypes
 	FEATURE_FLOOD_PLAINS,
 	FEATURE_FOREST,
 	FEATURE_FALLOUT,
-	FEATURE_ARARAT_MOUNTAIN, // This is a feature that is placed over all PLOT_MOUNTAINs in the game via a Lua function.
 	FEATURE_NATURAL_WONDER,
 
 	NUM_FEATURE_TYPES

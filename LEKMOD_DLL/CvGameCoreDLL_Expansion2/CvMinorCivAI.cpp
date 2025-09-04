@@ -6938,6 +6938,9 @@ bool CvMinorCivAI::DoMajorCivEraChange(PlayerTypes ePlayer, EraTypes eNewEra)
 	return bSomethingChanged;
 }
 
+
+
+#if !defined(LEKMOD_FIX_SCHOLASTICISM) // This function doesnt directly hook into the UI so chaning it should be fine :)
 // Science bonus when friends with a minor
 int CvMinorCivAI::GetScienceFriendshipBonus()
 {
@@ -6946,7 +6949,6 @@ int CvMinorCivAI::GetScienceFriendshipBonus()
 
 	return iResult;
 }
-
 int CvMinorCivAI::GetScienceFriendshipBonusTimes100()
 {
 	int iResult = GET_PLAYER(m_pPlayer->GetID()).GetScienceTimes100() * /*25*/ GC.getMINOR_CIV_SCIENCE_BONUS_MULTIPLIER();
@@ -6954,15 +6956,49 @@ int CvMinorCivAI::GetScienceFriendshipBonusTimes100()
 
 	return iResult;
 }
-
 /// How much are we getting RIGHT NOW (usually 0)
 int CvMinorCivAI::GetCurrentScienceFriendshipBonusTimes100(PlayerTypes ePlayer)
 {
-	if(GET_PLAYER(ePlayer).IsGetsScienceFromPlayer(GetPlayer()->GetID()))
+	if (GET_PLAYER(ePlayer).IsGetsScienceFromPlayer(GetPlayer()->GetID()))
 		return GetScienceFriendshipBonusTimes100();
 
 	return 0;
 }
+#else
+// Science bonus when friends with a minor
+int CvMinorCivAI::GetScienceFriendshipBonus(PlayerTypes eMajor)
+{
+	int iResult = GetScienceFriendshipBonusTimes100(eMajor);
+	iResult /= 100;
+
+	return iResult;
+}
+// Science bonus when friends with a minor times 100
+int CvMinorCivAI::GetScienceFriendshipBonusTimes100(PlayerTypes eMajor, EraTypes eAssumeEra)
+{
+	int iResult = 0;
+	// Old Scholasticism, based on the science output of the City State; Inactive if MINOR_CIV_SCIENCE_BONUS_MULTIPLIER is 0
+	iResult += (GET_PLAYER(m_pPlayer->GetID()).GetScienceTimes100() * /*0 as of v34.8*/ GC.getMINOR_CIV_SCIENCE_BONUS_MULTIPLIER()) / 100;
+	// New Scholasticism
+	EraTypes eCurrentEra = (eAssumeEra != NO_ERA) ? eAssumeEra : GET_TEAM(GET_PLAYER(eMajor).getTeam()).GetCurrentEra();
+	CvPlayerPolicies* pPolicies = GET_PLAYER(eMajor).GetPlayerPolicies();
+
+	if (IsAllies(eMajor))
+		iResult += pPolicies->GetMinorAllyYieldBonus(eCurrentEra, YIELD_SCIENCE);
+	else if (IsFriends(eMajor))
+		iResult += pPolicies->GetMinorFriendYieldBonus(eCurrentEra, YIELD_SCIENCE);
+
+	return iResult;
+}
+/// How much are we getting RIGHT NOW (usually 0)
+int CvMinorCivAI::GetCurrentScienceFriendshipBonusTimes100(PlayerTypes ePlayer)
+{
+	if (GET_PLAYER(ePlayer).IsGetsScienceFromPlayer(GetPlayer()->GetID()))
+		return GetScienceFriendshipBonusTimes100(ePlayer);
+
+	return 0;
+}
+#endif // LEKMOD_FIX_SCHOLASTICISM
 
 // Flat culture bonus when Friends with a minor
 int CvMinorCivAI::GetCultureFlatFriendshipBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)

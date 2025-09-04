@@ -1014,7 +1014,8 @@
 //#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
 
 
-// Loup's changes for importation step 1
+// ------------------------------------------- Loup's Changes Start -------------------------------------------------- \\
+
 #define TRAITIFY
 /* This import of Traitify has
 ✓ GoldenAgeCultureModifier -- Romania Trait
@@ -1070,21 +1071,10 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TECH_VOTES
 TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_POLICY_VOTES
 TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 */
-#define LEKMOD_v34 // Changes made for the new version of Lekmod, unrelated to the above
-/*
-✓ LandTradeRouteYieldBonus
-✓ SelfRelgiousPressureBonus
-✓ Lua Exports for activating the new Reformation effect, also just a new bool value since the Lua was delayed a turn for some reason. and made it happen twice.
-✓ New Golden Age Points as a Yield w/ Lua Exports
-✓ New building integer, GarrisonStrengthBonus gives a Flat bonus to the strength of a city with a garrison.
-
-✓ Building_GarrisonCityYield
-Trait_NearbyResouceBuildingClassYieldChange gave up
-Mughals Trait was quite specific and the behavoir of the code was buggy, so I elected to not use it in the dll for now.
-✓ Policy_FreeStrategicResources
-*/
+// Changes made for the new version of Lekmod, unrelated to the above
+#define LEKMOD_v34 
+// Allows the Collection of Golden Age Points during a Golden Age via game option.
 #define GAMEOPTION_GOLDENAGE_ALT
-// 3 more defines!
 // DLL code the Huey lake Req
 #define LEKMOD_BUILDING_LAKE_REQ
 // Fully fleshout the Yield From Kills system for Traits, Policies and Promotions.
@@ -1095,7 +1085,21 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 #define LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
 // Units now remember their Home city. Want to make more than Religious Unit remember home city Religion on Trained. This also makes Death yields pretty simple, now that I think about it.
 //#define UNITS_REMEMBER_HOME
-
+// Food from Maritime City States now applies inside the city, instead of on the plot under the city.
+#define LEKMOD_PATRO_FOOD_FIX
+// Prevent the Airplane production saving exploit. Boot out air units from the prod queue if the city has maxed out its air capacity from a rebase or purchase
+#define FIX_PRODUCTION_KEEPING_EXPLOITS
+// Relocate Puppet Yield Mod from the Global integers to CvYieldInfo
+#define LEKMOD_PUPPET_YIELD_MOD_INFO
+// Relocate the Player-Wide Golden Age yield mod from the Global integers to CvYieldInfo
+#define LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO
+// Standardize Yields on both the City-level and Player-level.
+#define STANDARDIZE_YIELDS
+// Unhardcode the Scholasticism policy effect from the DLL.
+#define LEKMOD_FIX_SCHOLASTICISM
+// Remove the double counting for Yield Per Religion in a city.
+#define LEKMOD_FIX_YIELD_PER_RELIGION
+// ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
 ////////////////////////
 //Benched or not working
 ////////////////////////

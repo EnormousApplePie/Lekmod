@@ -521,8 +521,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 						if(getFirstBuildingOrder(eBuilding) == 0)
 						{
 							clearOrderQueue();
-							chooseProduction();
-							// Send a notification to the user that what they were building was given to them, and they need to produce something else.
+							chooseProduction(); // Send a notification to the user that what they were building was given to them, and they need to produce something else.
 						}
 					}
 				}
@@ -551,11 +550,14 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	// Free population from things (e.g. Policies)
 	changePopulation(GET_PLAYER(getOwner()).GetNewCityExtraPopulation());
 #ifdef TRAITIFY // New floating text for population increases for the player. Both Trait and Policy driven, excluding the initial population.
-	if (GET_PLAYER(getOwner()).GetNewCityExtraPopulation() > 0)
+	if (GET_PLAYER(getOwner()).GetNewCityExtraPopulation() > 0 && getOwner() == GC.getGame().getActivePlayer() )
 	{
-		char szText[256] = { 0 };
-		sprintf_s(szText, "[COLOR_GREEN]+%d[ENDCOLOR] [ICON_CITIZEN]", GET_PLAYER(getOwner()).GetNewCityExtraPopulation());
-		GC.GetEngineUserInterface()->AddPopupText(getX(), getY(), szText, 1.5f);
+		if(bInitialFounding) // Only Show it on Inital Founding, and only to the player
+		{
+			char szText[256] = { 0 };
+			sprintf_s(szText, "[COLOR_GREEN]+%d[ENDCOLOR] [ICON_CITIZEN]", GET_PLAYER(getOwner()).GetNewCityExtraPopulation());
+			GC.GetEngineUserInterface()->AddPopupText(getX(), getY(), szText, 1.5f);
+		}
 	}
 #endif
 	// Free food from things (e.g. Policies)
@@ -8353,12 +8355,15 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 {
 	VALIDATE_OBJECT
 	int iDifference;
-
+	CvPlayer& kPlayer = GET_PLAYER(getOwner());
 #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
 	if (iValueKnown)
 		iDifference = *iValueKnown;
 	else
 #endif
+#if defined(NULL)
+	iDifference = isFoodProduction() ? std::min(0, GetFoodProduction(getYieldRate(YIELD_FOOD, false) - foodConsumption()) * 100) : (getYieldRateTimes100(YIELD_FOOD, false) - foodConsumption() * 100);
+#else
 	if(isFoodProduction())
 	{
 		iDifference = std::min(0, GetFoodProduction(getYieldRate(YIELD_FOOD, false) - foodConsumption()) * 100);
@@ -8367,13 +8372,11 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 	{
 		iDifference = (getYieldRateTimes100(YIELD_FOOD, false) - foodConsumption() * 100);
 	}
-
+#endif
 	if(bBottom)
 	{
 		if((getPopulation() == 1) && (getFood() == 0))
-		{
 			iDifference = std::max(0, iDifference);
-		}
 	}
 
 	// Growth Mods - Only apply if the City is growing (and not starving, otherwise it would actually have the OPPOSITE of the intended effect!)
@@ -8384,7 +8387,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 		// Capital Mod for player. Used for Policies and such
 		if(isCapital())
 		{
-			int iCapitalGrowthMod = GET_PLAYER(getOwner()).GetCapitalGrowthMod();
+			int iCapitalGrowthMod = kPlayer.GetCapitalGrowthMod();
 			if(iCapitalGrowthMod != 0)
 			{
 				iTotalMod += iCapitalGrowthMod;
@@ -8393,7 +8396,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 		}
 
 		// City Mod for player. Used for Policies and such
-		int iCityGrowthMod = GET_PLAYER(getOwner()).GetCityGrowthMod();
+		int iCityGrowthMod = kPlayer.GetCityGrowthMod();
 		if(iCityGrowthMod != 0)
 		{
 			iTotalMod += iCityGrowthMod;
@@ -8412,9 +8415,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 				iReligionGrowthMod = pReligion->m_Beliefs.GetCityGrowthModifier(bAtPeace);
 				BeliefTypes eSecondaryPantheon = GetCityReligions()->GetSecondaryReligionPantheonBelief();
 				if (eSecondaryPantheon != NO_BELIEF)
-				{
 					iReligionGrowthMod += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetCityGrowthModifier();
-				}
 				iTotalMod += iReligionGrowthMod;
 				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_FOODMOD_RELIGION", iReligionGrowthMod);
 			}
@@ -8424,7 +8425,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
 		if (!GC.getGame().isOption(GAMEOPTION_NO_HAPPINESS) && GET_PLAYER(getOwner()).GetExcessHappiness() + iExtraHappiness <= /*-10*/ GC.getVERY_UNHAPPY_THRESHOLD())
 #else
-		if(GET_PLAYER(getOwner()).IsEmpireVeryUnhappy())
+		if(kPlayer.IsEmpireVeryUnhappy())
 #endif
 		{
 			iMod = /*-100*/ GC.getVERY_UNHAPPY_GROWTH_PENALTY();
@@ -8435,7 +8436,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
 		else if (!GC.getGame().isOption(GAMEOPTION_NO_HAPPINESS) && GET_PLAYER(getOwner()).GetExcessHappiness() + iExtraHappiness < 0)
 #else
-		else if(GET_PLAYER(getOwner()).IsEmpireUnhappy())
+		else if(kPlayer.IsEmpireUnhappy())
 #endif
 		{
 			iMod = /*-75*/ GC.getUNHAPPY_GROWTH_PENALTY();
@@ -9371,7 +9372,7 @@ int CvCity::getJONSCulturePerTurnTimes100() const
 	{
 		return 0;
 	}
-
+	CvPlayer& kPlayer = GET_PLAYER(getOwner());
 	int iCulture = GetBaseJONSCulturePerTurn();
 
 	int iModifier = 100;
@@ -9379,14 +9380,14 @@ int CvCity::getJONSCulturePerTurnTimes100() const
 	// City modifier
 	iModifier += getCultureRateModifier();
 	// Player modifier
-	iModifier += GET_PLAYER(getOwner()).GetJONSCultureCityModifier();
+	iModifier += kPlayer.GetJONSCultureCityModifier();
 
 	// Wonder here?
 	if(getNumWorldWonders() > 0)
-		iModifier += GET_PLAYER(getOwner()).GetCultureWonderMultiplier();
+		iModifier += kPlayer.GetCultureWonderMultiplier();
 #if defined(MISC_CHANGES) // Trade routes providing culture
 	// Finally adding support for Trade routes providing culture
-	int iTradeYield = GET_PLAYER(m_eOwner).GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_CULTURE);
+	int iTradeYield = kPlayer.GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_CULTURE);
 	iTradeYield /= 100;
 	iCulture += iTradeYield;
 #endif
@@ -9394,14 +9395,23 @@ int CvCity::getJONSCulturePerTurnTimes100() const
 	// Puppet?
 	if(IsPuppet())
 	{
+#if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 #if defined(TRAITIFY) // Puppet Culture Modifier
 		int iTraitModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_CULTURE);
 		if (iTraitModifier != 0)
-		{
 			iModifier += iTraitModifier;
-		}
 #endif
 		iModifier += GC.getPUPPET_CULTURE_MODIFIER();
+#else
+		const CvYieldInfo& kYield = *GC.getYieldInfo(YIELD_CULTURE);
+		iModifier += kYield.getPuppetYieldModifier();
+#if defined(TRAITIFY)
+		int iTraitModifier = kPlayer.GetPlayerTraits()->GetPuppetYieldModifier(YIELD_CULTURE);
+		if (iTraitModifier != 0)
+			iModifier += iTraitModifier;
+#endif
+#endif
+
 	}
 
 	iCulture *= iModifier;
@@ -9562,7 +9572,7 @@ int CvCity::GetFaithPerTurn() const
 	{
 		return 0;
 	}
-
+	CvPlayer& kPlayer = GET_PLAYER(getOwner());
 	int iFaith = GetFaithPerTurnFromBuildings();
 	iFaith += GetBaseYieldRateFromTerrain(YIELD_FAITH);
 	iFaith += GetFaithPerTurnFromPolicies();
@@ -9571,32 +9581,40 @@ int CvCity::GetFaithPerTurn() const
 	iFaith += GetBaseYieldRateFromSpecialists(YIELD_FAITH);
 #endif
 	iFaith += GetFaithPerTurnFromReligion();
-
-	// Puppet?
-	int iModifier = 0;
 #if defined(MISC_CHANGES) // Trade routes providing faith
 	// Finally adding support for Trade routes providing faith
-	int iTradeYield = GET_PLAYER(m_eOwner).GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_FAITH);
+	int iTradeYield = kPlayer.GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_FAITH);
 	iTradeYield /= 100;
 	iFaith += iTradeYield;
 #endif
+	// Puppet?
+	int iModifier = 0;
 #ifdef AUI_CITY_FIX_VENICE_PUPPETS_GET_NO_YIELD_PENALTIES_BESIDES_CULTURE
 	if (IsPuppet() && !GetPlayer()->GetPlayerTraits()->IsNoAnnexing())
 #else
 	if(IsPuppet())
 #endif
 	{
-#if defined(TRAITIFY) // Puppet Faith Modifier
+#if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
+#if defined(TRAITIFY) // Puppet Culture Modifier
 		int iTraitModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_FAITH);
 		if (iTraitModifier != 0)
-		{
 			iModifier += iTraitModifier;
-		}
 #endif
 		iModifier = GC.getPUPPET_FAITH_MODIFIER();
+#else // LEKMOD_PUPPET_YIELD_MOD_INFO
+		const CvYieldInfo& kYield = *GC.getYieldInfo(YIELD_FAITH);
+		iModifier += kYield.getPuppetYieldModifier();
+#if defined(TRAITIFY)
+		int iTraitModifier = kPlayer.GetPlayerTraits()->GetPuppetYieldModifier(YIELD_FAITH);
+		if (iTraitModifier != 0)
+			iModifier += iTraitModifier;
+#endif // TRAITIFY
+#endif // LEKMOD_PUPPET_YIELD_MOD_INFO
 		iFaith *= (100 + iModifier);
 		iFaith /= 100;
 	}
+
 
 	return iFaith;
 }
@@ -10590,6 +10608,15 @@ void CvCity::DoAnnex()
 	}
 
 	GET_PLAYER(getOwner()).DoUpdateNextPolicyCost();
+#if defined(FIX_PRODUCTION_KEEPING_EXPLOITS) // Annexing Cities
+	int iLoop;
+	for (CvCity* pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
+	{
+		pLoopCity->CleanUpQueue(); // Annexing could have invalidated the construction of a National Wonder somewhere in the Empire.
+		if (pLoopCity->headOrderQueueNode() == NULL)
+			pLoopCity->chooseProduction(); // If the queue is now empty, pick something to build.
+	}
+#endif
 #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
 	if (bRunSelfConsistency)
 		GetPlayer()->doSelfConsistencyCheckAllCities();
@@ -10612,6 +10639,7 @@ int CvCity::GetLocalHappiness() const
 	int iPolicyBuildingHappiness = 0;
 #if defined(TRAITIFY)
 	int iTraitBuildingHappiness = 0;
+	iLocalHappiness += kPlayer.GetPlayerTraits()->GetLocalHappinessPerCity();
 #endif // TRAITIFY
 #endif // LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
 	int iHappinessPerGarrison = kPlayer.GetHappinessPerGarrisonedUnit();
@@ -11477,8 +11505,12 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	VALIDATE_OBJECT
 	int iModifier = 0;
 	int iTempMod;
+#if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 #if defined(TRAITIFY)
 	int iTraitMod;
+#endif
+#else
+	const CvYieldInfo& kYield = *GC.getYieldInfo(eIndex);
 #endif
 
 	// Yield Rate Modifier
@@ -11530,14 +11562,21 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	// Golden Age Yield Modifier
 	if(GET_PLAYER(getOwner()).isGoldenAge())
 	{
+#if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 		CvYieldInfo* pYield = GC.getYieldInfo(eIndex);
 		if(pYield)
 		{
-			iTempMod = pYield->getGoldenAgeYieldMod();
+			iTempMod = kYield.getGoldenAgeYieldMod();
 			iModifier += iTempMod;
 			if(toolTipSink)
 				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_GOLDEN_AGE", iTempMod);
 		}
+#else
+		iTempMod = kYield.getGoldenAgeYieldMod();
+		iModifier += iTempMod;
+		if (toolTipSink)
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_GOLDEN_AGE", iTempMod);
+#endif
 	}
 
 	// Religion Yield Rate Modifier
@@ -11579,6 +11618,7 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	// NQMP GJS - new Economic Union END
 
 	// Puppet
+#if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 #ifdef AUI_CITY_FIX_VENICE_PUPPETS_GET_NO_YIELD_PENALTIES_BESIDES_CULTURE
 	if (IsPuppet() && !GetPlayer()->GetPlayerTraits()->IsNoAnnexing())
 #else
@@ -11639,6 +11679,18 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 #endif
 		}
 	}
+#else // LEKMOD_PUPPET_YIELD_MOD_INFO
+	if (IsPuppet())
+	{
+		iTempMod = kYield.getPuppetYieldModifier();
+#if defined(TRAITIFY)
+		iTempMod += GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(eIndex);
+#endif
+		iModifier += iTempMod;
+		if (iTempMod != 0 && toolTipSink)
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+	}
+#endif // LEKMOD_PUPPET_YIELD_MOD_INFO
 
 	iModifier += iExtra;
 
@@ -11702,37 +11754,32 @@ int CvCity::getYieldRateTimes100(YieldTypes eIndex, bool bIgnoreTrade) const
 			return 0;
 		}
 	}
-
-	int iProcessYield = 0;
-#ifdef PRODUCTION_TO_YIELD_FIX
-	if (getProductionToYieldModifier(eIndex) != 0 && !IsFinishedOrderThisTurn())
-#else
-	if(getProductionToYieldModifier(eIndex) != 0)
-#endif
-	{
-		CvAssertMsg(eIndex != YIELD_PRODUCTION, "GAMEPLAY: should not be trying to convert Production into Production via process.");
-
-		iProcessYield = getYieldRateTimes100(YIELD_PRODUCTION, false) * getProductionToYieldModifier(eIndex) / 100;
-	}
-
 	// Sum up yield rate
 	int iBaseYield = getBaseYieldRate(eIndex) * 100;
-#ifdef AUI_PLOT_FIX_CITY_YIELD_CHANGE_RELOCATED
-	iBaseYield += GET_PLAYER(getOwner()).GetCityYieldChange(eIndex);
-	if (isCapital())
-	{
-		iBaseYield += GET_PLAYER(getOwner()).GetCapitalYieldChange(eIndex);
-	}
-#endif
 
+#if defined(LEKMOD_PATRO_FOOD_FIX)
+	if (eIndex == YIELD_FOOD)
+		iBaseYield += GetMaritimeCityStateFoodBonusTimes100();
+#endif
 	iBaseYield += (GetYieldPerPopTimes100(eIndex) * getPopulation());
+#if !defined(LEKMOD_FIX_YIELD_PER_RELIGION)
 	iBaseYield += (GetYieldPerReligionTimes100(eIndex) * GetCityReligions()->GetNumReligionsWithFollowers());
+#endif
 
 	int iModifiedYield = iBaseYield * getBaseYieldRateModifier(eIndex);
 	iModifiedYield /= 100;
 
-	iModifiedYield += iProcessYield;
+#ifdef PRODUCTION_TO_YIELD_FIX
+	if (getProductionToYieldModifier(eIndex) != 0 && !IsFinishedOrderThisTurn())
+#else
+	if (getProductionToYieldModifier(eIndex) != 0)
+#endif
+	{
+		CvAssertMsg(eIndex != YIELD_PRODUCTION, "GAMEPLAY: should not be trying to convert Production into Production via process.");
 
+		int iProcessYield = getYieldRateTimes100(YIELD_PRODUCTION, false) * getProductionToYieldModifier(eIndex) / 100;
+		iModifiedYield += iProcessYield;
+	}
 	if (!bIgnoreTrade)
 	{
 		int iTradeYield = GET_PLAYER(m_eOwner).GetTrade()->GetTradeValuesAtCityTimes100(this, eIndex);
@@ -11757,13 +11804,6 @@ int CvCity::getBaseYieldRate(YieldTypes eIndex) const
 	iValue += GetBaseYieldRateFromMisc(eIndex);
 	iValue += GetBaseYieldRateFromReligion(eIndex);
 	iValue += GetBaseYieldRateFromGreatWorks(eIndex); // NQMP GJS - Artistic Genius fix to add science to Great Works
-#ifdef AUI_PLOT_FIX_CITY_YIELD_CHANGE_RELOCATED
-	// Coastal City Mod
-	if (isCoastal())
-	{
-		iValue += GET_PLAYER(getOwner()).GetCoastalCityYieldChange(eIndex);
-	}
-#endif
 
 	return iValue;
 }
@@ -11960,7 +12000,34 @@ void CvCity::ChangeBaseYieldRateFromReligion(YieldTypes eIndex, int iChange)
 		}
 	}
 }
+#if defined(LEKMOD_PATRO_FOOD_FIX)
+int CvCity::GetMaritimeCityStateFoodBonusTimes100() const
+{
+	VALIDATE_OBJECT
+	int iFood = 0;
+	const PlayerTypes eOwner = getOwner();
+	for (int iPlayerLoop = MAX_MAJOR_CIVS; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+	{
+		const PlayerTypes eMinor = static_cast<PlayerTypes>(iPlayerLoop);
+		CvPlayer& kMinor = GET_PLAYER(eMinor);
+		if (!kMinor.isAlive() || !kMinor.isMinorCiv())
+			continue;
 
+		CvMinorCivAI* pMinor = kMinor.GetMinorCivAI();
+		if (!pMinor || pMinor->GetTrait() != MINOR_CIV_TRAIT_MARITIME)
+			continue;
+
+		// Allies
+		if (pMinor->IsAllies(eOwner))
+			iFood += isCapital() ? pMinor->GetAlliesCapitalFoodBonus(eOwner) + pMinor->GetAlliesOtherCityFoodBonus(eOwner) : pMinor->GetAlliesOtherCityFoodBonus(eOwner);
+
+		// Friends
+		if (pMinor->IsFriends(eOwner))
+			iFood += isCapital() ? pMinor->GetFriendsCapitalFoodBonus(eOwner) + pMinor->GetFriendsOtherCityFoodBonus(eOwner) : pMinor->GetFriendsOtherCityFoodBonus(eOwner);
+	}
+	return iFood;
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Extra yield for each pop point
 int CvCity::GetYieldPerPopTimes100(YieldTypes eIndex) const
@@ -11998,7 +12065,7 @@ void CvCity::ChangeYieldPerPopTimes100(YieldTypes eIndex, int iChange)
 int CvCity::GetYieldPerReligionTimes100(YieldTypes eIndex) const
 {
 	VALIDATE_OBJECT
-		CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 
 	return m_aiYieldPerReligion[eIndex];
@@ -12009,7 +12076,7 @@ int CvCity::GetYieldPerReligionTimes100(YieldTypes eIndex) const
 void CvCity::ChangeYieldPerReligionTimes100(YieldTypes eIndex, int iChange)
 {
 	VALIDATE_OBJECT
-		CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 
 	if(iChange != 0)
@@ -15998,7 +16065,18 @@ void CvCity::Purchase(UnitTypes eUnitType, BuildingTypes eBuildingType, ProjectT
 				{
 					pUnit->setMoves(0);
 				}
-
+#if defined(FIX_PRODUCTION_KEEPING_EXPLOITS) // Purchasing Air Units
+				if (pUnit->getUnitInfo().GetDomainType() == DOMAIN_AIR)
+				{
+					int iCurrentAirUnits = plot()->countNumAirUnits(getTeam());
+					if(GetMaxAirUnits() <= iCurrentAirUnits)
+					{
+						CleanUpQueue(); // Remove Air units if we are at or over our limit
+						if (headOrderQueueNode() == NULL)
+							chooseProduction(); // If Order queue is empty, choose something new
+					}
+				}
+#endif
 				ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 				if (pkScriptSystem) 
 				{
@@ -17621,9 +17699,9 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 		bool bFoundLake = false;
 		
 		CvPlot* pAdjacentPlot;
+		FeatureTypes eLakeVictoria = (FeatureTypes)GC.getInfoTypeForString("FEATURE_LAKE_VICTORIA");
 		for (int iDirectionLoop = 0; iDirectionLoop < NUM_DIRECTION_TYPES; iDirectionLoop++)
 		{
-			FeatureTypes eLakeVictoria = (FeatureTypes)GC.getInfoTypeForString("FEATURE_LAKE_VICTORIA");
 			pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iDirectionLoop));
 
 			if (pAdjacentPlot != NULL)
@@ -18289,8 +18367,8 @@ int CvCity::GetAirStrikeDefenseDamage(const CvUnit* pAttacker, bool bIncludeRand
 	// Bring it back out of hundreds
 	iDefenderDamage /= 100;
 
-	// Always do at least 1 damage
-	int iMinDamage = /*1*/ GC.getMIN_CITY_STRIKE_DAMAGE();
+	// Always do at least 10 damage
+	int iMinDamage = /*10*/ GC.getMIN_CITY_STRIKE_DAMAGE();
 	if(iDefenderDamage < iMinDamage)
 		iDefenderDamage = iMinDamage;
 

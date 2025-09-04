@@ -6631,7 +6631,12 @@ int CvLuaPlayer::lGetMinorCivFavoriteMajor(lua_State* L)
 int CvLuaPlayer::lGetMinorCivScienceFriendshipBonus(lua_State* L)
 {
 	CvPlayerAI* pkPlayer = GetInstance(L);
+#if defined(LEKMOD_FIX_SCHOLASTICISM) // Function Parameters changed with this define.
+	PlayerTypes ePlayer = (PlayerTypes)lua_tointeger(L, 2);
+	lua_pushinteger(L, pkPlayer->GetMinorCivAI()->GetScienceFriendshipBonus(ePlayer));
+#else
 	lua_pushinteger(L, pkPlayer->GetMinorCivAI()->GetScienceFriendshipBonus());
+#endif
 	return 1;
 }
 //------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -401,8 +401,14 @@ public:
 
 	bool DoMajorCivEraChange(PlayerTypes ePlayer, EraTypes eNewEra);
 
+	
+#if !defined(LEKMOD_FIX_SCHOLASTICISM)
 	int GetScienceFriendshipBonus();
 	int GetScienceFriendshipBonusTimes100();
+#else
+	int GetScienceFriendshipBonus(PlayerTypes eMajor);
+	int GetScienceFriendshipBonusTimes100(PlayerTypes eMajor, EraTypes eAssumeEra = NO_ERA);
+#endif
 	int GetCurrentScienceFriendshipBonusTimes100(PlayerTypes ePlayer);
 
 	// Culture bonuses

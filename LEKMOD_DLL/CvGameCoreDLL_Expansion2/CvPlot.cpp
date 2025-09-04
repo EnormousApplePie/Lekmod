@@ -8264,18 +8264,16 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 			}
 		}
 #if defined(TRAITIFY) // Special case for Armenia 
-		if(getFeatureType() == FEATURE_ARARAT_MOUNTAIN)
+		FeatureTypes eAraratMountain = (FeatureTypes)GC.getInfoTypeForString("FEATURE_ARARAT_MOUNTAIN");
+		if(getFeatureType() == eAraratMountain)
 		{
 			if (m_eOwner != NO_PLAYER)
 			{
 				// Shouldn't be possible today but who knows about tomorrow...
-				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
+				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(eAraratMountain, eYield);
 				if (eImprovement == NO_IMPROVEMENT)
-				{
-					iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
-				}
+					iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(eAraratMountain, eYield);
 			}
-			
 		}
 #endif
 
@@ -8352,6 +8350,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 
 	if(bCity)
 	{
+		CvPlayer& kPlayer = GET_PLAYER(getOwner());
 #ifdef NQM_YIELD_MIN_CITY_ON_HILLS_ADJUST
 		int iMinCityYield = kYield.getMinCity();
 		if (isHills())
@@ -8362,26 +8361,25 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 #else
 		iYield = std::max(iYield, kYield.getMinCity());
 #endif
-#ifndef AUI_PLOT_FIX_CITY_YIELD_CHANGE_RELOCATED
 		// Mod for Player; used for Policies and such
-		int iTemp = GET_PLAYER(getOwner()).GetCityYieldChange(eYield);	// In hundreds - will be added to capitalYieldChange below
+		int iTemp = kPlayer.GetCityYieldChange(eYield);	// In hundreds - will be added to capitalYieldChange below
 
 		// Coastal City Mod
 		if(pCity->isCoastal())
 		{
-			iYield += GET_PLAYER(getOwner()).GetCoastalCityYieldChange(eYield);
+			iYield += kPlayer.GetCoastalCityYieldChange(eYield);
 		}
 
 		// Capital Mod
 		if(pCity->isCapital())
 		{
-			iTemp += GET_PLAYER(getOwner()).GetCapitalYieldChange(eYield);
+			iTemp += kPlayer.GetCapitalYieldChange(eYield);
 
-			int iPerPopYield = pCity->getPopulation() * GET_PLAYER(getOwner()).GetCapitalYieldPerPopChange(eYield);
+			int iPerPopYield = pCity->getPopulation() * kPlayer.GetCapitalYieldPerPopChange(eYield);
 			iPerPopYield /= 100;
 			iYield += iPerPopYield;
 		}
-
+				
 #ifdef LEKMOD_v34
 		// Landmass yields from buildings
 		if (pCity != NULL)
@@ -8425,7 +8423,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 #endif
 
 		iYield += (iTemp / 100);
-#endif
 	}
 
 	iYield += GC.getGame().getPlotExtraYield(m_iX, m_iY, eYield);

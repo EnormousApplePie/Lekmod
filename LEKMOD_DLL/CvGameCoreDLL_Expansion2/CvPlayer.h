@@ -418,7 +418,17 @@ public:
 
 	int GetHappinessFromTradeRoutes() const;
 	void DoUpdateCityConnectionHappiness();
-
+#if defined(STANDARDIZE_YIELDS)
+	// Create Player level yield collecting functions to retire the yield specific ones.
+	int GetTotalYieldPerTurnTimes100(YieldTypes eYield, bool bExcludeReligion = false) const; // bExcludeReligion is to prevent recursive calls.
+	int GetYieldPerTurnFromCitiesTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromMinorCivsTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromReligionTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromTraitsTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromHappinessTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnForFreeTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromBonusTurnsTimes100(YieldTypes eYield) const;
+#endif
 	// Culture
 
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100

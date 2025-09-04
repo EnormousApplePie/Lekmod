@@ -378,7 +378,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 
 	Method(GetBaseYieldRateFromReligion);
 	Method(ChangeBaseYieldRateFromReligion);
-
+#if defined(LEKMOD_PATRO_FOOD_FIX)
+	Method(GetMaritimeCityStateFoodBonusTimes100);
+#endif
 	Method(GetYieldPerPopTimes100);
 
 	Method(GetBaseYieldRateModifier);
@@ -3046,6 +3048,13 @@ int CvLuaCity::lChangeBaseYieldRateFromReligion(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::ChangeBaseYieldRateFromReligion);
 }
+#if defined(LEKMOD_PATRO_FOOD_FIX)
+//------------------------------------------------------------------------------
+int CvLuaCity::lGetMaritimeCityStateFoodBonusTimes100(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetMaritimeCityStateFoodBonusTimes100);
+}
+#endif
 //------------------------------------------------------------------------------
 int CvLuaCity::lGetYieldPerPopTimes100(lua_State* L)
 {

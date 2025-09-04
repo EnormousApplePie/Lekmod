@@ -380,7 +380,9 @@ protected:
 
 	static int lGetBaseYieldRateFromReligion(lua_State* L);
 	static int lChangeBaseYieldRateFromReligion(lua_State* L);
-
+#if defined(LEKMOD_PATRO_FOOD_FIX)
+	static int lGetMaritimeCityStateFoodBonusTimes100(lua_State* L);
+#endif
 	static int lGetYieldPerPopTimes100(lua_State* L);
 
 	static int lGetBaseYieldRateModifier(lua_State* L);

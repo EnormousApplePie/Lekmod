@@ -7673,7 +7673,22 @@ bool CvUnit::rebase(int iX, int iY)
 	}
 
 	setXY(pTargetPlot->getX(), pTargetPlot->getY(), false, bShow, false);
-
+#if defined(FIX_PRODUCTION_KEEPING_EXPLOITS) // Rebase Air Units
+	if (pTargetPlot->isCity())
+	{
+		CvCity* pRebaseCity = pTargetPlot->getPlotCity();
+		if (pRebaseCity)
+		{
+			const int iUnitsThere = pTargetPlot->countNumAirUnits(getTeam());
+			if (iUnitsThere >= pRebaseCity->GetMaxAirUnits())
+			{
+				pRebaseCity->CleanUpQueue(); // Recent move could invalidate training of air units queued.
+				if (pRebaseCity->headOrderQueueNode() == NULL)
+					pRebaseCity->chooseProduction(); // If Order queue is empty, choose something new
+			}
+		}
+	}
+#endif
 	return true;
 }
 

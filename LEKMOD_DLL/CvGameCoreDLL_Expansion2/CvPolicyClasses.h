@@ -316,6 +316,10 @@ public:
 	int GetPolicyResourceYieldChanges(int i, int j) const;
 	int GetPolicyResourceClassYieldChanges(int i, int j) const;
 #endif
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	int GetMinorFriendYieldBonus(int i, int j) const;
+	int GetMinorAllyYieldBonus(int i, int j) const;
+#endif
 	int GetHurryModifier(int i) const;
 	bool IsSpecialistValid(int i) const;
 	int GetImprovementYieldChanges(int i, int j) const;
@@ -616,7 +620,10 @@ private:
 	int** m_ppiPolicyResourceYieldChanges;
 	int** m_ppiPolicyResourceClassYieldChanges;
 #endif
-
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	int** m_paiMinorFriendYieldBonus;
+	int** m_paiMinorAllyYieldBonus;
+#endif
 //	bool* m_pabHurry;
 	bool* m_pabSpecialistValid;
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -901,6 +908,10 @@ public:
 	int GetPolicyResourceQuantity(ResourceTypes eResource) const;
 	int GetPolicyResourceYieldChanges(ResourceTypes eResource, YieldTypes eYield) const;
 	int GetPolicyResourceClassYieldChanges(ResourceClassTypes eResourceClass, YieldTypes eYield) const;
+#endif
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	int GetMinorFriendYieldBonus(EraTypes eEra, YieldTypes eYield) const;
+	int GetMinorAllyYieldBonus(EraTypes eEra, YieldTypes eYield) const;
 #endif
 
 	// Functions to give current player status with respect to policies

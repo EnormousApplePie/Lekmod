@@ -11988,7 +11988,41 @@ void CvPlayer::changeTotalLandScored(int iChange)
 		CvAssert(getTotalLandScored() >= 0);
 	}
 }
+#if defined(STANDARDIZE_YIELDS)
+// Create Player level yield collecting functions to retire the yield specific ones.
+int CvPlayer::GetTotalYieldPerTurnTimes100(YieldTypes eYield, bool bExcludeReligion = false) const // bExcludeReligion is to prevent recursive calls.
+{
 
+}
+int CvPlayer::GetYieldPerTurnFromCitiesTimes100(YieldTypes eYield) const
+{
+	
+}
+int CvPlayer::GetYieldPerTurnFromMinorCivsTimes100(YieldTypes eYield) const
+{
+
+}
+int CvPlayer::GetYieldPerTurnFromReligionTimes100(YieldTypes eYield) const
+{
+
+}
+int CvPlayer::GetYieldPerTurnFromTraitsTimes100(YieldTypes eYield) const
+{
+
+}
+int CvPlayer::GetYieldPerTurnFromHappinessTimes100(YieldTypes eYield) const
+{
+
+}
+int CvPlayer::GetYieldPerTurnForFreeTimes100(YieldTypes eYield) const
+{
+
+}
+int CvPlayer::GetYieldPerTurnFromBonusTurnsTimes100(YieldTypes eYield) const
+{
+
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Total culture per turn
 int CvPlayer::GetTotalJONSCulturePerTurn() const
@@ -12055,20 +12089,27 @@ int CvPlayer::GetTotalJONSCulturePerTurnTimes100() const
 	// Temporary boost from bonus turns
 	iCulturePerTurn += GetCulturePerTurnFromBonusTurns();
 #endif
+	// Golden Age bonus
+	if (isGoldenAge() && !IsGoldenAgeCultureBonusDisabled())
+	{
 #if !defined(TRAITIFY) // Golden Age Culture Modifier -- Romania Trait
-	// Golden Age bonus
-	if (isGoldenAge() && !IsGoldenAgeCultureBonusDisabled())
-	{
+#if !defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
+		
 		iCulturePerTurn += ((iCulturePerTurn * GC.getGOLDEN_AGE_CULTURE_MODIFIER()) / 100);
-	}
 #else
-	// Golden Age bonus
-	CvPlayerTraits* pPlayerTraits = GetPlayerTraits();
-	if (isGoldenAge() && !IsGoldenAgeCultureBonusDisabled())
-	{
-		iCulturePerTurn += ((iCulturePerTurn * (GC.getGOLDEN_AGE_CULTURE_MODIFIER() + pPlayerTraits->GetGoldenAgeCultureModifier())) / 100);
-	}
+		const CvYieldInfo& kYield = *GC.getYieldInfo(YIELD_CULTURE);
+		iCulturePerTurn += ((iCulturePerTurn * kYield.getPlayerGoldenAgeYieldMod()) / 100);
 #endif
+#else // TRAITIFY
+		CvPlayerTraits* pPlayerTraits = GetPlayerTraits();
+#if defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
+		const CvYieldInfo& kYield = *GC.getYieldInfo(YIELD_CULTURE);
+		iCulturePerTurn += ((iCulturePerTurn * (kYield.getPlayerGoldenAgeYieldMod() + pPlayerTraits->GetGoldenAgeCultureModifier())) / 100);
+#else
+		iCulturePerTurn += ((iCulturePerTurn * (GC.getGOLDEN_AGE_CULTURE_MODIFIER() + pPlayerTraits->GetGoldenAgeCultureModifier())) / 100);
+#endif
+#endif // TRAITIFY
+	}
 	return iCulturePerTurn;
 }
 
@@ -14587,9 +14628,6 @@ int CvPlayer::GetHappinessFromCities() const
 	for(pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
 		iHappiness += pLoopCity->GetLocalHappiness();
-#if defined(TRAITIFY) // Burma Happiness
-		iHappiness += GetPlayerTraits()->GetLocalHappinessPerCity();
-#endif
 	}
 
 	return iHappiness;
@@ -21559,56 +21597,68 @@ int CvPlayer::GetScienceFromOtherPlayersTimes100() const
 
 	PlayerTypes ePlayer;
 	int iScienceFromPlayer;
-	for(int iPlayerLoop = MAX_MAJOR_CIVS; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+#if !defined(LEKMOD_FIX_SCHOLASTICISM)
+	for (int iPlayerLoop = MAX_MAJOR_CIVS; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 	{
-		ePlayer = (PlayerTypes) iPlayerLoop;
+		ePlayer = (PlayerTypes)iPlayerLoop;
 
 		iScienceFromPlayer = 0;
-		
 		// NQMP GJS - New Scholasticism
 		// era id starts at 0, also this code is SO shitty, should be in database somehow
-		if(IsGetsScienceFromPlayer(ePlayer))
+		if (IsGetsScienceFromPlayer(ePlayer))
 		{
 			if (GET_PLAYER(ePlayer).GetMinorCivAI()->IsAllies(GetID()))
 			{
 				switch ((int)GetCurrentEra())
 				{
-					case 0:
-						iScienceFromPlayer = 0;
-						break;
-					case 1:
-						iScienceFromPlayer = 100;
-						break;
-					case 2:
-						iScienceFromPlayer = 300;
-						break;
-					case 3:
-						iScienceFromPlayer = 600;
-						break;
-					case 4:
-						iScienceFromPlayer = 1000;
-						break;
-					case 5:
-						iScienceFromPlayer = 1500;
-						break;
-					case 6:
-						iScienceFromPlayer = 2100;
-						break;
-					case 7:
-						iScienceFromPlayer = 2800;
-						break;
+				case 0:
+					iScienceFromPlayer = 0;
+					break;
+				case 1:
+					iScienceFromPlayer = 100;
+					break;
+				case 2:
+					iScienceFromPlayer = 300;
+					break;
+				case 3:
+					iScienceFromPlayer = 600;
+					break;
+				case 4:
+					iScienceFromPlayer = 1000;
+					break;
+				case 5:
+					iScienceFromPlayer = 1500;
+					break;
+				case 6:
+					iScienceFromPlayer = 2100;
+					break;
+				case 7:
+					iScienceFromPlayer = 2800;
+					break;
 				}
 			}
 			else if (GET_PLAYER(ePlayer).GetMinorCivAI()->IsFriends(GetID()))
 			{
 				iScienceFromPlayer = GetCurrentEra() * 100; // NQMP GJS - New Scholasticism: Friend Status gives +1 Science per era after Ancient
 			}
-			
-				
+
+
 			//iScienceFromPlayer = GET_PLAYER(ePlayer).GetMinorCivAI()->GetScienceFriendshipBonusTimes100();
 			iScience += iScienceFromPlayer;
 		}
 	}
+#else
+	iScienceFromPlayer = 0;
+	for (int iPlayerLoop = MAX_MAJOR_CIVS; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+	{
+		ePlayer = (PlayerTypes)iPlayerLoop;
+		const CvPlayer& kMinor = GET_PLAYER(ePlayer);
+		if (!kMinor.isAlive() || !kMinor.isMinorCiv())
+			continue;
+		iScienceFromPlayer += GET_PLAYER(ePlayer).GetMinorCivAI()->GetCurrentScienceFriendshipBonusTimes100(GetID());
+	}
+	iScience += iScienceFromPlayer;
+#endif
 
 	// NQMP GJS - new Underground Sect begin
 	// Science from foreign followers of our religion?
@@ -26691,7 +26741,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			}
 		}
 #endif
-	}
+	} // END CITY LOOP
 
 	// Store off number of newly built cities that will get a free building
 	ChangeNumCitiesFreeAestheticsSchools(iNumCitiesFreeAestheticsSchools); // NQMP GJS - add support for NumCitiesFreeAestheticsSchools

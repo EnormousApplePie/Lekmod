@@ -3127,7 +3127,15 @@ void CvCityBuildings::DoSellBuilding(BuildingTypes eIndex)
 	SetNumRealBuilding(eIndex, 0);
 
 	SetSoldBuildingThisTurn(true);
-
+#if defined(FIX_PRODUCTION_KEEPING_EXPLOITS) // Selling Buildings
+	int iLoop;
+	for (CvCity* pLoopCity = GET_PLAYER(m_pCity->getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(m_pCity->getOwner()).nextCity(&iLoop))
+	{
+		pLoopCity->CleanUpQueue(); // Selling this building could have invalidated the construction of a National Wonder somewhere in the Empire.
+		if (pLoopCity->headOrderQueueNode() == NULL)
+			pLoopCity->chooseProduction(); // If the queue is now empty, pick something to build.
+	}
+#endif
 #ifdef LEKMOD_NEW_LUA_EVENTS
 	// MOD.EAP: Add a new lua event.
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();

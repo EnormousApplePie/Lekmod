@@ -677,18 +677,19 @@ public:
 	int GetBaseYieldRateFromReligion(YieldTypes eIndex) const;
 	void ChangeBaseYieldRateFromReligion(YieldTypes eIndex, int iChange);
 	// END Base Yield
-
+#if defined(LEKMOD_PATRO_FOOD_FIX)
+	int GetMaritimeCityStateFoodBonusTimes100()	const;
+#endif
 	int GetYieldPerPopTimes100(YieldTypes eIndex) const;
 	void ChangeYieldPerPopTimes100(YieldTypes eIndex, int iChange);
 
 	int GetYieldPerReligionTimes100(YieldTypes eIndex) const;
 	void ChangeYieldPerReligionTimes100(YieldTypes eIndex, int iChange);
-
+#if defined(STANDARDIZE_YIELDS)
+	int 
+#endif
 	int getYieldRateModifier(YieldTypes eIndex) const;
 	void changeYieldRateModifier(YieldTypes eIndex, int iChange);
-
-	int getPowerYieldRateModifier(YieldTypes eIndex) const;
-	void changePowerYieldRateModifier(YieldTypes eIndex, int iChange);
 
 	int getResourceYieldRateModifier(YieldTypes eIndex) const;
 	void changeResourceYieldRateModifier(YieldTypes eIndex, int iChange);
