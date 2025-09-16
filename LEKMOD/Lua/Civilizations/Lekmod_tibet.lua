@@ -24,22 +24,18 @@ function lekmod_tibet_add_building(player)
 end
 
 function lekmod_tibet_ua_on_era(team_id)
-
    for _, player in pairs(Players) do
       if player:GetTeam() == team_id then lekmod_tibet_add_building(player) end
    end
-
 end
 
 function lekmod_tibet_ua_on_city_founded(player_id)
-
    local player = Players[player_id]
    lekmod_tibet_add_building(player)
-
+ 
 end
 
 function lekmod_tibet_ua_city_capture(old_owner_id, is_capital, x, y, new_owner_id)
-
    local new_player = Players[new_owner_id]
    local old_player = Players[old_owner_id]
    if new_player:GetCivilizationType() ~= this_civ then

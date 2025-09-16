@@ -393,6 +393,9 @@ CvPlayer::CvPlayer() :
 	, m_iNumCitiesFreeWalls(0) // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	, m_iNumCitiesFreeCultureBuilding(0)
 	, m_iNumCitiesFreeFoodBuilding(0)
+#if defined(LEKMOD_FIX_PATRO_FOOD)
+	, m_iCityStateBonusModifier(0)
+#endif
 	, m_iUnitPurchaseCostModifier("CvPlayer::m_iUnitPurchaseCostModifier", m_syncArchive)
 	, m_iAllFeatureProduction("CvPlayer::m_iAllFeatureProduction", m_syncArchive)
 	, m_iCityDistanceHighwaterMark("CvPlayer::m_iCityDistanceHighwaterMark", m_syncArchive)
@@ -723,12 +726,15 @@ void CvPlayer::init(PlayerTypes eID)
 		ChangeTraitExtraLeagueVotes(GetPlayerTraits()->GetNumExtraLeagueVotes()); // Vatican Trait
 		changeHalfMoreSpecialistUnhappinessCount(GetPlayerTraits()->IsHalfMoreSpecialistUnhappiness()); // Mysore Trait
 		ChangeMinorFriendshipAnchorMod(GetPlayerTraits()->GetMinorFriendshipMinimum()); // Tonga Trait
+		ChangeExtraHappinessPerCity(GetPlayerTraits()->GetGlobalHappinessPerCity()); // Burma Trait
 		for (int iR = 0; iR < GC.getNumRouteInfos(); iR++)
 		{
 			GET_TEAM(getTeam()).changeRouteChange(((RouteTypes)iR), GetPlayerTraits()->GetRouteMovementChange((RouteTypes)iR)); // Franks Trait
 		}
 #endif
-
+#if defined(LEKMOD_FIX_PATRO_FOOD)
+		ChangeCityStateBonusModifier(GetPlayerTraits()->GetCityStateBonusModifier()); // Siam Trait. Still directly referenced in several places, just put here for stacking with patro finisher.
+#endif
 		for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 		{
 			ChangeCityYieldChange((YieldTypes)iJ, 100 * GetPlayerTraits()->GetFreeCityYield((YieldTypes)iJ));
@@ -741,7 +747,9 @@ void CvPlayer::init(PlayerTypes eID)
 		{
 			updateExtraYieldThreshold((YieldTypes)iI);
 		}
-
+#if defined(LEKMOD_GREAT_WORK_YIELD_EFFECTS) // Initialize the Base Culture output of Greatworks
+		ChangeGreatWorkYieldChange(YIELD_CULTURE, GC.getBASE_CULTURE_PER_GREAT_WORK());
+#endif
 		CvCivilizationInfo& playerCivilizationInfo = getCivilizationInfo();
 		for(iI = 0; iI < GC.getNumUnitClassInfos(); ++iI)
 		{
@@ -1168,6 +1176,9 @@ void CvPlayer::uninit()
 	m_iNumCitiesFreeWalls = 0; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	m_iNumCitiesFreeCultureBuilding = 0;
 	m_iNumCitiesFreeFoodBuilding = 0;
+#if defined(LEKMOD_FIX_PATRO_FOOD)
+	m_iCityStateBonusModifier = 0;
+#endif
 	m_iUnitPurchaseCostModifier = 0;
 	m_iAllFeatureProduction = 0;
 	m_iCityDistanceHighwaterMark = 1;
@@ -2211,7 +2222,11 @@ CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bInitialFoundin
 
 //	--------------------------------------------------------------------------------
 // NOTE: bGift set to true if the city is given as a gift, as in the case for trades and Austria UA of annexing city-states
+#if !defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
 void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
+#else
+void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bPurchased)
+#endif
 {
 	if(pOldCity == NULL)
 		return;
@@ -2258,8 +2273,11 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 #else
 	CvCityReligions tempReligions;
 #endif
+#if !defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
 	bool bIsMinorCivBuyout = (pOldCity->GetPlayer()->isMinorCiv() && bGift && (IsAbleToAnnexCityStates() || GetPlayerTraits()->IsNoAnnexing())); // Austria and Venice UA
-
+#else
+	bool bIsMinorCivBuyout = (pOldCity->GetPlayer()->isMinorCiv() && bGift && (IsAbleToAnnexCityStates() || GetPlayerTraits()->IsNoAnnexing() || bPurchased)); // Austria and Venice UA
+#endif
 	pCityPlot = pOldCity->plot();
 
 	pUnitNode = pCityPlot->headUnitNode();
@@ -3991,8 +4009,6 @@ bool CvPlayer::CanLiberatePlayerCity(PlayerTypes ePlayer)
 
 		return true;
 	}
-
-	return false;
 }
 
 #else
@@ -8053,6 +8069,9 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 			if (pNewUnit != NULL)
 			{
 				pNewUnit->convert(pUnit, true);
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+				pUnit->ConvertPromotions(pUnit, pNewUnit);
+#endif
 				pNewUnit->setupGraphical();
 
 				ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
@@ -8624,7 +8643,11 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 
 
 //	--------------------------------------------------------------------------------
+#if !defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
 void CvPlayer::found(int iX, int iY)
+#else
+void CvPlayer::found(int iX, int iY, UnitTypes eSettlerUnit)
+#endif
 {
 	if(!canFound(iX, iY))
 	{
@@ -8681,6 +8704,12 @@ void CvPlayer::found(int iX, int iY)
 			}
 		}
 	}
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	if(eSettlerUnit != NO_UNIT)
+	{
+		pCity->SetSettlerUnit(eSettlerUnit);
+	}
+#endif
 
 	AwardFreeBuildings(pCity);
 
@@ -10584,9 +10613,9 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 #else
 					iBuildingCount = pLoopCity->GetCityBuildings()->GetNumRealBuilding(eBuilding);
 #endif
-
 					if(iBuildingCount > 0)
 					{
+#if !defined(CLEAN_UP)
 						// GJS - changed how culture accumulates for buildings
 						pLoopCity->ChangeJONSCulturePerTurnFromBuildings(pBuildingInfo->GetBuildingClassYieldChange(eBuildingClass, YIELD_CULTURE) * iBuildingCount * iChange);
 
@@ -10616,6 +10645,18 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 							}
 							}
 						}
+#else
+						// Building Class Yield Stuff
+						for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+						{
+							YieldTypes eYield = (YieldTypes)iJ;
+							int iYieldChange = pBuildingInfo->GetBuildingClassYieldChange(eBuildingClass, eYield);
+							if (iYieldChange > 0)
+							{
+								pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
+							}
+						}
+#endif
 					}
 				}
 			}
@@ -10642,6 +10683,7 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 #endif
 			if (iBuildingCount > 0)
 			{
+#if !defined(STANDARDIZE_YIELDS) // compress yield changes
 				// GJS - changed how culture accumulates for buildings
 				pLoopCity->ChangeJONSCulturePerTurnFromBuildings(pBuildingInfo->GetBuildingClassYieldChange(eBuildingClass, YIELD_CULTURE) * iBuildingCount * iChange);
 
@@ -10669,14 +10711,23 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 					}
 					}
 				}
-				
+#else
+				// Building Class Yield Stuff
+				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					YieldTypes eYield = (YieldTypes)iJ;
+					int iYieldChange = pBuildingInfo->GetBuildingClassYieldChange(eBuildingClass, eYield);
+					if (iYieldChange > 0)
+					{
+						pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
+					}
+				}
+#endif
 			}
 		}
 #endif
-
 	}
 }
-
 //	--------------------------------------------------------------------------------
 /// Get yield change from buildings for a specific building class
 int CvPlayer::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType)
@@ -11988,41 +12039,6 @@ void CvPlayer::changeTotalLandScored(int iChange)
 		CvAssert(getTotalLandScored() >= 0);
 	}
 }
-#if defined(STANDARDIZE_YIELDS)
-// Create Player level yield collecting functions to retire the yield specific ones.
-int CvPlayer::GetTotalYieldPerTurnTimes100(YieldTypes eYield, bool bExcludeReligion = false) const // bExcludeReligion is to prevent recursive calls.
-{
-
-}
-int CvPlayer::GetYieldPerTurnFromCitiesTimes100(YieldTypes eYield) const
-{
-	
-}
-int CvPlayer::GetYieldPerTurnFromMinorCivsTimes100(YieldTypes eYield) const
-{
-
-}
-int CvPlayer::GetYieldPerTurnFromReligionTimes100(YieldTypes eYield) const
-{
-
-}
-int CvPlayer::GetYieldPerTurnFromTraitsTimes100(YieldTypes eYield) const
-{
-
-}
-int CvPlayer::GetYieldPerTurnFromHappinessTimes100(YieldTypes eYield) const
-{
-
-}
-int CvPlayer::GetYieldPerTurnForFreeTimes100(YieldTypes eYield) const
-{
-
-}
-int CvPlayer::GetYieldPerTurnFromBonusTurnsTimes100(YieldTypes eYield) const
-{
-
-}
-#endif
 //	--------------------------------------------------------------------------------
 /// Total culture per turn
 int CvPlayer::GetTotalJONSCulturePerTurn() const
@@ -12131,10 +12147,14 @@ int CvPlayer::GetJONSCulturePerTurnFromCitiesTimes100() const
 	int iLoop;
 	for(pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
+#if !defined(STANDARDIZE_YIELDS) // Change to standard getYieldRateTimes100
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 		iCulturePerTurn += pLoopCity->getJONSCulturePerTurnTimes100();
 #else
 		iCulturePerTurn += pLoopCity->getJONSCulturePerTurn();
+#endif
+#else
+		iCulturePerTurn += pLoopCity->getYieldRateTimes100(YIELD_CULTURE, false /*bIgnoreTrade*/);
 #endif
 	}
 
@@ -12371,13 +12391,18 @@ int CvPlayer::GetCulturePerTurnFromBonusTurnsTimes100() const
 /// Modifier for all Cities' culture
 int CvPlayer::GetJONSCultureCityModifier() const
 {
+#if !defined(STANDARDIZE_YIELDS) // change to standard yield rate
 	return m_iJONSCultureCityModifier;
+#else
+	return getYieldRateModifier(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
 /// Modifier for all Cities' culture
 void CvPlayer::ChangeJONSCultureCityModifier(int iChange)
 {
+#if !defined(STANDARDIZE_YIELDS) // change to standard yield rate
 	if(iChange != 0)
 	{
 		m_iJONSCultureCityModifier += iChange;
@@ -12387,6 +12412,9 @@ void CvPlayer::ChangeJONSCultureCityModifier(int iChange)
 			GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 		}
 	}
+#else
+	changeYieldRateModifier(YIELD_CULTURE, iChange);
+#endif
 }
 
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
@@ -12592,7 +12620,11 @@ void CvPlayer::ChangeCulturePerWonder(int iChange)
 		for(pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
 			iTotalCultureChange = pLoopCity->getNumWorldWonders() * iChange;
+#if !defined(STANDARDIZE_YIELDS) // change to standard yield rate
 			pLoopCity->ChangeJONSCulturePerTurnFromPolicies(iTotalCultureChange);
+#else
+			pLoopCity->ChangeBaseYieldRateFromPolicies(YIELD_CULTURE, iTotalCultureChange);
+#endif
 		}
 	}
 }
@@ -12664,8 +12696,11 @@ void CvPlayer::ChangeSpecialistCultureChange(int iChange)
 				iSpecialistCount = pLoopCity->GetCityCitizens()->GetSpecialistCount(eSpecialist);
 				iTotalCulture += (iSpecialistCount * pLoopCity->GetCultureFromSpecialist(eSpecialist));
 			}
-
+#if !defined(STANDARDIZE_YIELDS) // change to standard yield rate
 			pLoopCity->ChangeJONSCulturePerTurnFromSpecialists(-iTotalCulture);
+#else
+			pLoopCity->ChangeBaseYieldRateFromSpecialists(YIELD_CULTURE, -iTotalCulture);
+#endif
 		}
 
 		// CHANGE VALUE
@@ -12682,8 +12717,11 @@ void CvPlayer::ChangeSpecialistCultureChange(int iChange)
 				iSpecialistCount = pLoopCity->GetCityCitizens()->GetSpecialistCount(eSpecialist);
 				iTotalCulture += (iSpecialistCount * pLoopCity->GetCultureFromSpecialist(eSpecialist));
 			}
-
+#if !defined(STANDARDIZE_YIELDS) // change to standard yield rate
 			pLoopCity->ChangeJONSCulturePerTurnFromSpecialists(iTotalCulture);
+#else
+			pLoopCity->ChangeBaseYieldRateFromSpecialists(YIELD_CULTURE, iTotalCulture);
+#endif
 		}
 #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
 		doSelfConsistencyCheckAllCities();
@@ -12768,14 +12806,12 @@ void CvPlayer::ChangeNumCitiesFreeWalls(int iChange)
 	if(iChange != 0)
 		m_iNumCitiesFreeWalls += iChange;
 }
-
 //	--------------------------------------------------------------------------------
 /// Cities remaining to get a free culture building
 int CvPlayer::GetNumCitiesFreeCultureBuilding() const
 {
 	return m_iNumCitiesFreeCultureBuilding;
 }
-
 //	--------------------------------------------------------------------------------
 /// Changes number of cities remaining to get a free culture building
 void CvPlayer::ChangeNumCitiesFreeCultureBuilding(int iChange)
@@ -12783,16 +12819,12 @@ void CvPlayer::ChangeNumCitiesFreeCultureBuilding(int iChange)
 	if(iChange != 0)
 		m_iNumCitiesFreeCultureBuilding += iChange;
 }
-
 //	--------------------------------------------------------------------------------
 /// Cities remaining to get a free culture building
 int CvPlayer::GetNumCitiesFreeFoodBuilding() const
 {
 	return m_iNumCitiesFreeFoodBuilding;
 }
-
-
-
 //	--------------------------------------------------------------------------------
 /// Changes number of cities remaining to get a free culture building
 void CvPlayer::ChangeNumCitiesFreeFoodBuilding(int iChange)
@@ -12800,8 +12832,6 @@ void CvPlayer::ChangeNumCitiesFreeFoodBuilding(int iChange)
 	if(iChange != 0)
 		m_iNumCitiesFreeFoodBuilding += iChange;
 }
-
-
 /// Cities remaining to get a free building
 int CvPlayer::GetNumCitiesFreeChosenBuilding(BuildingClassTypes eBuildingClass) const
 {
@@ -12809,7 +12839,6 @@ int CvPlayer::GetNumCitiesFreeChosenBuilding(BuildingClassTypes eBuildingClass) 
 	CvAssertMsg(eBuildingClass > -1, "Index out of bounds");
 	return m_paiNumCitiesFreeChosenBuilding[eBuildingClass];
 }
-
 //	--------------------------------------------------------------------------------
 /// Changes number of cities remaining to get a free building
 void CvPlayer::ChangeNumCitiesFreeChosenBuilding(BuildingClassTypes eBuildingClass, int iChange)
@@ -13122,7 +13151,13 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 			int iPolicyCap = GC.getPOLICY_YIELD_CAP();
 			int iTraitCap = GC.getTRAIT_YIELD_CAP();
 			int iBeliefCap = GC.getBELIEF_YIELD_CAP();
-			int iPromotionCap = GC.getPROMOTION_YIELD_CAP();
+			int iPromotionCap = GC.getPROMOTION_YIELD_CAP(); 
+			if (pAttackingUnit != NULL)
+			{
+				int iCapFromPromotions = pAttackingUnit->GetKillYieldCap(eYield);
+				if(iCapFromPromotions > 0)
+					iPromotionCap += iCapFromPromotions;
+			}
 			int iUnitCap = GC.getUNIT_YIELD_CAP();
 			// Ok so EAP has requested a different System. 
 			// NQMP GJS - Cap Yields from kills to 30 per type (policy/trait/belief/other)
@@ -13836,12 +13871,15 @@ int CvPlayer::GetFaithPerTurnFromCities() const
 {
 	int iFaithPerTurn = 0;
 
-	// Add in culture from Cities
 	const CvCity* pLoopCity;
 	int iLoop;
 	for(pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
+#if !defined(STANDARDIZE_YIELDS) // change to standard yield rate
 		iFaithPerTurn += pLoopCity->GetFaithPerTurn();
+#else
+		iFaithPerTurn += pLoopCity->getYieldRate(YIELD_FAITH, false /*bIngoreTrade*/);
+#endif
 	}
 
 	return iFaithPerTurn;
@@ -22589,7 +22627,19 @@ void CvPlayer::changeNumResourceUsed(ResourceTypes eIndex, int iChange)
 
 	CvAssert(m_paiNumResourceUsed[eIndex] >= 0);
 }
-
+#if defined(LEKMOD_FIX_PATRO_FOOD)
+//	--------------------------------------------------------------------------------
+int CvPlayer::GetCityStateBonusModifier() const
+{
+	return m_iCityStateBonusModifier;
+}
+//	--------------------------------------------------------------------------------
+void CvPlayer::ChangeCityStateBonusModifier(int iChange)
+{
+	if (iChange != 0)
+		m_iCityStateBonusModifier += iChange;
+}
+#endif
 //	--------------------------------------------------------------------------------
 int CvPlayer::getNumResourceTotal(ResourceTypes eIndex, bool bIncludeImport) const
 {
@@ -26633,7 +26683,15 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			iCityCultureChange += (pPolicy->GetCulturePerGarrisonedUnit() * iChange);
 #endif
 		}
+#if !defined(STANDARDIZE_YIELDS) // change to standard yield rate
 		pLoopCity->ChangeJONSCulturePerTurnFromPolicies(iCityCultureChange);
+#else
+		pLoopCity->ChangeBaseYieldRateFromPolicies(YIELD_CULTURE, iCityCultureChange);
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS) // Garrison Yield Bonus does not exist without this define
+		pLoopCity->ChangeGarrisonYieldBonus(YIELD_CULTURE, pPolicy->GetCulturePerGarrisonedUnit() * iChange);
+		pLoopCity->ChangeGarrisonYieldBonus(YIELD_PRODUCTION, pPolicy->GetProductionFromGarrison() * iChange);
+#endif
+#endif
 #if !defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 		// Building modifiers
 		for(iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
@@ -26650,15 +26708,14 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 
 			if(eBuilding != NO_BUILDING)
 			{
+
 				CvBuildingEntry* pkBuilding = GC.getBuildingInfo(eBuilding);
 				if(pkBuilding)
 				{
 					iBuildingCount = pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding);
-
-					if(iBuildingCount > 0)
-					{
-						// GJS - changed how culture accumulates for buildings
-						pLoopCity->ChangeJONSCulturePerTurnFromPolicies(pPolicy->GetBuildingClassCultureChange(eBuildingClass) * iBuildingCount * iChange);
+#if !defined(STANDARDIZE_YIELDS)
+					// GJS - changed how culture accumulates for buildings
+					pLoopCity->ChangeJONSCulturePerTurnFromPolicies(pPolicy->GetBuildingClassCultureChange(eBuildingClass) * iBuildingCount * iChange);
 
 						// Building Class Yield Stuff
 						for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
@@ -26687,6 +26744,23 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 								}
 							}
 						}
+#else
+					// Building Class Yield Stuff
+					for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+					{
+						eYield = (YieldTypes)iJ;
+						iYieldMod = pPolicy->GetBuildingClassYieldModifiers(eBuildingClass, eYield);
+						if (iYieldMod > 0)
+						{
+							pLoopCity->changeYieldRateModifier(eYield, iYieldMod * iBuildingCount * iChange);
+						}
+						iYieldChange = pPolicy->GetBuildingClassYieldChanges(eBuildingClass, eYield);
+						if (iYieldChange != 0)
+						{
+							pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
+						}
+					}
+#endif
 					}
 				}
 			}
@@ -26709,12 +26783,14 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			iBuildingCount = pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding);
 			if (iBuildingCount > 0)
 			{
+#if !defined(STANDARDIZE_YIELDS) // compress yield change
 				// GJS - changed how culture accumulates for buildings
-				pLoopCity->ChangeJONSCulturePerTurnFromPolicies(pPolicy->GetBuildingClassCultureChange(eBuildingClass) * iBuildingCount * iChange);
+				pLoopCity->ChangeJONSCulturePerTurnFromPolicies(pPolicy->GetBuildingClassCultureChange(eBuildingClass)* iBuildingCount* iChange);
+
 				// Building Class Yield Stuff
 				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 				{
-					switch(iJ)
+					switch (iJ)
 					{
 					case YIELD_CULTURE:
 						// Skip, handled above
@@ -26723,26 +26799,43 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 						pLoopCity->ChangeFaithPerTurnFromPolicies(pPolicy->GetBuildingClassYieldChanges(eBuildingClass, iJ) * iBuildingCount * iChange);
 						break;
 					default:
+					{
+						eYield = (YieldTypes)iJ;
+						iYieldMod = pPolicy->GetBuildingClassYieldModifiers(eBuildingClass, eYield);
+						if (iYieldMod > 0)
 						{
-							eYield = (YieldTypes)iJ;
-							iYieldMod = pPolicy->GetBuildingClassYieldModifiers(eBuildingClass, eYield);
-							if (iYieldMod > 0)
-							{
-								pLoopCity->changeYieldRateModifier(eYield, iYieldMod * iBuildingCount * iChange);
-							}
-							iYieldChange = pPolicy->GetBuildingClassYieldChanges(eBuildingClass, eYield);
-							if (iYieldChange != 0)
-							{
-								pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
-							}
+							pLoopCity->changeYieldRateModifier(eYield, iYieldMod * iBuildingCount * iChange);
+						}
+						iYieldChange = pPolicy->GetBuildingClassYieldChanges(eBuildingClass, eYield);
+						if (iYieldChange != 0)
+						{
+							pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
 						}
 					}
+					}
 				}
+#else
+				// Building Class Yield Stuff
+				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					eYield = (YieldTypes)iJ;
+					iYieldMod = pPolicy->GetBuildingClassYieldModifiers(eBuildingClass, eYield);
+					if (iYieldMod > 0)
+					{
+						pLoopCity->changeYieldRateModifier(eYield, iYieldMod * iBuildingCount * iChange);
+					}
+					iYieldChange = pPolicy->GetBuildingClassYieldChanges(eBuildingClass, eYield);
+					if (iYieldChange != 0)
+					{
+						pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
+					}
+				}
+#endif
 			}
 		}
 #endif
 	} // END CITY LOOP
-
+					
 	// Store off number of newly built cities that will get a free building
 	ChangeNumCitiesFreeAestheticsSchools(iNumCitiesFreeAestheticsSchools); // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	ChangeNumCitiesFreePietyGardens(iNumCitiesFreePietyGardens);
@@ -27106,7 +27199,41 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			}
 		}
 	}
-
+#if defined(LEKMOD_FIX_PATRO_FOOD) // If this thing changes the patro benefits, update this directly since Firaxis hates me specifically
+	if (pPolicy->GetCityStateBonusModifier() != 0)
+	{
+		// Remove
+		int iMinorLoop;
+		for (iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
+		{
+			CvPlayer& kMinor = GET_PLAYER((PlayerTypes)iMinorLoop);
+			if (!kMinor.isAlive()) // Not Alive
+				continue;
+			if (!kMinor.isMinorCiv()) // Not Minor
+				continue;
+			if (kMinor.GetMinorCivAI()->GetTrait() != MINOR_CIV_TRAIT_MARITIME) // Only Maritime is fucked so skip everyone else
+				continue;
+			bool bFriends = kMinor.GetMinorCivAI()->IsFriends(GetID());
+			bool bAllies = kMinor.GetMinorCivAI()->IsAllies(GetID());
+			kMinor.GetMinorCivAI()->DoSetBonus(GetID(), false /*bAdd*/, bFriends, bAllies, true /*bSuppressNotifications*/, false /*bPassedBySomeone*/, NO_PLAYER);
+		}
+		ChangeCityStateBonusModifier(pPolicy->GetCityStateBonusModifier() * iChange); // Change the modifier
+		// Add Back
+		for (iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
+		{
+			CvPlayer& kMinor = GET_PLAYER((PlayerTypes)iMinorLoop);
+			if (!kMinor.isAlive()) // Not Alive
+				continue;
+			if (!kMinor.isMinorCiv()) // Not Minor
+				continue;
+			if (kMinor.GetMinorCivAI()->GetTrait() != MINOR_CIV_TRAIT_MARITIME) // Only Maritime is fucked so skip everyone else
+				continue;
+			bool bFriends = kMinor.GetMinorCivAI()->IsFriends(GetID());
+			bool bAllies = kMinor.GetMinorCivAI()->IsAllies(GetID());
+			kMinor.GetMinorCivAI()->DoSetBonus(GetID(), true /*bAdd*/, bFriends, bAllies, true /*bSuppressNotifications*/, false /*bPassedBySomeone*/, NO_PLAYER);
+		}
+	}
+#endif
 	DoUpdateHappiness();
 	GetTrade()->UpdateTradeConnectionValues();
 	recomputeGreatPeopleModifiers();
@@ -27697,6 +27824,9 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_iNumCitiesFreeWalls; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	kStream >> m_iNumCitiesFreeCultureBuilding;
 	kStream >> m_iNumCitiesFreeFoodBuilding;
+#if defined(LEKMOD_FIX_PATRO_FOOD)
+	kStream >> m_iCityStateBonusModifier;
+#endif
 	kStream >> m_iUnitPurchaseCostModifier;
 	kStream >> m_iAllFeatureProduction;
 	kStream >> m_iCityDistanceHighwaterMark;
@@ -28318,6 +28448,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_iNumCitiesFreeWalls; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	kStream << m_iNumCitiesFreeCultureBuilding;
 	kStream << m_iNumCitiesFreeFoodBuilding;
+#if defined(LEKMOD_FIX_PATRO_FOOD)
+	kStream << m_iCityStateBonusModifier;
+#endif
 	kStream << m_iUnitPurchaseCostModifier;
 	kStream << m_iAllFeatureProduction;
 	kStream << m_iCityDistanceHighwaterMark;

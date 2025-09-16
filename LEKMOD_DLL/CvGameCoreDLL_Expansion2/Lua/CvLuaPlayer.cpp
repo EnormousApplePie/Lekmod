@@ -1116,8 +1116,13 @@ int CvLuaPlayer::lAcquireCity(lua_State* L)
 	CvCity* pkCity = CvLuaCity::GetInstance(L, 2);
 	const bool bConquest = lua_toboolean(L, 3);
 	const bool bTrade = lua_toboolean(L, 4);
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	const bool bPurchased = luaL_optbool(L, 5, false);
 
+	pkPlayer->acquireCity(pkCity, bConquest, bTrade, bPurchased);
+#else
 	pkPlayer->acquireCity(pkCity, bConquest, bTrade);
+#endif
 	return 0;
 }
 //------------------------------------------------------------------------------
@@ -3503,6 +3508,7 @@ int CvLuaPlayer::lGetInternationalTradeRouteBaseBonus(lua_State* L)
 	CvCity* pOriginCity = CvLuaCity::GetInstance(L, 2, true);
 	CvCity* pDestCity = CvLuaCity::GetInstance(L, 3, true);
 	bool bOrigin = lua_toboolean(L, 4);
+	YieldTypes eYield = (YieldTypes)lua_tointeger(L, 5);
 
 	TradeConnection kTradeConnection;
 	kTradeConnection.m_iOriginX = pOriginCity->getX();

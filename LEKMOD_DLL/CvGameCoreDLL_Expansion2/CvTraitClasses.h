@@ -116,6 +116,7 @@ public:
 	int GetExtraPopulation() const;
 	int GetInternationalRouteGrowthModifier() const;
 	int GetLocalHappinessPerCity() const;
+	int GetGlobalHappinessPerCity() const;
 	int GetInternalTradeRouteYieldModifier() const;
 	int GetUnhappinessModifierForPuppetedCities() const;
 	int GetFaithCostModifier() const; 
@@ -344,6 +345,7 @@ protected:
 	int m_iExtraPopulation;
 	int m_iInternationalRouteGrowthModifier;
 	int m_iLocalHappinessPerCity;
+	int m_iGlobalHappinessPerCity;
 	int m_iInternalTradeRouteYieldModifier;
 	int m_iUnhappinessModifierForPuppetedCities;
 	int m_iFaithCostModifier;
@@ -773,6 +775,10 @@ public:
 	int GetLocalHappinessPerCity() const
 	{
 		return m_iLocalHappinessPerCity;
+	};
+	int GetGlobalHappinessPerCity() const
+	{
+		return m_iGlobalHappinessPerCity;
 	};
 	int GetInternalTradeRouteYieldModifier() const
 	{
@@ -1283,6 +1289,7 @@ private:
 	int m_iExtraPopulation;
 	int m_iInternationalRouteGrowthModifier;
 	int m_iLocalHappinessPerCity;
+	int m_iGlobalHappinessPerCity;
 	int m_iInternalTradeRouteYieldModifier;
 	int m_iUnhappinessModifierForPuppetedCities;
 	int m_iFaithCostModifier;

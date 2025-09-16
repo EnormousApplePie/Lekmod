@@ -125,7 +125,9 @@ public:
 	bool IsRangeAttackOnlyInDomain() const;
 	bool IsTrade() const;
 	int GetNumExoticGoods() const;
-
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	bool IsSubmerge() const;
+#endif
 	float GetUnitMaxSpeed() const;
 	float GetUnitPadTime() const;
 
@@ -267,6 +269,9 @@ private:
 	int m_iLeaderPromotion;
 	bool m_bTrade;
 	int m_iNumExoticGoods;
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	bool m_bSubmerge;
+#endif
 
 	// This is not loaded from XML, but cached so we don't have to recalculate every time
 	int m_iCachedPower;

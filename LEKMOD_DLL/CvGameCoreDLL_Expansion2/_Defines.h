@@ -746,7 +746,7 @@
 // fix tourism from futurism so it scales at different game speeds
 #define NQ_FIX_ADD_TOURISM_GAME_SPEED_MOD
 // golden age points accrue even while in golden ages
-#define NQ_GOLDEN_AGE_OVERHAUL
+//#define NQ_GOLDEN_AGE_OVERHAUL
 // coup chances now use base influence instead of effective influence (which would be -60 during war)
 // Cirra Edit
 #define NQ_COUP_FORMULA_USES_BASE_FRIENDSHIP_NOT_EFFECTIVE_FRIENDSHIP
@@ -1085,8 +1085,6 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
 // Units now remember their Home city. Want to make more than Religious Unit remember home city Religion on Trained. This also makes Death yields pretty simple, now that I think about it.
 //#define UNITS_REMEMBER_HOME
-// Food from Maritime City States now applies inside the city, instead of on the plot under the city.
-#define LEKMOD_PATRO_FOOD_FIX
 // Prevent the Airplane production saving exploit. Boot out air units from the prod queue if the city has maxed out its air capacity from a rebase or purchase
 #define FIX_PRODUCTION_KEEPING_EXPLOITS
 // Relocate Puppet Yield Mod from the Global integers to CvYieldInfo
@@ -1097,8 +1095,38 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define STANDARDIZE_YIELDS
 // Unhardcode the Scholasticism policy effect from the DLL.
 #define LEKMOD_FIX_SCHOLASTICISM
+// Fix Patro Food interaction with Patro 5
+#define LEKMOD_FIX_PATRO_FOOD
 // Remove the double counting for Yield Per Religion in a city.
 #define LEKMOD_FIX_YIELD_PER_RELIGION
+// Correct the fucked up Building_ResourceCultureChange and Building_ResourceFaithChange tables and convert into a single Building_LocalResourceYieldChange table.
+#define LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE
+// Consolidate Garrison Yield effects
+#define LEKMOD_GARRISON_YIELD_EFFECTS
+// Great Work Yield stuff
+#define LEKMOD_GREAT_WORK_YIELD_EFFECTS
+// Convert invaild Promotions for a Unit combat to valid ones.
+#define LEKMOD_CONVERT_PROMOTIONS_UPGRADE
+// Move from fixed table values to an array table for Promotion Prerequisites
+#define LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS
+// Changes made to CS quests
+#define LEKMOD_CITYSTATE_QUEST_CHANGES
+// Alters the Parameters for the Merchant of Venice buyout
+#define LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING
+// Unlinks Repair for Improvements time and Route build time.
+#define LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE
+// Defines Free Buildings to be given to a city depending on the Unit that settled it.
+#define LEKMOD_TRACK_CITY_SETTLER_UNITTYPE
+// Yield Increase based on Era
+#define LEKMOD_ERA_ENHANCED_YIELDS
+// Yield burst from Expending a Great Person from Beliefs
+#define LEKMOD_BELIEF_GP_EXPEND_YIELD
+// New Unit Mission "Submerge"
+#define LEKMOD_SUBMERGE_MISSION
+
+
+// Generic define for temp changes
+#define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
 ////////////////////////
 //Benched or not working

@@ -5081,11 +5081,12 @@ void CvTeam::enhanceBuilding(BuildingTypes eIndex, int iChange)
 						{
 							for(int k = 0; k < NUM_YIELD_TYPES; k++)
 							{
-								if((YieldTypes)k == YIELD_CULTURE)
+#if !defined(STANDARDIZE_YIELDS) // compress yield change
+								if ((YieldTypes)k == YIELD_CULTURE)
 								{
 									pLoopCity->ChangeJONSCulturePerTurnFromBuildings(thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
 								}
-								else if((YieldTypes)k == YIELD_FAITH)
+								else if ((YieldTypes)k == YIELD_FAITH)
 								{
 									pLoopCity->ChangeFaithPerTurnFromBuildings(thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
 								}
@@ -5093,6 +5094,9 @@ void CvTeam::enhanceBuilding(BuildingTypes eIndex, int iChange)
 								{
 									pLoopCity->ChangeBaseYieldRateFromBuildings(((YieldTypes)k), thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
 								}
+#else
+								pLoopCity->ChangeBaseYieldRateFromBuildings(((YieldTypes)k), thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
+#endif
 							}
 						}
 					}
@@ -5101,7 +5105,58 @@ void CvTeam::enhanceBuilding(BuildingTypes eIndex, int iChange)
 		}
 	}
 }
+//	--------------------------------------------------------------------------------
+void CvTeam::enhanceBuildingEra(BuildingTypes eIndex, int iChange)
+{
+	CvCity* pLoopCity;
+	int iLoop;
 
+	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	CvBuildingEntry* thisBuildingEntry = GC.getBuildingInfo(eIndex);
+	if (thisBuildingEntry == NULL)
+		return;
+
+	if (iChange != 0)
+	{
+		for (int i = 0; i < MAX_PLAYERS; i++)
+		{
+			CvPlayerAI& kPlayer = GET_PLAYER(static_cast<PlayerTypes>(i));
+			if (kPlayer.isAlive())
+			{
+				if (kPlayer.getTeam() == GetID())
+				{
+					for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+					{
+						if (pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex) > 0)
+						{
+							for (int k = 0; k < NUM_YIELD_TYPES; k++)
+							{
+#if !defined(STANDARDIZE_YIELDS) // compress yield change
+								if ((YieldTypes)k == YIELD_CULTURE)
+								{
+									pLoopCity->ChangeJONSCulturePerTurnFromBuildings(thisBuildingEntry->GetEraEnhancedYieldChange(GetCurrentEra(), k) * iChange);
+								}
+								else if ((YieldTypes)k == YIELD_FAITH)
+								{
+									pLoopCity->ChangeFaithPerTurnFromBuildings(thisBuildingEntry->GetEraEnhancedYieldChange(GetCurrentEra(), k) * iChange);
+								}
+								else
+								{
+									pLoopCity->ChangeBaseYieldRateFromBuildings(((YieldTypes)k), thisBuildingEntry->GetEraEnhancedYieldChange(GetCurrentEra(), k) * iChange);
+								}
+#else
+								pLoopCity->ChangeBaseYieldRateFromBuildings(((YieldTypes)k), thisBuildingEntry->GetEraEnhancedYieldChange(GetCurrentEra(), k) * iChange);
+#endif
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 //	--------------------------------------------------------------------------------
 int CvTeam::getTerrainTradeCount(TerrainTypes eIndex) const
@@ -7358,9 +7413,21 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 				}
 			}
 		}
-
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+		int iChange = eNewValue - m_eCurrentEra;
 		m_eCurrentEra = eNewValue;
 
+		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+		{
+			CvBuildingEntry* pBuildingEntry = GC.getBuildingInfo((BuildingTypes)iI);
+			if (pBuildingEntry)
+			{
+				enhanceBuildingEra(((BuildingTypes)iI), iChange);
+			}
+		}
+#else
+		m_eCurrentEra = eNewValue;
+#endif
 		if(GC.getGame().getActiveTeam() != NO_TEAM)
 		{
 			for(iI = 0; iI < GC.getMap().numPlots(); iI++)

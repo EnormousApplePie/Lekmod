@@ -355,7 +355,10 @@ public:
 
 	bool IsEverFriends(PlayerTypes ePlayer);
 	void SetEverFriends(PlayerTypes ePlayer, bool bValue);
-
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	int GetLastAllyTurnWithMajor(PlayerTypes ePlayer) const;
+	void SetLastAllyTurnWithMajor(PlayerTypes ePlayer, int iTurn);
+#endif
 	bool IsCloseToNotBeingAllies(PlayerTypes ePlayer);
 	bool IsCloseToNotBeingFriends(PlayerTypes ePlayer);
 
@@ -606,7 +609,9 @@ private:
 	int m_aiBullyGoldAmountTotalByPlayer[MAX_CIV_PLAYERS];
 	int m_aiBullyWorkersAmountTotalByPlayer[MAX_CIV_PLAYERS];
 #endif
-
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	int m_aiLastAllyTurnWithMajor[MAX_MAJOR_CIVS];
+#endif
 	int m_aiFriendshipWithMajorTimes100[MAX_MAJOR_CIVS];
 	int m_aiAngerFreeIntrusionCounter[MAX_MAJOR_CIVS];
 	int m_aiPlayerQuests[MAX_MAJOR_CIVS]; //antonjs: DEPRECATED

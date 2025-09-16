@@ -197,6 +197,7 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 	szTooltip += ")";
 	szTooltip += "[NEWLINE]";
 	CvString cultureString;
+#if !defined(LEKMOD_GREAT_WORK_YIELD_EFFECTS) // redo the Yield thing, its not much better actually, but w/e
 #if defined(MISC_CHANGES) // Show Yields being Added to Great Works in the Hover Tooltip
 	int iFoodPerWork = 0;
 	iFoodPerWork += GET_PLAYER(eOwner).GetGreatWorkYieldChange(YIELD_FOOD);
@@ -211,19 +212,49 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 #endif
 	int iCulturePerWork = GC.getBASE_CULTURE_PER_GREAT_WORK();
 	iCulturePerWork += GET_PLAYER(eOwner).GetGreatWorkYieldChange(YIELD_CULTURE);
+#else
+	for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
+	{
+		YieldTypes eYield = (YieldTypes)iYieldLoop;
+		int iYield = GET_PLAYER(eOwner).GetGreatWorkYieldChange(eYield);
+		if (iYield == 0)
+			continue;
+		const char* strYieldIcon = "";
+		switch (eYield) // No Yield Icon hookin in the DLL sadge.
+		{
+		case YIELD_FOOD:
+			strYieldIcon = "[ICON_FOOD]";
+			break;
+		case YIELD_PRODUCTION:
+			strYieldIcon = "[ICON_PRODUCTION]";
+			break;
+		case YIELD_GOLD:
+			strYieldIcon = "[ICON_GOLD]";
+			break;
+		case YIELD_SCIENCE:
+			strYieldIcon = "[ICON_RESEARCH]";
+			break;
+		case YIELD_CULTURE:
+			strYieldIcon = "[ICON_CULTURE]";
+			break;
+		case YIELD_FAITH:
+			strYieldIcon = "[ICON_PEACE]";
+			break;
+		case YIELD_GOLDEN_AGE_POINTS:
+			strYieldIcon = "[ICON_GOLDEN_AGE]";
+			break;
+		default:
+			strYieldIcon = "NO_ICON";
+		}
+		cultureString += CvString::format("+%d %s ", iYield, strYieldIcon);
+	}
+#endif
 	int iTourismPerWork = GC.getBASE_TOURISM_PER_GREAT_WORK();
 	iTourismPerWork += GET_PLAYER(eOwner).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_EXTRA_TOURISM_PER_GREAT_WORK); // NQMP GJS - Cultural Exchange
-
 #if !defined(MISC_CHANGES) // Build Tooltip String Dynamically
 	cultureString.Format("+%d [ICON_CULTURE], +%d [ICON_TOURISM]", iCulturePerWork, iTourismPerWork);
 #else
-	if (iFoodPerWork		!= 0) cultureString += CvString::format("+%d [ICON_FOOD] ", iFoodPerWork);
-	if (iProductionPerWork	!= 0) cultureString += CvString::format("+%d [ICON_PRODUCTION] ", iProductionPerWork);
-	if (iGoldPerWork		!= 0) cultureString += CvString::format("+%d [ICON_GOLD] ", iGoldPerWork);
-	if (iSciencePerWork		!= 0) cultureString += CvString::format("+%d [ICON_RESEARCH] ", iSciencePerWork);
-	if (iFaithPerWork		!= 0) cultureString += CvString::format("+%d [ICON_PEACE] ", iFaithPerWork);
-	if (iCulturePerWork		!= 0) cultureString += CvString::format("+%d [ICON_CULTURE] ", iCulturePerWork);
-	if (iTourismPerWork		!= 0) cultureString += CvString::format("+%d [ICON_TOURISM] ", iTourismPerWork);
+	if (iTourismPerWork != 0) cultureString += CvString::format("+%d [ICON_TOURISM] ", iTourismPerWork);
 #endif
 	szTooltip += cultureString;
 

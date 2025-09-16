@@ -3387,9 +3387,11 @@ int CvPlayerPolicies::GetNumericModifier(PolicyModifierType eType)
 			case POLICYMOD_MINOR_MILITARY_NUM_EXTRA_UNITS_TO_GIFT:
 				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetMinorMilitaryNumExtraUnitsToGift();
 				break;
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 			case POLICYMOD_CITY_STATE_BONUS_MODIFIER:
 				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetCityStateBonusModifier();
 				break;
+#endif
 			// NQMP GJS - Patronage Finisher end
 			// NQMP GJS - Colonialism begin
 			case POLICYMOD_EXTRA_TERRITORY_CLAIM:

@@ -554,6 +554,7 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 	local activeTeamID = Game and Game.GetActiveTeam()
 	local activeTeam = activeTeamID and Teams[ activeTeamID ]
 	local activeTeamTechs = activeTeam and activeTeam:GetTeamTechs()
+	local activeTeamEra = activeTeam and activeTeam:GetCurrentEra()
 	local activePlayerIdeologyID = bnw_mode and activePlayer and activePlayer:GetLateGamePolicyTree()
 	local activePlayerIdeology = activePlayerIdeologyID and GameInfo.PolicyBranchTypes[ activePlayerIdeologyID ]
 	local activePlayerIdeologyType = activePlayerIdeology and activePlayerIdeology.Type
@@ -583,7 +584,11 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 	local function techFilter( row )
 		return row and g_isScienceEnabled and ( not activeTeamTechs or not activeTeamTechs:HasTech( row.ID ) )
 	end
-
+	------------------
+	-- Era Filter
+	local function eraFilter(row)
+    return row and g_isScienceEnabled and (not activeTeamEra or row.ID > activeTeamEra)
+end
 	------------------
 	-- Policy Filter
 	local function policyFilter( row )
@@ -680,7 +685,17 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 					yieldChange = yieldChange + city:GetLeagueBuildingClassYieldChange( buildingClassID, yieldID )
 				end
 			end
-
+			-- Era Enhanced Yields
+			for row in GameInfo.Building_EraEnhancedYieldChanges ( thisBuildingAndYieldTypes ) do
+				local eraEnhancedYield = row.Yield or 0
+				local eRowEra = GameInfoTypes[row.EraType]
+				local iTeamEra = activeTeam:GetCurrentEra()
+		    	if eRowEra and iTeamEra >= eRowEra then
+					if eraEnhancedYield ~= 0 then
+						yieldChange = yieldChange + eraEnhancedYield
+					end
+				end
+			end
 			-- MOD.EAP START
 			-- Tech Enhanced Yield support
 			for row in GameInfo.Building_TechEnhancedYieldChanges( thisBuildingAndYieldTypes ) do
@@ -839,15 +854,15 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 			tips:insertIf( item and (row.Experience or 0)>0 and L(item.Description).." "..L( "TXT_KEY_EXPERIENCE_POPUP", row.Experience ).."/ "..L("TXT_KEY_VP_GREAT_WORKS") )
 		end
 		-- Theming Bonus
--- TODO Building_ThemingBonuses
---		tips:insertLocalizedIf( building.ThemingBonusHelp )
+	-- TODO Building_ThemingBonuses
+	--		tips:insertLocalizedIf( building.ThemingBonusHelp )
 		-- Free Great Work
 		local freeGreatWork = building.FreeGreatWork and GameInfo.GreatWorks[ building.FreeGreatWork ]
--- TODO type rather than blurb
+	-- TODO type rather than blurb
 		tips:insertIf( freeGreatWork and L"TXT_KEY_FREE" .." "..L( freeGreatWork.Description ) )
 
--- TODO sacred sites properly
--- TODO Building_YieldChangesPerReligion
+	-- TODO sacred sites properly
+	-- TODO Building_YieldChangesPerReligion
 		tip = ""
 		if (building.FaithCost or 0) > 0 and building.UnlockedByBelief and building.Cost == -1 then
 			local tourism = city and city:GetFaithBuildingTourism() or 0
@@ -860,7 +875,7 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 		end
 		tips:insertIf( #tip > 0 and L"TXT_KEY_CITYVIEW_TOURISM_TEXT" .. ":" .. tip )
 	end
--- TODO GetInternationalTradeRouteYourBuildingBonus
+	-- TODO GetInternationalTradeRouteYourBuildingBonus
 	if gk_mode then
 		-- Resources
 		for row in GameInfo.Building_ResourceQuantity( thisBuildingType ) do
@@ -885,7 +900,7 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 				end
 			end
 		end
--- TODO GameInfo.Building_ResourceYieldModifiers( thisBuildingType ), ResourceType, YieldType, Yield
+	-- TODO GameInfo.Building_ResourceYieldModifiers( thisBuildingType ), ResourceType, YieldType, Yield
 		tips:insertIf( #tip > 0 and tostring(resource.IconString) .. " " .. L(resource.Description) .. ":" .. tip )
 	end
 
@@ -930,7 +945,7 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 
 	-- Ocean Resource Yields enhanced by Building
 	tip = GetYieldString( GameInfo.Building_SeaResourceYieldChanges( thisBuildingType ) )
--- todo determine sea resources
+	-- todo determine sea resources
 	tips:insertIf( #tip > 0 and L"TXT_KEY_PLOTROLL_OCEAN" .." "..L"TXT_KEY_TOPIC_RESOURCES".. ":" .. tip )
 
 	-- Area Yields enhanced by Building
@@ -958,7 +973,7 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 		freeUnit = freeUnit and GetCivUnit( activeCivilizationType, freeUnit.Class )
 		tips:insertIf( freeUnit and (row.NumUnits or 0)>0 and ( row.NumUnits > 1 and row.NumUnits.." " or "" ) ..L"TXT_KEY_FREE".." "..UnitColor( L( freeUnit.Description ) ) )
 	end
---Building_FreeSpecialistCounts unused ?
+	--Building_FreeSpecialistCounts unused ?
 	-- free promotion to units trained in this city
 	local freePromotion = building.TrainedFreePromotion and GameInfo.UnitPromotions[ building.TrainedFreePromotion ]
 	tips:insertIf( freePromotion and L"TXT_KEY_PEDIA_FREEPROMOTIONS_LABEL".." "..L( freePromotion.Help ) )
@@ -983,7 +998,7 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 		tips:insertIf( item and (row.Modifier or 0)~=0 and S( "%s %+i%%[ICON_PRODUCTION]", L(item.Description), row.Modifier ) )
 	end
 
--- Lekmodv34 START
+	-- Lekmodv34 START
 	-- Unit combat production cost modifiers
 	for row in GameInfo.Building_UnitCombatProductionCostModifiers( thisBuildingType ) do
 		item = GameInfo.UnitCombatInfos[ row.UnitCombatType ]
@@ -1001,7 +1016,7 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 			end
 		end
 	end
--- Lekmod v34 END
+	-- Lekmod v34 END
 	-- free experience
 	for row in GameInfo.Building_DomainFreeExperiences( thisBuildingType ) do
 		item = GameInfo.Domains[ row.DomainType ]
@@ -1018,6 +1033,19 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 		tips:insertIf( #tip > 0 and "[ICON_BULLET]" .. enhancedYieldTechName .. tip )
 	end
 
+	items = {}
+	-- Yields enhanced by Era
+	for row in GameInfo.Building_EraEnhancedYieldChanges( thisBuildingType ) do
+	    if row.EraType and (row.Yield or 0) ~= 0 then
+	        items[row.EraType] = S("%s %+i%s", items[row.EraType] or "", row.Yield, tostring(YieldIcons[row.YieldType]))
+	    end
+	end
+	for eraType, tip in pairs(items) do
+	    local era = GameInfo.Eras[eraType]
+	    if eraFilter(era) and #tip > 0 then
+	        tips:insert("[ICON_BULLET]" .. TechColor(L(era.ShortDescription)) .. tip)
+	    end
+	end
 	items = {}
 	-- Yields enhanced by Policy
 	for row in GameInfo.Policy_BuildingClassYieldChanges( thisBuildingClassType ) do
@@ -1637,8 +1665,20 @@ local function GetYieldTooltip( city, yieldID, baseYield, totalYield, yieldIconS
 	-- Base Yield from Buildings
 	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_BUILDINGS", city:GetBaseYieldRateFromBuildings( yieldID ), yieldIconString )
 
+	-- Base Yield Rate from Policies, 34.8
+	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_POLICIES", city:GetBaseYieldRateFromPolicies( yieldID ), yieldIconString )
+
+	-- Base Yield Rate from Traits, 34.8
+	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_TRAITS", city:GetBaseYieldRateFromTraits( yieldID ), yieldIconString )
+
 	-- Base Yield from Specialists
 	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_SPECIALISTS", city:GetBaseYieldRateFromSpecialists( yieldID ), yieldIconString )
+
+	-- Base Yield Rate from Leagues, 34.8
+	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_LEAGUES", city:GetBaseYieldRateFromLeagues( yieldID ), yieldIconString )
+
+	-- Base Yield Rate from Garrison, 34.8
+	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_GARRISON", city:GetBaseYieldRateFromGarrison( yieldID ), yieldIconString )
 
 	-- Base Yield from Misc
 	tips:insertLocalizedBulletIfNonZero( yieldID == YieldTypes.YIELD_SCIENCE and "TXT_KEY_YIELD_FROM_POP" or "TXT_KEY_YIELD_FROM_MISC", city:GetBaseYieldRateFromMisc( yieldID ), yieldIconString )
@@ -1646,7 +1686,9 @@ local function GetYieldTooltip( city, yieldID, baseYield, totalYield, yieldIconS
 	-- Base Yield from Population
 	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_POP_EXTRA", city:GetYieldPerPopTimes100( yieldID ) * city:GetPopulation() / 100, yieldIconString )
 
-	-- Base Yield from Other Capitals -- v34
+	-- Base Yield Rate from Great Works & Themes, 34.8
+	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_GREAT_WORKS", city:GetBaseYieldRateFromGreatWorks( yieldID ), yieldIconString )
+	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_THEMED_BUILDINGS", city:GetBaseYieldRateFromThemedBuildings( yieldID ), yieldIconString )
 
 	-- Base Yield from Religion
 	if gk_mode then
@@ -1919,92 +1961,25 @@ end
 local function GetCultureTooltip( city )
 
 	local tips = table()
-	local cityOwner = Players[city:GetOwner()]
-	local culturePerTurn, cultureStored, cultureNeeded, cultureFromBuildings, cultureFromPolicies, cultureFromSpecialists, cultureFromTraits, baseCulturePerTurn
+	local isNoob = civBE_mode or not OptionsManager.IsNoBasicHelp()
 	-- Thanks fo Firaxis Cleverness...
+	local culturePerTurn, cultureStored, cultureNeeded
 	if civ5_mode then
 		culturePerTurn = city:GetJONSCulturePerTurn()
-		cultureStored = city:GetJONSCultureStored()
-		cultureNeeded = city:GetJONSCultureThreshold()
-		cultureFromBuildings = city:GetJONSCulturePerTurnFromBuildings()
-		cultureFromPolicies = city:GetJONSCulturePerTurnFromPolicies()
-		cultureFromSpecialists = city:GetJONSCulturePerTurnFromSpecialists()
-		cultureFromTraits = city:GetJONSCulturePerTurnFromTraits()
-		baseCulturePerTurn = city:GetBaseJONSCulturePerTurn()
+		cultureStored   = city:GetJONSCultureStored()
+		cultureNeeded   = city:GetJONSCultureThreshold()
 	else
 		culturePerTurn = city:GetCulturePerTurn()
-		cultureStored = city:GetCultureStored()
-		cultureNeeded = city:GetCultureThreshold()
-		cultureFromBuildings = city:GetCulturePerTurnFromBuildings()
-		cultureFromPolicies = city:GetCulturePerTurnFromPolicies()
-		cultureFromSpecialists = city:GetCulturePerTurnFromSpecialists()
-		cultureFromTraits = city:GetCulturePerTurnFromTraits()
-		baseCulturePerTurn = city:GetBaseCulturePerTurn()
+		cultureStored   = city:GetCultureStored()
+		cultureNeeded   = city:GetCultureThreshold()
 	end
 
-	if civBE_mode or not OptionsManager.IsNoBasicHelp() then
+	if isNoob then
 		tips:insertLocalized( "TXT_KEY_CULTURE_HELP_INFO" )
+	end
 		tips:insert( "" )
-	end
+		tips:insert(GetYieldTooltipHelper( city, YieldTypes.YIELD_CULTURE) )
 
-	-- Culture from Buildings
-	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_BUILDINGS", cultureFromBuildings )
-
-	-- Culture from Policies
-	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_POLICIES", cultureFromPolicies )
-
-	-- Culture from Specialists
-	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_SPECIALISTS", cultureFromSpecialists )
-
-	-- Culture from Religion
-	if civ5gk_mode then
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_RELIGION", city:GetJONSCulturePerTurnFromReligion() )
-	end
-
-	if civ5bnw_mode then
-		-- Culture from Great Works
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_GREAT_WORKS", city:GetJONSCulturePerTurnFromGreatWorks() )
-		-- Culture from Leagues
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_LEAGUES", city:GetJONSCulturePerTurnFromLeagues() )
-	end
-
-	-- Culture from Terrain
-	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_TERRAIN", gk_mode and city:GetBaseYieldRateFromTerrain( YieldTypes.YIELD_CULTURE ) or city:GetJONSCulturePerTurnFromTerrain() )
-
-	-- Culture from Traits
-	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_FROM_TRAITS", cultureFromTraits )
-	
-	-- Culture from Per-Population Yields
-	local culturePerPop = city:GetYieldPerPopTimes100(YieldTypes.YIELD_CULTURE) * city:GetPopulation() / 100
-	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_YIELD_FROM_POP_EXTRA", culturePerPop, "[ICON_CULTURE]" )
-	
-	-- Base Total
-	if baseCulturePerTurn ~= culturePerTurn then
-		tips:insert( "----------------" )
-		tips:insertLocalized( "TXT_KEY_YIELD_BASE", baseCulturePerTurn, "[ICON_CULTURE]" )
-		tips:insert( "" )
-	end
-
-	-- Empire Culture modifier
-	tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_PLAYER_MOD", cityOwner and cityOwner:GetCultureCityModifier() or 0 )
-
-	if civ5_mode then
-		-- City Culture modifier
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_CITY_MOD", city:GetCultureRateModifier())
-
-		-- Culture Wonders modifier
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_CULTURE_WONDER_BONUS", city:GetNumWorldWonders() > 0 and cityOwner and cityOwner:GetCultureWonderMultiplier() or 0 )
-	end
-
-	-- Puppet modifier
-	local puppetMod = city:IsPuppet() and GameDefines.PUPPET_CULTURE_MODIFIER or 0
-	if puppetMod ~= 0 then
-		tips:append( L( "TXT_KEY_PRODMOD_PUPPET", puppetMod ) )
-	end
-
-	-- Total
-	tips:insert( "----------------" )
-	tips:insertLocalized( "TXT_KEY_YIELD_TOTAL", culturePerTurn, "[ICON_CULTURE]" )
 
 	-- Tile growth
 	tips:insert( "" )
@@ -2096,27 +2071,7 @@ local function GetFaithTooltip( city )
 			tips:insert( "" )
 		end
 
-		-- Faith from Buildings
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_FAITH_FROM_BUILDINGS", city:GetFaithPerTurnFromBuildings() )
-
-		-- Faith from Traits
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_FAITH_FROM_TRAITS", city:GetFaithPerTurnFromTraits() )
-
-		-- Faith from Terrain
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_FAITH_FROM_TERRAIN", city:GetBaseYieldRateFromTerrain( YieldTypes.YIELD_FAITH ) )
-
-		-- Faith from Policies
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_FAITH_FROM_POLICIES", city:GetFaithPerTurnFromPolicies() )
-
-		-- Faith from Religion
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_FAITH_FROM_RELIGION", city:GetFaithPerTurnFromReligion() )
-
-		-- Puppet modifier
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_PRODMOD_PUPPET", city:IsPuppet() and GameDefines.PUPPET_FAITH_MODIFIER or 0 )
-
-		-- Citizens breakdown
-		tips:insert( "----------------")
-		tips:insertLocalized( "TXT_KEY_YIELD_TOTAL", city:GetFaithPerTurn(), "[ICON_PEACE]" )
+		tips:insert(GetYieldTooltipHelper( city, YieldTypes.YIELD_FAITH))
 		tips:insert( "" )
 		tips:insert( GetReligionTooltip( city ) )
 

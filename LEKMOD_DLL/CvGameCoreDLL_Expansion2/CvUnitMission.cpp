@@ -753,7 +753,13 @@ void CvUnitMission::ContinueMission(UnitHandle hUnit, int iSteps, int iETA)
 					kMissionData.eMissionType == CvTypes::getMISSION_SELL_EXOTIC_GOODS() ||
 					kMissionData.eMissionType == CvTypes::getMISSION_GIVE_POLICIES() ||
 					kMissionData.eMissionType == CvTypes::getMISSION_ONE_SHOT_TOURISM() ||
+#if !defined(LEKMOD_SUBMERGE_MISSION)
 					kMissionData.eMissionType == CvTypes::getMISSION_CHANGE_ADMIRAL_PORT())
+#else
+					kMissionData.eMissionType == CvTypes::getMISSION_CHANGE_ADMIRAL_PORT() ||
+					kMissionData.eMissionType == CvTypes::getMISSION_SUBMERGE() ||
+					kMissionData.eMissionType == CvTypes::getMISSION_SURFACE())
+#endif
 			{
 				bDone = true;
 			}
@@ -1257,7 +1263,22 @@ bool CvUnitMission::CanStartMission(UnitHandle hUnit, int iMission, int iData1, 
 			return true;
 		}
 	}
-
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	else if (iMission == CvTypes::getMISSION_SUBMERGE())
+	{
+		if (hUnit->canSubmerge(pPlot))
+		{
+			return true;
+		}
+	}
+	else if (iMission == CvTypes::getMISSION_SURFACE())
+	{
+		if (hUnit->canSurface(pPlot))
+		{
+			return true;
+		}
+	}
+#endif
 	return false;
 }
 
@@ -1721,6 +1742,18 @@ void CvUnitMission::StartMission(UnitHandle hUnit)
 					bAction = true;
 				}
 			}
+#if defined(LEKMOD_SUBMERGE_MISSION)
+			else if (pkQueueData->eMissionType == CvTypes::getMISSION_SUBMERGE())
+			{
+				hUnit->setSubmerged(true);
+				bAction = true;
+			}
+			else if (pkQueueData->eMissionType == CvTypes::getMISSION_SURFACE())
+			{
+				hUnit->setSubmerged(false);
+				bAction = true;
+			}
+#endif
 		}
 	}
 

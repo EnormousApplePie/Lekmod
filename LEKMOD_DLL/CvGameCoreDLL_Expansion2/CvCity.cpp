@@ -180,6 +180,7 @@ CvCity::CvCity() :
 	, m_iJONSCultureStored("CvCity::m_iJONSCultureStored", m_syncArchive, true)
 #endif
 	, m_iJONSCultureLevel("CvCity::m_iJONSCultureLevel", m_syncArchive)
+#if !defined(STANDARDIZE_YIELDS) // Remove a bunch of redundant variables
 	, m_iJONSCulturePerTurnFromBuildings("CvCity::m_iJONSCulturePerTurnFromBuildings", m_syncArchive)
 	, m_iJONSCulturePerTurnFromPolicies("CvCity::m_iJONSCulturePerTurnFromPolicies", m_syncArchive)
 	, m_iJONSCulturePerTurnFromSpecialists("CvCity::m_iJONSCulturePerTurnFromSpecialists", m_syncArchive)
@@ -188,6 +189,7 @@ CvCity::CvCity() :
 	, m_iFaithPerTurnFromPolicies(0)
 	, m_iFaithPerTurnFromReligion(0)
 	, m_iCultureRateModifier("CvCity::m_iCultureRateModifier", m_syncArchive)
+#endif
 	, m_iNumWorldWonders("CvCity::m_iNumWorldWonders", m_syncArchive)
 	, m_iNumTeamWonders("CvCity::m_iNumTeamWonders", m_syncArchive)
 	, m_iNumNationalWonders("CvCity::m_iNumNationalWonders", m_syncArchive)
@@ -253,9 +255,12 @@ CvCity::CvCity() :
 	, m_aiBaseYieldRateFromBuildings("CvCity::m_aiBaseYieldRateFromBuildings", m_syncArchive)
 	, m_aiBaseYieldRateFromSpecialists("CvCity::m_aiBaseYieldRateFromSpecialists", m_syncArchive)
 	, m_aiBaseYieldRateFromMisc("CvCity::m_aiBaseYieldRateFromMisc", m_syncArchive)
+#if defined(STANDARDIZE_YIELDS) // BaseYieldRateFromPolicies
+	, m_aiBaseYieldRateFromPolicies("CvCIty::m_aiBaseYieldRateFromPolicies", m_syncArchive)
+#endif
 	, m_aiYieldRateModifier("CvCity::m_aiYieldRateModifier", m_syncArchive)
 	, m_aiYieldPerPop("CvCity::m_aiYieldPerPop", m_syncArchive)
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	, m_aiGarrisonYieldBonus("CvCity::m_aiGarrisonYieldBonus", m_syncArchive)
 #endif
 	, m_aiPowerYieldRateModifier("CvCity::m_aiPowerYieldRateModifier", m_syncArchive)
@@ -288,6 +293,9 @@ CvCity::CvCity() :
 	, m_bRouteToCapitalConnectedThisTurn(false)
 #ifdef PRODUCTION_TO_YIELD_FIX
 	, m_bFinishedOrderThisTurn(false)
+#endif
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	, m_eSettlerUnit(NO_UNIT)
 #endif
 	, m_strName("")
 	, m_orderQueue()
@@ -549,8 +557,8 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	changePopulation(GC.getINITIAL_CITY_POPULATION() + GC.getGame().getStartEraInfo().getFreePopulation());
 	// Free population from things (e.g. Policies)
 	changePopulation(GET_PLAYER(getOwner()).GetNewCityExtraPopulation());
-#ifdef TRAITIFY // New floating text for population increases for the player. Both Trait and Policy driven, excluding the initial population.
-	if (GET_PLAYER(getOwner()).GetNewCityExtraPopulation() > 0 && getOwner() == GC.getGame().getActivePlayer() )
+#ifndef TRAITIFY // Remove, maybe add back when settle yields get added back.
+	if (GET_PLAYER(getOwner()).GetNewCityExtraPopulation() > 0 && getOwner() == GC.getGame().getActivePlayer())
 	{
 		if(bInitialFounding) // Only Show it on Inital Founding, and only to the player
 		{
@@ -658,7 +666,11 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 				ChangeJONSCulturePerTurnFromPolicies(iExtraCulture);
 			}
 #else
+#if !defined(STANDARDIZE_YIELDS) // BaseYieldRateFromPolicies
 			ChangeJONSCulturePerTurnFromPolicies(GC.getPolicyInfo(ePolicy)->GetCulturePerCity());
+#else
+			ChangeBaseYieldRateFromPolicies(YIELD_CULTURE, GC.getPolicyInfo(ePolicy)->GetCulturePerCity());
+#endif
 #endif
 		}
 	}
@@ -925,6 +937,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iJONSCultureStored = 0;
 #endif
 	m_iJONSCultureLevel = 0;
+#if !defined(STANDARDIZE_YIELDS) // Remove a bunch of redundant variables
 	m_iJONSCulturePerTurnFromBuildings = 0;
 	m_iJONSCulturePerTurnFromPolicies = 0;
 	m_iJONSCulturePerTurnFromSpecialists = 0;
@@ -933,6 +946,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iFaithPerTurnFromPolicies = 0;
 	m_iFaithPerTurnFromReligion = 0;
 	m_iCultureRateModifier = 0;
+#endif
 	m_iNumWorldWonders = 0;
 	m_iNumTeamWonders = 0;
 	m_iNumNationalWonders = 0;
@@ -1006,8 +1020,11 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_aiBaseYieldRateFromSpecialists.resize(NUM_YIELD_TYPES);
 	m_aiBaseYieldRateFromMisc.resize(NUM_YIELD_TYPES);
 	m_aiBaseYieldRateFromReligion.resize(NUM_YIELD_TYPES);
+#if defined(STANDARDIZE_YIELDS) // BaseYieldRateFromPolicies
+	m_aiBaseYieldRateFromPolicies.resize(NUM_YIELD_TYPES);
+#endif
 	m_aiYieldPerPop.resize(NUM_YIELD_TYPES);
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_aiGarrisonYieldBonus.resize(NUM_YIELD_TYPES);
 #endif
 	m_aiYieldPerReligion.resize(NUM_YIELD_TYPES);
@@ -1027,8 +1044,11 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiBaseYieldRateFromSpecialists.setAt(iI, 0);
 		m_aiBaseYieldRateFromMisc.setAt(iI, 0);
 		m_aiBaseYieldRateFromReligion[iI] = 0;
+#if defined(STANDARDIZE_YIELDS) // BaseYieldRateFromPolicies
+		m_aiBaseYieldRateFromPolicies.setAt(iI, 0);
+#endif
 		m_aiYieldPerPop.setAt(iI, 0);
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 		m_aiGarrisonYieldBonus.setAt(iI, 0);
 #endif
 		m_aiYieldPerReligion[iI] = 0;
@@ -1863,7 +1883,7 @@ void CvCity::doTurn()
 			iHitsHealed++;
 		}
 		int iBuildingDefense = m_pCityBuildings->GetBuildingDefense();
-#if defined(LEKMOD_v34) // CvCity::doTurn - add garrisoned unit defense
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS) // CvCity::doTurn - add garrisoned unit defense
 		if (GetGarrisonedUnit())
 		{
 			int iBonusDefense = m_pCityBuildings->GetGarrisonStrengthBonus();
@@ -2246,6 +2266,16 @@ bool CvCity::IsFinishedOrderThisTurn() const
 void CvCity::SetFinishedOrderThisTurn(bool bFinished)
 {
 	m_bFinishedOrderThisTurn = bFinished;
+}
+#endif
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+UnitTypes CvCity::SettlerUnit() const
+{
+	return m_eSettlerUnit;
+}
+void CvCity::SetSettlerUnit(UnitTypes eUnit)
+{
+	m_eSettlerUnit = eUnit;
 }
 #endif
 //	--------------------------------------------------------------------------------
@@ -3436,30 +3466,6 @@ void CvCity::ChangeResourceClassExtraYield(ResourceClassTypes eClass, YieldTypes
 	}
 }
 #endif
-#if defined(LEKMOD_v34) /// Garrison Yield Changes
-int CvCity::GetGarrisonYieldBonus(YieldTypes eYield) const
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return m_aiGarrisonYieldBonus[eYield];
-}
-void CvCity::ChangeGarrisonYieldBonus(YieldTypes eYield, int iAmount)
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	if (iAmount != 0)
-	{
-		m_aiGarrisonYieldBonus.setAt(eYield, m_aiGarrisonYieldBonus[eYield] + iAmount);
-
-		if (getTeam() == GC.getGame().getActiveTeam())
-		{
-			if (isCitySelected())
-			{
-				DLLUI->setDirty(CityScreen_DIRTY_BIT, true);
-				//DLLUI->setDirty(InfoPane_DIRTY_BIT, true );
-			}
-		}
-	}
-}
-#endif
 //	--------------------------------------------------------------------------------
 /// Extra yield for a Feature this city is working?
 int CvCity::GetFeatureExtraYield(FeatureTypes eFeature, YieldTypes eYield) const
@@ -3740,17 +3746,30 @@ void CvCity::ChangeNumResourceLocal(ResourceTypes eResource, int iChange)
 				// Do we have this building?
 				if(GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 				{
+#if !defined(STANDARDIZE_YIELDS) // remove Yield Specific calls
 					// Does eBuilding give culture with eResource?
 					int iCulture = pkBuildingInfo->GetResourceCultureChange(eResource);
 
-					if(iCulture != 0)
-						ChangeJONSCulturePerTurnFromBuildings(iCulture * iChange);
+					if (iCulture != 0)
+						ChangeJONSCulturePerTurnFromBuildings(iCulture * m_paiNumResourcesLocal[eResource] * iChange);
 
 					// Does eBuilding give faith with eResource?
 					int iFaith = pkBuildingInfo->GetResourceFaithChange(eResource);
 
-					if(iFaith != 0)
-						ChangeFaithPerTurnFromBuildings(iFaith * iChange);
+					if (iFaith != 0)
+						ChangeFaithPerTurnFromBuildings(iFaith * m_paiNumResourcesLocal[eResource] * iChange);
+#else
+					for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+					{
+						YieldTypes eYield = (YieldTypes)iYield;
+						// Does eBuilding give eYield with eResource?
+						int iBuildingYieldChange = pkBuildingInfo->GetBuildingLocalResourceYieldChange(eResource, eYield);
+						if(iChange != 0)
+						{
+							ChangeBaseYieldRateFromBuildings(eYield, (iBuildingYieldChange * m_paiNumResourcesLocal[eResource] * iChange));
+						}
+					}
+#endif
 				}
 			}
 		}
@@ -6451,13 +6470,13 @@ int CvCity::getProductionDifferenceTimes100(int /*iProductionNeeded*/, int /*iPr
 
 	int iTradeYield = GET_PLAYER(m_eOwner).GetTrade()->GetTradeValuesAtCityTimes100(this, YIELD_PRODUCTION);
 	iModifiedProduction += iTradeYield;
-
+#if !defined(LEKMOD_GARRISON_YIELD_EFFECTS)// Remove since this is moved the the Garrison Yield calc in the main stack.
 	// NQMP GJS - Military Caste
 	if (GetGarrisonedUnit() != NULL)
 	{
 		iModifiedProduction += (GET_PLAYER(m_eOwner).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_PRODUCTION_FROM_GARRISON) * 100);
 	}
-	
+#endif
 
 	return iModifiedProduction;
 }
@@ -6886,6 +6905,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 
 	CvPlayer& owningPlayer = GET_PLAYER(getOwner());
 	CvTeam& owningTeam = GET_TEAM(getTeam());
+#if defined(STANDARDIZE_YIELDS) // move policy and trait pointers moved to the top of processBuilding
+	CvPlayerPolicies* pPolicies = GET_PLAYER(getOwner()).GetPlayerPolicies();
+	CvPlayerTraits* pTraits = GET_PLAYER(getOwner()).GetPlayerTraits();
+#endif
 	const CvCivilizationInfo& thisCiv = getCivilizationInfo();
 
 	if(!(owningTeam.isObsoleteBuilding(eBuilding)) || bObsolete)
@@ -7282,7 +7305,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			}
 
 #ifdef LEKMOD_v34
-#ifdef LEKMOD_v34
 			// v34: Add support for auto-filling great work slots
 			else if (pBuildingInfo->GetFreeGreatWorkCount() > 0)
 			{
@@ -7293,7 +7315,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				}
 				else
 				{
-
 					// Check how many slots are available in this specific building
 					int iAvailableSlots = m_pCityBuildings->GetNumAvailableGreatWorkSlots(pBuildingInfo->GetGreatWorkSlotType());
 					int iSlotsToFill = std::min(pBuildingInfo->GetFreeGreatWorkCount(), iAvailableSlots);
@@ -7376,7 +7397,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				}
 			}
 #endif
-#endif
+
 
 #ifdef NQ_CHEAT_FIRST_ROYAL_LIBRARY_COMES_WITH_GREAT_WORK
 			// This is going to be really ugly. May Google forgive my eSoul. You should get a free great work with your first Royal Library.
@@ -7537,21 +7558,31 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 		{
 			owningPlayer.ChangeUnhappinessMod(pBuildingInfo->GetUnhappinessModifier() * iChange);
 		}
-
+#if !defined(STANDARDIZE_YIELDS) // Removed the pre-yield application of Culture
 		int iBuildingCulture = pBuildingInfo->GetYieldChange(YIELD_CULTURE);
 		if(iBuildingCulture > 0)
 		{
 			iBuildingCulture += owningPlayer.GetPlayerTraits()->GetCultureBuildingYieldChange();
 		}
 		ChangeJONSCulturePerTurnFromBuildings(iBuildingCulture * iChange);
+#else // Keep the Trait part ig
+		int iBuildingCulture = pBuildingInfo->GetYieldChange(YIELD_CULTURE);
+		if (iBuildingCulture > 0)
+		{
+			// Set instead of add, since we do the base yield change from buildings later
+			iBuildingCulture = owningPlayer.GetPlayerTraits()->GetCultureBuildingYieldChange();
+		}
+		ChangeBaseYieldRateFromBuildings(YIELD_CULTURE, (iBuildingCulture * iChange));
+#endif
 		changeCultureRateModifier(pBuildingInfo->GetCultureRateModifier() * iChange);
 		changePlotCultureCostModifier(pBuildingInfo->GetPlotCultureCostModifier() * iChange);
 		changePlotBuyCostModifier(pBuildingInfo->GetPlotBuyCostModifier() * iChange);
-
+#if !defined(STANDARDIZE_YIELDS) // Removed the pre-yield application of faith
 		int iBuildingFaith = pBuildingInfo->GetYieldChange(YIELD_FAITH);
 		ChangeFaithPerTurnFromBuildings(iBuildingFaith * iChange);
+#endif
 		m_pCityReligions->ChangeReligiousPressureModifier(pBuildingInfo->GetReligiousPressureModifier() * iChange);
-
+#if !defined(STANDARDIZE_YIELDS) // Remove the pre-yield application of Faith and Culture from Policies
 		PolicyTypes ePolicy;
 #ifdef AUI_WARNING_FIXES
 		for (uint iPolicyLoop = 0; iPolicyLoop < GC.getNumPolicyInfos(); iPolicyLoop++)
@@ -7567,7 +7598,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				ChangeFaithPerTurnFromPolicies(GC.getPolicyInfo(ePolicy)->GetBuildingClassYieldChanges(eBuildingClass, YIELD_FAITH) * iChange);
 			}
 		}
-
+#endif
 		changeMaxFoodKeptPercent(pBuildingInfo->GetFoodKept() * iChange);
 		changeMilitaryProductionModifier(pBuildingInfo->GetMilitaryProductionModifier() * iChange);
 		changeSpaceProductionModifier(pBuildingInfo->GetSpaceProductionModifier() * iChange);
@@ -7593,7 +7624,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 		}
 
 		// Resource loop
+#if !defined(LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE) // removed unneed variables
 		int iCulture, iFaith;
+#endif
 		ResourceTypes eResource;
 #ifdef AUI_WARNING_FIXES
 		for (uint iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
@@ -7613,12 +7646,13 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			// Do we have this resource local?
 			if(IsHasResourceLocal(eResource, /*bTestVisible*/ false))
 			{
+#if !defined(LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE) // Building Yield Change based on local resources, this has been de-specialized for all yields
 				// Our Building does give culture with eResource
 				iCulture = GC.getBuildingInfo(eBuilding)->GetResourceCultureChange(eResource);
 
 				if(iCulture != 0)
 				{
-					ChangeJONSCulturePerTurnFromBuildings(iCulture * m_paiNumResourcesLocal[eResource]);
+					ChangeJONSCulturePerTurnFromBuildings(iCulture * m_paiNumResourcesLocal[eResource] * iChange);
 				}
 
 				// What about faith?
@@ -7626,8 +7660,19 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 
 				if(iFaith != 0)
 				{
-					ChangeFaithPerTurnFromBuildings(iFaith * m_paiNumResourcesLocal[eResource]);
+					ChangeFaithPerTurnFromBuildings(iFaith * m_paiNumResourcesLocal[eResource] * iChange);
 				}
+#else
+				for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					YieldTypes eYield = (YieldTypes)iJ;
+					int iResourceYieldChange = GC.getBuildingInfo(eBuilding)->GetBuildingLocalResourceYieldChange(eResource, eYield);
+					if (iResourceYieldChange != 0)
+					{
+						ChangeBaseYieldRateFromBuildings(eYield, (iResourceYieldChange * m_paiNumResourcesLocal[eResource] * iChange));
+					}
+				}
+#endif
 			}
 		}
 
@@ -7702,7 +7747,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			ChangeYieldPerPopTimes100(eYield, pBuildingInfo->GetYieldChangePerPop(eYield) * iChange);
 			ChangeYieldPerReligionTimes100(eYield, pBuildingInfo->GetYieldChangePerReligion(eYield) * iChange);
 			changeYieldRateModifier(eYield, (pBuildingInfo->GetYieldModifier(eYield) * iChange));
-
+#if !defined(STANDARDIZE_YIELDS) // Cleaned up the messy application of Policy and Trait Yield Changes
 			CvPlayerPolicies* pPolicies = GET_PLAYER(getOwner()).GetPlayerPolicies();
 			changeYieldRateModifier(eYield, pPolicies->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
 			ChangeBaseYieldRateFromBuildings(eYield, pPolicies->GetBuildingClassYieldChange(eBuildingClass, eYield) * iChange);
@@ -7724,7 +7769,15 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				ChangeBaseYieldRateFromBuildings(eYield, pTraits->GetBuildingClassYieldChange(eBuildingClass, eYield) * iChange);
 			}
 #endif
-#if defined(LEKMOD_v34)
+#else
+			changeYieldRateModifier(eYield, pPolicies->GetBuildingClassYieldModifier(eBuildingClass, eYield)* iChange);
+			ChangeBaseYieldRateFromBuildings(eYield, pPolicies->GetBuildingClassYieldChange(eBuildingClass, eYield)* iChange);
+#if defined(TRAITIFY) // Trait Yieldchange on buildings
+			ChangeBaseYieldRateFromBuildings(eYield, pTraits->GetBuildingClassYieldChange(eBuildingClass, eYield)* iChange);
+			//changeYieldRateModifier(eYield, pTraits->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
+#endif
+#endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 			ChangeGarrisonYieldBonus(eYield, pBuildingInfo->GetGarrisonYieldChange(eYield)* iChange);		
 #endif
 
@@ -7782,6 +7835,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			{
 				if(owningTeam.GetTeamTechs()->HasTech((TechTypes)pBuildingInfo->GetEnhancedYieldTech()))
 				{
+#if !defined(STANDARDIZE_YIELDS) // compressed the Enhanced Yield Tech to match the new collection of yields
 					if(eYield == YIELD_CULTURE)
 					{
 						ChangeJONSCulturePerTurnFromBuildings(pBuildingInfo->GetTechEnhancedYieldChange(eYield) * iChange);
@@ -7794,12 +7848,44 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 					{
 						ChangeBaseYieldRateFromBuildings(eYield, pBuildingInfo->GetTechEnhancedYieldChange(eYield) * iChange);
 					}
+#else
+					ChangeBaseYieldRateFromBuildings(eYield, pBuildingInfo->GetTechEnhancedYieldChange(eYield) * iChange);
+#endif
 				}
 			}
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+			for (int iJ = 0; iJ < GC.getNumEraInfos(); iJ++)
+			{
+				EraTypes eEra = (EraTypes)iJ;
+				if (eEra != NO_ERA)
+				{
+					if (owningPlayer.GetCurrentEra() >= eEra)
+					{
+#if !defined(STANDARDIZE_YIELDS)
+						if (eYield == YIELD_CULTURE)
+						{
+							ChangeJONSCulturePerTurnFromBuildings(pBuildingInfo->GetEraEnhancedYieldChange(eEra, eYield) * iChange);
+						}
+						else if (eYield == YIELD_FAITH)
+						{
+							ChangeFaithPerTurnFromBuildings(pBuildingInfo->GetEraEnhancedYieldChange(eEra, eYield) * iChange);
+						}
+						else
+						{
+							ChangeBaseYieldRateFromBuildings(eYield, pBuildingInfo->GetEraEnhancedYieldChange(eEra, eYield) * iChange);
+						}
+#else
+						ChangeBaseYieldRateFromBuildings(eYield, pBuildingInfo->GetEraEnhancedYieldChange(eEra, eYield) * iChange);
+#endif
+					}
 
+				}
+			}
+#endif
 			int iBuildingClassBonus = owningPlayer.GetBuildingClassYieldChange(eBuildingClass, eYield);
 			if(iBuildingClassBonus > 0)
 			{
+#if !defined(STANDARDIZE_YIELDS) // Compress the Building_BuildingClassYieldChange effects to match the new yield collection methods
 				if(eYield == YIELD_CULTURE)
 				{
 					ChangeJONSCulturePerTurnFromBuildings(iBuildingClassBonus * iChange);
@@ -7812,8 +7898,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				{
 					ChangeBaseYieldRateFromBuildings(eYield, iBuildingClassBonus * iChange);
 				}
+#else
+				ChangeBaseYieldRateFromBuildings(eYield, iBuildingClassBonus * iChange);
+#endif
 			}
-		}
+		} // NUM_YIELD_TYPES loop end
 
 #ifdef AUI_WARNING_FIXES
 		if (pBuildingInfo->GetSpecialistType() != NO_SPECIALIST)
@@ -7866,7 +7955,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 	if(!bObsolete)
 	{
 		m_pCityBuildings->ChangeBuildingDefense(pBuildingInfo->GetDefenseModifier() * iChange);
-#if defined(LEKMOD_v34) // Add the garrison strength bonus NOTE: this is not inside of a if(GetGarrisonedUnit()) since that would make it only apply if the city is garrisoned on construction
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS) // Add the garrison strength bonus NOTE: this is not inside of a if(GetGarrisonedUnit()) since that would make it only apply if the city is garrisoned on construction
 		m_pCityBuildings->ChangeGarrisonStrengthBonus(pBuildingInfo->GetGarrisonStrengthBonus()* iChange);
 #endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
@@ -7933,7 +8022,11 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	// Culture
 	int iCulturePerSpecialist = GetCultureFromSpecialist(eSpecialist);
+#if !defined(STANDARDIZE_YIELDS) // processSpecialist
 	ChangeJONSCulturePerTurnFromSpecialists(iCulturePerSpecialist * iChange);
+#else
+	ChangeBaseYieldRateFromSpecialists(YIELD_CULTURE, iCulturePerSpecialist * iChange);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -7943,9 +8036,13 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 	updateYield();
 
 	// Reset city level yields
+#if !defined(STANDARDIZE_YIELDS) // Remove yield specific variables, and change the loop to NUM_YIELD_TYPES
 	m_iJONSCulturePerTurnFromReligion = 0;
 	m_iFaithPerTurnFromReligion = 0;
 	for(int iYield = 0; iYield <= YIELD_SCIENCE; iYield++)
+#else
+	for(int iYield = 0; iYield <= NUM_YIELD_TYPES; iYield++)
+#endif
 	{
 		m_aiBaseYieldRateFromReligion[iYield] = 0;
 	}
@@ -7955,6 +8052,7 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 		int iYieldPerReligion = GetYieldPerReligionTimes100((YieldTypes)iYield);
 		if (iYieldPerReligion > 0)
 		{
+#if !defined(STANDARDIZE_YIELDS) // Remove switch, and compress stack
 			switch(iYield)
 			{
 				case YIELD_CULTURE:
@@ -7967,12 +8065,15 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 					ChangeBaseYieldRateFromReligion((YieldTypes)iYield, (GetCityReligions()->GetNumReligionsWithFollowers() * iYieldPerReligion) / 100);
 					break;
 			}
+#else
+			ChangeBaseYieldRateFromReligion((YieldTypes)iYield, (GetCityReligions()->GetNumReligionsWithFollowers() * iYieldPerReligion) / 100);
+#endif
 		}
 
 		if(eNewMajority != NO_RELIGION)
 		{
 			const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eNewMajority, getOwner());
-			if(pReligion)
+			if (pReligion)
 			{
 				int iFollowers = GetCityReligions()->GetNumFollowers(eNewMajority);
 
@@ -7982,8 +8083,8 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 				{
 					iReligionYieldChange += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetCityYieldChange((YieldTypes)iYield);
 				}
-
-				switch(iYield)
+#if !defined(STANDARDIZE_YIELDS) // remove switch and compress stack
+				switch (iYield)
 				{
 				case YIELD_CULTURE:
 					ChangeJONSCulturePerTurnFromReligion(iReligionYieldChange);
@@ -7995,8 +8096,10 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 					ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iReligionYieldChange);
 					break;
 				}
-
-				if(IsRouteToCapitalConnected())
+#else
+				ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iReligionYieldChange);
+#endif
+				if (IsRouteToCapitalConnected())
 				{
 					int iReligionChange = pReligion->m_Beliefs.GetYieldChangeTradeRoute((YieldTypes)iYield);
 					//BeliefTypes eSecondaryPantheon = GetCityReligions()->GetSecondaryReligionPantheonBelief();
@@ -8004,8 +8107,8 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 					{
 						iReligionChange += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetYieldChangeTradeRoute((YieldTypes)iYield);
 					}
-
-					switch(iYield)
+#if !defined(STANDARDIZE_YIELDS) // remove switch and compress stack
+					switch (iYield)
 					{
 					case YIELD_CULTURE:
 						ChangeJONSCulturePerTurnFromReligion(iReligionChange);
@@ -8017,11 +8120,15 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 						ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iReligionChange);
 						break;
 					}
+#else
+					ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iReligionChange);
+#endif
 				}
-				
+
 				if (GetCityCitizens()->GetTotalSpecialistCount() > 0)
 				{
-					switch(iYield)
+#if !defined(STANDARDIZE_YIELDS) // remove switch and compress stack
+					switch (iYield)
 					{
 					case YIELD_CULTURE:
 						ChangeJONSCulturePerTurnFromReligion(pReligion->m_Beliefs.GetYieldChangeAnySpecialist((YieldTypes)iYield));
@@ -8033,6 +8140,9 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 						ChangeBaseYieldRateFromReligion((YieldTypes)iYield, pReligion->m_Beliefs.GetYieldChangeAnySpecialist((YieldTypes)iYield));
 						break;
 					}
+#else
+					ChangeBaseYieldRateFromReligion((YieldTypes)iYield, pReligion->m_Beliefs.GetYieldChangeAnySpecialist((YieldTypes)iYield));
+#endif
 				}
 #if defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 				for (int jJ = 0; jJ < GC.getNumBuildingInfos(); jJ++)
@@ -8069,6 +8179,7 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 							}
 						} // ... may Google forgive my eSoul...
 #endif
+#if !defined(STANDARDIZE_YIELDS) // remove switch and compress stack
 						switch (iYield)
 						{
 						case YIELD_CULTURE:
@@ -8081,7 +8192,9 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 							ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iYieldFromBuilding);
 							break;
 						}
-						
+#else
+						ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iYieldFromBuilding);
+#endif
 					}
 				}
 #else
@@ -8124,6 +8237,7 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 								}
 							} // ... may Google forgive my eSoul...
 #endif
+#if !defined(STANDARDIZE_YIELDS) // remove switch and compress stack
 							switch(iYield)
 							{
 							case YIELD_CULTURE:
@@ -8136,6 +8250,9 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 								ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iYieldFromBuilding);
 								break;
 							}
+#else
+							ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iYieldFromBuilding);
+#endif
 						}
 					}
 				}
@@ -9366,14 +9483,15 @@ int CvCity::getJONSCulturePerTurnTimes100() const
 #endif
 {
 	VALIDATE_OBJECT
-
+	int iCulture = 0;
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	// No culture during Resistance
 	if(IsResistance() || IsRazing())
 	{
 		return 0;
 	}
-	CvPlayer& kPlayer = GET_PLAYER(getOwner());
-	int iCulture = GetBaseJONSCulturePerTurn();
+
+	 iCulture = GetBaseJONSCulturePerTurn();
 
 	int iModifier = 100;
 
@@ -9418,7 +9536,9 @@ int CvCity::getJONSCulturePerTurnTimes100() const
 #ifndef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 	iCulture /= 100;
 #endif
-
+#else
+		iCulture = getYieldRateTimes100(YIELD_CULTURE, false /*bIgnoreTrade*/);
+#endif
 	return iCulture;
 }
 
@@ -9426,8 +9546,8 @@ int CvCity::getJONSCulturePerTurnTimes100() const
 int CvCity::GetBaseJONSCulturePerTurn() const
 {
 	VALIDATE_OBJECT
-
 	int iCulturePerTurn = 0;
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	iCulturePerTurn += GetJONSCulturePerTurnFromBuildings();
 	iCulturePerTurn += GetJONSCulturePerTurnFromPolicies();
 	iCulturePerTurn += GetJONSCulturePerTurnFromSpecialists();
@@ -9444,7 +9564,9 @@ int CvCity::GetBaseJONSCulturePerTurn() const
 	// Add per-population culture yields from the regular yield system
     iCulturePerTurn += (GetYieldPerPopTimes100(YIELD_CULTURE) * getPopulation()) / 100;
 #endif
-
+#else
+	iCulturePerTurn = getBaseYieldRate(YIELD_CULTURE);
+#endif
 	return iCulturePerTurn;
 }
 
@@ -9452,7 +9574,8 @@ int CvCity::GetBaseJONSCulturePerTurn() const
 int CvCity::GetJONSCulturePerTurnFromBuildings() const
 {
 	VALIDATE_OBJECT
-#if defined(LEKMOD_v34)
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 		if (GetGarrisonedUnit())
 		{
 			return m_iJONSCulturePerTurnFromBuildings + GetGarrisonYieldBonus(YIELD_CULTURE);
@@ -9464,6 +9587,9 @@ int CvCity::GetJONSCulturePerTurnFromBuildings() const
 #else
 	return m_iJONSCulturePerTurnFromBuildings;
 #endif
+#else
+	return GetBaseYieldRateFromBuildings(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -9472,7 +9598,11 @@ void CvCity::ChangeJONSCulturePerTurnFromBuildings(int iChange)
 	VALIDATE_OBJECT
 	if(iChange != 0)
 	{
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 		m_iJONSCulturePerTurnFromBuildings = (m_iJONSCulturePerTurnFromBuildings + iChange);
+#else
+		ChangeBaseYieldRateFromBuildings(YIELD_CULTURE, iChange);
+#endif
 	}
 }
 
@@ -9480,6 +9610,7 @@ void CvCity::ChangeJONSCulturePerTurnFromBuildings(int iChange)
 int CvCity::GetJONSCulturePerTurnFromPolicies() const
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 #ifdef FIX_POLICY_CULTURE_PER_GARRISONED_UNIT
 	if (GetGarrisonedUnit())
 	{
@@ -9492,6 +9623,9 @@ int CvCity::GetJONSCulturePerTurnFromPolicies() const
 #else
 	return m_iJONSCulturePerTurnFromPolicies;
 #endif
+#else 
+	return GetBaseYieldRateFromPolicies(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -9500,15 +9634,24 @@ void CvCity::ChangeJONSCulturePerTurnFromPolicies(int iChange)
 	VALIDATE_OBJECT
 	if(iChange != 0)
 	{
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 		m_iJONSCulturePerTurnFromPolicies = (m_iJONSCulturePerTurnFromPolicies + iChange);
+#else
+		ChangeBaseYieldRateFromPolicies(YIELD_CULTURE, iChange);
+#endif
 	}
+
 }
 
 //	--------------------------------------------------------------------------------
 int CvCity::GetJONSCulturePerTurnFromSpecialists() const
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	return m_iJONSCulturePerTurnFromSpecialists;
+#else
+	return m_aiBaseYieldRateFromSpecialists[YIELD_CULTURE];
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -9517,38 +9660,58 @@ void CvCity::ChangeJONSCulturePerTurnFromSpecialists(int iChange)
 	VALIDATE_OBJECT
 	if(iChange != 0)
 	{
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 		m_iJONSCulturePerTurnFromSpecialists = (m_iJONSCulturePerTurnFromSpecialists + iChange);
+#else
+		ChangeBaseYieldRateFromSpecialists(YIELD_CULTURE, iChange);
+#endif
 	}
 }
 
 //	--------------------------------------------------------------------------------
 int CvCity::GetJONSCulturePerTurnFromGreatWorks() const
 {
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	return GetCityBuildings()->GetCultureFromGreatWorks();
+#else
+	return GetBaseYieldRateFromGreatWorks(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
 int CvCity::GetJONSCulturePerTurnFromTraits() const
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	return GET_PLAYER(m_eOwner).GetPlayerTraits()->GetCityCultureBonus();
+#else
+	return GetBaseYieldRateFromTraits(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
 int CvCity::GetJONSCulturePerTurnFromReligion() const
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	return m_iJONSCulturePerTurnFromReligion;
+#else
+	return GetBaseYieldRateFromReligion(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
 void CvCity::ChangeJONSCulturePerTurnFromReligion(int iChange)
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	if(iChange != 0)
 	{
 		m_iJONSCulturePerTurnFromReligion = (m_iJONSCulturePerTurnFromReligion + iChange);
 	}
+#else
+		ChangeBaseYieldRateFromReligion(YIELD_CULTURE, iChange);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -9556,9 +9719,11 @@ int CvCity::GetJONSCulturePerTurnFromLeagues() const
 {
 	VALIDATE_OBJECT
 	int iValue = 0;
-
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	iValue += (getNumWorldWonders() * GC.getGame().GetGameLeagues()->GetWorldWonderYieldChange(getOwner(), YIELD_CULTURE));
-
+#else
+	iValue += GetBaseYieldRateFromLeagues(YIELD_CULTURE);
+#endif
 	return iValue;
 }
 
@@ -9566,7 +9731,8 @@ int CvCity::GetJONSCulturePerTurnFromLeagues() const
 int CvCity::GetFaithPerTurn() const
 {
 	VALIDATE_OBJECT
-
+	int iFaith = 0;
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	// No faith during Resistance
 	if(IsResistance() || IsRazing())
 	{
@@ -9614,8 +9780,9 @@ int CvCity::GetFaithPerTurn() const
 		iFaith *= (100 + iModifier);
 		iFaith /= 100;
 	}
-
-
+#else
+	iFaith += getYieldRate(YIELD_FAITH, false /*bIngoreTrade*/);
+#endif
 	return iFaith;
 }
 
@@ -9623,7 +9790,9 @@ int CvCity::GetFaithPerTurn() const
 int CvCity::GetFaithPerTurnFromBuildings() const
 {
 	VALIDATE_OBJECT
-#if defined(LEKMOD_v34)
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
+		
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 		if (GetGarrisonedUnit())
 		{
 			return m_iFaithPerTurnFromBuildings + GetGarrisonYieldBonus(YIELD_FAITH);
@@ -9635,6 +9804,9 @@ int CvCity::GetFaithPerTurnFromBuildings() const
 #else
 	return m_iFaithPerTurnFromBuildings;
 #endif
+#else 
+		return GetBaseYieldRateFromBuildings(YIELD_FAITH);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -9643,7 +9815,11 @@ void CvCity::ChangeFaithPerTurnFromBuildings(int iChange)
 	VALIDATE_OBJECT
 	if(iChange != 0)
 	{
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 		m_iFaithPerTurnFromBuildings = (m_iFaithPerTurnFromBuildings + iChange);
+#else
+		ChangeBaseYieldRateFromBuildings(YIELD_FAITH, iChange);
+#endif
 	}
 }
 
@@ -9651,17 +9827,25 @@ void CvCity::ChangeFaithPerTurnFromBuildings(int iChange)
 int CvCity::GetFaithPerTurnFromPolicies() const
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	return m_iFaithPerTurnFromPolicies;
+#else
+	return GetBaseYieldRateFromPolicies(YIELD_FAITH);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
 void CvCity::ChangeFaithPerTurnFromPolicies(int iChange)
 {
 	VALIDATE_OBJECT
-	if(iChange != 0)
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
+	if (iChange != 0)
 	{
 		m_iFaithPerTurnFromPolicies = (m_iFaithPerTurnFromPolicies + iChange);
 	}
+#else
+	ChangeBaseYieldRateFromPolicies(YIELD_FAITH, iChange);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -9670,7 +9854,7 @@ int CvCity::GetFaithPerTurnFromTraits() const
 	VALIDATE_OBJECT
 
 	int iRtnValue = 0;
-	
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	if(GET_PLAYER(m_eOwner).GetPlayerTraits()->IsFaithFromUnimprovedForest())
 	{
 		// See how many tiles adjacent to city are unimproved forest
@@ -9698,7 +9882,9 @@ int CvCity::GetFaithPerTurnFromTraits() const
 			iRtnValue = 1;
 		}
 	}
-
+#else 
+	iRtnValue = GetBaseYieldRateFromTraits(YIELD_FAITH);
+#endif
 	return iRtnValue;
 }
 
@@ -9706,17 +9892,25 @@ int CvCity::GetFaithPerTurnFromTraits() const
 int CvCity::GetFaithPerTurnFromReligion() const
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	return m_iFaithPerTurnFromReligion;
+#else
+	return GetBaseYieldRateFromReligion(YIELD_FAITH);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
 void CvCity::ChangeFaithPerTurnFromReligion(int iChange)
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	if(iChange != 0)
 	{
 		m_iFaithPerTurnFromReligion = (m_iFaithPerTurnFromReligion + iChange);
 	}
+#else
+	ChangeBaseYieldRateFromReligion(YIELD_FAITH, iChange);
+#endif
 }
 
 #ifdef NQ_FLAT_FAITH_PER_CITIZEN_BORN_FROM_BELIEFS
@@ -9747,17 +9941,25 @@ int CvCity::GetFlatFaithOnCitizenBorn() const
 int CvCity::getCultureRateModifier() const
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	return m_iCultureRateModifier;
+#else
+	return getYieldRateModifier(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
 void CvCity::changeCultureRateModifier(int iChange)
 {
 	VALIDATE_OBJECT
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 	if(iChange != 0)
 	{
 		m_iCultureRateModifier = (m_iCultureRateModifier + iChange);
 	}
+#else
+		changeYieldRateModifier(YIELD_CULTURE, iChange);
+#endif
 }
 
 
@@ -9779,7 +9981,11 @@ void CvCity::changeNumWorldWonders(int iChange)
 		CvAssert(getNumWorldWonders() >= 0);
 
 		// Extra culture for Wonders (Policies, etc.)
+#if !defined(STANDARDIZE_YIELDS) // Call to new function
 		ChangeJONSCulturePerTurnFromPolicies(GET_PLAYER(getOwner()).GetCulturePerWonder() * iChange);
+#else
+		ChangeBaseYieldRateFromPolicies(YIELD_CULTURE, GET_PLAYER(getOwner()).GetCulturePerWonder() * iChange);
+#endif
 	}
 }
 
@@ -10642,6 +10848,7 @@ int CvCity::GetLocalHappiness() const
 	iLocalHappiness += kPlayer.GetPlayerTraits()->GetLocalHappinessPerCity();
 #endif // TRAITIFY
 #endif // LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
+	int iHappinessFromReligion = 0;
 	int iHappinessPerGarrison = kPlayer.GetHappinessPerGarrisonedUnit();
 	if(iHappinessPerGarrison > 0)
 	{
@@ -10654,7 +10861,6 @@ int CvCity::GetLocalHappiness() const
 	// NQMP GJS - New Ottoman UA end
 
 	// Follower beliefs
-	int iHappinessFromReligion = 0;
 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 
 	ReligionTypes eMajority = GetCityReligions()->GetReligiousMajority();
@@ -10681,7 +10887,7 @@ int CvCity::GetLocalHappiness() const
 #ifdef AUI_WARNING_FIXES
 			for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
 #else
-			for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+			for (int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
 #endif
 			{
 				BuildingClassTypes eBuildingClass = (BuildingClassTypes)jJ;
@@ -10694,7 +10900,6 @@ int CvCity::GetLocalHappiness() const
 
 				CvCivilizationInfo& playerCivilizationInfo = kPlayer.getCivilizationInfo();
 				BuildingTypes eBuilding = (BuildingTypes)playerCivilizationInfo.getCivilizationBuildings(eBuildingClass);
-
 				if(eBuilding != NO_BUILDING)
 				{
 					if(GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
@@ -10730,13 +10935,6 @@ int CvCity::GetLocalHappiness() const
 	}
 #if !defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 	// Policy Building Mods
-	int iSpecialPolicyBuildingHappiness = 0;
-#ifdef AUI_WARNING_FIXES
-	uint iBuildingClassLoop;
-#else
-	int iBuildingClassLoop;
-#endif
-	BuildingClassTypes eBuildingClass;
 #ifdef AUI_WARNING_FIXES
 	for (uint iPolicyLoop = 0; iPolicyLoop < GC.getNumPolicyInfos(); iPolicyLoop++)
 #else
@@ -10758,9 +10956,8 @@ int CvCity::GetLocalHappiness() const
 					{
 						continue;
 					}
-
 					BuildingTypes eBuilding = (BuildingTypes)kPlayer.getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
-					if(eBuilding != NO_BUILDING && GetCityBuildings()->GetNumBuilding(eBuilding) > 0) // slewis - added the NO_BUILDING check for the ConquestDLX scenario which has civ specific wonders
+					if (eBuilding != NO_BUILDING && GetCityBuildings()->GetNumBuilding(eBuilding) > 0) // slewis - added the NO_BUILDING check for the ConquestDLX scenario which has civ specific wonders
 					{
 						if(pkPolicyInfo->GetBuildingClassHappiness(eBuildingClass) != 0)
 						{
@@ -10772,8 +10969,6 @@ int CvCity::GetLocalHappiness() const
 		}
 	}
 #if defined(TRAITIFY) // Building class happiness from traits
-	int iSpecialTraitBuildingHappiness = 0;
-
 	for (int iTraitLoop = 0; iTraitLoop < GC.getNumTraitInfos(); iTraitLoop++)
 	{
 		TraitTypes eTrait = (TraitTypes)iTraitLoop;
@@ -11507,7 +11702,7 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	int iTempMod;
 #if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 #if defined(TRAITIFY)
-	int iTraitMod;
+	int iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(eIndex);
 #endif
 #else
 	const CvYieldInfo& kYield = *GC.getYieldInfo(eIndex);
@@ -11630,46 +11825,65 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 #if defined(TRAITIFY) // Puppet Yield Modifiers
 		case YIELD_FOOD:
 			iTempMod = 0;
-			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_FOOD);
+#if defined(TRAITIFY) // Puppet Yield Modifiers
 			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+#endif
 			iModifier += iTempMod;
 			if (iTempMod != 0 && toolTipSink)
 				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
 			break;
 		case YIELD_PRODUCTION:
 			iTempMod = 0;
-			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_PRODUCTION);
+#if defined(TRAITIFY) // Puppet Yield Modifiers
 			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+#endif
 			iModifier += iTempMod;
 			if (iTempMod != 0 && toolTipSink)
 				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
 			break;
 #endif
-		case YIELD_SCIENCE:
-			iTempMod = GC.getPUPPET_SCIENCE_MODIFIER();
-#if defined(TRAITIFY) // Puppet Yield Modifiers
-			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_SCIENCE);
-			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
-#endif
-			iModifier += iTempMod;
-			if(iTempMod != 0 && toolTipSink)
-				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
-			break;
 		case YIELD_GOLD:
 			iTempMod = GC.getPUPPET_GOLD_MODIFIER();
 #if defined(TRAITIFY) // Puppet Yield Modifiers
-			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_GOLD);
+			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+#endif
+			iModifier += iTempMod;
+			if (iTempMod != 0 && toolTipSink)
+				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+			break;
+		case YIELD_SCIENCE:
+			iTempMod = GC.getPUPPET_SCIENCE_MODIFIER();
+#if defined(TRAITIFY) // Puppet Yield Modifiers
 			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
 #endif
 			iModifier += iTempMod;
 			if(iTempMod != 0 && toolTipSink)
 				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
 			break;
+#if defined(STANDARDIZE_YIELDS) // move culture puppet mod
+		case YIELD_CULTURE:
+			iTempMod = GC.getPUPPET_CULTURE_MODIFIER();
+#if defined(TRAITIFY) // Puppet Yield Modifiers
+			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+#endif
+			iModifier += iTempMod;
+			if (iTempMod != 0 && toolTipSink)
+				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+			break;
+		case YIELD_FAITH:
+			iTempMod = GC.getPUPPET_FAITH_MODIFIER();
+#if defined(TRAITIFY) // Puppet Yield Modifiers
+			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
+#endif
+			iModifier += iTempMod;
+			if (iTempMod != 0 && toolTipSink)
+				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_PUPPET", iTempMod);
+			break;
+#endif
 #if defined(LEKMOD_v34) // Puppet Yield Modifiers for Golden Age Points
 		case YIELD_GOLDEN_AGE_POINTS:
 			iTempMod = 0; // Hardcoded to 0 for now
 #if defined(TRAITIFY) // Puppet Yield Modifiers
-			iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(YIELD_GOLDEN_AGE_POINTS);
 			iTempMod += iTraitMod; // Add to TempMod for the toolTipSink
 #endif
 			iModifier += iTempMod;
@@ -11749,7 +11963,11 @@ int CvCity::getYieldRateTimes100(YieldTypes eIndex, bool bIgnoreTrade) const
 	// Resistance - no Science, Gold or Production (Prod handled in ProductionDifference)
 	if(IsResistance() || IsRazing())
 	{
+#if !defined(STANDARDIZE_YIELDS) // Relocate the Resistance and Razing zeroing
 		if(eIndex == YIELD_GOLD || eIndex == YIELD_SCIENCE)
+#else
+		if (eIndex == YIELD_GOLD || eIndex == YIELD_SCIENCE || eIndex == YIELD_CULTURE || eIndex == YIELD_FAITH)
+#endif
 		{
 			return 0;
 		}
@@ -11757,10 +11975,6 @@ int CvCity::getYieldRateTimes100(YieldTypes eIndex, bool bIgnoreTrade) const
 	// Sum up yield rate
 	int iBaseYield = getBaseYieldRate(eIndex) * 100;
 
-#if defined(LEKMOD_PATRO_FOOD_FIX)
-	if (eIndex == YIELD_FOOD)
-		iBaseYield += GetMaritimeCityStateFoodBonusTimes100();
-#endif
 	iBaseYield += (GetYieldPerPopTimes100(eIndex) * getPopulation());
 #if !defined(LEKMOD_FIX_YIELD_PER_RELIGION)
 	iBaseYield += (GetYieldPerReligionTimes100(eIndex) * GetCityReligions()->GetNumReligionsWithFollowers());
@@ -11804,6 +12018,15 @@ int CvCity::getBaseYieldRate(YieldTypes eIndex) const
 	iValue += GetBaseYieldRateFromMisc(eIndex);
 	iValue += GetBaseYieldRateFromReligion(eIndex);
 	iValue += GetBaseYieldRateFromGreatWorks(eIndex); // NQMP GJS - Artistic Genius fix to add science to Great Works
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+	iValue += GetBaseYieldRateFromGarrison(eIndex);
+#endif
+#if defined(STANDARDIZE_YIELDS) // New Yield collectors :)
+	iValue += GetBaseYieldRateFromTraits(eIndex);
+	iValue += GetBaseYieldRateFromLeagues(eIndex);
+	iValue += GetBaseYieldRateFromPolicies(eIndex);
+	iValue += GetBaseYieldRateFromThemedBuildings(eIndex);
+#endif
 
 	return iValue;
 }
@@ -11816,7 +12039,6 @@ int CvCity::GetBaseYieldRateFromGreatWorks(YieldTypes eIndex) const
 	VALIDATE_OBJECT
 	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
-
 	return GetCityBuildings()->GetYieldFromGreatWorks(eIndex);
 }
 
@@ -11865,18 +12087,8 @@ int CvCity::GetBaseYieldRateFromBuildings(YieldTypes eIndex) const
 	VALIDATE_OBJECT
 	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
-#if defined(LEKMOD_v34)
-	if(GetGarrisonedUnit())
-	{
-		return m_aiBaseYieldRateFromBuildings[eIndex] + GetGarrisonYieldBonus(eIndex);
-	}
-	else
-	{
-		return m_aiBaseYieldRateFromBuildings[eIndex];
-	}
-#else
+
 	return m_aiBaseYieldRateFromBuildings[eIndex];
-#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -11954,13 +12166,13 @@ void CvCity::ChangeBaseYieldRateFromMisc(YieldTypes eIndex, int iChange)
 	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 
-	if(iChange != 0)
+	if (iChange != 0)
 	{
 		m_aiBaseYieldRateFromMisc.setAt(eIndex, m_aiBaseYieldRateFromMisc[eIndex] + iChange);
 
-		if(getTeam() == GC.getGame().getActiveTeam())
+		if (getTeam() == GC.getGame().getActiveTeam())
 		{
-			if(isCitySelected())
+			if (isCitySelected())
 			{
 				DLLUI->setDirty(CityScreen_DIRTY_BIT, true);
 			}
@@ -12000,32 +12212,130 @@ void CvCity::ChangeBaseYieldRateFromReligion(YieldTypes eIndex, int iChange)
 		}
 	}
 }
-#if defined(LEKMOD_PATRO_FOOD_FIX)
-int CvCity::GetMaritimeCityStateFoodBonusTimes100() const
+#if defined(STANDARDIZE_YIELDS) // New Yield collectors :)
+// --------------------------------------------------------------------------------
+// Adding BaseYieldRate Functions for things that were previously only Faith or Culture
+int CvCity::GetBaseYieldRateFromTraits(YieldTypes eIndex) const
 {
 	VALIDATE_OBJECT
-	int iFood = 0;
-	const PlayerTypes eOwner = getOwner();
-	for (int iPlayerLoop = MAX_MAJOR_CIVS; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
+	// This is just consolidating, but I will return to make this better, maybe.
+	int iRtnValue = 0;
+	if (eIndex == YIELD_FAITH) // Celts :)
 	{
-		const PlayerTypes eMinor = static_cast<PlayerTypes>(iPlayerLoop);
-		CvPlayer& kMinor = GET_PLAYER(eMinor);
-		if (!kMinor.isAlive() || !kMinor.isMinorCiv())
-			continue;
-
-		CvMinorCivAI* pMinor = kMinor.GetMinorCivAI();
-		if (!pMinor || pMinor->GetTrait() != MINOR_CIV_TRAIT_MARITIME)
-			continue;
-
-		// Allies
-		if (pMinor->IsAllies(eOwner))
-			iFood += isCapital() ? pMinor->GetAlliesCapitalFoodBonus(eOwner) + pMinor->GetAlliesOtherCityFoodBonus(eOwner) : pMinor->GetAlliesOtherCityFoodBonus(eOwner);
-
-		// Friends
-		if (pMinor->IsFriends(eOwner))
-			iFood += isCapital() ? pMinor->GetFriendsCapitalFoodBonus(eOwner) + pMinor->GetFriendsOtherCityFoodBonus(eOwner) : pMinor->GetFriendsOtherCityFoodBonus(eOwner);
+		if (GET_PLAYER(m_eOwner).GetPlayerTraits()->IsFaithFromUnimprovedForest())
+		{
+			// See how many tiles adjacent to city are unimproved forest
+			int iAdjacentForests = 0;
+			for (int iDirectionLoop = 0; iDirectionLoop < NUM_DIRECTION_TYPES; ++iDirectionLoop)
+			{
+				CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iDirectionLoop));
+				if (pAdjacentPlot != NULL)
+				{
+					if (pAdjacentPlot->getFeatureType() == FEATURE_FOREST && pAdjacentPlot->getImprovementType() == NO_IMPROVEMENT)
+						iAdjacentForests++;
+				}
+			}
+			// If 3 or more, bonus is +2
+			if (iAdjacentForests > 2)
+				iRtnValue = 2;
+			else if (iAdjacentForests > 0)
+				iRtnValue = 1;
+		}
 	}
-	return iFood;
+	if (eIndex == YIELD_CULTURE) // Sumer :)
+	{
+		iRtnValue = GET_PLAYER(m_eOwner).GetPlayerTraits()->GetCityCultureBonus();
+	}
+	return iRtnValue;
+}
+// --------------------------------------------------------------------------------
+// Base yield rate from Leagues
+int CvCity::GetBaseYieldRateFromLeagues(YieldTypes eIndex) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
+	
+	return (eIndex == YIELD_CULTURE) ? (getNumWorldWonders() * GC.getGame().GetGameLeagues()->GetWorldWonderYieldChange(getOwner(), YIELD_CULTURE)) : 0;
+}
+//	--------------------------------------------------------------------------------
+// Base Yield Rate from Policies
+int CvCity::GetBaseYieldRateFromPolicies(YieldTypes eIndex) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
+	
+	return m_aiBaseYieldRateFromPolicies[eIndex];
+}
+//	--------------------------------------------------------------------------------
+// Change to Base Yield Rate from Policies
+void CvCity::ChangeBaseYieldRateFromPolicies(YieldTypes eIndex, int iChange)
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
+
+	if (iChange != 0)
+	{
+		m_aiBaseYieldRateFromPolicies.setAt(eIndex, m_aiBaseYieldRateFromPolicies[eIndex] + iChange);
+
+		if (getTeam() == GC.getGame().getActiveTeam())
+		{
+			if (isCitySelected())
+			{
+				DLLUI->setDirty(CityScreen_DIRTY_BIT, true);
+			}
+		}
+	}
+}
+//	--------------------------------------------------------------------------------
+/// Base yield rate earned if the City has Themed Buildings
+int CvCity::GetBaseYieldRateFromThemedBuildings(YieldTypes eYield) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
+
+	return (eYield == YIELD_CULTURE) ? m_pCityBuildings->GetThemingBonuses() : 0;
+}
+#endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+//	--------------------------------------------------------------------------------
+/// Base yield rate added if the city has a Garrison
+int CvCity::GetBaseYieldRateFromGarrison(YieldTypes eIndex) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
+
+	return (GetGarrisonedUnit() != NULL) ? GetGarrisonYieldBonus(eIndex) : 0;
+}
+//	--------------------------------------------------------------------------------
+int CvCity::GetGarrisonYieldBonus(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return m_aiGarrisonYieldBonus[eYield];
+}
+//	--------------------------------------------------------------------------------
+void CvCity::ChangeGarrisonYieldBonus(YieldTypes eYield, int iAmount)
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	if (iAmount != 0)
+	{
+		m_aiGarrisonYieldBonus.setAt(eYield, m_aiGarrisonYieldBonus[eYield] + iAmount);
+
+		if (getTeam() == GC.getGame().getActiveTeam())
+		{
+			if (isCitySelected())
+			{
+				DLLUI->setDirty(CityScreen_DIRTY_BIT, true);
+				//DLLUI->setDirty(InfoPane_DIRTY_BIT, true );
+			}
+		}
+	}
 }
 #endif
 //	--------------------------------------------------------------------------------
@@ -12287,6 +12597,12 @@ int CvCity::GetTradeYieldModifier(YieldTypes eIndex, CvString* toolTipSink) cons
 				*toolTipSink += "[NEWLINE][BULLET]";
 				*toolTipSink += GetLocalizedText("TXT_KEY_FAITH_FROM_TRADE_ROUTES", iReturnValue / 100.0f);
 				break;
+#if defined(LEKMOD_v34) // Golden Age Points as a Yield does not exist without v34
+			case YIELD_GOLDEN_AGE_POINTS:
+				*toolTipSink += "[NEWLINE][BULLET]";
+				*toolTipSink += GetLocalizedText("TXT_KEY_GOLDEN_AGE_POINTS_FROM_TRADE_ROUTES", iReturnValue / 100.0f);
+				break;
+#endif
 			}
 		}
 	}
@@ -12895,7 +13211,7 @@ void CvCity::updateStrengthValue()
 	if(pGarrisonedUnit)
 	{
 		int iMaxHits = GC.getMAX_HIT_POINTS();
-#if defined(LEKMOD_v34) // Add a raw amount of strength from garrisoned units, if the city has a building that does that
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS) // Add a raw amount of strength from garrisoned units, if the city has a building that does that
 		int iRawStrengthFromGarrison = m_pCityBuildings->GetGarrisonStrengthBonus();
 		if (iRawStrengthFromGarrison > 0)
 		{
@@ -12963,7 +13279,7 @@ int CvCity::getStrengthValue(bool bForRangeStrike) const
 		// subtract defense per citizen here as well (city strikes don't use defense values)
 		iValue -= (m_pCityBuildings->GetBuildingDefensePerCitizen() * getPopulation());
 #endif
-#if defined(LEKMOD_v34) // Subtract the raw amount of strength from garrisoned units, (city strikes don't use defense values)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS) // Subtract the raw amount of strength from garrisoned units, (city strikes don't use defense values)
 		if (GetGarrisonedUnit()) // a bit of a duplication, but I wanted to subtract it above getCITY_RANGED_ATTACK_STRENGTH_MULTIPLIER for consistency
 		{
 			iValue -= m_pCityBuildings->GetGarrisonStrengthBonus();
@@ -17078,17 +17394,16 @@ void CvCity::read(FDataStream& kStream)
 	kStream >> m_iJONSCultureStored;
 #endif
 	kStream >> m_iJONSCultureLevel;
+#if !defined(STANDARDIZE_YIELDS) // Remove a bunch of redundant variables
 	kStream >> m_iJONSCulturePerTurnFromBuildings;
-	kStream >> m_iJONSCulturePerTurnFromPolicies;
+	kStream >> m_iJONSCulturePerTurnFromPolicies; 
 	kStream >> m_iJONSCulturePerTurnFromSpecialists;
 	kStream >> m_iJONSCulturePerTurnFromReligion;
 	kStream >> m_iFaithPerTurnFromBuildings;
-
 	kStream >> m_iFaithPerTurnFromPolicies;
-
 	kStream >> m_iFaithPerTurnFromReligion;
-
 	kStream >> m_iCultureRateModifier;
+#endif
 	kStream >> m_iNumWorldWonders;
 	kStream >> m_iNumTeamWonders;
 	kStream >> m_iNumNationalWonders;
@@ -17183,7 +17498,10 @@ void CvCity::read(FDataStream& kStream)
 	kStream >> m_aiBaseYieldRateFromSpecialists;
 	kStream >> m_aiBaseYieldRateFromMisc;
 	kStream >> m_aiBaseYieldRateFromReligion;
-#if defined(LEKMOD_v34)
+#if defined(STANDARDIZE_YIELDS) // BaseYieldRateFromPolicies
+	kStream >> m_aiBaseYieldRateFromPolicies;
+#endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	kStream >> m_aiGarrisonYieldBonus;
 #endif
 	kStream >> m_aiYieldPerPop;
@@ -17211,6 +17529,9 @@ void CvCity::read(FDataStream& kStream)
 	kStream >> m_abRevealed;
 #ifdef PRODUCTION_TO_YIELD_FIX
 	kStream >> m_bFinishedOrderThisTurn;
+#endif
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	kStream >> m_eSettlerUnit;
 #endif
 	kStream >> m_strName;
 	kStream >> m_strScriptData;
@@ -17450,6 +17771,7 @@ void CvCity::write(FDataStream& kStream) const
 	kStream << m_iJONSCultureStored;
 #endif
 	kStream << m_iJONSCultureLevel;
+#if !defined(STANDARDIZE_YIELDS) // Remove a bunch of redundant variables
 	kStream << m_iJONSCulturePerTurnFromBuildings;
 	kStream << m_iJONSCulturePerTurnFromPolicies;
 	kStream << m_iJONSCulturePerTurnFromSpecialists;
@@ -17458,6 +17780,7 @@ void CvCity::write(FDataStream& kStream) const
 	kStream << m_iFaithPerTurnFromPolicies;
 	kStream << m_iFaithPerTurnFromReligion;
 	kStream << m_iCultureRateModifier;
+#endif
 	kStream << m_iNumWorldWonders;
 	kStream << m_iNumTeamWonders;
 	kStream << m_iNumNationalWonders;
@@ -17529,7 +17852,10 @@ void CvCity::write(FDataStream& kStream) const
 	kStream << m_aiBaseYieldRateFromSpecialists;
 	kStream << m_aiBaseYieldRateFromMisc;
 	kStream << m_aiBaseYieldRateFromReligion;
-#if defined(LEKMOD_v34)
+#if defined(STANDARDIZE_YIELDS) // BaseYieldRateFromPolicies
+	kStream << m_aiBaseYieldRateFromPolicies;
+#endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	kStream << m_aiGarrisonYieldBonus;
 #endif
 	kStream << m_aiYieldPerPop;
@@ -17546,6 +17872,9 @@ void CvCity::write(FDataStream& kStream) const
 	kStream << m_abRevealed;
 #ifdef PRODUCTION_TO_YIELD_FIX
 	kStream << m_bFinishedOrderThisTurn;
+#endif
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	kStream << m_eSettlerUnit;
 #endif
 	kStream << m_strName;
 	kStream << m_strScriptData;

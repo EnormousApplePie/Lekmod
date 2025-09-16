@@ -99,7 +99,10 @@ public:
 	bool IsFinishedOrderThisTurn() const;
 	void SetFinishedOrderThisTurn(bool bFinished);
 #endif
-
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	UnitTypes SettlerUnit() const;
+	void SetSettlerUnit(UnitTypes eUnit);
+#endif
 	void createGreatGeneral(UnitTypes eGreatPersonUnit);
 	void createGreatAdmiral(UnitTypes eGreatPersonUnit);
 
@@ -145,10 +148,6 @@ public:
 	void ChangeResourceExtraYield(ResourceTypes eResource, YieldTypes eYield, int iChange);
 #if defined(MISC_CHANGES) // CvCity resource class yield changes
 	void ChangeResourceClassExtraYield(ResourceClassTypes eResourceClass, YieldTypes eYield, int iChange);
-#endif
-#if defined(LEKMOD_v34)
-	int GetGarrisonYieldBonus(YieldTypes eYield) const; 
-	void ChangeGarrisonYieldBonus(YieldTypes eYield, int iAmount);
 #endif
 
 	int GetFeatureExtraYield(FeatureTypes eFeature, YieldTypes eYield) const;
@@ -676,18 +675,30 @@ public:
 
 	int GetBaseYieldRateFromReligion(YieldTypes eIndex) const;
 	void ChangeBaseYieldRateFromReligion(YieldTypes eIndex, int iChange);
+#if defined(STANDARDIZE_YIELDS)
+	int GetBaseYieldRateFromTraits(YieldTypes eIndex) const;
+	int GetBaseYieldRateFromLeagues(YieldTypes eIndex) const;
+	
+	int GetBaseYieldRateFromPolicies(YieldTypes eIndex) const;
+	void ChangeBaseYieldRateFromPolicies(YieldTypes eIndex, int iChange);
+
+	
+
+	int GetBaseYieldRateFromThemedBuildings(YieldTypes eIndex) const;
+#endif
 	// END Base Yield
-#if defined(LEKMOD_PATRO_FOOD_FIX)
-	int GetMaritimeCityStateFoodBonusTimes100()	const;
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+	int GetBaseYieldRateFromGarrison(YieldTypes eIndex) const;
+
+	int GetGarrisonYieldBonus(YieldTypes eYield) const;
+	void ChangeGarrisonYieldBonus(YieldTypes eYield, int iAmount);
 #endif
 	int GetYieldPerPopTimes100(YieldTypes eIndex) const;
 	void ChangeYieldPerPopTimes100(YieldTypes eIndex, int iChange);
 
 	int GetYieldPerReligionTimes100(YieldTypes eIndex) const;
 	void ChangeYieldPerReligionTimes100(YieldTypes eIndex, int iChange);
-#if defined(STANDARDIZE_YIELDS)
-	int 
-#endif
+
 	int getYieldRateModifier(YieldTypes eIndex) const;
 	void changeYieldRateModifier(YieldTypes eIndex, int iChange);
 
@@ -987,6 +998,7 @@ protected:
 	FAutoVariable<int, CvCity> m_iJONSCultureStored;
 #endif
 	FAutoVariable<int, CvCity> m_iJONSCultureLevel;
+#if !defined(STANDARDIZE_YIELDS) // Remove a bunch of redundant variables
 	FAutoVariable<int, CvCity> m_iJONSCulturePerTurnFromBuildings;
 	FAutoVariable<int, CvCity> m_iJONSCulturePerTurnFromPolicies;
 	FAutoVariable<int, CvCity> m_iJONSCulturePerTurnFromSpecialists;
@@ -995,6 +1007,7 @@ protected:
 	int m_iFaithPerTurnFromPolicies;
 	int m_iFaithPerTurnFromReligion;
 	FAutoVariable<int, CvCity> m_iCultureRateModifier;
+#endif
 	FAutoVariable<int, CvCity> m_iNumWorldWonders;
 	FAutoVariable<int, CvCity> m_iNumTeamWonders;
 	FAutoVariable<int, CvCity> m_iNumNationalWonders;
@@ -1066,6 +1079,9 @@ protected:
 	FAutoVariable<std::vector<int>, CvCity> m_aiBaseYieldRateFromSpecialists;
 	FAutoVariable<std::vector<int>, CvCity> m_aiBaseYieldRateFromMisc;
 	std::vector<int> m_aiBaseYieldRateFromReligion;
+#if defined(STANDARDIZE_YIELDS)
+	FAutoVariable<std::vector<int>, CvCity> m_aiBaseYieldRateFromPolicies;
+#endif
 	FAutoVariable<std::vector<int>, CvCity> m_aiYieldRateModifier;
 	FAutoVariable<std::vector<int>, CvCity> m_aiYieldPerPop;
 	std::vector<int> m_aiYieldPerReligion;
@@ -1075,7 +1091,7 @@ protected:
 	FAutoVariable<std::vector<int>, CvCity> m_aiProductionToYieldModifier;
 	FAutoVariable<std::vector<int>, CvCity> m_aiDomainFreeExperience;
 	FAutoVariable<std::vector<int>, CvCity> m_aiDomainProductionModifier;
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	FAutoVariable<std::vector<int>, CvCity> m_aiGarrisonYieldBonus;
 #endif
 
@@ -1113,6 +1129,9 @@ protected:
 
 #ifdef PRODUCTION_TO_YIELD_FIX
 	bool m_bFinishedOrderThisTurn;
+#endif
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	UnitTypes m_eSettlerUnit;
 #endif
 	CvString m_strName;
 

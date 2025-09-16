@@ -140,7 +140,7 @@ CvBuildingEntry::CvBuildingEntry(void):
 #if defined(MISC_CHANGES) // CvBuildingClasses member variables
 	m_iTourismPerMountain(0),
 #endif
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iGarrisonStrengthBonus(0),
 #endif
 	m_iPreferredDisplayPosition(0),
@@ -184,8 +184,12 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_piPrereqAndTechs(NULL),
 	m_piResourceQuantityRequirements(NULL),
 	m_piResourceQuantity(NULL),
+#if !defined(LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE) // Move Culture and Faith specific table to Full Resources
 	m_piResourceCultureChanges(NULL),
 	m_piResourceFaithChanges(NULL),
+#else
+	m_paiBuildingLocalResourceYieldChanges(NULL),
+#endif
 	m_piProductionTraits(NULL),
 	m_piSeaPlotYieldChange(NULL),
 	m_piRiverPlotYieldChange(NULL),
@@ -198,6 +202,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_piAreaYieldModifier(NULL),
 	m_piGlobalYieldModifier(NULL),
 	m_piTechEnhancedYieldChange(NULL),
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	m_ppiEraEnhancedYieldChange(NULL),
+#endif
 	m_piUnitCombatFreeExperience(NULL),
 	m_piUnitCombatProductionModifiers(NULL),
 #ifdef LEKMOD_v34
@@ -275,8 +282,12 @@ CvBuildingEntry::~CvBuildingEntry(void)
 	SAFE_DELETE_ARRAY(m_piPrereqAndTechs);
 	SAFE_DELETE_ARRAY(m_piResourceQuantityRequirements);
 	SAFE_DELETE_ARRAY(m_piResourceQuantity);
+#if !defined(LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE) // Move Culture and Faith specific table to Full Resources
 	SAFE_DELETE_ARRAY(m_piResourceCultureChanges);
 	SAFE_DELETE_ARRAY(m_piResourceFaithChanges);
+#else
+	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingLocalResourceYieldChanges);
+#endif
 	SAFE_DELETE_ARRAY(m_piProductionTraits);
 	SAFE_DELETE_ARRAY(m_piSeaPlotYieldChange);
 	SAFE_DELETE_ARRAY(m_piRiverPlotYieldChange);
@@ -289,6 +300,9 @@ CvBuildingEntry::~CvBuildingEntry(void)
 	SAFE_DELETE_ARRAY(m_piAreaYieldModifier);
 	SAFE_DELETE_ARRAY(m_piGlobalYieldModifier);
 	SAFE_DELETE_ARRAY(m_piTechEnhancedYieldChange);
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiEraEnhancedYieldChange);
+#endif
 	SAFE_DELETE_ARRAY(m_piUnitCombatFreeExperience);
 	SAFE_DELETE_ARRAY(m_piUnitCombatProductionModifiers);
 #ifdef LEKMOD_v34
@@ -494,7 +508,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 #if defined(MISC_CHANGES) // CvBuildingClasses read XML
 	m_iTourismPerMountain = kResults.GetInt("TourismPerMountain");
 #endif
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iGarrisonStrengthBonus = kResults.GetInt("GarrisonStrengthBonus");
 #endif
 	m_iPreferredDisplayPosition = kResults.GetInt("DisplayPosition");
@@ -600,12 +614,59 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	kUtility.SetYields(m_piAreaYieldModifier, "Building_AreaYieldModifiers", "BuildingType", szBuildingType);
 	kUtility.SetYields(m_piGlobalYieldModifier, "Building_GlobalYieldModifiers", "BuildingType", szBuildingType);
 	kUtility.SetYields(m_piTechEnhancedYieldChange, "Building_TechEnhancedYieldChanges", "BuildingType", szBuildingType);
-
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	{
+		kUtility.Initialize2DArray(m_ppiEraEnhancedYieldChange, "Eras", "Yields");
+		std::string strKey("Building_EraEnhancedYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if(pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, 
+				"SELECT Eras.ID as EraID, Yields.ID as YieldID, Yield from Building_EraEnhancedYieldChanges "
+				"INNER JOIN Eras on Eras.Type = EraType "
+				"INNER JOIN Yields on Yields.Type = YieldType "
+				"WHERE BuildingType = ?");
+		}
+		pResults->Bind(1, szBuildingType);
+		while(pResults->Step())
+		{
+			const int EraID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
+			m_ppiEraEnhancedYieldChange[EraID][YieldID] = yield;
+		}
+		pResults->Reset();
+	}
+#endif
 	kUtility.PopulateArrayByValue(m_piResourceQuantityRequirements, "Resources", "Building_ResourceQuantityRequirements", "ResourceType", "BuildingType", szBuildingType, "Cost");
 	kUtility.PopulateArrayByValue(m_piResourceQuantity, "Resources", "Building_ResourceQuantity", "ResourceType", "BuildingType", szBuildingType, "Quantity");
+#if !defined(LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE) // Move Culture and Faith specific table to Full Resources
 	kUtility.PopulateArrayByValue(m_piResourceCultureChanges, "Resources", "Building_ResourceCultureChanges", "ResourceType", "BuildingType", szBuildingType, "CultureChange");
 	kUtility.PopulateArrayByValue(m_piResourceFaithChanges, "Resources", "Building_ResourceFaithChanges", "ResourceType", "BuildingType", szBuildingType, "FaithChange");
-
+#else
+	{
+		kUtility.Initialize2DArray(m_paiBuildingLocalResourceYieldChanges, "Resources", "Yields");
+		std::string strKey("Building_LocalResourceYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if(pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, 
+				"SELECT Resources.ID as ResourceID, Yields.ID as YieldID, Yield from Building_LocalResourceYieldChanges "
+				"INNER JOIN Resources on Resources.Type = ResourceType "
+				"INNER JOIN Yields on Yields.Type = YieldType "
+				"WHERE BuildingType = ?");
+		}
+		pResults->Bind(1, szBuildingType);
+		while(pResults->Step())
+		{
+			const int ResourceID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
+			m_paiBuildingLocalResourceYieldChanges[ResourceID][YieldID] = yield;
+		}
+		pResults->Reset();
+	}
+#endif
 	kUtility.PopulateArrayByValue(m_paiHurryModifier, "HurryInfos", "Building_HurryModifiers", "HurryType", "BuildingType", szBuildingType, "HurryCostModifier");
 
 	//kUtility.PopulateArrayByValue(m_piProductionTraits, "Traits", "Building_ProductionTraits", "TraitType", "BuildingType", szBuildingType, "Trait");
@@ -1826,7 +1887,7 @@ int CvBuildingEntry::GetMountainTourism() const
 	return m_iTourismPerMountain;
 }
 #endif
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 /// Amount of Extra strenght a city gets for having a Garrisoned unit
 int CvBuildingEntry::GetGarrisonStrengthBonus() const
 {
@@ -2203,7 +2264,20 @@ int* CvBuildingEntry::GetTechEnhancedYieldChangeArray() const
 {
 	return m_piTechEnhancedYieldChange;
 }
-
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+/// Change to yield based on advancing eras
+int CvBuildingEntry::GetEraEnhancedYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_ppiEraEnhancedYieldChange ? m_ppiEraEnhancedYieldChange[i][j] : -1;
+}
+/// Array of yield changes based on advancing eras
+int** CvBuildingEntry::GetEraEnhancedYieldChangeArray() const
+{
+	return m_ppiEraEnhancedYieldChange;
+}
+#endif
 /// Sea plot yield changes by type
 int CvBuildingEntry::GetSeaPlotYieldChange(int i) const
 {
@@ -2331,7 +2405,7 @@ int CvBuildingEntry::GetResourceQuantity(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piResourceQuantity ? m_piResourceQuantity[i] : -1;
 }
-
+#if !defined(LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE) // Move Culture and Faith specific table to Full Resources
 /// Boost in Culture for each of these Resources
 int CvBuildingEntry::GetResourceCultureChange(int i) const
 {
@@ -2347,7 +2421,15 @@ int CvBuildingEntry::GetResourceFaithChange(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piResourceFaithChanges ? m_piResourceFaithChanges[i] : -1;
 }
-
+#else
+/// Boost in X Yield for having Y resource
+int CvBuildingEntry::GetBuildingLocalResourceYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumResourceInfos(), "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	return m_paiBuildingLocalResourceYieldChanges ? m_paiBuildingLocalResourceYieldChanges[i][j] : 0;
+}
+#endif
 /// Boost in production for leader with this trait
 int CvBuildingEntry::GetProductionTraits(int i) const
 {
@@ -2790,7 +2872,7 @@ CvCityBuildings::CvCityBuildings():
 	m_iNumBuildings(0),
 	m_iBuildingProductionModifier(0),
 	m_iBuildingDefense(0),
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iBuildingGarrisonStrengthBonus(0),
 #endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
@@ -2876,7 +2958,7 @@ void CvCityBuildings::Reset()
 	m_iNumBuildings = 0;
 	m_iBuildingProductionModifier = 0;
 	m_iBuildingDefense = 0;
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iBuildingGarrisonStrengthBonus = 0;
 #endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
@@ -2915,7 +2997,7 @@ void CvCityBuildings::Read(FDataStream& kStream)
 	kStream >> m_iNumBuildings;
 	kStream >> m_iBuildingProductionModifier;
 	kStream >> m_iBuildingDefense;
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	kStream >> m_iBuildingGarrisonStrengthBonus;
 #endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
@@ -2951,7 +3033,7 @@ void CvCityBuildings::Write(FDataStream& kStream)
 	kStream << m_iNumBuildings;
 	kStream << m_iBuildingProductionModifier;
 	kStream << m_iBuildingDefense;
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	kStream << m_iBuildingGarrisonStrengthBonus;
 #endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
@@ -4020,7 +4102,7 @@ bool CvCityBuildings::GetNextAvailableGreatWorkSlot(GreatWorkSlotType eGreatWork
 
 	return false;
 }
-
+#if !defined(LEKMOD_GREAT_WORK_YIELD_EFFECTS) // Combine Culture and Yield From Great Works
 /// Accessor: How much culture are we generating from Great Works in our buildings?
 int CvCityBuildings::GetCultureFromGreatWorks() const
 {
@@ -4032,7 +4114,7 @@ int CvCityBuildings::GetCultureFromGreatWorks() const
 
 	return iRtnValue;
 }
-
+#endif
 // NQMP GJS - Artistic Genius fix to add science to Great Works
 /// Accessor: How much of a yield are we generating from Great Works in our buildings?
 int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
@@ -4290,7 +4372,7 @@ void CvCityBuildings::ChangeBuildingDefense(int iChange)
 		m_pCity->plot()->plotAction(PUF_makeInfoBarDirty);
 	}
 }
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 /// Accessor: Get the Current bonus Strength from Garrisons
 int CvCityBuildings::GetGarrisonStrengthBonus() const
 {

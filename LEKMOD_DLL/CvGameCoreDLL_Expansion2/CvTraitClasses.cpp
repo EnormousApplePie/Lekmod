@@ -85,6 +85,7 @@ CvTraitEntry::CvTraitEntry() :
 	m_iExtraPopulation(0),
 	m_iInternationalRouteGrowthModifier(0),
 	m_iLocalHappinessPerCity(0),
+	m_iGlobalHappinessPerCity(0),
 	m_iInternalTradeRouteYieldModifier(0),
 	m_iUnhappinessModifierForPuppetedCities(0),
 	m_iFaithCostModifier(0),
@@ -596,6 +597,11 @@ int CvTraitEntry::GetInternationalRouteGrowthModifier() const
 int CvTraitEntry::GetLocalHappinessPerCity() const
 {
 	return m_iLocalHappinessPerCity;
+}
+/// Accessor:: does this trait give a bonus to global happiness per city?
+int CvTraitEntry::GetGlobalHappinessPerCity() const
+{
+	return m_iGlobalHappinessPerCity;
 }
 /// Accessor:: does this trait give a bonus to internal trade route yield?
 int CvTraitEntry::GetInternalTradeRouteYieldModifier() const
@@ -1320,26 +1326,12 @@ int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eRe
 // Remove Terrain Requirement
 bool CvTraitEntry::IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass) const
 {
-	if (eBuildingClass != NO_BUILDINGCLASS)
-	{
-		return m_abBuildingClassRemoveRequiredTerrain[eBuildingClass];
-	}
-	else
-	{
-		return false;
-	}
+	return eBuildingClass != NO_BUILDINGCLASS ? m_abBuildingClassRemoveRequiredTerrain[eBuildingClass] : false;
 }
 // Make Defined UnitClasses spawn in the Capital when given by traits
 bool CvTraitEntry::IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass) const
 {
-	if (eUnitClass != NO_UNITCLASS)
-	{
-		return m_abUnitClassForceSpawnCapital[eUnitClass];
-	}
-	else
-	{
-		return false;
-	}
+	return eUnitClass != NO_UNITCLASS ? m_abUnitClassForceSpawnCapital[eUnitClass] : false;
 }
 // Change Yield based on ResourceClassType (Netherlands, Russia and Jerusalem)
 int CvTraitEntry::GetResourceClassYieldChanges(int i, int j) const
@@ -1508,6 +1500,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_iMinorBullyModifier					= kResults.GetInt("MinorBullyModifier");
 	m_iInternationalRouteGrowthModifier		= kResults.GetInt("InternationalRouteGrowthModifier");
 	m_iLocalHappinessPerCity				= kResults.GetInt("LocalHappinessPerCity");
+	m_iGlobalHappinessPerCity				= kResults.GetInt("GlobalHappinessPerCity");
 	m_iInternalTradeRouteYieldModifier		= kResults.GetInt("InternalTradeRouteYieldModifier");
 	m_iUnhappinessModifierForPuppetedCities = kResults.GetInt("UnhappinessModifierForPuppetedCities");
 	m_iExtraPopulation						= kResults.GetInt("ExtraPopulation");
@@ -1897,8 +1890,11 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
-			pResults = kUtility.PrepareResults(strKey, "select Resources.ID as ResourceID, Yields.ID as YieldID, Yield from Trait_ResourceYieldChanges\
- inner join Resources on Resources.Type = ResourceType inner join Yields on Yields.Type = YieldType where TraitType = ?");
+			pResults = kUtility.PrepareResults(strKey, 
+				"select Resources.ID as ResourceID, Yields.ID as YieldID, Yield from Trait_ResourceYieldChanges "
+				"inner join Resources on Resources.Type = ResourceType "
+				"inner join Yields on Yields.Type = YieldType "
+				"where TraitType = ?");
 		}
 
 		pResults->Bind(1, szTraitType);
@@ -2538,6 +2534,7 @@ void CvPlayerTraits::InitPlayerTraits()
 			m_iMinorBullyModifier += trait->GetMinorBullyModifier();
 			m_iInternationalRouteGrowthModifier += trait->GetInternationalRouteGrowthModifier();
 			m_iLocalHappinessPerCity += trait->GetLocalHappinessPerCity();
+			m_iGlobalHappinessPerCity += trait->GetGlobalHappinessPerCity();
 			m_iInternalTradeRouteYieldModifier += trait->GetInternalTradeRouteYieldModifier();
 			m_iUnhappinessModifierForPuppetedCities += trait->GetUnhappinessModifierForPuppetedCities();
 			m_iExtraPopulation += trait->GetExtraPopulation();
@@ -3033,6 +3030,7 @@ void CvPlayerTraits::Reset()
 	m_iMinorBullyModifier = 0;
 	m_iInternationalRouteGrowthModifier = 0;
 	m_iLocalHappinessPerCity = 0;
+	m_iGlobalHappinessPerCity = 0;
 	m_iInternalTradeRouteYieldModifier = 0;
 	m_iUnhappinessModifierForPuppetedCities = 0;
 	m_iExtraPopulation = 0;
@@ -4465,6 +4463,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_iMinorBullyModifier;
 	kStream >> m_iInternationalRouteGrowthModifier;
 	kStream >> m_iLocalHappinessPerCity;
+	kStream >> m_iGlobalHappinessPerCity;
 	kStream >> m_iInternalTradeRouteYieldModifier;
 	kStream >> m_iUnhappinessModifierForPuppetedCities;
 	kStream >> m_iExtraPopulation;
@@ -4937,6 +4936,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_iMinorBullyModifier;
 	kStream << m_iInternationalRouteGrowthModifier;
 	kStream << m_iLocalHappinessPerCity;
+	kStream << m_iGlobalHappinessPerCity;
 	kStream << m_iInternalTradeRouteYieldModifier;
 	kStream << m_iUnhappinessModifierForPuppetedCities;
 	kStream << m_iExtraPopulation;
