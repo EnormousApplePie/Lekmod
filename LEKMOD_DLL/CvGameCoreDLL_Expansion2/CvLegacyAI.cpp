@@ -5,7 +5,7 @@
 #include "CvInfosSerializationHelper.h"
 // Include this after all other headers.
 #include "LintFree.h"
-
+#if defined(LEKMOD_LEGACY)
 // Constructor
 CvLegacyAI::CvLegacyAI(CvPlayerLegacies* currentLegacies):
 	m_pCurrentLegacies(currentLegacies)
@@ -37,3 +37,5 @@ int CvLegacyAI::ChooseLegacy(CvPlayer* pPlayer)
 	// Not ready for this yet.
 	return NULL;
 }
+
+#endif // LEKMOD_LEGACY

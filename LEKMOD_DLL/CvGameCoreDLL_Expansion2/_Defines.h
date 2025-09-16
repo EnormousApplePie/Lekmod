@@ -1093,6 +1093,9 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 #define DISPLAY_GENERAL_ADMIRAL_POINTS
 // Units now remember their Home city. Want to make more than Religious Unit remember home city Religion on Trained. This also makes Death yields pretty simple, now that I think about it.
 //#define UNITS_REMEMBER_HOME
+// 
+// Legacies, for now.
+#define LEKMOD_LEGACY
 
 ////////////////////////
 //Benched or not working

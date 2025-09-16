@@ -83,6 +83,8 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CvLegacyAI.cpp" />
+    <ClCompile Include="CvLegacyClasses.cpp" />
     <ClCompile Include="_precompile.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Mod|Win32'">Create</PrecompiledHeader>
     </ClCompile>
@@ -300,6 +302,8 @@
     <ClInclude Include="CvInfos.h" />
     <ClInclude Include="CvInfosSerializationHelper.h" />
     <ClInclude Include="CvInternalGameCoreUtils.h" />
+    <ClInclude Include="CvLegacyAI.h" />
+    <ClInclude Include="CvLegacyClasses.h" />
     <ClInclude Include="CvMap.h" />
     <ClInclude Include="CvMapGenerator.h" />
     <ClInclude Include="CvMilitaryAI.h" />

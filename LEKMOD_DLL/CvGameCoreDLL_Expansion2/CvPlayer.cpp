@@ -526,6 +526,9 @@ CvPlayer::CvPlayer() :
 
 {
 	m_pPlayerPolicies = FNEW(CvPlayerPolicies, c_eCiv5GameplayDLL, 0);
+#if defined(LEKMOD_LEGACY) // Allocate Memory
+	m_pPlayerLegacies = FNEW(CvPlayerLegacies, c_eCiv5GameplayDLL, 0);
+#endif
 	m_pEconomicAI = FNEW(CvEconomicAI, c_eCiv5GameplayDLL, 0);
 	m_pMilitaryAI = FNEW(CvMilitaryAI, c_eCiv5GameplayDLL, 0);
 	m_pCitySpecializationAI = FNEW(CvCitySpecializationAI, c_eCiv5GameplayDLL, 0);
@@ -574,6 +577,9 @@ CvPlayer::~CvPlayer()
 
 	SAFE_DELETE(m_pDangerPlots);
 	delete m_pPlayerPolicies;
+#if defined(LEKMOD_LEGACY) // Delete
+	delete m_pPlayerLegacies;
+#endif
 	delete m_pEconomicAI;
 	delete m_pMilitaryAI;
 	delete m_pCitySpecializationAI;
@@ -824,6 +830,9 @@ void CvPlayer::uninit()
 #endif
 
 	m_pPlayerPolicies->Uninit();
+#if defined(LEKMOD_LEGACY)
+	m_pPlayerLegacies->Uninit();
+#endif
 	m_pEconomicAI->Uninit();
 	m_pMilitaryAI->Uninit();
 	m_pCitySpecializationAI->Uninit();
@@ -1452,6 +1461,9 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_pReligionAI->Init(GC.GetGameBeliefs(), this);
 		m_pPlayerTechs->Init(GC.GetGameTechs(), this, false);
 		m_pPlayerPolicies->Init(GC.GetGamePolicies(), this, false);
+#if defined(LEKMOD_LEGACY)
+		m_pPlayerLegacies->Init(GC.GetGameLegacies(), this);
+#endif
 		m_pTacticalAI->Init(this);
 		m_pHomelandAI->Init(this);
 		m_pMinorCivAI->Init(this);
@@ -5115,7 +5127,9 @@ void CvPlayer::doTurnPostDiplomacy()
 	{
 		ChangeTourismBonusTurns(-1);
 	}
-
+#if defined(NQ_ALWAYS_SEE_BARB_CAMPS)
+	doUpdateBarbarianCampVisibility();
+#endif
 	// Golden Age
 	DoProcessGoldenAge();
 
@@ -5305,6 +5319,18 @@ void CvPlayer::doTurnPostDiplomacy()
 				pNotifications->Add(NOTIFICATION_CHOOSE_IDEOLOGY, strBuffer, strSummary, -1, -1, GetID());
 			}
 		}
+#if defined(LEKMOD_LEGACY) // Time to Pick! Maybe.
+		if (GetPlayerLegacies()->IsTimeToChooseLegacy())
+		{
+			CvNotifications* pNotifications = GetNotifications();
+			if (pNotifications)
+			{
+				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_CHOOSE_LEGACY");
+				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_CHOOSE_LEGACY");
+				pNotifications->Add(NOTIFICATION_CHOOSE_LEGACY, strBuffer, strSummary, -1, -1, GetID());
+			}
+		}
+#endif
 	}
 
 	if (isAlive() && getNumCities() > 0 && !isHuman() && !isMinorCiv())
@@ -5314,6 +5340,13 @@ void CvPlayer::doTurnPostDiplomacy()
 			AI_PERF_FORMAT("AI-perf.csv", ("DoChooseIdeology, Turn %03d, %s", GC.getGame().getElapsedGameTurns(), getCivilizationShortDescription()) );
 			GetPlayerPolicies()->DoChooseIdeology();
 		}
+#if defined(LEKMOD_LEGACY) // Log AI Legacy Choice
+		if (GetPlayerLegacies()->IsTimeToChooseLegacy())
+		{
+			AI_PERF_FORMAT("AI-perf.csv", ("DoChooseLegacy, Turn %03d, %s", GC.getGame().getElapsedGameTurns(), getCivilizationShortDescription()));
+			GetPlayerLegacies()->DoChooseLegacy();
+		}
+#endif
 	}
 
 	if(!isBarbarian() && !isHuman())
@@ -16052,7 +16085,12 @@ CvPlayerPolicies* CvPlayer::GetPlayerPolicies() const
 {
 	return m_pPlayerPolicies;
 }
-
+#if defined(LEKMOD_LEGACY)
+CvPlayerLegacies* CvPlayer::GetPlayerLegacies() const
+{
+	return m_pPlayerLegacies;
+}
+#endif
 //	--------------------------------------------------------------------------------
 CvPlayerTraits* CvPlayer::GetPlayerTraits() const
 {
@@ -16169,7 +16207,56 @@ void CvPlayer::doAdoptPolicy(PolicyTypes ePolicy)
 
 	updateYield();		// Policies can change the yield
 }
+#if defined(LEKMOD_LEGACY)
+void CvPlayer::setHasLegacy(LegacyTypes eIndex, bool bNewValue)
+{
+	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eIndex < GC.getNumLegacyInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	if (m_pPlayerLegacies->HasLegacy(eIndex) != bNewValue)
+	{
+		m_pPlayerLegacies->SetLegacy(eIndex, bNewValue);
+		processLegacies(eIndex, bNewValue ? 1 : -1);
+	}
+}
+bool CvPlayer::canChooseLegacy(LegacyTypes eLegacy) const
+{
+	return GetPlayerLegacies()->CanChooseLegacy(eLegacy);
+}
+void CvPlayer::doChooseLegacy(LegacyTypes eLegacy)
+{
+	CvLegacyEntry* pkLegacyInfo = GC.getLegacyInfo(eLegacy);
+	CvAssert(pkLegacyInfo != NULL);
+	if (pkLegacyInfo == NULL)
+		return;
 
+	// Can we actually adopt this?
+	if (!canChooseLegacy(eLegacy))
+		return;
+
+	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
+
+	// This Dirty bit must only be set when changing something for the active player
+	if (GC.getGame().getActivePlayer() == GetID())
+	{
+		GC.GetEngineUserInterface()->setDirty(Policies_DIRTY_BIT, true);
+	}
+
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+		args->Push(GetID());
+		args->Push(eLegacy);
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		LuaSupport::CallHook(pkScriptSystem, "PlayerChooseLegacy", args.get(), bResult);
+	}
+
+	updateYield();
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Empire in Anarchy?
 bool CvPlayer::IsAnarchy() const
@@ -26917,7 +27004,6 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	{
 		DoReformationNotification();
 	}
-	
 #else
 	if (isHuman() && pPolicy->IsAddReformationBelief() && GetReligions()->HasCreatedReligion() && !GetReligions()->HasAddedReformationBelief())
 	{
@@ -26960,8 +27046,9 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	recomputeGreatPeopleModifiers();
 	recomputePolicyCostModifier();
 	recomputeFreeExperience();
-
+#if !defined(NQ_ALWAYS_SEE_BARB_CAMPS)
 	doUpdateBarbarianCampVisibility();
+#endif
 #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
 	doSelfConsistencyCheckAllCities();
 #endif
@@ -26969,7 +27056,33 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 }
+#if defined(LEKMOD_LEGACY)
+void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
+{
+	CvLegacyEntry* pLegacy = GC.getLegacyInfo(eLegacy);
+	if (pLegacy == NULL)
+		return;
+	const CvLegacyEntry& kLegacy = (*pLegacy);
+	
+	int iYield;
+	YieldTypes eYield;
+	for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+	{
+		eYield = (YieldTypes)iI;
+		
+		iYield = kLegacy.GetCityYieldChange(iI) * iChange;
+		if (iYield != 0)
+			ChangeCityYieldChange(eYield, iYield * 100);
+	}
 
+	DoUpdateHappiness();
+	GetTrade()->UpdateTradeConnectionValues();
+	recomputeGreatPeopleModifiers();
+
+	GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
+}
+#endif
 #ifdef LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
 //  -------------------------------------------------------------------------------
 //Check Reformation notification in a function - to add it to other places
@@ -27723,6 +27836,9 @@ void CvPlayer::Read(FDataStream& kStream)
 #endif
 
 	m_pPlayerPolicies->Read(kStream);
+#if defined(LEKMOD_LEGACY) // Read PlayerLegacies
+	m_pPlayerLegacies->Read(kStream);
+#endif
 	m_pEconomicAI->Read(kStream);
 	m_pCitySpecializationAI->Read(kStream);
 	m_pWonderProductionAI->Read(kStream);
@@ -28296,6 +28412,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 #endif
 
 	m_pPlayerPolicies->Write(kStream);
+#if defined(LEKMOD_LEGACY) // Write PlayerLegacies
+	m_pPlayerLegacies->Write(kStream);
+#endif
 	m_pEconomicAI->Write(kStream);
 	m_pCitySpecializationAI->Write(kStream);
 	m_pWonderProductionAI->Write(kStream);

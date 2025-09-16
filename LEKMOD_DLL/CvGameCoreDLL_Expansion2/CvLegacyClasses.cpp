@@ -14,16 +14,19 @@ This is mimicking the policy system in implementation, so reference that.
 #include "CvInfosSerializationHelper.h"
 
 #include "LintFree.h"
-
+#if defined(LEKMOD_LEGACY)
 // Constructor
 CvLegacyEntry::CvLegacyEntry(void) :
-	m_eCivilization(NO_CIVILIZATION),
-	m_eEraOffered(NO_ERA)
+	m_iCivilization(NO_CIVILIZATION),
+	m_iEraOffered(NO_ERA),
+
+	m_piCityYieldChange(NULL)
 {
 }
 // Destructor
 CvLegacyEntry::~CvLegacyEntry(void)
 {
+	SAFE_DELETE_ARRAY(m_piCityYieldChange);
 }
 
 // Cache results from the database
@@ -32,27 +35,34 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	// Base info consists of ID, Type, Text, Civilopedia, Strategy, Help, DisabledHelp, Description.
 	if (!CvBaseInfo::CacheResults(kResults, kUtility))
 		return false;
+	
+	const char* szCivilization = kResults.GetText("CivilizationType");
+	m_iCivilization = GC.getInfoTypeForString(szCivilization, true);
+	const char* szEra = kResults.GetText("EraOffered");
+	m_iEraOffered = GC.getInfoTypeForString(szEra, true);
 
-
-	m_eCivilization = (CivilizationTypes)kResults.GetInt("CivilizationType");
-	m_eEraOffered = (EraTypes)kResults.GetInt("EraOffered");
-
+	// Arrays Start.
 	const char* szLegacyType = GetType();
-
+	kUtility.SetYields(m_piCityYieldChange, "Legacy_CityYieldChange", "LegacyType", szLegacyType);
 	// Return true at the very end.
 	return true;
 }
 // What civilization is the legacy offered to?
-CivilizationTypes CvLegacyEntry::GetCivilization() const
+int CvLegacyEntry::GetCivilization() const
 {
-	return m_eCivilization;
+	return m_iCivilization;
 }
 // At what era is this Legacy offered to the player?
-EraTypes CvLegacyEntry::GetEraOffered() const
+int CvLegacyEntry::GetEraOffered() const
 {
-	return m_eEraOffered;
+	return m_iEraOffered;
 }
 
+// ARRAYS
+int CvLegacyEntry::GetCityYieldChange(int i) const
+{
+	return m_piCityYieldChange ? m_piCityYieldChange[i] : 0;
+}
 //=====================================
 // CvLegacyXMLEntries
 //=====================================
@@ -198,6 +208,7 @@ void CvPlayerLegacies::SetLegacy(LegacyTypes eIndex, bool bNewValue)
 	if (HasLegacy(eIndex) != bNewValue)
 	{
 		m_pabHasLegacy[eIndex] = bNewValue;
+		m_pPlayer->processLegacies(eIndex, bNewValue ? 1 : -1);
 	}
 }
 // Get Legacy data from the XML
@@ -219,13 +230,51 @@ std::vector<LegacyTypes> CvPlayerLegacies::GetPotentialCivLegacies() const
 	}
 	return result;
 }
+// Check if the player can choose a specific legacy
+bool CvPlayerLegacies::CanChooseLegacy(LegacyTypes eLegacy) const
+{
+	CvAssertMsg(eLegacy >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eLegacy < GC.getNumLegacyInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	CvLegacyEntry* pkLegacyEntry = GC.getLegacyInfo(eLegacy);
+	if (pkLegacyEntry == NULL)
+		return false;
+
+	// Already has Legacy?
+	if (HasLegacy(eLegacy))
+	{
+		return false;
+	}
+
+	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+	if (pkScriptSystem)
+	{
+		CvLuaArgsHandle args;
+		args->Push(m_pPlayer->GetID());
+		args->Push(eLegacy);
+
+		// Attempt to execute the game events.
+		// Will return false if there are no registered listeners.
+		bool bResult = false;
+		if (LuaSupport::CallTestAll(pkScriptSystem, "PlayerCanChooseLegacy", args.get(), bResult))
+		{
+			// Check the result.
+			if (bResult == false)
+			{
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
 // Check if it's time to choose a legacy
 bool CvPlayerLegacies::IsTimeToChooseLegacy() const
 {
 	if (m_pLegacies == NULL)
 		return false;
 	EraTypes eCurrentEra = m_pPlayer->GetCurrentEra();
-	for (int i = 0; i < m_pLegacies->GetNumLegacies(); i++)
+	for (int i = 0; i < GC.getNumLegacyInfos(); i++)
 	{
 		CvLegacyEntry* pkLegacy = m_pLegacies->GetLegacyEntry(i);
 		if (pkLegacy && pkLegacy->GetCivilization() == m_pPlayer->getCivilizationType() && pkLegacy->GetEraOffered() == eCurrentEra)
@@ -235,3 +284,14 @@ bool CvPlayerLegacies::IsTimeToChooseLegacy() const
 	}
 	return false;
 }
+// Choose a legacy for the AI Player
+void CvPlayerLegacies::DoChooseLegacy()
+{
+	m_pLegacyAI->ChooseLegacy(m_pPlayer);
+}
+
+
+
+
+
+#endif // LEKMOD_LEGACY

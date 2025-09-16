@@ -26,12 +26,17 @@ public:
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
     // Accessor Functions
-    CivilizationTypes GetCivilization() const;
-    EraTypes GetEraOffered() const;
+    int GetCivilization() const;
+    int GetEraOffered() const;
 
+    // Arrays
+	int GetCityYieldChange(int i) const;
 private:
-    CivilizationTypes m_eCivilization;
-    EraTypes m_eEraOffered;
+    int m_iCivilization;
+    int m_iEraOffered;
+
+    //Arrays
+	int* m_piCityYieldChange;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -85,10 +90,12 @@ public:
     void SetLegacy(LegacyTypes eIndex, bool bNewValue);
     CvLegacyXMLEntries* GetLegacies() const;
 	std::vector<LegacyTypes> GetPotentialCivLegacies() const;
+	bool CanChooseLegacy(LegacyTypes eIndex) const;
     // Activation Time!
     bool IsTimeToChooseLegacy() const;
     // Do AI for legacy choices. will likely be random until the feature settles.
     void DoLegacyAI();
+    void DoChooseLegacy();
 
 private:
     bool* m_pabHasLegacy;
