@@ -1553,6 +1553,44 @@ function ActionToolTipHandler( control )
 
 		toolTip:insertLocalized( "TXT_KEY_MISSION_ALERT_NO_FORTIFY_HELP" )
 
+	elseif action.Type == "MISSION_RETRAIN" then
+
+    	local iUnitType = unit:GetUpgradeUnitType()
+    	local iRetrainCost
+
+    	if iUnitType ~= -1 then
+    	    local iGoldToUpgrade = unit:UpgradePrice(iUnitType)
+    	    iRetrainCost = math.max(50, math.ceil(iGoldToUpgrade / 2))
+    	else
+    	    iRetrainCost = 50
+    	end
+
+		local iNumRefundedPromotions = unit:GetNumPlayerChosenPromotions() or 0
+    	local iRefundedXP = 15 * math.max(0, iNumRefundedPromotions - 1)
+    	local iNewUnitLevel = unit:GetLevel() - iNumRefundedPromotions
+    	if iNewUnitLevel < 1 then iNewUnitLevel = 1 end
+
+		toolTip:insertLocalized( "TXT_KEY_MISSION_RETRAIN_HELP", iRefundedXP, iNewUnitLevel, iRetrainCost)
+
+		if not gameCanHandleAction then
+			toolTip:insert( "----------------" )
+			-- Can't Retrain because we lack the Gold
+			if (iRetrainCost > g_activePlayer:GetGold()) then
+				disabledTip:insertLocalized("TXT_KEY_RETRAIN_HELP_DISABLED_GOLD");
+			end
+			-- Can't upgrade because we're outside our territory
+			if (plot:GetOwner() ~= unit:GetOwner()) then
+				disabledTip:insertLocalized("TXT_KEY_RETRAIN_HELP_DISABLED_TERRITORY")
+			end
+			-- Can't Retrain because we do not have enough chosen Promotions
+			if (iNumRefundedPromotions < 2) then
+				disabledTip:insertLocalized("TXT_KEY_RETRAIN_HELP_DISABLED_PROMOTIONS")
+			end
+			-- Can't Retrain because we Lack experience
+			if (unit:GetExperience() < 30) then
+				disabledTip:insertLocalized("TXT_KEY_RETRAIN_HELP_DISABLED_EXPERIENCE")
+			end
+		end
 	-- Golden Age has special help text
 	elseif action.Type == "MISSION_GOLDEN_AGE" then
 

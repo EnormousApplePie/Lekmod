@@ -308,6 +308,10 @@ CvUnit::CvUnit() :
 	, m_bCanSubmerge("CvUnit::m_bSubmerged", m_syncArchive)
 	, m_bSubmerged("CvUnit::m_bSubmerged", m_syncArchive)
 #endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	, m_iNumSelectedPromotions("CvUnit::m_iNumSelectedPromotions", m_syncArchive)\
+	, m_abSelectedPromotions("CvUnit::m_abSelectedPromotions", m_syncArchive)
+#endif
 	, m_bEmbarked("CvUnit::m_bEmbarked", m_syncArchive)
 	, m_bAITurnProcessed("CvUnit::m_bAITurnProcessed", m_syncArchive, false, true)
 	, m_eTacticalMove("CvUnit::m_eTacticalMove", m_syncArchive)
@@ -1129,6 +1133,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_bCanSubmerge = false;
 	m_bSubmerged = false;
 #endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	m_iNumSelectedPromotions = 0;
+#endif
 	m_bEmbarked = false;
 	m_bAITurnProcessed = false;
 	m_bWaitingForMove = false;
@@ -1199,7 +1206,14 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	if(!bConstructorCall)
 	{
 		m_Promotions.Reset();
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+		m_abSelectedPromotions.clear();
+		m_abSelectedPromotions.resize(GC.getNumPromotionInfos());
+		for (int i = 0; i < GC.getNumPromotionInfos(); i++)
+		{
+			m_abSelectedPromotions.setAt(i, false);
+		}
+#endif
 		CvAssertMsg((0 < GC.getNumTerrainInfos()), "GC.getNumTerrainInfos() is not greater than zero but a float array is being allocated in CvUnit::reset");
 		m_terrainDoubleMoveCount.clear();
 		m_terrainImpassableCount.clear();
@@ -1396,13 +1410,20 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 		if(pkPromotionInfo)
 		{
 			bool bGivePromotion = false;
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+			bool bWasChosen = false;
+#endif
 			// Old unit has the promotion
 			if(pUnit->isHasPromotion(ePromotion) && !pkPromotionInfo->IsLostWithUpgrade())
 			{
 				bGivePromotion = true;
 			}
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+			if(pUnit->isHasPromotion(ePromotion) && pUnit->IsPromotionChosenByPlayer(ePromotion))
+			{
+				bWasChosen = true;
+			}
+#endif
 			// New unit gets promotion for free (as per XML)
 			else if(getUnitInfo().GetFreePromotions(ePromotion) && (!bIsUpgrade || !pkPromotionInfo->IsNotWithUpgrade()))
 			{
@@ -1417,6 +1438,12 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 			}
 
 			setHasPromotion(ePromotion, bGivePromotion);
+#if defined(LEKMOD_RETRAIN_MISSION)
+			if (bWasChosen)
+			{
+				SetPromotionChosenByPlayer(ePromotion, bGivePromotion);
+			}
+#endif
 		}
 	}
 
@@ -5114,10 +5141,15 @@ bool CvUnit::canSubmerge(const CvPlot* /*pPlot*/) const
 	return true;
 }
 //	--------------------------------------------------------------------------------
-bool CvUnit::canSurface(const CvPlot* /*pPlot*/) const
+bool CvUnit::canSurface(const CvPlot* pPlot) const
 {
 	VALIDATE_OBJECT
 	if(!IsSubmerged())
+	{
+		return false;
+	}
+
+	if (pPlot->getFeatureType() == FEATURE_ICE) // Can't surface under ice
 	{
 		return false;
 	}
@@ -5187,6 +5219,119 @@ void CvUnit::setSubmerged(bool bValue)
 		m_bSubmerged = bValue; // Set the new state
 
 		changeMoves(-GC.getMOVE_DENOMINATOR());
+	}
+}
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+bool CvUnit::canRetrain(const CvPlot* pPlot, bool bTestVisible) const
+{
+	VALIDATE_OBJECT
+	if(bTestVisible)
+	{
+		return (getLevel() >= 3) ? true : false; // Quick check for UI purposes
+	}
+	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
+	if(getNumPlayerChosenPromotions() < 2) // At Least 2 Chosen Promos
+	{
+		return false;
+	}
+	if(getExperience() < 30) // At Least 30 XP
+	{
+		return false;
+	}
+	if(pPlot->getOwner() != getOwner()) // Must be in Own Territory
+	{
+		return false;
+	}
+	UnitTypes eUpgradeUnitType = GetUpgradeUnitType();
+
+	// Does the Unit actually upgrade into anything?
+	if (eUpgradeUnitType == NO_UNIT)
+		return false;
+
+	CvUnitEntry* pUpgradeUnitInfo = GC.getUnitInfo(eUpgradeUnitType);
+	if (pUpgradeUnitInfo != NULL)
+	{
+		int iUpgradePrice = upgradePrice(eUpgradeUnitType);
+		if (kPlayer.GetTreasury()->GetGold() < std::max(50, (iUpgradePrice / 2))) // At Least Half the Upgrade Price or 50 Gold, whichever is more
+			return false;
+	}
+	else
+	{
+		if (kPlayer.GetTreasury()->GetGold() < 50) // At Least 50 Gold if no Upgrade Unit
+			return false;
+	}
+
+	if(movesLeft() <= 0) // Must have Moves
+	{
+		return false;
+	}
+
+	return true;
+}
+void CvUnit::retrain()
+{
+	VALIDATE_OBJECT
+	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
+	UnitTypes eUpgradeUnitType = GetUpgradeUnitType();
+	CvUnitEntry* pUpgradeUnitInfo = GC.getUnitInfo(eUpgradeUnitType);
+	if (pUpgradeUnitInfo != NULL)
+	{
+		int iUpgradePrice = upgradePrice(eUpgradeUnitType);
+		kPlayer.GetTreasury()->ChangeGold(-std::max(50, (iUpgradePrice / 2))); // Pay Half the Upgrade Price or 50 Gold, whichever is more
+	}
+	else
+	{
+		kPlayer.GetTreasury()->ChangeGold(-50); // Pay 50 Gold if no Upgrade Unit
+	}
+	int iSelectedPromotions = getNumPlayerChosenPromotions();
+	changeExperience(-(15 * iSelectedPromotions)); // Lose XP equal to 15 per Chosen Promo
+	for (int jJ = 0; jJ < GC.getNumPromotionInfos(); jJ++)
+	{
+		PromotionTypes ePromotion = (PromotionTypes)jJ;
+		if (ePromotion == NO_PROMOTION)
+			continue;
+		if (IsPromotionChosenByPlayer(ePromotion)) // Remove all Chosen Promos
+		{
+			setHasPromotion(ePromotion, false);
+		}
+	}
+	int iLevel = getLevel();
+	setLevel((iLevel - iSelectedPromotions)); // Set Level down by number of Chosen Promos
+	changeExperience(15 * (iSelectedPromotions - 1)); // Gain 15 XP per Chosen Promo minus 1
+	setNumPlayerChosenPromotions(0); // Reset Chosen Promos
+	setInstaHealLocked(true); // prevemt instaheal
+	setMoves(0); // Use up all Moves
+}
+int CvUnit::getNumPlayerChosenPromotions() const
+{
+	VALIDATE_OBJECT
+	return m_iNumSelectedPromotions;
+}
+void CvUnit::setNumPlayerChosenPromotions(int iNewValue)
+{
+	VALIDATE_OBJECT
+	m_iNumSelectedPromotions = iNewValue;
+}
+void CvUnit::changeNumPlayerChosenPromotions(int iChange)
+{
+	VALIDATE_OBJECT
+	if(iChange != 0)
+	{
+		m_iNumSelectedPromotions += iChange;
+	}
+}
+bool CvUnit::IsPromotionChosenByPlayer(PromotionTypes ePromotion) const
+{
+	VALIDATE_OBJECT
+	return ePromotion != NO_PROMOTION ? m_abSelectedPromotions[ePromotion] : false;
+}
+void CvUnit::SetPromotionChosenByPlayer(PromotionTypes ePromotion, bool bChosen)
+{
+	VALIDATE_OBJECT
+	if(ePromotion != NO_PROMOTION)
+	{
+		m_abSelectedPromotions.setAt(ePromotion, bChosen);
 	}
 }
 #endif
@@ -10931,7 +11076,10 @@ void CvUnit::promote(PromotionTypes ePromotion, int iLeaderUnitId)
 	else
 	{
 		setHasPromotion(ePromotion, true);
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+		changeNumPlayerChosenPromotions(1);
+		SetPromotionChosenByPlayer(ePromotion, true);
+#endif
 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 		if (pkScriptSystem)
 		{
@@ -11388,6 +11536,10 @@ CvUnit* CvUnit::DoUpgrade()
 		pNewUnit->convert(this, true);
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
 		ConvertPromotions(this, pNewUnit);
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+		int iOldNumPromos = getNumPlayerChosenPromotions();
+		pNewUnit->changeNumPlayerChosenPromotions(iOldNumPromos);
 #endif
 		pNewUnit->setupGraphical();
 
@@ -17191,8 +17343,12 @@ void CvUnit::setExperience(int iNewValue, int iMax)
 #else
 		if(getOwner() == GC.getGame().getActivePlayer())
 		{
+#if !defined(LEKMOD_RETRAIN_MISSION)
 			// Don't show XP for unit that's about to bite the dust
 			if(!IsDead())
+#else
+			if (!IsDead() && iExperienceChange > 0) // Don't show XP for unit that's about to bite the dust or if it is Losing XP
+#endif
 #endif
 			{
 				Localization::String localizedText = Localization::Lookup("TXT_KEY_EXPERIENCE_POPUP");

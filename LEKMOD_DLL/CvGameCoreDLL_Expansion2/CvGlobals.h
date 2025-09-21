@@ -550,7 +550,9 @@ public:
 #else
 	CvActionInfo* getActionInfo(int i);
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	int getNumMissionInfos();
+#endif
 	std::vector<CvMissionInfo*>& getMissionInfo();
 	_Ret_maybenull_ CvMissionInfo* getMissionInfo(MissionTypes eMissionNum);
 

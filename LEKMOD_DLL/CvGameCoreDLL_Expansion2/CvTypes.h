@@ -75,6 +75,9 @@ const MissionTypes getMISSION_CHANGE_ADMIRAL_PORT();
 const MissionTypes getMISSION_SUBMERGE();
 const MissionTypes getMISSION_SURFACE();
 #endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+const MissionTypes getMISSION_RETRAIN();
+#endif
 const unsigned int getNUM_MISSION_TYPES();
 
 const GreatWorkArtifactClass getARTIFACT_ANCIENT_RUIN();

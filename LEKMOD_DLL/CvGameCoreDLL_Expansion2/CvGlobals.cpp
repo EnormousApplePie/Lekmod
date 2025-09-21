@@ -3751,7 +3751,12 @@ CvActionInfo* CvGlobals::getActionInfo(int i)
 	else
 		return NULL;
 }
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+int CvGlobals::getNumMissionInfos()
+{
+	return (int)m_paMissionInfo.size();
+}
+#endif
 std::vector<CvMissionInfo*>& CvGlobals::getMissionInfo()
 {
 	return m_paMissionInfo;

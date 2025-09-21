@@ -152,6 +152,9 @@ public:
 
 	int GetTechYieldChanges(int i, int j) const;
 	int* GetTechYieldChangesArray(int i);
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	int GetEraYieldChanges(int i, int j) const;
+#endif
 #ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
 	int GetImprovementAdjacentBonus(int i, int j) const;
 	int GetImprovementAdjacentCivilizationAmount(int i, int j) const;
@@ -270,6 +273,9 @@ protected:
 	int** m_ppiTechYieldChanges;
 	int** m_ppiTechNoFreshWaterYieldChanges;
 	int** m_ppiTechFreshWaterYieldChanges;
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	int** m_ppiEraYieldChanges;
+#endif
 	int** m_ppiRouteYieldChanges;
 #endif
 #ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD

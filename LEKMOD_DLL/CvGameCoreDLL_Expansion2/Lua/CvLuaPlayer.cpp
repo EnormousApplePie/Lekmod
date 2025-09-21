@@ -962,7 +962,7 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 #if defined(TRAITIFY)
 	Method(GetTraitBuildingClassYieldChange);
 	Method(GetTraitBuildingClassHappiness);
-	//Method(GetTraitBuildingClassGlobalHappiness);
+	Method(GetTraitBuildingClassGlobalHappiness);
 #endif
 	Method(GetPlayerBuildingClassYieldChange);
 	Method(GetPlayerBuildingClassHappiness);
@@ -9900,6 +9900,8 @@ int CvLuaPlayer::lGetTraitBuildingClassYieldChange(lua_State* L)
 
 	return 0;
 }
+//------------------------------------------------------------------------------
+// Does not Include global happiness from traits
 int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
 {
 	CvPlayer* pkPlayer = GetInstance(L);
@@ -9922,7 +9924,6 @@ int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
 					if (pkPlayer->GetPlayerTraits()->HasTrait(eTrait))
 					{
 						iExtraHappiness += pkTraitInfo->GetBuildingClassHappiness(eBuildingClass);
-						iExtraHappiness += pkTraitInfo->GetBuildingClassGlobalHappiness(eBuildingClass);
 					}
 				}
 			}
@@ -9931,6 +9932,42 @@ int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
 		}
 	}
 	
+	//BUG: This can't be right...
+	lua_pushinteger(L, -1);
+	return 0;
+}
+//------------------------------------------------------------------------------
+// Does Includes only global happiness from traits
+int CvLuaPlayer::lGetTraitBuildingClassGlobalHappiness(lua_State* L)
+{
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		const BuildingTypes eBuilding = (BuildingTypes)lua_tointeger(L, 2);
+		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+		if (pkBuildingInfo)
+		{
+			BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingInfo->GetBuildingClassType();
+
+			int iExtraHappiness = 0;
+
+			for (int iTraitLoop = 0; iTraitLoop < GC.getNumTraitInfos(); iTraitLoop++)
+			{
+				const TraitTypes eTrait = static_cast<TraitTypes>(iTraitLoop);
+				CvTraitEntry* pkTraitInfo = GC.getTraitInfo(eTrait);
+				if (pkTraitInfo)
+				{
+					if (pkPlayer->GetPlayerTraits()->HasTrait(eTrait))
+					{
+						iExtraHappiness += pkTraitInfo->GetBuildingClassGlobalHappiness(eBuildingClass);
+					}
+				}
+			}
+			lua_pushinteger(L, iExtraHappiness);
+			return 1;
+		}
+	}
+
 	//BUG: This can't be right...
 	lua_pushinteger(L, -1);
 	return 0;

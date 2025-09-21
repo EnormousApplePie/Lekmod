@@ -1123,6 +1123,13 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_BELIEF_GP_EXPEND_YIELD
 // New Unit Mission "Submerge"
 #define LEKMOD_SUBMERGE_MISSION
+// New Unit Mission "Retrain"
+#define LEKMOD_RETRAIN_MISSION
+// Ban specific UnitMissions based on Trait
+#define LEKMOD_TRAIT_BAN_UNIT_MISSIONS
+// Add more flexibility to City Yield changes from Traits
+#define LEKMOD_CITY_YIELDS_TRAITS
+
 
 
 // Generic define for temp changes

@@ -7425,6 +7425,17 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 				enhanceBuildingEra(((BuildingTypes)iI), iChange);
 			}
 		}
+		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+		{
+			CvImprovementEntry* pImprovementEntry = GC.getImprovementInfo((ImprovementTypes)iI);
+			if (pImprovementEntry)
+			{
+				for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetEraYieldChanges(eNewValue, iJ) * iChange));
+				}
+			}
+		}
 #else
 		m_eCurrentEra = eNewValue;
 #endif

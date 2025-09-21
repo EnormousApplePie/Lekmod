@@ -737,7 +737,9 @@ void CvPlayer::init(PlayerTypes eID)
 #endif
 		for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 		{
+#if !defined(LEKMOD_CITY_YIELDS_TRAITS)
 			ChangeCityYieldChange((YieldTypes)iJ, 100 * GetPlayerTraits()->GetFreeCityYield((YieldTypes)iJ));
+#endif
 			changeYieldRateModifier((YieldTypes)iJ, GetPlayerTraits()->GetYieldRateModifier((YieldTypes)iJ));
 		}
 

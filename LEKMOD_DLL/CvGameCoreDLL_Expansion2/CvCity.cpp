@@ -8478,7 +8478,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 		iDifference = *iValueKnown;
 	else
 #endif
-#if defined(NULL)
+#if defined(CLEAN_UP)
 	iDifference = isFoodProduction() ? std::min(0, GetFoodProduction(getYieldRate(YIELD_FOOD, false) - foodConsumption()) * 100) : (getYieldRateTimes100(YIELD_FOOD, false) - foodConsumption() * 100);
 #else
 	if(isFoodProduction())

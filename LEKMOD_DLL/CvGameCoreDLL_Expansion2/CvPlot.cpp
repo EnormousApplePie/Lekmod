@@ -7995,6 +7995,12 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 				iYield += pkPolicyEntry->GetImprovementYieldChanges(eImprovement, eYield);
 			}
 		}
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+		for (iI = 0; iI < GC.getNumEraInfos(); ++iI)
+		{
+			iYield += pImprovement->GetEraYieldChanges(iI, eYield);
+		}
+#endif
 	}
 	else
 	{
@@ -8399,7 +8405,36 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 #endif
 		// Mod for Player; used for Policies and such
 		int iTemp = kPlayer.GetCityYieldChange(eYield);	// In hundreds - will be added to capitalYieldChange below
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+		UnitTypes eSettleUnit = pCity->SettlerUnit();
+		EraTypes eCurrentEra = kPlayer.GetCurrentEra();
+		if (eSettleUnit != NO_UNIT)
+		{
+			UnitTypes eTraitUnit = kPlayer.GetPlayerTraits()->GetYieldSettleUnit();
+			if (eTraitUnit == NO_UNIT) // Some are not keyed
+			{
+				iTemp += kPlayer.GetPlayerTraits()->GetCityEraYieldChange(eCurrentEra, eYield) * 100;
+			}
+			else if (eTraitUnit != NO_UNIT && eTraitUnit == eSettleUnit) // some are!
+			{
+				iTemp += kPlayer.GetPlayerTraits()->GetCityEraYieldChange(eCurrentEra, eYield) * 100;
+			}
+		}
+		for (int jJ = 0; jJ < GC.getNumTechInfos(); jJ++)
+		{
+			TechTypes eTech = (TechTypes)jJ;
+			if(GET_TEAM(kPlayer.getTeam()).GetTeamTechs()->HasTech(eTech))
+			{
+				iTemp += kPlayer.GetPlayerTraits()->GetCityTechYieldChange(eTech, eYield) * 100;
+				if (pCity->isCapital())
+				{
+					iTemp += kPlayer.GetPlayerTraits()->GetCapitalTechYieldChange(eTech, eYield) * 100;
+				}
+			}
+		}
+		// General city yield change from traits
+		iTemp += kPlayer.GetPlayerTraits()->GetCityYieldChange(eYield) * 100;
+#endif
 		// Coastal City Mod
 		if(pCity->isCoastal())
 		{
@@ -8410,7 +8445,10 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		if(pCity->isCapital())
 		{
 			iTemp += kPlayer.GetCapitalYieldChange(eYield);
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+			iTemp += kPlayer.GetPlayerTraits()->GetCapitalYieldChange(eYield) * 100;
+			iTemp += kPlayer.GetPlayerTraits()->GetCapitalEraYieldChange(eCurrentEra, eYield) * 100;
+#endif
 			int iPerPopYield = pCity->getPopulation() * kPlayer.GetCapitalYieldPerPopChange(eYield);
 			iPerPopYield /= 100;
 			iYield += iPerPopYield;

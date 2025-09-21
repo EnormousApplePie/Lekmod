@@ -86,6 +86,9 @@ MissionTypes s_eMISSION_CHANGE_ADMIRAL_PORT = NO_MISSION;
 MissionTypes s_eMISSION_SUBMERGE = NO_MISSION;
 MissionTypes s_eMISSION_SURFACE = NO_MISSION;
 #endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+MissionTypes s_eMISSION_RETRAIN = NO_MISSION;
+#endif
 unsigned int s_uiNUM_MISSION_TYPES = 0;
 
 void CvTypes::AcquireTypes(Database::Connection& db)
@@ -229,6 +232,9 @@ void CvTypes::AcquireTypes(Database::Connection& db)
 #if defined(LEKMOD_SUBMERGE_MISSION)
 		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_SUBMERGE"), &s_eMISSION_SUBMERGE));
 		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_SURFACE"), &s_eMISSION_SURFACE));
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_RETRAIN"), &s_eMISSION_RETRAIN));
 #endif
 
 		Database::Results kResults;
@@ -562,6 +568,12 @@ const MissionTypes CvTypes::getMISSION_SUBMERGE()
 const MissionTypes CvTypes::getMISSION_SURFACE()
 {
 	return s_eMISSION_SURFACE;
+}
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+const MissionTypes CvTypes::getMISSION_RETRAIN()
+{
+	return s_eMISSION_RETRAIN;
 }
 #endif
 //-------------------------------------------------------------------------

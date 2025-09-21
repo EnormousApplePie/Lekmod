@@ -320,6 +320,15 @@ public:
 	bool canSubmerge(const CvPlot* pPlot) const;
 	bool canSurface(const CvPlot* pPlot) const;
 #endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	bool canRetrain(const CvPlot* pPlot, bool bTestVisible) const;
+	void retrain();
+	int getNumPlayerChosenPromotions() const;
+	void setNumPlayerChosenPromotions(int iNewValue);
+	void changeNumPlayerChosenPromotions(int iChange);
+	bool IsPromotionChosenByPlayer(PromotionTypes ePromotion) const;
+	void SetPromotionChosenByPlayer(PromotionTypes ePromotion, bool bValue);
+#endif
 #if defined(UNITS_REMEMBER_HOME)
 	CvCity* GetHomeCity() const;
 	void SetHomeCity(int iNewCity);
@@ -1606,6 +1615,10 @@ protected:
 #if defined(LEKMOD_SUBMERGE_MISSION)
 	FAutoVariable<bool, CvUnit> m_bCanSubmerge;
 	FAutoVariable<bool, CvUnit> m_bSubmerged;
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	FAutoVariable<int, CvUnit> m_iNumSelectedPromotions;
+	FAutoVariable<std::vector<bool>, CvUnit> m_abSelectedPromotions;
 #endif
 	FAutoVariable<bool, CvUnit> m_bEmbarked;
 	FAutoVariable<bool, CvUnit> m_bAITurnProcessed;
