@@ -346,6 +346,9 @@ public:
 	void changeObsoleteBuildingCount(BuildingTypes eIndex, int iChange);
 
 	void enhanceBuilding(BuildingTypes eIndex, int iChange);
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	void enhanceBuildingEra(BuildingTypes eIndex, int iChange);
+#endif
 
 	int getTerrainTradeCount(TerrainTypes eIndex) const;
 	bool isTerrainTrade(TerrainTypes eIndex) const;

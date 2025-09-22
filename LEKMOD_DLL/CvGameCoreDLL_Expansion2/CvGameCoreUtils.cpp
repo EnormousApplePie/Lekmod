@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -312,7 +312,7 @@ bool isPromotionValid(PromotionTypes ePromotion, UnitTypes eUnit, bool bLeader, 
 			return false;
 		}
 	}
-
+#if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 	// Promotion Prereqs
 	if(NO_PROMOTION != promotionInfo->GetPrereqPromotion())
 	{
@@ -428,14 +428,33 @@ bool isPromotionValid(PromotionTypes ePromotion, UnitTypes eUnit, bool bLeader, 
 				bValid = true;
 			}
 		}
-
+#endif
 		if(!bValid)
 		{
 			return false;
 		}
-#endif
 	}
-
+#else
+	
+	const std::vector<int>& Prereqs = promotionInfo->GetPromotionPrereqOrs();
+	if(!Prereqs.empty()) 
+	{
+		bool bValid = false;
+		for (size_t i = 0; i < Prereqs.size(); ++i)
+		{
+			int id = Prereqs[i];
+			if (id == ePromotion) // prevent self-referencing prereqs, which are non-sensical
+				continue;
+			if (id != NO_PROMOTION && id >= 0 && id < GC.getNumPromotionInfos() && isPromotionValid((PromotionTypes)id, eUnit, bLeader, true))
+			{
+				bValid = true;
+				break; // one is enough
+			}
+		}
+		if (!bValid)
+			return false;
+	}
+#endif
 	return true;
 }
 

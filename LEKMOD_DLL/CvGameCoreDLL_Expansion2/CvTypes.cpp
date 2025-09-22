@@ -82,6 +82,13 @@ MissionTypes s_eMISSION_SELL_EXOTIC_GOODS = NO_MISSION;
 MissionTypes s_eMISSION_GIVE_POLICIES = NO_MISSION;
 MissionTypes s_eMISSION_ONE_SHOT_TOURISM = NO_MISSION;
 MissionTypes s_eMISSION_CHANGE_ADMIRAL_PORT = NO_MISSION;
+#if defined(LEKMOD_SUBMERGE_MISSION)
+MissionTypes s_eMISSION_SUBMERGE = NO_MISSION;
+MissionTypes s_eMISSION_SURFACE = NO_MISSION;
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+MissionTypes s_eMISSION_RETRAIN = NO_MISSION;
+#endif
 unsigned int s_uiNUM_MISSION_TYPES = 0;
 
 void CvTypes::AcquireTypes(Database::Connection& db)
@@ -222,6 +229,13 @@ void CvTypes::AcquireTypes(Database::Connection& db)
 		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_GIVE_POLICIES"), &s_eMISSION_GIVE_POLICIES));
 		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_ONE_SHOT_TOURISM"), &s_eMISSION_ONE_SHOT_TOURISM));
 		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_CHANGE_ADMIRAL_PORT"), &s_eMISSION_CHANGE_ADMIRAL_PORT));
+#if defined(LEKMOD_SUBMERGE_MISSION)
+		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_SUBMERGE"), &s_eMISSION_SUBMERGE));
+		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_SURFACE"), &s_eMISSION_SURFACE));
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_RETRAIN"), &s_eMISSION_RETRAIN));
+#endif
 
 		Database::Results kResults;
 		if(db.Execute(kResults, "SELECT Type, ID from Missions"))
@@ -546,4 +560,20 @@ const MissionTypes CvTypes::getMISSION_ONE_SHOT_TOURISM()
 {
 	return s_eMISSION_ONE_SHOT_TOURISM;
 }
+#if defined(LEKMOD_SUBMERGE_MISSION)
+const MissionTypes CvTypes::getMISSION_SUBMERGE()
+{
+	return s_eMISSION_SUBMERGE;
+}
+const MissionTypes CvTypes::getMISSION_SURFACE()
+{
+	return s_eMISSION_SURFACE;
+}
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+const MissionTypes CvTypes::getMISSION_RETRAIN()
+{
+	return s_eMISSION_RETRAIN;
+}
+#endif
 //-------------------------------------------------------------------------

@@ -962,7 +962,7 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 #if defined(TRAITIFY)
 	Method(GetTraitBuildingClassYieldChange);
 	Method(GetTraitBuildingClassHappiness);
-	//Method(GetTraitBuildingClassGlobalHappiness);
+	Method(GetTraitBuildingClassGlobalHappiness);
 #endif
 	Method(GetPlayerBuildingClassYieldChange);
 	Method(GetPlayerBuildingClassHappiness);
@@ -1116,8 +1116,13 @@ int CvLuaPlayer::lAcquireCity(lua_State* L)
 	CvCity* pkCity = CvLuaCity::GetInstance(L, 2);
 	const bool bConquest = lua_toboolean(L, 3);
 	const bool bTrade = lua_toboolean(L, 4);
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	const bool bPurchased = luaL_optbool(L, 5, false);
 
+	pkPlayer->acquireCity(pkCity, bConquest, bTrade, bPurchased);
+#else
 	pkPlayer->acquireCity(pkCity, bConquest, bTrade);
+#endif
 	return 0;
 }
 //------------------------------------------------------------------------------
@@ -3503,6 +3508,7 @@ int CvLuaPlayer::lGetInternationalTradeRouteBaseBonus(lua_State* L)
 	CvCity* pOriginCity = CvLuaCity::GetInstance(L, 2, true);
 	CvCity* pDestCity = CvLuaCity::GetInstance(L, 3, true);
 	bool bOrigin = lua_toboolean(L, 4);
+	YieldTypes eYield = (YieldTypes)lua_tointeger(L, 5);
 
 	TradeConnection kTradeConnection;
 	kTradeConnection.m_iOriginX = pOriginCity->getX();
@@ -6631,7 +6637,12 @@ int CvLuaPlayer::lGetMinorCivFavoriteMajor(lua_State* L)
 int CvLuaPlayer::lGetMinorCivScienceFriendshipBonus(lua_State* L)
 {
 	CvPlayerAI* pkPlayer = GetInstance(L);
+#if defined(LEKMOD_FIX_SCHOLASTICISM) // Function Parameters changed with this define.
+	PlayerTypes ePlayer = (PlayerTypes)lua_tointeger(L, 2);
+	lua_pushinteger(L, pkPlayer->GetMinorCivAI()->GetScienceFriendshipBonus(ePlayer));
+#else
 	lua_pushinteger(L, pkPlayer->GetMinorCivAI()->GetScienceFriendshipBonus());
+#endif
 	return 1;
 }
 //------------------------------------------------------------------------------
@@ -9889,6 +9900,8 @@ int CvLuaPlayer::lGetTraitBuildingClassYieldChange(lua_State* L)
 
 	return 0;
 }
+//------------------------------------------------------------------------------
+// Does not Include global happiness from traits
 int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
 {
 	CvPlayer* pkPlayer = GetInstance(L);
@@ -9911,7 +9924,6 @@ int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
 					if (pkPlayer->GetPlayerTraits()->HasTrait(eTrait))
 					{
 						iExtraHappiness += pkTraitInfo->GetBuildingClassHappiness(eBuildingClass);
-						iExtraHappiness += pkTraitInfo->GetBuildingClassGlobalHappiness(eBuildingClass);
 					}
 				}
 			}
@@ -9920,6 +9932,42 @@ int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
 		}
 	}
 	
+	//BUG: This can't be right...
+	lua_pushinteger(L, -1);
+	return 0;
+}
+//------------------------------------------------------------------------------
+// Does Includes only global happiness from traits
+int CvLuaPlayer::lGetTraitBuildingClassGlobalHappiness(lua_State* L)
+{
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		const BuildingTypes eBuilding = (BuildingTypes)lua_tointeger(L, 2);
+		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+		if (pkBuildingInfo)
+		{
+			BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingInfo->GetBuildingClassType();
+
+			int iExtraHappiness = 0;
+
+			for (int iTraitLoop = 0; iTraitLoop < GC.getNumTraitInfos(); iTraitLoop++)
+			{
+				const TraitTypes eTrait = static_cast<TraitTypes>(iTraitLoop);
+				CvTraitEntry* pkTraitInfo = GC.getTraitInfo(eTrait);
+				if (pkTraitInfo)
+				{
+					if (pkPlayer->GetPlayerTraits()->HasTrait(eTrait))
+					{
+						iExtraHappiness += pkTraitInfo->GetBuildingClassGlobalHappiness(eBuildingClass);
+					}
+				}
+			}
+			lua_pushinteger(L, iExtraHappiness);
+			return 1;
+		}
+	}
+
 	//BUG: This can't be right...
 	lua_pushinteger(L, -1);
 	return 0;

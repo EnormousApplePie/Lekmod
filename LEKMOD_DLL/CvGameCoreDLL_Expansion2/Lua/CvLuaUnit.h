@@ -136,7 +136,9 @@ protected:
 
 	static int lCanPromote(lua_State* L);
 	static int lPromote(lua_State* L);
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+	static int lGetNumPlayerChosenPromotions(lua_State* L);
+#endif
 	static int lGetUpgradeUnitType(lua_State* L);
 	static int lUpgradePrice(lua_State* L);
 	static int lCanUpgradeRightNow(lua_State* L);

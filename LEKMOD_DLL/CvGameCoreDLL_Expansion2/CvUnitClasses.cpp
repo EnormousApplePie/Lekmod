@@ -103,6 +103,9 @@ CvUnitEntry::CvUnitEntry(void) :
 	m_bRangeAttackOnlyInDomain(false),
 	m_bTrade(false),
 	m_iNumExoticGoods(0),
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	m_bSubmerge(false),
+#endif
 	m_pbUpgradeUnitClass(NULL),
 	m_pbUnitAIType(NULL),
 	m_pbNotUnitAIType(NULL),
@@ -241,6 +244,9 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_iNumExoticGoods = kResults.GetInt("NumExoticGoods");
 #if defined(MISC_CHANGES) // CvUnitClasses
 	m_bAnyIdeologyUnlock = kResults.GetBool("AnyIdeologyUnlock");
+#endif
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	m_bSubmerge = kResults.GetBool("Submerge");
 #endif
 
 	m_strUnitArtInfoTag = kResults.GetText("UnitArtInfo");
@@ -979,7 +985,13 @@ int CvUnitEntry::GetNumExoticGoods() const
 {
 	return m_iNumExoticGoods;
 }
-
+#if defined(LEKMOD_SUBMERGE_MISSION)
+/// Can Do Submerge Mission
+bool CvUnitEntry::IsSubmerge() const
+{
+	return m_bSubmerge;
+}
+#endif
 /// Return unit's current command
 int CvUnitEntry::GetCommandType() const
 {

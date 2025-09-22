@@ -939,7 +939,7 @@ bool CvMilitaryAI::BuyEmergencyBuilding(CvCity* pCity)
 		if(pkBuildingInfo)
 		{
 			// Make sure this building can be built now
-#if defined(NQ_BUILDING_DEFENSE_FROM_CITIZENS) || defined(LEKMOD_v34)
+#if defined(NQ_BUILDING_DEFENSE_FROM_CITIZENS) || defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 			if(pCity->canConstruct(eBldg) && (pkBuildingInfo->GetDefenseModifier() > 0 || pkBuildingInfo->GetDefensePerCitizen() > 0 || pkBuildingInfo->GetGarrisonStrengthBonus() > 0))
 #else
 			if(pCity->canConstruct(eBldg) && pkBuildingInfo->GetDefenseModifier() > 0)

@@ -1157,7 +1157,7 @@ void CvGameReligions::EnhanceReligion(PlayerTypes ePlayer, ReligionTypes eReligi
 #ifndef AUI_WARNING_FIXES
 	it->m_bEnhanced = true;
 #endif
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_v34) // Trigger Reformation Selection on Enhance.
 	// Get the player's Traits
 	CvPlayerTraits* pPlayerTraits = kPlayer.GetPlayerTraits();
 	// Now see if thier trait lets them pick a reformation belief
@@ -1166,15 +1166,31 @@ void CvGameReligions::EnhanceReligion(PlayerTypes ePlayer, ReligionTypes eReligi
 		// If they can, and they haven't already, give them the option to pick one
 		if (!HasAddedReformationBelief(ePlayer))
 		{
-			CvNotifications* pNotifications;
-			pNotifications = kPlayer.GetNotifications();
-			if (pNotifications)
+			if (!kPlayer.isHuman()) // AI Choice
 			{
-				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF");
-				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF");
-				pNotifications->Add(NOTIFICATION_ADD_REFORMATION_BELIEF, strBuffer, strSummary, -1, -1, -1);
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+				if (!GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_FOUNDING"))
+				{
+#endif
+					BeliefTypes eReformationBelief = kPlayer.GetReligionAI()->ChooseReformationBelief();
+					AddReformationBelief(ePlayer, eReligion, eReformationBelief);
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+				}
+#endif
+			}
+			else // Human Choice
+			{
+				CvNotifications* pNotifications;
+				pNotifications = kPlayer.GetNotifications();
+				if (pNotifications)
+				{
+					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF");
+					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF");
+					pNotifications->Add(NOTIFICATION_ADD_REFORMATION_BELIEF, strBuffer, strSummary, -1, -1, -1);
+				}
 			}
 		}
+		
 	}
 #endif
 	// Update game systems

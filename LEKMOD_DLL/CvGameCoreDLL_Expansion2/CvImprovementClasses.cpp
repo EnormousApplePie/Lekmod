@@ -140,6 +140,9 @@ CvImprovementEntry::CvImprovementEntry(void):
 	m_ppiTechYieldChanges(NULL),
 	m_ppiTechNoFreshWaterYieldChanges(NULL),
 	m_ppiTechFreshWaterYieldChanges(NULL),
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	m_ppiEraYieldChanges(NULL),
+#endif
 	m_ppiRouteYieldChanges(NULL),
 #endif
 #ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
@@ -198,7 +201,12 @@ CvImprovementEntry::~CvImprovementEntry(void)
 	{
 		CvDatabaseUtility::SafeDelete2DArray(m_ppiTechFreshWaterYieldChanges);
 	}
-
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	if (m_ppiEraYieldChanges != NULL)
+	{
+		CvDatabaseUtility::SafeDelete2DArray(m_ppiEraYieldChanges);
+	}
+#endif
 	if(m_ppiRouteYieldChanges != NULL)
 	{
 		CvDatabaseUtility::SafeDelete2DArray(m_ppiRouteYieldChanges);
@@ -415,8 +423,29 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 	const int iNumYields = kUtility.MaxRows("Yields");
 	const int iNumTechs = GC.getNumTechInfos();
 	CvAssertMsg(iNumTechs > 0, "Num Tech Infos <= 0");
-
-
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	const int iNumEras = kUtility.MaxRows("Eras");
+	{
+		kUtility.Initialize2DArray(m_ppiEraYieldChanges, iNumEras, iNumYields);
+		std::string strKey = "Improvements_EraYieldChanges";
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select Eras.ID as EraID, Yields.ID as YieldID, Yield from Improvement_EraYieldChanges inner join Yields on YieldType = Yields.Type inner join Eras on EraType = Eras.Type where ImprovementType = ?");
+		}
+		pResults->Bind(1, szImprovementType, lenImprovementType, false);
+		while (pResults->Step())
+		{
+			const int era_idx = pResults->GetInt(0);
+			CvAssert(era_idx > -1);
+			const int yield_idx = pResults->GetInt(1);
+			CvAssert(yield_idx > -1);
+			const int yield = pResults->GetInt(2);
+			m_ppiEraYieldChanges[era_idx][yield_idx] = yield;
+		}
+		pResults->Reset();
+	}
+#endif
 	//TechYieldChanges
 	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -1186,7 +1215,16 @@ int* CvImprovementEntry::GetTechYieldChangesArray(int i)
 	return m_ppiTechYieldChanges[i];
 #endif
 }
-
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+int CvImprovementEntry::GetEraYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumEraInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiEraYieldChanges[i][j];
+}
+#endif
 #ifdef LEKMOD_ADJACENT_IMPROVEMENT_YIELD
 /// How much a type of improvement adjacent to this improvement improves the yield of this improvement
 int CvImprovementEntry::GetImprovementAdjacentBonus(int i, int j) const

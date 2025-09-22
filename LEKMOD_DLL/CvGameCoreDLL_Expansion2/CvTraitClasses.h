@@ -116,6 +116,7 @@ public:
 	int GetExtraPopulation() const;
 	int GetInternationalRouteGrowthModifier() const;
 	int GetLocalHappinessPerCity() const;
+	int GetGlobalHappinessPerCity() const;
 	int GetInternalTradeRouteYieldModifier() const;
 	int GetUnhappinessModifierForPuppetedCities() const;
 	int GetFaithCostModifier() const; 
@@ -166,7 +167,9 @@ public:
 	TechTypes GetFreeBuildingPrereqTech() const; 
 	TechTypes GetCapitalFreeBuildingPrereqTech() const;
 
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	UnitTypes GetYieldSettleUnit() const;
+#endif
 	TechTypes GetFreeUnitPrereqTech() const;
 	ImprovementTypes GetCombatBonusImprovement() const;
 	BuildingTypes GetFreeBuilding() const;
@@ -234,6 +237,14 @@ public:
 #endif
 	int GetExtraYieldThreshold(int i) const;
 	int GetYieldChange(int i) const;
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	int GetCapitalYieldChange(int i) const;
+	int GetCapitalEraYieldChange(int i, int j) const;
+	int GetCapitalTechYieldChange(int i, int j) const;
+	int GetCityYieldChange(int i) const;
+	int GetCityEraYieldChange(int i, int j) const;
+	int GetCityTechYieldChange(int i, int j) const;
+#endif
 	int GetYieldChangeStrategicResources(int i) const;
 	int GetYieldChangeLuxuryResources(int i) const; // NQMP GJS - New Netherlands UA
 	int GetYieldChangeNaturalWonder(int i) const;
@@ -263,6 +274,9 @@ public:
 
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	bool NoBuildImprovements(ImprovementTypes eImprovement);
+#endif
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	bool IsBannedUnitMission(MissionTypes eMission);
 #endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	int GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass = NO_RESOURCECLASS);
@@ -344,6 +358,7 @@ protected:
 	int m_iExtraPopulation;
 	int m_iInternationalRouteGrowthModifier;
 	int m_iLocalHappinessPerCity;
+	int m_iGlobalHappinessPerCity;
 	int m_iInternalTradeRouteYieldModifier;
 	int m_iUnhappinessModifierForPuppetedCities;
 	int m_iFaithCostModifier;
@@ -390,6 +405,9 @@ protected:
 	int m_iTradeReligionModifier;
 	int m_iTradeBuildingModifier;
 
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	UnitTypes m_eYieldSettleUnit;
+#endif
 	TechTypes m_eFreeUnitPrereqTech;
 	ImprovementTypes m_eCombatBonusImprovement;
 	BuildingTypes m_eFreeBuilding;
@@ -479,7 +497,14 @@ protected:
 
 	int** m_ppiUnimprovedFeatureYieldChanges;
 #endif
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	int* m_piCapitalYieldChange;
+	int** m_ppiCapitalEraYieldChange;
+	int** m_ppiCapitalTechYieldChange;
+	int* m_piCityYieldChange;
+	int** m_ppiCityEraYieldChange;
+	int** m_ppiCityTechYieldChange;
+#endif
 
 	std::multimap<int, int> m_FreePromotionUnitCombats;
 
@@ -489,7 +514,9 @@ protected:
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	std::vector<bool> m_abNoBuildImprovements;
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	std::vector<bool> m_abNoUnitMissions;
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	std::vector<int> m_aiBuildTimeOverride;
 	std::vector<ResourceClassTypes> m_aiBuildTimeOverrideResourceClassRequired;
@@ -773,6 +800,10 @@ public:
 	int GetLocalHappinessPerCity() const
 	{
 		return m_iLocalHappinessPerCity;
+	};
+	int GetGlobalHappinessPerCity() const
+	{
+		return m_iGlobalHappinessPerCity;
 	};
 	int GetInternalTradeRouteYieldModifier() const
 	{
@@ -1144,7 +1175,9 @@ public:
 	// Inserted Table Entries from CMP DLL ~EAP
 	TechTypes GetFreeBuildingPrereqTech() const;
 	TechTypes GetCapitalFreeBuildingPrereqTech() const;
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	UnitTypes GetYieldSettleUnit() const;
+#endif
 
 	BuildingTypes GetFreeBuilding() const;
 	BuildingTypes GetFreeCapitalBuilding() const;
@@ -1172,6 +1205,9 @@ public:
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	bool NoBuild(ImprovementTypes eImprovement);
 #endif
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	bool IsBannedUnitMission(MissionTypes eMission);
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	int GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass = NO_RESOURCECLASS);
 #endif
@@ -1187,6 +1223,14 @@ public:
 	int GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYieldType) const;
 	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType);
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
+#endif
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	int GetCapitalYieldChange(YieldTypes eYield);
+	int GetCapitalEraYieldChange(EraTypes eEra, YieldTypes eYield);
+	int GetCapitalTechYieldChange(TechTypes eTech, YieldTypes eYield);
+	int GetCityYieldChange(YieldTypes eYield);
+	int GetCityEraYieldChange(EraTypes eEra, YieldTypes eYield);
+	int GetCityTechYieldChange(TechTypes eTech, YieldTypes eYield);
 #endif
 #if defined(LEKMOD_v34)
 	int GetYieldPerPopulation(YieldTypes eYield);
@@ -1283,6 +1327,7 @@ private:
 	int m_iExtraPopulation;
 	int m_iInternationalRouteGrowthModifier;
 	int m_iLocalHappinessPerCity;
+	int m_iGlobalHappinessPerCity;
 	int m_iInternalTradeRouteYieldModifier;
 	int m_iUnhappinessModifierForPuppetedCities;
 	int m_iFaithCostModifier;
@@ -1365,6 +1410,9 @@ private:
 
 	UnitTypes m_eCampGuardType;
 	unsigned int m_uiFreeUnitIndex;
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	UnitTypes m_eYieldSettleUnit;
+#endif
 	TechTypes m_eFreeUnitPrereqTech;
 	ImprovementTypes m_eCombatBonusImprovement;
 	BuildingTypes m_eFreeBuilding;
@@ -1384,11 +1432,15 @@ private:
 	int m_iYieldChangeIncomingTradeRoute[NUM_YIELD_TYPES];
 	int m_iYieldRateModifier[NUM_YIELD_TYPES];
 	int m_iStrategicResourceQuantityModifier[NUM_TERRAIN_TYPES];
+
 	std::vector<int> m_aiResourceQuantityModifier;
 	std::vector<bool> m_abNoTrain;
 
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	std::vector<bool> m_abNoBuild;
+#endif
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	std::vector<bool> m_abBannedUnitMissions;
 #endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	std::vector<int> m_aiBuildTimeOverride;
@@ -1432,7 +1484,14 @@ private:
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiResourceClassYieldChange;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiBuildingCostOverride;
 #endif
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	int m_aiCapitalYieldChange[NUM_YIELD_TYPES];
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiCapitalEraYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiCapitalTechYieldChange;
+	int m_aiCityYieldChange[NUM_YIELD_TYPES];
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiCityEraYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiCityTechYieldChange;
+#endif
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;
 };
 

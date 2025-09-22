@@ -29,6 +29,7 @@ public:
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
 	int	GetLayerAnimationPath() const;
+#if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 	int	GetPrereqPromotion() const;
 	void	SetPrereqPromotion(int i);
 	int	GetPrereqOrPromotion1() const;
@@ -53,7 +54,7 @@ public:
 	//EAP: adding an additional promotion thing
 	int	GetPrereqOrPromotion10() const;
 	void	SetPrereqOrPromotion10(int i);
-
+#endif
 	int  GetTechPrereq() const;
 	int  GetInvisibleType() const;
 	int  GetSeeInvisibleType() const;
@@ -116,6 +117,9 @@ public:
 #endif
 #ifdef NQ_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR
 	int GetCombatStrengthNearFriendlyMinor() const;
+#endif
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	bool IsSubmergePromotion() const;
 #endif
 	int  GetCommandType() const;
 	void SetCommandType(int iNewType);
@@ -248,6 +252,13 @@ public:
 #endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	int GetYieldFromKills(int i) const;
+	int GetKillYieldCap(int i) const;
+#endif
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+	int GetUpgradeConversionPromotion(int i) const;
+#endif
+#if defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
+	const std::vector<int>& GetPromotionPrereqOrs() const { return m_vPromotionPrereqOrs; }
 #endif
 #ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
 	int GetCombatDifferentIdeology() const;
@@ -255,6 +266,7 @@ public:
 
 protected:
 	int m_iLayerAnimationPath;
+#if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 	int m_iPrereqPromotion;
 	int m_iPrereqOrPromotion1;
 	int m_iPrereqOrPromotion2;
@@ -266,7 +278,7 @@ protected:
 	int m_iPrereqOrPromotion8;
 	int m_iPrereqOrPromotion9;
 	int m_iPrereqOrPromotion10;
-
+#endif
 	int m_iTechPrereq;
 	int m_iInvisibleType;
 	int m_iSeeInvisibleType;
@@ -329,6 +341,9 @@ protected:
 #endif
 #ifdef NQ_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR
 	int m_iCombatStrengthNearFriendlyMinor;
+#endif
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	bool m_bSubmergePromotion;
 #endif
 	int m_iCommandType;
 	int m_iUpgradeDiscount;
@@ -413,8 +428,15 @@ protected:
 	CvString m_strSound;
 
 	// Arrays
+#if defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
+	std::vector<int> m_vPromotionPrereqOrs;
+#endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	int* m_paiYieldFromKills;
+	int* m_paiKillYieldCap;
+#endif
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+	int* m_paiConvertPromotionUpgrades;
 #endif
 	int* m_piTerrainAttackPercent;
 	int* m_piTerrainDefensePercent;

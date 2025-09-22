@@ -283,6 +283,10 @@ CvPolicyEntry::CvPolicyEntry(void):
 	m_ppiPolicyResourceYieldChanges(NULL),
 	m_ppiPolicyResourceClassYieldChanges(NULL),
 #endif
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	m_paiMinorFriendYieldBonus(NULL),
+	m_paiMinorAllyYieldBonus(NULL),
+#endif
 	m_paiHurryModifier(NULL),
 	m_pabSpecialistValid(NULL),
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -343,6 +347,10 @@ CvPolicyEntry::~CvPolicyEntry(void)
 	SAFE_DELETE_ARRAY(m_piPolicyResourceQuantity);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyResourceYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyResourceClassYieldChanges);
+#endif
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	CvDatabaseUtility::SafeDelete2DArray(m_paiMinorFriendYieldBonus);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiMinorAllyYieldBonus);
 #endif
 
 //	SAFE_DELETE_ARRAY(m_pabHurry);
@@ -729,7 +737,35 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		pResults->Reset();
 	}
 #endif
-
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	{
+		kUtility.Initialize2DArray(m_paiMinorFriendYieldBonus, "Eras", "Yields");
+		kUtility.Initialize2DArray(m_paiMinorAllyYieldBonus, "Eras", "Yields");
+		
+		std::string strKey("Policy_CityStateRelationshipYieldBonus");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Eras.ID as EraID, Yields.ID as YieldID, FriendYieldBonusTimes100, AllyYieldBonusTimes100 "
+				"FROM Policy_CityStateRelationshipYieldBonus "
+				"INNER JOIN Eras ON Eras.Type = Policy_CityStateRelationshipYieldBonus.EraType "
+				"INNER JOIN Yields ON Yields.Type = Policy_CityStateRelationshipYieldBonus.YieldType "
+				"WHERE Policy_CityStateRelationshipYieldBonus.PolicyType = ?");
+		}
+		pResults->Bind(1, szPolicyType);
+		while (pResults->Step())
+		{
+			const int EraID = pResults->GetInt(0);
+			const int iYieldID = pResults->GetInt(1);
+			const int iFriendYieldBonus = pResults->GetInt(2);
+			const int iAllyYieldBonus = pResults->GetInt(3);
+			m_paiMinorFriendYieldBonus[EraID][iYieldID] = iFriendYieldBonus;
+			m_paiMinorAllyYieldBonus[EraID][iYieldID] = iAllyYieldBonus;
+		}
+		pResults->Reset();
+	}
+#endif
 	//BuildingYieldModifiers
 	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -2370,22 +2406,45 @@ int CvPolicyEntry::GetYieldFromKills(int i) const
 }
 #endif
 #if defined(LEKMOD_v34)
+/// Amount of Strategics being given by this Policy
 int CvPolicyEntry::GetPolicyResourceQuantity(int i) const
 {
 	CvAssertMsg(i >= 0 && i < GC.getNumResourceInfos(), "Index out of bounds");
 	return m_piPolicyResourceQuantity ? m_piPolicyResourceQuantity[i] : 0;
 }
+/// Yield changes for a specific resource class
 int CvPolicyEntry::GetPolicyResourceClassYieldChanges(int i, int j) const
 {
 	CvAssertMsg(i >= 0 && i < GC.getNumResourceClassInfos(), "Index out of bounds");
 	CvAssertMsg(j >= 0 && j < NUM_YIELD_TYPES, "Index out of bounds");
 	return m_ppiPolicyResourceClassYieldChanges ? m_ppiPolicyResourceClassYieldChanges[i][j] : 0;
 }
+/// Yield changes for a specific resource
 int CvPolicyEntry::GetPolicyResourceYieldChanges(int i, int j) const
 {
 	CvAssertMsg(i >= 0 && i < GC.getNumResourceInfos(), "Index out of bounds");
 	CvAssertMsg(j >= 0 && j < NUM_YIELD_TYPES, "Index out of bounds");
 	return m_ppiPolicyResourceYieldChanges ? m_ppiPolicyResourceYieldChanges[i][j] : 0;
+}
+#endif
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+/// Yield bonus from each City State Friend
+int CvPolicyEntry::GetMinorFriendYieldBonus(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumEraInfos(), "Era index out of bounds");
+	CvAssertMsg(i > -1, "Era index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Yield index out of bounds");
+	CvAssertMsg(j > -1, "Yield index out of bounds");
+	return m_paiMinorFriendYieldBonus ? m_paiMinorFriendYieldBonus[i][j] : 0;
+}
+/// Yield bonus from each City State Ally
+int CvPolicyEntry::GetMinorAllyYieldBonus(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumEraInfos(), "Era index out of bounds");
+	CvAssertMsg(i > -1, "Era index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Yield index out of bounds");
+	CvAssertMsg(j > -1, "Yield index out of bounds");
+	return m_paiMinorAllyYieldBonus ? m_paiMinorAllyYieldBonus[i][j] : 0;
 }
 #endif
 /// Is this hurry type now enabled?
@@ -3328,9 +3387,11 @@ int CvPlayerPolicies::GetNumericModifier(PolicyModifierType eType)
 			case POLICYMOD_MINOR_MILITARY_NUM_EXTRA_UNITS_TO_GIFT:
 				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetMinorMilitaryNumExtraUnitsToGift();
 				break;
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 			case POLICYMOD_CITY_STATE_BONUS_MODIFIER:
 				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetCityStateBonusModifier();
 				break;
+#endif
 			// NQMP GJS - Patronage Finisher end
 			// NQMP GJS - Colonialism begin
 			case POLICYMOD_EXTRA_TERRITORY_CLAIM:
@@ -3893,6 +3954,42 @@ int CvPlayerPolicies::GetPolicyResourceClassYieldChanges(ResourceClassTypes eRes
 			if (pPolicy->GetPolicyResourceClassYieldChanges(eResourceClass, eYield) > 0)
 			{
 				iYield += pPolicy->GetPolicyResourceClassYieldChanges(eResourceClass, eYield);
+			}
+		}
+	}
+	return iYield;
+}
+#endif
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+int CvPlayerPolicies::GetMinorFriendYieldBonus(EraTypes eEra, YieldTypes eYield) const
+{
+	int iYield = 0;
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+	{
+		// Do we have this policy?
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			CvPolicyEntry* pPolicy = m_pPolicies->GetPolicyEntry(i);
+			if (pPolicy->GetMinorFriendYieldBonus(eEra, eYield) > 0)
+			{
+				iYield += pPolicy->GetMinorFriendYieldBonus(eEra, eYield);
+			}
+		}
+	}
+	return iYield;
+}
+int CvPlayerPolicies::GetMinorAllyYieldBonus(EraTypes eEra, YieldTypes eYield) const
+{
+	int iYield = 0;
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+	{
+		// Do we have this policy?
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			CvPolicyEntry* pPolicy = m_pPolicies->GetPolicyEntry(i);
+			if (pPolicy->GetMinorAllyYieldBonus(eEra, eYield) > 0)
+			{
+				iYield += pPolicy->GetMinorAllyYieldBonus(eEra, eYield);
 			}
 		}
 	}

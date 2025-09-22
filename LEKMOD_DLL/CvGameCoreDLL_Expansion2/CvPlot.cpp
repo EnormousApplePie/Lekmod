@@ -234,6 +234,9 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_bLayoutStateWorked = false;
 	m_bImprovementPillaged = false;
 	m_bRoutePillaged = false;
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE)
+	m_bWasRoutePillaged = false;
+#endif
 	m_bBarbCampNotConverting = false;
 	m_bRoughFeature = false;
 	m_bResourceLinkedCityActive = false;
@@ -411,7 +414,9 @@ void CvPlot::doTurn()
 	{
 		changeImprovementDuration(1);
 	}
-
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE) // Remember if route was pillaged before potentially repairing it for continueMission down the line
+	SetWasRoutePillaged(IsRoutePillaged() ? true : false);
+#endif
 	verifyUnitValidPlot();
 
 	// Clear world anchor
@@ -2531,7 +2536,11 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible,
 	{
 		if(getRouteType() != NO_ROUTE)
 		{
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE) // Allows Routes to be made on Pontoons if there is already a Route there for upgrading purposes.
+			if ((isWater() && !thisBuildInfo.IsWater()) && !IsAllowsWalkWater())
+#else
 			if (isWater() && !thisBuildInfo.IsWater())
+#endif
 			{
 				return false;
 			}
@@ -2599,39 +2608,39 @@ int CvPlot::getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer) const
 
 	iTime = GC.getBuildInfo(eBuild)->getTime();
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
-		// catch the base build time and override it
-		int iOverrideTime = -1;
+	// catch the base build time and override it
+	int iOverrideTime = -1;
 
-		if (ePlayer != NO_PLAYER)
+	if (ePlayer != NO_PLAYER)
+	{
+		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+		
+		// Get the resource class if there's a resource on this plot
+		ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
+		ResourceTypes eResource = getResourceType();
+		
+		if (eResource != NO_RESOURCE)
 		{
-			CvPlayer& kPlayer = GET_PLAYER(ePlayer);
-			
-			// Get the resource class if there's a resource on this plot
-			ResourceClassTypes eResourceClass = NO_RESOURCECLASS;
-			ResourceTypes eResource = getResourceType();
-			
-			if (eResource != NO_RESOURCE)
+			CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
+			if (pResourceInfo)
 			{
-				CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
-				if (pResourceInfo)
+				// Only consider the resource if it's revealed to the player
+				if (GET_TEAM(kPlayer.getTeam()).GetTeamTechs()->HasTech((TechTypes)pResourceInfo->getTechReveal()))
 				{
-					// Only consider the resource if it's revealed to the player
-					if (GET_TEAM(kPlayer.getTeam()).GetTeamTechs()->HasTech((TechTypes)pResourceInfo->getTechReveal()))
-					{
-						eResourceClass = (ResourceClassTypes)pResourceInfo->getResourceClassType();
-					}
+					eResourceClass = (ResourceClassTypes)pResourceInfo->getResourceClassType();
 				}
 			}
-			
-			// Pass the resource class to the GetBuildTimeOverride method
-			iOverrideTime = kPlayer.GetPlayerTraits()->GetBuildTimeOverride(eBuild, eResourceClass);
 		}
+		
+		// Pass the resource class to the GetBuildTimeOverride method
+		iOverrideTime = kPlayer.GetPlayerTraits()->GetBuildTimeOverride(eBuild, eResourceClass);
+	}
 
-		// Check if override time is valid (>= 0) instead of > -1
-		if (iOverrideTime >= 0)
-		{
-			iTime = iOverrideTime;
-		}
+	// Check if override time is valid (>= 0) instead of > -1
+	if (iOverrideTime >= 0)
+	{
+		iTime = iOverrideTime;
+	}
 #endif
 	if (ePlayer != NO_PLAYER)
 	{
@@ -2656,22 +2665,38 @@ int CvPlot::getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer) const
 #endif
 			{
 				CvBuildInfo* pkBuildInfo = GC.getBuildInfo((BuildTypes) iBuildLoop);
-				if(!pkBuildInfo)
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE) // What the Fuck, Firaxis.
+				if(!pkBuildInfo) // Null Build Info
+					continue;
+				if (pkBuildInfo->getRoute() != eRoute) // BuildInfo is not for THIS route
+					continue; 
+				if (WasRoutePillaged()) // Only Adjust if the Route is pillaged. This updates once a turn.
+				{
+					ImprovementTypes eImprovement = getImprovementType();
+					if(eImprovement == NO_IMPROVEMENT || !IsImprovementPillaged()) // No Improvement, or it's not Pillaged
+					{
+						if (pkBuildInfo->getTime() < iTime) //If the Route is made faster than isRepair(), set time to Route build time
+							iTime = pkBuildInfo->getTime();
+					}
+				}
+#else
+				if (!pkBuildInfo) // Null Build Info
 				{
 					continue;
 				}
-
-				if(pkBuildInfo->getRoute() == eRoute)
+				if (pkBuildInfo->getRoute() == eRoute) // Only Adjust if the Route is the Route on this Plot
 				{
-					if(pkBuildInfo->getTime() < iTime)
+					if (pkBuildInfo->getTime() < iTime) //If the Route is made faster than isRepair(), set time to Route build time
 					{
 						iTime = pkBuildInfo->getTime();
 					}
 				}
+#endif
 			}
 		}
 	}
 	// End Repair time mod
+
 
 	if(getFeatureType() != NO_FEATURE)
 	{
@@ -7061,7 +7086,18 @@ void CvPlot::SetRoutePillaged(bool bPillaged)
 		}
 	}
 }
-
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE) // Clamps since IsRoutePillaged() updates before continueMission() is called
+//	--------------------------------------------------------------------------------
+bool CvPlot::WasRoutePillaged() const
+{
+	return m_bWasRoutePillaged;
+}
+//	--------------------------------------------------------------------------------
+void CvPlot::SetWasRoutePillaged(bool bPillaged)
+{
+	m_bWasRoutePillaged = bPillaged;
+}
+#endif
 //	--------------------------------------------------------------------------------
 void CvPlot::updateCityRoute()
 {
@@ -7959,6 +7995,12 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 				iYield += pkPolicyEntry->GetImprovementYieldChanges(eImprovement, eYield);
 			}
 		}
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+		for (iI = 0; iI < GC.getNumEraInfos(); ++iI)
+		{
+			iYield += pImprovement->GetEraYieldChanges(iI, eYield);
+		}
+#endif
 	}
 	else
 	{
@@ -8264,18 +8306,16 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 			}
 		}
 #if defined(TRAITIFY) // Special case for Armenia 
-		if(getFeatureType() == FEATURE_ARARAT_MOUNTAIN)
+		FeatureTypes eAraratMountain = (FeatureTypes)GC.getInfoTypeForString("FEATURE_ARARAT_MOUNTAIN");
+		if(getFeatureType() == eAraratMountain)
 		{
 			if (m_eOwner != NO_PLAYER)
 			{
 				// Shouldn't be possible today but who knows about tomorrow...
-				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
+				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(eAraratMountain, eYield);
 				if (eImprovement == NO_IMPROVEMENT)
-				{
-					iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(FEATURE_ARARAT_MOUNTAIN, eYield);
-				}
+					iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(eAraratMountain, eYield);
 			}
-			
 		}
 #endif
 
@@ -8352,6 +8392,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 
 	if(bCity)
 	{
+		CvPlayer& kPlayer = GET_PLAYER(getOwner());
 #ifdef NQM_YIELD_MIN_CITY_ON_HILLS_ADJUST
 		int iMinCityYield = kYield.getMinCity();
 		if (isHills())
@@ -8362,26 +8403,57 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 #else
 		iYield = std::max(iYield, kYield.getMinCity());
 #endif
-#ifndef AUI_PLOT_FIX_CITY_YIELD_CHANGE_RELOCATED
 		// Mod for Player; used for Policies and such
-		int iTemp = GET_PLAYER(getOwner()).GetCityYieldChange(eYield);	// In hundreds - will be added to capitalYieldChange below
-
+		int iTemp = kPlayer.GetCityYieldChange(eYield);	// In hundreds - will be added to capitalYieldChange below
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+		UnitTypes eSettleUnit = pCity->SettlerUnit();
+		EraTypes eCurrentEra = kPlayer.GetCurrentEra();
+		if (eSettleUnit != NO_UNIT)
+		{
+			UnitTypes eTraitUnit = kPlayer.GetPlayerTraits()->GetYieldSettleUnit();
+			if (eTraitUnit == NO_UNIT) // Some are not keyed
+			{
+				iTemp += kPlayer.GetPlayerTraits()->GetCityEraYieldChange(eCurrentEra, eYield) * 100;
+			}
+			else if (eTraitUnit != NO_UNIT && eTraitUnit == eSettleUnit) // some are!
+			{
+				iTemp += kPlayer.GetPlayerTraits()->GetCityEraYieldChange(eCurrentEra, eYield) * 100;
+			}
+		}
+		for (int jJ = 0; jJ < GC.getNumTechInfos(); jJ++)
+		{
+			TechTypes eTech = (TechTypes)jJ;
+			if(GET_TEAM(kPlayer.getTeam()).GetTeamTechs()->HasTech(eTech))
+			{
+				iTemp += kPlayer.GetPlayerTraits()->GetCityTechYieldChange(eTech, eYield) * 100;
+				if (pCity->isCapital())
+				{
+					iTemp += kPlayer.GetPlayerTraits()->GetCapitalTechYieldChange(eTech, eYield) * 100;
+				}
+			}
+		}
+		// General city yield change from traits
+		iTemp += kPlayer.GetPlayerTraits()->GetCityYieldChange(eYield) * 100;
+#endif
 		// Coastal City Mod
 		if(pCity->isCoastal())
 		{
-			iYield += GET_PLAYER(getOwner()).GetCoastalCityYieldChange(eYield);
+			iYield += kPlayer.GetCoastalCityYieldChange(eYield);
 		}
 
 		// Capital Mod
 		if(pCity->isCapital())
 		{
-			iTemp += GET_PLAYER(getOwner()).GetCapitalYieldChange(eYield);
-
-			int iPerPopYield = pCity->getPopulation() * GET_PLAYER(getOwner()).GetCapitalYieldPerPopChange(eYield);
+			iTemp += kPlayer.GetCapitalYieldChange(eYield);
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+			iTemp += kPlayer.GetPlayerTraits()->GetCapitalYieldChange(eYield) * 100;
+			iTemp += kPlayer.GetPlayerTraits()->GetCapitalEraYieldChange(eCurrentEra, eYield) * 100;
+#endif
+			int iPerPopYield = pCity->getPopulation() * kPlayer.GetCapitalYieldPerPopChange(eYield);
 			iPerPopYield /= 100;
 			iYield += iPerPopYield;
 		}
-
+				
 #ifdef LEKMOD_v34
 		// Landmass yields from buildings
 		if (pCity != NULL)
@@ -8425,7 +8497,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 #endif
 
 		iYield += (iTemp / 100);
-#endif
 	}
 
 	iYield += GC.getGame().getPlotExtraYield(m_iX, m_iY, eYield);
@@ -10523,6 +10594,10 @@ void CvPlot::read(FDataStream& kStream)
 	kStream >> bitPackWorkaround;
 	m_bRoutePillaged = bitPackWorkaround;
 	kStream >> bitPackWorkaround;
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE)
+	m_bWasRoutePillaged = bitPackWorkaround;
+	kStream >> bitPackWorkaround;
+#endif
 	m_bBarbCampNotConverting = bitPackWorkaround;
 	kStream >> bitPackWorkaround;
 	m_bRoughFeature = bitPackWorkaround;
@@ -10739,6 +10814,9 @@ void CvPlot::write(FDataStream& kStream) const
 	kStream << m_bPotentialCityWork;
 	kStream << m_bImprovementPillaged;
 	kStream << m_bRoutePillaged;
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE)
+	kStream << m_bWasRoutePillaged;
+#endif
 	kStream << m_bBarbCampNotConverting;
 	kStream << m_bRoughFeature;
 	kStream << m_bResourceLinkedCityActive;

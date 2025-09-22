@@ -312,6 +312,23 @@ public:
 	int getExoticGoodsGoldAmount();
 	int getExoticGoodsXPAmount();
 	bool sellExoticGoods();
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	bool canSubmerge() const;
+	void setCanSubmerge(bool bValue);
+	bool IsSubmerged() const;
+	void setSubmerged(bool bValue);
+	bool canSubmerge(const CvPlot* pPlot) const;
+	bool canSurface(const CvPlot* pPlot) const;
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	bool canRetrain(const CvPlot* pPlot, bool bTestVisible) const;
+	void retrain();
+	int getNumPlayerChosenPromotions() const;
+	void setNumPlayerChosenPromotions(int iNewValue);
+	void changeNumPlayerChosenPromotions(int iChange);
+	bool IsPromotionChosenByPlayer(PromotionTypes ePromotion) const;
+	void SetPromotionChosenByPlayer(PromotionTypes ePromotion, bool bValue);
+#endif
 #if defined(UNITS_REMEMBER_HOME)
 	CvCity* GetHomeCity() const;
 	void SetHomeCity(int iNewCity);
@@ -411,7 +428,9 @@ public:
 	UnitTypes GetUpgradeUnitType() const;
 	int upgradePrice(UnitTypes eUnit) const;
 	CvUnit* DoUpgrade();
-
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+	void ConvertPromotions(CvUnit* pOldUnit, CvUnit* pNewUnit);
+#endif
 	HandicapTypes getHandicapType() const;
 	CvCivilizationInfo& getCivilizationInfo() const;
 	CivilizationTypes getCivilizationType() const;
@@ -1142,6 +1161,8 @@ public:
 #if defined(FULL_YIELD_FROM_KILLS)
 	int GetYieldFromKills(YieldTypes eYield) const;
 	void ChangeYieldFromKills(YieldTypes eYield, int iChange);
+	int GetKillYieldCap(YieldTypes eYield) const;
+	void ChangeKillYieldCap(YieldTypes eYield, int iChange);
 #endif
 	int getTerrainDoubleMoveCount(TerrainTypes eIndex) const;
 	bool isTerrainDoubleMove(TerrainTypes eIndex) const;
@@ -1591,6 +1612,14 @@ protected:
 	FAutoVariable<bool, CvUnit> m_bNotConverting;
 	FAutoVariable<bool, CvUnit> m_bAirCombat;
 	FAutoVariable<bool, CvUnit> m_bSetUpForRangedAttack;
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	FAutoVariable<bool, CvUnit> m_bCanSubmerge;
+	FAutoVariable<bool, CvUnit> m_bSubmerged;
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	FAutoVariable<int, CvUnit> m_iNumSelectedPromotions;
+	FAutoVariable<std::vector<bool>, CvUnit> m_abSelectedPromotions;
+#endif
 	FAutoVariable<bool, CvUnit> m_bEmbarked;
 	FAutoVariable<bool, CvUnit> m_bAITurnProcessed;
 
@@ -1619,6 +1648,7 @@ protected:
 	CvUnitReligion* m_pReligion;
 #if defined(FULL_YIELD_FROM_KILLS)
 	FAutoVariable<std::vector<int>, CvUnit> m_iYieldFromKills;
+	FAutoVariable<std::vector<int>, CvUnit> m_iKillYieldCap;
 #endif
 	FAutoVariable<std::vector<int>, CvUnit> m_terrainDoubleMoveCount;
 	FAutoVariable<std::vector<int>, CvUnit> m_featureDoubleMoveCount;

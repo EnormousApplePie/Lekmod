@@ -42,7 +42,10 @@ protected:
 	static int lCountNumImprovedPlots(lua_State* L);
 	static int lCountNumWaterPlots(lua_State* L);
 	static int lCountNumRiverPlots(lua_State* L);
-
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	static int lGetSettlerUnit(lua_State* L);
+	static int lSetSettlerUnit(lua_State* L);
+#endif
 	static int lFindPopulationRank(lua_State* L);
 	static int lFindBaseYieldRateRank(lua_State* L);
 	static int lFindYieldRateRank(lua_State* L);
@@ -380,7 +383,18 @@ protected:
 
 	static int lGetBaseYieldRateFromReligion(lua_State* L);
 	static int lChangeBaseYieldRateFromReligion(lua_State* L);
+#if defined(STANDARDIZE_YIELDS)
+	static int lGetBaseYieldRateFromTraits(lua_State* L);
+	static int lGetBaseYieldRateFromLeagues(lua_State* L);
 
+	static int lGetBaseYieldRateFromPolicies(lua_State* L);
+	static int lChangeBaseYieldRateFromPolicies(lua_State* L);
+	static int lGetBaseYieldRateFromThemedBuildings(lua_State* L);
+#endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+	static int lGetBaseYieldRateFromGarrison(lua_State* L);
+	static int lGetGarrisonYieldBonus(lua_State* L);
+#endif
 	static int lGetYieldPerPopTimes100(lua_State* L);
 
 	static int lGetBaseYieldRateModifier(lua_State* L);

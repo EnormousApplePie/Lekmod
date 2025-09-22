@@ -25,7 +25,7 @@ function lekmod_macedonia_hetairoi_era_scaling(player_id)
             -- Update all bonuses when era changes
             unit:SetBaseCombatStrength(era_types[current_era])
             -- If has March, don't set it as that removes it if not Industrial
-            if not unit:isHasPromotion(GameInfoTypes["PROMOTION_MARCH"]) then 
+            if not unit:IsHasPromotion(GameInfoTypes["PROMOTION_MARCH"]) then 
                 unit:SetHasPromotion(GameInfoTypes["PROMOTION_MARCH"], current_era >= GameInfoTypes["ERA_INDUSTRIAL"])
             end
             unit:SetHasPromotion(GameInfoTypes["PROMOTION_ARMOR_VS_LAND"], current_era >= GameInfoTypes["ERA_MODERN"])

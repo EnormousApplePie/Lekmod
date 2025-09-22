@@ -959,7 +959,7 @@ protected:
 #if defined(TRAITIFY)
 	static int lGetTraitBuildingClassYieldChange(lua_State* L);
 	static int lGetTraitBuildingClassHappiness(lua_State* L);
-	//static int lGetTraitBuildingClassGlobalHappiness(lua_State* L);
+	static int lGetTraitBuildingClassGlobalHappiness(lua_State* L);
 	static int lGetPolicyExtraLeagueVotes(lua_State* L);
 	static int lChangePolicyExtraLeagueVotes(lua_State* L);
 #endif
