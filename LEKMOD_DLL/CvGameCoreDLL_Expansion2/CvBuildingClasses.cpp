@@ -3810,6 +3810,7 @@ void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, in
 			}
 
 			GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+			GC.GetEngineUserInterface()->setDirty(GreatWorksScreen_DIRTY_BIT, true);
 			return;
 		}
 	}
@@ -3824,6 +3825,7 @@ void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, in
 	}
 
 	GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+	GC.GetEngineUserInterface()->setDirty(GreatWorksScreen_DIRTY_BIT, true);
 }
 
 /// Accessor: Is there a Great Work inside this building?

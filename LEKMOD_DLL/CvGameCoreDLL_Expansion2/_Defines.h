@@ -1119,9 +1119,7 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_TRACK_CITY_SETTLER_UNITTYPE
 // Yield Increase based on Era
 #define LEKMOD_ERA_ENHANCED_YIELDS
-// Yield burst from Expending a Great Person from Beliefs
-#define LEKMOD_BELIEF_GP_EXPEND_YIELD
-// New Unit Mission "Submerge"
+// New Unit Mission "Submerge" and "Surface"
 #define LEKMOD_SUBMERGE_MISSION
 // New Unit Mission "Retrain"
 #define LEKMOD_RETRAIN_MISSION
@@ -1129,7 +1127,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_TRAIT_BAN_UNIT_MISSIONS
 // Add more flexibility to City Yield changes from Traits
 #define LEKMOD_CITY_YIELDS_TRAITS
-
+// Refactor Submarine Attack logic
+#define LEKMOD_SUBMARINE_ATTACK_CHANGES
 
 
 // Generic define for temp changes

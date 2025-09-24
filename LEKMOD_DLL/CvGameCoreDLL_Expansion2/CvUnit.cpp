@@ -307,6 +307,7 @@ CvUnit::CvUnit() :
 #if defined(LEKMOD_SUBMERGE_MISSION)
 	, m_bCanSubmerge("CvUnit::m_bSubmerged", m_syncArchive)
 	, m_bSubmerged("CvUnit::m_bSubmerged", m_syncArchive)
+	, m_bHasSubmergedOrSurfaced("CvUnit::m_bHasSubmergedOrSurfaced", m_syncArchive)
 #endif
 #if defined(LEKMOD_RETRAIN_MISSION)
 	, m_iNumSelectedPromotions("CvUnit::m_iNumSelectedPromotions", m_syncArchive)\
@@ -1132,6 +1133,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 #if defined(LEKMOD_SUBMERGE_MISSION)
 	m_bCanSubmerge = false;
 	m_bSubmerged = false;
+	m_bHasSubmergedOrSurfaced = false;
 #endif
 #if defined(LEKMOD_RETRAIN_MISSION)
 	m_iNumSelectedPromotions = 0;
@@ -2087,6 +2089,9 @@ void CvUnit::doTurn()
 	{
 		setInstaHealLocked(true);
 	}
+#endif
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	setHasSubmergedOrSurfacedThisTurn(false);
 #endif
 	testPromotionReady();
 
@@ -5128,6 +5133,11 @@ bool CvUnit::canSubmerge(const CvPlot* /*pPlot*/) const
 		return false;
 	}
 
+	if(hasSubmergedOrSurfacedThisTurn())
+	{
+		return false;
+	}
+
 	if(IsSubmerged())
 	{
 		return false;
@@ -5145,6 +5155,11 @@ bool CvUnit::canSurface(const CvPlot* pPlot) const
 {
 	VALIDATE_OBJECT
 	if(!IsSubmerged())
+	{
+		return false;
+	}
+
+	if(hasSubmergedOrSurfacedThisTurn())
 	{
 		return false;
 	}
@@ -5217,9 +5232,17 @@ void CvUnit::setSubmerged(bool bValue)
 			}
 		}
 		m_bSubmerged = bValue; // Set the new state
-
+		setHasSubmergedOrSurfacedThisTurn(true); // remember that we submerged/surfaced this turn
 		changeMoves(-GC.getMOVE_DENOMINATOR());
 	}
+}
+bool CvUnit::hasSubmergedOrSurfacedThisTurn() const
+{
+	return m_bHasSubmergedOrSurfaced;
+}
+void CvUnit::setHasSubmergedOrSurfacedThisTurn(bool bValue)
+{
+	m_bHasSubmergedOrSurfaced = bValue;
 }
 #endif
 #if defined(LEKMOD_RETRAIN_MISSION)
@@ -22056,12 +22079,39 @@ bool CvUnit::canEverRangeStrikeAt(int iX, int iY) const
 		{
 			return false;
 		}
-
+#if !defined(LEKMOD_SUBMARINE_ATTACK_CHANGES)
 		// preventing submarines from shooting into lakes.
 		if (pSourcePlot->getArea() != pTargetPlot->getArea())
 		{
 			return false;
 		}
+#else
+		if (pSourcePlot->isWater() && (pSourcePlot->getArea() != pTargetPlot->getArea())) // if source is water, target must be in same area
+		{
+			return false;
+		}
+		if (pSourcePlot->isCity() && getDomainType() == DOMAIN_SEA)
+		{
+			CvArea* pTargetArea = pTargetPlot->area();
+			bool bMatchesAdjacentWaterArea = false;
+
+			for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+			{
+				CvPlot* pAdjacentPlot = plotDirection(pSourcePlot->getX(), pSourcePlot->getY(), (DirectionTypes)iI);
+				if (pAdjacentPlot && pAdjacentPlot->isWater())
+				{
+					if (pAdjacentPlot->area() == pTargetArea)
+					{
+						bMatchesAdjacentWaterArea = true;
+						break; // found at least one valid adjacent water area
+					}
+				}
+			}
+
+			if (!bMatchesAdjacentWaterArea)
+				return false;
+		}
+#endif
 	}
 
 	// In Range?

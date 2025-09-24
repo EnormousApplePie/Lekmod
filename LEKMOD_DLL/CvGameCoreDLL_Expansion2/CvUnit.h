@@ -319,6 +319,8 @@ public:
 	void setSubmerged(bool bValue);
 	bool canSubmerge(const CvPlot* pPlot) const;
 	bool canSurface(const CvPlot* pPlot) const;
+	bool hasSubmergedOrSurfacedThisTurn() const;
+	void setHasSubmergedOrSurfacedThisTurn(bool bValue);
 #endif
 #if defined(LEKMOD_RETRAIN_MISSION)
 	bool canRetrain(const CvPlot* pPlot, bool bTestVisible) const;
@@ -1615,6 +1617,7 @@ protected:
 #if defined(LEKMOD_SUBMERGE_MISSION)
 	FAutoVariable<bool, CvUnit> m_bCanSubmerge;
 	FAutoVariable<bool, CvUnit> m_bSubmerged;
+	FAutoVariable<bool, CvUnit> m_bHasSubmergedOrSurfaced;
 #endif
 #if defined(LEKMOD_RETRAIN_MISSION)
 	FAutoVariable<int, CvUnit> m_iNumSelectedPromotions;

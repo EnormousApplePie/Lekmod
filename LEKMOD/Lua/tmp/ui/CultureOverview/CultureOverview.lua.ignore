@@ -1299,13 +1299,13 @@ end
 
 
 
--- Refresh great work info if dirty (SerialEventCityInfoDirty is called when great works are swapped).
+-- Refresh great work info if dirty (SerialEventCityInfoDirty & SerialEventGreatWorksScreenDirty is called when great works are swapped).
 function RefreshGreatWorkInfo()
 	if (not ContextPtr:IsHidden()) then
 		g_Tabs["YourCulture"].RefreshContent();
 	end
 end
-Events.SerialEventCityInfoDirty.Add(RefreshGreatWorkInfo);
+Events.SerialEventGreatWorksScreenDirty.Add(RefreshGreatWorkInfo);
 
 
 -------------------------------------------------------------------------------------------------------------------------
