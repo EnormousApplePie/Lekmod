@@ -73,7 +73,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetResourceDemanded);
 	Method(SetResourceDemanded);
 	Method(DoPickResourceDemanded);
-
+#if defined(LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA)
+	Method(GetResourceDemandedCountdown)
+#endif
 	Method(GetFoodTurnsLeft);
 	Method(IsProduction);
 	Method(IsProductionLimited);
@@ -1020,13 +1022,19 @@ int CvLuaCity::lDoPickResourceDemanded(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::DoPickResourceDemanded);
 }
-
+#if defined(LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA)
+//------------------------------------------------------------------------------
+//int GetResourceDemandedCountdown();
+int CvLuaCity::lGetResourceDemandedCountdown(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetResourceDemandedCountdown);
+}
+#endif
 //------------------------------------------------------------------------------
 //int getFoodTurnsLeft();
 int CvLuaCity::lGetFoodTurnsLeft(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::getFoodTurnsLeft);
-
 }
 //------------------------------------------------------------------------------
 //bool isProduction();

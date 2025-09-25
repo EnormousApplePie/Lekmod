@@ -1925,12 +1925,13 @@ local function UpdateCityViewNow()
 
 		if city:GetResourceDemanded(true) ~= -1 then
 			local resourceInfo = GameInfo.Resources[ city:GetResourceDemanded() ]
+			local resourceDemandedTimer = city:GetResourceDemandedCountdown()
 			local weLoveTheKingDayCounter = city:GetWeLoveTheKingDayCounter()
 			if weLoveTheKingDayCounter > 0 then
 				Controls.ResourceDemandedString:LocalizeAndSetText( "TXT_KEY_CITYVIEW_WLTKD_COUNTER", weLoveTheKingDayCounter )
 				Controls.ResourceDemandedBox:LocalizeAndSetToolTip( "TXT_KEY_CITYVIEW_RESOURCE_FULFILLED_TT" )
 			else
-				Controls.ResourceDemandedString:LocalizeAndSetText( "TXT_KEY_CITYVIEW_RESOURCE_DEMANDED", resourceInfo.IconString .. " " .. L(resourceInfo.Description) )
+				Controls.ResourceDemandedString:LocalizeAndSetText( "TXT_KEY_CITYVIEW_RESOURCE_DEMANDED", resourceInfo.IconString .. " " .. L(resourceInfo.Description) .. " (" .. resourceDemandedTimer .. ")" )
 				Controls.ResourceDemandedBox:LocalizeAndSetToolTip( "TXT_KEY_CITYVIEW_RESOURCE_DEMANDED_TT" )
 			end
 

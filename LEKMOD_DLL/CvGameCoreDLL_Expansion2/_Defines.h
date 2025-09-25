@@ -1129,6 +1129,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_CITY_YIELDS_TRAITS
 // Refactor Submarine Attack logic
 #define LEKMOD_SUBMARINE_ATTACK_CHANGES
+// Export the WLTKD count down for UI purposes.
+#define LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA
 
 
 // Generic define for temp changes

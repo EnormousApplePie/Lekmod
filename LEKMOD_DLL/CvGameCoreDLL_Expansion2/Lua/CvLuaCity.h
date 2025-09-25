@@ -75,6 +75,9 @@ protected:
 	static int lGetResourceDemanded(lua_State* L);
 	static int lSetResourceDemanded(lua_State* L);
 	static int lDoPickResourceDemanded(lua_State* L);
+#if defined(LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA)
+	static int lGetResourceDemandedCountdown(lua_State* L);
+#endif
 
 	static int lGetFoodTurnsLeft(lua_State* L);
 	static int lIsProduction(lua_State* L);
