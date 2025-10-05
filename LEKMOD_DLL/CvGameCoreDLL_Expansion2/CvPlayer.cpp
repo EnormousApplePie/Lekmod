@@ -17735,12 +17735,12 @@ void CvPlayer::DoSpawnGreatPerson(PlayerTypes eMinor)
 		{
 			// No prophets
 #ifdef NQ_PATRONAGE_GREAT_PEOPLE_FIX
-			if(eLoopUnit == GC.getInfoTypeForString("UNIT_WRITER") ||\
-				eLoopUnit == GC.getInfoTypeForString("UNIT_ARTIST") ||\
-				eLoopUnit == GC.getInfoTypeForString("UNIT_MUSICIAN") ||\
-				eLoopUnit == GC.getInfoTypeForString("UNIT_MERCHANT") ||\
-				eLoopUnit == GC.getInfoTypeForString("UNIT_ENGINEER") ||\
-				eLoopUnit == GC.getInfoTypeForString("UNIT_SCIENTIST") ||\
+			if(eLoopUnit == GC.getInfoTypeForString("UNIT_WRITER") ||
+				eLoopUnit == GC.getInfoTypeForString("UNIT_ARTIST") ||
+				eLoopUnit == GC.getInfoTypeForString("UNIT_MUSICIAN") ||
+				eLoopUnit == GC.getInfoTypeForString("UNIT_MERCHANT") ||
+				eLoopUnit == GC.getInfoTypeForString("UNIT_ENGINEER") ||
+				eLoopUnit == GC.getInfoTypeForString("UNIT_SCIENTIST") ||
 				eLoopUnit == GC.getInfoTypeForString("UNIT_GREAT_GENERAL"))
 #else
 			if(!pkUnitEntry->IsFoundReligion())
@@ -17771,52 +17771,6 @@ void CvPlayer::DoSpawnGreatPerson(PlayerTypes eMinor)
 				addFreeUnit((UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST"));
 			}
 #endif
-			// Bump up the count
-			/* NQMP GJS: Actually don't bump up the count lolz ... patronage finisher now gives free Great People :)
-			if(pNewGreatPeople->IsGreatGeneral())
-			{
-				incrementGreatGeneralsCreated();
-			}
-			else if(pNewGreatPeople->IsGreatAdmiral())
-			{
-				incrementGreatAdmiralsCreated();
-			}
-			else if (pNewGreatPeople->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
-			{
-				incrementGreatWritersCreated();
-			}							
-			else if (pNewGreatPeople->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
-			{
-				incrementGreatArtistsCreated();
-			}							
-			else if (pNewGreatPeople->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
-			{
-				incrementGreatMusiciansCreated();
-			}
-			// GJS: begin separation of great people
-			else if (pNewGreatPeople->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
-			{
-				incrementGreatScientistsCreated();
-			}							
-			else if (pNewGreatPeople->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
-			{
-				incrementGreatEngineersCreated();
-			}							
-			else if (pNewGreatPeople->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
-			{
-				incrementGreatMerchantsCreated();
-			}
-			else if (pNewGreatPeople->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
-			{
-				incrementGreatProphetsCreated();
-			}
-			// GJS: end separation of great people
-			else
-			{
-				incrementGreatPeopleCreated();
-			}
-			*/
-
 			if (pNewGreatPeople->IsGreatAdmiral())
 			{
 				CvPlot* pSpawnPlot = GetGreatAdmiralSpawnPlot(pNewGreatPeople);

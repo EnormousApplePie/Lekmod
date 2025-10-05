@@ -1548,9 +1548,9 @@ function OnCityViewUpdate()
 		
 		if (pCity:GetResourceDemanded(true) ~= -1) then
 			local pResourceInfo = GameInfo.Resources[pCity:GetResourceDemanded()];
-			szResourceDemanded = Locale.ConvertTextKey(pResourceInfo.IconString) .. " " .. Locale.ConvertTextKey(pResourceInfo.Description);
+			local iResourceDemandedTimer = pCity:GetResourceDemandedCountdown();
+			szResourceDemanded = Locale.ConvertTextKey(pResourceInfo.IconString) .. " " .. Locale.ConvertTextKey(pResourceInfo.Description) .. " (" .. iResourceDemandedTimer .. ")";
 			Controls.ResourceDemandedBox:SetHide(false);
-			
 		else
 			Controls.ResourceDemandedBox:SetHide(true);
 		end

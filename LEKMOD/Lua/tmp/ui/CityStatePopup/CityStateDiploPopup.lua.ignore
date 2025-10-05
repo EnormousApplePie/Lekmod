@@ -619,12 +619,12 @@ function OnDisplay()
 	SetButtonSize(Controls.BuyoutLabel, Controls.BuyoutButton, Controls.BuyoutAnim, Controls.BuyoutButtonHL);
 	
 	-- NEW: stay at the current menu level, update visible buttons 
-	if isAtWar == false and bActiveGiveScreen == true then
+	if bWar == false and bActiveGiveScreen == true then
 		PopulateGiftChoices()
 		Controls.GiveStack:SetHide(false)
 		Controls.TakeStack:SetHide(true)
 		Controls.ButtonStack:SetHide(true)
-	elseif isAtWar == false and bActiveTakeScreen == true then
+	elseif bWar == false and bActiveTakeScreen == true then
 		PopulateTakeChoices()
 		Controls.GiveStack:SetHide(true)
 		Controls.TakeStack:SetHide(false)
