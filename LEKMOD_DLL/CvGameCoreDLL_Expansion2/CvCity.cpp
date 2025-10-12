@@ -2872,6 +2872,29 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	if(!bTestVisible)
 	{
 		CvUnitEntry& thisUnitInfo = *pkUnitEntry;
+#ifdef LEKMOD_CUSTOM_SETTLERS
+		// Check population requirement for all units
+		if(thisUnitInfo.GetPopulationReq() > 0)
+		{
+			if(getPopulation() < thisUnitInfo.GetPopulationReq())
+			{
+				GC.getGame().BuildCannotPerformActionHelpText(toolTipSink, "TXT_KEY_NO_ACTION_UNIT_SIZE_LIMIT", "", "", thisUnitInfo.GetPopulationReq());
+				if(toolTipSink == NULL)
+					return false;
+			}
+		}
+		// Legacy settler population check (for units without PopulationReq set)
+		else if(thisUnitInfo.IsFound() || thisUnitInfo.IsFoundAbroad())
+		{
+			int iSizeRequirement = /*2*/ GC.getCITY_MIN_SIZE_FOR_SETTLERS();
+			if(getPopulation() < iSizeRequirement)
+			{
+				GC.getGame().BuildCannotPerformActionHelpText(toolTipSink, "TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT", "", "", iSizeRequirement);
+				if(toolTipSink == NULL)
+					return false;
+			}
+		}
+#else
 		// Settlers may not be trained in Cities that are too small
 		if(thisUnitInfo.IsFound() || thisUnitInfo.IsFoundAbroad())
 		{
@@ -2883,6 +2906,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 					return false;
 			}
 		}
+#endif
 
 		// See if there are any BuildingClass requirements
 #ifndef AUI_WARNING_FIXES
@@ -15730,6 +15754,15 @@ int CvCity::CreateUnit(UnitTypes eUnitType, UnitAITypes eAIType, bool bUseToSati
 	if (GC.getUnitInfo(eUnitType)->GetUnitCombatType() != NO_UNITCOMBAT)
 	{
 		thisPlayer.ChangeNumTrainedUnits(1);
+	}
+#endif
+
+#ifdef LEKMOD_CUSTOM_SETTLERS
+	// Apply local population change when unit is created
+	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnitType);
+	if(pkUnitInfo && pkUnitInfo->GetLocalPopChange() != 0)
+	{
+		changePopulation(pkUnitInfo->GetLocalPopChange());
 	}
 #endif
 

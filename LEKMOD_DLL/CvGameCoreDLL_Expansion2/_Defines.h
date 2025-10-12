@@ -1131,6 +1131,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_SUBMARINE_ATTACK_CHANGES
 // Export the WLTKD count down for UI purposes.
 #define LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA
+// Custom settler system - allows PopulationReq, SettlerCostModifier, and localPopChange fields in Units table for flexible unit requirements and effects
+#define LEKMOD_CUSTOM_SETTLERS
 
 
 // Generic define for temp changes

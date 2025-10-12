@@ -229,6 +229,11 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_bPillage = kResults.GetBool("Pillage");
 	m_bFound = kResults.GetBool("Found");
 	m_bFoundAbroad = kResults.GetBool("FoundAbroad");
+#ifdef LEKMOD_CUSTOM_SETTLERS
+	m_iPopulationReq = kResults.GetInt("PopulationReq");
+	m_iSettlerCostModifier = kResults.GetInt("SettlerCostModifier");
+	m_iLocalPopChange = kResults.GetInt("LocalPopChange");
+#endif
 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
 	m_iGoldenAgeTurns = kResults.GetInt("GoldenAgeTurns");
 	m_iFreePolicies = kResults.GetInt("FreePolicies");
@@ -907,6 +912,26 @@ bool CvUnitEntry::IsFoundAbroad() const
 {
 	return m_bFoundAbroad;
 }
+
+#ifdef LEKMOD_CUSTOM_SETTLERS
+/// Minimum population required to train this unit
+int CvUnitEntry::GetPopulationReq() const
+{
+	return m_iPopulationReq;
+}
+
+/// Settler-specific cost modifier (percentage)
+int CvUnitEntry::GetSettlerCostModifier() const
+{
+	return m_iSettlerCostModifier;
+}
+
+/// Local population change when this unit is built
+int CvUnitEntry::GetLocalPopChange() const
+{
+	return m_iLocalPopChange;
+}
+#endif
 
 /// Distance this unit steals
 int CvUnitEntry::GetCultureBombRadius() const

@@ -9817,6 +9817,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 		return 0;
 
 	int iProductionNeeded = pkUnitEntry->GetProductionCost();
+	
 	iProductionNeeded *= 100 + getUnitClassCount(eUnitClass) * pkUnitClassInfo->getInstanceCostModifier();
 	iProductionNeeded /= 100;
 
@@ -9853,6 +9854,15 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 	}
 
 	iProductionNeeded += getUnitExtraCost(eUnitClass);
+
+#ifdef LEKMOD_CUSTOM_SETTLERS
+	// Apply unit-specific settler cost modifier after all other cost calculations
+	if(pkUnitEntry->IsFound() && pkUnitEntry->GetSettlerCostModifier() != 0)
+	{
+		iProductionNeeded *= 100 + pkUnitEntry->GetSettlerCostModifier();
+		iProductionNeeded /= 100;
+	}
+#endif
 
 #ifdef NQ_UNIT_FINAL_PRODUCTION_COST_MODIFIER
 	iProductionNeeded *= (100 + pkUnitEntry->GetFinalProductionCostModifier());
