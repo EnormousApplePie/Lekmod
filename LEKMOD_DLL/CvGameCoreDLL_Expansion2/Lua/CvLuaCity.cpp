@@ -99,6 +99,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetProductionNameKey);
 	Method(GetGeneralProductionTurnsLeft);
 	Method(IsFoodProduction);
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
+	Method(GetFoodProduction);
+#endif
 	Method(GetFirstUnitOrder);
 	Method(GetFirstProjectOrder);
 	Method(GetFirstSpecialistOrder);
@@ -1190,6 +1193,14 @@ int CvLuaCity::lIsFoodProduction(lua_State* L)
 	lua_pushboolean(L, iResult);
 	return 1;
 }
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
+//------------------------------------------------------------------------------
+//int GetFoodProduction(int iExcessFood);
+int CvLuaCity::lGetFoodProduction(lua_State* L)
+{
+	return BasicLuaMethod<int, int>(L, &CvCity::GetFoodProduction);
+}
+#endif
 //------------------------------------------------------------------------------
 //int getFirstUnitOrder(UnitTypes eUnit);
 int CvLuaCity::lGetFirstUnitOrder(lua_State* L)

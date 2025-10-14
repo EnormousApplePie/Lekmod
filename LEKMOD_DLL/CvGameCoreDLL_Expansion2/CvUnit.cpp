@@ -5266,12 +5266,8 @@ bool CvUnit::canRetrain(const CvPlot* pPlot, bool bTestVisible) const
 	{
 		return false;
 	}
+
 	UnitTypes eUpgradeUnitType = GetUpgradeUnitType();
-
-	// Does the Unit actually upgrade into anything?
-	if (eUpgradeUnitType == NO_UNIT)
-		return false;
-
 	CvUnitEntry* pUpgradeUnitInfo = GC.getUnitInfo(eUpgradeUnitType);
 	if (pUpgradeUnitInfo != NULL)
 	{
@@ -5323,7 +5319,8 @@ void CvUnit::retrain()
 	setLevel((iLevel - iSelectedPromotions)); // Set Level down by number of Chosen Promos
 	changeExperience(15 * (iSelectedPromotions - 1)); // Gain 15 XP per Chosen Promo minus 1
 	setNumPlayerChosenPromotions(0); // Reset Chosen Promos
-	setInstaHealLocked(true); // prevemt instaheal
+	setInstaHealLocked(true); // prevent instaheal
+	testPromotionReady(); // Allow player to choose Promotions now.
 	setMoves(0); // Use up all Moves
 }
 int CvUnit::getNumPlayerChosenPromotions() const

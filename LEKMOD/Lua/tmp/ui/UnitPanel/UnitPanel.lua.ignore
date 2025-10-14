@@ -1158,11 +1158,12 @@ function TipHandler( control )
     	end
 
 		local iNumRefundedPromotions = unit:GetNumPlayerChosenPromotions() or 0
+		local iRemovedXP = 15 * math.max(0, iNumRefundedPromotions)
     	local iRefundedXP = 15 * math.max(0, iNumRefundedPromotions - 1)
     	local iNewUnitLevel = unit:GetLevel() - iNumRefundedPromotions
     	if iNewUnitLevel < 1 then iNewUnitLevel = 1 end
 
-		strActionHelp = strActionHelp .. Locale.ConvertTextKey("TXT_KEY_MISSION_RETRAIN_HELP", iRefundedXP, iNewUnitLevel, iRetrainCost);
+		strActionHelp = strActionHelp .. Locale.ConvertTextKey("TXT_KEY_MISSION_RETRAIN_HELP", iRemovedXP, iRefundedXP, iNewUnitLevel, iRetrainCost);
 
 		strToolTip = strToolTip .. strActionHelp;
 		if bDisabled then

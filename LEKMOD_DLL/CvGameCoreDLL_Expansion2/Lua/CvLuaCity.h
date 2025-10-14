@@ -102,6 +102,9 @@ protected:
 	static int lGetProductionNameKey(lua_State* L);
 	static int lGetGeneralProductionTurnsLeft(lua_State* L);
 	static int lIsFoodProduction(lua_State* L);
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
+	static int lGetFoodProduction(lua_State* L);
+#endif
 	static int lGetFirstUnitOrder(lua_State* L);
 	static int lGetFirstProjectOrder(lua_State* L);
 	static int lGetFirstSpecialistOrder(lua_State* L);
