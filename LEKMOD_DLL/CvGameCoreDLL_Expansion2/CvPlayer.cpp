@@ -13159,7 +13159,7 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 			}
 			if (pAttackingUnit != NULL)
 			{
-				const EraTypes eKilledUnitEra = (EraTypes)pkKilledUnitInfo->GetEra();
+			    EraTypes eKilledUnitEra = (EraTypes)pkKilledUnitInfo->GetEra();
 				bool bValid = pAttackingUnit->IsKillYieldEraValid(eKilledUnitEra);
 				if(bValid)
 				{

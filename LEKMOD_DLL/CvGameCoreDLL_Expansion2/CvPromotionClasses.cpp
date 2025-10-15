@@ -1764,11 +1764,11 @@ int CvPromotionEntry::GetKillYieldCap(int i) const
 	}
 	return 0;
 }
-bool CvPromotionEntry::IsKillYieldValid(int i) const
+bool CvPromotionEntry::IsKillYieldEraValid(int i) const
 {
-	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i < GC.getNumEraInfos(), "Index out of bounds");
 	CvAssertMsg(i > -1, "Index out of bounds");
-	if (i > -1 && i < NUM_YIELD_TYPES && m_pabKillYieldValidEra)
+	if (i > -1 && i < GC.getNumEraInfos() && m_pabKillYieldValidEra)
 	{
 		return m_pabKillYieldValidEra[i];
 	}

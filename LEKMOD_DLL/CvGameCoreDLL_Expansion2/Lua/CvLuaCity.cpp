@@ -511,6 +511,11 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 #if defined(LEKMOD_v34)
 	Method(GetPlotValue);
 #endif
+#if defined(RELIGION_PRESSURE_LUA)
+	Method(GetReligionPressure);
+	Method(GetTotalReligionPressure);
+	Method(GetPressurePerFollower);
+#endif
 }
 //------------------------------------------------------------------------------
 void CvLuaCity::HandleMissingInstance(lua_State* L)
@@ -4243,6 +4248,56 @@ int CvLuaCity::lGetPlotValue(lua_State* L)
 	const bool bUseAllowGrowthFlag = lua_toboolean(L, 3);
 	const int iValue = pkCity->GetCityCitizens()->GetPlotValue(pPlot, bUseAllowGrowthFlag);
 	lua_pushinteger(L, iValue);
+	return 1;
+}
+#endif
+#if defined(RELIGION_PRESSURE_LUA)
+//------------------------------------------------------------------------------
+// int City:GetReligionPressure(int religionID)
+int CvLuaCity::lGetReligionPressure(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const ReligionTypes eReligion = (ReligionTypes)luaL_checkint(L, 2);
+	int iPressure = 0;
+
+	if (pkCity && eReligion >= NO_RELIGION)
+	{
+		iPressure = pkCity->GetCityReligions()->GetPressure(eReligion);
+	}
+
+	lua_pushinteger(L, iPressure);
+	return 1;
+}
+//------------------------------------------------------------------------------
+// int City:GetTotalReligionPressure()
+int CvLuaCity::lGetTotalReligionPressure(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	int iTotal = 0;
+
+	if (pkCity)
+	{
+		iTotal = pkCity->GetCityReligions()->GetTotalPressure();
+	}
+
+	lua_pushinteger(L, iTotal);
+	return 1;
+}
+//------------------------------------------------------------------------------
+// int City:GetPressurePerFollower()
+int CvLuaCity::lGetPressurePerFollower(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	int iResult = 0;
+
+	if (pkCity)
+	{
+		const int iPop = pkCity->getPopulation();
+		const int iTotal = pkCity->GetCityReligions()->GetTotalPressure();
+		iResult = iTotal / iPop;
+	}
+
+	lua_pushinteger(L, iResult);
 	return 1;
 }
 #endif

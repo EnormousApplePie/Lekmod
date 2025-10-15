@@ -21437,7 +21437,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		}
 		for (iI = 0; iI < GC.getNumEraInfos(); iI++)
 		{
-			SetKillYieldEraValid((EraTypes)iI, ((thisPromotion.IsKillYieldValid(iI)) ? iChange : 0));
+			SetKillYieldEraValid((EraTypes)iI, ((thisPromotion.IsKillYieldEraValid(iI)) ? iChange : 0));
 		}
 #endif
 		for(iI = 0; iI < GC.getNumTerrainInfos(); iI++)

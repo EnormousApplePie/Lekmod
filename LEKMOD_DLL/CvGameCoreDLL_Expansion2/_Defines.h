@@ -1135,7 +1135,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_FOODPRODUCTION_LUA
 // Custom settler system - allows PopulationReq, SettlerCostModifier, and localPopChange fields in Units table for flexible unit requirements and effects
 #define LEKMOD_CUSTOM_SETTLERS
-
+// Export Pressure Values for cities
+#define RELIGION_PRESSURE_LUA
 
 // Generic define for temp changes
 #define CLEAN_UP

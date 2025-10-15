@@ -405,7 +405,12 @@ local function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 	-- Settler Specifics
 	tips:insertLocalizedIf( unit.Food and "TXT_KEY_CITYVIEW_STAGNATION_TEXT" ) -- build using food / stop city growth
 	if unit.Found or unit.FoundAbroad then
+		if unit.PopulationReq <= 0 then -- Custom Population Req, not hardcoded :) so skip the hardcoded blurb
 		tips:append( L("TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT", GameDefines.CITY_MIN_SIZE_FOR_SETTLERS) )
+	end
+	end
+	if unit.PopulationReq > 0 then 
+		tips:append( L("TXT_KEY_NO_ACTION_UNIT_SIZE_LIMIT", unit.PopulationReq, unit.Description) )
 	end
 
 	-- Civilization:

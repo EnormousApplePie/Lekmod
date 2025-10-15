@@ -522,6 +522,11 @@ protected:
 #if defined(LEKMOD_v34)
 	static int lGetPlotValue(lua_State* L);
 #endif
+#if defined(RELIGION_PRESSURE_LUA)
+	static int lGetReligionPressure(lua_State* L);
+	static int lGetTotalReligionPressure(lua_State* L);
+	static int lGetPressurePerFollower(lua_State* L);
+#endif
 };
 
 #endif //CVLUACITY_H
