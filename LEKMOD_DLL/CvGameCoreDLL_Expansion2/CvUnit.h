@@ -1165,6 +1165,8 @@ public:
 	void ChangeYieldFromKills(YieldTypes eYield, int iChange);
 	int GetKillYieldCap(YieldTypes eYield) const;
 	void ChangeKillYieldCap(YieldTypes eYield, int iChange);
+	bool IsKillYieldEraValid(EraTypes eEra) const;
+	void SetKillYieldEraValid(EraTypes eEra, bool bValid);
 #endif
 	int getTerrainDoubleMoveCount(TerrainTypes eIndex) const;
 	bool isTerrainDoubleMove(TerrainTypes eIndex) const;
@@ -1652,6 +1654,7 @@ protected:
 #if defined(FULL_YIELD_FROM_KILLS)
 	FAutoVariable<std::vector<int>, CvUnit> m_iYieldFromKills;
 	FAutoVariable<std::vector<int>, CvUnit> m_iKillYieldCap;
+	FAutoVariable<std::vector<bool>, CvUnit> m_bKillYieldEraValid;
 #endif
 	FAutoVariable<std::vector<int>, CvUnit> m_terrainDoubleMoveCount;
 	FAutoVariable<std::vector<int>, CvUnit> m_featureDoubleMoveCount;

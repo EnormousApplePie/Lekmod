@@ -178,6 +178,7 @@ CvPromotionEntry::CvPromotionEntry():
 #if defined(FULL_YIELD_FROM_KILLS)
 	m_paiYieldFromKills(NULL),
 	m_paiKillYieldCap(NULL),
+	m_pabKillYieldValidEra(NULL),
 #endif
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
 	m_paiConvertPromotionUpgrades(NULL),
@@ -209,6 +210,7 @@ CvPromotionEntry::~CvPromotionEntry(void)
 #if defined(FULL_YIELD_FROM_KILLS)
 	SAFE_DELETE_ARRAY(m_paiYieldFromKills);
 	SAFE_DELETE_ARRAY(m_paiKillYieldCap);
+	SAFE_DELETE_ARRAY(m_pabKillYieldValidEra);
 #endif
 #if defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 	m_vPromotionPrereqOrs.clear();
@@ -449,6 +451,27 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	const char* szPromotionType = GetType();
 
 #if defined(FULL_YIELD_FROM_KILLS)
+	{
+		kUtility.InitializeArray(m_pabKillYieldValidEra, "Eras", false);
+		std::string sqlKey = "UnitPromotions_KillYieldValidEras";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL =
+				"SELECT Eras.ID "
+				"FROM UnitPromotions_KillYieldValidEras "
+				"INNER JOIN Eras ON Eras.Type = EraType "
+				"WHERE PromotionType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+		pResults->Bind(1, szPromotionType);
+		while (pResults->Step())
+		{
+			const int iEraID = pResults->GetInt(0);
+			m_pabKillYieldValidEra[iEraID] = true;
+		}
+		pResults->Reset();
+	}
 	{
 		kUtility.InitializeArray(m_paiYieldFromKills, "Yields", 0);
 		kUtility.InitializeArray(m_paiKillYieldCap, "Yields", 0);
@@ -1740,6 +1763,16 @@ int CvPromotionEntry::GetKillYieldCap(int i) const
 		return m_paiKillYieldCap[i];
 	}
 	return 0;
+}
+bool CvPromotionEntry::IsKillYieldValid(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	if (i > -1 && i < NUM_YIELD_TYPES && m_pabKillYieldValidEra)
+	{
+		return m_pabKillYieldValidEra[i];
+	}
+	return false;
 }
 #endif
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)

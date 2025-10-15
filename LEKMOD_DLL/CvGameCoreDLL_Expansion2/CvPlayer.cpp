@@ -13158,7 +13158,14 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 					iUnitValue += pkAttackingUnitInfo->GetYieldFromKills(eYield); // This is Unit_YieldFromKills
 			}
 			if (pAttackingUnit != NULL)
-				iPromotionValue += pAttackingUnit->GetYieldFromKills(eYield); // This is UnitPromotions_YieldFromKills
+			{
+				const EraTypes eKilledUnitEra = (EraTypes)pkKilledUnitInfo->GetEra();
+				bool bValid = pAttackingUnit->IsKillYieldEraValid(eKilledUnitEra);
+				if(bValid)
+				{
+					iPromotionValue += pAttackingUnit->GetYieldFromKills(eYield); // This is UnitPromotions_YieldFromKills
+				}
+			}
 
 			int iPolicyCap = GC.getPOLICY_YIELD_CAP();
 			int iTraitCap = GC.getTRAIT_YIELD_CAP();
@@ -13173,7 +13180,7 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 			int iUnitCap = GC.getUNIT_YIELD_CAP();
 			// Ok so EAP has requested a different System. 
 			// NQMP GJS - Cap Yields from kills to 30 per type (policy/trait/belief/other)
-			// Expanding on GJS's cap. Make them Global Integers, and use them to cap the values. Set to -1 to do Uncapped values.
+			// Expanding on GJS's cap. Make them Global Integers, and use them to cap the values. 
 			if (iPolicyCap > 0)
 				iPolicyValue = min((iPolicyValue * iCombatStrength) / 100, iPolicyCap);
 			else 

@@ -8468,11 +8468,6 @@ void CvGame::doTurn()
 	}
 #endif
 
-#ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
-#ifdef LEKMOD_v34 // Process deals after happiness is applied.
-	m_kGameDeals.DoTurn();
-#endif
-#endif
 
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 	// Victory stuff
@@ -8595,8 +8590,14 @@ void CvGame::doTurn()
 				GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
 #endif
 			}
+#ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+#ifdef LEKMOD_v34 // Process deals after happiness is applied.
+			m_kGameDeals.DoTurn();
+#endif
+#endif
 		}
 	}
+
 
 	LogGameState();
 #ifndef AUTOSAVE_END_OF_TURN
@@ -9531,6 +9532,11 @@ void CvGame::updateMoves()
 					player.setTurnActive(true);
 				}
 			}
+#ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+#ifdef LEKMOD_v34 // Process deals after the player's turns are activated
+			m_kGameDeals.DoTurn();
+#endif
+#endif
 		}
 	}
 }

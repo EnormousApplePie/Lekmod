@@ -1120,7 +1120,7 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Yield Increase based on Era
 #define LEKMOD_ERA_ENHANCED_YIELDS
 // New Unit Mission "Submerge" and "Surface"
-#define LEKMOD_SUBMERGE_MISSION
+//#define LEKMOD_SUBMERGE_MISSION
 // New Unit Mission "Retrain"
 #define LEKMOD_RETRAIN_MISSION
 // Ban specific UnitMissions based on Trait

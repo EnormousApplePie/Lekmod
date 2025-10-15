@@ -334,6 +334,7 @@ CvUnit::CvUnit() :
 #if defined(FULL_YIELD_FROM_KILLS)
 	, m_iYieldFromKills("CvUnit::m_iYieldFromKills", m_syncArchive)
 	, m_iKillYieldCap("CvUnit::m_iKillYieldCap", m_syncArchive)
+	, m_bKillYieldEraValid("CvUnit::m_bKillYieldEraValid", m_syncArchive)
 #endif
 	, m_terrainDoubleMoveCount("CvUnit::m_terrainDoubleMoveCount", m_syncArchive)
 	, m_featureDoubleMoveCount("CvUnit::m_featureDoubleMoveCount", m_syncArchive)
@@ -1235,6 +1236,12 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 		{
 			m_iYieldFromKills.setAt(i, 0);
 			m_iKillYieldCap.setAt(i, 0);
+		}
+		m_bKillYieldEraValid.clear();
+		m_bKillYieldEraValid.resize(GC.getNumEraInfos());
+		for (int i = 0; i < GC.getNumEraInfos(); i++)
+		{
+			m_bKillYieldEraValid.setAt(i, false);
 		}
 #endif
 
@@ -9641,7 +9648,11 @@ bool CvUnit::canBuyCityState(const CvPlot* pPlot, bool bTestVisible) const
 			// We can't buy out a city-state if someone other than us has been its ally recently 
 			CvMinorCivAI* pMinor = GET_PLAYER(pPlot->getOwner()).GetMinorCivAI();
 			if(!pMinor)
+				return false; 
+			if (pMinor->GetAlly() != NO_PLAYER && pMinor->GetAlly() != getOwner())
+			{
 				return false;
+			}
 			for (int iPlayer = 0; iPlayer < MAX_MAJOR_CIVS; iPlayer++)
 			{
 				const PlayerTypes eLoopPlayer = (PlayerTypes)iPlayer;
@@ -20677,6 +20688,20 @@ void CvUnit::ChangeKillYieldCap(YieldTypes eYield, int iChange)
 	m_iKillYieldCap.setAt(eYield, m_iKillYieldCap[eYield] + iChange);
 	CvAssert(GetKillYieldCap(eYield) >= 0);
 }
+bool CvUnit::IsKillYieldEraValid(EraTypes eEra) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eEra >= 0, "eEra is expected to be non-negative (invalid Era)");
+	CvAssertMsg(eEra < GC.getNumEraInfos(), "eEra is expected to be within maximum bounds (invalid Era)");
+	return m_bKillYieldEraValid[eEra];
+}
+void CvUnit::SetKillYieldEraValid(EraTypes eEra, bool bValid)
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eEra >= 0, "eEra is expected to be non-negative (invalid Era)");
+	CvAssertMsg(eEra < GC.getNumEraInfos(), "eEra is expected to be within maximum bounds (invalid Era)");
+	m_bKillYieldEraValid.setAt(eEra, bValid);
+}
 #endif
 //	--------------------------------------------------------------------------------
 int CvUnit::getTerrainDoubleMoveCount(TerrainTypes eIndex) const
@@ -21409,6 +21434,10 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		{
 			ChangeYieldFromKills((YieldTypes)iI, (thisPromotion.GetYieldFromKills(iI) * iChange));
 			ChangeKillYieldCap((YieldTypes)iI, (thisPromotion.GetKillYieldCap(iI) * iChange));
+		}
+		for (iI = 0; iI < GC.getNumEraInfos(); iI++)
+		{
+			SetKillYieldEraValid((EraTypes)iI, ((thisPromotion.IsKillYieldValid(iI)) ? iChange : 0));
 		}
 #endif
 		for(iI = 0; iI < GC.getNumTerrainInfos(); iI++)
