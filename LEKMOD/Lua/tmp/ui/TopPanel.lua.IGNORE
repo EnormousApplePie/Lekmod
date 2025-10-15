@@ -133,6 +133,7 @@ function UpdateData()
 					-- Transformed into a TXT_KEY with 3 parameters 1_GoldenAgeProgress 2_GoldenAgeThreshold and 3_GoldenAgePointsPerTurn GoldenAgePointsPerTurn changes color if it is negative
 					strGoldenAgeStr = Locale.ConvertTextKey("TXT_KEY_TOP_PANEL_GOLDEN_AGE", iGoldenAgeProgress, iGoldenAgeThreshold, iTotalGoldenAgePointsPerTurn);
 				end	
+				strGoldenAgeStr = "[ICON_GOLDEN_AGE]" .. strGoldenAgeStr;
 			end
 			
 			Controls.GoldenAgeString:SetText(strGoldenAgeStr);
