@@ -11612,12 +11612,13 @@ void CvUnit::ConvertPromotions(CvUnit* pOldUnit, CvUnit* pNewUnit)
 			if (iNewPromo != NO_PROMOTION)
 			{
 				const PromotionTypes eNewPromotion = (PromotionTypes)iNewPromo;
-				if (pNewUnit->canAcquirePromotion(eNewPromotion))
+				if (pOldUnit->IsPromotionChosenByPlayer(eLoopPromotion)) //  Did player choose this promo on the old unit?
 				{
-					pNewUnit->setHasPromotion(eNewPromotion, true);
-					// If the old unit had a promotion that is replaced by this one, remove it
-					pNewUnit->setHasPromotion(eLoopPromotion, false);
+					pNewUnit->SetPromotionChosenByPlayer(eLoopPromotion, false); // Clear it on the new unit, since we are changing it.
+					pNewUnit->SetPromotionChosenByPlayer(eNewPromotion, true); // Set the new promo as chosen by player.
 				}
+				pNewUnit->setHasPromotion(eNewPromotion, true); // Shiny eNewPromotion
+				pNewUnit->setHasPromotion(eLoopPromotion, false); // Dusty old eLoopPromotion
 			}
 		}
 	}
