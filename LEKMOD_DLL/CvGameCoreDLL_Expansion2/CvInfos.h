@@ -1438,7 +1438,9 @@ public:
 #endif
 
 	int getResourceQuantityType(int i) const;
-
+#if defined(CLEAN_UP)
+	int getResourceTradeRouteYieldBonusTimes100(int i) const;
+#endif
 	bool isTerrain(int i) const;
 	bool isFeature(int i) const;
 	bool isFeatureTerrain(int i) const;
@@ -1503,7 +1505,9 @@ protected:
 	int* m_piResourceQuantityTypes;
 	int* m_piImprovementChange;
 	int* m_piFlavor;
-
+#if defined(CLEAN_UP)
+	int* m_piResourceTradeRouteYieldBonus;
+#endif
 	bool* m_pbTerrain;
 	bool* m_pbFeature;
 	bool* m_pbFeatureTerrain;

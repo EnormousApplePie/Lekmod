@@ -4484,6 +4484,9 @@ CvResourceInfo::CvResourceInfo() :
 	m_piResourceQuantityTypes(NULL),
 	m_piFlavor(NULL),
 	m_piImprovementChange(NULL),
+#if defined(CLEAN_UP)
+	m_piResourceTradeRouteYieldBonus(NULL),
+#endif
 	m_pbTerrain(NULL),
 	m_pbFeature(NULL),
 	m_pbFeatureTerrain(NULL)
@@ -4500,6 +4503,9 @@ CvResourceInfo::~CvResourceInfo()
 	SAFE_DELETE_ARRAY(m_piResourceQuantityTypes);
 	SAFE_DELETE_ARRAY(m_piFlavor);
 	SAFE_DELETE_ARRAY(m_piImprovementChange);
+#if defined(CLEAN_UP)
+	SAFE_DELETE_ARRAY(m_piResourceTradeRouteYieldBonus);
+#endif
 	SAFE_DELETE_ARRAY(m_pbTerrain);
 	SAFE_DELETE_ARRAY(m_pbFeature);
 	SAFE_DELETE_ARRAY(m_pbFeatureTerrain);	// free memory - MT
@@ -4881,6 +4887,14 @@ int CvResourceInfo::getImprovementChange(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piImprovementChange ? m_piImprovementChange[i] : -1;
 }
+#if defined(CLEAN_UP)
+int CvResourceInfo::getResourceTradeRouteYieldBonusTimes100(int i) const
+{
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_piResourceTradeRouteYieldBonus ? m_piResourceTradeRouteYieldBonus[i]: 0;
+}
+#endif
 //------------------------------------------------------------------------------
 bool CvResourceInfo::isTerrain(int i) const
 {
@@ -4997,7 +5011,29 @@ bool CvResourceInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility
 	kUtility.PopulateArrayByExistence(m_pbTerrain, "Terrains", "Resource_TerrainBooleans", "TerrainType", "ResourceType", szResourceType);
 	kUtility.PopulateArrayByExistence(m_pbFeature, "Features", "Resource_FeatureBooleans", "FeatureType", "ResourceType", szResourceType);
 	kUtility.PopulateArrayByExistence(m_pbFeatureTerrain, "Terrains", "Resource_FeatureTerrainBooleans", "TerrainType", "ResourceType", szResourceType);
-
+#if defined(CLEAN_UP)
+	{
+		kUtility.InitializeArray(m_piResourceTradeRouteYieldBonus, NUM_YIELD_TYPES, 0);
+		std::string sqlKey = "Resource_TradeRouteYieldBonus";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL = 
+				"SELECT Yields.ID AS YieldID, YieldTimes100 FROM Resource_TradeRouteYieldBonus "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE ResourceType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+		pResults->Bind(1, szResourceType);
+		while (pResults->Step())
+		{
+			const int YieldID = pResults->GetInt(0);
+			const int YieldTimes100 = pResults->GetInt(1);
+			m_piResourceTradeRouteYieldBonus[YieldID] = YieldTimes100;
+		}
+		pResults->Reset();
+	}
+#endif
 	//Resource_QuantityTypes
 	{
 		const int iNumQuantityTypes = GC.getNUM_RESOURCE_QUANTITY_TYPES();
