@@ -2331,15 +2331,9 @@ void CvPlayerTrade::MoveUnits (void)
 		}
 	}
 }
-
-//	--------------------------------------------------------------------------------
-#ifdef AUI_CONSTIFY
-int CvPlayerTrade::GetTradeConnectionBaseValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer) const
-#else
-int CvPlayerTrade::GetTradeConnectionBaseValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
-#endif
-{
 #if defined(CLEAN_UP)
+int CvPlayerTrade::GetTradeConnectionBaseValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
 	int iResult = 0;
 	int iBase = 0;
 	if ((GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection))) // International Trade
@@ -2414,7 +2408,7 @@ int CvPlayerTrade::GetTradeConnectionBaseValueTimes100(const TradeConnection& kT
 				break;
 			case YIELD_PRODUCTION:
 #if defined(MISC_CHANGES)
-				iBase = GC.getINTERNAL_TRADE_PRODUCTION_BASE_TIMES100(/*300*/); 
+				iBase = GC.getINTERNAL_TRADE_PRODUCTION_BASE_TIMES100(/*300*/);
 #else
 				iBase = 300;
 #endif
@@ -2428,7 +2422,199 @@ int CvPlayerTrade::GetTradeConnectionBaseValueTimes100(const TradeConnection& kT
 		}
 	}
 	return iResult;
+}
+int CvPlayerTrade::GetTradeConnectionGPTValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer, bool bOriginCity)
+{
+	if (eYield != YIELD_GOLD)
+		return 0;
+	if (bAsOriginPlayer)
+	{
+		if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection))
+		{
+			int iX, iY;
+			iX = (bOriginCity) ? kTradeConnection.m_iOriginX : kTradeConnection.m_iDestX;
+			iY = (bOriginCity) ? kTradeConnection.m_iOriginY : kTradeConnection.m_iDestY;
+			CvPlot* pPlot = GC.getMap().plot(iX, iY);
+			CvAssertMsg(pPlot, "CvPlayerTrade - plot is null");
+			if (!pPlot)
+				return 0;
+			CvCity* pCity = pPlot->getPlotCity();
+			CvAssertMsg(pCity, "CvPlayerTrade - pCity is null");
+			if (!pCity)
+				return 0;
+			int iDivisor = GC.getINTERNATIONAL_TRADE_CITY_GPT_DIVISOR(/*20*/);
+			if (iDivisor == 0)
+				iDivisor = 1;
+			return pCity->getYieldRateTimes100(eYield, true) / iDivisor;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+int CvPlayerTrade::GetTradeConnectionResourceValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+	CvPlot* pOriginPlot = GC.getMap().plot(kTradeConnection.m_iOriginX, kTradeConnection.m_iOriginY);
+	CvPlot* pDestPlot = GC.getMap().plot(kTradeConnection.m_iDestX, kTradeConnection.m_iDestY);
+	CvAssertMsg(pOriginPlot && pDestPlot, "pOriginPlot or pDestPlot are null");
+	if (!pOriginPlot || !pDestPlot)
+		return 0;
+	CvCity* pOriginCity = pOriginPlot->getPlotCity();
+	CvCity* pDestCity = pDestPlot->getPlotCity();
+	CvAssertMsg(pOriginCity && pDestCity, "pOriginCity or pDestCity are null");
+	if (!pOriginCity || !pDestCity)
+		return 0;
+	int iValue = 0;
+	if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection)) // International Trade
+	{
+		if (bAsOriginPlayer) // Origin City
+		{
+			for (int i = 0; i < GC.getNumResourceInfos(); i++)
+			{
+				ResourceTypes eResource = (ResourceTypes)i;
+				const CvResourceInfo* pkResourceInfo = GC.getResourceInfo(eResource);
+				if (pkResourceInfo)
+				{
+					if (pOriginCity->IsHasResourceLocal(eResource, false) != pDestCity->IsHasResourceLocal(eResource, false))
+						iValue += pkResourceInfo->getResourceTradeRouteYieldBonusTimes100(eYield);
+				}
+			}
+			int iModifer = 100 + GET_PLAYER(kTradeConnection.m_eOriginOwner).GetPlayerTraits()->GetTradeRouteResourceModifier();
+			iValue *= iModifer;
+			iValue /= 100;
+
+			return iValue;
+		}
+		else // Destination City
+		{
+			return 0;
+		}
+	}
+	else // Internal Trade
+	{
+		if (bAsOriginPlayer) // Origin City
+		{
+			return 0;
+		}
+		else // Destination City
+		{
+			return 0;
+		}
+	}
+}
+int CvPlayerTrade::GetTradeConnectionYourBuildingValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+	CvPlot* pOriginPlot = GC.getMap().plot(kTradeConnection.m_iOriginX, kTradeConnection.m_iOriginY);
+	CvPlot* pDestPlot = GC.getMap().plot(kTradeConnection.m_iDestX, kTradeConnection.m_iDestY);
+	CvAssertMsg(pOriginPlot && pDestPlot, "pOriginPlot or pDestPlot are null");
+	if (!pOriginPlot || !pDestPlot)
+		return 0;
+	CvCity* pDestCity = pDestPlot->getPlotCity();
+	if (!pDestCity)
+		return 0;
+	int iBonus = 0;
+	if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection)) // International Trade
+	{
+		if (bAsOriginPlayer) // Origin City
+		{
+
+		}
+		else
+		{
+
+		}
+	}
+	else
+	{
+		if (bAsOriginPlayer) // Origin City
+		{
+
+		}
+		else
+		{
+
+		}
+	}
+	
+	if (bAsOriginPlayer)
+	{
+		CvCity* pOriginCity = CvGameTrade::GetOriginCity(kTradeConnection);
+		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)GET_PLAYER(pOriginCity->getOwner()).getCivilizationInfo().getCivilizationBuildings(iI);
+			if (eBuilding != NO_BUILDING)
+			{
+				CvBuildingEntry* pBuildingEntry = GC.GetGameBuildings()->GetEntry(eBuilding);
+				if (!pBuildingEntry)
+				{
+					continue;
+				}
+
+				if (pBuildingEntry && pOriginCity->GetCityBuildings()->GetNumBuilding((BuildingTypes)pBuildingEntry->GetID()))
+				{
+					if (pBuildingEntry->GetTradeRouteSeaGoldBonus() > 0 && kTradeConnection.m_eDomain == DOMAIN_SEA)
+					{
+						iBonus += pBuildingEntry->GetTradeRouteSeaGoldBonus();
+					}
+					else if (pBuildingEntry->GetTradeRouteLandGoldBonus() > 0 && kTradeConnection.m_eDomain == DOMAIN_LAND)
+					{
+						iBonus += pBuildingEntry->GetTradeRouteLandGoldBonus();
+					}
+				}
+			}
+		}
+	}
+
+	if (bAsOriginPlayer)
+	{
+		iBonus *= (100 + GET_PLAYER(kTradeConnection.m_eOriginOwner).GetPlayerTraits()->GetTradeBuildingModifier());
+		iBonus /= 100;
+	}
+	else
+	{
+		iBonus *= (100 + GET_PLAYER(kTradeConnection.m_eDestOwner).GetPlayerTraits()->GetTradeBuildingModifier());
+		iBonus /= 100;
+	}
+
+	return iBonus;
+}
+int CvPlayerTrade::GetTradeConnectionTheirBuildingValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+
+}
+int CvPlayerTrade::GetTradeConnectionExclusiveValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+
+}
+int CvPlayerTrade::GetTradeConnectionPolicyValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+
+}
+int CvPlayerTrade::GetTradeConnectionOtherTraitValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+
+}
+int CvPlayerTrade::GetTradeConnectionDomainValueModifierTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+
+}
+int CvPlayerTrade::GetTradeConnectionRiverValueModifierTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+
+}
+int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+
+}
 #else
+//	--------------------------------------------------------------------------------
+#ifdef AUI_CONSTIFY
+int CvPlayerTrade::GetTradeConnectionBaseValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer) const
+#else
+int CvPlayerTrade::GetTradeConnectionBaseValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+#endif
+{
 	if (bAsOriginPlayer) 
 	{
 		if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection))
@@ -2479,7 +2665,6 @@ int CvPlayerTrade::GetTradeConnectionBaseValueTimes100(const TradeConnection& kT
 	}
 
 	return 0;
-#endif
 }
 //	--------------------------------------------------------------------------------
 #ifdef AUI_CONSTIFY
@@ -2488,32 +2673,7 @@ int CvPlayerTrade::GetTradeConnectionGPTValueTimes100(const TradeConnection& kTr
 int CvPlayerTrade::GetTradeConnectionGPTValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer, bool bOriginCity)
 #endif
 {
-#if defined(CLEAN_UP)
-	if (eYield != YIELD_GOLD)
-		return 0;
-	if (bAsOriginPlayer)
-	{
-		if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection))
-		{
-			int iX, iY;
-			iX = (bOriginCity) ? kTradeConnection.m_iOriginX : kTradeConnection.m_iDestX;
-			iY = (bOriginCity) ? kTradeConnection.m_iOriginY : kTradeConnection.m_iDestY;
-			CvPlot* pPlot = GC.getMap().plot(iX, iY);
-			CvAssertMsg(pPlot, "CvPlayerTrade - plot is null");
-			if (!pPlot)
-				return 0;
-			CvCity* pCity = pPlot->getPlotCity();
-			CvAssertMsg(pCity, "CvPlayerTrade - pCity is null");
-			if (!pCity)
-				return 0;
-			int iDivisor = GC.getINTERNATIONAL_TRADE_CITY_GPT_DIVISOR(/*20*/);
-			if (iDivisor == 0)
-				iDivisor = 1;
-			return pCity->getYieldRateTimes100(eYield, true) / iDivisor;
-		}
-	}
-	return 0;
-#else
+
 	if (bAsOriginPlayer)
 	{
 		if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection))
@@ -2561,7 +2721,6 @@ int CvPlayerTrade::GetTradeConnectionGPTValueTimes100(const TradeConnection& kTr
 		return 0;
 	}
 	return 0;
-#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -3188,7 +3347,7 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100 (const TradeConnection& kTrad
 
 	return iValue;	
 }
-
+#endif
 //	--------------------------------------------------------------------------------
 void CvPlayerTrade::UpdateTradeConnectionValues (void)
 {
