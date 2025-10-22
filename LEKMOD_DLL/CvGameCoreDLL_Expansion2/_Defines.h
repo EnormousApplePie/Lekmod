@@ -1120,7 +1120,7 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Yield Increase based on Era
 #define LEKMOD_ERA_ENHANCED_YIELDS
 // New Unit Mission "Submerge" and "Surface"
-#define LEKMOD_SUBMERGE_MISSION
+//#define LEKMOD_SUBMERGE_MISSION
 // New Unit Mission "Retrain"
 #define LEKMOD_RETRAIN_MISSION
 // Ban specific UnitMissions based on Trait
@@ -1131,9 +1131,12 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_SUBMARINE_ATTACK_CHANGES
 // Export the WLTKD count down for UI purposes.
 #define LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA
+// Export the Food Production value for UI purposes.
+#define LEKMOD_FOODPRODUCTION_LUA
 // Custom settler system - allows PopulationReq, SettlerCostModifier, and localPopChange fields in Units table for flexible unit requirements and effects
 #define LEKMOD_CUSTOM_SETTLERS
-
+// Export Pressure Values for cities
+#define RELIGION_PRESSURE_LUA
 
 // Generic define for temp changes
 #define CLEAN_UP

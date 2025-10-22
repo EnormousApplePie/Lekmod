@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--Override for main menu theme.-->
+<Script2DFile>
+  <Script2DSounds>
+    <Script2DSound>
+      <ScriptID>AS2D_MUSIC_MAIN_MENU</ScriptID>
+      <SoundID>SND_MUSIC_MAIN_MENU_LEK</SoundID>
+      <SoundType>GAME_MUSIC</SoundType>
+      <iMinVolume>80</iMinVolume>
+      <iMaxVolume>80</iMaxVolume>
+      <bIsMusic>1</bIsMusic>
+      <bLooping>1</bLooping>
+    </Script2DSound>
+    <Script2DSound>
+      <ScriptID>AS2D_INTERFACE_CARAVAN_TRADE_ROUTE</ScriptID>
+      <SoundID>SND_INTERFACE_CARAVAN_TRADE_ROUTE</SoundID>
+      <SoundType>GAME_SFX</SoundType>
+      <iMinVolume>80</iMinVolume>
+      <iMaxVolume>80</iMaxVolume>
+    </Script2DSound>
+  </Script2DSounds>
+</Script2DFile>

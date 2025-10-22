@@ -575,6 +575,9 @@ protected:
 	static int lGetMinorCivFriendshipAnchorWithMajor(lua_State* L);
 	static int lGetFriendshipNeededForNextLevel(lua_State* L);
 	static int lGetMinorCivFriendshipLevelWithMajor(lua_State* L);
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	static int lGetLastAllyTurnWithMajor(lua_State* L);
+#endif
 	static int lGetActiveQuestForPlayer(lua_State* L); // DEPRECATED
 	static int lIsMinorCivActiveQuestForPlayer(lua_State* L);
 	static int lGetMinorCivNumActiveQuestsForPlayer(lua_State* L);

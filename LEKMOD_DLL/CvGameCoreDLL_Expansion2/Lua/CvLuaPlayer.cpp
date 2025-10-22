@@ -591,6 +591,9 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(ChangeMinorCivFriendshipWithMajor);
 	Method(GetMinorCivFriendshipAnchorWithMajor);
 	Method(GetMinorCivFriendshipLevelWithMajor);
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	Method(GetLastAllyTurnWithMajor);
+#endif
 	Method(GetActiveQuestForPlayer);
 	Method(IsMinorCivActiveQuestForPlayer);
 	Method(GetMinorCivNumActiveQuestsForPlayer);
@@ -6406,6 +6409,16 @@ int CvLuaPlayer::lGetMinorCivFriendshipLevelWithMajor(lua_State* L)
 	lua_pushinteger(L, iResult);
 	return 1;
 }
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+int CvLuaPlayer::lGetLastAllyTurnWithMajor(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const PlayerTypes ePlayer = (PlayerTypes) lua_tointeger(L, 2);
+	const int iResult = pkPlayer->GetMinorCivAI()->GetLastAllyTurnWithMajor(ePlayer);
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 // Deprecated
 int CvLuaPlayer::lGetActiveQuestForPlayer(lua_State* L)

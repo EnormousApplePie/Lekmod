@@ -99,6 +99,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetProductionNameKey);
 	Method(GetGeneralProductionTurnsLeft);
 	Method(IsFoodProduction);
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
+	Method(GetFoodProduction);
+#endif
 	Method(GetFirstUnitOrder);
 	Method(GetFirstProjectOrder);
 	Method(GetFirstSpecialistOrder);
@@ -507,6 +510,11 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 #endif
 #if defined(LEKMOD_v34)
 	Method(GetPlotValue);
+#endif
+#if defined(RELIGION_PRESSURE_LUA)
+	Method(GetReligionPressure);
+	Method(GetTotalReligionPressure);
+	Method(GetPressurePerFollower);
 #endif
 }
 //------------------------------------------------------------------------------
@@ -1190,6 +1198,14 @@ int CvLuaCity::lIsFoodProduction(lua_State* L)
 	lua_pushboolean(L, iResult);
 	return 1;
 }
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
+//------------------------------------------------------------------------------
+//int GetFoodProduction(int iExcessFood);
+int CvLuaCity::lGetFoodProduction(lua_State* L)
+{
+	return BasicLuaMethod<int, int>(L, &CvCity::GetFoodProduction);
+}
+#endif
 //------------------------------------------------------------------------------
 //int getFirstUnitOrder(UnitTypes eUnit);
 int CvLuaCity::lGetFirstUnitOrder(lua_State* L)
@@ -4232,6 +4248,56 @@ int CvLuaCity::lGetPlotValue(lua_State* L)
 	const bool bUseAllowGrowthFlag = lua_toboolean(L, 3);
 	const int iValue = pkCity->GetCityCitizens()->GetPlotValue(pPlot, bUseAllowGrowthFlag);
 	lua_pushinteger(L, iValue);
+	return 1;
+}
+#endif
+#if defined(RELIGION_PRESSURE_LUA)
+//------------------------------------------------------------------------------
+// int City:GetReligionPressure(int religionID)
+int CvLuaCity::lGetReligionPressure(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const ReligionTypes eReligion = (ReligionTypes)luaL_checkint(L, 2);
+	int iPressure = 0;
+
+	if (pkCity && eReligion >= NO_RELIGION)
+	{
+		iPressure = pkCity->GetCityReligions()->GetPressure(eReligion);
+	}
+
+	lua_pushinteger(L, iPressure);
+	return 1;
+}
+//------------------------------------------------------------------------------
+// int City:GetTotalReligionPressure()
+int CvLuaCity::lGetTotalReligionPressure(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	int iTotal = 0;
+
+	if (pkCity)
+	{
+		iTotal = pkCity->GetCityReligions()->GetTotalPressure();
+	}
+
+	lua_pushinteger(L, iTotal);
+	return 1;
+}
+//------------------------------------------------------------------------------
+// int City:GetPressurePerFollower()
+int CvLuaCity::lGetPressurePerFollower(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	int iResult = 0;
+
+	if (pkCity)
+	{
+		const int iPop = pkCity->getPopulation();
+		const int iTotal = pkCity->GetCityReligions()->GetTotalPressure();
+		iResult = iTotal / iPop;
+	}
+
+	lua_pushinteger(L, iResult);
 	return 1;
 }
 #endif

@@ -405,7 +405,12 @@ local function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 	-- Settler Specifics
 	tips:insertLocalizedIf( unit.Food and "TXT_KEY_CITYVIEW_STAGNATION_TEXT" ) -- build using food / stop city growth
 	if unit.Found or unit.FoundAbroad then
+		if unit.PopulationReq <= 0 then -- Custom Population Req, not hardcoded :) so skip the hardcoded blurb
 		tips:append( L("TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT", GameDefines.CITY_MIN_SIZE_FOR_SETTLERS) )
+	end
+	end
+	if unit.PopulationReq > 0 then 
+		tips:append( L("TXT_KEY_NO_ACTION_UNIT_SIZE_LIMIT", unit.PopulationReq, unit.Description) )
 	end
 
 	-- Civilization:
@@ -1899,18 +1904,9 @@ local function GetProductionTooltip( city )
 	local strModifiersString = city:GetYieldModifierTooltip( YieldTypes.YIELD_PRODUCTION )
 	-- Extra Production from Food (ie. producing Colonists)
 	if city:IsFoodProduction() then
-		local productionFromFood = city:GetYieldRate( YieldTypes.YIELD_FOOD, false ) - city:FoodConsumption( true, 0 )
-		if productionFromFood <= 0 then
-			productionFromFood = 0
-		elseif productionFromFood <= 2 then
-			productionFromFood = productionFromFood * 100
-		elseif productionFromFood <= 4 then
-			productionFromFood = 200 + (productionFromFood - 2) * 50
-		else
-			productionFromFood = 300 + (productionFromFood - 4) * 25
-		end
+		local productionFromFood = city:GetFoodProduction(city:GetYieldRate( YieldTypes.YIELD_FOOD, false ) - city:FoodConsumption( true, 0 ))
 		if productionFromFood > 0 then
-			strModifiersString = strModifiersString .. L( "TXT_KEY_PRODMOD_FOOD_CONVERSION", productionFromFood / 100 )
+			strModifiersString = strModifiersString .. L( "TXT_KEY_PRODMOD_FOOD_CONVERSION", productionFromFood )
 		end
 	end
 	tipText = GetYieldTooltip( city, YieldTypes.YIELD_PRODUCTION, city:GetBaseYieldRate( YieldTypes.YIELD_PRODUCTION ), productionPerTurn100 / 100, "[ICON_PRODUCTION]", strModifiersString ) .. "[NEWLINE][NEWLINE]" .. tipText

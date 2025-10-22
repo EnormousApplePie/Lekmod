@@ -2878,7 +2878,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 		{
 			if(getPopulation() < thisUnitInfo.GetPopulationReq())
 			{
-				GC.getGame().BuildCannotPerformActionHelpText(toolTipSink, "TXT_KEY_NO_ACTION_UNIT_SIZE_LIMIT", "", "", thisUnitInfo.GetPopulationReq());
+				GC.getGame().BuildCannotPerformActionHelpText(toolTipSink, "TXT_KEY_NO_ACTION_UNIT_SIZE_LIMIT", thisUnitInfo.GetDescription(), "", thisUnitInfo.GetPopulationReq());
 				if(toolTipSink == NULL)
 					return false;
 			}

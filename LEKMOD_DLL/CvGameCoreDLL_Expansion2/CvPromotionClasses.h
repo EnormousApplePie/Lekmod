@@ -253,6 +253,7 @@ public:
 #if defined(FULL_YIELD_FROM_KILLS)
 	int GetYieldFromKills(int i) const;
 	int GetKillYieldCap(int i) const;
+	bool IsKillYieldEraValid(int i) const;
 #endif
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
 	int GetUpgradeConversionPromotion(int i) const;
@@ -434,6 +435,7 @@ protected:
 #if defined(FULL_YIELD_FROM_KILLS)
 	int* m_paiYieldFromKills;
 	int* m_paiKillYieldCap;
+	bool* m_pabKillYieldValidEra;
 #endif
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
 	int* m_paiConvertPromotionUpgrades;
