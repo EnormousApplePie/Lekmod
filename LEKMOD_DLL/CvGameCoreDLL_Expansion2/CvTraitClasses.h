@@ -180,8 +180,11 @@ public:
 	bool IsMoveFriendlyWoodsAsRoad() const;
 	bool IsFasterAlongRiver() const;
 	bool IsFasterInHills() const;
-	bool IsEmbarkedAllWater() const;
-	bool IsEmbarkedToLandFlatCost() const;
+    bool IsEmbarkedAllWater() const;
+    bool IsEmbarkedToLandFlatCost() const;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    bool IsCiviliansEmbarkOneMove() const;
+#endif
 	bool IsNoHillsImprovementMaintenance() const;
 	bool IsTechBoostFromCapitalScienceBuildings() const;
 	bool IsStaysAliveZeroCities() const;
@@ -419,9 +422,12 @@ protected:
 	bool m_bFightWellDamaged;
 	bool m_bMoveFriendlyWoodsAsRoad;
 	bool m_bFasterAlongRiver;
-	bool m_bFasterInHills;
-	bool m_bEmbarkedAllWater;
-	bool m_bEmbarkedToLandFlatCost;
+    bool m_bFasterInHills;
+    bool m_bEmbarkedAllWater;
+    bool m_bEmbarkedToLandFlatCost;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    bool m_bCiviliansEmbarkOneMove;
+#endif
 	bool m_bNoHillsImprovementMaintenance;
 	bool m_bTechBoostFromCapitalScienceBuildings;
 	bool m_bStaysAliveZeroCities;
@@ -994,14 +1000,20 @@ public:
 	{
 		return m_bFasterInHills;
 	};
-	bool IsEmbarkedAllWater() const
+    bool IsEmbarkedAllWater() const
 	{
 		return m_bEmbarkedAllWater;
 	};
-	bool IsEmbarkedToLandFlatCost() const
+    bool IsEmbarkedToLandFlatCost() const
 	{
 		return m_bEmbarkedToLandFlatCost;
 	};
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    bool IsCiviliansEmbarkOneMove() const
+	{
+		return m_bCiviliansEmbarkOneMove;
+	};
+#endif
 	bool IsNoHillsImprovementMaintenance() const
 	{
 		return m_bNoHillsImprovementMaintenance;
@@ -1380,9 +1392,12 @@ private:
 	bool m_bFightWellDamaged;
 	bool m_bMoveFriendlyWoodsAsRoad;
 	bool m_bFasterAlongRiver;
-	bool m_bFasterInHills;
-	bool m_bEmbarkedAllWater;
-	bool m_bEmbarkedToLandFlatCost;
+    bool m_bFasterInHills;
+    bool m_bEmbarkedAllWater;
+    bool m_bEmbarkedToLandFlatCost;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    bool m_bCiviliansEmbarkOneMove;
+#endif
 	bool m_bNoHillsImprovementMaintenance;
 	bool m_bTechBoostFromCapitalScienceBuildings;
 	bool m_bStaysAliveZeroCities;

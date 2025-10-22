@@ -3901,7 +3901,10 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 				changeMoves(-iMoveCost);
 #ifndef LEK_EMBARK_1_MOVEMENT
 				//EAP: Embark to 1 movement
-				finishMoves();
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+				if (!(!IsCombatUnit() && GET_PLAYER(getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove()))
+#endif
+					finishMoves();
 #endif
 				bShouldDeductCost = false;
 
@@ -3919,7 +3922,10 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 				changeMoves(-iMoveCost);
 #ifndef LEK_EMBARK_1_MOVEMENT
 				//EAP: Embark to 1 movement
-				finishMoves();
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+				if (!(!IsCombatUnit() && GET_PLAYER(getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove()))
+#endif
+					finishMoves();
 #endif
 				//finishMoves();
 				bShouldDeductCost = false;
@@ -8825,7 +8831,11 @@ bool CvUnit::DoSpreadReligion()
 				}
 			}
 
-			if(IsGreatPerson())
+            #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+            int iFollowersBefore = pCity->GetCityReligions()->GetNumFollowers(eReligion);
+            ReligionTypes eMajorityBefore = pCity->GetCityReligions()->GetReligiousMajority();
+            #endif
+            if(IsGreatPerson())
 			{
 				pCity->GetCityReligions()->AddProphetSpread(eReligion, iConversionStrength, getOwner());
 			}
@@ -8833,6 +8843,60 @@ bool CvUnit::DoSpreadReligion()
 			{
 				pCity->GetCityReligions()->AddReligiousPressure(FOLLOWER_CHANGE_MISSIONARY, eReligion, iConversionStrength, getOwner());
 			}
+            #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+            int iFollowersAfter = pCity->GetCityReligions()->GetNumFollowers(eReligion);
+            int iDeltaFollowers = std::max(0, iFollowersAfter - iFollowersBefore);
+            ReligionTypes eMajorityAfter = pCity->GetCityReligions()->GetReligiousMajority();
+            if (iDeltaFollowers > 0 && getUnitInfo().IsSpreadReligion())
+            {
+                bool bOnlyMajority = (eMajorityAfter == eReligion && eMajorityBefore != eReligion);
+                CvUnitPromotions* pPromos = GetPromotions();
+                if (pPromos)
+                {
+                    for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+                    {
+                        // allow only global yields
+                        if (iYield == YIELD_SCIENCE || iYield == YIELD_GOLD || iYield == YIELD_FAITH || iYield == YIELD_CULTURE)
+                        {
+                            int iPerFollower = 0;
+                            int iPerFollowerMajority = 0;
+                            // sum across all promotions the unit has
+                            for (int iP = 0; iP < GC.getNumPromotionInfos(); iP++)
+                            {
+                                if (isHasPromotion((PromotionTypes)iP))
+                                {
+                                    const CvPromotionEntry* pEntry = GC.getPromotionInfo((PromotionTypes)iP);
+                                    if (pEntry)
+                                    {
+                                        iPerFollower += pEntry->GetYieldFromFollowerConversion(iYield);
+                                        iPerFollowerMajority += pEntry->GetYieldFromFollowerConversionMajority(iYield);
+                                    }
+                                }
+                            }
+                            int iAmount = iDeltaFollowers * (bOnlyMajority ? (iPerFollower + iPerFollowerMajority) : iPerFollower);
+                            if (iAmount > 0)
+                            {
+                                CvPlayer& kOwner = GET_PLAYER(getOwner());
+                                if (iYield == YIELD_GOLD)
+                                    kOwner.GetTreasury()->ChangeGold(iAmount);
+                                else if (iYield == YIELD_FAITH)
+                                    kOwner.ChangeFaith(iAmount);
+                                else if (iYield == YIELD_CULTURE)
+                                    kOwner.changeJONSCultureTimes100(iAmount * 100);
+                                else if (iYield == YIELD_SCIENCE)
+                                {
+                                    TechTypes eCurrentTech = kOwner.GetPlayerTechs()->GetCurrentResearch();
+                                    if(eCurrentTech == NO_TECH)
+                                        kOwner.changeOverflowResearch(iAmount);
+                                    else
+                                        GET_TEAM(kOwner.getTeam()).GetTeamTechs()->ChangeResearchProgress(eCurrentTech, iAmount, kOwner.GetID());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #endif
 			GetReligionData()->SetSpreadsLeft(GetReligionData()->GetSpreadsLeft() - 1);
 
 			if (pCity->plot() && pCity->plot()->GetActiveFogOfWarMode() == FOGOFWARMODE_OFF)

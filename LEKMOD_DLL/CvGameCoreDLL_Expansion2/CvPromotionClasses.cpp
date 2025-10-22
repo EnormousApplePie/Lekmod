@@ -183,6 +183,10 @@ CvPromotionEntry::CvPromotionEntry():
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
 	m_paiConvertPromotionUpgrades(NULL),
 #endif
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+    m_paiYieldFromFollowerConversion(NULL),
+    m_paiYieldFromFollowerConversionMajority(NULL),
+#endif
 	m_piTerrainAttackPercent(NULL),
 	m_piTerrainDefensePercent(NULL),
 	m_piFeatureAttackPercent(NULL),
@@ -217,6 +221,10 @@ CvPromotionEntry::~CvPromotionEntry(void)
 #endif
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
 	SAFE_DELETE_ARRAY(m_paiConvertPromotionUpgrades);
+#endif
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+    SAFE_DELETE_ARRAY(m_paiYieldFromFollowerConversion);
+    SAFE_DELETE_ARRAY(m_paiYieldFromFollowerConversionMajority);
 #endif
 	SAFE_DELETE_ARRAY(m_piTerrainAttackPercent);
 	SAFE_DELETE_ARRAY(m_piTerrainDefensePercent);
@@ -497,6 +505,37 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 
 			m_paiYieldFromKills[iYieldID] = iYield;
 			m_paiKillYieldCap[iYieldID] = iMaxValue;
+		}
+		pResults->Reset();
+	}
+#endif
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+	{
+		kUtility.InitializeArray(m_paiYieldFromFollowerConversion, "Yields", 0);
+		kUtility.InitializeArray(m_paiYieldFromFollowerConversionMajority, "Yields", 0);
+		std::string sqlKey = "UnitPromotions_YieldsFromFollowerConversion";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL =
+				"SELECT Yields.ID, Amount, OnlyMajority "
+				"FROM UnitPromotions_YieldsFromFollowerConversion "
+				"INNER JOIN Yields ON Yields.Type = Yield "
+				"WHERE PromotionType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+
+		pResults->Bind(1, szPromotionType);
+
+		while (pResults->Step())
+		{
+			const int iYieldID = pResults->GetInt(0);
+			const int iAmount = pResults->GetInt(1);
+			const bool bOnlyMajority = pResults->GetBool(2);
+			if (bOnlyMajority)
+				m_paiYieldFromFollowerConversionMajority[iYieldID] = iAmount;
+			else
+				m_paiYieldFromFollowerConversion[iYieldID] = iAmount;
 		}
 		pResults->Reset();
 	}
@@ -1773,6 +1812,28 @@ bool CvPromotionEntry::IsKillYieldEraValid(int i) const
 		return m_pabKillYieldValidEra[i];
 	}
 	return false;
+}
+#endif
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+int CvPromotionEntry::GetYieldFromFollowerConversion(int i) const
+{
+    CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+    CvAssertMsg(i > -1, "Index out of bounds");
+    if (i > -1 && i < NUM_YIELD_TYPES && m_paiYieldFromFollowerConversion)
+    {
+        return m_paiYieldFromFollowerConversion[i];
+    }
+    return 0;
+}
+int CvPromotionEntry::GetYieldFromFollowerConversionMajority(int i) const
+{
+    CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+    CvAssertMsg(i > -1, "Index out of bounds");
+    if (i > -1 && i < NUM_YIELD_TYPES && m_paiYieldFromFollowerConversionMajority)
+    {
+        return m_paiYieldFromFollowerConversionMajority[i];
+    }
+    return 0;
 }
 #endif
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)

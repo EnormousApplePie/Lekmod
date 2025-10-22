@@ -23,6 +23,10 @@
 class CvPromotionEntry: public CvHotKeyInfo
 {
 public:
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+    int GetYieldFromFollowerConversion(int i) const;
+    int GetYieldFromFollowerConversionMajority(int i) const;
+#endif
 	CvPromotionEntry(void);
 	~CvPromotionEntry(void);
 
@@ -266,6 +270,10 @@ public:
 #endif
 
 protected:
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+    int* m_paiYieldFromFollowerConversion;
+    int* m_paiYieldFromFollowerConversionMajority;
+#endif
 	int m_iLayerAnimationPath;
 #if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 	int m_iPrereqPromotion;

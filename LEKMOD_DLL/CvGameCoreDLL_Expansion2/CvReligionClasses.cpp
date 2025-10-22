@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -944,6 +944,43 @@ void CvGameReligions::FoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion
 	kPlayer.DoReligionOneShots(eReligion);
 #endif
 
+#if defined(LEKMOD_v34) // Trigger Reformation Selection on Founding.
+	// Get the player's Traits
+	CvPlayerTraits* pPlayerTraits = kPlayer.GetPlayerTraits();
+	// Now see if thier trait lets them pick a reformation belief
+	if (pPlayerTraits->IsReligionEnhanceReformation() == true)
+	{
+		// If they can, and they haven't already, give them the option to pick one
+		if (!HasAddedReformationBelief(ePlayer))
+		{
+			if (!kPlayer.isHuman()) // AI Choice
+			{
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+				if (!GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_FOUNDING"))
+				{
+#endif
+					BeliefTypes eReformationBelief = kPlayer.GetReligionAI()->ChooseReformationBelief();
+					AddReformationBelief(ePlayer, eReligion, eReformationBelief);
+#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
+				}
+#endif
+			}
+			else // Human Choice
+			{
+				CvNotifications* pNotifications;
+				pNotifications = kPlayer.GetNotifications();
+				if (pNotifications)
+				{
+					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF");
+					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF");
+					pNotifications->Add(NOTIFICATION_ADD_REFORMATION_BELIEF, strBuffer, strSummary, -1, -1, -1);
+				}
+			}
+		}
+		
+	}
+#endif
+
 	// In case we have another prophet sitting around, make sure he's set to this religion
 	int iLoopUnit;
 	CvUnit* pLoopUnit;
@@ -1156,42 +1193,6 @@ void CvGameReligions::EnhanceReligion(PlayerTypes ePlayer, ReligionTypes eReligi
 	it->m_Beliefs.AddBelief(eBelief2);
 #ifndef AUI_WARNING_FIXES
 	it->m_bEnhanced = true;
-#endif
-#if defined(LEKMOD_v34) // Trigger Reformation Selection on Enhance.
-	// Get the player's Traits
-	CvPlayerTraits* pPlayerTraits = kPlayer.GetPlayerTraits();
-	// Now see if thier trait lets them pick a reformation belief
-	if (pPlayerTraits->IsReligionEnhanceReformation() == true)
-	{
-		// If they can, and they haven't already, give them the option to pick one
-		if (!HasAddedReformationBelief(ePlayer))
-		{
-			if (!kPlayer.isHuman()) // AI Choice
-			{
-#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
-				if (!GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_FOUNDING"))
-				{
-#endif
-					BeliefTypes eReformationBelief = kPlayer.GetReligionAI()->ChooseReformationBelief();
-					AddReformationBelief(ePlayer, eReligion, eReformationBelief);
-#ifdef AI_CANNOT_FOUND_OR_ENHANCE_OR_SPREAD_RELIGION
-				}
-#endif
-			}
-			else // Human Choice
-			{
-				CvNotifications* pNotifications;
-				pNotifications = kPlayer.GetNotifications();
-				if (pNotifications)
-				{
-					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF");
-					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF");
-					pNotifications->Add(NOTIFICATION_ADD_REFORMATION_BELIEF, strBuffer, strSummary, -1, -1, -1);
-				}
-			}
-		}
-		
-	}
 #endif
 	// Update game systems
 	UpdateAllCitiesThisReligion(eReligion);

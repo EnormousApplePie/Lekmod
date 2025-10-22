@@ -142,7 +142,10 @@ CvTraitEntry::CvTraitEntry() :
 	m_bFasterAlongRiver(false),
 	m_bFasterInHills(false),
 	m_bEmbarkedAllWater(false),
-	m_bEmbarkedToLandFlatCost(false),
+    m_bEmbarkedToLandFlatCost(false),
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    m_bCiviliansEmbarkOneMove(false),
+#endif
 	m_bNoHillsImprovementMaintenance(false),
 	m_bTechBoostFromCapitalScienceBuildings(false),
 	m_bStaysAliveZeroCities(false),
@@ -924,6 +927,12 @@ bool CvTraitEntry::IsEmbarkedToLandFlatCost() const
 	return m_bEmbarkedToLandFlatCost;
 }
 
+/// Accessor:: civilian units embarking cost 1 MP
+bool CvTraitEntry::IsCiviliansEmbarkOneMove() const
+{
+    return m_bCiviliansEmbarkOneMove;
+}
+
 /// Accessor:: free improvement maintenance in hills?
 bool CvTraitEntry::IsNoHillsImprovementMaintenance() const
 {
@@ -1675,7 +1684,10 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_bFasterAlongRiver = kResults.GetBool("FasterAlongRiver");
 	m_bFasterInHills = kResults.GetBool("FasterInHills");
 	m_bEmbarkedAllWater = kResults.GetBool("EmbarkedAllWater");
-	m_bEmbarkedToLandFlatCost = kResults.GetBool("EmbarkedToLandFlatCost");
+    m_bEmbarkedToLandFlatCost = kResults.GetBool("EmbarkedToLandFlatCost");
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    m_bCiviliansEmbarkOneMove = kResults.GetBool("CiviliansEmbarkOneMove");
+#endif
 	m_bNoHillsImprovementMaintenance = kResults.GetBool("NoHillsImprovementMaintenance");
 	m_bTechBoostFromCapitalScienceBuildings = kResults.GetBool("TechBoostFromCapitalScienceBuildings");
 	m_bStaysAliveZeroCities = kResults.GetBool("StaysAliveZeroCities");
@@ -2779,6 +2791,10 @@ void CvPlayerTraits::InitPlayerTraits()
 			if(trait->IsEmbarkedToLandFlatCost())
 			{
 				m_bEmbarkedToLandFlatCost = true;
+			}
+			if(trait->IsCiviliansEmbarkOneMove())
+			{
+				m_bCiviliansEmbarkOneMove = true;
 			}
 			if(trait->IsNoHillsImprovementMaintenance())
 			{
@@ -4957,7 +4973,10 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 
 	kStream >> m_bEmbarkedAllWater;
 
-	kStream >> m_bEmbarkedToLandFlatCost;
+    kStream >> m_bEmbarkedToLandFlatCost;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    kStream >> m_bCiviliansEmbarkOneMove;
+#endif
 
 	kStream >> m_bNoHillsImprovementMaintenance;
 
@@ -5348,6 +5367,9 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_bFasterInHills;
 	kStream << m_bEmbarkedAllWater;
 	kStream << m_bEmbarkedToLandFlatCost;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    kStream << m_bCiviliansEmbarkOneMove;
+#endif
 	kStream << m_bNoHillsImprovementMaintenance;
 	kStream << m_bTechBoostFromCapitalScienceBuildings;
 	kStream << m_bStaysAliveZeroCities;

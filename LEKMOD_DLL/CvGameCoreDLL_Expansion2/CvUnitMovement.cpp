@@ -219,8 +219,19 @@ bool CvUnitMovement::ConsumesAllMoves(const CvUnit* pUnit, const CvPlot* pFromPl
 		if (!pToPlot->isWater() && pFromPlot->isWater() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
 
 		{
-			return false;	// Then no, it does not.
+			return false;
 		}
+
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    // New: Civilian embark does not consume all moves if trait present
+    if (pToPlot->isWater() && !pFromPlot->isWater())
+    {
+        if (!pUnit->IsCombatUnit() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove())
+        {
+            return false;
+        }
+    }
+#endif
 
 		
 		
@@ -258,6 +269,16 @@ bool CvUnitMovement::CostsOnlyOne(const CvUnit* pUnit, const CvPlot* pFromPlot, 
 	{
 		return true;
 	}
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    // New: Only civilian units embarking cost 1 move
+    if (pToPlot->isWater() && !pFromPlot->isWater() && pUnit->CanEverEmbark())
+    {
+        if (!pUnit->IsCombatUnit() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove())
+        {
+            return true;
+        }
+    }
+#endif
 
 	return false;
 }

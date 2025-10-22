@@ -958,6 +958,10 @@
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 // Culture per pop from buildings
 #define LEKMOD_CULTURE_PER_POP_FROM_BUILDINGS
+// New Trait ability that allows civilian units to embark for 1 move
+#define LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+// Yields from converting cities and/or citizens to a religion
+#define LEKMOD_PROMO_YIELD_FROM_CONVERSION
 
 
 /// ###############################
