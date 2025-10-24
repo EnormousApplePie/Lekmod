@@ -2,6 +2,7 @@
 <!-- carved into tree bark by murena2 -->
 <Script2DFile> 
 	<Script2DSounds>
+		<!-- Civilization Music -->
 		<Script2DSound>
 			<ScriptID>AS2D_LEADER_MUSIC_VENEZ_PEACE</ScriptID>
 			<SoundID>SND_LEADER_MUSIC_VENEZ_PEACE</SoundID>
@@ -58,8 +59,8 @@
 			<ScriptID>AS2D_LEADER_MUSIC_MUWATALLIS_PEACE</ScriptID> 
 			<SoundID>SND_LEADER_MUSIC_MUWATALLIS_PEACE</SoundID> 
 			<SoundType>GAME_MUSIC</SoundType> 
-			<iMaxVolume>60</iMaxVolume> 
-			<iMinVolume>60</iMinVolume> 
+			<iMaxVolume>55</iMaxVolume> 
+			<iMinVolume>55</iMinVolume> 
 			<bIsMusic>1</bIsMusic> 
 			<iPriority>1</iPriority> 
 		</Script2DSound>
@@ -76,8 +77,8 @@
 			<ScriptID>AS2D_LEADER_MUSIC_CHARLEMAGNE_PEACE</ScriptID> 
 			<SoundID>SND_LEADER_MUSIC_CHARLEMAGNE_PEACE</SoundID> 
 			<SoundType>GAME_MUSIC</SoundType> 
-			<iMaxVolume>60</iMaxVolume> 
-			<iMinVolume>60</iMinVolume> 
+			<iMaxVolume>65</iMaxVolume> 
+			<iMinVolume>65</iMinVolume> 
 			<bIsMusic>1</bIsMusic> 
 			<iPriority>1</iPriority> 
 		</Script2DSound>
@@ -85,8 +86,8 @@
 			<ScriptID>AS2D_LEADER_MUSIC_CHARLEMAGNE_WAR</ScriptID> 
 			<SoundID>SND_LEADER_MUSIC_CHARLEMAGNE_WAR</SoundID> 
 			<SoundType>GAME_MUSIC</SoundType> 
-			<iMaxVolume>55</iMaxVolume> 
-			<iMinVolume>55</iMinVolume> 
+			<iMaxVolume>60</iMaxVolume> 
+			<iMinVolume>60</iMinVolume> 
 			<bIsMusic>1</bIsMusic> 
 			<iPriority>1</iPriority> 
 		</Script2DSound>
@@ -94,8 +95,8 @@
 			<ScriptID>AS2D_LEADER_MUSIC_ALARIC_PEACE</ScriptID> 
 			<SoundID>SND_LEADER_MUSIC_ALARIC_PEACE</SoundID> 
 			<SoundType>GAME_MUSIC</SoundType> 
-			<iMaxVolume>60</iMaxVolume> 
-			<iMinVolume>60</iMinVolume> 
+			<iMaxVolume>65</iMaxVolume> 
+			<iMinVolume>65</iMinVolume> 
 			<bIsMusic>1</bIsMusic> 
 			<iPriority>1</iPriority> 
 		</Script2DSound>
@@ -103,8 +104,8 @@
 			<ScriptID>AS2D_LEADER_MUSIC_ALARIC_WAR</ScriptID> 
 			<SoundID>SND_LEADER_MUSIC_ALARIC_WAR</SoundID> 
 			<SoundType>GAME_MUSIC</SoundType> 
-			<iMaxVolume>55</iMaxVolume> 
-			<iMinVolume>55</iMinVolume> 
+			<iMaxVolume>60</iMaxVolume> 
+			<iMinVolume>60</iMinVolume> 
 			<bIsMusic>1</bIsMusic> 
 			<iPriority>1</iPriority> 
 		</Script2DSound>
@@ -132,6 +133,14 @@
 			<iMaxVolume>40</iMaxVolume>
 			<iMinVolume>40</iMinVolume>
 			<bIsMusic>True</bIsMusic>
+		</Script2DSound>
+		<Script2DSound>
+			<ScriptID>AS2D_AMBIENCE_LEADER_MACEDON_AMBIENCE</ScriptID>
+			<SoundID>SND_AMBIENCE_ALEXANDER_AMBIENCE</SoundID>
+			<SoundType>GAME_SFX</SoundType>
+			<iMaxVolume>20</iMaxVolume>
+			<iMinVolume>20</iMinVolume>
+			<bLooping>True</bLooping>
 		</Script2DSound>
 		<Script2DSound>
 			<ScriptID>AS2D_LEADER_MUSIC_HORDE_PEACE</ScriptID>
@@ -177,8 +186,8 @@
 			<ScriptID>AS2D_LEADER_MUSIC_CONQ_WAR</ScriptID>
 			<SoundID>SND_LEADER_MUSIC_CONQ_WAR</SoundID>
 			<SoundType>GAME_MUSIC</SoundType>
-			<iMaxVolume>55</iMaxVolume>
-			<iMinVolume>55</iMinVolume>
+			<iMaxVolume>65</iMaxVolume>
+			<iMinVolume>65</iMinVolume>
 			<bIsMusic>True</bIsMusic>
 		</Script2DSound>
 		<Script2DSound>
@@ -193,16 +202,16 @@
 			<ScriptID>AS2D_LEADER_MUSIC_HARDASS_WAR</ScriptID>
 			<SoundID>SND_LEADER_MUSIC_HARDASS_WAR</SoundID>
 			<SoundType>GAME_MUSIC</SoundType>
-			<iMaxVolume>55</iMaxVolume>
-			<iMinVolume>55</iMinVolume>
+			<iMaxVolume>65</iMaxVolume>
+			<iMinVolume>65</iMinVolume>
 			<bIsMusic>True</bIsMusic>
 		</Script2DSound>
 		<Script2DSound>
 			<ScriptID>AS2D_LEADER_MUSIC_MC_AHO_EITU_PEACE</ScriptID>
 			<SoundID>SND_LEADER_MUSIC_MC_AHO_EITU_PEACE</SoundID>
 			<SoundType>GAME_MUSIC</SoundType>
-			<MinVolume>40</MinVolume>
-			<MaxVolume>40</MaxVolume>
+			<MinVolume>35</MinVolume>
+			<MaxVolume>35</MaxVolume>
 			<IsMusic>true</IsMusic>
 		</Script2DSound>
 		<Script2DSound>
@@ -217,8 +226,8 @@
 			<ScriptID>AS2D_LEADER_MUSIC_MC_TE_RAUPARAHA_PEACE</ScriptID>
 			<SoundID>SND_LEADER_MUSIC_MC_TE_RAUPARAHA_PEACE</SoundID>
 			<SoundType>GAME_MUSIC</SoundType>
-			<MinVolume>40</MinVolume>
-			<MaxVolume>40</MaxVolume>
+			<MinVolume>35</MinVolume>
+			<MaxVolume>35</MaxVolume>
 			<IsMusic>true</IsMusic>
 		</Script2DSound>
 		<Script2DSound>

@@ -8151,6 +8151,7 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 
 				if (GetCityCitizens()->GetTotalSpecialistCount() > 0)
 				{
+
 #if !defined(STANDARDIZE_YIELDS) // remove switch and compress stack
 					switch (iYield)
 					{
@@ -8165,7 +8166,16 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 						break;
 					}
 #else
+#if !defined(LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED)
 					ChangeBaseYieldRateFromReligion((YieldTypes)iYield, pReligion->m_Beliefs.GetYieldChangeAnySpecialist((YieldTypes)iYield));
+#else
+					int iReligionChange = pReligion->m_Beliefs.GetYieldChangeAnySpecialist((YieldTypes)iYield);
+					if (eSecondaryPantheon != NO_BELIEF)
+					{
+						iReligionChange += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetYieldChangeAnySpecialist((YieldTypes)iYield);
+					}
+					ChangeBaseYieldRateFromReligion((YieldTypes)iYield, iReligionChange);
+#endif
 #endif
 				}
 #if defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
@@ -8187,10 +8197,21 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 					if (GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 					{
 						int iYieldFromBuilding = pReligion->m_Beliefs.GetBuildingClassYieldChange(eBuildingClass, (YieldTypes)iYield, iFollowers);
-
+#if defined(LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED)
+						if (eSecondaryPantheon != NO_BELIEF)
+						{
+							iYieldFromBuilding += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetBuildingClassYieldChange(eBuildingClass, (YieldTypes)iYield);
+						}
+#endif
 						if (isWorldWonderClass(*pkBuildingClassInfo))
 						{
 							iYieldFromBuilding += pReligion->m_Beliefs.GetYieldChangeWorldWonder((YieldTypes)iYield);
+#if defined(LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED)
+							if (eSecondaryPantheon != NO_BELIEF)
+							{
+								iYieldFromBuilding += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetYieldChangeWorldWonder((YieldTypes)iYield);
+							}
+#endif
 						}
 
 #ifdef NQ_CHEAT_SACRED_SITES_AFFECTS_GOLD
@@ -8502,7 +8523,7 @@ int CvCity::foodDifferenceTimes100(bool bBottom, CvString* toolTipSink) const
 		iDifference = *iValueKnown;
 	else
 #endif
-#if defined(CLEAN_UP)
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
 	iDifference = isFoodProduction() ? std::min(0, GetFoodProduction(getYieldRate(YIELD_FOOD, false) - foodConsumption()) * 100) : (getYieldRateTimes100(YIELD_FOOD, false) - foodConsumption() * 100);
 #else
 	if(isFoodProduction())
@@ -10951,6 +10972,13 @@ int CvCity::GetLocalHappiness() const
 				if (GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 				{
 					iHappinessFromReligion += pReligion->m_Beliefs.GetBuildingClassHappiness(eBuildingClass, iFollowers);
+#if defined(LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED)
+					
+					if (eSecondaryPantheon != NO_BELIEF)
+					{
+						iHappinessFromReligion += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetBuildingClassHappiness(eBuildingClass);
+					}
+#endif
 				}
 			}
 #endif

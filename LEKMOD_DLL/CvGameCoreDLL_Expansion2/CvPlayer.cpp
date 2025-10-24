@@ -10627,7 +10627,7 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 #endif
 					if(iBuildingCount > 0)
 					{
-#if !defined(CLEAN_UP)
+#if !defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 						// GJS - changed how culture accumulates for buildings
 						pLoopCity->ChangeJONSCulturePerTurnFromBuildings(pBuildingInfo->GetBuildingClassYieldChange(eBuildingClass, YIELD_CULTURE) * iBuildingCount * iChange);
 
