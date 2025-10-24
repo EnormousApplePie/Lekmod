@@ -8850,9 +8850,6 @@ bool CvUnit::DoSpreadReligion()
             if (iDeltaFollowers > 0 && getUnitInfo().IsSpreadReligion())
             {
                 bool bOnlyMajority = (eMajorityAfter == eReligion && eMajorityBefore != eReligion);
-                CvUnitPromotions* pPromos = GetPromotions();
-                if (pPromos)
-                {
                     for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
                     {
                         // allow only global yields
@@ -8894,7 +8891,6 @@ bool CvUnit::DoSpreadReligion()
                             }
                         }
                     }
-                }
             }
             #endif
 			GetReligionData()->SetSpreadsLeft(GetReligionData()->GetSpreadsLeft() - 1);
