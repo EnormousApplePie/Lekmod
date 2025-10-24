@@ -1342,7 +1342,24 @@ private:
 	CvRouteInfo(const CvRouteInfo&);
 	CvRouteInfo& operator=(const CvRouteInfo&);
 };
+#if defined(CLEAN_UP)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//  class : CvTradeConnectionInfo
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+class CvTradeConnectionInfo :	public CvBaseInfo
+{
+	public:
+	CvTradeConnectionInfo();
+	virtual ~CvTradeConnectionInfo();
+	int getBaseOriginValue() const;
+	int getBaseDestinationValue() const;
 
+	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
+protected:
+	int m_iBaseOriginValue;
+	int m_iBaseDestinationValue;
+};
+#endif
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //  class : CvResourceClassInfo
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -308,6 +308,13 @@ public:
 	int GetNumFreeUnitsByClass(int i) const;
 	int GetTourismByUnitClassCreated(int i) const;
 	int GetImprovementCultureChanges(int i) const;
+#if defined(CLEAN_UP)
+	int GetMinorTradeRouteDomainYieldChanges(int i, int j) const;
+	int GetTradeConnectionLandYieldChanges(int i, int j) const;
+	int GetTradeConnectionSeaYieldChanges(int i, int j) const;
+	int GetTradeConnectionLandYieldModifier(int i, int j) const;
+	int GetTradeConnectionSeaYieldModifier(int i, int j) const;
+#endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	int GetYieldFromKills(int i) const;
 #endif
@@ -612,6 +619,13 @@ private:
 	int* m_paiBuildingClassHappiness;
 	int* m_paiFreeUnitClasses;
 	int* m_paiTourismOnUnitCreation;
+#if defined(CLEAN_UP)
+	int** m_ppiMinorTradeRouteDomainYieldChanges;
+	int** m_ppiTradeConnectionLandYieldChanges;
+	int** m_ppiTradeConnectionSeaYieldChanges;
+	int** m_ppiTradeConnectionLandYieldModifiers;
+	int** m_ppiTradeConnectionSeaYieldModifiers;
+#endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	int* m_paiYieldFromKills;
 #endif
@@ -902,6 +916,13 @@ public:
 	int GetTourismFromUnitCreation(UnitClassTypes eUnitClass) const;
 #if defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
 	int GetBuildingClassHappiness(BuildingClassTypes eBuildingClass) const;
+#endif
+#if defined(CLEAN_UP)
+	int GetMinorTradeRouteDomainYieldChanges(DomainTypes eDomain, YieldTypes eYield) const;
+	int GetTradeConnectionLandYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+	int GetTradeConnectionSeaYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+	int GetTradeConnectionLandYieldModifier(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+	int GetTradeConnectionSeaYieldModifier(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
 #endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	int GetYieldFromKills(YieldTypes eYield) const;

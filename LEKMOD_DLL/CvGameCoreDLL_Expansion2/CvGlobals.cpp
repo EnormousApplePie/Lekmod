@@ -3187,7 +3187,25 @@ CvBaseInfo* CvGlobals::getUnitCombatClassInfo(UnitCombatTypes e)
 	else
 		return NULL;
 }
-
+#if defined(CLEAN_UP)
+int CvGlobals::getNumTradeConnectionInfos()
+{
+	return (int)m_paTradeConnectionInfo.size();
+}
+std::vector<CvTradeConnectionInfo*>& CvGlobals::getTradeConnectionInfo()
+{
+	return m_paTradeConnectionInfo;
+}
+CvBaseInfo* CvGlobals::getTradeConnectionInfo(TradeConnectionType e)
+{
+	CvAssert(e > -1);
+	CvAssert(e < NUM_TRADE_CONNECTION_TYPES);
+	if(e > -1 && e < (int)m_paTradeConnectionInfo.size())
+		return m_paTradeConnectionInfo[e];
+	else
+		return NULL;
+}
+#endif
 std::vector<CvBaseInfo*>& CvGlobals::getUnitAIInfo()
 {
 	return m_paUnitAIInfos;
@@ -7026,6 +7044,9 @@ void CvGlobals::deleteInfoArrays()
 	deleteInfoArray(m_paTerrainInfo);
 	deleteInfoArray(m_paFeatureInfo);
 	deleteInfoArray(m_paResourceClassInfo);
+#if defined(CLEAN_UP)
+	deleteInfoArray(m_paTradeConnectionInfo);
+#endif
 	deleteInfoArray(m_paResourceInfo);
 	deleteInfoArray(m_paUnitDomainInfo);
 

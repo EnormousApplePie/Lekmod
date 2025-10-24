@@ -4411,7 +4411,40 @@ bool CvRouteInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 
 	return true;
 }
+#if defined(CLEAN_UP)
+//======================================================================================================
+//					CvTradeConnectionInfo
+//======================================================================================================
+CvTradeConnectionInfo::CvTradeConnectionInfo() :
+	m_iBaseOriginValue(0),
+	m_iBaseDestinationValue(0)
+{
+}
+CvTradeConnectionInfo::~CvTradeConnectionInfo()
+{
+}
+//------------------------------------------------------------------------------
+int CvTradeConnectionInfo::getBaseOriginValue() const
+{
+	return m_iBaseOriginValue;
+}
+//------------------------------------------------------------------------------
+int CvTradeConnectionInfo::getBaseDestinationValue() const
+{
+	return m_iBaseDestinationValue;
+}
+//------------------------------------------------------------------------------
+bool CvTradeConnectionInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
+{
+	if (!CvBaseInfo::CacheResults(kResults, kUtility))
+		return false;
 
+	m_iBaseOriginValue = kResults.GetInt("BaseOriginValue");
+	m_iBaseDestinationValue = kResults.GetInt("BaseDestinationValue");
+
+	return true;
+}
+#endif
 //======================================================================================================
 //					CvResourceClassInfo
 //======================================================================================================

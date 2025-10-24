@@ -346,6 +346,9 @@ bool CvDllDatabaseUtility::PrefetchGameData()
 		PrefetchCollection(pkNotificationEntries->GetNotificationEntries(), "Notifications");
 	}
 
+#if defined(CLEAN_UP)
+	PrefetchCollection(GC.getTradeConnectionInfo(), "TradeConnections");
+#endif
 	//Technologies
 	PrefetchCollection(GC.getTechInfo(), "Technologies");
 
@@ -621,6 +624,9 @@ bool CvDllDatabaseUtility::ValidatePrefetchProcess()
 	ValidateVectorSize(getNumSpecialUnitInfos);
 	ValidateVectorSize(getNumVoteSourceInfos);
 	ValidateVectorSize(getNumUnitCombatClassInfos);
+#if defined(CLEAN_UP)
+	ValidateVectorSize(getNumTradeConnectionInfos);
+#endif
 
 	ValidateCount(gc.getUnitAIInfo().size);
 

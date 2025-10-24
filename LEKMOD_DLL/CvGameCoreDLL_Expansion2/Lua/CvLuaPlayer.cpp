@@ -3625,6 +3625,7 @@ int CvLuaPlayer::lGetInternationalTradeRouteYourBuildingBonus(lua_State* L)
 	kTradeConnection.m_eOriginOwner = pOriginCity->getOwner();
 	kTradeConnection.m_eDestOwner = pDestCity->getOwner();
 	kTradeConnection.m_eDomain = eDomain;
+	kTradeConnection.m_eConnectionType = TRADE_CONNECTION_INTERNATIONAL;
 
 	int iResult = pPlayerTrade->GetTradeConnectionYourBuildingValueTimes100(kTradeConnection, YIELD_GOLD, bOrigin);
 	lua_pushinteger(L, iResult);
@@ -3649,6 +3650,7 @@ int CvLuaPlayer::lGetInternationalTradeRouteTheirBuildingBonus(lua_State* L)
 	kTradeConnection.m_eOriginOwner = pOriginCity->getOwner();
 	kTradeConnection.m_eDestOwner = pDestCity->getOwner();
 	kTradeConnection.m_eDomain = eDomain;
+	kTradeConnection.m_eConnectionType = TRADE_CONNECTION_INTERNATIONAL;
 
 	int iResult = pPlayerTrade->GetTradeConnectionTheirBuildingValueTimes100(kTradeConnection, YIELD_GOLD, bOrigin);
 	lua_pushinteger(L, iResult);
@@ -3663,6 +3665,8 @@ int CvLuaPlayer::lGetInternationalTradeRoutePolicyBonus(lua_State* L)
 	CvCity* pOriginCity = CvLuaCity::GetInstance(L, 2, true);
 	CvCity* pDestCity = CvLuaCity::GetInstance(L, 3, true);
 	DomainTypes eDomain = (DomainTypes)lua_tointeger(L, 4);
+	bool bOrigin = lua_toboolean(L, 5);
+	YieldTypes eYield = (YieldTypes)lua_tointeger(L, 6);
 
 	TradeConnection kTradeConnection;
 	kTradeConnection.m_iOriginX = pOriginCity->getX();
@@ -3674,7 +3678,7 @@ int CvLuaPlayer::lGetInternationalTradeRoutePolicyBonus(lua_State* L)
 	kTradeConnection.m_eDomain = eDomain;
 	kTradeConnection.m_eConnectionType = TRADE_CONNECTION_INTERNATIONAL;
 
-	int iResult = pPlayerTrade->GetTradeConnectionPolicyValueTimes100(kTradeConnection, YIELD_GOLD);
+	int iResult = pPlayerTrade->GetTradeConnectionPolicyValueTimes100(kTradeConnection, YIELD_GOLD, true);
 	lua_pushinteger(L, iResult);
 	return 1;
 }
@@ -3699,7 +3703,7 @@ int CvLuaPlayer::lGetInternationalTradeRouteOtherTraitBonus(lua_State* L)
 	kTradeConnection.m_eDomain = eDomain;
 	kTradeConnection.m_eConnectionType = TRADE_CONNECTION_INTERNATIONAL;
 
-	int iResult = pPlayerTrade->GetTradeConnectionOtherTraitValueTimes100(kTradeConnection, YIELD_GOLD, bOrigin);
+	int iResult = pPlayerTrade->GetTradeConnectionTraitValueTimes100(kTradeConnection, YIELD_GOLD, false);
 	lua_pushinteger(L, iResult);
 	return 1;	
 }

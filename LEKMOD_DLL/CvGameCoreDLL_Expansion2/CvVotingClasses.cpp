@@ -9976,7 +9976,7 @@ int CvLeagueAI::ScoreVoteChoiceYesNo(CvProposal* pProposal, int iChoice, bool bE
 		for (int i = 0; i < NUM_YIELD_TYPES; i++)
 		{
 			YieldTypes e = (YieldTypes) i;
-			if (GetPlayer()->GetPlayerTraits()->GetYieldChangeIncomingTradeRoute(e) > 0)
+			if (GetPlayer()->GetPlayerTraits()->GetYieldChangePerTradePartnerByDomain(DOMAIN_LAND, e) > 0)
 			{
 				iScore += -40;
 				break;
@@ -10035,7 +10035,7 @@ int CvLeagueAI::ScoreVoteChoiceYesNo(CvProposal* pProposal, int iChoice, bool bE
 			for (int i = 0; i < NUM_YIELD_TYPES; i++)
 			{
 				YieldTypes e = (YieldTypes) i;
-				if (GetPlayer()->GetPlayerTraits()->GetYieldChangeIncomingTradeRoute(e) > 0)
+				if (GetPlayer()->GetPlayerTraits()->GetYieldChangePerTradePartnerByDomain(DOMAIN_LAND, e) > 0)
 				{
 					iScore += -20;
 					break;

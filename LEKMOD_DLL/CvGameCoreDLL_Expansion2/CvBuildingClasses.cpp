@@ -233,6 +233,14 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_ppiBuildingClassYieldChanges(std::pair<int**, size_t>(NULL, 0)),
 #else
 	m_ppaiResourceYieldChange(NULL),
+#if defined(CLEAN_UP)
+	m_ppaiTradeConnectionOriginLandYieldChange(NULL),
+	m_ppaiTradeConnectionOriginSeaYieldChange(NULL),
+	m_ppaiTradeConnectionDestinationLandYieldChange(NULL),
+	m_ppaiTradeConnectionDestinationSeaYieldChange(NULL),
+	m_ppaiIncomingTradeConnectionLandYieldChange(NULL),
+	m_ppaiIncomingTradeConnectionSeaYieldChange(NULL),
+#endif
 #if defined(MISC_CHANGES) // CvBuildingClasses arrays
 	m_ppaiResourceClassYieldChange(NULL),
 #endif
@@ -331,6 +339,14 @@ CvBuildingEntry::~CvBuildingEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges.first, m_ppiBuildingClassYieldChanges.second);
 #else
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiResourceYieldChange);
+#if defined(CLEAN_UP)
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiTradeConnectionOriginLandYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiTradeConnectionOriginSeaYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiTradeConnectionDestinationLandYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiTradeConnectionDestinationSeaYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiIncomingTradeConnectionLandYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiIncomingTradeConnectionSeaYieldChange);
+#endif
 #if defined(MISC_CHANGES) // CvBuildingClasses arrays
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiResourceClassYieldChange);
 #endif
@@ -747,33 +763,125 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 		//Trim extra memory off container since this is mostly read-only.
 		std::map<int, std::map<int, int>>(m_ppiResourceYieldChangeGlobal).swap(m_ppiResourceYieldChangeGlobal);
 	}
+#if defined(CLEAN_UP)
+	// Origin Trade Connections, the ORIGIN gets this bonus
+	{
+		kUtility.Initialize2DArray(m_ppaiTradeConnectionOriginLandYieldChange, "TradeConnections", "Yields");
+		kUtility.Initialize2DArray(m_ppaiTradeConnectionOriginSeaYieldChange, "TradeConnections", "Yields");
+		std::string strKey("Building_TradeConnectionOriginYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL = 
+				"SELECT TradeConnections.ID as TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldTimes100 "
+				"FROM Building_TradeConnectionOriginYieldChanges "
+				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
+				"INNER JOIN Domains ON Domains.ID = DomainType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE BuildingType = ?";
+			pResults = kUtility.PrepareResults(strKey, szSQL);
+		}
+		pResults->Bind(1, szBuildingType);
+		while (pResults->Step())
+		{
+			const int iTradeConnectionID = pResults->GetInt(0);
+			const int iDomainID = pResults->GetInt(1);
+			const int iYieldID = pResults->GetInt(2);
+			const int iYieldTimes100 = pResults->GetInt(3);
+			if (iDomainID == DOMAIN_LAND)
+				m_ppaiTradeConnectionOriginLandYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
+			else if (iDomainID == DOMAIN_SEA)
+				m_ppaiTradeConnectionOriginSeaYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
+		}
+		pResults->Reset();
+	}
+	// Destination Trade Connections, the DESTINATION gets this bonus
+	{
+		kUtility.Initialize2DArray(m_ppaiTradeConnectionDestinationLandYieldChange, "TradeConnections", "Yields");
+		kUtility.Initialize2DArray(m_ppaiTradeConnectionDestinationSeaYieldChange, "TradeConnections", "Yields");
+		std::string strKey("Building_TradeConnectionDestinationYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL = 
+				"SELECT TradeConnections.ID as TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldTimes100 "
+				"FROM Building_TradeConnectionDestinationYieldChanges "
+				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
+				"INNER JOIN Domains ON Domains.ID = DomainType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE BuildingType = ?";
+			pResults = kUtility.PrepareResults(strKey, szSQL);
+		}
+		pResults->Bind(1, szBuildingType);
+		while (pResults->Step())
+		{
+			const int iTradeConnectionID = pResults->GetInt(0);
+			const int iDomainID = pResults->GetInt(1);
+			const int iYieldID = pResults->GetInt(2);
+			const int iYieldTimes100 = pResults->GetInt(3);
+			if (iDomainID == DOMAIN_LAND)
+				m_ppaiTradeConnectionDestinationLandYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
+			else if (iDomainID == DOMAIN_SEA)
+				m_ppaiTradeConnectionDestinationSeaYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
+		}
+		pResults->Reset();
+	}
+	// Incomging Trade Connections, the ORIGIN gets this bonus
+	{
+		kUtility.Initialize2DArray(m_ppaiIncomingTradeConnectionLandYieldChange, "TradeConnections", "Yields");
+		kUtility.Initialize2DArray(m_ppaiIncomingTradeConnectionSeaYieldChange, "TradeConnections", "Yields");
+		std::string strKey("Building_IncomingTradeConnectionYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL = 
+				"SELECT TradeConnections.ID as TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldTimes100 "
+				"FROM Building_IncomingTradeConnectionYieldChanges "
+				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
+				"INNER JOIN Domains ON Domains.ID = DomainType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE BuildingType = ?";
+			pResults = kUtility.PrepareResults(strKey, szSQL);
+		}
+		pResults->Bind(1, szBuildingType);
+		while (pResults->Step())
+		{
+			const int iTradeConnectionID = pResults->GetInt(0);
+			const int iDomainID = pResults->GetInt(1);
+			const int iYieldID = pResults->GetInt(2);
+			const int iYieldTimes100 = pResults->GetInt(3);
+			if (iDomainID == DOMAIN_LAND)
+				m_ppaiIncomingTradeConnectionLandYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
+			else if (iDomainID == DOMAIN_SEA)
+				m_ppaiIncomingTradeConnectionSeaYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
+		}
+		pResults->Reset();
+	}
+#endif
 #if defined(MISC_CHANGES) // CvBuildingClasses arrays
 	{
-
 		kUtility.Initialize2DArray(m_ppaiResourceClassYieldChange, "ResourceClasses", "Yields");
-
 		std::string strKey("Building_ResourceClassYieldChanges");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
-			pResults = kUtility.PrepareResults(strKey,
-				"SELECT ResourceClasses.ID AS ResourceClassID, Yields.ID AS YieldID, Building_ResourceClassYieldChanges.Yield \
-			 FROM Building_ResourceClassYieldChanges \
-			 INNER JOIN ResourceClasses ON ResourceClasses.Type = ResourceClassType \
-			 INNER JOIN Yields ON Yields.Type = YieldType \
-			 WHERE BuildingType = ?");
+			const char* szSQL = 
+				"SELECT ResourceClasses.ID AS ResourceClassID, Yields.ID AS YieldID, Building_ResourceClassYieldChanges.Yield "
+				"FROM Building_ResourceClassYieldChanges "
+				"INNER JOIN ResourceClasses ON ResourceClasses.Type = ResourceClassType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE BuildingType = ?";
+			pResults = kUtility.PrepareResults(strKey, szSQL);
 		}
-
 		pResults->Bind(1, szBuildingType);
-
 		while (pResults->Step())
 		{
 			const int iResourceClassID = pResults->GetInt(0);
 			const int iYieldID = pResults->GetInt(1);
 			const int iYield = pResults->GetInt(2);
-
 			m_ppaiResourceClassYieldChange[iResourceClassID][iYieldID] = iYield;
 		}
+		pResults->Reset();
 	}
 #endif
 	//FeatureYieldChanges
@@ -2538,6 +2646,57 @@ int CvBuildingEntry::GetResourceYieldChangeGlobal(int iResource, int iYieldType)
 
 	return 0;
 }
+#if defined(CLEAN_UP)
+
+int CvBuildingEntry::GetTradeConnectionOriginLandYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < NUM_TRADE_CONNECTION_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiTradeConnectionOriginLandYieldChange ? m_ppaiTradeConnectionOriginLandYieldChange[i][j] : 0;
+}
+int CvBuildingEntry::GetTradeConnectionOriginSeaYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < NUM_TRADE_CONNECTION_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiTradeConnectionOriginSeaYieldChange ? m_ppaiTradeConnectionOriginSeaYieldChange[i][j] : 0;
+}
+int CvBuildingEntry::GetTradeConnectionDestinationLandYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < NUM_TRADE_CONNECTION_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiTradeConnectionDestinationLandYieldChange ? m_ppaiTradeConnectionDestinationLandYieldChange[i][j] : 0;
+}
+int CvBuildingEntry::GetTradeConnectionDestinationSeaYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < NUM_TRADE_CONNECTION_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiTradeConnectionDestinationSeaYieldChange ? m_ppaiTradeConnectionDestinationSeaYieldChange[i][j] : 0;
+}
+int CvBuildingEntry::GetIncomingTradeConnectionLandYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < NUM_TRADE_CONNECTION_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiIncomingTradeConnectionLandYieldChange ? m_ppaiIncomingTradeConnectionLandYieldChange[i][j] : 0;
+}
+int CvBuildingEntry::GetIncomingTradeConnectionSeaYieldChange(int i, int j) const
+{
+	CvAssertMsg(i < NUM_TRADE_CONNECTION_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiIncomingTradeConnectionSeaYieldChange ? m_ppaiIncomingTradeConnectionSeaYieldChange[i][j] : 0;
+}
+#endif
 #if defined(MISC_CHANGES) // CvBuildingEntry:: arrays
 /// Change to Yield based on ResourceClass
 int CvBuildingEntry::GetResourceClassYieldChange(int i, int j) const

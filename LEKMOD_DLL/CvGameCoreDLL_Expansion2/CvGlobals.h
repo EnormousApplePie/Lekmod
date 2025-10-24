@@ -38,6 +38,9 @@ class CvEntityEventInfo;
 class CvLandscapeInfo;
 class CvTerrainInfo;
 class CvResourceClassInfo;
+#if defined(CLEAN_UP)
+class CvTradeConnectionInfo;
+#endif
 class CvResourceInfo;
 class CvFeatureInfo;
 class CvCivilizationInfo;
@@ -332,7 +335,11 @@ public:
 #endif
 	std::vector<CvResourceClassInfo*>& getResourceClassInfo();
 	_Ret_maybenull_ CvResourceClassInfo* getResourceClassInfo(ResourceClassTypes eResourceNum);
-
+#if defined(CLEAN_UP)
+	int getNumTradeConnectionInfos();
+	std::vector<CvTradeConnectionInfo*>& getTradeConnectionInfo();
+	CvBaseInfo* getTradeConnectionInfo(TradeConnectionType e);
+#endif
 #ifdef AUI_WARNING_FIXES
 	uint getNumResourceInfos() const;
 #else
@@ -7930,6 +7937,9 @@ protected:
 	std::vector<CvRouteInfo*> m_paRouteInfo;
 	std::vector<CvFeatureInfo*> m_paFeatureInfo;
 	std::vector<CvResourceClassInfo*> m_paResourceClassInfo;
+#if defined(CLEAN_UP)
+	std::vector<CvTradeConnectionInfo*> m_paTradeConnectionInfo;
+#endif
 	std::vector<CvResourceInfo*> m_paResourceInfo;
 	std::vector<CvBuildInfo*> m_paBuildInfo;
 	std::vector<CvHandicapInfo*> m_paHandicapInfo;

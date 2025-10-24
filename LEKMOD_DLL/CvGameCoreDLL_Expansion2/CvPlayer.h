@@ -548,6 +548,9 @@ public:
 #if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN)
 	void TestMidTurnPolicyNotification();
 #endif
+#if defined(CLEAN_UP)
+	int GetYieldFromTraits(YieldTypes eYield) const;
+#endif
 	void TestMidTurnPopGrowth(CvCity* pCity, bool bAlwaysShowNotification);
 #ifdef NQ_BELIEF_TOGGLE_ALLOW_FAITH_GIFTS_TO_MINORS
 	bool CanFaithGiftMinors();
