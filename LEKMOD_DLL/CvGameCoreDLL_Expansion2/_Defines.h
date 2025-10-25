@@ -1141,7 +1141,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_CUSTOM_SETTLERS
 // Export Pressure Values for cities
 #define RELIGION_PRESSURE_LUA
-
+// Extend the functionality of Religious Tolerance
+#define LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
