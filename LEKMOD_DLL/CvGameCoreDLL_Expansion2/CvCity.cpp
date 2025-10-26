@@ -672,6 +672,10 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 			ChangeBaseYieldRateFromPolicies(YIELD_CULTURE, GC.getPolicyInfo(ePolicy)->GetCulturePerCity());
 #endif
 #endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+			ChangeGarrisonYieldBonus(YIELD_CULTURE, GC.getPolicyInfo(ePolicy)->GetCulturePerGarrisonedUnit());
+			ChangeGarrisonYieldBonus(YIELD_PRODUCTION, GC.getPolicyInfo(ePolicy)->GetProductionFromGarrison());
+#endif
 		}
 	}
 
