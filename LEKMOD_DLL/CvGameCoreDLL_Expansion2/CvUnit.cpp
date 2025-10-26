@@ -8832,6 +8832,7 @@ bool CvUnit::DoSpreadReligion()
 			}
 
             #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+            // Capture state before the spread
             int iFollowersBefore = pCity->GetCityReligions()->GetNumFollowers(eReligion);
             ReligionTypes eMajorityBefore = pCity->GetCityReligions()->GetReligiousMajority();
             #endif
@@ -8844,12 +8845,14 @@ bool CvUnit::DoSpreadReligion()
 				pCity->GetCityReligions()->AddReligiousPressure(FOLLOWER_CHANGE_MISSIONARY, eReligion, iConversionStrength, getOwner());
 			}
             #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+            // Calculate the actual change after the spread
             int iFollowersAfter = pCity->GetCityReligions()->GetNumFollowers(eReligion);
             int iDeltaFollowers = std::max(0, iFollowersAfter - iFollowersBefore);
             ReligionTypes eMajorityAfter = pCity->GetCityReligions()->GetReligiousMajority();
+            
             if (iDeltaFollowers > 0 && getUnitInfo().IsSpreadReligion())
             {
-                bool bOnlyMajority = (eMajorityAfter == eReligion && eMajorityBefore != eReligion);
+                bool bMajorityConversion = (eMajorityAfter == eReligion && eMajorityBefore != eReligion);
                     for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
                     {
                         // allow only global yields
@@ -8870,7 +8873,8 @@ bool CvUnit::DoSpreadReligion()
                                     }
                                 }
                             }
-                            int iAmount = iDeltaFollowers * (bOnlyMajority ? (iPerFollower + iPerFollowerMajority) : iPerFollower);
+                            // Calculate yield: followers gained * per-follower yield + (majority conversion bonus if applicable)
+                            int iAmount = (iDeltaFollowers * iPerFollower) + (bMajorityConversion ? iPerFollowerMajority : 0);
                             if (iAmount > 0)
                             {
                                 CvPlayer& kOwner = GET_PLAYER(getOwner());
