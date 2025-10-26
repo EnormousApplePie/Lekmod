@@ -13072,7 +13072,6 @@ void CvPlayer::DoYieldsFromKill(CvUnit* pAttackingUnit, CvUnit* pKilledUnit, int
 			DoYieldBonusFromKill((YieldTypes)iYield, pAttackingUnit, pKilledUnit, iX, iY, bWasBarbarian, iNumBonuses);
 		}
 	}
-	
 }
 void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, CvUnit* pKilledUnit, int iX, int iY, bool bWasBarbarian, int& iNumBonuses)
 {
@@ -13282,6 +13281,87 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 				ReportYieldFromKill(eYield, iTotalValue, iX, iY, iNumBonuses);
 			}
 		}
+	}
+}
+#endif
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION)
+void CvPlayer::DoYieldsFromConversion(CvUnit* pConvertingUnit, CvCity* pPressuredCity,int iFollowerDelta, bool bMajority, int iX, int iY, int iExistingDelay)
+{
+	int iNumBonuses = iExistingDelay; // Passed by reference below, incremented to stagger floating text in UI
+	if (pPressuredCity != NULL)
+	{
+		for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+		{
+			DoYieldBonusFromConversion((YieldTypes)iYield, pConvertingUnit, pPressuredCity, iFollowerDelta, bMajority, iX, iY, iNumBonuses);
+		}
+	}
+}
+void CvPlayer::DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConvertingUnit, CvCity* pPressuredCity, int iFollowerDelta, bool bMajority, int iX, int iY, int& iNumBonuses)
+{
+	CvGame& kGame = GC.getGame();
+	CvAssertMsg(pConvertingUnit != NULL, "Converting Unit is NULL, Please Report.");
+	if (pConvertingUnit == NULL) return;
+	CvAssertMsg(pPressuredCity != NULL, "Pressured City is NULL, Please Report.");
+	if (pPressuredCity == NULL) return;
+	if (eYield == YIELD_FAITH && (kGame.isOption(GAMEOPTION_NO_RELIGION)))
+		return; // No Faith in this game, so no support for it
+#if defined(LEKMOD_v34)	// YIELD_GOLDEN_AGE_POINTS doesn't exist without v34.
+	if (eYield == YIELD_GOLDEN_AGE_POINTS && kGame.isOption(GAMEOPTION_NO_HAPPINESS))
+		return; // No Golden Ages in this game, so no support for it
+#endif
+	if (iFollowerDelta == 0)
+		return; // No change in followers, so no yields to give
+	int iPerFollower = 0;
+	int iPerFollowerMajority = 0;
+	// sum across all promotions the unit has
+	for (int iP = 0; iP < GC.getNumPromotionInfos(); iP++)
+	{
+		if (pConvertingUnit->isHasPromotion((PromotionTypes)iP))
+		{
+			const CvPromotionEntry* pEntry = GC.getPromotionInfo((PromotionTypes)iP);
+			if (pEntry)
+			{
+				iPerFollower += pEntry->GetYieldFromFollowerConversion(eYield);
+				iPerFollowerMajority += pEntry->GetYieldFromFollowerConversionMajority(eYield);
+			}
+		}
+	}
+	int iTotalValue = iFollowerDelta * ((bMajority ? iPerFollower + iPerFollowerMajority : iPerFollower));
+	if (iTotalValue > 0)
+	{
+		switch (eYield)
+		{
+		case YIELD_GOLD:
+			GetTreasury()->ChangeGold(iTotalValue);
+			break;
+		case YIELD_CULTURE:
+			changeJONSCulture(iTotalValue);
+#if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN) // if this is the human player, have the popup come up so that he can choose a new policy
+			if (isAlive() && isHuman() && getNumCities() > 0)
+				TestMidTurnPolicyNotification();
+#endif
+			break;
+		case YIELD_FAITH:
+			ChangeFaith(iTotalValue);
+			break;
+		case YIELD_SCIENCE:
+		{
+			TechTypes eCurrentTech = GetPlayerTechs()->GetCurrentResearch();
+			if (eCurrentTech == NO_TECH)
+				changeOverflowResearch(iTotalValue);
+			else
+				GET_TEAM(getTeam()).GetTeamTechs()->ChangeResearchProgress(eCurrentTech, iTotalValue, GetID());
+		}
+		break;
+#if defined(LEKMOD_v34) // YIELD_GOLDEN_AGE_POINTS doesn't exist without v34.
+		case YIELD_GOLDEN_AGE_POINTS:
+			ChangeGoldenAgeProgressMeter(iTotalValue);
+			// Consider making this push us into a GA if we reach the Threshold, but Currently that is just worse than waiting.
+			break;
+		}
+#endif
+		iNumBonuses++;
+		ReportYieldFromKill(eYield, iTotalValue, iX, iY, iNumBonuses);
 	}
 }
 #endif

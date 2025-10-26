@@ -545,6 +545,10 @@ public:
 #endif
 	void DoUnresearchedTechBonusFromKill(UnitTypes eKilledUnitType, int iX, int iY, int &iNumBonuses);
 	void ReportYieldFromKill(YieldTypes eYield, int iValue, int iX, int iY, int iDelay);
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION)
+	void DoYieldsFromConversion(CvUnit* pConvertingUnit, CvCity* pPressuredCity, int iFollowerDelta, bool bMajority, int iX, int iY, int iExistingDelay);
+	void DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConvertingUnit, CvCity* pPressuredCity, int iFollowerDelta, bool bMajority, int iX, int iY, int& iNumBonuses);
+#endif
 #if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN)
 	void TestMidTurnPolicyNotification();
 #endif
