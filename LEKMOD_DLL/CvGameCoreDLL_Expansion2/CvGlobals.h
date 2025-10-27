@@ -338,7 +338,7 @@ public:
 #if defined(CLEAN_UP)
 	int getNumTradeConnectionInfos();
 	std::vector<CvTradeConnectionInfo*>& getTradeConnectionInfo();
-	CvBaseInfo* getTradeConnectionInfo(TradeConnectionType e);
+	_Ret_maybenull_ CvTradeConnectionInfo* getTradeConnectionInfo(TradeConnectionType e);
 #endif
 #ifdef AUI_WARNING_FIXES
 	uint getNumResourceInfos() const;

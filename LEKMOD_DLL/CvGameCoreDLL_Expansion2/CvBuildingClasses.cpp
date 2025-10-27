@@ -776,7 +776,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 				"SELECT TradeConnections.ID as TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldTimes100 "
 				"FROM Building_TradeConnectionOriginYieldChanges "
 				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
-				"INNER JOIN Domains ON Domains.ID = DomainType "
+				"INNER JOIN Domains ON Domains.Type = DomainType "
 				"INNER JOIN Yields ON Yields.Type = YieldType "
 				"WHERE BuildingType = ?";
 			pResults = kUtility.PrepareResults(strKey, szSQL);
@@ -790,7 +790,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 			const int iYieldTimes100 = pResults->GetInt(3);
 			if (iDomainID == DOMAIN_LAND)
 				m_ppaiTradeConnectionOriginLandYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
-			else if (iDomainID == DOMAIN_SEA)
+			if (iDomainID == DOMAIN_SEA)
 				m_ppaiTradeConnectionOriginSeaYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
 		}
 		pResults->Reset();
@@ -807,7 +807,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 				"SELECT TradeConnections.ID as TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldTimes100 "
 				"FROM Building_TradeConnectionDestinationYieldChanges "
 				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
-				"INNER JOIN Domains ON Domains.ID = DomainType "
+				"INNER JOIN Domains ON Domains.Type = DomainType "
 				"INNER JOIN Yields ON Yields.Type = YieldType "
 				"WHERE BuildingType = ?";
 			pResults = kUtility.PrepareResults(strKey, szSQL);
@@ -821,7 +821,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 			const int iYieldTimes100 = pResults->GetInt(3);
 			if (iDomainID == DOMAIN_LAND)
 				m_ppaiTradeConnectionDestinationLandYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
-			else if (iDomainID == DOMAIN_SEA)
+			if (iDomainID == DOMAIN_SEA)
 				m_ppaiTradeConnectionDestinationSeaYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
 		}
 		pResults->Reset();
@@ -838,7 +838,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 				"SELECT TradeConnections.ID as TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldTimes100 "
 				"FROM Building_IncomingTradeConnectionYieldChanges "
 				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
-				"INNER JOIN Domains ON Domains.ID = DomainType "
+				"INNER JOIN Domains ON Domains.Type = DomainType "
 				"INNER JOIN Yields ON Yields.Type = YieldType "
 				"WHERE BuildingType = ?";
 			pResults = kUtility.PrepareResults(strKey, szSQL);
@@ -852,7 +852,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 			const int iYieldTimes100 = pResults->GetInt(3);
 			if (iDomainID == DOMAIN_LAND)
 				m_ppaiIncomingTradeConnectionLandYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
-			else if (iDomainID == DOMAIN_SEA)
+			if (iDomainID == DOMAIN_SEA)
 				m_ppaiIncomingTradeConnectionSeaYieldChange[iTradeConnectionID][iYieldID] = iYieldTimes100;
 		}
 		pResults->Reset();

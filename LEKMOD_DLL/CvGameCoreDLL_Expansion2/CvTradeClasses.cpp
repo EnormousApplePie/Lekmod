@@ -2899,8 +2899,9 @@ int CvPlayerTrade::GetTradeConnectionRiverValueModifierTimes100(const TradeConne
 }
 int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
 {
-	int iTotalValue = 0;
+	// If you put yield cases in this function, I will bite you. Put them in the Helpers or make a better yield grabber.
 	// Base Values
+	int iTotalValue = 0;
 	int iBaseValue			= GetTradeConnectionBaseValueTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 	int iOriginGPTValue		= GetTradeConnectionGPTValueTimes100(kTradeConnection, eYield, bAsOriginPlayer, true /*bOriginCity*/);
 	int iDestGPTValue		= GetTradeConnectionGPTValueTimes100(kTradeConnection, eYield, bAsOriginPlayer, false /*bOriginCity*/);
@@ -2922,9 +2923,8 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTrade
 	iTotalValue += iPolicyValue;
 	iTotalValue += iTraitValue;
 	iTotalValue += iReligionValue;
-
-	int iModifier = 100; // Start at 100 since 0 would be no value at all.
 	// Modifiers
+	int iModifier = 100;
 	int iPolicyModifier		= GetTradeConnectionPolicyValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 	int iTraitModifier		= GetTradeConnectionTraitValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 	int iDomainModifier		= GetTradeConnectionDomainValueModifierTimes100(kTradeConnection, eYield);
@@ -2935,7 +2935,8 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTrade
 	iModifier += iDomainModifier;
 	iModifier += iRiverMod;
 
-	iTotalValue = (iTotalValue * iModifier) / 100;
+	iTotalValue *= iModifier;
+	iTotalValue /= 100;
 	return iTotalValue;
 }
 #else

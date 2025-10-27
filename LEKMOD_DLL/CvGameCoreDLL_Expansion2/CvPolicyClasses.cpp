@@ -703,9 +703,9 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 			const char* szSQL =
 				"SELECT TradeConnections.ID as TradeConnectionID, Domains.ID as DomainID, Yields.ID as YieldID, YieldTimes100, CityStateOnly  "
 				"FROM Policy_TradeRouteYieldChanges "
-				"INNER JOIN Yields ON Yields.Type = YieldType "
 				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
 				"INNER JOIN Domains ON Domains.Type = DomainType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
 				"WHERE PolicyType = ?";
 			pResults = kUtility.PrepareResults(strKey, szSQL);
 		}
@@ -741,9 +741,9 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 			const char* szSQL =
 				"SELECT TradeConnections.ID as TradeConnectionID, Domains.ID as DomainID, Yields.ID as YieldID, YieldModifier  "
 				"FROM Policy_TradeRouteYieldModifiers "
-				"INNER JOIN Yields ON Yields.Type = YieldType "
 				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
 				"INNER JOIN Domains ON Domains.Type = DomainType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
 				"WHERE PolicyType = ?";
 			pResults = kUtility.PrepareResults(strKey, szSQL);
 		}

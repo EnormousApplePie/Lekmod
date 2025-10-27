@@ -3196,7 +3196,7 @@ std::vector<CvTradeConnectionInfo*>& CvGlobals::getTradeConnectionInfo()
 {
 	return m_paTradeConnectionInfo;
 }
-CvBaseInfo* CvGlobals::getTradeConnectionInfo(TradeConnectionType e)
+CvTradeConnectionInfo* CvGlobals::getTradeConnectionInfo(TradeConnectionType e)
 {
 	CvAssert(e > -1);
 	CvAssert(e < NUM_TRADE_CONNECTION_TYPES);
