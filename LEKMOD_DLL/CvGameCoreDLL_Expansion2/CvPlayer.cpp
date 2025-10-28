@@ -13326,7 +13326,7 @@ void CvPlayer::DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConverting
 			}
 		}
 	}
-	int iTotalValue = iFollowerDelta * ((bMajority ? iPerFollower + iPerFollowerMajority : iPerFollower));
+	int iTotalValue = (iFollowerDelta * iPerFollower) + (bMajority ? iPerFollowerMajority : 0);
 	if (iTotalValue > 0)
 	{
 		switch (eYield)

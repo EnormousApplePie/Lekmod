@@ -3821,7 +3821,18 @@ void CvCityReligions::DoPopulationChange(int iChange)
 	}
 	else if (iChange < 0)
 	{
+#if defined(LEKMOD_RELIGIOUS_PRESSURE_POP_LOSS) // Reduce Atheism pressure on pop loss, if it is the majority religion
+		if (eMajorityReligion == NO_RELIGION)
+		{
+			AddReligiousPressure(FOLLOWER_CHANGE_POP_CHANGE, eMajorityReligion, iChange * GC.getRELIGION_ATHEISM_PRESSURE_PER_POP());
+		}
+		else
+		{
+			RecomputeFollowers(FOLLOWER_CHANGE_POP_CHANGE, eMajorityReligion);
+		}
+#else
 		RecomputeFollowers(FOLLOWER_CHANGE_POP_CHANGE, eMajorityReligion);
+#endif
 	}
 }
 
