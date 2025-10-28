@@ -5000,7 +5000,9 @@ void CvPlayer::doTurn()
 	{
 		doTurnPostDiplomacy();
 	}
-
+#if defined(TRAITIFY)
+	updateYield();
+#endif
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if(pkScriptSystem)
 	{
