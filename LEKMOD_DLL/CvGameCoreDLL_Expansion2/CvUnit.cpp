@@ -8853,48 +8853,8 @@ bool CvUnit::DoSpreadReligion()
             if (iDeltaFollowers > 0 && getUnitInfo().IsSpreadReligion())
             {
                 bool bMajorityConversion = (eMajorityAfter == eReligion && eMajorityBefore != eReligion);
-                    for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
-                    {
-                        // allow only global yields
-                        if (iYield == YIELD_SCIENCE || iYield == YIELD_GOLD || iYield == YIELD_FAITH || iYield == YIELD_CULTURE)
-                        {
-                            int iPerFollower = 0;
-                            int iPerFollowerMajority = 0;
-                            // sum across all promotions the unit has
-                            for (int iP = 0; iP < GC.getNumPromotionInfos(); iP++)
-                            {
-                                if (isHasPromotion((PromotionTypes)iP))
-                                {
-                                    const CvPromotionEntry* pEntry = GC.getPromotionInfo((PromotionTypes)iP);
-                                    if (pEntry)
-                                    {
-                                        iPerFollower += pEntry->GetYieldFromFollowerConversion(iYield);
-                                        iPerFollowerMajority += pEntry->GetYieldFromFollowerConversionMajority(iYield);
-                                    }
-                                }
-                            }
-                            // Calculate yield: followers gained * per-follower yield + (majority conversion bonus if applicable)
-                            int iAmount = (iDeltaFollowers * iPerFollower) + (bMajorityConversion ? iPerFollowerMajority : 0);
-                            if (iAmount > 0)
-                            {
-                                CvPlayer& kOwner = GET_PLAYER(getOwner());
-                                if (iYield == YIELD_GOLD)
-                                    kOwner.GetTreasury()->ChangeGold(iAmount);
-                                else if (iYield == YIELD_FAITH)
-                                    kOwner.ChangeFaith(iAmount);
-                                else if (iYield == YIELD_CULTURE)
-                                    kOwner.changeJONSCultureTimes100(iAmount * 100);
-                                else if (iYield == YIELD_SCIENCE)
-                                {
-                                    TechTypes eCurrentTech = kOwner.GetPlayerTechs()->GetCurrentResearch();
-                                    if(eCurrentTech == NO_TECH)
-                                        kOwner.changeOverflowResearch(iAmount);
-                                    else
-                                        GET_TEAM(kOwner.getTeam()).GetTeamTechs()->ChangeResearchProgress(eCurrentTech, iAmount, kOwner.GetID());
-                                }
-                            }
-                        }
-                    }
+				CvPlayer& kPlayer = GET_PLAYER(getOwner());
+				kPlayer.DoYieldsFromConversion(this, pCity, iDeltaFollowers, bMajorityConversion, getX(), getY(), 0);
             }
             #endif
 			GetReligionData()->SetSpreadsLeft(GetReligionData()->GetSpreadsLeft() - 1);

@@ -5000,7 +5000,9 @@ void CvPlayer::doTurn()
 	{
 		doTurnPostDiplomacy();
 	}
-
+#if defined(TRAITIFY)
+	updateYield();
+#endif
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if(pkScriptSystem)
 	{
@@ -13326,7 +13328,7 @@ void CvPlayer::DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConverting
 			}
 		}
 	}
-	int iTotalValue = iFollowerDelta * ((bMajority ? iPerFollower + iPerFollowerMajority : iPerFollower));
+	int iTotalValue = (iFollowerDelta * iPerFollower) + (bMajority ? iPerFollowerMajority : 0);
 	if (iTotalValue > 0)
 	{
 		switch (eYield)
