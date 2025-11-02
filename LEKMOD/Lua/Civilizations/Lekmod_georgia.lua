@@ -97,6 +97,8 @@ if is_active then
    GameEvents.CityAdoptReligion.Add(lekmod_georgia_ua_on_convert)
    GameEvents.CityConvertsReligion.Add(lekmod_georgia_ua_on_convert)
    GameEvents.CityCanConstruct.Add(lekmod_georgia_disable_normal_faith_buildings)
+   GameEvents.ReligionFounded.Add(lekmod_georgia_ua)
+   GameEvents.ReligionEnhanced.Add(lekmod_georgia_ua)
 end
 GameEvents.PlayerDoTurn.Add(lekmod_georgia_uu_golden_age)
 GameEvents.GreatPersonExpended.Add(lekmod_georgia_uu_golden_age)
