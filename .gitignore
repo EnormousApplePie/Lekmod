@@ -1,4 +1,12 @@
 
+## Build output directories for the DLL project
+LEKMOD_DLL/**/BuildOutput/
+LEKMOD_DLL/**/BuildTemp/
+LEKMOD_DLL/**/Debug/
+LEKMOD_DLL/**/Release/
+
+## Keep the distribution DLL in the LEKMOD folder tracked
+!LEKMOD/CvGameCore_Expansion2.dll
 LEKMOD_DLL/BuildTemp/
 
 LEKMOD_DLL/.vs/
