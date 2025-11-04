@@ -2905,7 +2905,7 @@ int CvPlayerTrade::GetTradeConnectionRiverValueModifierTimes100(const TradeConne
 
 	return iModifier;
 }
-int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer, bool bIncludeModifiers)
 {
 	// If you put yield cases in this function, I will bite you. Put them in the Helpers or make a better yield grabber.
 	// Base Values
@@ -2932,19 +2932,23 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTrade
 	iTotalValue += iTraitValue;
 	iTotalValue += iReligionValue;
 	// Modifiers
-	int iModifier = 100;
-	int iPolicyModifier		= GetTradeConnectionPolicyValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
-	int iTraitModifier		= GetTradeConnectionTraitValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
-	int iDomainModifier		= GetTradeConnectionDomainValueModifierTimes100(kTradeConnection, eYield);
-	int iRiverMod			= GetTradeConnectionRiverValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
+	if (bIncludeModifiers)
+	{
+		int iModifier = 100;
+		int iPolicyModifier = GetTradeConnectionPolicyValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
+		int iTraitModifier = GetTradeConnectionTraitValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
+		int iDomainModifier = GetTradeConnectionDomainValueModifierTimes100(kTradeConnection, eYield);
+		int iRiverMod = GetTradeConnectionRiverValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 
-	iModifier += iPolicyModifier;
-	iModifier += iTraitModifier;
-	iModifier += iDomainModifier;
-	iModifier += iRiverMod;
+		iModifier += iPolicyModifier;
+		iModifier += iTraitModifier;
+		iModifier += iDomainModifier;
+		iModifier += iRiverMod;
 
-	iTotalValue *= iModifier;
-	iTotalValue /= 100;
+		iTotalValue *= iModifier;
+		iTotalValue /= 100;
+	}
+
 	return iTotalValue;
 }
 #else

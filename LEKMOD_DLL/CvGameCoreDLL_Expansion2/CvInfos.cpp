@@ -5065,7 +5065,7 @@ bool CvResourceInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility
 				"FROM Resource_TradeConnectionYieldBonus "
 				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
 				"INNER JOIN Yields ON Yields.Type = YieldType "
-				"INNER JOIN Domains ON Domains.Type = DomainType"
+				"INNER JOIN Domains ON Domains.Type = DomainType "
 				"WHERE ResourceType = ?";
 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 		}

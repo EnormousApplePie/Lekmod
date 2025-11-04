@@ -4197,6 +4197,7 @@ int CvLuaPlayer::lGetTradeConnectionTotalValue(lua_State* L)
 	bool bOrigin = lua_toboolean(L, 5);
 	YieldTypes eYield = (YieldTypes)lua_tointeger(L, 6);
 	DomainTypes eDomain = (DomainTypes)lua_tointeger(L, 7);
+	bool bIncludeModifiers = lua_toboolean(L, 8);
 
 	TradeConnection kTradeConnection;
 	kTradeConnection.m_iOriginX = pOriginCity->getX();
@@ -4208,7 +4209,7 @@ int CvLuaPlayer::lGetTradeConnectionTotalValue(lua_State* L)
 	kTradeConnection.m_eDomain = eDomain;
 	kTradeConnection.m_eConnectionType = eConnectionType;
 
-	int iResult = pPlayerTrade->GetTradeConnectionValueTimes100(kTradeConnection, eYield, bOrigin);
+	int iResult = pPlayerTrade->GetTradeConnectionValueTimes100(kTradeConnection, eYield, bOrigin , bIncludeModifiers);
 	lua_pushinteger(L, iResult);
 	return 1;
 }
