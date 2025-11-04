@@ -16,7 +16,7 @@ jobs:
         config: [Debug, Release]
     env:
       vs_url: https://archive.org/download/vs-2008-express-w-sp-1/VS2008-Express-w-SP1.ISO
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
