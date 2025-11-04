@@ -1097,6 +1097,10 @@ Mughals Trait was quite specific and the behavoir of the code was buggy, so I el
 // Legacies, for now.
 #define LEKMOD_LEGACY
 
+#define NOTIFICATION_CHOOSE_LEGACY -782919237
+#define NOTIFICATION_LEGACY_CHOSEN 447239182
+
+
 ////////////////////////
 //Benched or not working
 ////////////////////////

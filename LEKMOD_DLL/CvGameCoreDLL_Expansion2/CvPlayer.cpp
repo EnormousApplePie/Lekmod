@@ -5327,7 +5327,7 @@ void CvPlayer::doTurnPostDiplomacy()
 			{
 				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_CHOOSE_LEGACY");
 				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_CHOOSE_LEGACY");
-				pNotifications->Add(NOTIFICATION_CHOOSE_LEGACY, strBuffer, strSummary, -1, -1, GetID());
+				pNotifications->Add((NotificationTypes)NOTIFICATION_CHOOSE_LEGACY, strBuffer, strSummary, -1, -1, GetID());
 			}
 		}
 #endif

@@ -145,6 +145,10 @@ static uint V1_IndexToHash[] =
 	NOTIFICATION_LEAGUE_CALL_FOR_VOTES,
 	NOTIFICATION_CHOOSE_IDEOLOGY,
 	NOTIFICATION_IDEOLOGY_CHOSEN,
+#if defined(LEKMOD_LEGACY)
+	NOTIFICATION_CHOOSE_LEGACY,
+	NOTIFICATION_LEGACY_CHOSEN,
+#endif
 	NOTIFICATION_DIPLOMAT_EJECTED,
 	NOTIFICATION_INTERNATIONAL_TRADE_UNIT_PLUNDERED_TRADER,
 	NOTIFICATION_INTERNATIONAL_TRADE_UNIT_PLUNDERED_TRADEE,
@@ -562,6 +566,9 @@ bool CvNotifications::MayUserDismiss(int iLookupIndex)
 			case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
 			case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
 			case NOTIFICATION_CHOOSE_IDEOLOGY:
+#if defined(LEKMOD_LEGACY)
+			case NOTIFICATION_CHOOSE_LEGACY:
+#endif
 #ifdef MP_PLAYERS_VOTING_SYSTEM
 			case NOTIFICATION_MP_IRR_PROPOSAL:
 			case NOTIFICATION_MP_CC_PROPOSAL:
@@ -749,7 +756,13 @@ bool CvNotifications::GetEndTurnBlockedType(EndTurnBlockingTypes& eBlockingType,
 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 				return true;
 				break;
-
+#if defined(LEKMOD_LEGACY)
+				case NOTIFICATION_CHOOSE_LEGACY:
+				eBlockingType = ENDTURN_BLOCKING_CHOOSE_LEGACY;
+				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+				return true;
+				break;
+#endif
 			default:
 				// these notifications don't block, so don't return a blocking type
 				break;
@@ -1073,6 +1086,9 @@ void CvNotifications::Activate(Notification& notification)
 		break;
 
 	case NOTIFICATION_IDEOLOGY_CHOSEN:
+#if defined(LEKMOD_LEGACY)
+	case NOTIFICATION_LEGACY_CHOSEN:
+#endif
 	case NOTIFICATION_CULTURE_VICTORY_SOMEONE_INFLUENTIAL:
 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_TWO:
 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_TWO_ACTIVE_PLAYER:
@@ -1105,7 +1121,16 @@ void CvNotifications::Activate(Notification& notification)
 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 		}
 		break;
-
+#if defined(LEKMOD_LEGACY)
+	case NOTIFICATION_CHOOSE_LEGACY:
+		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+		if (notification.m_iGameDataIndex >= 0)
+		{
+			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_1, m_ePlayer);
+			GC.GetEngineUserInterface()->AddPopup(kPopup);
+		}
+		break;
+#endif
 #ifndef AUI_WARNING_FIXES
 	case NOTIFICATION_LEAGUE_PROJECT_COMPLETE:
 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
@@ -1389,6 +1414,9 @@ bool CvNotifications::IsNotificationRedundant(Notification& notification)
 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
 	case NOTIFICATION_CHOOSE_IDEOLOGY:
+#if defined(LEKMOD_LEGACY)
+	case NOTIFICATION_CHOOSE_LEGACY:
+#endif
 	{
 		int iIndex = m_iNotificationsBeginIndex;
 		while(iIndex != m_iNotificationsEndIndex)
@@ -1829,7 +1857,16 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 			}
 		}
 		break;
-
+#if defined(LEKMOD_LEGACY)
+		case NOTIFICATION_CHOOSE_LEGACY:
+		{
+			if (GET_PLAYER(m_ePlayer).GetPlayerLegacies()->IsTimeToChooseLegacy() == false)
+			{
+				return true;
+			}
+		}
+		break;
+#endif
 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
 	{
 #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
@@ -1908,6 +1945,9 @@ bool CvNotifications::IsNotificationTypeEndOfTurnExpired(NotificationTypes eNoti
 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
 	case NOTIFICATION_CHOOSE_IDEOLOGY:
+#if defined(LEKMOD_LEGACY)
+	case NOTIFICATION_CHOOSE_LEGACY:
+#endif
 		return false;
 		break;
 

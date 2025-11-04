@@ -210,6 +210,37 @@ void CvPlayerLegacies::SetLegacy(LegacyTypes eIndex, bool bNewValue)
 		m_pabHasLegacy[eIndex] = bNewValue;
 		m_pPlayer->processLegacies(eIndex, bNewValue ? 1 : -1);
 	}
+	// Notify others
+	for (int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop) {
+		PlayerTypes eNotifyPlayer = (PlayerTypes)iNotifyLoop;
+		CvPlayerAI& kCurNotifyPlayer = GET_PLAYER(eNotifyPlayer);
+
+		// Issue notification if OTHER than target player
+		if (m_pPlayer->GetID() != eNotifyPlayer)
+		{
+			CvTeam& kNotifyTeam = GET_TEAM(kCurNotifyPlayer.getTeam());
+			const bool bHasMet = kNotifyTeam.isHasMet(m_pPlayer->getTeam());
+
+			CvNotifications* pNotifications = kCurNotifyPlayer.GetNotifications();
+			if (pNotifications)
+			{
+				CvString strBuffer;
+				if (bHasMet)
+				{
+					strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_IDEOLOGY_CHOSEN", m_pPlayer->getCivilizationShortDescriptionKey(), pkLegacy->GetDescriptionKey());
+				}
+				else
+				{
+					strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_IDEOLOGY_CHOSEN_UNMET", pkLegacy->GetDescriptionKey());
+				}
+
+				CvString strSummary;
+				strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_IDEOLOGY_CHOSEN");
+
+				pNotifications->Add((NotificationTypes)NOTIFICATION_LEGACY_CHOSEN, strBuffer, strSummary, -1, -1, m_pPlayer->GetID());
+			}
+		}
+	}
 }
 // Get Legacy data from the XML
 CvLegacyXMLEntries* CvPlayerLegacies::GetLegacies() const
