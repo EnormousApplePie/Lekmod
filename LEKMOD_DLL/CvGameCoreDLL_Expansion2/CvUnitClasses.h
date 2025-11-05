@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -111,6 +111,11 @@ public:
 	bool IsPillage() const;
 	bool IsFound() const;
 	bool IsFoundAbroad() const;
+#ifdef LEKMOD_CUSTOM_SETTLERS
+	int GetPopulationReq() const;
+	int GetSettlerCostModifier() const;
+	int GetLocalPopChange() const;
+#endif
 	int GetCultureBombRadius() const;
 	int GetCultureBombRadiusNeutral() const;
 	int GetGoldenAgeTurns() const;
@@ -125,7 +130,9 @@ public:
 	bool IsRangeAttackOnlyInDomain() const;
 	bool IsTrade() const;
 	int GetNumExoticGoods() const;
-
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	bool IsSubmerge() const;
+#endif
 	float GetUnitMaxSpeed() const;
 	float GetUnitPadTime() const;
 
@@ -250,6 +257,11 @@ private:
 	bool m_bPillage;
 	bool m_bFound;
 	bool m_bFoundAbroad;
+#ifdef LEKMOD_CUSTOM_SETTLERS
+	int m_iPopulationReq;
+	int m_iSettlerCostModifier;
+	int m_iLocalPopChange;
+#endif
 	int m_iCultureBombRadius;
 	int m_iCultureBombRadiusNeutral;
 	int m_iGoldenAgeTurns;
@@ -267,6 +279,9 @@ private:
 	int m_iLeaderPromotion;
 	bool m_bTrade;
 	int m_iNumExoticGoods;
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	bool m_bSubmerge;
+#endif
 
 	// This is not loaded from XML, but cached so we don't have to recalculate every time
 	int m_iCachedPower;

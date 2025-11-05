@@ -753,7 +753,19 @@ void CvUnitMission::ContinueMission(UnitHandle hUnit, int iSteps, int iETA)
 					kMissionData.eMissionType == CvTypes::getMISSION_SELL_EXOTIC_GOODS() ||
 					kMissionData.eMissionType == CvTypes::getMISSION_GIVE_POLICIES() ||
 					kMissionData.eMissionType == CvTypes::getMISSION_ONE_SHOT_TOURISM() ||
+#if !defined(LEKMOD_SUBMERGE_MISSION)
 					kMissionData.eMissionType == CvTypes::getMISSION_CHANGE_ADMIRAL_PORT())
+#else
+					kMissionData.eMissionType == CvTypes::getMISSION_CHANGE_ADMIRAL_PORT() ||
+					kMissionData.eMissionType == CvTypes::getMISSION_SUBMERGE() ||
+					kMissionData.eMissionType == CvTypes::getMISSION_SURFACE()
+#if !defined(LEKMOD_RETRAIN_MISSION)
+				)
+#else
+				|| kMissionData.eMissionType == CvTypes::getMISSION_RETRAIN()
+				)
+#endif
+#endif
 			{
 				bDone = true;
 			}
@@ -868,6 +880,13 @@ bool CvUnitMission::CanStartMission(UnitHandle hUnit, int iMission, int iData1, 
 
 #ifdef AUI_UNIT_MISSION_FIX_NO_MISSION_ON_DEATH
 	if (hUnit->isDelayedDeath())
+	{
+		return false;
+	}
+#endif
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	CvPlayer& kPlayer = GET_PLAYER(hUnit->getOwner());
+	if(kPlayer.GetPlayerTraits()->IsBannedUnitMission((MissionTypes)iMission))
 	{
 		return false;
 	}
@@ -1257,7 +1276,31 @@ bool CvUnitMission::CanStartMission(UnitHandle hUnit, int iMission, int iData1, 
 			return true;
 		}
 	}
-
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	else if (iMission == CvTypes::getMISSION_SUBMERGE())
+	{
+		if (hUnit->canSubmerge(pPlot))
+		{
+			return true;
+		}
+	}
+	else if (iMission == CvTypes::getMISSION_SURFACE())
+	{
+		if (hUnit->canSurface(pPlot))
+		{
+			return true;
+		}
+	}
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	else if (iMission == CvTypes::getMISSION_RETRAIN())
+	{
+		if (hUnit->canRetrain(pPlot, bTestVisible))
+		{
+			return true;
+		}
+	}
+#endif
 	return false;
 }
 
@@ -1721,6 +1764,25 @@ void CvUnitMission::StartMission(UnitHandle hUnit)
 					bAction = true;
 				}
 			}
+#if defined(LEKMOD_SUBMERGE_MISSION)
+			else if (pkQueueData->eMissionType == CvTypes::getMISSION_SUBMERGE())
+			{
+				hUnit->setSubmerged(true);
+				bAction = true;
+			}
+			else if (pkQueueData->eMissionType == CvTypes::getMISSION_SURFACE())
+			{
+				hUnit->setSubmerged(false);
+				bAction = true;
+			}
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+			else if (pkQueueData->eMissionType == CvTypes::getMISSION_RETRAIN())
+			{
+				hUnit->retrain();
+				bAction = true;
+			}
+#endif
 		}
 	}
 

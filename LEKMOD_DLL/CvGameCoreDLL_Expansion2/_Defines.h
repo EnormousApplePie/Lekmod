@@ -746,7 +746,7 @@
 // fix tourism from futurism so it scales at different game speeds
 #define NQ_FIX_ADD_TOURISM_GAME_SPEED_MOD
 // golden age points accrue even while in golden ages
-#define NQ_GOLDEN_AGE_OVERHAUL
+//#define NQ_GOLDEN_AGE_OVERHAUL
 // coup chances now use base influence instead of effective influence (which would be -60 during war)
 // Cirra Edit
 #define NQ_COUP_FORMULA_USES_BASE_FRIENDSHIP_NOT_EFFECTIVE_FRIENDSHIP
@@ -958,6 +958,10 @@
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 // Culture per pop from buildings
 #define LEKMOD_CULTURE_PER_POP_FROM_BUILDINGS
+// New Trait ability that allows civilian units to embark for 1 move
+#define LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+// Yields from converting cities and/or citizens to a religion
+#define LEKMOD_PROMO_YIELD_FROM_CONVERSION
 
 
 /// ###############################
@@ -1014,7 +1018,8 @@
 //#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
 
 
-// Loup's changes for importation step 1
+// ------------------------------------------- Loup's Changes Start -------------------------------------------------- \\
+
 #define TRAITIFY
 /* This import of Traitify has
 ✓ GoldenAgeCultureModifier -- Romania Trait
@@ -1070,29 +1075,82 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TECH_VOTES
 TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_POLICY_VOTES
 TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 */
-#define LEKMOD_v34 // Changes made for the new version of Lekmod, unrelated to the above
-/*
-✓ LandTradeRouteYieldBonus
-✓ SelfRelgiousPressureBonus
-✓ Lua Exports for activating the new Reformation effect, also just a new bool value since the Lua was delayed a turn for some reason. and made it happen twice.
-✓ New Golden Age Points as a Yield w/ Lua Exports
-✓ New building integer, GarrisonStrengthBonus gives a Flat bonus to the strength of a city with a garrison.
-
-✓ Building_GarrisonCityYield
-Trait_NearbyResouceBuildingClassYieldChange gave up
-Mughals Trait was quite specific and the behavoir of the code was buggy, so I elected to not use it in the dll for now.
-✓ Policy_FreeStrategicResources
-*/
+// Changes made for the new version of Lekmod, unrelated to the above
+#define LEKMOD_v34 
+// Allows the Collection of Golden Age Points during a Golden Age via game option.
 #define GAMEOPTION_GOLDENAGE_ALT
-// 3 more defines!
 // DLL code the Huey lake Req
 #define LEKMOD_BUILDING_LAKE_REQ
 // Fully fleshout the Yield From Kills system for Traits, Policies and Promotions.
 #define FULL_YIELD_FROM_KILLS
 // Display the General and Admiral Points earned from Combat.
 #define DISPLAY_GENERAL_ADMIRAL_POINTS
+// Yield Changes apply to all buildings of a Class, instead of just the civ's building for that class. Used in cases when civs can get a Unique Building of another civ, or the basic building while having a Unique.
+#define LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
 // Units now remember their Home city. Want to make more than Religious Unit remember home city Religion on Trained. This also makes Death yields pretty simple, now that I think about it.
 //#define UNITS_REMEMBER_HOME
+// Prevent the Airplane production saving exploit. Boot out air units from the prod queue if the city has maxed out its air capacity from a rebase or purchase
+#define FIX_PRODUCTION_KEEPING_EXPLOITS
+// Relocate Puppet Yield Mod from the Global integers to CvYieldInfo
+#define LEKMOD_PUPPET_YIELD_MOD_INFO
+// Relocate the Player-Wide Golden Age yield mod from the Global integers to CvYieldInfo
+#define LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO
+// Standardize Yields on both the City-level and Player-level.
+#define STANDARDIZE_YIELDS
+// Unhardcode the Scholasticism policy effect from the DLL.
+#define LEKMOD_FIX_SCHOLASTICISM
+// Fix Patro Food interaction with Patro 5
+#define LEKMOD_FIX_PATRO_FOOD
+// Remove the double counting for Yield Per Religion in a city.
+#define LEKMOD_FIX_YIELD_PER_RELIGION
+// Correct the fucked up Building_ResourceCultureChange and Building_ResourceFaithChange tables and convert into a single Building_LocalResourceYieldChange table.
+#define LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE
+// Consolidate Garrison Yield effects
+#define LEKMOD_GARRISON_YIELD_EFFECTS
+// Great Work Yield stuff
+#define LEKMOD_GREAT_WORK_YIELD_EFFECTS
+// Convert invaild Promotions for a Unit combat to valid ones.
+#define LEKMOD_CONVERT_PROMOTIONS_UPGRADE
+// Move from fixed table values to an array table for Promotion Prerequisites
+#define LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS
+// Changes made to CS quests
+#define LEKMOD_CITYSTATE_QUEST_CHANGES
+// Alters the Parameters for the Merchant of Venice buyout
+#define LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING
+// Unlinks Repair for Improvements time and Route build time.
+#define LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE
+// Defines Free Buildings to be given to a city depending on the Unit that settled it.
+#define LEKMOD_TRACK_CITY_SETTLER_UNITTYPE
+// Yield Increase based on Era
+#define LEKMOD_ERA_ENHANCED_YIELDS
+// New Unit Mission "Submerge" and "Surface"
+//#define LEKMOD_SUBMERGE_MISSION
+// New Unit Mission "Retrain"
+#define LEKMOD_RETRAIN_MISSION
+// Ban specific UnitMissions based on Trait
+#define LEKMOD_TRAIT_BAN_UNIT_MISSIONS
+// Add more flexibility to City Yield changes from Traits
+#define LEKMOD_CITY_YIELDS_TRAITS
+// Refactor Submarine Attack logic
+#define LEKMOD_SUBMARINE_ATTACK_CHANGES
+// Export the WLTKD count down for UI purposes.
+#define LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA
+// Export the Food Production value for UI purposes.
+#define LEKMOD_FOODPRODUCTION_LUA
+// Custom settler system - allows PopulationReq, SettlerCostModifier, and localPopChange fields in Units table for flexible unit requirements and effects
+#define LEKMOD_CUSTOM_SETTLERS
+// Export Pressure Values for cities
+#define RELIGION_PRESSURE_LUA
+// Extend the functionality of Religious Tolerance
+#define LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED
+// Change the religious pressure when losing population
+#define LEKMOD_RELIGIOUS_PRESSURE_POP_LOSS
+
+
+
+// Generic define for temp changes
+#define CLEAN_UP
+// ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
 // 
 // Legacies, for now.
 #define LEKMOD_LEGACY

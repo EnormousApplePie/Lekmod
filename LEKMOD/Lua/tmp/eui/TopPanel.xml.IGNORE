@@ -81,6 +81,66 @@
 			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
 		</Box>
 		<Button ID="GpIcon" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<!--Container Size="3,1" /-->
+		<!-- Scientist -->
+		<Label ID="ScientistTurns" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="ScientistBox" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="ScientistBarShadow" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="ScientistBar" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="ScientistIcon" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<!--Container Size="3,1" /-->
+		<!-- Engineer -->
+		<Label ID="EngineerTurns" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="EngineerBox" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="EngineerBarShadow" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="EngineerBar" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="EngineerIcon" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<!--Container Size="3,1" /-->
+		<!-- Merchant -->
+		<Label ID="MerchantTurns" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="MerchantBox" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="MerchantBarShadow" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="MerchantBar" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="MerchantIcon" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<!--Container Size="3,1" /-->
+		<!-- Writer -->
+		<Label ID="WriterTurns" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="WriterBox" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="WriterBarShadow" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="WriterBar" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="WriterIcon" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<!--Container Size="3,1" /-->
+		<!-- Artist -->
+		<Label ID="ArtistTurns" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="ArtistBox" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="ArtistBarShadow" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="ArtistBar" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="ArtistIcon" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
+		<!--Container Size="3,1" /-->
+		<!-- Musician -->
+		<Label ID="MusicianTurns" Anchor="L,T" Offset="0,9" Color0="Production,255" Color1="0,0,0,200" Font="TwCenMT14" FontStyle="Stroke" ForceNonIME="1" />
+		<Box ID="MusicianBox" Hidden="1" Anchor="L,T" Offset="0,-6" Size="6,30" Color="0,0,0,255" >
+			<Bar ID="MusicianBarShadow" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,128" Direction="Up"/>
+			<Bar ID="MusicianBar" Anchor="C,B" Offset="0,0" Size="4,30" FGColor="Production,255" Direction="Up"/>
+			<Box Anchor="L,C" Offset="0,0" Size="3,30" Color="0,0,0,64" />
+			<Box Anchor="R,C" Offset="1,0" Size="1,30" Color="255,255,0,64" />
+		</Box>
+		<Button ID="MusicianIcon" Hidden="1" NoStateChange="1" Anchor="L,T" Offset="-5,-13" Size="45.45" ToolTipType="TooltipTypeTopPanel" />
 		<Container Size="10,1" />
 
 		<!-- Happy & Golden Age --> <!-- Golden Age Points v34 -->

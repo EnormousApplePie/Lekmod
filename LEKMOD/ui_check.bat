@@ -58,10 +58,12 @@ copy /y "%patchfolder%\Lua\tmp\ui\Core\IconSupport.lua.ignore" "%patchfolder%\Lu
 REM --------------------------------------------------------------------------------------------------
 copy /y "%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.lua.ignore" "%patchfolder%\Lua\UI\CultureOverview.lua" > nul
 copy /y "%patchfolder%\Lua\tmp\ui\CultureOverview\CultureOverview.xml.ignore" "%patchfolder%\Lua\UI\CultureOverview.xml" > nul
-IF NOT EXIST "%euifolder%\CultureOverview\EconomicGeneralInfo.lua" (
+IF NOT EXIST "%euifolder%\EconomicGeneralInfo.lua" (
   copy /y "%patchfolder%\Lua\tmp\ui\CultureOverview\EconomicGeneralInfo.lua.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.lua" > nul
+  copy /y "%patchfolder%\Lua\tmp\ui\CultureOverview\EconomicGeneralInfo.xml.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.xml" > nul
 ) ELSE (
-  copy /y "%patchfolder%\Lua\tmp\eui\CultureOverview\EconomicGeneralInfo.lua.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.lua" > nul
+  copy /y "%patchfolder%\Lua\tmp\eui\EconomicGeneralInfo.lua.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.lua" > nul
+  copy /y "%patchfolder%\Lua\tmp\eui\EconomicGeneralInfo.xml.ignore" "%patchfolder%\Lua\UI\EconomicGeneralInfo.xml" > nul
 )
 REM --------------------------------------------------------------------------------------------------
 copy /y "%patchfolder%\Lua\tmp\ui\FrontEnd\EULA.lua.ignore" "%patchfolder%\Lua\UI\EULA.lua" > nul
@@ -101,6 +103,7 @@ copy /y "%patchfolder%\Lua\tmp\ui\Lobby\MPGameSetupScreen.lua.ignore" "%patchfol
 copy /y "%patchfolder%\Lua\tmp\ui\Lobby\MPGameSetupScreen.xml.ignore" "%patchfolder%\Lua\UI\MPGameSetupScreen.xml" > nul
 copy /y "%patchfolder%\Lua\tmp\ui\Lobby\StagingRoom.lua.ignore" "%patchfolder%\Lua\UI\StagingRoom.lua" > nul
 copy /y "%patchfolder%\Lua\tmp\ui\Lobby\StagingRoom.xml.ignore" "%patchfolder%\Lua\UI\StagingRoom.xml" > nul
+ copy /y "%patchfolder%\Lua\tmp\ui\PlotMouseoverInclude.lua.ignore" "%patchfolder%\Lua\UI\PlotMouseoverInclude.lua" > nul
 REM --------------------------------------------------------------------------------------------------
 copy /y "%patchfolder%\Lua\tmp\ui\MiniMapPanel\MiniMapPanel.lua.ignore" "%patchfolder%\Lua\UI\MiniMapPanel.lua" > nul
 copy /y "%patchfolder%\Lua\tmp\ui\MiniMapPanel\MiniMapPanel.xml.ignore" "%patchfolder%\Lua\UI\MiniMapPanel.xml" > nul
@@ -156,11 +159,6 @@ IF NOT EXIST "%euifolder%\ToolTips\InfoTooltipInclude.lua" (
 ) ELSE (
   copy /y "%patchfolder%\Lua\tmp\eui\ToolTips\InfoTooltipInclude.lua.ignore" "%patchfolder%\Lua\UI\InfoTooltipInclude.lua" > nul
 )
-IF NOT EXIST "%euifolder%\ToolTips\PlotMouseoverInclude.lua" (
-  copy /y "%patchfolder%\Lua\tmp\ui\PlotMouseoverInclude.lua.ignore" "%patchfolder%\Lua\UI\PlotMouseoverInclude.lua" > nul
-) ELSE (
-  copy /y "%patchfolder%\Lua\tmp\eui\PlotMouseoverInclude.lua.ignore" "%patchfolder%\Lua\UI\PlotMouseoverInclude.lua" > nul
-)
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%euifolder%\UnitFlagManager\UnitFlagManager.lua" (
   copy /y "%patchfolder%\Lua\tmp\ui\UnitFlagManager\UnitFlagManager.lua.ignore" "%patchfolder%\Lua\UI\UnitFlagManager.lua" > nul
@@ -204,7 +202,7 @@ REM ----------------------------------------------------------------------------
 copy /y "%patchfolder%\Lua\tmp\ui\prophetreplace.lua.ignore" "%patchfolder%\Lua\UI\prophetreplace.lua" > nul
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%euifolder%\Improvements\YieldIconManager.lua" (
-  copy /y "%patchfolder%\Lua\tmp\ui\Improvements\YieldIconManager.lua.ignore" "%patchfolder%\Lua\UI\YieldIconManager.lua" > nul
+  copy /y "%patchfolder%\Lua\tmp\ui\YieldIconManager.lua.ignore" "%patchfolder%\Lua\UI\YieldIconManager.lua" > nul
 ) ELSE (
   copy /y "%patchfolder%\Lua\tmp\eui\Improvements\YieldIconManager.lua.ignore" "%patchfolder%\Lua\UI\YieldIconManager.lua" > nul
 )

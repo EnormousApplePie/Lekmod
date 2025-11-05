@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -355,7 +355,10 @@ public:
 
 	bool IsEverFriends(PlayerTypes ePlayer);
 	void SetEverFriends(PlayerTypes ePlayer, bool bValue);
-
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	int GetLastAllyTurnWithMajor(PlayerTypes ePlayer) const;
+	void SetLastAllyTurnWithMajor(PlayerTypes ePlayer, int iTurn);
+#endif
 	bool IsCloseToNotBeingAllies(PlayerTypes ePlayer);
 	bool IsCloseToNotBeingFriends(PlayerTypes ePlayer);
 
@@ -401,8 +404,14 @@ public:
 
 	bool DoMajorCivEraChange(PlayerTypes ePlayer, EraTypes eNewEra);
 
+	
+#if !defined(LEKMOD_FIX_SCHOLASTICISM)
 	int GetScienceFriendshipBonus();
 	int GetScienceFriendshipBonusTimes100();
+#else
+	int GetScienceFriendshipBonus(PlayerTypes eMajor);
+	int GetScienceFriendshipBonusTimes100(PlayerTypes eMajor, EraTypes eAssumeEra = NO_ERA);
+#endif
 	int GetCurrentScienceFriendshipBonusTimes100(PlayerTypes ePlayer);
 
 	// Culture bonuses
@@ -600,7 +609,9 @@ private:
 	int m_aiBullyGoldAmountTotalByPlayer[MAX_CIV_PLAYERS];
 	int m_aiBullyWorkersAmountTotalByPlayer[MAX_CIV_PLAYERS];
 #endif
-
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	int m_aiLastAllyTurnWithMajor[MAX_MAJOR_CIVS];
+#endif
 	int m_aiFriendshipWithMajorTimes100[MAX_MAJOR_CIVS];
 	int m_aiAngerFreeIntrusionCounter[MAX_MAJOR_CIVS];
 	int m_aiPlayerQuests[MAX_MAJOR_CIVS]; //antonjs: DEPRECATED

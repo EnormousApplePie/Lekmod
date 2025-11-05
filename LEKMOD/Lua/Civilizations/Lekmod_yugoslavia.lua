@@ -20,7 +20,7 @@ function lekmod_yugoslavia_ideology_tenet(player_id, policy_branch_id)
    or policy_branch_id == GameInfoTypes["POLICY_BRANCH_ORDER"] then
       local free_tenets = player:GetNumFreeTenets()
       print ("Player has " .. free_tenets .. " free tenets")
-      player:SetNumFreeTenets(free_tenets + 1)
+      player:SetNumFreeTenets(free_tenets + 1, true)
    end
 
 end

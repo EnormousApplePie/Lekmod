@@ -15,7 +15,6 @@
 	<Value language="en_US">Multiplayer Modspack</Value>
   </Description>
   <Gameplay>
-    <GameData>Lekmod_stonehenge_update.xml</GameData>
   </Gameplay>
   <UISkin name="Expansion2Primary" set="Expansion2" platform="Common">
 	<GameplaySkin>

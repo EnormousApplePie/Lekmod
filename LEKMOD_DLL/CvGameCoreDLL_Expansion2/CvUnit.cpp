@@ -8,7 +8,7 @@
 
 #include "CvGameCoreDLLPCH.h"
 #include "CvUnit.h"
-#include "CvArea.h"
+#include "CvArea.h" 
 #include "CvPlot.h"
 #include "CvCity.h"
 #include "CvGlobals.h"
@@ -304,6 +304,15 @@ CvUnit::CvUnit() :
 	, m_bNotConverting("CvUnit::m_bNotConverting", m_syncArchive)
 	, m_bAirCombat("CvUnit::m_bAirCombat", m_syncArchive)
 	, m_bSetUpForRangedAttack("CvUnit::m_bSetUpForRangedAttack", m_syncArchive)
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	, m_bCanSubmerge("CvUnit::m_bSubmerged", m_syncArchive)
+	, m_bSubmerged("CvUnit::m_bSubmerged", m_syncArchive)
+	, m_bHasSubmergedOrSurfaced("CvUnit::m_bHasSubmergedOrSurfaced", m_syncArchive)
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	, m_iNumSelectedPromotions("CvUnit::m_iNumSelectedPromotions", m_syncArchive)\
+	, m_abSelectedPromotions("CvUnit::m_abSelectedPromotions", m_syncArchive)
+#endif
 	, m_bEmbarked("CvUnit::m_bEmbarked", m_syncArchive)
 	, m_bAITurnProcessed("CvUnit::m_bAITurnProcessed", m_syncArchive, false, true)
 	, m_eTacticalMove("CvUnit::m_eTacticalMove", m_syncArchive)
@@ -324,6 +333,8 @@ CvUnit::CvUnit() :
 	, m_iScenarioData(0)
 #if defined(FULL_YIELD_FROM_KILLS)
 	, m_iYieldFromKills("CvUnit::m_iYieldFromKills", m_syncArchive)
+	, m_iKillYieldCap("CvUnit::m_iKillYieldCap", m_syncArchive)
+	, m_bKillYieldEraValid("CvUnit::m_bKillYieldEraValid", m_syncArchive)
 #endif
 	, m_terrainDoubleMoveCount("CvUnit::m_terrainDoubleMoveCount", m_syncArchive)
 	, m_featureDoubleMoveCount("CvUnit::m_featureDoubleMoveCount", m_syncArchive)
@@ -649,7 +660,12 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 	{
 		changeNumExoticGoods(getUnitInfo().GetNumExoticGoods());
 	}
-
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	if (getUnitInfo().IsSubmerge() == true)
+	{
+		setCanSubmerge(true);
+	}
+#endif
 	// free XP from handicap?
 	int iXP = GC.getGame().getHandicapInfo().getAIFreeXP();
 	if (iXP && !kPlayer.isHuman() && /*kPlayer.GetID() < MAX_MAJOR_CIVS &&*/ canAcquirePromotionAny())
@@ -1115,6 +1131,14 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_bNotConverting = false;
 	m_bAirCombat = false;
 	m_bSetUpForRangedAttack = false;
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	m_bCanSubmerge = false;
+	m_bSubmerged = false;
+	m_bHasSubmergedOrSurfaced = false;
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+	m_iNumSelectedPromotions = 0;
+#endif
 	m_bEmbarked = false;
 	m_bAITurnProcessed = false;
 	m_bWaitingForMove = false;
@@ -1185,7 +1209,14 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	if(!bConstructorCall)
 	{
 		m_Promotions.Reset();
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+		m_abSelectedPromotions.clear();
+		m_abSelectedPromotions.resize(GC.getNumPromotionInfos());
+		for (int i = 0; i < GC.getNumPromotionInfos(); i++)
+		{
+			m_abSelectedPromotions.setAt(i, false);
+		}
+#endif
 		CvAssertMsg((0 < GC.getNumTerrainInfos()), "GC.getNumTerrainInfos() is not greater than zero but a float array is being allocated in CvUnit::reset");
 		m_terrainDoubleMoveCount.clear();
 		m_terrainImpassableCount.clear();
@@ -1199,9 +1230,18 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 #if defined(FULL_YIELD_FROM_KILLS) // Clear, Resize and Set m_iYieldFromKills array
 		m_iYieldFromKills.clear();
 		m_iYieldFromKills.resize(NUM_YIELD_TYPES);
+		m_iKillYieldCap.clear();
+		m_iKillYieldCap.resize(NUM_YIELD_TYPES);
 		for (int i = 0; i < NUM_YIELD_TYPES; i++)
 		{
 			m_iYieldFromKills.setAt(i, 0);
+			m_iKillYieldCap.setAt(i, 0);
+		}
+		m_bKillYieldEraValid.clear();
+		m_bKillYieldEraValid.resize(GC.getNumEraInfos());
+		for (int i = 0; i < GC.getNumEraInfos(); i++)
+		{
+			m_bKillYieldEraValid.setAt(i, false);
 		}
 #endif
 
@@ -1379,13 +1419,20 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 		if(pkPromotionInfo)
 		{
 			bool bGivePromotion = false;
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+			bool bWasChosen = false;
+#endif
 			// Old unit has the promotion
 			if(pUnit->isHasPromotion(ePromotion) && !pkPromotionInfo->IsLostWithUpgrade())
 			{
 				bGivePromotion = true;
 			}
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+			if(pUnit->isHasPromotion(ePromotion) && pUnit->IsPromotionChosenByPlayer(ePromotion))
+			{
+				bWasChosen = true;
+			}
+#endif
 			// New unit gets promotion for free (as per XML)
 			else if(getUnitInfo().GetFreePromotions(ePromotion) && (!bIsUpgrade || !pkPromotionInfo->IsNotWithUpgrade()))
 			{
@@ -1400,6 +1447,12 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 			}
 
 			setHasPromotion(ePromotion, bGivePromotion);
+#if defined(LEKMOD_RETRAIN_MISSION)
+			if (bWasChosen)
+			{
+				SetPromotionChosenByPlayer(ePromotion, bGivePromotion);
+			}
+#endif
 		}
 	}
 
@@ -2043,6 +2096,9 @@ void CvUnit::doTurn()
 	{
 		setInstaHealLocked(true);
 	}
+#endif
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	setHasSubmergedOrSurfacedThisTurn(false);
 #endif
 	testPromotionReady();
 
@@ -3845,7 +3901,10 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 				changeMoves(-iMoveCost);
 #ifndef LEK_EMBARK_1_MOVEMENT
 				//EAP: Embark to 1 movement
-				finishMoves();
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+				if (!(!IsCombatUnit() && GET_PLAYER(getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove()))
+#endif
+					finishMoves();
 #endif
 				bShouldDeductCost = false;
 
@@ -3863,7 +3922,10 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 				changeMoves(-iMoveCost);
 #ifndef LEK_EMBARK_1_MOVEMENT
 				//EAP: Embark to 1 movement
-				finishMoves();
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+				if (!(!IsCombatUnit() && GET_PLAYER(getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove()))
+#endif
+					finishMoves();
 #endif
 				//finishMoves();
 				bShouldDeductCost = false;
@@ -5074,8 +5136,238 @@ void CvUnit::setSetUpForRangedAttack(bool bValue)
 		}
 	}
 }
+#if defined(LEKMOD_SUBMERGE_MISSION)
+//	--------------------------------------------------------------------------------
+bool CvUnit::canSubmerge(const CvPlot* /*pPlot*/) const
+{
+	VALIDATE_OBJECT
+	if(!canSubmerge())
+	{
+		return false;
+	}
 
+	if(hasSubmergedOrSurfacedThisTurn())
+	{
+		return false;
+	}
 
+	if(IsSubmerged())
+	{
+		return false;
+	}
+
+	if(movesLeft() <= 0)
+	{
+		return false;
+	}
+
+	return true;
+}
+//	--------------------------------------------------------------------------------
+bool CvUnit::canSurface(const CvPlot* pPlot) const
+{
+	VALIDATE_OBJECT
+	if(!IsSubmerged())
+	{
+		return false;
+	}
+
+	if(hasSubmergedOrSurfacedThisTurn())
+	{
+		return false;
+	}
+
+	if (pPlot->getFeatureType() == FEATURE_ICE) // Can't surface under ice
+	{
+		return false;
+	}
+
+	if(movesLeft() <= 0)
+	{
+		return false;
+	}
+
+	return true;
+}
+//	--------------------------------------------------------------------------------
+bool CvUnit::canSubmerge() const
+{
+	VALIDATE_OBJECT
+	return m_bCanSubmerge;
+}
+//	--------------------------------------------------------------------------------
+void CvUnit::setCanSubmerge(bool bValue)
+{
+	VALIDATE_OBJECT
+	if(m_bCanSubmerge != bValue)
+	{
+		m_bCanSubmerge = bValue;
+	}
+}
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsSubmerged() const
+{
+	VALIDATE_OBJECT
+	return m_bSubmerged;
+}
+//	--------------------------------------------------------------------------------
+void CvUnit::setSubmerged(bool bValue)
+{
+	VALIDATE_OBJECT
+	if (IsSubmerged() != bValue) // only do this if changing state
+	{
+		for (int jJ = 0; jJ < GC.getNumPromotionInfos(); jJ++)
+		{
+			PromotionTypes ePromotion = (PromotionTypes)jJ;
+			if (ePromotion == NO_PROMOTION)
+				continue;
+			CvPromotionEntry* pkPromotionEntry = GC.getPromotionInfo(ePromotion);
+			if (!pkPromotionEntry)
+				continue;
+			if (pkPromotionEntry->IsSubmergePromotion())
+			{
+				setHasPromotion(ePromotion, bValue);
+			}
+		}
+		InvisibleTypes eSubmarine = (InvisibleTypes)GC.getInfoTypeForString("INVISIBLE_SUBMARINE");
+		setInvisibleType(bValue ? eSubmarine : NO_INVISIBLE);
+		int iSpace = cargoSpace();
+		if (iSpace > 0)
+		{
+			CvPlot* pTransportPlot = plot();
+			for (const IDInfo* pUnitNode = pTransportPlot->headUnitNode(); pUnitNode != NULL; pUnitNode = pTransportPlot->nextUnitNode(pUnitNode))
+			{
+				CvUnit* pUnit = ::getUnit(*pUnitNode);
+				if (pUnit && pUnit->getTransportUnit() == this)
+				{
+					setInvisibleType(bValue ? eSubmarine : NO_INVISIBLE);
+				}
+			}
+		}
+		m_bSubmerged = bValue; // Set the new state
+		setHasSubmergedOrSurfacedThisTurn(true); // remember that we submerged/surfaced this turn
+		changeMoves(-GC.getMOVE_DENOMINATOR());
+	}
+}
+bool CvUnit::hasSubmergedOrSurfacedThisTurn() const
+{
+	return m_bHasSubmergedOrSurfaced;
+}
+void CvUnit::setHasSubmergedOrSurfacedThisTurn(bool bValue)
+{
+	m_bHasSubmergedOrSurfaced = bValue;
+}
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+bool CvUnit::canRetrain(const CvPlot* pPlot, bool bTestVisible) const
+{
+	VALIDATE_OBJECT
+	if(bTestVisible)
+	{
+		return (getLevel() >= 3) ? true : false; // Quick check for UI purposes
+	}
+	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
+	if(getNumPlayerChosenPromotions() < 2) // At Least 2 Chosen Promos
+	{
+		return false;
+	}
+	if(getExperience() < 30) // At Least 30 XP
+	{
+		return false;
+	}
+	if(pPlot->getOwner() != getOwner()) // Must be in Own Territory
+	{
+		return false;
+	}
+
+	UnitTypes eUpgradeUnitType = GetUpgradeUnitType();
+	CvUnitEntry* pUpgradeUnitInfo = GC.getUnitInfo(eUpgradeUnitType);
+	if (pUpgradeUnitInfo != NULL)
+	{
+		int iUpgradePrice = upgradePrice(eUpgradeUnitType);
+		if (kPlayer.GetTreasury()->GetGold() < std::max(50, (iUpgradePrice / 2))) // At Least Half the Upgrade Price or 50 Gold, whichever is more
+			return false;
+	}
+	else
+	{
+		if (kPlayer.GetTreasury()->GetGold() < 50) // At Least 50 Gold if no Upgrade Unit
+			return false;
+	}
+
+	if(movesLeft() <= 0) // Must have Moves
+	{
+		return false;
+	}
+
+	return true;
+}
+void CvUnit::retrain()
+{
+	VALIDATE_OBJECT
+	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
+	UnitTypes eUpgradeUnitType = GetUpgradeUnitType();
+	CvUnitEntry* pUpgradeUnitInfo = GC.getUnitInfo(eUpgradeUnitType);
+	if (pUpgradeUnitInfo != NULL)
+	{
+		int iUpgradePrice = upgradePrice(eUpgradeUnitType);
+		kPlayer.GetTreasury()->ChangeGold(-std::max(50, (iUpgradePrice / 2))); // Pay Half the Upgrade Price or 50 Gold, whichever is more
+	}
+	else
+	{
+		kPlayer.GetTreasury()->ChangeGold(-50); // Pay 50 Gold if no Upgrade Unit
+	}
+	int iSelectedPromotions = getNumPlayerChosenPromotions();
+	changeExperience(-(15 * iSelectedPromotions)); // Lose XP equal to 15 per Chosen Promo
+	for (int jJ = 0; jJ < GC.getNumPromotionInfos(); jJ++)
+	{
+		PromotionTypes ePromotion = (PromotionTypes)jJ;
+		if (ePromotion == NO_PROMOTION)
+			continue;
+		if (IsPromotionChosenByPlayer(ePromotion)) // Remove all Chosen Promos
+		{
+			setHasPromotion(ePromotion, false);
+		}
+	}
+	int iLevel = getLevel();
+	setLevel((iLevel - iSelectedPromotions)); // Set Level down by number of Chosen Promos
+	changeExperience(15 * (iSelectedPromotions - 1)); // Gain 15 XP per Chosen Promo minus 1
+	setNumPlayerChosenPromotions(0); // Reset Chosen Promos
+	setInstaHealLocked(true); // prevent instaheal
+	testPromotionReady(); // Allow player to choose Promotions now.
+	setMoves(0); // Use up all Moves
+}
+int CvUnit::getNumPlayerChosenPromotions() const
+{
+	VALIDATE_OBJECT
+	return m_iNumSelectedPromotions;
+}
+void CvUnit::setNumPlayerChosenPromotions(int iNewValue)
+{
+	VALIDATE_OBJECT
+	m_iNumSelectedPromotions = iNewValue;
+}
+void CvUnit::changeNumPlayerChosenPromotions(int iChange)
+{
+	VALIDATE_OBJECT
+	if(iChange != 0)
+	{
+		m_iNumSelectedPromotions += iChange;
+	}
+}
+bool CvUnit::IsPromotionChosenByPlayer(PromotionTypes ePromotion) const
+{
+	VALIDATE_OBJECT
+	return ePromotion != NO_PROMOTION ? m_abSelectedPromotions[ePromotion] : false;
+}
+void CvUnit::SetPromotionChosenByPlayer(PromotionTypes ePromotion, bool bChosen)
+{
+	VALIDATE_OBJECT
+	if(ePromotion != NO_PROMOTION)
+	{
+		m_abSelectedPromotions.setAt(ePromotion, bChosen);
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 bool CvUnit::canEmbark(const CvPlot* pPlot) const
 {
@@ -7673,7 +7965,22 @@ bool CvUnit::rebase(int iX, int iY)
 	}
 
 	setXY(pTargetPlot->getX(), pTargetPlot->getY(), false, bShow, false);
-
+#if defined(FIX_PRODUCTION_KEEPING_EXPLOITS) // Rebase Air Units
+	if (pTargetPlot->isCity())
+	{
+		CvCity* pRebaseCity = pTargetPlot->getPlotCity();
+		if (pRebaseCity)
+		{
+			const int iUnitsThere = pTargetPlot->countNumAirUnits(getTeam());
+			if (iUnitsThere >= pRebaseCity->GetMaxAirUnits())
+			{
+				pRebaseCity->CleanUpQueue(); // Recent move could invalidate training of air units queued.
+				if (pRebaseCity->headOrderQueueNode() == NULL)
+					pRebaseCity->chooseProduction(); // If Order queue is empty, choose something new
+			}
+		}
+	}
+#endif
 	return true;
 }
 
@@ -7900,6 +8207,9 @@ bool CvUnit::pillage()
 	else if(pPlot->isRoute())
 	{
 		pPlot->SetRoutePillaged(true);
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE)
+		pPlot->SetWasRoutePillaged(true);
+#endif
 	}
 
 	if(!hasFreePillageMove())
@@ -7996,8 +8306,12 @@ bool CvUnit::found()
 
 	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
 	CvPlayerAI& kActivePlayer = GET_PLAYER(eActivePlayer);
-
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	UnitTypes eThisUnitType = getUnitType();
+	kPlayer.found(getX(), getY(), eThisUnitType);
+#else
 	kPlayer.found(getX(), getY());
+#endif
 
 	if(pPlot->isActiveVisible(false))
 	{
@@ -8517,7 +8831,12 @@ bool CvUnit::DoSpreadReligion()
 				}
 			}
 
-			if(IsGreatPerson())
+            #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+            // Capture state before the spread
+            int iFollowersBefore = pCity->GetCityReligions()->GetNumFollowers(eReligion);
+            ReligionTypes eMajorityBefore = pCity->GetCityReligions()->GetReligiousMajority();
+            #endif
+            if(IsGreatPerson())
 			{
 				pCity->GetCityReligions()->AddProphetSpread(eReligion, iConversionStrength, getOwner());
 			}
@@ -8525,6 +8844,19 @@ bool CvUnit::DoSpreadReligion()
 			{
 				pCity->GetCityReligions()->AddReligiousPressure(FOLLOWER_CHANGE_MISSIONARY, eReligion, iConversionStrength, getOwner());
 			}
+            #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+            // Calculate the actual change after the spread
+            int iFollowersAfter = pCity->GetCityReligions()->GetNumFollowers(eReligion);
+            int iDeltaFollowers = std::max(0, iFollowersAfter - iFollowersBefore);
+            ReligionTypes eMajorityAfter = pCity->GetCityReligions()->GetReligiousMajority();
+            
+            if (iDeltaFollowers > 0 && getUnitInfo().IsSpreadReligion())
+            {
+                bool bMajorityConversion = (eMajorityAfter == eReligion && eMajorityBefore != eReligion);
+				CvPlayer& kPlayer = GET_PLAYER(getOwner());
+				kPlayer.DoYieldsFromConversion(this, pCity, iDeltaFollowers, bMajorityConversion, getX(), getY(), 0);
+            }
+            #endif
 			GetReligionData()->SetSpreadsLeft(GetReligionData()->GetSpreadsLeft() - 1);
 
 			if (pCity->plot() && pCity->plot()->GetActiveFogOfWarMode() == FOGOFWARMODE_OFF)
@@ -9325,11 +9657,47 @@ bool CvUnit::canBuyCityState(const CvPlot* pPlot, bool bTestVisible) const
 		{
 			return false;
 		}
-
+#if !defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
 		// Owned by a non-minor civ
 		if(!GET_PLAYER(pPlot->getOwner()).isMinorCiv())
 			return false;
-
+#else
+		// Owned by a non-minor civ
+		if (!GET_PLAYER(pPlot->getOwner()).isMinorCiv())
+		{
+			return false;
+		}
+		else // Owned by a Minor civ.
+		{
+			// We can't buy out a city-state if someone other than us has been its ally recently 
+			CvMinorCivAI* pMinor = GET_PLAYER(pPlot->getOwner()).GetMinorCivAI();
+			if(!pMinor)
+				return false; 
+			if (pMinor->GetAlly() != NO_PLAYER && pMinor->GetAlly() != getOwner())
+			{
+				return false;
+			}
+			for (int iPlayer = 0; iPlayer < MAX_MAJOR_CIVS; iPlayer++)
+			{
+				const PlayerTypes eLoopPlayer = (PlayerTypes)iPlayer;
+				const CvPlayer& kLoopPlayer = GET_PLAYER(eLoopPlayer);
+				if (eLoopPlayer == getOwner()) // We Don't Care about our ally status, just other players
+					continue;
+				if (kLoopPlayer.isAlive() && kLoopPlayer.isMajorCiv())
+				{
+					const int iLastTurnAlliedThisMajor = pMinor->GetLastAllyTurnWithMajor(eLoopPlayer);
+					if (iLastTurnAlliedThisMajor < 0) // Never allied
+						continue;
+					const int iTurnDiff = GC.getGame().getGameTurn() - iLastTurnAlliedThisMajor;
+					if (iTurnDiff < GC.getMINOR_CIV_BUYOUT_TURNS())
+					{
+						return false;
+					}
+				}
+			}
+			
+		}
+#endif
 		if(GET_TEAM(pPlot->getTeam()).isAtWar(getTeam()))
 		{
 			return false;
@@ -10763,7 +11131,10 @@ void CvUnit::promote(PromotionTypes ePromotion, int iLeaderUnitId)
 	else
 	{
 		setHasPromotion(ePromotion, true);
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+		changeNumPlayerChosenPromotions(1);
+		SetPromotionChosenByPlayer(ePromotion, true);
+#endif
 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 		if (pkScriptSystem)
 		{
@@ -11218,6 +11589,13 @@ CvUnit* CvUnit::DoUpgrade()
 		}
 
 		pNewUnit->convert(this, true);
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+		ConvertPromotions(this, pNewUnit);
+#endif
+#if defined(LEKMOD_RETRAIN_MISSION)
+		int iOldNumPromos = getNumPlayerChosenPromotions();
+		pNewUnit->changeNumPlayerChosenPromotions(iOldNumPromos);
+#endif
 		pNewUnit->setupGraphical();
 
 		// Can't move after upgrading
@@ -11233,8 +11611,43 @@ CvUnit* CvUnit::DoUpgrade()
 
 	return pNewUnit;
 }
-
-
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+void CvUnit::ConvertPromotions(CvUnit* pOldUnit, CvUnit* pNewUnit)
+{
+	VALIDATE_OBJECT
+	UnitCombatTypes eOldUnitCombat = pOldUnit->getUnitCombatType();
+	UnitCombatTypes eNewUnitCombat = pNewUnit->getUnitCombatType();
+	if (eOldUnitCombat == NO_UNITCOMBAT || eNewUnitCombat == NO_UNITCOMBAT) // Some Units dont have these, as they are civilians, but they can be upgraded, so guard against that.
+		return;
+	if (eOldUnitCombat != eNewUnitCombat) // If UnitCombat doesn't change, assume all Promos are fine.
+	{
+		for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
+		{
+			PromotionTypes eLoopPromotion = (PromotionTypes)iPromotion;
+			if (!pOldUnit->isHasPromotion(eLoopPromotion))
+				continue;
+			CvPromotionEntry* pkPromotionInfo = GC.getPromotionInfo(eLoopPromotion);
+			if (pkPromotionInfo == NULL)
+				continue;
+			if (pkPromotionInfo->IsCannotBeChosen())
+				continue; 
+			// Check if this promotion has a listed conversion
+			const int iNewPromo = pkPromotionInfo->GetUpgradeConversionPromotion(eNewUnitCombat);
+			if (iNewPromo != NO_PROMOTION)
+			{
+				const PromotionTypes eNewPromotion = (PromotionTypes)iNewPromo;
+				if (pOldUnit->IsPromotionChosenByPlayer(eLoopPromotion)) //  Did player choose this promo on the old unit?
+				{
+					pNewUnit->SetPromotionChosenByPlayer(eLoopPromotion, false); // Clear it on the new unit, since we are changing it.
+					pNewUnit->SetPromotionChosenByPlayer(eNewPromotion, true); // Set the new promo as chosen by player.
+				}
+				pNewUnit->setHasPromotion(eNewPromotion, true); // Shiny eNewPromotion
+				pNewUnit->setHasPromotion(eLoopPromotion, false); // Dusty old eLoopPromotion
+			}
+		}
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 HandicapTypes CvUnit::getHandicapType() const
 {
@@ -11574,13 +11987,28 @@ int CvUnit::baseMoves(DomainTypes eIntoDomain /* = NO_DOMAIN */) const
 			iExtraGlobalMoveChange += iExtraGlobalMoveChangeEnemy;
 		}
 	}
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	int iMoves = (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + m_iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange + iExtraGlobalMoveChangeFriendlyCivilian);
 
-#ifdef TRAITIFY
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange + iExtraGlobalMoveChangeFriendlyCivilian);
+	int iSubmergedMoves = iMoves; // Default to normal moves incase something goes wrong
+	int eUnitClass = getUnitClassType();
+	if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_SUBMARINE"))
+	{
+		iSubmergedMoves = 5; // xml this later
+	}
+	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_NUCLEAR_SUBMARINE"))
+	{
+		iSubmergedMoves = 6; // xml this later
+	}
+	
+	return IsSubmerged() ? iSubmergedMoves : iMoves;
 #else
-	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
+#ifdef TRAITIFY
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + m_iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange + iExtraGlobalMoveChangeFriendlyCivilian);
+#else
+	return (m_pUnitInfo->GetMoves() + getExtraMoves() + thisTeam.getExtraMoves(eDomain) + m_iExtraNavalMoves + iExtraGoldenAgeMoves + iExtraUnitCombatTypeMoves + iExtraGlobalMoveChange);
 #endif
-
+#endif
 #else
 
 #ifdef AUI_WARNING_FIXES
@@ -14074,15 +14502,38 @@ int CvUnit::maxXPValue() const
 
 	iMaxValue = INT_MAX;
 
-	if(isBarbarian() || 
-		GET_PLAYER(this->getOwner()).isMinorCiv()) // NQMP GJS: city states give max 30 XP
+	if(isBarbarian() || GET_PLAYER(getOwner()).isMinorCiv()) // NQMP GJS: city states give max 30 XP
 	{
 		iMaxValue = std::min(iMaxValue, GC.getBARBARIAN_MAX_XP_VALUE());
 	}
-
+#if defined(LEKMOD_AI_XP_CAP)
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		if (!GET_PLAYER(getOwner()).isHuman())
+		{
+			iMaxValue = std::min(iMaxValue, GC.getBARBARIAN_MAX_XP_VALUE());
+		}
+	}
+#endif
 	return iMaxValue;
 }
-
+#if defined(NQ_NO_GG_POINTS_FROM_CS_OR_BARBS)
+bool CvUnit::canEarnGlobalXP() const
+{
+	VALIDATE_OBJECT
+	CvPlayer& kPlayer = GET_PLAYER(getOwner());
+	if (isBarbarian() || kPlayer.isMinorCiv())
+		return false;
+#if defined(LEKMOD_AI_XP_CAP)
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		if (!kPlayer.isHuman())
+			return false;
+	}
+#endif
+	return true;
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 int CvUnit::firstStrikes() const
@@ -16948,8 +17399,12 @@ void CvUnit::setExperience(int iNewValue, int iMax)
 #else
 		if(getOwner() == GC.getGame().getActivePlayer())
 		{
+#if !defined(LEKMOD_RETRAIN_MISSION)
 			// Don't show XP for unit that's about to bite the dust
 			if(!IsDead())
+#else
+			if (!IsDead() && iExperienceChange > 0) // Don't show XP for unit that's about to bite the dust or if it is Losing XP
+#endif
 #endif
 			{
 				Localization::String localizedText = Localization::Lookup("TXT_KEY_EXPERIENCE_POPUP");
@@ -20231,7 +20686,7 @@ void CvUnit::setScenarioData(int iNewValue)
 int CvUnit::GetYieldFromKills(YieldTypes eYield) const
 {
 	VALIDATE_OBJECT
-		CvAssertMsg(eYield >= 0, "eYield is expected to be non-negative (invalid Yield)");
+	CvAssertMsg(eYield >= 0, "eYield is expected to be non-negative (invalid Yield)");
 	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eYield is expected to be within maximum bounds (invalid Yield)");
 	return m_iYieldFromKills[eYield];
 }
@@ -20242,6 +20697,35 @@ void CvUnit::ChangeYieldFromKills(YieldTypes eYield, int iChange)
 	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eYield is expected to be within maximum bounds (invalid Yield)");
 	m_iYieldFromKills.setAt(eYield, m_iYieldFromKills[eYield] + iChange);
 	CvAssert(GetYieldFromKills(eYield) >= 0);
+}
+int CvUnit::GetKillYieldCap(YieldTypes eYield) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eYield >= 0, "eYield is expected to be non-negative (invalid Yield)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eYield is expected to be within maximum bounds (invalid Yield)");
+	return m_iKillYieldCap[eYield];
+}
+void CvUnit::ChangeKillYieldCap(YieldTypes eYield, int iChange)
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eYield >= 0, "eYield is expected to be non-negative (invalid Yield)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eYield is expected to be within maximum bounds (invalid Yield)");
+	m_iKillYieldCap.setAt(eYield, m_iKillYieldCap[eYield] + iChange);
+	CvAssert(GetKillYieldCap(eYield) >= 0);
+}
+bool CvUnit::IsKillYieldEraValid(EraTypes eEra) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eEra >= 0, "eEra is expected to be non-negative (invalid Era)");
+	CvAssertMsg(eEra < GC.getNumEraInfos(), "eEra is expected to be within maximum bounds (invalid Era)");
+	return m_bKillYieldEraValid[eEra];
+}
+void CvUnit::SetKillYieldEraValid(EraTypes eEra, bool bValid)
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eEra >= 0, "eEra is expected to be non-negative (invalid Era)");
+	CvAssertMsg(eEra < GC.getNumEraInfos(), "eEra is expected to be within maximum bounds (invalid Era)");
+	m_bKillYieldEraValid.setAt(eEra, bValid);
 }
 #endif
 //	--------------------------------------------------------------------------------
@@ -20530,7 +21014,7 @@ bool CvUnit::canAcquirePromotion(PromotionTypes ePromotion) const
 	{
 		return false;
 	}
-
+#if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 	// AND prereq
 	if(pkPromotionInfo->GetPrereqPromotion() != NO_PROMOTION)
 	{
@@ -20637,11 +21121,33 @@ bool CvUnit::canAcquirePromotion(PromotionTypes ePromotion) const
 				bLacksOrPrereq = false;
 		}
 	}
-
-	if(bLacksOrPrereq)
+	if (bLacksOrPrereq)
 	{
 		return false;
 	}
+#else
+	const std::vector<int>& Prereqs = pkPromotionInfo->GetPromotionPrereqOrs();
+	if (!Prereqs.empty())
+	{
+		bool bHasAny = false;
+		for (size_t i = 0; i < Prereqs.size(); ++i)
+		{
+			const int prereqId = Prereqs[i];
+			if (prereqId >= 0 && prereqId < GC.getNumPromotionInfos())
+			{
+				const PromotionTypes eReq = static_cast<PromotionTypes>(prereqId);
+				if (eReq != NO_PROMOTION && isHasPromotion(eReq))
+				{
+					bHasAny = true;
+					break; // found one, good enough.
+				}
+			}
+		}
+		if (!bHasAny)
+			return false;
+	}
+#endif
+	
 
 	if(pkPromotionInfo->GetTechPrereq() != NO_TECH)
 	{
@@ -20688,7 +21194,7 @@ bool CvUnit::isPromotionValid(PromotionTypes ePromotion) const
 		return false;
 	}
 
-	if(!::isPromotionValid(ePromotion, getUnitType(), true))
+	if(!::isPromotionValid(ePromotion, getUnitType(), true/*bLeader*/))
 		return false;
 
 	// Insta-heal - must be damaged
@@ -20807,7 +21313,6 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 
 		m_Promotions.SetPromotion(eIndex, bNewValue);
 		iChange = ((isHasPromotion(eIndex)) ? 1 : -1);
-
 		// Promotions will set Invisibility once but not change it later
 		if(getInvisibleType() == NO_INVISIBLE && thisPromotion.GetInvisibleType() != NO_INVISIBLE)
 		{
@@ -20953,6 +21458,11 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			ChangeYieldFromKills((YieldTypes)iI, (thisPromotion.GetYieldFromKills(iI) * iChange));
+			ChangeKillYieldCap((YieldTypes)iI, (thisPromotion.GetKillYieldCap(iI) * iChange));
+		}
+		for (iI = 0; iI < GC.getNumEraInfos(); iI++)
+		{
+			SetKillYieldEraValid((EraTypes)iI, ((thisPromotion.IsKillYieldEraValid(iI)) ? iChange : 0));
 		}
 #endif
 		for(iI = 0; iI < GC.getNumTerrainInfos(); iI++)
@@ -21620,12 +22130,39 @@ bool CvUnit::canEverRangeStrikeAt(int iX, int iY) const
 		{
 			return false;
 		}
-
+#if !defined(LEKMOD_SUBMARINE_ATTACK_CHANGES)
 		// preventing submarines from shooting into lakes.
 		if (pSourcePlot->getArea() != pTargetPlot->getArea())
 		{
 			return false;
 		}
+#else
+		if (pSourcePlot->isWater() && (pSourcePlot->getArea() != pTargetPlot->getArea())) // if source is water, target must be in same area
+		{
+			return false;
+		}
+		if (pSourcePlot->isCity() && getDomainType() == DOMAIN_SEA)
+		{
+			CvArea* pTargetArea = pTargetPlot->area();
+			bool bMatchesAdjacentWaterArea = false;
+
+			for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+			{
+				CvPlot* pAdjacentPlot = plotDirection(pSourcePlot->getX(), pSourcePlot->getY(), (DirectionTypes)iI);
+				if (pAdjacentPlot && pAdjacentPlot->isWater())
+				{
+					if (pAdjacentPlot->area() == pTargetArea)
+					{
+						bMatchesAdjacentWaterArea = true;
+						break; // found at least one valid adjacent water area
+					}
+				}
+			}
+
+			if (!bMatchesAdjacentWaterArea)
+				return false;
+		}
+#endif
 	}
 
 	// In Range?

@@ -16,6 +16,7 @@
 /// Constructor
 CvPromotionEntry::CvPromotionEntry():
 	m_iLayerAnimationPath(ANIMATIONPATH_NONE),
+#if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 	m_iPrereqPromotion(NO_PROMOTION),
 	m_iPrereqOrPromotion1(NO_PROMOTION),
 	m_iPrereqOrPromotion2(NO_PROMOTION),
@@ -27,6 +28,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iPrereqOrPromotion8(NO_PROMOTION),
 	m_iPrereqOrPromotion9(NO_PROMOTION),
 	m_iPrereqOrPromotion10(NO_PROMOTION),
+#endif
 	m_iTechPrereq(NO_TECH),
 	m_iInvisibleType(NO_INVISIBLE),
 	m_iSeeInvisibleType(NO_INVISIBLE),
@@ -92,6 +94,9 @@ CvPromotionEntry::CvPromotionEntry():
 #endif
 #ifdef NQ_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR
 	m_iCombatStrengthNearFriendlyMinor(0),
+#endif
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	m_bSubmergePromotion(false),
 #endif
 	m_iCommandType(NO_COMMAND),
 	m_iUpgradeDiscount(0),
@@ -172,6 +177,15 @@ CvPromotionEntry::CvPromotionEntry():
 #endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	m_paiYieldFromKills(NULL),
+	m_paiKillYieldCap(NULL),
+	m_pabKillYieldValidEra(NULL),
+#endif
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+	m_paiConvertPromotionUpgrades(NULL),
+#endif
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+    m_paiYieldFromFollowerConversion(NULL),
+    m_paiYieldFromFollowerConversionMajority(NULL),
 #endif
 	m_piTerrainAttackPercent(NULL),
 	m_piTerrainDefensePercent(NULL),
@@ -197,6 +211,21 @@ CvPromotionEntry::CvPromotionEntry():
 /// Destructor
 CvPromotionEntry::~CvPromotionEntry(void)
 {
+#if defined(FULL_YIELD_FROM_KILLS)
+	SAFE_DELETE_ARRAY(m_paiYieldFromKills);
+	SAFE_DELETE_ARRAY(m_paiKillYieldCap);
+	SAFE_DELETE_ARRAY(m_pabKillYieldValidEra);
+#endif
+#if defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
+	m_vPromotionPrereqOrs.clear();
+#endif
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+	SAFE_DELETE_ARRAY(m_paiConvertPromotionUpgrades);
+#endif
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+    SAFE_DELETE_ARRAY(m_paiYieldFromFollowerConversion);
+    SAFE_DELETE_ARRAY(m_paiYieldFromFollowerConversionMajority);
+#endif
 	SAFE_DELETE_ARRAY(m_piTerrainAttackPercent);
 	SAFE_DELETE_ARRAY(m_piTerrainDefensePercent);
 	SAFE_DELETE_ARRAY(m_piFeatureAttackPercent);
@@ -347,6 +376,9 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 #ifdef NQ_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR
 	m_iCombatStrengthNearFriendlyMinor = kResults.GetInt("CombatStrengthNearFriendlyMinor");
 #endif
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	m_bSubmergePromotion = kResults.GetBool("SubmergePromotion");
+#endif
 	m_iUpgradeDiscount = kResults.GetInt("UpgradeDiscount");
 	m_iExperiencePercent = kResults.GetInt("ExperiencePercent");
 	m_iAdjacentMod = kResults.GetInt("AdjacentMod");
@@ -381,7 +413,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 
 	const char* szSeeInvisible = kResults.GetText("SeeInvisible");
 	m_iSeeInvisibleType = GC.getInfoTypeForString(szSeeInvisible, true);
-
+#if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 	const char* szPromotionPrereq = kResults.GetText("PromotionPrereq");
 	m_iPrereqPromotion = GC.getInfoTypeForString(szPromotionPrereq, true);
 
@@ -412,9 +444,9 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	const char* szPromotionPrereqOr9 = kResults.GetText("PromotionPrereqOr9");
 	m_iPrereqOrPromotion9 = GC.getInfoTypeForString(szPromotionPrereqOr9, true);
 
-	const char* szPromotionPrereqOr10 = kResults.GetText("PromotionPrereqOr9");
+	const char* szPromotionPrereqOr10 = kResults.GetText("PromotionPrereqOr10");
 	m_iPrereqOrPromotion10 = GC.getInfoTypeForString(szPromotionPrereqOr10, true);
-
+#endif
 	//Arrays
 	const int iNumUnitClasses = kUtility.MaxRows("UnitClasses");
 	const int iNumTerrains = GC.getNumTerrainInfos();
@@ -427,7 +459,140 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	const char* szPromotionType = GetType();
 
 #if defined(FULL_YIELD_FROM_KILLS)
-	kUtility.SetYields(m_paiYieldFromKills, "UnitPromotions_YieldFromKills", "PromotionType", szPromotionType);
+	{
+		kUtility.InitializeArray(m_pabKillYieldValidEra, "Eras", false);
+		std::string sqlKey = "UnitPromotions_KillYieldValidEras";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL =
+				"SELECT Eras.ID "
+				"FROM UnitPromotions_KillYieldValidEras "
+				"INNER JOIN Eras ON Eras.Type = EraType "
+				"WHERE PromotionType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+		pResults->Bind(1, szPromotionType);
+		while (pResults->Step())
+		{
+			const int iEraID = pResults->GetInt(0);
+			m_pabKillYieldValidEra[iEraID] = true;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.InitializeArray(m_paiYieldFromKills, "Yields", 0);
+		kUtility.InitializeArray(m_paiKillYieldCap, "Yields", 0);
+		std::string sqlKey = "UnitPromotions_YieldFromKills";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL =
+				"SELECT Yields.ID, Yield, COALESCE(Max, -1) "
+				"FROM UnitPromotions_YieldFromKills "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE PromotionType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+
+		pResults->Bind(1, szPromotionType);
+
+		while (pResults->Step())
+		{
+			const int iYieldID = pResults->GetInt(0);
+			const int iYield = pResults->GetInt(1);
+			const int iMaxValue = pResults->GetInt(2);
+
+			m_paiYieldFromKills[iYieldID] = iYield;
+			m_paiKillYieldCap[iYieldID] = iMaxValue;
+		}
+		pResults->Reset();
+	}
+#endif
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+	{
+		kUtility.InitializeArray(m_paiYieldFromFollowerConversion, "Yields", 0);
+		kUtility.InitializeArray(m_paiYieldFromFollowerConversionMajority, "Yields", 0);
+		std::string sqlKey = "UnitPromotions_YieldsFromFollowerConversion";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL =
+				"SELECT Yields.ID, Amount, OnlyMajority "
+				"FROM UnitPromotions_YieldsFromFollowerConversion "
+				"INNER JOIN Yields ON Yields.Type = Yield "
+				"WHERE PromotionType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+
+		pResults->Bind(1, szPromotionType);
+
+		while (pResults->Step())
+		{
+			const int iYieldID = pResults->GetInt(0);
+			const int iAmount = pResults->GetInt(1);
+			const bool bOnlyMajority = pResults->GetBool(2);
+			if (bOnlyMajority)
+				m_paiYieldFromFollowerConversionMajority[iYieldID] = iAmount;
+			else
+				m_paiYieldFromFollowerConversion[iYieldID] = iAmount;
+		}
+		pResults->Reset();
+	}
+#endif
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+	{
+		kUtility.InitializeArray(m_paiConvertPromotionUpgrades, iNumUnitCombatClasses, NO_PROMOTION);
+		std::string sqlKey = "UnitPromotions_UnitCombatPromotionConversion";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL =
+				"SELECT UnitCombatInfos.ID , UnitPromotions.ID  "
+				"FROM UnitPromotions_UnitCombatPromotionConversion "
+				"INNER JOIN UnitCombatInfos ON UnitCombatInfos.Type = UnitCombatType "
+				"INNER JOIN UnitPromotions ON UnitPromotions.Type = ToPromotion "
+				"WHERE PromotionType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+		pResults->Bind(1, szPromotionType);
+
+		while (pResults->Step())
+		{
+			const int iUnitCombatID = pResults->GetInt(0);
+			const int iToPromotion = pResults->GetInt(1);
+
+			m_paiConvertPromotionUpgrades[iUnitCombatID] = iToPromotion;
+		}
+		pResults->Reset();
+	}
+#endif
+#if defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
+	{
+		// Clear any existing prerequisites
+		m_vPromotionPrereqOrs.clear();
+		
+		std::string sqlKey = "UnitPromotions_PromotionPrereqOrs";
+		Database::Results* pResults = kUtility.GetResults(sqlKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL =
+				"SELECT UnitPromotions.ID FROM UnitPromotions_PromotionPrereqOrs "
+				"INNER JOIN UnitPromotions ON UnitPromotions.Type = PrerequisitePromotion "
+				"WHERE PromotionType = ?";
+			pResults = kUtility.PrepareResults(sqlKey, szSQL);
+		}
+
+		pResults->Bind(1, szPromotionType);
+
+		while (pResults->Step())
+		{
+			const int id = pResults->GetInt(0);
+			m_vPromotionPrereqOrs.push_back(id);
+		}
+		pResults->Reset();
+	}
+
 #endif
 	//UnitPromotions_Terrains
 	{
@@ -686,7 +851,7 @@ int CvPromotionEntry::GetLayerAnimationPath() const
 {
 	return m_iLayerAnimationPath;
 }
-
+#if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)
 /// Accessor: The promotion required before this promotion is available
 int CvPromotionEntry::GetPrereqPromotion() const
 {
@@ -820,7 +985,7 @@ void CvPromotionEntry::SetPrereqOrPromotion10(int i)
 {
 	m_iPrereqOrPromotion10 = i;
 }
-
+#endif
 ///////////////////////////
 
 /// Accessor: Gets the tech prerequisite for this promotion
@@ -1162,7 +1327,13 @@ int CvPromotionEntry::GetCombatStrengthNearFriendlyMinor() const
 	return m_iCombatStrengthNearFriendlyMinor;
 }
 #endif
-
+#if defined(LEKMOD_SUBMERGE_MISSION)
+/// Accessor: Is this given to submarines when they submerge?
+bool CvPromotionEntry::IsSubmergePromotion() const
+{
+	return m_bSubmergePromotion;
+}
+#endif
 /// Accessor: Returns the command type for this HotKeyInfo class (which would be COMMAND_PROMOTION)
 int CvPromotionEntry::GetCommandType() const
 {
@@ -1621,6 +1792,60 @@ int CvPromotionEntry::GetYieldFromKills(int i) const
 		return m_paiYieldFromKills[i];
 	}
 	return 0;
+}
+int CvPromotionEntry::GetKillYieldCap(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	if (i > -1 && i < NUM_YIELD_TYPES && m_paiKillYieldCap)
+	{
+		return m_paiKillYieldCap[i];
+	}
+	return 0;
+}
+bool CvPromotionEntry::IsKillYieldEraValid(int i) const
+{
+	CvAssertMsg(i < GC.getNumEraInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	if (i > -1 && i < GC.getNumEraInfos() && m_pabKillYieldValidEra)
+	{
+		return m_pabKillYieldValidEra[i];
+	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+int CvPromotionEntry::GetYieldFromFollowerConversion(int i) const
+{
+    CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+    CvAssertMsg(i > -1, "Index out of bounds");
+    if (i > -1 && i < NUM_YIELD_TYPES && m_paiYieldFromFollowerConversion)
+    {
+        return m_paiYieldFromFollowerConversion[i];
+    }
+    return 0;
+}
+int CvPromotionEntry::GetYieldFromFollowerConversionMajority(int i) const
+{
+    CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+    CvAssertMsg(i > -1, "Index out of bounds");
+    if (i > -1 && i < NUM_YIELD_TYPES && m_paiYieldFromFollowerConversionMajority)
+    {
+        return m_paiYieldFromFollowerConversionMajority[i];
+    }
+    return 0;
+}
+#endif
+#if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
+int CvPromotionEntry::GetUpgradeConversionPromotion(int i) const
+{
+	CvAssertMsg(i < GC.getNumPromotionInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	if (i > -1 && i < GC.getNumPromotionInfos() && m_paiConvertPromotionUpgrades)
+	{
+		return m_paiConvertPromotionUpgrades[i];
+	}
+	return NO_PROMOTION;
 }
 #endif
 /// Returns an array of bonuses when attacking a tile of a given terrain

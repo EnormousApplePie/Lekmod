@@ -42,7 +42,10 @@ protected:
 	static int lCountNumImprovedPlots(lua_State* L);
 	static int lCountNumWaterPlots(lua_State* L);
 	static int lCountNumRiverPlots(lua_State* L);
-
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	static int lGetSettlerUnit(lua_State* L);
+	static int lSetSettlerUnit(lua_State* L);
+#endif
 	static int lFindPopulationRank(lua_State* L);
 	static int lFindBaseYieldRateRank(lua_State* L);
 	static int lFindYieldRateRank(lua_State* L);
@@ -72,6 +75,9 @@ protected:
 	static int lGetResourceDemanded(lua_State* L);
 	static int lSetResourceDemanded(lua_State* L);
 	static int lDoPickResourceDemanded(lua_State* L);
+#if defined(LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA)
+	static int lGetResourceDemandedCountdown(lua_State* L);
+#endif
 
 	static int lGetFoodTurnsLeft(lua_State* L);
 	static int lIsProduction(lua_State* L);
@@ -96,6 +102,9 @@ protected:
 	static int lGetProductionNameKey(lua_State* L);
 	static int lGetGeneralProductionTurnsLeft(lua_State* L);
 	static int lIsFoodProduction(lua_State* L);
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
+	static int lGetFoodProduction(lua_State* L);
+#endif
 	static int lGetFirstUnitOrder(lua_State* L);
 	static int lGetFirstProjectOrder(lua_State* L);
 	static int lGetFirstSpecialistOrder(lua_State* L);
@@ -380,7 +389,18 @@ protected:
 
 	static int lGetBaseYieldRateFromReligion(lua_State* L);
 	static int lChangeBaseYieldRateFromReligion(lua_State* L);
+#if defined(STANDARDIZE_YIELDS)
+	static int lGetBaseYieldRateFromTraits(lua_State* L);
+	static int lGetBaseYieldRateFromLeagues(lua_State* L);
 
+	static int lGetBaseYieldRateFromPolicies(lua_State* L);
+	static int lChangeBaseYieldRateFromPolicies(lua_State* L);
+	static int lGetBaseYieldRateFromThemedBuildings(lua_State* L);
+#endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+	static int lGetBaseYieldRateFromGarrison(lua_State* L);
+	static int lGetGarrisonYieldBonus(lua_State* L);
+#endif
 	static int lGetYieldPerPopTimes100(lua_State* L);
 
 	static int lGetBaseYieldRateModifier(lua_State* L);
@@ -501,6 +521,11 @@ protected:
 #endif
 #if defined(LEKMOD_v34)
 	static int lGetPlotValue(lua_State* L);
+#endif
+#if defined(RELIGION_PRESSURE_LUA)
+	static int lGetReligionPressure(lua_State* L);
+	static int lGetTotalReligionPressure(lua_State* L);
+	static int lGetPressurePerFollower(lua_State* L);
 #endif
 };
 

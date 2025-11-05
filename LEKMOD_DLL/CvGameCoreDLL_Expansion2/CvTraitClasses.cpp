@@ -85,6 +85,7 @@ CvTraitEntry::CvTraitEntry() :
 	m_iExtraPopulation(0),
 	m_iInternationalRouteGrowthModifier(0),
 	m_iLocalHappinessPerCity(0),
+	m_iGlobalHappinessPerCity(0),
 	m_iInternalTradeRouteYieldModifier(0),
 	m_iUnhappinessModifierForPuppetedCities(0),
 	m_iFaithCostModifier(0),
@@ -125,7 +126,9 @@ CvTraitEntry::CvTraitEntry() :
 	m_iTradeRouteResourceModifier(0),
 	m_iUniqueLuxuryCities(0),
 	m_iUniqueLuxuryQuantity(0),
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	m_eYieldSettleUnit(NO_UNIT),
+#endif
 	m_eFreeUnitPrereqTech(NO_TECH),
 	m_eFreeBuilding(NO_BUILDING),
 
@@ -139,7 +142,10 @@ CvTraitEntry::CvTraitEntry() :
 	m_bFasterAlongRiver(false),
 	m_bFasterInHills(false),
 	m_bEmbarkedAllWater(false),
-	m_bEmbarkedToLandFlatCost(false),
+    m_bEmbarkedToLandFlatCost(false),
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    m_bCiviliansEmbarkOneMove(false),
+#endif
 	m_bNoHillsImprovementMaintenance(false),
 	m_bTechBoostFromCapitalScienceBuildings(false),
 	m_bStaysAliveZeroCities(false),
@@ -185,6 +191,14 @@ CvTraitEntry::CvTraitEntry() :
 #endif
 	m_paiExtraYieldThreshold(NULL),
 	m_paiYieldChange(NULL),
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	m_piCapitalYieldChange(NULL),
+	m_ppiCapitalEraYieldChange(NULL),
+	m_ppiCapitalTechYieldChange(NULL),
+	m_piCityYieldChange(NULL),
+	m_ppiCityEraYieldChange(NULL),
+	m_ppiCityTechYieldChange(NULL),
+#endif
 	m_paiYieldChangeStrategicResources(NULL),
 	m_paiYieldChangeLuxuryResources(NULL), // NQMP GJS - New Netherlands UA
 	m_paiYieldChangeNaturalWonder(NULL),
@@ -248,6 +262,14 @@ CvTraitEntry::~CvTraitEntry()
 #if defined(LEKMOD_v34)
 	SAFE_DELETE_ARRAY(m_paiYieldPerPopulation);
 	SAFE_DELETE_ARRAY(m_paiYieldPerPopulationForeignReligion);
+#endif
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	SAFE_DELETE_ARRAY(m_piCapitalYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiCapitalEraYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiCapitalTechYieldChange);
+	SAFE_DELETE_ARRAY(m_piCityYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiCityEraYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiCityTechYieldChange);
 #endif
 #ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiAnySpecificSpecialistYieldChanges);
@@ -597,6 +619,11 @@ int CvTraitEntry::GetLocalHappinessPerCity() const
 {
 	return m_iLocalHappinessPerCity;
 }
+/// Accessor:: does this trait give a bonus to global happiness per city?
+int CvTraitEntry::GetGlobalHappinessPerCity() const
+{
+	return m_iGlobalHappinessPerCity;
+}
 /// Accessor:: does this trait give a bonus to internal trade route yield?
 int CvTraitEntry::GetInternalTradeRouteYieldModifier() const
 {
@@ -828,7 +855,12 @@ TechTypes CvTraitEntry::GetCapitalFreeBuildingPrereqTech() const
 {
 	return m_eCapitalFreeBuildingPrereqTech;
 }
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+UnitTypes CvTraitEntry::GetYieldSettleUnit() const
+{
+	return m_eYieldSettleUnit;
+}
+#endif
 /// Accessor: tech that triggers this free unit
 TechTypes CvTraitEntry::GetFreeUnitPrereqTech() const
 {
@@ -893,6 +925,12 @@ bool CvTraitEntry::IsEmbarkedAllWater() const
 bool CvTraitEntry::IsEmbarkedToLandFlatCost() const
 {
 	return m_bEmbarkedToLandFlatCost;
+}
+
+/// Accessor:: civilian units embarking cost 1 MP
+bool CvTraitEntry::IsCiviliansEmbarkOneMove() const
+{
+    return m_bCiviliansEmbarkOneMove;
 }
 
 /// Accessor:: free improvement maintenance in hills?
@@ -1042,7 +1080,32 @@ int CvTraitEntry::GetYieldChange(int i) const
 {
 	return m_paiYieldChange ? m_paiYieldChange[i] : -1;
 }
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+int CvTraitEntry::GetCapitalYieldChange(int i) const
+{
+	return m_piCapitalYieldChange ? m_piCapitalYieldChange[i] : 0;
+}
+int CvTraitEntry::GetCapitalEraYieldChange(int i, int j) const
+{
+	return m_ppiCapitalEraYieldChange ? m_ppiCapitalEraYieldChange[i][j] : 0;
+}
+int CvTraitEntry::GetCapitalTechYieldChange(int i, int j) const
+{
+	return m_ppiCapitalTechYieldChange ? m_ppiCapitalTechYieldChange[i][j] : 0;
+}
+int CvTraitEntry::GetCityYieldChange(int i) const
+{
+	return m_piCityYieldChange ? m_piCityYieldChange[i] : 0;
+}
+int CvTraitEntry::GetCityEraYieldChange(int i, int j) const
+{
+	return m_ppiCityEraYieldChange ? m_ppiCityEraYieldChange[i][j] : 0;
+}
+int CvTraitEntry::GetCityTechYieldChange(int i, int j) const
+{
+	return m_ppiCityTechYieldChange ? m_ppiCityTechYieldChange[i][j] : 0;
+}
+#endif
 /// Accessor:: Extra yield from strategic resources
 int CvTraitEntry::GetYieldChangeStrategicResources(int i) const
 {
@@ -1270,7 +1333,12 @@ bool CvTraitEntry::NoBuildImprovements(ImprovementTypes eImprovement)
 	}
 }
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+bool CvTraitEntry::IsBannedUnitMission(MissionTypes eMission)
+{
+	return (eMission != NO_MISSION) ? m_abNoUnitMissions[eMission] : false;
+}
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass)
 {
@@ -1320,26 +1388,12 @@ int CvTraitEntry::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eRe
 // Remove Terrain Requirement
 bool CvTraitEntry::IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBuildingClass) const
 {
-	if (eBuildingClass != NO_BUILDINGCLASS)
-	{
-		return m_abBuildingClassRemoveRequiredTerrain[eBuildingClass];
-	}
-	else
-	{
-		return false;
-	}
+	return eBuildingClass != NO_BUILDINGCLASS ? m_abBuildingClassRemoveRequiredTerrain[eBuildingClass] : false;
 }
 // Make Defined UnitClasses spawn in the Capital when given by traits
 bool CvTraitEntry::IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass) const
 {
-	if (eUnitClass != NO_UNITCLASS)
-	{
-		return m_abUnitClassForceSpawnCapital[eUnitClass];
-	}
-	else
-	{
-		return false;
-	}
+	return eUnitClass != NO_UNITCLASS ? m_abUnitClassForceSpawnCapital[eUnitClass] : false;
 }
 // Change Yield based on ResourceClassType (Netherlands, Russia and Jerusalem)
 int CvTraitEntry::GetResourceClassYieldChanges(int i, int j) const
@@ -1508,6 +1562,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_iMinorBullyModifier					= kResults.GetInt("MinorBullyModifier");
 	m_iInternationalRouteGrowthModifier		= kResults.GetInt("InternationalRouteGrowthModifier");
 	m_iLocalHappinessPerCity				= kResults.GetInt("LocalHappinessPerCity");
+	m_iGlobalHappinessPerCity				= kResults.GetInt("GlobalHappinessPerCity");
 	m_iInternalTradeRouteYieldModifier		= kResults.GetInt("InternalTradeRouteYieldModifier");
 	m_iUnhappinessModifierForPuppetedCities = kResults.GetInt("UnhappinessModifierForPuppetedCities");
 	m_iExtraPopulation						= kResults.GetInt("ExtraPopulation");
@@ -1565,7 +1620,13 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	{
 		m_eFreeUnitPrereqTech = (TechTypes)GC.getInfoTypeForString(szTextVal, true);
 	}
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	szTextVal = kResults.GetText("YieldSettleUnit");
+	if(szTextVal)
+	{
+		m_eYieldSettleUnit = (UnitTypes)GC.getInfoTypeForString(szTextVal, true);
+	}
+#endif
 	//// CMP DLL THING
 
 	szTextVal = kResults.GetText("FreeBuildingPrereqTech");
@@ -1623,7 +1684,10 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_bFasterAlongRiver = kResults.GetBool("FasterAlongRiver");
 	m_bFasterInHills = kResults.GetBool("FasterInHills");
 	m_bEmbarkedAllWater = kResults.GetBool("EmbarkedAllWater");
-	m_bEmbarkedToLandFlatCost = kResults.GetBool("EmbarkedToLandFlatCost");
+    m_bEmbarkedToLandFlatCost = kResults.GetBool("EmbarkedToLandFlatCost");
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    m_bCiviliansEmbarkOneMove = kResults.GetBool("CiviliansEmbarkOneMove");
+#endif
 	m_bNoHillsImprovementMaintenance = kResults.GetBool("NoHillsImprovementMaintenance");
 	m_bTechBoostFromCapitalScienceBuildings = kResults.GetBool("TechBoostFromCapitalScienceBuildings");
 	m_bStaysAliveZeroCities = kResults.GetBool("StaysAliveZeroCities");
@@ -1647,6 +1711,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	kUtility.SetYields(m_paiExtraYieldThreshold, "Trait_ExtraYieldThresholds", "TraitType", szTraitType);
 
 	kUtility.SetYields(m_paiYieldChange, "Trait_YieldChanges", "TraitType", szTraitType);
+
 #if !defined(LEKMOD_v34)
 	kUtility.SetYields(m_paiYieldChangeStrategicResources, "Trait_YieldChangesStrategicResources", "TraitType", szTraitType);
 	kUtility.SetYields(m_paiYieldChangeLuxuryResources, "Trait_YieldChangesLuxuryResources", "TraitType", szTraitType); // NQMP GJS - New Netherlands UA
@@ -1660,6 +1725,103 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	kUtility.SetYields(m_paiYieldModifier, "Trait_YieldModifiers", "TraitType", szTraitType);
 
 	const int iNumTerrains = GC.getNumTerrainInfos();
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	kUtility.SetYields(m_piCapitalYieldChange, "Trait_CapitalYieldChange", "TraitType", szTraitType);
+	{
+		kUtility.Initialize2DArray(m_ppiCapitalEraYieldChange, "Eras", "Yields");
+		std::string strKey("Trait_CapitalEraYieldChange");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT COALESCE(Eras.ID, -1) AS EraID, Yields.ID AS YieldID, YieldChange "
+				"FROM Trait_CapitalEraYieldChange "
+				"INNER JOIN Eras ON Eras.Type = EraType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE TraitType = ?");
+		}
+		pResults->Bind(1, szTraitType);
+		while (pResults->Step())
+		{
+			const int EraID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int YieldChange = pResults->GetInt(2);
+			m_ppiCapitalEraYieldChange[EraID][YieldID] = YieldChange;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.Initialize2DArray(m_ppiCapitalTechYieldChange, "Technologies", "Yields");
+		std::string strKey("Trait_CapitalTechYieldChange");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT COALESCE(Technologies.ID, -1) as TechID, Yields.ID AS YieldID, YieldChange "
+				"FROM Trait_CapitalTechYieldChange "
+				"INNER JOIN Technologies ON Technologies.Type = TechType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE TraitType = ?");
+		}
+		pResults->Bind(1, szTraitType);
+		while (pResults->Step())
+		{
+			const int TechID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int YieldChange = pResults->GetInt(2);
+			m_ppiCapitalTechYieldChange[TechID][YieldID] = YieldChange;
+		}
+		pResults->Reset();
+	}
+	kUtility.SetYields(m_piCityYieldChange, "Trait_CityYieldChange", "TraitType", szTraitType);
+	{
+		kUtility.Initialize2DArray(m_ppiCityEraYieldChange, "Eras", "Yields");
+		kUtility.Initialize2DArray(m_ppiCityTechYieldChange, "Technologies", "Yields");
+		std::string strKey("Trait_CityEraYieldChange");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT COALESCE(Eras.ID, -1) AS EraID, Yields.ID AS YieldID, YieldChange "
+				"FROM Trait_CityEraYieldChange "
+				"INNER JOIN Eras ON Eras.Type = EraType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE TraitType = ?");
+		}
+		pResults->Bind(1, szTraitType);
+		while (pResults->Step())
+		{
+			const int EraID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int YieldChange = pResults->GetInt(2);
+			m_ppiCityEraYieldChange[EraID][YieldID] = YieldChange;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.Initialize2DArray(m_ppiCityTechYieldChange, "Technologies", "Yields");
+		std::string strKey("Trait_CityTechYieldChange");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT COALESCE(Technologies.ID, -1) AS TechID, Yields.ID AS YieldID, YieldChange "
+				"FROM Trait_CityTechYieldChange "
+				"INNER JOIN Technologies ON Technologies.Type = TechType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE TraitType = ?");
+		}
+		pResults->Bind(1, szTraitType);
+		while (pResults->Step())
+		{
+			const int TechID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int YieldChange = pResults->GetInt(2);
+			m_ppiCityTechYieldChange[TechID][YieldID] = YieldChange;
+		}
+		pResults->Reset();
+	}
+#endif
 #if defined(BENCHED)
 	{
 		kUtility.InitializeArray(m_paiYieldPerPopulation, "Trait_YieldPerPopulation", 0);
@@ -1897,8 +2059,11 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
-			pResults = kUtility.PrepareResults(strKey, "select Resources.ID as ResourceID, Yields.ID as YieldID, Yield from Trait_ResourceYieldChanges\
- inner join Resources on Resources.Type = ResourceType inner join Yields on Yields.Type = YieldType where TraitType = ?");
+			pResults = kUtility.PrepareResults(strKey, 
+				"select Resources.ID as ResourceID, Yields.ID as YieldID, Yield from Trait_ResourceYieldChanges "
+				"inner join Resources on Resources.Type = ResourceType "
+				"inner join Yields on Yields.Type = YieldType "
+				"where TraitType = ?");
 		}
 
 		pResults->Bind(1, szTraitType);
@@ -2202,18 +2367,10 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 			const int iYieldType = pResults->GetInt(2);
 			const int iYield = pResults->GetInt(3);
 
-			if (bAllowImprovement)
-			{
-				m_ppiFeatureYieldChanges[iFeatureType][iYieldType] = iYield;
-			}
-			else
-			{
-				m_ppiUnimprovedFeatureYieldChanges[iFeatureType][iYieldType] = iYield;
-			}
+			bAllowImprovement ? m_ppiFeatureYieldChanges[iFeatureType][iYieldType] = iYield : m_ppiUnimprovedFeatureYieldChanges[iFeatureType][iYieldType] = iYield;
 		}
-
+		pResults->Reset();
 	}
-
 #endif
 
 	// NoTrain
@@ -2269,7 +2426,31 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 
 	}
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	{
+		for (int iMissionLoop = 0; iMissionLoop < GC.getNumMissionInfos(); iMissionLoop++)
+		{
+			m_abNoUnitMissions.push_back(false);
+		}
+		std::string strKey("Trait_BanUnitMissions");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			const char* szSQL = 
+				"SELECT Missions.ID FROM Trait_BanUnitMissions "
+				"INNER JOIN Missions on MissionType = Missions.Type "
+				"WHERE TraitType = ? ";
+			pResults = kUtility.PrepareResults(strKey, szSQL);
+		}
+		pResults->Bind(1, szTraitType);
+		while (pResults->Step())
+		{
+			const int iMission = pResults->GetInt(0);
+			m_abNoUnitMissions[iMission] = true;
+		}
+		pResults->Reset();
+	}
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	// Build Improvement Build Override from the builds table
 	{
@@ -2538,6 +2719,7 @@ void CvPlayerTraits::InitPlayerTraits()
 			m_iMinorBullyModifier += trait->GetMinorBullyModifier();
 			m_iInternationalRouteGrowthModifier += trait->GetInternationalRouteGrowthModifier();
 			m_iLocalHappinessPerCity += trait->GetLocalHappinessPerCity();
+			m_iGlobalHappinessPerCity += trait->GetGlobalHappinessPerCity();
 			m_iInternalTradeRouteYieldModifier += trait->GetInternalTradeRouteYieldModifier();
 			m_iUnhappinessModifierForPuppetedCities += trait->GetUnhappinessModifierForPuppetedCities();
 			m_iExtraPopulation += trait->GetExtraPopulation();
@@ -2609,6 +2791,10 @@ void CvPlayerTraits::InitPlayerTraits()
 			if(trait->IsEmbarkedToLandFlatCost())
 			{
 				m_bEmbarkedToLandFlatCost = true;
+			}
+			if(trait->IsCiviliansEmbarkOneMove())
+			{
+				m_bCiviliansEmbarkOneMove = true;
 			}
 			if(trait->IsNoHillsImprovementMaintenance())
 			{
@@ -2694,7 +2880,44 @@ void CvPlayerTraits::InitPlayerTraits()
 #if defined(TRAITIFY)
 				m_iPuppetYieldModifiers[iYield] = trait->GetPuppetYieldModifiers(iYield);
 #endif
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+				m_aiCapitalYieldChange[iYield] += trait->GetCapitalYieldChange(iYield);
+				m_aiCityYieldChange[iYield] = trait->GetCityYieldChange(iYield);
+				for (int iEraLoop = 0; iEraLoop < GC.getNumEraInfos(); iEraLoop++)
+				{
+					int iChange = trait->GetCapitalEraYieldChange((EraTypes)iEraLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiCapitalEraYieldChange[iEraLoop];
+						yields[iYield] = (m_ppaaiCapitalEraYieldChange[iEraLoop][iYield] + iChange);
+						m_ppaaiCapitalEraYieldChange[iEraLoop] = yields;
+					}
+					iChange = trait->GetCityEraYieldChange((EraTypes)iEraLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiCityEraYieldChange[iEraLoop];
+						yields[iYield] = (m_ppaaiCityEraYieldChange[iEraLoop][iYield] + iChange);
+						m_ppaaiCityEraYieldChange[iEraLoop] = yields;
+					}
+				}
+				for (int iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
+				{
+					int iChange = trait->GetCapitalTechYieldChange((TechTypes)iTechLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiCapitalTechYieldChange[iTechLoop];
+						yields[iYield] = (m_ppaaiCapitalTechYieldChange[iTechLoop][iYield] + iChange);
+						m_ppaaiCapitalTechYieldChange[iTechLoop] = yields;
+					}
+					iChange = trait->GetCityTechYieldChange((TechTypes)iTechLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiCityTechYieldChange[iTechLoop];
+						yields[iYield] = (m_ppaaiCityTechYieldChange[iTechLoop][iYield] + iChange);
+						m_ppaaiCityTechYieldChange[iTechLoop] = yields;
+					}
+				}
+#endif
 #ifdef AUI_WARNING_FIXES
 				for (uint iFeatureLoop = 0; iFeatureLoop < GC.getNumFeatureInfos(); iFeatureLoop++)
 #else
@@ -2867,7 +3090,12 @@ void CvPlayerTraits::InitPlayerTraits()
 				m_abNoBuild[iImprovement] = trait->NoBuildImprovements((ImprovementTypes)iImprovement);
 			}
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+			for (int iMission = 0; iMission < GC.getNumMissionInfos(); iMission++)
+			{
+				m_abBannedUnitMissions[iMission] = trait->IsBannedUnitMission((MissionTypes)iMission);
+			}
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	// Copy the backward compatibility vectors
 	for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
@@ -2935,7 +3163,9 @@ void CvPlayerTraits::Uninit()
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
 	m_abNoBuild.clear();
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	m_abBannedUnitMissions.clear();
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	m_aiBuildTimeOverride.clear();
 #endif
@@ -2960,6 +3190,12 @@ void CvPlayerTraits::Uninit()
 	m_ppaaiResourceYieldChange.clear();
 	m_ppaaiResourceClassYieldChange.clear();
 	m_ppaaiBuildingCostOverride.clear();
+#endif
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	m_ppaaiCapitalEraYieldChange.clear();
+	m_ppaaiCapitalTechYieldChange.clear();
+	m_ppaaiCityEraYieldChange.clear();
+	m_ppaaiCityTechYieldChange.clear();
 #endif
 	m_aFreeResourceXCities.clear();
 }
@@ -3033,6 +3269,7 @@ void CvPlayerTraits::Reset()
 	m_iMinorBullyModifier = 0;
 	m_iInternationalRouteGrowthModifier = 0;
 	m_iLocalHappinessPerCity = 0;
+	m_iGlobalHappinessPerCity = 0;
 	m_iInternalTradeRouteYieldModifier = 0;
 	m_iUnhappinessModifierForPuppetedCities = 0;
 	m_iExtraPopulation = 0;
@@ -3147,6 +3384,16 @@ void CvPlayerTraits::Reset()
 	m_ppaaiBuildingCostOverride.clear();
 	m_ppaaiBuildingCostOverride.resize(GC.getNumBuildingInfos());
 #endif
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	m_ppaaiCapitalEraYieldChange.clear();
+	m_ppaaiCapitalEraYieldChange.resize(GC.getNumEraInfos());
+	m_ppaaiCapitalTechYieldChange.clear();
+	m_ppaaiCapitalTechYieldChange.resize(GC.getNumTechInfos());
+	m_ppaaiCityEraYieldChange.clear();
+	m_ppaaiCityEraYieldChange.resize(GC.getNumEraInfos());
+	m_ppaaiCityTechYieldChange.clear();
+	m_ppaaiCityTechYieldChange.resize(GC.getNumTechInfos());
+#endif
 	
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
 	for(unsigned int j = 0; j < NUM_YIELD_TYPES; ++j)
@@ -3194,6 +3441,20 @@ void CvPlayerTraits::Reset()
 		for(int iSpecialist = 0; iSpecialist < 2; iSpecialist++)
 		{
 			m_ppaaiAnySpecificSpecialistYieldChange[iSpecialist] = yield;
+		}
+#endif
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+		m_aiCapitalYieldChange[iYield] = 0;
+		m_aiCityYieldChange[iYield] = 0;
+		for (int iEra = 0; iEra < GC.getNumEraInfos(); iEra++)
+		{
+			m_ppaaiCapitalEraYieldChange[iEra] = yield;
+			m_ppaaiCityEraYieldChange[iEra] = yield;
+		}
+		for (int iTech = 0; iTech < GC.getNumTechInfos(); iTech++)
+		{
+			m_ppaaiCapitalTechYieldChange[iTech] = yield;
+			m_ppaaiCityTechYieldChange[iTech] = yield;
 		}
 #endif
 		for (int iFeature = 0; iFeature < GC.getNumFeatureInfos(); iFeature++)
@@ -3289,7 +3550,14 @@ void CvPlayerTraits::Reset()
 		m_abNoBuild[iImprovement] = false;
 	}
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	m_abBannedUnitMissions.clear();
+	m_abBannedUnitMissions.resize(GC.getNumMissionInfos());
+	for (int iMission = 0; iMission < GC.getNumMissionInfos(); iMission++)
+	{
+		m_abBannedUnitMissions[iMission] = false;
+	}
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	m_aiBuildTimeOverride.clear();
 	m_aiBuildTimeOverrideResourceClassRequired.clear();
@@ -3679,9 +3947,7 @@ int CvPlayerTraits::GetBuildingClassHappiness(BuildingClassTypes eBuildingClass)
 {
 	CvAssertMsg(eBuildingClass < GC.getNumBuildingClassInfos(), "Invalid eBuildingClass parameter in call to CvPlayerTraits::GetBuildingClassHappiness()");
 	if (eBuildingClass == NO_BUILDINGCLASS)
-	{
 		return 0;
-	}
 
 	return m_aiBuildingClassHappiness[(int)eBuildingClass];
 }
@@ -3708,6 +3974,88 @@ int CvPlayerTraits::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClas
 
 	return m_ppaaiBuildingClassYieldChange[(int)eBuildingClass][(int)eYieldType];
 }
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+// Optional Unit Defined by Trait to settle cities with extra yields
+UnitTypes CvPlayerTraits::GetYieldSettleUnit() const
+{
+	for (size_t iI = 0; iI < m_vPotentiallyActiveLeaderTraits.size(); iI++)
+	{
+		CvTraitEntry* pkTraitInfo = GC.getTraitInfo(m_vPotentiallyActiveLeaderTraits[iI]);
+		if (pkTraitInfo && HasTrait(m_vPotentiallyActiveLeaderTraits[iI]))
+		{
+			if (pkTraitInfo->GetYieldSettleUnit() != NO_UNIT)
+			{
+				return pkTraitInfo->GetYieldSettleUnit();
+			}
+		}
+	}
+
+	return NO_UNIT;
+}
+int CvPlayerTraits::GetCapitalYieldChange(YieldTypes eYieldType)
+{
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetCapitalYieldChange()");
+	if (eYieldType == NO_YIELD)
+	{
+		return 0;
+	}
+	return m_aiCapitalYieldChange[(int)eYieldType];
+}
+// Yields from Eras - Capital
+int CvPlayerTraits::GetCapitalEraYieldChange(EraTypes eEra, YieldTypes eYield)
+{
+	CvAssertMsg(eEra < GC.getNumEraInfos(), "Invalid eEra parameter in call to CvPlayerTraits::GetCapitalEraYieldChange()");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "Invalid eYield parameter in call to CvPlayerTraits::GetCapitalEraYieldChange()");
+	if (eEra == NO_ERA)
+	{
+		return 0;
+	}
+
+	return m_ppaaiCapitalEraYieldChange[(int)eEra][(int)eYield];
+}
+// Yield From Tech - Capital
+int CvPlayerTraits::GetCapitalTechYieldChange(TechTypes eTech, YieldTypes eYield)
+{
+	CvAssertMsg(eTech < GC.getNumTechInfos(), "Invalid eTech parameter in call to CvPlayerTraits::GetCapitalTechYieldChange()");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "Invalid eYield parameter in call to CvPlayerTraits::GetCapitalTechYieldChange()");
+	if (eTech == NO_TECH)
+	{
+		return 0;
+	}
+	return m_ppaaiCapitalTechYieldChange[(int)eTech][(int)eYield];
+}
+int CvPlayerTraits::GetCityYieldChange(YieldTypes eYieldType)
+{
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetCityYieldChange()");
+	if (eYieldType == NO_YIELD)
+	{
+		return 0;
+	}
+	return m_aiCityYieldChange[(int)eYieldType];
+}
+// Yield From Tech - All Cities
+int CvPlayerTraits::GetCityTechYieldChange(TechTypes eTech, YieldTypes eYield)
+{
+	CvAssertMsg(eTech < GC.getNumTechInfos(), "Invalid eTech parameter in call to CvPlayerTraits::GetCityTechYieldChange()");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "Invalid eYield parameter in call to CvPlayerTraits::GetCityTechYieldChange()");
+	if (eTech == NO_TECH)
+	{
+		return 0;
+	}
+	return m_ppaaiCityTechYieldChange[(int)eTech][(int)eYield];
+}
+// Yields from Eras - All Cities
+int CvPlayerTraits::GetCityEraYieldChange(EraTypes eEra, YieldTypes eYield)
+{
+	CvAssertMsg(eEra < GC.getNumEraInfos(), "Invalid eEra parameter in call to CvPlayerTraits::GetCityEraYieldChange()");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "Invalid eYield parameter in call to CvPlayerTraits::GetCityEraYieldChange()");
+	if (eEra == NO_ERA)
+	{
+		return 0;
+	}
+	return m_ppaaiCityEraYieldChange[(int)eEra][(int)eYield];
+}
+#endif
 //Yield Per Pop
 int CvPlayerTraits::GetYieldPerPopulation(YieldTypes eYieldType)
 {
@@ -3965,7 +4313,6 @@ bool CvPlayerTraits::NoTrain(UnitClassTypes eUnitClassType)
 }
 
 #ifdef LEKMOD_TRAIT_NO_BUILD_IMPROVEMENTS
-
 bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovement)
 {
 	if (eImprovement != NO_IMPROVEMENT)
@@ -3977,9 +4324,13 @@ bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovement)
 		return false;
 	}
 }
-
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+bool CvPlayerTraits::IsBannedUnitMission(MissionTypes eMission)
+{
+	return (eMission != NO_MISSION) ? m_abBannedUnitMissions[eMission] : false;
+}
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 int CvPlayerTraits::GetBuildTimeOverride(BuildTypes eBuild, ResourceClassTypes eResourceClass)
 {
@@ -4467,6 +4818,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_iMinorBullyModifier;
 	kStream >> m_iInternationalRouteGrowthModifier;
 	kStream >> m_iLocalHappinessPerCity;
+	kStream >> m_iGlobalHappinessPerCity;
 	kStream >> m_iInternalTradeRouteYieldModifier;
 	kStream >> m_iUnhappinessModifierForPuppetedCities;
 	kStream >> m_iExtraPopulation;
@@ -4621,7 +4973,10 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 
 	kStream >> m_bEmbarkedAllWater;
 
-	kStream >> m_bEmbarkedToLandFlatCost;
+    kStream >> m_bEmbarkedToLandFlatCost;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    kStream >> m_bCiviliansEmbarkOneMove;
+#endif
 
 	kStream >> m_bNoHillsImprovementMaintenance;
 
@@ -4729,7 +5084,6 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	ArrayWrapper<int> kRouteMovementChangeWrapper(NUM_ROUTE_TYPES, m_iRouteMovementChange);
 	kStream >> kRouteMovementChangeWrapper;
 #endif
-
 	if (uiVersion >= 7)
 	{
 		ArrayWrapper<int> kYieldChangePerTradePartnerWrapper(NUM_YIELD_TYPES, m_iYieldChangePerTradePartner);
@@ -4792,7 +5146,16 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 		m_abNoBuild.push_back(bValue);
 	}
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	kStream >> iNumEntries;
+	m_abBannedUnitMissions.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_abBannedUnitMissions.push_back(bValue);
+	}
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	kStream >> iNumEntries;
 	m_aiBuildTimeOverride.clear();
@@ -4850,7 +5213,16 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_ppaaiResourceYieldChange;
 	kStream >> m_ppaaiBuildingCostOverride;
 #endif
-
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	ArrayWrapper<int> kCapitalYieldChangeWrapper(NUM_YIELD_TYPES, m_aiCapitalYieldChange);
+	kStream >> kCapitalYieldChangeWrapper;
+	kStream >> m_ppaaiCapitalEraYieldChange;
+	kStream >> m_ppaaiCapitalTechYieldChange;
+	ArrayWrapper<int> kCityYieldChangeWrapper(NUM_YIELD_TYPES, m_aiCityYieldChange);
+	kStream >> kCityYieldChangeWrapper;
+	kStream >> m_ppaaiCityEraYieldChange;
+	kStream >> m_ppaaiCityTechYieldChange;
+#endif
 	if (uiVersion >= 11)
 	{
 		kStream >> iNumEntries;
@@ -4939,6 +5311,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_iMinorBullyModifier;
 	kStream << m_iInternationalRouteGrowthModifier;
 	kStream << m_iLocalHappinessPerCity;
+	kStream << m_iGlobalHappinessPerCity;
 	kStream << m_iInternalTradeRouteYieldModifier;
 	kStream << m_iUnhappinessModifierForPuppetedCities;
 	kStream << m_iExtraPopulation;
@@ -4994,6 +5367,9 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_bFasterInHills;
 	kStream << m_bEmbarkedAllWater;
 	kStream << m_bEmbarkedToLandFlatCost;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+    kStream << m_bCiviliansEmbarkOneMove;
+#endif
 	kStream << m_bNoHillsImprovementMaintenance;
 	kStream << m_bTechBoostFromCapitalScienceBuildings;
 	kStream << m_bStaysAliveZeroCities;
@@ -5087,7 +5463,13 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 		kStream << m_abNoBuild[ui];
 	}
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	kStream << m_abBannedUnitMissions.size();
+	for (uint ui = 0; ui < m_abBannedUnitMissions.size(); ui++)
+	{
+		kStream << m_abBannedUnitMissions[ui];
+	}
+#endif
 #ifdef LEKMOD_BUILD_TIME_OVERRIDE
 	kStream << m_aiBuildTimeOverride.size();
 	for (uint ui = 0; ui < m_aiBuildTimeOverride.size(); ui++)
@@ -5126,6 +5508,14 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_ppaaiResourceClassYieldChange;
 	kStream << m_ppaaiResourceYieldChange;
 	kStream << m_ppaaiBuildingCostOverride;
+#endif
+#if defined(LEKMOD_CITY_YIELDS_TRAITS)
+	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_aiCapitalYieldChange);
+	kStream << m_ppaaiCapitalEraYieldChange;
+	kStream << m_ppaaiCapitalTechYieldChange;
+	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_aiCityYieldChange);
+	kStream << m_ppaaiCityEraYieldChange;
+	kStream << m_ppaaiCityTechYieldChange;
 #endif
 
 	kStream << (int)m_aUniqueLuxuryAreas.size();

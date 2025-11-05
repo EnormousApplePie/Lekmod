@@ -554,7 +554,9 @@ public:
 #else
 	CvActionInfo* getActionInfo(int i);
 #endif
-
+#if defined(LEKMOD_TRAIT_BAN_UNIT_MISSIONS)
+	int getNumMissionInfos();
+#endif
 	std::vector<CvMissionInfo*>& getMissionInfo();
 	_Ret_maybenull_ CvMissionInfo* getMissionInfo(MissionTypes eMissionNum);
 
@@ -5714,10 +5716,12 @@ public:
 	{
 		return m_iMIN_UNIT_GOLDEN_AGE_TURNS;
 	}
+#if !defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
 	inline int getGOLDEN_AGE_CULTURE_MODIFIER()
 	{
 		return m_iGOLDEN_AGE_CULTURE_MODIFIER;
 	}
+#endif
 	inline int getHILLS_EXTRA_MOVEMENT()
 	{
 		return m_iHILLS_EXTRA_MOVEMENT;
@@ -6074,6 +6078,7 @@ public:
 	{
 		return m_iPATH_DAMAGE_WEIGHT;
 	}
+#if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 	inline int getPUPPET_SCIENCE_MODIFIER()
 	{
 		return m_iPUPPET_SCIENCE_MODIFIER;
@@ -6090,6 +6095,7 @@ public:
 	{
 		return m_iPUPPET_FAITH_MODIFIER;
 	}
+#endif
 	inline int getBASE_POLICY_COST()
 	{
 		return m_iBASE_POLICY_COST;
@@ -9268,7 +9274,9 @@ protected:
 	int m_iGOLDEN_AGE_LENGTH;
 	int m_iGOLDEN_AGE_GREAT_PEOPLE_MODIFIER;
 	int m_iMIN_UNIT_GOLDEN_AGE_TURNS;
+#if !defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
 	int m_iGOLDEN_AGE_CULTURE_MODIFIER;
+#endif
 	int m_iHILLS_EXTRA_MOVEMENT;
 	int m_iRIVER_EXTRA_MOVEMENT;
 	int m_iFEATURE_GROWTH_MODIFIER;
@@ -9358,10 +9366,12 @@ protected:
 	int m_iADVANCED_START_CITY_PLACEMENT_MAX_RANGE;
 	int m_iNEW_CITY_BUILDING_VALUE_MODIFIER;
 	int m_iPATH_DAMAGE_WEIGHT;
+#if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 	int m_iPUPPET_SCIENCE_MODIFIER;
 	int m_iPUPPET_CULTURE_MODIFIER;
 	int m_iPUPPET_GOLD_MODIFIER;
 	int m_iPUPPET_FAITH_MODIFIER;
+#endif
 	int m_iBASE_POLICY_COST;
 	int m_iPOLICY_COST_INCREASE_TO_BE_EXPONENTED;
 	int m_iPOLICY_COST_VISIBLE_DIVISOR;

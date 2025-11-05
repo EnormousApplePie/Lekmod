@@ -40,7 +40,10 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(CountNumImprovedPlots);
 	Method(CountNumWaterPlots);
 	Method(CountNumRiverPlots);
-
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+	Method(GetSettlerUnit);
+	Method(SetSettlerUnit);
+#endif
 	Method(FindPopulationRank);
 	Method(FindBaseYieldRateRank);
 	Method(FindYieldRateRank);
@@ -70,7 +73,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetResourceDemanded);
 	Method(SetResourceDemanded);
 	Method(DoPickResourceDemanded);
-
+#if defined(LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA)
+	Method(GetResourceDemandedCountdown)
+#endif
 	Method(GetFoodTurnsLeft);
 	Method(IsProduction);
 	Method(IsProductionLimited);
@@ -94,6 +99,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetProductionNameKey);
 	Method(GetGeneralProductionTurnsLeft);
 	Method(IsFoodProduction);
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
+	Method(GetFoodProduction);
+#endif
 	Method(GetFirstUnitOrder);
 	Method(GetFirstProjectOrder);
 	Method(GetFirstSpecialistOrder);
@@ -378,7 +386,17 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 
 	Method(GetBaseYieldRateFromReligion);
 	Method(ChangeBaseYieldRateFromReligion);
-
+#if defined(STANDARDIZE_YIELDS)
+	Method(GetBaseYieldRateFromTraits);
+	Method(GetBaseYieldRateFromLeagues);
+	Method(GetBaseYieldRateFromPolicies);
+	Method(ChangeBaseYieldRateFromPolicies);
+	Method(GetBaseYieldRateFromThemedBuildings);
+#endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+	Method(GetBaseYieldRateFromGarrison);
+	Method(GetGarrisonYieldBonus);
+#endif
 	Method(GetYieldPerPopTimes100);
 
 	Method(GetBaseYieldRateModifier);
@@ -492,6 +510,11 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 #endif
 #if defined(LEKMOD_v34)
 	Method(GetPlotValue);
+#endif
+#if defined(RELIGION_PRESSURE_LUA)
+	Method(GetReligionPressure);
+	Method(GetTotalReligionPressure);
+	Method(GetPressurePerFollower);
 #endif
 }
 //------------------------------------------------------------------------------
@@ -644,6 +667,20 @@ int CvLuaCity::lCountNumRiverPlots(lua_State* L)
 	lua_pushinteger(L, iResult);
 	return 1;
 }
+#if defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
+//------------------------------------------------------------------------------
+//UnitTypes GetSettlerUnit();
+int CvLuaCity::lGetSettlerUnit(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::SettlerUnit);
+}
+//------------------------------------------------------------------------------
+//void SetSettlerUnit(UnitTypes eUnit);
+int CvLuaCity::lSetSettlerUnit(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::SetSettlerUnit);
+}
+#endif
 //------------------------------------------------------------------------------
 //int findPopulationRank();
 int CvLuaCity::lFindPopulationRank(lua_State* L)
@@ -993,13 +1030,19 @@ int CvLuaCity::lDoPickResourceDemanded(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::DoPickResourceDemanded);
 }
-
+#if defined(LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA)
+//------------------------------------------------------------------------------
+//int GetResourceDemandedCountdown();
+int CvLuaCity::lGetResourceDemandedCountdown(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetResourceDemandedCountdown);
+}
+#endif
 //------------------------------------------------------------------------------
 //int getFoodTurnsLeft();
 int CvLuaCity::lGetFoodTurnsLeft(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::getFoodTurnsLeft);
-
 }
 //------------------------------------------------------------------------------
 //bool isProduction();
@@ -1155,6 +1198,14 @@ int CvLuaCity::lIsFoodProduction(lua_State* L)
 	lua_pushboolean(L, iResult);
 	return 1;
 }
+#if defined(LEKMOD_FOODPRODUCTION_LUA)
+//------------------------------------------------------------------------------
+//int GetFoodProduction(int iExcessFood);
+int CvLuaCity::lGetFoodProduction(lua_State* L)
+{
+	return BasicLuaMethod<int, int>(L, &CvCity::GetFoodProduction);
+}
+#endif
 //------------------------------------------------------------------------------
 //int getFirstUnitOrder(UnitTypes eUnit);
 int CvLuaCity::lGetFirstUnitOrder(lua_State* L)
@@ -3046,6 +3097,50 @@ int CvLuaCity::lChangeBaseYieldRateFromReligion(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::ChangeBaseYieldRateFromReligion);
 }
+#if defined(STANDARDIZE_YIELDS)
+//------------------------------------------------------------------------------
+int CvLuaCity::lGetBaseYieldRateFromTraits(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetBaseYieldRateFromTraits);
+}
+//------------------------------------------------------------------------------
+int CvLuaCity::lGetBaseYieldRateFromLeagues(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetBaseYieldRateFromLeagues);
+}
+//------------------------------------------------------------------------------
+int CvLuaCity::lGetBaseYieldRateFromPolicies(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetBaseYieldRateFromPolicies);
+}
+//------------------------------------------------------------------------------
+int CvLuaCity::lChangeBaseYieldRateFromPolicies(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::ChangeBaseYieldRateFromPolicies);
+}
+//------------------------------------------------------------------------------
+int CvLuaCity::lGetBaseYieldRateFromThemedBuildings(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetBaseYieldRateFromThemedBuildings);
+}
+#endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+//------------------------------------------------------------------------------
+int CvLuaCity::lGetGarrisonYieldBonus(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const YieldTypes eIndex = (YieldTypes)lua_tointeger(L, 2);
+	const int iResult = pkCity->GetGarrisonYieldBonus(eIndex);
+
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaCity::lGetBaseYieldRateFromGarrison(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetBaseYieldRateFromGarrison);
+}
+#endif
 //------------------------------------------------------------------------------
 int CvLuaCity::lGetYieldPerPopTimes100(lua_State* L)
 {
@@ -4153,6 +4248,56 @@ int CvLuaCity::lGetPlotValue(lua_State* L)
 	const bool bUseAllowGrowthFlag = lua_toboolean(L, 3);
 	const int iValue = pkCity->GetCityCitizens()->GetPlotValue(pPlot, bUseAllowGrowthFlag);
 	lua_pushinteger(L, iValue);
+	return 1;
+}
+#endif
+#if defined(RELIGION_PRESSURE_LUA)
+//------------------------------------------------------------------------------
+// int City:GetReligionPressure(int religionID)
+int CvLuaCity::lGetReligionPressure(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const ReligionTypes eReligion = (ReligionTypes)luaL_checkint(L, 2);
+	int iPressure = 0;
+
+	if (pkCity && eReligion >= NO_RELIGION)
+	{
+		iPressure = pkCity->GetCityReligions()->GetPressure(eReligion);
+	}
+
+	lua_pushinteger(L, iPressure);
+	return 1;
+}
+//------------------------------------------------------------------------------
+// int City:GetTotalReligionPressure()
+int CvLuaCity::lGetTotalReligionPressure(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	int iTotal = 0;
+
+	if (pkCity)
+	{
+		iTotal = pkCity->GetCityReligions()->GetTotalPressure();
+	}
+
+	lua_pushinteger(L, iTotal);
+	return 1;
+}
+//------------------------------------------------------------------------------
+// int City:GetPressurePerFollower()
+int CvLuaCity::lGetPressurePerFollower(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	int iResult = 0;
+
+	if (pkCity)
+	{
+		const int iPop = pkCity->getPopulation();
+		const int iTotal = pkCity->GetCityReligions()->GetTotalPressure();
+		iResult = iTotal / iPop;
+	}
+
+	lua_pushinteger(L, iResult);
 	return 1;
 }
 #endif

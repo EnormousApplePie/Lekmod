@@ -431,6 +431,7 @@ local g_cityToolTips = {
 		else
 			-- We love the king
 			local resource = GameInfo.Resources[ city:GetResourceDemanded() ]
+			local resourceDemandedTimer = city:GetResourceDemandedCountdown()
 			local weLoveTheKingDayCounter = city:GetWeLoveTheKingDayCounter()
 			if weLoveTheKingDayCounter > 0 then
 				return L( "TXT_KEY_CITYVIEW_WLTKD_COUNTER", weLoveTheKingDayCounter )
@@ -457,7 +458,7 @@ local g_cityToolTips = {
 						end
 					end
 				end
-				local tip = L( "TXT_KEY_CITYVIEW_RESOURCE_DEMANDED", resource.IconString .. " " .. L(resource.Description) )
+				local tip = L( "TXT_KEY_CITYVIEW_RESOURCE_DEMANDED", resource.IconString .. " " .. L(resource.Description) .. " (" .. resourceDemandedTimer .. ")" )
 				if #civs > 0 then
 					tip = tip.."[NEWLINE]"..L"TXT_KEY_EO_RESOURCES_AVAILBLE"..": "..table_concat(civs, ", " )
 				end

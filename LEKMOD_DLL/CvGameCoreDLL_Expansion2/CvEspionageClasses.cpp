@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -2270,8 +2270,19 @@ bool CvPlayerEspionage::AttemptCoup(uint uiSpyIndex)
 			pNotifications->Add(eNotification, strNotification.toUTF8(), strSummary.toUTF8(), pCity->getX(), pCity->getY(), -1);
 		}
 	}
-	
+
+#ifdef AI_CANT_COUP
+	if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_COUP") && !GET_PLAYER(m_pPlayer->GetID()).isHuman())
+	{
+		if (aiNewInfluenceValueTimes100[m_pPlayer->GetID()] > 0)
+		{
+			aiNewInfluenceValueTimes100[m_pPlayer->GetID()] = 0;
+		}
+	}
 	pMinorCivAI->SetFriendshipWithMajorTimes100(m_pPlayer->GetID(), aiNewInfluenceValueTimes100[m_pPlayer->GetID()]);
+#else
+	pMinorCivAI->SetFriendshipWithMajorTimes100(m_pPlayer->GetID(), aiNewInfluenceValueTimes100[m_pPlayer->GetID()]);
+#endif
 	pMinorCivAI->SetDisableNotifications(false);
 
 	// send notification to player

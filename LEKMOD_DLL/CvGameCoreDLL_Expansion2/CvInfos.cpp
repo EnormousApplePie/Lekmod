@@ -5462,6 +5462,12 @@ CvYieldInfo::CvYieldInfo() :
 	m_iGoldenAgeYield(0),
 	m_iGoldenAgeYieldThreshold(0),
 	m_iGoldenAgeYieldMod(0),
+#if defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
+	m_iPlayerGoldenAgeYieldMod(0),
+#endif
+#if defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
+	m_iPuppetYieldMod(0),
+#endif
 	m_iAIWeightPercent(0)
 {
 }
@@ -5521,6 +5527,20 @@ int CvYieldInfo::getGoldenAgeYieldMod() const
 {
 	return m_iGoldenAgeYieldMod;
 }
+#if defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
+//------------------------------------------------------------------------------
+int CvYieldInfo::getPlayerGoldenAgeYieldMod() const
+{
+	return m_iPlayerGoldenAgeYieldMod;
+}
+#endif
+#if defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
+//------------------------------------------------------------------------------
+int CvYieldInfo::getPuppetYieldModifier() const
+{
+	return m_iPuppetYieldMod;
+}
+#endif
 //------------------------------------------------------------------------------
 int CvYieldInfo::getAIWeightPercent() const
 {
@@ -5545,6 +5565,12 @@ bool CvYieldInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	kResults.GetValue("GoldenAgeYield", m_iGoldenAgeYield);
 	kResults.GetValue("GoldenAgeYieldThreshold", m_iGoldenAgeYieldThreshold);
 	kResults.GetValue("GoldenAgeYieldMod", m_iGoldenAgeYieldMod);
+#if defined(LEKMOD_PLAYER_GOLDEN_AGE_YIELD_MOD_INFO)
+	kResults.GetValue("PlayerGoldenAgeYieldMod", m_iPlayerGoldenAgeYieldMod);
+#endif
+#if defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
+	kResults.GetValue("PuppetYieldMod", m_iPuppetYieldMod);
+#endif
 	kResults.GetValue("AIWeightPercent", m_iAIWeightPercent);
 
 	return true;

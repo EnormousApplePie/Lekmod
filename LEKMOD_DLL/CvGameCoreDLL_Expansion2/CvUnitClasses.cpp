@@ -103,6 +103,9 @@ CvUnitEntry::CvUnitEntry(void) :
 	m_bRangeAttackOnlyInDomain(false),
 	m_bTrade(false),
 	m_iNumExoticGoods(0),
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	m_bSubmerge(false),
+#endif
 	m_pbUpgradeUnitClass(NULL),
 	m_pbUnitAIType(NULL),
 	m_pbNotUnitAIType(NULL),
@@ -226,6 +229,11 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_bPillage = kResults.GetBool("Pillage");
 	m_bFound = kResults.GetBool("Found");
 	m_bFoundAbroad = kResults.GetBool("FoundAbroad");
+#ifdef LEKMOD_CUSTOM_SETTLERS
+	m_iPopulationReq = kResults.GetInt("PopulationReq");
+	m_iSettlerCostModifier = kResults.GetInt("SettlerCostModifier");
+	m_iLocalPopChange = kResults.GetInt("LocalPopChange");
+#endif
 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
 	m_iGoldenAgeTurns = kResults.GetInt("GoldenAgeTurns");
 	m_iFreePolicies = kResults.GetInt("FreePolicies");
@@ -241,6 +249,9 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_iNumExoticGoods = kResults.GetInt("NumExoticGoods");
 #if defined(MISC_CHANGES) // CvUnitClasses
 	m_bAnyIdeologyUnlock = kResults.GetBool("AnyIdeologyUnlock");
+#endif
+#if defined(LEKMOD_SUBMERGE_MISSION)
+	m_bSubmerge = kResults.GetBool("Submerge");
 #endif
 
 	m_strUnitArtInfoTag = kResults.GetText("UnitArtInfo");
@@ -902,6 +913,26 @@ bool CvUnitEntry::IsFoundAbroad() const
 	return m_bFoundAbroad;
 }
 
+#ifdef LEKMOD_CUSTOM_SETTLERS
+/// Minimum population required to train this unit
+int CvUnitEntry::GetPopulationReq() const
+{
+	return m_iPopulationReq;
+}
+
+/// Settler-specific cost modifier (percentage)
+int CvUnitEntry::GetSettlerCostModifier() const
+{
+	return m_iSettlerCostModifier;
+}
+
+/// Local population change when this unit is built
+int CvUnitEntry::GetLocalPopChange() const
+{
+	return m_iLocalPopChange;
+}
+#endif
+
 /// Distance this unit steals
 int CvUnitEntry::GetCultureBombRadius() const
 {
@@ -979,7 +1010,13 @@ int CvUnitEntry::GetNumExoticGoods() const
 {
 	return m_iNumExoticGoods;
 }
-
+#if defined(LEKMOD_SUBMERGE_MISSION)
+/// Can Do Submerge Mission
+bool CvUnitEntry::IsSubmerge() const
+{
+	return m_bSubmerge;
+}
+#endif
 /// Return unit's current command
 int CvUnitEntry::GetCommandType() const
 {

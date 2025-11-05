@@ -1553,6 +1553,86 @@ function ActionToolTipHandler( control )
 
 		toolTip:insertLocalized( "TXT_KEY_MISSION_ALERT_NO_FORTIFY_HELP" )
 
+	elseif action.Type == "MISSION_BUY_CITY_STATE" then
+
+		toolTip:insertLocalized( "TXT_KEY_MISSION_BUY_CITY_STATE_HELP" )
+
+		if not gameCanHandleAction then
+			toolTip:insert( "----------------" )
+			local thisUnitOwner = unit:GetOwner()
+
+        	local minor = nil
+        	if plot and plot:IsOwned() then
+        	    local owner = Players[plot:GetOwner()]
+        	    if owner and owner:IsMinorCiv() then
+        	        minor = owner
+        	    end
+        	end
+			if not minor then -- not in cs territory
+				disabledTip:insertLocalized( "TXT_KEY_BUY_CITY_STATE_HELP_DISABLED_TERRITORY" )
+			else -- in cs territory, other reasons
+				local ally = minor:GetAlly()
+				local minorName = minor:GetCivilizationShortDescriptionKey()
+
+				if ally ~= -1 and ally ~= thisUnitOwner then
+					disabledTip:insertLocalized( "TXT_KEY_BUY_CITY_STATE_HELP_DISABLED_ALLIED_TO_ANOTHER", minorName, Players[ally]:GetCivilizationShortDescriptionKey() )
+				end
+				local window = GameDefines.MINOR_CIV_BUYOUT_TURNS or 0
+				if window > 0 and minor.GetLastAllyTurnWithMajor then
+					local thisTurn = Game.GetGameTurn()
+					for majorLoop = 0, GameDefines.MAX_MAJOR_CIVS - 1 do
+						 if majorLoop ~= thisUnitOwner then
+        	                local lastTurn = minor:GetLastAllyTurnWithMajor(majorLoop) or -1 -- -1 if never
+							if lastTurn >= 0 then
+								local turnDelta = thisTurn - lastTurn
+        	                    if turnDelta < window then
+									disabledTip:insertLocalized( "TXT_KEY_BUY_CITY_STATE_HELP_DISABLED_RECENT_ALLY", minorName, Players[majorLoop]:GetCivilizationShortDescriptionKey(), window - turnDelta )
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	elseif action.Type == "MISSION_RETRAIN" then
+
+    	local iUnitType = unit:GetUpgradeUnitType()
+    	local iRetrainCost
+
+    	if iUnitType ~= -1 then
+    	    local iGoldToUpgrade = unit:UpgradePrice(iUnitType)
+    	    iRetrainCost = math.max(50, math_ceil(iGoldToUpgrade / 2))
+    	else
+    	    iRetrainCost = 50
+    	end
+
+		local iNumRefundedPromotions = unit:GetNumPlayerChosenPromotions() or 0
+		local iRemovedXP = 15 * math_max(0, iNumRefundedPromotions)
+    	local iRefundedXP = 15 * math_max(0, iNumRefundedPromotions - 1)
+    	local iNewUnitLevel = unit:GetLevel() - iNumRefundedPromotions
+    	if iNewUnitLevel < 1 then iNewUnitLevel = 1 end
+
+		toolTip:insertLocalized( "TXT_KEY_MISSION_RETRAIN_HELP", iRemovedXP, iRefundedXP, iNewUnitLevel, iRetrainCost)
+
+		if not gameCanHandleAction then
+			toolTip:insert( "----------------" )
+			-- Can't Retrain because we lack the Gold
+			if (iRetrainCost > g_activePlayer:GetGold()) then
+				disabledTip:insertLocalized("TXT_KEY_RETRAIN_HELP_DISABLED_GOLD");
+			end
+			-- Can't upgrade because we're outside our territory
+			if (plot:GetOwner() ~= unit:GetOwner()) then
+				disabledTip:insertLocalized("TXT_KEY_RETRAIN_HELP_DISABLED_TERRITORY")
+			end
+			-- Can't Retrain because we do not have enough chosen Promotions
+			if (iNumRefundedPromotions < 2) then
+				disabledTip:insertLocalized("TXT_KEY_RETRAIN_HELP_DISABLED_PROMOTIONS")
+			end
+			-- Can't Retrain because we Lack experience
+			if (unit:GetExperience() < 30) then
+				disabledTip:insertLocalized("TXT_KEY_RETRAIN_HELP_DISABLED_EXPERIENCE")
+			end
+		end
 	-- Golden Age has special help text
 	elseif action.Type == "MISSION_GOLDEN_AGE" then
 

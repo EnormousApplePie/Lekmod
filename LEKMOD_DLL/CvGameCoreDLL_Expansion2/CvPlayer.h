@@ -94,7 +94,11 @@ public:
 	CvPlot* addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI = NO_UNITAI);
 
 	CvCity* initCity(int iX, int iY, bool bBumpUnits = true, bool bInitialFounding = true);
+#if !defined
+	void acquireCity(CvCity* pCity, bool bConquest, bool bGift, bool bPurchased = false);
+#else
 	void acquireCity(CvCity* pCity, bool bConquest, bool bGift);
+#endif
 	void killCities();
 	CvString getNewCityName() const;
 	CvString GetBorrowedCityName(CivilizationTypes eCivToBorrowFrom) const;
@@ -253,7 +257,11 @@ public:
 
 	void AwardFreeBuildings(CvCity* pCity); // slewis - broken out so that Venice can get free buildings when they purchase something
 	bool canFound(int iX, int iY, bool bTestVisible = false) const;
+#if !defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE)
 	void found(int iX, int iY);
+#else
+	void found(int iX, int iY, UnitTypes eSettlerUnit = NO_UNIT);
+#endif
 
 	bool canTrain(UnitTypes eUnit, bool bContinue = false, bool bTestVisible = false, bool bIgnoreCost = false, bool bIgnoreUniqueUnitStatus = false, CvString* toolTipSink = NULL) const;
 	bool canConstruct(BuildingTypes eBuilding, bool bContinue = false, bool bTestVisible = false, bool bIgnoreCost = false, CvString* toolTipSink = NULL) const;
@@ -423,7 +431,17 @@ public:
 
 	int GetHappinessFromTradeRoutes() const;
 	void DoUpdateCityConnectionHappiness();
-
+#if !defined(STANDARDIZE_YIELDS) // Off for now while I plot and Scheme.
+	// Create Player level yield collecting functions to retire the yield specific ones.
+	int GetTotalYieldPerTurnTimes100(YieldTypes eYield, bool bExcludeReligion = false) const; // bExcludeReligion is to prevent recursive calls.
+	int GetYieldPerTurnFromCitiesTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromMinorCivsTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromReligionTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromTraitsTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromHappinessTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnForFreeTimes100(YieldTypes eYield) const;
+	int GetYieldPerTurnFromBonusTurnsTimes100(YieldTypes eYield) const;
+#endif
 	// Culture
 
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
@@ -532,6 +550,10 @@ public:
 #endif
 	void DoUnresearchedTechBonusFromKill(UnitTypes eKilledUnitType, int iX, int iY, int &iNumBonuses);
 	void ReportYieldFromKill(YieldTypes eYield, int iValue, int iX, int iY, int iDelay);
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION)
+	void DoYieldsFromConversion(CvUnit* pConvertingUnit, CvCity* pPressuredCity, int iFollowerDelta, bool bMajority, int iX, int iY, int iExistingDelay);
+	void DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConvertingUnit, CvCity* pPressuredCity, int iFollowerDelta, bool bMajority, int iX, int iY, int& iNumBonuses);
+#endif
 #if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN)
 	void TestMidTurnPolicyNotification();
 #endif
@@ -1392,7 +1414,10 @@ public:
 	void UpdateResourcesSiphoned();
 
 	void DoTestOverResourceNotification(ResourceTypes eIndex);
-
+#if defined(LEKMOD_FIX_PATRO_FOOD)
+	int GetCityStateBonusModifier() const;
+	void ChangeCityStateBonusModifier(int iChange);
+#endif
 	int GetStrategicResourceMod() const;
 	void ChangeStrategicResourceMod(int iChange);
 
@@ -2207,6 +2232,9 @@ protected:
 	int m_iNumCitiesFreeWalls; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	int m_iNumCitiesFreeCultureBuilding;
 	int m_iNumCitiesFreeFoodBuilding;
+#if defined(LEKMOD_FIX_PATRO_FOOD)
+	int m_iCityStateBonusModifier;
+#endif
 	FAutoVariable<int, CvPlayer> m_iUnitPurchaseCostModifier;
 	FAutoVariable<int, CvPlayer> m_iAllFeatureProduction;
 	FAutoVariable<int, CvPlayer> m_iCityDistanceHighwaterMark; // this is used to determine camera zoom

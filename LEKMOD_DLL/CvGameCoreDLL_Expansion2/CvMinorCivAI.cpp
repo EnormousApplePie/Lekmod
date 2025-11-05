@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -652,6 +652,12 @@ bool CvMinorCivQuest::IsExpired()
 				{
 					return true;
 				}
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES) // Expire Wonder quests if we are more than 1 era ahead of the wonder's era ( Classical Wonders Expire in Renaissance, etc. )
+				const TechTypes eRequiredTech = (TechTypes)pkBuildingInfo->GetPrereqAndTech();
+				const int iWonderEra = GC.getTechInfo(eRequiredTech)->GetEra();
+				if ((iWonderEra + 1) < pLoopPlayer->GetCurrentEra() && m_eAssignedPlayer == eLoopPlayer) // Only expire for the assigned player
+					return true;
+#endif
 			}
 		}
 	}
@@ -1221,6 +1227,7 @@ bool CvMinorCivQuest::DoFinishQuest()
 	PlayerTypes eOldAlly = pMinor->GetMinorCivAI()->GetAlly();
 	int iOldInf = pMinor->GetMinorCivAI()->GetEffectiveFriendshipWithMajor(m_eAssignedPlayer);
 
+
 	pMinor->GetMinorCivAI()->ChangeFriendshipWithMajor(m_eAssignedPlayer, GetInfluenceReward(), /*bFromQuest*/ true);
 	
 	bool bNowFriends = pMinor->GetMinorCivAI()->IsFriends(m_eAssignedPlayer);
@@ -1666,7 +1673,9 @@ void CvMinorCivAI::Reset()
 		m_aiBullyGoldAmountTotalByPlayer[iI] = 0;
 		m_aiBullyWorkersAmountTotalByPlayer[iI] = 0;
 #endif
-
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+		m_aiLastAllyTurnWithMajor[iI] = -1;
+#endif
 		m_aiFriendshipWithMajorTimes100[iI] = 0;
 		m_aiAngerFreeIntrusionCounter[iI] = 0;
 		m_aiPlayerQuests[iI] = NO_MINOR_CIV_QUEST_TYPE;
@@ -1762,7 +1771,9 @@ void CvMinorCivAI::Read(FDataStream& kStream)
 	kStream >> m_aiBullyGoldAmountTotalByPlayer;
 	kStream >> m_aiBullyWorkersAmountTotalByPlayer;
 #endif
-
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	kStream >> m_aiLastAllyTurnWithMajor;
+#endif
 	kStream >> m_aiFriendshipWithMajorTimes100;
 
 	kStream >> m_aiAngerFreeIntrusionCounter;
@@ -1852,7 +1863,9 @@ void CvMinorCivAI::Write(FDataStream& kStream) const
 	kStream << m_aiBullyGoldAmountTotalByPlayer;
 	kStream << m_aiBullyWorkersAmountTotalByPlayer;
 #endif
-
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+	kStream << m_aiLastAllyTurnWithMajor;
+#endif
 	kStream << m_aiFriendshipWithMajorTimes100;
 	kStream << m_aiAngerFreeIntrusionCounter;
 	kStream << m_aiPlayerQuests;
@@ -2031,7 +2044,11 @@ void CvMinorCivAI::DoTurn()
 
 		DoElection();
 		DoFriendship();
-
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+		PlayerTypes eAlly = GetAlly();
+		if (eAlly != NO_PLAYER)
+			SetLastAllyTurnWithMajor(eAlly, GC.getGame().getGameTurn());
+#endif
 		DoTestThreatenedAnnouncement();
 		DoTestProxyWarAnnouncement();
 
@@ -3525,11 +3542,11 @@ bool CvMinorCivAI::IsValidQuestForPlayer(PlayerTypes ePlayer, MinorCivQuestTypes
 		// This player must not have bullied us recently
 		if(IsRecentlyBulliedByMajor(ePlayer))
 			return false;
-
+#if !defined(LEKMOD_CITYSTATE_QUEST_CHANGES) // Remove Ever Friends requirement - ROUTE QUEST
 		// Must have been friends at some point
 		if(!IsEverFriends(ePlayer))
 			return false;
-
+#endif
 		// Cannot already have a route
 		if (GET_PLAYER(ePlayer).IsCapitalConnectedToPlayer(GetPlayer()->GetID()))
 			return false;
@@ -3596,7 +3613,11 @@ bool CvMinorCivAI::IsValidQuestForPlayer(PlayerTypes ePlayer, MinorCivQuestTypes
 		// This player must not have bullied us recently
 		if(IsRecentlyBulliedByMajor(ePlayer))
 			return false;
-
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES) // Lekmod: Don't give out GP quests too early (Turn 90 scaled with game speed)
+		int iGameSpeedPercent = GC.getGame().getGameSpeedInfo().getGreatPeoplePercent();
+		if (GC.getGame().getGameTurn() < (90 * iGameSpeedPercent) / 100)
+			return false;	
+#endif
 		UnitTypes eUnit = GetBestGreatPersonForQuest(ePlayer);
 
 		if(eUnit == NO_UNIT)
@@ -4880,12 +4901,13 @@ BuildingTypes CvMinorCivAI::GetBestWonderForQuest(PlayerTypes ePlayer)
 		{
 			continue;
 		}
-#if defined(TRAITIFY) // banish the ISS from CS quest.
-		if (pkBuildingInfo->GetBuildingClassType() == GC.getInfoTypeForString("BUILDINGCLASS_INTERNATIONAL_SPACE_STATION"))
-		{
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES) // Ban Wonder quests if we are more than 1 era ahead of the wonder's era ( Classical Wonders are Banned in Renaissance, etc. )
+		const TechTypes eRequiredTech = (TechTypes)pkBuildingInfo->GetPrereqAndTech(); 
+		const int iWonderEra = GC.getTechInfo(eRequiredTech)->GetEra(); 
+		if ((iWonderEra + 1) < GET_PLAYER(ePlayer).GetCurrentEra())
 			continue;
-		}
 #endif
+
 		// Someone CAN be building this wonder right now, but they can't be more than a certain % of the way done (25% by default)
 		for(iWorldPlayerLoop = 0; iWorldPlayerLoop < MAX_MAJOR_CIVS; iWorldPlayerLoop++)
 		{
@@ -5502,7 +5524,15 @@ void CvMinorCivAI::ChangeFriendshipWithMajorTimes100(PlayerTypes ePlayer, int iC
 				iChange /= 100;
 			}
 		}
-
+#ifdef AI_CANT_COUP
+		if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_COUP") && !GET_PLAYER(ePlayer).isHuman())
+		{
+			if (iChange > 0)
+			{
+				iChange = 0;
+			}
+		}
+#endif
 		SetFriendshipWithMajorTimes100(ePlayer, GetBaseFriendshipWithMajorTimes100(ePlayer) + iChange, bFromQuest);
 	}
 }
@@ -5938,7 +5968,23 @@ void CvMinorCivAI::SetEverFriends(PlayerTypes ePlayer, bool bValue)
 
 	m_abEverFriends[ePlayer] = bValue;
 }
+#if defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
+int CvMinorCivAI::GetLastAllyTurnWithMajor(PlayerTypes ePlayer) const
+{
+	CvAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative (invalid Index)");
+	CvAssertMsg(ePlayer < MAX_MAJOR_CIVS, "ePlayer is expected to be within maximum bounds (invalid Index)");
+	if (ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return -1; // as defined during Reset()
 
+	return m_aiLastAllyTurnWithMajor[ePlayer];
+}
+void CvMinorCivAI::SetLastAllyTurnWithMajor(PlayerTypes ePlayer, int iTurn)
+{
+	CvAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative (invalid Index)");
+	CvAssertMsg(ePlayer < MAX_MAJOR_CIVS, "ePlayer is expected to be within maximum bounds (invalid Index)");
+
+	m_aiLastAllyTurnWithMajor[ePlayer] = iTurn;
+}
+#endif
 
 /// Are we about to lose our status? (used in Diplo AI)
 bool CvMinorCivAI::IsCloseToNotBeingAllies(PlayerTypes ePlayer)
@@ -6163,7 +6209,6 @@ void CvMinorCivAI::DoFriendshipChangeEffects(PlayerTypes ePlayer, int iOldFriend
 	}
 }
 
-
 /// Is the player above the "Friends" threshold?
 bool CvMinorCivAI::IsFriendshipAboveFriendsThreshold(int iFriendship) const
 {
@@ -6176,7 +6221,6 @@ bool CvMinorCivAI::IsFriendshipAboveFriendsThreshold(int iFriendship) const
 
 	return false;
 }
-
 
 /// What is the friends threshold?
 int CvMinorCivAI::GetFriendsThreshold() const
@@ -6934,6 +6978,9 @@ bool CvMinorCivAI::DoMajorCivEraChange(PlayerTypes ePlayer, EraTypes eNewEra)
 	return bSomethingChanged;
 }
 
+
+
+#if !defined(LEKMOD_FIX_SCHOLASTICISM) // This function doesnt directly hook into the UI so chaning it should be fine :)
 // Science bonus when friends with a minor
 int CvMinorCivAI::GetScienceFriendshipBonus()
 {
@@ -6942,7 +6989,6 @@ int CvMinorCivAI::GetScienceFriendshipBonus()
 
 	return iResult;
 }
-
 int CvMinorCivAI::GetScienceFriendshipBonusTimes100()
 {
 	int iResult = GET_PLAYER(m_pPlayer->GetID()).GetScienceTimes100() * /*25*/ GC.getMINOR_CIV_SCIENCE_BONUS_MULTIPLIER();
@@ -6950,15 +6996,49 @@ int CvMinorCivAI::GetScienceFriendshipBonusTimes100()
 
 	return iResult;
 }
-
 /// How much are we getting RIGHT NOW (usually 0)
 int CvMinorCivAI::GetCurrentScienceFriendshipBonusTimes100(PlayerTypes ePlayer)
 {
-	if(GET_PLAYER(ePlayer).IsGetsScienceFromPlayer(GetPlayer()->GetID()))
+	if (GET_PLAYER(ePlayer).IsGetsScienceFromPlayer(GetPlayer()->GetID()))
 		return GetScienceFriendshipBonusTimes100();
 
 	return 0;
 }
+#else
+// Science bonus when friends with a minor
+int CvMinorCivAI::GetScienceFriendshipBonus(PlayerTypes eMajor)
+{
+	int iResult = GetScienceFriendshipBonusTimes100(eMajor);
+	iResult /= 100;
+
+	return iResult;
+}
+// Science bonus when friends with a minor times 100
+int CvMinorCivAI::GetScienceFriendshipBonusTimes100(PlayerTypes eMajor, EraTypes eAssumeEra)
+{
+	int iResult = 0;
+	// Old Scholasticism, based on the science output of the City State; Inactive if MINOR_CIV_SCIENCE_BONUS_MULTIPLIER is 0
+	iResult += (GET_PLAYER(m_pPlayer->GetID()).GetScienceTimes100() * /*0 as of v34.8*/ GC.getMINOR_CIV_SCIENCE_BONUS_MULTIPLIER()) / 100;
+	// New Scholasticism
+	EraTypes eCurrentEra = (eAssumeEra != NO_ERA) ? eAssumeEra : GET_TEAM(GET_PLAYER(eMajor).getTeam()).GetCurrentEra();
+	CvPlayerPolicies* pPolicies = GET_PLAYER(eMajor).GetPlayerPolicies();
+
+	if (IsAllies(eMajor))
+		iResult += pPolicies->GetMinorAllyYieldBonus(eCurrentEra, YIELD_SCIENCE);
+	else if (IsFriends(eMajor))
+		iResult += pPolicies->GetMinorFriendYieldBonus(eCurrentEra, YIELD_SCIENCE);
+
+	return iResult;
+}
+/// How much are we getting RIGHT NOW (usually 0)
+int CvMinorCivAI::GetCurrentScienceFriendshipBonusTimes100(PlayerTypes ePlayer)
+{
+	if (GET_PLAYER(ePlayer).IsGetsScienceFromPlayer(GetPlayer()->GetID()))
+		return GetScienceFriendshipBonusTimes100(ePlayer);
+
+	return 0;
+}
+#endif // LEKMOD_FIX_SCHOLASTICISM
 
 // Flat culture bonus when Friends with a minor
 int CvMinorCivAI::GetCultureFlatFriendshipBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)
@@ -7050,13 +7130,15 @@ int CvMinorCivAI::GetCurrentCultureFlatBonus(PlayerTypes ePlayer)
 
 	if(IsFriends(ePlayer))
 		iAmount += GetCultureFlatFriendshipBonus(ePlayer);
-
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 	// Modify the bonus if called for by our trait
 	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier(); 
 	
 	//NQMP GJS - Patronage Finisher
 	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
-
+#else
+	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
+#endif
 	if(iModifier > 0)
 	{
 		iAmount *= (iModifier + 100);
@@ -7449,11 +7531,15 @@ int CvMinorCivAI::GetCurrentFaithFlatBonus(PlayerTypes ePlayer)
 	if(IsFriends(ePlayer))
 		iAmount += GetFaithFlatFriendshipBonus(ePlayer);
 
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 	// Modify the bonus if called for by our trait
-	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier(); 
-	
+	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
+
 	//NQMP GJS - Patronage Finisher
 	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
+#else
+	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
+#endif
 
 	if(iModifier > 0)
 	{
@@ -7493,11 +7579,15 @@ int CvMinorCivAI::GetFriendsCapitalFoodBonus(PlayerTypes ePlayer, EraTypes eAssu
 	else
 		iBonus = /*200*/ GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_POST_RENAISSANCE();
 
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 	// Modify the bonus if called for by our trait
-	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier(); 
-	
+	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
+
 	//NQMP GJS - Patronage Finisher
 	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
+#else
+	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
+#endif
 
 	if(iModifier > 0)
 	{
@@ -7527,11 +7617,15 @@ int CvMinorCivAI::GetFriendsOtherCityFoodBonus(PlayerTypes ePlayer, EraTypes eAs
 	else
 		iBonus = /*0*/ GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_POST_RENAISSANCE();
 
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 	// Modify the bonus if called for by our trait
-	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier(); 
-	
+	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
+
 	//NQMP GJS - Patronage Finisher
 	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
+#else
+	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
+#endif
 
 	if(iModifier > 0)
 	{
@@ -7547,11 +7641,15 @@ int CvMinorCivAI::GetAlliesCapitalFoodBonus(PlayerTypes ePlayer)
 {
 	int iBonus = /*100*/ GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT();
 
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 	// Modify the bonus if called for by our trait
-	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier(); 
-	
+	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
+
 	//NQMP GJS - Patronage Finisher
 	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
+#else
+	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
+#endif
 
 	if(iModifier > 0)
 	{
@@ -7567,11 +7665,15 @@ int CvMinorCivAI::GetAlliesOtherCityFoodBonus(PlayerTypes ePlayer)
 {
 	int iBonus = /*100*/ GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT();
 
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 	// Modify the bonus if called for by our trait
-	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier(); 
-	
+	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
+
 	//NQMP GJS - Patronage Finisher
 	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
+#else
+	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
+#endif
 
 	if(iModifier > 0)
 	{
@@ -8110,7 +8212,11 @@ void CvMinorCivAI::DoAcquire(PlayerTypes eMajor, int &iNumUnits, int& iCapitalX,
 				iCapitalX = pCity->getX();
 				iCapitalY = pCity->getY();
 			}
+#if !defined(LEKMOD_MERCHANT_BUYOUT_NOT_NOANNEXING)
 			GET_PLAYER(eMajor).acquireCity(pCity, false, true); // deletes pCity, don't reuse the pointer
+#else
+			GET_PLAYER(eMajor).acquireCity(pCity, false /*bConquest*/, true /*bGift*/, true /*bPurchased*/); // deletes pCity, don't reuse the pointer
+#endif
 		}
 	}
 	SetDisableNotifications(false);

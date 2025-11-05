@@ -528,7 +528,10 @@ public:
 
 	bool IsRoutePillaged() const;
 	void SetRoutePillaged(bool bPillaged);
-
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE)
+	bool WasRoutePillaged() const;
+	void SetWasRoutePillaged(bool bPillaged);
+#endif
 	PlayerTypes GetPlayerThatClearedBarbCampHere() const;
 	void SetPlayerThatClearedBarbCampHere(PlayerTypes eNewValue);
 
@@ -972,6 +975,9 @@ protected:
 
 	bool m_bImprovementPillaged:1;
 	bool m_bRoutePillaged:1;
+#if defined(LEKMOD_NO_INSTANT_REPAIR_ON_ROUTE)
+	bool m_bWasRoutePillaged:1;
+#endif
 	bool m_bStartingPlot:1;
 	bool m_bHills:1;
 	bool m_bNEOfRiver:1;

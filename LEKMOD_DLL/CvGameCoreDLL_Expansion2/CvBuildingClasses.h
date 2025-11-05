@@ -216,7 +216,7 @@ public:
 #if defined(MISC_CHANGES) // CvBuildingClasses Getters
 	int GetMountainTourism() const;
 #endif
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int GetGarrisonStrengthBonus() const;
 #endif
 	int GetPreferredDisplayPosition() const;
@@ -283,6 +283,10 @@ public:
 	int* GetGlobalYieldModifierArray() const;
 	int GetTechEnhancedYieldChange(int i) const;
 	int* GetTechEnhancedYieldChangeArray() const;
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	int GetEraEnhancedYieldChange(int i, int j) const;
+	int** GetEraEnhancedYieldChangeArray() const;
+#endif
 	int GetSeaPlotYieldChange(int i) const;
 	int* GetSeaPlotYieldChangeArray() const;
 	int GetRiverPlotYieldChange(int i) const;
@@ -306,8 +310,12 @@ public:
 	int GetPrereqAndTechs(int i) const;
 	int GetResourceQuantityRequirement(int i) const;
 	int GetResourceQuantity(int i) const;
+#if !defined(LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE)
 	int GetResourceCultureChange(int i) const;
 	int GetResourceFaithChange(int i) const;
+#else
+	int GetBuildingLocalResourceYieldChange(int i, int j) const;
+#endif
 	int GetProductionTraits(int i) const;
 	int GetPrereqNumOfBuildingClass(int i) const;
 	int GetFlavorValue(int i) const;
@@ -488,7 +496,7 @@ private:
 #if defined(MISC_CHANGES) // CvBuildingClasses member variables
 	int m_iTourismPerMountain;
 #endif
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int m_iGarrisonStrengthBonus;
 #endif
 	int m_iPreferredDisplayPosition;
@@ -544,8 +552,12 @@ private:
 	int* m_piPrereqAndTechs;
 	int* m_piResourceQuantityRequirements;
 	int* m_piResourceQuantity;
+#if !defined(LEKMOD_FIX_BUILDING_RESOURCE_YIELD_CHANGE)
 	int* m_piResourceCultureChanges;
 	int* m_piResourceFaithChanges;
+#else
+	int** m_paiBuildingLocalResourceYieldChanges;
+#endif
 	int* m_piProductionTraits;
 	int* m_piSeaPlotYieldChange;
 	int* m_piRiverPlotYieldChange;
@@ -558,6 +570,9 @@ private:
 	int* m_piAreaYieldModifier;
 	int* m_piGlobalYieldModifier;
 	int* m_piTechEnhancedYieldChange;
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+	int** m_ppiEraEnhancedYieldChange;
+#endif
 	int* m_piUnitCombatFreeExperience;
 	int* m_piUnitCombatProductionModifiers;
 #ifdef LEKMOD_v34
@@ -778,7 +793,7 @@ public:
 
 	int GetBuildingDefense() const;
 	void ChangeBuildingDefense(int iChange);
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int GetGarrisonStrengthBonus() const;
 	void ChangeGarrisonStrengthBonus(int iChange);
 #endif
@@ -806,7 +821,7 @@ private:
 	int m_iNumBuildings;
 	int m_iBuildingProductionModifier;
 	int m_iBuildingDefense;
-#if defined(LEKMOD_v34)
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int m_iBuildingGarrisonStrengthBonus;
 #endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS

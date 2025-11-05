@@ -316,6 +316,10 @@ public:
 	int GetPolicyResourceYieldChanges(int i, int j) const;
 	int GetPolicyResourceClassYieldChanges(int i, int j) const;
 #endif
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	int GetMinorFriendYieldBonus(int i, int j) const;
+	int GetMinorAllyYieldBonus(int i, int j) const;
+#endif
 	int GetHurryModifier(int i) const;
 	bool IsSpecialistValid(int i) const;
 	int GetImprovementYieldChanges(int i, int j) const;
@@ -616,7 +620,10 @@ private:
 	int** m_ppiPolicyResourceYieldChanges;
 	int** m_ppiPolicyResourceClassYieldChanges;
 #endif
-
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	int** m_paiMinorFriendYieldBonus;
+	int** m_paiMinorAllyYieldBonus;
+#endif
 //	bool* m_pabHurry;
 	bool* m_pabSpecialistValid;
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -821,7 +828,9 @@ enum PolicyModifierType
 	POLICYMOD_OPEN_BORDERS_TOURISM_MODIFIER,
 	POLICYMOD_SCIENCE_FROM_KILLS, // NQMP GJS - Honor Finisher
 	POLICYMOD_MINOR_MILITARY_NUM_EXTRA_UNITS_TO_GIFT, // NQMP GJS - Patronage Finisher
+#if !defined(LEKMOD_FIX_PATRO_FOOD)
 	POLICYMOD_CITY_STATE_BONUS_MODIFIER, // NQMP GJS - Patronage Finisher
+#endif
 	POLICYMOD_EXTRA_TERRITORY_CLAIM, // NQMP GJS - Colonialism
 	POLICYMOD_PRODUCTION_FROM_GARRISON, // NQMP GJS - Military Caste
 	POLICYMOD_EXTRA_TOURISM_PER_GREAT_WORK, // NQMP GJS - Cultural Exchange
@@ -891,6 +900,9 @@ public:
 	CvString GetWeLoveTheKingString();
 	std::vector<BuildingTypes> GetFreeBuildingsOnConquest();
 	int GetTourismFromUnitCreation(UnitClassTypes eUnitClass) const;
+#if defined(LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE)
+	int GetBuildingClassHappiness(BuildingClassTypes eBuildingClass) const;
+#endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	int GetYieldFromKills(YieldTypes eYield) const;
 #endif
@@ -898,6 +910,10 @@ public:
 	int GetPolicyResourceQuantity(ResourceTypes eResource) const;
 	int GetPolicyResourceYieldChanges(ResourceTypes eResource, YieldTypes eYield) const;
 	int GetPolicyResourceClassYieldChanges(ResourceClassTypes eResourceClass, YieldTypes eYield) const;
+#endif
+#if defined(LEKMOD_FIX_SCHOLASTICISM)
+	int GetMinorFriendYieldBonus(EraTypes eEra, YieldTypes eYield) const;
+	int GetMinorAllyYieldBonus(EraTypes eEra, YieldTypes eYield) const;
 #endif
 
 	// Functions to give current player status with respect to policies

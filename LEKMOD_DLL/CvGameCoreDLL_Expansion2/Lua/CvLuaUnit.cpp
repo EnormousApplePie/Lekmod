@@ -129,7 +129,9 @@ void CvLuaUnit::PushMethods(lua_State* L, int t)
 
 	Method(CanPromote);
 	Method(Promote);
-
+#if defined(LEKMOD_RETRAIN_MISSION)
+	Method(GetNumPlayerChosenPromotions);
+#endif
 	Method(GetUpgradeUnitType);
 	Method(UpgradePrice);
 	Method(CanUpgradeRightNow);
@@ -1524,6 +1526,17 @@ int CvLuaUnit::lPromote(lua_State* L)
 	pkUnit->promote(ePromotion, iLeaderUnitId);
 	return 0;
 }
+#if defined(LEKMOD_RETRAIN_MISSION)
+//------------------------------------------------------------------------------
+//int getNumPlayerChosenPromotions()
+int CvLuaUnit::lGetNumPlayerChosenPromotions(lua_State* L)
+{
+	CvUnit* pkUnit = GetInstance(L);
+	const int iResult = pkUnit->getNumPlayerChosenPromotions();
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 //int GetUpgradeUnitType();
 int CvLuaUnit::lGetUpgradeUnitType(lua_State* L)
