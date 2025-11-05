@@ -1742,7 +1742,11 @@ public:
 	void SetFaithPurchaseType(FaithPurchaseTypes eType);
 	int GetFaithPurchaseIndex() const;
 	void SetFaithPurchaseIndex(int iIndex);
-
+#if defined(LEKMOD_LEGACY)
+	int GetNumFreeLegacies() const;
+	void SetNumFreeLegacies(int iValue);
+	void ChangeNumFreeLegacies(int iChange);
+#endif
 	int GetNumFreePolicies() const;
 	void SetNumFreePolicies(int iValue);
 	void ChangeNumFreePolicies(int iChange);
@@ -2253,6 +2257,9 @@ protected:
 
 	FAutoVariable<int, CvPlayer> m_iFreeTechCount;
 	int m_iMedianTechPercentage;
+#if defined(LEKMOD_LEGACY)
+	FAutoVariable<int, CvPlayer> m_iFreeLegacies;
+#endif
 	FAutoVariable<int, CvPlayer> m_iNumFreePolicies;
 	FAutoVariable<int, CvPlayer> m_iNumFreePoliciesEver; 
 	int m_iNumFreeTenets;

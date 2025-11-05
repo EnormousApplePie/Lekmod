@@ -492,6 +492,9 @@ CvPlayer::CvPlayer() :
 	, m_iGreatPeopleSpawnCounter("CvPlayer::m_iGreatPeopleSpawnCounter", m_syncArchive)
 	, m_iFreeTechCount("CvPlayer::m_iFreeTechCount", m_syncArchive, true)
 	, m_iMedianTechPercentage(50)
+#if defined(LEKMOD_LEGACY)
+	, m_iFreeLegacies("CvPlayer::m_iFreeLegacies", m_syncArchive)
+#endif
 	, m_iNumFreePolicies("CvPlayer::m_iNumFreePolicies", m_syncArchive)
 	, m_iNumFreePoliciesEver("CvPlayer::m_iNumFreePoliciesEver", m_syncArchive)
 	, m_iNumFreeTenets(0)
@@ -1206,6 +1209,9 @@ void CvPlayer::uninit()
 	m_iGreatPeopleSpawnCounter = 0;
 	m_iFreeTechCount = 0;
 	m_iMedianTechPercentage = 50;
+#if defined(LEKMOD_LEGACY)
+	m_iFreeLegacies = 0;
+#endif
 	m_iNumFreePolicies = 0;
 	m_iNumFreePoliciesEver = 0;
 	m_iNumFreeTenets = 0;
@@ -5339,7 +5345,7 @@ void CvPlayer::doTurnPostDiplomacy()
 				pNotifications->Add(NOTIFICATION_CHOOSE_IDEOLOGY, strBuffer, strSummary, -1, -1, GetID());
 			}
 		}
-#if defined(LEKMOD_LEGACY) // Time to Pick! Maybe.
+#if !defined(LEKMOD_LEGACY) // Time to Pick! Maybe.
 		if (GetPlayerLegacies()->IsTimeToChooseLegacy())
 		{
 			CvNotifications* pNotifications = GetNotifications();
@@ -28012,6 +28018,9 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_iGreatPeopleSpawnCounter;
 	kStream >> m_iFreeTechCount;
 	kStream >> m_iMedianTechPercentage;
+#if defined(LEKMOD_LEGACY)
+	kStream >> m_iFreeLegacies;
+#endif
 	kStream >> m_iNumFreePolicies;
 	kStream >> m_iNumFreePoliciesEver;
 	if (uiVersion >= 16)
@@ -28639,6 +28648,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_iGreatPeopleSpawnCounter;
 	kStream << m_iFreeTechCount;
 	kStream << m_iMedianTechPercentage;
+#if defined(LEKMOD_LEGACY)
+	kStream << m_iFreeLegacies;
+#endif
 	kStream << m_iNumFreePolicies;
 	kStream << m_iNumFreePoliciesEver;
 	kStream << m_iNumFreeTenets;
@@ -30490,7 +30502,23 @@ void CvPlayer::ChangeMedianTechPercentage(int iValue)
 {
 	m_iMedianTechPercentage += iValue;
 }
-
+#if defined(LEKMOD_LEGACY)
+//	--------------------------------------------------------------------------------
+int CvPlayer::GetNumFreeLegacies() const
+{
+	return m_iFreeLegacies;
+}
+// --------------------------------------------------------------------------------
+void CvPlayer::SetNumFreeLegacies(int iValue)
+{
+	m_iFreeLegacies = iValue;
+}
+// --------------------------------------------------------------------------------
+void CvPlayer::ChangeNumFreeLegacies(int iChange)
+{
+	m_iFreeLegacies += iChange;
+}
+#endif
 //	--------------------------------------------------------------------------------
 int CvPlayer::GetNumFreePolicies() const
 {

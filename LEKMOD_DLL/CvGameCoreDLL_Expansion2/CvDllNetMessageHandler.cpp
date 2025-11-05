@@ -1276,7 +1276,20 @@ void CvDllNetMessageHandler::ResponseArchaeologyChoice(PlayerTypes ePlayer, Arch
 void CvDllNetMessageHandler::ResponseIdeologyChoice(PlayerTypes ePlayer, PolicyBranchTypes eChoice)
 {
 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+#if !defined(LEKMOD_LEGACY) // Hijack Ideology Choice for Legacies
 	kPlayer.GetPlayerPolicies()->SetPolicyBranchUnlocked(eChoice, true, false);
+#else
+	if (eChoice >= 0) // Positive IDs are for Ideologies
+	{
+		kPlayer.GetPlayerPolicies()->SetPolicyBranchUnlocked(eChoice, true, false);
+	}
+	else if (eChoice <= -10) // Using an agreed upon offset to avoid collisions
+	{
+		// Agreed upon offset is add 10 then multiply by -1 so we need to reverse that here
+		int iFixedID = (eChoice * -1) - 10;
+		kPlayer.GetPlayerLegacies()->SetLegacy((LegacyTypes)iFixedID, true);
+	}
+#endif
 }
 //------------------------------------------------------------------------------
 #ifdef AUI_WARNING_FIXES

@@ -210,8 +210,10 @@ void CvPlayerLegacies::SetLegacy(LegacyTypes eIndex, bool bNewValue)
 		m_pabHasLegacy[eIndex] = bNewValue;
 		m_pPlayer->processLegacies(eIndex, bNewValue ? 1 : -1);
 	}
+	m_pPlayer->ChangeNumFreeLegacies(-1); // Used up a legacy choice
 	// Notify others
-	for (int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop) {
+	for (int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop)
+	{
 		PlayerTypes eNotifyPlayer = (PlayerTypes)iNotifyLoop;
 		CvPlayerAI& kCurNotifyPlayer = GET_PLAYER(eNotifyPlayer);
 
@@ -314,6 +316,19 @@ bool CvPlayerLegacies::IsTimeToChooseLegacy() const
 		}
 	}
 	return false;
+}
+void CvPlayerLegacies::testLegacyNotification() const
+{
+	if (m_pPlayer->GetNumFreeLegacies() > 0) // Has a legacy to choose
+	{
+		CvNotifications* pNotifications = m_pPlayer->GetNotifications();
+		if (pNotifications)
+		{
+			CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_LEGACY_CHOOSE_LEGACY", GC.getEraInfo(m_pPlayer->GetCurrentEra())->GetTextKey());
+			CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_LEGACY_CHOOSE_LEGACY");
+			pNotifications->Add((NotificationTypes)NOTIFICATION_CHOOSE_LEGACY, strBuffer, strSummary, -1, -1, m_pPlayer->GetID());
+		}
+	}
 }
 // Choose a legacy for the AI Player
 void CvPlayerLegacies::DoChooseLegacy()

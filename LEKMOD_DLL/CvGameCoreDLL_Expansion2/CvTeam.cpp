@@ -7406,6 +7406,22 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 			if(kPlayer.isAlive() && kPlayer.getTeam() == GetID() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
 			{
+#if defined(LEKMOD_LEGACY)
+				for (int iLegacyLoop = 0; iLegacyLoop < GC.getNumLegacyInfos(); iLegacyLoop++)
+				{
+					LegacyTypes eLegacy = (LegacyTypes)iLegacyLoop;
+					CvLegacyEntry* pkLegacyInfo = GC.getLegacyInfo(eLegacy);
+					if (pkLegacyInfo)
+					{
+						if (pkLegacyInfo->GetEraOffered() == eNewValue && (CivilizationTypes)pkLegacyInfo->GetCivilization() == kPlayer.getCivilizationType()) // Is there at legacy offered this era?
+						{
+							kPlayer.ChangeNumFreeLegacies(1); // Give the player a free legacy choice
+							kPlayer.GetPlayerLegacies()->testLegacyNotification();
+							break; // Found at least 1, no need to continue.
+						}
+					}
+				}
+#endif
 				int iNumFreePolicies = kPlayer.GetPlayerTraits()->GetFreeSocialPoliciesPerEra() > 0;
 				if (iNumFreePolicies > 0)
 				{
@@ -7447,8 +7463,7 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 
 				if(pLoopPlot->getRevealedImprovementType(GC.getGame().getActiveTeam(), true) != NO_IMPROVEMENT)
 				{
-					if((pLoopPlot->getTeam() == GetID()) ||
-					        (!pLoopPlot->isOwned() && GetID() == GC.getGame().getActiveTeam()))
+					if((pLoopPlot->getTeam() == GetID()) || (!pLoopPlot->isOwned() && GetID() == GC.getGame().getActiveTeam()))
 					{
 						pLoopPlot->setLayoutDirty(true);
 					}

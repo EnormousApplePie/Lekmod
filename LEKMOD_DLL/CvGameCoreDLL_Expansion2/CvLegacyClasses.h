@@ -93,6 +93,7 @@ public:
 	bool CanChooseLegacy(LegacyTypes eIndex) const;
     // Activation Time!
     bool IsTimeToChooseLegacy() const;
+    void testLegacyNotification() const;
     // Do AI for legacy choices. will likely be random until the feature settles.
     void DoLegacyAI();
     void DoChooseLegacy();

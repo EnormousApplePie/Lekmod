@@ -1121,16 +1121,6 @@ void CvNotifications::Activate(Notification& notification)
 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 		}
 		break;
-#if defined(LEKMOD_LEGACY)
-	case NOTIFICATION_CHOOSE_LEGACY:
-		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
-		if (notification.m_iGameDataIndex >= 0)
-		{
-			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_1, m_ePlayer);
-			GC.GetEngineUserInterface()->AddPopup(kPopup);
-		}
-		break;
-#endif
 #ifndef AUI_WARNING_FIXES
 	case NOTIFICATION_LEAGUE_PROJECT_COMPLETE:
 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
@@ -1157,6 +1147,16 @@ void CvNotifications::Activate(Notification& notification)
 			int iId = notification.m_iGameDataIndex;
 			int iStatus = (int)pkMPVotingSystem->GetProposalStatus(iId);
 			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_0, iId, iStatus);
+			GC.GetEngineUserInterface()->AddPopup(kPopup);
+		}
+		break;
+#endif
+#if defined(LEKMOD_LEGACY)
+	case NOTIFICATION_CHOOSE_LEGACY:
+		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+		if (notification.m_iGameDataIndex >= 0)
+		{
+			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_1, m_ePlayer);
 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 		}
 		break;
@@ -1860,7 +1860,7 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 #if defined(LEKMOD_LEGACY)
 		case NOTIFICATION_CHOOSE_LEGACY:
 		{
-			if (GET_PLAYER(m_ePlayer).GetPlayerLegacies()->IsTimeToChooseLegacy() == false)
+			if (GET_PLAYER(m_ePlayer).GetNumFreeLegacies() == 0) // No Legacies to choose
 			{
 				return true;
 			}
