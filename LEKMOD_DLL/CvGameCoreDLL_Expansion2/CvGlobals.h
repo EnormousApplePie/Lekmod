@@ -87,6 +87,10 @@ class CvAICityStrategyEntry;
 class CvPolicyXMLEntries;
 class CvPolicyEntry;
 class CvPolicyBranchEntry;
+#if defined(LEKMOD_LEGACY)
+class CvLegacyEntry;
+class CvLegacyXMLEntries;
+#endif
 class CvTechXMLEntries;
 class CvTechEntry;
 class CvBuildingEntry;
@@ -661,7 +665,12 @@ public:
 #endif
 	std::vector<CvPolicyBranchEntry*>& getPolicyBranchInfo();
 	_Ret_maybenull_ CvPolicyBranchEntry* getPolicyBranchInfo(PolicyBranchTypes ePolicyBranchNum);
-
+#if defined(LEKMOD_LEGACY)
+	int getNumLegacyInfos();
+	std::vector<CvLegacyEntry*>& getLegacyInfo();
+	_Ret_maybenull_ CvLegacyEntry* getLegacyInfo(LegacyTypes eLegacyNum);
+	CvLegacyXMLEntries* GetGameLegacies() const;
+#endif
 #ifdef AUI_WARNING_FIXES
 	uint getNumEmphasisInfos() const;
 #else
@@ -7973,6 +7982,9 @@ protected:
 	CvAIGrandStrategyXMLEntries* m_pAIGrandStrategies;
 	CvAICityStrategies* m_pAICityStrategies;
 	CvPolicyXMLEntries* m_pPolicies;
+#if defined(LEKMOD_LEGACY)
+	CvLegacyXMLEntries* m_pLegacies;
+#endif
 	CvTechXMLEntries* m_pTechs;
 	CvBuildingXMLEntries* m_pBuildings;
 	CvUnitXMLEntries* m_pUnits;

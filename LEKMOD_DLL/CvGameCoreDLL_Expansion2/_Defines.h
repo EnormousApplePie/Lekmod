@@ -1151,6 +1151,14 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
+// 
+// Legacies, for now.
+#define LEKMOD_LEGACY
+
+#define NOTIFICATION_CHOOSE_LEGACY -782919237
+#define NOTIFICATION_LEGACY_CHOSEN 447239182
+
+
 ////////////////////////
 //Benched or not working
 ////////////////////////

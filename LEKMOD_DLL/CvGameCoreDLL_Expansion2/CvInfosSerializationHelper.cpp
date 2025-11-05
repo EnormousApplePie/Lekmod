@@ -258,6 +258,9 @@ IMPLEMENT_SERIALIZATION_INFO_TYPE_HELPER(ImprovementTypes, getImprovementInfo, N
 #if defined(TRAITIFY)
 IMPLEMENT_SERIALIZATION_INFO_TYPE_HELPER(BuildingClassTypes, getBuildingClassInfo, NO_BUILDINGCLASS);
 #endif
+#if defined(LEKMOD_LEGACY)
+IMPLEMENT_SERIALIZATION_INFO_TYPE_HELPER(LegacyTypes, getLegacyInfo, NO_LEGACY)
+#endif
 // Can't use this because nothing ever respects the values.  They are all hard-coded in the enum
 //IMPLEMENT_SERIALIZATION_INFO_TYPE_HELPER(UnitAITypes, getUnitAIInfo, NO_UNITAI);
 

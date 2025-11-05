@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -1941,6 +1941,9 @@ CvGlobals::CvGlobals() :
 	m_pMilitaryAIStrategies(NULL),
 	m_pAIGrandStrategies(NULL),
 	m_pPolicies(NULL),
+#if defined(LEKMOD_LEGACY)
+	m_pLegacies(NULL),
+#endif
 	m_pTechs(NULL),
 	m_pBuildings(NULL),
 	m_pEmphases(NULL),
@@ -2220,6 +2223,9 @@ void CvGlobals::init()
 	m_pAIGrandStrategies = FNEW(CvAIGrandStrategyXMLEntries, c_eCiv5GameplayDLL, 0);
 	m_pAICityStrategies = FNEW(CvAICityStrategies, c_eCiv5GameplayDLL, 0);
 	m_pPolicies = FNEW(CvPolicyXMLEntries, c_eCiv5GameplayDLL, 0);
+#if defined(LEKMOD_LEGACY)
+	m_pLegacies = FNEW(CvLegacyXMLEntries, c_eCiv5GameplayDLL, 0);
+#endif
 	m_pTechs = FNEW(CvTechXMLEntries, c_eCiv5GameplayDLL, 0);
 	m_pBuildings = FNEW(CvBuildingXMLEntries, c_eCiv5GameplayDLL, 0);
 	m_pUnits = FNEW(CvUnitXMLEntries, c_eCiv5GameplayDLL, 0);
@@ -2288,6 +2294,9 @@ void CvGlobals::uninit()
 	SAFE_DELETE(m_pMilitaryAIStrategies);
 	SAFE_DELETE(m_pAIGrandStrategies);
 	SAFE_DELETE(m_pPolicies);
+#if defined(LEKMOD_LEGACY)
+	SAFE_DELETE(m_pLegacies);
+#endif
 	SAFE_DELETE(m_pBuildings);
 	SAFE_DELETE(m_pUnits);
 	SAFE_DELETE(m_pProjects);
@@ -4212,7 +4221,26 @@ CvPolicyXMLEntries* CvGlobals::GetGamePolicies() const
 {
 	return m_pPolicies;
 }
-
+#if defined(LEKMOD_LEGACY)
+int CvGlobals::getNumLegacyInfos()
+{
+	return (int)m_pLegacies->GetLegacyEntries().size();
+}
+std::vector<CvLegacyEntry*>& CvGlobals::getLegacyInfo()
+{
+	return m_pLegacies->GetLegacyEntries();
+}
+CvLegacyEntry* CvGlobals::getLegacyInfo(LegacyTypes eLegacyNum)
+{
+	CvAssert(eLegacyNum > -1);
+	CvAssert(eLegacyNum < GC.getNumLegacyInfos());
+	return m_pLegacies->GetLegacyEntries()[eLegacyNum];
+}
+CvLegacyXMLEntries* CvGlobals::GetGameLegacies() const
+{
+	return m_pLegacies;
+}
+#endif
 #ifdef AUI_WARNING_FIXES
 uint CvGlobals::getNumPolicyBranchInfos() const
 {

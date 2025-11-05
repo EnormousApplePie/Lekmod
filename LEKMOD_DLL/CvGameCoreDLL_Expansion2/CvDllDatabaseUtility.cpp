@@ -334,6 +334,7 @@ bool CvDllDatabaseUtility::PrefetchGameData()
 	PrefetchCollection(GC.getVoteSourceInfo(), "VoteSources");
 	PrefetchCollection(GC.getUnitDomainInfo(), "Domains");
 
+
 	//Leaders
 	PrefetchCollection(GC.getLeaderHeadInfo(), "Leaders");
 
@@ -374,6 +375,9 @@ bool CvDllDatabaseUtility::PrefetchGameData()
 	PrefetchCollection(GC.getCivilizationInfo(), "Civilizations");
 	PrefetchCollection(GC.getMinorCivInfo(), "MinorCivilizations");
 	PrefetchCollection(GC.getTraitInfo(), "Traits");
+#if defined(LEKMOD_LEGACY)
+	PrefetchCollection(GC.getLegacyInfo(), "Legacies");
+#endif
 	PrefetchCollection(GC.getReligionInfo(), "Religions");
 	PrefetchCollection(GC.getBeliefInfo(), "Beliefs");
 	PrefetchCollection(GC.getLeagueSpecialSessionInfo(), "LeagueSpecialSessions");
@@ -658,6 +662,9 @@ bool CvDllDatabaseUtility::ValidatePrefetchProcess()
 	ValidateVectorSize(getNumAIGrandStrategyInfos);
 	ValidateVectorSize(getNumAICityStrategyInfos);
 	ValidateVectorSize(getNumPolicyInfos);
+#if defined(LEKMOD_LEGACY)
+	ValidateVectorSize(getNumLegacyInfos);
+#endif
 	ValidateVectorSize(getNumPolicyBranchInfos);
 	ValidateVectorSize(getNumTechInfos);
 	ValidateVectorSize(getNumEraInfos);

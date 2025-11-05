@@ -767,6 +767,9 @@ DECLARE_SERIALIZATION_INFO_TYPE_HELPER(ImprovementTypes);
 #if defined(TRAITIFY)
 DECLARE_SERIALIZATION_INFO_TYPE_HELPER(BuildingClassTypes);
 #endif
+#if defined(LEKMOD_LEGACY) // LegacyType Info Serialition Helper
+DECLARE_SERIALIZATION_INFO_TYPE_HELPER(LegacyTypes);
+#endif
 // Can't use this because nothing ever respects the values.  They are all hard-coded in the enum
 //DECLARE_SERIALIZATION_INFO_TYPE_HELPER(UnitAITypes);
 

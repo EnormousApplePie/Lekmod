@@ -500,6 +500,12 @@
     <ClCompile Include="Lua\CvLuaUnit.cpp">
       <Filter>Lua</Filter>
     </ClCompile>
+    <ClCompile Include="CvLegacyClasses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CvLegacyAI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="banned.h">
@@ -1025,6 +1031,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="_FruityDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CvLegacyClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CvLegacyAI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

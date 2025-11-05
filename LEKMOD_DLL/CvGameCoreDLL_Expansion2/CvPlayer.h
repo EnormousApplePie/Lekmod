@@ -26,6 +26,9 @@
 #include "CvUnitCycler.h"
 
 class CvPlayerPolicies;
+#if defined(LEKMOD_LEGACY)
+class CvPlayerLegaies;
+#endif
 class CvEconomicAI;
 class CvMilitaryAI;
 class CvCitySpecializationAI;
@@ -65,7 +68,9 @@ typedef FStaticVector<int, 152* 96, true, c_eCiv5GameplayDLL, 0> CvPlotsVector; 
 class CvPlayer
 {
 	friend class CvPlayerPolicies;
-
+#if defined(LEKMOD_LEGACY)
+	friend class CvPlayerLegacies;
+#endif
 public:
 	typedef std::map<unsigned int, int> TurnData;
 
@@ -740,7 +745,11 @@ public:
 	bool canAdoptPolicy(PolicyTypes ePolicy) const;
 	void doAdoptPolicy(PolicyTypes ePolicy);
 	void DoBuyNewBranch(PolicyBranchTypes eBranch);
-
+#if defined(LEKMOD_LEGACY)
+	void setHasLegacy(LegacyTypes eIndex, bool bNewValue);
+	bool canChooseLegacy(LegacyTypes eLegacy) const;
+	void doChooseLegacy(LegacyTypes eLegacy);
+#endif
 	bool IsAnarchy() const;
 	int GetAnarchyNumTurns() const;
 	void SetAnarchyNumTurns(int iValue);
@@ -1784,6 +1793,9 @@ public:
 #endif
 
 	CvPlayerPolicies* GetPlayerPolicies() const;
+#if defined(LEKMOD_LEGACY)
+	CvPlayerLegacies* GetPlayerLegacies() const;
+#endif
 	CvPlayerTraits* GetPlayerTraits() const;
 	CvEconomicAI* GetEconomicAI() const;
 	CvMilitaryAI* GetMilitaryAI() const;
@@ -2396,7 +2408,10 @@ protected:
 	// Policies
 	CvPlayerPolicies* m_pPlayerPolicies;
 	void processPolicies(PolicyTypes ePolicy, int iChange);
-
+#if defined(LEKMOD_LEGACY)
+	CvPlayerLegacies* m_pPlayerLegacies;
+	void processLegacies(LegacyTypes eLegacy, int iChange);
+#endif
 	// AI Strategies
 	CvEconomicAI* m_pEconomicAI;
 	CvMilitaryAI* m_pMilitaryAI;
