@@ -824,15 +824,17 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 		DLLUI->setDirty(NationalBorders_DIRTY_BIT, true);
 
-		// Garrisoned?
-		if (GetGarrisonedUnit())
-		{
-	#ifndef FIX_POLICY_CULTURE_PER_GARRISONED_UNIT
-			ChangeJONSCulturePerTurnFromPolicies(GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CULTURE_FROM_GARRISON));
-	#endif
-		}
-
-		AI_init();
+	// Garrisoned?
+	if (GetGarrisonedUnit())
+	{
+#ifndef FIX_POLICY_CULTURE_PER_GARRISONED_UNIT
+		ChangeJONSCulturePerTurnFromPolicies(GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CULTURE_FROM_GARRISON));
+#endif
+	}
+#if defined(TRAITIFY)
+	updateYield();
+#endif
+	AI_init();
 
 	#ifdef AUI_PLAYER_FIX_VENICE_ONLY_BANS_SETTLERS_NOT_SETTLING
 		if (GetPlayer()->GetPlayerTraits()->IsNoAnnexing() && !isCapital())

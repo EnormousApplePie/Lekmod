@@ -3643,6 +3643,9 @@ void CvPlayerTraits::Reset()
 	m_bFasterInHills = false;
 	m_bEmbarkedAllWater = false;
 	m_bEmbarkedToLandFlatCost = false;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+	m_bCiviliansEmbarkOneMove = false;
+#endif
 	m_bNoHillsImprovementMaintenance = false;
 	m_bTechBoostFromCapitalScienceBuildings = false;
 	m_bStaysAliveZeroCities = false;
