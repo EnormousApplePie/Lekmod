@@ -107,6 +107,7 @@ public:
 	bool IsHalfMoreSpecialistUnhappiness() const;
 
 	int GetGoldenAgeCultureModifier() const;
+	int GetGreatGeneralSiegeBonus() const;
 	int GetNumExtraLeagueVotes() const;
 	int GetNumTradeRouteBonus() const;
 	int GetMinorFriendshipMinimum() const;
@@ -224,10 +225,12 @@ public:
 	int GetTerrainYieldChanges(int i, int j) const;
 	int GetBuildingClassHappiness(int i) const;
 	int GetBuildingClassGlobalHappiness(int i) const;
+	int GetBuildingClassProductionModifiers(int i) const;
 	int GetResourceClassYieldChanges(int i, int j) const;
 	int GetBuildingCostOverride(int i, int j) const;
 	int GetPuppetYieldModifiers(int i) const;
 	int GetBuildingClassYieldChanges(int i, int j) const;
+	int GetBuildingClassYieldModifiers(int i, int j) const;
 	int GetFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const;
 	int GetRouteMovementChange(int i) const;
 #endif
@@ -352,6 +355,7 @@ protected:
 	bool m_bHalfMoreSpecialistUnhappiness;
 
 	int m_iGoldenAgeCultureModifier;
+	int m_iGreatGeneralSiegeBonus;
 	int m_iNumExtraLeagueVotes;
 	int m_iNumTradeRouteBonus;
 	int m_iMinorFriendshipMinimum;
@@ -461,6 +465,7 @@ protected:
 	std::vector<bool> m_abUnitClassForceSpawnCapital;
 	int** m_ppiBuildingCostOverride;
 	int** m_ppiBuildingClassYieldChanges;
+	int** m_ppiBuildingClassYieldModifiers;
 	int** m_ppiResourceClassYieldChanges;
 	int** m_ppiFeatureYieldChanges;
 	int** m_ppiResourceYieldChanges;
@@ -469,6 +474,7 @@ protected:
 	int* m_paiRouteMovementChange;
 	int* m_paiBuildingClassHappiness;
 	int* m_paiBuildingClassGlobalHappiness;
+	int* m_paiBuildingClassProductionModifiers;
 	int* m_piPuppetYieldModifiers;
 #endif
 #if defined(LEKMOD_v34)
@@ -770,6 +776,10 @@ public:
 	int GetGoldenAgeCultureModifier() const
 	{
 		return m_iGoldenAgeCultureModifier;
+	};
+	int GetGreatGeneralSiegeBonus() const
+	{
+		return m_iGreatGeneralSiegeBonus;
 	};
 	int GetNumExtraLeagueVotes() const
 	{
@@ -1231,10 +1241,12 @@ public:
 	int GetTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYield);
 	int GetBuildingClassHappiness(BuildingClassTypes eBuildingClass);
 	int GetBuildingClassGlobalHappiness(BuildingClassTypes eBuildingClass);
+	int GetBuildingClassProductionModifier(BuildingClassTypes eBuildingClass);
 	int GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYieldType);
 	int GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYieldType) const;
 	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType);
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
+	int GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
 #endif
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 	int GetCapitalYieldChange(YieldTypes eYield);
@@ -1330,6 +1342,7 @@ private:
 	bool m_bHalfMoreSpecialistUnhappiness;
 
 	int m_iGoldenAgeCultureModifier;
+	int m_iGreatGeneralSiegeBonus;
 	int m_iNumExtraLeagueVotes;
 	int m_iNumTradeRouteBonus;
 	int m_iMinorFriendshipMinimum;
@@ -1492,7 +1505,9 @@ private:
 	std::vector<bool> m_abForceSpawnCapital;
 	std::vector<int> m_aiBuildingClassHappiness;
 	std::vector<int> m_aiBuildingClassGlobalHappiness;
+	std::vector<int> m_aiBuildingClassProductionModifier;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiBuildingClassYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiBuildingClassYieldModifier;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiFeatureYieldChange;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTerrainYieldChange;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiResourceYieldChange;

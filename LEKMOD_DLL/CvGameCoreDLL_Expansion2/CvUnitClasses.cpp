@@ -666,7 +666,17 @@ int CvUnitEntry::GetCombat() const
 {
 	return m_iCombat;
 }
-
+#if defined(LEKMOD_LEGACY)
+/// Returns combat value
+void CvUnitEntry::ChangeCombat(int iChange)
+{
+	m_iCombat += iChange;
+}
+void CvUnitEntry::ChangeRangedCombat(int iChange)
+{
+	m_iRangedCombat += iChange;
+}
+#endif
 /// Sets combat value
 void CvUnitEntry::SetCombat(int iNum)
 {
@@ -1046,7 +1056,14 @@ int CvUnitEntry::GetResourceQuantityRequirement(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piResourceQuantityRequirements ? m_piResourceQuantityRequirements[i] : -1;
 }
-
+#if defined(LEKMOD_LEGACY)
+void CvUnitEntry::ChangeResourceQuantityRequirement(int i, int iChange)
+{
+	CvAssertMsg(i < GC.getNumResourceInfos(), "Resource type out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	m_piResourceQuantityRequirements[i] += iChange;
+}
+#endif
 /// Production boost for having a specific building in city
 int CvUnitEntry::GetBuildingProductionModifier(BuildingTypes eBuilding) const
 {

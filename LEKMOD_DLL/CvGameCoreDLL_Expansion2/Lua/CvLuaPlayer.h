@@ -305,6 +305,9 @@ protected:
 	static int lIsEmpireSuperUnhappy(lua_State* L);
 
 	static int lGetHappinessFromPolicies(lua_State* L);
+#if defined(LEKMOD_LEGACY)
+	static int lGetHappinessFromLegacies(lua_State* L);
+#endif
 	static int lGetHappinessFromCities(lua_State* L);
 	static int lGetHappinessFromBuildings(lua_State* L);
 
@@ -961,8 +964,10 @@ protected:
 	static int lGetPolicyEspionageCatchSpiesModifier(lua_State* L);
 #if defined(TRAITIFY)
 	static int lGetTraitBuildingClassYieldChange(lua_State* L);
+	static int lGetTraitBuildingClassYieldModifier(lua_State* L);
 	static int lGetTraitBuildingClassHappiness(lua_State* L);
 	static int lGetTraitBuildingClassGlobalHappiness(lua_State* L);
+	static int lGetGreatGeneralSiegeBonusFromTraits(lua_State* L);
 	static int lGetPolicyExtraLeagueVotes(lua_State* L);
 	static int lChangePolicyExtraLeagueVotes(lua_State* L);
 #endif
@@ -1062,6 +1067,13 @@ protected:
 	static int lGetLiberationPreviewString(lua_State* L);
 #ifdef ENHANCED_GRAPHS
 	static int lAddReplayOpenedDemographics(lua_State* L);
+#endif
+#if defined(LEKMOD_LEGACY)
+	static int lGetGreatGeneralSiegeBonusFromLegacies(lua_State* L);
+	static int lGetLegacyBuildingClassYieldChange(lua_State* L);
+	static int lGetLegacyBuildingClassHappiness(lua_State* L);
+	static int lGetLegacyBuildingClassGlobalHappiness(lua_State* L);
+	static int lGetLegacyBuildingClassYieldModifier(lua_State* L);
 #endif
 };
 

@@ -7397,7 +7397,30 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 				}
 			}
 		}
+#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
+		int iChange = eNewValue - m_eCurrentEra;
 
+		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+		{
+			CvBuildingEntry* pBuildingEntry = GC.getBuildingInfo((BuildingTypes)iI);
+			if (pBuildingEntry)
+			{
+				enhanceBuildingEra(((BuildingTypes)iI), iChange);
+			}
+		}
+		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+		{
+			CvImprovementEntry* pImprovementEntry = GC.getImprovementInfo((ImprovementTypes)iI);
+			if (pImprovementEntry)
+			{
+				for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetEraYieldChanges(eNewValue, iJ) * iChange));
+				}
+			}
+		}
+		m_eCurrentEra = eNewValue;
+#endif
 		// Trait to provide free policies on era change?
 		PlayerTypes ePlayer;
 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
@@ -7429,32 +7452,7 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 				}
 			}
 		}
-#if defined(LEKMOD_ERA_ENHANCED_YIELDS)
-		int iChange = eNewValue - m_eCurrentEra;
-		m_eCurrentEra = eNewValue;
 
-		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-		{
-			CvBuildingEntry* pBuildingEntry = GC.getBuildingInfo((BuildingTypes)iI);
-			if (pBuildingEntry)
-			{
-				enhanceBuildingEra(((BuildingTypes)iI), iChange);
-			}
-		}
-		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
-		{
-			CvImprovementEntry* pImprovementEntry = GC.getImprovementInfo((ImprovementTypes)iI);
-			if (pImprovementEntry)
-			{
-				for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
-				{
-					changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetEraYieldChanges(eNewValue, iJ) * iChange));
-				}
-			}
-		}
-#else
-		m_eCurrentEra = eNewValue;
-#endif
 		if(GC.getGame().getActiveTeam() != NO_TEAM)
 		{
 			for(iI = 0; iI < GC.getMap().numPlots(); iI++)
@@ -7480,6 +7478,9 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 			if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 			{
 				gDLL->GameplayEraChanged(ePlayer, eNewValue);
+#if defined(LEKMOD_ERA_BASED_UNIT_UPDATES)
+
+#endif
 			}
 		}
 

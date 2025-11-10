@@ -509,6 +509,9 @@ public:
 
 	void SetBaseCombatStrength(int iCombat);
 	int GetBaseCombatStrength(bool bIgnoreEmbarked = false) const;
+#if defined(LEKMOD_LEGACY)
+	void ChangeBaseCombatStrength(int iChange);
+#endif
 	int GetBaseCombatStrengthConsideringDamage() const;
 
 	int GetGenericMaxStrengthModifier(const CvUnit* pOtherUnit, const CvPlot* pBattlePlot, bool bIgnoreUnitAdjacency) const;
@@ -519,6 +522,9 @@ public:
 	bool canSiege(TeamTypes eTeam) const;
 
 	int GetBaseRangedCombatStrength() const;
+#if defined(LEKMOD_LEGACY)
+	void ChangeBaseRangedCombatStrength(int iChange);
+#endif
 	int GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* pCity, bool bAttacking, bool bForRangedAttack) const;
 
 	int GetAirCombatDamage(const CvUnit* pDefender, CvCity* pCity, bool bIncludeRand, int iAssumeExtraDamage = 0) const;
@@ -958,6 +964,7 @@ public:
 	// Great General Stuff
 	bool IsNearGreatGeneral() const;
 	bool IsStackedGreatGeneral() const;
+
 	int GetGreatGeneralStackMovement() const;
 	int GetEmbarkedUnitStackMovement() const; // NQMP GJS - Danish Longship
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
@@ -1536,6 +1543,9 @@ protected:
 	FAutoVariable<int, CvUnit> m_iExtraNavalMoves;
 	FAutoVariable<int, CvUnit> m_iKamikazePercent;
 	FAutoVariable<int, CvUnit> m_iBaseCombat;
+#if defined(LEKMOD_LEGACY)
+	FAutoVariable<int, CvUnit> m_iBaseRangedCombat;
+#endif
 	FAutoVariable<DirectionTypes, CvUnit> m_eFacingDirection;
 	FAutoVariable<int, CvUnit> m_iArmyId;
 

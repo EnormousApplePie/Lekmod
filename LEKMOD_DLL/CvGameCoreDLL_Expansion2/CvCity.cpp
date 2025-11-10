@@ -6298,7 +6298,29 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding, CvString* toolTipSink
 			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_BUILDING_POLICY", iTempMod);
 		}
 	}
-
+#if defined(TRAITIFY) //BuildingClassProductionModifier from Traits
+	iTempMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingClassProductionModifier((BuildingClassTypes)kBuildingClassInfo.GetID());
+	if(iTempMod != 0)
+	{
+		iMultiplier += iTempMod;
+		if(toolTipSink && iTempMod)
+		{
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_BUILDING_TRAIT", iTempMod);
+		}
+	}
+#endif
+#if defined(LEKMOD_LEGACY)
+	// From Legacies
+	iTempMod = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetBuildingClassProductionModifier((BuildingClassTypes)kBuildingClassInfo.GetID());
+	if(iTempMod != 0)
+	{
+		iMultiplier += iTempMod;
+		if(toolTipSink && iTempMod)
+		{
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_BUILDING_LEGACY", iTempMod);
+		}
+	}
+#endif
 	// From traits
 	iTempMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetCapitalBuildingDiscount(eBuilding);
 	if(iTempMod != 0)
@@ -6936,6 +6958,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 #if defined(STANDARDIZE_YIELDS) // move policy and trait pointers moved to the top of processBuilding
 	CvPlayerPolicies* pPolicies = GET_PLAYER(getOwner()).GetPlayerPolicies();
 	CvPlayerTraits* pTraits = GET_PLAYER(getOwner()).GetPlayerTraits();
+#if defined(LEKMOD_LEGACY)
+	CvPlayerLegacies* pLegacies = GET_PLAYER(getOwner()).GetPlayerLegacies();
+#endif
 #endif
 	const CvCivilizationInfo& thisCiv = getCivilizationInfo();
 
@@ -7798,11 +7823,15 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			}
 #endif
 #else
-			changeYieldRateModifier(eYield, pPolicies->GetBuildingClassYieldModifier(eBuildingClass, eYield)* iChange);
+			changeYieldRateModifier(eYield, pPolicies->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
 			ChangeBaseYieldRateFromBuildings(eYield, pPolicies->GetBuildingClassYieldChange(eBuildingClass, eYield)* iChange);
 #if defined(TRAITIFY) // Trait Yieldchange on buildings
-			ChangeBaseYieldRateFromBuildings(eYield, pTraits->GetBuildingClassYieldChange(eBuildingClass, eYield)* iChange);
-			//changeYieldRateModifier(eYield, pTraits->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
+			ChangeBaseYieldRateFromBuildings(eYield, pTraits->GetBuildingClassYieldChange(eBuildingClass, eYield) * iChange);
+			changeYieldRateModifier(eYield, pTraits->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
+#endif
+#if defined(LEKMOD_LEGACY)
+			ChangeBaseYieldRateFromBuildings(eYield, pLegacies->GetBuildingClassYieldChange(eBuildingClass, eYield) * iChange);
+			changeYieldRateModifier(eYield, pLegacies->GetBuildingClassYieldModifier(eBuildingClass, eYield) * iChange);
 #endif
 #endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
@@ -8042,18 +8071,21 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 	for(iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		ChangeBaseYieldRateFromSpecialists(((YieldTypes)iI), (pkSpecialist->getYieldChange(iI) * iChange));
+#if defined(STANDARDIZE_YIELDS) // processSpecialist
+		if (iI == YIELD_CULTURE)
+		{
+			int iCulturePerSpecialist = GetCultureFromSpecialist(eSpecialist);
+			ChangeBaseYieldRateFromSpecialists(((YieldTypes)iI), iCulturePerSpecialist * iChange);
+		}
+#endif
 	}
 
 	updateExtraSpecialistYield();
 
 	changeSpecialistFreeExperience(pkSpecialist->getExperience() * iChange);
-
-	// Culture
+#if !defined(STANDARDIZE_YIELDS)
 	int iCulturePerSpecialist = GetCultureFromSpecialist(eSpecialist);
-#if !defined(STANDARDIZE_YIELDS) // processSpecialist
 	ChangeJONSCulturePerTurnFromSpecialists(iCulturePerSpecialist * iChange);
-#else
-	ChangeBaseYieldRateFromSpecialists(YIELD_CULTURE, iCulturePerSpecialist * iChange);
 #endif
 }
 
@@ -10896,6 +10928,9 @@ int CvCity::GetLocalHappiness() const
 	int iTraitBuildingHappiness = 0;
 	iLocalHappiness += kPlayer.GetPlayerTraits()->GetLocalHappinessPerCity();
 #endif // TRAITIFY
+#if defined(LEKMOD_LEGACY)
+	int iLegacyBuildingHappiness = 0;
+#endif
 #endif // LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
 	int iHappinessFromReligion = 0;
 	int iHappinessPerGarrison = kPlayer.GetHappinessPerGarrisonedUnit();
@@ -11080,12 +11115,18 @@ int CvCity::GetLocalHappiness() const
 #if defined(TRAITIFY)
 			iTraitBuildingHappiness += kPlayer.GetPlayerTraits()->GetBuildingClassHappiness(eBuildingClass);
 #endif // TRAITIFY
+#if defined(LEKMOD_LEGACY)
+			iLegacyBuildingHappiness += kPlayer.GetPlayerLegacies()->GetBuildingClassHappinessChange(eBuildingClass);
+#endif
 		}
 	}
 	iLocalHappiness += iPolicyBuildingHappiness;
 #if defined(TRAITIFY)
 	iLocalHappiness += iTraitBuildingHappiness;
 #endif // TRAITIFY
+#if defined(LEKMOD_LEGACY)
+	iLocalHappiness += iLegacyBuildingHappiness;
+#endif
 #endif // LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
 
 
@@ -11800,7 +11841,22 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	iModifier += iTempMod;
 	if(toolTipSink)
 		GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_PLAYER", iTempMod);
+#if defined(LEKMOD_LEGACY) // The Wide Open West. its a bit hard coded but whatever
+	if (!isCapital() && GET_PLAYER(getOwner()).GetPlayerLegacies()->GetYieldModCapitalProximity() > 0)
+	{
+		const CvCity* pCapital = GET_PLAYER(getOwner()).getCapitalCity();
+		if (pCapital)
+		{
+			const int distance = plotDistance(getX(), getY(), pCapital->getX(), pCapital->getY());
+			int iQualified = distance > GET_PLAYER(getOwner()).GetPlayerLegacies()->GetYieldModCapitalProximity() ? 1 : -1;
 
+			iTempMod += (GET_PLAYER(getOwner()).GetPlayerLegacies()->GetCityYieldModifier(eIndex) * iQualified);
+			iModifier += iTempMod;
+			if (toolTipSink)
+				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_LEGACY", iTempMod);
+		}
+	}
+#endif
 	// Player Capital Yield Rate Modifier
 	if(isCapital())
 	{

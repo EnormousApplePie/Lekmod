@@ -222,6 +222,9 @@ CvUnit::CvUnit() :
 	, m_iExtraNavalMoves("CvUnit::m_iExtraNavalMoves", m_syncArchive)
 	, m_iKamikazePercent("CvUnit::m_iKamikazePercent", m_syncArchive)
 	, m_iBaseCombat("CvUnit::m_iBaseCombat", m_syncArchive)
+#if defined(LEKMOD_LEGACY)
+	, m_iBaseRangedCombat("CvUnit::m_iBaseRangedCombat", m_syncArchive)
+#endif
 	, m_eFacingDirection("CvUnit::m_eFacingDirection", m_syncArchive, true)
 	, m_iArmyId("CvUnit::m_iArmyId", m_syncArchive)
 	, m_iIgnoreTerrainCostCount("CvUnit::m_iIgnoreTerrainCostCount", m_syncArchive)
@@ -595,7 +598,20 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 			}
 		}
 	}
-
+#if defined(LEKMOD_LEGACY)
+	const UnitTypes unitType = getUnitType();
+	if (unitType != NO_UNIT)
+	{
+		for (int iJ = 0; iJ < GC.getNumPromotionInfos(); iJ++)
+		{
+			const PromotionTypes ePromotion = (PromotionTypes)iJ;
+			if (kPlayer.GetPlayerLegacies()->HasFreePromotionUnitType(ePromotion, unitType))
+			{
+				setHasPromotion(ePromotion, true);
+			}
+		}
+	}
+#endif
 	// Free Promotions from Policies, Techs, etc.
 	for(iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
@@ -1160,6 +1176,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_eUnitType = eUnit;
 	m_pUnitInfo = (NO_UNIT != m_eUnitType) ? GC.getUnitInfo(m_eUnitType) : NULL;
 	m_iBaseCombat = (NO_UNIT != m_eUnitType) ? m_pUnitInfo->GetCombat() : 0;
+#if defined(LEKMOD_LEGACY)
+	m_iBaseRangedCombat = (NO_UNIT != m_eUnitType) ? m_pUnitInfo->GetRangedCombat() : 0;
+#endif
 	m_eLeaderUnitType = NO_UNIT;
 	m_eInvisibleType = NO_INVISIBLE;
 	m_eSeeInvisibleType = NO_INVISIBLE;
@@ -11386,7 +11405,6 @@ bool CvUnit::CanUpgradeRightNow(bool bOnlyTestVisible) const
 		{
 			eResource = (ResourceTypes) iResourceLoop;
 			iNumResourceNeeded = pUpgradeUnitInfo->GetResourceQuantityRequirement(eResource);
-
 			if(iNumResourceNeeded > 0)
 			{
 				// Amount we have lying around
@@ -12570,7 +12588,13 @@ int CvUnit::GetBaseCombatStrength(bool bIgnoreEmbarked) const
 
 	return m_iBaseCombat;
 }
-
+#if defined(LEKMOD_LEGACY)
+void CvUnit::ChangeBaseCombatStrength(int iChange)
+{
+	VALIDATE_OBJECT
+	m_iBaseCombat += iChange;
+}
+#endif
 //	--------------------------------------------------------------------------------
 int CvUnit::GetBaseCombatStrengthConsideringDamage() const
 {
@@ -12953,7 +12977,29 @@ int CvUnit::GetMaxAttackStrength(const CvPlot* pFromPlot, const CvPlot* pToPlot,
 				iTempModifier = GC.getSAPPED_CITY_ATTACK_MODIFIER();
 				iModifier += iTempModifier;
 			}
-
+#if defined(TRAITIFY) || defined(LEKMOD_LEGACY)
+			PromotionTypes eGreatGeneralPromotion = NO_PROMOTION;
+			for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+			{
+				const PromotionTypes eLoopPromotion = static_cast<PromotionTypes>(iI);
+				CvPromotionEntry* pkPromotionInfo = GC.getPromotionInfo(eLoopPromotion);
+				if (pkPromotionInfo)
+				{
+					if (pkPromotionInfo->IsGreatGeneral())
+					{
+						eGreatGeneralPromotion = eLoopPromotion;
+						break;
+					}
+				}	
+			}
+			if (IsNearUnitWithPromotion(eGreatGeneralPromotion, 2, false /*bSameDomain*/, true /*bSamePlayer*/))
+			{
+				iTempModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetGreatGeneralSiegeBonus();
+				iModifier += iTempModifier;
+				iTempModifier = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetGreatGeneralSiegeBonus();
+				iModifier += iTempModifier;
+			}
+#endif
 #ifdef LEKMOD_PROMOTION_ADJACENT_CITY_ATTACK
 			// Nearby unit gives a city attack bonus
 			if (IsNearCityAttackBonus())
@@ -13307,10 +13353,17 @@ bool CvUnit::canSiege(TeamTypes eTeam) const
 int CvUnit::GetBaseRangedCombatStrength() const
 {
 	VALIDATE_OBJECT
+#if !defined(LEKMOD_LEGACY)
 	return m_pUnitInfo->GetRangedCombat();
+#else
+	return m_iBaseRangedCombat;
 }
-
-
+void CvUnit::ChangeBaseRangedCombatStrength(int iChange)
+{
+	VALIDATE_OBJECT
+	m_iBaseRangedCombat += iChange;
+}
+#endif
 //	--------------------------------------------------------------------------------
 int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* pCity, bool bAttacking, bool bForRangedAttack) const
 {
@@ -13356,7 +13409,7 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 	// Great General nearby
 	if(IsNearGreatGeneral() && !IsIgnoreGreatGeneralBenefit())
 	{
-		iModifier += /*25*/ GC.getGREAT_GENERAL_STRENGTH_MOD();
+		iModifier += kPlayer.GetGreatGeneralCombatBonus();
 		iModifier += pTraits->GetGreatGeneralExtraBonus();
 
 		if(IsStackedGreatGeneral())
@@ -13637,7 +13690,29 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 			iTempModifier = GC.getSAPPED_CITY_ATTACK_MODIFIER();
 			iModifier += iTempModifier;
 		}
-
+#if defined(TRAITIFY) || defined(LEKMOD_LEGACY)
+		PromotionTypes eGreatGeneralPromotion = NO_PROMOTION;
+		for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+		{
+			const PromotionTypes eLoopPromotion = static_cast<PromotionTypes>(iI);
+			CvPromotionEntry* pkPromotionInfo = GC.getPromotionInfo(eLoopPromotion);
+			if (pkPromotionInfo)
+			{
+				if (pkPromotionInfo->IsGreatGeneral())
+				{
+					eGreatGeneralPromotion = eLoopPromotion;
+					break;
+				}
+			}
+		}
+		if (IsNearUnitWithPromotion(eGreatGeneralPromotion, 2, false /*bSameDomain*/, true /*bSamePlayer*/))
+		{
+			iTempModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetGreatGeneralSiegeBonus();
+			iModifier += iTempModifier;
+			iTempModifier = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetGreatGeneralSiegeBonus();
+			iModifier += iTempModifier;
+		}
+#endif
 		// Bonus against city states?
 		if(GET_PLAYER(pCity->getOwner()).isMinorCiv())
 		{

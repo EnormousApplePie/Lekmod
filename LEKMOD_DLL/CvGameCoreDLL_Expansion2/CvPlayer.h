@@ -27,7 +27,7 @@
 
 class CvPlayerPolicies;
 #if defined(LEKMOD_LEGACY)
-class CvPlayerLegaies;
+class CvPlayerLegacies;
 #endif
 class CvEconomicAI;
 class CvMilitaryAI;
@@ -610,6 +610,9 @@ public:
 	PlayerTypes GetMostUnhappyCityRecipient();
 
 	int GetHappinessFromPolicies() const;
+#if defined(LEKMOD_LEGACY)
+	int GetHappinessFromLegacies() const;
+#endif
 	int GetHappinessFromCities() const;
 	int GetHappinessFromBuildings() const;
 
@@ -691,7 +694,9 @@ public:
 	void ChangeHappinessFromLeagues(int iChange);
 
 	// END Happiness
-
+#if defined(LEKMOD_LEGACY)
+	int GetNumSpecialistsInEmpire(SpecialistTypes eSpecialist) const;
+#endif
 	// Espionage
 	int GetEspionageModifier() const;
 	void ChangeEspionageModifier(int iChange);

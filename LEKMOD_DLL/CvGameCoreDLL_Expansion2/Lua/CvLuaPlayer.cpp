@@ -322,6 +322,9 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(IsEmpireSuperUnhappy);
 
 	Method(GetHappinessFromPolicies);
+#if defined(LEKMOD_LEGACY)
+	Method(GetHappinessFromLegacies);
+#endif
 	Method(GetHappinessFromCities);
 	Method(GetHappinessFromBuildings);
 
@@ -964,8 +967,10 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetPolicyEspionageCatchSpiesModifier);
 #if defined(TRAITIFY)
 	Method(GetTraitBuildingClassYieldChange);
+	Method(GetTraitBuildingClassYieldModifier);
 	Method(GetTraitBuildingClassHappiness);
 	Method(GetTraitBuildingClassGlobalHappiness);
+	Method(GetGreatGeneralSiegeBonusFromTraits);
 #endif
 	Method(GetPlayerBuildingClassYieldChange);
 	Method(GetPlayerBuildingClassHappiness);
@@ -1057,6 +1062,13 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetLiberationPreviewString);
 #ifdef ENHANCED_GRAPHS
 	Method(AddReplayOpenedDemographics);
+#endif
+#if defined(LEKMOD_LEGACY)
+	Method(GetGreatGeneralSiegeBonusFromLegacies);
+	Method(GetLegacyBuildingClassYieldChange);
+	Method(GetLegacyBuildingClassHappiness);
+	Method(GetLegacyBuildingClassGlobalHappiness);
+	Method(GetLegacyBuildingClassYieldModifier);
 #endif
 
 }
@@ -3041,7 +3053,14 @@ int CvLuaPlayer::lGetHappinessFromPolicies(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromPolicies);
 }
-
+#if defined(LEKMOD_LEGACY)
+//------------------------------------------------------------------------------
+//int GetHappinessFromLegacies() const;
+int CvLuaPlayer::lGetHappinessFromLegacies(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromLegacies);
+}
+#endif
 //------------------------------------------------------------------------------
 //int GetHappinessFromCities() const;
 int CvLuaPlayer::lGetHappinessFromCities(lua_State* L)
@@ -9914,75 +9933,61 @@ int CvLuaPlayer::lGetTraitBuildingClassYieldChange(lua_State* L)
 	return 0;
 }
 //------------------------------------------------------------------------------
-// Does not Include global happiness from traits
-int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
+int CvLuaPlayer::lGetTraitBuildingClassYieldModifier(lua_State* L)
 {
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	const YieldTypes eYieldType = (YieldTypes)luaL_checkint(L, 3);
+
 	CvPlayer* pkPlayer = GetInstance(L);
 	if (pkPlayer)
 	{
-		const BuildingTypes eBuilding = (BuildingTypes)lua_tointeger(L, 2);
-		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
-		if (pkBuildingInfo)
-		{
-			BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingInfo->GetBuildingClassType();
-	
-			int iExtraHappiness = 0;
-	
-			for (int iTraitLoop = 0; iTraitLoop < GC.getNumTraitInfos(); iTraitLoop++)
-			{
-				const TraitTypes eTrait = static_cast<TraitTypes>(iTraitLoop);
-				CvTraitEntry* pkTraitInfo = GC.getTraitInfo(eTrait);
-				if (pkTraitInfo)
-				{
-					if (pkPlayer->GetPlayerTraits()->HasTrait(eTrait))
-					{
-						iExtraHappiness += pkTraitInfo->GetBuildingClassHappiness(eBuildingClass);
-					}
-				}
-			}
-			lua_pushinteger(L, iExtraHappiness);
-			return 1;
-		}
+		int Change = pkPlayer->GetPlayerTraits()->GetBuildingClassYieldModifier(eBuildingClass, eYieldType);
+		lua_pushinteger(L, Change);
+
+		return 1;
 	}
-	
-	//BUG: This can't be right...
-	lua_pushinteger(L, -1);
+
+	return 0;
+}
+//------------------------------------------------------------------------------
+// Does not Include global happiness from traits
+int CvLuaPlayer::lGetTraitBuildingClassHappiness(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int HappinessChange = pkPlayer->GetPlayerTraits()->GetBuildingClassHappiness(eBuildingClass);
+		lua_pushinteger(L, HappinessChange);
+		return 1;
+	}
 	return 0;
 }
 //------------------------------------------------------------------------------
 // Does Includes only global happiness from traits
 int CvLuaPlayer::lGetTraitBuildingClassGlobalHappiness(lua_State* L)
 {
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
 	CvPlayer* pkPlayer = GetInstance(L);
 	if (pkPlayer)
 	{
-		const BuildingTypes eBuilding = (BuildingTypes)lua_tointeger(L, 2);
-		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
-		if (pkBuildingInfo)
-		{
-			BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingInfo->GetBuildingClassType();
-
-			int iExtraHappiness = 0;
-
-			for (int iTraitLoop = 0; iTraitLoop < GC.getNumTraitInfos(); iTraitLoop++)
-			{
-				const TraitTypes eTrait = static_cast<TraitTypes>(iTraitLoop);
-				CvTraitEntry* pkTraitInfo = GC.getTraitInfo(eTrait);
-				if (pkTraitInfo)
-				{
-					if (pkPlayer->GetPlayerTraits()->HasTrait(eTrait))
-					{
-						iExtraHappiness += pkTraitInfo->GetBuildingClassGlobalHappiness(eBuildingClass);
-					}
-				}
-			}
-			lua_pushinteger(L, iExtraHappiness);
-			return 1;
-		}
+		int HappinessChange = pkPlayer->GetPlayerTraits()->GetBuildingClassGlobalHappiness(eBuildingClass);
+		lua_pushinteger(L, HappinessChange);
+		return 1;
 	}
-
-	//BUG: This can't be right...
-	lua_pushinteger(L, -1);
+	return 0;
+}
+// -----------------------------------------------------------------------------
+// Great General combat bonus VS Cites from Traits
+int CvLuaPlayer::lGetGreatGeneralSiegeBonusFromTraits(lua_State* L)
+{
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int iBonus = pkPlayer->GetPlayerTraits()->GetGreatGeneralSiegeBonus();
+		lua_pushinteger(L, iBonus);
+		return 1;
+	}
 	return 0;
 }
 #endif
@@ -11571,5 +11576,71 @@ int CvLuaPlayer::lAddReplayOpenedDemographics(lua_State* L)
 	CvPlayerAI* pkPlayer = GetInstance(L);
 	pkPlayer->ChangeNumTimesOpenedDemographics(1);
 	return 1;
+}
+#endif
+#if defined(LEKMOD_LEGACY)
+int CvLuaPlayer::lGetGreatGeneralSiegeBonusFromLegacies(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int iBonus = pkPlayer->GetPlayerLegacies()->GetGreatGeneralSiegeBonus();
+		lua_pushinteger(L, iBonus);
+		return 1;
+	}
+	return 0;
+}
+int CvLuaPlayer::lGetLegacyBuildingClassYieldChange(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	const YieldTypes eYieldType = (YieldTypes)luaL_checkint(L, 3);
+
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int Change = pkPlayer->GetPlayerLegacies()->GetBuildingClassYieldChange(eBuildingClass, eYieldType);
+		lua_pushinteger(L, Change);
+
+		return 1;
+	}
+
+	return 0;
+}
+int CvLuaPlayer::lGetLegacyBuildingClassYieldModifier(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	const YieldTypes eYieldType = (YieldTypes)luaL_checkint(L, 3);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int Modifier = pkPlayer->GetPlayerLegacies()->GetBuildingClassYieldModifier(eBuildingClass, eYieldType);
+		lua_pushinteger(L, Modifier);
+		return 1;
+	}
+	return 0;
+}
+int CvLuaPlayer::lGetLegacyBuildingClassHappiness(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int HappinessChange = pkPlayer->GetPlayerLegacies()->GetBuildingClassHappinessChange(eBuildingClass);
+		lua_pushinteger(L, HappinessChange);
+		return 1;
+	}
+	return 0;
+}
+int CvLuaPlayer::lGetLegacyBuildingClassGlobalHappiness(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int HappinessChange = pkPlayer->GetPlayerLegacies()->GetBuildingClassGlobalHappinessChange(eBuildingClass);
+		lua_pushinteger(L, HappinessChange);
+		return 1;
+	}
+	return 0;
 }
 #endif

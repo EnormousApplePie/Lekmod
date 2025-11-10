@@ -65,6 +65,10 @@ public:
 	bool IsRemoveHeresy() const;
 	bool IsCanBuyCityState() const;
 	int GetCombat() const;
+#if defined(LEKMOD_LEGACY)
+	void ChangeCombat(int iChange);
+	void ChangeRangedCombat(int iChange);
+#endif
 	void SetCombat(int iNum);
 	int GetCombatLimit() const;
 	int GetRangedCombat() const;
@@ -154,6 +158,9 @@ public:
 	// Accessor Functions (Arrays)
 	int GetPrereqAndTechs(int i) const;
 	int GetResourceQuantityRequirement(int i) const;
+#if defined(LEKMOD_LEGACY)
+	void ChangeResourceQuantityRequirement(int i, int iChange);
+#endif
 	int GetBuildingProductionModifier(BuildingTypes eBuilding) const;
 	int GetYieldFromKills(YieldTypes eYield) const;
 	int GetProductionTraits(int i) const;

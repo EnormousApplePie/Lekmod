@@ -1287,7 +1287,7 @@ void CvDllNetMessageHandler::ResponseIdeologyChoice(PlayerTypes ePlayer, PolicyB
 	{
 		// Agreed upon offset is add 10 then multiply by -1 so we need to reverse that here
 		int iFixedID = (eChoice * -1) - 10;
-		kPlayer.GetPlayerLegacies()->SetLegacy((LegacyTypes)iFixedID, true);
+		kPlayer.doChooseLegacy((LegacyTypes)iFixedID);
 	}
 #endif
 }

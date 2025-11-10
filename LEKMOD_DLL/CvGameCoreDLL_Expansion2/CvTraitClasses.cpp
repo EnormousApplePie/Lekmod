@@ -76,6 +76,7 @@ CvTraitEntry::CvTraitEntry() :
 	m_bHalfMoreSpecialistUnhappiness(false),
 
 	m_iGoldenAgeCultureModifier(0),
+	m_iGreatGeneralSiegeBonus(0),
 	m_iNumExtraLeagueVotes(0),
 	m_iNumTradeRouteBonus(0),
 	m_iMinorFriendshipMinimum(0),
@@ -172,6 +173,7 @@ CvTraitEntry::CvTraitEntry() :
 #if defined(TRAITIFY) // Constructor, Arrays
 	m_ppiBuildingCostOverride(NULL),
 	m_ppiBuildingClassYieldChanges(NULL),
+	m_ppiBuildingClassYieldModifiers(NULL),
 	m_piPuppetYieldModifiers(NULL),
 	m_paiRouteMovementChange(NULL),
 	m_ppiResourceClassYieldChanges(NULL),
@@ -181,6 +183,7 @@ CvTraitEntry::CvTraitEntry() :
 
 	m_paiBuildingClassGlobalHappiness(NULL),
 	m_paiBuildingClassHappiness(NULL),
+	m_paiBuildingClassProductionModifiers(NULL),
 #endif
 #if defined(LEKMOD_v34)
 	m_paiYieldPerPopulation(NULL),
@@ -246,6 +249,7 @@ CvTraitEntry::~CvTraitEntry()
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiSpecialistYieldChanges);
 #if defined(TRAITIFY) // Destructor, Arrays
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldModifiers);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingCostOverride);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiResourceClassYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiFeatureYieldChanges);
@@ -255,6 +259,7 @@ CvTraitEntry::~CvTraitEntry()
 	SAFE_DELETE_ARRAY(m_paiRouteMovementChange);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassGlobalHappiness);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassHappiness);
+	SAFE_DELETE_ARRAY(m_paiBuildingClassProductionModifiers);
 #endif
 #if defined(FULL_YIELD_FROM_KILLS)
 	SAFE_DELETE_ARRAY(m_paiYieldFromKills);
@@ -573,6 +578,11 @@ bool CvTraitEntry::IsHalfMoreSpecialistUnhappiness() const
 int CvTraitEntry::GetGoldenAgeCultureModifier() const
 {
 	return m_iGoldenAgeCultureModifier;
+}
+/// Accessor:: does this trait give a siege bonus to great generals?
+int CvTraitEntry::GetGreatGeneralSiegeBonus() const
+{
+	return m_iGreatGeneralSiegeBonus;
 }
 /// Accessor:: does this trait give extra league votes?
 int CvTraitEntry::GetNumExtraLeagueVotes() const
@@ -1418,6 +1428,13 @@ int CvTraitEntry::GetBuildingClassGlobalHappiness(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_paiBuildingClassGlobalHappiness ? m_paiBuildingClassGlobalHappiness[i] : -1;
 }
+// Production Modifiers for eBuildingClass
+int CvTraitEntry::GetBuildingClassProductionModifiers(int i) const
+{
+	CvAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_paiBuildingClassProductionModifiers ? m_paiBuildingClassProductionModifiers[i] : -1;
+}
 // Override prod/gold/faith cost of buildings
 int CvTraitEntry::GetBuildingCostOverride(int i, int j) const
 {
@@ -1435,6 +1452,15 @@ int CvTraitEntry::GetBuildingClassYieldChanges(int i, int j) const
 	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
 	CvAssertMsg(j > -1, "Index out of bounds");
 	return m_ppiBuildingClassYieldChanges[i][j];
+}
+// Change the yield of a building when a trait is active
+int CvTraitEntry::GetBuildingClassYieldModifiers(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiBuildingClassYieldModifiers[i][j];
 }
 // Puppet City Yield Modifiers
 int CvTraitEntry::GetPuppetYieldModifiers(int i) const
@@ -1554,6 +1580,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_bHalfMoreSpecialistUnhappiness		= kResults.GetBool("HalfMoreSpecialistUnhappiness");
 
 	m_iGoldenAgeCultureModifier				= kResults.GetInt("GoldenAgeCultureModifier");
+	m_iGreatGeneralSiegeBonus				= kResults.GetInt("GreatGeneralSiegeBonus");
 	m_iNumExtraLeagueVotes					= kResults.GetInt("NumExtraLeagueVotes");
 	m_iNumTradeRouteBonus					= kResults.GetInt("NumTradeRouteBonus");
 	m_iMinorFriendshipMinimum				= kResults.GetInt("MinorFriendshipMinimum");
@@ -1858,6 +1885,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 #endif
 #if defined(TRAITIFY) // CvTraitEntry::CacheResults, ARRAY
 	kUtility.SetYields(m_piPuppetYieldModifiers, "Trait_PuppetYieldModifiers", "TraitType", szTraitType);
+	kUtility.PopulateArrayByValue(m_paiBuildingClassProductionModifiers, "BuildingClasses", "Trait_BuildingClassProductionModifiers", "BuildingClassType", "TraitType", szTraitType, "Modifier");
 	// Route Movement Change.
 	{
 		kUtility.InitializeArray(m_paiRouteMovementChange, "Routes", 0);
@@ -2003,14 +2031,17 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	//BuildingYieldChanges
 	{
 		kUtility.Initialize2DArray(m_ppiBuildingClassYieldChanges, "BuildingClasses", "Yields");
-
+		kUtility.Initialize2DArray(m_ppiBuildingClassYieldModifiers, "BuildingClasses", "Yields");
 		std::string strKey("Trait_BuildingClassYieldChanges");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
 			pResults = kUtility.PrepareResults(strKey,
-				"select BuildingClasses.ID as BuildingClassID, Yields.ID as YieldID, Yield from Trait_BuildingClassYieldChanges \
-inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner join Yields on Yields.Type = YieldType where TraitType = ?");
+				"SELECT BuildingClasses.ID as BuildingClassID, Yields.ID as YieldID, Yield, Modifier "
+				"from Trait_BuildingClassYieldChanges "
+				"INNER JOIN BuildingClasses on BuildingClasses.Type = BuildingClassType "
+				"INNER JOIN Yields on Yields.Type = YieldType "
+				"WHERE TraitType = ? ");
 		}
 
 		pResults->Bind(1, szTraitType);
@@ -2020,8 +2051,10 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 			const int BuildingClassID = pResults->GetInt(0);
 			const int iYieldID = pResults->GetInt(1);
 			const int iYieldChange = pResults->GetInt(2);
+			const int iModifier = pResults->GetInt(3);
 
 			m_ppiBuildingClassYieldChanges[BuildingClassID][iYieldID] = iYieldChange;
+			m_ppiBuildingClassYieldModifiers[BuildingClassID][iYieldID] = iModifier;
 		}
 	}
 	//Building Cost Override
@@ -2249,7 +2282,7 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 #endif
 
 
-		std::string strKey("Building_SpecialistYieldChanges");
+		std::string strKey("Trait_SpecialistYieldChanges");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if(pResults == NULL)
 		{
@@ -2711,6 +2744,7 @@ void CvPlayerTraits::InitPlayerTraits()
 			m_bHalfMoreSpecialistUnhappiness = trait->IsHalfMoreSpecialistUnhappiness();
 
 			m_iGoldenAgeCultureModifier += trait->GetGoldenAgeCultureModifier();
+			m_iGreatGeneralSiegeBonus += trait->GetGreatGeneralSiegeBonus();
 			m_iNumExtraLeagueVotes += trait->GetNumExtraLeagueVotes();
 			m_iNumTradeRouteBonus += trait->GetNumTradeRouteBonus();
 			m_iMinorFriendshipMinimum += trait->GetMinorFriendshipMinimum();
@@ -2985,6 +3019,13 @@ void CvPlayerTraits::InitPlayerTraits()
 						yields[iYield] = (m_ppaaiBuildingClassYieldChange[iBuildingClassLoop][iYield] + iChange);
 						m_ppaaiBuildingClassYieldChange[iBuildingClassLoop] = yields;
 					}
+					iChange = trait->GetBuildingClassYieldModifiers((BuildingClassTypes)iBuildingClassLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiBuildingClassYieldModifier[iBuildingClassLoop];
+						yields[iYield] = (m_ppaaiBuildingClassYieldModifier[iBuildingClassLoop][iYield] + iChange);
+						m_ppaaiBuildingClassYieldModifier[iBuildingClassLoop] = yields;
+					}
 				}
 				for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 				{
@@ -3047,6 +3088,7 @@ void CvPlayerTraits::InitPlayerTraits()
 			{
 				m_aiBuildingClassHappiness[iBuildingClass] = trait->GetBuildingClassHappiness((BuildingClassTypes)iBuildingClass);
 				m_aiBuildingClassGlobalHappiness[iBuildingClass] = trait->GetBuildingClassGlobalHappiness((BuildingClassTypes)iBuildingClass);
+				m_aiBuildingClassProductionModifier[iBuildingClass] = trait->GetBuildingClassProductionModifiers((BuildingClassTypes)iBuildingClass);
 				m_abRemoveRequiredTerrain[iBuildingClass] = trait->IsBuildingClassRemoveRequiredTerrain((BuildingClassTypes)iBuildingClass);
 			}
 			for (int iRouteType = 0; iRouteType < NUM_ROUTE_TYPES; iRouteType++)
@@ -3184,7 +3226,9 @@ void CvPlayerTraits::Uninit()
 	m_abRemoveRequiredTerrain.clear();
 	m_aiBuildingClassHappiness.clear();
 	m_aiBuildingClassGlobalHappiness.clear();
+	m_aiBuildingClassProductionModifier.clear();
 	m_ppaaiBuildingClassYieldChange.clear();
+	m_ppaaiBuildingClassYieldModifier.clear();
 	m_ppaaiFeatureYieldChange.clear();
 	m_ppaaiTerrainYieldChange.clear();
 	m_ppaaiResourceYieldChange.clear();
@@ -3261,6 +3305,7 @@ void CvPlayerTraits::Reset()
 	m_bHalfMoreSpecialistUnhappiness = false;
 
 	m_iGoldenAgeCultureModifier = 0;
+	m_iGreatGeneralSiegeBonus = 0;
 	m_iNumExtraLeagueVotes = 0;
 	m_iNumTradeRouteBonus = 0;
 	m_iMinorFriendshipMinimum = 0;
@@ -3371,8 +3416,12 @@ void CvPlayerTraits::Reset()
 	m_aiBuildingClassHappiness.resize(GC.getNumBuildingClassInfos());
 	m_aiBuildingClassGlobalHappiness.clear();
 	m_aiBuildingClassGlobalHappiness.resize(GC.getNumBuildingClassInfos());
+	m_aiBuildingClassProductionModifier.clear();
+	m_aiBuildingClassProductionModifier.resize(GC.getNumBuildingClassInfos());
 	m_ppaaiBuildingClassYieldChange.clear();
 	m_ppaaiBuildingClassYieldChange.resize(GC.getNumBuildingClassInfos());
+	m_ppaaiBuildingClassYieldModifier.clear();
+	m_ppaaiBuildingClassYieldModifier.resize(GC.getNumBuildingClassInfos());
 	m_ppaaiFeatureYieldChange.clear();
 	m_ppaaiFeatureYieldChange.resize(GC.getNumFeatureInfos());
 	m_ppaaiTerrainYieldChange.clear();
@@ -3483,6 +3532,7 @@ void CvPlayerTraits::Reset()
 		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
 		{
 			m_ppaaiBuildingClassYieldChange[iBuildingClass] = yield;
+			m_ppaaiBuildingClassYieldModifier[iBuildingClass] = yield;
 		}
 		for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
 		{
@@ -3505,6 +3555,7 @@ void CvPlayerTraits::Reset()
 	{
 		m_aiBuildingClassHappiness[iBuildingClass] = 0;
 		m_aiBuildingClassGlobalHappiness[iBuildingClass] = 0;
+		m_aiBuildingClassProductionModifier[iBuildingClass] = 0;
 		m_abRemoveRequiredTerrain[iBuildingClass] = false;
 	}
 	for (int iRouteType = 0; iRouteType < NUM_ROUTE_TYPES; iRouteType++)
@@ -3962,6 +4013,13 @@ int CvPlayerTraits::GetBuildingClassGlobalHappiness(BuildingClassTypes eBuilding
 
 	return m_aiBuildingClassGlobalHappiness[(int)eBuildingClass];
 }
+// Building Class Production Modifier
+int CvPlayerTraits::GetBuildingClassProductionModifier(BuildingClassTypes eBuildingClass)
+{
+	CvAssertMsg(eBuildingClass < GC.getNumBuildingClassInfos(), "Invalid eBuildingClass parameter in call to CvPlayerTraits::GetBuildingClassProductionModifier()");
+
+	return eBuildingClass != NO_BUILDINGCLASS ? m_aiBuildingClassProductionModifier[(int)eBuildingClass] : 0;
+}
 ///Get Yield Change from Trait for a specific building class
 int CvPlayerTraits::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType)
 {
@@ -3973,6 +4031,13 @@ int CvPlayerTraits::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClas
 	}
 
 	return m_ppaaiBuildingClassYieldChange[(int)eBuildingClass][(int)eYieldType];
+}
+/// Get Yield Mod from Trait for eBuildingClass
+int CvPlayerTraits::GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYieldType)
+{
+	CvAssertMsg(eBuildingClass < GC.getNumBuildingClassInfos(), "Invalid eBuildingClass parameter in call to CvPlayerTraits::GetBuildingClassYieldModifier()");
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetBuildingClassYieldModifier()");
+	return eBuildingClass != NO_BUILDINGCLASS ? m_ppaaiBuildingClassYieldModifier[(int)eBuildingClass][(int)eYieldType] : 0;
 }
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 // Optional Unit Defined by Trait to settle cities with extra yields
@@ -4810,6 +4875,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_bHalfMoreSpecialistUnhappiness;
 
 	kStream >> m_iGoldenAgeCultureModifier;
+	kStream >> m_iGreatGeneralSiegeBonus;
 	kStream >> m_iNumExtraLeagueVotes;
 	kStream >> m_iNumTradeRouteBonus;
 	kStream >> m_iMinorFriendshipMinimum;
@@ -5108,6 +5174,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 #if defined(TRAITIFY)
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiBuildingClassGlobalHappiness);
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiBuildingClassHappiness);
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiBuildingClassProductionModifier);
 
 	kStream >> iNumEntries;
 	m_abRemoveRequiredTerrain.clear();
@@ -5207,6 +5274,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_ppaaiUnimprovedFeatureYieldChange;
 #if defined(TRAITIFY) // CvPlayerTraits::Read (for CvPlayerTraits Arrays)
 	kStream >> m_ppaaiBuildingClassYieldChange;
+	kStream >> m_ppaaiBuildingClassYieldModifier;
 	kStream >> m_ppaaiFeatureYieldChange;
 	kStream >> m_ppaaiTerrainYieldChange;
 	kStream >> m_ppaaiResourceClassYieldChange;
@@ -5303,6 +5371,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_bHalfMoreSpecialistUnhappiness;
 
 	kStream << m_iGoldenAgeCultureModifier;
+	kStream << m_iGreatGeneralSiegeBonus;
 	kStream << m_iNumExtraLeagueVotes;
 	kStream << m_iNumTradeRouteBonus;
 	kStream << m_iMinorFriendshipMinimum;
@@ -5436,6 +5505,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 #if defined(TRAITIFY)
 	CvInfosSerializationHelper::WriteHashedDataArray<BuildingClassTypes, int>(kStream, m_aiBuildingClassGlobalHappiness);
 	CvInfosSerializationHelper::WriteHashedDataArray<BuildingClassTypes, int>(kStream, m_aiBuildingClassHappiness);
+	CvInfosSerializationHelper::WriteHashedDataArray<BuildingClassTypes, int>(kStream, m_aiBuildingClassProductionModifier);
 
 	kStream << m_abRemoveRequiredTerrain.size();
 	for (uint ui = 0; ui < m_abRemoveRequiredTerrain.size(); ui++)
@@ -5503,6 +5573,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_ppaaiUnimprovedFeatureYieldChange;
 #if defined(TRAITIFY) // CvPlayerTraits::Write (for CvPlayerTraits Arrays)
 	kStream << m_ppaaiBuildingClassYieldChange;
+	kStream << m_ppaaiBuildingClassYieldModifier;
 	kStream << m_ppaaiFeatureYieldChange;
 	kStream << m_ppaaiTerrainYieldChange;
 	kStream << m_ppaaiResourceClassYieldChange;

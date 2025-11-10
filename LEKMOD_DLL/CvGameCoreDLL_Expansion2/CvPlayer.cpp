@@ -3353,7 +3353,14 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 			pNewCity->SetOccupied(true);
 
 			int iInfluenceReduction = GetCulture()->GetInfluenceCityConquestReduction(eOldOwner);
-
+#if defined(LEKMOD_LEGACY)
+			int iResistanceTimeReduction = GetPlayerLegacies()->GetResistanceTimeReduction();
+			iInfluenceReduction += iResistanceTimeReduction;
+			if (iInfluenceReduction > 100) // Cap at 100%, no negative resistance time
+			{
+				iInfluenceReduction = 100;
+			}
+#endif
 #ifdef NQ_DIABLE_RESISTANCE_TIME_VIA_POLICIES
 			int iResistanceTurns = 0;
 			if (!IsDisablesResistanceTime())
@@ -5345,18 +5352,6 @@ void CvPlayer::doTurnPostDiplomacy()
 				pNotifications->Add(NOTIFICATION_CHOOSE_IDEOLOGY, strBuffer, strSummary, -1, -1, GetID());
 			}
 		}
-#if !defined(LEKMOD_LEGACY) // Time to Pick! Maybe.
-		if (GetPlayerLegacies()->IsTimeToChooseLegacy())
-		{
-			CvNotifications* pNotifications = GetNotifications();
-			if (pNotifications)
-			{
-				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_CHOOSE_LEGACY");
-				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_CHOOSE_LEGACY");
-				pNotifications->Add((NotificationTypes)NOTIFICATION_CHOOSE_LEGACY, strBuffer, strSummary, -1, -1, GetID());
-			}
-		}
-#endif
 	}
 
 	if (isAlive() && getNumCities() > 0 && !isHuman() && !isMinorCiv())
@@ -5366,13 +5361,6 @@ void CvPlayer::doTurnPostDiplomacy()
 			AI_PERF_FORMAT("AI-perf.csv", ("DoChooseIdeology, Turn %03d, %s", GC.getGame().getElapsedGameTurns(), getCivilizationShortDescription()) );
 			GetPlayerPolicies()->DoChooseIdeology();
 		}
-#if defined(LEKMOD_LEGACY) // Log AI Legacy Choice
-		if (GetPlayerLegacies()->IsTimeToChooseLegacy())
-		{
-			AI_PERF_FORMAT("AI-perf.csv", ("DoChooseLegacy, Turn %03d, %s", GC.getGame().getElapsedGameTurns(), getCivilizationShortDescription()));
-			GetPlayerLegacies()->DoChooseLegacy();
-		}
-#endif
 	}
 
 	if(!isBarbarian() && !isHuman())
@@ -14198,7 +14186,9 @@ void CvPlayer::DoUpdateHappiness()
 
 	// Increase from policies
 	m_iHappiness += GetHappinessFromPolicies();
-
+#if defined(LEKMOD_LEGACY)
+	m_iHappiness += GetHappinessFromLegacies();
+#endif
 	// Increase from num cities (player based, for buildings and such)
 	m_iHappiness += getNumCities() * m_iHappinessPerCity;
 
@@ -14794,7 +14784,34 @@ int CvPlayer::GetHappinessFromPolicies() const
 
 	return iHappiness;
 }
-
+#if defined(LEKMOD_LEGACY)
+//	--------------------------------------------------------------------------------
+/// Returns the amount of Happiness being added by Legacies
+int CvPlayer::GetHappinessFromLegacies() const
+{
+	int iHappiness = 0;
+	for (int iS = 0; iS < GC.getNumSpecialistInfos(); iS++)
+	{
+		SpecialistTypes eSpecialist = (SpecialistTypes)iS;
+		if (GetPlayerLegacies()->GetSpecialistHappinessChange(eSpecialist) != 0)
+		{
+			iHappiness += (GetPlayerLegacies()->GetSpecialistHappinessChange(eSpecialist) * GetNumSpecialistsInEmpire(eSpecialist));
+			iHappiness /= 100; // SpecialistHappinessChange is stored as Times 100 to allow for decimal values
+		}
+	}
+	const CvCity* pLoopCity;
+	int iLoop;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		if (pLoopCity == NULL)
+			continue;
+		if (pLoopCity->getOriginalOwner() != GetID())
+			continue;
+		iHappiness += GetPlayerLegacies()->GetHappinessPerOriginalCity();
+	}
+	return iHappiness;
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Returns the amount of Local Happiness generated in the cities
 int CvPlayer::GetHappinessFromCities() const
@@ -14863,7 +14880,9 @@ int CvPlayer::GetHappinessFromBuildings() const
 #if defined(TRAITIFY) // Global Happiness from Buildings as defined by Traits (Currently Macedonia)
 	// Trait Mods
 	int iTraitBuildingHappiness = 0;
-
+#if defined(LEKMOD_LEGACY)
+	int iLegacyBuildingHappiness = 0;
+#endif
 	// Loop through all Building Classes and check for Trait-based Global Happiness
 	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 	{
@@ -14875,7 +14894,17 @@ int CvPlayer::GetHappinessFromBuildings() const
 		}
 
 		int iTraitHappiness = GetPlayerTraits()->GetBuildingClassGlobalHappiness(eBuildingClass);
-
+#if defined(LEKMOD_LEGACY)
+		int iLegacyHappiness = GetPlayerLegacies()->GetBuildingClassGlobalHappinessChange(eBuildingClass);
+		if (iLegacyHappiness > 0)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
+			if (eBuilding != NO_BUILDING)
+			{
+				iLegacyBuildingHappiness += iLegacyHappiness * countNumBuildings(eBuilding);
+			}
+		}
+#endif
 		if (iTraitHappiness > 0)
 		{
 			BuildingTypes eBuilding = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
@@ -14885,7 +14914,9 @@ int CvPlayer::GetHappinessFromBuildings() const
 			}
 		}
 	}
-
+#if defined(LEKMOD_LEGACY)
+	iHappiness += iLegacyBuildingHappiness;
+#endif
 	iHappiness += iTraitBuildingHappiness;
 #endif
 	iHappiness += iSpecialBuildingHappiness;
@@ -15526,7 +15557,6 @@ int CvPlayer::GetUnhappinessFromCityPopulation(CvCity* pAssumeCityAnnexed, CvCit
 #endif
 				iPopulation += (iSpecialistCount / 2);
 			}
-
 			iUnhappinessFromThisCity = iPopulation * iUnhappinessPerPop;
 
 			if(pLoopCity->isCapital() && GetCapitalUnhappinessMod() != 0)
@@ -15672,7 +15702,6 @@ int CvPlayer::GetUnhappinessFromCitySpecialists(CvCity* pAssumeCityAnnexed, CvCi
 				iPopulation++; // Round up
 				iPopulation = static_cast<int>(iPopulation * 0.5);
 			}
-
 			iUnhappinessFromThisCity = iPopulation * iUnhappinessPerPop;
 
 			if(pLoopCity->isCapital() && GetCapitalUnhappinessMod() != 0)
@@ -16059,7 +16088,21 @@ void CvPlayer::ChangeHappinessFromLeagues(int iChange)
 {
 	SetHappinessFromLeagues(GetHappinessFromLeagues() + iChange);
 }
-
+#if defined(LEKMOD_LEGACY)
+//	--------------------------------------------------------------------------------
+///	Num Specialists
+int CvPlayer::GetNumSpecialistsInEmpire(SpecialistTypes eSpecialist) const
+{
+	int iTotalSpecialists = 0;
+	const CvCity* pLoopCity;
+	int iLoop;
+	for(pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		iTotalSpecialists += pLoopCity->GetCityCitizens()->GetSpecialistCount(eSpecialist);
+	}
+	return iTotalSpecialists;
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Get the global modifier on the espionage progress rate
 int CvPlayer::GetEspionageModifier() const
@@ -16452,6 +16495,37 @@ void CvPlayer::setHasLegacy(LegacyTypes eIndex, bool bNewValue)
 		m_pPlayerLegacies->SetLegacy(eIndex, bNewValue);
 		processLegacies(eIndex, bNewValue ? 1 : -1);
 	}
+	ChangeNumFreeLegacies(-1); // Used up a legacy choice
+	// Notify others
+	for (int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop)
+	{
+		PlayerTypes eNotifyPlayer = (PlayerTypes)iNotifyLoop;
+		CvPlayerAI& kCurNotifyPlayer = GET_PLAYER(eNotifyPlayer);
+
+		// Issue notification if OTHER than target player
+		if (GetID() != eNotifyPlayer)
+		{
+			CvTeam& kNotifyTeam = GET_TEAM(kCurNotifyPlayer.getTeam());
+			const bool bHasMet = kNotifyTeam.isHasMet(getTeam());
+
+			CvNotifications* pNotifications = kCurNotifyPlayer.GetNotifications();
+			if (pNotifications)
+			{
+				CvString strBuffer;
+				if (bHasMet)
+				{
+					strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_LEGACY_CHOSEN", getCivilizationShortDescriptionKey(), GC.getLegacyInfo(eIndex)->GetDescriptionKey());
+				}
+				else
+				{
+					strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_LEGACY_CHOSEN_UNMET", GC.getEraInfo(GetCurrentEra())->GetTextKey());
+				}
+				CvString strSummary;
+				strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_LEGACY_CHOSEN");
+				pNotifications->Add((NotificationTypes)NOTIFICATION_LEGACY_CHOSEN, strBuffer, strSummary, -1, -1, GetID());
+			}
+		}
+	}
 }
 bool CvPlayer::canChooseLegacy(LegacyTypes eLegacy) const
 {
@@ -16467,6 +16541,8 @@ void CvPlayer::doChooseLegacy(LegacyTypes eLegacy)
 	// Can we actually adopt this?
 	if (!canChooseLegacy(eLegacy))
 		return;
+
+	setHasLegacy(eLegacy, true);
 
 	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 
@@ -27399,6 +27475,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 #if defined(LEKMOD_LEGACY)
 void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 {
+	int iI, iJ, jI, jJ, iBuildingCount, iYieldMod, iYieldChange, iLoop;
 	CvLegacyEntry* pLegacy = GC.getLegacyInfo(eLegacy);
 	if (pLegacy == NULL)
 		return;
@@ -27406,13 +27483,231 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 	
 	int iYield;
 	YieldTypes eYield;
-	for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		eYield = (YieldTypes)iI;
 		
 		iYield = kLegacy.GetCityYieldChange(iI) * iChange;
 		if (iYield != 0)
 			ChangeCityYieldChange(eYield, iYield * 100);
+		iYield = kLegacy.GetCityYieldModifier(iI) * iChange;
+		if (iYield != 0 && kLegacy.GetYieldModCapitalProximity() == 0)
+			changeYieldRateModifier(eYield, iYield);
+
+		for (jJ = 0; jJ < GC.getNumSpecialistInfos(); jJ++)
+		{
+			SpecialistTypes eSpecialist = (SpecialistTypes)jJ;
+			iYield = kLegacy.GetSpecialistYieldChange(eSpecialist, iI) * iChange;
+			if (iYield != 0)
+				changeSpecialistExtraYield(eSpecialist, eYield, iYield * iChange);
+		}
+		/*
+		for (jJ = 0; jJ < GC.getNumImprovementInfos(); jJ++)
+		{
+			ImprovementTypes eImprovement = (ImprovementTypes)jJ;
+			iYield = kLegacy.GetImprovementYieldChange(eImprovement, iI) * iChange;
+			if (iYield != 0)
+				changeImprovementExtraYield(eImprovement, eYield, iYield * iChange);	
+		}*/
+		for (jJ = 0; jJ < GC.getNumResourceInfos(); jJ++)
+		{
+			ResourceTypes eResource = (ResourceTypes)iJ;
+			iYield = kLegacy.GetResourceYieldChange(eResource, iI) * iChange;
+			if (iYield != 0)
+				changeResourceYieldChange(eResource, eYield, iYield * iChange);
+		}
+		for (jJ = 0; jJ < GC.getNumResourceClassInfos(); jJ++)
+		{
+			ResourceClassTypes eResourceClass = (ResourceClassTypes)iJ;
+			iYield = kLegacy.GetResourceClassYieldChange(eResourceClass, iI) * iChange;
+			if (iYield != 0)
+			{
+				ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+				ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
+				for (int i = 0; i < GC.getNumResourceInfos(); ++i)
+				{
+					ResourceTypes eResource = (ResourceTypes)i;
+					const CvResourceInfo* pResource = GC.getResourceInfo(eResource);
+					if (!pResource)
+						continue;
+					// Always Skip Hidden Artifacts and Artifacts
+					if (eResource == eHiddenArtifacts || eResource == eArtifacts)
+						continue;
+					if (pResource->getResourceClassType() == eResourceClass)
+					{
+						changeResourceYieldChange(eResource, eYield, iYield * iChange);
+					}
+				}
+			}
+		}
+	}
+	// Loop through Cities
+	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		for (jJ = 0; jJ < GC.getNumBuildingInfos(); jJ++)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)jJ;
+			if (eBuilding == NO_BUILDING)
+				continue;
+			CvBuildingEntry* pkBuilding = GC.getBuildingInfo(eBuilding);
+			if (!pkBuilding)
+				continue;
+			BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuilding->GetBuildingClassType();
+			if (eBuildingClass == NO_BUILDINGCLASS)
+				continue;
+			CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+			if (!pkBuildingClassInfo)
+				continue;
+			iBuildingCount = pLoopCity->GetCityBuildings()->GetNumBuilding(eBuilding);
+			if (iBuildingCount > 0)
+			{
+#if !defined(STANDARDIZE_YIELDS) // compress yield change
+				// Building Class Yield Stuff
+				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					switch (iJ)
+					{
+					case YIELD_CULTURE:
+						pLoopCity->ChangeJONSCulturePerTurnFromPolicies(kLegacy.GetBuildingClassYieldChange(eBuildingClass, iJ) * iBuildingCount * iChange);
+						break;
+					case YIELD_FAITH:
+						pLoopCity->ChangeFaithPerTurnFromPolicies(kLegacy.GetBuildingClassYieldChange(eBuildingClass, iJ) * iBuildingCount * iChange);
+						break;
+					default:
+					{
+						eYield = (YieldTypes)iJ;
+						iYieldMod = kLegacy.GetBuildingClassYieldModifier(eBuildingClass, eYield);
+						if (iYieldMod > 0)
+						{
+							pLoopCity->changeYieldRateModifier(eYield, iYieldMod * iBuildingCount * iChange);
+						}
+						iYieldChange = kLegacy.GetBuildingClassYieldChange(eBuildingClass, eYield);
+						if (iYieldChange != 0)
+						{
+							pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
+						}
+					}
+					}
+				}
+#else
+				// Building Class Yield Stuff
+				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					eYield = (YieldTypes)iJ;
+					iYieldMod = kLegacy.GetBuildingClassYieldModifier(eBuildingClass, eYield);
+					if (iYieldMod > 0)
+					{
+						pLoopCity->changeYieldRateModifier(eYield, iYieldMod * iBuildingCount * iChange);
+					}
+					iYieldChange = kLegacy.GetBuildingClassYieldChange(eBuildingClass, eYield);
+					if (iYieldChange != 0)
+					{
+						pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
+					}
+				}
+#endif
+			}
+		}
+	}
+	// Free Promotions
+	for (iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+	{
+		PromotionTypes ePromotion = (PromotionTypes)iI;
+
+		if (kLegacy.IsFreePromotion(ePromotion))
+		{
+			ChangeFreePromotionCount(ePromotion, iChange);
+		}
+	}
+	for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+	{
+		UnitTypes eLoopUnitType = pLoopUnit->getUnitType();
+		if (eLoopUnitType == NO_UNIT)
+			continue;
+		// Adjust Strength for Existing Units
+		int iStrengthChange = kLegacy.GetUnitStrengthChange((int)eLoopUnitType) * iChange;
+		if (iStrengthChange != 0)
+		{
+			pLoopUnit->ChangeBaseCombatStrength(iStrengthChange);
+		}
+		// Adjust Ranged Strength for Existing Units
+		int iRangeStrengthChange = kLegacy.GetUnitRangedStrengthChange((int)eLoopUnitType) * iChange;
+		if (iRangeStrengthChange != 0)
+		{
+			pLoopUnit->ChangeBaseRangedCombatStrength(iRangeStrengthChange);
+		}
+		// Add Free Promotion to Existing Units
+		for (iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+		{
+			PromotionTypes ePromotion = (PromotionTypes)iI;
+			if (kLegacy.IsFreePromotionUnitType(iI, (int)eLoopUnitType))
+			{
+				if (!pLoopUnit->isHasPromotion(ePromotion))
+				{
+					pLoopUnit->setHasPromotion(ePromotion, iChange);
+				}
+			}
+		}
+		// Adjust Resource Usage for Existing Units
+		for (jJ = 0; jJ < GC.getNumResourceInfos(); jJ++)
+		{
+			ResourceTypes eResource = (ResourceTypes)jJ;
+			if (eResource == NO_RESOURCE)
+				continue;
+			int iResourceChange = kLegacy.GetUnitResourceRequirementChange((int)eLoopUnitType, (int)eResource);
+			if (iResourceChange != 0)
+			{
+				changeNumResourceUsed(eResource, iResourceChange);
+			}
+		}
+	}
+	for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
+	{
+		UnitTypes eUnit = (UnitTypes)iI;
+		if (eUnit == NO_UNIT)
+			continue;
+		// Adjust Strength for Future Units
+		int iStrengthChange = kLegacy.GetUnitStrengthChange(eUnit) * iChange;
+		if (iStrengthChange != 0)
+		{
+			GC.getUnitInfo(eUnit)->ChangeCombat(iStrengthChange);
+		}
+		int iRangeStrengthChange = kLegacy.GetUnitRangedStrengthChange(eUnit) * iChange;
+		if (iRangeStrengthChange != 0)
+		{
+			GC.getUnitInfo(eUnit)->ChangeRangedCombat(iRangeStrengthChange);
+		}
+		// Adjust Resource Usage for Future Units
+		for (jJ = 0; jJ < GC.getNumResourceInfos(); jJ++)
+		{
+			ResourceTypes eResource = (ResourceTypes)jJ;
+			if (eResource == NO_RESOURCE)
+				continue;
+			int iResourceChange = kLegacy.GetUnitResourceRequirementChange((int)eUnit, (int)eResource) * iChange;
+			if (iResourceChange != 0)
+			{
+				GC.getUnitInfo(eUnit)->ChangeResourceQuantityRequirement(eResource, iResourceChange* iChange);
+			}
+		}
+	}
+	// Golden Age!
+	int iGoldenAgeTurns = kLegacy.GetGoldenAgeTurns() * iChange;
+	if (iGoldenAgeTurns > 0)
+	{
+		int iLengthModifier = getGoldenAgeModifier();
+		iLengthModifier += GetPlayerTraits()->GetGoldenAgeDurationModifier();
+
+		if (iLengthModifier > 0)
+		{
+			iGoldenAgeTurns *= (100 + iLengthModifier);
+			iGoldenAgeTurns /= 100;
+		}
+
+		// Game Speed mod
+		iGoldenAgeTurns *= GC.getGame().getGameSpeedInfo().getGoldenAgePercent();
+		iGoldenAgeTurns /= 100;
+
+		changeGoldenAgeTurns(iGoldenAgeTurns);
 	}
 
 	DoUpdateHappiness();
