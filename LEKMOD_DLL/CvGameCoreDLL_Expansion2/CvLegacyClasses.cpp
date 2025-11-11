@@ -25,33 +25,45 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_iGreatGeneralSiegeBonus(0),
 	m_iResistanceTimeReduction(0),
 	m_iYieldModCapitalProximity(0),
+	m_iPlotGoldCostModifier(0),
+	m_iPlotCultureCostModifier(0),
 
-	m_pbFreePromotion(NULL),
+	
 	m_piCityYieldChange(NULL),
 	m_piCityYieldModifier(NULL),
 	m_piBuildingClassProductionModifier(NULL),
 	m_piBuildingClassHappinessChange(NULL),
 	m_piBuildingClassGlobalHappinessChange(NULL),
+	m_paiBuildingClassYieldChange(NULL),
+	m_paiBuildingClassYieldModifier(NULL),
+	m_paiBuildingClassGreatPersonPointChange(NULL),
+	m_paiBuildingClassGreatPersonPointModifier(NULL),
 	m_paiUnitResourceRequirementChange(NULL),
 	m_piUnitRangedStrengthChange(NULL),
 	m_piUnitStrengthChange(NULL),
-	m_paiBuildingClassYieldChange(NULL),
-	m_paiBuildingClassYieldModifier(NULL),
 	m_paiResourceYieldChange(NULL),
 	m_paiResourceClassYieldChange(NULL),
 	m_paiSpecialistYieldChange(NULL),
-	m_piSpecialistHappinessChange(NULL)
+	m_piSpecialistHappinessChange(NULL),
+	m_paiImprovementYieldChange(NULL),
+	m_paiImprovementYieldChangePerXWorldWonder(NULL),
+	m_paiImprovementNearbyHealChangeByDomain(NULL),
+	m_piPromotionNearbyGeneral(NULL),
+	m_pbFreePromotion(NULL)
 {
 }
 // Destructor
 CvLegacyEntry::~CvLegacyEntry(void)
 {
 	SAFE_DELETE_ARRAY(m_pbFreePromotion);
+	SAFE_DELETE_ARRAY(m_piPromotionNearbyGeneral);
 	SAFE_DELETE_ARRAY(m_piCityYieldChange);
 	SAFE_DELETE_ARRAY(m_piCityYieldModifier);
 	SAFE_DELETE_ARRAY(m_piBuildingClassProductionModifier);
 	SAFE_DELETE_ARRAY(m_piBuildingClassHappinessChange);
 	SAFE_DELETE_ARRAY(m_piBuildingClassGlobalHappinessChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassGreatPersonPointModifier);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassGreatPersonPointChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiUnitResourceRequirementChange);
 	SAFE_DELETE_ARRAY(m_piUnitRangedStrengthChange);
 	SAFE_DELETE_ARRAY(m_piUnitStrengthChange);
@@ -61,6 +73,9 @@ CvLegacyEntry::~CvLegacyEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_paiResourceClassYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiSpecialistYieldChange);
 	SAFE_DELETE_ARRAY(m_piSpecialistHappinessChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementYieldChangePerXWorldWonder);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementNearbyHealChangeByDomain);
 }
 
 // Cache results from the database
@@ -80,15 +95,43 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iGreatGeneralSiegeBonus = kResults.GetInt("GreatGeneralSiegeBonus");
 	m_iResistanceTimeReduction = kResults.GetInt("ResistanceTimeReduction");
 	m_iYieldModCapitalProximity = kResults.GetInt("YieldModCapitalProximity");
+	m_iPlotGoldCostModifier = kResults.GetInt("PlotGoldCostModifier");
+	m_iPlotCultureCostModifier = kResults.GetInt("PlotCultureCostModifier");
 
 	// Arrays Start.
 	const char* szLegacyType = GetType();
 	kUtility.SetYields(m_piCityYieldChange, "Legacy_CityYieldChange", "LegacyType", szLegacyType);
 	kUtility.PopulateArrayByValue(m_piCityYieldModifier, "Yields", "Legacy_CityYieldModifier", "YieldType", "LegacyType", szLegacyType, "Modifier");
 	kUtility.PopulateArrayByExistence(m_pbFreePromotion, "UnitPromotions", "Legacy_FreePromotions", "PromotionType", "LegacyType", szLegacyType);
+	kUtility.PopulateArrayByExistence(m_piPromotionNearbyGeneral, "UnitPromotions", "Legacy_FreePromotions", "PromotionType", "LegacyType", szLegacyType);
 	kUtility.PopulateArrayByValue(m_piBuildingClassProductionModifier, "BuildingClasses", "Legacy_BuildingClassProductionModifiers", "BuildingClassType", "LegacyType", szLegacyType, "Modifier");
 	kUtility.PopulateArrayByValue(m_piSpecialistHappinessChange, "Specialists", "Legacy_SpecialistHappinessChange", "SpecialistType", "LegacyType", szLegacyType, "HappinessTimes100");
 	// Complex/Compound Arrays 
+	{
+		kUtility.Initialize2DArray(m_paiBuildingClassGreatPersonPointChange, "BuildingClasses", "Specialists");
+		kUtility.Initialize2DArray(m_paiBuildingClassGreatPersonPointModifier, "BuildingClasses", "Specialists");
+		std::string strKey("Legacy_BuildingClassGreatPersonPointChange");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT BuildingClasses.ID as BuildingClassID, Specialists.ID as SpecialistID, RateChange, Modifier FROM Legacy_BuildingClassGreatPersonPointChange "
+				"INNER JOIN BuildingClasses ON BuildingClasses.Type = BuildingClassType "
+				"INNER JOIN Specialists ON Specialists.Type = SpecialistType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int iBuildingClass = pResults->GetInt(0);
+			const int iSpecialist = pResults->GetInt(1);
+			const int iPointsPerTurn = pResults->GetInt(2);
+			const int iPointModifier = pResults->GetInt(3);
+			m_paiBuildingClassGreatPersonPointChange[iBuildingClass][iSpecialist] = iPointsPerTurn;
+			m_paiBuildingClassGreatPersonPointModifier[iBuildingClass][iSpecialist] = iPointModifier;
+		}
+		pResults->Reset();
+	}
 	{
 		// Building Class Yields and Yield Modifiers
 		kUtility.Initialize2DArray(m_paiBuildingClassYieldChange, "BuildingClasses", "Yields");
@@ -272,6 +315,53 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		}
 		pResults->Reset();
 	}
+	{
+		kUtility.Initialize2DArray(m_paiImprovementYieldChange, "Improvements", "Yields");
+		kUtility.Initialize2DArray(m_paiImprovementYieldChangePerXWorldWonder, "Improvements", "Yields");
+		std::string strKey("Legacy_ImprovementYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Improvements.ID as ImprovementID, Yields.ID as YieldID, Yield, YieldPerXWorldWonder FROM Legacy_ImprovementYieldChanges "
+				"INNER JOIN Improvements ON Improvements.Type = ImprovementType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int iImprovement = pResults->GetInt(0);
+			const int iYield = pResults->GetInt(1);
+			const int iYieldChange = pResults->GetInt(2);
+			const int iYieldPerXWorldWonder = pResults->GetInt(3);
+			m_paiImprovementYieldChange[iImprovement][iYield] = iYieldChange;
+			m_paiImprovementYieldChangePerXWorldWonder[iImprovement][iYield] = iYieldPerXWorldWonder;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.Initialize2DArray(m_paiImprovementNearbyHealChangeByDomain, "Improvements", "Domains");
+		std::string strKey("Legacy_ImprovementNearbyHealChangeByDomain");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Improvements.ID as ImprovementID, Domains.ID as DomainID, HealChange FROM Legacy_ImprovementNearbyHealChangeByDomain "
+				"INNER JOIN Improvements ON Improvements.Type = ImprovementType "
+				"INNER JOIN Domains ON Domains.Type = DomainType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int iImprovement = pResults->GetInt(0);
+			const int iDomain = pResults->GetInt(1);
+			const int iHealChange = pResults->GetInt(2);
+			m_paiImprovementNearbyHealChangeByDomain[iImprovement][iDomain] = iHealChange;
+		}
+		pResults->Reset();
+	}
 	// Return true at the very end.
 	return true;
 }
@@ -304,6 +394,14 @@ int CvLegacyEntry::GetResistanceTimeReduction() const
 int CvLegacyEntry::GetYieldModCapitalProximity() const
 {
 	return m_iYieldModCapitalProximity;
+}
+int CvLegacyEntry::GetPlotGoldCostModifier() const
+{
+	return m_iPlotGoldCostModifier;
+}
+int CvLegacyEntry::GetPlotCultureCostModifier() const
+{
+	return m_iPlotCultureCostModifier;
 }
 // ARRAYS
 int CvLegacyEntry::IsFreePromotion(int i) const
@@ -385,6 +483,26 @@ int CvLegacyEntry::GetSpecialistYieldChange(int i, int j) const
 int CvLegacyEntry::GetSpecialistHappinessChange(int i) const
 {
 	return m_piSpecialistHappinessChange ? m_piSpecialistHappinessChange[i] : 0;
+}
+int CvLegacyEntry::GetImprovementYieldChange(int i, int j) const
+{
+	return m_paiImprovementYieldChange ? m_paiImprovementYieldChange[i][j] : 0;
+}
+int CvLegacyEntry::GetImprovementYieldChangePerXWorldWonder(int i, int j) const
+{
+	return m_paiImprovementYieldChangePerXWorldWonder ? m_paiImprovementYieldChangePerXWorldWonder[i][j] : 0;
+}
+int CvLegacyEntry::GetImprovementNearbyHealChangeByDomain(int i, int j) const
+{
+	return m_paiImprovementNearbyHealChangeByDomain ? m_paiImprovementNearbyHealChangeByDomain[i][j] : 0;
+}
+int CvLegacyEntry::GetBuildingClassGreatPersonPointModifier(int i, int j) const
+{
+	return m_paiBuildingClassGreatPersonPointModifier ? m_paiBuildingClassGreatPersonPointModifier[i][j] : 0;
+}
+int CvLegacyEntry::GetBuildingClassGreatPersonPointChange(int i, int j) const
+{
+	return m_paiBuildingClassGreatPersonPointChange ? m_paiBuildingClassGreatPersonPointChange[i][j] : 0;
 }
 //=====================================
 // CvLegacyXMLEntries
@@ -475,6 +593,9 @@ void CvPlayerLegacies::Uninit()
 	m_vaaiResourceClassYieldChanges.clear();
 	m_vaaiSpecialistYieldChanges.clear();
 	m_viSpecialistHappinessChanges.clear();
+	m_vaaiImprovementYieldChanges.clear();
+	m_vaaiImprovementYieldChangePerXWorldWonder.clear();
+	m_vaaiNearbyImprovementHealChangeByDomain.clear();
 }
 // Reset
 void CvPlayerLegacies::Reset()
@@ -495,6 +616,8 @@ void CvPlayerLegacies::Reset()
 	m_iGreatGeneralSiegeBonus = 0;
 	m_iResistanceTimeReduction = 0;
 	m_iYieldModCapitalProximity = 0;
+	m_iPlotGoldCostModifier = 0;
+	m_iPlotCultureCostModifier = 0;
 	
 	// Arrays
 	// Units
@@ -542,6 +665,10 @@ void CvPlayerLegacies::Reset()
 	m_vaaiResourceClassYieldChanges.resize(GC.getNumResourceClassInfos());
 	m_vaaiSpecialistYieldChanges.clear();
 	m_vaaiSpecialistYieldChanges.resize(GC.getNumSpecialistInfos());
+	m_vaaiImprovementYieldChanges.clear();
+	m_vaaiImprovementYieldChanges.resize(GC.getNumImprovementInfos());
+	m_vaaiImprovementYieldChangePerXWorldWonder.clear();
+	m_vaaiImprovementYieldChangePerXWorldWonder.resize(GC.getNumImprovementInfos());
 
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
 	for (unsigned int j = 0; j < NUM_YIELD_TYPES; ++j)
@@ -573,8 +700,28 @@ void CvPlayerLegacies::Reset()
 		{
 			m_vaaiResourceClassYieldChanges[iResourceClass] = yield;
 		}
+		// Improvement
+		for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+		{
+			m_vaaiImprovementYieldChanges[iImprovement] = yield;
+			m_vaaiImprovementYieldChangePerXWorldWonder[iImprovement] = yield;
+		}
 	} // END NUM_YIELD_TYPES LOOP
-
+	m_vaaiNearbyImprovementHealChangeByDomain.clear();
+	m_vaaiNearbyImprovementHealChangeByDomain.resize(GC.getNumImprovementInfos());
+	Firaxis::Array< int, NUM_DOMAIN_TYPES > domain;
+	for (unsigned int j = 0; j < NUM_DOMAIN_TYPES; ++j)
+	{
+		domain[j] = 0;
+	}
+	for (int iDomain = 0; iDomain < NUM_DOMAIN_TYPES; iDomain++)
+	{
+		// Improvement
+		for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+		{
+			m_vaaiNearbyImprovementHealChangeByDomain[iImprovement] = domain;
+		}
+	}
 	// Reset the AI
 	m_pLegacyAI->Reset();
 }
@@ -594,6 +741,8 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_iGreatGeneralSiegeBonus;
 	kStream >> m_iResistanceTimeReduction;
 	kStream >> m_iYieldModCapitalProximity;
+	kStream >> m_iPlotGoldCostModifier;
+	kStream >> m_iPlotCultureCostModifier;
 
 	kStream >> m_viCityYieldChange;
 	kStream >> m_viCityYieldModifier;
@@ -608,6 +757,9 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_vaaiResourceClassYieldChanges;
 	kStream >> m_vaaiSpecialistYieldChanges;
 	kStream >> m_viSpecialistHappinessChanges;
+	kStream >> m_vaaiImprovementYieldChanges;
+	kStream >> m_vaaiImprovementYieldChangePerXWorldWonder;
+	kStream >> m_vaaiNearbyImprovementHealChangeByDomain;
 
 	m_pLegacyAI->Read(kStream);
 }
@@ -627,6 +779,8 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_iGreatGeneralSiegeBonus;
 	kStream << m_iResistanceTimeReduction;
 	kStream << m_iYieldModCapitalProximity;
+	kStream << m_iPlotGoldCostModifier;
+	kStream << m_iPlotCultureCostModifier;
 
 	kStream << m_viCityYieldChange;
 	kStream << m_viCityYieldModifier;
@@ -641,6 +795,9 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_vaaiResourceClassYieldChanges;
 	kStream << m_vaaiSpecialistYieldChanges;
 	kStream << m_viSpecialistHappinessChanges;
+	kStream << m_vaaiImprovementYieldChanges;
+	kStream << m_vaaiImprovementYieldChangePerXWorldWonder;
+	kStream << m_vaaiNearbyImprovementHealChangeByDomain;
 
 	m_pLegacyAI->Write(kStream);
 }
@@ -754,6 +911,8 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	m_iGreatGeneralSiegeBonus += kLegacy.GetGreatGeneralSiegeBonus();
 	m_iResistanceTimeReduction += kLegacy.GetResistanceTimeReduction();
 	m_iYieldModCapitalProximity += kLegacy.GetYieldModCapitalProximity();
+	m_iPlotGoldCostModifier += kLegacy.GetPlotGoldCostModifier();
+	m_iPlotCultureCostModifier += kLegacy.GetPlotCultureCostModifier();
 	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 	{
 		iChange = kLegacy.GetCityYieldChange((YieldTypes)iYield);
@@ -807,14 +966,38 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 				m_vaaiResourceClassYieldChanges[iResourceClass][iYield] += iChange;
 			}
 		}
+		// Improvement
+		for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+		{
+			iChange = kLegacy.GetImprovementYieldChange((ImprovementTypes)iImprovement, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiImprovementYieldChanges[iImprovement][iYield] += iChange;
+			}
+			iChange = kLegacy.GetImprovementYieldChangePerXWorldWonder((ImprovementTypes)iImprovement, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiImprovementYieldChangePerXWorldWonder[iImprovement][iYield] += iChange;
+			}
+		}
 	} // END NUM_YIELD_TYPES LOOP
+	for (int iDomain = 0; iDomain < NUM_DOMAIN_TYPES; iDomain++)
+	{
+		for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+		{
+			iChange = kLegacy.GetImprovementNearbyHealChangeByDomain((ImprovementTypes)iImprovement, (DomainTypes)iDomain);
+			if (iChange != 0)
+			{
+				m_vaaiNearbyImprovementHealChangeByDomain[iImprovement][iDomain] += iChange;
+			}
+		}
+	} // END NUM_DOMAIN_TYPES LOOP
 	// BuildingClass - Non-yield
 	for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
 	{
 		m_viBuildingClassProductionModifiers[iBuildingClass] += kLegacy.GetBuildingClassProductionModifier(iBuildingClass);
 		m_viBuildingClassHappinessChanges[iBuildingClass] += kLegacy.GetBuildingClassHappinessChange(iBuildingClass);
 		m_viBuildingClassGlobalHappinessChanges[iBuildingClass] += kLegacy.GetBuildingClassGlobalHappinessChange(iBuildingClass);
-		
 	}
 	// Specialist - Non-yield
 	for (int iSpecialist = 0; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
@@ -857,9 +1040,26 @@ int CvPlayerLegacies::GetYieldModCapitalProximity() const
 {
 	return m_iYieldModCapitalProximity;
 }
+// How much does the player's legacies change the gold cost of plots?
+int CvPlayerLegacies::GetPlotGoldCostModifier() const
+{
+	return m_iPlotGoldCostModifier;
+}
+// How much does the player's legacies change the culture cost of plots?
+int CvPlayerLegacies::GetPlotCultureCostModifier() const
+{
+	return m_iPlotCultureCostModifier;
+}
+// ARRAYS START
+// Does the player have a free promotion for a specific unit type from legacies
 bool CvPlayerLegacies::HasFreePromotionUnitType(PromotionTypes ePromotion, UnitTypes eUnitType) const
 {
 	CvAssertMsg((promotionID >= 0), "promotionID is less than zero");
+	CvAssertMsg((promotionID < GC.getNumPromotionInfos()), "promotionID is expected to be within maximum bounds");
+	if (ePromotion == NO_PROMOTION || eUnitType == NO_UNIT)
+	{
+		return false;
+	}
 	for (int iI = 0; iI < GC.getNumLegacyInfos(); iI++)
 	{
 		const LegacyTypes eLegacy = static_cast<LegacyTypes>(iI);
@@ -878,6 +1078,89 @@ bool CvPlayerLegacies::HasFreePromotionUnitType(PromotionTypes ePromotion, UnitT
 
 	return false;
 }
+// How much resource requirement change does the player get for a unit from legacies
+int CvPlayerLegacies::GetUnitResourceRequirementChange(UnitTypes eUnit, ResourceTypes eResource) const
+{
+	CvAssertMsg(eUnit >= 0 && eUnit < GC.getNumUnitInfos(), "Unit index out of bounds");
+	CvAssertMsg(eResource >= 0 && eResource < GC.getNumResourceInfos(), "Resource index out of bounds");
+	if (eUnit == NO_UNIT || eResource == NO_RESOURCE)
+	{
+		return 0;
+	}
+	for (int iI = 0; iI < GC.getNumLegacyInfos(); iI++)
+	{
+		const LegacyTypes eLegacy = static_cast<LegacyTypes>(iI);
+		CvLegacyEntry* pkLegacy = GC.getLegacyInfo(eLegacy);
+		if (pkLegacy)
+		{
+			if (HasLegacy(eLegacy))
+			{
+				int iChange = pkLegacy->GetUnitResourceRequirementChange(eUnit, eResource);
+				if (iChange != 0)
+				{
+					return iChange;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// How much great person point modifier does the player get for a building class from legacies
+int CvPlayerLegacies::GetBuildingClassGreatPersonPointModifier(BuildingClassTypes eBuildingClass, SpecialistTypes eSpecialist) const
+{
+	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
+	CvAssertMsg(eSpecialist >= 0 && eSpecialist < GC.getNumSpecialistInfos(), "GreatPerson index out of bounds");
+	if (eBuildingClass == NO_BUILDINGCLASS || eSpecialist == NO_SPECIALIST)
+	{
+		return 0;
+	}
+	for (int iI = 0; iI < GC.getNumLegacyInfos(); iI++)
+	{
+		const LegacyTypes eLegacy = static_cast<LegacyTypes>(iI);
+		CvLegacyEntry* pkLegacy = GC.getLegacyInfo(eLegacy);
+		if (pkLegacy)
+		{
+			if (HasLegacy(eLegacy))
+			{
+				int iChange = pkLegacy->GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
+				if (iChange != 0)
+				{
+					return iChange;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// How much great person point change does the player get for a building class from legacies
+int CvPlayerLegacies::GetBuildingClassGreatPersonPointChange(BuildingClassTypes eBuildingClass, SpecialistTypes eSpecialist) const
+{
+	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
+	CvAssertMsg(eSpecialist >= 0 && eSpecialist < GC.getNumSpecialistInfos(), "GreatPerson index out of bounds");
+	if (eBuildingClass == NO_BUILDINGCLASS || eSpecialist == NO_SPECIALIST)
+	{
+		return 0;
+	}
+	for (int iI = 0; iI < GC.getNumLegacyInfos(); iI++)
+	{
+		const LegacyTypes eLegacy = static_cast<LegacyTypes>(iI);
+		CvLegacyEntry* pkLegacy = GC.getLegacyInfo(eLegacy);
+		if (pkLegacy)
+		{
+			if (HasLegacy(eLegacy))
+			{
+				int iChange = pkLegacy->GetBuildingClassGreatPersonPointChange(eBuildingClass, eSpecialist);
+				if (iChange != 0)
+				{
+					return iChange;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// BELOW HERE ARE SIMPLE GETTERS FOR PLAYER LEGACY EFFECTS AS THEY HAVE SIMPLE STORAGE
+// How much yield change does the player get for a city from legacies
 int CvPlayerLegacies::GetCityYieldChange(YieldTypes eYield) const
 {
 	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
@@ -903,28 +1186,6 @@ int CvPlayerLegacies::GetBuildingClassGlobalHappinessChange(BuildingClassTypes e
 {
 	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
 	return eBuildingClass != NO_BUILDINGCLASS ? m_viBuildingClassGlobalHappinessChanges[(int)eBuildingClass] : 0;
-}
-// How much resource requirement change does the player get for a unit from legacies
-int CvPlayerLegacies::GetUnitResourceRequirementChange(UnitTypes eUnit, ResourceTypes eResource) const
-{
-	CvAssertMsg(eUnit >= 0 && eUnit < GC.getNumUnitInfos(), "Unit index out of bounds");
-	for (int iI = 0; iI < GC.getNumLegacyInfos(); iI++)
-	{
-		const LegacyTypes eLegacy = static_cast<LegacyTypes>(iI);
-		CvLegacyEntry* pkLegacy = GC.getLegacyInfo(eLegacy);
-		if (pkLegacy)
-		{
-			if (HasLegacy(eLegacy))
-			{
-				int iChange = pkLegacy->GetUnitResourceRequirementChange(eUnit, eResource);
-				if (iChange != 0)
-				{
-					return iChange;
-				}
-			}
-		}
-	}
-	return 0;
 }
 // How much ranged strength change does the player get for a unit from legacies
 int CvPlayerLegacies::GetUnitRangedStrengthChange(UnitTypes eUnit) const
@@ -979,6 +1240,29 @@ int CvPlayerLegacies::GetSpecialistHappinessChange(SpecialistTypes eSpecialist) 
 	CvAssertMsg(eSpecialist >= 0 && eSpecialist < GC.getNumSpecialistInfos(), "Specialist index out of bounds");
 	return eSpecialist != NO_SPECIALIST ? m_viSpecialistHappinessChanges[(int)eSpecialist] : 0;
 }
+// How much yield change does the player get for an improvement from legacies
+int CvPlayerLegacies::GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const
+{
+	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return eImprovement != NO_IMPROVEMENT ? m_vaaiImprovementYieldChanges[(int)eImprovement][(int)eYield] : 0;
+}
+// How much yield change per X world wonders does the player get for an improvement from legacies
+int CvPlayerLegacies::GetImprovementYieldChangePerXWorldWonder(ImprovementTypes eImprovement, YieldTypes eYield) const
+{
+	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return eImprovement != NO_IMPROVEMENT ? m_vaaiImprovementYieldChangePerXWorldWonder[(int)eImprovement][(int)eYield] : 0;
+}
+// How much nearby heal change by domain does the player get for an improvement from legacies
+int CvPlayerLegacies::GetNearbyImprovementHealChangeByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const
+{
+	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
+	CvAssertMsg(eDomain >= 0 && eDomain < NUM_DOMAIN_TYPES, "Domain index out of bounds");
+	return eImprovement != NO_IMPROVEMENT ? m_vaaiNearbyImprovementHealChangeByDomain[(int)eImprovement][(int)eDomain] : 0;
+}
+
+
 void CvPlayerLegacies::DoLegacyAI()
 {
 	//

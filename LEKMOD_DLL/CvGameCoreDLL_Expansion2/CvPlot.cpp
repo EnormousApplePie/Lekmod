@@ -8330,6 +8330,14 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 				CvPlayer &kPlayer = GET_PLAYER(ePlayer);
 				iYield += pWorkingCity->GetImprovementExtraYield(eImprovement, eYield);
 				iYield += kPlayer.GetImprovementExtraYield(eImprovement, eYield);
+#if defined(LEKMOD_LEGACY)
+				int iNumWorldWonders = kPlayer.GetNumWonders();
+				int iTemp = kPlayer.GetPlayerLegacies()->GetImprovementYieldChangePerXWorldWonder(eImprovement, eYield);
+				if (iTemp != 0 && iNumWorldWonders > 0)
+				{
+					iYield += (iNumWorldWonders / iTemp);
+				}
+#endif
 		
 			}
 		}

@@ -397,7 +397,10 @@ public:
 
 	int getGreatPeopleRateModifier() const;
 	void changeGreatPeopleRateModifier(int iChange);
-
+#if defined(LEKMOD_LEGACY)
+	int getSpecificGreatPeopleRateModifier(SpecialistTypes eSpecialist) const;
+	void changeSpecificGreatPeopleRateModifier(SpecialistTypes eSpecialist, int iChange);
+#endif
 	// Culture stuff
 
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
@@ -992,6 +995,9 @@ protected:
 	FAutoVariable<int, CvCity> m_iNumGreatPeople;
 	FAutoVariable<int, CvCity> m_iBaseGreatPeopleRate;
 	FAutoVariable<int, CvCity> m_iGreatPeopleRateModifier;
+#if defined(LEKMOD_LEGACY)
+	FAutoVariable<std::vector<int>, CvCity> m_aiGreatPeopleRateModifierBySpecialist;
+#endif
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 	FAutoVariable<int, CvCity> m_iJONSCultureStoredT100;
 #else

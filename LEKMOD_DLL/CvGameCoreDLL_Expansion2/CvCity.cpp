@@ -174,6 +174,9 @@ CvCity::CvCity() :
 	, m_iNumGreatPeople("CvCity::m_iNumGreatPeople", m_syncArchive)
 	, m_iBaseGreatPeopleRate("CvCity::m_iBaseGreatPeopleRate", m_syncArchive)
 	, m_iGreatPeopleRateModifier("CvCity::m_iGreatPeopleRateModifier", m_syncArchive)
+#if defined(LEKMOD_LEGACY)
+	, m_aiGreatPeopleRateModifierBySpecialist("CvCity::m_aiGreatPeopleRateModifierBySpecialist", m_syncArchive)
+#endif
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 	, m_iJONSCultureStoredT100("CvCity::m_iJONSCultureT100Stored", m_syncArchive, true)
 #else
@@ -935,6 +938,13 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iNumGreatPeople = 0;
 	m_iBaseGreatPeopleRate = 0;
 	m_iGreatPeopleRateModifier = 0;
+#if defined(LEKMOD_LEGACY)
+	m_aiGreatPeopleRateModifierBySpecialist.resize(GC.getNumSpecialistInfos());
+	for(iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		m_aiGreatPeopleRateModifierBySpecialist.setAt(iI, 0);
+	}
+#endif
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 	m_iJONSCultureStoredT100 = 0;
 #else
@@ -7971,6 +7981,25 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			GetCityCitizens()->ChangeBuildingGreatPeopleRateChanges((SpecialistTypes) GC.getBuildingInfo(eBuilding)->GetSpecialistType(), pBuildingInfo->GetGreatPeopleRateChange() * iChange);
 #endif
 		}
+#if defined(LEKMOD_LEGACY)
+		for (int jJ = 0; jJ < GC.getNumSpecialistInfos(); jJ++)
+		{
+			SpecialistTypes eSpecialist = (SpecialistTypes)jJ;
+			if (eSpecialist == NO_SPECIALIST)
+				continue;
+			int iLegacyGreatPersonPointChange = pLegacies->GetBuildingClassGreatPersonPointChange(eBuildingClass, eSpecialist);
+			if (iLegacyGreatPersonPointChange > 0)
+			{
+				GetCityCitizens()->ChangeBuildingGreatPeopleRateChanges(eSpecialist, iLegacyGreatPersonPointChange * iChange);
+			}
+			
+			int iLegacyGreatPersonPointModifier = pLegacies->GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
+			if (iLegacyGreatPersonPointModifier > 0)
+			{
+				changeSpecificGreatPeopleRateModifier(eSpecialist, iLegacyGreatPersonPointModifier * iChange);
+			}
+		}
+#endif
 
 #ifdef AUI_WARNING_FIXES
 		for (uint iI = 0; iI < GC.getNumUnitCombatClassInfos(); iI++)
@@ -9309,7 +9338,6 @@ int CvCity::getTotalGreatPeopleRateModifier() const
 	return std::max(0, (iModifier + 100));
 }
 
-
 //	--------------------------------------------------------------------------------
 void CvCity::changeBaseGreatPeopleRate(int iChange)
 {
@@ -9318,7 +9346,6 @@ void CvCity::changeBaseGreatPeopleRate(int iChange)
 	CvAssert(getBaseGreatPeopleRate() >= 0);
 }
 
-
 //	--------------------------------------------------------------------------------
 int CvCity::getGreatPeopleRateModifier() const
 {
@@ -9326,15 +9353,30 @@ int CvCity::getGreatPeopleRateModifier() const
 	return m_iGreatPeopleRateModifier;
 }
 
-
 //	--------------------------------------------------------------------------------
 void CvCity::changeGreatPeopleRateModifier(int iChange)
 {
 	VALIDATE_OBJECT
 	m_iGreatPeopleRateModifier = (m_iGreatPeopleRateModifier + iChange);
 }
-
-
+#if defined(LEKMOD_LEGACY)
+//	--------------------------------------------------------------------------------
+int CvCity::getSpecificGreatPeopleRateModifier(SpecialistTypes eSpecialist) const
+{
+	VALIDATE_OBJECT
+	return m_aiGreatPeopleRateModifierBySpecialist[eSpecialist];
+}
+//	--------------------------------------------------------------------------------
+void CvCity::changeSpecificGreatPeopleRateModifier(SpecialistTypes eSpecialist, int iChange)
+{
+	VALIDATE_OBJECT
+	if (iChange != 0)
+	{
+		m_aiGreatPeopleRateModifierBySpecialist.setAt(eSpecialist, m_aiGreatPeopleRateModifierBySpecialist[eSpecialist] + iChange);
+		CvAssert(getGreatPeopleRateModifier(eSpecialist) >= 0);
+	}
+}
+#endif
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 int CvCity::GetJONSCultureStoredTimes100() const
 {
@@ -11848,7 +11890,7 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 		if (pCapital)
 		{
 			const int distance = plotDistance(getX(), getY(), pCapital->getX(), pCapital->getY());
-			int iQualified = distance > GET_PLAYER(getOwner()).GetPlayerLegacies()->GetYieldModCapitalProximity() ? 1 : -1;
+			int iQualified = distance >= GET_PLAYER(getOwner()).GetPlayerLegacies()->GetYieldModCapitalProximity() ? 1 : -1;
 
 			iTempMod += (GET_PLAYER(getOwner()).GetPlayerLegacies()->GetCityYieldModifier(eIndex) * iQualified);
 			iModifier += iTempMod;
@@ -17509,6 +17551,9 @@ void CvCity::read(FDataStream& kStream)
 	kStream >> m_iNumGreatPeople;
 	kStream >> m_iBaseGreatPeopleRate;
 	kStream >> m_iGreatPeopleRateModifier;
+#if defined(LEKMOD_LEGACY)
+	kStream >> m_aiGreatPeopleRateModifierBySpecialist;
+#endif
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 	kStream >> m_iJONSCultureStoredT100;
 #else
@@ -17886,6 +17931,9 @@ void CvCity::write(FDataStream& kStream) const
 	kStream << m_iNumGreatPeople;
 	kStream << m_iBaseGreatPeopleRate;
 	kStream << m_iGreatPeopleRateModifier;
+#if defined(LEKMOD_LEGACY)
+	kStream << m_aiGreatPeopleRateModifierBySpecialist;
+#endif
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 	kStream << m_iJONSCultureStoredT100;
 #else

@@ -226,7 +226,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetTotalGreatPeopleRateModifier);
 	Method(ChangeBaseGreatPeopleRate);
 	Method(GetGreatPeopleRateModifier);
-
+#if defined(LEKMOD_LEGACY)
+	Method(GetBuildingGreatPeopleRateModifier);
+#endif
 	Method(GetJONSCultureStored);
 	Method(SetJONSCultureStored);
 	Method(ChangeJONSCultureStored);
@@ -2084,6 +2086,19 @@ int CvLuaCity::lGetGreatPeopleRateModifier(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::getGreatPeopleRateModifier);
 }
+#if defined(LEKMOD_LEGACY)
+//------------------------------------------------------------------------------
+//int getSpecificGreatPeopleRateModifier(eSpecialist)
+int CvLuaCity::lGetBuildingGreatPeopleRateModifier(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const SpecialistTypes eSpecialist = (SpecialistTypes)lua_tointeger(L, 2);
+	const int iResult = pkCity->getSpecificGreatPeopleRateModifier(eSpecialist);
+
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 //int GetJONSCultureStored() const;
 int CvLuaCity::lGetJONSCultureStored(lua_State* L)

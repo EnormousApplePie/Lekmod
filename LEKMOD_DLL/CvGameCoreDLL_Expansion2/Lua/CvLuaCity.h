@@ -226,7 +226,9 @@ protected:
 	static int lGetTotalGreatPeopleRateModifier(lua_State* L);
 	static int lChangeBaseGreatPeopleRate(lua_State* L);
 	static int lGetGreatPeopleRateModifier(lua_State* L);
-
+#if defined(LEKMOD_LEGACY)
+	static int lGetBuildingGreatPeopleRateModifier(lua_State* L);
+#endif
 	static int lGetJONSCultureStored(lua_State* L);
 	static int lSetJONSCultureStored(lua_State* L);
 	static int lChangeJONSCultureStored(lua_State* L);

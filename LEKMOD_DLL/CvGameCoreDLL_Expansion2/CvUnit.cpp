@@ -6257,7 +6257,21 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 	int iExtraFriendlyHeal = getExtraFriendlyHeal();
 	int iExtraNeutralHeal = getExtraNeutralHeal();
 	int iExtraEnemyHeal = getExtraEnemyHeal();
+#if defined(LEKMOD_LEGACY)
+	int iLegacyBonus = 0;
+	for (int iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+	{
+		ImprovementTypes eImprovement = (ImprovementTypes)iI;
+		if (eImprovement == NO_IMPROVEMENT)
+			continue;	
+		iLegacyBonus = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetNearbyImprovementHealChangeByDomain(eImprovement, getDomainType());
 
+		if (IsNearImprovementType(eImprovement, 1, true /*bSameOwner*/))
+		{
+			iExtraHeal += iLegacyBonus;
+		}
+	}
+#endif
 	// Heal from religion
 	int iReligionMod = 0;
 	if(!pCity)
@@ -16769,7 +16783,25 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 
 	if (bOwnerIsActivePlayer)
 		DLLUI->SetDontShowPopups(false);
-
+#if defined(LEKMOD_LEGACY) // Gonna Do something wonky
+	IsNearUnitWithPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_GREAT_GENERAL", true /*bHideAssert*/), GC.getGREAT_GENERAL_RANGE(), false, true);
+	{
+		for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+		{
+			PromotionTypes ePromotion = (PromotionTypes)iI;
+			if (ePromotion == NO_PROMOTION)
+				continue;
+			PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneral(ePromotion);
+			if (eLegacyPromotion != NO_PROMOTION)
+			{
+				if (isHasPromotion(eLegacyPromotion))
+				{
+					setHasPromotion(eLegacyPromotion, true);
+				}
+			}
+		}
+	}
+#endif
 	// Send out a message that the unit has updated the garrison for the city it was in.
 	CvCity* pkNewGarrisonCity = GetGarrisonedCity();
 	if (pkNewGarrisonCity && pkNewGarrisonCity != pkPrevGarrisonedCity)
@@ -19679,47 +19711,36 @@ bool CvUnit::IsNearFeatureType(FeatureTypes eFeature, int iRange, bool bSameOwne
 bool CvUnit::IsNearImprovementType(ImprovementTypes eImprovement, int iRange, bool bSameOwner) const
 {
 	VALIDATE_OBJECT
-	CvAssertMsg(eImprovement > 0, "eImprovement is expected to be non-negative (invalid eImprovement)");
+	CvAssertMsg(eImprovement >= 0, "eImprovement is expected to be non-negative (invalid eImprovement)");
 	if (!eImprovement || iRange < 1)
 	{
 		return false;
 	}
-
-	CvPlot* pLoopPlot;
-	IDInfo* pUnitNode;
-	CvUnit* pLoopUnit;
 
 	// Look around this Unit to see if there's a unit with the given promotion nearby
 	for (int iX = -iRange; iX <= iRange; iX++)
 	{
 		for (int iY = -iRange; iY <= iRange; iY++)
 		{
-			pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
-
+			CvPlot* pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
 			if (pLoopPlot != NULL)
 			{
 				//check if this loop plot has the right improvement
 				if (pLoopPlot->getImprovementType() == eImprovement)
 				{
 					//check if we care about the owner
-					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					if (bSameOwner && pLoopPlot->getOwner() != getOwner())
 					{
 						continue;
 					}
-
 					return true;
-
 				}
-				
 			}
 		}
 	}
-
 	return false;
 }
-
 #endif
-
 //	--------------------------------------------------------------------------------
 bool CvUnit::IsCanHeavyCharge() const
 {

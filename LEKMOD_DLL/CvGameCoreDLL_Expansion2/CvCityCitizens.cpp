@@ -3114,7 +3114,9 @@ void CvCityCitizens::DoSpecialists()
 
 					// City mod
 					iMod += GetCity()->getGreatPeopleRateModifier();
-
+#if defined(LEKMOD_LEGACY)
+					iMod += GetCity()->getSpecificGreatPeopleRateModifier(eSpecialist);
+#endif
 					// Player mod
 					iMod += GetPlayer()->getGreatPeopleRateModifier();
 

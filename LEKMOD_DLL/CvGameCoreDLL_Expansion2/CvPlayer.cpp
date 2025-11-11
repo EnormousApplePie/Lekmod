@@ -10768,6 +10768,11 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 		}
 #endif
 	}
+
+	if (::isWorldWonderClass(pBuildingInfo->GetBuildingClassInfo()))
+	{
+		updateYield();
+	}
 }
 //	--------------------------------------------------------------------------------
 /// Get yield change from buildings for a specific building class
@@ -27475,7 +27480,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 #if defined(LEKMOD_LEGACY)
 void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 {
-	int iI, iJ, jI, jJ, iBuildingCount, iYieldMod, iYieldChange, iLoop;
+	int iI, iJ, jI, jJ, iBuildingCount, iYieldMod, iYieldChange, iLoop, iTemp;
 	CvLegacyEntry* pLegacy = GC.getLegacyInfo(eLegacy);
 	if (pLegacy == NULL)
 		return;
@@ -27491,7 +27496,7 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 		if (iYield != 0)
 			ChangeCityYieldChange(eYield, iYield * 100);
 		iYield = kLegacy.GetCityYieldModifier(iI) * iChange;
-		if (iYield != 0 && kLegacy.GetYieldModCapitalProximity() == 0)
+		if (iYield != 0 && kLegacy.GetYieldModCapitalProximity() == 0) // If capital proximity is set, we handle this elsewhere
 			changeYieldRateModifier(eYield, iYield);
 
 		for (jJ = 0; jJ < GC.getNumSpecialistInfos(); jJ++)
@@ -27501,14 +27506,13 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 			if (iYield != 0)
 				changeSpecialistExtraYield(eSpecialist, eYield, iYield * iChange);
 		}
-		/*
 		for (jJ = 0; jJ < GC.getNumImprovementInfos(); jJ++)
 		{
 			ImprovementTypes eImprovement = (ImprovementTypes)jJ;
 			iYield = kLegacy.GetImprovementYieldChange(eImprovement, iI) * iChange;
 			if (iYield != 0)
-				changeImprovementExtraYield(eImprovement, eYield, iYield * iChange);	
-		}*/
+				ChangeImprovementExtraYield(eImprovement, eYield, iYield * iChange);	
+		}
 		for (jJ = 0; jJ < GC.getNumResourceInfos(); jJ++)
 		{
 			ResourceTypes eResource = (ResourceTypes)iJ;
@@ -27605,7 +27609,22 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 						pLoopCity->ChangeBaseYieldRateFromBuildings(eYield, iYieldChange * iBuildingCount * iChange);
 					}
 				}
-#endif
+#endif			
+				for (jI = 0; jI < GC.getNumSpecialistInfos(); jI++)
+				{
+					SpecialistTypes eSpecialist = (SpecialistTypes)jI;
+					if (eSpecialist == NO_SPECIALIST)
+						continue;
+					
+					iTemp = kLegacy.GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
+					if (iTemp > 0)
+						pLoopCity->changeSpecificGreatPeopleRateModifier(eSpecialist, iTemp * iBuildingCount * iChange);
+						
+					iTemp = kLegacy.GetBuildingClassGreatPersonPointChange(eBuildingClass, eSpecialist);
+					if (iTemp > 0)
+						pLoopCity->GetCityCitizens()->ChangeBuildingGreatPeopleRateChanges(eSpecialist, iTemp * iBuildingCount * iChange);
+						
+				}
 			}
 		}
 	}
@@ -27619,6 +27638,7 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 			ChangeFreePromotionCount(ePromotion, iChange);
 		}
 	}
+	// Loop through Units
 	for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 	{
 		UnitTypes eLoopUnitType = pLoopUnit->getUnitType();
@@ -27661,6 +27681,7 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 			}
 		}
 	}
+	// Loop through all Unit Infos to adjust future units
 	for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
 	{
 		UnitTypes eUnit = (UnitTypes)iI;
@@ -27709,6 +27730,8 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 
 		changeGoldenAgeTurns(iGoldenAgeTurns);
 	}
+	ChangePlotGoldCostMod(kLegacy.GetPlotGoldCostModifier() * iChange);
+	ChangePlotCultureCostModifier(kLegacy.GetPlotCultureCostModifier() * iChange);
 
 	DoUpdateHappiness();
 	GetTrade()->UpdateTradeConnectionValues();
@@ -29837,14 +29860,23 @@ int CvPlayer::GetBuyPlotCost() const
 {
 	int iCost = /*50*/ GC.getPLOT_BASE_COST();
 	iCost += (/*5*/ GC.getPLOT_ADDITIONAL_COST_PER_PLOT() * GetNumPlotsBought());
-
+#if !defined(LEKMOD_LEGACY)
 	// Cost Mod (Policies, etc.)
 	if(GetPlotGoldCostMod() != 0)
 	{
 		iCost *= (100 + GetPlotGoldCostMod());
 		iCost /= 100;
 	}
+#else // We are introducing another cost mod onto America, which is already high. so Cap the value to -90%
+	// Cost Mod (Policies, etc.)
+	if(GetPlotGoldCostMod() != 0)
+	{
+		int iMod = std::max(-90, GetPlotGoldCostMod()); // Caps discounts to 90%
+		iCost *= (100 + iMod);
+		iCost /= 100;
+	}
 
+#endif
 	if(isMinorCiv())
 	{
 		iCost *= /*200*/ GC.getMINOR_CIV_GOLD_PERCENT();

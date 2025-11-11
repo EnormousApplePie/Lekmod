@@ -8,7 +8,6 @@
 #if defined(LEKMOD_LEGACY)
 // LegacyAI
 class CvLegacyAI;
-#define SAFE_ESTIMATE_PROX_LIMIT 200
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //  CLASS:      CvLegacyEntry
 //!  \brief		A single entry in Legacies
@@ -34,8 +33,11 @@ public:
 	int GetGreatGeneralSiegeBonus() const;
 	int GetResistanceTimeReduction() const;
 	int GetYieldModCapitalProximity() const;
+	int GetPlotGoldCostModifier() const;
+	int GetPlotCultureCostModifier() const;
     // Arrays
 	int IsFreePromotion(int i) const;
+	int GetPromotionNearbyGeneral(int i) const;
 	bool IsFreePromotionUnitType(const int promotionID, const int unitTypeID) const;
 	int GetCityYieldChange(int i) const;
 	int GetCityYieldModifier(int i) const;
@@ -44,6 +46,8 @@ public:
 	int GetBuildingClassGlobalHappinessChange(int i) const;
 	int GetBuildingClassYieldChange(int i, int j) const;
 	int GetBuildingClassYieldModifier(int i, int j) const;
+	int GetBuildingClassGreatPersonPointChange(int i, int j) const;
+	int GetBuildingClassGreatPersonPointModifier(int i, int j) const;
 	int GetUnitResourceRequirementChange(int i, int j) const;
 	int GetUnitRangedStrengthChange(int i) const;
 	int GetUnitStrengthChange(int i) const;
@@ -51,6 +55,9 @@ public:
 	int GetResourceClassYieldChange(int i, int j) const;
 	int GetSpecialistYieldChange(int i, int j) const;
 	int GetSpecialistHappinessChange(int i) const;
+	int GetImprovementYieldChange(int i, int j) const;
+	int GetImprovementYieldChangePerXWorldWonder(int i, int j) const;
+	int GetImprovementNearbyHealChangeByDomain(int i, int j) const;
 private:
     int m_iCivilization;
     int m_iEraOffered;
@@ -59,8 +66,11 @@ private:
 	int m_iGreatGeneralSiegeBonus;
 	int m_iResistanceTimeReduction;
 	int m_iYieldModCapitalProximity;
+	int m_iPlotGoldCostModifier;
+	int m_iPlotCultureCostModifier;
     //Arrays
 	bool* m_pbFreePromotion;
+	int* m_piPromotionNearbyGeneral;
 	std::multimap<int, int> m_FreePromotionUnitType;
 	int* m_piCityYieldChange;
 	int* m_piCityYieldModifier;
@@ -69,6 +79,8 @@ private:
 	int* m_piBuildingClassGlobalHappinessChange;
 	int** m_paiBuildingClassYieldChange;
 	int** m_paiBuildingClassYieldModifier;
+	int** m_paiBuildingClassGreatPersonPointChange;
+	int** m_paiBuildingClassGreatPersonPointModifier;
 	int** m_paiResourceYieldChange;
 	int** m_paiResourceClassYieldChange;
 	int** m_paiUnitResourceRequirementChange;
@@ -76,6 +88,9 @@ private:
 	int* m_piUnitStrengthChange;
 	int** m_paiSpecialistYieldChange;
 	int* m_piSpecialistHappinessChange;
+	int** m_paiImprovementYieldChange;
+	int** m_paiImprovementYieldChangePerXWorldWonder;
+	int** m_paiImprovementNearbyHealChangeByDomain;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -142,8 +157,11 @@ public:
 	int GetGreatGeneralSiegeBonus() const;
 	int GetResistanceTimeReduction() const;
 	int GetYieldModCapitalProximity() const;
+	int GetPlotGoldCostModifier() const;
+	int GetPlotCultureCostModifier() const;
 	// Arrays
 	bool HasFreePromotionUnitType(PromotionTypes ePromotion, UnitTypes eUnitType) const;
+	int GetPromotionNearbyGeneral(PromotionTypes ePromotion) const;
 	int GetCityYieldChange(YieldTypes eYield) const;
 	int GetCityYieldModifier(YieldTypes eYield) const;
 	int GetUnitResourceRequirementChange(UnitTypes eUnit, ResourceTypes eResource) const;
@@ -154,10 +172,15 @@ public:
 	int GetBuildingClassGlobalHappinessChange(BuildingClassTypes eBuildingClass) const;
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield) const;
 	int GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYield) const;
+	int GetBuildingClassGreatPersonPointChange(BuildingClassTypes eBuildingClass, SpecialistTypes eSpecialist) const;
+	int GetBuildingClassGreatPersonPointModifier(BuildingClassTypes eBuildingClass, SpecialistTypes eSpecialist) const;
 	int GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYield) const;
 	int GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYield) const;
 	int GetSpecialistYieldChange(SpecialistTypes eSpecialist, YieldTypes eYield) const;
 	int GetSpecialistHappinessChange(SpecialistTypes eSpecialist) const;
+	int GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const;
+	int GetImprovementYieldChangePerXWorldWonder(ImprovementTypes eImprovement, YieldTypes eYield) const;
+	int GetNearbyImprovementHealChangeByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const;
 private:
     bool* m_pabHasLegacy;
 	CvLegacyXMLEntries* m_pLegacies;
@@ -172,6 +195,8 @@ private:
 	int m_iGreatGeneralSiegeBonus;
 	int m_iResistanceTimeReduction;
 	int m_iYieldModCapitalProximity;
+	int m_iPlotGoldCostModifier;
+	int m_iPlotCultureCostModifier;
 	//Arrays
 	std::vector <int> m_viCityYieldChange;
 	std::vector <int> m_viCityYieldModifier;
@@ -180,12 +205,16 @@ private:
 	std::vector <int> m_viBuildingClassGlobalHappinessChanges;
 	std::vector <int> m_viUnitRangedStrengthChanges;
 	std::vector <int> m_viUnitStrengthChanges;
+	std::vector <int> m_viPromotionNearbyGeneral;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingClassYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingClassYieldModifiers;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiResourceYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiResourceClassYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiSpecialistYieldChanges;
 	std::vector <int> m_viSpecialistHappinessChanges;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiImprovementYieldChanges;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiImprovementYieldChangePerXWorldWonder;
+	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementHealChangeByDomain;
 };
 #endif
 #endif //LEK_CIV5_LEGACYCLASSES_H
