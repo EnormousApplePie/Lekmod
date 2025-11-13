@@ -58,6 +58,7 @@ public:
 	int GetImprovementYieldChange(int i, int j) const;
 	int GetImprovementYieldChangePerXWorldWonder(int i, int j) const;
 	int GetImprovementNearbyHealChangeByDomain(int i, int j) const;
+	int GetGreatWorkClassYieldChange(int i, int j) const;
 private:
     int m_iCivilization;
     int m_iEraOffered;
@@ -91,6 +92,7 @@ private:
 	int** m_paiImprovementYieldChange;
 	int** m_paiImprovementYieldChangePerXWorldWonder;
 	int** m_paiImprovementNearbyHealChangeByDomain;
+	int** m_paiGreatWorkClassYieldChange;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -181,6 +183,7 @@ public:
 	int GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const;
 	int GetImprovementYieldChangePerXWorldWonder(ImprovementTypes eImprovement, YieldTypes eYield) const;
 	int GetNearbyImprovementHealChangeByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const;
+	int GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const;
 private:
     bool* m_pabHasLegacy;
 	CvLegacyXMLEntries* m_pLegacies;
@@ -206,6 +209,7 @@ private:
 	std::vector <int> m_viUnitRangedStrengthChanges;
 	std::vector <int> m_viUnitStrengthChanges;
 	std::vector <int> m_viPromotionNearbyGeneral;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiGreatWorkClassYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingClassYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingClassYieldModifiers;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiResourceYieldChanges;

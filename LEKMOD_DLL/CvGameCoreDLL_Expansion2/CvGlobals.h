@@ -38,6 +38,9 @@ class CvEntityEventInfo;
 class CvLandscapeInfo;
 class CvTerrainInfo;
 class CvResourceClassInfo;
+#if defined(LEKMOD_LEGACY)
+class CvGreatWorkClassInfo;
+#endif
 class CvResourceInfo;
 class CvFeatureInfo;
 class CvCivilizationInfo;
@@ -328,7 +331,11 @@ public:
 #endif
 	std::vector<CvTerrainInfo*>& getTerrainInfo();
 	CvTerrainInfo* getTerrainInfo(TerrainTypes eTerrainNum);
-
+#if defined(LEKMOD_LEGACY)
+	int getNumGreatWorkClassInfos();
+	std::vector<CvGreatWorkClassInfo*>& getGreatWorkClassInfo();
+	CvGreatWorkClassInfo* getGreatWorkClassInfo(GreatWorkClass eGreatWorkClassNum);
+#endif
 #ifdef AUI_WARNING_FIXES
 	uint getNumResourceClassInfos() const;
 #else
@@ -7938,6 +7945,9 @@ protected:
 	std::vector<CvYieldInfo*> m_paYieldInfo;
 	std::vector<CvRouteInfo*> m_paRouteInfo;
 	std::vector<CvFeatureInfo*> m_paFeatureInfo;
+#if defined(LEKMOD_LEGACY)
+	std::vector<CvGreatWorkClassInfo*> m_paGreatWorkClassInfo;
+#endif
 	std::vector<CvResourceClassInfo*> m_paResourceClassInfo;
 	std::vector<CvResourceInfo*> m_paResourceInfo;
 	std::vector<CvBuildInfo*> m_paBuildInfo;

@@ -4411,7 +4411,37 @@ bool CvRouteInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 
 	return true;
 }
-
+#if defined(LEKMOD_LEGACY)
+//======================================================================================================
+//					CvGreatWorkClassInfo
+//======================================================================================================
+CvGreatWorkClassInfo::CvGreatWorkClassInfo() :
+	m_piBaseYield(NULL)
+{
+}
+//------------------------------------------------------------------------------
+CvGreatWorkClassInfo::~CvGreatWorkClassInfo()
+{
+	SAFE_DELETE_ARRAY(m_piBaseYield);
+}
+//------------------------------------------------------------------------------
+int CvGreatWorkClassInfo::getGreatWorkClassBaseYield(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piBaseYield ? m_piBaseYield[i] : -1;
+}
+//------------------------------------------------------------------------------
+bool CvGreatWorkClassInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
+{
+	if(!CvBaseInfo::CacheResults(kResults, kUtility))
+		return false;
+	//Arrays
+	const char* szGreatWorkClassType = GetType();
+	kUtility.SetYields(m_piBaseYield, "GreatWorkClass_Yields", "GreatWorkClassType", szGreatWorkClassType);
+	return true;
+}
+#endif
 //======================================================================================================
 //					CvResourceClassInfo
 //======================================================================================================

@@ -2883,6 +2883,9 @@ CvCityBuildings::CvCityBuildings():
 	m_iLandmarksTourismPercent(0),
 	m_iGreatWorksTourismModifier(0),
 	m_bSoldBuildingThisTurn(false),
+#if defined(LEKMOD_LEGACY)
+	m_bGreatWorkClassCountsDirty(true),
+#endif
 	m_pBuildings(NULL),
 #ifdef AUI_CITY_FIX_COMPONENT_CONSTRUCTORS_CONTAIN_POINTERS
 	m_pCity(pCity)
@@ -2930,6 +2933,9 @@ void CvCityBuildings::Init(CvBuildingXMLEntries* pBuildings, CvCity* pCity)
 
 	m_aBuildingYieldChange.clear();
 	m_aBuildingGreatWork.clear();
+#if defined(LEKMOD_LEGACY)
+	m_cachedGreatWorkClassCounts.clear();
+#endif
 
 	Reset();
 }
@@ -2970,6 +2976,9 @@ void CvCityBuildings::Reset()
 	m_iGreatWorksTourismModifier = 0;
 
 	m_bSoldBuildingThisTurn = false;
+#if defined(LEKMOD_LEGACY)
+	m_bGreatWorkClassCountsDirty = true;
+#endif
 
 	for(iI = 0; iI < m_pBuildings->GetNumBuildings(); iI++)
 	{
@@ -3009,6 +3018,9 @@ void CvCityBuildings::Read(FDataStream& kStream)
 	kStream >> m_iGreatWorksTourismModifier;
 
 	kStream >> m_bSoldBuildingThisTurn;
+#if defined(LEKMOD_LEGACY)
+	SetGreatWorkCacheDirty();
+#endif
 
 	BuildingArrayHelpers::Read(kStream, m_paiBuildingProduction);
 	BuildingArrayHelpers::Read(kStream, m_paiBuildingProductionTime);
@@ -3044,6 +3056,9 @@ void CvCityBuildings::Write(FDataStream& kStream)
 	kStream << m_iLandmarksTourismPercent;
 	kStream << m_iGreatWorksTourismModifier;
 	kStream << m_bSoldBuildingThisTurn;
+#if defined(LEKMOD_LEGACY)
+	kStream << m_bGreatWorkClassCountsDirty;
+#endif
 
 #ifdef _MSC_VER
 #pragma warning ( push )
@@ -3785,12 +3800,8 @@ int CvCityBuildings::GetBuildingGreatWork(BuildingClassTypes eBuildingClass, int
 	return -1;
 }
 
-/// Accessor: Set yield boost for a specific building by yield type
-#ifdef AUI_WARNING_FIXES
-void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, uint iSlot, int iGreatWorkIndex)
-#else
+/// Accessor: Set Great Work in a specific building by slot index
 void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, int iSlot, int iGreatWorkIndex)
-#endif
 {
 	for(std::vector<BuildingGreatWork>::iterator it = m_aBuildingGreatWork.begin(); it != m_aBuildingGreatWork.end(); ++it)
 	{
@@ -3807,6 +3818,7 @@ void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, in
 				{
 					(*it).iGreatWorkIndex = iGreatWorkIndex;
 				}
+				SetGreatWorkCacheDirty();
 			}
 
 			GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
@@ -3822,6 +3834,7 @@ void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, in
 		kWork.iSlot = iSlot;
 		kWork.iGreatWorkIndex = iGreatWorkIndex;
 		m_aBuildingGreatWork.push_back(kWork);
+		SetGreatWorkCacheDirty();
 	}
 
 	GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
@@ -4117,6 +4130,7 @@ int CvCityBuildings::GetCultureFromGreatWorks() const
 	return iRtnValue;
 }
 #endif
+#if !defined(LEKMOD_LEGACY)
 // NQMP GJS - Artistic Genius fix to add science to Great Works
 /// Accessor: How much of a yield are we generating from Great Works in our buildings?
 int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
@@ -4125,7 +4139,81 @@ int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
 	int iRtnValue = iYieldPerWork * m_aBuildingGreatWork.size();
 	return iRtnValue;
 }
+#else
+int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
+{
+	CvPlayer& kPlayer = GET_PLAYER(m_pCity->getOwner());
+	int iTotalYield = 0;
 
+	int iBasePerWork = kPlayer.GetGreatWorkYieldChange(eIndex);
+	int iTotalWorks = static_cast<int>(m_aBuildingGreatWork.size());
+	iTotalYield += iBasePerWork * iTotalWorks;
+
+	// Add per-class yields
+	for (int iI = 0; iI < GC.getNumGreatWorkClassInfos(); iI++)
+	{
+		GreatWorkClass eClass = (GreatWorkClass)iI;
+		const int iCount = GetNumGreatWorks(eClass);
+		if (iCount <= 0) // No Works of this class
+			continue;
+		int ClassChange = GC.getGreatWorkClassInfo(eClass)->getGreatWorkClassBaseYield(eIndex);
+		ClassChange += kPlayer.GetGreatWorkClassYieldChange(eClass, eIndex);
+		iTotalYield += iCount * ClassChange;
+	}
+
+	return iTotalYield;
+}
+int CvCityBuildings::GetNumGreatWorks(GreatWorkClass eGreatWorkClass) const
+{
+	const std::map<GreatWorkClass, int>& mClassCounts = GetGreatWorkClassCounts();
+
+	std::map<GreatWorkClass, int>::const_iterator it = mClassCounts.find(eGreatWorkClass);
+	if (it != mClassCounts.end())
+	{
+		return it->second;
+	}
+
+	return 0;
+}
+const std::map<GreatWorkClass, int>& CvCityBuildings::GetGreatWorkClassCounts() const
+{
+	CvCityBuildings* pThis = const_cast<CvCityBuildings*>(this);
+
+	if (m_bGreatWorkClassCountsDirty)
+	{
+		pThis->m_cachedGreatWorkClassCounts.clear();
+
+		CvGameCulture* pCulture = GC.getGame().GetGameCulture();
+		if (pCulture)
+		{
+			for (size_t i = 0; i < m_aBuildingGreatWork.size(); ++i)
+			{
+				const BuildingGreatWork& kWork = m_aBuildingGreatWork[i];
+				if (kWork.iGreatWorkIndex < 0)
+					continue;
+
+				GreatWorkClass eClass = pCulture->GetGreatWorkClass(kWork.iGreatWorkIndex);
+				if (eClass != NO_GREAT_WORK_CLASS)
+				{
+					std::map<GreatWorkClass, int>::iterator it = pThis->m_cachedGreatWorkClassCounts.find(eClass);
+					if (it != pThis->m_cachedGreatWorkClassCounts.end())
+						it->second++;
+					else
+						pThis->m_cachedGreatWorkClassCounts.insert(std::make_pair(eClass, 1));
+				}
+			}
+		}
+
+		pThis->SetGreatWorkCacheDirty(false);
+	}
+
+	return m_cachedGreatWorkClassCounts;
+}
+void CvCityBuildings::SetGreatWorkCacheDirty(bool bDirty)
+{
+	m_bGreatWorkClassCountsDirty = bDirty;
+}
+#endif
 /// Accessor: How many Great Works of specific slot type present in this city?
 #ifdef AUI_WARNING_FIXES
 uint CvCityBuildings::GetNumGreatWorks() const

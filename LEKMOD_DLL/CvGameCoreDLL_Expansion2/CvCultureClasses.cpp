@@ -217,6 +217,8 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 	{
 		YieldTypes eYield = (YieldTypes)iYieldLoop;
 		int iYield = GET_PLAYER(eOwner).GetGreatWorkYieldChange(eYield);
+		iYield += GET_PLAYER(eOwner).GetGreatWorkClassYieldChange(pWork->m_eClassType, eYield);
+		iYield += GC.getGreatWorkClassInfo(pWork->m_eClassType)->getGreatWorkClassBaseYield(eYield);
 		if (iYield == 0)
 			continue;
 		const char* strYieldIcon = "";
@@ -243,18 +245,25 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 		case YIELD_GOLDEN_AGE_POINTS:
 			strYieldIcon = "[ICON_GOLDEN_AGE]";
 			break;
+#if defined(LEK_YIELD_TOURISM)
+		case YIELD_TOURISM:
+			strYieldIcon = "[ICON_TOURISM]";
+			break;
+#endif
 		default:
 			strYieldIcon = "NO_ICON";
 		}
 		cultureString += CvString::format("+%d %s ", iYield, strYieldIcon);
 	}
 #endif
+#if !defined(LEK_YIELD_TOURISM)
 	int iTourismPerWork = GC.getBASE_TOURISM_PER_GREAT_WORK();
 	iTourismPerWork += GET_PLAYER(eOwner).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_EXTRA_TOURISM_PER_GREAT_WORK); // NQMP GJS - Cultural Exchange
 #if !defined(MISC_CHANGES) // Build Tooltip String Dynamically
 	cultureString.Format("+%d [ICON_CULTURE], +%d [ICON_TOURISM]", iCulturePerWork, iTourismPerWork);
 #else
 	if (iTourismPerWork != 0) cultureString += CvString::format("+%d [ICON_TOURISM] ", iTourismPerWork);
+#endif
 #endif
 	szTooltip += cultureString;
 

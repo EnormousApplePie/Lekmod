@@ -1342,7 +1342,22 @@ private:
 	CvRouteInfo(const CvRouteInfo&);
 	CvRouteInfo& operator=(const CvRouteInfo&);
 };
+#if defined(LEKMOD_LEGACY)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//  class : CvGreatWorkClassInfo
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+class CvGreatWorkClassInfo :	public CvBaseInfo
+{
+public:
+	CvGreatWorkClassInfo();
+	virtual ~CvGreatWorkClassInfo();
 
+	int getGreatWorkClassBaseYield(int i) const;
+	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
+protected:
+	int* m_piBaseYield;
+};
+#endif
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //  class : CvResourceClassInfo
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

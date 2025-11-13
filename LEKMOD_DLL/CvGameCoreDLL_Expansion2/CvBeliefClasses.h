@@ -120,6 +120,9 @@ public:
 	int GetHolyCityYieldChange(int i) const;
 	int GetYieldChangePerForeignCity(int i) const;
 	int GetYieldChangePerXForeignFollowers(int i) const;
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+	int GetYieldChangePerXFollowers(int i) const;
+#endif
 	int GetResourceQuantityModifier(int i) const;
 	int GetImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;
 	int GetBuildingClassYieldChange(int i, int j) const;
@@ -236,6 +239,9 @@ protected:
 	int* m_paiHolyCityYieldChange;
 	int* m_paiYieldChangePerForeignCity;
 	int* m_paiYieldChangePerXForeignFollowers;
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+	int* m_paiYieldChangePerXFollowers;
+#endif
 	int* m_piResourceQuantityModifiers;
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
 	std::pair<int**, size_t> m_ppiImprovementYieldChanges;
@@ -497,6 +503,9 @@ public:
 	int GetHolyCityYieldChange(YieldTypes eYield) const;
 	int GetYieldChangePerForeignCity(YieldTypes eYield) const;
 	int GetYieldChangePerXForeignFollowers(YieldTypes eYield) const;
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+	int GetYieldChangePerXFollowers(YieldTypes eYield) const;
+#endif
 	int GetResourceQuantityModifier(ResourceTypes eResource) const;
 	int GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const;
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType, int iFollowers) const;

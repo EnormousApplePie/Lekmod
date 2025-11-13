@@ -106,6 +106,9 @@ CvBeliefEntry::CvBeliefEntry() :
 	m_paiHolyCityYieldChange(NULL),
 	m_paiYieldChangePerForeignCity(NULL),
 	m_paiYieldChangePerXForeignFollowers(NULL),
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+	m_paiYieldChangePerXFollowers(NULL),
+#endif
 	m_piResourceQuantityModifiers(NULL),
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
 	m_ppiImprovementYieldChanges(std::pair<int**, size_t>(NULL, 0)),
@@ -582,7 +585,13 @@ int CvBeliefEntry::GetYieldChangePerXForeignFollowers(int i) const
 {
 	return m_paiYieldChangePerXForeignFollowers ? m_paiYieldChangePerXForeignFollowers[i] : -1;
 }
-
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+/// Accessor:: Additional player-level yield for followers in all cities
+int CvBeliefEntry::GetYieldChangePerXFollowers(int i) const
+{
+	return m_paiYieldChangePerXFollowers ? m_paiYieldChangePerXFollowers[i] : -1;
+}
+#endif
 /// Accessor:: Additional quantity of a specific resource
 int CvBeliefEntry::GetResourceQuantityModifier(int i) const
 {
@@ -879,6 +888,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	kUtility.PopulateArrayByValue(m_paiBuildingClassTourism, "BuildingClasses", "Belief_BuildingClassTourism", "BuildingClassType", "BeliefType", szBeliefType, "Tourism");
 	kUtility.PopulateArrayByValue(m_paiYieldChangePerForeignCity, "Yields", "Belief_YieldChangePerForeignCity", "YieldType", "BeliefType", szBeliefType, "Yield");
 	kUtility.PopulateArrayByValue(m_paiYieldChangePerXForeignFollowers, "Yields", "Belief_YieldChangePerXForeignFollowers", "YieldType", "BeliefType", szBeliefType, "ForeignFollowers");
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+	kUtility.PopulateArrayByValue(m_paiYieldChangePerXFollowers, "Yields", "Belief_YieldChangePerXFollowers", "YieldType", "BeliefType", szBeliefType, "Followers");
+#endif
 	kUtility.PopulateArrayByExistence(m_pbFaithPurchaseUnitEraEnabled, "Eras", "Belief_EraFaithUnitPurchase", "EraType", "BeliefType", szBeliefType);
 	kUtility.PopulateArrayByExistence(m_pbBuildingClassEnabled, "BuildingClasses", "Belief_BuildingClassFaithPurchase", "BuildingClassType", "BeliefType", szBeliefType);
 
@@ -1686,7 +1698,22 @@ int CvReligionBeliefs::GetYieldChangePerXForeignFollowers(YieldTypes eYield) con
 
 	return rtnValue;
 }
-
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+/// Extra Yield per Follower
+int CvReligionBeliefs::GetYieldChangePerXFollowers(YieldTypes eYield) const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	int rtnValue = 0;
+	for(int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if(HasBelief((BeliefTypes)i))
+		{
+			rtnValue += pBeliefs->GetEntry(i)->GetYieldChangePerXFollowers(eYield);
+		}
+	}
+	return rtnValue;
+}
+#endif
 /// Extra yield from this improvement
 int CvReligionBeliefs::GetResourceQuantityModifier(ResourceTypes eResource) const
 {

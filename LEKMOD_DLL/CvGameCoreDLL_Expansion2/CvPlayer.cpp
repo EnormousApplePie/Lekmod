@@ -477,6 +477,9 @@ CvPlayer::CvPlayer() :
 	, m_paiHurryModifier("CvPlayer::m_paiHurryModifier", m_syncArchive)
 	, m_pabLoyalMember("CvPlayer::m_pabLoyalMember", m_syncArchive)
 	, m_pabGetsScienceFromPlayer("CvPlayer::m_pabGetsScienceFromPlayer", m_syncArchive)
+#if defined(LEKMOD_LEGACY)
+	, m_ppaaiGreatWorkClassYieldChange("CvPlayer::m_ppaaiGreatWorkClassYieldChange", m_syncArchive)
+#endif
 	, m_ppaaiSpecialistExtraYield("CvPlayer::m_ppaaiSpecialistExtraYield", m_syncArchive)
 	, m_ppaaiImprovementYieldChange("CvPlayer::m_ppaaiImprovementYieldChange", m_syncArchive)
 	, m_ppaaiBuildingClassYieldMod("CvPlayer::m_ppaaiBuildingClassYieldMod", m_syncArchive)
@@ -758,8 +761,10 @@ void CvPlayer::init(PlayerTypes eID)
 		{
 			updateExtraYieldThreshold((YieldTypes)iI);
 		}
+#if !defined(LEKMOD_LEGACY)
 #if defined(LEKMOD_GREAT_WORK_YIELD_EFFECTS) // Initialize the Base Culture output of Greatworks
 		ChangeGreatWorkYieldChange(YIELD_CULTURE, GC.getBASE_CULTURE_PER_GREAT_WORK());
+#endif
 #endif
 		CvCivilizationInfo& playerCivilizationInfo = getCivilizationInfo();
 		for(iI = 0; iI < GC.getNumUnitClassInfos(); ++iI)
@@ -882,7 +887,9 @@ void CvPlayer::uninit()
 	{
 		m_pDangerPlots->Uninit();
 	}
-
+#if defined(LEKMOD_LEGACY)
+	m_ppaaiGreatWorkClassYieldChange.clear();
+#endif
 	m_ppaaiSpecialistExtraYield.clear();
 	m_ppiImprovementYieldChange.clear();
 	m_ppaaiImprovementYieldChange.clear();
@@ -1535,7 +1542,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		{
 			m_ppaaiSpecialistExtraYield.setAt(i, yield);
 		}
-
+#if defined(LEKMOD_LEGACY)
+		m_ppaaiGreatWorkClassYieldChange.clear();
+		m_ppaaiGreatWorkClassYieldChange.resize(GC.getNumGreatWorkClassInfos());
+		for(unsigned int i = 0; i < m_ppaaiGreatWorkClassYieldChange.size(); ++i)
+		{
+			m_ppaaiGreatWorkClassYieldChange.setAt(i, yield);
+		}
+#endif
 		m_ppaaiImprovementYieldChange.clear();
 		m_ppaaiImprovementYieldChange.resize(GC.getNumImprovementInfos());
 		for(unsigned int i = 0; i < m_ppaaiImprovementYieldChange.size(); ++i)
@@ -11930,7 +11944,33 @@ void CvPlayer::ChangeGreatWorkYieldChange(YieldTypes eYield, int iChange)
 		m_aiGreatWorkYieldChange[eYield] = m_aiGreatWorkYieldChange[eYield] + iChange;
 	}
 }
-
+#if defined(LEKMOD_LEGACY)
+// --------------------------------------------------------------------------------
+// How much additional Yield from a GreatWorkClass does this player have?
+int CvPlayer::GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	CvAssertMsg(eGreatWorkClass >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_ppaaiGreatWorkClassYieldChange[eGreatWorkClass][eYield];
+}
+// --------------------------------------------------------------------------------
+// Changes how much additional Yield from a GreatWorkClass does this player have
+void CvPlayer::ChangeGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield, int iChange)
+{
+	CvAssertMsg(eYield >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	CvAssertMsg(eGreatWorkClass >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	if(iChange != 0)
+	{
+		Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiGreatWorkClassYieldChange[eGreatWorkClass];
+		yields[eYield] = (m_ppaaiGreatWorkClassYieldChange[eGreatWorkClass][eYield] + iChange);
+		m_ppaaiGreatWorkClassYieldChange.setAt(eGreatWorkClass, yields);
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 CvPlot* CvPlayer::getStartingPlot() const
 {
@@ -26629,17 +26669,46 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 		iMod = pPolicy->GetSpecialistExtraYield(iI) * iChange;
 		if(iMod != 0)
 			changeSpecialistExtraYield(eYield, iMod);
-	}
 #if defined(LEKMOD_v34) // Grant free resources from this policy
-	for (int i = 0; i < GC.getNumResourceInfos(); ++i)
-	{
-		int iAmount = pPolicy->GetPolicyResourceQuantity(i);
-		if (iAmount != 0)
+		for (int i = 0; i < GC.getNumResourceInfos(); ++i)
 		{
-			changeNumResourceTotal((ResourceTypes)i, iAmount * iChange);
+			ResourceTypes eResource = (ResourceTypes)i;
+			int iAmount = pPolicy->GetPolicyResourceQuantity(i);
+			if (iAmount != 0)
+			{
+				changeNumResourceTotal(eResource, iAmount * iChange);
+			}
+			iMod = pPolicy->GetPolicyResourceYieldChanges(eResource, iI) * iChange;
+			if (iMod != 0)
+				changeResourceYieldChange(eResource, eYield, iMod * iChange);
 		}
-	}
+		for (int jJ = 0; jJ < GC.getNumResourceClassInfos(); jJ++)
+		{
+			ResourceClassTypes eResourceClass = (ResourceClassTypes)jJ;
+			iMod = pPolicy->GetPolicyResourceClassYieldChanges(eResourceClass, iI) * iChange;
+			if (iMod != 0)
+			{
+				ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+				ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
+				for (int i = 0; i < GC.getNumResourceInfos(); ++i)
+				{
+					ResourceTypes eResource = (ResourceTypes)i;
+					const CvResourceInfo* pResource = GC.getResourceInfo(eResource);
+					if (!pResource)
+						continue;
+					// Always Skip Hidden Artifacts and Artifacts
+					if (eResource == eHiddenArtifacts || eResource == eArtifacts)
+						continue;
+					if (pResource->getResourceClassType() == eResourceClass)
+					{
+						changeResourceYieldChange(eResource, eYield, iMod * iChange);
+					}
+				}
+			}
+		}
 #endif
+	}
+
 	for(iI = 0; iI < GC.getNumUnitCombatClassInfos(); iI++)
 	{
 		changeUnitCombatProductionModifiers((UnitCombatTypes)iI, (pPolicy->GetUnitCombatProductionModifiers(iI) * iChange));
@@ -27515,14 +27584,21 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 		}
 		for (jJ = 0; jJ < GC.getNumResourceInfos(); jJ++)
 		{
-			ResourceTypes eResource = (ResourceTypes)iJ;
+			ResourceTypes eResource = (ResourceTypes)jJ;
 			iYield = kLegacy.GetResourceYieldChange(eResource, iI) * iChange;
 			if (iYield != 0)
 				changeResourceYieldChange(eResource, eYield, iYield * iChange);
 		}
+		for (jJ = 0; jJ < GC.getNumGreatWorkClassInfos(); jJ++)
+		{
+			GreatWorkClass eGreatWorkClass = (GreatWorkClass)jJ;
+			iYield = kLegacy.GetGreatWorkClassYieldChange(eGreatWorkClass, iI) * iChange;
+			if (iYield != 0)
+				ChangeGreatWorkClassYieldChange(eGreatWorkClass, eYield, iYield * iChange);
+		}
 		for (jJ = 0; jJ < GC.getNumResourceClassInfos(); jJ++)
 		{
-			ResourceClassTypes eResourceClass = (ResourceClassTypes)iJ;
+			ResourceClassTypes eResourceClass = (ResourceClassTypes)jJ;
 			iYield = kLegacy.GetResourceClassYieldChange(eResourceClass, iI) * iChange;
 			if (iYield != 0)
 			{
@@ -28549,7 +28625,9 @@ void CvPlayer::Read(FDataStream& kStream)
 			m_pFlavorManager->AddFlavorRecipient(m_pWonderProductionAI, false /*bPropogateFlavors*/);
 		}
 	}
-
+#if defined(LEKMOD_LEGACY)
+	kStream >> m_ppaaiGreatWorkClassYieldChange;
+#endif
 	kStream >> m_ppaaiSpecialistExtraYield;
 	kStream >> m_ppaaiImprovementYieldChange;
 
@@ -29120,7 +29198,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 		kStream << false;
 	}
 	m_pTreasury->Write(kStream);
-
+#if defined(LEKMOD_LEGACY)
+	kStream << m_ppaaiGreatWorkClassYieldChange;
+#endif
 	kStream << m_ppaaiSpecialistExtraYield;
 	kStream << m_ppaaiImprovementYieldChange;
 

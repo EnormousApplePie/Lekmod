@@ -1149,7 +1149,6 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_ERA_BASED_UNIT_UPDATES
 
 
-
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
@@ -1176,7 +1175,7 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 //EAP: AI will now use workers like workboats CURRENTLY NOT WORKING
 //#define AI_WORKER_EMBARKED_FIX
 //EAP: Add Tourism as an actual yield (for buildings etc) CURRENTLY NOT WORKING
-//#define LEK_YIELD_TOURISM
+#define LEK_YIELD_TOURISM
 
 /// EAP: Some stuff related to the above
 #define RING0_PLOTS											(1)

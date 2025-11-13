@@ -54,6 +54,11 @@ std::string toString(const YieldTypes& v)
 		return std::string("YIELD_GOLDEN_AGE_POINTS");
 		break;
 #endif
+#if defined(LEK_YIELD_TOURISM)
+	case YIELD_TOURISM:
+		return std::string("YIELD_TOURISM");
+		break;
+#endif
 	default:
 		return std::string("INVALID ENUM VALUE");
 		break;

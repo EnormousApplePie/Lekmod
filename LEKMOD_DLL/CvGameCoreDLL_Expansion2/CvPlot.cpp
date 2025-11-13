@@ -8382,18 +8382,12 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 					if (pkResourceInfo->getResourceClassType() != NO_RESOURCECLASS && eResource != eArtifacts && eResource != eHiddenArtifacts)
 					{
 						ResourceClassTypes eResourceClass = (ResourceClassTypes)pkResourceInfo->getResourceClassType();
-#if defined(LEKMOD_v34)
-						iYield += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetPolicyResourceClassYieldChanges(eResourceClass, eYield);
-#endif
 						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceClassYieldChange(eResourceClass, eYield);
 					}
 #endif
-
-				}
-				CvPlayer &kPlayer = GET_PLAYER(ePlayer);
-				iYield += kPlayer.GetPlayerPolicies()->GetPolicyResourceYieldChanges(eResource, eYield);
-				iYield += kPlayer.GetPlayerTraits()->GetResourceYieldChange(eResource, eYield);
-				iYield += kPlayer.getResourceYieldChange(eResource, eYield);
+					iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceYieldChange(eResource, eYield);
+					iYield += GET_PLAYER(ePlayer).getResourceYieldChange(eResource, eYield);
+				}	
 			}
 		}
 	}

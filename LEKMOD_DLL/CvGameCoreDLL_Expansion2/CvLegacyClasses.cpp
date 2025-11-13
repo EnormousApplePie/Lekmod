@@ -49,6 +49,7 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_paiImprovementYieldChangePerXWorldWonder(NULL),
 	m_paiImprovementNearbyHealChangeByDomain(NULL),
 	m_piPromotionNearbyGeneral(NULL),
+	m_paiGreatWorkClassYieldChange(NULL),
 	m_pbFreePromotion(NULL)
 {
 }
@@ -76,6 +77,7 @@ CvLegacyEntry::~CvLegacyEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementYieldChangePerXWorldWonder);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementNearbyHealChangeByDomain);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiGreatWorkClassYieldChange);
 }
 
 // Cache results from the database
@@ -103,10 +105,32 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	kUtility.SetYields(m_piCityYieldChange, "Legacy_CityYieldChange", "LegacyType", szLegacyType);
 	kUtility.PopulateArrayByValue(m_piCityYieldModifier, "Yields", "Legacy_CityYieldModifier", "YieldType", "LegacyType", szLegacyType, "Modifier");
 	kUtility.PopulateArrayByExistence(m_pbFreePromotion, "UnitPromotions", "Legacy_FreePromotions", "PromotionType", "LegacyType", szLegacyType);
-	kUtility.PopulateArrayByExistence(m_piPromotionNearbyGeneral, "UnitPromotions", "Legacy_FreePromotions", "PromotionType", "LegacyType", szLegacyType);
+	kUtility.PopulateArrayByExistence(m_piPromotionNearbyGeneral, "UnitPromotions", "Legacy_FreePromotionNearbyGeneral", "PromotionType", "LegacyType", szLegacyType);
 	kUtility.PopulateArrayByValue(m_piBuildingClassProductionModifier, "BuildingClasses", "Legacy_BuildingClassProductionModifiers", "BuildingClassType", "LegacyType", szLegacyType, "Modifier");
 	kUtility.PopulateArrayByValue(m_piSpecialistHappinessChange, "Specialists", "Legacy_SpecialistHappinessChange", "SpecialistType", "LegacyType", szLegacyType, "HappinessTimes100");
-	// Complex/Compound Arrays 
+	// Complex/Compound Arrays
+	{
+		kUtility.Initialize2DArray(m_paiGreatWorkClassYieldChange, "GreatWorkClasses", "Yields");
+		std::string strKey("Legacy_GreatWorkClassYieldChange");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT GreatWorkClasses.ID as GreatWorkClassID, Yields.ID as YieldID, Yield FROM Legacy_GreatWorkClassYieldChange "
+				"INNER JOIN GreatWorkClasses ON GreatWorkClasses.Type = GreatWorkClassType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int iGreatWorkClass = pResults->GetInt(0);
+			const int iYieldID = pResults->GetInt(1);
+			const int iYield = pResults->GetInt(2);
+			m_paiGreatWorkClassYieldChange[iGreatWorkClass][iYieldID] = iYield;
+		}
+		pResults->Reset();
+	}
 	{
 		kUtility.Initialize2DArray(m_paiBuildingClassGreatPersonPointChange, "BuildingClasses", "Specialists");
 		kUtility.Initialize2DArray(m_paiBuildingClassGreatPersonPointModifier, "BuildingClasses", "Specialists");
@@ -428,6 +452,10 @@ bool CvLegacyEntry::IsFreePromotionUnitType(const int promotionID, const int uni
 
 	return false;
 }
+int CvLegacyEntry::GetPromotionNearbyGeneral(int i) const
+{
+	return m_piPromotionNearbyGeneral ? m_piPromotionNearbyGeneral[i] : -1;
+}
 int CvLegacyEntry::GetCityYieldChange(int i) const
 {
 	return m_piCityYieldChange ? m_piCityYieldChange[i] : 0;
@@ -503,6 +531,10 @@ int CvLegacyEntry::GetBuildingClassGreatPersonPointModifier(int i, int j) const
 int CvLegacyEntry::GetBuildingClassGreatPersonPointChange(int i, int j) const
 {
 	return m_paiBuildingClassGreatPersonPointChange ? m_paiBuildingClassGreatPersonPointChange[i][j] : 0;
+}
+int CvLegacyEntry::GetGreatWorkClassYieldChange(int i, int j) const
+{
+	return m_paiGreatWorkClassYieldChange ? m_paiGreatWorkClassYieldChange[i][j] : 0;
 }
 //=====================================
 // CvLegacyXMLEntries
@@ -580,6 +612,7 @@ void CvPlayerLegacies::Uninit()
 {
 	SAFE_DELETE_ARRAY(m_pabHasLegacy);
 	SAFE_DELETE(m_pLegacyAI);
+	m_viPromotionNearbyGeneral.clear();
 	m_viCityYieldChange.clear();
 	m_viCityYieldModifier.clear();
 	m_viUnitRangedStrengthChanges.clear();
@@ -596,6 +629,7 @@ void CvPlayerLegacies::Uninit()
 	m_vaaiImprovementYieldChanges.clear();
 	m_vaaiImprovementYieldChangePerXWorldWonder.clear();
 	m_vaaiNearbyImprovementHealChangeByDomain.clear();
+	m_vaaiGreatWorkClassYieldChanges.clear();
 }
 // Reset
 void CvPlayerLegacies::Reset()
@@ -620,6 +654,13 @@ void CvPlayerLegacies::Reset()
 	m_iPlotCultureCostModifier = 0;
 	
 	// Arrays
+	// Promotions
+	m_viPromotionNearbyGeneral.clear();
+	m_viPromotionNearbyGeneral.resize(GC.getNumPromotionInfos());
+	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
+	{
+		m_viPromotionNearbyGeneral[iPromotion] = 0;
+	}
 	// Units
 	m_viUnitStrengthChanges.clear();
 	m_viUnitStrengthChanges.resize(GC.getNumUnitInfos());
@@ -669,6 +710,8 @@ void CvPlayerLegacies::Reset()
 	m_vaaiImprovementYieldChanges.resize(GC.getNumImprovementInfos());
 	m_vaaiImprovementYieldChangePerXWorldWonder.clear();
 	m_vaaiImprovementYieldChangePerXWorldWonder.resize(GC.getNumImprovementInfos());
+	m_vaaiGreatWorkClassYieldChanges.clear();
+	m_vaaiGreatWorkClassYieldChanges.resize(GC.getNumGreatWorkClassInfos());
 
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
 	for (unsigned int j = 0; j < NUM_YIELD_TYPES; ++j)
@@ -705,6 +748,11 @@ void CvPlayerLegacies::Reset()
 		{
 			m_vaaiImprovementYieldChanges[iImprovement] = yield;
 			m_vaaiImprovementYieldChangePerXWorldWonder[iImprovement] = yield;
+		}
+		// Great Work Class
+		for (int iGreatWorkClass = 0; iGreatWorkClass < GC.getNumGreatWorkClassInfos(); iGreatWorkClass++)
+		{
+			m_vaaiGreatWorkClassYieldChanges[iGreatWorkClass] = yield;
 		}
 	} // END NUM_YIELD_TYPES LOOP
 	m_vaaiNearbyImprovementHealChangeByDomain.clear();
@@ -744,6 +792,7 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_iPlotGoldCostModifier;
 	kStream >> m_iPlotCultureCostModifier;
 
+	kStream >> m_viPromotionNearbyGeneral;
 	kStream >> m_viCityYieldChange;
 	kStream >> m_viCityYieldModifier;
 	kStream >> m_viUnitRangedStrengthChanges;
@@ -760,6 +809,7 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_vaaiImprovementYieldChanges;
 	kStream >> m_vaaiImprovementYieldChangePerXWorldWonder;
 	kStream >> m_vaaiNearbyImprovementHealChangeByDomain;
+	kStream >> m_vaaiGreatWorkClassYieldChanges;
 
 	m_pLegacyAI->Read(kStream);
 }
@@ -782,6 +832,7 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_iPlotGoldCostModifier;
 	kStream << m_iPlotCultureCostModifier;
 
+	kStream << m_viPromotionNearbyGeneral;
 	kStream << m_viCityYieldChange;
 	kStream << m_viCityYieldModifier;
 	kStream << m_viUnitRangedStrengthChanges;
@@ -798,6 +849,7 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_vaaiImprovementYieldChanges;
 	kStream << m_vaaiImprovementYieldChangePerXWorldWonder;
 	kStream << m_vaaiNearbyImprovementHealChangeByDomain;
+	kStream << m_vaaiGreatWorkClassYieldChanges;
 
 	m_pLegacyAI->Write(kStream);
 }
@@ -980,6 +1032,15 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 				m_vaaiImprovementYieldChangePerXWorldWonder[iImprovement][iYield] += iChange;
 			}
 		}
+		// Great Work Class
+		for (int iGreatWorkClass = 0; iGreatWorkClass < GC.getNumGreatWorkClassInfos(); iGreatWorkClass++)
+		{
+			iChange = kLegacy.GetGreatWorkClassYieldChange((GreatWorkClass)iGreatWorkClass, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiGreatWorkClassYieldChanges[iGreatWorkClass][iYield] += iChange;
+			}
+		}
 	} // END NUM_YIELD_TYPES LOOP
 	for (int iDomain = 0; iDomain < NUM_DOMAIN_TYPES; iDomain++)
 	{
@@ -1013,6 +1074,11 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	{
 		m_viUnitRangedStrengthChanges[iUnit] += kLegacy.GetUnitRangedStrengthChange(iUnit);
 		m_viUnitStrengthChanges[iUnit] += kLegacy.GetUnitStrengthChange(iUnit);
+	}
+	// Promotions
+	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
+	{
+		m_viPromotionNearbyGeneral[iPromotion] += kLegacy.GetPromotionNearbyGeneral(iPromotion);
 	}
 }
 // How Much happiness per original city does the player get from legacies
@@ -1160,6 +1226,11 @@ int CvPlayerLegacies::GetBuildingClassGreatPersonPointChange(BuildingClassTypes 
 	return 0;
 }
 // BELOW HERE ARE SIMPLE GETTERS FOR PLAYER LEGACY EFFECTS AS THEY HAVE SIMPLE STORAGE
+int CvPlayerLegacies::GetPromotionNearbyGeneral(PromotionTypes ePromotion) const
+{
+	CvAssertMsg(ePromotion >= 0 && ePromotion < GC.getNumPromotionInfos(), "Promotion index out of bounds");
+	return ePromotion != NO_PROMOTION ? m_viPromotionNearbyGeneral[ePromotion] : 0;
+}
 // How much yield change does the player get for a city from legacies
 int CvPlayerLegacies::GetCityYieldChange(YieldTypes eYield) const
 {
@@ -1260,6 +1331,13 @@ int CvPlayerLegacies::GetNearbyImprovementHealChangeByDomain(ImprovementTypes eI
 	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
 	CvAssertMsg(eDomain >= 0 && eDomain < NUM_DOMAIN_TYPES, "Domain index out of bounds");
 	return eImprovement != NO_IMPROVEMENT ? m_vaaiNearbyImprovementHealChangeByDomain[(int)eImprovement][(int)eDomain] : 0;
+}
+// How much yield change does the player get for a great work class from legacies
+int CvPlayerLegacies::GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const
+{
+	CvAssertMsg(eGreatWorkClass >= 0 && eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "GreatWorkClass index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return eGreatWorkClass != NO_GREAT_WORK_CLASS ? m_vaaiGreatWorkClassYieldChanges[(int)eGreatWorkClass][(int)eYield] : 0;
 }
 
 

@@ -408,7 +408,10 @@ public:
 
 	int GetGreatWorkYieldChange(YieldTypes eYield) const;
 	void ChangeGreatWorkYieldChange(YieldTypes eYield, int iChange);
-
+#if defined(LEKMOD_LEGACY)
+	int GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const;
+	void ChangeGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield, int iChange);
+#endif
 	CvPlot* getStartingPlot() const;
 	void setStartingPlot(CvPlot* pNewValue);
 
@@ -431,17 +434,6 @@ public:
 
 	int GetHappinessFromTradeRoutes() const;
 	void DoUpdateCityConnectionHappiness();
-#if !defined(STANDARDIZE_YIELDS) // Off for now while I plot and Scheme.
-	// Create Player level yield collecting functions to retire the yield specific ones.
-	int GetTotalYieldPerTurnTimes100(YieldTypes eYield, bool bExcludeReligion = false) const; // bExcludeReligion is to prevent recursive calls.
-	int GetYieldPerTurnFromCitiesTimes100(YieldTypes eYield) const;
-	int GetYieldPerTurnFromMinorCivsTimes100(YieldTypes eYield) const;
-	int GetYieldPerTurnFromReligionTimes100(YieldTypes eYield) const;
-	int GetYieldPerTurnFromTraitsTimes100(YieldTypes eYield) const;
-	int GetYieldPerTurnFromHappinessTimes100(YieldTypes eYield) const;
-	int GetYieldPerTurnForFreeTimes100(YieldTypes eYield) const;
-	int GetYieldPerTurnFromBonusTurnsTimes100(YieldTypes eYield) const;
-#endif
 	// Culture
 
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
@@ -2373,7 +2365,9 @@ protected:
 	FAutoVariable<std::vector<bool>, CvPlayer> m_pabLoyalMember;
 
 	FAutoVariable<std::vector<bool>, CvPlayer> m_pabGetsScienceFromPlayer;
-
+#if defined(LEKMOD_LEGACY)
+	FAutoVariable< std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > >, CvPlayer> m_ppaaiGreatWorkClassYieldChange;
+#endif
 	FAutoVariable< std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > >, CvPlayer> m_ppaaiSpecialistExtraYield;
 	FAutoVariable< std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > >, CvPlayer> m_ppaaiImprovementYieldChange;
 
