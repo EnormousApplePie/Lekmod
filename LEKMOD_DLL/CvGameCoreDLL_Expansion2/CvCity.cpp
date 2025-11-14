@@ -7638,6 +7638,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 		ChangeBaseYieldRateFromBuildings(YIELD_CULTURE, (iBuildingCulture * iChange));
 #endif
 		changeCultureRateModifier(pBuildingInfo->GetCultureRateModifier() * iChange);
+#if defined(LEK_YIELD_TOURISM)
+		changeYieldRateModifier(YIELD_TOURISM, pPolicies->GetBuildingClassTourismModifier(eBuildingClass) * iChange);
+#endif
 		changePlotCultureCostModifier(pBuildingInfo->GetPlotCultureCostModifier() * iChange);
 		changePlotBuyCostModifier(pBuildingInfo->GetPlotBuyCostModifier() * iChange);
 #if !defined(STANDARDIZE_YIELDS) // Removed the pre-yield application of faith
@@ -11841,9 +11844,10 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	int iTempMod;
 #if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 #if defined(TRAITIFY)
-	int iTraitMod = GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(eIndex);
+	int iTraitMod = kPlayer.GetPlayerTraits()->GetPuppetYieldModifier(eIndex);
 #endif
 #else
+	CvPlayer& kPlayer = GET_PLAYER(getOwner());
 	const CvYieldInfo& kYield = *GC.getYieldInfo(eIndex);
 #endif
 
@@ -11879,37 +11883,63 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	}
 
 	// Player Yield Rate Modifier
-	iTempMod = GET_PLAYER(getOwner()).getYieldRateModifier(eIndex);
+	iTempMod = kPlayer.getYieldRateModifier(eIndex);
 	iModifier += iTempMod;
 	if(toolTipSink)
 		GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_PLAYER", iTempMod);
 #if defined(LEKMOD_LEGACY) // The Wide Open West. its a bit hard coded but whatever
-	if (!isCapital() && GET_PLAYER(getOwner()).GetPlayerLegacies()->GetYieldModCapitalProximity() > 0)
+	if (!isCapital() && kPlayer.GetPlayerLegacies()->GetYieldModCapitalProximity() > 0)
 	{
-		const CvCity* pCapital = GET_PLAYER(getOwner()).getCapitalCity();
+		const CvCity* pCapital = kPlayer.getCapitalCity();
 		if (pCapital)
 		{
 			const int distance = plotDistance(getX(), getY(), pCapital->getX(), pCapital->getY());
-			int iQualified = distance >= GET_PLAYER(getOwner()).GetPlayerLegacies()->GetYieldModCapitalProximity() ? 1 : -1;
+			int iQualified = distance >= kPlayer.GetPlayerLegacies()->GetYieldModCapitalProximity() ? 1 : -1;
 
-			iTempMod += (GET_PLAYER(getOwner()).GetPlayerLegacies()->GetCityYieldModifier(eIndex) * iQualified);
+			iTempMod = (kPlayer.GetPlayerLegacies()->GetCityYieldModifier(eIndex) * iQualified);
 			iModifier += iTempMod;
 			if (toolTipSink)
 				GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_LEGACY", iTempMod);
 		}
 	}
 #endif
+#if defined(LEK_YIELD_TOURISM)
+	if (YIELD_TOURISM == eIndex)
+	{
+		// Internet
+		iTempMod = kPlayer.GetInfluenceSpreadModifier(); 
+		iModifier += iTempMod;
+		if (toolTipSink && iTempMod != 0)
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_INFLUENCE", iTempMod);
+		// International Games
+		iTempMod = kPlayer.GetTourismBonusTurns() > 0 ? GC.getTEMPORARY_TOURISM_BOOST_MOD() : 0; 
+		iModifier += iTempMod;
+		if (toolTipSink && iTempMod != 0)
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_TEMPORARY", iTempMod);
+		// World Religion
+		iTempMod = GC.getGame().GetGameLeagues()->GetCityTourismModifier(getOwner(), this);
+		iModifier += iTempMod;
+		if (toolTipSink && iTempMod != 0)
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_WORLD_RELIGION", iTempMod);
+		// Brazil Trait
+		iTempMod = kPlayer.isGoldenAge() ? kPlayer.GetPlayerTraits()->GetGoldenAgeTourismModifier() : 0;
+		iModifier += iTempMod;
+		if (toolTipSink && iTempMod != 0)
+			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_CARNIVAL", iTempMod);
+	}
+	
+#endif
 	// Player Capital Yield Rate Modifier
 	if(isCapital())
 	{
-		iTempMod = GET_PLAYER(getOwner()).getCapitalYieldRateModifier(eIndex);
+		iTempMod = kPlayer.getCapitalYieldRateModifier(eIndex);
 		iModifier += iTempMod;
 		if(toolTipSink)
 			GC.getGame().BuildProdModHelpText(toolTipSink, "TXT_KEY_PRODMOD_YIELD_CAPITAL", iTempMod);
 	}
 
 	// Golden Age Yield Modifier
-	if(GET_PLAYER(getOwner()).isGoldenAge())
+	if(kPlayer.isGoldenAge())
 	{
 #if !defined(LEKMOD_PUPPET_YIELD_MOD_INFO)
 		CvYieldInfo* pYield = GC.getYieldInfo(eIndex);
@@ -12052,7 +12082,7 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra, CvString* to
 	{
 		iTempMod = kYield.getPuppetYieldModifier();
 #if defined(TRAITIFY)
-		iTempMod += GET_PLAYER(getOwner()).GetPlayerTraits()->GetPuppetYieldModifier(eIndex);
+		iTempMod += kPlayer.GetPlayerTraits()->GetPuppetYieldModifier(eIndex);
 #endif
 		iModifier += iTempMod;
 		if (iTempMod != 0 && toolTipSink)
@@ -12181,6 +12211,9 @@ int CvCity::getBaseYieldRate(YieldTypes eIndex) const
 	iValue += GetBaseYieldRateFromPolicies(eIndex);
 	iValue += GetBaseYieldRateFromThemedBuildings(eIndex);
 #endif
+#if defined(LEK_YIELD_TOURISM)
+	iValue += GetBaseYieldRateFromLandmarks(eIndex);
+#endif
 
 	return iValue;
 }
@@ -12195,7 +12228,15 @@ int CvCity::GetBaseYieldRateFromGreatWorks(YieldTypes eIndex) const
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 	return GetCityBuildings()->GetYieldFromGreatWorks(eIndex);
 }
-
+#if defined(LEK_YIELD_TOURISM)
+int CvCity::GetBaseYieldRateFromLandmarks(YieldTypes eYield) const
+{
+	VALIDATE_OBJECT
+	CvAssertMsg(eYield >= 0, "eYield expected to be >= 0");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eYield expected to be < NUM_YIELD_TYPES");
+	return GetCityBuildings()->GetYieldFromLandmarks(eYield);
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// Base yield rate from Terrain
 int CvCity::GetBaseYieldRateFromTerrain(YieldTypes eIndex) const
@@ -12453,7 +12494,7 @@ int CvCity::GetBaseYieldRateFromThemedBuildings(YieldTypes eYield) const
 	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 
-	return (eYield == YIELD_CULTURE) ? m_pCityBuildings->GetThemingBonuses() : 0;
+	return (YIELD_CULTURE == eYield || YIELD_TOURISM == eYield) ? m_pCityBuildings->GetThemingBonuses() : 0;
 }
 #endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)

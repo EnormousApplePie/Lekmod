@@ -4160,6 +4160,16 @@ int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
 		ClassChange += kPlayer.GetGreatWorkClassYieldChange(eClass, eIndex);
 		iTotalYield += iCount * ClassChange;
 	}
+#if defined(LEK_YIELD_TOURISM)
+	if (YIELD_TOURISM == eIndex)
+	{
+		// Apply Great Works tourism modifier
+		int iModifier = 100;
+		iModifier += GetGreatWorksTourismModifier();
+		iTotalYield *= iModifier;
+		iTotalYield /= 100;
+	}
+#endif
 
 	return iTotalYield;
 }
@@ -4212,6 +4222,24 @@ const std::map<GreatWorkClass, int>& CvCityBuildings::GetGreatWorkClassCounts() 
 void CvCityBuildings::SetGreatWorkCacheDirty(bool bDirty)
 {
 	m_bGreatWorkClassCountsDirty = bDirty;
+}
+#endif
+#if defined(LEK_YIELD_TOURISM)
+int CvCityBuildings::GetYieldFromLandmarks(YieldTypes eYield) const
+{
+	int iRtnValue = 0;
+	if (YIELD_TOURISM != eYield)
+		return iRtnValue;
+	int iPercent = GetLandmarksTourismPercent();
+	if (iPercent > 0)
+	{
+		iRtnValue += m_pCity->GetCityCulture()->GetCultureFromWonders();
+		iRtnValue += m_pCity->GetCityCulture()->GetCultureFromImprovements();
+		iRtnValue += m_pCity->GetCityCulture()->GetCultureFromNaturalWonders();
+		iRtnValue *= iPercent;
+		iRtnValue /= 100;
+	}
+	return iRtnValue;
 }
 #endif
 /// Accessor: How many Great Works of specific slot type present in this city?

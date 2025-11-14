@@ -197,6 +197,13 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 	szTooltip += ")";
 	szTooltip += "[NEWLINE]";
 	CvString cultureString;
+#if defined(LEKMOD_LEGACY)
+	CvPlayerCulture* pCulture = GET_PLAYER(eOwner).GetCulture();
+	int iCityID, iSlot;
+	BuildingTypes eBuilding;
+	pCulture->GetGreatWorkLocation(iIndex, iCityID, eBuilding, iSlot);
+	CvBuildingEntry* buildingInfo = GC.getBuildingInfo(eBuilding);
+#endif
 #if !defined(LEKMOD_GREAT_WORK_YIELD_EFFECTS) // redo the Yield thing, its not much better actually, but w/e
 #if defined(MISC_CHANGES) // Show Yields being Added to Great Works in the Hover Tooltip
 	int iFoodPerWork = 0;
@@ -219,6 +226,11 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 		int iYield = GET_PLAYER(eOwner).GetGreatWorkYieldChange(eYield);
 		iYield += GET_PLAYER(eOwner).GetGreatWorkClassYieldChange(pWork->m_eClassType, eYield);
 		iYield += GC.getGreatWorkClassInfo(pWork->m_eClassType)->getGreatWorkClassBaseYield(eYield);
+		//iYield += buildingInfo->GetGreatWorkYieldChange(eYield); // Building-specific yield bonus
+		int iMod = 100;
+		iMod += YIELD_TOURISM == eYield ? GET_PLAYER(eOwner).getCity(iCityID)->GetCityBuildings()->GetGreatWorksTourismModifier() : 0; // Tourism bonus from building
+		iYield *= iMod;
+		iYield /= 100;
 		if (iYield == 0)
 			continue;
 		const char* strYieldIcon = "";
@@ -255,6 +267,8 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 		}
 		cultureString += CvString::format("+%d %s ", iYield, strYieldIcon);
 	}
+	// int iHappinessFromWork = buildingInfo->GetGreatWorkHappiness(); // Building-specific yield bonus
+	//cultureString += CvString::format("+%d [ICON_TOURISM] ", iHappinessFromWork);
 #endif
 #if !defined(LEK_YIELD_TOURISM)
 	int iTourismPerWork = GC.getBASE_TOURISM_PER_GREAT_WORK();
@@ -4546,7 +4560,7 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 	{
 		return 0;
 	}
-
+#if !defined(LEKMOD_LEGACY)
 	int iBonusTourismPerGreatWork = GET_PLAYER(m_pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_EXTRA_TOURISM_PER_GREAT_WORK); // NQMP GJS - Cultural Exchange
 
 	int iBonusTourismPerWonder = GET_PLAYER(m_pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_TOURISM_PER_WONDER); // NQMP GJS - Flourishing of the Arts
@@ -4559,9 +4573,6 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 
 	iBase += m_pCity->GetCityBuildings()->GetThemingBonuses();
 
-#ifdef LEK_YIELD_TOURISM
-	iBase += m_pCity->getYieldRate(YIELD_TOURISM, false);
-#endif
 
 	int iPercent = m_pCity->GetCityBuildings()->GetLandmarksTourismPercent();
 	if (iPercent > 0)
@@ -4680,9 +4691,13 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 
 #ifdef NQ_TOURISM_PER_CITY
 	iBase += GET_PLAYER(m_pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_TOURISM_PER_CITY);
-#endif
 
 	return iBase;
+#endif
+#else
+	return m_pCity->getBaseYieldRate(YIELD_TOURISM);
+#endif
+	
 }
 
 /// What is the tourism output ignoring player-specific modifiers?
@@ -4692,6 +4707,7 @@ int CvCityCulture::GetBaseTourism() const
 int CvCityCulture::GetBaseTourism()
 #endif
 {
+#if !defined(LEKMOD_LEGACY)
 	int iBase = GetBaseTourismBeforeModifiers();
 
 	int iModifier = 0;
@@ -4742,19 +4758,19 @@ int CvCityCulture::GetBaseTourism()
 			}
 		}
 	}
-#ifdef LEK_YIELD_TOURISM
-	int iCityBaseTourismYieldRateMod = m_pCity->getBaseYieldRateModifier(YIELD_TOURISM) - 100;
-	if (iCityBaseTourismYieldRateMod != 0)
-	{
-		iModifier += iCityBaseTourismYieldRateMod;
-	}
-#endif
+
 	if (iModifier > 0)
 	{
 		iBase = iBase * (100 + iModifier) / 100;
 	}
 
 	return iBase;
+#else
+	int iBase = GetBaseTourismBeforeModifiers();
+	int iModifier = 100;
+	iModifier += m_pCity->getYieldRateModifier(YIELD_TOURISM);
+	return (iBase * iModifier) / 100;
+#endif
 }
 
 /// What is the tourism modifier for one player

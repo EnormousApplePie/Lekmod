@@ -774,6 +774,9 @@ public:
 	const std::map<GreatWorkClass, int>& GetGreatWorkClassCounts() const;
 	void SetGreatWorkCacheDirty(bool bDirty = true);
 #endif
+#if defined(LEK_YIELD_TOURISM)
+	int GetYieldFromLandmarks(YieldTypes eYield) const;
+#endif
 #ifdef AUI_WARNING_FIXES
 	uint GetNumGreatWorks() const;
 	uint GetNumGreatWorks(GreatWorkSlotType eGreatWorkSlot) const;

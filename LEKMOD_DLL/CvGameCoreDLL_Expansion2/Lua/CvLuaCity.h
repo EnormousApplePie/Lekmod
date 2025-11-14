@@ -376,7 +376,12 @@ protected:
 	static int lGetBaseYieldRate(lua_State* L);
 
 	static int lGetBaseYieldRateFromGreatWorks(lua_State* L); // NQMP GJS - Artistic Genius add support for Science from Great Works
-
+#if defined(LEK_YIELD_TOURISM)
+	static int lGetBaseYieldRateFromLandmarks(lua_State* L);
+	static int lGetCultureFromWonders(lua_State* L);
+	static int lGetCultureFromImprovements(lua_State* L);
+	static int lGetCultureFromNaturalWonders(lua_State* L);
+#endif
 	static int lGetBaseYieldRateFromTerrain(lua_State* L);
 	static int lChangeBaseYieldRateFromTerrain(lua_State* L);
 

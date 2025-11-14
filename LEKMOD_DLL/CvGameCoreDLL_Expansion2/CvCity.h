@@ -663,7 +663,9 @@ public:
 	int getBaseYieldRate(YieldTypes eIndex) const;
 
 	int GetBaseYieldRateFromGreatWorks(YieldTypes eIndex) const; // NQMP GJS - Artistic Genius fix to add science to Great Works
-
+#if defined(LEK_YIELD_TOURISM)
+	int GetBaseYieldRateFromLandmarks(YieldTypes eIndex) const;
+#endif
 	int GetBaseYieldRateFromTerrain(YieldTypes eIndex) const;
 	void ChangeBaseYieldRateFromTerrain(YieldTypes eIndex, int iChange);
 
@@ -684,8 +686,6 @@ public:
 	
 	int GetBaseYieldRateFromPolicies(YieldTypes eIndex) const;
 	void ChangeBaseYieldRateFromPolicies(YieldTypes eIndex, int iChange);
-
-	
 
 	int GetBaseYieldRateFromThemedBuildings(YieldTypes eIndex) const;
 #endif

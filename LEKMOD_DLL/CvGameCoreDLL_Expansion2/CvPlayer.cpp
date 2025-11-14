@@ -27113,6 +27113,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 					}
 				}
 #else
+				pLoopCity->changeYieldRateModifier(YIELD_TOURISM, pPolicy->GetBuildingClassTourismModifier(eBuildingClass)* iChange);
 				// Building Class Yield Stuff
 				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 				{

@@ -373,7 +373,12 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetBaseYieldRate);
 
 	Method(GetBaseYieldRateFromGreatWorks);
-
+#if defined(LEK_YIELD_TOURISM)
+	Method(GetBaseYieldRateFromLandmarks);
+	Method(GetCultureFromWonders);
+	Method(GetCultureFromImprovements);
+	Method(GetCultureFromNaturalWonders);
+#endif
 	Method(GetBaseYieldRateFromTerrain);
 	Method(ChangeBaseYieldRateFromTerrain);
 
@@ -3060,7 +3065,30 @@ int CvLuaCity::lGetBaseYieldRateFromGreatWorks(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvCity::GetBaseYieldRateFromGreatWorks);
 }
-
+#if defined(LEK_YIELD_TOURISM)
+int CvLuaCity::lGetBaseYieldRateFromLandmarks(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvCity::GetBaseYieldRateFromLandmarks);
+}
+int CvLuaCity::lGetCultureFromWonders(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	lua_pushinteger(L, pkCity->GetCityCulture()->GetCultureFromWonders());
+	return 1;
+}
+int CvLuaCity::lGetCultureFromImprovements(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	lua_pushinteger(L, pkCity->GetCityCulture()->GetCultureFromImprovements());
+	return 1;
+}
+int CvLuaCity::lGetCultureFromNaturalWonders(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	lua_pushinteger(L, pkCity->GetCityCulture()->GetCultureFromNaturalWonders());
+	return 1;
+}
+#endif
 //------------------------------------------------------------------------------
 int CvLuaCity::lGetBaseYieldRateFromTerrain(lua_State* L)
 {

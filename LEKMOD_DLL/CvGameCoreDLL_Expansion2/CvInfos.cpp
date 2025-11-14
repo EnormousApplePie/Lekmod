@@ -4438,7 +4438,7 @@ bool CvGreatWorkClassInfo::CacheResults(Database::Results& kResults, CvDatabaseU
 		return false;
 	//Arrays
 	const char* szGreatWorkClassType = GetType();
-	kUtility.SetYields(m_piBaseYield, "GreatWorkClass_Yields", "GreatWorkClassType", szGreatWorkClassType);
+	kUtility.SetYields(m_piBaseYield, "GreatWorkClasses_Yields", "GreatWorkClassType", szGreatWorkClassType);
 	return true;
 }
 #endif
