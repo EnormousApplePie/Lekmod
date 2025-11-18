@@ -202,7 +202,6 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 	int iCityID, iSlot;
 	BuildingTypes eBuilding;
 	pCulture->GetGreatWorkLocation(iIndex, iCityID, eBuilding, iSlot);
-	CvBuildingEntry* buildingInfo = GC.getBuildingInfo(eBuilding);
 #endif
 #if !defined(LEKMOD_GREAT_WORK_YIELD_EFFECTS) // redo the Yield thing, its not much better actually, but w/e
 #if defined(MISC_CHANGES) // Show Yields being Added to Great Works in the Hover Tooltip
@@ -228,7 +227,7 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 		iYield += GC.getGreatWorkClassInfo(pWork->m_eClassType)->getGreatWorkClassBaseYield(eYield);
 		//iYield += buildingInfo->GetGreatWorkYieldChange(eYield); // Building-specific yield bonus
 		int iMod = 100;
-		iMod += YIELD_TOURISM == eYield ? GET_PLAYER(eOwner).getCity(iCityID)->GetCityBuildings()->GetGreatWorksTourismModifier() : 0; // Tourism bonus from building
+		//iMod += YIELD_TOURISM == eYield ? GET_PLAYER(eOwner).getCity(iCityID)->GetCityBuildings()->GetGreatWorksTourismModifier() : 0; // Tourism bonus from building
 		iYield *= iMod;
 		iYield /= 100;
 		if (iYield == 0)
@@ -268,7 +267,7 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 		cultureString += CvString::format("+%d %s ", iYield, strYieldIcon);
 	}
 	// int iHappinessFromWork = buildingInfo->GetGreatWorkHappiness(); // Building-specific yield bonus
-	//cultureString += CvString::format("+%d [ICON_TOURISM] ", iHappinessFromWork);
+	//cultureString += CvString::format("+%d [ICON_HAPPINESS_1] ", iHappinessFromWork);
 #endif
 #if !defined(LEK_YIELD_TOURISM)
 	int iTourismPerWork = GC.getBASE_TOURISM_PER_GREAT_WORK();
@@ -2679,11 +2678,12 @@ int CvPlayerCulture::GetLastTurnInfluenceOn(PlayerTypes ePlayer) const
 /// Influence being applied each turn
 int CvPlayerCulture::GetInfluencePerTurn(PlayerTypes ePlayer) const
 {
+#if !defined(LEK_TOURISM)
 	int iRtnValue = 0;
 	int iModifier = 0;
 
-	CvPlayer &kOtherPlayer = GET_PLAYER(ePlayer);
-	CvTeam &kOtherTeam = GET_TEAM(kOtherPlayer.getTeam());
+	CvPlayer& kOtherPlayer = GET_PLAYER(ePlayer);
+	CvTeam& kOtherTeam = GET_TEAM(kOtherPlayer.getTeam());
 
 	if ((int)ePlayer != m_pPlayer->GetID() && kOtherPlayer.isAlive() && !kOtherPlayer.isMinorCiv() && kOtherTeam.isHasMet(m_pPlayer->getTeam()))
 	{
@@ -2760,7 +2760,35 @@ int CvPlayerCulture::GetInfluencePerTurn(PlayerTypes ePlayer) const
 	}
 
 	return iRtnValue;
+#else
+	int iRtnValue = 0;
+	int iModifier = 0;
+	CvPlayer& kOtherPlayer = GET_PLAYER(ePlayer);
+	CvTeam& kOtherTeam = GET_TEAM(kOtherPlayer.getTeam());
+	
+	if ((int)ePlayer != m_pPlayer->GetID() && kOtherPlayer.isAlive() && !kOtherPlayer.isMinorCiv() && kOtherTeam.isHasMet(m_pPlayer->getTeam()))
+	{
+		bool bTargetHasGreatFirewall = false;
+		// only check for firewall if the internet influence spread modifier is > 0
+		int iTechSpreadModifier = m_pPlayer->GetInfluenceSpreadModifier();
+		if (iTechSpreadModifier > 0)
+		{
 
+		}
+
+		CvCity* pCapital = kOtherPlayer.getCapitalCity();
+		if (pCapital != NULL)
+		{
+			iModifier = pCapital->GetCityCulture()->GetTourismMultiplier(kOtherPlayer.GetID(), false, false, false, false, false);
+		}
+		bool bTheInternet = (iTechSpreadModifier > 0 && !bTargetHasGreatFirewall);
+
+		iRtnValue = m_pPlayer->GetTourismPerTurnTimes100(bTheInternet);
+		iRtnValue = iRtnValue * (100 + iModifier) / 100;
+	}
+
+	return iRtnValue;
+#endif
 }
 
 /// Current influence level on this player
@@ -3161,7 +3189,11 @@ int CvPlayerCulture::GetTourism()
 	int iLoop;
 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 	{
+#if !defined(LEK_TOURISM)
 		iRtnValue += pCity->GetCityCulture()->GetBaseTourism();
+#else
+		iRtnValue += pCity->getYieldRateTimes100(YIELD_TOURISM, false);
+#endif
 	}
 
 	return iRtnValue;
@@ -4560,7 +4592,7 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 	{
 		return 0;
 	}
-#if !defined(LEKMOD_LEGACY)
+#if !defined(LEK_YIELD_TOURISM)
 	int iBonusTourismPerGreatWork = GET_PLAYER(m_pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_EXTRA_TOURISM_PER_GREAT_WORK); // NQMP GJS - Cultural Exchange
 
 	int iBonusTourismPerWonder = GET_PLAYER(m_pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_TOURISM_PER_WONDER); // NQMP GJS - Flourishing of the Arts
@@ -4707,7 +4739,7 @@ int CvCityCulture::GetBaseTourism() const
 int CvCityCulture::GetBaseTourism()
 #endif
 {
-#if !defined(LEKMOD_LEGACY)
+#if !defined(LEK_YIELD_TOURISM)
 	int iBase = GetBaseTourismBeforeModifiers();
 
 	int iModifier = 0;
@@ -4767,9 +4799,9 @@ int CvCityCulture::GetBaseTourism()
 	return iBase;
 #else
 	int iBase = GetBaseTourismBeforeModifiers();
-	int iModifier = 100;
-	iModifier += m_pCity->getYieldRateModifier(YIELD_TOURISM);
-	return (iBase * iModifier) / 100;
+	int iModifier = 0;
+	iModifier += m_pCity->getBaseYieldRateModifier(YIELD_TOURISM);
+	return iBase * iModifier / 100;
 #endif
 }
 

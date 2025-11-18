@@ -3113,7 +3113,6 @@ bool CvTeam::HavePolicyInTeam(PolicyTypes ePolicy)
 	}
 	return false;
 }
-
 //	--------------------------------------------------------------------------------
 int CvTeam::getAllowEmbassyTradingAllowedCount() const
 {

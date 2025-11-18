@@ -433,6 +433,12 @@ CvPlayer::CvPlayer() :
 	, m_eID("CvPlayer::m_eID", m_syncArchive)
 	, m_ePersonalityType("CvPlayer::m_ePersonalityType", m_syncArchive)
 	, m_aiCityYieldChange("CvPlayer::m_aiCityYieldChange", m_syncArchive)
+#if defined(LEKMOD_LEGACY)
+	, m_aiOriginalCityYieldChange("CvPlayer::m_aiOriginalCityYieldChange", m_syncArchive)
+#endif
+#if defined(TRAITIFY)
+	, m_aiConqueredCityYieldChange("CvPlayer::m_aiConqueredCityYieldChange", m_syncArchive)
+#endif
 	, m_aiCoastalCityYieldChange("CvPlayer::m_aiCoastalCityYieldChange", m_syncArchive)
 	, m_aiCapitalYieldChange("CvPlayer::m_aiCapitalYieldChange", m_syncArchive)
 	, m_aiCapitalYieldPerPopChange("CvPlayer::m_aiCapitalYieldPerPopChange", m_syncArchive)
@@ -1291,7 +1297,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 	m_aiCityYieldChange.clear();
 	m_aiCityYieldChange.resize(NUM_YIELD_TYPES, 0);
-
+#if defined(LEKMOD_LEGACY)
+	m_aiOriginalCityYieldChange.clear();
+	m_aiOriginalCityYieldChange.resize(NUM_YIELD_TYPES, 0);
+#endif
+#if defined(TRAITIFY)
+	m_aiConqueredCityYieldChange.clear();
+	m_aiConqueredCityYieldChange.resize(NUM_YIELD_TYPES, 0);
+#endif
 	m_aiCoastalCityYieldChange.clear();
 	m_aiCoastalCityYieldChange.resize(NUM_YIELD_TYPES, 0);
 
@@ -8833,12 +8846,20 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 	{
 		return false;
 	}
-
+#if defined(LEKMOD_LEGACY)
+	if(GetPlayerLegacies()->NoTrainUnit(eUnit))
+	{
+		return false;
+	}
+#endif
 	// Should we check whether this Unit has been blocked out by the civ XML?
 	if(!bIgnoreUniqueUnitStatus)
 	{
 		UnitTypes eThisPlayersUnitType = (UnitTypes) getCivilizationInfo().getCivilizationUnits(eUnitClass);
-
+#if defined(LEKMOD_LEGACY)
+		UnitTypes eLegacyUnitType = (UnitTypes) GetPlayerLegacies()->GetLegacyUnitClassOverride(eUnitClass);
+		eThisPlayersUnitType = (NO_UNIT != eLegacyUnitType) ? eLegacyUnitType : eThisPlayersUnitType;
+#endif
 		// If the player isn't allowed to train this Unit (via XML) then return false
 		if(eThisPlayersUnitType != eUnit)
 		{
@@ -8848,10 +8869,25 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 
 	if(!bIgnoreCost)
 	{
+#if !defined(LEKMOD_LEGACY)
 		if(pUnitInfo.GetProductionCost() == -1)
 		{
 			return false;
 		}
+#else
+		int iProductionCost = pUnitInfo.GetProductionCost();
+		int iLegacyCost = GetPlayerLegacies()->GetUnitCostOverride(eUnit, YIELD_PRODUCTION);
+		// Block buildings that have a base production cost of -1 and no valid override (0 = no override)
+		if (iProductionCost == -1 && iLegacyCost <= 0)
+		{
+			return false;
+		}
+		// Block buildings that have a valid production cost but an override setting them to -1
+		if (iProductionCost > -1 && iLegacyCost == -1)
+		{
+			return false;
+		}
+#endif
 	}
 
 	// One City Challenge
@@ -8875,10 +8911,20 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 	PolicyTypes ePolicy = (PolicyTypes)pUnitInfo.GetPolicyType();
 	if (ePolicy != NO_POLICY)
 	{
+#if !defined(LEKMOD_LEGACY)
 		if (!GetPlayerPolicies()->HasPolicy(ePolicy))
 		{
 			return false;
 		}
+#else
+		if(!GetPlayerLegacies()->IsUnitIgnorePolicyPrereq(eUnit))
+		{
+			if (!GetPlayerPolicies()->HasPolicy(ePolicy))
+			{
+				return false;
+			}
+		}
+#endif
 	}
 
 #if defined(MISC_CHANGES) // New Unit Unlocks
@@ -8902,7 +8948,16 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 		}
 	}
 #endif
-
+#if defined(LEKMOD_LEGACY)
+	LegacyTypes eLegacy = (LegacyTypes)pUnitInfo.GetLegacyType();
+	if (eLegacy != NO_LEGACY)
+	{
+		if (!GetPlayerLegacies()->HasLegacy(eLegacy))
+		{
+			return false;
+		}
+	}
+#endif
 	if (GC.getGame().isOption(GAMEOPTION_NO_RELIGION))
 	{
 		if (pUnitInfo.IsFoundReligion() || pUnitInfo.IsSpreadReligion() || pUnitInfo.IsRemoveHeresy())
@@ -8925,13 +8980,22 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 			}
 		}
 	}
-
+#if !defined(LEKMOD_LEGACY)
 	// Tech requirements
 	if(!(GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)(pUnitInfo.GetPrereqAndTech()))))
 	{
 		return false;
 	}
-
+#else
+	// Tech requirements
+	if(!GetPlayerLegacies()->IsUnitIgnoreTechPrereq(eUnit))
+	{
+		if (!(GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)(pUnitInfo.GetPrereqAndTech()))))
+		{
+			return false;
+		}
+	}
+#endif
 	int iI;
 	for(iI = 0; iI < GC.getNUM_UNIT_AND_TECH_PREREQS(); iI++)
 	{
@@ -9174,12 +9238,28 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	const BuildingClassTypes eBuildingClass = ((BuildingClassTypes)(pBuildingInfo.GetBuildingClassType()));
 	const CvBuildingClassInfo& kBuildingClass = pkBuildingInfo->GetBuildingClassInfo();
-
+#if !defined(LEKMOD_LEGACY)
 	// Checks to make sure civilization doesn't have an override that prevents construction of this building
-	if(getCivilizationInfo().getCivilizationBuildings(eBuildingClass) != eBuilding)
+	if (getCivilizationInfo().getCivilizationBuildings(eBuildingClass) != eBuilding)
 	{
 		return false;
 	}
+#else
+	if (GetPlayerLegacies()->NoConstructBuilding(eBuilding))
+	{
+		return false;
+	}
+	// Checks to make sure civilization doesn't have an override that prevents construction of this building
+	BuildingTypes eThisPlayersBuildingType = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
+	BuildingTypes eLegacyBuildingType = (BuildingTypes)GetPlayerLegacies()->GetLegacyBuildingClassOverride(eBuildingClass);
+	eThisPlayersBuildingType = (NO_BUILDING != eLegacyBuildingType) ? eLegacyBuildingType : eThisPlayersBuildingType;
+	// If the player isn't allowed to construct this Building (via XML) then return false
+	if (eThisPlayersBuildingType != eBuilding)
+	{
+		return false;
+	}
+#endif
+	
 #if !defined(TRAITIFY) // redo the building blocking code that is based on the buildings base production as there is now a mechanic to override it.
 	if (!bIgnoreCost)
 	{
@@ -9193,28 +9273,62 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	{
 		// Get the base production cost and any trait-based override
 		int iBaseCost = pBuildingInfo.GetProductionCost();
-		int iOverrideCost = GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
-
+		int iTraitCost = GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
+#if !defined(LEKMOD_LEGACY)
 		// Block buildings that have a base production cost of -1 and no valid override (0 = no override)
-		if (iBaseCost == -1 && iOverrideCost <= 0)
+		if (iBaseCost == -1 && iTraitCost <= 0)
 		{
 		    return false;
 		}
 		// Block buildings that have a valid production cost but an override setting them to -1
-		if (iBaseCost > -1 && iOverrideCost == -1)
+		if (iBaseCost > -1 && iTraitCost == -1)
 		{
 		    return false;
 		}
+#else
+		int iLegacyCost = GetPlayerLegacies()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
+		int iOverrideCost = 0;
+		if (iTraitCost != 0 && iLegacyCost != 0) // Both overrides exist, take the smaller one
+			iOverrideCost = std::min(iTraitCost, iLegacyCost);
+		else if (iTraitCost != 0) // Only trait override exists
+			iOverrideCost = iTraitCost;
+		else if (iLegacyCost != 0) // Only legacy override exists
+			iOverrideCost = iLegacyCost;
+		// Block buildings that have a base production cost of -1 and no valid override (0 = no override)
+		if (iBaseCost == -1 && iOverrideCost <= 0)
+		{
+			return false;
+		}
+		if (iOverrideCost < -1)
+		{
+			iOverrideCost = -1; 
+		}
+		// Block buildings that have a valid production cost but an override setting them to -1
+		if (iBaseCost > -1 && iOverrideCost == -1)
+		{
+			return false;
+		}
+#endif
 	}
 #endif
 
 	PolicyBranchTypes eBranch = (PolicyBranchTypes)pBuildingInfo.GetPolicyBranchType();
 	if (eBranch != NO_POLICY_BRANCH_TYPE)
 	{
+#if defined(LEKMOD_LEGACY)
+		if (!GetPlayerLegacies()->IsBuildingIgnorePolicyPrereq(eBuilding))
+		{
+			if (!GetPlayerPolicies()->IsPolicyBranchUnlocked(eBranch))
+			{
+				return false;
+			}
+		}
+#else
 		if (!GetPlayerPolicies()->IsPolicyBranchUnlocked(eBranch))
 		{
 			return false;
 		}
+#endif
 	}
 
 	if(!(currentTeam.GetTeamTechs()->HasTech((TechTypes)(pBuildingInfo.GetPrereqAndTech()))))
@@ -10528,7 +10642,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 		BuildingTypes eFreeBuilding = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(pBuildingInfo->GetFreeBuildingClass());
 		changeFreeBuildingCount(eFreeBuilding, iChange);
 	}
-
 	// Unit upgrade cost mod
 	ChangeUnitUpgradeCostMod(pBuildingInfo->GetUnitUpgradeCostMod() * iChange);
 
@@ -11850,7 +11963,50 @@ void CvPlayer::ChangeCityYieldChange(YieldTypes eYield, int iChange)
 		updateYield();
 	}
 }
-
+#if defined(LEKMOD_LEGACY)
+//	--------------------------------------------------------------------------------
+/// How much additional Yield does the players Original Cities produce
+int CvPlayer::GetOriginalCityYieldChange(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_aiOriginalCityYieldChange[eYield];
+}
+//	--------------------------------------------------------------------------------
+/// Changes how much additional Yield the players Original Cities produces
+void CvPlayer::ChangeOriginalCityYieldChange(YieldTypes eYield, int iChange)
+{
+	CvAssertMsg(eYield >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	if(iChange != 0)
+	{
+		m_aiOriginalCityYieldChange.setAt(eYield, m_aiOriginalCityYieldChange[eYield] + iChange);
+		updateYield();
+	}
+}
+#endif
+#if defined(TRAITIFY)
+//	--------------------------------------------------------------------------------
+/// How much additional Yield does the players Conquered Cities produce
+int CvPlayer::GetConqueredCityYieldChange(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_aiConqueredCityYieldChange[eYield];
+}
+//	--------------------------------------------------------------------------------
+/// Changes how much additional Yield the players Conquered Cities produces
+void CvPlayer::ChangeConqueredCityYieldChange(YieldTypes eYield, int iChange)
+{
+	CvAssertMsg(eYield >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	if(iChange != 0)
+	{
+		m_aiConqueredCityYieldChange.setAt(eYield, m_aiConqueredCityYieldChange[eYield] + iChange);
+		updateYield();
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 /// How much additional Yield do coastal Cities produce?
 int CvPlayer::GetCoastalCityYieldChange(YieldTypes eYield) const
@@ -13349,8 +13505,14 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 					ChangeGoldenAgeProgressMeter(iTotalValue);
 					// Consider making this push us into a GA if we reach the Threshold, but Currently that is just worse than waiting.
 					break;
-				}
 #endif
+#if defined(LEK_YIELD_TOURISM)
+				case YIELD_TOURISM:
+					GetCulture()->ChangeInfluenceOn(pKilledUnit->getOwner(), iTotalValue);
+					break;
+#endif
+				}
+
 				iNumBonuses++;
 				ReportYieldFromKill(eYield, iTotalValue, iX, iY, iNumBonuses);
 			}
@@ -13432,10 +13594,85 @@ void CvPlayer::DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConverting
 			ChangeGoldenAgeProgressMeter(iTotalValue);
 			// Consider making this push us into a GA if we reach the Threshold, but Currently that is just worse than waiting.
 			break;
+#endif
+#if defined(LEK_YIELD_TOURISM)
+		case YIELD_TOURISM:
+			GetCulture()->ChangeInfluenceOn(pPressuredCity->getOwner(), iTotalValue);
+			break;
+#endif
+		}
+
+		iNumBonuses++;
+		ReportYieldFromKill(eYield, iTotalValue, iX, iY, iNumBonuses);
+	}
+}
+#endif
+#if defined(LEKMOD_LEGACY)
+void CvPlayer::DoYieldsFromPlotBuy(CvCity* pCity, CvPlot* pPlot, int iExistingDelay, bool bGold)
+{
+	int iNumBonuses = iExistingDelay; // Passed by reference below, incremented to stagger floating text in UI
+	if (pPlot != NULL)
+	{
+		for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+		{
+			DoYieldBonusFromPlotBuy((YieldTypes)iYield, pCity ,pPlot, iNumBonuses, bGold);
+		}
+	}
+}
+void CvPlayer::DoYieldBonusFromPlotBuy(YieldTypes eYield, CvCity* pCity, CvPlot* pPlot, int& iNumBonuses, bool /*bGold*/)
+{
+	CvGame& kGame = GC.getGame();
+	CvAssertMsg(pPlot != NULL, "Purchased Plot is NULL, Please Report.");
+	if (pPlot == NULL) return;
+	CvAssertMsg(pCity != NULL, "Buying City is NULL, Please Report.");
+	if (pCity == NULL) return;
+	if (eYield == YIELD_FAITH && (kGame.isOption(GAMEOPTION_NO_RELIGION)))
+		return; // No Faith in this game, so no support for it
+#if defined(LEKMOD_v34)	// YIELD_GOLDEN_AGE_POINTS doesn't exist without v34.
+	if (eYield == YIELD_GOLDEN_AGE_POINTS && kGame.isOption(GAMEOPTION_NO_HAPPINESS))
+		return; // No Golden Ages in this game, so no support for it
+#endif
+	int iTotalValue = 0;
+	iTotalValue += GetPlayerLegacies()->GetPlotPurchaseYieldReward(eYield);
+	if (iTotalValue > 0)
+	{
+		switch (eYield)
+		{
+		case YIELD_FOOD:
+			pCity->changeFood(iTotalValue);
+		case YIELD_PRODUCTION:
+			pCity->setOverflowProduction(pCity->getOverflowProduction() + iTotalValue);
+		case YIELD_GOLD:
+			GetTreasury()->ChangeGold(iTotalValue);
+			break;
+		case YIELD_CULTURE:
+			changeJONSCulture(iTotalValue);
+#if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN) // if this is the human player, have the popup come up so that he can choose a new policy
+			if (isAlive() && isHuman() && getNumCities() > 0)
+				TestMidTurnPolicyNotification();
+#endif
+			break;
+		case YIELD_FAITH:
+			ChangeFaith(iTotalValue);
+			break;
+		case YIELD_SCIENCE:
+		{
+			TechTypes eCurrentTech = GetPlayerTechs()->GetCurrentResearch();
+			if (eCurrentTech == NO_TECH)
+				changeOverflowResearch(iTotalValue);
+			else
+				GET_TEAM(getTeam()).GetTeamTechs()->ChangeResearchProgress(eCurrentTech, iTotalValue, GetID());
+		}
+		break;
+#if defined(LEKMOD_v34) // YIELD_GOLDEN_AGE_POINTS doesn't exist without v34.
+		case YIELD_GOLDEN_AGE_POINTS:
+			ChangeGoldenAgeProgressMeter(iTotalValue);
+			// Consider making this push us into a GA if we reach the Threshold, but Currently that is just worse than waiting.
+			break;
 		}
 #endif
 		iNumBonuses++;
-		ReportYieldFromKill(eYield, iTotalValue, iX, iY, iNumBonuses);
+		ReportYieldFromKill(eYield, iTotalValue, pPlot->getX(), pPlot->getY(), iNumBonuses);
 	}
 }
 #endif
@@ -13520,6 +13757,11 @@ void CvPlayer::ReportYieldFromKill(YieldTypes eYield, int iValue, int iX, int iY
 #if defined(FULL_YIELD_FROM_KILLS) && defined(LEKMOD_v34) // Add Golden Age points for Kills, GAP is only a Yield if v34 is defined
 		case YIELD_GOLDEN_AGE_POINTS:
 			yieldString = "[COLOR_WHITE]+%d[ENDCOLOR][ICON_GOLDEN_AGE]";
+			break;
+#endif
+#if defined(LEK_YIELD_TOURISM)
+			case YIELD_TOURISM:
+			yieldString = "[COLOR_CYAN]+%d[ENDCOLOR][ICON_TOURISM]";
 			break;
 #endif
 		default:
@@ -14854,6 +15096,8 @@ int CvPlayer::GetHappinessFromLegacies() const
 			continue;
 		iHappiness += GetPlayerLegacies()->GetHappinessPerOriginalCity();
 	}
+	iHappiness += (getGreatPersonImprovementCount() * GetPlayerLegacies()->GetHappinessFromGreatImprovements());
+	iHappiness += (GetReligions()->GetNumForeignCitiesFollowing() * GetPlayerLegacies()->GetHappinessFromForeignReligiousMajority());
 	return iHappiness;
 }
 #endif
@@ -17745,7 +17989,7 @@ void CvPlayer::DoGreatPersonExpended(UnitTypes eGreatPersonUnit)
 	}
 
 #endif
-
+	DoUpdateHappiness();
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if (pkScriptSystem)
 	{
@@ -19025,7 +19269,41 @@ void CvPlayer::ChangeEnablesSSPartHurryCount(int iChange)
 		CvAssert(GetEnablesSSPartHurryCount() >= 0);
 	}
 }
+#if defined(LEK_TOURISM)
+// Tourism this is Generating, dislocating from the CvCultureClasses object since we can just import it
+int CvPlayer::GetTourismPerTurnTimes100(bool bTheInternet)
+{
+	int iTotal = 0;
 
+	// From Cities
+	iTotal += calculateTotalYield(YIELD_TOURISM);
+	// if we have the internet, but we dont want to consider it, then remove 
+	if (GetInfluenceSpreadModifier() > 0 && !bTheInternet)
+	{
+		iTotal -= (GetBaseTourismFromCities() * GetInfluenceSpreadModifier()) / 100;
+	}
+	
+	return iTotal;
+}
+// the premodified amount of tourism we are making from cities
+int CvPlayer::GetBaseTourismFromCities()
+{
+	int iBase = 0;
+
+	const CvCity* pLoopCity;
+	int iTotalYield = 0;
+	int iLoop = 0;
+
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		iTotalYield += pLoopCity->getBaseYieldRate(YIELD_TOURISM);
+	}
+
+	return iTotalYield;
+
+	return iBase;
+}
+#endif
 #ifdef NQ_DIABLE_RESISTANCE_TIME_VIA_POLICIES
 //	--------------------------------------------------------------------------------
 int CvPlayer::GetDisablesResistanceTimeCount() const
@@ -27113,7 +27391,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 					}
 				}
 #else
-				pLoopCity->changeYieldRateModifier(YIELD_TOURISM, pPolicy->GetBuildingClassTourismModifier(eBuildingClass)* iChange);
+				//pLoopCity->changeYieldRateModifier(YIELD_TOURISM, pPolicy->GetBuildingClassTourismModifier(eBuildingClass)* iChange);
 				// Building Class Yield Stuff
 				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 				{
@@ -27551,6 +27829,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 {
 	int iI, iJ, jI, jJ, iBuildingCount, iYieldMod, iYieldChange, iLoop, iTemp;
+	bool bTemp;
 	CvLegacyEntry* pLegacy = GC.getLegacyInfo(eLegacy);
 	if (pLegacy == NULL)
 		return;
@@ -27565,6 +27844,12 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 		iYield = kLegacy.GetCityYieldChange(iI) * iChange;
 		if (iYield != 0)
 			ChangeCityYieldChange(eYield, iYield * 100);
+		iYield = kLegacy.GetOriginalCityYieldChange(iI) * iChange;
+		if (iYield != 0)
+			ChangeOriginalCityYieldChange(eYield, iYield * 100);
+		iYield = kLegacy.GetConqueredCityYieldChange(iI) * iChange;
+		if (iYield != 0)
+			ChangeConqueredCityYieldChange(eYield, iYield * 100);
 		iYield = kLegacy.GetCityYieldModifier(iI) * iChange;
 		if (iYield != 0 && kLegacy.GetYieldModCapitalProximity() == 0) // If capital proximity is set, we handle this elsewhere
 			changeYieldRateModifier(eYield, iYield);
@@ -27694,13 +27979,17 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 						continue;
 					
 					iTemp = kLegacy.GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
-					if (iTemp > 0)
-						pLoopCity->changeSpecificGreatPeopleRateModifier(eSpecialist, iTemp * iBuildingCount * iChange);
 						
 					iTemp = kLegacy.GetBuildingClassGreatPersonPointChange(eBuildingClass, eSpecialist);
 					if (iTemp > 0)
 						pLoopCity->GetCityCitizens()->ChangeBuildingGreatPeopleRateChanges(eSpecialist, iTemp * iBuildingCount * iChange);
 						
+				}
+				BuildingTypes eNewBuilding = (BuildingTypes)kLegacy.GetLegacyBuildingClassOverride(eBuildingClass);
+				if (eNewBuilding != NO_BUILDING)
+				{
+					pLoopCity->GetCityBuildings()->SetNumRealBuilding(eBuilding, 0); // remove old replaced building
+					pLoopCity->GetCityBuildings()->SetNumRealBuilding(eNewBuilding, iBuildingCount); // add new replaced building
 				}
 			}
 		}
@@ -27784,7 +28073,7 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 			int iResourceChange = kLegacy.GetUnitResourceRequirementChange((int)eUnit, (int)eResource) * iChange;
 			if (iResourceChange != 0)
 			{
-				GC.getUnitInfo(eUnit)->ChangeResourceQuantityRequirement(eResource, iResourceChange* iChange);
+				GC.getUnitInfo(eUnit)->ChangeResourceQuantityRequirement(eResource, iResourceChange * iChange);
 			}
 		}
 	}
@@ -28477,6 +28766,12 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_eID;
 	kStream >> m_ePersonalityType;
 	kStream >> m_aiCityYieldChange;
+#if defined(LEKMOD_LEGACY)
+	kStream >> m_aiOriginalCityYieldChange;
+#endif
+#if defined(TRAITIFY) // Read
+	kStream >> m_aiConqueredCityYieldChange;
+#endif
 	kStream >> m_aiCoastalCityYieldChange;
 	kStream >> m_aiCapitalYieldChange;
 	kStream >> m_aiCapitalYieldPerPopChange;
@@ -29093,6 +29388,12 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_ePersonalityType;
 
 	kStream << m_aiCityYieldChange;
+#if defined(LEKMOD_LEGACY)
+	kStream << m_aiOriginalCityYieldChange;
+#endif
+#if defined(TRAITIFY) // Read
+	kStream << m_aiConqueredCityYieldChange;
+#endif
 	kStream << m_aiCoastalCityYieldChange;
 	kStream << m_aiCapitalYieldChange;
 	kStream << m_aiCapitalYieldPerPopChange;

@@ -771,8 +771,6 @@ public:
 	int GetCultureFromGreatWorks() const;
 #if defined(LEKMOD_LEGACY)
 	int GetNumGreatWorks(GreatWorkClass eGreatWorkClass) const;
-	const std::map<GreatWorkClass, int>& GetGreatWorkClassCounts() const;
-	void SetGreatWorkCacheDirty(bool bDirty = true);
 #endif
 #if defined(LEK_YIELD_TOURISM)
 	int GetYieldFromLandmarks(YieldTypes eYield) const;
@@ -847,10 +845,6 @@ private:
 	int* m_paiBuildingOriginalTime;
 	int* m_paiNumRealBuilding;
 	int* m_paiNumFreeBuilding;
-#if defined(LEKMOD_LEGACY)
-	bool m_bGreatWorkClassCountsDirty;
-	std::map<GreatWorkClass, int> m_cachedGreatWorkClassCounts;
-#endif
 /// CMP
 
 	std::vector<BuildingTypes> m_buildingsThatExistAtLeastOnce;

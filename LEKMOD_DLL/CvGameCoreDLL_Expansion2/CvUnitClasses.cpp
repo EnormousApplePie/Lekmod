@@ -75,6 +75,9 @@ CvUnitEntry::CvUnitEntry(void) :
 	m_iPolicyBranchType(NO_POLICY_BRANCH_TYPE),
 	m_bAnyIdeologyUnlock(false),
 #endif
+#if defined(LEKMOD_LEGACY)
+	m_iLegacyType(NO_LEGACY),
+#endif
 	m_iGoodyHutUpgradeUnitClass(NO_UNITCLASS),
 	m_iGroupSize(0),
 	m_iGroupDefinitions(0),
@@ -295,6 +298,10 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 #if defined(MISC_CHANGES) // CvUnitClasses
 	szTextVal = kResults.GetText("PolicyBranchType");
 	m_iPolicyBranchType = GC.getInfoTypeForString(szTextVal, true);
+#endif
+#if defined(LEKMOD_LEGACY)
+	szTextVal = kResults.GetText("LegacyType");
+	m_iLegacyType = GC.getInfoTypeForString(szTextVal, true);
 #endif
 	szTextVal = kResults.GetText("GoodyHutUpgradeUnitClass");
 	m_iGoodyHutUpgradeUnitClass = GC.getInfoTypeForString(szTextVal, true);
@@ -837,6 +844,13 @@ int CvUnitEntry::GetPolicyBranchType() const
 bool CvUnitEntry::IsAnyIdeologyUnlock() const
 {
 	return m_bAnyIdeologyUnlock;
+}
+#endif
+#if defined(LEKMOD_LEGACY)
+/// Legacy required for this unit
+int CvUnitEntry::GetLegacyType() const
+{
+	return m_iLegacyType;
 }
 #endif
 /// Unitclass that replaces this Unit if the appropriate Goody is received from a Hut

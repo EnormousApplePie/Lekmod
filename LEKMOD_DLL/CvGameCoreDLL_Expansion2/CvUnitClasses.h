@@ -98,6 +98,9 @@ public:
 	int GetPolicyBranchType() const;
 	bool IsAnyIdeologyUnlock() const;
 #endif
+#if defined(LEKMOD_LEGACY)
+	int GetLegacyType() const;
+#endif
 	int GetGoodyHutUpgradeUnitClass() const;
 	int GetGroupSize() const;			// the initial number of individuals in the unit group
 	int GetGroupDefinitions() const;	// the number of UnitMeshGroups for this unit
@@ -246,6 +249,9 @@ private:
 #if defined(MISC_CHANGES) // Member variables
 	int m_iPolicyBranchType;
 	bool m_bAnyIdeologyUnlock;
+#endif
+#if defined(LEKMOD_LEGACY)
+	int m_iLegacyType;
 #endif
 	int m_iGoodyHutUpgradeUnitClass;
 	int m_iGroupSize;

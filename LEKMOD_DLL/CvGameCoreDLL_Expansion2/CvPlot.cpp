@@ -6500,7 +6500,6 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 			{
 				CvPlayer& owningPlayer = GET_PLAYER(owningPlayerID);
 				owningPlayer.changeImprovementCount(eOldImprovement, -1);
-
 				// Maintenance change!
 				if(MustPayMaintenanceHere(owningPlayerID))
 				{
@@ -8436,6 +8435,16 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		}
 		// General city yield change from traits
 		iTemp += kPlayer.GetPlayerTraits()->GetCityYieldChange(eYield) * 100;
+#endif
+#if defined(LEKMOD_LEGACY) || defined(TRAITIFY)
+		if (pCity->getOriginalOwner() == pCity->getOwner()) // Original Owner still has it
+		{
+			iTemp += kPlayer.GetOriginalCityYieldChange(eYield);
+		}
+		if (pCity->getOriginalOwner() != pCity->getOwner()) // City has been captured
+		{
+			iTemp += kPlayer.GetConqueredCityYieldChange(eYield);
+		}
 #endif
 		// Coastal City Mod
 		if(pCity->isCoastal())

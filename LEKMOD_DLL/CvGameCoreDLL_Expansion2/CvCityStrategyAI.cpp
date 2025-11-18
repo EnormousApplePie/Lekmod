@@ -3237,9 +3237,7 @@ bool CityStrategyAIHelpers::IsTestCityStrategy_GoodGPCity(CvCity* pCity)
 
 					// City mod
 					iMod += pCity->getGreatPeopleRateModifier();
-#if defined(LEKMOD_LEGACY) // City Modifier for a Specific Specialist Type, instead of the general one
-					iMod += pCity->getSpecificGreatPeopleRateModifier(eSpecialist);
-#endif
+
 					// Player mod
 					iMod += pCity->GetPlayer()->getGreatPeopleRateModifier();
 

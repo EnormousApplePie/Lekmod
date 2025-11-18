@@ -469,6 +469,9 @@ int CvCityCitizens::GetPlotValue(CvPlot* pPlot, bool bUseAllowGrowthFlag)
 #if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
 	int iGoldenAgePointsValue = (GC.getAI_CITIZEN_VALUE_GOLDEN_AGE_POINTS() * pPlot->getYield(YIELD_GOLDEN_AGE_POINTS));
 #endif
+#if defined(LEK_YIELD_TOURISM)
+	int iTourismYieldValue = (GC.getAI_CITIZEN_VALUE_CULTURE() * pPlot->getYield(YIELD_TOURISM));
+#endif
 #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
 #ifndef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
 	iFoodYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD);
@@ -535,6 +538,12 @@ int CvCityCitizens::GetPlotValue(CvPlot* pPlot, bool bUseAllowGrowthFlag)
 	else if (eFocus == CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS)
 	{
 		iGoldenAgePointsValue *= 3;
+	}
+#endif
+#if defined(LEK_YIELD_TOURISM)
+	else if (eFocus == CITY_AI_FOCUS_TYPE_TOURISM)
+	{
+		iTourismYieldValue *= 3;
 	}
 #endif
 
@@ -1219,6 +1228,35 @@ bool CvCityCitizens::IsAIWantSpecialistRightNow()
 		}
 	}
 #endif
+#if defined(LEK_YIELD_TOURISM)
+	else if(eFocusType == CITY_AI_FOCUS_TYPE_TOURISM)
+	{
+		// Loop through all Buildings
+		for (int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+		{
+			const BuildingTypes eBuilding = (BuildingTypes)iBuildingLoop;
+			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+			if (pkBuildingInfo)
+			{
+				// Have this Building in the City?
+				if (m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+				{
+					// Can't add more than the max
+					if (IsCanAddSpecialistToBuilding(eBuilding))
+					{
+						const SpecialistTypes eSpecialist = (SpecialistTypes)pkBuildingInfo->GetSpecialistType();
+						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+						if (pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_TOURISM) > 0)
+						{
+							iWeight *= 3;
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+#endif
 
 	// specialists are cheaper somehow
 	if (m_pCity->GetPlayer()->isHalfSpecialistUnhappiness() || m_pCity->GetPlayer()->isHalfSpecialistFood())
@@ -1391,6 +1429,9 @@ int CvCityCitizens::GetSpecialistValue(SpecialistTypes eSpecialist)
 	int iFaithYieldValue = (GC.getAI_CITIZEN_VALUE_FAITH() * pPlayer->specialistYield(eSpecialist, YIELD_FAITH));
 #if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
 	int iGoldenAgePointsYieldValue = (GC.getAI_CITIZEN_VALUE_GOLDEN_AGE_POINTS() * pPlayer->specialistYield(eSpecialist, YIELD_GOLDEN_AGE_POINTS));
+#endif
+#if defined(LEK_YIELD_TOURISM)
+	int iTourismYieldValue = (GC.getAI_CITIZEN_VALUE_CULTURE() * pPlayer->specialistYield(eSpecialist, YIELD_TOURISM));
 #endif
 #ifdef AUI_CITIZENS_GET_SPECIALIST_VALUE_ACCOUNT_FOR_GURUSHIP
 	if (pReligion)
@@ -1605,6 +1646,12 @@ int CvCityCitizens::GetSpecialistValue(SpecialistTypes eSpecialist)
 	else if (eFocus == CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS)
 	{
 		iGoldenAgePointsYieldValue *= 3;
+	}
+#endif
+#if defined(LEK_YIELD_TOURISM)
+	else if (eFocus == CITY_AI_FOCUS_TYPE_TOURISM)
+	{
+		iTourismYieldValue *= 3;
 	}
 #endif
 	else if(eFocus == CITY_AI_FOCUS_TYPE_GREAT_PEOPLE)
@@ -1888,6 +1935,11 @@ bool CvCityCitizens::IsBetterThanDefaultSpecialist(SpecialistTypes eSpecialist)
 #if defined(LEKMOD_v34) //Support for the New Golden Age Points yield
 	case CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS:
 		eYield = YIELD_GOLDEN_AGE_POINTS;
+		break;
+#endif
+#if defined(LEK_YIELD_TOURISM)
+	case CITY_AI_FOCUS_TYPE_TOURISM:
+		eYield = YIELD_TOURISM;
 		break;
 #endif
 	default:
@@ -3114,9 +3166,7 @@ void CvCityCitizens::DoSpecialists()
 
 					// City mod
 					iMod += GetCity()->getGreatPeopleRateModifier();
-#if defined(LEKMOD_LEGACY)
-					iMod += GetCity()->getSpecificGreatPeopleRateModifier(eSpecialist);
-#endif
+
 					// Player mod
 					iMod += GetPlayer()->getGreatPeopleRateModifier();
 

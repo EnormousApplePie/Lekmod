@@ -35,11 +35,16 @@ public:
 	int GetYieldModCapitalProximity() const;
 	int GetPlotGoldCostModifier() const;
 	int GetPlotCultureCostModifier() const;
+	int GetHappinessFromGreatImprovements() const;
+	int GetHappinessFromForeignReligiousMajority() const;
     // Arrays
 	int IsFreePromotion(int i) const;
 	int GetPromotionNearbyGeneral(int i) const;
 	bool IsFreePromotionUnitType(const int promotionID, const int unitTypeID) const;
+	int GetPlotPurchaseYieldReward(int i) const;
 	int GetCityYieldChange(int i) const;
+	int GetOriginalCityYieldChange(int i) const;
+	int GetConqueredCityYieldChange(int i) const;
 	int GetCityYieldModifier(int i) const;
 	int GetBuildingClassProductionModifier(int i) const;
 	int GetBuildingClassHappinessChange(int i) const;
@@ -58,7 +63,19 @@ public:
 	int GetImprovementYieldChange(int i, int j) const;
 	int GetImprovementYieldChangePerXWorldWonder(int i, int j) const;
 	int GetImprovementNearbyHealChangeByDomain(int i, int j) const;
+	int GetImprovementNearbyCombatModifierByDomain(int i, int j) const;
 	int GetGreatWorkClassYieldChange(int i, int j) const;
+	bool IsNoTrainUnit(UnitTypes eUnit) const;
+	bool IsNoConstructBuilding(BuildingTypes eBuilding) const;
+	int GetLegacyUnitClassOverride(int i) const;
+	int GetLegacyBuildingClassOverride(int i) const;
+	bool IsUnitIgnoreTechPrereq(UnitTypes eUnit) const;
+	bool IsUnitIgnorePolicyPrereq(UnitTypes eUnit) const;
+	bool IsBuildingIgnoreTechPrereq(BuildingTypes eBuilding) const;
+	bool IsBuildingIgnorePolicyPrereq(BuildingTypes eBuilding) const;
+	bool IsRevealResource(ResourceTypes eResource) const;
+	int GetUnitCostOverride(int i, int j) const;
+	int GetBuildingCostOverride(int i, int j) const;
 private:
     int m_iCivilization;
     int m_iEraOffered;
@@ -69,15 +86,35 @@ private:
 	int m_iYieldModCapitalProximity;
 	int m_iPlotGoldCostModifier;
 	int m_iPlotCultureCostModifier;
+	int m_iHappinessFromGreatImprovements;
+	int m_iHappinessFromForeignReligiousMajority;
     //Arrays
-	bool* m_pbFreePromotion;
-	int* m_piPromotionNearbyGeneral;
+	// Weirdos
 	std::multimap<int, int> m_FreePromotionUnitType;
+	// 1D
+	bool* m_pbFreePromotion;
+	int* m_piPlotPurchaseYieldReward;
 	int* m_piCityYieldChange;
+	int* m_piOriginalCityYieldChange;
+	int* m_piConqueredCityYieldChange;
 	int* m_piCityYieldModifier;
 	int* m_piBuildingClassProductionModifier;
 	int* m_piBuildingClassHappinessChange;
 	int* m_piBuildingClassGlobalHappinessChange;
+	int* m_piUnitRangedStrengthChange;
+	int* m_piUnitStrengthChange;
+	int* m_piSpecialistHappinessChange;
+	int* m_piLegacyUnitClassOverride;
+	int* m_piLegacyBuildingClassOverride;
+	int* m_piPromotionNearbyGeneralUnitCombat;
+	std::vector<bool> m_pbUnitIgnoreTechPrereq;
+	std::vector<bool> m_pbUnitIgnorePolicyPrereq;
+	std::vector<bool> m_pbBuildingIgnoreTechPrereq;
+	std::vector<bool> m_pbBuildingIgnorePolicyPrereq;
+	std::vector<bool> m_abNoTrainUnit;
+	std::vector<bool> m_abNoConstructBuilding;
+	std::vector<bool> m_abRevealResource;
+	// 2D
 	int** m_paiBuildingClassYieldChange;
 	int** m_paiBuildingClassYieldModifier;
 	int** m_paiBuildingClassGreatPersonPointChange;
@@ -85,14 +122,14 @@ private:
 	int** m_paiResourceYieldChange;
 	int** m_paiResourceClassYieldChange;
 	int** m_paiUnitResourceRequirementChange;
-	int* m_piUnitRangedStrengthChange;
-	int* m_piUnitStrengthChange;
 	int** m_paiSpecialistYieldChange;
-	int* m_piSpecialistHappinessChange;
 	int** m_paiImprovementYieldChange;
 	int** m_paiImprovementYieldChangePerXWorldWonder;
 	int** m_paiImprovementNearbyHealChangeByDomain;
+	int** m_paiImprovementNearbyCombatModifierByDomain;
 	int** m_paiGreatWorkClassYieldChange;
+	int** m_paiUnitCostOverride;
+	int** m_paiBuildingCostOverride;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -161,10 +198,15 @@ public:
 	int GetYieldModCapitalProximity() const;
 	int GetPlotGoldCostModifier() const;
 	int GetPlotCultureCostModifier() const;
+	int GetHappinessFromGreatImprovements() const;
+	int GetHappinessFromForeignReligiousMajority() const;
 	// Arrays
 	bool HasFreePromotionUnitType(PromotionTypes ePromotion, UnitTypes eUnitType) const;
-	int GetPromotionNearbyGeneral(PromotionTypes ePromotion) const;
+	int GetPromotionNearbyGeneralUnitCombat(UnitCombatTypes eUnitCombat) const;
+	int GetPlotPurchaseYieldReward(YieldTypes eYield) const;
 	int GetCityYieldChange(YieldTypes eYield) const;
+	int GetOriginalCityYieldChange(YieldTypes eYield) const;
+	int GetConqueredCityYieldChange(YieldTypes eYield) const;
 	int GetCityYieldModifier(YieldTypes eYield) const;
 	int GetUnitResourceRequirementChange(UnitTypes eUnit, ResourceTypes eResource) const;
 	int GetUnitRangedStrengthChange(UnitTypes eUnit) const;
@@ -183,7 +225,19 @@ public:
 	int GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const;
 	int GetImprovementYieldChangePerXWorldWonder(ImprovementTypes eImprovement, YieldTypes eYield) const;
 	int GetNearbyImprovementHealChangeByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const;
+	int GetNearbyImprovementCombatModifierByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const;
 	int GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const;
+	bool NoTrainUnit(UnitTypes eUnit) const;
+	bool NoConstructBuilding(BuildingTypes eBuilding) const;
+	int GetLegacyUnitClassOverride(UnitClassTypes eUnitClass) const;
+	int GetLegacyBuildingClassOverride(BuildingClassTypes eBuildingClass) const;
+	bool IsUnitIgnoreTechPrereq(UnitTypes eUnit) const;
+	bool IsUnitIgnorePolicyPrereq(UnitTypes eUnit) const;
+	bool IsBuildingIgnoreTechPrereq(BuildingTypes eBuilding) const;
+	bool IsBuildingIgnorePolicyPrereq(BuildingTypes eBuilding) const;
+	bool IsRevealResource(ResourceTypes eResource) const;
+	int GetUnitCostOverride(UnitTypes eUnit, YieldTypes eYield) const;
+	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYield) const;
 private:
     bool* m_pabHasLegacy;
 	CvLegacyXMLEntries* m_pLegacies;
@@ -200,25 +254,42 @@ private:
 	int m_iYieldModCapitalProximity;
 	int m_iPlotGoldCostModifier;
 	int m_iPlotCultureCostModifier;
+	int m_iHappinessFromGreatImprovements;
+	int m_iHappinessFromForeignReligiousMajority;
 	//Arrays
+	std::vector<bool> m_vbNoTrain;
+	std::vector<bool> m_vbNoConstruct;
+	std::vector<bool> m_vbUnitIgnoreTechPrereq;
+	std::vector<bool> m_vbUnitIgnorePolicyPrereq;
+	std::vector<bool> m_vbBuildingIgnoreTechPrereq;
+	std::vector<bool> m_vbBuildingIgnorePolicyPrereq;
+	std::vector<bool> m_vbRevealResource;
+	std::vector <int> m_viPlotPurchaseYieldReward;
 	std::vector <int> m_viCityYieldChange;
+	std::vector <int> m_viOriginalCityYieldChange;
+	std::vector <int> m_viConqueredCityYieldChange;
 	std::vector <int> m_viCityYieldModifier;
 	std::vector <int> m_viBuildingClassProductionModifiers;
 	std::vector <int> m_viBuildingClassHappinessChanges;
 	std::vector <int> m_viBuildingClassGlobalHappinessChanges;
 	std::vector <int> m_viUnitRangedStrengthChanges;
 	std::vector <int> m_viUnitStrengthChanges;
-	std::vector <int> m_viPromotionNearbyGeneral;
+	std::vector <int> m_viLegacyUnitClassOverrides;
+	std::vector <int> m_viLegacyBuildingClassOverrides;
+	std::vector <int> m_viSpecialistHappinessChanges;
+	std::vector <int> m_viPromotionNearbyGeneralUnitCombat;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiUnitCostOverrides;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingCostOverrides;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiGreatWorkClassYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingClassYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingClassYieldModifiers;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiResourceYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiResourceClassYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiSpecialistYieldChanges;
-	std::vector <int> m_viSpecialistHappinessChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiImprovementYieldChanges;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiImprovementYieldChangePerXWorldWonder;
 	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementHealChangeByDomain;
+	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementCombatModifierByDomain;
 };
 #endif
 #endif //LEK_CIV5_LEGACYCLASSES_H

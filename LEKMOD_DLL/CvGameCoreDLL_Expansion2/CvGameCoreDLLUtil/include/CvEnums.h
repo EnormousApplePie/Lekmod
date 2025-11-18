@@ -2610,7 +2610,9 @@ enum CityAIFocusTypes
 #if defined(LEKMOD_v34)
 	CITY_AI_FOCUS_TYPE_GOLDEN_AGE_POINTS,
 #endif
-
+#if defined(LEK_YIELD_TOURISM)
+	CITY_AI_FOCUS_TYPE_TOURISM,
+#endif
 	NUM_CITY_AI_FOCUS_TYPES
 };
 

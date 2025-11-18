@@ -16783,21 +16783,28 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 
 	if (bOwnerIsActivePlayer)
 		DLLUI->SetDontShowPopups(false);
-#if defined(LEKMOD_LEGACY) // Gonna Do something wonky
-	IsNearUnitWithPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_GREAT_GENERAL", true /*bHideAssert*/), GC.getGREAT_GENERAL_RANGE(), false, true);
+#if defined(LEKMOD_LEGACY) // Gonna Do something wonky, probably gonna get rid of this
+	if (IsNearUnitWithPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_GREAT_GENERAL", true /*bHideAssert*/), GC.getGREAT_GENERAL_RANGE(), false, true))
 	{
-		for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+		// This returns an ID of the legacy promotion for our unit combat type, or NO_PROMOTION
+		PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneralUnitCombat(getUnitCombatType());
+		if (eLegacyPromotion != NO_PROMOTION)
 		{
-			PromotionTypes ePromotion = (PromotionTypes)iI;
-			if (ePromotion == NO_PROMOTION)
-				continue;
-			PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneral(ePromotion);
-			if (eLegacyPromotion != NO_PROMOTION)
+			if (!isHasPromotion(eLegacyPromotion)) // We don't have it, so give it
 			{
-				if (isHasPromotion(eLegacyPromotion))
-				{
-					setHasPromotion(eLegacyPromotion, true);
-				}
+				setHasPromotion(eLegacyPromotion, true);
+			}
+		}
+	}
+	else // Not near a general, so remove any legacy promotions we have from them
+	{
+		// This returns an ID of the legacy promotion for our unit combat type, or NO_PROMOTION
+		PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneralUnitCombat(getUnitCombatType());
+		if (eLegacyPromotion != NO_PROMOTION)
+		{
+			if (isHasPromotion(eLegacyPromotion) && !IsPromotionChosenByPlayer(eLegacyPromotion)) // Not chosen by player, so remove it
+			{
+				setHasPromotion(eLegacyPromotion, false);
 			}
 		}
 	}
@@ -19254,6 +19261,7 @@ int CvUnit::GetReverseGreatGeneralModifier()const
 int CvUnit::GetNearbyImprovementModifier()const
 {
 	VALIDATE_OBJECT
+#if !defined(LEKMOD_LEGACY)
 	CvPlayer& kPlayer = GET_PLAYER(m_eOwner);
 	int iImprovementRange = kPlayer.GetPlayerTraits()->GetNearbyImprovementBonusRange();
 	int iImprovementModifier = kPlayer.GetPlayerTraits()->GetNearbyImprovementCombatBonus();
@@ -19296,6 +19304,41 @@ int CvUnit::GetNearbyImprovementModifier()const
 	}
 
 	return 0;
+#else
+	CvPlayer& kPlayer = GET_PLAYER(m_eOwner);
+	int iTotalMod = 0;
+	int iLegacyMod = 0;
+	int iTemp = 0;
+	int iImprovementRange = kPlayer.GetPlayerTraits()->GetNearbyImprovementBonusRange();
+	int iImprovementModifier = kPlayer.GetPlayerTraits()->GetNearbyImprovementCombatBonus();
+	ImprovementTypes eTraitImprovement = kPlayer.GetPlayerTraits()->GetCombatBonusImprovementType();
+	
+	if(IsNearImprovementType(eTraitImprovement, iImprovementRange, false))
+	{
+		iTotalMod += iImprovementModifier;
+	}
+	for (int iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+	{
+		ImprovementTypes eImprovement = (ImprovementTypes)iI;
+		iTemp = kPlayer.GetPlayerLegacies()->GetNearbyImprovementCombatModifierByDomain(eImprovement, getDomainType());
+		if (iTemp != 0)
+		{
+			if (IsNearImprovementType(eImprovement, 1, true))
+			{
+				if (iTemp > iLegacyMod) // only take the best legacy improvement
+				{
+					iLegacyMod = iTemp;
+				}
+			}
+		}
+	}
+	// If we found a legacy mod, apply it
+	if (iLegacyMod != 0)
+	{
+		iTotalMod += iLegacyMod;
+	}
+	return iTotalMod;
+#endif
 }
 
 //	--------------------------------------------------------------------------------

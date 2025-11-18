@@ -1155,6 +1155,7 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // 
 // Legacies, for now.
 #define LEKMOD_LEGACY
+#define LEK_TOURISM
 
 #define NOTIFICATION_CHOOSE_LEGACY 3773863721
 #define NOTIFICATION_LEGACY_CHOSEN 2089163589
@@ -1175,7 +1176,7 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 //EAP: AI will now use workers like workboats CURRENTLY NOT WORKING
 //#define AI_WORKER_EMBARKED_FIX
 //EAP: Add Tourism as an actual yield (for buildings etc) CURRENTLY NOT WORKING
-#define LEK_YIELD_TOURISM
+//#define LEK_YIELD_TOURISM
 
 /// EAP: Some stuff related to the above
 #define RING0_PLOTS											(1)

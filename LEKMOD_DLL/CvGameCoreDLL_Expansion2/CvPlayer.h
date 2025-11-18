@@ -396,7 +396,14 @@ public:
 #endif
 	int GetCityYieldChange(YieldTypes eYield) const;
 	void ChangeCityYieldChange(YieldTypes eYield, int iChange);
-
+#if defined(LEKMOD_LEGACY)
+	int GetOriginalCityYieldChange(YieldTypes eYield) const;
+	void ChangeOriginalCityYieldChange(YieldTypes eYield, int iChange);
+#endif
+#if defined(TRAITIFY)
+	int GetConqueredCityYieldChange(YieldTypes eYield) const;
+	void ChangeConqueredCityYieldChange(YieldTypes eYield, int iChange);
+#endif
 	int GetCoastalCityYieldChange(YieldTypes eYield) const;
 	void ChangeCoastalCityYieldChange(YieldTypes eYield, int iChange);
 
@@ -545,6 +552,10 @@ public:
 #if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION)
 	void DoYieldsFromConversion(CvUnit* pConvertingUnit, CvCity* pPressuredCity, int iFollowerDelta, bool bMajority, int iX, int iY, int iExistingDelay);
 	void DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConvertingUnit, CvCity* pPressuredCity, int iFollowerDelta, bool bMajority, int iX, int iY, int& iNumBonuses);
+#endif
+#if defined(LEKMOD_LEGACY)
+	void DoYieldsFromPlotBuy(CvCity* pCity, CvPlot* pPlot, int iExistingDelay, bool bGold);
+	void DoYieldBonusFromPlotBuy(YieldTypes eYield, CvCity* pCity, CvPlot* pPlot, int& iNumBonuses, bool bGold);
 #endif
 #if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN)
 	void TestMidTurnPolicyNotification();
@@ -1064,7 +1075,10 @@ public:
 	int GetEnablesSSPartHurryCount() const;
 	bool IsEnablesSSPartHurry() const;
 	void ChangeEnablesSSPartHurryCount(int iChange);
-
+#if defined(LEK_TOURISM)
+	int GetTourismPerTurnTimes100(bool bTheInternet);
+	int GetBaseTourismFromCities();
+#endif
 #ifdef NQ_DIABLE_RESISTANCE_TIME_VIA_POLICIES
 	int GetDisablesResistanceTimeCount() const;
 	bool IsDisablesResistanceTime() const;
@@ -2294,6 +2308,12 @@ protected:
 	FAutoVariable<bool, CvPlayer> m_bAlliesGreatPersonBiasApplied;
 
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiCityYieldChange;
+#if defined(LEKMOD_LEGACY)
+	FAutoVariable<std::vector<int>, CvPlayer> m_aiOriginalCityYieldChange;
+#endif
+#if defined(TRAITIFY)
+	FAutoVariable<std::vector<int>, CvPlayer> m_aiConqueredCityYieldChange;
+#endif
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiCoastalCityYieldChange;
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiCapitalYieldChange;
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiCapitalYieldPerPopChange;

@@ -27,8 +27,16 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_iYieldModCapitalProximity(0),
 	m_iPlotGoldCostModifier(0),
 	m_iPlotCultureCostModifier(0),
+	m_iHappinessFromGreatImprovements(0),
+	m_iHappinessFromForeignReligiousMajority(0),
 
-	
+	m_piOriginalCityYieldChange(NULL),
+	m_piConqueredCityYieldChange(NULL),
+	m_paiBuildingCostOverride(NULL),
+	m_paiUnitCostOverride(NULL),
+	m_piLegacyBuildingClassOverride(NULL),
+	m_piLegacyUnitClassOverride(NULL),
+	m_piPlotPurchaseYieldReward(NULL),
 	m_piCityYieldChange(NULL),
 	m_piCityYieldModifier(NULL),
 	m_piBuildingClassProductionModifier(NULL),
@@ -48,7 +56,8 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_paiImprovementYieldChange(NULL),
 	m_paiImprovementYieldChangePerXWorldWonder(NULL),
 	m_paiImprovementNearbyHealChangeByDomain(NULL),
-	m_piPromotionNearbyGeneral(NULL),
+	m_paiImprovementNearbyCombatModifierByDomain(NULL),
+	m_piPromotionNearbyGeneralUnitCombat(NULL),
 	m_paiGreatWorkClassYieldChange(NULL),
 	m_pbFreePromotion(NULL)
 {
@@ -57,26 +66,34 @@ CvLegacyEntry::CvLegacyEntry(void) :
 CvLegacyEntry::~CvLegacyEntry(void)
 {
 	SAFE_DELETE_ARRAY(m_pbFreePromotion);
-	SAFE_DELETE_ARRAY(m_piPromotionNearbyGeneral);
+	SAFE_DELETE_ARRAY(m_piLegacyBuildingClassOverride);
+	SAFE_DELETE_ARRAY(m_piLegacyUnitClassOverride);
+	SAFE_DELETE_ARRAY(m_piPlotPurchaseYieldReward);
 	SAFE_DELETE_ARRAY(m_piCityYieldChange);
+	SAFE_DELETE_ARRAY(m_piOriginalCityYieldChange);
+	SAFE_DELETE_ARRAY(m_piConqueredCityYieldChange);
 	SAFE_DELETE_ARRAY(m_piCityYieldModifier);
 	SAFE_DELETE_ARRAY(m_piBuildingClassProductionModifier);
 	SAFE_DELETE_ARRAY(m_piBuildingClassHappinessChange);
 	SAFE_DELETE_ARRAY(m_piBuildingClassGlobalHappinessChange);
-	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassGreatPersonPointModifier);
-	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassGreatPersonPointChange);
-	CvDatabaseUtility::SafeDelete2DArray(m_paiUnitResourceRequirementChange);
 	SAFE_DELETE_ARRAY(m_piUnitRangedStrengthChange);
 	SAFE_DELETE_ARRAY(m_piUnitStrengthChange);
+	SAFE_DELETE_ARRAY(m_piSpecialistHappinessChange);
+	SAFE_DELETE_ARRAY(m_piPromotionNearbyGeneralUnitCombat);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingCostOverride);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiUnitCostOverride);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassYieldModifier);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiResourceYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiResourceClassYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiSpecialistYieldChange);
-	SAFE_DELETE_ARRAY(m_piSpecialistHappinessChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassGreatPersonPointModifier);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassGreatPersonPointChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiUnitResourceRequirementChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementYieldChangePerXWorldWonder);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementNearbyHealChangeByDomain);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementNearbyCombatModifierByDomain);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiGreatWorkClassYieldChange);
 }
 
@@ -99,16 +116,293 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iYieldModCapitalProximity = kResults.GetInt("YieldModCapitalProximity");
 	m_iPlotGoldCostModifier = kResults.GetInt("PlotGoldCostModifier");
 	m_iPlotCultureCostModifier = kResults.GetInt("PlotCultureCostModifier");
+	m_iHappinessFromGreatImprovements = kResults.GetInt("HappinessFromGreatImprovements");
+	m_iHappinessFromForeignReligiousMajority = kResults.GetInt("HappinessFromForeignReligiousMajority");
 
 	// Arrays Start.
 	const char* szLegacyType = GetType();
-	kUtility.SetYields(m_piCityYieldChange, "Legacy_CityYieldChange", "LegacyType", szLegacyType);
+	kUtility.SetYields(m_piPlotPurchaseYieldReward, "Legacy_PlotPurchaseYieldReward", "LegacyType", szLegacyType);
 	kUtility.PopulateArrayByValue(m_piCityYieldModifier, "Yields", "Legacy_CityYieldModifier", "YieldType", "LegacyType", szLegacyType, "Modifier");
 	kUtility.PopulateArrayByExistence(m_pbFreePromotion, "UnitPromotions", "Legacy_FreePromotions", "PromotionType", "LegacyType", szLegacyType);
-	kUtility.PopulateArrayByExistence(m_piPromotionNearbyGeneral, "UnitPromotions", "Legacy_FreePromotionNearbyGeneral", "PromotionType", "LegacyType", szLegacyType);
 	kUtility.PopulateArrayByValue(m_piBuildingClassProductionModifier, "BuildingClasses", "Legacy_BuildingClassProductionModifiers", "BuildingClassType", "LegacyType", szLegacyType, "Modifier");
 	kUtility.PopulateArrayByValue(m_piSpecialistHappinessChange, "Specialists", "Legacy_SpecialistHappinessChange", "SpecialistType", "LegacyType", szLegacyType, "HappinessTimes100");
 	// Complex/Compound Arrays
+	{
+		kUtility.Initialize2DArray(m_paiImprovementNearbyCombatModifierByDomain, "Improvements", "Domains");
+		std::string strKey("Legacy_ImprovementNearbyCombatModifierByDomain");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Improvements.ID as ImprovementID, Domains.ID as DomainID, CombatModifier FROM Legacy_ImprovementNearbyCombatModifierByDomain "
+				"INNER JOIN Improvements ON Improvements.Type = ImprovementType "
+				"INNER JOIN Domains ON Domains.Type = DomainType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int improvement = pResults->GetInt(0);
+			const int domain = pResults->GetInt(1);
+			const int combatModifier = pResults->GetInt(2);
+			m_paiImprovementNearbyCombatModifierByDomain[improvement][domain] = combatModifier;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.InitializeArray(m_piCityYieldChange, "Yields");
+		kUtility.InitializeArray(m_piOriginalCityYieldChange, "Yields");
+		kUtility.InitializeArray(m_piConqueredCityYieldChange, "Yields");
+		std::string strKey("Legacy_CityYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Yields.ID as YieldID, CityYieldChange, OriginalCityYieldChange, ConqueredCityYieldChange FROM Legacy_CityYieldChanges "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int yield = pResults->GetInt(0);
+			const int cityYieldChange = pResults->GetInt(1);
+			const int originalCityYieldChange = pResults->GetInt(2);
+			const int conqueredCityYieldChange = pResults->GetInt(3);
+			m_piCityYieldChange[yield] = cityYieldChange;
+			m_piOriginalCityYieldChange[yield] = originalCityYieldChange;
+			m_piConqueredCityYieldChange[yield] = conqueredCityYieldChange;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.Initialize2DArray(m_paiBuildingCostOverride, "Buildings", "Yields");
+		std::string strKey("Legacy_BuildingCostOverride");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Buildings.ID as BuildingID, Yields.ID as YieldID, CostOverride FROM Legacy_BuildingCostOverride "
+				"INNER JOIN Buildings ON Buildings.Type = BuildingType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int building = pResults->GetInt(0);
+			const int yield = pResults->GetInt(1);
+			const int costOverride = pResults->GetInt(2);
+			m_paiBuildingCostOverride[building][yield] = costOverride;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.Initialize2DArray(m_paiUnitCostOverride, "Units", "Yields");
+		std::string strKey("Legacy_UnitCostOverride");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Units.ID as UnitID, Yields.ID as YieldID, CostOverride FROM Legacy_UnitCostOverride "
+				"INNER JOIN Units ON Units.Type = UnitType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int unit = pResults->GetInt(0);
+			const int yield = pResults->GetInt(1);
+			const int costOverride = pResults->GetInt(2);
+			m_paiUnitCostOverride[unit][yield] = costOverride;
+		}
+		pResults->Reset();
+	}
+	{
+		for (int iResource = 0; iResource < GC.getNumResourceInfos(); iResource++)
+		{
+			m_abRevealResource.push_back(false);
+		}
+		std::string strKey("Legacy_RevealResource");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Resources.ID as ResourceID FROM Legacy_RevealResource "
+				"INNER JOIN Resources ON Resources.Type = ResourceType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int resource = pResults->GetInt(0);
+			m_abRevealResource[resource] = true;
+		}
+		pResults->Reset();
+	}
+	{
+		for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
+		{
+			m_pbBuildingIgnorePolicyPrereq.push_back(false);
+			m_pbBuildingIgnoreTechPrereq.push_back(false);
+		}
+		std::string strKey("Legacy_BuildingIgnorePrereqs");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Buildings.ID as BuildingID, IgnorePolicyPrereq, IgnoreTechPrereq FROM Legacy_BuildingIgnorePrereqs "
+				"INNER JOIN Buildings ON Buildings.Type = BuildingType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int building = pResults->GetInt(0);
+			const bool bIgnorePolicy = pResults->GetBool(1);
+			const bool bIgnoreTech = pResults->GetBool(2);
+			m_pbBuildingIgnorePolicyPrereq[building] = bIgnorePolicy;
+			m_pbBuildingIgnoreTechPrereq[building] = bIgnoreTech;
+		}
+		pResults->Reset();
+	}
+	{
+		for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
+		{
+			m_pbUnitIgnorePolicyPrereq.push_back(false);
+			m_pbUnitIgnoreTechPrereq.push_back(false);
+		}
+		std::string strKey("Legacy_UnitIgnorePrereqs");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Units.ID as UnitID, IgnorePolicyPrereq, IgnoreTechPrereq FROM Legacy_UnitIgnorePrereqs "
+				"INNER JOIN Units ON Units.Type = UnitType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int unit = pResults->GetInt(0);
+			const bool bIgnorePolicy = pResults->GetBool(1);
+			const bool bIgnoreTech = pResults->GetBool(2);
+			m_pbUnitIgnorePolicyPrereq[unit] = bIgnorePolicy;
+			m_pbUnitIgnoreTechPrereq[unit] = bIgnoreTech;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.InitializeArray(m_piLegacyBuildingClassOverride, "BuildingClasses", -1);
+		std::string strKey("Legacy_BuildingClassOverride");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT BuildingClasses.ID as BuildingClassID, COALESCE(Buildings.ID, -1) as BuildingID FROM Legacy_BuildingClassOverride "
+				"INNER JOIN BuildingClasses ON BuildingClasses.Type = BuildingClassType "
+				"INNER JOIN Buildings ON Buildings.Type = BuildingType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int buildingClass = pResults->GetInt(0);
+			const int building = pResults->GetInt(1);
+			m_piLegacyBuildingClassOverride[buildingClass] = building;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.InitializeArray(m_piLegacyUnitClassOverride, "UnitClasses", -1);
+		std::string strKey("Legacy_UnitClassOverride");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT UnitClasses.ID as UnitClassID, COALESCE(Units.ID, -1) as UnitID FROM Legacy_UnitClassOverride "
+				"INNER JOIN UnitClasses ON UnitClasses.Type = UnitClassType "
+				"INNER JOIN Units ON Units.Type = UnitType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int unitClass = pResults->GetInt(0);
+			const int unit = pResults->GetInt(1);
+			m_piLegacyUnitClassOverride[unitClass] = unit;
+		}
+		pResults->Reset();
+	}
+	// No Construct
+	{
+		for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
+		{
+			m_abNoConstructBuilding.push_back(false);
+		}
+
+		std::string strKey("Legacy_NoConstructBuilding");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Buildings.ID as BuildingID FROM Legacy_NoConstructBuilding "
+				"INNER JOIN Buildings ON Buildings.Type = BuildingType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int building = pResults->GetInt(1);
+			m_abNoConstructBuilding[building] = true;
+		}
+		pResults->Reset();
+	}
+	// No Train
+	{
+		for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
+		{
+			m_abNoTrainUnit.push_back(false);
+		}
+		std::string strKey("Legacy_NoTrainUnit");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Units.ID as UnitID FROM Legacy_NoTrainUnit "
+				"INNER JOIN Units ON Units.Type = UnitType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int unit = pResults->GetInt(1);
+			m_abNoTrainUnit[unit] = true;
+		}
+		pResults->Reset();
+	}
+	{
+		kUtility.InitializeArray(m_piPromotionNearbyGeneralUnitCombat, "UnitCombatInfos");
+		std::string strKey("Legacy_FreePromotionNearbyGeneral");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT UnitCombatInfos.ID as UnitCombatID, UnitPromotions.ID as PromotionID FROM Legacy_FreePromotionNearbyGeneral "
+				"INNER JOIN UnitPromotions ON UnitPromotions.Type = PromotionType "
+				"INNER JOIN UnitCombatInfos ON UnitCombatInfos.Type = UnitCombatType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int iUnitCombat = pResults->GetInt(2);
+			const int iPromotion = pResults->GetInt(1);
+			m_piPromotionNearbyGeneralUnitCombat[iUnitCombat] = iPromotion;
+		}
+		pResults->Reset();
+	}
 	{
 		kUtility.Initialize2DArray(m_paiGreatWorkClassYieldChange, "GreatWorkClasses", "Yields");
 		std::string strKey("Legacy_GreatWorkClassYieldChange");
@@ -427,7 +721,51 @@ int CvLegacyEntry::GetPlotCultureCostModifier() const
 {
 	return m_iPlotCultureCostModifier;
 }
+int CvLegacyEntry::GetHappinessFromGreatImprovements() const
+{
+	return m_iHappinessFromGreatImprovements;
+}
+int CvLegacyEntry::GetHappinessFromForeignReligiousMajority() const
+{
+	return m_iHappinessFromForeignReligiousMajority;
+}
 // ARRAYS
+bool CvLegacyEntry::IsRevealResource(ResourceTypes eResource) const
+{
+	return NO_RESOURCE != eResource ? m_abRevealResource[eResource] : false;
+}
+bool CvLegacyEntry::IsNoTrainUnit(UnitTypes eUnit) const
+{
+	return NO_UNIT != eUnit ? m_abNoTrainUnit[eUnit] : false;
+}
+bool CvLegacyEntry::IsNoConstructBuilding(BuildingTypes eBuilding) const
+{
+	return NO_BUILDING != eBuilding ? m_abNoConstructBuilding[eBuilding] : false;
+}
+int CvLegacyEntry::GetLegacyBuildingClassOverride(int i) const
+{
+	return m_piLegacyBuildingClassOverride ? m_piLegacyBuildingClassOverride[i] : -1;
+}
+bool CvLegacyEntry::IsBuildingIgnorePolicyPrereq(BuildingTypes eBuilding) const
+{
+	return NO_BUILDING != eBuilding ? m_pbBuildingIgnorePolicyPrereq[eBuilding] : false;
+}
+bool CvLegacyEntry::IsBuildingIgnoreTechPrereq(BuildingTypes eBuilding) const
+{
+	return NO_BUILDING != eBuilding ? m_pbBuildingIgnoreTechPrereq[eBuilding] : false;
+}
+int CvLegacyEntry::GetLegacyUnitClassOverride(int i) const
+{
+	return m_piLegacyUnitClassOverride ? m_piLegacyUnitClassOverride[i] : -1;
+}
+bool CvLegacyEntry::IsUnitIgnorePolicyPrereq(UnitTypes eUnit) const
+{
+	return NO_UNIT != eUnit ? m_pbUnitIgnorePolicyPrereq[eUnit] : false;
+}
+bool CvLegacyEntry::IsUnitIgnoreTechPrereq(UnitTypes eUnit) const
+{
+	return NO_UNIT != eUnit ? m_pbUnitIgnoreTechPrereq[eUnit] : false;
+}
 int CvLegacyEntry::IsFreePromotion(int i) const
 {
 	return m_pbFreePromotion ? m_pbFreePromotion[i] : -1;
@@ -452,13 +790,25 @@ bool CvLegacyEntry::IsFreePromotionUnitType(const int promotionID, const int uni
 
 	return false;
 }
+int CvLegacyEntry::GetPlotPurchaseYieldReward(int i) const
+{
+	return m_piPlotPurchaseYieldReward ? m_piPlotPurchaseYieldReward[i] : 0;
+}
 int CvLegacyEntry::GetPromotionNearbyGeneral(int i) const
 {
-	return m_piPromotionNearbyGeneral ? m_piPromotionNearbyGeneral[i] : -1;
+	return m_piPromotionNearbyGeneralUnitCombat ? m_piPromotionNearbyGeneralUnitCombat[i] : -1;
 }
 int CvLegacyEntry::GetCityYieldChange(int i) const
 {
 	return m_piCityYieldChange ? m_piCityYieldChange[i] : 0;
+}
+int CvLegacyEntry::GetOriginalCityYieldChange(int i) const
+{
+	return m_piOriginalCityYieldChange ? m_piOriginalCityYieldChange[i] : 0;
+}
+int CvLegacyEntry::GetConqueredCityYieldChange(int i) const
+{
+	return m_piConqueredCityYieldChange ? m_piConqueredCityYieldChange[i] : 0;
 }
 int CvLegacyEntry::GetCityYieldModifier(int i) const
 {
@@ -524,6 +874,10 @@ int CvLegacyEntry::GetImprovementNearbyHealChangeByDomain(int i, int j) const
 {
 	return m_paiImprovementNearbyHealChangeByDomain ? m_paiImprovementNearbyHealChangeByDomain[i][j] : 0;
 }
+int CvLegacyEntry::GetImprovementNearbyCombatModifierByDomain(int i, int j) const
+{
+	return m_paiImprovementNearbyCombatModifierByDomain ? m_paiImprovementNearbyCombatModifierByDomain[i][j] : 0;
+}
 int CvLegacyEntry::GetBuildingClassGreatPersonPointModifier(int i, int j) const
 {
 	return m_paiBuildingClassGreatPersonPointModifier ? m_paiBuildingClassGreatPersonPointModifier[i][j] : 0;
@@ -535,6 +889,14 @@ int CvLegacyEntry::GetBuildingClassGreatPersonPointChange(int i, int j) const
 int CvLegacyEntry::GetGreatWorkClassYieldChange(int i, int j) const
 {
 	return m_paiGreatWorkClassYieldChange ? m_paiGreatWorkClassYieldChange[i][j] : 0;
+}
+int CvLegacyEntry::GetBuildingCostOverride(int i, int j) const
+{
+	return m_paiBuildingCostOverride ? m_paiBuildingCostOverride[i][j] : -1;
+}
+int CvLegacyEntry::GetUnitCostOverride(int i, int j) const
+{
+	return m_paiUnitCostOverride ? m_paiUnitCostOverride[i][j] : -1;
 }
 //=====================================
 // CvLegacyXMLEntries
@@ -612,14 +974,26 @@ void CvPlayerLegacies::Uninit()
 {
 	SAFE_DELETE_ARRAY(m_pabHasLegacy);
 	SAFE_DELETE(m_pLegacyAI);
-	m_viPromotionNearbyGeneral.clear();
+	m_vbRevealResource.clear();
+	m_viLegacyBuildingClassOverrides.clear();
+	m_vbBuildingIgnorePolicyPrereq.clear();
+	m_vbBuildingIgnoreTechPrereq.clear();
+	m_viLegacyUnitClassOverrides.clear();
+	m_vbUnitIgnorePolicyPrereq.clear();
+	m_vbUnitIgnoreTechPrereq.clear();
+	m_vbNoConstruct.clear();
+	m_vbNoTrain.clear();
+	m_viPlotPurchaseYieldReward.clear();
 	m_viCityYieldChange.clear();
+	m_viOriginalCityYieldChange.clear();
+	m_viConqueredCityYieldChange.clear();
 	m_viCityYieldModifier.clear();
 	m_viUnitRangedStrengthChanges.clear();
 	m_viUnitStrengthChanges.clear();
 	m_viBuildingClassProductionModifiers.clear();
 	m_viBuildingClassHappinessChanges.clear();
 	m_viBuildingClassGlobalHappinessChanges.clear();
+	m_viPromotionNearbyGeneralUnitCombat.clear();
 	m_vaaiBuildingClassYieldChanges.clear();
 	m_vaaiBuildingClassYieldModifiers.clear();
 	m_vaaiResourceYieldChanges.clear();
@@ -629,7 +1003,10 @@ void CvPlayerLegacies::Uninit()
 	m_vaaiImprovementYieldChanges.clear();
 	m_vaaiImprovementYieldChangePerXWorldWonder.clear();
 	m_vaaiNearbyImprovementHealChangeByDomain.clear();
+	m_vaaiNearbyImprovementCombatModifierByDomain.clear();
 	m_vaaiGreatWorkClassYieldChanges.clear();
+	m_vaaiBuildingCostOverrides.clear();
+	m_vaaiUnitCostOverrides.clear();
 }
 // Reset
 void CvPlayerLegacies::Reset()
@@ -652,24 +1029,55 @@ void CvPlayerLegacies::Reset()
 	m_iYieldModCapitalProximity = 0;
 	m_iPlotGoldCostModifier = 0;
 	m_iPlotCultureCostModifier = 0;
+	m_iHappinessFromGreatImprovements = 0;
+	m_iHappinessFromForeignReligiousMajority = 0;
 	
 	// Arrays
-	// Promotions
-	m_viPromotionNearbyGeneral.clear();
-	m_viPromotionNearbyGeneral.resize(GC.getNumPromotionInfos());
-	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
+	// Resources
+	m_vbRevealResource.clear();
+	m_vbRevealResource.resize(GC.getNumResourceInfos());
+	for (int iResource = 0; iResource < GC.getNumResourceInfos(); iResource++)
 	{
-		m_viPromotionNearbyGeneral[iPromotion] = 0;
+		m_vbRevealResource[iResource] = false;
 	}
 	// Units
 	m_viUnitStrengthChanges.clear();
 	m_viUnitStrengthChanges.resize(GC.getNumUnitInfos());
 	m_viUnitRangedStrengthChanges.clear();
 	m_viUnitRangedStrengthChanges.resize(GC.getNumUnitInfos());
+	m_vbNoTrain.clear();
+	m_vbNoTrain.resize(GC.getNumUnitInfos());
+	m_vbUnitIgnorePolicyPrereq.clear();
+	m_vbUnitIgnorePolicyPrereq.resize(GC.getNumUnitInfos());
+	m_vbUnitIgnoreTechPrereq.clear();
+	m_vbUnitIgnoreTechPrereq.resize(GC.getNumUnitInfos());
 	for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
 	{
 		m_viUnitStrengthChanges[iUnit] = 0;
 		m_viUnitRangedStrengthChanges[iUnit] = 0;
+		m_vbNoTrain[iUnit] = false;
+		m_vbUnitIgnorePolicyPrereq[iUnit] = false;
+		m_vbUnitIgnoreTechPrereq[iUnit] = false;
+	}
+	// UnitClass
+	m_viLegacyUnitClassOverrides.clear();
+	m_viLegacyUnitClassOverrides.resize(GC.getNumUnitClassInfos());
+	for (int iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); iUnitClass++)
+	{
+		m_viLegacyUnitClassOverrides[iUnitClass] = NO_UNIT;
+	}
+	// Buildings
+	m_vbNoConstruct.clear();
+	m_vbNoConstruct.resize(GC.getNumBuildingInfos());
+	m_vbBuildingIgnorePolicyPrereq.clear();
+	m_vbBuildingIgnorePolicyPrereq.resize(GC.getNumBuildingInfos());
+	m_vbBuildingIgnoreTechPrereq.clear();
+	m_vbBuildingIgnoreTechPrereq.resize(GC.getNumBuildingInfos());
+	for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
+	{
+		m_vbNoConstruct[iBuilding] = false;
+		m_vbBuildingIgnorePolicyPrereq[iBuilding] = false;
+		m_vbBuildingIgnoreTechPrereq[iBuilding] = false;
 	}
 	// BuildingClass
 	m_viBuildingClassProductionModifiers.clear();
@@ -678,11 +1086,14 @@ void CvPlayerLegacies::Reset()
 	m_viBuildingClassHappinessChanges.resize(GC.getNumBuildingClassInfos());
 	m_viBuildingClassGlobalHappinessChanges.clear();
 	m_viBuildingClassGlobalHappinessChanges.resize(GC.getNumBuildingClassInfos());
+	m_viLegacyBuildingClassOverrides.clear();
+	m_viLegacyBuildingClassOverrides.resize(GC.getNumBuildingClassInfos());
 	for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
 	{
 		m_viBuildingClassProductionModifiers[iBuildingClass] = 0;
 		m_viBuildingClassHappinessChanges[iBuildingClass] = 0;
 		m_viBuildingClassGlobalHappinessChanges[iBuildingClass] = 0;
+		m_viLegacyBuildingClassOverrides[iBuildingClass] = NO_BUILDING;
 	}
 	// Specialists
 	m_viSpecialistHappinessChanges.clear();
@@ -691,9 +1102,21 @@ void CvPlayerLegacies::Reset()
 	{
 		m_viSpecialistHappinessChanges[iSpecialist] = 0;
 	}
+	m_viPromotionNearbyGeneralUnitCombat.clear();
+	m_viPromotionNearbyGeneralUnitCombat.resize(GC.getNumUnitCombatClassInfos());
+	for (int iUnitCombat = 0; iUnitCombat < GC.getNumUnitCombatClassInfos(); iUnitCombat++)
+	{
+		m_viPromotionNearbyGeneralUnitCombat[iUnitCombat] = NO_PROMOTION;
+	}
 	// START YIELD RESETS
+	m_viPlotPurchaseYieldReward.clear();
+	m_viPlotPurchaseYieldReward.resize(NUM_YIELD_TYPES);
 	m_viCityYieldChange.clear();
 	m_viCityYieldChange.resize(NUM_YIELD_TYPES);
+	m_viOriginalCityYieldChange.clear();
+	m_viOriginalCityYieldChange.resize(NUM_YIELD_TYPES);
+	m_viConqueredCityYieldChange.clear();
+	m_viConqueredCityYieldChange.resize(NUM_YIELD_TYPES);
 	m_viCityYieldModifier.clear();
 	m_viCityYieldModifier.resize(NUM_YIELD_TYPES);
 	m_vaaiBuildingClassYieldChanges.clear();
@@ -712,6 +1135,10 @@ void CvPlayerLegacies::Reset()
 	m_vaaiImprovementYieldChangePerXWorldWonder.resize(GC.getNumImprovementInfos());
 	m_vaaiGreatWorkClassYieldChanges.clear();
 	m_vaaiGreatWorkClassYieldChanges.resize(GC.getNumGreatWorkClassInfos());
+	m_vaaiBuildingCostOverrides.clear();
+	m_vaaiBuildingCostOverrides.resize(GC.getNumBuildingInfos());
+	m_vaaiUnitCostOverrides.clear();
+	m_vaaiUnitCostOverrides.resize(GC.getNumUnitInfos());
 
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
 	for (unsigned int j = 0; j < NUM_YIELD_TYPES; ++j)
@@ -720,8 +1147,12 @@ void CvPlayerLegacies::Reset()
 	}
 	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 	{
+		m_viPlotPurchaseYieldReward[iYield] = 0;
 		m_viCityYieldChange[iYield] = 0;
+		m_viOriginalCityYieldChange[iYield] = 0;
+		m_viConqueredCityYieldChange[iYield] = 0;
 		m_viCityYieldModifier[iYield] = 0;
+		
 		// BuildingClass
 		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
 		{
@@ -754,9 +1185,21 @@ void CvPlayerLegacies::Reset()
 		{
 			m_vaaiGreatWorkClassYieldChanges[iGreatWorkClass] = yield;
 		}
+		// Buildings
+		for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
+		{
+			m_vaaiBuildingCostOverrides[iBuilding] = yield;
+		}
+		// Units
+		for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
+		{
+			m_vaaiUnitCostOverrides[iUnit] = yield;
+		}
 	} // END NUM_YIELD_TYPES LOOP
 	m_vaaiNearbyImprovementHealChangeByDomain.clear();
 	m_vaaiNearbyImprovementHealChangeByDomain.resize(GC.getNumImprovementInfos());
+	m_vaaiNearbyImprovementCombatModifierByDomain.clear();
+	m_vaaiNearbyImprovementCombatModifierByDomain.resize(GC.getNumImprovementInfos());
 	Firaxis::Array< int, NUM_DOMAIN_TYPES > domain;
 	for (unsigned int j = 0; j < NUM_DOMAIN_TYPES; ++j)
 	{
@@ -768,6 +1211,7 @@ void CvPlayerLegacies::Reset()
 		for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 		{
 			m_vaaiNearbyImprovementHealChangeByDomain[iImprovement] = domain;
+			m_vaaiNearbyImprovementCombatModifierByDomain[iImprovement] = domain;
 		}
 	}
 	// Reset the AI
@@ -791,15 +1235,22 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_iYieldModCapitalProximity;
 	kStream >> m_iPlotGoldCostModifier;
 	kStream >> m_iPlotCultureCostModifier;
+	kStream >> m_iHappinessFromGreatImprovements;
+	kStream >> m_iHappinessFromForeignReligiousMajority;
 
-	kStream >> m_viPromotionNearbyGeneral;
+	kStream >> m_viLegacyUnitClassOverrides;
+	kStream >> m_viLegacyBuildingClassOverrides;
+	kStream >> m_viPlotPurchaseYieldReward;
 	kStream >> m_viCityYieldChange;
+	kStream >> m_viOriginalCityYieldChange;
+	kStream >> m_viConqueredCityYieldChange;
 	kStream >> m_viCityYieldModifier;
 	kStream >> m_viUnitRangedStrengthChanges;
 	kStream >> m_viUnitStrengthChanges;
 	kStream >> m_viBuildingClassProductionModifiers;
 	kStream >> m_viBuildingClassHappinessChanges;
 	kStream >> m_viBuildingClassGlobalHappinessChanges;
+	kStream >> m_viPromotionNearbyGeneralUnitCombat;
 	kStream >> m_vaaiBuildingClassYieldChanges;
 	kStream >> m_vaaiBuildingClassYieldModifiers;
 	kStream >> m_vaaiResourceYieldChanges;
@@ -809,7 +1260,68 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_vaaiImprovementYieldChanges;
 	kStream >> m_vaaiImprovementYieldChangePerXWorldWonder;
 	kStream >> m_vaaiNearbyImprovementHealChangeByDomain;
+	kStream >> m_vaaiNearbyImprovementCombatModifierByDomain;
 	kStream >> m_vaaiGreatWorkClassYieldChanges;
+	kStream >> m_vaaiBuildingCostOverrides;
+	kStream >> m_vaaiUnitCostOverrides;
+	// Boolean Arrays
+	int iNumEntries;
+	kStream >> iNumEntries;
+	m_vbNoTrain.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_vbNoTrain.push_back(bValue);
+	}
+	kStream >> iNumEntries;
+	m_vbNoConstruct.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_vbNoConstruct.push_back(bValue);
+	}
+	kStream >> iNumEntries;
+	m_vbUnitIgnorePolicyPrereq.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_vbUnitIgnorePolicyPrereq.push_back(bValue);
+	}
+	kStream >> iNumEntries;
+	m_vbUnitIgnoreTechPrereq.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_vbUnitIgnoreTechPrereq.push_back(bValue);
+	}
+	kStream >> iNumEntries;
+	m_vbBuildingIgnorePolicyPrereq.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_vbBuildingIgnorePolicyPrereq.push_back(bValue);
+	}
+	kStream >> iNumEntries;
+	m_vbBuildingIgnoreTechPrereq.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_vbBuildingIgnoreTechPrereq.push_back(bValue);
+	}
+	kStream >> iNumEntries;
+	m_vbRevealResource.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_vbRevealResource.push_back(bValue);
+	}
 
 	m_pLegacyAI->Read(kStream);
 }
@@ -831,15 +1343,22 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_iYieldModCapitalProximity;
 	kStream << m_iPlotGoldCostModifier;
 	kStream << m_iPlotCultureCostModifier;
+	kStream << m_iHappinessFromGreatImprovements;
+	kStream << m_iHappinessFromForeignReligiousMajority;
 
-	kStream << m_viPromotionNearbyGeneral;
+	kStream << m_viLegacyUnitClassOverrides;
+	kStream << m_viLegacyBuildingClassOverrides;
+	kStream << m_viPlotPurchaseYieldReward;
 	kStream << m_viCityYieldChange;
+	kStream << m_viOriginalCityYieldChange;
+	kStream << m_viConqueredCityYieldChange;
 	kStream << m_viCityYieldModifier;
 	kStream << m_viUnitRangedStrengthChanges;
 	kStream << m_viUnitStrengthChanges;
 	kStream << m_viBuildingClassProductionModifiers;
 	kStream << m_viBuildingClassHappinessChanges;
 	kStream << m_viBuildingClassGlobalHappinessChanges;
+	kStream << m_viPromotionNearbyGeneralUnitCombat;
 	kStream << m_vaaiBuildingClassYieldChanges;
 	kStream << m_vaaiBuildingClassYieldModifiers;
 	kStream << m_vaaiResourceYieldChanges;
@@ -849,7 +1368,46 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_vaaiImprovementYieldChanges;
 	kStream << m_vaaiImprovementYieldChangePerXWorldWonder;
 	kStream << m_vaaiNearbyImprovementHealChangeByDomain;
+	kStream << m_vaaiNearbyImprovementCombatModifierByDomain;
 	kStream << m_vaaiGreatWorkClassYieldChanges;
+	kStream << m_vaaiBuildingCostOverrides;
+	kStream << m_vaaiUnitCostOverrides;
+	// Boolean Arrays
+	kStream << m_vbNoTrain.size();
+	for (uint ui = 0; ui < m_vbNoTrain.size(); ui++)
+	{
+		kStream << m_vbNoTrain[ui];
+	}
+	kStream << m_vbNoConstruct.size();
+	for (uint ui = 0; ui < m_vbNoConstruct.size(); ui++)
+	{
+		kStream << m_vbNoConstruct[ui];
+	}
+	kStream << m_vbUnitIgnorePolicyPrereq.size();
+	for (uint ui = 0; ui < m_vbUnitIgnorePolicyPrereq.size(); ui++)
+	{
+		kStream << m_vbUnitIgnorePolicyPrereq[ui];
+	}
+	kStream << m_vbUnitIgnoreTechPrereq.size();
+	for (uint ui = 0; ui < m_vbUnitIgnoreTechPrereq.size(); ui++)
+	{
+		kStream << m_vbUnitIgnoreTechPrereq[ui];
+	}
+	kStream << m_vbBuildingIgnorePolicyPrereq.size();
+	for (uint ui = 0; ui < m_vbBuildingIgnorePolicyPrereq.size(); ui++)
+	{
+		kStream << m_vbBuildingIgnorePolicyPrereq[ui];
+	}
+	kStream << m_vbBuildingIgnoreTechPrereq.size();
+	for (uint ui = 0; ui < m_vbBuildingIgnoreTechPrereq.size(); ui++)
+	{
+		kStream << m_vbBuildingIgnoreTechPrereq[ui];
+	}
+	kStream << m_vbRevealResource.size();
+	for (uint ui = 0; ui < m_vbRevealResource.size(); ui++)
+	{
+		kStream << m_vbRevealResource[ui];
+	}
 
 	m_pLegacyAI->Write(kStream);
 }
@@ -965,12 +1523,29 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	m_iYieldModCapitalProximity += kLegacy.GetYieldModCapitalProximity();
 	m_iPlotGoldCostModifier += kLegacy.GetPlotGoldCostModifier();
 	m_iPlotCultureCostModifier += kLegacy.GetPlotCultureCostModifier();
+	m_iHappinessFromGreatImprovements += kLegacy.GetHappinessFromGreatImprovements();
+	m_iHappinessFromForeignReligiousMajority += kLegacy.GetHappinessFromForeignReligiousMajority();
 	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 	{
+		iChange = kLegacy.GetPlotPurchaseYieldReward((YieldTypes)iYield);
+		if (iChange != 0)
+		{
+			m_viPlotPurchaseYieldReward[iYield] += iChange;
+		}
 		iChange = kLegacy.GetCityYieldChange((YieldTypes)iYield);
 		if (iChange != 0)
 		{
 			m_viCityYieldChange[iYield] += iChange;
+		}
+		iChange = kLegacy.GetOriginalCityYieldChange((YieldTypes)iYield);
+		if (iChange != 0)
+		{
+			m_viOriginalCityYieldChange[iYield] += iChange;
+		}
+		iChange = kLegacy.GetConqueredCityYieldChange((YieldTypes)iYield);
+		if (iChange != 0)
+		{
+			m_viConqueredCityYieldChange[iYield] += iChange;
 		}
 		iChange = kLegacy.GetCityYieldModifier((YieldTypes)iYield);
 		if (iChange != 0)
@@ -1041,6 +1616,24 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 				m_vaaiGreatWorkClassYieldChanges[iGreatWorkClass][iYield] += iChange;
 			}
 		}
+		// Buildings
+		for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
+		{
+			iChange = kLegacy.GetBuildingCostOverride((BuildingTypes)iBuilding, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiBuildingCostOverrides[iBuilding][iYield] = iChange;
+			}
+		}
+		// Units
+		for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
+		{
+			iChange = kLegacy.GetUnitCostOverride((UnitTypes)iUnit, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiUnitCostOverrides[iUnit][iYield] = iChange;
+			}
+		}
 	} // END NUM_YIELD_TYPES LOOP
 	for (int iDomain = 0; iDomain < NUM_DOMAIN_TYPES; iDomain++)
 	{
@@ -1051,6 +1644,11 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 			{
 				m_vaaiNearbyImprovementHealChangeByDomain[iImprovement][iDomain] += iChange;
 			}
+			iChange = kLegacy.GetImprovementNearbyCombatModifierByDomain((ImprovementTypes)iImprovement, (DomainTypes)iDomain);
+			if (iChange != 0)
+			{
+				m_vaaiNearbyImprovementCombatModifierByDomain[iImprovement][iDomain] += iChange;
+			}
 		}
 	} // END NUM_DOMAIN_TYPES LOOP
 	// BuildingClass - Non-yield
@@ -1059,6 +1657,7 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		m_viBuildingClassProductionModifiers[iBuildingClass] += kLegacy.GetBuildingClassProductionModifier(iBuildingClass);
 		m_viBuildingClassHappinessChanges[iBuildingClass] += kLegacy.GetBuildingClassHappinessChange(iBuildingClass);
 		m_viBuildingClassGlobalHappinessChanges[iBuildingClass] += kLegacy.GetBuildingClassGlobalHappinessChange(iBuildingClass);
+		m_viLegacyBuildingClassOverrides[iBuildingClass] = kLegacy.GetLegacyBuildingClassOverride(iBuildingClass);
 	}
 	// Specialist - Non-yield
 	for (int iSpecialist = 0; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
@@ -1074,11 +1673,31 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	{
 		m_viUnitRangedStrengthChanges[iUnit] += kLegacy.GetUnitRangedStrengthChange(iUnit);
 		m_viUnitStrengthChanges[iUnit] += kLegacy.GetUnitStrengthChange(iUnit);
+		m_vbNoTrain[iUnit] = kLegacy.IsNoTrainUnit((UnitTypes)iUnit);
+		m_vbUnitIgnorePolicyPrereq[iUnit] = kLegacy.IsUnitIgnorePolicyPrereq((UnitTypes)iUnit);
+		m_vbUnitIgnoreTechPrereq[iUnit] = kLegacy.IsUnitIgnoreTechPrereq((UnitTypes)iUnit);
 	}
-	// Promotions
-	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
+	// UnitClasses
+	for (int iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); iUnitClass++)
 	{
-		m_viPromotionNearbyGeneral[iPromotion] += kLegacy.GetPromotionNearbyGeneral(iPromotion);
+		m_viLegacyUnitClassOverrides[iUnitClass] = kLegacy.GetLegacyUnitClassOverride(iUnitClass);
+	}
+	// Buildings - Non-yield
+	for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
+	{
+		m_vbNoConstruct[iBuilding] = kLegacy.IsNoConstructBuilding((BuildingTypes)iBuilding);
+		m_vbBuildingIgnorePolicyPrereq[iBuilding] = kLegacy.IsBuildingIgnorePolicyPrereq((BuildingTypes)iBuilding);
+		m_vbBuildingIgnoreTechPrereq[iBuilding] = kLegacy.IsBuildingIgnoreTechPrereq((BuildingTypes)iBuilding);
+	}
+	// Resources - Non-yield
+	for (int iResource = 0; iResource < GC.getNumResourceInfos(); iResource++)
+	{
+		m_vbRevealResource[iResource] = kLegacy.IsRevealResource((ResourceTypes)iResource);
+	}
+	// UnitCombatClasses
+	for (int iUnitCombat = 0; iUnitCombat < GC.getNumUnitCombatClassInfos(); iUnitCombat++)
+	{
+		m_viPromotionNearbyGeneralUnitCombat[iUnitCombat] = kLegacy.GetPromotionNearbyGeneral(iUnitCombat);
 	}
 }
 // How Much happiness per original city does the player get from legacies
@@ -1115,6 +1734,16 @@ int CvPlayerLegacies::GetPlotGoldCostModifier() const
 int CvPlayerLegacies::GetPlotCultureCostModifier() const
 {
 	return m_iPlotCultureCostModifier;
+}
+// How much happiness does the player get from great improvements from legacies
+int CvPlayerLegacies::GetHappinessFromGreatImprovements() const
+{
+	return m_iHappinessFromGreatImprovements;
+}
+// How much happiness does the player get from foreign cities following their religion from legacies
+int CvPlayerLegacies::GetHappinessFromForeignReligiousMajority() const
+{
+	return m_iHappinessFromForeignReligiousMajority;
 }
 // ARRAYS START
 // Does the player have a free promotion for a specific unit type from legacies
@@ -1226,21 +1855,88 @@ int CvPlayerLegacies::GetBuildingClassGreatPersonPointChange(BuildingClassTypes 
 	return 0;
 }
 // BELOW HERE ARE SIMPLE GETTERS FOR PLAYER LEGACY EFFECTS AS THEY HAVE SIMPLE STORAGE
-int CvPlayerLegacies::GetPromotionNearbyGeneral(PromotionTypes ePromotion) const
+// Get the promotion granted for having a nearby general for a specific unit combat type from legacies
+int CvPlayerLegacies::GetPromotionNearbyGeneralUnitCombat(UnitCombatTypes eUnitCombat) const
 {
-	CvAssertMsg(ePromotion >= 0 && ePromotion < GC.getNumPromotionInfos(), "Promotion index out of bounds");
-	return ePromotion != NO_PROMOTION ? m_viPromotionNearbyGeneral[ePromotion] : 0;
+	CvAssertMsg(eUnitCombat >= 0 && eUnitCombat < GC.getNumUnitCombatClassInfos(), "UnitCombat index out of bounds");
+	return NO_UNITCOMBAT != eUnitCombat ? m_viPromotionNearbyGeneralUnitCombat[eUnitCombat] : NO_PROMOTION;
+}
+// Does this Legacy reveal this resource type for the player
+bool CvPlayerLegacies::IsRevealResource(ResourceTypes eResource) const
+{
+	return NO_RESOURCE != eResource ? m_vbRevealResource[eResource] : false;
+}
+// Get the Building Type override for a specific building class from legacies
+int CvPlayerLegacies::GetLegacyBuildingClassOverride(BuildingClassTypes eBuildingClass) const
+{
+	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
+	return NO_BUILDINGCLASS != eBuildingClass ? m_viLegacyBuildingClassOverrides[(int)eBuildingClass] : NO_BUILDING;
+}
+// Does this Legacy allow this building type to ignore policy prerequisites
+bool CvPlayerLegacies::IsBuildingIgnorePolicyPrereq(BuildingTypes eBuildingType) const
+{
+	return NO_BUILDING != eBuildingType ? m_vbBuildingIgnorePolicyPrereq[eBuildingType] : false;
+}
+// Does this Legacy allow this building type to ignore tech prerequisites
+bool CvPlayerLegacies::IsBuildingIgnoreTechPrereq(BuildingTypes eBuildingType) const
+{
+	return NO_BUILDING != eBuildingType ? m_vbBuildingIgnoreTechPrereq[eBuildingType] : false;
+}
+// Get the unit type override for a specific unit class from legacies
+int CvPlayerLegacies::GetLegacyUnitClassOverride(UnitClassTypes eUnitClass) const
+{
+	CvAssertMsg(eUnitClass >= 0 && eUnitClass < GC.getNumUnitClassInfos(), "UnitClass index out of bounds");
+	return NO_UNITCLASS != eUnitClass ? m_viLegacyUnitClassOverrides[(int)eUnitClass] : NO_UNIT;
+}
+// Does this Legacy allow this unit type to ignore policy prerequisites
+bool CvPlayerLegacies::IsUnitIgnorePolicyPrereq(UnitTypes eUnitType) const
+{
+	return NO_UNIT != eUnitType ? m_vbUnitIgnorePolicyPrereq[eUnitType] : false;
+}
+// Does this Legacy allow this unit type to ignore tech prerequisites
+bool CvPlayerLegacies::IsUnitIgnoreTechPrereq(UnitTypes eUnitType) const
+{
+	return NO_UNIT != eUnitType ? m_vbUnitIgnoreTechPrereq[eUnitType] : false;
+}
+// Is this unit type not trainable by the player from legacies
+bool CvPlayerLegacies::NoTrainUnit(UnitTypes eUnitType) const
+{
+	return NO_UNIT != eUnitType ? m_vbNoTrain[eUnitType] : false;
+}
+// Is this building type not constructable by the player from legacies
+bool CvPlayerLegacies::NoConstructBuilding(BuildingTypes eBuildingType) const
+{
+	return NO_BUILDING != eBuildingType ? m_vbNoConstruct[eBuildingType] : false;
+}
+// How much yield reward does the player get for purchasing a plot from legacies
+int CvPlayerLegacies::GetPlotPurchaseYieldReward(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_YIELD != eYield ? m_viPlotPurchaseYieldReward[eYield] : 0;
 }
 // How much yield change does the player get for a city from legacies
 int CvPlayerLegacies::GetCityYieldChange(YieldTypes eYield) const
 {
 	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eYield != NO_YIELD ? m_viCityYieldChange[eYield] : 0;
+	return NO_YIELD != eYield ? m_viCityYieldChange[eYield] : 0;
 }
+// How much yield change does the player get for an original city from legacies
+int CvPlayerLegacies::GetOriginalCityYieldChange(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_YIELD != eYield ? m_viOriginalCityYieldChange[eYield] : 0;
+}
+// How much yield change does the player get for a conquered city from legacies
+int CvPlayerLegacies::GetConqueredCityYieldChange(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_YIELD != eYield ? m_viConqueredCityYieldChange[eYield] : 0;
+}
+// How much yield modifier does the player get for a city from legacies
 int CvPlayerLegacies::GetCityYieldModifier(YieldTypes eYield) const
 {
 	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eYield != NO_YIELD ? m_viCityYieldModifier[eYield] : 0;
+	return NO_YIELD != eYield ? m_viCityYieldModifier[eYield] : 0;
 }
 // How much production modifier does the player get for a building class from legacies
 int CvPlayerLegacies::GetBuildingClassProductionModifier(BuildingClassTypes eBuildingClass) const
@@ -1332,12 +2028,33 @@ int CvPlayerLegacies::GetNearbyImprovementHealChangeByDomain(ImprovementTypes eI
 	CvAssertMsg(eDomain >= 0 && eDomain < NUM_DOMAIN_TYPES, "Domain index out of bounds");
 	return eImprovement != NO_IMPROVEMENT ? m_vaaiNearbyImprovementHealChangeByDomain[(int)eImprovement][(int)eDomain] : 0;
 }
+// How much nearby combat modifier by domain does the player get for an improvement from legacies
+int CvPlayerLegacies::GetNearbyImprovementCombatModifierByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const
+{
+	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
+	CvAssertMsg(eDomain >= 0 && eDomain < NUM_DOMAIN_TYPES, "Domain index out of bounds");
+	return eImprovement != NO_IMPROVEMENT ? m_vaaiNearbyImprovementCombatModifierByDomain[(int)eImprovement][(int)eDomain] : 0;
+}
 // How much yield change does the player get for a great work class from legacies
 int CvPlayerLegacies::GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const
 {
 	CvAssertMsg(eGreatWorkClass >= 0 && eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "GreatWorkClass index out of bounds");
 	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
 	return eGreatWorkClass != NO_GREAT_WORK_CLASS ? m_vaaiGreatWorkClassYieldChanges[(int)eGreatWorkClass][(int)eYield] : 0;
+}
+// Does this Legacy set the cost of a building type for the player
+int CvPlayerLegacies::GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYield) const
+{
+	CvAssertMsg(eBuilding >= 0 && eBuilding < GC.getNumBuildingInfos(), "Building index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_BUILDING != eBuilding ? m_vaaiBuildingCostOverrides[(int)eBuilding][(int)eYield] : 0;
+}
+// Does this Legacy set the cost of a unit type for the player
+int CvPlayerLegacies::GetUnitCostOverride(UnitTypes eUnit, YieldTypes eYield) const
+{
+	CvAssertMsg(eUnit >= 0 && eUnit < GC.getNumUnitInfos(), "Unit index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_UNIT != eUnit ? m_vaaiUnitCostOverrides[(int)eUnit][(int)eYield] : 0;
 }
 
 

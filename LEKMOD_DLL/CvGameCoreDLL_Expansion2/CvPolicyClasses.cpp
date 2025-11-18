@@ -5191,6 +5191,7 @@ bool CvPlayerPolicies::IsTimeToChooseIdeology() const
 		{
 			// Find a building that triggers an ideology
 			// Loop through all building classes
+#if !defined(LEKMOD_LEGACY) // Convert Ideology trigger to BuildingType instead of BuildingClassType
 #ifdef AUI_WARNING_FIXES
 			for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 #else
@@ -5225,6 +5226,39 @@ bool CvPlayerPolicies::IsTimeToChooseIdeology() const
 					}
 				}
 			}
+#else
+			for (uint iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+			{
+				CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo((BuildingTypes)iI);
+				if (pkBuildingInfo)
+				{
+					if (pkBuildingInfo->GetXBuiltTriggersIdeologyChoice() > 0)
+					{
+						BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingInfo->GetBuildingClassType();
+						if (eBuildingClass != NO_BUILDINGCLASS)
+						{
+							const BuildingTypes eCivBuilding = (BuildingTypes)pkInfo->getCivilizationBuildings(eBuildingClass);
+							if (eCivBuilding != NO_BUILDING)
+							{
+								if (m_pPlayer->getBuildingClassCount(eBuildingClass) >= pkBuildingInfo->GetXBuiltTriggersIdeologyChoice())
+								{
+									return true;
+								}
+#ifdef LEKMOD_UNLOCK_IDEO_ALL_CITIES
+								else if (m_pPlayer->getNumCities() < pkBuildingInfo->GetXBuiltTriggersIdeologyChoice())
+								{
+									if (m_pPlayer->getBuildingClassCount(eBuildingClass) >= m_pPlayer->getNumCities())
+									{
+										return true;
+									}
+								}
+#endif
+							}
+						}
+					}
+				}
+			}
+#endif
 		}
 	}
 
