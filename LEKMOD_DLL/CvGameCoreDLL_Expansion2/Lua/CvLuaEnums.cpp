@@ -208,7 +208,6 @@ int CvLuaEnums::pRegister(lua_State* L)
 #if defined(LEKMOD_v34)
 	RegisterEnum(YIELD_GOLDEN_AGE_POINTS);
 #endif
-	RegisterEnum(YIELD_TOURISM);
 	RegisterEnum(NUM_YIELD_TYPES);
 	EnumEnd(L);
 

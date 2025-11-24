@@ -3657,7 +3657,12 @@ int CvLeague::CalculateStartingVotesForMember(PlayerTypes ePlayer, bool bForceUp
 		int iPolicyVotes = GET_PLAYER(ePlayer).GetPolicyExtraLeagueVotes();
 		iVotes += iPolicyVotes;
 #endif
-
+#if defined(LEKMOD_LEGACY)
+		int iTemp = GET_PLAYER(ePlayer).GetPlayerLegacies()->GetVotesPerCapital();
+		int iLegacyVotes = iTemp * GET_PLAYER(ePlayer).GetNumOriginalCapitalsControlled();
+		iVotes += iLegacyVotes;
+		iTraitVotes += iLegacyVotes; // Include in Trait votes for tooltip
+#endif
 		// World Religion
 		int iWorldReligionVotes = GetExtraVotesForFollowingReligion(ePlayer);
 		iVotes += iWorldReligionVotes;

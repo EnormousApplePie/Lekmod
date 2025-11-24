@@ -5422,7 +5422,7 @@ int CvMinorCivAI::GetFriendshipChangePerTurnTimes100(PlayerTypes ePlayer)
 	if (GET_TEAM(kPlayer.getTeam()).isHasMet(GetPlayer()->getTeam()))
 	{
 		int iShift = 0;
-
+#if !defined(LEKMOD_LEGACY)
 		if (kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_PROTECTED_MINOR_INFLUENCE) != 0)
 		{
 			if (GC.getGame().GetGameTrade()->IsPlayerConnectedToPlayer(ePlayer, GetPlayer()->GetID()))
@@ -5430,7 +5430,26 @@ int CvMinorCivAI::GetFriendshipChangePerTurnTimes100(PlayerTypes ePlayer)
 				iShift += kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_PROTECTED_MINOR_INFLUENCE);
 			}
 		}
-
+#else
+		if (GC.getGame().GetGameTrade()->IsPlayerConnectedToPlayer(ePlayer, GetPlayer()->GetID()))
+		{
+			if (kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_PROTECTED_MINOR_INFLUENCE) != 0)
+			{
+				iShift += kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_PROTECTED_MINOR_INFLUENCE);
+			}
+			if (kPlayer.GetPlayerLegacies()->GetInfluenceChangeTradeConnection() != 0)
+			{
+				iShift += kPlayer.GetPlayerLegacies()->GetInfluenceChangeTradeConnection();
+			}
+		}
+		if (IsSameReligionAsMajor(ePlayer))
+		{
+			if (kPlayer.GetPlayerLegacies()->GetInfluenceChangeMajorityReligion() != 0)
+			{
+				iShift += kPlayer.GetPlayerLegacies()->GetInfluenceChangeMajorityReligion();
+			}
+		}
+#endif
 		if (CanMajorBullyGold(ePlayer))
 		{
 			iShift += kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_AFRAID_INFLUENCE);

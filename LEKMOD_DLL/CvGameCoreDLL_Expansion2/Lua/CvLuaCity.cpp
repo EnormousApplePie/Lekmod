@@ -520,6 +520,9 @@ void CvLuaCity::PushMethods(lua_State* L, int t)
 	Method(GetTotalReligionPressure);
 	Method(GetPressurePerFollower);
 #endif
+#if defined(LEKMOD_LEGACY)
+	Method(GetBuildingGreatPeopleRateModifier);
+#endif
 }
 //------------------------------------------------------------------------------
 void CvLuaCity::HandleMissingInstance(lua_State* L)
@@ -4328,4 +4331,13 @@ int CvLuaCity::lGetPressurePerFollower(lua_State* L)
 	return 1;
 }
 #endif
-//------------------------------------------------------------------------------
+#if defined(LEKMOD_LEGACY)
+int CvLuaCity::lGetBuildingGreatPeopleRateModifier(lua_State* L)
+{
+	CvCity* pkCity = GetInstance(L);
+	const SpecialistTypes eSpecialist = (SpecialistTypes)lua_tointeger(L, 2);
+	const int iResult = pkCity->GetCityCitizens()->GetBuildingGreatPeopleRateModifier(eSpecialist);
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif

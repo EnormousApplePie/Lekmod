@@ -1069,6 +1069,10 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetLegacyBuildingClassHappiness);
 	Method(GetLegacyBuildingClassGlobalHappiness);
 	Method(GetLegacyBuildingClassYieldModifier);
+	Method(GetLegacyBuildingClassGreatPersonPointChange);
+	Method(GetLegacyBuildingClassGreatPersonRateModifier);
+	Method(HasLegacy);
+	Method(SetHasLegacy);
 #endif
 
 }
@@ -11631,7 +11635,7 @@ int CvLuaPlayer::lGetLegacyBuildingClassHappiness(lua_State* L)
 	}
 	return 0;
 }
-int CvLuaPlayer::lGetLegacyBuildingClassGlobalHappiness(lua_State* L)
+int CvLuaPlayer::lGetLegacyBuildingClassGlobalHappiness(lua_State* L)	
 {
 	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
 	CvPlayer* pkPlayer = GetInstance(L);
@@ -11642,5 +11646,47 @@ int CvLuaPlayer::lGetLegacyBuildingClassGlobalHappiness(lua_State* L)
 		return 1;
 	}
 	return 0;
+}
+int CvLuaPlayer::lGetLegacyBuildingClassGreatPersonPointChange(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	const SpecialistTypes eSpecialist = (SpecialistTypes)luaL_checkint(L, 3);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int Modifier = pkPlayer->GetPlayerLegacies()->GetBuildingClassGreatPersonPointChange(eBuildingClass, eSpecialist);
+		lua_pushinteger(L, Modifier);
+		return 1;
+	}
+	return 0;
+}
+int CvLuaPlayer::lGetLegacyBuildingClassGreatPersonRateModifier(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	const SpecialistTypes eSpecialist = (SpecialistTypes)luaL_checkint(L, 3);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int Modifier = pkPlayer->GetPlayerLegacies()->GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
+		lua_pushinteger(L, Modifier);
+		return 1;
+	}
+	return 0;
+}
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lHasLegacy(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const LegacyTypes iIndex = (LegacyTypes)lua_tointeger(L, 2);
+
+	const bool bResult = pkPlayer->GetPlayerLegacies()->HasLegacy(iIndex);
+	lua_pushboolean(L, bResult);
+	return 1;
+}
+//------------------------------------------------------------------------------
+//void setHasPolicy(PolicyTypes  eIndex, bool bNewValue);
+int CvLuaPlayer::lSetHasLegacy(lua_State* L)
+{
+	return BasicLuaMethod(L, &CvPlayerAI::setHasLegacy);
 }
 #endif

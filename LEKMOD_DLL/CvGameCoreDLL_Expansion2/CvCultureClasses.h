@@ -32,6 +32,9 @@ public:
 	int m_iTurnFounded;
 	EraTypes m_eEra;
 	PlayerTypes m_ePlayer;
+#if defined(LEKMOD_LEGACY)
+	std::vector<int> m_viYield;
+#endif
 };
 
 FDataStream& operator>>(FDataStream&, CvGreatWork&);
@@ -384,6 +387,10 @@ public:
 	int GetCultureFromWonders() const;
 	int GetCultureFromNaturalWonders() const;
 	int GetCultureFromImprovements() const;
+#if defined(LEKMOD_LEGACY)
+	int GetTourismFromWorkedImprovements() const;
+	int GetPublicThemingBonusIndex(BuildingClassTypes eBuildingClass) const { return GetPublicThemingBonusIndex(eBuildingClass); }
+#endif
 
 	void LogGreatWorks (FILogFile* pLog);
 

@@ -418,6 +418,8 @@ public:
 #if defined(LEKMOD_LEGACY)
 	int GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const;
 	void ChangeGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield, int iChange);
+	int GetGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass) const;
+	void ChangeGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass, int iChange);
 #endif
 	CvPlot* getStartingPlot() const;
 	void setStartingPlot(CvPlot* pNewValue);
@@ -716,6 +718,11 @@ public:
 #if defined(TRAITIFY) // Handle Extra League Votes from Traits
 	int GetTraitExtraLeagueVotes() const;
 	void ChangeTraitExtraLeagueVotes(int iChange);
+#endif
+#if defined(LEKMOD_LEGACY)
+	int GetLegacyExtraLeagueVotes() const;
+	void ChangeLegacyExtraLeagueVotes(int iChange);
+	int GetNumOriginalCapitalsControlled();
 #endif
 #if defined(MISC_CHANGES) // Handle Extra League Votes from Techs and Policies
 	int GetTechExtraLeagueVotes() const;
@@ -1075,10 +1082,6 @@ public:
 	int GetEnablesSSPartHurryCount() const;
 	bool IsEnablesSSPartHurry() const;
 	void ChangeEnablesSSPartHurryCount(int iChange);
-#if defined(LEK_TOURISM)
-	int GetTourismPerTurnTimes100(bool bTheInternet);
-	int GetBaseTourismFromCities();
-#endif
 #ifdef NQ_DIABLE_RESISTANCE_TIME_VIA_POLICIES
 	int GetDisablesResistanceTimeCount() const;
 	bool IsDisablesResistanceTime() const;
@@ -2054,6 +2057,9 @@ protected:
 #if defined(TRAITIFY) // create variables
 	int m_iTraitExtraLeagueVotes;
 #endif
+#if defined(LEKMOD_LEGACY)
+	int m_iLegacyExtraLeagueVotes;
+#endif
 #if defined(MISC_CHANGES) // create variables
 	int m_iTechExtraLeagueVotes;
 	int m_iPolicyExtraLeagueVotes;
@@ -2387,6 +2393,7 @@ protected:
 	FAutoVariable<std::vector<bool>, CvPlayer> m_pabGetsScienceFromPlayer;
 #if defined(LEKMOD_LEGACY)
 	FAutoVariable< std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > >, CvPlayer> m_ppaaiGreatWorkClassYieldChange;
+	FAutoVariable<std::vector<int>, CvPlayer> m_paiTourismBonusPerClass;
 #endif
 	FAutoVariable< std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > >, CvPlayer> m_ppaaiSpecialistExtraYield;
 	FAutoVariable< std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > >, CvPlayer> m_ppaaiImprovementYieldChange;
@@ -2437,6 +2444,7 @@ protected:
 #if defined(LEKMOD_LEGACY)
 	CvPlayerLegacies* m_pPlayerLegacies;
 	void processLegacies(LegacyTypes eLegacy, int iChange);
+	void incrementGreatPersonCount(CvUnit* pUnit);
 #endif
 	// AI Strategies
 	CvEconomicAI* m_pEconomicAI;

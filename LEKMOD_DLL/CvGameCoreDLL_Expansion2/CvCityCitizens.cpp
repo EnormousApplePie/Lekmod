@@ -37,6 +37,9 @@ CvCityCitizens::CvCityCitizens()
 	m_aiNumSpecialistsInBuilding = NULL;
 	m_aiNumForcedSpecialistsInBuilding = NULL;
 	m_piBuildingGreatPeopleRateChanges = NULL;
+#if defined(LEKMOD_LEGACY)
+	m_piBuildingGreatPeopleRateModifier = NULL;
+#endif
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 	m_aiCachedGPChangeT100ForThisTurn = NULL;
 #endif
@@ -69,6 +72,9 @@ void CvCityCitizens::Uninit()
 		SAFE_DELETE_ARRAY(m_aiNumSpecialistsInBuilding);
 		SAFE_DELETE_ARRAY(m_aiNumForcedSpecialistsInBuilding);
 		SAFE_DELETE_ARRAY(m_piBuildingGreatPeopleRateChanges);
+#if defined(LEKMOD_LEGACY)
+		SAFE_DELETE_ARRAY(m_piBuildingGreatPeopleRateModifier);
+#endif
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 		SAFE_DELETE_ARRAY(m_aiCachedGPChangeT100ForThisTurn);
 #endif
@@ -152,6 +158,14 @@ void CvCityCitizens::Reset()
 	{
 		m_piBuildingGreatPeopleRateChanges[iI] = 0;
 	}
+#if defined(LEKMOD_LEGACY)
+	CvAssertMsg(m_piBuildingGreatPeopleRateModifier == NULL, "about to leak memory, CvCityCitizens::m_piBuildingGreatPeopleRateModifier");
+	m_piBuildingGreatPeopleRateModifier = FNEW(int[GC.getNumSpecialistInfos()], c_eCiv5GameplayDLL, 0);
+	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		m_piBuildingGreatPeopleRateModifier[iI] = 0;
+	}
+#endif
 
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 	SAFE_DELETE_ARRAY(m_aiCachedGPChangeT100ForThisTurn);
@@ -198,6 +212,9 @@ void CvCityCitizens::Read(FDataStream& kStream)
 	BuildingArrayHelpers::Read(kStream, m_aiNumForcedSpecialistsInBuilding);
 
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_piBuildingGreatPeopleRateChanges, GC.getNumSpecialistInfos());
+#if defined(LEKMOD_LEGACY)
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_piBuildingGreatPeopleRateModifier, GC.getNumSpecialistInfos());
+#endif
 }
 
 /// Serialization write
@@ -230,6 +247,9 @@ void CvCityCitizens::Write(FDataStream& kStream)
 	BuildingArrayHelpers::Write(kStream, m_aiNumForcedSpecialistsInBuilding, GC.getNumBuildingInfos());
 
 	CvInfosSerializationHelper::WriteHashedDataArray<SpecialistTypes, int>(kStream, m_piBuildingGreatPeopleRateChanges, GC.getNumSpecialistInfos());
+#if defined(LEKMOD_LEGACY)
+	CvInfosSerializationHelper::WriteHashedDataArray<SpecialistTypes, int>(kStream, m_piBuildingGreatPeopleRateModifier, GC.getNumSpecialistInfos());
+#endif
 }
 
 /// Returns the City object this set of Citizens is associated with
@@ -3166,7 +3186,9 @@ void CvCityCitizens::DoSpecialists()
 
 					// City mod
 					iMod += GetCity()->getGreatPeopleRateModifier();
-
+#if defined(LEKMOD_LEGACY)
+					iMod += GetBuildingGreatPeopleRateModifier(eSpecialist);
+#endif
 					// Player mod
 					iMod += GetPlayer()->getGreatPeopleRateModifier();
 
@@ -3628,7 +3650,22 @@ void CvCityCitizens::ChangeBuildingGreatPeopleRateChanges(SpecialistTypes eSpeci
 
 	m_piBuildingGreatPeopleRateChanges[eSpecialist] += iChange;
 }
-
+#if defined(LEKMOD_LEGACY)
+/// Building Great People Rate Modifier for this Specialist
+int CvCityCitizens::GetBuildingGreatPeopleRateModifier(SpecialistTypes eSpecialist) const
+{
+	CvAssert(eSpecialist > -1);
+	CvAssert(eSpecialist < GC.getNumSpecialistInfos());
+	return m_piBuildingGreatPeopleRateModifier[eSpecialist];
+}
+/// Change Building Great People Rate Modifier for this Specialist
+void CvCityCitizens::ChangeBuildingGreatPeopleRateModifier(SpecialistTypes eSpecialist, int iChange)
+{
+	CvAssert(eSpecialist > -1);
+	CvAssert(eSpecialist < GC.getNumSpecialistInfos());
+	m_piBuildingGreatPeopleRateModifier[eSpecialist] += iChange;
+}
+#endif
 /// How much progress does this City have towards a Great Person from eIndex?
 int CvCityCitizens::GetSpecialistGreatPersonProgress(SpecialistTypes eIndex) const
 {

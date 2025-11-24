@@ -8063,6 +8063,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			{
 				GetCityCitizens()->ChangeBuildingGreatPeopleRateChanges(eSpecialist, iLegacyGreatPersonPointChange * iChange);
 			}
+			int iLegacyModifier = pLegacies->GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
+			if (iLegacyModifier != 0)
+			{
+				GetCityCitizens()->ChangeBuildingGreatPeopleRateModifier(eSpecialist, iLegacyModifier * iChange);
+			}
 		}
 #endif
 
@@ -12202,6 +12207,12 @@ int CvCity::getYieldRateTimes100(YieldTypes eIndex, bool bIgnoreTrade) const
 		{
 			return 0;
 		}
+#if defined(LEKMOD_v34)
+		else if (eIndex == YIELD_GOLDEN_AGE_POINTS)
+		{
+			return 0;
+		}
+#endif
 	}
 	// Sum up yield rate
 	int iBaseYield = getBaseYieldRate(eIndex) * 100;
@@ -16667,10 +16678,22 @@ void CvCity::Purchase(UnitTypes eUnitType, BuildingTypes eBuildingType, ProjectT
 			if (iResult != FFreeList::INVALID_INDEX)
 			{
 				CvUnit* pUnit = kPlayer.getUnit(iResult);
+#if !defined(LEKMOD_LEGACY)
 				if (!pUnit->getUnitInfo().CanMoveAfterPurchase())
 				{
 					pUnit->setMoves(0);
 				}
+#else
+				int iExtraMoves = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPurchasedUnitExtraMoves();
+				if (iExtraMoves > 0)
+				{
+					pUnit->setMoves(pUnit->maxMoves() + iExtraMoves);
+				}
+				else if (!pUnit->getUnitInfo().CanMoveAfterPurchase())
+				{
+					pUnit->setMoves(0);
+				}
+#endif
 #if defined(FIX_PRODUCTION_KEEPING_EXPLOITS) // Purchasing Air Units
 				if (pUnit->getUnitInfo().GetDomainType() == DOMAIN_AIR)
 				{

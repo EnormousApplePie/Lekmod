@@ -24,10 +24,12 @@ public:
 
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
-    // Accessor Functions
+    // These are key functions, very important.
     int GetCivilization() const;
     int GetEraOffered() const;
-
+	bool IncludesOneShotFreeUnits(LegacyTypes eLegacy) const;
+	void SetIncludesOneShotFreeUnits(LegacyTypes eLegacy);
+	// Accessor Functions
 	int GetHappinessPerOriginalCity() const;
 	int GetGoldenAgeTurns() const;
 	int GetGreatGeneralSiegeBonus() const;
@@ -37,6 +39,13 @@ public:
 	int GetPlotCultureCostModifier() const;
 	int GetHappinessFromGreatImprovements() const;
 	int GetHappinessFromForeignReligiousMajority() const;
+	int GetVotesPerCapital() const;
+	int GetInfluenceChangeMajorityReligion() const;
+	int GetInfluenceChangeTradeConnection() const;
+	int GetPurchasedUnitExtraMoves() const;
+	int GetHappinessPerTheme() const;
+	bool IsTradeUnplunderable() const;
+	bool IsCannotPlunder() const;
     // Arrays
 	int IsFreePromotion(int i) const;
 	int GetPromotionNearbyGeneral(int i) const;
@@ -61,10 +70,12 @@ public:
 	int GetSpecialistYieldChange(int i, int j) const;
 	int GetSpecialistHappinessChange(int i) const;
 	int GetImprovementYieldChange(int i, int j) const;
+	int GetImprovementTourismBonus(int i) const;
 	int GetImprovementYieldChangePerXWorldWonder(int i, int j) const;
 	int GetImprovementNearbyHealChangeByDomain(int i, int j) const;
 	int GetImprovementNearbyCombatModifierByDomain(int i, int j) const;
 	int GetGreatWorkClassYieldChange(int i, int j) const;
+	int GetGreatWorkClassTourismChange(int i) const;
 	bool IsNoTrainUnit(UnitTypes eUnit) const;
 	bool IsNoConstructBuilding(BuildingTypes eBuilding) const;
 	int GetLegacyUnitClassOverride(int i) const;
@@ -76,6 +87,10 @@ public:
 	bool IsRevealResource(ResourceTypes eResource) const;
 	int GetUnitCostOverride(int i, int j) const;
 	int GetBuildingCostOverride(int i, int j) const;
+	int GetNumFreeUnitsByClass(int i) const;
+	int GetNumFreeUnitsByType(int i) const;
+	int GetBuildTimeOverride(int i) const;
+	int GetYieldBonusFromThemes(int i) const;
 private:
     int m_iCivilization;
     int m_iEraOffered;
@@ -88,10 +103,18 @@ private:
 	int m_iPlotCultureCostModifier;
 	int m_iHappinessFromGreatImprovements;
 	int m_iHappinessFromForeignReligiousMajority;
+	int m_iVotesPerCapital;
+	int m_iInfluenceChangeMajorityReligion;
+	int m_iInfluenceChangeTradeConnection;
+	int m_iPurchasedUnitExtraMoves;
+	int m_iHappinessPerTheme;
+	bool m_bTradeUnplunderable;
+	bool m_bCannotPlunder;
     //Arrays
 	// Weirdos
 	std::multimap<int, int> m_FreePromotionUnitType;
 	// 1D
+	bool* m_pbHasOneShotUnits;
 	bool* m_pbFreePromotion;
 	int* m_piPlotPurchaseYieldReward;
 	int* m_piCityYieldChange;
@@ -107,6 +130,12 @@ private:
 	int* m_piLegacyUnitClassOverride;
 	int* m_piLegacyBuildingClassOverride;
 	int* m_piPromotionNearbyGeneralUnitCombat;
+	int* m_piGreatWorkClassTourismChange;
+	int* m_piImprovementTourismBonus;
+	int* m_piNumFreeUnitsByClass;
+	int* m_piNumFreeUnitsByType;
+	int* m_piBuildTimeOverride;
+	int* m_piYieldBonusFromThemes;
 	std::vector<bool> m_pbUnitIgnoreTechPrereq;
 	std::vector<bool> m_pbUnitIgnorePolicyPrereq;
 	std::vector<bool> m_pbBuildingIgnoreTechPrereq;
@@ -187,6 +216,8 @@ public:
     // Activation Time!
     void testLegacyNotification() const;
     void updatePlayerLegacies(LegacyTypes eLegacy);
+	bool HasOneShotFreeUnitsFired(LegacyTypes eLegacy) const;
+	void SetOneShotFreeUnitsFired(LegacyTypes eLegacy, bool bFired);
     // Do AI for legacy choices. will likely be random until the feature settles.
     void DoLegacyAI();
     void DoChooseLegacy();
@@ -200,6 +231,13 @@ public:
 	int GetPlotCultureCostModifier() const;
 	int GetHappinessFromGreatImprovements() const;
 	int GetHappinessFromForeignReligiousMajority() const;
+	int GetVotesPerCapital() const;
+	int GetInfluenceChangeMajorityReligion() const;
+	int GetInfluenceChangeTradeConnection() const;
+	int GetPurchasedUnitExtraMoves() const;
+	int GetHappinessPerTheme() const;
+	bool IsTradeUnplunderable() const;
+	bool IsCannotPlunder() const;
 	// Arrays
 	bool HasFreePromotionUnitType(PromotionTypes ePromotion, UnitTypes eUnitType) const;
 	int GetPromotionNearbyGeneralUnitCombat(UnitCombatTypes eUnitCombat) const;
@@ -223,10 +261,12 @@ public:
 	int GetSpecialistYieldChange(SpecialistTypes eSpecialist, YieldTypes eYield) const;
 	int GetSpecialistHappinessChange(SpecialistTypes eSpecialist) const;
 	int GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const;
+	int GetImprovementTourismBonus(ImprovementTypes eImprovement) const;
 	int GetImprovementYieldChangePerXWorldWonder(ImprovementTypes eImprovement, YieldTypes eYield) const;
 	int GetNearbyImprovementHealChangeByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const;
 	int GetNearbyImprovementCombatModifierByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const;
 	int GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const;
+	int GetGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass) const;
 	bool NoTrainUnit(UnitTypes eUnit) const;
 	bool NoConstructBuilding(BuildingTypes eBuilding) const;
 	int GetLegacyUnitClassOverride(UnitClassTypes eUnitClass) const;
@@ -238,8 +278,11 @@ public:
 	bool IsRevealResource(ResourceTypes eResource) const;
 	int GetUnitCostOverride(UnitTypes eUnit, YieldTypes eYield) const;
 	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYield) const;
+	int GetBuildTimeOverride(BuildTypes eBuild) const;
+	int GetYieldBonusFromThemes(YieldTypes eYield) const;
 private:
     bool* m_pabHasLegacy;
+	bool* m_pabOneShotFreeUnitsFired;
 	CvLegacyXMLEntries* m_pLegacies;
     CvLegacyAI* m_pLegacyAI;
 	CvPlayer* m_pPlayer;
@@ -256,6 +299,13 @@ private:
 	int m_iPlotCultureCostModifier;
 	int m_iHappinessFromGreatImprovements;
 	int m_iHappinessFromForeignReligiousMajority;
+	int m_iVotesPerCapital;
+	int m_iInfluenceChangeMajorityReligion;
+	int m_iInfluenceChangeTradeConnection;
+	int m_iPurchasedUnitExtraMoves;
+	int m_iHappinessPerTheme;
+	bool m_bTradeUnplunderable;
+	bool m_bCannotPlunder;
 	//Arrays
 	std::vector<bool> m_vbNoTrain;
 	std::vector<bool> m_vbNoConstruct;
@@ -278,6 +328,10 @@ private:
 	std::vector <int> m_viLegacyBuildingClassOverrides;
 	std::vector <int> m_viSpecialistHappinessChanges;
 	std::vector <int> m_viPromotionNearbyGeneralUnitCombat;
+	std::vector <int> m_viGreatWorkClassTourismChanges;
+	std::vector <int> m_viImprovementTourismBonuses;
+	std::vector <int> m_viBuildTimeOverrides;
+	std::vector <int> m_viYieldBonusFromThemes;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiUnitCostOverrides;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingCostOverrides;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiGreatWorkClassYieldChanges;

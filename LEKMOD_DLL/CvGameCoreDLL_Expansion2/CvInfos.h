@@ -1352,9 +1352,11 @@ public:
 	CvGreatWorkClassInfo();
 	virtual ~CvGreatWorkClassInfo();
 
+	int getBaseTourism() const;
 	int getGreatWorkClassBaseYield(int i) const;
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 protected:
+	int m_iBaseTourism;
 	int* m_piBaseYield;
 };
 #endif

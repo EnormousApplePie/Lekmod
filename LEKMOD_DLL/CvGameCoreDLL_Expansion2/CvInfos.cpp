@@ -4416,6 +4416,7 @@ bool CvRouteInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 //					CvGreatWorkClassInfo
 //======================================================================================================
 CvGreatWorkClassInfo::CvGreatWorkClassInfo() :
+	m_iBaseTourism(0),
 	m_piBaseYield(NULL)
 {
 }
@@ -4423,6 +4424,11 @@ CvGreatWorkClassInfo::CvGreatWorkClassInfo() :
 CvGreatWorkClassInfo::~CvGreatWorkClassInfo()
 {
 	SAFE_DELETE_ARRAY(m_piBaseYield);
+}
+//------------------------------------------------------------------------------
+int CvGreatWorkClassInfo::getBaseTourism() const
+{
+	return m_iBaseTourism;
 }
 //------------------------------------------------------------------------------
 int CvGreatWorkClassInfo::getGreatWorkClassBaseYield(int i) const
@@ -4436,6 +4442,7 @@ bool CvGreatWorkClassInfo::CacheResults(Database::Results& kResults, CvDatabaseU
 {
 	if(!CvBaseInfo::CacheResults(kResults, kUtility))
 		return false;
+	m_iBaseTourism = kResults.GetInt("BaseTourism");
 	//Arrays
 	const char* szGreatWorkClassType = GetType();
 	kUtility.SetYields(m_piBaseYield, "GreatWorkClasses_Yields", "GreatWorkClassType", szGreatWorkClassType);

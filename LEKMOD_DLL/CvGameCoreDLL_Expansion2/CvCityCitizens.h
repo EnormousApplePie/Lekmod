@@ -175,7 +175,10 @@ public:
 
 	int GetBuildingGreatPeopleRateChanges(SpecialistTypes eSpecialist) const;
 	void ChangeBuildingGreatPeopleRateChanges(SpecialistTypes eSpecialist, int iChange);
-
+#if defined(LEKMOD_LEGACY)
+	int GetBuildingGreatPeopleRateModifier(SpecialistTypes eSpecialist) const;
+	void ChangeBuildingGreatPeopleRateModifier(SpecialistTypes eSpecialist, int iChange);
+#endif
 	int GetSpecialistGreatPersonProgress(SpecialistTypes eIndex) const;
 	int GetSpecialistGreatPersonProgressTimes100(SpecialistTypes eIndex) const;
 	void ChangeSpecialistGreatPersonProgressTimes100(SpecialistTypes eIndex, int iChange);
@@ -237,6 +240,9 @@ private:
 	int* m_aiNumSpecialistsInBuilding;
 	int* m_aiNumForcedSpecialistsInBuilding;
 	int* m_piBuildingGreatPeopleRateChanges;
+#if defined(LEKMOD_LEGACY)
+	int* m_piBuildingGreatPeopleRateModifier;
+#endif
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 	int* m_aiCachedGPChangeT100ForThisTurn;
 #endif

@@ -204,6 +204,9 @@ CvPlayer::CvPlayer() :
 #if defined(TRAITIFY) // Initialize
 	, m_iTraitExtraLeagueVotes(0)
 #endif
+#if defined(LEKMOD_LEGACY)
+	, m_iLegacyExtraLeagueVotes(0)
+#endif
 #if defined(MISC_CHANGES) // Initialize
 	, m_iTechExtraLeagueVotes(0)
 	, m_iPolicyExtraLeagueVotes(0)
@@ -485,6 +488,7 @@ CvPlayer::CvPlayer() :
 	, m_pabGetsScienceFromPlayer("CvPlayer::m_pabGetsScienceFromPlayer", m_syncArchive)
 #if defined(LEKMOD_LEGACY)
 	, m_ppaaiGreatWorkClassYieldChange("CvPlayer::m_ppaaiGreatWorkClassYieldChange", m_syncArchive)
+	, m_paiTourismBonusPerClass("CvPlayer::m_paiTourismBonusPerClass", m_syncArchive)
 #endif
 	, m_ppaaiSpecialistExtraYield("CvPlayer::m_ppaaiSpecialistExtraYield", m_syncArchive)
 	, m_ppaaiImprovementYieldChange("CvPlayer::m_ppaaiImprovementYieldChange", m_syncArchive)
@@ -895,6 +899,7 @@ void CvPlayer::uninit()
 	}
 #if defined(LEKMOD_LEGACY)
 	m_ppaaiGreatWorkClassYieldChange.clear();
+	m_paiTourismBonusPerClass.clear();
 #endif
 	m_ppaaiSpecialistExtraYield.clear();
 	m_ppiImprovementYieldChange.clear();
@@ -1004,6 +1009,9 @@ void CvPlayer::uninit()
 	m_iExtraLeagueVotes = 0;
 #if defined(TRAITIFY) // uninit()
 	m_iTraitExtraLeagueVotes = 0;
+#endif
+#if defined(LEKMOD_LEGACY)
+	m_iLegacyExtraLeagueVotes = 0;
 #endif
 #if defined(MISC_CHANGES) // uninit()
 	m_iTechExtraLeagueVotes = 0;
@@ -1562,6 +1570,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		{
 			m_ppaaiGreatWorkClassYieldChange.setAt(i, yield);
 		}
+		m_paiTourismBonusPerClass.clear();
+		m_paiTourismBonusPerClass.resize(GC.getNumGreatWorkClassInfos(), 0);
 #endif
 		m_ppaaiImprovementYieldChange.clear();
 		m_ppaaiImprovementYieldChange.resize(GC.getNumImprovementInfos());
@@ -2532,13 +2542,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 		{
 			DoTechFromCityConquer(pOldCity);
 		}
-		
-
-
-
-
-
-		
 	//}
 #endif
 		if (GetPlayerTraits()->IsTechFromCityConquer())
@@ -12098,6 +12101,13 @@ void CvPlayer::ChangeGreatWorkYieldChange(YieldTypes eYield, int iChange)
 	if(iChange != 0)
 	{
 		m_aiGreatWorkYieldChange[eYield] = m_aiGreatWorkYieldChange[eYield] + iChange;
+#if defined(LEKMOD_LEGACY)
+		int iLoop;
+		for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			pLoopCity->GetCityBuildings()->rebuildGreatWorkYields();
+		}
+#endif
 	}
 }
 #if defined(LEKMOD_LEGACY)
@@ -12124,7 +12134,29 @@ void CvPlayer::ChangeGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, Y
 		Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiGreatWorkClassYieldChange[eGreatWorkClass];
 		yields[eYield] = (m_ppaaiGreatWorkClassYieldChange[eGreatWorkClass][eYield] + iChange);
 		m_ppaaiGreatWorkClassYieldChange.setAt(eGreatWorkClass, yields);
+
+		int iLoop;
+		for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			pLoopCity->GetCityBuildings()->rebuildGreatWorkYields();
+		}
 	}
+}
+// --------------------------------------------------------------------------------
+// Changes how much additional Tourism from a GreatWorkClass does this player have
+int CvPlayer::GetGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass) const
+{
+	CvAssertMsg(eGreatWorkClass >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_paiTourismBonusPerClass[eGreatWorkClass];
+}
+// --------------------------------------------------------------------------------
+// Changes how much additional Tourism from a GreatWorkClass does this player have
+void CvPlayer::ChangeGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass, int iChange)
+{
+	CvAssertMsg(eGreatWorkClass >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	m_paiTourismBonusPerClass.setAt(eGreatWorkClass, m_paiTourismBonusPerClass[eGreatWorkClass] + iChange);
 }
 #endif
 //	--------------------------------------------------------------------------------
@@ -15077,6 +15109,7 @@ int CvPlayer::GetHappinessFromPolicies() const
 int CvPlayer::GetHappinessFromLegacies() const
 {
 	int iHappiness = 0;
+	int iTemp = 0;
 	for (int iS = 0; iS < GC.getNumSpecialistInfos(); iS++)
 	{
 		SpecialistTypes eSpecialist = (SpecialistTypes)iS;
@@ -15092,9 +15125,22 @@ int CvPlayer::GetHappinessFromLegacies() const
 	{
 		if (pLoopCity == NULL)
 			continue;
-		if (pLoopCity->getOriginalOwner() != GetID())
-			continue;
-		iHappiness += GetPlayerLegacies()->GetHappinessPerOriginalCity();
+		iTemp = GetPlayerLegacies()->GetHappinessPerOriginalCity();
+		if (iTemp != 0)
+		{
+			if (pLoopCity->getOriginalOwner() != GetID())
+				continue;
+			iHappiness += iTemp;
+		}
+		iTemp = GetPlayerLegacies()->GetHappinessPerTheme();
+		if (iTemp != 0)
+		{
+			int numThemes = pLoopCity->GetCityBuildings()->countNumThemesActive();
+			if (numThemes > 0)
+			{
+				iHappiness += (iTemp * numThemes);
+			}
+		}
 	}
 	iHappiness += (getGreatPersonImprovementCount() * GetPlayerLegacies()->GetHappinessFromGreatImprovements());
 	iHappiness += (GetReligions()->GetNumForeignCitiesFollowing() * GetPlayerLegacies()->GetHappinessFromForeignReligiousMajority());
@@ -16466,6 +16512,40 @@ void CvPlayer::ChangeTraitExtraLeagueVotes(int iChange)
 	{
 		m_iTraitExtraLeagueVotes = 0;
 	}
+}
+#endif
+#if defined(LEKMOD_LEGACY)
+// --------------------------------------------------------------------------------
+// Extra League Votes from Legacies
+int CvPlayer::GetLegacyExtraLeagueVotes() const
+{
+	return m_iLegacyExtraLeagueVotes;
+}
+// --------------------------------------------------------------------------------
+// Change Extra League Votes from Legacies
+void CvPlayer::ChangeLegacyExtraLeagueVotes(int iChange)
+{
+	m_iLegacyExtraLeagueVotes += iChange;
+	CvAssert(m_iLegacyExtraLeagueVotes >= 0);
+	if (m_iLegacyExtraLeagueVotes < 0)
+	{
+		m_iLegacyExtraLeagueVotes = 0;
+	}
+}
+// --------------------------------------------------------------------------------
+// How many Capitals do we control?
+int CvPlayer::GetNumOriginalCapitalsControlled()
+{
+	int iNumCapitals = 0;
+	int iLoop;
+	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		if (pLoopCity->IsOriginalCapital())
+		{
+			iNumCapitals++;
+		}
+	}
+	return iNumCapitals;
 }
 #endif
 #if defined(MISC_CHANGES) // Handle Extra League Votes from Techs and Policies
@@ -17989,7 +18069,6 @@ void CvPlayer::DoGreatPersonExpended(UnitTypes eGreatPersonUnit)
 	}
 
 #endif
-	DoUpdateHappiness();
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if (pkScriptSystem)
 	{
@@ -19269,41 +19348,6 @@ void CvPlayer::ChangeEnablesSSPartHurryCount(int iChange)
 		CvAssert(GetEnablesSSPartHurryCount() >= 0);
 	}
 }
-#if defined(LEK_TOURISM)
-// Tourism this is Generating, dislocating from the CvCultureClasses object since we can just import it
-int CvPlayer::GetTourismPerTurnTimes100(bool bTheInternet)
-{
-	int iTotal = 0;
-
-	// From Cities
-	iTotal += calculateTotalYield(YIELD_TOURISM);
-	// if we have the internet, but we dont want to consider it, then remove 
-	if (GetInfluenceSpreadModifier() > 0 && !bTheInternet)
-	{
-		iTotal -= (GetBaseTourismFromCities() * GetInfluenceSpreadModifier()) / 100;
-	}
-	
-	return iTotal;
-}
-// the premodified amount of tourism we are making from cities
-int CvPlayer::GetBaseTourismFromCities()
-{
-	int iBase = 0;
-
-	const CvCity* pLoopCity;
-	int iTotalYield = 0;
-	int iLoop = 0;
-
-	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		iTotalYield += pLoopCity->getBaseYieldRate(YIELD_TOURISM);
-	}
-
-	return iTotalYield;
-
-	return iBase;
-}
-#endif
 #ifdef NQ_DIABLE_RESISTANCE_TIME_VIA_POLICIES
 //	--------------------------------------------------------------------------------
 int CvPlayer::GetDisablesResistanceTimeCount() const
@@ -26911,7 +26955,17 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 
 	int iMod;
 	YieldTypes eYield;
-
+	for (iI = 0; iI < GC.getNumGreatWorkClassInfos(); iI++)
+	{
+		GreatWorkClass eGreatWorkClass = (GreatWorkClass)iI;
+		if (eGreatWorkClass == NO_GREAT_WORK_CLASS)
+			continue;
+		iMod = pPolicy->GetExtraTourismPerGreatWork() * iChange;
+		if (iMod != 0)
+		{
+			ChangeGreatWorkClassTourismChange(eGreatWorkClass, iMod);
+		}
+	}
 	for(iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		eYield = (YieldTypes) iI;
@@ -27977,12 +28031,12 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 					SpecialistTypes eSpecialist = (SpecialistTypes)jI;
 					if (eSpecialist == NO_SPECIALIST)
 						continue;
-					
-					iTemp = kLegacy.GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
-						
 					iTemp = kLegacy.GetBuildingClassGreatPersonPointChange(eBuildingClass, eSpecialist);
 					if (iTemp > 0)
 						pLoopCity->GetCityCitizens()->ChangeBuildingGreatPeopleRateChanges(eSpecialist, iTemp * iBuildingCount * iChange);
+					iTemp = kLegacy.GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
+					if (iTemp != 0)
+						pLoopCity->GetCityCitizens()->ChangeBuildingGreatPeopleRateModifier(eSpecialist, iTemp * iBuildingCount * iChange);
 						
 				}
 				BuildingTypes eNewBuilding = (BuildingTypes)kLegacy.GetLegacyBuildingClassOverride(eBuildingClass);
@@ -28050,7 +28104,7 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 	// Loop through all Unit Infos to adjust future units
 	for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
 	{
-		UnitTypes eUnit = (UnitTypes)iI;
+		const UnitTypes eUnit = (UnitTypes)iI;
 		if (eUnit == NO_UNIT)
 			continue;
 		// Adjust Strength for Future Units
@@ -28067,13 +28121,76 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 		// Adjust Resource Usage for Future Units
 		for (jJ = 0; jJ < GC.getNumResourceInfos(); jJ++)
 		{
-			ResourceTypes eResource = (ResourceTypes)jJ;
+			const ResourceTypes eResource = (ResourceTypes)jJ;
 			if (eResource == NO_RESOURCE)
 				continue;
 			int iResourceChange = kLegacy.GetUnitResourceRequirementChange((int)eUnit, (int)eResource) * iChange;
 			if (iResourceChange != 0)
 			{
 				GC.getUnitInfo(eUnit)->ChangeResourceQuantityRequirement(eResource, iResourceChange * iChange);
+			}
+		}
+	}
+	// Free Units
+	if (kLegacy.IncludesOneShotFreeUnits(eLegacy) && !m_pPlayerLegacies->HasOneShotFreeUnitsFired(eLegacy))
+	{
+		
+		m_pPlayerLegacies->SetOneShotFreeUnitsFired(eLegacy, true);
+
+		if (getCapitalCity() != NULL)
+		{
+			int iX = getCapitalCity()->getX();
+			int iY = getCapitalCity()->getY();
+
+			for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+			{
+				const UnitClassTypes eUnitClass = (UnitClassTypes)iI;
+				if (NO_UNITCLASS == eUnitClass)
+					continue;
+				CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
+				if (pkUnitClassInfo)
+					continue;
+				int iNumFreeUnits = kLegacy.GetNumFreeUnitsByClass(eUnitClass);
+				if (iNumFreeUnits > 0)
+				{
+					const UnitTypes eUnit = (UnitTypes)getCivilizationInfo().getCivilizationUnits(eUnitClass);
+					CvUnitEntry* pUnitEntry = GC.getUnitInfo(eUnit);
+					if (GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman() && pUnitEntry != NULL && pUnitEntry->IsFound())
+					{
+						continue;
+					}
+					for (int iUnitLoop = 0; iUnitLoop < iNumFreeUnits; iUnitLoop++)
+					{
+						CvUnit* pNewUnit = initUnit(eUnit, iX, iY);
+						CvAssert(pNewUnit);
+						incrementGreatPersonCount(pNewUnit);
+						pNewUnit->jumpToNearestValidPlot();
+					}
+				}
+			}
+			for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
+			{
+				const UnitTypes eUnit = (UnitTypes)iI;
+				if (NO_UNIT == eUnit)
+					continue;
+				CvUnitEntry* pUnitEntry = GC.getUnitInfo(eUnit);
+				if (!pUnitEntry)
+					continue;
+				int iNumFreeUnits = kLegacy.GetNumFreeUnitsByType(eUnit);
+				if (iNumFreeUnits > 0)
+				{
+					if (GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman() && pUnitEntry != NULL && pUnitEntry->IsFound())
+					{
+						continue;
+					}
+					for (int iUnitLoop = 0; iUnitLoop < iNumFreeUnits; iUnitLoop++)
+					{		
+						CvUnit* pNewUnit = initUnit(eUnit, iX, iY);
+						CvAssert(pNewUnit);
+						incrementGreatPersonCount(pNewUnit);
+						pNewUnit->jumpToNearestValidPlot();
+					}
+				}
 			}
 		}
 	}
@@ -28096,6 +28213,15 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 
 		changeGoldenAgeTurns(iGoldenAgeTurns);
 	}
+	for (iI = 0; iI < GC.getNumGreatWorkClassInfos(); iI++)
+	{
+		GreatWorkClass eGreatWorkClass = (GreatWorkClass)iI;
+		iTemp = kLegacy.GetGreatWorkClassTourismChange(iI) * iChange;
+		if (iTemp != 0)
+		{
+			ChangeGreatWorkClassTourismChange(eGreatWorkClass, iTemp);
+		}
+	}
 	ChangePlotGoldCostMod(kLegacy.GetPlotGoldCostModifier() * iChange);
 	ChangePlotCultureCostModifier(kLegacy.GetPlotCultureCostModifier() * iChange);
 
@@ -28105,6 +28231,124 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 
 	GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
+}
+void CvPlayer::incrementGreatPersonCount(CvUnit* pUnit)
+{
+	if (pUnit)
+	{
+		if (pUnit->IsGreatGeneral())
+		{
+#ifdef ENHANCED_GRAPHS
+			ChangeNumGeneralsTotal(1);
+#else
+			incrementGreatGeneralsCreated();
+#endif
+#ifdef NQ_WAR_HERO
+			if (IsWarHero())
+			{
+				addFreeUnit((UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST"));
+			}
+#endif
+		}
+		else if (pUnit->IsGreatAdmiral())
+		{
+#ifdef ENHANCED_GRAPHS
+			ChangeNumAdmiralsTotal(1);
+#else
+			incrementGreatAdmiralsCreated();
+#endif
+			CvPlot* pSpawnPlot = GetGreatAdmiralSpawnPlot(pUnit);
+			if (pUnit->plot() != pSpawnPlot)
+			{
+				pUnit->setXY(pSpawnPlot->getX(), pSpawnPlot->getY());
+			}
+		}
+		else if (pUnit->getUnitInfo().IsFoundReligion())
+		{
+			ReligionTypes eReligion = GetReligions()->GetReligionCreatedByPlayer();
+			int iReligionSpreads = pUnit->getUnitInfo().GetReligionSpreads();
+			int iReligiousStrength = pUnit->getUnitInfo().GetReligiousStrength();
+			if (iReligionSpreads > 0 && eReligion > RELIGION_PANTHEON)
+			{
+				pUnit->GetReligionData()->SetSpreadsLeft(iReligionSpreads);
+				pUnit->GetReligionData()->SetReligiousStrength(iReligiousStrength);
+				pUnit->GetReligionData()->SetReligion(eReligion);
+			}
+#ifdef ENHANCED_GRAPHS
+			ChangeNumProphetsTotal(1);
+#endif
+		}
+		else if (pUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
+		{
+#ifdef ENHANCED_GRAPHS
+			ChangeNumWritersTotal(1);
+#endif	
+		}
+		else if (pUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
+		{
+#ifdef ENHANCED_GRAPHS
+			ChangeNumArtistsTotal(1);
+#endif
+		}
+		else if (pUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
+		{
+#ifdef ENHANCED_GRAPHS
+			ChangeNumMusiciansTotal(1);
+#endif
+			if (pUnit->getUnitInfo().GetOneShotTourism() > 0)
+			{
+				pUnit->SetTourismBlastStrength(GetCulture()->GetTourismBlastStrength(pUnit->getUnitInfo().GetOneShotTourism()));
+			}
+		}
+		// GJS: begin separation of great people
+		else if (pUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
+		{
+			// GJS: Great Scientists now bulb for science at point of birth, not current science 
+#ifdef DECREASE_BULB_AMOUNT_OVER_TIME
+			if (GC.getGame().isOption("GAMEOPTION_NO_SCIENTIST_SAVING"))
+			{
+				pUnit->SetScientistBirthTurn(GC.getGame().getGameTurn());
+			}
+			else
+			{
+				pUnit->SetResearchBulbAmount(GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), pUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
+			}
+#else
+			pUnit->SetResearchBulbAmount(GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), pUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
+#endif
+#ifdef ENHANCED_GRAPHS
+			ChangeNumScientistsTotal(1);
+#endif
+		}
+		else if (pUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
+		{
+			// GJS NQMP - Free Great Engineers from policies are actually free
+			//incrementGreatEngineersCreated();
+#ifdef ENHANCED_GRAPHS
+			ChangeNumEngineersTotal(1);
+#endif
+		}
+		else if (pUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
+		{
+			// GJS NQMP - Free Great Merchants from policies are actually free
+			//incrementGreatMerchantsCreated();
+#ifdef ENHANCED_GRAPHS
+			ChangeNumMerchantsTotal(1);
+#endif
+		}
+		else if (pUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+		{
+			incrementGreatProphetsCreated();
+#ifdef ENHANCED_GRAPHS
+			ChangeNumProphetsTotal(1);
+#endif
+		}
+		// GJS: end separation of great people
+		else if (pUnit->IsGreatPerson())
+		{
+			incrementGreatPeopleCreated();
+		}
+	}
 }
 #endif
 #ifdef LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
@@ -28436,6 +28680,9 @@ void CvPlayer::Read(FDataStream& kStream)
 	}
 #if defined(TRAITIFY) // Read
 	kStream >> m_iTraitExtraLeagueVotes;
+#endif
+#if defined(LEKMOD_LEGACY)
+	kStream >> m_iLegacyExtraLeagueVotes;
 #endif
 #if defined(MISC_CHANGES) // Read
 	kStream >> m_iTechExtraLeagueVotes;
@@ -28923,6 +29170,7 @@ void CvPlayer::Read(FDataStream& kStream)
 	}
 #if defined(LEKMOD_LEGACY)
 	kStream >> m_ppaaiGreatWorkClassYieldChange;
+	kStream >> m_paiTourismBonusPerClass;
 #endif
 	kStream >> m_ppaaiSpecialistExtraYield;
 	kStream >> m_ppaaiImprovementYieldChange;
@@ -29123,6 +29371,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_iExtraLeagueVotes;
 #if defined(TRAITIFY) // Write
 	kStream << m_iTraitExtraLeagueVotes;
+#endif
+#if defined(LEKMOD_LEGACY)
+	kStream << m_iLegacyExtraLeagueVotes;
 #endif
 #if defined(MISC_CHANGES) // Write
 	kStream << m_iTechExtraLeagueVotes;
@@ -29502,6 +29753,7 @@ void CvPlayer::Write(FDataStream& kStream) const
 	m_pTreasury->Write(kStream);
 #if defined(LEKMOD_LEGACY)
 	kStream << m_ppaaiGreatWorkClassYieldChange;
+	kStream << m_paiTourismBonusPerClass;
 #endif
 	kStream << m_ppaaiSpecialistExtraYield;
 	kStream << m_ppaaiImprovementYieldChange;

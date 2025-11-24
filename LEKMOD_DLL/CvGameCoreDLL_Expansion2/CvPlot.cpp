@@ -2635,11 +2635,25 @@ int CvPlot::getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer) const
 		// Pass the resource class to the GetBuildTimeOverride method
 		iOverrideTime = kPlayer.GetPlayerTraits()->GetBuildTimeOverride(eBuild, eResourceClass);
 	}
-
+#if! defined(LEKMOD_LEGACY)
 	// Check if override time is valid (>= 0) instead of > -1
 	if (iOverrideTime >= 0)
 	{
 		iTime = iOverrideTime;
+	}
+#endif
+#endif
+#if defined(LEKMOD_LEGACY)
+	int iLegacyOverride = -1;
+	if (ePlayer != NO_PLAYER)
+	{
+		iLegacyOverride = GET_PLAYER(ePlayer).GetPlayerLegacies()->GetBuildTimeOverride(eBuild);
+	}
+	// If both overrides are -1, use original time; if one is -1, use the other; if both valid, use the minimum
+	int iTemp = (iLegacyOverride == -1) ? iOverrideTime : (iOverrideTime == -1 ? iLegacyOverride : std::min(iLegacyOverride, iOverrideTime));
+	if (iTemp >= 0)
+	{
+		iTime = iTemp;
 	}
 #endif
 	if (ePlayer != NO_PLAYER)

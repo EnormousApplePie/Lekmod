@@ -19,6 +19,7 @@ This is mimicking the policy system in implementation, so reference that.
 CvLegacyEntry::CvLegacyEntry(void) :
 	m_iCivilization(NO_CIVILIZATION),
 	m_iEraOffered(NO_ERA),
+	m_pbHasOneShotUnits(NULL),
 
 	m_iHappinessPerOriginalCity(0),
 	m_iGoldenAgeTurns(0),
@@ -29,7 +30,18 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_iPlotCultureCostModifier(0),
 	m_iHappinessFromGreatImprovements(0),
 	m_iHappinessFromForeignReligiousMajority(0),
+	m_iVotesPerCapital(0),
+	m_iInfluenceChangeMajorityReligion(0),
+	m_iInfluenceChangeTradeConnection(0),
+	m_iPurchasedUnitExtraMoves(0),
+	m_iHappinessPerTheme(0),
+	m_bTradeUnplunderable(false),
+	m_bCannotPlunder(false),
 
+	m_piYieldBonusFromThemes(NULL),
+	m_piBuildTimeOverride(NULL),
+	m_piNumFreeUnitsByClass(NULL),
+	m_piNumFreeUnitsByType(NULL),
 	m_piOriginalCityYieldChange(NULL),
 	m_piConqueredCityYieldChange(NULL),
 	m_paiBuildingCostOverride(NULL),
@@ -59,12 +71,15 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_paiImprovementNearbyCombatModifierByDomain(NULL),
 	m_piPromotionNearbyGeneralUnitCombat(NULL),
 	m_paiGreatWorkClassYieldChange(NULL),
+	m_piGreatWorkClassTourismChange(NULL),
+	m_piImprovementTourismBonus(NULL),
 	m_pbFreePromotion(NULL)
 {
 }
 // Destructor
 CvLegacyEntry::~CvLegacyEntry(void)
 {
+	SAFE_DELETE_ARRAY(m_pbHasOneShotUnits);
 	SAFE_DELETE_ARRAY(m_pbFreePromotion);
 	SAFE_DELETE_ARRAY(m_piLegacyBuildingClassOverride);
 	SAFE_DELETE_ARRAY(m_piLegacyUnitClassOverride);
@@ -80,6 +95,12 @@ CvLegacyEntry::~CvLegacyEntry(void)
 	SAFE_DELETE_ARRAY(m_piUnitStrengthChange);
 	SAFE_DELETE_ARRAY(m_piSpecialistHappinessChange);
 	SAFE_DELETE_ARRAY(m_piPromotionNearbyGeneralUnitCombat);
+	SAFE_DELETE_ARRAY(m_piGreatWorkClassTourismChange);
+	SAFE_DELETE_ARRAY(m_piImprovementTourismBonus);
+	SAFE_DELETE_ARRAY(m_piNumFreeUnitsByClass);
+	SAFE_DELETE_ARRAY(m_piNumFreeUnitsByType);
+	SAFE_DELETE_ARRAY(m_piBuildTimeOverride);
+	SAFE_DELETE_ARRAY(m_piYieldBonusFromThemes);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingCostOverride);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiUnitCostOverride);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassYieldChange);
@@ -108,6 +129,8 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iCivilization = GC.getInfoTypeForString(szCivilization, true);
 	const char* szEra = kResults.GetText("EraOffered");
 	m_iEraOffered = GC.getInfoTypeForString(szEra, true);
+	// Initialize a Derived Array
+	m_pbHasOneShotUnits = FNEW(bool[GC.getNumLegacyInfos()], c_eCiv5GameplayDLL, 0);
 
 	m_iHappinessPerOriginalCity = kResults.GetInt("HappinessPerOriginalCity");
 	m_iGoldenAgeTurns = kResults.GetInt("GoldenAgeTurns");
@@ -118,14 +141,29 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iPlotCultureCostModifier = kResults.GetInt("PlotCultureCostModifier");
 	m_iHappinessFromGreatImprovements = kResults.GetInt("HappinessFromGreatImprovements");
 	m_iHappinessFromForeignReligiousMajority = kResults.GetInt("HappinessFromForeignReligiousMajority");
+	m_iVotesPerCapital = kResults.GetInt("VotesPerCapital");
+	m_iInfluenceChangeMajorityReligion = kResults.GetInt("InfluenceChangeMajorityReligion");
+	m_iInfluenceChangeTradeConnection = kResults.GetInt("InfluenceChangeTradeConnection");
+	m_iPurchasedUnitExtraMoves = kResults.GetInt("PurchasedUnitExtraMoves");
+	m_iHappinessPerTheme = kResults.GetInt("HappinessFromThemes");
+
+	m_bTradeUnplunderable = kResults.GetBool("TradeUnplunderable");
+	m_bCannotPlunder = kResults.GetBool("CannotPlunder");
 
 	// Arrays Start.
 	const char* szLegacyType = GetType();
 	kUtility.SetYields(m_piPlotPurchaseYieldReward, "Legacy_PlotPurchaseYieldReward", "LegacyType", szLegacyType);
-	kUtility.PopulateArrayByValue(m_piCityYieldModifier, "Yields", "Legacy_CityYieldModifier", "YieldType", "LegacyType", szLegacyType, "Modifier");
+	kUtility.SetYields(m_piYieldBonusFromThemes, "Legacy_YieldBonusFromThemes", "LegacyType", szLegacyType);
+
 	kUtility.PopulateArrayByExistence(m_pbFreePromotion, "UnitPromotions", "Legacy_FreePromotions", "PromotionType", "LegacyType", szLegacyType);
+
+	kUtility.PopulateArrayByValue(m_piCityYieldModifier, "Yields", "Legacy_CityYieldModifier", "YieldType", "LegacyType", szLegacyType, "Modifier");
 	kUtility.PopulateArrayByValue(m_piBuildingClassProductionModifier, "BuildingClasses", "Legacy_BuildingClassProductionModifiers", "BuildingClassType", "LegacyType", szLegacyType, "Modifier");
 	kUtility.PopulateArrayByValue(m_piSpecialistHappinessChange, "Specialists", "Legacy_SpecialistHappinessChange", "SpecialistType", "LegacyType", szLegacyType, "HappinessTimes100");
+	kUtility.PopulateArrayByValue(m_piNumFreeUnitsByType, "Units", "Legacy_NumFreeUnitsByType", "UnitType", "LegacyType", szLegacyType, "NumUnits");
+	kUtility.PopulateArrayByValue(m_piNumFreeUnitsByClass, "UnitClasses", "Legacy_NumFreeUnitsByClass", "UnitClassType", "LegacyType", szLegacyType, "NumUnits");
+	kUtility.PopulateArrayByValue(m_piGreatWorkClassTourismChange, "GreatWorkClasses", "Legacy_GreatWorkClassTourismChange", "GreatWorkClassType", "LegacyType", szLegacyType, "TourismChange");
+	kUtility.PopulateArrayByValue(m_piBuildTimeOverride, "Builds", "Legacy_BuildTimeOverride", "BuildType", "LegacyType", szLegacyType, "TimeOverride");
 	// Complex/Compound Arrays
 	{
 		kUtility.Initialize2DArray(m_paiImprovementNearbyCombatModifierByDomain, "Improvements", "Domains");
@@ -477,8 +515,8 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		pResults->Reset();
 	}
 	{
-		kUtility.InitializeArray(m_piBuildingClassHappinessChange, "BuildingClasses", 0);
-		kUtility.InitializeArray(m_piBuildingClassGlobalHappinessChange, "BuildingClasses", 0);
+		kUtility.InitializeArray(m_piBuildingClassHappinessChange, "BuildingClasses");
+		kUtility.InitializeArray(m_piBuildingClassGlobalHappinessChange, "BuildingClasses");
 		std::string strKey("Legacy_BuildingClassHappinessChange");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
@@ -611,8 +649,8 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		pResults->Reset();
 	}
 	{
-		kUtility.InitializeArray(m_piUnitRangedStrengthChange, "Units", 0);
-		kUtility.InitializeArray(m_piUnitStrengthChange, "Units", 0);
+		kUtility.InitializeArray(m_piUnitRangedStrengthChange, "Units");
+		kUtility.InitializeArray(m_piUnitStrengthChange, "Units");
 		std::string strKey("Legacy_UnitStrengthChanges");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
@@ -659,6 +697,26 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		pResults->Reset();
 	}
 	{
+		kUtility.InitializeArray(m_piImprovementTourismBonus, "Improvements");
+		std::string strKey("Legacy_ImprovementTourismBonus");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Improvements.ID as ImprovementID, Tourism FROM Legacy_ImprovementTourismBonus "
+				"INNER JOIN Improvements ON Improvements.Type = ImprovementType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int iImprovement = pResults->GetInt(0);
+			const int iTourism = pResults->GetInt(1);
+			m_piImprovementTourismBonus[iImprovement] = iTourism;
+		}
+		pResults->Reset();
+	}
+	{
 		kUtility.Initialize2DArray(m_paiImprovementNearbyHealChangeByDomain, "Improvements", "Domains");
 		std::string strKey("Legacy_ImprovementNearbyHealChangeByDomain");
 		Database::Results* pResults = kUtility.GetResults(strKey);
@@ -680,6 +738,7 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		}
 		pResults->Reset();
 	}
+	SetIncludesOneShotFreeUnits((LegacyTypes)GetID());
 	// Return true at the very end.
 	return true;
 }
@@ -693,6 +752,51 @@ int CvLegacyEntry::GetEraOffered() const
 {
 	return m_iEraOffered;
 }
+// Does this Legacy Include Free Units?
+bool CvLegacyEntry::IncludesOneShotFreeUnits(LegacyTypes eLegacy) const
+{
+	CvAssertMsg(eLegacy >= 0 && eLegacy < GC.getNumLegacyInfos(), "Legacy index out of bounds");
+	return m_pbHasOneShotUnits[eLegacy];
+}
+// Set if this Legacy Has Free Units
+void CvLegacyEntry::SetIncludesOneShotFreeUnits(LegacyTypes eLegacy)
+{
+	bool bHasOneShotUnits = false;
+	if (m_piNumFreeUnitsByType != NULL)
+	{
+		for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
+		{
+			if (m_piNumFreeUnitsByType[iUnit] > 0)
+			{
+				bHasOneShotUnits = true;
+				break;
+			}
+		}
+	}
+	if (!bHasOneShotUnits && m_piNumFreeUnitsByClass != NULL)
+	{
+		for (int iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); iUnitClass++)
+		{
+			if (m_piNumFreeUnitsByClass[iUnitClass] > 0)
+			{
+				bHasOneShotUnits = true;
+				break;
+			}
+		}
+	}
+
+	m_pbHasOneShotUnits[eLegacy] = bHasOneShotUnits;
+}
+// Special Stuff, doesnt need a Player Legacy object
+int CvLegacyEntry::GetNumFreeUnitsByClass(int i) const
+{
+	return m_piNumFreeUnitsByClass ? m_piNumFreeUnitsByClass[i] : 0;
+}
+int CvLegacyEntry::GetNumFreeUnitsByType(int i) const
+{
+	return m_piNumFreeUnitsByType ? m_piNumFreeUnitsByType[i] : 0;
+}
+// SIMPLE GETTERS
 int CvLegacyEntry::GetHappinessPerOriginalCity() const
 {
 	return m_iHappinessPerOriginalCity;
@@ -728,6 +832,34 @@ int CvLegacyEntry::GetHappinessFromGreatImprovements() const
 int CvLegacyEntry::GetHappinessFromForeignReligiousMajority() const
 {
 	return m_iHappinessFromForeignReligiousMajority;
+}
+int CvLegacyEntry::GetVotesPerCapital() const
+{
+	return m_iVotesPerCapital;
+}
+int CvLegacyEntry::GetInfluenceChangeMajorityReligion() const
+{
+	return m_iInfluenceChangeMajorityReligion;
+}
+int CvLegacyEntry::GetInfluenceChangeTradeConnection() const
+{
+	return m_iInfluenceChangeTradeConnection;
+}
+int CvLegacyEntry::GetPurchasedUnitExtraMoves() const
+{
+	return m_iPurchasedUnitExtraMoves;
+}
+int CvLegacyEntry::GetHappinessPerTheme() const
+{
+	return m_iHappinessPerTheme;
+}
+bool CvLegacyEntry::IsTradeUnplunderable() const
+{
+	return m_bTradeUnplunderable;
+}
+bool CvLegacyEntry::IsCannotPlunder() const
+{
+	return m_bCannotPlunder;
 }
 // ARRAYS
 bool CvLegacyEntry::IsRevealResource(ResourceTypes eResource) const
@@ -890,6 +1022,14 @@ int CvLegacyEntry::GetGreatWorkClassYieldChange(int i, int j) const
 {
 	return m_paiGreatWorkClassYieldChange ? m_paiGreatWorkClassYieldChange[i][j] : 0;
 }
+int CvLegacyEntry::GetGreatWorkClassTourismChange(int i) const
+{
+	return m_piGreatWorkClassTourismChange ? m_piGreatWorkClassTourismChange[i] : 0;
+}
+int CvLegacyEntry::GetImprovementTourismBonus(int i) const
+{
+	return m_piImprovementTourismBonus ? m_piImprovementTourismBonus[i] : 0;
+}
 int CvLegacyEntry::GetBuildingCostOverride(int i, int j) const
 {
 	return m_paiBuildingCostOverride ? m_paiBuildingCostOverride[i][j] : -1;
@@ -897,6 +1037,14 @@ int CvLegacyEntry::GetBuildingCostOverride(int i, int j) const
 int CvLegacyEntry::GetUnitCostOverride(int i, int j) const
 {
 	return m_paiUnitCostOverride ? m_paiUnitCostOverride[i][j] : -1;
+}
+int CvLegacyEntry::GetBuildTimeOverride(int i) const
+{
+	return m_piBuildTimeOverride ? m_piBuildTimeOverride[i] : -1;
+}
+int CvLegacyEntry::GetYieldBonusFromThemes(int i) const
+{
+	return m_piYieldBonusFromThemes ? m_piYieldBonusFromThemes[i] : 0;
 }
 //=====================================
 // CvLegacyXMLEntries
@@ -945,6 +1093,7 @@ CvLegacyEntry* CvLegacyXMLEntries::GetLegacyEntry(int iIndex)
 /// Constructor
 CvPlayerLegacies::CvPlayerLegacies(void):
 	m_pabHasLegacy(NULL),
+	m_pabOneShotFreeUnitsFired(NULL),
 	m_pLegacies(NULL),
 	m_pLegacyAI(NULL),
 	m_pPlayer(NULL)
@@ -963,6 +1112,7 @@ void CvPlayerLegacies::Init(CvLegacyXMLEntries* pLegacies, CvPlayer* pPlayer)
 
 	// Allocate memory.
 	m_pabHasLegacy = FNEW(bool[m_pLegacies->GetNumLegacies()], c_eCiv5GameplayDLL, 0);
+	m_pabOneShotFreeUnitsFired = FNEW(bool[m_pLegacies->GetNumLegacies()], c_eCiv5GameplayDLL, 0);
 	m_pLegacyAI = FNEW(CvLegacyAI(this), c_eCiv5GameplayDLL, 0);
 
 	Reset();
@@ -973,6 +1123,7 @@ void CvPlayerLegacies::Init(CvLegacyXMLEntries* pLegacies, CvPlayer* pPlayer)
 void CvPlayerLegacies::Uninit()
 {
 	SAFE_DELETE_ARRAY(m_pabHasLegacy);
+	SAFE_DELETE_ARRAY(m_pabOneShotFreeUnitsFired);
 	SAFE_DELETE(m_pLegacyAI);
 	m_vbRevealResource.clear();
 	m_viLegacyBuildingClassOverrides.clear();
@@ -1005,8 +1156,12 @@ void CvPlayerLegacies::Uninit()
 	m_vaaiNearbyImprovementHealChangeByDomain.clear();
 	m_vaaiNearbyImprovementCombatModifierByDomain.clear();
 	m_vaaiGreatWorkClassYieldChanges.clear();
+	m_viGreatWorkClassTourismChanges.clear();
+	m_viImprovementTourismBonuses.clear();
 	m_vaaiBuildingCostOverrides.clear();
 	m_vaaiUnitCostOverrides.clear();
+	m_viBuildTimeOverrides.clear();
+	m_viYieldBonusFromThemes.clear();
 }
 // Reset
 void CvPlayerLegacies::Reset()
@@ -1014,12 +1169,10 @@ void CvPlayerLegacies::Reset()
 	m_vCivHasLegacy.resize(GC.getNumLegacyInfos(), false);
 	m_vPotentiallyActiveCivLegacies.clear();
 
-	if (m_pabHasLegacy)
+	for (int i = 0; i < m_pLegacies->GetNumLegacies(); i++)
 	{
-		for (int i = 0; i < m_pLegacies->GetNumLegacies(); i++)
-		{
-			m_pabHasLegacy[i] = false;
-		}
+		m_pabHasLegacy[i] = false;
+		m_pabOneShotFreeUnitsFired[i] = false;
 	}
 	// Gameplay Effects
 	m_iHappinessPerOriginalCity = 0;
@@ -1031,14 +1184,42 @@ void CvPlayerLegacies::Reset()
 	m_iPlotCultureCostModifier = 0;
 	m_iHappinessFromGreatImprovements = 0;
 	m_iHappinessFromForeignReligiousMajority = 0;
+	m_iVotesPerCapital = 0;
+	m_iInfluenceChangeMajorityReligion = 0;
+	m_iInfluenceChangeTradeConnection = 0;
+	m_iPurchasedUnitExtraMoves = 0;
+	m_iHappinessPerTheme = 0;
+	m_bCannotPlunder = false;
+	m_bTradeUnplunderable = false;
 	
 	// Arrays
+	// Builds
+	m_viBuildTimeOverrides.clear();
+	m_viBuildTimeOverrides.resize(GC.getNumBuildInfos());
+	for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
+	{
+		m_viBuildTimeOverrides[iBuild] = -1;
+	}
 	// Resources
 	m_vbRevealResource.clear();
 	m_vbRevealResource.resize(GC.getNumResourceInfos());
 	for (int iResource = 0; iResource < GC.getNumResourceInfos(); iResource++)
 	{
 		m_vbRevealResource[iResource] = false;
+	}
+	// Great Work Classes
+	m_viGreatWorkClassTourismChanges.clear();
+	m_viGreatWorkClassTourismChanges.resize(GC.getNumGreatWorkClassInfos());
+	for (int iGreatWorkClass = 0; iGreatWorkClass < GC.getNumGreatWorkClassInfos(); iGreatWorkClass++)
+	{
+		m_viGreatWorkClassTourismChanges[iGreatWorkClass] = 0;
+	}
+	// Improvements, 1d
+	m_viImprovementTourismBonuses.clear();
+	m_viImprovementTourismBonuses.resize(GC.getNumImprovementInfos());
+	for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+	{
+		m_viImprovementTourismBonuses[iImprovement] = 0;
 	}
 	// Units
 	m_viUnitStrengthChanges.clear();
@@ -1139,6 +1320,8 @@ void CvPlayerLegacies::Reset()
 	m_vaaiBuildingCostOverrides.resize(GC.getNumBuildingInfos());
 	m_vaaiUnitCostOverrides.clear();
 	m_vaaiUnitCostOverrides.resize(GC.getNumUnitInfos());
+	m_viYieldBonusFromThemes.clear();
+	m_viYieldBonusFromThemes.resize(NUM_YIELD_TYPES);
 
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
 	for (unsigned int j = 0; j < NUM_YIELD_TYPES; ++j)
@@ -1152,6 +1335,7 @@ void CvPlayerLegacies::Reset()
 		m_viOriginalCityYieldChange[iYield] = 0;
 		m_viConqueredCityYieldChange[iYield] = 0;
 		m_viCityYieldModifier[iYield] = 0;
+		m_viYieldBonusFromThemes[iYield] = 0;
 		
 		// BuildingClass
 		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
@@ -1228,6 +1412,7 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 		uiLegacyCount = m_pLegacies->GetNumLegacies();
 	}
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabHasLegacy, uiLegacyCount);
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_pabOneShotFreeUnitsFired, uiLegacyCount);
 	kStream >> m_iHappinessPerOriginalCity;
 	kStream >> m_iGoldenAgeTurns;
 	kStream >> m_iGreatGeneralSiegeBonus;
@@ -1237,7 +1422,15 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_iPlotCultureCostModifier;
 	kStream >> m_iHappinessFromGreatImprovements;
 	kStream >> m_iHappinessFromForeignReligiousMajority;
+	kStream >> m_iVotesPerCapital;
+	kStream >> m_iInfluenceChangeMajorityReligion;
+	kStream >> m_iInfluenceChangeTradeConnection;
+	kStream >> m_iPurchasedUnitExtraMoves;
+	kStream >> m_iHappinessPerTheme;
+	kStream >> m_bCannotPlunder;
+	kStream >> m_bTradeUnplunderable;
 
+	kStream >> m_viYieldBonusFromThemes;
 	kStream >> m_viLegacyUnitClassOverrides;
 	kStream >> m_viLegacyBuildingClassOverrides;
 	kStream >> m_viPlotPurchaseYieldReward;
@@ -1262,8 +1455,11 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_vaaiNearbyImprovementHealChangeByDomain;
 	kStream >> m_vaaiNearbyImprovementCombatModifierByDomain;
 	kStream >> m_vaaiGreatWorkClassYieldChanges;
+	kStream >> m_viGreatWorkClassTourismChanges;
+	kStream >> m_viImprovementTourismBonuses;
 	kStream >> m_vaaiBuildingCostOverrides;
 	kStream >> m_vaaiUnitCostOverrides;
+	kStream >> m_viBuildTimeOverrides;
 	// Boolean Arrays
 	int iNumEntries;
 	kStream >> iNumEntries;
@@ -1336,6 +1532,7 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 		uiLegacyCount = m_pLegacies->GetNumLegacies();
 	}
 	CvInfosSerializationHelper::WriteHashedDataArray<LegacyTypes>(kStream, m_pabHasLegacy, uiLegacyCount);
+	CvInfosSerializationHelper::WriteHashedDataArray<LegacyTypes>(kStream, m_pabOneShotFreeUnitsFired, uiLegacyCount);
 	kStream << m_iHappinessPerOriginalCity;
 	kStream << m_iGoldenAgeTurns;
 	kStream << m_iGreatGeneralSiegeBonus;
@@ -1345,7 +1542,15 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_iPlotCultureCostModifier;
 	kStream << m_iHappinessFromGreatImprovements;
 	kStream << m_iHappinessFromForeignReligiousMajority;
+	kStream << m_iVotesPerCapital;
+	kStream << m_iInfluenceChangeMajorityReligion;
+	kStream << m_iInfluenceChangeTradeConnection;
+	kStream << m_iPurchasedUnitExtraMoves;
+	kStream << m_iHappinessPerTheme;
+	kStream << m_bCannotPlunder;
+	kStream << m_bTradeUnplunderable;
 
+	kStream << m_viYieldBonusFromThemes;
 	kStream << m_viLegacyUnitClassOverrides;
 	kStream << m_viLegacyBuildingClassOverrides;
 	kStream << m_viPlotPurchaseYieldReward;
@@ -1370,8 +1575,11 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_vaaiNearbyImprovementHealChangeByDomain;
 	kStream << m_vaaiNearbyImprovementCombatModifierByDomain;
 	kStream << m_vaaiGreatWorkClassYieldChanges;
+	kStream << m_viGreatWorkClassTourismChanges;
+	kStream << m_viImprovementTourismBonuses;
 	kStream << m_vaaiBuildingCostOverrides;
 	kStream << m_vaaiUnitCostOverrides;
+	kStream << m_viBuildTimeOverrides;
 	// Boolean Arrays
 	kStream << m_vbNoTrain.size();
 	for (uint ui = 0; ui < m_vbNoTrain.size(); ui++)
@@ -1508,6 +1716,18 @@ void CvPlayerLegacies::testLegacyNotification() const
 		}
 	}
 }
+// Has this Legacy already given its free units?
+bool CvPlayerLegacies::HasOneShotFreeUnitsFired(LegacyTypes eLegacy) const
+{
+	CvAssertMsg(eLegacy >= 0 && eLegacy < GC.getNumLegacyInfos(), "Legacy index out of bounds");
+	return m_pabOneShotFreeUnitsFired[eLegacy];
+}
+// Set that this Legacy has given its free units
+void CvPlayerLegacies::SetOneShotFreeUnitsFired(LegacyTypes eLegacy, bool bFired)
+{
+	CvAssertMsg(eLegacy >= 0 && eLegacy < GC.getNumLegacyInfos(), "Legacy index out of bounds");
+	m_pabOneShotFreeUnitsFired[eLegacy] = bFired;
+}
 // Load Legacy Entry info into the PlayerLegacies object for access
 void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 {
@@ -1515,6 +1735,7 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	if (pkLegacyEntry == NULL)
 		return;
 	int iChange = 0;
+	bool bTemp = false;
 	const CvLegacyEntry& kLegacy = (*pkLegacyEntry);
 	m_iHappinessPerOriginalCity += kLegacy.GetHappinessPerOriginalCity();
 	m_iGoldenAgeTurns += kLegacy.GetGoldenAgeTurns();
@@ -1525,8 +1746,22 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	m_iPlotCultureCostModifier += kLegacy.GetPlotCultureCostModifier();
 	m_iHappinessFromGreatImprovements += kLegacy.GetHappinessFromGreatImprovements();
 	m_iHappinessFromForeignReligiousMajority += kLegacy.GetHappinessFromForeignReligiousMajority();
+	m_iVotesPerCapital += kLegacy.GetVotesPerCapital();
+	m_iInfluenceChangeMajorityReligion += kLegacy.GetInfluenceChangeMajorityReligion();
+	m_iInfluenceChangeTradeConnection += kLegacy.GetInfluenceChangeTradeConnection();
+	m_iPurchasedUnitExtraMoves += kLegacy.GetPurchasedUnitExtraMoves();
+	m_iHappinessPerTheme += kLegacy.GetHappinessPerTheme();
+	bTemp = kLegacy.IsCannotPlunder();
+	if (bTemp) m_bCannotPlunder = bTemp;
+	bTemp = kLegacy.IsTradeUnplunderable();
+	if (bTemp) m_bTradeUnplunderable = bTemp;
 	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 	{
+		iChange = kLegacy.GetYieldBonusFromThemes((YieldTypes)iYield);
+		if (iChange != 0)
+		{
+			m_viYieldBonusFromThemes[iYield] += iChange;
+		}
 		iChange = kLegacy.GetPlotPurchaseYieldReward((YieldTypes)iYield);
 		if (iChange != 0)
 		{
@@ -1699,6 +1934,21 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	{
 		m_viPromotionNearbyGeneralUnitCombat[iUnitCombat] = kLegacy.GetPromotionNearbyGeneral(iUnitCombat);
 	}
+	// Great Work Classes
+	for (int iGreatWorkClass = 0; iGreatWorkClass < GC.getNumGreatWorkClassInfos(); iGreatWorkClass++)
+	{
+		m_viGreatWorkClassTourismChanges[iGreatWorkClass] += kLegacy.GetGreatWorkClassTourismChange(iGreatWorkClass);
+	}
+	// Improvements - Non-yield
+	for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+	{
+		m_viImprovementTourismBonuses[iImprovement] += kLegacy.GetImprovementTourismBonus(iImprovement);
+	}
+	// Builds
+	for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
+	{
+		m_viBuildTimeOverrides[iBuild] = kLegacy.GetBuildTimeOverride(iBuild);
+	}
 }
 // How Much happiness per original city does the player get from legacies
 int CvPlayerLegacies::GetHappinessPerOriginalCity() const
@@ -1744,6 +1994,41 @@ int CvPlayerLegacies::GetHappinessFromGreatImprovements() const
 int CvPlayerLegacies::GetHappinessFromForeignReligiousMajority() const
 {
 	return m_iHappinessFromForeignReligiousMajority;
+}
+// How many votes per capital does the player get from legacies
+int CvPlayerLegacies::GetVotesPerCapital() const
+{
+	return m_iVotesPerCapital;
+}
+// How much influence change does the player get for majority religion in a City-State
+int CvPlayerLegacies::GetInfluenceChangeMajorityReligion() const
+{
+	return m_iInfluenceChangeMajorityReligion;
+}
+// How much influence change does the player get for a trade connection with a City-State 
+int CvPlayerLegacies::GetInfluenceChangeTradeConnection() const
+{
+	return m_iInfluenceChangeTradeConnection;
+}
+// How many extra moves does the player get for purchased units from legacies
+int CvPlayerLegacies::GetPurchasedUnitExtraMoves() const
+{
+	return m_iPurchasedUnitExtraMoves;
+}
+// How much happiness per theme does the player get from legacies
+int CvPlayerLegacies::GetHappinessPerTheme() const
+{
+	return m_iHappinessPerTheme;
+}
+// Can your Trade Routes be plundered?
+bool CvPlayerLegacies::IsTradeUnplunderable() const
+{
+	return m_bTradeUnplunderable;
+}
+// Is the ability to plunder Trade Routes blocked by Legacy?
+bool CvPlayerLegacies::IsCannotPlunder() const
+{
+	return m_bCannotPlunder;
 }
 // ARRAYS START
 // Does the player have a free promotion for a specific unit type from legacies
@@ -2040,7 +2325,19 @@ int CvPlayerLegacies::GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClas
 {
 	CvAssertMsg(eGreatWorkClass >= 0 && eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "GreatWorkClass index out of bounds");
 	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eGreatWorkClass != NO_GREAT_WORK_CLASS ? m_vaaiGreatWorkClassYieldChanges[(int)eGreatWorkClass][(int)eYield] : 0;
+	return NO_GREAT_WORK_CLASS != eGreatWorkClass ? m_vaaiGreatWorkClassYieldChanges[(int)eGreatWorkClass][(int)eYield] : 0;
+}
+// How much tourism change does the player get for a great work class from legacies
+int CvPlayerLegacies::GetGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass) const
+{
+	CvAssertMsg(eGreatWorkClass >= 0 && eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "GreatWorkClass index out of bounds");
+	return NO_GREAT_WORK_CLASS != eGreatWorkClass ? m_viGreatWorkClassTourismChanges[(int)eGreatWorkClass] : 0;
+}
+// How much tourism bonus does the player get for an improvement from legacies
+int CvPlayerLegacies::GetImprovementTourismBonus(ImprovementTypes eImprovement) const
+{
+	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
+	return NO_IMPROVEMENT != eImprovement ? m_viImprovementTourismBonuses[(int)eImprovement] : 0;
 }
 // Does this Legacy set the cost of a building type for the player
 int CvPlayerLegacies::GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYield) const
@@ -2056,8 +2353,18 @@ int CvPlayerLegacies::GetUnitCostOverride(UnitTypes eUnit, YieldTypes eYield) co
 	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
 	return NO_UNIT != eUnit ? m_vaaiUnitCostOverrides[(int)eUnit][(int)eYield] : 0;
 }
-
-
+// Does this Legacy set the build time of a build type for the player
+int CvPlayerLegacies::GetBuildTimeOverride(BuildTypes eBuild) const
+{
+	CvAssertMsg(eBuild >= 0 && eBuild < GC.getNumBuildInfos(), "Build index out of bounds");
+	return NO_BUILD != eBuild ? m_viBuildTimeOverrides[(int)eBuild] : -1;
+}
+// Does this legacy give a yield bonus for having active themes?
+int CvPlayerLegacies::GetYieldBonusFromThemes(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_YIELD != eYield ? m_viYieldBonusFromThemes[(int)eYield] : 0;
+}
 void CvPlayerLegacies::DoLegacyAI()
 {
 	//

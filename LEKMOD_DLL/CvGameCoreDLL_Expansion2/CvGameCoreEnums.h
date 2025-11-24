@@ -21,7 +21,6 @@ enum YieldTypes
 #if defined(LEKMOD_v34)
 	YIELD_GOLDEN_AGE_POINTS,
 #endif
-	YIELD_TOURISM,
     NUM_YIELD_TYPES
 };
 

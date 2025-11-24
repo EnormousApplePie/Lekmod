@@ -7420,7 +7420,12 @@ bool CvUnit::canPlunderTradeRoute(const CvPlot* pPlot, bool bOnlyTestVisibility)
 	{
 		return false;
 	}
-
+#if defined(LEKMOD_LEGACY)
+	if (GET_PLAYER(m_eOwner).GetPlayerLegacies()->IsCannotPlunder())
+	{
+		return false;
+	}
+#endif
 	if (GET_PLAYER(m_eOwner).GetTrade()->ContainsOpposingPlayerTradeUnit(pPlot))
 	{
 		if (!bOnlyTestVisibility)
@@ -7448,6 +7453,12 @@ bool CvUnit::canPlunderTradeRoute(const CvPlot* pPlot, bool bOnlyTestVisibility)
 #ifdef NQ_UNIT_IMMUNE_TO_PLUNDER_FROM_TRAIT
 			DomainTypes eDomain = GC.getGame().GetGameTrade()->GetDomainFromID(aiTradeUnitsAtPlot[0]);
 			if (eDomain == DOMAIN_SEA && GET_PLAYER(eTradeUnitOwner).GetPlayerTraits()->IsSeaTradeRoutesArePlunderImmune())
+			{
+				return false;
+			}
+#endif
+#if defined(LEKMOD_LEGACY)
+			if (GET_PLAYER(eTradeUnitOwner).GetPlayerLegacies()->IsTradeUnplunderable())
 			{
 				return false;
 			}
@@ -11001,6 +11012,14 @@ bool CvUnit::build(BuildTypes eBuild)
 			if(pkBuildInfo->getImprovement() != NO_IMPROVEMENT || pkBuildInfo->getRoute() != NO_ROUTE)	// Prevents chopping Forest or Jungle from counting
 			{
 				kPlayer.changeTotalImprovementsBuilt(1);
+#if defined(LEKMOD_LEGACY)
+				ImprovementTypes eImprovement = (ImprovementTypes)pkBuildInfo->getImprovement();
+				CvImprovementEntry* pkImprovementInfo = GC.getImprovementInfo(eImprovement);
+				if (pkImprovementInfo && pkImprovementInfo->IsCreatedByGreatPerson())
+				{
+					kPlayer.DoUpdateHappiness();
+				}
+#endif
 			}
 
 			if(GC.getLogging() && GC.getAILogging())
@@ -16802,7 +16821,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 		PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneralUnitCombat(getUnitCombatType());
 		if (eLegacyPromotion != NO_PROMOTION)
 		{
-			if (isHasPromotion(eLegacyPromotion) && !IsPromotionChosenByPlayer(eLegacyPromotion)) // Not chosen by player, so remove it
+			if (isHasPromotion(eLegacyPromotion) && (!IsPromotionChosenByPlayer(eLegacyPromotion) || !getUnitInfo().GetFreePromotions(eLegacyPromotion))) // chosen by player or free on the unit itself, so keep it
 			{
 				setHasPromotion(eLegacyPromotion, false);
 			}
@@ -16869,7 +16888,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 								GET_PLAYER(eLoopMinor).getCapitalCity()->plot()->updateFog();
 								break;
 							}
-						}
+						}	
 					}
 				}
 			}

@@ -532,6 +532,9 @@ protected:
 	static int lGetTotalReligionPressure(lua_State* L);
 	static int lGetPressurePerFollower(lua_State* L);
 #endif
+#if defined(LEKMOD_LEGACY)
+	static int lGetBuildingGreatPeopleRateModifier(lua_State* L);
+#endif
 };
 
 #endif //CVLUACITY_H

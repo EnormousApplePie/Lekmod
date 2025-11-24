@@ -2883,6 +2883,9 @@ CvCityBuildings::CvCityBuildings():
 	m_iLandmarksTourismPercent(0),
 	m_iGreatWorksTourismModifier(0),
 	m_bSoldBuildingThisTurn(false),
+#if defined(LEKMOD_LEGACY)
+	m_bGreatWorkClassMapDirty(true),
+#endif
 
 	m_pBuildings(NULL),
 #ifdef AUI_CITY_FIX_COMPONENT_CONSTRUCTORS_CONTAIN_POINTERS
@@ -2972,7 +2975,9 @@ void CvCityBuildings::Reset()
 	m_iGreatWorksTourismModifier = 0;
 
 	m_bSoldBuildingThisTurn = false;
-
+#if defined(LEKMOD_LEGACY)
+	m_bGreatWorkClassMapDirty = true;
+#endif
 
 	for(iI = 0; iI < m_pBuildings->GetNumBuildings(); iI++)
 	{
@@ -3805,8 +3810,11 @@ void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, in
 				else
 				{
 					(*it).iGreatWorkIndex = iGreatWorkIndex;
+#if defined(LEKMOD_LEGACY)
+					rebuildGreatWorkYields();
+#endif
 				}
-				//SetGreatWorkCacheDirty();
+				m_bGreatWorkClassMapDirty = true;
 			}
 
 			GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
@@ -3822,7 +3830,10 @@ void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, in
 		kWork.iSlot = iSlot;
 		kWork.iGreatWorkIndex = iGreatWorkIndex;
 		m_aBuildingGreatWork.push_back(kWork);
-		//SetGreatWorkCacheDirty();
+		m_bGreatWorkClassMapDirty = true;
+#if defined(LEKMOD_LEGACY)
+		rebuildGreatWorkYields();
+#endif
 	}
 
 	GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
@@ -4130,55 +4141,102 @@ int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
 #else
 int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
 {
-	CvPlayer& kPlayer = GET_PLAYER(m_pCity->getOwner());
 	int iTotalYield = 0;
-
-	int iBasePerWork = kPlayer.GetGreatWorkYieldChange(eIndex);
-	int iTotalWorks = static_cast<int>(m_aBuildingGreatWork.size());
-	iTotalYield += iBasePerWork * iTotalWorks;
-
-	// Add per-class yields
-	for (int iI = 0; iI < GC.getNumGreatWorkClassInfos(); iI++)
+	CvGameCulture* culture = GC.getGame().GetGameCulture();
+	if (!culture)
+		return 0;
+	for (std::vector<BuildingGreatWork>::const_iterator it = m_aBuildingGreatWork.begin(); it != m_aBuildingGreatWork.end(); ++it)
 	{
-		GreatWorkClass eClass = (GreatWorkClass)iI;
-		const int iCount = GetNumGreatWorks(eClass);
-		if (iCount <= 0) // No Works of this class
-			continue;
-		int ClassChange = GC.getGreatWorkClassInfo(eClass)->getGreatWorkClassBaseYield(eIndex);
-		ClassChange += kPlayer.GetGreatWorkClassYieldChange(eClass, eIndex);
-		iTotalYield += iCount * ClassChange;
+		const CvGreatWork* pWork = &culture->m_CurrentGreatWorks[(*it).iGreatWorkIndex];
+		if (pWork)
+		{
+			iTotalYield += pWork->m_viYield[eIndex];
+		}
 	}
-#if defined(LEK_YIELD_TOURISM) // Great Works Tourism Modifier
-	if (YIELD_TOURISM == eIndex)
-	{
-		// Apply Great Works tourism modifier
-		int iModifier = 100;
-		iModifier += GetGreatWorksTourismModifier();
-		iTotalYield *= iModifier;
-		iTotalYield /= 100;
-	}
-#endif
-
 	return iTotalYield;
 }
 int CvCityBuildings::GetNumGreatWorks(GreatWorkClass eGreatWorkClass) const
 {
-	if (eGreatWorkClass == NO_GREAT_WORK_CLASS)
-		return 0;
+	const std::map<GreatWorkClass, int>& mClassCounts = GetGreatWorkClassCounts();
 
-	CvGameCulture* pCulture = GC.getGame().GetGameCulture();
-	int iCount = 0;
-
-	for (size_t i = 0; i < m_aBuildingGreatWork.size(); ++i)
+	std::map<GreatWorkClass, int>::const_iterator it = mClassCounts.find(eGreatWorkClass);
+	if (it != mClassCounts.end())
 	{
-		const BuildingGreatWork& kWork = m_aBuildingGreatWork[i];
-		if (kWork.iGreatWorkIndex < 0)
-			continue;
-
-		if (pCulture->GetGreatWorkClass(kWork.iGreatWorkIndex) == eGreatWorkClass)
-			++iCount;
+		return it->second;
 	}
 
+	return 0;
+}
+const std::map<GreatWorkClass, int>& CvCityBuildings::GetGreatWorkClassCounts() const
+{
+	// If dirty, rebuild the cache
+	if (m_bGreatWorkClassMapDirty)
+	{
+		m_cachedGreatWorkClassCounts.clear();
+
+		CvGameCulture* pCulture = GC.getGame().GetGameCulture();
+		if (pCulture)
+		{
+			for (size_t i = 0; i < m_aBuildingGreatWork.size(); ++i)
+			{
+				const BuildingGreatWork& kWork = m_aBuildingGreatWork[i];
+				if (kWork.iGreatWorkIndex < 0)
+					continue;
+
+				GreatWorkClass eClass = pCulture->GetGreatWorkClass(kWork.iGreatWorkIndex);
+				if (eClass != NO_GREAT_WORK_CLASS)
+				{
+					// Increment the count for this class
+					std::map<GreatWorkClass, int>::iterator it = m_cachedGreatWorkClassCounts.find(eClass);
+					if (it != m_cachedGreatWorkClassCounts.end())
+					{
+						it->second += 1;
+					}
+					else
+					{
+						m_cachedGreatWorkClassCounts.insert(std::make_pair(eClass, 1));
+					}
+				}
+			}
+		}
+
+		// Mark cache as valid
+		m_bGreatWorkClassMapDirty = false;
+	}
+
+	return m_cachedGreatWorkClassCounts;
+}
+void CvCityBuildings::rebuildGreatWorkYields()
+{
+	CvGameCulture* culture = GC.getGame().GetGameCulture();
+	if (!culture)
+		return;
+	for (std::vector<BuildingGreatWork>::const_iterator it = m_aBuildingGreatWork.begin(); it != m_aBuildingGreatWork.end(); ++it)
+	{
+		CvGreatWork* pWork = &culture->m_CurrentGreatWorks[(*it).iGreatWorkIndex];
+		if (pWork)
+		{
+			std::fill(pWork->m_viYield.begin(), pWork->m_viYield.end(), 0);
+			for (int yield = 0; yield < NUM_YIELD_TYPES; yield++)
+			{
+				YieldTypes eYield = (YieldTypes)yield;
+				int base = GC.getGreatWorkClassInfo(pWork->m_eClassType)->getGreatWorkClassBaseYield(eYield);
+				int playerYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkYieldChange(eYield);
+				int playerClassYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkClassYieldChange(pWork->m_eClassType, eYield);
+				pWork->m_viYield[yield] = base + playerYield + playerClassYield;
+			}
+		}
+	}
+}
+int CvCityBuildings::countNumThemesActive() const
+{
+	int iCount = 0;
+	for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
+	{
+		BuildingClassTypes eBuildingClass = (BuildingClassTypes)iBuildingClass;
+		if (m_pCity->GetCityCulture()->GetPublicThemingBonusIndex(eBuildingClass) != -1)
+			iCount++;
+	}
 	return iCount;
 }
 #endif
@@ -4303,7 +4361,20 @@ int CvCityBuildings::GetThemingBonuses() const
 			}
 		}
 	}
-
+#if defined(LEKMOD_LEGACY)
+	for (int yield = 0; yield < NUM_YIELD_TYPES; yield++)
+	{
+		int iTemp = GET_PLAYER(m_pCity->getOwner()).GetPlayerLegacies()->GetYieldBonusFromThemes((YieldTypes)yield);
+		if (iTemp != 0)
+		{
+			int iCount = countNumThemesActive();
+			if (iCount > 0)
+			{
+				iBonus += iTemp * iCount;
+			}
+		}
+	}
+#endif
 	return iBonus;
 }
 
