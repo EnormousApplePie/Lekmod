@@ -1,0 +1,85 @@
+name: Build & Release Lekmod
+# Automatically build zip archives for Lekmap and LEKMOD on push to main branch,
+# and create GitHub Releases with the built artifacts.
+# Also triggered manually via workflow_dispatch and on autobuild-workflows branches - will create draft releases for testing.
+
+
+# Maybe we want to run this together with CI and auto replace CvGameCore_Expansion2.dll
+
+
+on:
+  push:
+    branches:
+      - main
+      - "*-autobuild-workflows"
+      - autobuild-workflows
+    workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract LEKMAP version
+        id: lekmap_ver
+        run: |
+          echo "version=$(jq -r .version lekmap.metadata.json)" >> $GITHUB_OUTPUT
+
+      - name: Extract LEKMOD version
+        id: lekmod_ver
+        run: |
+          echo "version=$(jq -r .version lekmod.metadata.json)" >> $GITHUB_OUTPUT
+
+      - name: Prepare zip folders
+        run: |
+          mkdir -p dist
+
+          # Lekmap
+          mkdir -p "dist/Lekmap v${{ steps.lekmap_ver.outputs.version }}/"
+          cp -r Lekmap/* "dist/Lekmap v${{ steps.lekmap_ver.outputs.version }}/"
+
+          # LEKMOD
+          mkdir -p "dist/LEKMOD_v${{ steps.lekmod_ver.outputs.version }}/"
+          cp -r LEKMOD/* "dist/LEKMOD_v${{ steps.lekmod_ver.outputs.version }}/"
+
+      - name: Create archives
+        run: |
+          cd dist
+
+          zip -r "Lekmap v${{ steps.lekmap_ver.outputs.version }}.zip" "Lekmap v${{ steps.lekmap_ver.outputs.version }}"
+          zip -r "LEKMOD_v${{ steps.lekmod_ver.outputs.version }}.zip" "LEKMOD_v${{ steps.lekmod_ver.outputs.version }}"
+
+      - name: Upload artifacts (downloadable in Actions)
+        uses: actions/upload-artifact@v4
+        with:
+          name: lekmod-zips
+          path: dist/*.zip
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          files: dist/*.zip
+          draft: ${{ github.ref != 'refs/heads/main' }}
+          make_latest: ${{ github.ref != 'refs/heads/main' }}
+          overwrite_files: true
+          generate_release_notes: true
+
+      - name: Create separate LEKMAP tagged release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "LEKMAP_${{ steps.lekmap_ver.outputs.version }}"
+          files: dist/Lekmap-v${{ steps.lekmap_ver.outputs.version }}.zip
+          draft: ${{ github.ref != 'refs/heads/main' }}
+          overwrite_files: true
+          generate_release_notes: true
+
+      - name: Create separate LEKMOD tagged release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "LEKMOD_${{ steps.lekmod_ver.outputs.version }}"
+          files: dist/LEKMOD_v${{ steps.lekmod_ver.outputs.version }}.zip
+          draft: ${{ github.ref != 'refs/heads/main' }}
+          overwrite_files: true
+          generate_release_notes: true
