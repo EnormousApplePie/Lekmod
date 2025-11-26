@@ -27,6 +27,8 @@ public:
     // These are key functions, very important.
     int GetCivilization() const;
     int GetEraOffered() const;
+	bool IsInstant() const;
+	// One-Shot Free Units
 	bool IncludesOneShotFreeUnits(LegacyTypes eLegacy) const;
 	void SetIncludesOneShotFreeUnits(LegacyTypes eLegacy);
 	// Accessor Functions
@@ -94,6 +96,7 @@ public:
 private:
     int m_iCivilization;
     int m_iEraOffered;
+	bool m_bInstant;
 	int m_iHappinessPerOriginalCity;
 	int m_iGoldenAgeTurns;
 	int m_iGreatGeneralSiegeBonus;
@@ -211,10 +214,11 @@ public:
 	bool HasLegacy(LegacyTypes eIndex) const;
     void SetLegacy(LegacyTypes eIndex, bool bNewValue);
     CvLegacyXMLEntries* GetLegacies() const;
-	std::vector<LegacyTypes> GetPotentialCivLegacies() const;
+	std::vector<LegacyTypes> GetCivLegacies() const;
+	std::vector<LegacyTypes> GetEraLegacies(EraTypes eEra) const;
 	bool CanChooseLegacy(LegacyTypes eIndex) const;
     // Activation Time!
-    void testLegacyNotification() const;
+    void testLegacyNotification(EraTypes eEra) const;
     void updatePlayerLegacies(LegacyTypes eLegacy);
 	bool HasOneShotFreeUnitsFired(LegacyTypes eLegacy) const;
 	void SetOneShotFreeUnitsFired(LegacyTypes eLegacy, bool bFired);
@@ -345,5 +349,5 @@ private:
 	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementHealChangeByDomain;
 	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementCombatModifierByDomain;
 };
-#endif
+#endif //defined(LEKMOD_LEGACY)
 #endif //LEK_CIV5_LEGACYCLASSES_H

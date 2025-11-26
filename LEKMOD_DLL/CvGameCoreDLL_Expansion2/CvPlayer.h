@@ -1757,9 +1757,7 @@ public:
 	int GetFaithPurchaseIndex() const;
 	void SetFaithPurchaseIndex(int iIndex);
 #if defined(LEKMOD_LEGACY)
-	int GetNumFreeLegacies() const;
-	void SetNumFreeLegacies(int iValue);
-	void ChangeNumFreeLegacies(int iChange);
+	bool HasLegacyThisEra(EraTypes eEra) const;
 #endif
 	int GetNumFreePolicies() const;
 	void SetNumFreePolicies(int iValue);

@@ -389,7 +389,7 @@ public:
 	int GetCultureFromImprovements() const;
 #if defined(LEKMOD_LEGACY)
 	int GetTourismFromWorkedImprovements() const;
-	int GetPublicThemingBonusIndex(BuildingClassTypes eBuildingClass) const { return GetPublicThemingBonusIndex(eBuildingClass); }
+	int GetPublicThemingBonusIndex(BuildingClassTypes eBuildingClass) const { return GetThemingBonusIndex(eBuildingClass); }
 #endif
 
 	void LogGreatWorks (FILogFile* pLog);

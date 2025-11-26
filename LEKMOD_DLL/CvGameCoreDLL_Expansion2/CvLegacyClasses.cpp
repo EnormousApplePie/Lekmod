@@ -19,6 +19,7 @@ This is mimicking the policy system in implementation, so reference that.
 CvLegacyEntry::CvLegacyEntry(void) :
 	m_iCivilization(NO_CIVILIZATION),
 	m_iEraOffered(NO_ERA),
+	m_bInstant(false),
 	m_pbHasOneShotUnits(NULL),
 
 	m_iHappinessPerOriginalCity(0),
@@ -129,6 +130,7 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iCivilization = GC.getInfoTypeForString(szCivilization, true);
 	const char* szEra = kResults.GetText("EraOffered");
 	m_iEraOffered = GC.getInfoTypeForString(szEra, true);
+	m_bInstant = kResults.GetBool("Instant");
 	// Initialize a Derived Array
 	m_pbHasOneShotUnits = FNEW(bool[GC.getNumLegacyInfos()], c_eCiv5GameplayDLL, 0);
 
@@ -751,6 +753,11 @@ int CvLegacyEntry::GetCivilization() const
 int CvLegacyEntry::GetEraOffered() const
 {
 	return m_iEraOffered;
+}
+// Does this legacy trigger the choice instantly when entering the prereq era?
+bool CvLegacyEntry::IsInstant() const
+{
+	return m_bInstant;
 }
 // Does this Legacy Include Free Units?
 bool CvLegacyEntry::IncludesOneShotFreeUnits(LegacyTypes eLegacy) const
@@ -1651,15 +1658,29 @@ CvLegacyXMLEntries* CvPlayerLegacies::GetLegacies() const
 	return m_pLegacies;
 }
 // Get the Legacies for this civ that have not been chosen.
-std::vector<LegacyTypes> CvPlayerLegacies::GetPotentialCivLegacies() const
+std::vector<LegacyTypes> CvPlayerLegacies::GetCivLegacies() const
 {
 	std::vector<LegacyTypes> result;
 	for (int iLegacy = 0; iLegacy < GC.getNumLegacyInfos(); iLegacy++)
 	{
 		CvLegacyEntry* pkLegacy = m_pLegacies->GetLegacyEntry(iLegacy);
-		if (pkLegacy && pkLegacy->GetCivilization() == m_pPlayer->getCivilizationType() && !HasLegacy((LegacyTypes)iLegacy))
+		if (pkLegacy && pkLegacy->GetCivilization() == m_pPlayer->getCivilizationType())
 		{
 			result.push_back((LegacyTypes)iLegacy);
+		}
+	}
+	return result;
+}
+std::vector<LegacyTypes> CvPlayerLegacies::GetEraLegacies(EraTypes eEra) const
+{
+	std::vector<LegacyTypes> result;
+	const std::vector<LegacyTypes>& civLegacies = GetCivLegacies();
+	for (size_t i = 0; i < civLegacies.size(); i++)
+	{
+		CvLegacyEntry* pkLegacy = m_pLegacies->GetLegacyEntry(civLegacies[i]);
+		if (pkLegacy && pkLegacy->GetEraOffered() == eEra)
+		{
+			result.push_back(civLegacies[i]);
 		}
 	}
 	return result;
@@ -1703,16 +1724,19 @@ bool CvPlayerLegacies::CanChooseLegacy(LegacyTypes eLegacy) const
 	return true;
 }
 // Give the player a notification to choose a legacy
-void CvPlayerLegacies::testLegacyNotification() const
+void CvPlayerLegacies::testLegacyNotification(EraTypes eEra) const
 {
-	if (m_pPlayer->GetNumFreeLegacies() > 0) // Has a legacy to choose
+	if (!m_pPlayer->HasLegacyThisEra(eEra) && GetCivLegacies().size() > 0) // Has not chosen a legacy this era, and has any legacies available
 	{
-		CvNotifications* pNotifications = m_pPlayer->GetNotifications();
-		if (pNotifications)
+		if (GetEraLegacies(eEra).size() > 0) // No legacies available this era for this civ
 		{
-			CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_CHOOSE_LEGACY", GC.getEraInfo(m_pPlayer->GetCurrentEra())->GetTextKey());
-			CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_CHOOSE_LEGACY_SUMMARY");
-			pNotifications->Add((NotificationTypes)NOTIFICATION_CHOOSE_LEGACY, strBuffer, strSummary, -1, -1, m_pPlayer->GetID());
+			CvNotifications* pNotifications = m_pPlayer->GetNotifications();
+			if (pNotifications)
+			{
+				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_CHOOSE_LEGACY", GC.getEraInfo(m_pPlayer->GetCurrentEra())->GetTextKey());
+				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_CHOOSE_LEGACY_SUMMARY");
+				pNotifications->Add((NotificationTypes)NOTIFICATION_CHOOSE_LEGACY, strBuffer, strSummary, -1, -1, m_pPlayer->GetID(), eEra);
+			}
 		}
 	}
 }

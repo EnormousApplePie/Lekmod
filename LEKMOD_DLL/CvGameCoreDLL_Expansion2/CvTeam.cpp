@@ -7426,20 +7426,22 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 		{
 			ePlayer = (PlayerTypes) iPlayerLoop;
 			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
-			if(kPlayer.isAlive() && kPlayer.getTeam() == GetID() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
+			if (kPlayer.isAlive() && kPlayer.getTeam() == GetID() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
 			{
 #if defined(LEKMOD_LEGACY)
-				for (int iLegacyLoop = 0; iLegacyLoop < GC.getNumLegacyInfos(); iLegacyLoop++)
+				if (!GC.getGame().isOption(GAMEOPTION_NO_LEGACIES)) // Legacies disabled?
 				{
-					LegacyTypes eLegacy = (LegacyTypes)iLegacyLoop;
-					CvLegacyEntry* pkLegacyInfo = GC.getLegacyInfo(eLegacy);
-					if (pkLegacyInfo)
+					for (int iLegacyLoop = 0; iLegacyLoop < GC.getNumLegacyInfos(); iLegacyLoop++)
 					{
-						if (pkLegacyInfo->GetEraOffered() == eNewValue && (CivilizationTypes)pkLegacyInfo->GetCivilization() == kPlayer.getCivilizationType()) // Is there at legacy offered this era?
+						LegacyTypes eLegacy = (LegacyTypes)iLegacyLoop;
+						CvLegacyEntry* pkLegacyInfo = GC.getLegacyInfo(eLegacy);
+						if (pkLegacyInfo)
 						{
-							kPlayer.ChangeNumFreeLegacies(1); // Give the player a free legacy choice
-							kPlayer.GetPlayerLegacies()->testLegacyNotification();
-							break; // Found at least 1, no need to continue.
+							if (pkLegacyInfo->GetEraOffered() == eNewValue && (CivilizationTypes)pkLegacyInfo->GetCivilization() == kPlayer.getCivilizationType() && pkLegacyInfo->IsInstant())
+							{
+								kPlayer.GetPlayerLegacies()->testLegacyNotification(eNewValue); // Pass so popup knows what era to scrape for.
+								break; // Found at least 1, no need to continue.
+							}
 						}
 					}
 				}

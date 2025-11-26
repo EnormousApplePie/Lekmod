@@ -1106,7 +1106,9 @@ void CvGame::uninit()
 	m_iNumVictoryVotesExpected = 0;
 	m_iVotesNeededForDiploVictory = 0;
 	m_iMapScoreMod = 0;
-
+#if defined(LEKMOD_LEGACY)
+	m_iGameEra = -1;
+#endif
 	m_uiInitialTime = 0;
 #ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
 	m_fPreviousTurnLen = 0.0f;
@@ -4649,6 +4651,7 @@ bool CvGame::canTrainNukes() const
 //	--------------------------------------------------------------------------------
 EraTypes CvGame::getCurrentEra() const
 {
+#if !defined(LEKMOD_LEGACY)
 	int iEra;
 	int iCount;
 	int iI;
@@ -4672,8 +4675,64 @@ EraTypes CvGame::getCurrentEra() const
 
 	return NO_ERA;
 }
+#else
+	return (EraTypes)m_iGameEra;
+}
+void CvGame::recalculateGameEra()
+{
+	std::vector<int> eras;
+	int iI;
 
+	for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+		if (!kPlayer.isAlive())
+			continue;
 
+		if (isOption("GAMEOPTION_AI_GIMP_NO_CULTURE") && !kPlayer.isHuman())
+			continue;
+	
+		const EraTypes eEra = kPlayer.GetCurrentEra();
+		if (eEra != NO_ERA)
+		{
+			eras.push_back((int)eEra);
+		}
+	}
+
+	if (eras.empty())
+		return;
+	// Ok, so sort it
+	std::sort(eras.begin(), eras.end());
+
+	const int n = (int)eras.size();
+	// If even, take upper middle, if odd, take middle + 1
+	// This should result in a bias towards later eras
+	// and if 3/6 players are in Era 2 and 3/6 in Era 3, we want to go to Era 3
+	// and if 3/7 players are in Era 3 and 4/7 in Era 2, we want to go to Era 3
+	const int idx = (n % 2 == 0) ? (n / 2) : (n / 2 + 1); 
+	const int newEra = eras[std::min(idx, n - 1)];
+
+	if (m_iGameEra == newEra)
+		return;
+
+	m_iGameEra = newEra;
+
+	if (!isOption(GAMEOPTION_NO_LEGACIES))
+	{
+		for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+		{
+			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+			if (!kPlayer.isAlive())
+				continue;
+
+			if (isOption("GAMEOPTION_AI_GIMP_NO_CULTURE") && !kPlayer.isHuman())
+				continue;
+
+			kPlayer.GetPlayerLegacies()->testLegacyNotification((EraTypes)m_iGameEra);
+		}
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 TeamTypes CvGame::getActiveTeam()
 {
@@ -8386,6 +8445,9 @@ void CvGame::doTurn()
 #ifdef MP_PLAYERS_VOTING_SYSTEM
 	GetMPVotingSystem()->DoTurn();
 #endif
+#if defined(LEKMOD_LEGACY)
+	recalculateGameEra();
+#endif
 
 #ifdef AUI_WARNING_FIXES
 	kEngineUserInterface.setCanEndTurn(false);
@@ -10632,7 +10694,9 @@ void CvGame::Read(FDataStream& kStream)
 	kStream >> m_iNumVictoryVotesExpected;
 	kStream >> m_iVotesNeededForDiploVictory;
 	kStream >> m_iMapScoreMod;
-
+#if defined(LEKMOD_LEGACY)
+	kStream >> m_iGameEra;
+#endif
 	// m_uiInitialTime not saved
 #ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
 	kStream >> m_fPreviousTurnLen;
@@ -10900,7 +10964,9 @@ void CvGame::Write(FDataStream& kStream) const
 	kStream << m_iNumVictoryVotesExpected;
 	kStream << m_iVotesNeededForDiploVictory;
 	kStream << m_iMapScoreMod;
-
+#if defined(LEKMOD_LEGACY)
+	kStream << m_iGameEra;
+#endif
 	// m_uiInitialTime not saved
 #ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
 	kStream << m_fPreviousTurnLen;

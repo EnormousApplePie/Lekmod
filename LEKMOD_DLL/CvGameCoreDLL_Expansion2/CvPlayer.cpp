@@ -16864,7 +16864,6 @@ void CvPlayer::setHasLegacy(LegacyTypes eIndex, bool bNewValue)
 		m_pPlayerLegacies->SetLegacy(eIndex, bNewValue);
 		processLegacies(eIndex, bNewValue ? 1 : -1);
 	}
-	ChangeNumFreeLegacies(-1); // Used up a legacy choice
 	// Notify others
 	for (int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop)
 	{
@@ -31465,19 +31464,23 @@ void CvPlayer::ChangeMedianTechPercentage(int iValue)
 }
 #if defined(LEKMOD_LEGACY)
 //	--------------------------------------------------------------------------------
-int CvPlayer::GetNumFreeLegacies() const
+bool CvPlayer::HasLegacyThisEra(EraTypes eEra) const
 {
-	return m_iFreeLegacies;
-}
-// --------------------------------------------------------------------------------
-void CvPlayer::SetNumFreeLegacies(int iValue)
-{
-	m_iFreeLegacies = iValue;
-}
-// --------------------------------------------------------------------------------
-void CvPlayer::ChangeNumFreeLegacies(int iChange)
-{
-	m_iFreeLegacies += iChange;
+	const std::vector<LegacyTypes>& civLegacies = GetPlayerLegacies()->GetCivLegacies();
+	for (size_t i = 0; i < civLegacies.size(); ++i)
+	{
+		LegacyTypes eLegacy = civLegacies[i];
+		const CvLegacyEntry* pInfo = GC.getLegacyInfo(eLegacy);
+		if (!pInfo)
+			continue;
+
+		if (pInfo->GetEraOffered() == eEra)
+		{
+			if (GetPlayerLegacies()->HasLegacy(eLegacy))
+				return true;
+		}
+	}
+	return false;
 }
 #endif
 //	--------------------------------------------------------------------------------

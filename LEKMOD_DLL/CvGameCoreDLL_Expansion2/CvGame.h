@@ -135,6 +135,9 @@ public:
 
 	bool canTrainNukes() const;
 	EraTypes getCurrentEra() const;
+#if defined(LEKMOD_LEGACY)
+	void recalculateGameEra();
+#endif
 
 	TeamTypes getActiveTeam();
 	CivilizationTypes getActiveCivilizationType();
@@ -689,7 +692,9 @@ protected:
 	int m_iNumVictoryVotesExpected;
 	int m_iVotesNeededForDiploVictory;
 	int m_iMapScoreMod;
-
+#if defined(LEKMOD_LEGACY)
+	int m_iGameEra;
+#endif
 	unsigned int m_uiInitialTime;
 #ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN
 	float m_fPreviousTurnLen;

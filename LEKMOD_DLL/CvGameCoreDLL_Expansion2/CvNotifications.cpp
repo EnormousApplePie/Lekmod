@@ -1156,7 +1156,8 @@ void CvNotifications::Activate(Notification& notification)
 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
 		if (notification.m_iGameDataIndex >= 0)
 		{
-			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_1, m_ePlayer);
+			int iEra = notification.m_iExtraGameData;
+			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_1, m_ePlayer, iEra);
 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 		}
 		break;
@@ -1860,7 +1861,7 @@ bool CvNotifications::IsNotificationExpired(int iIndex)
 #if defined(LEKMOD_LEGACY)
 		case NOTIFICATION_CHOOSE_LEGACY:
 		{
-			if (GET_PLAYER(m_ePlayer).GetNumFreeLegacies() == 0) // No Legacies to choose
+			if (GET_PLAYER(m_ePlayer).HasLegacyThisEra((EraTypes)m_aNotifications[iIndex].m_iExtraGameData)) // No Legacies to choose
 			{
 				return true;
 			}

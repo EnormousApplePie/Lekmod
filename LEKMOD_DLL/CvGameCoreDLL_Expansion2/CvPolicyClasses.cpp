@@ -5185,7 +5185,7 @@ bool CvPlayerPolicies::IsTimeToChooseIdeology() const
 	// Check for the right number of buildings of a certain type (3 factories)
 	else
 	{
-		CvBuildingXMLEntries* pkGameBuildings = GC.GetGameBuildings();
+		//CvBuildingXMLEntries* pkGameBuildings = GC.GetGameBuildings();
 		CvCivilizationInfo* pkInfo = GC.getCivilizationInfo(m_pPlayer->getCivilizationType());
 		if(pkInfo)
 		{
@@ -5227,7 +5227,7 @@ bool CvPlayerPolicies::IsTimeToChooseIdeology() const
 				}
 			}
 #else
-			for (uint iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+			for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 			{
 				CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo((BuildingTypes)iI);
 				if (pkBuildingInfo)
