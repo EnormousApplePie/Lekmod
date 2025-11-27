@@ -5000,9 +5000,7 @@ void CvPlayer::doTurn()
 	{
 		doTurnPostDiplomacy();
 	}
-#if defined(TRAITIFY)
-	updateYield();
-#endif
+
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if(pkScriptSystem)
 	{
@@ -8714,7 +8712,9 @@ void CvPlayer::found(int iX, int iY, UnitTypes eSettlerUnit)
 		pCity->SetSettlerUnit(eSettlerUnit);
 	}
 #endif
-
+#if defined(TRAITIFY)
+	pCity->updateYield();
+#endif
 	AwardFreeBuildings(pCity);
 
 	DoUpdateNextPolicyCost();
