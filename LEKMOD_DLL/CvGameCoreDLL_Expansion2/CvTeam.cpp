@@ -5749,8 +5749,8 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 						{
 							if(pLoopPlot->isCity() || pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 							{
-								// Appropriate Improvement on this Plot?
-								if(pLoopPlot->isCity() || GC.getImprovementInfo(pLoopPlot->getImprovementType())->IsImprovementResourceTrade(eResource))
+								// Appropriate Unpillaged Improvement on this Plot?
+								if (pLoopPlot->isCity() || (GC.getImprovementInfo(pLoopPlot->getImprovementType())->IsImprovementResourceTrade(eResource) && !pLoopPlot->IsImprovementPillaged()))
 								{
 									for(int iI = 0; iI < MAX_PLAYERS; iI++)
 									{
