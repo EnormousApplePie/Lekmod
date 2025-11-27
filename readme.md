@@ -1,6 +1,8 @@
 # Lekmod
 
-Lekmod is a comprehensive community-driven overhaul mod for Sid Meier's Civilization V. It introduces new civilizations, balance changes, bugfixes, and enhanced gameplay features for both singleplayer and multiplayer. The project includes a custom mapscript, custom .dll source files, and a wide array of mod files to improve and expand the Civilization V experience.
+Lekmod is a comprehensive community-driven balance/content mod for Sid Meier's Civilization V. It introduces new civilizations, balance changes, bugfixes, QoL changes, and enhanced gameplay features for both singleplayer and multiplayer. The project is primarely focused for multiplayer, some content may be missing in singleplayer games.
+
+The project includes a custom mapscript, custom .dll source files, and the main mod files.
 
 ## Features
 - New and reworked civilizations
@@ -32,7 +34,7 @@ https://discord.gg/VQBNPmc
 
 ---
 ## Requirements
-1. OS: Windows 10/11 - Full Support or Linux (Proton) - Limited/Untested Support, (MAC - No Support)
+1. OS: Windows 7+ - Full Support or Linux (Proton) - Limited/Untested Support, (MAC - No Support)
 1. Game: Sid Meier's Civilization V - All available DLC's except for map packs.
 1. Standard UI or EUI (Enhanced User Interface) - LEKMOD v33 and higher support both UIs, Note EUI v 1.29 or higher is currently not supported.
 
