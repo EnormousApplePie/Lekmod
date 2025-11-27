@@ -8832,6 +8832,7 @@ bool CvUnit::DoSpreadReligion()
 			}
 
             #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+            // Capture state before the spread
             int iFollowersBefore = pCity->GetCityReligions()->GetNumFollowers(eReligion);
             ReligionTypes eMajorityBefore = pCity->GetCityReligions()->GetReligiousMajority();
             #endif
@@ -8844,15 +8845,17 @@ bool CvUnit::DoSpreadReligion()
 				pCity->GetCityReligions()->AddReligiousPressure(FOLLOWER_CHANGE_MISSIONARY, eReligion, iConversionStrength, getOwner());
 			}
             #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
+            // Calculate the actual change after the spread
             int iFollowersAfter = pCity->GetCityReligions()->GetNumFollowers(eReligion);
             int iDeltaFollowers = std::max(0, iFollowersAfter - iFollowersBefore);
             ReligionTypes eMajorityAfter = pCity->GetCityReligions()->GetReligiousMajority();
-			if (iDeltaFollowers > 0 && getUnitInfo().IsSpreadReligion())
-			{
-				bool bOnlyMajority = (eMajorityAfter == eReligion && eMajorityBefore != eReligion);
-				CvPlayer* pConvertingPlayer = &GET_PLAYER(getOwner());
-				pConvertingPlayer->DoYieldsFromConversion(this, pCity, iDeltaFollowers, bOnlyMajority, getX(), getY(), 0);
-			}
+            
+            if (iDeltaFollowers > 0 && getUnitInfo().IsSpreadReligion())
+            {
+                bool bMajorityConversion = (eMajorityAfter == eReligion && eMajorityBefore != eReligion);
+				CvPlayer& kPlayer = GET_PLAYER(getOwner());
+				kPlayer.DoYieldsFromConversion(this, pCity, iDeltaFollowers, bMajorityConversion, getX(), getY(), 0);
+            }
             #endif
 			GetReligionData()->SetSpreadsLeft(GetReligionData()->GetSpreadsLeft() - 1);
 

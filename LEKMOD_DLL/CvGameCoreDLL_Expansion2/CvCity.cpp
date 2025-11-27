@@ -672,6 +672,10 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 			ChangeBaseYieldRateFromPolicies(YIELD_CULTURE, GC.getPolicyInfo(ePolicy)->GetCulturePerCity());
 #endif
 #endif
+#if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
+			ChangeGarrisonYieldBonus(YIELD_CULTURE, GC.getPolicyInfo(ePolicy)->GetCulturePerGarrisonedUnit());
+			ChangeGarrisonYieldBonus(YIELD_PRODUCTION, GC.getPolicyInfo(ePolicy)->GetProductionFromGarrison());
+#endif
 		}
 	}
 
@@ -809,7 +813,9 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		ChangeJONSCulturePerTurnFromPolicies(GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CULTURE_FROM_GARRISON));
 #endif
 	}
-
+#if defined(TRAITIFY)
+	updateYield();
+#endif
 	AI_init();
 
 #ifdef AUI_PLAYER_FIX_VENICE_ONLY_BANS_SETTLERS_NOT_SETTLING

@@ -655,10 +655,8 @@ bool CvMinorCivQuest::IsExpired()
 #if defined(LEKMOD_CITYSTATE_QUEST_CHANGES) // Expire Wonder quests if we are more than 1 era ahead of the wonder's era ( Classical Wonders Expire in Renaissance, etc. )
 				const TechTypes eRequiredTech = (TechTypes)pkBuildingInfo->GetPrereqAndTech();
 				const int iWonderEra = GC.getTechInfo(eRequiredTech)->GetEra();
-				if ((iWonderEra + 1) < pLoopPlayer->GetCurrentEra())
-				{
+				if ((iWonderEra + 1) < pLoopPlayer->GetCurrentEra() && m_eAssignedPlayer == eLoopPlayer) // Only expire for the assigned player
 					return true;
-				}
 #endif
 			}
 		}
