@@ -769,11 +769,14 @@ public:
 
 	int GetYieldFromGreatWorks(YieldTypes eIndex) const; // NQMP GJS - Artistic Genius fix to add science to Great Works
 	int GetCultureFromGreatWorks() const;
-#if defined(LEKMOD_LEGACY)
+#if !defined(LEKMOD_LEGACY)
+	int GetThemingBonuses() const;
+#else
 	int GetNumGreatWorks(GreatWorkClass eGreatWorkClass) const;
 	const std::map<GreatWorkClass, int>& GetGreatWorkClassCounts() const;
 	void rebuildGreatWorkYields();
 	int countNumThemesActive() const;
+	int GetThemingBonuses(YieldTypes eYield) const;
 #endif
 #if defined(LEK_YIELD_TOURISM)
 	int GetYieldFromLandmarks(YieldTypes eYield) const;
@@ -790,11 +793,7 @@ public:
 	void ChangeLandmarksTourismPercent(int iChange);
 	int GetGreatWorksTourismModifier() const;
 	void ChangeGreatWorksTourismModifier(int iChange);
-#if defined(LEKMOD_LEGACY)
-	int GetThemingBonuses(YieldTypes eYield) const;
-#else
-	int GetThemingBonuses() const;
-#endif
+
 	int GetNumBuildingsFromFaith() const;
 
 	int GetCityStateTradeRouteProductionModifier() const;

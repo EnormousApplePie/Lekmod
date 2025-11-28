@@ -4138,6 +4138,33 @@ int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
 	int iRtnValue = iYieldPerWork * m_aBuildingGreatWork.size();
 	return iRtnValue;
 }
+/// Accessor: Total theming bonus from all buildings in the city
+int CvCityBuildings::GetThemingBonuses() const
+{
+	int iBonus = 0;
+
+#ifdef AUI_WARNING_FIXES
+	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+#else
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+#endif
+	{
+		BuildingClassTypes eLoopBuildingClass = (BuildingClassTypes)iI;
+		CvCivilizationInfo* pkCivInfo = GC.getCivilizationInfo(m_pCity->getCivilizationType());
+		if (pkCivInfo)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)pkCivInfo->getCivilizationBuildings(eLoopBuildingClass);
+			if (NO_BUILDING != eBuilding)
+			{
+				if (GetNumBuilding(eBuilding) > 0)
+				{
+					iBonus += m_pCity->GetCityCulture()->GetThemingBonus(eLoopBuildingClass);
+				}
+			}
+		}
+	}
+	return iBonus;
+}
 #else
 int CvCityBuildings::GetYieldFromGreatWorks(YieldTypes eIndex) const
 {
@@ -4239,6 +4266,39 @@ int CvCityBuildings::countNumThemesActive() const
 	}
 	return iCount;
 }
+int CvCityBuildings::GetThemingBonuses(YieldTypes eYield) const
+{
+	int iBonus = 0;
+	if (YIELD_CULTURE == eYield)
+	{
+		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+		{
+			BuildingClassTypes eLoopBuildingClass = (BuildingClassTypes)iI;
+			CvCivilizationInfo* pkCivInfo = GC.getCivilizationInfo(m_pCity->getCivilizationType());
+			if (pkCivInfo)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)pkCivInfo->getCivilizationBuildings(eLoopBuildingClass);
+				if (NO_BUILDING != eBuilding)
+				{
+					if (GetNumBuilding(eBuilding) > 0)
+					{
+						iBonus += m_pCity->GetCityCulture()->GetThemingBonus(eLoopBuildingClass);
+					}
+				}
+			}
+		}
+	}
+	int iTemp = GET_PLAYER(m_pCity->getOwner()).GetPlayerLegacies()->GetYieldBonusFromThemes(eYield);
+	if (iTemp != 0)
+	{
+		int iCount = countNumThemesActive();
+		if (iCount > 0)
+		{
+			iBonus += iTemp * iCount;
+		}
+	}
+	return iBonus;
+}
 #endif
 #if defined(LEK_YIELD_TOURISM)
 int CvCityBuildings::GetYieldFromLandmarks(YieldTypes eYield) const
@@ -4336,69 +4396,6 @@ void CvCityBuildings::ChangeGreatWorksTourismModifier(int iChange)
 	}
 }
 
-/// Accessor: Total theming bonus from all buildings in the city
-#if !defined(LEKMOD_LEGACY)
-int CvCityBuildings::GetThemingBonuses() const
-{
-	int iBonus = 0;
-
-#ifdef AUI_WARNING_FIXES
-	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-#else
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-#endif
-	{
-		BuildingClassTypes eLoopBuildingClass = (BuildingClassTypes)iI;
-		CvCivilizationInfo* pkCivInfo = GC.getCivilizationInfo(m_pCity->getCivilizationType());
-		if (pkCivInfo)
-		{
-			BuildingTypes eBuilding = (BuildingTypes)pkCivInfo->getCivilizationBuildings(eLoopBuildingClass);
-			if (NO_BUILDING != eBuilding)
-			{
-				if (GetNumBuilding(eBuilding) > 0)
-				{
-					iBonus += m_pCity->GetCityCulture()->GetThemingBonus(eLoopBuildingClass);
-				}
-			}
-		}
-	}
-	return iBonus;
-}
-#else
-int CvCityBuildings::GetThemingBonuses(YieldTypes eYield) const
-{
-	int iBonus = 0;
-	if (YIELD_CULTURE == eYield)
-	{
-		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-		{
-			BuildingClassTypes eLoopBuildingClass = (BuildingClassTypes)iI;
-			CvCivilizationInfo* pkCivInfo = GC.getCivilizationInfo(m_pCity->getCivilizationType());
-			if (pkCivInfo)
-			{
-				BuildingTypes eBuilding = (BuildingTypes)pkCivInfo->getCivilizationBuildings(eLoopBuildingClass);
-				if (NO_BUILDING != eBuilding)
-				{
-					if (GetNumBuilding(eBuilding) > 0)
-					{
-						iBonus += m_pCity->GetCityCulture()->GetThemingBonus(eLoopBuildingClass);
-					}
-				}
-			}
-		}
-	}
-	int iTemp = GET_PLAYER(m_pCity->getOwner()).GetPlayerLegacies()->GetYieldBonusFromThemes(eYield);
-	if (iTemp != 0)
-	{
-		int iCount = countNumThemesActive();
-		if (iCount > 0)
-		{
-			iBonus += iTemp * iCount;
-		}
-	}
-	return iBonus;
-}
-#endif
 /// Accessor: How many buildings in this city are ones that are built through Faith?
 int CvCityBuildings::GetNumBuildingsFromFaith() const
 {

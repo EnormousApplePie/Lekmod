@@ -48,6 +48,9 @@ public:
 	int GetHappinessPerTheme() const;
 	bool IsTradeUnplunderable() const;
 	bool IsCannotPlunder() const;
+	int GetFriendlyCityReligionCombatModifier() const;
+	int GetOccupiedCityReligionCombatModifier() const;
+	int GetEnemyCityReligionCombatModifier() const;
     // Arrays
 	int IsFreePromotion(int i) const;
 	int GetPromotionNearbyGeneral(int i) const;
@@ -113,6 +116,9 @@ private:
 	int m_iHappinessPerTheme;
 	bool m_bTradeUnplunderable;
 	bool m_bCannotPlunder;
+	int m_iFriendlyCityReligionCombatModifier;
+	int m_iOccupiedCityReligionCombatModifier;
+	int m_iEnemyCityReligionCombatModifier;
     //Arrays
 	// Weirdos
 	std::multimap<int, int> m_FreePromotionUnitType;
@@ -242,6 +248,9 @@ public:
 	int GetHappinessPerTheme() const;
 	bool IsTradeUnplunderable() const;
 	bool IsCannotPlunder() const;
+	int GetFriendlyCityReligionCombatModifier() const;
+	int GetOccupiedCityReligionCombatModifier() const;
+	int GetEnemyCityReligionCombatModifier() const;
 	// Arrays
 	bool HasFreePromotionUnitType(PromotionTypes ePromotion, UnitTypes eUnitType) const;
 	int GetPromotionNearbyGeneralUnitCombat(UnitCombatTypes eUnitCombat) const;
@@ -310,6 +319,9 @@ private:
 	int m_iHappinessPerTheme;
 	bool m_bTradeUnplunderable;
 	bool m_bCannotPlunder;
+	int m_iFriendlyCityReligionCombatModifier;
+	int m_iOccupiedCityReligionCombatModifier;
+	int m_iEnemyCityReligionCombatModifier;
 	//Arrays
 	std::vector<bool> m_vbNoTrain;
 	std::vector<bool> m_vbNoConstruct;

@@ -1073,6 +1073,9 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetLegacyBuildingClassGreatPersonRateModifier);
 	Method(GetLegacyUnitRangedCombatChange);
 	Method(GetLegacyUnitCombatChange);
+	Method(GetLegacyFriendlyCityReligionCombatModifier);
+	Method(GetLegacyOccupiedCityReligionCombatModifier);
+	Method(GetLegacyEnemyCityReligionCombatModifier);
 	Method(HasLegacy);
 	Method(SetHasLegacy);
 #endif
@@ -11698,6 +11701,71 @@ int CvLuaPlayer::lGetLegacyUnitCombatChange(lua_State* L)
 		return 1;
 	}
 	return 0;
+}
+int CvLuaPlayer::lGetLegacyFriendlyCityReligionCombatModifier(lua_State* L)
+{
+	int iRtnValue = 0;
+
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 2);
+	if (pkPlot)
+	{
+		CvCity* pPlotCity = pkPlot->getWorkingCity();
+		if (pPlotCity)
+		{
+			ReligionTypes eReligion = pPlotCity->GetCityReligions()->GetReligiousMajority();
+			ReligionTypes eFoundedReligion = pkPlayer->GetReligions()->GetReligionCreatedByPlayer();
+			if (eFoundedReligion != NO_RELIGION && eReligion == eFoundedReligion)
+			{
+				iRtnValue = pkPlayer->GetPlayerLegacies()->GetFriendlyCityReligionCombatModifier();
+			}
+		}
+	}
+	lua_pushinteger(L, iRtnValue);
+
+	return 1;
+}
+int CvLuaPlayer::lGetLegacyOccupiedCityReligionCombatModifier(lua_State* L)
+{
+	int iRtnValue = 0;
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 2);
+	if (pkPlot)
+	{
+		CvCity* pPlotCity = pkPlot->getWorkingCity();
+		if (pPlotCity)
+		{
+			ReligionTypes eReligion = pPlotCity->GetCityReligions()->GetReligiousMajority();
+			ReligionTypes eFoundedReligion = pkPlayer->GetReligions()->GetReligionCreatedByPlayer();
+			if (eFoundedReligion != NO_RELIGION && eReligion == eFoundedReligion)
+			{
+				iRtnValue = pkPlayer->GetPlayerLegacies()->GetOccupiedCityReligionCombatModifier();
+			}
+		}
+	}
+	lua_pushinteger(L, iRtnValue);
+	return 1;
+}
+int CvLuaPlayer::lGetLegacyEnemyCityReligionCombatModifier(lua_State* L)
+{
+	int iRtnValue = 0;
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 2);
+	if (pkPlot)
+	{
+		CvCity* pPlotCity = pkPlot->getWorkingCity();
+		if (pPlotCity)
+		{
+			ReligionTypes eReligion = pPlotCity->GetCityReligions()->GetReligiousMajority();
+			ReligionTypes eFoundedReligion = pkPlayer->GetReligions()->GetReligionCreatedByPlayer();
+			if (eFoundedReligion != NO_RELIGION && eReligion == eFoundedReligion)
+			{
+				iRtnValue = pkPlayer->GetPlayerLegacies()->GetEnemyCityReligionCombatModifier();
+			}
+		}
+	}
+	lua_pushinteger(L, iRtnValue);
+	return 1;
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lHasLegacy(lua_State* L)

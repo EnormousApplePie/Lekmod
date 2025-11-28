@@ -157,11 +157,13 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
 	if (iHappiness ~= nil) then
 		iHappinessTotal = iHappinessTotal + iHappiness;
 	end
-	local iHappiness = pBuildingInfo.UnmoddedHappiness;
-	if (iHappiness ~= nil) then
-		iHappinessTotal = iHappinessTotal + iHappiness;
+	local iGlobalHappiness = pBuildingInfo.UnmoddedHappiness + pActivePlayer:GetTraitBuildingClassGlobalHappiness(buildingClassID)
+		+ pActivePlayer:GetLegacyBuildingClassGlobalHappiness(buildingClassID);
+	if (iGlobalHappiness ~= nil) then
+		iHappinessTotal = iHappinessTotal + iGlobalHappiness;
 	end
-	iHappinessTotal = iHappinessTotal + pActivePlayer:GetExtraBuildingHappinessFromPolicies(iBuildingID) + pActivePlayer:GetTraitBuildingClassHappiness(iBuildingID);
+	iHappinessTotal = iHappinessTotal + pActivePlayer:GetExtraBuildingHappinessFromPolicies(iBuildingID) + pActivePlayer:GetTraitBuildingClassHappiness(buildingClassID)
+		+ pActivePlayer:GetLegacyBuildingClassHappiness(buildingClassID);
 	if (pCity ~= nil) then
 		iHappinessTotal = iHappinessTotal + pCity:GetReligionBuildingClassHappiness(buildingClassID) + pActivePlayer:GetPlayerBuildingClassHappiness(buildingClassID);
 	end
@@ -192,12 +194,14 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
 			local iEraEnhancedYield   = 0;
 			local iTeamEra = pActiveTeam:GetCurrentEra();
 
-    	iYieldChange = iYieldChange + Game.GetBuildingYieldChange(iBuildingID, iYieldType) + pActivePlayer:GetPolicyBuildingClassYieldChange(buildingClassID, iYieldType) + pActivePlayer:GetTraitBuildingClassYieldChange(buildingClassID, iYieldType) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, iYieldType)
+    	iYieldChange = iYieldChange + Game.GetBuildingYieldChange(iBuildingID, iYieldType) + pActivePlayer:GetPolicyBuildingClassYieldChange(buildingClassID, iYieldType) + pActivePlayer:GetLegacyBuildingClassYieldChange(buildingClassID, iYieldType)
+			+ pActivePlayer:GetTraitBuildingClassYieldChange(buildingClassID, iYieldType) + pActivePlayer:GetPlayerBuildingClassYieldChange(buildingClassID, iYieldType);
     	if pCity ~= nil then
     	    iYieldChange = iYieldChange + pCity:GetReligionBuildingClassYieldChange(buildingClassID, iYieldType) + pCity:GetLeagueBuildingClassYieldChange(buildingClassID, iYieldType);
     	end
 
-    	iYieldModifier = iYieldModifier + Game.GetBuildingYieldModifier(iBuildingID, iYieldType) + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, iYieldType);
+    	iYieldModifier = iYieldModifier + Game.GetBuildingYieldModifier(iBuildingID, iYieldType) + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, iYieldType)
+			+ pActivePlayer:GetTraitBuildingClassYieldModifier(buildingClassID, iYieldType) + pActivePlayer:GetLegacyBuildingClassYieldModifier(buildingClassID, iYieldType);
 
     	for row in GameInfo.Building_YieldChangesPerPop{ BuildingType = pBuildingInfo.Type, YieldType = Yields.Type } do
     	    fYieldChangePerPop = fYieldChangePerPop + (row.Yield or 0);
@@ -243,21 +247,94 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
     	end
 	end -- END Yields
 
-	-- Great People
-	local specialistType = pBuildingInfo.SpecialistType;
-	if specialistType ~= nil then
-		local iNumPoints = pBuildingInfo.GreatPeopleRateChange;
-		if (iNumPoints > 0) then
-			table.insert(lines, "[ICON_GREAT_PEOPLE] " .. Locale.ConvertTextKey(GameInfo.Specialists[specialistType].GreatPeopleTitle) .. " " .. iNumPoints); 
-		end
+	-- Great Work Tourism %
+	local greatWorkTourism = pBuildingInfo.GreatWorksTourismModifier;
+	if (greatWorkTourism ~= 0) then
+		table.insert(lines, "[ICON_TOURISM] " .. string.format(": %+i%% [ICON_GREAT_WORK]", greatWorkTourism)); 
+	end
+	-- New Specialist Handling, so lets get this going
+	local specialistMap = {
+		[GameInfoTypes["SPECIALIST_ARTIST"]] = "[ICON_GREAT_ARTIST]",
+		[GameInfoTypes["SPECIALIST_WRITER"]] = "[ICON_GREAT_WRITER]",
+		[GameInfoTypes["SPECIALIST_MUSICIAN"]] = "[ICON_GREAT_MUSICIAN]",
+		[GameInfoTypes["SPECIALIST_SCIENTIST"]] = "[ICON_GREAT_SCIENTIST]",
+		[GameInfoTypes["SPECIALIST_MERCHANT"]] = "[ICON_GREAT_MERCHANT]",
+		[GameInfoTypes["SPECIALIST_ENGINEER"]] = "[ICON_GREAT_ENGINEER]",
+	};
+	local rateMap = {};
+	local modifierMap = {};
+	local specialistName  = {};
+	local buildingSpecialist = pBuildingInfo.SpecialistType;
+	local buildingSpecialistCount = pBuildingInfo.SpecialistCount or 0;
+	for specialist in GameInfo.Specialists() do
+		local specialistID = specialist.ID
+		local isCitizen = (specialist.Type == "SPECIALIST_CITIZEN")
+		local civType = GameInfo.Civilizations[pActivePlayer:GetCivilizationType()].Type
+    	local unitClassType = specialist.GreatPeopleUnitClass or nil
+    	if unitClassType then
+    	    local overrideUnitType = nil
+    	    for row in GameInfo.Civilization_UnitClassOverrides() do
+    	        if row.CivilizationType == civType and row.UnitClassType == unitClassType then
+    	            overrideUnitType = row.UnitType
+    	            break
+    	        end
+    	    end
 		
-		if(pBuildingInfo.SpecialistCount > 0) then
-			-- Append a key such as TXT_KEY_SPECIALIST_ARTIST_SLOTS
-			local specialistSlotsKey = GameInfo.Specialists[specialistType].Description .. "_SLOTS";
-			table.insert(lines, "[ICON_GREAT_PEOPLE] " .. Locale.ConvertTextKey(specialistSlotsKey) .. " " .. pBuildingInfo.SpecialistCount);
+    	    local unitType = overrideUnitType
+    	    if not unitType then
+    	        local unitclassInfo = GameInfo.UnitClasses[unitClassType]
+    	        if unitclassInfo then unitType = unitclassInfo.DefaultUnit end
+    	    end
+    	    if unitType then
+    	        local unitInfo = GameInfo.Units[unitType]
+    	        if unitInfo then
+    	            specialistName[specialistID] = unitInfo.Description
+    	        end
+    	    end
+    	end
+		if not isCitizen then
+    		local legacyPoints = pActivePlayer:GetLegacyBuildingClassGreatPersonPointChange(buildingClassID, specialistID) or 0
+    		if legacyPoints > 0 then
+    		    rateMap[specialistID] = (rateMap[specialistID] or 0) + legacyPoints
+    		end
+    		local legacyMod = pActivePlayer:GetLegacyBuildingClassGreatPersonRateModifier(buildingClassID, specialistID) or 0
+    		if legacyMod > 0 then
+    		    modifierMap[specialistID] = (modifierMap[specialistID] or 0) + legacyMod
+    		end
+   		end
+    	if buildingSpecialist == specialist.Type then
+    	    if buildingSpecialistCount > 0 then
+				local icon = specialistMap[specialistID] or "[ICON_GREAT_PEOPLE]";
+				local nameKey = specialistName[specialistID];
+    	        table.insert(lines, icon .. " " .. Locale.ConvertTextKey(nameKey) .. " Slots: " .. buildingSpecialistCount)
+    	    end
+
+    	    local basePts = pBuildingInfo.GreatPeopleRateChange or 0
+    	    if basePts > 0 then
+    	        rateMap[specialistID] = (rateMap[specialistID] or 0) + basePts
+    	    end
+    	end
+	end
+	local generalModifier = pBuildingInfo.GreatPeopleRateModifier;
+	if (generalModifier ~= 0) then
+		table.insert(lines, "[ICON_GREAT_PEOPLE] " .. Locale.ConvertTextKey("TXT_KEY_PEDIA_GP_LABEL") .. string.format(" %+i%%", generalModifier)); 
+	end
+	for specialistID, rate in pairs(rateMap) do
+		local icon = specialistMap[specialistID] or "[ICON_GREAT_PEOPLE]";
+		local nameKey = specialistName[specialistID];
+		if rate ~= 0 then 
+			table.insert(lines, icon .. " " .. Locale.ConvertTextKey(nameKey) .. " points" .. string.format(": %+i", rate));
+		end
+	end
+	for specialistID, modifier in pairs(modifierMap) do
+		local icon = specialistMap[specialistID] or "[ICON_GREAT_PEOPLE]";
+		local nameKey = specialistName[specialistID];
+		if modifier ~= 0 then
+			table.insert(lines, icon .. " " .. Locale.ConvertTextKey(nameKey) .. " points" .. string.format(": %+i%%", modifier));
 		end
 	end
 	
+	-- Great Works
 	local iNumGreatWorks = pBuildingInfo.GreatWorkCount;
 	if(iNumGreatWorks > 0) then
 		local greatWorksSlotType = GameInfo.GreatWorkSlots[pBuildingInfo.GreatWorkSlotType];

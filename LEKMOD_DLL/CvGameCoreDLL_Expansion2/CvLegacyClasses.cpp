@@ -38,6 +38,9 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_iHappinessPerTheme(0),
 	m_bTradeUnplunderable(false),
 	m_bCannotPlunder(false),
+	m_iFriendlyCityReligionCombatModifier(0),
+	m_iOccupiedCityReligionCombatModifier(0),
+	m_iEnemyCityReligionCombatModifier(0),
 
 	m_piYieldBonusFromThemes(NULL),
 	m_piBuildTimeOverride(NULL),
@@ -148,6 +151,9 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iInfluenceChangeTradeConnection = kResults.GetInt("InfluenceChangeTradeConnection");
 	m_iPurchasedUnitExtraMoves = kResults.GetInt("PurchasedUnitExtraMoves");
 	m_iHappinessPerTheme = kResults.GetInt("HappinessFromThemes");
+	m_iFriendlyCityReligionCombatModifier = kResults.GetInt("FriendlyCityReligionCombatModifier");
+	m_iOccupiedCityReligionCombatModifier = kResults.GetInt("OccupiedCityReligionCombatModifier");
+	m_iEnemyCityReligionCombatModifier = kResults.GetInt("EnemyCityReligionCombatModifier");
 
 	m_bTradeUnplunderable = kResults.GetBool("TradeUnplunderable");
 	m_bCannotPlunder = kResults.GetBool("CannotPlunder");
@@ -868,6 +874,18 @@ bool CvLegacyEntry::IsCannotPlunder() const
 {
 	return m_bCannotPlunder;
 }
+int CvLegacyEntry::GetFriendlyCityReligionCombatModifier() const
+{
+	return m_iFriendlyCityReligionCombatModifier;
+}
+int CvLegacyEntry::GetOccupiedCityReligionCombatModifier() const
+{
+	return m_iOccupiedCityReligionCombatModifier;
+}
+int CvLegacyEntry::GetEnemyCityReligionCombatModifier() const
+{
+	return m_iEnemyCityReligionCombatModifier;
+}
 // ARRAYS
 bool CvLegacyEntry::IsRevealResource(ResourceTypes eResource) const
 {
@@ -1198,6 +1216,9 @@ void CvPlayerLegacies::Reset()
 	m_iHappinessPerTheme = 0;
 	m_bCannotPlunder = false;
 	m_bTradeUnplunderable = false;
+	m_iFriendlyCityReligionCombatModifier = 0;
+	m_iOccupiedCityReligionCombatModifier = 0;
+	m_iEnemyCityReligionCombatModifier = 0;
 	
 	// Arrays
 	// Builds
@@ -1436,6 +1457,9 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_iHappinessPerTheme;
 	kStream >> m_bCannotPlunder;
 	kStream >> m_bTradeUnplunderable;
+	kStream >> m_iFriendlyCityReligionCombatModifier;
+	kStream >> m_iOccupiedCityReligionCombatModifier;
+	kStream >> m_iEnemyCityReligionCombatModifier;
 
 	kStream >> m_viYieldBonusFromThemes;
 	kStream >> m_viLegacyUnitClassOverrides;
@@ -1556,6 +1580,9 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_iHappinessPerTheme;
 	kStream << m_bCannotPlunder;
 	kStream << m_bTradeUnplunderable;
+	kStream << m_iFriendlyCityReligionCombatModifier;
+	kStream << m_iOccupiedCityReligionCombatModifier;
+	kStream << m_iEnemyCityReligionCombatModifier;
 
 	kStream << m_viYieldBonusFromThemes;
 	kStream << m_viLegacyUnitClassOverrides;
@@ -1775,6 +1802,9 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	m_iInfluenceChangeTradeConnection += kLegacy.GetInfluenceChangeTradeConnection();
 	m_iPurchasedUnitExtraMoves += kLegacy.GetPurchasedUnitExtraMoves();
 	m_iHappinessPerTheme += kLegacy.GetHappinessPerTheme();
+	m_iFriendlyCityReligionCombatModifier += kLegacy.GetFriendlyCityReligionCombatModifier();
+	m_iOccupiedCityReligionCombatModifier += kLegacy.GetOccupiedCityReligionCombatModifier();
+	m_iEnemyCityReligionCombatModifier += kLegacy.GetEnemyCityReligionCombatModifier();
 	bTemp = kLegacy.IsCannotPlunder();
 	if (bTemp) m_bCannotPlunder = bTemp;
 	bTemp = kLegacy.IsTradeUnplunderable();
@@ -2053,6 +2083,21 @@ bool CvPlayerLegacies::IsTradeUnplunderable() const
 bool CvPlayerLegacies::IsCannotPlunder() const
 {
 	return m_bCannotPlunder;
+}
+// Does this legacy give a combat mod for friendly cities based on religion
+int CvPlayerLegacies::GetFriendlyCityReligionCombatModifier() const
+{
+	return m_iFriendlyCityReligionCombatModifier;
+}
+// Does this legacy give a combat mod for occupied cities based on religion
+int CvPlayerLegacies::GetOccupiedCityReligionCombatModifier() const
+{
+	return m_iOccupiedCityReligionCombatModifier;
+}
+// Does this legacy give a combat mod for enemy cities based on religion
+int CvPlayerLegacies::GetEnemyCityReligionCombatModifier() const
+{
+	return m_iEnemyCityReligionCombatModifier;
 }
 // ARRAYS START
 // Does the player have a free promotion for a specific unit type from legacies

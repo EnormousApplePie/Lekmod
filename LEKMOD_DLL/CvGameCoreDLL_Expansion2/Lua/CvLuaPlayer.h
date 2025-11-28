@@ -1078,6 +1078,9 @@ protected:
 	static int lGetLegacyBuildingClassGreatPersonRateModifier(lua_State* L);
 	static int lGetLegacyUnitRangedCombatChange(lua_State* L);
 	static int lGetLegacyUnitCombatChange(lua_State* L);
+	static int lGetLegacyFriendlyCityReligionCombatModifier(lua_State* L);
+	static int lGetLegacyOccupiedCityReligionCombatModifier(lua_State* L);
+	static int lGetLegacyEnemyCityReligionCombatModifier(lua_State* L);
 	static int lHasLegacy(lua_State* L);
 	static int lSetHasLegacy(lua_State* L);
 #endif

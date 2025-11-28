@@ -12663,7 +12663,9 @@ int CvUnit::GetGenericMaxStrengthModifier(const CvUnit* pOtherUnit, const CvPlot
 	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 	ReligionTypes eFoundedReligion = pReligions->GetFounderBenefitsReligion(kPlayer.GetID());
-
+#if defined(LEKMOD_LEGACY)
+	ReligionTypes ePlayerReligion = kPlayer.GetReligions()->GetReligionCreatedByPlayer();
+#endif
 	// If the empire is unhappy, then Units get a combat penalty
 	if(kPlayer.IsEmpireUnhappy())
 	{
@@ -12735,6 +12737,34 @@ int CvUnit::GetGenericMaxStrengthModifier(const CvUnit* pOtherUnit, const CvPlot
 						iModifier += iTempModifier;
 					}
 				}
+#if defined(LEKMOD_LEGACY)
+				if(eReligion != NO_RELIGION && eReligion == ePlayerReligion)
+				{
+					const CvReligion* pCityReligion = pReligions->GetReligion(eReligion, pPlotCity->getOwner());
+					int iFriendlyLegacyMod = kPlayer.GetPlayerLegacies()->GetFriendlyCityReligionCombatModifier();
+					int iOccupiedLegacyMod = kPlayer.GetPlayerLegacies()->GetOccupiedCityReligionCombatModifier();
+					if(pCityReligion)
+					{
+						if (pPlotCity->IsOccupied() || pPlotCity->IsPuppet())
+						{
+							if (iOccupiedLegacyMod > 0)
+							{
+								iTempModifier = iOccupiedLegacyMod;
+								iModifier += iTempModifier;
+							}
+						}
+						else
+						{
+							if (iFriendlyLegacyMod > 0)
+							{
+								iTempModifier = iFriendlyLegacyMod;
+								iModifier += iTempModifier;
+							}
+						}
+					}
+					
+				}
+#endif
 			}
 		}
 
@@ -12766,6 +12796,21 @@ int CvUnit::GetGenericMaxStrengthModifier(const CvUnit* pOtherUnit, const CvPlot
 							iModifier += iTempModifier;
 						}
 					}
+#if defined(LEKMOD_LEGACY)
+					if (eReligion != NO_RELIGION && eReligion == ePlayerReligion)
+					{
+						const CvReligion* pCityReligion = pReligions->GetReligion(eReligion, pPlotCity->getOwner());
+						int iEnemyLegacyMod = kPlayer.GetPlayerLegacies()->GetEnemyCityReligionCombatModifier();
+						if (pCityReligion)
+						{
+							if (iEnemyLegacyMod > 0)
+							{
+								iTempModifier = iEnemyLegacyMod;
+								iModifier += iTempModifier;
+							}
+						}
+					}
+#endif
 				}
 			}
 		}
@@ -13650,6 +13695,33 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 							iModifier += iTempModifier;
 						}
 					}
+					ReligionTypes ePlayerReligion = kPlayer.GetReligions()->GetReligionCreatedByPlayer();
+					if (eReligion != NO_RELIGION && eReligion == ePlayerReligion)
+					{
+						const CvReligion* pCityReligion = pReligions->GetReligion(eReligion, pPlotCity->getOwner());
+						int iFriendlyLegacyMod = kPlayer.GetPlayerLegacies()->GetFriendlyCityReligionCombatModifier();
+						int iOccupiedLegacyMod = kPlayer.GetPlayerLegacies()->GetOccupiedCityReligionCombatModifier();
+						if (pCityReligion)
+						{
+							if (pPlotCity->IsOccupied() || pPlotCity->IsPuppet())
+							{
+								if (iOccupiedLegacyMod > 0)
+								{
+									iTempModifier = iOccupiedLegacyMod;
+									iModifier += iTempModifier;
+								}
+							}
+							else
+							{
+								if (iFriendlyLegacyMod > 0)
+								{
+									iTempModifier = iFriendlyLegacyMod;
+									iModifier += iTempModifier;
+								}
+							}
+						}
+
+					}
 				}
 			}
 
@@ -13675,6 +13747,22 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 								iModifier += iTempModifier;
 							}
 						}
+#if defined(LEKMOD_LEGACY)
+						ReligionTypes ePlayerReligion = kPlayer.GetReligions()->GetReligionCreatedByPlayer();
+						if (eReligion != NO_RELIGION && eReligion == ePlayerReligion)
+						{
+							const CvReligion* pCityReligion = pReligions->GetReligion(eReligion, pPlotCity->getOwner());
+							int iEnemyLegacyMod = kPlayer.GetPlayerLegacies()->GetEnemyCityReligionCombatModifier();
+							if (pCityReligion)
+							{
+								if (iEnemyLegacyMod > 0)
+								{
+									iTempModifier = iEnemyLegacyMod;
+									iModifier += iTempModifier;
+								}
+							}
+						}
+#endif
 					}
 				}
 			}
@@ -13825,6 +13913,33 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 						iModifier += iTempModifier;
 					}
 				}
+				ReligionTypes ePlayerReligion = kPlayer.GetReligions()->GetReligionCreatedByPlayer();
+				if (eReligion != NO_RELIGION && eReligion == ePlayerReligion)
+				{
+					const CvReligion* pCityReligion = pReligions->GetReligion(eReligion, pPlotCity->getOwner());
+					int iFriendlyLegacyMod = kPlayer.GetPlayerLegacies()->GetFriendlyCityReligionCombatModifier();
+					int iOccupiedLegacyMod = kPlayer.GetPlayerLegacies()->GetOccupiedCityReligionCombatModifier();
+					if (pCityReligion)
+					{
+						if (pPlotCity->IsOccupied() || pPlotCity->IsPuppet())
+						{
+							if (iOccupiedLegacyMod > 0)
+							{
+								iTempModifier = iOccupiedLegacyMod;
+								iModifier += iTempModifier;
+							}
+						}
+						else
+						{
+							if (iFriendlyLegacyMod > 0)
+							{
+								iTempModifier = iFriendlyLegacyMod;
+								iModifier += iTempModifier;
+							}
+						}
+					}
+
+				}
 			}
 		}
 
@@ -13850,6 +13965,22 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 							iModifier += iTempModifier;
 						}
 					}
+#if defined(LEKMOD_LEGACY)
+					ReligionTypes ePlayerReligion = kPlayer.GetReligions()->GetReligionCreatedByPlayer();
+					if (eReligion != NO_RELIGION && eReligion == ePlayerReligion)
+					{
+						const CvReligion* pCityReligion = pReligions->GetReligion(eReligion, pPlotCity->getOwner());
+						int iEnemyLegacyMod = kPlayer.GetPlayerLegacies()->GetEnemyCityReligionCombatModifier();
+						if (pCityReligion)
+						{
+							if (iEnemyLegacyMod > 0)
+							{
+								iTempModifier = iEnemyLegacyMod;
+								iModifier += iTempModifier;
+							}
+						}
+					}
+#endif
 				}
 			}
 		}

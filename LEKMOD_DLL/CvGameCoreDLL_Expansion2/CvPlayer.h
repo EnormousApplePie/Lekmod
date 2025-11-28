@@ -2272,9 +2272,6 @@ protected:
 
 	FAutoVariable<int, CvPlayer> m_iFreeTechCount;
 	int m_iMedianTechPercentage;
-#if defined(LEKMOD_LEGACY)
-	FAutoVariable<int, CvPlayer> m_iFreeLegacies;
-#endif
 	FAutoVariable<int, CvPlayer> m_iNumFreePolicies;
 	FAutoVariable<int, CvPlayer> m_iNumFreePoliciesEver; 
 	int m_iNumFreeTenets;

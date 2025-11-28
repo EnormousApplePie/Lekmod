@@ -3135,8 +3135,8 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	int iOverrideProductionCost = 0;
 	int iOverrideGoldCost = 0;
 #if defined(LEKMOD_LEGACY)
-	int iLegacyGoldCost = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_GOLD);
-	int iLegacyProductionCost = GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
+	int iLegacyGoldCost = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetBuildingCostOverride(eBuilding, YIELD_GOLD);
+	int iLegacyProductionCost = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetBuildingCostOverride(eBuilding, YIELD_PRODUCTION);
 	if (iLegacyGoldCost > 0 && iTraitGoldCost > 0)
 		iOverrideGoldCost = std::min(iTraitGoldCost, iLegacyGoldCost);
 	else if (iLegacyGoldCost > 0)
