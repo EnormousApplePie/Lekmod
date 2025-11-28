@@ -444,16 +444,7 @@ int CvTreasury::GetGoldPerTurnFromTradeRoutesTimes100() const
 /// Gold per turn from traits
 int CvTreasury::GetGoldPerTurnFromTraits() const
 {
-	// NQMP GJS - Morocco UA Gateway To Africa now scales with era BEGIN TradePartnerYieldFlatBonusPerEra
-	int bonus = m_pPlayer->GetPlayerTraits()->GetYieldChangePerTradePartner(YIELD_GOLD);
-	if (bonus > 0) // temp fix since the GetTradePartnerYieldFlatBonusPerEra() stat is currently hard-coded to return 1 instead of reading from SQL
-	{
-		bonus += m_pPlayer->GetPlayerTraits()->GetTradePartnerYieldFlatBonusPerEra() * m_pPlayer->GetCurrentEra();
-		bonus *= m_pPlayer->GetTrade()->GetNumDifferentTradingPartners();
-	}
-	return bonus;
-	//return m_pPlayer->GetPlayerTraits()->GetYieldChangePerTradePartner(YIELD_GOLD) * m_pPlayer->GetTrade()->GetNumDifferentTradingPartners();
-	// NQMP GJS - Morocco UA Gateway To Africa now scales with era END
+	return (m_pPlayer->GetYieldFromTraits(YIELD_GOLD) / 100);
 }
 
 /// Gold Per Turn from Religion

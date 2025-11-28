@@ -1019,6 +1019,7 @@ protected:
 	static int lGetNumInternationalTradeRoutesUsed(lua_State* L);
 	static int lGetNumInternationalTradeRoutesAvailable(lua_State* L);
 	static int lGetPotentialInternationalTradeRouteDestinations(lua_State* L);
+#if !defined(TRADE_REFACTOR)
 	static int lGetInternationalTradeRouteBaseBonus(lua_State* L);
 	static int lGetInternationalTradeRouteGPTBonus(lua_State* L);
 	static int lGetInternationalTradeRouteResourceBonus(lua_State* L);
@@ -1032,6 +1033,25 @@ protected:
 	static int lGetInternationalTradeRouteDomainModifier(lua_State* L);
 	static int lGetInternationalTradeRouteTotal(lua_State* L);
 	static int lGetInternationalTradeRouteScience(lua_State* L);
+#else
+	static int lGetTradeConnectionBaseYield(lua_State* L);
+	static int lGetTradeConnectionOriginGPTValue(lua_State* L);
+	static int lGetTradeConnectionDestinationGPTValue(lua_State* L);
+	static int lGetTradeConnectionResourceValue(lua_State* L);
+	static int lGetTradeConnectionYourBuildingValue(lua_State* L);
+	static int lGetTradeConnectionTheirBuildingValue(lua_State* L);
+	static int lGetTradeConnectionExclusiveValue(lua_State* L);
+	static int lGetTradeConnectionPolicyValue(lua_State* L);
+	static int lGetTradeConnectionTraitValue(lua_State* L);
+	static int lGetTradeConnectionReligionValue(lua_State* L);
+	// Mods
+	static int lGetTradeConnectionPolicyValueModifier(lua_State* L);
+	static int lGetTradeConnectionTraitValueModifier(lua_State* L);
+	static int lGetTradeConnectionDomainValueModifier(lua_State* L);
+	static int lGetTradeConnectionRiverValueModifier(lua_State* L);
+	// Sum of All
+	static int lGetTradeConnectionTotalValue(lua_State* L);
+#endif
 	static int lGetPotentialTradeUnitNewHomeCity(lua_State* L);
 	static int lGetPotentialAdmiralNewPort(lua_State* L);
 	static int lGetNumAvailableTradeUnits(lua_State* L);

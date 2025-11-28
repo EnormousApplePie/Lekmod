@@ -324,7 +324,17 @@ public:
 	int GetHurryModifier(int i) const;
 	bool IsBuildingClassNeededInCity(int i) const;
 	int GetNumFreeUnits(int i) const;
-
+#if defined(TRADE_REFACTOR)
+	// Yield for SENDER if creating a Trade Route from a city with this building
+	int GetTradeConnectionOriginLandYieldChange(int i, int j) const;
+	int GetTradeConnectionOriginSeaYieldChange(int i, int j) const;
+	// Yield for RECEIVER for having a Trade Route sent to a city with this building
+	int GetTradeConnectionDestinationLandYieldChange(int i, int j) const;
+	int GetTradeConnectionDestinationSeaYieldChange(int i, int j) const;
+	// Yield for the SENDER if they send a Trade Route to a city with this building, if international, else to destination city. its a bit complicated...
+	int GetIncomingTradeConnectionLandYieldChange(int i, int j) const;
+	int GetIncomingTradeConnectionSeaYieldChange(int i, int j) const;
+#endif
 #if defined(MISC_CHANGES) // CvBuildingClasses arrays
 	int GetResourceClassYieldChange(int i, int j) const;
 #endif
@@ -600,6 +610,14 @@ private:
 	std::pair<int**, size_t> m_ppiBuildingClassYieldChanges;
 #else
 	int** m_ppaiResourceYieldChange;
+#if defined(TRADE_REFACTOR)
+	int** m_ppaiTradeConnectionOriginLandYieldChange;
+	int** m_ppaiTradeConnectionOriginSeaYieldChange;
+	int** m_ppaiTradeConnectionDestinationLandYieldChange;
+	int** m_ppaiTradeConnectionDestinationSeaYieldChange;
+	int** m_ppaiIncomingTradeConnectionLandYieldChange;
+	int** m_ppaiIncomingTradeConnectionSeaYieldChange;
+#endif
 #if defined(MISC_CHANGES) // CvBuildingClasses arrays
 	int** m_ppaiResourceClassYieldChange;
 #endif

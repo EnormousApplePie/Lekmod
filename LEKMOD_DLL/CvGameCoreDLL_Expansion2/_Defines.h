@@ -1151,11 +1151,14 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 
 // Generic define for temp changes
 #define CLEAN_UP
+// Change how the Trade Route yields are calculated and extend the modification potential.
+#define TRADE_REFACTOR
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
 // 
-// Legacies, for now.
+// Legacies
 #define LEKMOD_LEGACY
 #define GAMEOPTION_NO_LEGACIES "GAMEOPTION_NO_LEGACIES"
+// hashes for notifications
 #define NOTIFICATION_CHOOSE_LEGACY 3773863721
 #define NOTIFICATION_LEGACY_CHOSEN 2089163589
 

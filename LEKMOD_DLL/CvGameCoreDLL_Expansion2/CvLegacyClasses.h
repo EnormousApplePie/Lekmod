@@ -360,6 +360,14 @@ private:
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiImprovementYieldChangePerXWorldWonder;
 	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementHealChangeByDomain;
 	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementCombatModifierByDomain;
+#if defined(TRADE_REFACTOR) // These are reliant on the Trade Refactor.
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionLandYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionSeaYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiIncomingTradeConnectionLandYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiIncomingTradeConnectionSeaYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionLandYieldModifier;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionSeaYieldModifier;
+#endif
 };
 #endif //defined(LEKMOD_LEGACY)
 #endif //LEK_CIV5_LEGACYCLASSES_H

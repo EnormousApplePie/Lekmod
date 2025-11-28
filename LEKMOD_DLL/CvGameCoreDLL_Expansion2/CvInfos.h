@@ -1342,16 +1342,34 @@ private:
 	CvRouteInfo(const CvRouteInfo&);
 	CvRouteInfo& operator=(const CvRouteInfo&);
 };
+#if defined(TRADE_REFACTOR)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//  class : CvTradeConnectionInfo
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+class CvTradeConnectionInfo :	public CvBaseInfo
+{
+	public:
+	CvTradeConnectionInfo();
+	virtual ~CvTradeConnectionInfo();
+	int getBaseOriginValue() const;
+	int getBaseDestinationValue() const;
+
+
+	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
+protected:
+	int m_iBaseOriginValue;
+	int m_iBaseDestinationValue;
+};
+#endif
 #if defined(LEKMOD_LEGACY)
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //  class : CvGreatWorkClassInfo
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-class CvGreatWorkClassInfo :	public CvBaseInfo
+class CvGreatWorkClassInfo : public CvBaseInfo
 {
 public:
 	CvGreatWorkClassInfo();
 	virtual ~CvGreatWorkClassInfo();
-
 	int getBaseTourism() const;
 	int getGreatWorkClassBaseYield(int i) const;
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
@@ -1455,7 +1473,10 @@ public:
 #endif
 
 	int getResourceQuantityType(int i) const;
-
+#if defined(TRADE_REFACTOR)
+	int getTradeConnectionResourceLandYieldBonusTimes100(int i, int j) const;
+	int getTradeConnectionResourceSeaYieldBonusTimes100(int i, int j) const;
+#endif
 	bool isTerrain(int i) const;
 	bool isFeature(int i) const;
 	bool isFeatureTerrain(int i) const;
@@ -1520,7 +1541,10 @@ protected:
 	int* m_piResourceQuantityTypes;
 	int* m_piImprovementChange;
 	int* m_piFlavor;
-
+#if defined(TRADE_REFACTOR)
+	int** m_paiTradeConnectionResourceLandYieldBonus;
+	int** m_paiTradeConnectionResourceSeaYieldBonus;
+#endif
 	bool* m_pbTerrain;
 	bool* m_pbFeature;
 	bool* m_pbFeatureTerrain;

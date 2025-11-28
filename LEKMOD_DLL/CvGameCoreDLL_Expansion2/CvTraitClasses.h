@@ -254,8 +254,19 @@ public:
 	int GetYieldChangeStrategicResources(int i) const;
 	int GetYieldChangeLuxuryResources(int i) const; // NQMP GJS - New Netherlands UA
 	int GetYieldChangeNaturalWonder(int i) const;
+#if !defined(TRADE_REFACTOR)
 	int GetYieldChangePerTradePartner(int i) const;
 	int GetYieldChangeIncomingTradeRoute(int i) const;
+#else
+	int GetTradePartnerYieldFlatBonusPerEra(int i) const;
+	int GetTradeConnectionLandYieldChange(int i, int j) const;
+	int GetTradeConnectionSeaYieldChange(int i, int j) const;
+	int GetYieldChangePerTradePartnerByDomain(int i, int j) const;
+	int GetIncomingTradeConnectionLandYieldChange(int i, int j) const;
+	int GetIncomingTradeConnectionSeaYieldChange(int i, int j) const;
+	int GetTradeConnectionLandYieldModifier(int i, int j) const;
+	int GetTradeConnectionSeaYieldModifier(int i, int j) const;
+#endif
 	int GetYieldModifier(int i) const;
 	int GetStrategicResourceQuantityModifier(int i) const;
 	int GetObsoleteTech() const;
@@ -489,8 +500,19 @@ protected:
 	int* m_paiYieldChangeStrategicResources;
 	int* m_paiYieldChangeLuxuryResources; // NQMP GJS - New Netherlands UA
 	int* m_paiYieldChangeNaturalWonder;
+#if !defined(TRADE_REFACTOR)
 	int* m_paiYieldChangePerTradePartner;
 	int* m_paiYieldChangeIncomingTradeRoute;
+#else
+	int* m_paiTradePartnerYieldFlatBonusPerEra;
+	int** m_ppiTradeConnectionLandYieldChange;
+	int** m_ppiTradeConnectionSeaYieldChange;
+	int** m_ppiYieldChangePerTradePartnerByDomain;
+	int** m_ppiIncomingTradeConnectionLandYieldChange;
+	int** m_ppiIncomingTradeConnectionSeaYieldChange;
+	int** m_ppiTradeConnectionLandYieldModifier;
+	int** m_ppiTradeConnectionSeaYieldModifier;
+#endif
 	int* m_paiYieldModifier;
 	int* m_piStrategicResourceQuantityModifier;
 	int* m_piResourceQuantityModifiers;
@@ -517,7 +539,6 @@ protected:
 	int** m_ppiCityEraYieldChange;
 	int** m_ppiCityTechYieldChange;
 #endif
-
 	std::multimap<int, int> m_FreePromotionUnitCombats;
 
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;
@@ -1151,6 +1172,7 @@ public:
 		return m_iRouteMovementChange[(int)eRoute];
 	};
 #endif
+#if !defined(TRADE_REFACTOR)
 	int GetYieldChangePerTradePartner(YieldTypes eYield) const
 	{
 		return m_iYieldChangePerTradePartner[(int)eYield];
@@ -1165,6 +1187,19 @@ public:
 	{
 		return m_iYieldChangeIncomingTradeRoute[(int)eYield];
 	};
+#else
+	int GetTradePartnerYieldFlatBonusPerEra(YieldTypes eYield) const
+	{
+		return m_iTradePartnerYieldFlatBonusPerEra[(int)eYield];
+	};
+	int GetTradeConnectionLandYieldChange(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+	int GetTradeConnectionSeaYieldChange(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+	int GetYieldChangePerTradePartnerByDomain(DomainTypes eDomain, YieldTypes eYield) const;
+	int GetIncomingTradeConnectionLandYieldChange(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+	int GetIncomingTradeConnectionSeaYieldChange(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+	int GetTradeConnectionLandYieldModifier(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+	int GetTradeConnectionSeaYieldModifier(TradeConnectionType eTradeConnection, YieldTypes eYield) const;
+#endif
 	int GetYieldRateModifier(YieldTypes eYield) const
 	{
 		return m_iYieldRateModifier[(int)eYield];
@@ -1456,8 +1491,19 @@ private:
 	int m_iYieldChangeStrategicResources[NUM_YIELD_TYPES];
 	int m_iYieldChangeLuxuryResources[NUM_YIELD_TYPES]; // NQMP GJS - New Netherlands UA
 	int m_iYieldChangeNaturalWonder[NUM_YIELD_TYPES];
+#if !defined(TRADE_REFACTOR)
 	int m_iYieldChangePerTradePartner[NUM_YIELD_TYPES];
 	int m_iYieldChangeIncomingTradeRoute[NUM_YIELD_TYPES];
+#else
+	int m_iTradePartnerYieldFlatBonusPerEra[NUM_YIELD_TYPES];
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionLandYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionSeaYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiYieldChangePerTradePartnerByDomain;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiIncomingTradeConnectionLandYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiIncomingTradeConnectionSeaYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionLandYieldModifier;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionSeaYieldModifier;
+#endif
 	int m_iYieldRateModifier[NUM_YIELD_TYPES];
 	int m_iStrategicResourceQuantityModifier[NUM_TERRAIN_TYPES];
 

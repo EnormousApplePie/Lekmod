@@ -12465,16 +12465,7 @@ int CvPlayer::GetJONSCulturePerTurnFromExcessHappinessTimes100() const
 /// Trait bonus which adds Culture for trade partners? 
 int CvPlayer::GetJONSCulturePerTurnFromTraits() const
 {
-	// NQMP GJS - Morocco UA Gateway To Africa now scales with era BEGIN TradePartnerYieldFlatBonusPerEra
-	int bonus = GetPlayerTraits()->GetYieldChangePerTradePartner(YIELD_CULTURE);
-	if (bonus > 0) // temp fix since the GetTradePartnerYieldFlatBonusPerEra() stat is currently hard-coded to return 1 instead of reading from SQL
-	{
-		bonus += GetPlayerTraits()->GetTradePartnerYieldFlatBonusPerEra() * GetCurrentEra();
-		bonus *= GetTrade()->GetNumDifferentTradingPartners();
-	}
-	return bonus;
-	//return GetPlayerTraits()->GetYieldChangePerTradePartner(YIELD_CULTURE) * GetTrade()->GetNumDifferentTradingPartners();
-	// NQMP GJS - Morocco UA Gateway To Africa now scales with era END
+	return (GetYieldFromTraits(YIELD_CULTURE) / 100);
 }
 
 //	--------------------------------------------------------------------------------
@@ -13832,6 +13823,18 @@ void CvPlayer::TestMidTurnPolicyNotification()
 	}
 }
 #endif
+#if defined(TRADE_REFACTOR)
+int CvPlayer::GetYieldFromTraits(YieldTypes eYield) const
+{
+	int iYield = GetPlayerTraits()->GetYieldChangePerTradePartnerByDomain(DOMAIN_LAND, eYield); // This is set to LAND, since the SEA one is for display purposes.
+	if (iYield > 0)
+	{
+		iYield += GetPlayerTraits()->GetTradePartnerYieldFlatBonusPerEra(eYield) * GetCurrentEra();
+		iYield *= GetTrade()->GetNumDifferentTradingPartners();
+	}
+	return iYield;
+}
+#endif
 void CvPlayer::TestMidTurnPopGrowth(CvCity* pCity, bool bAlwaysShowNotification)
 {
 	CvAssertMsg(pCity != NULL, "pCity in CvPlayer::TestMidTurnPopGrowth is not assigned a valid value");
@@ -13849,8 +13852,8 @@ void CvPlayer::TestMidTurnPopGrowth(CvCity* pCity, bool bAlwaysShowNotification)
 				pCity->changeFood(-(std::max(0, (pCity->growthThreshold() - pCity->getFoodKept()))));
 				pCity->changePopulation(1);
 
-				// Only show notification if the city is small and if bAlwaysShowNotification is false
-				if (pCity->getPopulation() <= 5 && !bAlwaysShowNotification)
+				// show notification if the city is small or if bAlwaysShowNotification is true
+				if (pCity->getPopulation() <= 5 || bAlwaysShowNotification)
 				{
 					CvNotifications* pNotifications = GetNotifications();
 					if (pNotifications)
@@ -14368,7 +14371,7 @@ int CvPlayer::GetFaithPerTurnFromReligion() const
 		{
 			iFaithPerTurn += pReligion->m_Beliefs.GetHolyCityYieldChange(YIELD_FAITH);
 
-#ifdef NQ_FAITH_PER_FOREIGN_TRADE_ROUTE
+#ifndef NQ_FAITH_PER_FOREIGN_TRADE_ROUTE
 			iFaithPerTurn += pReligion->m_Beliefs.GetFaithPerForeignTradeRoute() * GetTrade()->GetNumForeignTradeRoutes(GetID());
 #endif
 

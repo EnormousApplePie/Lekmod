@@ -38,6 +38,9 @@ class CvEntityEventInfo;
 class CvLandscapeInfo;
 class CvTerrainInfo;
 class CvResourceClassInfo;
+#if defined(TRADE_REFACTOR)
+class CvTradeConnectionInfo;
+#endif
 #if defined(LEKMOD_LEGACY)
 class CvGreatWorkClassInfo;
 #endif
@@ -343,7 +346,11 @@ public:
 #endif
 	std::vector<CvResourceClassInfo*>& getResourceClassInfo();
 	_Ret_maybenull_ CvResourceClassInfo* getResourceClassInfo(ResourceClassTypes eResourceNum);
-
+#if defined(TRADE_REFACTOR)
+	int getNumTradeConnectionInfos();
+	std::vector<CvTradeConnectionInfo*>& getTradeConnectionInfo();
+	_Ret_maybenull_ CvTradeConnectionInfo* getTradeConnectionInfo(TradeConnectionType e);
+#endif
 #ifdef AUI_WARNING_FIXES
 	uint getNumResourceInfos() const;
 #else
@@ -7949,6 +7956,9 @@ protected:
 	std::vector<CvGreatWorkClassInfo*> m_paGreatWorkClassInfo;
 #endif
 	std::vector<CvResourceClassInfo*> m_paResourceClassInfo;
+#if defined(TRADE_REFACTOR)
+	std::vector<CvTradeConnectionInfo*> m_paTradeConnectionInfo;
+#endif
 	std::vector<CvResourceInfo*> m_paResourceInfo;
 	std::vector<CvBuildInfo*> m_paBuildInfo;
 	std::vector<CvHandicapInfo*> m_paHandicapInfo;
