@@ -3,7 +3,7 @@ include("PlotIterators.lua")
 
 local this_civ = GameInfoTypes["CIVILIZATION_VENEZ"] -- This is the Civilization name for Venice
 local is_active = LekmodUtilities:is_civilization_active(this_civ)
-
+local compassTech = GameInfoTypes["TECH_COMPASS"]
 ------------------------------------------------------------------------------------------------------------------------
 -- Venice UA: Add a Trade Route at Compass
 ------------------------------------------------------------------------------------------------------------------------
@@ -13,6 +13,8 @@ function lekmod_venice_route_compass(team_id, tech_id)
 		if player:IsAlive() and player:GetTeam() == team_id and player:GetCivilizationType() == this_civ then
 			if tech_id == compassTech then
 				player:ChangeNumMiscTradeRoutes(1)
+				print("venice TR slot added, removing listener")
+				GameEvents.TeamTechResearched.Remove(lekmod_venice_route_compass)
 			end
 		end
 	end

@@ -1928,6 +1928,8 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 				"WHERE TraitType = ?");
 		}
 
+		pResults->Bind(1, szTraitType);
+
 		while (pResults->Step())
 		{
 			const int UnitClassID = pResults->GetInt(1);
@@ -3321,6 +3323,9 @@ void CvPlayerTraits::Reset()
 	m_bFasterInHills = false;
 	m_bEmbarkedAllWater = false;
 	m_bEmbarkedToLandFlatCost = false;
+#ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+	m_bCiviliansEmbarkOneMove = false;
+#endif
 	m_bNoHillsImprovementMaintenance = false;
 	m_bTechBoostFromCapitalScienceBuildings = false;
 	m_bStaysAliveZeroCities = false;
@@ -3868,14 +3873,7 @@ bool CvPlayerTraits::IsBuildingClassRemoveRequiredTerrain(BuildingClassTypes eBu
 // Force Spawn UnitClass is Capital
 bool CvPlayerTraits::IsUnitClassForceSpawnCapital(UnitClassTypes eUnitClass)
 {
-	if (eUnitClass != NO_UNITCLASS)
-	{
-		return m_abForceSpawnCapital[eUnitClass];
-	}
-	else
-	{
-		return false;
-	}
+	return NO_UNITCLASS != eUnitClass ? m_abForceSpawnCapital[eUnitClass] : false;
 }
 // Building Cost Override (Gold Faith and Production)
 int CvPlayerTraits::GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType)
