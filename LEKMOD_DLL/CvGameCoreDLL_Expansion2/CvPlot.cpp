@@ -2650,7 +2650,19 @@ int CvPlot::getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer) const
 		iLegacyOverride = GET_PLAYER(ePlayer).GetPlayerLegacies()->GetBuildTimeOverride(eBuild);
 	}
 	// If both overrides are -1, use original time; if one is -1, use the other; if both valid, use the minimum
-	int iTemp = (iLegacyOverride == -1) ? iOverrideTime : (iOverrideTime == -1 ? iLegacyOverride : std::min(iLegacyOverride, iOverrideTime));
+	int iTemp = -1;
+	if (iOverrideTime > -1 && iLegacyOverride > -1)
+	{
+		iTemp = std::min(iOverrideTime, iLegacyOverride);
+	}
+	else if (iOverrideTime > -1)
+	{
+		iTemp = iOverrideTime;
+	}
+	else if (iLegacyOverride > -1)
+	{
+		iTemp = iLegacyOverride;
+	}
 	if (iTemp >= 0)
 	{
 		iTime = iTemp;

@@ -790,8 +790,11 @@ public:
 	void ChangeLandmarksTourismPercent(int iChange);
 	int GetGreatWorksTourismModifier() const;
 	void ChangeGreatWorksTourismModifier(int iChange);
-
+#if defined(LEKMOD_LEGACY)
+	int GetThemingBonuses(YieldTypes eYield) const;
+#else
 	int GetThemingBonuses() const;
+#endif
 	int GetNumBuildingsFromFaith() const;
 
 	int GetCityStateTradeRouteProductionModifier() const;

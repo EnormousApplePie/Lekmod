@@ -4027,7 +4027,10 @@ int CvPlayerCulture::GetTotalThemingBonuses() const
 	int iLoop;
 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 	{
-		iRtnValue += pCity->GetCityBuildings()->GetThemingBonuses();;
+		for (int i = 0; i < NUM_YIELD_TYPES; i++)
+		{
+			iRtnValue += pCity->GetCityBuildings()->GetThemingBonuses((YieldTypes)i);
+		}
 	}
 
 	return iRtnValue;
@@ -4597,7 +4600,7 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 
 	iBase += GetTourismFromWorkedImprovements(); // Vatican legacy, workaround until I can puzzle out this Tourism-as-yield issue
 #endif
-	iBase += m_pCity->GetCityBuildings()->GetThemingBonuses();
+	iBase += m_pCity->GetCityBuildings()->GetThemingBonuses(YIELD_CULTURE);
 
 
 	int iPercent = m_pCity->GetCityBuildings()->GetLandmarksTourismPercent();
@@ -5523,7 +5526,7 @@ CvString CvCityCulture::GetTourismTooltip()
 #endif
 	iTotal += iTemp;
 	// Themes
-	iTemp = m_pCity->GetCityBuildings()->GetThemingBonuses();
+	iTemp = m_pCity->GetCityBuildings()->GetThemingBonuses(YIELD_CULTURE);
 	if (iTemp > 0)
 	{
 		szRtnValue += "[NEWLINE][ICON_BULLET]";

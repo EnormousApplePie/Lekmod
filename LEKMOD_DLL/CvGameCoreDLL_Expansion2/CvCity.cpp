@@ -12551,12 +12551,8 @@ int CvCity::GetBaseYieldRateFromThemedBuildings(YieldTypes eYield) const
 	VALIDATE_OBJECT
 	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
-#if defined(LEK_YIELD_TOURISM)
-	if (YIELD_CULTURE != eYield && YIELD_TOURISM != eYield)
-	{
-		return 0;
-	}
-	return m_pCityBuildings->GetThemingBonuses();
+#if defined(LEKMOD_LEGACY)
+	return m_pCityBuildings->GetThemingBonuses(eYield);
 #else
 	return YIELD_CULTURE == eYield ? m_pCityBuildings->GetThemingBonuses() : 0;
 #endif
@@ -16684,7 +16680,7 @@ void CvCity::Purchase(UnitTypes eUnitType, BuildingTypes eBuildingType, ProjectT
 					pUnit->setMoves(0);
 				}
 #else
-				int iExtraMoves = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPurchasedUnitExtraMoves();
+				int iExtraMoves = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPurchasedUnitExtraMoves() * GC.getMOVE_DENOMINATOR(); // lekmod legacy: purchased units may get extra moves
 				if (iExtraMoves > 0)
 				{
 					pUnit->setMoves(pUnit->maxMoves() + iExtraMoves);

@@ -1071,6 +1071,8 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetLegacyBuildingClassYieldModifier);
 	Method(GetLegacyBuildingClassGreatPersonPointChange);
 	Method(GetLegacyBuildingClassGreatPersonRateModifier);
+	Method(GetLegacyUnitRangedCombatChange);
+	Method(GetLegacyUnitCombatChange);
 	Method(HasLegacy);
 	Method(SetHasLegacy);
 #endif
@@ -11669,6 +11671,30 @@ int CvLuaPlayer::lGetLegacyBuildingClassGreatPersonRateModifier(lua_State* L)
 	{
 		int Modifier = pkPlayer->GetPlayerLegacies()->GetBuildingClassGreatPersonPointModifier(eBuildingClass, eSpecialist);
 		lua_pushinteger(L, Modifier);
+		return 1;
+	}
+	return 0;
+}
+int CvLuaPlayer::lGetLegacyUnitRangedCombatChange(lua_State* L)
+{
+	const UnitTypes eUnit = (UnitTypes)luaL_checkint(L, 2);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int Change = pkPlayer->GetPlayerLegacies()->GetUnitRangedStrengthChange(eUnit);
+		lua_pushinteger(L, Change);
+		return 1;
+	}
+	return 0;
+}
+int CvLuaPlayer::lGetLegacyUnitCombatChange(lua_State* L)
+{
+	const UnitTypes eUnit = (UnitTypes)luaL_checkint(L, 2);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		int Change = pkPlayer->GetPlayerLegacies()->GetUnitRangedStrengthChange(eUnit);
+		lua_pushinteger(L, Change);
 		return 1;
 	}
 	return 0;

@@ -4688,7 +4688,8 @@ void CvGame::recalculateGameEra()
 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
 		if (!kPlayer.isAlive())
 			continue;
-
+		if (kPlayer.isMinorCiv() || kPlayer.isBarbarian()) // Don't count minors or barbarians, since they dont progess like Majors.
+			continue;
 		if (isOption("GAMEOPTION_AI_GIMP_NO_CULTURE") && !kPlayer.isHuman())
 			continue;
 	
@@ -4704,13 +4705,13 @@ void CvGame::recalculateGameEra()
 	// Ok, so sort it
 	std::sort(eras.begin(), eras.end());
 
-	const int n = (int)eras.size();
+	const int numCountedPlayers = (int)eras.size();
 	// If even, take upper middle, if odd, take middle + 1
 	// This should result in a bias towards later eras
 	// and if 3/6 players are in Era 2 and 3/6 in Era 3, we want to go to Era 3
 	// and if 3/7 players are in Era 3 and 4/7 in Era 2, we want to go to Era 3
-	const int idx = (n % 2 == 0) ? (n / 2) : (n / 2 + 1); 
-	const int newEra = eras[std::min(idx, n - 1)];
+	const int idx = (numCountedPlayers % 2 == 0) ? (numCountedPlayers / 2) : (numCountedPlayers / 2 + 1);
+	const int newEra = eras[std::min(idx, numCountedPlayers - 1)];
 
 	if (m_iGameEra == newEra)
 		return;
@@ -4725,10 +4726,16 @@ void CvGame::recalculateGameEra()
 			if (!kPlayer.isAlive())
 				continue;
 
-			if (isOption("GAMEOPTION_AI_GIMP_NO_CULTURE") && !kPlayer.isHuman())
-				continue;
-
-			kPlayer.GetPlayerLegacies()->testLegacyNotification((EraTypes)m_iGameEra);
+			if (!kPlayer.isHuman())
+			{
+				if (isOption("GAMEOPTION_AI_GIMP_NO_CULTURE"))
+					continue;
+				//kPlayer.GetPlayerLegacies()->DoChooseLegacy(); AI Function.
+			}
+			else // Push notification and popup to human players.
+			{
+				kPlayer.GetPlayerLegacies()->testLegacyNotification((EraTypes)m_iGameEra);
+			}
 		}
 	}
 }

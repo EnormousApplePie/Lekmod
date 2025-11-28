@@ -165,7 +165,7 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	kUtility.PopulateArrayByValue(m_piNumFreeUnitsByType, "Units", "Legacy_NumFreeUnitsByType", "UnitType", "LegacyType", szLegacyType, "NumUnits");
 	kUtility.PopulateArrayByValue(m_piNumFreeUnitsByClass, "UnitClasses", "Legacy_NumFreeUnitsByClass", "UnitClassType", "LegacyType", szLegacyType, "NumUnits");
 	kUtility.PopulateArrayByValue(m_piGreatWorkClassTourismChange, "GreatWorkClasses", "Legacy_GreatWorkClassTourismChange", "GreatWorkClassType", "LegacyType", szLegacyType, "TourismChange");
-	kUtility.PopulateArrayByValue(m_piBuildTimeOverride, "Builds", "Legacy_BuildTimeOverride", "BuildType", "LegacyType", szLegacyType, "TimeOverride");
+	kUtility.PopulateArrayByValue(m_piBuildTimeOverride, "Builds", "Legacy_BuildTimeOverride", "BuildType", "LegacyType", szLegacyType, "TimeOverride", -1);
 	// Complex/Compound Arrays
 	{
 		kUtility.Initialize2DArray(m_paiImprovementNearbyCombatModifierByDomain, "Improvements", "Domains");
