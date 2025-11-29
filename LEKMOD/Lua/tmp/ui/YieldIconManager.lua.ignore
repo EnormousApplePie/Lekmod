@@ -48,7 +48,6 @@ ContextPtr:SetUpdate( Update );
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 function ShowHexYield( x, y, bShow )
-    print("SafeShowYield: x="..x.." y="..y.." show="..tostring(bShow))
 --[[
 We ignore the engine’s "hide" (bShow == false) requests because they are unreliable.
 The Civ5 engine frequently sends bShow=false for tiles that are still fully visible
