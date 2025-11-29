@@ -1,11 +1,6 @@
 include( "FLuaVector" );
 include( "InstanceManager" );
 
-print( "Loading Yield Icon Manager" );
-print( "Loading Yield Icon Manager" );
-print( "Loading Yield Icon Manager" );
-print( "Loading Yield Icon Manager" );
-
 
 -------------------------------------------------
 -- Yield Icon Manager
@@ -140,14 +135,6 @@ function BuildYield( x, y, index )
     anchor.Stack:ReprocessAnchoring();
     anchor.Anchor:SetHexPosition( x, y );
 
-
-    print("BuildYield: yields -> F="..yieldInfo.m_Food
-        .." P="..yieldInfo.m_Production
-        .." G="..yieldInfo.m_Gold
-        .." S="..yieldInfo.m_Science
-        .." C="..yieldInfo.m_Culture
-        .." FTH="..yieldInfo.m_Faith
-        .." GA="..yieldInfo.m_GoldenAge)
 end
 
 
@@ -258,8 +245,6 @@ end
 function DestroyYield( index )
     --print( "Hiding hex( " .. tostring( x ) .. " " .. tostring( y ) .. " )  index: " .. index );
     --g_Hidden = g_Hidden + 1;
-    print("DestroyYield: index="..index)
-
     -- we can get double hide requests when an icon scrolls off the corner of the view
     local instanceSet = g_VisibleSet[ index ];
     if( instanceSet ) then
