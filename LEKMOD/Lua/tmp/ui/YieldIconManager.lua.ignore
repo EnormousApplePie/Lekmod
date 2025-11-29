@@ -77,10 +77,7 @@ Final behavior:
     local idx = plot:GetPlotIndex()
 
     DestroyYield(idx)
-
-    if bShow then
-        BuildYield(x, y, idx)
-    end
+    BuildYield(x, y, idx)
 end
 Events.ShowHexYield.Add( ShowHexYield );
 
