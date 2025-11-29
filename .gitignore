@@ -20,3 +20,5 @@ LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildTemp/
 /LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildOutput/VS2008_ModWin32/CvGameCore_Expansion2.exp
 /LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildOutput/VS2008_ModWin32/CvGameCore_Expansion2.lib
 /LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildOutput/VS2008_ModWin32/CvGameCore_Expansion2.pdb
+
+.local/

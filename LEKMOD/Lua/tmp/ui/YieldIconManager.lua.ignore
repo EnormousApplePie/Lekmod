@@ -1,12 +1,18 @@
 include( "FLuaVector" );
 include( "InstanceManager" );
 
+print( "Loading Yield Icon Manager" );
+print( "Loading Yield Icon Manager" );
+print( "Loading Yield Icon Manager" );
+print( "Loading Yield Icon Manager" );
+
 
 -------------------------------------------------
 -- Yield Icon Manager
 -------------------------------------------------
 local g_AnchorIM = InstanceManager:new( "AnchorInstance", "Anchor", Controls.Scrap );
 local g_ImageIM  = InstanceManager:new( "ImageInstance",  "Image",  Controls.Scrap );
+
 
 local cultureTexture = "YieldAtlas_128_Culture.dds"
 local defaultTexture = "YieldAtlas.dds"
@@ -47,18 +53,40 @@ ContextPtr:SetUpdate( Update );
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 function ShowHexYield( x, y, bShow )
+    print("SafeShowYield: x="..x.." y="..y.." show="..tostring(bShow))
+--[[
+We ignore the engine’s "hide" (bShow == false) requests because they are unreliable.
+The Civ5 engine frequently sends bShow=false for tiles that are still fully visible
+during camera movement, map-wrapping, zoom transitions, and mode changes.
 
-    local plot = Map.GetPlot( x, y );
-    if( plot ~= nil ) then
-		local index = plot:GetPlotIndex();
-		if( bShow ) then
-			DestroyYield( index );
-			BuildYield( x, y, index );
-		else
-			DestroyYield( index );
-		end
-	end
- 
+If we obey those false "hide" events, visible yield icons randomly disappear.
+This is the root cause of the long-standing yield icon bug.
+
+By ignoring bShow=false, we keep yield icons displayed until the engine
+sends a new bShow=true event or a yield-change event rebuilds them.
+
+This WILL NOT draw icons off-screen, because the Civ5 UI system does not
+render UI elements outside the visible viewport. It only keeps them allocated
+in memory, which is safe.
+
+Final behavior:
+- Only "show" events trigger Destroy + Build
+- "Hide" events are ignored
+- Prevents disappearing tile yields entirely
+- Slightly higher UI instance count, but harmless on modern PCs
+]]
+    if not bShow then return end
+
+    local plot = Map.GetPlot(x, y)
+    if not plot then return end
+
+    local idx = plot:GetPlotIndex()
+
+    DestroyYield(idx)
+
+    if bShow then
+        BuildYield(x, y, idx)
+    end
 end
 Events.ShowHexYield.Add( ShowHexYield );
 
@@ -111,6 +139,15 @@ function BuildYield( x, y, index )
     anchor.Stack:CalculateSize();
     anchor.Stack:ReprocessAnchoring();
     anchor.Anchor:SetHexPosition( x, y );
+
+
+    print("BuildYield: yields -> F="..yieldInfo.m_Food
+        .." P="..yieldInfo.m_Production
+        .." G="..yieldInfo.m_Gold
+        .." S="..yieldInfo.m_Science
+        .." C="..yieldInfo.m_Culture
+        .." FTH="..yieldInfo.m_Faith
+        .." GA="..yieldInfo.m_GoldenAge)
 end
 
 
@@ -221,7 +258,8 @@ end
 function DestroyYield( index )
     --print( "Hiding hex( " .. tostring( x ) .. " " .. tostring( y ) .. " )  index: " .. index );
     --g_Hidden = g_Hidden + 1;
-    
+    print("DestroyYield: index="..index)
+
     -- we can get double hide requests when an icon scrolls off the corner of the view
     local instanceSet = g_VisibleSet[ index ];
     if( instanceSet ) then
@@ -320,6 +358,7 @@ function OnActivePlayerChanged(iActivePlayer, iPrevActivePlayer)
 	UI.RefreshYieldVisibleMode();
 end
 Events.GameplaySetActivePlayer.Add(OnActivePlayerChanged);
+
 
 -- Bit of a hack here, we want to ensure that the yield icons are properly refreshed
 -- when starting a new game.
