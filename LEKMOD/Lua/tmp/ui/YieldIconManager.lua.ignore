@@ -17,6 +17,9 @@ local goldenageTexture = "yieldatlas_128_GA.dds"
 local g_VisibleSet = {};
 local g_YieldInfoCache = {};
 
+local g_YieldOnSpamCounter = 0
+local g_VisibleCount       = 0
+
 --[[
 local g_Shown = 0;
 local g_Hidden = 0;
@@ -68,8 +71,37 @@ Final behavior:
 - "Hide" events are ignored
 - Prevents disappearing tile yields entirely
 - Slightly higher UI instance count, but harmless on modern PCs
+
+However, we need to detect when the user manually toggles yield icons OFF.
+The engine sends one "false" call per visible tile when the user toggles yield icons OFF.
+We can count these calls to detect the toggle event and destroy all icons cleanly.
 ]]
-    if not bShow then return end
+    -- print("ShowHexYield: ", x, y, bShow, "VisibleCount:", g_VisibleCount, "SpamCounter:", g_YieldOnSpamCounter)
+
+    -- Handle hide events
+    if not bShow then
+        g_YieldOnSpamCounter = g_YieldOnSpamCounter + 1
+
+        -- Real user toggled YIELD ICONS OFF:
+        -- Engine sends one "false" call per visible tile.
+        -- When spam count == number of visible icons → it's the OFF toggle.
+        if g_YieldOnSpamCounter >= g_VisibleCount and g_VisibleCount > 10 then
+            -- User turned OFF yield icons → destroy everything cleanly.
+            for idx in pairs(g_VisibleSet) do
+                DestroyYield(idx)
+            end
+            g_VisibleSet = {}
+            g_YieldOnSpamCounter = 0
+            g_VisibleCount = 0
+            return
+        end
+
+        -- Engine false spam during camera movement → ignore
+        return
+    end
+
+    -- Reset spam counter on any valid "show" event
+    g_YieldOnSpamCounter = 0
 
     local plot = Map.GetPlot(x, y)
     if not plot then return end
@@ -116,6 +148,10 @@ function BuildYield( x, y, index )
     record = {};
     record.AnchorInstance = g_AnchorIM:GetInstance();
     record.AnchorInstance.Anchor:ChangeParent( Controls.YieldStore );
+
+    if not g_VisibleSet[ index ] then
+        g_VisibleCount = g_VisibleCount + 1
+    end
     g_VisibleSet[ index ] = record;
     local anchor = record.AnchorInstance;
 
@@ -256,6 +292,7 @@ function DestroyYield( index )
         end
         
         g_VisibleSet[ index ] = nil;
+        g_VisibleCount = g_VisibleCount - 1
     end
     
 end
