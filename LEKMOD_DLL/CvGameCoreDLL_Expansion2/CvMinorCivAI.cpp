@@ -5213,7 +5213,7 @@ PlayerTypes CvMinorCivAI::GetBestBullyQuestTarget(PlayerTypes eForPlayer)
 			continue;
 
 		const int iCapitalDistance = plotDistance(pMajorCapital->getX(), pMajorCapital->getY(), pTargetPlot->getX(), pTargetPlot->getY());
-		const bool bWithinCapitalRange = (iCapitalDistance != -1 && iCapitalDistance <= 10);
+		const bool bWithinCapitalRange = (iCapitalDistance != -1 && iCapitalDistance <= 20);
 
 		int iClosestCityDistance = INT_MAX;
 		int iLoop = 0;
@@ -5229,7 +5229,7 @@ PlayerTypes CvMinorCivAI::GetBestBullyQuestTarget(PlayerTypes eForPlayer)
 				iClosestCityDistance = iDistance;
 			}
 		}
-		const bool bWithinCityRange = (iClosestCityDistance != INT_MAX && iClosestCityDistance <= 5);
+		const bool bWithinCityRange = (iClosestCityDistance != INT_MAX && iClosestCityDistance <= 10);
 
 		if(!bWithinCapitalRange && !bWithinCityRange)
 			continue;
