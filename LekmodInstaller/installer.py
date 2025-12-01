@@ -7,6 +7,7 @@ from tkinter import ttk, messagebox, scrolledtext, filedialog
 import threading
 import json
 import os
+import sys
 from pathlib import Path
 from updater import UpdateChecker
 from ui_manager import UIManager
@@ -17,11 +18,18 @@ class LekmodInstaller:
     def __init__(self, root):
         self.root = root
         self.root.title("Lekmod Installer & Updater v1.0")
-        self.root.geometry("650x600")
-        self.root.resizable(False, False)
+        self.root.geometry("700x750")
+        self.root.resizable(True, True)
+        self.root.minsize(600, 600)
         
-        # Load config
-        config_path = Path(__file__).parent / 'config.json'
+        # Load config (handle both dev and PyInstaller bundled)
+        if getattr(sys, 'frozen', False):
+            # Running as compiled exe
+            config_path = Path(sys._MEIPASS) / 'config.json'
+        else:
+            # Running as script
+            config_path = Path(__file__).parent / 'config.json'
+        
         with open(config_path, 'r') as f:
             self.config = json.load(f)
         
@@ -162,19 +170,50 @@ class LekmodInstaller:
                                               font=("Arial", 10))
         self.update_installer_btn.pack(side=tk.RIGHT)
         
-        # Progress
-        self.progress = ttk.Progressbar(content, mode='indeterminate')
-        self.progress.pack(fill=tk.X, pady=(0, 10))
+        # Progress bars
+        progress_frame = tk.Frame(content)
+        progress_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # Indeterminate progress (for general operations)
+        self.progress_indeterminate = ttk.Progressbar(progress_frame, mode='indeterminate')
+        
+        # Determinate progress (for downloads with known size)
+        self.progress_determinate = ttk.Progressbar(progress_frame, mode='determinate', maximum=100)
+        
+        # Progress label (shows what's happening)
+        self.progress_label = tk.Label(progress_frame, text="", anchor=tk.W, fg="#3498db")
+        
+        # Hide both initially
+        self.current_progress_mode = None
         
         # Log
         log_frame = tk.LabelFrame(content, text="Installation Log", padx=5, pady=5)
         log_frame.pack(fill=tk.BOTH, expand=True)
         
-        self.log_text = scrolledtext.ScrolledText(log_frame, height=8, 
-                                                  state=tk.DISABLED,
+        # Log buttons
+        log_buttons = tk.Frame(log_frame)
+        log_buttons.pack(fill=tk.X, pady=(0, 5))
+        
+        tk.Button(log_buttons, text="📋 Expand Log", 
+                 command=self.expand_log,
+                 bg="#95a5a6", fg="white").pack(side=tk.LEFT, padx=(0, 5))
+        
+        tk.Button(log_buttons, text="🗑️ Clear Log", 
+                 command=self.clear_log,
+                 bg="#95a5a6", fg="white").pack(side=tk.LEFT)
+        
+        self.log_text = scrolledtext.ScrolledText(log_frame, height=15, 
+                                                  state=tk.NORMAL,
                                                   wrap=tk.WORD,
-                                                  bg="#f8f9fa")
+                                                  bg="#f8f9fa",
+                                                  fg="#000000",
+                                                  font=("Consolas", 9))
         self.log_text.pack(fill=tk.BOTH, expand=True)
+        
+        # Add initial welcome message
+        self.log("Lekmod Installer v1.0.0")
+        self.log("Ready to install!")
+        self.log("")
         
     def check_eui_presence(self):
         """Check if EUI is installed and show info"""
@@ -245,12 +284,103 @@ class LekmodInstaller:
                 self.check_installed_version()
             
     def log(self, message):
-        """Add message to log"""
-        self.log_text.config(state=tk.NORMAL)
-        self.log_text.insert(tk.END, f"{message}\n")
-        self.log_text.see(tk.END)
-        self.log_text.config(state=tk.DISABLED)
-        self.root.update_idletasks()
+        """Add message to log (thread-safe)"""
+        def _update_log():
+            # If message starts with "Downloading..." and previous line also does, replace it
+            try:
+                current_text = self.log_text.get("end-2l", "end-1l").strip()
+                if message.startswith("Downloading...") and current_text.startswith("Downloading..."):
+                    # Delete the previous downloading line and replace it
+                    self.log_text.delete("end-2l", "end-1l")
+            except:
+                pass
+                
+            self.log_text.insert(tk.END, f"{message}\n")
+            self.log_text.see(tk.END)
+            self.root.update()
+        
+        # Ensure UI update happens in main thread
+        if threading.current_thread() != threading.main_thread():
+            self.root.after(0, _update_log)
+        else:
+            _update_log()
+    
+    def set_progress(self, value, message=""):
+        """Set progress bar value (0-100) with optional message"""
+        def _update():
+            if self.current_progress_mode != 'determinate':
+                # Hide indeterminate, show determinate
+                if self.current_progress_mode == 'indeterminate':
+                    self.progress_indeterminate.pack_forget()
+                    self.progress_indeterminate.stop()
+                
+                self.progress_label.pack(fill=tk.X, pady=(0, 2))
+                self.progress_determinate.pack(fill=tk.X)
+                self.current_progress_mode = 'determinate'
+            
+            self.progress_determinate['value'] = value
+            if message:
+                self.progress_label.config(text=message)
+            self.root.update()
+        
+        self.root.after(0, _update)
+    
+    def show_indeterminate_progress(self):
+        """Show bouncing progress bar"""
+        def _update():
+            if self.current_progress_mode != 'indeterminate':
+                if self.current_progress_mode == 'determinate':
+                    self.progress_determinate.pack_forget()
+                    self.progress_label.pack_forget()
+                
+                self.progress_indeterminate.pack(fill=tk.X)
+                self.progress_indeterminate.start()
+                self.current_progress_mode = 'indeterminate'
+        
+        self.root.after(0, _update)
+    
+    def hide_progress(self):
+        """Hide all progress bars"""
+        def _update():
+            if self.current_progress_mode == 'indeterminate':
+                self.progress_indeterminate.stop()
+                self.progress_indeterminate.pack_forget()
+            elif self.current_progress_mode == 'determinate':
+                self.progress_determinate.pack_forget()
+                self.progress_label.pack_forget()
+            
+            self.current_progress_mode = None
+        
+        self.root.after(0, _update)
+    
+    def expand_log(self):
+        """Open log in a larger window"""
+        log_window = tk.Toplevel(self.root)
+        log_window.title("Installation Log - Full View")
+        log_window.geometry("900x600")
+        
+        # Copy log content
+        log_content = self.log_text.get("1.0", tk.END)
+        
+        # Create larger text widget
+        text_widget = scrolledtext.ScrolledText(log_window, 
+                                                wrap=tk.WORD,
+                                                bg="#f8f9fa",
+                                                fg="#000000",
+                                                font=("Consolas", 10))
+        text_widget.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        text_widget.insert("1.0", log_content)
+        text_widget.see(tk.END)
+        
+        # Close button
+        tk.Button(log_window, text="Close", command=log_window.destroy,
+                 bg="#3498db", fg="white", font=("Arial", 10)).pack(pady=10)
+    
+    def clear_log(self):
+        """Clear the log"""
+        self.log_text.delete("1.0", tk.END)
+        self.log("Log cleared")
+        self.log("")
     
     def check_installer_updates(self):
         """Check for installer updates on startup (silent)"""
@@ -278,6 +408,7 @@ class LekmodInstaller:
     def update_installer(self):
         """Update the installer itself"""
         self.log("Checking for installer updates...")
+        self.show_indeterminate_progress()
         self.update_installer_btn.config(state=tk.DISABLED)
         threading.Thread(target=self._update_installer_thread, 
                         daemon=True).start()
@@ -331,6 +462,7 @@ class LekmodInstaller:
             self.log(f"❌ Installer update failed: {e}")
             messagebox.showerror("Update Failed", 
                                f"Failed to update installer:\n\n{str(e)}")
+            self.hide_progress()
             self.update_installer_btn.config(state=tk.NORMAL)
         
     def detect_installation(self):
@@ -386,7 +518,7 @@ class LekmodInstaller:
     def check_updates(self):
         """Check for available versions from Google Drive"""
         self.log("Checking Google Drive for available versions...")
-        self.progress.start()
+        self.show_indeterminate_progress()
         self.refresh_btn.config(state=tk.DISABLED)
         threading.Thread(target=self._check_updates_thread, 
                         daemon=True).start()
@@ -421,7 +553,7 @@ class LekmodInstaller:
                                f"Failed to check for updates:\n{str(e)}\n\n"
                                f"Please check your internet connection.")
         finally:
-            self.progress.stop()
+            self.hide_progress()
             self.refresh_btn.config(state=tk.NORMAL)
             
     def install_update(self):
@@ -452,9 +584,12 @@ class LekmodInstaller:
             
         self.log(f"Starting installation of Lekmod {selected_version}...")
         self.log(f"UI Mode: {ui_type}")
+        self.log("=" * 50)
         self.install_btn.config(state=tk.DISABLED)
         self.refresh_btn.config(state=tk.DISABLED)
-        self.progress.start()
+        
+        # Show indeterminate progress for now
+        self.show_indeterminate_progress()
         
         threading.Thread(target=self._install_thread, 
                         args=(selected_version, ui_type),
@@ -469,11 +604,47 @@ class LekmodInstaller:
             
             self.ui_manager.civ5_path = civ5_path
             
+            # Check for existing LEKMOD installations
+            existing_folders = self.ui_manager.find_existing_lekmod_folders(civ5_path)
+            
+            if existing_folders:
+                # Ask user what to do
+                folder_list = "\n  - ".join(existing_folders)
+                
+                response = messagebox.askyesnocancel(
+                    "Existing LEKMOD Installation Found",
+                    f"Found existing LEKMOD installation(s):\n\n  - {folder_list}\n\n"
+                    f"These must be removed before installing {version}.\n\n"
+                    f"Remove and continue?\n\n"
+                    f"(Click 'No' to cancel installation)",
+                    icon='warning'
+                )
+                
+                if response is None or response is False:
+                    # User clicked Cancel or No
+                    self.log("Installation cancelled by user")
+                    return
+                
+                # User clicked Yes - remove existing installations
+                self.log(f"Found {len(existing_folders)} existing LEKMOD folder(s)")
+                self.ui_manager.remove_lekmod_folders(civ5_path, existing_folders, self.log)
+                self.log("✓ Existing installations removed")
+            
             # 1. Download from Google Drive
             self.log(f"📥 Downloading Lekmod {version} from Google Drive...")
-            download_path = self.downloader.download_version(version, self.log)
+            
+            # Get version info from GitHub (not bundled config)
+            all_versions = self.updater.get_available_versions()
+            if version not in all_versions:
+                raise Exception(f"Version {version} not found in available versions!")
+            
+            version_info = all_versions[version]
+            download_path = self.downloader.download_version_with_info(
+                version, version_info, self.log, self.set_progress
+            )
             
             # 2. Extract
+            self.show_indeterminate_progress()
             self.log("📦 Extracting files...")
             extract_path = self.ui_manager.extract_mod(download_path, self.log)
             
@@ -494,22 +665,26 @@ class LekmodInstaller:
             except:
                 pass
             
+            self.log("=" * 50)
             self.log("✅ Installation complete!")
+            self.log("=" * 50)
             messagebox.showinfo("Success", 
                                f"Lekmod {version} installed successfully!\n\n"
                                f"UI Mode: {ui_type}\n"
                                f"Location: {civ5_path}/Assets/DLC/LEKMOD_{version}")
             
         except Exception as e:
+            self.log("=" * 50)
             self.log(f"❌ Installation failed: {e}")
+            self.log("=" * 50)
             messagebox.showerror("Installation Failed", 
                                f"Installation failed:\n\n{str(e)}\n\n"
                                f"Please check the log for details.")
         finally:
-            self.progress.stop()
+            self.hide_progress()
             self.install_btn.config(state=tk.NORMAL)
             self.refresh_btn.config(state=tk.NORMAL)
-            self.detect_installation()
+            self.check_installed_version()
 
 def main():
     root = tk.Tk()
