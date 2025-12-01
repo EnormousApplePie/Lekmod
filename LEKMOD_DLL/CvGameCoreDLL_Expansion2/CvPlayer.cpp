@@ -74,53 +74,53 @@ bool isEmpty(const char* szString)
 // Public Functions...
 namespace FSerialization
 {
-void SyncPlayer()
-{
-	if(GC.getGame().isNetworkMultiPlayer())
+	void SyncPlayer()
 	{
-		PlayerTypes eAuthoritativePlayerID = GC.getGame().getActivePlayer();
-		CvPlayer& authoritativePlayer = GET_PLAYER(eAuthoritativePlayerID);
-		const FAutoArchive& archive = authoritativePlayer.getSyncArchive();
-		if(archive.hasDeltas())
+		if(GC.getGame().isNetworkMultiPlayer())
 		{
-			FMemoryStream ms;
-			std::vector<std::pair<std::string, std::string> > callStacks;
-			archive.saveDelta(ms, callStacks);
-			gDLL->sendPlayerSyncCheck(eAuthoritativePlayerID, ms, callStacks);
-		}
-
-		// host is authoritative for AI players
-
-		if(gDLL->IsHost())
-		{
-			for(int i = 0; i < MAX_PLAYERS; ++i)
+			PlayerTypes eAuthoritativePlayerID = GC.getGame().getActivePlayer();
+			CvPlayer& authoritativePlayer = GET_PLAYER(eAuthoritativePlayerID);
+			const FAutoArchive& archive = authoritativePlayer.getSyncArchive();
+			if(archive.hasDeltas())
 			{
-				CvPlayer& player = GET_PLAYER(static_cast<PlayerTypes>(i));
-				if(!player.isHuman() && player.isAlive())
+				FMemoryStream ms;
+				std::vector<std::pair<std::string, std::string> > callStacks;
+				archive.saveDelta(ms, callStacks);
+				gDLL->sendPlayerSyncCheck(eAuthoritativePlayerID, ms, callStacks);
+			}
+	
+			// host is authoritative for AI players
+	
+			if(gDLL->IsHost())
+			{
+				for(int i = 0; i < MAX_PLAYERS; ++i)
 				{
-					const FAutoArchive& aiArchive = player.getSyncArchive();
-					FMemoryStream ms;
-					std::vector<std::pair<std::string, std::string> > callStacks;
-					aiArchive.saveDelta(ms, callStacks);
-					gDLL->sendPlayerSyncCheck(static_cast<PlayerTypes>(i), ms, callStacks);
+					CvPlayer& player = GET_PLAYER(static_cast<PlayerTypes>(i));
+					if(!player.isHuman() && player.isAlive())
+					{
+						const FAutoArchive& aiArchive = player.getSyncArchive();
+						FMemoryStream ms;
+						std::vector<std::pair<std::string, std::string> > callStacks;
+						aiArchive.saveDelta(ms, callStacks);
+						gDLL->sendPlayerSyncCheck(static_cast<PlayerTypes>(i), ms, callStacks);
+					}
 				}
 			}
 		}
 	}
-}
-
-//	--------------------------------------------------------------------------------
-// clears ALL deltas for ALL players
-void ClearPlayerDeltas()
-{
-	int i = 0;
-	for(i = 0; i < MAX_PLAYERS; ++i)
+	
+	//	--------------------------------------------------------------------------------
+	// clears ALL deltas for ALL players
+	void ClearPlayerDeltas()
 	{
-		CvPlayer& player = GET_PLAYER(static_cast<PlayerTypes>(i));
-		FAutoArchive& archive = player.getSyncArchive();
-		archive.clearDelta();
+		int i = 0;
+		for(i = 0; i < MAX_PLAYERS; ++i)
+		{
+			CvPlayer& player = GET_PLAYER(static_cast<PlayerTypes>(i));
+			FAutoArchive& archive = player.getSyncArchive();
+			archive.clearDelta();
+		}
 	}
-}
 }
 
 //	--------------------------------------------------------------------------------

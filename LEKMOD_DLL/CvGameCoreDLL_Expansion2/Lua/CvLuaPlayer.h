@@ -1044,11 +1044,13 @@ protected:
 	static int lGetTradeConnectionPolicyValue(lua_State* L);
 	static int lGetTradeConnectionTraitValue(lua_State* L);
 	static int lGetTradeConnectionReligionValue(lua_State* L);
+	static int lGetTradeConnectionLegacyValue(lua_State* L);
 	// Mods
 	static int lGetTradeConnectionPolicyValueModifier(lua_State* L);
 	static int lGetTradeConnectionTraitValueModifier(lua_State* L);
 	static int lGetTradeConnectionDomainValueModifier(lua_State* L);
 	static int lGetTradeConnectionRiverValueModifier(lua_State* L);
+	static int lGetTradeConnectionLegacyValueModifier(lua_State* L);
 	// Sum of All
 	static int lGetTradeConnectionTotalValue(lua_State* L);
 #endif

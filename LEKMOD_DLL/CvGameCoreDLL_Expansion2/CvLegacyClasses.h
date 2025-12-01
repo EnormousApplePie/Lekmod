@@ -96,6 +96,14 @@ public:
 	int GetNumFreeUnitsByType(int i) const;
 	int GetBuildTimeOverride(int i) const;
 	int GetYieldBonusFromThemes(int i) const;
+#if defined(TRADE_REFACTOR)
+	int GetTradeConnectionLandYieldChanges(int i, int j) const;
+	int GetTradeConnectionSeaYieldChanges(int i, int j) const;
+	int GetIncomingTradeConnectionLandYieldChanges(int i, int j) const;
+	int GetIncomingTradeConnectionSeaYieldChanges(int i, int j) const;
+	int GetTradeConnectionLandYieldModifier(int i, int j) const;
+	int GetTradeConnectionSeaYieldModifier(int i, int j) const;
+#endif
 private:
     int m_iCivilization;
     int m_iEraOffered;
@@ -168,6 +176,14 @@ private:
 	int** m_paiGreatWorkClassYieldChange;
 	int** m_paiUnitCostOverride;
 	int** m_paiBuildingCostOverride;
+#if defined(TRADE_REFACTOR)
+	int** m_paiTradeConnectionLandYieldChanges;
+	int** m_paiTradeConnectionSeaYieldChanges;
+	int** m_paiIncomingTradeConnectionLandYieldChanges;
+	int** m_paiIncomingTradeConnectionSeaYieldChanges;
+	int** m_paiTradeConnectionLandYieldModifier;
+	int** m_paiTradeConnectionSeaYieldModifier;
+#endif
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -293,6 +309,14 @@ public:
 	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYield) const;
 	int GetBuildTimeOverride(BuildTypes eBuild) const;
 	int GetYieldBonusFromThemes(YieldTypes eYield) const;
+#if defined(TRADE_REFACTOR)
+	int GetTradeConnectionLandYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const;
+	int GetTradeConnectionSeaYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const;
+	int GetIncomingTradeConnectionLandYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const;
+	int GetIncomingTradeConnectionSeaYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const;
+	int GetTradeConnectionLandYieldModifier(TradeConnectionType eConnection, YieldTypes eYield) const;
+	int GetTradeConnectionSeaYieldModifier(TradeConnectionType eConnection, YieldTypes eYield) const;
+#endif
 private:
     bool* m_pabHasLegacy;
 	bool* m_pabOneShotFreeUnitsFired;
@@ -361,12 +385,12 @@ private:
 	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementHealChangeByDomain;
 	std::vector< Firaxis::Array<int, NUM_DOMAIN_TYPES > > m_vaaiNearbyImprovementCombatModifierByDomain;
 #if defined(TRADE_REFACTOR) // These are reliant on the Trade Refactor.
-	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionLandYieldChange;
-	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionSeaYieldChange;
-	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiIncomingTradeConnectionLandYieldChange;
-	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiIncomingTradeConnectionSeaYieldChange;
-	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionLandYieldModifier;
-	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiTradeConnectionSeaYieldModifier;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiTradeConnectionLandYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiTradeConnectionSeaYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiIncomingTradeConnectionLandYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiIncomingTradeConnectionSeaYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiTradeConnectionLandYieldModifier;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiTradeConnectionSeaYieldModifier;
 #endif
 };
 #endif //defined(LEKMOD_LEGACY)

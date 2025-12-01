@@ -1107,7 +1107,7 @@ void CvGame::uninit()
 	m_iVotesNeededForDiploVictory = 0;
 	m_iMapScoreMod = 0;
 #if defined(LEKMOD_LEGACY)
-	m_iGameEra = -1;
+	m_iGameEra = 0;
 #endif
 	m_uiInitialTime = 0;
 #ifdef GAME_UPDATE_TURN_TIMER_ONCE_PER_TURN

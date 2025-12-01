@@ -58,6 +58,14 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_piBuildingClassProductionModifier(NULL),
 	m_piBuildingClassHappinessChange(NULL),
 	m_piBuildingClassGlobalHappinessChange(NULL),
+#if defined(TRADE_REFACTOR)
+	m_paiTradeConnectionLandYieldChanges(NULL),
+	m_paiTradeConnectionSeaYieldChanges(NULL),
+	m_paiIncomingTradeConnectionLandYieldChanges(NULL),
+	m_paiIncomingTradeConnectionSeaYieldChanges(NULL),
+	m_paiTradeConnectionLandYieldModifier(NULL),
+	m_paiTradeConnectionSeaYieldModifier(NULL),
+#endif
 	m_paiBuildingClassYieldChange(NULL),
 	m_paiBuildingClassYieldModifier(NULL),
 	m_paiBuildingClassGreatPersonPointChange(NULL),
@@ -105,6 +113,14 @@ CvLegacyEntry::~CvLegacyEntry(void)
 	SAFE_DELETE_ARRAY(m_piNumFreeUnitsByType);
 	SAFE_DELETE_ARRAY(m_piBuildTimeOverride);
 	SAFE_DELETE_ARRAY(m_piYieldBonusFromThemes);
+#if defined(TRADE_REFACTOR)
+	CvDatabaseUtility::SafeDelete2DArray(m_paiTradeConnectionLandYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiTradeConnectionSeaYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiIncomingTradeConnectionLandYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiIncomingTradeConnectionSeaYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiTradeConnectionLandYieldModifier);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiTradeConnectionSeaYieldModifier);
+#endif
 	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingCostOverride);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiUnitCostOverride);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiBuildingClassYieldChange);
@@ -137,26 +153,26 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	// Initialize a Derived Array
 	m_pbHasOneShotUnits = FNEW(bool[GC.getNumLegacyInfos()], c_eCiv5GameplayDLL, 0);
 
-	m_iHappinessPerOriginalCity = kResults.GetInt("HappinessPerOriginalCity");
-	m_iGoldenAgeTurns = kResults.GetInt("GoldenAgeTurns");
-	m_iGreatGeneralSiegeBonus = kResults.GetInt("GreatGeneralSiegeBonus");
-	m_iResistanceTimeReduction = kResults.GetInt("ResistanceTimeReduction");
-	m_iYieldModCapitalProximity = kResults.GetInt("YieldModCapitalProximity");
-	m_iPlotGoldCostModifier = kResults.GetInt("PlotGoldCostModifier");
-	m_iPlotCultureCostModifier = kResults.GetInt("PlotCultureCostModifier");
-	m_iHappinessFromGreatImprovements = kResults.GetInt("HappinessFromGreatImprovements");
+	m_iHappinessPerOriginalCity				 = kResults.GetInt("HappinessPerOriginalCity");
+	m_iGoldenAgeTurns						 = kResults.GetInt("GoldenAgeTurns");
+	m_iGreatGeneralSiegeBonus				 = kResults.GetInt("GreatGeneralSiegeBonus");
+	m_iResistanceTimeReduction				 = kResults.GetInt("ResistanceTimeReduction");
+	m_iYieldModCapitalProximity				 = kResults.GetInt("YieldModCapitalProximity");
+	m_iPlotGoldCostModifier					 = kResults.GetInt("PlotGoldCostModifier");
+	m_iPlotCultureCostModifier				 = kResults.GetInt("PlotCultureCostModifier");
+	m_iHappinessFromGreatImprovements		 = kResults.GetInt("HappinessFromGreatImprovements");
 	m_iHappinessFromForeignReligiousMajority = kResults.GetInt("HappinessFromForeignReligiousMajority");
-	m_iVotesPerCapital = kResults.GetInt("VotesPerCapital");
-	m_iInfluenceChangeMajorityReligion = kResults.GetInt("InfluenceChangeMajorityReligion");
-	m_iInfluenceChangeTradeConnection = kResults.GetInt("InfluenceChangeTradeConnection");
-	m_iPurchasedUnitExtraMoves = kResults.GetInt("PurchasedUnitExtraMoves");
-	m_iHappinessPerTheme = kResults.GetInt("HappinessFromThemes");
-	m_iFriendlyCityReligionCombatModifier = kResults.GetInt("FriendlyCityReligionCombatModifier");
-	m_iOccupiedCityReligionCombatModifier = kResults.GetInt("OccupiedCityReligionCombatModifier");
-	m_iEnemyCityReligionCombatModifier = kResults.GetInt("EnemyCityReligionCombatModifier");
+	m_iVotesPerCapital						 = kResults.GetInt("VotesPerCapital");
+	m_iInfluenceChangeMajorityReligion		 = kResults.GetInt("InfluenceChangeMajorityReligion");
+	m_iInfluenceChangeTradeConnection		 = kResults.GetInt("InfluenceChangeTradeConnection");
+	m_iPurchasedUnitExtraMoves				 = kResults.GetInt("PurchasedUnitExtraMoves");
+	m_iHappinessPerTheme					 = kResults.GetInt("HappinessFromThemes");
+	m_iFriendlyCityReligionCombatModifier	 = kResults.GetInt("FriendlyCityReligionCombatModifier");
+	m_iOccupiedCityReligionCombatModifier	 = kResults.GetInt("OccupiedCityReligionCombatModifier");
+	m_iEnemyCityReligionCombatModifier		 = kResults.GetInt("EnemyCityReligionCombatModifier");
 
-	m_bTradeUnplunderable = kResults.GetBool("TradeUnplunderable");
-	m_bCannotPlunder = kResults.GetBool("CannotPlunder");
+	m_bTradeUnplunderable					 = kResults.GetBool("TradeUnplunderable");
+	m_bCannotPlunder						 = kResults.GetBool("CannotPlunder");
 
 	// Arrays Start.
 	const char* szLegacyType = GetType();
@@ -173,6 +189,97 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	kUtility.PopulateArrayByValue(m_piGreatWorkClassTourismChange, "GreatWorkClasses", "Legacy_GreatWorkClassTourismChange", "GreatWorkClassType", "LegacyType", szLegacyType, "TourismChange");
 	kUtility.PopulateArrayByValue(m_piBuildTimeOverride, "Builds", "Legacy_BuildTimeOverride", "BuildType", "LegacyType", szLegacyType, "TimeOverride", -1);
 	// Complex/Compound Arrays
+#if defined(TRADE_REFACTOR)
+	// Trade Connection Yield Changes, given to the Destination Player
+	{
+		kUtility.Initialize2DArray(m_paiTradeConnectionLandYieldChanges, "TradeConnections", "Yields");
+		kUtility.Initialize2DArray(m_paiTradeConnectionSeaYieldChanges, "TradeConnections", "Yields");
+		std::string strKey("Legacy_TradeConnectionYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT TradeConnections.ID AS TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldChangeTimes100 "
+				"FROM Legacy_TradeConnectionYieldChanges "
+				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"INNER JOIN Domains ON Domains.Type = DomainType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int tradeConnection = pResults->GetInt(0);
+			const int domain = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2); 
+			const int change = pResults->GetInt(3);
+			if (domain == DOMAIN_LAND)
+				m_paiTradeConnectionLandYieldChanges[tradeConnection][yield] = change;
+			else if (domain == DOMAIN_SEA)
+				m_paiTradeConnectionSeaYieldChanges[tradeConnection][yield] = change;
+		}
+	}
+	// Incoming Trade Connection Yield Changes, given to the Origin Player
+	{
+		kUtility.Initialize2DArray(m_paiIncomingTradeConnectionLandYieldChanges, "TradeConnections", "Yields");
+		kUtility.Initialize2DArray(m_paiIncomingTradeConnectionSeaYieldChanges, "TradeConnections", "Yields");
+		std::string strKey("Legacy_TradeConnectionIncomingYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT TradeConnections.ID AS TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldChangeTimes100 "
+				"FROM Legacy_TradeConnectionIncomingYieldChanges "
+				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"INNER JOIN Domains ON Domains.Type = DomainType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int tradeConnection = pResults->GetInt(0);
+			const int domain = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2); 
+			const int change = pResults->GetInt(3);
+			if (domain == DOMAIN_LAND)
+				m_paiIncomingTradeConnectionLandYieldChanges[tradeConnection][yield] = change;
+			else if (domain == DOMAIN_SEA)
+				m_paiIncomingTradeConnectionSeaYieldChanges[tradeConnection][yield] = change;
+		}
+	}
+	// Trade Connection Yield Modifier
+	{
+		kUtility.Initialize2DArray(m_paiTradeConnectionLandYieldModifier, "TradeConnections", "Yields");
+		kUtility.Initialize2DArray(m_paiTradeConnectionSeaYieldModifier, "TradeConnections", "Yields");
+		std::string strKey("Legacy_TradeConnectionYieldModifiers");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT TradeConnections.ID AS TradeConnectionID, Domains.ID as DomainID, Yields.ID AS YieldID, YieldModifier "
+				"FROM Legacy_TradeConnectionYieldModifiers "
+				"INNER JOIN TradeConnections ON TradeConnections.Type = TradeConnectionType "
+				"INNER JOIN Domains ON Domains.Type = DomainType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int tradeConnection = pResults->GetInt(0);
+			const int domain = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2); 
+			const int modifier = pResults->GetInt(3);
+			if (domain == DOMAIN_LAND)
+				m_paiTradeConnectionLandYieldModifier[tradeConnection][yield] = modifier;
+			else if (domain == DOMAIN_SEA)
+				m_paiTradeConnectionSeaYieldModifier[tradeConnection][yield] = modifier;
+		}
+		pResults->Reset();
+	}
+#endif
+	// Nearby Improvement Combat Modifier By Domain 
 	{
 		kUtility.Initialize2DArray(m_paiImprovementNearbyCombatModifierByDomain, "Improvements", "Domains");
 		std::string strKey("Legacy_ImprovementNearbyCombatModifierByDomain");
@@ -1071,6 +1178,32 @@ int CvLegacyEntry::GetYieldBonusFromThemes(int i) const
 {
 	return m_piYieldBonusFromThemes ? m_piYieldBonusFromThemes[i] : 0;
 }
+#if defined(TRADE_REFACTOR)
+int CvLegacyEntry::GetTradeConnectionLandYieldChanges(int i, int j) const
+{
+	return m_paiTradeConnectionLandYieldChanges ? m_paiTradeConnectionLandYieldChanges[i][j] : 0;
+}
+int CvLegacyEntry::GetTradeConnectionSeaYieldChanges(int i, int j) const
+{
+	return m_paiTradeConnectionSeaYieldChanges ? m_paiTradeConnectionSeaYieldChanges[i][j] : 0;
+}
+int CvLegacyEntry::GetIncomingTradeConnectionLandYieldChanges(int i, int j) const
+{
+	return m_paiIncomingTradeConnectionLandYieldChanges ? m_paiIncomingTradeConnectionLandYieldChanges[i][j] : 0;
+}
+int CvLegacyEntry::GetIncomingTradeConnectionSeaYieldChanges(int i, int j) const
+{
+	return m_paiIncomingTradeConnectionSeaYieldChanges ? m_paiIncomingTradeConnectionSeaYieldChanges[i][j] : 0;
+}
+int CvLegacyEntry::GetTradeConnectionLandYieldModifier(int i, int j) const
+{
+	return m_paiTradeConnectionLandYieldModifier ? m_paiTradeConnectionLandYieldModifier[i][j] : 0;
+}
+int CvLegacyEntry::GetTradeConnectionSeaYieldModifier(int i, int j) const
+{
+	return m_paiTradeConnectionSeaYieldModifier ? m_paiTradeConnectionSeaYieldModifier[i][j] : 0;
+}
+#endif
 //=====================================
 // CvLegacyXMLEntries
 //=====================================
@@ -1187,6 +1320,14 @@ void CvPlayerLegacies::Uninit()
 	m_vaaiUnitCostOverrides.clear();
 	m_viBuildTimeOverrides.clear();
 	m_viYieldBonusFromThemes.clear();
+#if defined(TRADE_REFACTOR)
+	m_vaaiTradeConnectionLandYieldChange.clear();
+	m_vaaiTradeConnectionSeaYieldChange.clear();
+	m_vaaiIncomingTradeConnectionLandYieldChange.clear();
+	m_vaaiIncomingTradeConnectionSeaYieldChange.clear();
+	m_vaaiTradeConnectionLandYieldModifier.clear();
+	m_vaaiTradeConnectionSeaYieldModifier.clear();
+#endif
 }
 // Reset
 void CvPlayerLegacies::Reset()
@@ -1350,6 +1491,20 @@ void CvPlayerLegacies::Reset()
 	m_vaaiUnitCostOverrides.resize(GC.getNumUnitInfos());
 	m_viYieldBonusFromThemes.clear();
 	m_viYieldBonusFromThemes.resize(NUM_YIELD_TYPES);
+#if defined(TRADE_REFACTOR)
+	m_vaaiTradeConnectionLandYieldChange.clear();
+	m_vaaiTradeConnectionLandYieldChange.resize(NUM_TRADE_CONNECTION_TYPES);
+	m_vaaiTradeConnectionSeaYieldChange.clear();
+	m_vaaiTradeConnectionSeaYieldChange.resize(NUM_TRADE_CONNECTION_TYPES);
+	m_vaaiIncomingTradeConnectionLandYieldChange.clear();
+	m_vaaiIncomingTradeConnectionLandYieldChange.resize(NUM_TRADE_CONNECTION_TYPES);
+	m_vaaiIncomingTradeConnectionSeaYieldChange.clear();
+	m_vaaiIncomingTradeConnectionSeaYieldChange.resize(NUM_TRADE_CONNECTION_TYPES);
+	m_vaaiTradeConnectionLandYieldModifier.clear();
+	m_vaaiTradeConnectionLandYieldModifier.resize(NUM_TRADE_CONNECTION_TYPES);
+	m_vaaiTradeConnectionSeaYieldModifier.clear();
+	m_vaaiTradeConnectionSeaYieldModifier.resize(NUM_TRADE_CONNECTION_TYPES);
+#endif
 
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
 	for (unsigned int j = 0; j < NUM_YIELD_TYPES; ++j)
@@ -1407,6 +1562,17 @@ void CvPlayerLegacies::Reset()
 		{
 			m_vaaiUnitCostOverrides[iUnit] = yield;
 		}
+#if defined(TRADE_REFACTOR)
+		for (int iTradeConnection = 0; iTradeConnection < NUM_TRADE_CONNECTION_TYPES; iTradeConnection++)
+		{
+			m_vaaiTradeConnectionLandYieldChange[iTradeConnection] = yield;
+			m_vaaiTradeConnectionSeaYieldChange[iTradeConnection] = yield;
+			m_vaaiIncomingTradeConnectionLandYieldChange[iTradeConnection] = yield;
+			m_vaaiIncomingTradeConnectionSeaYieldChange[iTradeConnection] = yield;
+			m_vaaiTradeConnectionLandYieldModifier[iTradeConnection] = yield;
+			m_vaaiTradeConnectionSeaYieldModifier[iTradeConnection] = yield;
+		}
+#endif
 	} // END NUM_YIELD_TYPES LOOP
 	m_vaaiNearbyImprovementHealChangeByDomain.clear();
 	m_vaaiNearbyImprovementHealChangeByDomain.resize(GC.getNumImprovementInfos());
@@ -1491,6 +1657,14 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_vaaiBuildingCostOverrides;
 	kStream >> m_vaaiUnitCostOverrides;
 	kStream >> m_viBuildTimeOverrides;
+#if defined(TRADE_REFACTOR)
+	kStream >> m_vaaiTradeConnectionLandYieldChange;
+	kStream >> m_vaaiTradeConnectionSeaYieldChange;
+	kStream >> m_vaaiIncomingTradeConnectionLandYieldChange;
+	kStream >> m_vaaiIncomingTradeConnectionSeaYieldChange;
+	kStream >> m_vaaiTradeConnectionLandYieldModifier;
+	kStream >> m_vaaiTradeConnectionSeaYieldModifier;
+#endif
 	// Boolean Arrays
 	int iNumEntries;
 	kStream >> iNumEntries;
@@ -1614,6 +1788,14 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_vaaiBuildingCostOverrides;
 	kStream << m_vaaiUnitCostOverrides;
 	kStream << m_viBuildTimeOverrides;
+#if defined(TRADE_REFACTOR)
+	kStream << m_vaaiTradeConnectionLandYieldChange;
+	kStream << m_vaaiTradeConnectionSeaYieldChange;
+	kStream << m_vaaiIncomingTradeConnectionLandYieldChange;
+	kStream << m_vaaiIncomingTradeConnectionSeaYieldChange;
+	kStream << m_vaaiTradeConnectionLandYieldModifier;
+	kStream << m_vaaiTradeConnectionSeaYieldModifier;
+#endif
 	// Boolean Arrays
 	kStream << m_vbNoTrain.size();
 	for (uint ui = 0; ui < m_vbNoTrain.size(); ui++)
@@ -1923,6 +2105,41 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 				m_vaaiUnitCostOverrides[iUnit][iYield] = iChange;
 			}
 		}
+#if defined(TRADE_REFACTOR)
+		for (int iTradeConnection = 0; iTradeConnection < NUM_TRADE_CONNECTION_TYPES; iTradeConnection++)
+		{
+			iChange = kLegacy.GetTradeConnectionLandYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiTradeConnectionLandYieldChange[iTradeConnection][iYield] += iChange;
+			}
+			iChange = kLegacy.GetTradeConnectionSeaYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiTradeConnectionSeaYieldChange[iTradeConnection][iYield] += iChange;
+			}
+			iChange = kLegacy.GetIncomingTradeConnectionLandYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiIncomingTradeConnectionLandYieldChange[iTradeConnection][iYield] += iChange;
+			}
+			iChange = kLegacy.GetIncomingTradeConnectionSeaYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiIncomingTradeConnectionSeaYieldChange[iTradeConnection][iYield] += iChange;
+			}
+			iChange = kLegacy.GetTradeConnectionLandYieldModifier((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiTradeConnectionLandYieldModifier[iTradeConnection][iYield] += iChange;
+			}
+			iChange = kLegacy.GetTradeConnectionSeaYieldModifier((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			if (iChange != 0)
+			{
+				m_vaaiTradeConnectionSeaYieldModifier[iTradeConnection][iYield] += iChange;
+			}
+		}
+#endif
 	} // END NUM_YIELD_TYPES LOOP
 	for (int iDomain = 0; iDomain < NUM_DOMAIN_TYPES; iDomain++)
 	{
@@ -2434,6 +2651,50 @@ int CvPlayerLegacies::GetYieldBonusFromThemes(YieldTypes eYield) const
 	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
 	return NO_YIELD != eYield ? m_viYieldBonusFromThemes[(int)eYield] : 0;
 }
+#if defined(TRADE_REFACTOR)
+// How much land yield change does the player get for a trade connection type from legacies
+int CvPlayerLegacies::GetTradeConnectionLandYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
+{
+	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionLandYieldChange[(int)eTradeConnection][(int)eYield] : 0;
+}
+// How much sea yield change does the player get for a trade connection type from legacies
+int CvPlayerLegacies::GetTradeConnectionSeaYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
+{
+	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionSeaYieldChange[(int)eTradeConnection][(int)eYield] : 0;
+}
+// How much yield does this player's legacy give the player sending them a trade connection by land
+int CvPlayerLegacies::GetIncomingTradeConnectionLandYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
+{
+	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiIncomingTradeConnectionLandYieldChange[(int)eTradeConnection][(int)eYield] : 0;
+}
+// How much yield does this player's legacy give the player sending them a trade connection by sea
+int CvPlayerLegacies::GetIncomingTradeConnectionSeaYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
+{
+	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiIncomingTradeConnectionSeaYieldChange[(int)eTradeConnection][(int)eYield] : 0;
+}
+// How much land yield modifier does the player get for a trade connection type from legacies
+int CvPlayerLegacies::GetTradeConnectionLandYieldModifier(TradeConnectionType eTradeConnection, YieldTypes eYield) const
+{
+	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionLandYieldModifier[(int)eTradeConnection][(int)eYield] : 0;
+}
+// How much sea yield modifier does the player get for a trade connection type from legacies
+int CvPlayerLegacies::GetTradeConnectionSeaYieldModifier(TradeConnectionType eTradeConnection, YieldTypes eYield) const
+{
+	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionSeaYieldModifier[(int)eTradeConnection][(int)eYield] : 0;
+}
+#endif
 void CvPlayerLegacies::DoLegacyAI()
 {
 	//

@@ -2771,6 +2771,54 @@ int CvPlayerTrade::GetTradeConnectionReligionValueTimes100(const TradeConnection
 	}
 	return iValue;
 }
+int CvPlayerTrade::GetTradeConnectionLegacyValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+	int iValue = 0;
+	CvPlayerLegacies* originLegacies = GET_PLAYER(kTradeConnection.m_eOriginOwner).GetPlayerLegacies();
+	CvPlayerLegacies* destLegacies = GET_PLAYER(kTradeConnection.m_eDestOwner).GetPlayerLegacies();
+	if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection)) // International Trade
+	{
+		// Time to make Morocco less asinine
+		if (bAsOriginPlayer) // Origin City
+		{
+			if (kTradeConnection.m_eDomain == DOMAIN_LAND) 
+			{
+				iValue += originLegacies->GetTradeConnectionLandYieldChanges(kTradeConnection.m_eConnectionType, eYield);
+				// Destination's legacies can add to the origin's yield
+				iValue += destLegacies->GetIncomingTradeConnectionLandYieldChanges(kTradeConnection.m_eConnectionType, eYield);
+			}
+			else if (kTradeConnection.m_eDomain == DOMAIN_SEA) 
+			{
+				iValue += originLegacies->GetTradeConnectionSeaYieldChanges(kTradeConnection.m_eConnectionType, eYield);
+				// Destination's legacies can add to the origin's yield
+				iValue += destLegacies->GetIncomingTradeConnectionSeaYieldChanges(kTradeConnection.m_eConnectionType, eYield);
+			}
+		}
+		else // Destination City
+		{
+			//	Nothing for now
+		}
+	}
+	else // Internal Trade
+	{
+		if (bAsOriginPlayer) // Origin City
+		{
+			// There is no Legacy bonus for the origin city on internal trade routes, but incoming is on the Destination City side, so might as well use the other one here
+			if (kTradeConnection.m_eDomain == DOMAIN_LAND)
+				iValue += originLegacies->GetTradeConnectionLandYieldChanges(kTradeConnection.m_eConnectionType, eYield);
+			else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+				iValue += originLegacies->GetTradeConnectionSeaYieldChanges(kTradeConnection.m_eConnectionType, eYield);
+		}
+		else // Destination City, for internal trade routes, gets the incoming bonus.
+		{
+			if (kTradeConnection.m_eDomain == DOMAIN_LAND)
+				iValue += destLegacies->GetIncomingTradeConnectionLandYieldChanges(kTradeConnection.m_eConnectionType, eYield);
+			else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+				iValue += destLegacies->GetIncomingTradeConnectionSeaYieldChanges(kTradeConnection.m_eConnectionType, eYield);
+		}
+	}
+	return iValue;
+}
 int CvPlayerTrade::GetTradeConnectionPolicyValueModifierTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
 {
 	int iModifier = 0;
@@ -2905,6 +2953,42 @@ int CvPlayerTrade::GetTradeConnectionRiverValueModifierTimes100(const TradeConne
 
 	return iModifier;
 }
+int CvPlayerTrade::GetTradeConnectionLegacyValueModifierTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
+{
+	int iModifier = 0;
+	CvPlayerLegacies* originLegacies = GET_PLAYER(kTradeConnection.m_eOriginOwner).GetPlayerLegacies();
+	CvPlayerLegacies* destLegacies = GET_PLAYER(kTradeConnection.m_eDestOwner).GetPlayerLegacies();
+	if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection)) // International Trade
+	{
+		if (bAsOriginPlayer) // Origin City
+		{
+			if (kTradeConnection.m_eDomain == DOMAIN_LAND)
+				iModifier += originLegacies->GetTradeConnectionLandYieldModifier(kTradeConnection.m_eConnectionType, eYield);
+			else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+				iModifier += originLegacies->GetTradeConnectionSeaYieldModifier(kTradeConnection.m_eConnectionType, eYield);
+		}
+		else // Destination City
+		{
+			// None for now
+		}
+	}
+	else // Internal Trade
+	{
+		if (bAsOriginPlayer) // Origin City
+		{
+			// nothing
+		}
+		else // Destination City
+		{
+			if (kTradeConnection.m_eDomain == DOMAIN_LAND)
+				iModifier += destLegacies->GetTradeConnectionLandYieldModifier(kTradeConnection.m_eConnectionType, eYield);
+			else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+				iModifier += destLegacies->GetTradeConnectionSeaYieldModifier(kTradeConnection.m_eConnectionType, eYield);
+		}
+	}
+	return iModifier;
+	return iModifier;
+}
 int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer, bool bIncludeModifiers)
 {
 	// If you put yield cases in this function, I will bite you. Put them in the Helpers or make a better yield grabber.
@@ -2920,6 +3004,7 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTrade
 	int iPolicyValue		= GetTradeConnectionPolicyValueTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 	int iTraitValue			= GetTradeConnectionTraitValueTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 	int iReligionValue		= GetTradeConnectionReligionValueTimes100(kTradeConnection, eYield, bAsOriginPlayer);
+	int iLegacyValue		= GetTradeConnectionLegacyValueTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 
 	iTotalValue += iBaseValue;
 	iTotalValue += iOriginGPTValue;
@@ -2931,6 +3016,7 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTrade
 	iTotalValue += iPolicyValue;
 	iTotalValue += iTraitValue;
 	iTotalValue += iReligionValue;
+	iTotalValue += iLegacyValue;
 	// Modifiers
 	if (bIncludeModifiers)
 	{
@@ -2939,11 +3025,13 @@ int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTrade
 		int iTraitModifier = GetTradeConnectionTraitValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 		int iDomainModifier = GetTradeConnectionDomainValueModifierTimes100(kTradeConnection, eYield);
 		int iRiverMod = GetTradeConnectionRiverValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
+		int iLegacyMod = GetTradeConnectionLegacyValueModifierTimes100(kTradeConnection, eYield, bAsOriginPlayer);
 
 		iModifier += iPolicyModifier;
 		iModifier += iTraitModifier;
 		iModifier += iDomainModifier;
 		iModifier += iRiverMod;
+		iModifier += iLegacyMod;
 
 		iTotalValue *= iModifier;
 		iTotalValue /= 100;
