@@ -104,7 +104,7 @@ class UIManager:
         
         # Return the version from the folder name (e.g., LEKMOD_v34.10 -> v34.10)
         latest_folder = sorted(lekmod_folders)[-1]  # Simple alphabetical sort
-        version = latest_folder.replace("LEKMOD_", "")
+        version_from_folder = latest_folder.replace("LEKMOD_", "")
         
         lekmod_path = os.path.join(dlc_path, latest_folder)
         
@@ -129,9 +129,9 @@ class UIManager:
                 except:
                     pass
         
-        # If folder exists but no version found
-        if lekmod_path:
-            return "Unknown Version"
+        # If no version file found, return version from folder name
+        if version_from_folder:
+            return version_from_folder
             
         return None
         
@@ -377,4 +377,13 @@ class UIManager:
         log_callback(f"Copying files to {dlc_dest}...")
         shutil.copytree(lekmod_source, dlc_dest)
         log_callback(f"✓ Files copied successfully!")
+        
+        # Delete ui_check.bat as it's only needed for manual installation
+        ui_check_path = os.path.join(dlc_dest, "ui_check.bat")
+        if os.path.exists(ui_check_path):
+            try:
+                os.remove(ui_check_path)
+                log_callback(f"✓ Removed ui_check.bat (not needed for installer-based installation)")
+            except Exception as e:
+                log_callback(f"⚠ Could not remove ui_check.bat: {e}")
 
