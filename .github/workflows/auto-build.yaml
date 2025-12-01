@@ -38,10 +38,15 @@ jobs:
           # Lekmap
           mkdir -p "dist/Lekmap v${{ steps.lekmap_ver.outputs.version }}/"
           cp -r Lekmap/* "dist/Lekmap v${{ steps.lekmap_ver.outputs.version }}/"
+          # Copy license file if exists
+          find . -maxdepth 1 -type f -iname "license*" | head -n 1 | xargs -r -I{} cp "{}" "dist/Lekmap v${{ steps.lekmap_ver.outputs.version }}/"
+
 
           # LEKMOD
           mkdir -p "dist/LEKMOD_v${{ steps.lekmod_ver.outputs.version }}/"
           cp -r LEKMOD/* "dist/LEKMOD_v${{ steps.lekmod_ver.outputs.version }}/"
+          # Copy license file if exists
+          find . -maxdepth 1 -type f -iname "license*" | head -n 1 | xargs -r -I{} cp "{}" "dist/LEKMOD_v${{ steps.lekmod_ver.outputs.version }}/"
 
       - name: Create archives
         run: |
