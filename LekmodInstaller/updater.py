@@ -11,23 +11,35 @@ class UpdateChecker:
         self.version_url = config.get('version_check_url')
         
     def get_available_versions(self):
-        """Get list of available versions"""
+        """Get list of available versions (fresh from GitHub each time)"""
         versions = {}
         
         # Try to fetch from online JSON first
         if self.version_url:
             try:
-                response = requests.get(self.version_url, timeout=10)
+                # Add cache-busting parameter to avoid GitHub caching
+                import time
+                cache_bust = f"?t={int(time.time())}"
+                url_with_cache_bust = self.version_url + cache_bust
+                
+                response = requests.get(url_with_cache_bust, timeout=10)
                 if response.status_code == 200:
                     online_versions = response.json()
-                    versions.update(online_versions)
-                    return versions
+                    if online_versions:
+                        return online_versions
+                else:
+                    print(f"GitHub returned status code: {response.status_code}")
             except Exception as e:
                 print(f"Failed to fetch online versions: {e}")
+                # Don't return here - try fallback
         
         # Fallback to local config
         if 'versions' in self.config:
             versions.update(self.config['versions'])
+        
+        # If still empty, that's an error
+        if not versions:
+            raise Exception("No versions available from GitHub or local config")
         
         return versions
     

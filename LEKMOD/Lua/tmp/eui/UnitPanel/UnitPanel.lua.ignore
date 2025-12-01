@@ -1021,6 +1021,9 @@ local function UpdateUnitActions( unit )
 				else
 					instance = g_BuildIM:GetInstance()
 				end
+			elseif action.Type == "MISSION_RETRAIN" or action.Type == "COMMAND_DELETE" then
+				-- Special actions like Retrain and Delete go in the BuildIM (special actions panel)
+				instance = g_BuildIM:GetInstance()
 			else
 				instance = g_ActionIM:GetInstance()
 			end

@@ -14,13 +14,34 @@ from ui_manager import UIManager
 from google_drive_api import GoogleDriveDownloader
 from installer_updater import InstallerUpdater
 
+try:
+    from PIL import Image, ImageTk
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
+    print("Warning: PIL not installed. Background image will not be shown.")
+
 class LekmodInstaller:
     def __init__(self, root):
         self.root = root
         self.root.title("Lekmod Installer & Updater v1.0")
-        self.root.geometry("700x750")
+        self.root.geometry("600x600")
         self.root.resizable(True, True)
-        self.root.minsize(600, 600)
+        self.root.minsize(560, 560)
+        
+        # Set window icon
+        try:
+            if getattr(sys, 'frozen', False):
+                # Running as exe - icon is in same folder as exe
+                icon_path = Path(sys.executable).parent / 'icon.ico'
+            else:
+                # Running as script - icon is in same folder as installer.py
+                icon_path = Path(__file__).parent / 'icon.ico'
+            
+            if icon_path.exists():
+                self.root.iconbitmap(str(icon_path))
+        except Exception as e:
+            print(f"Could not load icon: {e}")
         
         # Load config (handle both dev and PyInstaller bundled)
         if getattr(sys, 'frozen', False):
@@ -41,138 +62,215 @@ class LekmodInstaller:
         
         # State
         self.use_eui = tk.BooleanVar(value=False)
+        self.versions_data = {}  # Store full version data
         
         self.setup_ui()
         self.check_installer_updates()  # Check on startup
         self.detect_installation()
         
     def setup_ui(self):
-        # Header
-        header = tk.Frame(self.root, bg="#2c3e50", height=80)
-        header.pack(fill=tk.X)
+        # Create main canvas for background image
+        self.canvas_bg = "#2c3e2e"
+        self.canvas = tk.Canvas(self.root, highlightthickness=0, bg=self.canvas_bg)
+        self.canvas.pack(fill=tk.BOTH, expand=True)
         
-        title = tk.Label(header, text="LEKMOD", font=("Arial", 24, "bold"),
-                        bg="#2c3e50", fg="white")
-        title.pack(pady=10)
+        # Try to load background image
+        self.bg_image = None
+        self.bg_photo = None
+        self.resize_timer = None
+        if HAS_PIL:
+            try:
+                if getattr(sys, 'frozen', False):
+                    bg_path = Path(sys.executable).parent / 'background.png'
+                else:
+                    bg_path = Path(__file__).parent / 'background.png'
+                
+                if bg_path.exists():
+                    self.bg_image = Image.open(bg_path)
+                    # Do initial background setup
+                    self.root.after(100, self.update_background)
+            except Exception as e:
+                print(f"Could not load background: {e}")
         
-        version_text = f"v{self.config.get('installer_version', '1.0.0')}"
-        subtitle = tk.Label(header, text=f"Installer & Updater - {version_text}", 
-                           font=("Arial", 12),
-                           bg="#2c3e50", fg="#ecf0f1")
-        subtitle.pack()
+        # Create main frame - match canvas background color to blend seamlessly
+        self.main_frame = tk.Frame(self.canvas, bg=self.canvas_bg)
         
-        # Main content
-        content = tk.Frame(self.root, padx=20, pady=20)
+        # Header with banner logo
+        header = tk.Frame(self.main_frame, bg=self.canvas_bg)
+        header.pack(fill=tk.X, pady=(0, 2))
+        
+        # Try to load banner logo
+        if HAS_PIL:
+            try:
+                if getattr(sys, 'frozen', False):
+                    banner_path = Path(sys.executable).parent / 'banner.png'
+                else:
+                    banner_path = Path(__file__).parent / 'banner.png'
+                
+                if banner_path.exists():
+                    banner_img = Image.open(banner_path)
+                    # Use native size - no resizing to avoid blurriness
+                    self.banner_photo = ImageTk.PhotoImage(banner_img)
+                    
+                    banner_label = tk.Label(header, image=self.banner_photo, bg=self.canvas_bg)
+                    banner_label.pack(pady=2)
+                else:
+                    # Fallback to text
+                    self._create_text_header(header)
+            except Exception as e:
+                print(f"Could not load banner: {e}")
+                self._create_text_header(header)
+        else:
+            self._create_text_header(header)
+        
+        # Main content - scales with window
+        content = tk.Frame(self.main_frame, padx=6, pady=2, bg=self.canvas_bg)
         content.pack(fill=tk.BOTH, expand=True)
         
-        # Installation info
-        info_frame = tk.LabelFrame(content, text="Civilization V Installation Path", padx=10, pady=10)
-        info_frame.pack(fill=tk.X, pady=(0, 10))
+        # Create canvas window - center it
+        self.canvas_window_id = self.canvas.create_window(
+            0, 0, window=self.main_frame, anchor='center', tags="frame_window"
+        )
         
-        # Path entry with label
-        path_label_frame = tk.Frame(info_frame)
-        path_label_frame.pack(fill=tk.X, pady=(0, 5))
+        # Bind canvas resize with debouncing for performance
+        def on_canvas_resize(event):
+            # Cancel previous timer if exists
+            if self.resize_timer:
+                self.root.after_cancel(self.resize_timer)
+            
+            # Debounce resize - only update after user stops resizing (100ms delay)
+            self.resize_timer = self.root.after(100, lambda: self._do_resize(event.width, event.height))
         
-        tk.Label(path_label_frame, text="Installation Path:", anchor=tk.W).pack(side=tk.LEFT)
+        self.canvas.bind('<Configure>', on_canvas_resize)
         
-        self.status_label = tk.Label(path_label_frame, text="", 
-                                     anchor=tk.W, fg="#27ae60", font=("Arial", 9))
-        self.status_label.pack(side=tk.LEFT, padx=(10, 0))
+        # Initial center
+        self.root.after(100, lambda: self._center_content())
         
-        # Path entry field
-        path_entry_frame = tk.Frame(info_frame)
-        path_entry_frame.pack(fill=tk.X, pady=(0, 5))
+        # Combined settings frame (Installation Path + UI Config + Version)
+        settings_outer, settings_frame = self.create_civ5_frame(content, padx=8, pady=5)
+        settings_outer.pack(fill=tk.X, pady=(0, 2))
+        
+        # Title for settings section
+        tk.Label(settings_frame, text="Installation Settings", 
+                font=("Arial", 11, "bold"), bg='#1a3d0f', fg='#f5deb3').pack(anchor=tk.W, pady=(0, 2))
+        
+        # Installation Path
+        tk.Label(settings_frame, text="Installation Path:", 
+                font=("Arial", 10), bg='#1a3d0f', fg='#f5deb3', anchor=tk.W).pack(fill=tk.X)
+        
+        path_entry_frame = tk.Frame(settings_frame, bg='#1a3d0f')
+        path_entry_frame.pack(fill=tk.X, pady=(2, 2))
         
         self.install_path_var = tk.StringVar()
         self.install_path_var.set(r"C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V")
         
         self.install_path_entry = tk.Entry(path_entry_frame, 
                                            textvariable=self.install_path_var,
-                                           font=("Arial", 9))
+                                           font=("Arial", 9),
+                                           bg='white', fg='#000000',
+                                           insertbackground='#000000')
         self.install_path_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
         
-        tk.Button(path_entry_frame, text="Browse...", 
-                 command=self.browse_civ5_path,
-                 bg="#95a5a6", fg="white",
-                 width=10).pack(side=tk.LEFT, padx=(5, 0))
+        browse_frame, self.browse_btn = self.create_civ5_button(
+            path_entry_frame, "Browse...", self.browse_civ5_path,
+            width=9, height=1, font_size=9, font_weight='normal'
+        )
+        browse_frame.pack(side=tk.LEFT, padx=(3, 0))
         
-        # Verify button
-        tk.Button(path_entry_frame, text="Verify", 
-                 command=self.verify_civ5_path,
-                 bg="#3498db", fg="white",
-                 width=8).pack(side=tk.LEFT, padx=(5, 0))
+        verify_frame, self.verify_btn = self.create_civ5_button(
+            path_entry_frame, "Verify", self.verify_civ5_path,
+            width=7, height=1, font_size=9, font_weight='normal'
+        )
+        verify_frame.pack(side=tk.LEFT, padx=(3, 0))
         
-        self.version_label = tk.Label(info_frame, text="Version: Checking...", 
-                                      anchor=tk.W)
-        self.version_label.pack(fill=tk.X, pady=(5, 0))
+        # Status label
+        self.status_label = tk.Label(settings_frame, text="", 
+                                     anchor=tk.W, fg="#90ee90", font=("Arial", 9),
+                                     bg='#1a3d0f')
+        self.status_label.pack(fill=tk.X, pady=(2, 0))
+        
+        self.version_label = tk.Label(settings_frame, text="Version: Checking...", 
+                                      anchor=tk.W, bg='#1a3d0f', fg='#f5deb3',
+                                      font=("Arial", 9))
+        self.version_label.pack(fill=tk.X, pady=(2, 3))
+        
+        # Separator line
+        tk.Frame(settings_frame, bg='#d2b48c', height=1).pack(fill=tk.X, pady=(0, 3))
         
         # UI Type Selection
-        ui_frame = tk.LabelFrame(content, text="User Interface Configuration", 
-                                padx=10, pady=10)
-        ui_frame.pack(fill=tk.X, pady=(0, 10))
+        tk.Label(settings_frame, text="User Interface Mode:", 
+                font=("Arial", 10), bg='#1a3d0f', fg='#f5deb3', anchor=tk.W).pack(fill=tk.X)
         
-        # Simple checkbox for EUI
-        eui_cb = tk.Checkbutton(ui_frame, 
+        eui_cb = tk.Checkbutton(settings_frame, 
                                text="Install for Enhanced UI (EUI)",
                                variable=self.use_eui,
-                               font=("Arial", 10))
-        eui_cb.pack(anchor=tk.W)
+                               font=("Arial", 10),
+                               bg='#1a3d0f', fg='#f5deb3',
+                               selectcolor='#0d2607',
+                               activebackground='#1a3d0f',
+                               activeforeground='#f5deb3')
+        eui_cb.pack(anchor=tk.W, pady=(2, 1))
         
-        # Info label
-        info_label = tk.Label(ui_frame, 
-                             text="Check this box if you have EUI (UI_bc1 or UI_bc1_xits) installed",
+        info_label = tk.Label(settings_frame, 
+                             text="Check if you have EUI (UI_bc1 or UI_bc1_xits) installed",
                              font=("Arial", 8),
-                             fg="#7f8c8d",
+                             fg="#a0a0a0",
+                             bg='#1a3d0f',
                              anchor=tk.W)
-        info_label.pack(anchor=tk.W, pady=(2, 0))
+        info_label.pack(anchor=tk.W, pady=(0, 1))
         
-        # Optional: Show if EUI is detected
-        self.eui_detected_label = tk.Label(ui_frame, text="", 
-                                          anchor=tk.W, fg="#3498db",
-                                          font=("Arial", 8, "italic"))
-        self.eui_detected_label.pack(anchor=tk.W, pady=(5, 0))
+        self.eui_detected_label = tk.Label(settings_frame, text="", 
+                                          anchor=tk.W, fg="#90ee90",
+                                          bg='#1a3d0f',
+                                          font=("Arial", 9, "italic"))
+        self.eui_detected_label.pack(anchor=tk.W, pady=(0, 3))
+        
+        # Separator line
+        tk.Frame(settings_frame, bg='#d2b48c', height=1).pack(fill=tk.X, pady=(0, 3))
         
         # Version selection
-        version_frame = tk.LabelFrame(content, text="Select Version", padx=10, pady=10)
-        version_frame.pack(fill=tk.X, pady=(0, 10))
+        tk.Label(settings_frame, text="Select Version:", 
+                font=("Arial", 10), bg='#1a3d0f', fg='#f5deb3', anchor=tk.W).pack(fill=tk.X)
         
         self.version_var = tk.StringVar()
-        self.version_combo = ttk.Combobox(version_frame, textvariable=self.version_var,
-                                          state="readonly", width=50)
-        self.version_combo.pack(fill=tk.X)
+        self.version_combo = ttk.Combobox(settings_frame, textvariable=self.version_var,
+                                          state="readonly", width=45, font=("Arial", 9))
+        self.version_combo.pack(fill=tk.X, pady=(2, 3))
         
-        # Buttons
-        button_frame = tk.Frame(content)
-        button_frame.pack(fill=tk.X, pady=(0, 10))
+        # Separator line
+        tk.Frame(settings_frame, bg='#d2b48c', height=1).pack(fill=tk.X, pady=(0, 3))
         
-        self.install_btn = tk.Button(button_frame, text="Install/Update", 
-                                     command=self.install_update,
-                                     bg="#27ae60", fg="white", 
-                                     font=("Arial", 12, "bold"),
-                                     height=2)
-        self.install_btn.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
+        # Action buttons - now inside settings frame
+        button_container = tk.Frame(settings_frame, bg='#1a3d0f')
+        button_container.pack(fill=tk.X, pady=(0, 2))
         
-        self.refresh_btn = tk.Button(button_frame, text="Refresh Versions",
-                                     command=self.check_updates,
-                                     bg="#3498db", fg="white",
-                                     font=("Arial", 12, "bold"),
-                                     height=2)
-        self.refresh_btn.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(5, 0))
+        # Install/Update button (same size as Refresh)
+        install_frame, self.install_btn = self.create_civ5_button(
+            button_container, "Install/Update", self.install_update,
+            width=18, height=1, font_size=10, font_weight='bold'
+        )
+        install_frame.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 3))
         
-        # Update Installer button (smaller, below main buttons)
-        update_installer_frame = tk.Frame(content)
-        update_installer_frame.pack(fill=tk.X, pady=(5, 5))
+        # Refresh Versions button
+        refresh_frame, self.refresh_btn = self.create_civ5_button(
+            button_container, "Refresh Versions", self.check_updates,
+            width=18, height=1, font_size=10, font_weight='normal'
+        )
+        refresh_frame.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(3, 0))
         
-        self.update_installer_btn = tk.Button(update_installer_frame, 
-                                              text="Update Installer",
-                                              command=self.update_installer,
-                                              bg="#e67e22", fg="white",
-                                              font=("Arial", 10))
-        self.update_installer_btn.pack(side=tk.RIGHT)
+        # Update installer button (below main buttons, full width)
+        update_installer_frame, self.update_installer_btn = self.create_civ5_button(
+            settings_frame, "Update Installer", self.update_installer,
+            width=40, height=1, font_size=10, font_weight='normal'
+        )
+        update_installer_frame.pack(pady=(3, 0))
         
-        # Progress bars
-        progress_frame = tk.Frame(content)
-        progress_frame.pack(fill=tk.X, pady=(0, 10))
+        # Log frame - now gets more space
+        log_outer, log_frame = self.create_civ5_frame(content, padx=6, pady=4)
+        log_outer.pack(fill=tk.BOTH, expand=True, pady=(2, 0))
+        
+        # Progress bars inside log frame header (shown during operations)
+        progress_frame = tk.Frame(log_frame, bg='#1a3d0f')
         
         # Indeterminate progress (for general operations)
         self.progress_indeterminate = ttk.Progressbar(progress_frame, mode='indeterminate')
@@ -181,33 +279,45 @@ class LekmodInstaller:
         self.progress_determinate = ttk.Progressbar(progress_frame, mode='determinate', maximum=100)
         
         # Progress label (shows what's happening)
-        self.progress_label = tk.Label(progress_frame, text="", anchor=tk.W, fg="#3498db")
+        self.progress_label = tk.Label(progress_frame, text="", anchor=tk.W, fg="#90ee90", bg='#1a3d0f', font=("Arial", 9))
         
         # Hide both initially
         self.current_progress_mode = None
         
-        # Log
-        log_frame = tk.LabelFrame(content, text="Installation Log", padx=5, pady=5)
-        log_frame.pack(fill=tk.BOTH, expand=True)
+        # Log header
+        log_header = tk.Frame(log_frame, bg='#1a3d0f')
+        log_header.pack(fill=tk.X, pady=(0, 1))
         
-        # Log buttons
-        log_buttons = tk.Frame(log_frame)
-        log_buttons.pack(fill=tk.X, pady=(0, 5))
+        tk.Label(log_header, text="Installation Log", 
+                font=("Arial", 10, "bold"), bg='#1a3d0f', fg='#f5deb3').pack(side=tk.LEFT)
         
-        tk.Button(log_buttons, text="📋 Expand Log", 
-                 command=self.expand_log,
-                 bg="#95a5a6", fg="white").pack(side=tk.LEFT, padx=(0, 5))
+        # Log buttons on the right
+        log_button_container = tk.Frame(log_header, bg='#1a3d0f')
+        log_button_container.pack(side=tk.RIGHT)
         
-        tk.Button(log_buttons, text="🗑️ Clear Log", 
-                 command=self.clear_log,
-                 bg="#95a5a6", fg="white").pack(side=tk.LEFT)
+        # Progress bars below log header (initially hidden)
+        progress_frame.pack(fill=tk.X, pady=(0, 1))
         
-        self.log_text = scrolledtext.ScrolledText(log_frame, height=15, 
+        expand_log_frame, expand_log_btn = self.create_civ5_button(
+            log_button_container, "📋 Expand", self.expand_log,
+            width=9, height=1, font_size=9, font_weight='normal'
+        )
+        expand_log_frame.pack(side=tk.LEFT, padx=(0, 3))
+        
+        clear_log_frame, clear_log_btn = self.create_civ5_button(
+            log_button_container, "🗑️ Clear", self.clear_log,
+            width=7, height=1, font_size=9, font_weight='normal'
+        )
+        clear_log_frame.pack(side=tk.LEFT)
+        
+        # Log text area - expands to fill available space
+        self.log_text = scrolledtext.ScrolledText(log_frame, height=8, 
                                                   state=tk.NORMAL,
                                                   wrap=tk.WORD,
-                                                  bg="#f8f9fa",
-                                                  fg="#000000",
-                                                  font=("Consolas", 9))
+                                                  bg="#2c2416",
+                                                  fg="#d2b48c",
+                                                  font=("Consolas", 9),
+                                                  insertbackground='#d2b48c')
         self.log_text.pack(fill=tk.BOTH, expand=True)
         
         # Add initial welcome message
@@ -525,33 +635,49 @@ class LekmodInstaller:
         
     def _check_updates_thread(self):
         try:
-            # Get versions from Google Drive
+            self.log("Fetching versions from GitHub...")
+            
+            # Get versions from GitHub
             versions = self.updater.get_available_versions()
             
-            if versions:
-                # Format version list with dates and sizes
-                version_display = []
-                for v in versions:
-                    info = versions[v]
-                    date = info.get('release_date', 'Unknown date')
-                    size = info.get('size', 'Unknown size')
-                    version_display.append(f"{v} - {date} ({size})")
-                
+            if not versions:
+                self.log("⚠ No versions found")
+                self.root.after(0, lambda: messagebox.showwarning(
+                    "No Versions", 
+                    "Could not find any versions.\n"
+                    "Please check your internet connection\n"
+                    "and GitHub/Google Drive configuration."
+                ))
+                return
+            
+            # Store versions data for later use
+            self.versions_data = versions
+            
+            # Format version list with dates and sizes
+            version_display = []
+            for v in versions:
+                info = versions[v]
+                date = info.get('release_date', 'Unknown date')
+                size = info.get('size', 'Unknown size')
+                version_display.append(f"{v} - {date} ({size})")
+            
+            # Update combo box in main thread
+            def update_combo():
                 self.version_combo['values'] = version_display
                 if version_display:
                     self.version_combo.current(0)
-                self.log(f"✓ Found {len(versions)} versions on Google Drive")
-            else:
-                self.log("⚠ No versions found on Google Drive")
-                messagebox.showwarning("No Versions", 
-                                      "Could not find any versions.\n"
-                                      "Please check your internet connection\n"
-                                      "and Google Drive configuration.")
+            
+            self.root.after(0, update_combo)
+            
+            self.log(f"✓ Found {len(versions)} version(s): {', '.join(versions.keys())}")
+            
         except Exception as e:
             self.log(f"✗ Error checking updates: {e}")
-            messagebox.showerror("Update Check Failed", 
-                               f"Failed to check for updates:\n{str(e)}\n\n"
-                               f"Please check your internet connection.")
+            self.root.after(0, lambda: messagebox.showerror(
+                "Update Check Failed", 
+                f"Failed to check for updates:\n{str(e)}\n\n"
+                f"Please check your internet connection."
+            ))
         finally:
             self.hide_progress()
             self.refresh_btn.config(state=tk.NORMAL)
@@ -685,6 +811,115 @@ class LekmodInstaller:
             self.install_btn.config(state=tk.NORMAL)
             self.refresh_btn.config(state=tk.NORMAL)
             self.check_installed_version()
+
+    def _create_text_header(self, header):
+        """Fallback text header if banner image not found"""
+        title = tk.Label(header, text="LEKMOD", font=("Arial", 20, "bold"),
+                        bg=self.canvas_bg, fg="#f5deb3")  # Beige color
+        title.pack(pady=2)
+        
+        version_text = f"v{self.config.get('installer_version', '1.0.0')}"
+        subtitle = tk.Label(header, text=f"Installer & Updater - {version_text}", 
+                           font=("Arial", 10),
+                           bg=self.canvas_bg, fg="#d2b48c")
+        subtitle.pack()
+    
+    def _do_resize(self, width, height):
+        """Perform the actual resize operation"""
+        self.update_background()
+        self._center_content()
+    
+    def _center_content(self):
+        """Center the main content on the canvas"""
+        try:
+            canvas_width = self.canvas.winfo_width()
+            canvas_height = self.canvas.winfo_height()
+            
+            if canvas_width > 1 and canvas_height > 1:
+                # Center the window
+                x = canvas_width // 2
+                y = canvas_height // 2
+                self.canvas.coords(self.canvas_window_id, x, y)
+        except Exception as e:
+            print(f"Error centering content: {e}")
+    
+    def update_background(self):
+        """Update background image to fit current window size while maintaining aspect ratio"""
+        if not self.bg_image or not HAS_PIL:
+            return
+        
+        try:
+            # Get current canvas size
+            canvas_width = self.canvas.winfo_width()
+            canvas_height = self.canvas.winfo_height()
+            
+            if canvas_width <= 1 or canvas_height <= 1:
+                return
+            
+            # Get original image dimensions
+            img_width, img_height = self.bg_image.size
+            
+            # Calculate scaling to cover the canvas while maintaining aspect ratio
+            width_ratio = canvas_width / img_width
+            height_ratio = canvas_height / img_height
+            
+            # Use the larger ratio to ensure the image covers the entire canvas
+            scale_ratio = max(width_ratio, height_ratio)
+            
+            # Calculate new dimensions
+            new_width = int(img_width * scale_ratio)
+            new_height = int(img_height * scale_ratio)
+            
+            # Resize background image maintaining aspect ratio
+            resized = self.bg_image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+            self.bg_photo = ImageTk.PhotoImage(resized)
+            
+            # Update canvas - center the background
+            self.canvas.delete("bg")
+            self.canvas.create_image(canvas_width//2, canvas_height//2, 
+                                    image=self.bg_photo, anchor='center', tags="bg")
+            self.canvas.tag_lower("bg")
+        except Exception as e:
+            print(f"Error updating background: {e}")
+    
+    def create_civ5_frame(self, parent, **kwargs):
+        """Create a Civ 5 styled frame with beige border and dark green background"""
+        padx = kwargs.get('padx', 12)
+        pady = kwargs.get('pady', 10)
+        
+        # Outer frame for beige border
+        outer_frame = tk.Frame(parent, bg='#d2b48c', bd=0)
+        
+        # Inner frame with dark green background
+        inner_frame = tk.Frame(outer_frame, bg='#1a3d0f', padx=padx, pady=pady)
+        inner_frame.pack(padx=2, pady=2, fill=tk.BOTH, expand=True)
+        
+        return outer_frame, inner_frame
+    
+    def create_civ5_button(self, parent, text, command, **kwargs):
+        """Create a Civ 5 styled button with beige background and darker border"""
+        # Extract standard button options
+        width = kwargs.get('width', 15)
+        height = kwargs.get('height', 1)
+        font_size = kwargs.get('font_size', 10)
+        font_weight = kwargs.get('font_weight', 'bold')
+        border_width = kwargs.get('border_width', 2)
+        
+        # Create frame for border effect
+        frame = tk.Frame(parent, bg='#8B7355', bd=0)
+        
+        # Create button with beige background and black text
+        btn = tk.Button(frame, text=text, command=command,
+                       bg='#e8dcc4', fg='#000000',  # Light beige bg, black text
+                       activebackground='#d4c5a9',  # Darker beige when pressed
+                       activeforeground='#000000',
+                       font=("Arial", font_size, font_weight),
+                       bd=0, relief=tk.FLAT,
+                       width=width, height=height)
+        # Pack with exact same padding on all sides for even border
+        btn.pack(padx=border_width, pady=border_width)
+        
+        return frame, btn
 
 def main():
     root = tk.Tk()
