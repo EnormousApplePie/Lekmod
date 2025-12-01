@@ -10813,7 +10813,7 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible,
 bool CvUnit::build(BuildTypes eBuild)
 {
 	VALIDATE_OBJECT
-	bool bFinished;
+	bool bFinished = false;
 
 	CvAssertMsg(eBuild < GC.getNumBuildInfos(), "Invalid Build");
 	CvPlayer& kPlayer = GET_PLAYER(getOwner());
@@ -10870,8 +10870,8 @@ bool CvUnit::build(BuildTypes eBuild)
 #endif
 
 	}
-
-	bFinished = pPlot->changeBuildProgress(eBuild, workRate(false), getOwner());
+	if (!bFinished)
+		bFinished = pPlot->changeBuildProgress(eBuild, workRate(false), getOwner());
 
 	finishMoves(); // needs to be at bottom because movesLeft() can affect workRate()...
 
