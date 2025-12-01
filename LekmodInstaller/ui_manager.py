@@ -157,7 +157,7 @@ class UIManager:
         return extract_dir
         
     def configure_ui_files(self, mod_path, ui_type, log_callback):
-        """Configure UI files based on detected UI"""
+        """Configure UI files based on UI type (replicates ui_check.bat logic)"""
         # Find LEKMOD folder (supports LEKMOD or LEKMOD_vX.X naming)
         lekmod_path = None
         for root, dirs, files in os.walk(mod_path):
@@ -172,52 +172,167 @@ class UIManager:
             raise Exception(f"LEKMOD folder not found in extracted files")
         
         ui_dest = os.path.join(lekmod_path, "Lua", "UI")
+        tmp_ui = os.path.join(lekmod_path, "Lua", "tmp", "ui")
+        tmp_eui = os.path.join(lekmod_path, "Lua", "tmp", "eui")
         
         # Clear existing UI files
         if os.path.exists(ui_dest):
             shutil.rmtree(ui_dest)
         os.makedirs(ui_dest)
         
-        # Determine source folder based on UI type
-        if "Enhanced UI" in ui_type:
-            source_folder = "eui"
-            log_callback(f"✓ Configuring for {ui_type}")
-        else:
-            source_folder = "ui"
-            log_callback(f"✓ Configuring for Standard UI")
-            
-        # Copy files from tmp folder
-        tmp_path = os.path.join(lekmod_path, "Lua", "tmp", source_folder)
+        is_eui = "Enhanced UI" in ui_type
+        log_callback(f"✓ Configuring for {'EUI' if is_eui else 'Standard UI'}")
         
-        if not os.path.exists(tmp_path):
-            raise Exception(f"UI source folder not found: {tmp_path}")
-            
-        # Walk through all UI files and copy them
         file_count = 0
-        for root, dirs, files in os.walk(tmp_path):
-            for file in files:
-                if file.endswith('.ignore') or file.endswith('.IGNORE'):
-                    source_file = os.path.join(root, file)
-                    
-                    # Calculate relative path
-                    rel_path = os.path.relpath(source_file, tmp_path)
-                    dest_file = os.path.join(ui_dest, rel_path)
-                    
-                    # Remove .ignore extension
-                    dest_file = dest_file.replace('.ignore', '').replace('.IGNORE', '')
-                    
-                    # Create destination directory
+        
+        # Files ALWAYS copied from tmp/ui (regardless of EUI)
+        always_ui_files = [
+            "AncientRuins/GoodyHutPopup.lua",
+            "Core/IconSupport.lua",
+            "CultureOverview/CultureOverview.lua",
+            "CultureOverview/CultureOverview.xml",
+            "FrontEnd/EULA.lua",
+            "FrontEnd/FrontEnd.lua",  # Main menu!
+            "GPList/GPList.lua",
+            "GPList/GPList.xml",
+            "LeaderHead/SimpleDiploTrade.lua",
+            "LeaderHead/SimpleDiploTrade.xml",
+            "Lobby/AdvancedSetup.lua",
+            "Lobby/JoiningRoom.lua",
+            "Lobby/JoiningRoom.xml",
+            "Lobby/LoadMenu.lua",
+            "Lobby/Lobby.lua",
+            "Lobby/Lobby.xml",
+            "Lobby/MPGameOptions.lua",
+            "Lobby/MPGameSetupScreen.lua",
+            "Lobby/MPGameSetupScreen.xml",
+            "Lobby/StagingRoom.lua",
+            "Lobby/StagingRoom.xml",
+            "PlotMouseoverInclude.lua",
+            "MiniMapPanel/MiniMapPanel.lua",
+            "MiniMapPanel/MiniMapPanel.xml",
+            "MPTurnPanel/MPTurnPanel.lua",
+            "MPTurnPanel/MPTurnPanel.xml",
+            "Replays/Demographics.lua",
+            "Replays/GameMenu.lua",
+            "Replays/ReplayViewer.lua",
+            "Replays/ReplayViewer.xml",
+            "VotingSystem/CCVotePopup.lua",
+            "VotingSystem/CCVotePopup.xml",
+            "VotingSystem/NetworkKickedPopup.lua",
+            "VotingSystem/ProposalChartPopup.lua",
+            "VotingSystem/ProposalChartPopup.xml",
+            "VotingSystem/VictoryProgress.lua",
+            "VotingSystem/VictoryProgress.xml",
+            "Bombardment.lua",
+            "DiscussionDialog.lua",
+            "EndGameMenu.lua",
+            "Highlights.xml",
+            "InGame.lua",
+            "mountain.lua",
+            "prophetreplace.lua",
+            "UnitList/UnitList.lua",
+            "UnitList/UnitList.xml",
+            "UnitPanel/EnemyUnitPanel.lua",
+        ]
+        
+        # Copy always-ui files
+        log_callback(f"Copying common UI files...")
+        for rel_path in always_ui_files:
+            source_file = os.path.join(tmp_ui, rel_path + ".ignore")
+            if not os.path.exists(source_file):
+                source_file = os.path.join(tmp_ui, rel_path + ".IGNORE")
+            
+            if os.path.exists(source_file):
+                dest_file = os.path.join(ui_dest, rel_path)
+                os.makedirs(os.path.dirname(dest_file), exist_ok=True)
+                shutil.copy2(source_file, dest_file)
+                file_count += 1
+        
+        # Conditional files (depends on EUI)
+        conditional_files = {
+            # Format: "destination": ("ui_source", "eui_source")
+            "CityBannerManager.lua": ("ui/CityBanners/CityBannerManager.lua", "eui/CityBanners/CityBannerManager_2.lua"),
+            "CityBannerManager.xml": ("ui/CityBanners/CityBannerManager.xml", "eui/CityBanners/CityBannerManager_2.xml"),
+            "CityStateDiploPopup.lua": ("ui/CityStatePopup/CityStateDiploPopup.lua", "eui/CityStatePopup/CityStateDiploPopup.lua"),
+            "CityView.lua": ("ui/CityView/CityView.lua", "eui/CityView/CityView.lua"),
+            "CityView.xml": ("ui/CityView/CityView.xml", "eui/CityView/CityView.xml"),
+            "CityView_small.xml": ("ui/CityView/CityView_small.xml", "eui/CityView/CityView_small.xml"),
+            "ProductionPopup.lua": ("ui/CityView/ProductionPopup.lua", None),
+            "ProductionPopup.xml": ("ui/CityView/ProductionPopup.xml", None),
+            "CityStateStatusHelper.lua": ("ui/Core/CityStateStatusHelper.lua", None),
+            "EUI_tooltip_library.lua": (None, "eui/Core/EUI_tooltip_library.lua"),
+            "EUI_unit_include.lua": (None, "eui/Core/EUI_unit_include.lua"),
+            "EconomicGeneralInfo.lua": ("ui/CultureOverview/EconomicGeneralInfo.lua", "eui/EconomicGeneralInfo.lua"),
+            "EconomicGeneralInfo.xml": ("ui/CultureOverview/EconomicGeneralInfo.xml", "eui/EconomicGeneralInfo.xml"),
+            "SelectCivilization.lua": ("ui/GameSetup/SelectCivilization.lua", "eui/GameSetup/SelectCivilization.lua"),
+            "WorldView.lua": ("ui/Improvements/WorldView.lua", "eui/Improvements/WorldView.lua"),
+            "TradeLogic.lua": ("ui/LeaderHead/TradeLogic.lua", "eui/LeaderHead/TradeLogic.lua"),
+            "DiploCorner.lua": ("ui/NotificationPanel/DiploCorner.lua", "eui/NotificationPanel/DiploCorner.lua"),
+            "DiploCorner.xml": ("ui/NotificationPanel/DiploCorner.xml", "eui/NotificationPanel/DiploCorner.xml"),
+            "NotificationPanel.lua": ("ui/NotificationPanel/NotificationPanel.lua", "eui/NotificationPanel/NotificationPanel.lua"),
+            "NotificationPanel.xml": ("ui/NotificationPanel/NotificationPanel.xml", "eui/NotificationPanel/NotificationPanel.xml"),
+            "OptionsMenu.lua": ("ui/Options/OptionsMenu.lua", "eui/Options/OptionsMenu.lua"),
+            "OptionsMenu.xml": ("ui/Options/OptionsMenu.xml", "eui/Options/OptionsMenu.xml"),
+            "TechPopup.lua": ("ui/TechTree/TechPopup.lua", "eui/TechTree/TechPopup.lua"),
+            "TechPopup.xml": (None, "eui/TechTree/TechPopup.xml"),
+            "TechTree.lua": ("ui/TechTree/TechTree.lua", "eui/TechTree/TechTree.lua"),
+            "TechButtonInclude.lua": ("ui/ToolTips/TechButtonInclude.lua", "eui/ToolTips/TechButtonInclude.lua"),
+            "InfoTooltipInclude.lua": ("ui/ToolTips/InfoTooltipInclude.lua", "eui/ToolTips/InfoTooltipInclude.lua"),
+            "UnitFlagManager.lua": ("ui/UnitFlagManager/UnitFlagManager.lua", "eui/UnitFlagManager/UnitFlagManager.lua"),
+            "UnitFlagManager.xml": ("ui/UnitFlagManager/UnitFlagManager.xml", "eui/UnitFlagManager/UnitFlagManager.xml"),
+            "UnitPanel.lua": ("ui/UnitPanel/UnitPanel.lua", "eui/UnitPanel/UnitPanel.lua"),
+            "YieldIconManager.lua": ("ui/YieldIconManager.lua", "eui/Improvements/YieldIconManager.lua"),
+            "TopPanel.lua": ("ui/TopPanel.lua", "eui/TopPanel.lua"),
+            "TopPanel.xml": (None, "eui/TopPanel.xml"),
+        }
+        
+        log_callback(f"Copying UI-specific files...")
+        for dest_name, (ui_source, eui_source) in conditional_files.items():
+            source_path = eui_source if is_eui and eui_source else ui_source
+            
+            if source_path:
+                source_file = os.path.join(lekmod_path, "Lua", "tmp", source_path + ".ignore")
+                if not os.path.exists(source_file):
+                    source_file = os.path.join(lekmod_path, "Lua", "tmp", source_path + ".IGNORE")
+                
+                if os.path.exists(source_file):
+                    dest_file = os.path.join(ui_dest, dest_name)
                     os.makedirs(os.path.dirname(dest_file), exist_ok=True)
-                    
-                    # Copy file
                     shutil.copy2(source_file, dest_file)
                     file_count += 1
-                    
-                    if file_count % 10 == 0:
-                        log_callback(f"Configured {file_count} UI files...")
-                    
-        log_callback(f"✓ Configured {file_count} UI files for {source_folder}")
         
+        log_callback(f"✓ Configured {file_count} total UI files")
+        
+    def find_existing_lekmod_folders(self, civ5_path):
+        """Find any existing LEKMOD installations"""
+        dlc_path = os.path.join(civ5_path, "Assets", "DLC")
+        
+        if not os.path.exists(dlc_path):
+            return []
+        
+        existing_folders = []
+        try:
+            for item in os.listdir(dlc_path):
+                item_path = os.path.join(dlc_path, item)
+                if os.path.isdir(item_path) and item.startswith("LEKMOD"):
+                    existing_folders.append(item)
+        except:
+            pass
+        
+        return existing_folders
+    
+    def remove_lekmod_folders(self, civ5_path, folders, log_callback):
+        """Remove specified LEKMOD folders"""
+        dlc_path = os.path.join(civ5_path, "Assets", "DLC")
+        
+        for folder in folders:
+            folder_path = os.path.join(dlc_path, folder)
+            if os.path.exists(folder_path):
+                log_callback(f"Removing {folder}...")
+                shutil.rmtree(folder_path)
+                log_callback(f"✓ Removed {folder}")
+    
     def install_mod(self, mod_source, civ5_path, version, log_callback):
         """Install mod to Civ 5 Assets/DLC (for multiplayer compatibility)"""
         # Install to Assets/DLC instead of MODS
@@ -231,16 +346,6 @@ class UIManager:
         # Destination is Assets/DLC/LEKMOD_v34.10 (uses version number)
         folder_name = f"LEKMOD_{version}"
         dlc_dest = os.path.join(dlc_path, folder_name)
-        
-        # Backup existing installation
-        if os.path.exists(dlc_dest):
-            backup_path = dlc_dest + ".backup"
-            log_callback(f"Creating backup of existing installation...")
-            
-            if os.path.exists(backup_path):
-                shutil.rmtree(backup_path)
-            shutil.move(dlc_dest, backup_path)
-            log_callback(f"✓ Backup created at: {backup_path}")
             
         # Find LEKMOD source folder in the extracted archive
         # Supports both "LEKMOD" and "LEKMOD_v34.10" folder names
