@@ -1,7 +1,7 @@
 # Installation Instructions
 
 
-# Table of Contents
+## Table of Contents
 1. [Requirements](#requirements)
 1. [LEKMOD Installation](#lekmod-installation)
     1. [Windows](#windows)
@@ -12,7 +12,7 @@
         1. [LEKMOD v32 and lower](#b-lekmod-v32-and-lower---no-specific-ui-support)
 1. [Lekmap Installation](#lekmap-installation-windowslinux)
 
-# Requirements
+## Requirements
 1. OS
     1. **Windows 7+** - Full Support
     1. **Linux** - Limited/Untested Support
@@ -20,10 +20,10 @@
 1. Game: Sid Meier's Civilization V - All available DLC's except for map packs.
 1. Standard UI or EUI (Enhanced User Interface) - LEKMOD v33 and higher support both UIs, Note EUI v 1.29 or higher is currently not supported.
 
-# LEKMOD Installation 
+## LEKMOD Installation 
 
-## Windows
-### Option A. LEKMOD v33 and higher *- with Custom EUI and Standard UI support*
+### Windows
+#### Option A. LEKMOD v33 and higher *- with Custom EUI and Standard UI support*
 1. Download the version you wish to install
 1. Extract the contents of the zip file
 1. Copy the extracted files into your DLC folder, replacing any existing files
@@ -36,7 +36,7 @@ This will copy the necessary UI files based on your current UI setup. (UI / EUI 
 1. Launch the game. You should see "LEKMOD" in your multiplayer lobby.
 
 
-### Option B. LEKMOD v32 and lower *- No specific UI support*
+#### Option B. LEKMOD v32 and lower *- No specific UI support*
 1. Download the version you wish to install
 1. Extract the contents of the zip file
 1. Copy the extracted files into your LEKMOD folder, replacing any existing files
@@ -45,8 +45,8 @@ To find your game folder, right click Civilization V in your Steam library, sele
 `...\Sid Meier's Civilization V\Assets\DLC\LEKMODvXX_X\`
 1. Launch the game. You should see "LEKMOD" in your multiplayer lobby.
 
-## Linux
-### A. LEKMOD v33 and higher - EUI and Standard UI support - (Currently Unavailable)
+### Linux
+#### A. LEKMOD v33 and higher - EUI and Standard UI support - (Currently Unavailable)
 1. Ensure you have Proton enabled for Civilization V
 For steam, right click Civilization V in your library, select Properties, go to the Compatibility tab, and check "Force the use of a specific Steam Play compatibility tool", then select the latest Proton version from the dropdown.
 Suggested Proton version: Proton Experimental or Proton 10.0-3
@@ -62,7 +62,7 @@ To find your game folder, right click Civilization V in your Steam library, sele
 This will copy the necessary UI files based on your current UI setup. (UI / EUI up to v1.28 supported)
 1. Launch the game. You should see "LEKMOD" in your multiplayer lobby.
 
-### B. LEKMOD v32 and lower - No specific UI support
+#### B. LEKMOD v32 and lower - No specific UI support
 1. Ensure you have Proton enabled for Civilization V
 For steam, right click Civilization V in your library, select Properties, go to the Compatibility tab, and check "Force the use of a specific Steam Play compatibility tool", then select the latest Proton version from the dropdown.
 Suggested Proton version: Proton Experimental or Proton 10.0-3
@@ -77,7 +77,7 @@ To find your game folder, right click Civilization V in your Steam library, sele
 1. Launch the game. You should see "LEKMOD" in your multiplayer lobby.
 
 
-# Lekmap Installation (Windows/Linux)
+## Lekmap Installation (Windows/Linux)
 1. Download Lekmap
 1. Extract the contents of the zip file
 1. Copy the extracted folder into your MAPS folder
