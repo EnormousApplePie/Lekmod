@@ -1,7 +1,7 @@
 {
   "version": "1.0.1",
-  "download_url": "https://github.com/YOUR_USERNAME/Lekmod/releases/download/v1.0.1/LekmodInstaller.exe",
-  "changelog": "- Added self-update feature\n- Manual path entry with default Steam path\n- Improved UI detection\n- Bug fixes",
-  "release_date": "2025-01-15",
+  "download_url": "Drive_link",
+  "changelog": "Initial release",
+  "release_date": "2025-12-01",
   "minimum_required_version": "1.0.0"
 }
