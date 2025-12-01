@@ -29,3 +29,39 @@ LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildTemp/
 /.vs/Lekmod/v17/.wsuo
 /.vs/Lekmod/v17/DocumentLayout.json
 /.vs/VSWorkspaceState.json
+
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+*.spec
+
+# Downloads folder
+downloads/
+
+# Temp files
+*.tmp
+lekmod_temp/
+*.backup
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+*.exe (except in releases)
