@@ -49,29 +49,24 @@ https://discord.gg/VQBNPmc
 
 ## Windows
 ### Option A. LEKMOD v33 and higher *- with Custom EUI and Standard UI support*
-#### 1. Download the version you wish to install
-#### 2. Extract the contents of the zip file
-#### 3. Copy the extracted files into your DLC folder, replacing any existing files
-Usually under: `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC`
-To find your game folder, right click Civilization V in your Steam library, select Properties, go to the Local Files tab, and click Browse Local Files. 
-
-The final path should look like this:
+1. Download the version you wish to install
+1. Extract the contents of the zip file
+1. Copy the extracted files into your DLC folder, replacing any existing files
+Usually under: `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC` <br/> 
+To find your game folder, right click Civilization V in your Steam library, select Properties, go to the Local Files tab, and click Browse Local Files. <br/> The final path should look like this:
 `...\Sid Meier's Civilization V\Assets\DLC\LEKMODvXX_X\`
-#### 4. Open the folder and run ui_check.bat
+1. Open the folder and run ui_check.bat
 This will copy the necessary UI files based on your current UI setup. (UI / EUI up to v1.28 supported)
 
-#### 5. Launch the game. You should see "LEKMOD" in your multiplayer lobby.
+1. Launch the game. You should see "LEKMOD" in your multiplayer lobby.
 
-<div style="height: 1px;" alt="Separator"></div>
 
 ### Option B. LEKMOD v32 and lower *- No specific UI support*
-#### 1. Download the version you wish to install
-#### 2. Extract the contents of the zip file
-#### 3. Copy the extracted files into your LEKMOD folder, replacing any existing files
-Usually under: `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC`
-To find your game folder, right click Civilization V in your Steam library, select Properties, go to the Local Files tab, and click Browse Local Files. 
-
-The final path should look like this:
+1. Download the version you wish to install
+1. Extract the contents of the zip file
+1. Copy the extracted files into your LEKMOD folder, replacing any existing files
+Usually under: `C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\Assets\DLC` <br/> 
+To find your game folder, right click Civilization V in your Steam library, select Properties, go to the Local Files tab, and click Browse Local Files. <br/> The final path should look like this:
 `...\Sid Meier's Civilization V\Assets\DLC\LEKMODvXX_X\`
 #### 4. Launch the game. You should see "LEKMOD" in your multiplayer lobby.
 
