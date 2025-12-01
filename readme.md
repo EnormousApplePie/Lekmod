@@ -62,8 +62,7 @@ This will copy the necessary UI files based on your current UI setup. (UI / EUI 
 
 #### 5. Launch the game. You should see "LEKMOD" in your multiplayer lobby.
 
-
-<br/>
+<div style="height: 1px;" alt="Separator"></div>
 
 ### Option B. LEKMOD v32 and lower *- No specific UI support*
 #### 1. Download the version you wish to install
