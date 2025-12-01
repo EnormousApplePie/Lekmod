@@ -24,7 +24,7 @@ except ImportError:
 class LekmodInstaller:
     def __init__(self, root):
         self.root = root
-        self.root.title("Lekmod Installer & Updater v1.0")
+        self.root.title("Lekmod Installer & Updater")
         self.root.geometry("600x600")
         self.root.resizable(True, True)
         self.root.minsize(560, 560)
@@ -321,7 +321,6 @@ class LekmodInstaller:
         self.log_text.pack(fill=tk.BOTH, expand=True)
         
         # Add initial welcome message
-        self.log("Lekmod Installer v1.0.0")
         self.log("Ready to install!")
         self.log("")
         
