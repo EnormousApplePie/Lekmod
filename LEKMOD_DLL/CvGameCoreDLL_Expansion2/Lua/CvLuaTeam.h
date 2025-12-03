@@ -212,6 +212,9 @@ protected:
 	static int lSetCurrentEra(lua_State* L);
 
 	static int lUpdateEmbarkGraphics(lua_State* L);
+#if defined(LEKMOD_LEGACY)
+	static int lIsResourceRevealed(lua_State* L);
+#endif
 };
 
 #endif //CVLUATEAM_H

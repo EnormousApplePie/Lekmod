@@ -697,7 +697,11 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		// Add Resource Quantity to total
 		if(plot()->getResourceType() != NO_RESOURCE)
 		{
+#if !defined(LEKMOD_LEGACY)
 			if(GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(plot()->getResourceType())->getTechCityTrade()))
+#else
+			if (GET_TEAM(getTeam()).IsResourceTrade(plot()->getResourceType()))
+#endif
 			{
 				owningPlayer.changeNumResourceTotal(plot()->getResourceType(), plot()->getNumResourceForPlayer(getOwner()));
 			}
@@ -1677,7 +1681,11 @@ void CvCity::PreKill()
 	// If this city was built on a Resource, remove its Quantity from total
 	if(pPlot->getResourceType() != NO_RESOURCE)
 	{
+#if !defined(LEKMOD_LEGACY)
 		if(GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(pPlot->getResourceType())->getTechCityTrade()))
+#else
+		if (GET_TEAM(getTeam()).IsResourceTrade(pPlot->getResourceType()))
+#endif
 		{
 			GET_PLAYER(getOwner()).changeNumResourceTotal(pPlot->getResourceType(), -pPlot->getNumResourceForPlayer(getOwner()));
 		}
@@ -7964,7 +7972,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 					ResourceTypes eLoopResource = pLoopPlot->getResourceType();
 					if(eLoopResource != NO_RESOURCE && GC.getResourceInfo(eLoopResource)->getResourceUsage() == RESOURCEUSAGE_LUXURY)
 					{
+#if !defined(LEKMOD_LEGACY)
 						if(owningTeam.GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(eLoopResource)->getTechCityTrade()))
+#else
+						if (owningTeam.IsResourceTrade(eLoopResource))
+#endif
 						{
 							if(pLoopPlot == plot() || (pLoopPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pLoopPlot->getImprovementType())->IsImprovementResourceTrade(eLoopResource)))
 							{
@@ -7990,7 +8002,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 					ResourceTypes eLoopResource = pLoopPlot->getResourceType();
 					if(eLoopResource != NO_RESOURCE && GC.getResourceInfo(eLoopResource)->getResourceUsage() == RESOURCEUSAGE_LUXURY)
 					{
-						if(owningTeam.GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(eLoopResource)->getTechCityTrade()))
+#if !defined(LEKMOD_LEGACY)
+						if (owningTeam.GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(eLoopResource)->getTechCityTrade()))
+#else
+						if (owningTeam.IsResourceTrade(eLoopResource))
+#endif
 						{
 							if(pLoopPlot == plot() || (pLoopPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pLoopPlot->getImprovementType())->IsImprovementResourceTrade(eLoopResource)))
 							{

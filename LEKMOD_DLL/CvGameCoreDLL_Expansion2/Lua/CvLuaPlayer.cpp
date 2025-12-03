@@ -1098,6 +1098,8 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetLegacyFriendlyCityReligionCombatModifier);
 	Method(GetLegacyOccupiedCityReligionCombatModifier);
 	Method(GetLegacyEnemyCityReligionCombatModifier);
+	Method(GetLegacyBuildingClassOverride);
+	Method(GetLegacyUnitClassOverride);
 	Method(HasLegacy);
 	Method(SetHasLegacy);
 #endif
@@ -12239,6 +12241,31 @@ int CvLuaPlayer::lGetLegacyEnemyCityReligionCombatModifier(lua_State* L)
 	return 1;
 }
 //------------------------------------------------------------------------------
+int CvLuaPlayer::lGetLegacyBuildingClassOverride(lua_State* L)
+{
+	const BuildingClassTypes eBuildingClass = (BuildingClassTypes)luaL_checkint(L, 2);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		BuildingTypes eBuildingType = (BuildingTypes)pkPlayer->GetPlayerLegacies()->GetLegacyBuildingClassOverride(eBuildingClass);
+		lua_pushinteger(L, eBuildingType);
+		return 1;
+	}
+	return 0;
+}
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lGetLegacyUnitClassOverride(lua_State* L)
+{
+	const UnitClassTypes eUnitClass = (UnitClassTypes)luaL_checkint(L, 2);
+	CvPlayer* pkPlayer = GetInstance(L);
+	if (pkPlayer)
+	{
+		UnitTypes eUnitType = (UnitTypes)pkPlayer->GetPlayerLegacies()->GetLegacyUnitClassOverride(eUnitClass);
+		lua_pushinteger(L, eUnitType);
+		return 1;
+	}
+	return 0;
+}
 int CvLuaPlayer::lHasLegacy(lua_State* L)
 {
 	CvPlayerAI* pkPlayer = GetInstance(L);

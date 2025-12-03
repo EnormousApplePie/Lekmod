@@ -2738,9 +2738,17 @@ int CvBuilderTaskingAI::GetResourceWeight(ResourceTypes eResource, ImprovementTy
 
 		iWeight *= iModifier;
 	}
+#if !defined(LEKMOD_LEGACY)
 	else if(pkResource->getResourceUsage() == RESOURCEUSAGE_STRATEGIC && pkResource->getTechCityTrade())
+#else
+	else if (pkResource->getResourceUsage() == RESOURCEUSAGE_STRATEGIC && GET_TEAM(m_pPlayer->getTeam()).IsResourceTrade(eResource))
+#endif
 	{
-		bool bHasTech = GET_TEAM(m_pPlayer->getTeam()).GetTeamTechs()->HasTech((TechTypes) pkResource->getTechCityTrade());
+#if !defined(LEKMOD_LEGACY)
+		bool bHasTech = GET_TEAM(m_pPlayer->getTeam()).GetTeamTechs()->HasTech((TechTypes)pkResource->getTechCityTrade());
+#else
+		bool bHasTech = GET_TEAM(m_pPlayer->getTeam()).IsResourceTrade(eResource);
+#endif
 		if(bHasTech)
 		{
 			// measure quantity

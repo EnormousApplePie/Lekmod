@@ -168,7 +168,12 @@ public:
 	void changeGoldTradingCount(int iChange);
 
 	bool HavePolicyInTeam(PolicyTypes ePolicy);
-
+#if defined(LEKMOD_LEGACY)
+	bool IsResourceRevealed(ResourceTypes eResource) const;
+	void SetResourceRevealed(ResourceTypes eResource, bool bRevealed);
+	bool IsResourceTrade(ResourceTypes eResource) const;
+	void SetResourceTrade(ResourceTypes eResource, bool bTrade);
+#endif
 	int getAllowEmbassyTradingAllowedCount() const;
 	bool isAllowEmbassyTradingAllowed() const;
 	void changeAllowEmbassyTradingAllowedCount(int iChange);
@@ -517,7 +522,7 @@ protected:
 	Firaxis::Array< bool, REALLY_MAX_TEAMS > m_abTradeAgreement;
 	Firaxis::Array< bool, REALLY_MAX_TEAMS > m_abForcePeace;
 	Firaxis::Array< int, REALLY_MAX_PLAYERS > m_aiTurnTeamMet;
-
+#if !defined(LEKMOD_LEGACY)
 	typedef
 	FAllocArrayType< int,
 	                 FAllocArrayType< bool,
@@ -537,6 +542,29 @@ protected:
 	                 FAllocArray2DType< int,
 	                 FAllocArray2DType< int,
 	                 FAllocBase< 0, 0 > > > > > > > > > > > > > > > > > > CvTeamData;
+#else
+	typedef
+		FAllocArrayType< int,
+		FAllocArrayType< bool,
+		FAllocArrayType< bool,
+		FAllocArrayType< bool,
+		FAllocArrayType< bool,
+		FAllocArrayType< bool,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArrayType< int,
+		FAllocArray2DType< int,
+		FAllocArray2DType< int,
+		FAllocArray2DType< int,
+		FAllocBase< 0, 0 > > > > > > > > > > > > > > > > > > > >CvTeamData;
+#endif
 	CvTeamData m_BatchData;
 
 	int* m_aiForceTeamVoteEligibilityCount;
@@ -544,6 +572,10 @@ protected:
 	bool* m_abCanLaunch;
 	bool* m_abVictoryAchieved;
 	bool* m_abSmallAwardAchieved;
+#if defined(LEKMOD_LEGACY)
+	bool* m_abResourceRevealed;
+	bool* m_abResourceTrade;
+#endif
 
 	int* m_paiRouteChange;
 	int* m_paiBuildTimeChange;

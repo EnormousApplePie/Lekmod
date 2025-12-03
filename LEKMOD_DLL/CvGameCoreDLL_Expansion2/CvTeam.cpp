@@ -62,7 +62,10 @@ CvTeam::CvTeam()
 	m_abCanLaunch = NULL;
 	m_abVictoryAchieved = NULL;
 	m_abSmallAwardAchieved = NULL;
-
+#if defined(LEKMOD_LEGACY)
+	m_abResourceRevealed = NULL;
+	m_abResourceTrade = NULL;
+#endif
 	m_paiRouteChange = NULL;
 	m_paiBuildTimeChange = NULL;
 	m_paiProjectCount = NULL;
@@ -121,7 +124,10 @@ void CvTeam::uninit()
 	m_abCanLaunch = NULL;
 	m_abVictoryAchieved = NULL;
 	m_abSmallAwardAchieved = NULL;
-
+#if defined(LEKMOD_LEGACY)
+	m_abResourceRevealed = NULL;
+	m_abResourceTrade = NULL;
+#endif
 	m_paiRouteChange = NULL;
 	m_paiBuildTimeChange = NULL;
 	m_paiProjectCount = NULL;
@@ -261,6 +267,9 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 		int numBuildingInfos = GC.getNumBuildingInfos();
 		int numTerrainInfos = GC.getNumTerrainInfos();
 		int numImprovementInfos = GC.getNumImprovementInfos();
+#if defined(LEKMOD_LEGACY)
+		int numResourceInfos = GC.getNumResourceInfos();
+#endif
 #endif
 
 		//Perform batch allocation
@@ -271,6 +280,10 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 			{&m_abCanLaunch,						numVictoryInfos, 0},
 			{&m_abVictoryAchieved,					numVictoryInfos, 0},
 			{&m_abSmallAwardAchieved,				numSmallAwardInfos, 0},
+#if defined(LEKMOD_LEGACY)
+			{&m_abResourceRevealed,				    numResourceInfos, 0},
+			{&m_abResourceTrade,				    numResourceInfos, 0},
+#endif
 
 			{&m_paiRouteChange,						numRouteInfos, 0},
 			{&m_paiBuildTimeChange,					numBuildInfos, 0},
@@ -318,6 +331,13 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 		{
 			m_abSmallAwardAchieved[i] = false;
 		}
+#if defined(LEKMOD_LEGACY)
+		for (int i = 0; i < numResourceInfos; i++)
+		{
+			m_abResourceRevealed[i] = false;
+			m_abResourceTrade[i] = false;
+		}
+#endif
 #ifdef AUI_WARNING_FIXES
 		for (uint i = 0; i < numRouteInfos; i++)
 #else
@@ -397,10 +417,8 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 				m_ppaaiImprovementFreshWaterYieldChange[i][j] = 0;
 			}
 		}
-
 		m_pTeamTechs->Init(GC.GetGameTechs(), this);
 		m_pavProjectArtTypes = FNEW(std::vector<int> [GC.getNumProjectInfos()], c_eCiv5GameplayDLL, 0);
-		m_aeRevealedResources.clear();
 	}
 }
 
@@ -3113,6 +3131,173 @@ bool CvTeam::HavePolicyInTeam(PolicyTypes ePolicy)
 	}
 	return false;
 }
+#if defined(LEKMOD_LEGACY)
+void CvTeam::SetResourceRevealed(ResourceTypes eResource, bool bReveal)
+{
+	if (eResource == NO_RESOURCE) // Invalid resource
+		return;
+
+	if (IsResourceRevealed(eResource) == bReveal) // No change
+		return;
+
+	m_abResourceRevealed[eResource] = bReveal;
+
+	CvString strBuffer;
+	NotificationTypes eNotificationType = NO_NOTIFICATION_TYPE;
+	const bool bIsActiveTeam = (GetID() == GC.getGame().getActiveTeam());
+	CvMap& kMap = GC.getMap();
+	const int iNumPlots = kMap.numPlots();
+	
+	for (int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
+	{
+		CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iPlotLoop);
+		const ResourceTypes plotResource = pLoopPlot->getResourceType();
+		if (plotResource != eResource)
+			continue;
+		const CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
+		if (bReveal)
+		{
+			// update the resources
+			if (!pLoopPlot->isRevealed(m_eID))
+				continue;
+			if (pLoopPlot->getResourceType(m_eID) == NO_RESOURCE)
+				continue;
+			// Create resource link
+			if (pLoopPlot->isOwned())
+				pLoopPlot->DoFindCityToLinkResourceTo();
+			// Only update for active team
+			if (bIsActiveTeam)
+			{
+				// If we've force revealed the resource for this team, then don't send another event
+				if (!pLoopPlot->IsResourceForceReveal(GetID()))
+				{
+					pLoopPlot->setLayoutDirty(true);
+					pLoopPlot->updateYield();
+				}
+				// Notify the player that owns this Plot
+				if (pLoopPlot->getOwner() == GC.getGame().getActivePlayer() && pLoopPlot->getTeam() == GetID())
+				{
+					if (!CvPreGame::loadWBScenario() || GC.getGame().getGameTurn() > 0)
+					{
+						strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_RESOURCE", pResourceInfo->GetTextKey());
+
+						CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE", pResourceInfo->GetTextKey());
+
+						switch (pResourceInfo->getResourceUsage())
+						{
+						case RESOURCEUSAGE_LUXURY:
+							eNotificationType = NOTIFICATION_DISCOVERED_LUXURY_RESOURCE;
+							break;
+						case RESOURCEUSAGE_STRATEGIC:
+							eNotificationType = NOTIFICATION_DISCOVERED_STRATEGIC_RESOURCE;
+							break;
+						case RESOURCEUSAGE_BONUS:
+							eNotificationType = NOTIFICATION_DISCOVERED_BONUS_RESOURCE;
+							break;
+						}
+
+						CvNotifications* pNotifications = GET_PLAYER(pLoopPlot->getOwner()).GetNotifications();
+						if (pNotifications)
+							pNotifications->Add(eNotificationType, strBuffer, strSummary, pLoopPlot->getX(), pLoopPlot->getY(), eResource);
+					}
+				}
+			}
+		}
+		else // Not reveal
+		{
+			// Unlink resource from city
+			if (pLoopPlot->GetResourceLinkedCity() != NULL)
+			{
+				pLoopPlot->SetResourceLinkedCity(NULL);
+			}
+			// Update the plot layout if this is the active team
+			if (bIsActiveTeam)
+			{
+				pLoopPlot->setLayoutDirty(true);
+				pLoopPlot->updateYield();
+			}
+		}
+	}
+}
+bool CvTeam::IsResourceRevealed(ResourceTypes eResource) const
+{
+	return m_abResourceRevealed[eResource];
+}
+bool CvTeam::IsResourceTrade(ResourceTypes eResource) const
+{
+	return m_abResourceTrade[eResource];
+}
+void CvTeam::SetResourceTrade(ResourceTypes eResource, bool bTrade)
+{
+	if (eResource == NO_RESOURCE)
+		return;
+
+	if (IsResourceTrade(eResource) == bTrade)
+		return;
+
+	m_abResourceTrade[eResource] = bTrade;
+
+	const TeamTypes thisTeam = GetID();
+	CvMap& kMap = GC.getMap();
+	const int iNumPlots = kMap.numPlots();
+
+	CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
+	if (!pResourceInfo)
+		return;
+
+	for (int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
+	{
+		CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iPlotLoop);
+		ImprovementTypes plotImprovement = pLoopPlot->getImprovementType();
+		PlayerTypes ePlayer = pLoopPlot->getOwner();
+		if (ePlayer == NO_PLAYER) // Unowned plot
+			continue;
+		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+		if (!kPlayer.isAlive()) // Alive
+			continue;
+		if (kPlayer.getTeam() != thisTeam)
+			continue;
+		if (pLoopPlot->getResourceType() != eResource) // Not the resource we're looking for
+			continue;
+		bool bConnectable =
+			pLoopPlot->isCity() ||
+			(plotImprovement != NO_IMPROVEMENT &&
+			!pLoopPlot->IsImprovementPillaged() &&
+			GC.getImprovementInfo(plotImprovement)->IsImprovementResourceTrade(eResource));
+		
+		if (!bConnectable)
+			continue;
+
+		if (bTrade) // Enable trade
+		{
+			// slewis - added in so resources wouldn't be double counted when the minor civ researches the technology
+			if (!(kPlayer.isMinorCiv() && pLoopPlot->IsImprovedByGiftFromMajor()))
+			{
+				kPlayer.changeNumResourceTotal(eResource, pLoopPlot->getNumResourceForPlayer(ePlayer));
+			}
+
+			// Reconnect resource link
+			if (pLoopPlot->GetResourceLinkedCity() != NULL)
+			{
+				pLoopPlot->SetResourceLinkedCityActive(true);
+			}
+			// Create resource link
+			else
+			{
+				pLoopPlot->DoFindCityToLinkResourceTo();
+			}
+		}
+		else // Disable trade
+		{
+			kPlayer.changeNumResourceTotal(eResource, -pLoopPlot->getNumResourceForPlayer(ePlayer));
+
+			// Disconnect resource link
+			if (pLoopPlot->GetResourceLinkedCity() != NULL)
+				pLoopPlot->SetResourceLinkedCityActive(false);
+		}
+	}
+}
+#endif
 //	--------------------------------------------------------------------------------
 int CvTeam::getAllowEmbassyTradingAllowedCount() const
 {
@@ -5668,7 +5853,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					}
 				}
 			}
-
+#if !defined(LEKMOD_LEGACY)
 			NotificationTypes eNotificationType = NO_NOTIFICATION_TYPE;
 
 			const bool bIsActiveTeam = (GetID() == GC.getGame().getActiveTeam());
@@ -5794,6 +5979,31 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					}
 				}
 			}
+#else
+			for (int resource = 0; resource < GC.getNumResourceInfos(); resource++)
+			{
+				ResourceTypes eResource = (ResourceTypes)resource;
+				if (eResource == NO_RESOURCE)
+					continue;
+				CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
+				if (pResourceInfo == NULL)
+					continue;
+				const TechTypes eTechReveal = static_cast<TechTypes>(pResourceInfo->getTechReveal());
+				if (eTechReveal == eIndex)
+				{
+					SetResourceRevealed(eResource, bNewValue);
+				}
+				else if (eTechReveal == NO_TECH)
+				{
+					// If there's no reveal tech, the resource is always revealed
+					SetResourceRevealed(eResource, true);
+				}
+				if (pResourceInfo->getTechCityTrade() == eIndex)
+				{
+					SetResourceTrade(eResource, bNewValue);
+				}
+			}
+#endif
 		}
 
 		processTech(eIndex, ((bNewValue) ? 1 : -1));
@@ -7844,7 +8054,10 @@ void CvTeam::Read(FDataStream& kStream)
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abCanLaunch, GC.getNumVictoryInfos());
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abVictoryAchieved, GC.getNumVictoryInfos());
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abSmallAwardAchieved, GC.getNumSmallAwardInfos());
-
+#if defined(LEKMOD_LEGACY)
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abResourceRevealed, GC.getNumResourceInfos());
+	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abResourceTrade, GC.getNumResourceInfos());
+#endif
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiRouteChange, GC.getNumRouteInfos());
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiBuildTimeChange, GC.getNumBuildInfos());
 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiProjectCount, GC.getNumProjectInfos());
@@ -7997,6 +8210,10 @@ void CvTeam::Write(FDataStream& kStream) const
 	CvInfosSerializationHelper::WriteHashedDataArray<VictoryTypes, bool>(kStream, m_abCanLaunch, GC.getNumVictoryInfos());
 	CvInfosSerializationHelper::WriteHashedDataArray<VictoryTypes, bool>(kStream, m_abVictoryAchieved, GC.getNumVictoryInfos());
 	CvInfosSerializationHelper::WriteHashedDataArray<SmallAwardTypes, bool>(kStream, m_abSmallAwardAchieved, GC.getNumSmallAwardInfos());
+#if defined(LEKMOD_LEGACY)
+	CvInfosSerializationHelper::WriteHashedDataArray<ResourceTypes, bool>(kStream, m_abResourceRevealed, GC.getNumResourceInfos());
+	CvInfosSerializationHelper::WriteHashedDataArray<ResourceTypes, bool>(kStream, m_abResourceTrade, GC.getNumResourceInfos());
+#endif
 	CvInfosSerializationHelper::WriteHashedDataArray<RouteTypes, int>(kStream, m_paiRouteChange, GC.getNumRouteInfos());
 	CvInfosSerializationHelper::WriteHashedDataArray<BuildTypes, int>(kStream, m_paiBuildTimeChange, GC.getNumBuildInfos());
 	CvInfosSerializationHelper::WriteHashedDataArray<ProjectTypes, int>(kStream, m_paiProjectCount, GC.getNumProjectInfos());

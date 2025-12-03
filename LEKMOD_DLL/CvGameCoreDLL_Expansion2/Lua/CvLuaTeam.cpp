@@ -206,6 +206,9 @@ void CvLuaTeam::PushMethods(lua_State* L, int t)
 	Method(SetCurrentEra);
 
 	Method(UpdateEmbarkGraphics);
+#if defined(LEKMOD_LEGACY)
+	Method(IsResourceRevealed);
+#endif
 }
 //------------------------------------------------------------------------------
 const char* CvLuaTeam::GetTypeName()
@@ -1256,3 +1259,15 @@ int CvLuaTeam::lUpdateEmbarkGraphics(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvTeam::UpdateEmbarkGraphics);
 }
+#if defined(LEKMOD_LEGACY)
+//------------------------------------------------------------------------------
+//bool IsResourceRevealed(ResourceTypes eResource);
+int CvLuaTeam::lIsResourceRevealed(lua_State* L)
+{
+	CvTeam* pkTeam = GetInstance(L);
+	const ResourceTypes eResource = (ResourceTypes)lua_tointeger(L, 2);
+
+	lua_pushboolean(L, pkTeam->IsResourceRevealed(eResource));
+	return 1;
+}
+#endif

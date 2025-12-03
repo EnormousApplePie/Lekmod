@@ -5428,8 +5428,11 @@ void CvPlot::setOwner(PlayerTypes eNewValue, int iAcquiringCityID, bool bCheckUn
 					{
 						SetResourceLinkedCity(NULL);
 					}
-
+#if !defined(LEKMOD_LEGACY)
 					if(GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#else
+					if (GET_TEAM(getTeam()).IsResourceTrade(getResourceType()))
+#endif
 					{
 						if(getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType())->IsImprovementResourceTrade(getResourceType()))
 						{
@@ -5604,7 +5607,11 @@ void CvPlot::setOwner(PlayerTypes eNewValue, int iAcquiringCityID, bool bCheckUn
 				if(getResourceType() != NO_RESOURCE)
 				{
 					// Add Resource Quantity to total
-					if(GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#if !defined(LEKMOD_LEGACY)
+					if (GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#else
+					if (GET_TEAM(getTeam()).IsResourceTrade(getResourceType()))
+#endif
 					{
 						if(getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(getImprovementType())->IsImprovementResourceTrade(getResourceType()))
 						{
@@ -6210,7 +6217,7 @@ bool CvPlot::IsNaturalWonder() const
 
 	return GC.getFeatureInfo(eFeature)->IsNaturalWonder();
 }
-
+#if !defined(LEKMOD_LEGACY)
 //	--------------------------------------------------------------------------------
 ResourceTypes CvPlot::getResourceType(TeamTypes eTeam) const
 {
@@ -6245,8 +6252,22 @@ ResourceTypes CvPlot::getResourceType(TeamTypes eTeam) const
 
 	return (ResourceTypes)m_eResourceType;
 }
+#else
+//	--------------------------------------------------------------------------------
+ResourceTypes CvPlot::getResourceType(TeamTypes eTeam) const
+{
+	if (eTeam != NO_TEAM)
+	{
+		if (m_eResourceType != NO_RESOURCE)
+		{
+			if (!GET_TEAM(eTeam).IsResourceRevealed((ResourceTypes)m_eResourceType))
+				return NO_RESOURCE;
+		}
+	}
 
-
+	return (ResourceTypes)m_eResourceType;
+}
+#endif
 //	--------------------------------------------------------------------------------
 ResourceTypes CvPlot::getNonObsoleteResourceType(TeamTypes eTeam) const
 {
@@ -6687,9 +6708,17 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 					bool bBuilderHasTech = false;
 					if (eBuilder != NO_PLAYER)
 					{
+#if !defined(LEKMOD_LEGACY)
 						bBuilderHasTech = GET_TEAM(GET_PLAYER(eBuilder).getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade());
+#else
+						bBuilderHasTech = GET_TEAM(GET_PLAYER(eBuilder).getTeam()).IsResourceRevealed(getResourceType());
+#endif	
 					}
+#if !defined(LEKMOD_LEGACY)
 					if (bIgnoreResourceTechPrereq && bBuilderHasTech || GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#else
+					if (bIgnoreResourceTechPrereq && bBuilderHasTech || GET_TEAM(getTeam()).IsResourceTrade(getResourceType()))
+#endif	
 #else
 					if (bIgnoreResourceTechPrereq || GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
 #endif
@@ -6738,9 +6767,17 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 					bool bBuilderHasTech = false;
 					if (eBuilder != NO_PLAYER)
 					{
+#if !defined(LEKMOD_LEGACY)
 						bBuilderHasTech = GET_TEAM(GET_PLAYER(eBuilder).getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade());
+#else
+						bBuilderHasTech = GET_TEAM(GET_PLAYER(eBuilder).getTeam()).IsResourceRevealed(getResourceType());
+#endif
 					}
+#if !defined(LEKMOD_LEGACY)
 					if (IsImprovedByGiftFromMajor() && bBuilderHasTech || GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#else
+					if (IsImprovedByGiftFromMajor() && bBuilderHasTech || GET_TEAM(getTeam()).IsResourceTrade(getResourceType()))
+#endif
 #else
 					if (IsImprovedByGiftFromMajor() || // If old improvement was a gift, it ignored our tech limits, so be sure to remove resources properly
 						GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
@@ -6828,7 +6865,11 @@ void CvPlot::SetImprovementPillaged(bool bPillaged)
 		{
 			if(getTeam() != NO_TEAM)
 			{
+#if !defined(LEKMOD_LEGACY)
 				if(GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#else
+				if (GET_TEAM(getTeam()).IsResourceTrade(getResourceType()))
+#endif
 				{
 					if(GC.getImprovementInfo(getImprovementType())->IsImprovementResourceTrade(getResourceType()))
 					{

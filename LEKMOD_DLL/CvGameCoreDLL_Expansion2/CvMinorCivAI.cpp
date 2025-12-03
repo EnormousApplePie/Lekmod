@@ -4824,11 +4824,20 @@ ResourceTypes CvMinorCivAI::GetNearbyResourceForQuest(PlayerTypes ePlayer)
 			}
 
 			// Player has to be able to use it
+#if !defined(LEKMOD_LEGACY)
 			eConnectTech = (TechTypes) pkResourceInfo->getTechCityTrade();
-			if(!GET_TEAM(eTeam).GetTeamTechs()->HasTech(eConnectTech))
+			if (!GET_TEAM(eTeam).GetTeamTechs()->HasTech(eConnectTech))
 			{
 				continue;
 			}
+#else
+			bool isCanTrade = GET_TEAM(eTeam).IsResourceTrade(eResource);
+			if (!isCanTrade)
+			{
+				continue;
+			}
+#endif
+			
 
 #ifdef NQ_NO_UNIQUE_LUX_REQUESTS
 			// cannot be a resource unique to a civilization (i.e. Indonesian uniques)

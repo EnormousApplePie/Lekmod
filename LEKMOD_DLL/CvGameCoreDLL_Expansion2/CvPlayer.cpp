@@ -74,53 +74,53 @@ bool isEmpty(const char* szString)
 // Public Functions...
 namespace FSerialization
 {
-	void SyncPlayer()
+void SyncPlayer()
+{
+	if(GC.getGame().isNetworkMultiPlayer())
 	{
-		if(GC.getGame().isNetworkMultiPlayer())
+		PlayerTypes eAuthoritativePlayerID = GC.getGame().getActivePlayer();
+		CvPlayer& authoritativePlayer = GET_PLAYER(eAuthoritativePlayerID);
+		const FAutoArchive& archive = authoritativePlayer.getSyncArchive();
+		if(archive.hasDeltas())
 		{
-			PlayerTypes eAuthoritativePlayerID = GC.getGame().getActivePlayer();
-			CvPlayer& authoritativePlayer = GET_PLAYER(eAuthoritativePlayerID);
-			const FAutoArchive& archive = authoritativePlayer.getSyncArchive();
-			if(archive.hasDeltas())
+			FMemoryStream ms;
+			std::vector<std::pair<std::string, std::string> > callStacks;
+			archive.saveDelta(ms, callStacks);
+			gDLL->sendPlayerSyncCheck(eAuthoritativePlayerID, ms, callStacks);
+		}
+
+		// host is authoritative for AI players
+
+		if(gDLL->IsHost())
+		{
+			for(int i = 0; i < MAX_PLAYERS; ++i)
 			{
-				FMemoryStream ms;
-				std::vector<std::pair<std::string, std::string> > callStacks;
-				archive.saveDelta(ms, callStacks);
-				gDLL->sendPlayerSyncCheck(eAuthoritativePlayerID, ms, callStacks);
-			}
-	
-			// host is authoritative for AI players
-	
-			if(gDLL->IsHost())
-			{
-				for(int i = 0; i < MAX_PLAYERS; ++i)
+				CvPlayer& player = GET_PLAYER(static_cast<PlayerTypes>(i));
+				if(!player.isHuman() && player.isAlive())
 				{
-					CvPlayer& player = GET_PLAYER(static_cast<PlayerTypes>(i));
-					if(!player.isHuman() && player.isAlive())
-					{
-						const FAutoArchive& aiArchive = player.getSyncArchive();
-						FMemoryStream ms;
-						std::vector<std::pair<std::string, std::string> > callStacks;
-						aiArchive.saveDelta(ms, callStacks);
-						gDLL->sendPlayerSyncCheck(static_cast<PlayerTypes>(i), ms, callStacks);
-					}
+					const FAutoArchive& aiArchive = player.getSyncArchive();
+					FMemoryStream ms;
+					std::vector<std::pair<std::string, std::string> > callStacks;
+					aiArchive.saveDelta(ms, callStacks);
+					gDLL->sendPlayerSyncCheck(static_cast<PlayerTypes>(i), ms, callStacks);
 				}
 			}
 		}
 	}
-	
-	//	--------------------------------------------------------------------------------
-	// clears ALL deltas for ALL players
-	void ClearPlayerDeltas()
+}
+
+//	--------------------------------------------------------------------------------
+// clears ALL deltas for ALL players
+void ClearPlayerDeltas()
+{
+	int i = 0;
+	for(i = 0; i < MAX_PLAYERS; ++i)
 	{
-		int i = 0;
-		for(i = 0; i < MAX_PLAYERS; ++i)
-		{
-			CvPlayer& player = GET_PLAYER(static_cast<PlayerTypes>(i));
-			FAutoArchive& archive = player.getSyncArchive();
-			archive.clearDelta();
-		}
+		CvPlayer& player = GET_PLAYER(static_cast<PlayerTypes>(i));
+		FAutoArchive& archive = player.getSyncArchive();
+		archive.clearDelta();
 	}
+}
 }
 
 //	--------------------------------------------------------------------------------
@@ -28130,7 +28130,6 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 	// Free Units
 	if (kLegacy.IncludesOneShotFreeUnits(eLegacy) && !m_pPlayerLegacies->HasOneShotFreeUnitsFired(eLegacy))
 	{
-		
 		m_pPlayerLegacies->SetOneShotFreeUnitsFired(eLegacy, true);
 
 		if (getCapitalCity() != NULL)
@@ -28216,6 +28215,15 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 		if (iTemp != 0)
 		{
 			ChangeGreatWorkClassTourismChange(eGreatWorkClass, iTemp);
+		}
+	}
+	for (iI = 0; iI < GC.getNumResourceInfos(); iI++)
+	{
+		ResourceTypes eResource = (ResourceTypes)iI;
+		if (kLegacy.IsRevealResource(eResource))
+		{
+			GET_TEAM(getTeam()).SetResourceRevealed(eResource, (bool)iChange);
+			GET_TEAM(getTeam()).SetResourceTrade(eResource, (bool)iChange);
 		}
 	}
 	ChangePlotGoldCostMod(kLegacy.GetPlotGoldCostModifier() * iChange);
