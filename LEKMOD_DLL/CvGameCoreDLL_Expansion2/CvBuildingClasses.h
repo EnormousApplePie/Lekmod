@@ -346,6 +346,9 @@ public:
 
 	int GetResourceYieldChange(int i, int j) const;
 	int* GetResourceYieldChangeArray(int i) const;
+#if defined(LEKMOD_LEGACY)
+	int GetResourceClassYieldChangePlayer(int i, int j) const;
+#endif
 	int GetFeatureYieldChange(int i, int j) const;
 	int* GetFeatureYieldChangeArray(int i) const;
 	int GetResourceYieldChangeGlobal(int iResource, int iYieldType) const;
@@ -610,6 +613,9 @@ private:
 	std::pair<int**, size_t> m_ppiBuildingClassYieldChanges;
 #else
 	int** m_ppaiResourceYieldChange;
+#if defined(LEKMOD_LEGACY) // Player level building driven resourceclass based yield changes cuz im not typing that shit out
+	int** m_ppaiResourceClassYieldChangePlayer;
+#endif
 #if defined(TRADE_REFACTOR)
 	int** m_ppaiTradeConnectionOriginLandYieldChange;
 	int** m_ppaiTradeConnectionOriginSeaYieldChange;

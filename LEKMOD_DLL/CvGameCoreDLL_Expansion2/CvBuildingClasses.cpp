@@ -233,6 +233,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_ppiBuildingClassYieldChanges(std::pair<int**, size_t>(NULL, 0)),
 #else
 	m_ppaiResourceYieldChange(NULL),
+#if defined(LEKMOD_LEGACY)
+	m_ppaiResourceClassYieldChangePlayer(NULL),
+#endif
 #if defined(TRADE_REFACTOR)
 	m_ppaiTradeConnectionOriginLandYieldChange(NULL),
 	m_ppaiTradeConnectionOriginSeaYieldChange(NULL),
@@ -339,6 +342,9 @@ CvBuildingEntry::~CvBuildingEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges.first, m_ppiBuildingClassYieldChanges.second);
 #else
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiResourceYieldChange);
+#if defined(LEKMOD_LEGACY)
+	CvDatabaseUtility::SafeDelete2DArray(m_ppaiResourceClassYieldChangePlayer);
+#endif
 #if defined(TRADE_REFACTOR)
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiTradeConnectionOriginLandYieldChange);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppaiTradeConnectionOriginSeaYieldChange);
@@ -706,7 +712,32 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 #if defined(LEKMOD_v34)
 	kUtility.SetYields(m_piGarrisonYieldChange, "Building_GarrisonYieldChanges", "BuildingType", szBuildingType);
 #endif
-
+#if defined(LEKMOD_LEGACY)
+	// Player wide resource class yield changes
+	{
+		kUtility.Initialize2DArray(m_ppaiResourceClassYieldChangePlayer, "ResourceClasses", "Yields");
+		std::string strKey("Building_ResourceClassYieldChangesPlayer");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if(pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, 
+				"SELECT ResourceClasses.ID as ResourceClassID, Yields.ID as YieldID, Yield "
+				"FROM Building_ResourceClassYieldChangesPlayer "
+				"INNER JOIN ResourceClasses ON ResourceClasses.Type = ResourceClassType "
+				"INNER JOIN Yields ON Yields.Type = YieldType "
+				"WHERE BuildingType = ? ");
+		}
+		pResults->Bind(1, szBuildingType);
+		while(pResults->Step())
+		{
+			const int ResourceClassID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
+			m_ppaiResourceClassYieldChangePlayer[ResourceClassID][YieldID] = yield;
+		}
+		pResults->Reset();
+	}
+#endif
 	//ResourceYieldChanges
 	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -2627,6 +2658,16 @@ int* CvBuildingEntry::GetResourceYieldChangeArray(int i) const
 	return m_ppaiResourceYieldChange[i];
 #endif
 }
+#if defined(LEKMOD_LEGACY)
+int CvBuildingEntry::GetResourceClassYieldChangePlayer(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumResourceClassInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiResourceClassYieldChangePlayer ? m_ppaiResourceClassYieldChangePlayer[i][j] : -1;
+}
+#endif
 /// Change to Resource yield by type
 int CvBuildingEntry::GetResourceYieldChangeGlobal(int iResource, int iYieldType) const
 {

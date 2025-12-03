@@ -172,6 +172,15 @@ function GatherInfoAboutUniqueStuff( civType )
 			validUnitBuilds[thisUnitClass.Type] = nil;
 		end
 		-- MOD.EAP: End
+		local player = Game.GetActivePlayer()
+		local activePlayer = Players[player]
+		local legacyUnit = activePlayer:GetLegacyUnitClassOverride( thisUnitClass.ID )
+		if legacyUnit ~= -1 then
+			local legacyUnitInfo = GameInfo.Units[legacyUnit];
+			if legacyUnitInfo then
+				validUnitBuilds[thisUnitClass.Type] = legacyUnitInfo.Type
+			end
+		end
 	end
 
 	-- put in my overrides
@@ -184,6 +193,15 @@ function GatherInfoAboutUniqueStuff( civType )
 	-- put in the default buildings for any civ
 	for thisBuildingClass in GameInfo.BuildingClasses() do
 		validBuildingBuilds[thisBuildingClass.Type] = thisBuildingClass.DefaultBuilding
+		local player = Game.GetActivePlayer()
+		local activePlayer = Players[player]
+		local legacyBuilding = activePlayer:GetLegacyBuildingClassOverride( thisBuildingClass.ID )
+		if legacyBuilding ~= -1 then
+			local legacyBuildingInfo = GameInfo.Buildings[legacyBuilding];
+			if legacyBuildingInfo then
+				validBuildingBuilds[thisBuildingClass.Type] = legacyBuildingInfo.Type
+			end
+		end
 	end
 
 	-- put in my overrides

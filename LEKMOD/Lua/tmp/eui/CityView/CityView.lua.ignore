@@ -1724,6 +1724,7 @@ local function UpdateCityViewNow()
 					local gpThreshold = city:GetSpecialistUpgradeThreshold(unitClass.ID)
 					local gpProgress = city:GetSpecialistGreatPersonProgressTimes100(specialist.ID) / 100
 					local gpChange = specialist.GreatPeopleRateChange * city:GetSpecialistCount( specialist.ID )
+					gpChange = gpChange + city:GetGreatWorkClassGreatPeoplePoints(specialist.ID) * 100;
 					for building in GameInfo.Buildings{SpecialistType = specialist.Type} do
 						if city:IsHasBuilding(building.ID) then
 							gpChange = gpChange + building.GreatPeopleRateChange
@@ -1732,6 +1733,7 @@ local function UpdateCityViewNow()
 
 					local gpChangePlayerMod = cityOwner:GetGreatPeopleRateModifier()
 					local gpChangeCityMod = city:GetGreatPeopleRateModifier()
+					local gpChangeBuildingMod = city:GetBuildingGreatPeopleRateModifier(specialist.ID);
 					local gpChangePolicyMod = 0
 					local gpChangeWorldCongressMod = 0
 					local gpChangeGoldenAgeMod = 0
@@ -1805,7 +1807,7 @@ local function UpdateCityViewNow()
 
 					end
 
-					local gpChangeMod = gpChangePlayerMod + gpChangePolicyMod + gpChangeWorldCongressMod + gpChangeCityMod + gpChangeGoldenAgeMod
+					local gpChangeMod = gpChangePlayerMod + gpChangePolicyMod + gpChangeWorldCongressMod + gpChangeCityMod + gpChangeBuildingMod + gpChangeGoldenAgeMod
 					gpChange = (gpChangeMod / 100 + 1) * gpChange
 
 					if gpProgress > 0 or gpChange > 0 then
@@ -1831,8 +1833,8 @@ local function UpdateCityViewNow()
 							if gpChangePolicyMod ~= 0 then
 								tips:insert( L( "TXT_KEY_POLICY_GP_MOD", gpChangePolicyMod ) )
 							end
-							if gpChangeCityMod ~= 0 then
-								tips:insert( L( "TXT_KEY_CITY_GP_MOD", gpChangeCityMod ) )
+							if gpChangeCityMod + gpChangeBuildingMod ~= 0 then
+								tips:insert( L( "TXT_KEY_CITY_GP_MOD", gpChangeCityMod + gpChangeBuildingMod ) )
 							end
 							if gpChangeGoldenAgeMod ~= 0 then
 								tips:insert( L( "TXT_KEY_GOLDENAGE_GP_MOD", gpChangeGoldenAgeMod ) )

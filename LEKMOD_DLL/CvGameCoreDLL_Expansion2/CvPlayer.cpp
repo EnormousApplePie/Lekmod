@@ -10702,7 +10702,32 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 		{
 			changeResourceYieldChange(((ResourceTypes)iJ), ((YieldTypes)iI), (pBuildingInfo->GetResourceYieldChangeGlobal((ResourceTypes)iJ, (YieldTypes)iI) * iChange));
 		}
-		
+#if defined(LEKMOD_LEGACY)
+		for (iJ = 0; iJ < GC.getNumResourceClassInfos(); iJ++)
+		{
+			ResourceClassTypes eResourceClass = (ResourceClassTypes)iJ;
+			int iYield = pBuildingInfo->GetResourceClassYieldChangePlayer(eResourceClass, iI) * iChange;
+			if (iYield != 0)
+			{
+				ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+				ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
+				for (int i = 0; i < GC.getNumResourceInfos(); ++i)
+				{
+					ResourceTypes eResource = (ResourceTypes)i;
+					const CvResourceInfo* pResource = GC.getResourceInfo(eResource);
+					if (!pResource)
+						continue;
+					// Always Skip Hidden Artifacts and Artifacts
+					if (eResource == eHiddenArtifacts || eResource == eArtifacts)
+						continue;
+					if (pResource->getResourceClassType() == eResourceClass)
+					{
+						changeResourceYieldChange(eResource, ((YieldTypes)iI), iYield * iChange);
+					}
+				}
+			}
+		}
+#endif
 	}
 
 	for(iI = 0; iI < GC.getNumSpecialistInfos(); iI++)

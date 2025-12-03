@@ -8421,9 +8421,15 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		{
 			TeamTypes eTeam = GET_PLAYER(ePlayer).getTeam();
 			const CvResourceInfo* pkResourceInfo = GC.getResourceInfo(eResource);
+#if !defined(LEKMOD_LEGACY)
 			if(pkResourceInfo != NULL && eTeam != NO_TEAM && GET_TEAM(eTeam).GetTeamTechs()->HasTech((TechTypes) pkResourceInfo->getTechReveal()))
 			{
 				if (pkResourceInfo->getPolicyReveal() == NO_POLICY || GET_PLAYER(ePlayer).GetPlayerPolicies()->HasPolicy((PolicyTypes)pkResourceInfo->getPolicyReveal()))
+#else
+			if (GET_TEAM(eTeam).IsResourceRevealed(eResource))
+			{
+				if (GET_TEAM(eTeam).IsResourceTrade(eResource))
+#endif
 				{
 					// Extra yield from resources
 					if(pWorkingCity != NULL)

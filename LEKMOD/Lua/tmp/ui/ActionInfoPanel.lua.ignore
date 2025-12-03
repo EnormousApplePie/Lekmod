@@ -487,7 +487,7 @@ function OnEndTurnDirty()
 		buttonDisabled = false;
 		iFlashingState = FLASHING_END_TURN;
 	elseif (EndTurnBlockingType == EndTurnBlockingTypes.ENDTURN_BLOCKING_CHOOSE_LEGACY) then
-		strEndTurnMessage = "TXT_KEY_CHOOSE_LEGACY";
+		strEndTurnMessage = Locale.ConvertTextKey("TXT_KEY_CHOOSE_LEGACY");
 		buttonDisabled = false;
 		iFlashingState = FLASHING_END_TURN;
 	else

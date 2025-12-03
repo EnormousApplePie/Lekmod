@@ -6537,7 +6537,7 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding, CvString* toolTipSink
 		}
 	}
 #endif
-#if !defined(LEKMOD_LEGACY)
+#if defined(LEKMOD_LEGACY)
 	// From Legacies
 	iTempMod = GET_PLAYER(getOwner()).GetPlayerLegacies()->GetBuildingClassProductionModifier((BuildingClassTypes)kBuildingClassInfo.GetID());
 	if(iTempMod != 0)

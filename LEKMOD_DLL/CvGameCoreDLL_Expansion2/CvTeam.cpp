@@ -3172,7 +3172,6 @@ void CvTeam::SetResourceRevealed(ResourceTypes eResource, bool bReveal)
 				if (!pLoopPlot->IsResourceForceReveal(GetID()))
 				{
 					pLoopPlot->setLayoutDirty(true);
-					pLoopPlot->updateYield();
 				}
 				// Notify the player that owns this Plot
 				if (pLoopPlot->getOwner() == GC.getGame().getActivePlayer() && pLoopPlot->getTeam() == GetID())
@@ -3202,6 +3201,7 @@ void CvTeam::SetResourceRevealed(ResourceTypes eResource, bool bReveal)
 					}
 				}
 			}
+			pLoopPlot->updateYield();
 		}
 		else // Not reveal
 		{

@@ -1020,10 +1020,11 @@ local function UpdateTopPanelNow()
 		local resource = GameInfo.Resources[ resourceID ]
 
 		local numResourceUsed = g_activePlayer:GetNumResourceUsed( resourceID )
+		local revealed = g_activeTeam:IsResourceRevealed( resourceID )
 
 		if numResourceUsed > 0
-			or ( g_activeTeamTechs:HasTech(GameInfoTypes[resource.TechReveal])
-			and ( civBE_mode or g_activeTeamTechs:HasTech(GameInfoTypes[resource.TechCityTrade]) ) )
+			or revealed
+			and ( civBE_mode or g_activeTeamTechs:HasTech(GameInfoTypes[resource.TechCityTrade]) )
 		then
 			resourceInstance:SetText( Colorize( g_activePlayer:GetNumResourceAvailable(resourceID, true) ) .. resource.IconString )
 		else
@@ -1611,6 +1612,9 @@ g_toolTipHandler.SciencePerTurn = function()-- control )
 		-- Science from Other Players
 		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_MINORS", g_activePlayer:GetScienceFromOtherPlayersTimes100() / 100 )
 
+		-- Science from Religion
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_RELIGION", g_activePlayer:GetYieldFromReligionTimes100(GameInfoTypes.YIELD_SCIENCE) / 100 )
+
 		if civ5_mode then
 			-- Science from Happiness
 			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_HAPPINESS", g_activePlayer:GetScienceFromHappinessTimes100() / 100 )
@@ -2085,6 +2089,7 @@ if civ5_mode then
 			local happinessFromExtraResources = g_activePlayer:GetHappinessFromResourceVariety()
 			local extraLuxuryHappiness = g_activePlayer:GetExtraHappinessPerLuxury()
 			local buildingHappiness = g_activePlayer:GetHappinessFromBuildings()
+			local legacyHappiness = g_activePlayer:GetHappinessFromLegacies()
 
 			local cityHappiness = 0
 			local garrisonedUnitsHappiness = 0
@@ -2107,7 +2112,7 @@ if civ5_mode then
 			local leagueHappiness = bnw_mode and g_activePlayer:GetHappinessFromLeagues() or 0
 			local totalHappiness = g_activePlayer:GetHappiness()
 			local happinessFromVassals = g_activePlayer.GetHappinessFromVassals and g_activePlayer:GetHappinessFromVassals() or 0	-- Compatibility with Putmalk's Civ IV Diplomacy Features Mod
-			local handicapHappiness = totalHappiness - policiesHappiness - resourcesHappiness - cityHappiness - buildingHappiness - garrisonedUnitsHappiness - minorCivHappiness - tradeRouteHappiness - religionHappiness - naturalWonderHappiness - extraHappinessPerCity - leagueHappiness - happinessFromVassals	-- Compatibility with Putmalk's Civ IV Diplomacy Features Mod
+			local handicapHappiness = totalHappiness - policiesHappiness - resourcesHappiness - cityHappiness - buildingHappiness - legacyHappiness - garrisonedUnitsHappiness - minorCivHappiness - tradeRouteHappiness - religionHappiness - naturalWonderHappiness - extraHappinessPerCity - leagueHappiness - happinessFromVassals	-- Compatibility with Putmalk's Civ IV Diplomacy Features Mod
 
 			if g_activePlayer:IsEmpireVeryUnhappy() then
 
@@ -2184,6 +2189,7 @@ if civ5_mode then
 			tips:insertLocalizedBulletIfNonZero( "TXT_KEY_TP_HAPPINESS_DIFFICULTY_LEVEL", handicapHappiness )
 			tips:insertLocalizedBulletIfNonZero( "TXT_KEY_TP_HAPPINESS_POLICIES", math_max(policiesHappiness,0) )
 			tips:insertLocalizedBulletIfNonZero( "TXT_KEY_TP_HAPPINESS_BUILDINGS", buildingHappiness )
+			tips:insertLocalizedBulletIfNonZero( "TXT_KEY_TP_HAPPINESS_LEGACIES", legacyHappiness )
 			tips:insertLocalizedBulletIfNonZero( "TXT_KEY_TP_HAPPINESS_CITIES", cityHappiness )
 			tips:insertLocalizedBulletIfNonZero( "TXT_KEY_TP_HAPPINESS_GARRISONED_UNITS", garrisonedUnitsHappiness )
 			tips:insertLocalizedBulletIfNonZero( "TXT_KEY_TP_HAPPINESS_CONNECTED_CITIES", tradeRouteHappiness )

@@ -167,6 +167,10 @@ local function PolicyColor( s )
 	return TextColor("[COLOR_MAGENTA]", s)
 end
 
+local function LegacyColor( s )
+	return TextColor("[COLOR_XP_BLUE]", s)
+end
+
 local function TechColor( s )
 	return TextColor("[COLOR_CYAN]", s)
 end
@@ -218,12 +222,19 @@ local function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 	if not unit then
 		return "<Unit undefined in game database>"
 	end
-
+	-- Player data
+	local activePlayerID = Game and Game.GetActivePlayer()
+	local activePlayer = activePlayerID and Players[ activePlayerID ]
+	local city, activeCivilizationType
 	-- Unit XML stats
 	local productionCost = unit.Cost
 	local rangedStrength = unit.RangedCombat
 	local unitRange = unit.Range
 	local combatStrength = unit.Combat
+	if activePlayer then 
+		rangedStrength = rangedStrength + activePlayer:GetLegacyUnitRangedCombatChange( unitID )
+		combatStrength = combatStrength + activePlayer:GetLegacyUnitCombatChange( unitID )
+	end
 	local unitMoves = unit.Moves
 	local unitDomainType = unit.Domain
 
@@ -239,12 +250,7 @@ local function GetHelpTextForUnit( unitID ) -- isIncludeRequirementsInfo )
 			unitMoves = unitMoves + (promotion.MovesChange or 0)
 		end
 	end
-
-	-- Player data
-	local activePlayerID = Game and Game.GetActivePlayer()
-	local activePlayer = activePlayerID and Players[ activePlayerID ]
-	local city, activeCivilizationType
-
+	
 	-- BE orbital units
 	local orbitalInfo = civBE_mode and unit.Orbital and GameInfo.OrbitalUnits[ unit.Orbital ]
 
@@ -555,6 +561,8 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 	local maxGlobalInstances = buildingClass and tonumber(buildingClass.MaxGlobalInstances) or 0
 	local thisBuildingType = { BuildingType = buildingType }
 	local thisBuildingAndResourceTypes =  { BuildingType = buildingType }
+	local thisBuildingAndResourceClassTypes = { BuildingType = buildingType }
+	local thisBuildingAndImprovementTypes = { BuildingType = buildingType }
 	local thisBuildingClassType = { BuildingClassType = buildingClassType }
 	local activeTeamID = Game and Game.GetActiveTeam()
 	local activeTeam = activeTeamID and Teams[ activeTeamID ]
@@ -592,8 +600,13 @@ local function GetHelpTextForBuilding( buildingID, bExcludeName, bExcludeHeader,
 	------------------
 	-- Era Filter
 	local function eraFilter(row)
-    return row and g_isScienceEnabled and (not activeTeamEra or row.ID > activeTeamEra)
-end
+    	return row and g_isScienceEnabled and (not activeTeamEra or row.ID > activeTeamEra)
+	end
+	------------------
+	-- Legacy Filter
+	local function legacyFilter(row)
+		return row and not( activePlayer and activePlayer:HasLegacy( row.ID ))
+	end
 	------------------
 	-- Policy Filter
 	local function policyFilter( row )
@@ -632,7 +645,10 @@ end
 			happinessChange = happinessChange + activePlayer:GetExtraBuildingHappinessFromPolicies( buildingID )
 			if gk_mode then
 				happinessChange = happinessChange + activePlayer:GetPlayerBuildingClassHappiness( buildingClassID )
-				happinessChange = happinessChange + activePlayer:GetTraitBuildingClassHappiness( buildingID )
+				happinessChange = happinessChange + activePlayer:GetTraitBuildingClassHappiness( buildingClassID )
+				happinessChange = happinessChange + activePlayer:GetTraitBuildingClassGlobalHappiness( buildingClassID )
+				happinessChange = happinessChange + activePlayer:GetLegacyBuildingClassGlobalHappiness( buildingClassID )
+				happinessChange = happinessChange + activePlayer:GetLegacyBuildingClassHappiness( buildingClassID )
 			end
 		else
 			-- get the active perk types
@@ -677,8 +693,11 @@ end
 					yieldChange = yieldChange + activePlayer:GetPlayerBuildingClassYieldChange( buildingClassID, yieldID )
 								+ activePlayer:GetPolicyBuildingClassYieldChange( buildingClassID, yieldID )
 								+ activePlayer:GetTraitBuildingClassYieldChange( buildingClassID, yieldID )
+								+ activePlayer:GetLegacyBuildingClassYieldChange( buildingClassID, yieldID )
 				end
-				yieldModifier = yieldModifier + activePlayer:GetPolicyBuildingClassYieldModifier( buildingClassID, yieldID )
+				yieldModifier = yieldModifier + activePlayer:GetPolicyBuildingClassYieldModifier( buildingClassID, yieldID ) + activePlayer:GetTraitBuildingClassYieldModifier( buildingClassID, yieldID )
+				+ activePlayer:GetLegacyBuildingClassYieldModifier( buildingClassID, yieldID )
+				-- Player Perks
 				for i=1, #activePerkTypes do
 					yieldChange = yieldChange + Game.GetPlayerPerkBuildingClassFlatYieldChange( activePerkTypes[i], buildingClassID, yieldID )
 					yieldModifier = yieldModifier + Game.GetPlayerPerkBuildingClassPercentYieldChange( activePerkTypes[i], buildingClassID, yieldID )
@@ -836,7 +855,14 @@ end
 	local specialistType = building.SpecialistType
 	local specialist = specialistType and GameInfo.Specialists[ specialistType ]
 	if specialist then
-		tips:insertIf( ( building.GreatPeopleRateChange or 0 ) ~= 0 and S("%s %+i%s", L( specialist.GreatPeopleTitle ), building.GreatPeopleRateChange, GreatPeopleIcon( specialistType ) ) )
+		if activePlayer then 
+			local specialistrate = building.GreatPeopleRateChange + activePlayer:GetLegacyBuildingClassGreatPersonPointChange( buildingClassID, specialist.ID )
+			tips:insertIf( specialistrate ~= 0 and S("%s %+i%s", L( specialist.GreatPeopleTitle ), specialistrate, GreatPeopleIcon( specialistType ) ) )
+			local specificRateChange = activePlayer:GetLegacyBuildingClassGreatPersonRateModifier( buildingClassID, specialist.ID )
+			tips:insertIf( specificRateChange ~= 0 and S("%s %+i%%%s", L( specialist.GreatPeopleTitle ), specificRateChange, GreatPeopleIcon( specialistType ) ) )
+		else
+			tips:insertIf( ( building.GreatPeopleRateChange  or 0 ) ~= 0 and S("%s %+i%s", L( specialist.GreatPeopleTitle ), specialistrate, GreatPeopleIcon( specialistType ) ) )
+		end
 		if (building.SpecialistCount or 0) ~= 0 then
 			if civ5_mode then
 				local numSpecialistsInBuilding = UI_GetHeadSelectedCity() and city:GetNumSpecialistsInBuilding( buildingID ) or building.SpecialistCount
@@ -848,6 +874,18 @@ end
 				tips:insert( S( "%i[ICON_CITIZEN]%s /%s", building.SpecialistCount, L( specialist.Description ), GetSpecialistYields( city, specialist ) ) )
 			end
 		end
+	end
+	-- generalized specialist stuff, not keyed to the building's main specialist
+	for specialistRow in GameInfo.Specialists() do
+	    local specialistID = specialistRow.ID
+	    if specialistRow ~= specialist then -- skip the main specialist, already handled above
+	        if activePlayer then
+	            local generalSpecialistRate = activePlayer:GetLegacyBuildingClassGreatPersonPointChange(buildingClassID, specialistID)
+	            tips:insertIf(generalSpecialistRate ~= 0 and S("%s %+i%s", L(specialistRow.GreatPeopleTitle), generalSpecialistRate, GreatPeopleIcon(specialistRow.Type) ) )
+	            local specificRateChange = activePlayer:GetLegacyBuildingClassGreatPersonRateModifier(buildingClassID, specialistID)
+	            tips:insertIf( specificRateChange ~= 0 and S("%s %+i%%%s", L(specialistRow.GreatPeopleTitle), specificRateChange, GreatPeopleIcon(specialistRow.Type) ) )
+	        end
+	    end
 	end
 
 	if civ5bnw_mode then
@@ -908,7 +946,18 @@ end
 	-- TODO GameInfo.Building_ResourceYieldModifiers( thisBuildingType ), ResourceType, YieldType, Yield
 		tips:insertIf( #tip > 0 and tostring(resource.IconString) .. " " .. L(resource.Description) .. ":" .. tip )
 	end
-
+	for resourceclass in GameInfo.ResourceClasses() do
+		thisBuildingAndResourceClassTypes.ResourceClassType = resourceclass.Type or -1
+		tip = GetYieldString( GameInfo.Building_ResourceClassYieldChangesPlayer( thisBuildingAndResourceClassTypes ) )
+		tips:insertIf( #tip > 0 and "All " .. L(resourceclass.Description) .. ":" .. tip )
+		tip = GetYieldString( GameInfo.Building_ResourceClassYieldChanges( thisBuildingAndResourceClassTypes ) )
+		tips:insertIf( #tip > 0 and L(resourceclass.Description) .. ":" .. tip )
+	end
+	for improvement in GameInfo.Improvements() do 
+		thisBuildingAndImprovementTypes.ImprovementType = improvement.Type or -1
+		tip = GetYieldString( GameInfo.Building_ImprovementYieldChanges( thisBuildingAndImprovementTypes ) )
+		tips:insertIf( #tip > 0 and L(improvement.Description) .. ":" .. tip )
+	end
 	-- Feature Yields enhanced by Building
 	for feature in GameInfo.Features() do
 		tip = GetYieldString( GameInfo.Building_FeatureYieldChanges{ BuildingType = buildingType, FeatureType = feature.Type } )
@@ -1092,6 +1141,42 @@ end
 			end
 		end
 
+		items = {}
+		-- Yields enhanced by Legacy
+		for row in GameInfo.Legacy_BuildingClassYieldChange ( thisBuildingClassType ) do
+			if row.LegacyType and (row.Yield or 0) ~= 0 then
+				items[row.LegacyType] = S( "%s %+i%s", items[row.LegacyType] or "", row.Yield, tostring(YieldIcons[row.YieldType]) )
+			end
+			if row.LegacyType and (row.Modifier or 0) ~= 0 then
+				items[row.LegacyType] = S( "%s %+i%%%s", items[row.LegacyType] or "", row.Modifier, tostring(YieldIcons[row.YieldType]) )
+			end
+		end
+		-- Great Person Points enhanced by Legacy
+		for row in GameInfo.Legacy_BuildingClassGreatPersonPointChange (thisBuildingClassType) do
+			if row.LegacyType and (row.RateChange or 0) ~= 0 then
+				items[row.LegacyType] = S( "%s %+i%s", items[row.LegacyType] or "", row.RateChange, GreatPeopleIcon(row.SpecialistType) )
+			end
+			if row.LegacyType and (row.Modifier or 0) ~= 0 then
+				items[row.LegacyType] = S( "%s %+i%%%s", items[row.LegacyType] or "", row.Modifier, GreatPeopleIcon(row.SpecialistType) )
+			end
+		end
+		-- Happiness
+		for row in GameInfo.Legacy_BuildingClassHappinessChange (thisBuildingClassType) do
+			if row.LegacyType and (row.Happiness or 0) ~= 0 then
+				items[row.LegacyType] = S( "%s %+i[ICON_HAPPINESS_1]", items[row.LegacyType] or "", row.Happiness )
+			end
+			if row.LegacyType and (row.GlobalHappiness or 0) ~= 0 then
+				items[row.LegacyType] = S( "%s %+i[ICON_HAPPINESS_1]", items[row.LegacyType] or "", row.GlobalHappiness )
+			end
+		end
+		-- insert into tooltip
+		for legacyType, tip in pairs(items) do
+			local legacy = GameInfo.Legacies[legacyType]
+			if legacyFilter(legacy) and # tip > 0 then
+				tips:insert("[ICON_BULLET]" .. LegacyColor(L(legacy.Description)) .. tip)
+			end
+		end
+
 		if gk_mode then
 			-- Yields enhanced by Beliefs
 			items = {}
@@ -1234,6 +1319,11 @@ end
 	for row in GameInfo.Policy_BuildingClassProductionModifiers( thisBuildingClassType ) do
 		local policy = GameInfo.Policies[ row.PolicyType ]
 		tips:insertIf( policyFilter( policy ) and (row.ProductionModifier or 0)~=0 and S( "[ICON_BULLET]%s +%i%%[ICON_PRODUCTION]", PolicyColor( L(policy.Description) ), row.ProductionModifier ) )
+	end
+	-- Legacy Prod Mod
+	for row in GameInfo.Legacy_BuildingClassProductionModifiers( thisBuildingClassType ) do
+		local legacy = GameInfo.Legacies[ row.LegacyType ]
+		tips:insertIf( legacyFilter( legacy ) and (row.Modifier or 0)~=0 and S( "[ICON_BULLET]%s +%i%%[ICON_PRODUCTION]", LegacyColor( L(legacy.Description) ), row.Modifier ) )
 	end
 
 
@@ -1502,6 +1592,28 @@ local function GetHelpTextForImprovement( improvementID )
 				end
 			end
 			tips:insertIf( tip~="" and "[ICON_BULLET]" .. PolicyColor( L(item.Description) ) .. tip )
+		end
+	end
+	-- Legacy Yield Changes
+	items = {}
+	condition = { ImprovementType = improvement.Type }
+	for row in GameInfo.Legacy_ImprovementYieldChanges( thisImprovementType ) do 
+		SetKey( items, row.LegacyType )
+	end
+	for LegacyType in pairs(items) do
+		item = GameInfo.Legacies[ LegacyType ]
+		if item then
+			tip = ""
+			condition.LegacyType = LegacyType
+			tip = GetYieldString ( GameInfo.Legacy_ImprovementYieldChanges( condition ) )
+			for row in GameInfo.Legacy_ImprovementYieldChanges(condition) do
+            	local perX = row.YieldPerXWorldWonder or 0
+            	if perX ~= 0 then
+            	    local icon = tostring(YieldIcons[row.YieldType])
+            	    tip = S("%s +1%s %i %s", tip, icon, perX, L("TXT_KEY_WONDER_SECTION_1"))
+            	end
+       		end
+			tips:insertIf( tip~="" and "[ICON_BULLET]" .. LegacyColor( L(item.Description) ) .. tip )
 		end
 	end
 
