@@ -534,6 +534,7 @@ protected:
 #endif
 #if defined(LEKMOD_LEGACY)
 	static int lGetBuildingGreatPeopleRateModifier(lua_State* L);
+	static int lGetGreatWorkClassGreatPeoplePoints(lua_State* L);
 #endif
 };
 

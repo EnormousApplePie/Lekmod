@@ -12543,6 +12543,7 @@ int CvPlayer::GetCulturePerTurnFromReligion() const
 int CvPlayer::GetCulturePerTurnFromReligionTimes100() const
 #endif
 {
+#if !defined(LEKMOD_LEGACY)
 	int iOtherCulturePerTurn = 0;
 	int iReligionCulturePerTurn = 0;
 
@@ -12578,17 +12579,23 @@ int CvPlayer::GetCulturePerTurnFromReligionTimes100() const
 			iTemp = pReligion->m_Beliefs.GetYieldChangePerXForeignFollowers(YIELD_CULTURE);
 			if (iTemp > 0)
 			{
-#ifdef LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES
-				int iFollowers = pReligions->GetNumFollowers(eFoundedReligion);
-#else
 				int iFollowers = GetReligions()->GetNumForeignFollowers(false /*bAtPeace*/);
-#endif
 				if (iFollowers > 0)
 				{
 					iReligionCulturePerTurn += (iFollowers / iTemp);
 				}
 			}
-
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+			iTemp = pReligion->m_Beliefs.GetYieldChangePerXFollowers(YIELD_CULTURE);
+			if (iTemp > 0)
+			{
+				int iFollowers = pReligions->GetNumFollowers(eFoundedReligion);
+				if (iFollowers > 0)
+				{
+					iReligionCulturePerTurn += (iFollowers / iTemp);
+				}
+			}
+#endif
 			bool bAtPeace = GET_TEAM(getTeam()).getAtWarCount(false) == 0;
 			int iMod = pReligion->m_Beliefs.GetPlayerCultureModifier(bAtPeace);
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
@@ -12604,6 +12611,9 @@ int CvPlayer::GetCulturePerTurnFromReligionTimes100() const
 	}
 
 	return 0;
+#else
+	return GetYieldFromReligionTimes100(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -13692,6 +13702,52 @@ void CvPlayer::DoYieldBonusFromPlotBuy(YieldTypes eYield, CvCity* pCity, CvPlot*
 		ReportYieldFromKill(eYield, iTotalValue, pPlot->getX(), pPlot->getY(), iNumBonuses);
 	}
 }
+
+int CvPlayer::GetYieldFromReligionTimes100(YieldTypes eYield) const
+{
+	int iYield = 0;
+	// Founder beliefs
+	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+	ReligionTypes eFoundedReligion = pReligions->GetFounderBenefitsReligion(GetID());
+	if (eFoundedReligion != NO_RELIGION)
+	{
+		const CvReligion* pReligion = pReligions->GetReligion(eFoundedReligion, NO_PLAYER);
+		if (pReligion)
+		{
+			iYield += pReligion->m_Beliefs.GetHolyCityYieldChange(eYield);
+			iYield += GetPlayerLegacies()->GetHolyCityYieldChange(eYield);
+
+			int iTemp = pReligion->m_Beliefs.GetYieldChangePerForeignCity(eYield);
+			if (iTemp > 0)
+			{
+				iYield += (iTemp * GetReligions()->GetNumForeignCitiesFollowing());
+			}
+
+			iTemp = pReligion->m_Beliefs.GetYieldChangePerXForeignFollowers(eYield);
+			if (iTemp > 0)
+			{
+				int iFollowers = GetReligions()->GetNumForeignFollowers(false /*bAtPeace*/);
+				if (iFollowers > 0)
+				{
+					iYield += (iFollowers / iTemp);
+				}
+			}
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+			iTemp = pReligion->m_Beliefs.GetYieldChangePerXFollowers(eYield);
+			if (iTemp > 0)
+			{
+				int iFollowers = pReligions->GetNumFollowers(eFoundedReligion);
+				if (iFollowers > 0)
+				{
+					iYield += (iFollowers / iTemp);
+				}
+			}
+#endif
+		}
+	}
+	iYield *= 100;
+	return iYield;
+}
 #endif
 //	--------------------------------------------------------------------------------
 /// Apply and show a bonus towards unresearched tech when we defeat a unit of that tech
@@ -14359,6 +14415,7 @@ int CvPlayer::GetFaithPerTurnFromMinor(PlayerTypes eMinor) const
 /// Faith per turn from Religion
 int CvPlayer::GetFaithPerTurnFromReligion() const
 {
+#if !defined(LEKMOD_LEGACY)
 	int iFaithPerTurn = 0;
 
 	// Founder beliefs
@@ -14416,10 +14473,24 @@ int CvPlayer::GetFaithPerTurnFromReligion() const
 					iFaithPerTurn += (iTemp / iFollowers);
 				}
 			}
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+			iTemp = pReligion->m_Beliefs.GetYieldChangePerXFollowers(YIELD_FAITH);
+			if (iTemp > 0)
+			{
+				int iFollowers = pReligions->GetNumFollowers(eFoundedReligion);
+				if (iFollowers > 0)
+				{
+					iFaithPerTurn += (iFollowers / iTemp);
+				}
+			}
+#endif
 		}
 	}
 
 	return iFaithPerTurn;
+#else
+	return GetYieldFromReligionTimes100(YIELD_FAITH) / 100;
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -22178,7 +22249,10 @@ int CvPlayer::GetScienceTimes100() const
 
 	// Science from other players!
 	iValue += GetScienceFromOtherPlayersTimes100();
-
+#if defined(LEKMOD_LEGACY)
+	// Science From Religion!
+	iValue += GetYieldFromReligionTimes100(YIELD_SCIENCE);
+#endif
 	// Happiness converted to Science? (Policies, etc.)
 	iValue += GetScienceFromHappinessTimes100();
 
@@ -22284,7 +22358,7 @@ int CvPlayer::GetScienceFromOtherPlayersTimes100() const
 	}
 	iScience += iScienceFromPlayer;
 #endif
-
+#if !defined(LEKMOD_LEGACY)
 	// NQMP GJS - new Underground Sect begin
 	// Science from foreign followers of our religion?
 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
@@ -22297,19 +22371,28 @@ int CvPlayer::GetScienceFromOtherPlayersTimes100() const
 			int iTemp = pReligion->m_Beliefs.GetYieldChangePerXForeignFollowers(YIELD_SCIENCE);
 			if (iTemp > 0)
 			{
-#ifdef LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES
-				int iFollowers = pReligions->GetNumFollowers(eFoundedReligion);
-#else
 				int iFollowers = GetReligions()->GetNumForeignFollowers(false /*bAtPeace*/);
-#endif
 				if (iFollowers > 0)
 				{
 					iScienceFromPlayer = (iFollowers / iTemp);
 					iScience += iScienceFromPlayer * 100;
 				}
 			}
+#if defined(LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES)
+			iTemp = pReligion->m_Beliefs.GetYieldChangePerXFollowers(YIELD_SCIENCE);
+			if (iTemp > 0)
+			{
+				int iFollowers = pReligions->GetNumFollowers(eFoundedReligion);
+				if (iFollowers > 0)
+				{
+					iScienceFromPlayer += (iFollowers / iTemp);
+					iScience += iScienceFromPlayer * 100;
+				}
+			}
+#endif
 		}
 	}
+#endif
 	// NQMP GJS - new Underground Sect end
 
 	return iScience;
@@ -28224,6 +28307,17 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 		{
 			GET_TEAM(getTeam()).SetResourceRevealed(eResource, (bool)iChange);
 			GET_TEAM(getTeam()).SetResourceTrade(eResource, (bool)iChange);
+		}
+	}
+	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
+	ReligionTypes eReligion = pGameReligions->GetReligionCreatedByPlayer(GetID());
+	if (eReligion != NO_RELIGION)
+	{
+		const CvReligion* pReligion = pGameReligions->GetReligion(eReligion, GetID());
+		CvCity* pHolyCity = GC.getMap().plot(pReligion->m_iHolyCityX, pReligion->m_iHolyCityY)->getPlotCity();
+		if (pHolyCity != NULL)
+		{
+			pHolyCity->GetCityReligions()->ChangeReligiousPressureModifier(kLegacy.GetHolyCityReligiousPressureModifier() * iChange);
 		}
 	}
 	ChangePlotGoldCostMod(kLegacy.GetPlotGoldCostModifier() * iChange);

@@ -285,7 +285,25 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 #endif
 #endif
 	szTooltip += cultureString;
-
+#if defined(LEKMOD_LEGACY)
+	CvString gppString;
+	bool bFirst = true;
+	for (int specialist = 0; specialist < GC.getNumSpecialistInfos(); specialist++)
+	{
+		SpecialistTypes eSpecialist = (SpecialistTypes)specialist;
+		int greatWorkgpp = GET_PLAYER(eOwner).GetPlayerLegacies()->GetGreatWorkClassGreatPersonPoint(pWork->m_eClassType, eSpecialist);
+		if (greatWorkgpp != 0)
+		{
+			if (bFirst)
+			{
+				gppString += "[NEWLINE]";
+				bFirst = false;
+			}
+			gppString += CvString::format("+%d %s ", greatWorkgpp, GC.getSpecialistInfo(eSpecialist)->getGreatPersonIconString());
+		}
+	}
+	szTooltip += gppString;
+#endif
 	return szTooltip;
 }
 

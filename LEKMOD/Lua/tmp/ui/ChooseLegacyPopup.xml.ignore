@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context id="ChooseLegacyPopup" Font="TwCenMT14" FontStyle="Base" Color="Beige" Color1="Black">
+  <Box Size="100%,100%" Color="0,0,0,140"/>
+	<Instance Name="LegacyCard">
+	  <Grid Size="360,340">
+	    <Button ID="Button" Anchor="C,C" Size="360,340" StateOffsetIncrement="0,0">
+	      <Box  Size="360,340" Color="0,0,0,110"/>
+	      <Grid Size="360,340" Style="Grid9Frame"/>
+	      <AlphaAnim ID="SelectGlow" Anchor="C,C" Size="370,350"
+	                 AlphaStart="2" AlphaEnd="1" Pause="0" Cycle="Bounce" Speed="1"
+	                 Hidden="1">
+	        <Grid Size="370,350" Style="Grid9Frame"/>
+	      </AlphaAnim>
+	      <Stack ID="Content" Anchor="L,T" Offset="20,18" Size="320,300" Spacing="10">
+	        <Grid ID="NameFrame" Anchor="C,T" Size="320,32">
+	          <Label ID="Name" Anchor="C,C" JustifyH="C"
+	                 Font="TwCenMT22" FontStyle="Shadow"
+	                 ColorSet="Beige_Black_Alpha" WrapWidth="320" String=""/>
+	        </Grid>
+	        <Label ID="Help" Anchor="L,T" JustifyH="L"
+	               Font="TwCenMT18" FontStyle="Shadow"
+	               ColorSet="Beige_Black_Alpha" WrapWidth="320" LeadingOffset="-4" String=""/>
+	      </Stack>
+	    </Button>
+	  </Grid>
+	</Instance>
+  <Grid Size="900,620" Anchor="C,C" Style="Grid9DetailFive140" ConsumeMouse="1" ConsumeKeyboard="1">
+    <Label Style="MenuTitleCaption" ID="TitleLabel" String="Choose a Legacy"/>
+    <Label ID="DescriptionLabel" Anchor="C,T" Offset="0,66"
+           Font="TwCenMT18" FontStyle="Shadow"
+           ColorSet="Beige_Black_Alpha" WrapWidth="800" String="" />
+    <ScrollPanel ID="LegacyScrollPanel" Anchor="C,C" Offset="0,20" Size="820,420" Vertical="1">
+      <ScrollBar Style="VertSlider" Length="380" Offset="0.18" Anchor="R,T" AnchorSide="O,I"/>
+      <UpButton   Style="ScrollBarUp"   Anchor="R,T" AnchorSide="O,I"/>
+      <DownButton Style="ScrollBarDown" Anchor="R,B" AnchorSide="O,I"/>
+
+      <Grid Anchor="L,T" Size="800,Auto" ID="CardColumns">
+        <Stack ID="LeftStack"  Anchor="L,T" Size="380,Auto" Padding="10" Spacing="20"/>
+        <Stack ID="RightStack" Anchor="R,T" Size="380,Auto" Padding="10" Spacing="20"/>
+      </Grid>
+    </ScrollPanel>
+	<Grid ID="ChooseConfirm" Hidden="1" Anchor="C,C" Size="640,240" Style="Grid9DetailFive140" ConsumeMouse="1" ConsumeKeyboard="1">
+	  <Grid Anchor="C,T" Offset="0,28" Size="600,120" Style="Grid9Frame">
+	    <Label ID="ConfirmText"
+	           Anchor="C,C"
+	           Font="TwCenMT20" FontStyle="Shadow"
+	           ColorSet="Beige_Black_Alpha"
+	           WrapWidth="560"
+	           String=""/>
+	  </Grid>
+		<Grid Anchor="C,B" Offset="0,48" Size="480,44">
+		  <GridButton ID="ConfirmYes" Anchor="L,B" Style="SmallButton" Size="220,44">
+		    <Label Anchor="C,C" String="TXT_KEY_YES_BUTTON" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha"/>
+		  </GridButton>
+
+		  <GridButton ID="ConfirmNo" Anchor="R,B" Style="SmallButton" Size="220,44">
+		    <Label Anchor="C,C" String="TXT_KEY_NO_BUTTON" Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha"/>
+		  </GridButton>
+		</Grid>
+	</Grid>
+  </Grid>
+</Context>

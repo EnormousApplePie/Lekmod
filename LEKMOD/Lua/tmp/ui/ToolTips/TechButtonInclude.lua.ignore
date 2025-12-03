@@ -4,6 +4,8 @@
 include( "IconSupport" );
 include( "InfoTooltipInclude" );
 
+local playerID = Game.GetActivePlayer();
+local player = Players[playerID];
 -- List the textures that we will need here
 local defaultErrorTextureSheet;
 
@@ -43,6 +45,14 @@ function GatherInfoAboutUniqueStuff( civType )
 		if validUnitBuilds[thisUnitClass.Type] == "UNIT_WORKBOAT" then
 			validUnitBuilds[thisUnitClass.Type] = nil;
 		end
+		-- Put in Legacy Overrides
+		local legacyOverride = player:GetLegacyUnitClassOverride(thisUnitClass.ID); -- Returns int Type of Unit or nil
+		if legacyOverride ~= nil then
+			local legacyUnitInfo = GameInfo.Units[legacyOverride];
+			if legacyUnitInfo then
+				validUnitBuilds[thisUnitClass.Type]	= legacyUnitInfo.Type;
+			end
+		end
 
 	end
 
@@ -52,10 +62,20 @@ function GatherInfoAboutUniqueStuff( civType )
 			validUnitBuilds[thisOverride.UnitClassType]	= thisOverride.UnitType;
  		end
 	end
+	
 
 	-- put in the default buildings for any civ
 	for thisBuildingClass in GameInfo.BuildingClasses() do
 		validBuildingBuilds[thisBuildingClass.Type]	= thisBuildingClass.DefaultBuilding;	
+
+		-- put in Legacy Overrides
+		local legacyOverride = player:GetLegacyBuildingClassOverride(thisBuildingClass.ID); -- Returns int Type of Building or nil
+		if legacyOverride ~= nil then
+			local legacyBuildingInfo = GameInfo.Buildings[legacyOverride];
+			if legacyBuildingInfo then
+				validBuildingBuilds[thisBuildingClass.Type]	= legacyBuildingInfo.Type;
+			end
+		end
 	end
 
 	-- put in my overrides

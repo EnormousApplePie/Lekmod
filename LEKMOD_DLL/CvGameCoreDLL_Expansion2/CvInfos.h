@@ -216,7 +216,12 @@ public:
 	int getExperience() const;
 
 	bool isVisible() const;
-
+#if defined(LEKMOD_LEGACY)
+	const char* getIconString() const;
+	void setIconString(const char* szVal);
+	const char* getGreatPersonIconString() const;
+	void setGreatPersonIconString(const char* szVal);
+#endif
 	// Arrays
 	int getYieldChange(int i) const;
 	const int* getYieldChangeArray() const;
@@ -237,7 +242,10 @@ protected:
 	int m_iExperience;
 
 	bool m_bVisible;
-
+#if defined(LEKMOD_LEGACY)
+	CvString m_szIconString;
+	CvString m_szGreatPersonIconString;
+#endif
 	CvString m_strTexture;
 
 	// Arrays

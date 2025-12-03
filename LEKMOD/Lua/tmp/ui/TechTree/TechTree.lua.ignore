@@ -859,6 +859,17 @@ function OnTechTreeActivePlayerChanged( iActivePlayer, iPrevActivePlayer )
 	OnCloseButtonClicked();
 end
 Events.GameplaySetActivePlayer.Add(OnTechTreeActivePlayerChanged);
+-- Legacies are a Lekmod addition!
+function on_adopt_legacy()
+	playerID = Game.GetActivePlayer();	
+	player = Players[playerID];
+	civType = GameInfo.Civilizations[player:GetCivilizationType()].Type;
+	activeTeamID = Game.GetActiveTeam();
+	activeTeam = Teams[activeTeamID];
+	-- Legacies can change unique stuff, so we need to re-gather that info
+	GatherInfoAboutUniqueStuff( civType );	
+end
+GameEvents.PlayerChooseLegacy.Add(on_adopt_legacy);
 
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------

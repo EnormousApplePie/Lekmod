@@ -795,6 +795,7 @@ public:
 	void rebuildGreatWorkYields();
 	int countNumThemesActive() const;
 	int GetThemingBonuses(YieldTypes eYield) const;
+	int GetGreatWorkClassGreatPersonPoints(SpecialistTypes eSpecialist) const;
 #endif
 #if defined(LEK_YIELD_TOURISM)
 	int GetYieldFromLandmarks(YieldTypes eYield) const;

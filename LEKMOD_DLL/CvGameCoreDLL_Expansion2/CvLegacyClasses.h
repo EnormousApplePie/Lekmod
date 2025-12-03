@@ -51,6 +51,8 @@ public:
 	int GetFriendlyCityReligionCombatModifier() const;
 	int GetOccupiedCityReligionCombatModifier() const;
 	int GetEnemyCityReligionCombatModifier() const;
+	int GetGreatProphetCostModifier() const;
+	int GetHolyCityReligiousPressureModifier() const;
     // Arrays
 	int IsFreePromotion(int i) const;
 	int GetPromotionNearbyGeneral(int i) const;
@@ -104,6 +106,8 @@ public:
 	int GetTradeConnectionLandYieldModifier(int i, int j) const;
 	int GetTradeConnectionSeaYieldModifier(int i, int j) const;
 #endif
+	int GetHolyCityYieldChange(int i) const;
+	int GetGreatWorkClassGreatPersonPoint(int i, int j) const;
 private:
     int m_iCivilization;
     int m_iEraOffered;
@@ -127,6 +131,8 @@ private:
 	int m_iFriendlyCityReligionCombatModifier;
 	int m_iOccupiedCityReligionCombatModifier;
 	int m_iEnemyCityReligionCombatModifier;
+	int m_iGreatProphetCostModifier;
+	int m_iHolyCityReligiousPressureModifier;
     //Arrays
 	// Weirdos
 	std::multimap<int, int> m_FreePromotionUnitType;
@@ -153,6 +159,7 @@ private:
 	int* m_piNumFreeUnitsByType;
 	int* m_piBuildTimeOverride;
 	int* m_piYieldBonusFromThemes;
+	int* m_piHolyCityYieldChange;
 	std::vector<bool> m_pbUnitIgnoreTechPrereq;
 	std::vector<bool> m_pbUnitIgnorePolicyPrereq;
 	std::vector<bool> m_pbBuildingIgnoreTechPrereq;
@@ -184,6 +191,7 @@ private:
 	int** m_paiTradeConnectionLandYieldModifier;
 	int** m_paiTradeConnectionSeaYieldModifier;
 #endif
+	int** m_paiGreatWorkClassGreatPersonPoint;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -267,6 +275,8 @@ public:
 	int GetFriendlyCityReligionCombatModifier() const;
 	int GetOccupiedCityReligionCombatModifier() const;
 	int GetEnemyCityReligionCombatModifier() const;
+	int GetGreatProphetCostModifier() const;
+	int GetHolyCityReligiousPressureModifier() const;
 	// Arrays
 	bool HasFreePromotionUnitType(PromotionTypes ePromotion, UnitTypes eUnitType) const;
 	int GetPromotionNearbyGeneralUnitCombat(UnitCombatTypes eUnitCombat) const;
@@ -317,6 +327,8 @@ public:
 	int GetTradeConnectionLandYieldModifier(TradeConnectionType eConnection, YieldTypes eYield) const;
 	int GetTradeConnectionSeaYieldModifier(TradeConnectionType eConnection, YieldTypes eYield) const;
 #endif
+	int GetHolyCityYieldChange(YieldTypes eYield) const;
+	int GetGreatWorkClassGreatPersonPoint(GreatWorkClass eGreatWorkClass, SpecialistTypes eSpecialist) const;
 private:
     bool* m_pabHasLegacy;
 	bool* m_pabOneShotFreeUnitsFired;
@@ -346,6 +358,8 @@ private:
 	int m_iFriendlyCityReligionCombatModifier;
 	int m_iOccupiedCityReligionCombatModifier;
 	int m_iEnemyCityReligionCombatModifier;
+	int m_iGreatProphetCostModifier;
+	int m_iHolyCityReligiousPressureModifier;
 	//Arrays
 	std::vector<bool> m_vbNoTrain;
 	std::vector<bool> m_vbNoConstruct;
@@ -372,6 +386,7 @@ private:
 	std::vector <int> m_viImprovementTourismBonuses;
 	std::vector <int> m_viBuildTimeOverrides;
 	std::vector <int> m_viYieldBonusFromThemes;
+	std::vector <int> m_viHolyCityYieldChange;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiUnitCostOverrides;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiBuildingCostOverrides;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_vaaiGreatWorkClassYieldChanges;

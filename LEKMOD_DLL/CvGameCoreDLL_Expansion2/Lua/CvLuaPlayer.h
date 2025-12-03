@@ -1107,6 +1107,7 @@ protected:
 	static int lGetLegacyUnitClassOverride(lua_State* L);
 	static int lHasLegacy(lua_State* L);
 	static int lSetHasLegacy(lua_State* L);
+	static int lGetYieldFromReligionTimes100(lua_State* L);
 #endif
 };
 

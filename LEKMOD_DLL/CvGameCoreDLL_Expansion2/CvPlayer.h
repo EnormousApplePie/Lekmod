@@ -558,6 +558,7 @@ public:
 #if defined(LEKMOD_LEGACY)
 	void DoYieldsFromPlotBuy(CvCity* pCity, CvPlot* pPlot, int iExistingDelay, bool bGold);
 	void DoYieldBonusFromPlotBuy(YieldTypes eYield, CvCity* pCity, CvPlot* pPlot, int& iNumBonuses, bool bGold);
+	int GetYieldFromReligionTimes100(YieldTypes eYield) const;
 #endif
 #if defined(UPDATE_CULTURE_NOTIFICATION_DURING_TURN)
 	void TestMidTurnPolicyNotification();

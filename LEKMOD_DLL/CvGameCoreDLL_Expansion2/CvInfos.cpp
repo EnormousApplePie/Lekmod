@@ -807,6 +807,24 @@ void CvSpecialistInfo::setTexture(const char* szVal)
 {
 	m_strTexture = szVal;
 }
+#if defined(LEKMOD_LEGACY)
+const char* CvSpecialistInfo::getIconString() const
+{
+	return m_szIconString;
+}
+void CvSpecialistInfo::setIconString(const char* szVal)
+{
+	m_szIconString = szVal;
+}
+const char* CvSpecialistInfo::getGreatPersonIconString() const
+{
+	return m_szGreatPersonIconString;
+}
+void CvSpecialistInfo::setGreatPersonIconString(const char* szVal)
+{
+	m_szGreatPersonIconString = szVal;
+}
+#endif
 //------------------------------------------------------------------------------
 bool CvSpecialistInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
 {
@@ -818,7 +836,10 @@ bool CvSpecialistInfo::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iExperience = kResults.GetInt("Experience");
 	m_iGreatPeopleRateChange = kResults.GetInt("GreatPeopleRateChange");
 	m_iCulturePerTurn = kResults.GetInt("CulturePerTurn");
-
+#if defined(LEKMOD_LEGACY)
+	setIconString(kResults.GetText("IconString"));
+	setGreatPersonIconString(kResults.GetText("GreatPersonIconString"));
+#endif
 	setTexture(kResults.GetText("Texture"));
 
 	const char* szGreatPeople = kResults.GetText("GreatPeopleUnitClass");

@@ -932,7 +932,9 @@ void CvGameReligions::FoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion
 
 	// Inform the holy city
 	pkHolyCity->GetCityReligions()->DoReligionFounded(kReligion.m_eReligion);
-
+#if defined(LEKMOD_LEGACY)
+	pkHolyCity->GetCityReligions()->ChangeReligiousPressureModifier(kPlayer.GetPlayerLegacies()->GetHolyCityReligiousPressureModifier());
+#endif
 	// Update game systems
 	kPlayer.UpdateReligion();
 #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
@@ -2869,7 +2871,14 @@ int CvPlayerReligions::GetCostNextProphet(bool bIncludeBeliefDiscounts, bool bAd
 			}
 		}
 	}
-
+#if defined(LEKMOD_LEGACY)
+	int legacyMod = GET_PLAYER(m_pPlayer->GetID()).GetPlayerLegacies()->GetGreatProphetCostModifier();
+	if (legacyMod != 0)
+	{
+		iCost *= (100 + legacyMod);
+		iCost /= 100;
+	}
+#endif
 	if (bAdjustForSpeedDifficulty)
 	{
 		// Adjust for game speed

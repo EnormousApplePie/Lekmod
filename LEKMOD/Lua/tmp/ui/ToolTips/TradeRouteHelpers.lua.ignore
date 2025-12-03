@@ -1,0 +1,242 @@
+-------------------------------------------------
+-- TradeRouteHelpers.lua (Vibe coded. not sorry, this was giving me a headache)
+-------------------------------------------------
+
+local TRADE_CONNECTION_INTERNATIONAL = GameInfoTypes.TRADE_CONNECTION_INTERNATIONAL or 0
+local YIELD_SCIENCE = GameInfoTypes.YIELD_SCIENCE
+
+local function IsMajorCiv(p)
+	return (not p:IsMinorCiv()) and (not p:IsBarbarian())
+end
+
+local function AddInto(target, src)
+	for k, v in pairs(src) do
+		if v ~= 0 then target[k] = (target[k] or 0) + v end
+	end
+end
+
+local function HasValues(t)
+	for _, v in pairs(t) do if v ~= 0 then return true end end
+	return false
+end
+
+local function FormatFlatYields(t)
+	local parts = {}
+	for row in GameInfo.Yields() do
+		local id = row.ID
+		local v = t[id]
+		if v and v ~= 0 then
+			parts[#parts+1] = string.format("%+g%s", v, row.IconString)
+		end
+	end
+	return (#parts > 0) and table.concat(parts, " ") or nil
+end
+
+local function FormatPercentMods(t)
+	local parts = {}
+	for row in GameInfo.Yields() do
+		local id = row.ID
+		local pct = t[id]
+		if pct and pct ~= 0 then
+			parts[#parts+1] = string.format("%+d%%%s", pct, row.IconString)
+		end
+	end
+	return (#parts > 0) and table.concat(parts, " ") or nil
+end
+
+local function GetDisplayPlayerName(pPlayer)
+	if Game:IsNetworkMultiPlayer() then
+		local nick = pPlayer:GetNickName()
+		if nick and nick ~= "" then return nick end
+	end
+	return pPlayer:GetName()
+end
+
+-------------------------------------------------
+-- Build one POV block for tooltip
+-------------------------------------------------
+local function BuildSingleSide(pViewPlayer, pOriginCity, pTargetCity, eConnectionType, eDomain, bAsOrigin)
+	local lines = {}
+	local pPlayer = pViewPlayer
+
+	local base = {}
+	local cities = {}
+	local yourBld = {}
+	local theirBld = {}
+	local exclusive = {}
+	local policies = {}
+	local traits = {}
+	local religion = {}
+	local legacy = {}
+
+	for yInfo in GameInfo.Yields() do
+		local yID = yInfo.ID
+
+		base[yID] = (pPlayer:GetTradeConnectionBaseYield( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain ) or 0) / 100
+
+		cities[yID] =
+			((pPlayer:GetTradeConnectionOriginGPTValue(	pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain) or 0)
+			+
+			(pPlayer:GetTradeConnectionDestinationGPTValue(	pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain) or 0)) / 100
+
+		yourBld[yID] = (pPlayer:GetTradeConnectionYourBuildingValue( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain) or 0) / 100
+
+		theirBld[yID] = (pPlayer:GetTradeConnectionTheirBuildingValue( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain) or 0) / 100
+
+		exclusive[yID] = (pPlayer:GetTradeConnectionExclusiveValue( pOriginCity, pTargetCity, eConnectionType, yID, eDomain) or 0) / 100
+
+		policies[yID] = (pPlayer:GetTradeConnectionPolicyValue( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain) or 0) / 100
+
+		traits[yID] = (pPlayer:GetTradeConnectionTraitValue( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain) or 0) / 100
+
+		religion[yID] = (pPlayer:GetTradeConnectionReligionValue( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain) or 0) / 100
+
+		legacy[yID] = (pPlayer:GetTradeConnectionLegacyValue( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain) or 0) / 100
+	end
+
+	local sum = {}
+	AddInto(sum, base)
+	AddInto(sum, cities)
+	AddInto(sum, yourBld)
+	AddInto(sum, theirBld)
+	AddInto(sum, exclusive)
+	AddInto(sum, policies)
+	AddInto(sum, traits)
+	AddInto(sum, religion)
+	AddInto(sum, legacy)
+
+	-------------------------------------------------
+	-- BASE SECTION
+	-------------------------------------------------
+	local anyBase =
+		HasValues(base) or HasValues(cities) or
+		HasValues(yourBld) or HasValues(theirBld) or
+		HasValues(exclusive) or HasValues(policies) or
+		HasValues(traits) or HasValues(religion) or HasValues(legacy)
+
+	if anyBase then
+		lines[#lines+1] = "[BASE]"
+
+		local function Add(lbl, tbl)
+			local s = FormatFlatYields(tbl)
+			if s then lines[#lines+1] = lbl .. ": " .. s end
+		end
+		Add("Base", base)
+		Add("Cities", cities)
+		Add(pOriginCity:GetName() .. "'s Buildings", yourBld)
+		Add(pTargetCity:GetName() .. "'s Buildings", theirBld)
+		Add("Exclusive", exclusive)
+		Add("Policies", policies)
+		Add("Traits", traits)
+		Add("Religion", religion)
+		Add("Legacies", legacy)
+	end
+
+	local pctLines = {}
+	local hasModifiers = false
+	-- Show no matter the yield type
+	local goldID = GameInfoTypes.YIELD_GOLD
+	local domainMod = pPlayer:GetTradeConnectionDomainValueModifier(pOriginCity, pTargetCity, eConnectionType, goldID, eDomain)
+
+	if domainMod ~= 0 then
+		pctLines[#pctLines+1] = string.format("  Domain: %+d%%", domainMod)
+		hasModifiers = true
+	end
+
+	local function Collect(label, func)
+		local tmp = {}
+		for yInfo in GameInfo.Yields() do
+			local yID = yInfo.ID
+			local pct = func(yID)
+			if pct and pct ~= 0 and sum[yID] ~= 0 then
+				tmp[yID] = pct
+			end
+		end
+		local s = FormatPercentMods(tmp)
+		if s then
+			pctLines[#pctLines+1] = "  " .. label .. ": " .. s
+			hasModifiers = true
+		end
+	end
+
+	Collect("Policies", function(yID)
+		return pPlayer:GetTradeConnectionPolicyValueModifier( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain )
+	end)
+	Collect("Traits", function(yID)
+		return pPlayer:GetTradeConnectionTraitValueModifier( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain )
+	end)
+	Collect("Legacies", function(yID)
+		return pPlayer:GetTradeConnectionLegacyValueModifier( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain )
+	end)
+	Collect("River", function(yID)
+		return pPlayer:GetTradeConnectionRiverValueModifier( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain )
+	end)
+
+	if hasModifiers then
+		local sumStr = FormatFlatYields(sum) or "0"
+		lines[#lines+1] = "Sum: " .. sumStr
+		lines[#lines+1] = "[MODIFIERS]"
+		for _, s in ipairs(pctLines) do lines[#lines+1] = s end
+	end
+
+	local total = {}
+	for yInfo in GameInfo.Yields() do
+		local yID = yInfo.ID
+		local v = pPlayer:GetTradeConnectionTotalValue( pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yID, eDomain, true )
+		if v and v ~= 0 then
+			total[yID] = v / 100
+		end
+	end
+
+	local t = FormatFlatYields(total)
+	local sumStr = FormatFlatYields(sum)
+
+	if t or sumStr then
+		lines[#lines+1] = "[TOTAL]"
+		lines[#lines+1] = "Total: " .. (t or sumStr)
+	end
+
+	return table.concat(lines, "[NEWLINE]"), sum
+end
+
+function BuildTradeRouteToolTipString(pPlayer, pOriginCity, pTargetCity, eConnectionType, eDomain)
+	if not pOriginCity or not pTargetCity then return "" end
+
+	local pOriginOwner = Players[pOriginCity:GetOwner()]
+	local pDestOwner   = Players[pTargetCity:GetOwner()]
+
+	local header1 = string.format("=== %s (%s) ===", pOriginCity:GetName(), Locale.Lookup(GameInfo.Civilizations[pOriginOwner:GetCivilizationType()].Description) )
+	local header2 = string.format("=== %s (%s) ===", pTargetCity:GetName(), Locale.Lookup(GameInfo.Civilizations[pDestOwner:GetCivilizationType()].Description) )
+	-------------------------------------------------
+	local originBlock, originSum = BuildSingleSide(pOriginOwner, pOriginCity, pTargetCity, eConnectionType, eDomain, true)
+	local destBlock, destSum = BuildSingleSide(pDestOwner, pOriginCity, pTargetCity, eConnectionType, eDomain, false)
+
+	local sciIcon = GameInfo.Yields[YIELD_SCIENCE].IconString or ""
+	local techOrigin = ""
+	local techDest   = ""
+
+	if eConnectionType == TRADE_CONNECTION_INTERNATIONAL
+	   and IsMajorCiv(pOriginOwner) and IsMajorCiv(pDestOwner) then
+		local diffForOrigin = pOriginOwner:GetNumTechDifference(pDestOwner:GetID())
+		if diffForOrigin and diffForOrigin > 0 then
+			local sciGain = diffForOrigin * 0.5
+			techOrigin = string.format( "[TECH][NEWLINE]+%.1f%s (%s knows %d techs you don't)", sciGain, sciIcon, GetDisplayPlayerName(pDestOwner), diffForOrigin)
+		end
+		local diffForDest = pDestOwner:GetNumTechDifference(pOriginOwner:GetID())
+		if diffForDest and diffForDest > 0 then
+			local sciGain = diffForDest * 0.5
+			techDest = string.format( "[TECH][NEWLINE]+%.1f%s (You know %d techs they don't)", sciGain, sciIcon, diffForDest )
+		end
+	end
+	-------------------------------------------------
+	local out = header1 .. "[NEWLINE]" .. originBlock
+	if techOrigin ~= "" then
+		out = out .. "[NEWLINE]" .. techOrigin
+	end
+
+	out = out .. "[NEWLINE][NEWLINE]" .. header2 .. "[NEWLINE]" .. destBlock
+	if techDest ~= "" then
+		out = out .. "[NEWLINE]" .. techDest
+	end
+	return out
+end

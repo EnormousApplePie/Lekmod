@@ -1271,7 +1271,8 @@ end
 -----------------------------------------------------------------------------------------
 -- Lekmod: Load LUA files
 -----------------------------------------------------------------------------------------
-
+--
+ContextPtr:LoadNewContext("ChooseLegacyPopup")
 -- From NQ
 ContextPtr:LoadNewContext("Exploration1_Colonialism")
 ContextPtr:LoadNewContext("Exploration5_TreasureFleets")

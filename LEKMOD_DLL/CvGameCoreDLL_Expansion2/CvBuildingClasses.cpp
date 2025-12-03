@@ -4457,6 +4457,20 @@ int CvCityBuildings::GetThemingBonuses(YieldTypes eYield) const
 	}
 	return iBonus;
 }
+int CvCityBuildings::GetGreatWorkClassGreatPersonPoints(SpecialistTypes eSpecialist) const
+{
+	int points = 0;
+	for (int workclass = 0; workclass < GC.getNumGreatWorkClassInfos(); workclass++)
+	{
+		GreatWorkClass eWorkClass = (GreatWorkClass)workclass;
+		int numWorks = GetNumGreatWorks(eWorkClass);
+		if (numWorks > 0)
+		{
+			points += GET_PLAYER(m_pCity->getOwner()).GetPlayerLegacies()->GetGreatWorkClassGreatPersonPoint(eWorkClass, eSpecialist) * numWorks;
+		}
+	}
+	return points;
+}
 #endif
 #if defined(LEK_YIELD_TOURISM)
 int CvCityBuildings::GetYieldFromLandmarks(YieldTypes eYield) const

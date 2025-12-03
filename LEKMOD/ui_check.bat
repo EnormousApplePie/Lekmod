@@ -159,6 +159,11 @@ IF NOT EXIST "%euifolder%\ToolTips\InfoTooltipInclude.lua" (
 ) ELSE (
   copy /y "%patchfolder%\Lua\tmp\eui\ToolTips\InfoTooltipInclude.lua.ignore" "%patchfolder%\Lua\UI\InfoTooltipInclude.lua" > nul
 )
+IF NOT EXIST "%euifolder%\ToolTips\TradeRouteHelpers.lua" (
+  copy /y "%patchfolder%\Lua\tmp\ui\ToolTips\TradeRouteHelpers.lua.ignore" "%patchfolder%\Lua\UI\TradeRouteHelpers.lua" > nul
+) ELSE (
+  copy /y "%patchfolder%\Lua\tmp\eui\ToolTips\TradeRouteHelpers.lua.ignore" "%patchfolder%\Lua\UI\TradeRouteHelpers.lua" > nul
+)
 REM --------------------------------------------------------------------------------------------------
 IF NOT EXIST "%euifolder%\UnitFlagManager\UnitFlagManager.lua" (
   copy /y "%patchfolder%\Lua\tmp\ui\UnitFlagManager\UnitFlagManager.lua.ignore" "%patchfolder%\Lua\UI\UnitFlagManager.lua" > nul
@@ -214,4 +219,11 @@ IF NOT EXIST "%euifolder%\TopPanel\TopPanel.lua" (
   copy /y "%patchfolder%\Lua\tmp\eui\TopPanel.xml.ignore" "%patchfolder%\Lua\UI\TopPanel.xml" > nul
 )
 REM --------------------------------------------------------------------------------------------------
+copy /y "%patchfolder%\Lua\tmp\ui\ChooseInternationalTradeRoutePopup.lua.ignore" "%patchfolder%\Lua\UI\ChooseInternationalTradeRoutePopup.lua" > nul
+REM --------------------------------------------------------------------------------------------------
+copy /y "%patchfolder%\Lua\tmp\ui\ChooseLegacyPopup.lua.ignore" "%patchfolder%\Lua\UI\ChooseLegacyPopup.lua" > nul
+REM --------------------------------------------------------------------------------------------------
+copy /y "%patchfolder%\Lua\tmp\ui\ChooseLegacyPopup.xml.ignore" "%patchfolder%\Lua\UI\ChooseLegacyPopup.xml" > nul
+REM --------------------------------------------------------------------------------------------------
+copy /y "%patchfolder%\Lua\tmp\ui\ActionInfoPanel.lua.ignore" "%patchfolder%\Lua\UI\ActionInfoPanel.lua" > nul
 EXIT

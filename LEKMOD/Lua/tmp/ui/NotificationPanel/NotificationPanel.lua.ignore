@@ -57,6 +57,7 @@ Controls["LeagueCallForProposalsButton"]:RegisterCallback(Mouse.eRClick, Generic
 Controls["ChooseArchaeologyButton"]:RegisterCallback(Mouse.eRClick, GenericRightClick);
 Controls["LeagueCallForVotesButton"]:RegisterCallback(Mouse.eRClick, GenericRightClick);
 Controls["ChooseIdeologyButton"]:RegisterCallback(Mouse.eRClick, GenericRightClick);
+Controls["ChooseLegacyButton"]:RegisterCallback(Mouse.eRClick, GenericRightClick);
 
 ------------------------------------------------------------------------------------
 -- build the list of types we can handle
@@ -235,6 +236,8 @@ g_NameTable[ NotificationTypes.NOTIFICATION_MP_SCRAP_PROPOSAL ] = "MPVotingSyste
 g_NameTable[ NotificationTypes.NOTIFICATION_MP_REMAP_PROPOSAL ] = "MPVotingSystemProposal";
 g_NameTable[ NotificationTypes.NOTIFICATION_MP_PROPOSAL_RESULT ] = "MPVotingSystemResult";
 
+g_NameTable[ NotificationTypes.NOTIFICATION_CHOOSE_LEGACY ] = "ChooseLegacy";
+g_NameTable[ NotificationTypes.NOTIFICATION_LEGACY_CHOSEN ] = "LegacyChosen";
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
 --- Actual new notification entry point
@@ -274,7 +277,8 @@ function OnNotificationAdded( Id, type, toolTip, strSummary, iGameValue, iExtraG
 		name == "LeagueCallForProposals" or
 		name == "ChooseArchaeology" or
 		name == "LeagueCallForVotes" or
-		name == "ChooseIdeology") then
+		name == "ChooseIdeology" or
+		name == "ChooseLegacy") then
         
         button = Controls[name .. "Button"];
         text = Controls[name .. "Text"];
@@ -481,7 +485,8 @@ function RemoveNotificationID( Id )
 		name == "LeagueCallForProposals" or
 		name == "ChooseArchaeology" or
 		name == "LeagueCallForVotes" or
-		name == "ChooseIdeology"
+		name == "ChooseIdeology" or
+		name == "ChooseLegacy"
 		)
     then
         Controls[ name .. "Button" ]:SetHide( true );

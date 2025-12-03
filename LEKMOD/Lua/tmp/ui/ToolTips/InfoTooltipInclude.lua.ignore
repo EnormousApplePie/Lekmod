@@ -41,14 +41,16 @@ function GetHelpTextForUnit(iUnitID, bIncludeRequirementsInfo, pCity)
 	end
 	
 	-- Ranged Strength
-	local iRangedStrength = pUnitInfo.RangedCombat;
+	local iLegacyChange = pActivePlayer:GetLegacyUnitRangedCombatChange(iUnitID);
+	local iRangedStrength = pUnitInfo.RangedCombat + iLegacyChange;
 	if (iRangedStrength ~= 0) then
 		strHelpText = strHelpText .. "[NEWLINE]";
 		strHelpText = strHelpText .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_RANGED_STRENGTH", iRangedStrength);
 	end
 	
 	-- Strength
-	local iStrength = pUnitInfo.Combat;
+	local iLegacyChange = pActivePlayer:GetLegacyUnitCombatChange(iUnitID);
+	local iStrength = pUnitInfo.Combat + iLegacyChange;
 	if (iStrength ~= 0) then
 		strHelpText = strHelpText .. "[NEWLINE]";
 		strHelpText = strHelpText .. Locale.ConvertTextKey("TXT_KEY_PRODUCTION_STRENGTH", iStrength);
@@ -333,7 +335,7 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
 			table.insert(lines, icon .. " " .. Locale.ConvertTextKey(nameKey) .. " points" .. string.format(": %+i%%", modifier));
 		end
 	end
-	
+
 	-- Great Works
 	local iNumGreatWorks = pBuildingInfo.GreatWorkCount;
 	if(iNumGreatWorks > 0) then
@@ -349,12 +351,6 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
 			table.insert(lines, localizedText);
 		end
 	end
-	
-	local iTechEnhancedTourism = pBuildingInfo.TechEnhancedTourism;
-	if(iTechEnhancedTourism > 0 and pActiveTeam:GetTeamTechs():HasTech(iEnhancingTech)) then
-		local localizedText = Locale.ConvertTextKey("TXT_KEY_PRODUCTION_BUILDING_TOURISM", iTechEnhancedTourism);
-		table.insert(lines, localizedText);
-	end	
 	
 	strHelpText = strHelpText .. table.concat(lines, "[NEWLINE]");
 	
@@ -650,7 +646,15 @@ end
 
 -- TOURISM
 function GetTourismTooltip(pCity)
-	return pCity:GetTourismTooltip();
+	local strTourismToolTip = "";
+
+	if (not OptionsManager.IsNoBasicHelp()) then
+		strTourismToolTip = strTourismToolTip .. Locale.ConvertTextKey("TXT_KEY_TOURISM_HELP_INFO");
+		strTourismToolTip = strTourismToolTip .. "[NEWLINE][NEWLINE]";
+	end
+	strTourismToolTip = strTourismToolTip .. pCity:GetTourismTooltip();
+	
+	return strTourismToolTip;
 end
 
 -- Yield Tooltip Helper
@@ -777,6 +781,11 @@ function GetYieldTooltip(pCity, iYieldType, iBase, iTotal, strIconString, strMod
 		strYieldBreakdown = strYieldBreakdown .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_YIELD_FROM_THEMED_BUILDINGS", iYieldFromThemedBuildings, strIconString);
 		strYieldBreakdown = strYieldBreakdown .. "[NEWLINE]";
 	end
+	--local iYieldFromLandmarks = pCity:GetBaseYieldRateFromLandmarks(iYieldType);
+	--if (iYieldFromLandmarks ~= 0) then
+	--	strYieldBreakdown = strYieldBreakdown .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_YIELD_FROM_LANDMARKS", iYieldFromLandmarks, strIconString);
+	--	strYieldBreakdown = strYieldBreakdown .. "[NEWLINE]";
+	--end
 	-- End 34.8
 	if (iYieldType == YieldTypes.YIELD_FOOD) then
 		local iYieldFromTrade = pCity:GetYieldRate(YieldTypes.YIELD_FOOD, false) - pCity:GetYieldRate(YieldTypes.YIELD_FOOD, true);

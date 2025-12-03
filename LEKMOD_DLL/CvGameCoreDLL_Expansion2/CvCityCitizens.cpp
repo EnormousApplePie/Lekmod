@@ -3176,7 +3176,9 @@ void CvCityCitizens::DoSpecialists()
 
 				// GPP from Specialists
 				iGPPChange = pkSpecialistInfo->getGreatPeopleRateChange() * iCount * 100;
-
+#if defined(LEKMOD_LEGACY) // GPP from GreatWorks
+				iGPPChange += GetCity()->GetCityBuildings()->GetGreatWorkClassGreatPersonPoints(eSpecialist) * 100;
+#endif
 				// GPP from Buildings
 				iGPPChange += GetBuildingGreatPeopleRateChanges(eSpecialist) * 100;
 

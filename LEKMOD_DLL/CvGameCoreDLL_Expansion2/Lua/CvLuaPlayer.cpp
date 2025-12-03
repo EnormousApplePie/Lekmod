@@ -1102,6 +1102,7 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetLegacyUnitClassOverride);
 	Method(HasLegacy);
 	Method(SetHasLegacy);
+	Method(GetYieldFromReligionTimes100);
 #endif
 
 }
@@ -12280,5 +12281,15 @@ int CvLuaPlayer::lHasLegacy(lua_State* L)
 int CvLuaPlayer::lSetHasLegacy(lua_State* L)
 {
 	return BasicLuaMethod(L, &CvPlayerAI::setHasLegacy);
+}
+//------------------------------------------------------------------------------
+//int GetYieldFromReligionTimes100(YieldTypes eYield) const;
+int CvLuaPlayer::lGetYieldFromReligionTimes100(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const YieldTypes eYield = (YieldTypes)luaL_checkint(L, 2);
+	int iValue = pkPlayer->GetYieldFromReligionTimes100(eYield);
+	lua_pushinteger(L, iValue);
+	return 1;
 }
 #endif

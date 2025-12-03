@@ -1122,6 +1122,7 @@ function OnCityViewUpdate()
 							iGPPChange = iGPPChange + building.GreatPeopleRateChange * 100;
 						end
 					end
+					iGPPChange = iGPPChange + pCity:GetGreatWorkClassGreatPeoplePoints(pSpecialistInfo.ID) * 100;
 					if iGPPChange > 0 then
 						-- Generic GP mods
 						local iPlayerMod = pPlayer:GetGreatPeopleRateModifier();
@@ -1132,6 +1133,8 @@ function OnCityViewUpdate()
 							pWorldCongress = Game.GetActiveLeague();
 						end
 						local iCityMod = pCity:GetGreatPeopleRateModifier();
+						local iBuildingMod = pCity:GetBuildingGreatPeopleRateModifier(iSpecialistIndex);
+						iCityMod = iCityMod + iBuildingMod;
 						local iGoldenAgeMod = 0;
 						local bGoldenAge = (pPlayer:GetGoldenAgeTurns() > 0);
 						
@@ -1632,7 +1635,7 @@ function OnCityViewUpdate()
 		end
 		--Controls.ScienceBox:SetToolTipString(strToolTip);
 		
-		local iCulturePerTurn = pCity:GetJONSCulturePerTurn();
+		local iCulturePerTurn = pCity:GetYieldRateTimes100(YieldTypes.YIELD_CULTURE) / 100;
 		Controls.CulturePerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iCulturePerTurn) );
 		--Controls.CultureBox:SetToolTipString(strToolTip);
 		local cultureStored = pCity:GetJONSCultureStored();
@@ -1654,7 +1657,7 @@ function OnCityViewUpdate()
 		if (Game.IsOption(GameOptionTypes.GAMEOPTION_NO_RELIGION)) then
 			Controls.FaithPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_OFF") );
 		else
-			local iFaithPerTurn = pCity:GetFaithPerTurn();
+			local iFaithPerTurn = pCity:GetYieldRateTimes100(YieldTypes.YIELD_FAITH) / 100;
 			Controls.FaithPerTurnLabel:SetText( Locale.ConvertTextKey("TXT_KEY_CITYVIEW_PERTURN_TEXT", iFaithPerTurn) );
 		end
 		-- v34 Golden Age Points

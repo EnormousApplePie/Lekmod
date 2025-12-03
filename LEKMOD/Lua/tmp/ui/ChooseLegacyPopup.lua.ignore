@@ -1,0 +1,235 @@
+-- ChooseLegacyPopup.lua
+include("InstanceManager")
+
+if not ContextPtr:IsHidden() then
+  ContextPtr:SetHide(true)
+end
+if Controls.ChooseConfirm then
+  Controls.ChooseConfirm:SetHide(true)
+end
+
+local g_PopupInfo      = nil
+local g_PlayerID       = nil         -- from Data1 
+local g_OverrideEraID  = nil         -- from Data2 
+local g_SelectedInst   = nil         -- selected card's instance table
+local g_SelectedID     = nil         -- Legacies.ID selected
+
+local g_LeftIM, g_RightIM = nil, nil
+
+local function EnsureInstanceManagers()
+  if not Controls.LeftStack or not Controls.RightStack then
+    print("ChooseLegacyPopup: Stacks not ready",
+          Controls.LeftStack ~= nil, Controls.RightStack ~= nil)
+    return false
+  end
+  if not g_LeftIM  then g_LeftIM  = InstanceManager:new("LegacyCard", "Button", Controls.LeftStack) end
+  if not g_RightIM then g_RightIM = InstanceManager:new("LegacyCard", "Button", Controls.RightStack) end
+  return true
+end
+
+local function L(s) return (s and s ~= "" and Locale) and Locale.ConvertTextKey(s) or (s or "") end
+
+local function GetPlayerAndCiv(pid)
+  local p = Players[pid]
+  if not p then return nil, nil end
+  local civID  = p:GetCivilizationType()
+  local civRow = (civID and GameInfo.Civilizations[civID]) and GameInfo.Civilizations[civID] or nil
+  return p, civRow
+end
+
+local function SafeCalc(ctrl)
+  if ctrl and ctrl.CalculateSize then ctrl:CalculateSize() end
+  if ctrl and ctrl.ReprocessAnchoring then ctrl:ReprocessAnchoring() end
+end
+
+local function SafeScrollCalc(panel)
+  if panel and panel.CalculateInternalSize then panel:CalculateInternalSize() end
+end
+
+local function BuildDataListForCivEra(pid)
+  local p, civRow = GetPlayerAndCiv(pid)
+
+  local eraTypeStr = nil
+  if g_OverrideEraID ~= nil and GameInfo.Eras[g_OverrideEraID] then
+    eraTypeStr = GameInfo.Eras[g_OverrideEraID].Type
+  else
+    local eraID = p and p:GetCurrentEra()
+    eraTypeStr = (eraID and GameInfo.Eras[eraID]) and GameInfo.Eras[eraID].Type or nil
+  end
+
+  local civTypeStr = civRow and civRow.Type or nil
+
+  local items = {}
+  if GameInfo.Legacies then
+    for row in GameInfo.Legacies() do
+      local okEra = true
+      if row.EraOffered and row.EraOffered ~= "" then
+        okEra = (eraTypeStr ~= nil and row.EraOffered == eraTypeStr)
+      end
+      local okCiv = true
+      if row.CivilizationType and row.CivilizationType ~= "" then
+        okCiv = (civTypeStr ~= nil and row.CivilizationType == civTypeStr)
+      end
+      if okEra and okCiv then
+        items[#items+1] = {
+          ID      = row.ID,
+          Type    = row.Type,
+          nameKey = row.Description or row.Type,
+          helpKey = row.Help or "",
+        }
+      end
+    end
+  end
+
+  -- Fallback demo entries so UI never blanks out (optional)
+  if #items == 0 then
+    items = {
+      { ID=1, Type="LEGACY_A", nameKey="Option #1", helpKey="" },
+      { ID=2, Type="LEGACY_B", nameKey="Option #2", helpKey="" },
+    }
+  end
+
+  return items
+end
+
+local function ClearGlow()
+  if g_SelectedInst and g_SelectedInst.SelectGlow then
+    g_SelectedInst.SelectGlow:SetHide(true)
+  end
+  g_SelectedInst = nil
+end
+
+local function ClearSelection()
+  ClearGlow()
+  g_SelectedID = nil
+end
+
+-- Open confirmation overlay for selected legacy
+function SelectLegacyChoice(choiceID)
+  g_SelectedID = choiceID
+
+  local txt = "Confirm?"
+  if GameInfo.Legacies and choiceID then
+    local row = GameInfo.Legacies[choiceID]
+    if row and row.Description then
+      local name = L(row.Description)
+      if Locale and Locale.HasTextKey and Locale.HasTextKey("TXT_KEY_CHOOSE_LEGACY_CONFIRM_FMT") then
+        txt = Locale.ConvertTextKey("TXT_KEY_CHOOSE_LEGACY_CONFIRM_FMT", name)
+      else
+        txt = "Adopt " .. name .. "?"
+      end
+    end
+  end
+
+  if Controls.ConfirmText   then Controls.ConfirmText:SetText(txt) end
+  if Controls.ChooseConfirm then Controls.ChooseConfirm:SetHide(false) end
+end
+
+-- Yes/No
+local function OnConfirmYes()
+  if not g_SelectedID then return end
+  local pid = g_PlayerID or Game.GetActivePlayer()
+  if Controls.ChooseConfirm then Controls.ChooseConfirm:SetHide(true) end
+
+  -- Encode via Ideology path: (ID + 10) * -1
+  local offsetID = (g_SelectedID + 10) * -1
+  Network.SendIdeologyChoice(pid, offsetID)
+
+  print(string.format("ChooseLegacyPopup: chosen ID=%d encoded=%d player=%d",
+        g_SelectedID, offsetID, pid or -1))
+
+  UIManager:DequeuePopup(ContextPtr)
+end
+
+local function OnConfirmNo()
+  if Controls.ChooseConfirm then Controls.ChooseConfirm:SetHide(true) end
+  ClearSelection()
+end
+
+if Controls.ConfirmYes then Controls.ConfirmYes:RegisterCallback(Mouse.eLClick, OnConfirmYes) end
+if Controls.ConfirmNo  then Controls.ConfirmNo:RegisterCallback(Mouse.eLClick, OnConfirmNo)   end
+
+local function PopulateLegacyCards_ByCivEra(pid)
+  if not EnsureInstanceManagers() then return end
+
+  g_LeftIM:ResetInstances()
+  g_RightIM:ResetInstances()
+  ClearSelection()
+
+  local items = BuildDataListForCivEra(pid)
+
+  for i = 1, #items do
+    local item = items[i]
+    local im   = (i % 2 == 1) and g_LeftIM or g_RightIM
+    local inst = im:GetInstance()
+
+    inst.Name:SetText(L(item.nameKey or item.Type))
+    inst.Help:SetText(L(item.helpKey or ""))
+
+    local thisID = item.ID or i
+    inst.Button:RegisterCallback(Mouse.eLClick, function()
+      if g_SelectedInst and g_SelectedInst ~= inst and g_SelectedInst.SelectGlow then
+        g_SelectedInst.SelectGlow:SetHide(true)
+      end
+      if inst.SelectGlow then inst.SelectGlow:SetHide(false) end
+      g_SelectedInst = inst
+      SelectLegacyChoice(thisID)
+    end)
+  end
+
+  SafeCalc(Controls.LeftStack)
+  SafeCalc(Controls.RightStack)
+  SafeCalc(Controls.CardColumns)
+  SafeScrollCalc(Controls.LegacyScrollPanel)
+end
+
+local function ClosePopup()
+  UIManager:DequeuePopup(ContextPtr)
+end
+
+ContextPtr:SetShowHideHandler(function(bIsHide)
+  if not bIsHide then
+    if g_PopupInfo then
+      Events.SerialEventGameMessagePopupShown(g_PopupInfo)
+    end
+  else
+    ClearSelection()
+    if Controls.ChooseConfirm then Controls.ChooseConfirm:SetHide(true) end
+    Events.SerialEventGameMessagePopupProcessed.CallImmediate(ButtonPopupTypes.BUTTONPOPUP_MODDER_1, 0)
+  end
+end)
+
+ContextPtr:SetInputHandler(function(uiMsg, wParam)
+  if uiMsg == KeyEvents.KeyDown and wParam == Keys.VK_ESCAPE then
+    if Controls.ChooseConfirm and not Controls.ChooseConfirm:IsHidden() then
+      Controls.ChooseConfirm:SetHide(true)
+      ClearSelection()
+    else
+      ClosePopup()
+    end
+    return true
+  end
+end)
+
+local function OnPopupMessage(popupInfo)
+  if popupInfo.Type ~= ButtonPopupTypes.BUTTONPOPUP_MODDER_1 then return end
+
+  g_PopupInfo     = popupInfo
+  g_PlayerID      = popupInfo.Data1 or Game.GetActivePlayer()
+  g_OverrideEraID = popupInfo.Data2
+
+  if Controls.TitleLabel then
+    if Locale and Locale.HasTextKey and Locale.HasTextKey("TXT_KEY_CHOOSE_LEGACY_TITLE") then
+      Controls.TitleLabel:SetText(Locale.ConvertTextKey("TXT_KEY_CHOOSE_LEGACY_TITLE"))
+    else
+      Controls.TitleLabel:SetText("Choose a Legacy")
+    end
+  end
+  if Controls.DescriptionLabel then
+    Controls.DescriptionLabel:SetText("")
+  end
+
+  PopulateLegacyCards_ByCivEra(g_PlayerID)
+  UIManager:QueuePopup(ContextPtr, PopupPriority.SocialPolicy)
+end
+Events.SerialEventGameMessagePopup.Add(OnPopupMessage)

@@ -41,6 +41,8 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_iFriendlyCityReligionCombatModifier(0),
 	m_iOccupiedCityReligionCombatModifier(0),
 	m_iEnemyCityReligionCombatModifier(0),
+	m_iGreatProphetCostModifier(0),
+	m_iHolyCityReligiousPressureModifier(0),
 
 	m_piYieldBonusFromThemes(NULL),
 	m_piBuildTimeOverride(NULL),
@@ -58,6 +60,8 @@ CvLegacyEntry::CvLegacyEntry(void) :
 	m_piBuildingClassProductionModifier(NULL),
 	m_piBuildingClassHappinessChange(NULL),
 	m_piBuildingClassGlobalHappinessChange(NULL),
+	m_piHolyCityYieldChange(NULL),
+	m_paiGreatWorkClassGreatPersonPoint(NULL),
 #if defined(TRADE_REFACTOR)
 	m_paiTradeConnectionLandYieldChanges(NULL),
 	m_paiTradeConnectionSeaYieldChanges(NULL),
@@ -113,6 +117,7 @@ CvLegacyEntry::~CvLegacyEntry(void)
 	SAFE_DELETE_ARRAY(m_piNumFreeUnitsByType);
 	SAFE_DELETE_ARRAY(m_piBuildTimeOverride);
 	SAFE_DELETE_ARRAY(m_piYieldBonusFromThemes);
+	SAFE_DELETE_ARRAY(m_piHolyCityYieldChange);
 #if defined(TRADE_REFACTOR)
 	CvDatabaseUtility::SafeDelete2DArray(m_paiTradeConnectionLandYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiTradeConnectionSeaYieldChanges);
@@ -136,6 +141,7 @@ CvLegacyEntry::~CvLegacyEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementNearbyHealChangeByDomain);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiImprovementNearbyCombatModifierByDomain);
 	CvDatabaseUtility::SafeDelete2DArray(m_paiGreatWorkClassYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_paiGreatWorkClassGreatPersonPoint);
 }
 
 // Cache results from the database
@@ -170,6 +176,8 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iFriendlyCityReligionCombatModifier	 = kResults.GetInt("FriendlyCityReligionCombatModifier");
 	m_iOccupiedCityReligionCombatModifier	 = kResults.GetInt("OccupiedCityReligionCombatModifier");
 	m_iEnemyCityReligionCombatModifier		 = kResults.GetInt("EnemyCityReligionCombatModifier");
+	m_iGreatProphetCostModifier				 = kResults.GetInt("GreatProphetCostModifier");
+	m_iHolyCityReligiousPressureModifier	 = kResults.GetInt("HolyCityReligiousPressureModifier");
 
 	m_bTradeUnplunderable					 = kResults.GetBool("TradeUnplunderable");
 	m_bCannotPlunder						 = kResults.GetBool("CannotPlunder");
@@ -178,6 +186,7 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	const char* szLegacyType = GetType();
 	kUtility.SetYields(m_piPlotPurchaseYieldReward, "Legacy_PlotPurchaseYieldReward", "LegacyType", szLegacyType);
 	kUtility.SetYields(m_piYieldBonusFromThemes, "Legacy_YieldBonusFromThemes", "LegacyType", szLegacyType);
+	kUtility.SetYields(m_piHolyCityYieldChange, "Legacy_HolyCityYieldChange", "LegacyType", szLegacyType);
 
 	kUtility.PopulateArrayByExistence(m_pbFreePromotion, "UnitPromotions", "Legacy_FreePromotions", "PromotionType", "LegacyType", szLegacyType);
 
@@ -279,6 +288,28 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		pResults->Reset();
 	}
 #endif
+	{
+		kUtility.Initialize2DArray(m_paiGreatWorkClassGreatPersonPoint, "GreatWorkClasses", "Specialists");
+		std::string strKey("Legacy_GreatWorkClassGreatPersonPoint");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT GreatWorkClasses.ID as GreatWorkClassID, Specialists.ID as SpecialistID, GreatPersonPointChange FROM Legacy_GreatWorkClassGreatPersonPoint "
+				"INNER JOIN GreatWorkClasses ON GreatWorkClasses.Type = GreatWorkClassType "
+				"INNER JOIN Specialists ON Specialists.Type = SpecialistType "
+				"WHERE LegacyType = ?");
+		}
+		pResults->Bind(1, szLegacyType);
+		while (pResults->Step())
+		{
+			const int greatWorkClass = pResults->GetInt(0);
+			const int specialist = pResults->GetInt(1);
+			const int greatPersonPointChange = pResults->GetInt(2);
+			m_paiGreatWorkClassGreatPersonPoint[greatWorkClass][specialist] = greatPersonPointChange;
+		}
+		pResults->Reset();
+	}
 	// Nearby Improvement Combat Modifier By Domain 
 	{
 		kUtility.Initialize2DArray(m_paiImprovementNearbyCombatModifierByDomain, "Improvements", "Domains");
@@ -993,6 +1024,14 @@ int CvLegacyEntry::GetEnemyCityReligionCombatModifier() const
 {
 	return m_iEnemyCityReligionCombatModifier;
 }
+int CvLegacyEntry::GetGreatProphetCostModifier() const
+{
+	return m_iGreatProphetCostModifier;
+}
+int CvLegacyEntry::GetHolyCityReligiousPressureModifier() const
+{
+	return m_iHolyCityReligiousPressureModifier;
+}
 // ARRAYS
 bool CvLegacyEntry::IsRevealResource(ResourceTypes eResource) const
 {
@@ -1204,6 +1243,14 @@ int CvLegacyEntry::GetTradeConnectionSeaYieldModifier(int i, int j) const
 	return m_paiTradeConnectionSeaYieldModifier ? m_paiTradeConnectionSeaYieldModifier[i][j] : 0;
 }
 #endif
+int CvLegacyEntry::GetHolyCityYieldChange(int i) const
+{
+	return m_piHolyCityYieldChange ? m_piHolyCityYieldChange[i] : 0;
+}
+int CvLegacyEntry::GetGreatWorkClassGreatPersonPoint(int i, int j) const
+{
+	return m_paiGreatWorkClassGreatPersonPoint ? m_paiGreatWorkClassGreatPersonPoint[i][j] : 0;
+}
 //=====================================
 // CvLegacyXMLEntries
 //=====================================
@@ -1360,6 +1407,8 @@ void CvPlayerLegacies::Reset()
 	m_iFriendlyCityReligionCombatModifier = 0;
 	m_iOccupiedCityReligionCombatModifier = 0;
 	m_iEnemyCityReligionCombatModifier = 0;
+	m_iGreatProphetCostModifier = 0;
+	m_iHolyCityReligiousPressureModifier = 0;
 	
 	// Arrays
 	// Builds
@@ -1505,6 +1554,8 @@ void CvPlayerLegacies::Reset()
 	m_vaaiTradeConnectionSeaYieldModifier.clear();
 	m_vaaiTradeConnectionSeaYieldModifier.resize(NUM_TRADE_CONNECTION_TYPES);
 #endif
+	m_viHolyCityYieldChange.clear();
+	m_viHolyCityYieldChange.resize(NUM_YIELD_TYPES);
 
 	Firaxis::Array< int, NUM_YIELD_TYPES > yield;
 	for (unsigned int j = 0; j < NUM_YIELD_TYPES; ++j)
@@ -1519,6 +1570,7 @@ void CvPlayerLegacies::Reset()
 		m_viConqueredCityYieldChange[iYield] = 0;
 		m_viCityYieldModifier[iYield] = 0;
 		m_viYieldBonusFromThemes[iYield] = 0;
+		m_viHolyCityYieldChange[iYield] = 0;
 		
 		// BuildingClass
 		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
@@ -1626,6 +1678,8 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_iFriendlyCityReligionCombatModifier;
 	kStream >> m_iOccupiedCityReligionCombatModifier;
 	kStream >> m_iEnemyCityReligionCombatModifier;
+	kStream >> m_iGreatProphetCostModifier;
+	kStream >> m_iHolyCityReligiousPressureModifier;
 
 	kStream >> m_viYieldBonusFromThemes;
 	kStream >> m_viLegacyUnitClassOverrides;
@@ -1657,6 +1711,7 @@ void CvPlayerLegacies::Read(FDataStream& kStream)
 	kStream >> m_vaaiBuildingCostOverrides;
 	kStream >> m_vaaiUnitCostOverrides;
 	kStream >> m_viBuildTimeOverrides;
+	kStream >> m_viHolyCityYieldChange;
 #if defined(TRADE_REFACTOR)
 	kStream >> m_vaaiTradeConnectionLandYieldChange;
 	kStream >> m_vaaiTradeConnectionSeaYieldChange;
@@ -1757,6 +1812,8 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_iFriendlyCityReligionCombatModifier;
 	kStream << m_iOccupiedCityReligionCombatModifier;
 	kStream << m_iEnemyCityReligionCombatModifier;
+	kStream << m_iGreatProphetCostModifier;
+	kStream << m_iHolyCityReligiousPressureModifier;
 
 	kStream << m_viYieldBonusFromThemes;
 	kStream << m_viLegacyUnitClassOverrides;
@@ -1788,6 +1845,7 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	kStream << m_vaaiBuildingCostOverrides;
 	kStream << m_vaaiUnitCostOverrides;
 	kStream << m_viBuildTimeOverrides;
+	kStream << m_viHolyCityYieldChange;
 #if defined(TRADE_REFACTOR)
 	kStream << m_vaaiTradeConnectionLandYieldChange;
 	kStream << m_vaaiTradeConnectionSeaYieldChange;
@@ -1987,12 +2045,19 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	m_iFriendlyCityReligionCombatModifier += kLegacy.GetFriendlyCityReligionCombatModifier();
 	m_iOccupiedCityReligionCombatModifier += kLegacy.GetOccupiedCityReligionCombatModifier();
 	m_iEnemyCityReligionCombatModifier += kLegacy.GetEnemyCityReligionCombatModifier();
+	m_iGreatProphetCostModifier += kLegacy.GetGreatProphetCostModifier();
+	m_iHolyCityReligiousPressureModifier += kLegacy.GetHolyCityReligiousPressureModifier();
 	bTemp = kLegacy.IsCannotPlunder();
 	if (bTemp) m_bCannotPlunder = bTemp;
 	bTemp = kLegacy.IsTradeUnplunderable();
 	if (bTemp) m_bTradeUnplunderable = bTemp;
 	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 	{
+		iChange = kLegacy.GetHolyCityYieldChange((YieldTypes)iYield);
+		if (iChange != 0)
+		{
+			m_viHolyCityYieldChange[iYield] += iChange;
+		}
 		iChange = kLegacy.GetYieldBonusFromThemes((YieldTypes)iYield);
 		if (iChange != 0)
 		{
@@ -2205,11 +2270,6 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	{
 		m_viPromotionNearbyGeneralUnitCombat[iUnitCombat] = kLegacy.GetPromotionNearbyGeneral(iUnitCombat);
 	}
-	// Great Work Classes
-	for (int iGreatWorkClass = 0; iGreatWorkClass < GC.getNumGreatWorkClassInfos(); iGreatWorkClass++)
-	{
-		m_viGreatWorkClassTourismChanges[iGreatWorkClass] += kLegacy.GetGreatWorkClassTourismChange(iGreatWorkClass);
-	}
 	// Improvements - Non-yield
 	for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 	{
@@ -2316,6 +2376,16 @@ int CvPlayerLegacies::GetEnemyCityReligionCombatModifier() const
 {
 	return m_iEnemyCityReligionCombatModifier;
 }
+// How much does the player reduce Great Prophet cost from legacies
+int CvPlayerLegacies::GetGreatProphetCostModifier() const
+{
+	return m_iGreatProphetCostModifier;
+}
+// How much does this legacy increase the pressure exerted by the Holy City
+int CvPlayerLegacies::GetHolyCityReligiousPressureModifier() const
+{
+	return m_iHolyCityReligiousPressureModifier;
+}
 // ARRAYS START
 // Does the player have a free promotion for a specific unit type from legacies
 bool CvPlayerLegacies::HasFreePromotionUnitType(PromotionTypes ePromotion, UnitTypes eUnitType) const
@@ -2416,6 +2486,33 @@ int CvPlayerLegacies::GetBuildingClassGreatPersonPointChange(BuildingClassTypes 
 			if (HasLegacy(eLegacy))
 			{
 				int iChange = pkLegacy->GetBuildingClassGreatPersonPointChange(eBuildingClass, eSpecialist);
+				if (iChange != 0)
+				{
+					return iChange;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// How much great person points does the player get for a great work class from legacies
+int CvPlayerLegacies::GetGreatWorkClassGreatPersonPoint(GreatWorkClass eGreatWorkClass, SpecialistTypes eSpecialist) const
+{
+	CvAssertMsg(eGreatWorkClass >= 0 && eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "GreatWorkClass index out of bounds");
+	CvAssertMsg(eSpecialist >= 0 && eSpecialist < GC.getNumSpecialistInfos(), "GreatPerson index out of bounds");
+	if (eGreatWorkClass == NO_GREAT_WORK_CLASS || eSpecialist == NO_SPECIALIST)
+	{
+		return 0;
+	}
+	for (int iI = 0; iI < GC.getNumLegacyInfos(); iI++)
+	{
+		const LegacyTypes eLegacy = static_cast<LegacyTypes>(iI);
+		CvLegacyEntry* pkLegacy = GC.getLegacyInfo(eLegacy);
+		if (pkLegacy)
+		{
+			if (HasLegacy(eLegacy))
+			{
+				int iChange = pkLegacy->GetGreatWorkClassGreatPersonPoint(eGreatWorkClass, eSpecialist);
 				if (iChange != 0)
 				{
 					return iChange;
@@ -2651,6 +2748,12 @@ int CvPlayerLegacies::GetYieldBonusFromThemes(YieldTypes eYield) const
 	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
 	return NO_YIELD != eYield ? m_viYieldBonusFromThemes[(int)eYield] : 0;
 }
+// Does this legacy give a yield bonus in the holy city
+int CvPlayerLegacies::GetHolyCityYieldChange(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
+	return NO_YIELD != eYield ? m_viHolyCityYieldChange[(int)eYield] : 0;
+}
 #if defined(TRADE_REFACTOR)
 // How much land yield change does the player get for a trade connection type from legacies
 int CvPlayerLegacies::GetTradeConnectionLandYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
@@ -2695,6 +2798,9 @@ int CvPlayerLegacies::GetTradeConnectionSeaYieldModifier(TradeConnectionType eTr
 	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionSeaYieldModifier[(int)eTradeConnection][(int)eYield] : 0;
 }
 #endif
+
+
+// AI METHODS
 void CvPlayerLegacies::DoLegacyAI()
 {
 	//

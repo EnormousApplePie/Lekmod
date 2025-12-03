@@ -197,16 +197,17 @@ function UpdateData()
 					
 					bShowResource = false;
 					
-					if (pTeam:GetTeamTechs():HasTech(GameInfoTypes[pResource.TechReveal])) then
-						if (pTeam:GetTeamTechs():HasTech(GameInfoTypes[pResource.TechCityTrade])) then
-							bShowResource = true;
-						end
+					if (pTeam:IsResourceRevealed(iResourceLoop)) then
+						bShowResource = true;
 					end
 					
 					iNumAvailable = pPlayer:GetNumResourceAvailable(iResourceLoop, true);
 					iNumUsed = pPlayer:GetNumResourceUsed(iResourceLoop);
 					iNumTotal = pPlayer:GetNumResourceTotal(iResourceLoop, true);
 					
+					if (iNumAvailable > 0) and not bShowResource then
+						bShowResource = true;
+					end
 					if (iNumUsed > 0) then
 						bShowResource = true;
 					end
@@ -466,7 +467,20 @@ function ScienceTipHandler( control )
 
 			strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_SCIENCE_FROM_MINORS", iScienceFromOtherPlayers / 100);
 		end
+
+		-- Science from Religion
+		local iScienceFromReligion = pPlayer:GetYieldFromReligionTimes100(GameInfoTypes.YIELD_SCIENCE);
+		if (iScienceFromReligion ~= 0) then
+			
+			-- Add separator for non-initial entries
+			if (bFirstEntry) then
+				bFirstEntry = false;
+			else
+				strText = strText .. "[NEWLINE]";
+			end
 	
+			strText = strText .. Locale.ConvertTextKey("TXT_KEY_TP_SCIENCE_FROM_RELIGION", iScienceFromReligion / 100);
+		end
 		-- Science from Happiness
 		local iScienceFromHappiness = pPlayer:GetScienceFromHappinessTimes100();
 		if (iScienceFromHappiness ~= 0) then
@@ -633,6 +647,7 @@ function HappinessTipHandler( control )
 		end
 	
 		local iPoliciesHappiness = pPlayer:GetHappinessFromPolicies();
+		local iLegaciesHappiness = pPlayer:GetHappinessFromLegacies();
 		local iResourcesHappiness = pPlayer:GetHappinessFromResources();
 		local iExtraLuxuryHappiness = pPlayer:GetExtraHappinessPerLuxury();
 		local iCityHappiness = pPlayer:GetHappinessFromCities();
@@ -644,7 +659,7 @@ function HappinessTipHandler( control )
 		local iMinorCivHappiness = pPlayer:GetHappinessFromMinorCivs();
 		local iLeagueHappiness = pPlayer:GetHappinessFromLeagues();
 	
-		local iHandicapHappiness = pPlayer:GetHappiness() - iPoliciesHappiness - iResourcesHappiness - iCityHappiness - iBuildingHappiness - iTradeRouteHappiness - iReligionHappiness - iNaturalWonderHappiness - iMinorCivHappiness - iExtraHappinessPerCity - iLeagueHappiness;
+		local iHandicapHappiness = pPlayer:GetHappiness() - iPoliciesHappiness - iLegaciesHappiness - iResourcesHappiness - iCityHappiness - iBuildingHappiness - iTradeRouteHappiness - iReligionHappiness - iNaturalWonderHappiness - iMinorCivHappiness - iExtraHappinessPerCity - iLeagueHappiness;
 	
 		if (pPlayer:IsEmpireVeryUnhappy()) then
 		
@@ -661,7 +676,7 @@ function HappinessTipHandler( control )
 			strText = strText .. "[COLOR:255:60:60:255]" .. Locale.ConvertTextKey("TXT_KEY_TP_EMPIRE_UNHAPPY") .. "[/COLOR]";
 		end
 	
-		local iTotalHappiness = iPoliciesHappiness + iResourcesHappiness + iCityHappiness + iBuildingHappiness + iMinorCivHappiness + iHandicapHappiness + iTradeRouteHappiness + iReligionHappiness + iNaturalWonderHappiness + iExtraHappinessPerCity + iLeagueHappiness;
+		local iTotalHappiness = iPoliciesHappiness + iLegaciesHappiness + iResourcesHappiness + iCityHappiness + iBuildingHappiness + iMinorCivHappiness + iHandicapHappiness + iTradeRouteHappiness + iReligionHappiness + iNaturalWonderHappiness + iExtraHappinessPerCity + iLeagueHappiness;
 	
 		strText = strText .. "[NEWLINE][NEWLINE]";
 		strText = strText .. "[COLOR:150:255:150:255]";
@@ -711,6 +726,10 @@ function HappinessTipHandler( control )
 		if (iPoliciesHappiness >= 0) then
 			strText = strText .. "[NEWLINE]";
 			strText = strText .. "  [ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_TP_HAPPINESS_POLICIES", iPoliciesHappiness);
+		end
+		if (iLegaciesHappiness >= 0) then
+			strText = strText .. "[NEWLINE]";
+			strText = strText .. "  [ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_TP_HAPPINESS_LEGACIES", iLegaciesHappiness);
 		end
 		strText = strText .. "[NEWLINE]";
 		strText = strText .. "  [ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_TP_HAPPINESS_BUILDINGS", iBuildingHappiness);
@@ -789,6 +808,10 @@ function HappinessTipHandler( control )
 			strText = strText .. "[NEWLINE]";
 			strText = strText .. "  [ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_TP_HAPPINESS_POLICIES", iPoliciesHappiness);
 		end		
+		if (iLegaciesHappiness < 0) then
+			strText = strText .. "[NEWLINE]";
+			strText = strText .. "  [ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_TP_HAPPINESS_LEGACIES", iLegaciesHappiness);
+		end
 		if (iUnhappinessPublicOpinion > 0) then
 			strText = strText .. "[NEWLINE]";
 			strText = strText .. "  [ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_TP_UNHAPPINESS_PUBLIC_OPINION", iUnhappinessPublicOpinion);
