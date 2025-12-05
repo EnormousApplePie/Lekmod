@@ -22,3 +22,38 @@ LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildTemp/
 /LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildOutput/VS2008_ModWin32/CvGameCore_Expansion2.pdb
 
 .local/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+*.spec
+
+# Downloads folder
+downloads/
+
+# Temp files
+*.tmp
+lekmod_temp/
+*.backup
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+*.exe (except in releases)
