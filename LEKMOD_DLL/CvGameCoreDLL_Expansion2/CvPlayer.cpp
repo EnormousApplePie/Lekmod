@@ -8765,6 +8765,9 @@ void CvPlayer::found(int iX, int iY, UnitTypes eSettlerUnit)
 		pCity->SetSettlerUnit(eSettlerUnit);
 	}
 #endif
+#if defined(TRAITIFY)
+	pCity->updateYield();
+#endif
 
 	AwardFreeBuildings(pCity);
 

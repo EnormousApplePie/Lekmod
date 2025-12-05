@@ -2753,19 +2753,71 @@ int CvPlayerTrade::GetTradeConnectionTraitValueTimes100(const TradeConnection& k
 int CvPlayerTrade::GetTradeConnectionReligionValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer)
 {
 	int iValue = 0;
-	if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection)) // International Trade
+	CvCity* pOriginCity = CvGameTrade::GetOriginCity(kTradeConnection);
+	CvCity* pDestCity = CvGameTrade::GetDestCity(kTradeConnection);
+	if (!pOriginCity || !pDestCity)
+		return 0;
+	ReligionTypes eOriginReligion = pOriginCity->GetCityReligions()->GetReligiousMajority();
+	ReligionTypes eDestReligion = pDestCity->GetCityReligions()->GetReligiousMajority();
+	const CvReligion* pOriginReligion = NULL;
+	const CvReligion* pDestReligion = NULL;
+	if (eOriginReligion != NO_RELIGION)
+		pOriginReligion = GC.getGame().GetGameReligions()->GetReligion(eOriginReligion, pOriginCity->getOwner());
+	if (eDestReligion != NO_RELIGION)
+		pDestReligion = GC.getGame().GetGameReligions()->GetReligion(eDestReligion, pDestCity->getOwner());
+
+	if (GC.getGame().GetGameTrade()->IsConnectionInternational(kTradeConnection))
 	{
-		CvCity* pOriginCity = CvGameTrade::GetOriginCity(kTradeConnection);
-		ReligionTypes eMajReligion  = pOriginCity->GetCityReligions()->GetReligiousMajority();
-		if (eMajReligion != NO_RELIGION)
+		if (bAsOriginPlayer)
 		{
-			if (bAsOriginPlayer) // Origin City
+			if (kTradeConnection.m_eDomain == DOMAIN_LAND)
 			{
-				const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajReligion, pOriginCity->getOwner());
-				if (pReligion)
-				{
-					iValue += pReligion->m_Beliefs.GetFaithPerForeignTradeRoute();
-				}
+				if (pOriginReligion)
+					iValue += pOriginReligion->m_Beliefs.GetTradeConnectionOriginLandYieldChange(kTradeConnection.m_eConnectionType, eYield);
+
+				if (pDestReligion)
+					iValue += pDestReligion->m_Beliefs.GetIncomingTradeConnectionLandYieldChange(kTradeConnection.m_eConnectionType, eYield);
+			}
+			else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+			{
+				if (pOriginReligion)
+					iValue += pOriginReligion->m_Beliefs.GetTradeConnectionOriginSeaYieldChange(kTradeConnection.m_eConnectionType, eYield);
+
+				if (pDestReligion)
+					iValue += pDestReligion->m_Beliefs.GetIncomingTradeConnectionSeaYieldChange(kTradeConnection.m_eConnectionType, eYield);
+			}
+		}
+		else // Destination player
+		{
+
+		}
+	}
+	else
+	{
+		if (bAsOriginPlayer)
+		{
+			if (kTradeConnection.m_eDomain == DOMAIN_LAND)
+			{
+				if (pOriginReligion)
+					iValue += pOriginReligion->m_Beliefs.GetTradeConnectionOriginLandYieldChange(kTradeConnection.m_eConnectionType, eYield);
+			}
+			else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+			{
+				if (pOriginReligion)
+					iValue += pOriginReligion->m_Beliefs.GetTradeConnectionOriginSeaYieldChange(kTradeConnection.m_eConnectionType, eYield);
+			}
+		}
+		else // Destination side
+		{
+			if (kTradeConnection.m_eDomain == DOMAIN_LAND)
+			{
+				if (pDestReligion)
+					iValue += pDestReligion->m_Beliefs.GetIncomingTradeConnectionLandYieldChange(kTradeConnection.m_eConnectionType, eYield);
+			}
+			else if (kTradeConnection.m_eDomain == DOMAIN_SEA)
+			{
+				if (pDestReligion)
+					iValue += pDestReligion->m_Beliefs.GetIncomingTradeConnectionSeaYieldChange(kTradeConnection.m_eConnectionType, eYield);
 			}
 		}
 	}

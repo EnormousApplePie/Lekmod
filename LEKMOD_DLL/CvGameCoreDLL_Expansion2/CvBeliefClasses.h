@@ -137,6 +137,14 @@ public:
 	int GetResourceHappiness(int i) const;
 	int GetYieldChangeAnySpecialist(int i) const;
 	int GetYieldChangeTradeRoute(int i) const;
+#if defined(TRADE_REFACTOR)
+	// Yield for SENDER if creating a Trade Route from a city with this belief
+	int GetTradeConnectionOriginLandYieldChange(int i, int j) const;
+	int GetTradeConnectionOriginSeaYieldChange(int i, int j) const;
+	// Yield for the SENDER if they send a Trade Route to a city with this belief, if international, else to RECEIVER city.
+	int GetIncomingTradeConnectionLandYieldChange(int i, int j) const;
+	int GetIncomingTradeConnectionSeaYieldChange(int i, int j) const;
+#endif
 	int GetYieldChangeNaturalWonder(int i) const;
 	int GetYieldChangeWorldWonder(int i) const;
 	int GetYieldModifierNaturalWonder(int i) const;
@@ -270,6 +278,12 @@ protected:
 	int* m_piResourceHappiness;
 	int* m_piYieldChangeAnySpecialist;
 	int* m_piYieldChangeTradeRoute;
+#if defined(TRADE_REFACTOR)
+	int** m_ppiTradeConnectionOriginLandYieldChange;
+	int** m_ppiTradeConnectionOriginSeaYieldChange;
+	int** m_ppiIncomingTradeConnectionLandYieldChange;
+	int** m_ppiIncomingTradeConnectionSeaYieldChange;
+#endif
 	int* m_piYieldChangeNaturalWonder;
 	int* m_piYieldChangeWorldWonder;
 	int* m_piYieldModifierNaturalWonder;
@@ -520,6 +534,14 @@ public:
 	int GetResourceHappiness(ResourceTypes eResource) const;
 	int GetYieldChangeAnySpecialist(YieldTypes eYieldType) const;
 	int GetYieldChangeTradeRoute(YieldTypes eYieldType) const;
+#if defined(TRADE_REFACTOR)
+	// Yield for SENDER if creating a Trade Route from a city with this belief
+	int GetTradeConnectionOriginLandYieldChange(TradeConnectionType eConnection, YieldTypes eYield) const;
+	int GetTradeConnectionOriginSeaYieldChange(TradeConnectionType eConnection, YieldTypes eYield) const;
+	// Yield for the SENDER if they send a Trade Route to a city with this belief, if international, else to RECEIVER city.
+	int GetIncomingTradeConnectionLandYieldChange(TradeConnectionType eConnection, YieldTypes eYield) const;
+	int GetIncomingTradeConnectionSeaYieldChange(TradeConnectionType eConnection, YieldTypes eYield) const;
+#endif
 	int GetYieldChangeNaturalWonder(YieldTypes eYieldType) const;
 	int GetYieldChangeWorldWonder(YieldTypes eYieldType) const;
 	int GetYieldModifierNaturalWonder(YieldTypes eYieldType) const;
