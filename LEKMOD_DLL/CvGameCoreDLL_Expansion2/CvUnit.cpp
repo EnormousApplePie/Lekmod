@@ -13926,7 +13926,7 @@ int CvUnit::GetRangeCombatDamage(const CvUnit* pDefender, CvCity* pCity, bool bI
 
 		if (pDefender->isEmbarked())
 		{
-			iDefenderStrength = pDefender->GetEmbarkedUnitDefense();;
+			iDefenderStrength = pDefender->GetEmbarkedUnitDefense();
 		}
 
 		// Use Ranged combat value for defender, UNLESS it's a boat or an Impi (ranged support)
