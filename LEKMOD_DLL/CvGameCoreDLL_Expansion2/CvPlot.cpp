@@ -8014,10 +8014,16 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		if(bIsFreshWater)
 		{
 			iYield += kTeam.getImprovementFreshWaterYieldChange(eImprovement, eYield);
+#if defined(TRAITIFY)
+			iYield += kPlayer.GetPlayerTraits()->GetFreshWaterImprovementYieldChange(eImprovement, eYield);
+#endif
 		}
 		else
 		{
 			iYield += kTeam.getImprovementNoFreshWaterYieldChange(eImprovement, eYield);
+#if defined(TRAITIFY)
+			iYield += kPlayer.GetPlayerTraits()->GetNonFreshWaterImprovementYieldChange(eImprovement, eYield);
+#endif
 		}
 	}
 
