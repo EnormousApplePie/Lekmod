@@ -1145,6 +1145,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED
 // Change the religious pressure when losing population
 #define LEKMOD_RELIGIOUS_PRESSURE_POP_LOSS
+// Make mountains more yieldable
+#define LEKMOD_MOUNTAINS
 
 
 

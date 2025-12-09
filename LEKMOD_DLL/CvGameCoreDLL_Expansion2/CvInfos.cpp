@@ -5130,6 +5130,9 @@ CvFeatureInfo::CvFeatureInfo() :
 	m_piYieldChange(NULL),
 	m_piRiverYieldChange(NULL),
 	m_piHillsYieldChange(NULL),
+#if defined(LEKMOD_MOUNTAINS)
+	m_piMountainYieldChange(NULL),
+#endif
 	m_pi3DAudioScriptFootstepIndex(NULL),
 	m_pbTerrain(NULL),
 	m_bClearable(false)
@@ -5141,6 +5144,9 @@ CvFeatureInfo::~CvFeatureInfo()
 	SAFE_DELETE_ARRAY(m_piYieldChange);
 	SAFE_DELETE_ARRAY(m_piRiverYieldChange);
 	SAFE_DELETE_ARRAY(m_piHillsYieldChange);
+#if defined(LEKMOD_MOUNTAINS)
+	SAFE_DELETE_ARRAY(m_piMountainYieldChange);
+#endif
 	SAFE_DELETE_ARRAY(m_pi3DAudioScriptFootstepIndex);
 	SAFE_DELETE_ARRAY(m_pbTerrain);
 }
@@ -5335,6 +5341,15 @@ int CvFeatureInfo::getHillsYieldChange(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piHillsYieldChange ? m_piHillsYieldChange[i] : -1;
 }
+#if defined(LEKMOD_MOUNTAINS)
+//------------------------------------------------------------------------------
+int CvFeatureInfo::getMountainYieldChange(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piMountainYieldChange ? m_piMountainYieldChange[i] : -1;
+}
+#endif
 //------------------------------------------------------------------------------
 int CvFeatureInfo::get3DAudioScriptFootstepIndex(int i) const
 {
@@ -5436,6 +5451,9 @@ bool CvFeatureInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	kUtility.SetYields(m_piYieldChange, "Feature_YieldChanges", "FeatureType", szFeatureType);
 	kUtility.SetYields(m_piRiverYieldChange, "Feature_RiverYieldChanges", "FeatureType", szFeatureType);
 	kUtility.SetYields(m_piHillsYieldChange, "Feature_HillsYieldChanges", "FeatureType", szFeatureType);
+#if defined(LEKMOD_MOUNTAINS)
+	kUtility.SetYields(m_piMountainYieldChange, "Feature_MountainYieldChanges", "FeatureType", szFeatureType);
+#endif
 
 	kUtility.PopulateArrayByExistence(m_pbTerrain, "Terrains", "Feature_TerrainBooleans", "TerrainType", "FeatureType", szFeatureType);
 
@@ -5596,6 +5614,9 @@ CvTerrainInfo::CvTerrainInfo() :
 	m_piYields(NULL),
 	m_piRiverYieldChange(NULL),
 	m_piHillsYieldChange(NULL),
+#if defined(LEKMOD_MOUNTAINS)
+	m_piMountainYieldChange(NULL),
+#endif
 	m_pi3DAudioScriptFootstepIndex(NULL)
 {
 }
@@ -5605,6 +5626,9 @@ CvTerrainInfo::~CvTerrainInfo()
 	SAFE_DELETE_ARRAY(m_piYields);
 	SAFE_DELETE_ARRAY(m_piRiverYieldChange);
 	SAFE_DELETE_ARRAY(m_piHillsYieldChange);
+#if defined(LEKMOD_MOUNTAINS)
+	SAFE_DELETE_ARRAY(m_piMountainYieldChange);
+#endif
 	SAFE_DELETE_ARRAY(m_pi3DAudioScriptFootstepIndex);
 }
 //------------------------------------------------------------------------------
@@ -5703,6 +5727,15 @@ int CvTerrainInfo::getHillsYieldChange(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piHillsYieldChange ? m_piHillsYieldChange[i] : -1;
 }
+#if defined(LEKMOD_MOUNTAINS)
+//------------------------------------------------------------------------------
+int CvTerrainInfo::getMountainYieldChange(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piMountainYieldChange ? m_piMountainYieldChange[i] : -1;
+}
+#endif
 //------------------------------------------------------------------------------
 int CvTerrainInfo::get3DAudioScriptFootstepIndex(int i) const
 {
@@ -5747,6 +5780,9 @@ bool CvTerrainInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	kUtility.SetYields(m_piYields, "Terrain_Yields", "TerrainType", szTerrainType);
 	kUtility.SetYields(m_piRiverYieldChange, "Terrain_RiverYieldChanges", "TerrainType", szTerrainType);
 	kUtility.SetYields(m_piHillsYieldChange, "Terrain_HillsYieldChanges", "TerrainType", szTerrainType);
+#if defined(LEKMOD_MOUNTAINS)
+	kUtility.SetYields(m_piMountainYieldChange, "Terrain_MountainYieldChanges", "TerrainType", szTerrainType);
+#endif
 
 	m_strEffectTypeTag = kResults.GetText("EffectTypeTag");
 

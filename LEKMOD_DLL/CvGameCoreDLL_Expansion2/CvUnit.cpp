@@ -19553,6 +19553,24 @@ bool CvUnit::IsNearTerrainType(TerrainTypes eTerrainType, int iRange, bool bSame
 					return true;
 
 				}
+				else if (eTerrainType == TERRAIN_MOUNTAIN && pLoopPlot->isMountain())
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+					return true;
+				}
+				else if (eTerrainType == TERRAIN_HILL && pLoopPlot->isHills())
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+					return true;
+				}
 			}
 		}
 	}

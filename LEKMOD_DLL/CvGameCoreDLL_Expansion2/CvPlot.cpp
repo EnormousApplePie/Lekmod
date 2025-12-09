@@ -7555,8 +7555,11 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	int iYield;
 	ReligionTypes eMajority = NO_RELIGION;
 	BeliefTypes eSecondaryPantheon = NO_BELIEF;
-
+#if !defined(LEKMOD_MOUNTAINS)
 	if(isImpassable() || isMountain())
+#else
+	if (isImpassable())
+#endif
 	{
 		// No Feature, or the Feature isn't a Natural Wonder (which are impassable but allowed to be worked)
 		if(getFeatureType() == NO_FEATURE || !GC.getFeatureInfo(getFeatureType())->IsNaturalWonder())
@@ -7722,7 +7725,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 
 	// GJS - this was moved after the Feature terrain yield replacement if statement (just above this) to allow yield changes from religion based on terrain with replacement features
 	// Extra yield for religion on this terrain
-	if(pWorkingCity != NULL && eMajority != NO_RELIGION)
+	if(pWorkingCity != NULL && eMajority != NO_RELIGION && !isMountain())
 	{
 		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, pWorkingCity->getOwner());
 		if(pReligion)
@@ -7779,6 +7782,12 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	{
 		iYield += ((bIgnoreFeature || (getFeatureType() == NO_FEATURE)) ? GC.getTerrainInfo(getTerrainType())->getHillsYieldChange(eYield) : GC.getFeatureInfo(getFeatureType())->getHillsYieldChange(eYield));
 	}
+#if defined(LEKMOD_MOUNTAINS)
+	if(isMountain())
+	{
+		iYield += ((bIgnoreFeature || (getFeatureType() == NO_FEATURE)) ? GC.getTerrainInfo(getTerrainType())->getMountainYieldChange(eYield) : GC.getFeatureInfo(getFeatureType())->getMountainYieldChange(eYield));
+	}
+#endif
 
 	return std::max(0, iYield);
 }
@@ -8207,6 +8216,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 
 	if(ePlayer != NO_PLAYER)
 	{
+		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 		pCity = getPlotCity();
 
 		if(pCity != NULL)
@@ -8229,7 +8239,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		{
 			if(!isImpassable() && !isMountain())
 			{
-				iYield += GET_PLAYER(ePlayer).getSeaPlotYield(eYield);
+				iYield += kPlayer.getSeaPlotYield(eYield);
 
 				if(pWorkingCity != NULL)
 				{
@@ -8251,7 +8261,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 					}
 				}
 
-				if(getResourceType(GET_PLAYER(ePlayer).getTeam()) != NO_RESOURCE)
+				if(getResourceType(kPlayer.getTeam()) != NO_RESOURCE)
 				{
 					if(pWorkingCity != NULL)
 					{
@@ -8284,12 +8294,9 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		{
 			if (NULL != pWorkingCity)
 			{
-				if (eYield == YIELD_SCIENCE)
-				{
-					iYield += pWorkingCity->getMountainScienceYield();
-				}
-
+				iYield += pWorkingCity->GetTerrainExtraYield(TERRAIN_MOUNTAIN, eYield);
 			}
+			iYield += kPlayer.GetPlayerTraits()->GetTerrainYieldChange(TERRAIN_MOUNTAIN, eYield);
 		}
 		// NQMP GJS - mountain science yield end
 
@@ -8298,7 +8305,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		{
 			if (NULL != pWorkingCity)
 			{
-				iYield += pWorkingCity->getHillYieldChangesFromBuildings(eYield);
+				iYield += pWorkingCity->GetTerrainExtraYield(TERRAIN_HILL, eYield);
+				iYield += kPlayer.GetPlayerTraits()->GetTerrainYieldChange(TERRAIN_HILL, eYield);
 			}
 		}
 #endif
@@ -8311,19 +8319,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 				iYield += pWorkingCity->GetFeatureExtraYield(getFeatureType(), eYield);
 			}
 		}
-#if defined(TRAITIFY) // Special case for Armenia 
-		FeatureTypes eAraratMountain = (FeatureTypes)GC.getInfoTypeForString("FEATURE_ARARAT_MOUNTAIN");
-		if(getFeatureType() == eAraratMountain)
-		{
-			if (m_eOwner != NO_PLAYER)
-			{
-				// Shouldn't be possible today but who knows about tomorrow...
-				iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetFeatureYieldChange(eAraratMountain, eYield);
-				if (eImprovement == NO_IMPROVEMENT)
-					iYield += GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits()->GetUnimprovedFeatureYieldChange(eAraratMountain, eYield);
-			}
-		}
-#endif
 
 		if (eImprovement != NO_IMPROVEMENT && !IsImprovementPillaged())
 		{
@@ -11337,6 +11332,7 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 
 	if(ePlayer != NO_PLAYER)
 	{
+		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 		// City plot yield
 		if(pCity != NULL)
 		{
@@ -11359,7 +11355,7 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 			if(!isImpassable() && !isMountain())
 			{
 				// Player sea plot yield
-				iYield += GET_PLAYER(ePlayer).getSeaPlotYield(eYield);
+				iYield += kPlayer.getSeaPlotYield(eYield);
 
 				if(pWorkingCity != NULL)
 				{
@@ -11379,7 +11375,7 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 				}
 
 				// Worked water resources
-				if(getResourceType(GET_PLAYER(ePlayer).getTeam()) != NO_RESOURCE)
+				if(getResourceType(kPlayer.getTeam()) != NO_RESOURCE)
 				{
 					if(pWorkingCity != NULL)
 					{
@@ -11411,7 +11407,8 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 		{
 			if (NULL != pWorkingCity)
 			{
-				iYield += pWorkingCity->getHillYieldChangesFromBuildings(eYield);
+				iYield += pWorkingCity->GetTerrainExtraYield(TERRAIN_HILL, eYield);
+				iYield += kPlayer.GetPlayerTraits()->GetTerrainYieldChange(TERRAIN_HILL, eYield);
 			}
 		}
 #endif
