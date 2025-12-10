@@ -34,23 +34,6 @@ function lekmod_cuba_ua_culture(player_id)
 
 end
 ------------------------------------------------------------------------------------------------------------------------
--- Cuba UB Dance Hall. Add a dummy building if there is a great work of music in the city.
-------------------------------------------------------------------------------------------------------------------------
-function lekmod_cuba_building(player_id)
-   local player = Players[player_id]
-   if player:GetCivilizationType() == this_civ then
-      for city in player:Cities() do
-         if city:IsHasBuilding(GameInfoTypes["BUILDING_DANCE_HALL"]) then
-            if city:GetNumGreatWorksInBuilding(GameInfoTypes.BUILDINGCLASS_OPERA_HOUSE) > 0 then
-               city:SetNumRealBuilding(GameInfoTypes["BUILDING_CUBA_TRAIT_UB"], 1)
-            else
-               city:SetNumRealBuilding(GameInfoTypes["BUILDING_CUBA_TRAIT_UB"], 0)
-            end
-         end
-      end
-   end
-end
-------------------------------------------------------------------------------------------------------------------------
 -- Cuba UU. Unlock and give 2 of the unit if the player has adopted an ideology tenet for the first time.
 ------------------------------------------------------------------------------------------------------------------------
 function lekmod_cuba_unit_unlock(player_id, policy_id)
@@ -71,7 +54,6 @@ function lekmod_cuba_unit_unlock(player_id, policy_id)
 end
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-   GameEvents.PlayerDoTurn.Add(lekmod_cuba_building)
    GameEvents.PlayerDoTurn.Add(lekmod_cuba_ua_culture)
    GameEvents.PlayerAdoptPolicy.Add(lekmod_cuba_unit_unlock)
 end

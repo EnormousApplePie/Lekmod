@@ -10920,11 +10920,12 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 		}
 #endif
 	}
-
+#if defined(LEKMOD_LEGACY)
 	if (::isWorldWonderClass(pBuildingInfo->GetBuildingClassInfo()))
 	{
 		updateYield();
 	}
+#endif
 }
 //	--------------------------------------------------------------------------------
 /// Get yield change from buildings for a specific building class

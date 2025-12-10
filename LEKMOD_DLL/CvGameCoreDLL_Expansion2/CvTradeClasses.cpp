@@ -3039,7 +3039,6 @@ int CvPlayerTrade::GetTradeConnectionLegacyValueModifierTimes100(const TradeConn
 		}
 	}
 	return iModifier;
-	return iModifier;
 }
 int CvPlayerTrade::GetTradeConnectionValueTimes100(const TradeConnection& kTradeConnection, YieldTypes eYield, bool bAsOriginPlayer, bool bIncludeModifiers)
 {

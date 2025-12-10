@@ -205,7 +205,7 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 	szTooltip += ")";
 	szTooltip += "[NEWLINE]";
 	CvString cultureString;
-#if defined(LEKMOD_LEGACY)
+#if defined(LEKMOD_LEGACY) // some of this is useful
 	CvPlayerCulture* pCulture = GET_PLAYER(eOwner).GetCulture();
 	int iCityID, iSlot;
 	BuildingTypes eBuilding;
@@ -229,8 +229,8 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 #else
 	for (int iYieldLoop = 0; iYieldLoop < NUM_YIELD_TYPES; iYieldLoop++)
 	{
-		YieldTypes eYield = (YieldTypes)iYieldLoop;
-		int iYield = pWork->m_viYield[iYieldLoop];
+		YieldTypes eYield = static_cast<YieldTypes>(iYieldLoop);
+		int iYield = pWork->m_viYield[eYield];
 		if (iYield == 0)
 			continue;
 		const char* strYieldIcon = "";
@@ -286,7 +286,7 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 #endif
 	szTooltip += cultureString;
 #if defined(LEKMOD_LEGACY)
-	CvString gppString;
+	CvString extraString;
 	bool bFirst = true;
 	for (int specialist = 0; specialist < GC.getNumSpecialistInfos(); specialist++)
 	{
@@ -296,13 +296,31 @@ CvString CvGameCulture::GetGreatWorkTooltip(int iIndex, PlayerTypes eOwner) cons
 		{
 			if (bFirst)
 			{
-				gppString += "[NEWLINE]";
+				extraString += "[NEWLINE]";
 				bFirst = false;
 			}
-			gppString += CvString::format("+%d %s ", greatWorkgpp, GC.getSpecialistInfo(eSpecialist)->getGreatPersonIconString());
+			extraString += CvString::format("+%d %s ", greatWorkgpp, GC.getSpecialistInfo(eSpecialist)->getGreatPersonIconString());
 		}
 	}
-	szTooltip += gppString;
+	int buildingWorkHappiness = 0;
+	if (eBuilding != NO_BUILDING)
+	{
+		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+		if (pkBuildingInfo)
+		{
+			buildingWorkHappiness = pkBuildingInfo->GetGreatWorkHappiness();
+			if (buildingWorkHappiness != 0)
+			{
+				if (bFirst)
+				{
+					extraString += "[NEWLINE]";
+					bFirst = false;
+				}
+				extraString += CvString::format("+%d [ICON_HAPPINESS_1] ", buildingWorkHappiness);
+			} 
+		}
+	}
+	szTooltip += extraString;
 #endif
 	return szTooltip;
 }

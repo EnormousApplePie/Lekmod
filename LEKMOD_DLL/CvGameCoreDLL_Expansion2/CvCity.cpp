@@ -2785,6 +2785,9 @@ UnitTypes CvCity::allUpgradesAvailable(UnitTypes eUnit, int iUpgradeCount) const
 	bUpgradeUnavailable = false;
 
 	const CvCivilizationInfo& thisCiv = getCivilizationInfo();
+#if defined(LEKMOD_LEGACY)
+	const CvPlayerLegacies* playerLegacies = GET_PLAYER(getOwner()).GetPlayerLegacies();
+#endif
 
 #ifdef AUI_WARNING_FIXES
 	for (uint iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
@@ -2798,8 +2801,14 @@ UnitTypes CvCity::allUpgradesAvailable(UnitTypes eUnit, int iUpgradeCount) const
 		{
 			if(pkUnitInfo->GetUpgradeUnitClass(iI))
 			{
-				const UnitTypes eLoopUnit = (UnitTypes) thisCiv.getCivilizationUnits(iI);
-
+				UnitTypes eLoopUnit = static_cast<UnitTypes>(thisCiv.getCivilizationUnits(iI));
+#if defined(LEKMOD_LEGACY) // Returns the UnitType
+				const UnitTypes eLegacyUnit = static_cast<UnitTypes>(playerLegacies->GetLegacyUnitClassOverride(eUnitClass));
+				if (eLegacyUnit != NO_UNIT)
+				{
+					eLoopUnit = eLegacyUnit;
+				}
+#endif
 				if(eLoopUnit != NO_UNIT)
 				{
 					bUpgradeFound = true;
@@ -8386,7 +8395,7 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 	m_iFaithPerTurnFromReligion = 0;
 	for(int iYield = 0; iYield <= YIELD_SCIENCE; iYield++)
 #else
-	for(int iYield = 0; iYield <= NUM_YIELD_TYPES; iYield++)
+	for(int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 #endif
 	{
 		m_aiBaseYieldRateFromReligion[iYield] = 0;
@@ -11408,8 +11417,9 @@ int CvCity::GetLocalHappiness() const
 	iLocalHappiness += iLegacyBuildingHappiness;
 #endif
 #endif // LEKMOD_NONCIV_BUILDINGCLASS_YIELD_CHANGE
-
-
+#if defined(LEKMOD_LEGACY)
+	iLocalHappiness += GetCityBuildings()->GetHappinessFromGreatWorks();
+#endif
 	// India has unique way to compute local happiness cap
 	if(kPlayer.GetPlayerTraits()->GetPopulationUnhappinessModifier() != 0)
 	{
@@ -17480,7 +17490,12 @@ bool CvCity::doCheckProduction()
 				}
 
 				eUpgradeUnit = allUpgradesAvailable((UnitTypes)iI);
-
+#if defined(LEKMOD_LEGACY)
+				if (eUpgradeUnit == NO_UNIT)
+				{
+					eUpgradeUnit = static_cast<UnitTypes>(thisPlayer.GetPlayerLegacies()->GetLegacyUnitClassOverride(static_cast<UnitClassTypes>(GC.getUnitInfo(static_cast<UnitTypes>(iI))->GetUnitClassType())));
+				}
+#endif
 				if(eUpgradeUnit != NO_UNIT)
 				{
 					CvAssertMsg(eUpgradeUnit != iI, "Trying to upgrade a Unit to itself");
@@ -17525,7 +17540,6 @@ bool CvCity::doCheckProduction()
 				if(getFirstBuildingOrder(eBuilding) != -1)
 				{
 					BuildingClassTypes eBuildingClass = (BuildingClassTypes) pkBuildingInfo->GetReplacementBuildingClass();
-
 					if(eBuildingClass != NO_BUILDINGCLASS)
 					{
 						BuildingTypes eUpgradeBuilding = ((BuildingTypes)(thisPlayer.getCivilizationInfo().getCivilizationBuildings(eBuildingClass)));
@@ -17569,6 +17583,44 @@ bool CvCity::doCheckProduction()
 							}
 						}
 					}
+#if defined(LEKMOD_LEGACY)
+					eBuildingClass = (BuildingClassTypes)pkBuildingInfo->GetBuildingClassType();
+					BuildingTypes eLegacyBuilding = (BuildingTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetLegacyBuildingClassOverride(eBuildingClass);
+					if (eLegacyBuilding != NO_BUILDING)
+					{
+						CvAssertMsg(eUpgradeBuilding != iI, "Trying to upgrade a Building to itself");
+						iUpgradeProduction = m_pCityBuildings->GetBuildingProduction(eBuilding);
+						m_pCityBuildings->SetBuildingProduction((eBuilding), 0);
+						m_pCityBuildings->SetBuildingProduction(eLegacyBuilding, iUpgradeProduction);
+
+						pOrderNode = headOrderQueueNode();
+
+						while (pOrderNode != NULL)
+						{
+							if (pOrderNode->eOrderType == ORDER_CONSTRUCT)
+							{
+								if (pOrderNode->iData1 == iI)
+								{
+									CvBuildingEntry* pkOrderBuildingInfo = GC.getBuildingInfo((BuildingTypes)pOrderNode->iData1);
+									CvBuildingEntry* pkUpgradeBuildingInfo = GC.getBuildingInfo(eLegacyBuilding);
+
+									if (NULL != pkOrderBuildingInfo && NULL != pkUpgradeBuildingInfo)
+									{
+										const BuildingClassTypes eOrderBuildingClass = (BuildingClassTypes)pkOrderBuildingInfo->GetBuildingClassType();
+										const BuildingClassTypes eUpgradeBuildingClass = (BuildingClassTypes)pkUpgradeBuildingInfo->GetBuildingClassType();
+
+										thisPlayer.changeBuildingClassMaking(eOrderBuildingClass, -1);
+										pOrderNode->iData1 = eLegacyBuilding;
+										thisPlayer.changeBuildingClassMaking(eUpgradeBuildingClass, 1);
+
+									}
+								}
+							}
+
+							pOrderNode = nextOrderQueueNode(pOrderNode);
+						}
+					}
+#endif
 				}
 			}
 		}

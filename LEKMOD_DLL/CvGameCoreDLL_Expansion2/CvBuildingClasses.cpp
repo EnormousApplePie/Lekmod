@@ -143,6 +143,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iGarrisonStrengthBonus(0),
 #endif
+#if defined(LEKMOD_LEGACY)
+	m_iGreatWorkHappiness(0),
+#endif
 	m_iPreferredDisplayPosition(0),
 	m_iPortraitIndex(-1),
 	m_bTeamShare(false),
@@ -213,6 +216,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 #endif
 	m_piDomainFreeExperience(NULL),
 	m_piDomainFreeExperiencePerGreatWork(NULL),
+#if defined(LEKMOD_LEGACY)
+	m_piBuildingGreatWorkYieldChange(NULL),
+#endif
 	m_piDomainProductionModifier(NULL),
 	m_piPrereqNumOfBuildingClass(NULL),
 	m_piFlavorValue(NULL),
@@ -322,6 +328,9 @@ CvBuildingEntry::~CvBuildingEntry(void)
 #endif
 	SAFE_DELETE_ARRAY(m_piDomainFreeExperience);
 	SAFE_DELETE_ARRAY(m_piDomainFreeExperiencePerGreatWork);
+#if defined(LEKMOD_LEGACY)
+	SAFE_DELETE_ARRAY(m_piBuildingGreatWorkYieldChange);
+#endif
 	SAFE_DELETE_ARRAY(m_piDomainProductionModifier);
 	SAFE_DELETE_ARRAY(m_piPrereqNumOfBuildingClass);
 	SAFE_DELETE_ARRAY(m_piFlavorValue);
@@ -533,6 +542,9 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iGarrisonStrengthBonus = kResults.GetInt("GarrisonStrengthBonus");
 #endif
+#if defined(LEKMOD_LEGACY)
+	m_iGreatWorkHappiness = kResults.GetInt("GreatWorkHappiness");
+#endif
 	m_iPreferredDisplayPosition = kResults.GetInt("DisplayPosition");
 	m_iPortraitIndex = kResults.GetInt("PortraitIndex");
 
@@ -713,6 +725,7 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	kUtility.SetYields(m_piGarrisonYieldChange, "Building_GarrisonYieldChanges", "BuildingType", szBuildingType);
 #endif
 #if defined(LEKMOD_LEGACY)
+	kUtility.SetYields(m_piBuildingGreatWorkYieldChange, "Building_HoldingGreatWorkYieldChange", "BuildingType", szBuildingType);
 	// Player wide resource class yield changes
 	{
 		kUtility.Initialize2DArray(m_ppaiResourceClassYieldChangePlayer, "ResourceClasses", "Yields");
@@ -2033,6 +2046,13 @@ int CvBuildingEntry::GetGarrisonStrengthBonus() const
 	return m_iGarrisonStrengthBonus;
 }
 #endif
+#if defined(LEKMOD_LEGACY)
+/// How much happiness does this building provide to Great Works inside it
+int CvBuildingEntry::GetGreatWorkHappiness() const
+{
+	return m_iGreatWorkHappiness;
+}
+#endif
 /// What ring the engine will try to display this building
 int CvBuildingEntry::GetPreferredDisplayPosition() const
 {
@@ -2504,7 +2524,15 @@ int CvBuildingEntry::GetDomainFreeExperiencePerGreatWork(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piDomainFreeExperiencePerGreatWork ? m_piDomainFreeExperiencePerGreatWork[i] : -1;
 }
-
+#if defined(LEKMOD_LEGACY)
+/// Yield for great works being held in this building
+int CvBuildingEntry::GetBuildingGreatWorkYieldChange(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	return m_piBuildingGreatWorkYieldChange ? m_piBuildingGreatWorkYieldChange[i] : 0;
+}
+#endif
 /// Production modifier in this domain
 int CvBuildingEntry::GetDomainProductionModifier(int i) const
 {
@@ -2665,7 +2693,7 @@ int CvBuildingEntry::GetResourceClassYieldChangePlayer(int i, int j) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
 	CvAssertMsg(j > -1, "Index out of bounds");
-	return m_ppaiResourceClassYieldChangePlayer ? m_ppaiResourceClassYieldChangePlayer[i][j] : -1;
+	return m_ppaiResourceClassYieldChangePlayer ? m_ppaiResourceClassYieldChangePlayer[i][j] : 0;
 }
 #endif
 /// Change to Resource yield by type
@@ -4009,11 +4037,14 @@ void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, in
 				else
 				{
 					(*it).iGreatWorkIndex = iGreatWorkIndex;
-#if defined(LEKMOD_LEGACY)
+#if !defined(LEKMOD_LEGACY)
+				}
+#else
 					rebuildGreatWorkYields();
-#endif
+					calculateHappinessFromGreatWorks();
 				}
 				m_bGreatWorkClassMapDirty = true;
+#endif				
 			}
 
 			GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
@@ -4029,9 +4060,10 @@ void CvCityBuildings::SetBuildingGreatWork(BuildingClassTypes eBuildingClass, in
 		kWork.iSlot = iSlot;
 		kWork.iGreatWorkIndex = iGreatWorkIndex;
 		m_aBuildingGreatWork.push_back(kWork);
-		m_bGreatWorkClassMapDirty = true;
 #if defined(LEKMOD_LEGACY)
+		m_bGreatWorkClassMapDirty = true;
 		rebuildGreatWorkYields();
+		calculateHappinessFromGreatWorks();
 #endif
 	}
 
@@ -4412,7 +4444,6 @@ const std::map<GreatWorkClass, int>& CvCityBuildings::GetGreatWorkClassCounts() 
 				GreatWorkClass eClass = pCulture->GetGreatWorkClass(kWork.iGreatWorkIndex);
 				if (eClass != NO_GREAT_WORK_CLASS)
 				{
-					// Increment the count for this class
 					std::map<GreatWorkClass, int>::iterator it = m_cachedGreatWorkClassCounts.find(eClass);
 					if (it != m_cachedGreatWorkClassCounts.end())
 					{
@@ -4425,7 +4456,6 @@ const std::map<GreatWorkClass, int>& CvCityBuildings::GetGreatWorkClassCounts() 
 				}
 			}
 		}
-
 		// Mark cache as valid
 		m_bGreatWorkClassMapDirty = false;
 	}
@@ -4437,22 +4467,62 @@ void CvCityBuildings::rebuildGreatWorkYields()
 	CvGameCulture* culture = GC.getGame().GetGameCulture();
 	if (!culture)
 		return;
-	for (std::vector<BuildingGreatWork>::const_iterator it = m_aBuildingGreatWork.begin(); it != m_aBuildingGreatWork.end(); ++it)
+	CvPlayerCulture* playerCulture = GET_PLAYER(m_pCity->getOwner()).GetCulture();
+	if (playerCulture)
 	{
-		CvGreatWork* pWork = &culture->m_CurrentGreatWorks[(*it).iGreatWorkIndex];
-		if (pWork)
+		for (std::vector<BuildingGreatWork>::const_iterator it = m_aBuildingGreatWork.begin(); it != m_aBuildingGreatWork.end(); ++it)
 		{
-			std::fill(pWork->m_viYield.begin(), pWork->m_viYield.end(), 0);
-			for (int yield = 0; yield < NUM_YIELD_TYPES; yield++)
+			int iCityID, iSlot;
+			BuildingTypes eBuilding;
+			playerCulture->GetGreatWorkLocation((*it).iGreatWorkIndex, iCityID, eBuilding, iSlot);
+			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+			CvGreatWork* pWork = &culture->m_CurrentGreatWorks[(*it).iGreatWorkIndex];
+			if (pWork)
 			{
-				YieldTypes eYield = (YieldTypes)yield;
-				int base = GC.getGreatWorkClassInfo(pWork->m_eClassType)->getGreatWorkClassBaseYield(eYield);
-				int playerYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkYieldChange(eYield);
-				int playerClassYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkClassYieldChange(pWork->m_eClassType, eYield);
-				pWork->m_viYield[yield] = base + playerYield + playerClassYield;
+				std::fill(pWork->m_viYield.begin(), pWork->m_viYield.end(), 0);
+				for (int yield = 0; yield < NUM_YIELD_TYPES; yield++)
+				{
+					YieldTypes eYield = static_cast<YieldTypes>(yield);
+					int base = GC.getGreatWorkClassInfo(pWork->m_eClassType)->getGreatWorkClassBaseYield(eYield);
+					int playerYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkYieldChange(eYield);
+					int playerClassYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkClassYieldChange(pWork->m_eClassType, eYield);
+					int buildingYieldChange = pkBuildingInfo->GetBuildingGreatWorkYieldChange(eYield);
+					pWork->m_viYield[yield] = base + playerYield + playerClassYield + buildingYieldChange;
+				}
 			}
 		}
 	}
+}
+int CvCityBuildings::GetHappinessFromGreatWorks() const
+{
+	return m_iHappinessFromGreatWorks;
+}
+void CvCityBuildings::calculateHappinessFromGreatWorks()
+{
+	m_iHappinessFromGreatWorks = 0;
+	int iTotalHappiness = 0;
+	CvGameCulture* culture = GC.getGame().GetGameCulture();
+	if (!culture)
+		return;
+	CvPlayerCulture* playerCulture = GET_PLAYER(m_pCity->getOwner()).GetCulture();
+	if (playerCulture)
+	{
+		for (std::vector<BuildingGreatWork>::const_iterator it = m_aBuildingGreatWork.begin(); it != m_aBuildingGreatWork.end(); ++it)
+		{
+			int iCityID, iSlot;
+			BuildingTypes eBuilding;
+			playerCulture->GetGreatWorkLocation((*it).iGreatWorkIndex, iCityID, eBuilding, iSlot);
+			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+			CvGreatWork* pWork = &culture->m_CurrentGreatWorks[(*it).iGreatWorkIndex];
+			if (pWork)
+			{
+				int buildingHappiness = pkBuildingInfo->GetGreatWorkHappiness();
+				iTotalHappiness += buildingHappiness;
+			}
+		}
+	}
+	m_iHappinessFromGreatWorks = iTotalHappiness;
+	GET_PLAYER(m_pCity->getOwner()).DoUpdateHappiness();
 }
 int CvCityBuildings::countNumThemesActive() const
 {

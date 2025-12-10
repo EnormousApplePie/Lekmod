@@ -219,6 +219,9 @@ public:
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int GetGarrisonStrengthBonus() const;
 #endif
+#if defined(LEKMOD_LEGACY)
+	int GetGreatWorkHappiness() const;
+#endif
 	int GetPreferredDisplayPosition() const;
 	int GetPortraitIndex() const;
 	bool IsTeamShare() const;
@@ -305,6 +308,9 @@ public:
 #endif
 	int GetDomainFreeExperience(int i) const;
 	int GetDomainFreeExperiencePerGreatWork(int i) const;
+#if defined(LEKMOD_LEGACY)
+	int GetBuildingGreatWorkYieldChange(int i) const;
+#endif
 	int GetDomainProductionModifier(int i) const;
 	int GetLockedBuildingClasses(int i) const;
 	int GetPrereqAndTechs(int i) const;
@@ -512,6 +518,9 @@ private:
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int m_iGarrisonStrengthBonus;
 #endif
+#if defined(LEKMOD_LEGACY)
+	int m_iGreatWorkHappiness;
+#endif
 	int m_iPreferredDisplayPosition;
 	int m_iPortraitIndex;
 
@@ -594,6 +603,9 @@ private:
 #endif
 	int* m_piDomainFreeExperience;
 	int* m_piDomainFreeExperiencePerGreatWork;
+#if defined(LEKMOD_LEGACY)
+	int* m_piBuildingGreatWorkYieldChange;
+#endif
 	int* m_piDomainProductionModifier;
 	int* m_piPrereqNumOfBuildingClass;
 	int* m_piFlavorValue;
@@ -802,6 +814,8 @@ public:
 	int countNumThemesActive() const;
 	int GetThemingBonuses(YieldTypes eYield) const;
 	int GetGreatWorkClassGreatPersonPoints(SpecialistTypes eSpecialist) const;
+	int GetHappinessFromGreatWorks() const;
+	void calculateHappinessFromGreatWorks();
 #endif
 #if defined(LEK_YIELD_TOURISM)
 	int GetYieldFromLandmarks(YieldTypes eYield) const;
@@ -878,6 +892,7 @@ private:
 #if defined(LEKMOD_LEGACY)
 	mutable std::map<GreatWorkClass, int> m_cachedGreatWorkClassCounts;
 	mutable bool m_bGreatWorkClassMapDirty;
+	int m_iHappinessFromGreatWorks;
 #endif
 /// CMP
 
