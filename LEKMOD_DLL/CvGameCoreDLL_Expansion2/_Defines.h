@@ -1149,6 +1149,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_MOUNTAINS
 // Correct exploit where killing a minor civ reduces the World Leader vote requirement while in session
 #define LEKMOD_PREVENT_MINOR_CIV_KILL_VOTE_EXPLOIT
+// Prevent Helicopters from getting the Embark promotion upon upgrading
+#define LEKMOD_HELICOPTER_EMBARK_FIX
 
 
 
