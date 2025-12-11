@@ -1421,18 +1421,18 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 			bool bGivePromotion = false;
 #if defined(LEKMOD_RETRAIN_MISSION)
 			bool bWasChosen = false;
+
+			if (pUnit->isHasPromotion(ePromotion) && pUnit->IsPromotionChosenByPlayer(ePromotion))
+			{
+				bWasChosen = true;
+			}
 #endif
 			// Old unit has the promotion
 			if(pUnit->isHasPromotion(ePromotion) && !pkPromotionInfo->IsLostWithUpgrade())
 			{
 				bGivePromotion = true;
 			}
-#if defined(LEKMOD_RETRAIN_MISSION)
-			if(pUnit->isHasPromotion(ePromotion) && pUnit->IsPromotionChosenByPlayer(ePromotion))
-			{
-				bWasChosen = true;
-			}
-#endif
+
 			// New unit gets promotion for free (as per XML)
 			else if(getUnitInfo().GetFreePromotions(ePromotion) && (!bIsUpgrade || !pkPromotionInfo->IsNotWithUpgrade()))
 			{
