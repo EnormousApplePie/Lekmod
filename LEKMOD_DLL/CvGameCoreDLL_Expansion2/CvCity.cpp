@@ -247,7 +247,6 @@ CvCity::CvCity() :
 	, m_eOriginalOwner("CvCity::m_eOriginalOwner", m_syncArchive)
 	, m_ePlayersReligion("CvCity::m_ePlayersReligion", m_syncArchive)
 	, m_aiSeaPlotYield("CvCity::m_aiSeaPlotYield", m_syncArchive)
-	, m_iMountainScienceYield("CvCity::m_iMountainScienceYield", m_syncArchive) // NQMP GJS - mountain science yield
 	, m_aiRiverPlotYield("CvCity::m_aiRiverPlotYield", m_syncArchive)
 	, m_aiLakePlotYield("CvCity::m_aiLakePlotYield", m_syncArchive)
 	, m_aiSeaResourceYield("CvCity::m_aiSeaResourceYield", m_syncArchive)
@@ -1012,8 +1011,6 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_eOriginalOwner = eOwner;
 	m_ePlayersReligion = NO_PLAYER;
 
-
-	m_iMountainScienceYield = 0; // NQMP GJS - mountain science yield
 	m_aiSeaPlotYield.resize(NUM_YIELD_TYPES);
 	m_aiRiverPlotYield.resize(NUM_YIELD_TYPES);
 	m_aiSeaResourceYield.resize(NUM_YIELD_TYPES);
@@ -7759,8 +7756,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 		}
 
 		YieldTypes eYield;
-		
-		changeMountainScienceYield(pBuildingInfo->GetMountainScienceYield()); // NQMP GJS - mountain science yield
 
 		for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
@@ -11637,36 +11632,6 @@ void CvCity::changeSeaPlotYield(YieldTypes eIndex, int iChange)
 		updateYield();
 	}
 }
-
-#ifdef NQ_ALLOW_BUILDING_HILL_YIELD_CHANGES
-/// Change to Hills yield from buildings
-int CvCity::getHillYieldChangesFromBuildings(YieldTypes eYield) const
-{
-	VALIDATE_OBJECT
-	CvAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	CvAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
-	return m_ppaiTerrainYieldChange[TERRAIN_HILL][eYield];
-}
-#endif
-
-// NQMP GJS - mountain science yield begin
-int CvCity::getMountainScienceYield() const
-{
-	VALIDATE_OBJECT
-	return m_iMountainScienceYield;
-}
-
-void CvCity::changeMountainScienceYield(int iChange)
-{
-	VALIDATE_OBJECT
-
-	if (iChange != 0)
-	{
-		m_iMountainScienceYield = (getMountainScienceYield() + iChange);
-		updateYield();
-	}
-}
-// NQMP GJS - mountain science yield end
 
 //	--------------------------------------------------------------------------------
 int CvCity::getRiverPlotYield(YieldTypes eIndex) const
@@ -17552,7 +17517,6 @@ void CvCity::read(FDataStream& kStream)
 	kStream >> m_eOriginalOwner;
 	kStream >> m_ePlayersReligion;
 
-	kStream >> m_iMountainScienceYield; // NQMP GJS - mountain science yield
 	kStream >> m_aiSeaPlotYield;
 	kStream >> m_aiRiverPlotYield;
 	kStream >> m_aiLakePlotYield;
@@ -17906,7 +17870,6 @@ void CvCity::write(FDataStream& kStream) const
 	kStream << m_eOriginalOwner;
 	kStream << m_ePlayersReligion;
 
-	kStream << m_iMountainScienceYield; // NQMP GJS - mountain science yield
 	kStream << m_aiSeaPlotYield;
 	kStream << m_aiRiverPlotYield;
 	kStream << m_aiLakePlotYield;

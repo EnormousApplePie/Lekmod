@@ -632,10 +632,6 @@ public:
 	int getSeaPlotYield(YieldTypes eIndex) const;
 	void changeSeaPlotYield(YieldTypes eIndex, int iChange);
 
-#ifdef NQ_ALLOW_BUILDING_HILL_YIELD_CHANGES
-	int getHillYieldChangesFromBuildings(YieldTypes eYield) const;
-#endif
-
 	int getMountainScienceYield() const; // NQMP GJS - mountain science yield
 	void changeMountainScienceYield(int iChange); // NQMP GJS - mountain science yield
 
@@ -1069,7 +1065,6 @@ protected:
 	FAutoVariable<PlayerTypes, CvCity> m_eOriginalOwner;
 	FAutoVariable<PlayerTypes, CvCity> m_ePlayersReligion;
 	
-	FAutoVariable<int, CvCity> m_iMountainScienceYield; // NQMP GJS - mountain science yield
 	FAutoVariable<std::vector<int>, CvCity> m_aiSeaPlotYield;
 	FAutoVariable<std::vector<int>, CvCity> m_aiRiverPlotYield;
 	FAutoVariable<std::vector<int>, CvCity> m_aiLakePlotYield;

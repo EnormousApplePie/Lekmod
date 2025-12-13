@@ -178,6 +178,8 @@ CvTraitEntry::CvTraitEntry() :
 	m_ppiFeatureYieldChanges(NULL),
 	m_ppiTerrainYieldChanges(NULL),
 	m_ppiResourceYieldChanges(NULL),
+	m_ppiFreshWaterImprovementYieldChanges(NULL),
+	m_ppiNonFreshWaterImprovementYieldChanges(NULL),
 
 	m_paiBuildingClassGlobalHappiness(NULL),
 	m_paiBuildingClassHappiness(NULL),
@@ -251,6 +253,8 @@ CvTraitEntry::~CvTraitEntry()
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiFeatureYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiResourceYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiTerrainYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiFreshWaterImprovementYieldChanges);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiNonFreshWaterImprovementYieldChanges);
 	SAFE_DELETE_ARRAY(m_piPuppetYieldModifiers);
 	SAFE_DELETE_ARRAY(m_paiRouteMovementChange);
 	SAFE_DELETE_ARRAY(m_paiBuildingClassGlobalHappiness);
@@ -1491,6 +1495,24 @@ int CvTraitEntry::GetYieldPerPopulationForeignReligion(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_paiYieldPerPopulationForeignReligion ? m_paiYieldPerPopulationForeignReligion[i] : -1;
 }
+// Yield for Fresh Water Improvements
+int CvTraitEntry::GetFreshWaterImprovementYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiFreshWaterImprovementYieldChanges ? m_ppiFreshWaterImprovementYieldChanges[i][j] : 0;
+}
+// Yield for non-Fresh Water Improvements
+int CvTraitEntry::GetNonFreshWaterImprovementYieldChanges(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+	return m_ppiNonFreshWaterImprovementYieldChanges ? m_ppiNonFreshWaterImprovementYieldChanges[i][j] : 0;
+}
 #endif
 /// Load XML data
 bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
@@ -2102,6 +2124,37 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 			m_ppiTerrainYieldChanges[TerrainID][YieldID] = yield;
 		}
 	}
+	// Trait_ImprovementYieldChanges
+	{
+		kUtility.Initialize2DArray(m_ppiImprovementYieldChanges, "Improvements", "Yields");
+		kUtility.Initialize2DArray(m_ppiFreshWaterImprovementYieldChanges, "Improvements", "Yields");
+		kUtility.Initialize2DArray(m_ppiNonFreshWaterImprovementYieldChanges, "Improvements", "Yields");
+		std::string strKey("Trait_ImprovementYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey,
+				"SELECT Improvements.ID as ImprovementID, Yields.ID as YieldID, Yield , FreshWaterYield, NonFreshWaterYield "
+				"FROM Trait_ImprovementYieldChanges "
+				"INNER JOIN Improvements on Improvements.Type = ImprovementType "
+				"INNER JOIN Yields on Yields.Type = YieldType "
+				"WHERE TraitType = ?");
+		}
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const int ImprovementID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
+			const int freshWaterYield = pResults->GetInt(3);
+			const int nonFreshWaterYield = pResults->GetInt(4);
+
+			m_ppiImprovementYieldChanges[ImprovementID][YieldID] = yield;
+			m_ppiFreshWaterImprovementYieldChanges[ImprovementID][YieldID] = freshWaterYield;
+			m_ppiNonFreshWaterImprovementYieldChanges[ImprovementID][YieldID] = nonFreshWaterYield;
+		}
+	}
 #endif
 	//Trait_Terrains
 	{
@@ -2208,7 +2261,7 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 
 		pResults->Reset();
 	}
-
+#if !defined(TRAITIFY)
 	//ImprovementYieldChanges
 	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -2240,6 +2293,7 @@ inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner joi
 #endif
 		}
 	}
+#endif
 
 	//SpecialistYieldChanges
 	{
@@ -3013,6 +3067,22 @@ void CvPlayerTraits::InitPlayerTraits()
 						yields[iYield] = (m_ppaaiImprovementYieldChange[iImprovementLoop][iYield] + iChange);
 						m_ppaaiImprovementYieldChange[iImprovementLoop] = yields;
 					}
+#if defined(TRAITIFY) // Load CvTraitEntry arrays into CvPlayerTraitArrays
+					iChange = trait->GetFreshWaterImprovementYieldChanges((ImprovementTypes)iImprovementLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiFreshWaterImprovementYieldChange[iImprovementLoop];
+						yields[iYield] = (m_ppaaiFreshWaterImprovementYieldChange[iImprovementLoop][iYield] + iChange);
+						m_ppaaiFreshWaterImprovementYieldChange[iImprovementLoop] = yields;
+					}
+					iChange = trait->GetNonFreshWaterImprovementYieldChanges((ImprovementTypes)iImprovementLoop, (YieldTypes)iYield);
+					if (iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiNonFreshWaterImprovementYieldChange[iImprovementLoop];
+						yields[iYield] = (m_ppaaiNonFreshWaterImprovementYieldChange[iImprovementLoop][iYield] + iChange);
+						m_ppaaiNonFreshWaterImprovementYieldChange[iImprovementLoop] = yields;
+					}
+#endif
 				}
 
 #ifdef AUI_WARNING_FIXES
@@ -3192,6 +3262,8 @@ void CvPlayerTraits::Uninit()
 	m_ppaaiResourceYieldChange.clear();
 	m_ppaaiResourceClassYieldChange.clear();
 	m_ppaaiBuildingCostOverride.clear();
+	m_ppaaiFreshWaterImprovementYieldChange.clear();
+	m_ppaaiNonFreshWaterImprovementYieldChange.clear();
 #endif
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 	m_ppaaiCapitalEraYieldChange.clear();
@@ -3388,6 +3460,10 @@ void CvPlayerTraits::Reset()
 	m_ppaaiResourceClassYieldChange.resize(GC.getNumResourceClassInfos());
 	m_ppaaiBuildingCostOverride.clear();
 	m_ppaaiBuildingCostOverride.resize(GC.getNumBuildingInfos());
+	m_ppaaiFreshWaterImprovementYieldChange.clear();
+	m_ppaaiFreshWaterImprovementYieldChange.resize(GC.getNumImprovementInfos());
+	m_ppaaiNonFreshWaterImprovementYieldChange.clear();
+	m_ppaaiNonFreshWaterImprovementYieldChange.resize(GC.getNumImprovementInfos());
 #endif
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 	m_ppaaiCapitalEraYieldChange.clear();
@@ -3437,6 +3513,10 @@ void CvPlayerTraits::Reset()
 		for(int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 		{
 			m_ppaaiImprovementYieldChange[iImprovement] = yield;
+#if defined(TRAITIFY) // CvPlayerTraits::Reset, in NUM_YIELD_TYPE loop
+			m_ppaaiFreshWaterImprovementYieldChange[iImprovement] = yield;
+			m_ppaaiNonFreshWaterImprovementYieldChange[iImprovement] = yield;
+#endif
 		}
 		for(int iSpecialist = 0; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
 		{
@@ -3971,6 +4051,28 @@ int CvPlayerTraits::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClas
 	}
 
 	return m_ppaaiBuildingClassYieldChange[(int)eBuildingClass][(int)eYieldType];
+}
+// FreshWater Improvement Yield Changes
+int CvPlayerTraits::GetFreshWaterImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYieldType)
+{
+	CvAssertMsg(eImprovement < GC.getNumImprovementInfos(), "Invalid eImprovement parameter in call to CvPlayerTraits::GetFreshWaterImprovementYieldChange()");
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetFreshWaterImprovementYieldChange()");
+	if (eImprovement == NO_IMPROVEMENT)
+	{
+		return 0;
+	}
+	return m_ppaaiFreshWaterImprovementYieldChange[(int)eImprovement][(int)eYieldType];
+}
+// Non FreshWater Improvement Yield Changes
+int CvPlayerTraits::GetNonFreshWaterImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYieldType)
+{
+	CvAssertMsg(eImprovement < GC.getNumImprovementInfos(), "Invalid eImprovement parameter in call to CvPlayerTraits::GetNonFreshWaterImprovementYieldChange()");
+	CvAssertMsg(eYieldType < NUM_YIELD_TYPES, "Invalid eYieldType parameter in call to CvPlayerTraits::GetNonFreshWaterImprovementYieldChange()");
+	if (eImprovement == NO_IMPROVEMENT)
+	{
+		return 0;
+	}
+	return m_ppaaiNonFreshWaterImprovementYieldChange[(int)eImprovement][(int)eYieldType];
 }
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 // Optional Unit Defined by Trait to settle cities with extra yields
@@ -5210,6 +5312,8 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_ppaaiResourceClassYieldChange;
 	kStream >> m_ppaaiResourceYieldChange;
 	kStream >> m_ppaaiBuildingCostOverride;
+	kStream >> m_ppaaiFreshWaterImprovementYieldChange;
+	kStream >> m_ppaaiNonFreshWaterImprovementYieldChange;
 #endif
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 	ArrayWrapper<int> kCapitalYieldChangeWrapper(NUM_YIELD_TYPES, m_aiCapitalYieldChange);
@@ -5503,6 +5607,8 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_ppaaiResourceClassYieldChange;
 	kStream << m_ppaaiResourceYieldChange;
 	kStream << m_ppaaiBuildingCostOverride;
+	kStream << m_ppaaiFreshWaterImprovementYieldChange;
+	kStream << m_ppaaiNonFreshWaterImprovementYieldChange;
 #endif
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_aiCapitalYieldChange);
