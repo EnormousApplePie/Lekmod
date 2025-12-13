@@ -100,7 +100,6 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_iFreeTechs(0),
 	m_iFreePolicies(0),
 	m_iFreeFlatFaith(0), // NQMP GJS - New Stonehenge
-	m_iMountainScienceYield(0), // NQMP GJS - mountain science yield
 	m_iFreeGreatPeople(0),
 	m_iMedianTechPercentChange(0),
 	m_iGold(0),
@@ -469,7 +468,6 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	m_iFreeTechs = kResults.GetInt("FreeTechs");
 	m_iFreePolicies = kResults.GetInt("FreePolicies");
 	m_iFreeFlatFaith = kResults.GetInt("FreeFlatFaith"); // NQMP GJS - New Stonehenge
-	m_iMountainScienceYield = kResults.GetInt("MountainScienceYield"); // NQMP GJS - mountain science yield
 	m_iFreeGreatPeople = kResults.GetInt("FreeGreatPeople");
 	m_iMedianTechPercentChange = kResults.GetInt("MedianTechPercentChange");
 	m_iGold = kResults.GetInt("Gold");
@@ -1678,14 +1676,6 @@ int CvBuildingEntry::GetFreeFlatFaith() const
 	return m_iFreeFlatFaith;
 }
 // NQMP GJS - New Stonehenge end
-
-// NQMP GJS - mountain science yield begin
-/// Amount of instant flat faith granted by this building
-int CvBuildingEntry::GetMountainScienceYield() const
-{
-	return m_iMountainScienceYield;
-}
-// NQMP GJS - mountain science yield end
 
 /// Number of free Great People granted by this building
 int CvBuildingEntry::GetFreeGreatPeople() const

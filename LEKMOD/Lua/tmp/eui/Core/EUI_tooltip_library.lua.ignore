@@ -1713,7 +1713,7 @@ local function GetYieldTooltip( city, yieldID, baseYield, totalYield, yieldIconS
 
 	-- Food eaten by pop
 	if yieldID == YieldTypes.YIELD_FOOD then
-		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_FOOD_FROM_TRADE_ROUTES", city:GetYieldRate( yieldID, false ) - city:GetYieldRate( yieldID, true ) )
+		tips:insertLocalizedBulletIfNonZero( "TXT_KEY_FOOD_FROM_TRADE_ROUTES", (city:GetYieldRateTimes100( yieldID, false ) - city:GetYieldRateTimes100( yieldID, true ) ) / 100 )
 		strModifiersString = "[NEWLINE][ICON_BULLET]" .. L( "TXT_KEY_YIELD_EATEN_BY_POP", city:FoodConsumption( true, 0 ), yieldIconString ) .. strModifiersString
 	elseif civBE_mode then
 		local yieldFromTrade = city:GetYieldPerTurnFromTrade( yieldID )

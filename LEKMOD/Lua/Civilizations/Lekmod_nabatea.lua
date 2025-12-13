@@ -4,23 +4,6 @@ include("PlotIterators.lua")
 
 local this_civ = GameInfoTypes["CIVILIZATION_NABATEA"]
 local is_active = LekmodUtilities:is_civilization_active(this_civ)
-
-------------------------------------------------------------------------------------------------------------------------
--- Nabatea UA. Add a dummy technology that gives fresh water farms +1 food until civil service is researched.
-------------------------------------------------------------------------------------------------------------------------
-function lekmod_nabatea_ua_farm_food(player_id)
-
-	local player = Players[player_id]
-	if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
-
-   local team = Teams[player:GetTeam()]
-   if team:IsHasTech(GameInfoTypes["TECH_CIVIL_SERVICE"]) then
-      team:SetHasTech(GameInfoTypes["TECH_CIVIL_DUMMY"], false)
-	elseif team:IsHasTech(GameInfoTypes["TECH_MATHEMATICS"]) then
-		team:SetHasTech(GameInfoTypes["TECH_CIVIL_DUMMY"], true)
-	end
-
-end
 ------------------------------------------------------------------------------------------------------------------------
 -- Nabatea UU. Award gold for discovering cities with a Zabonah.
 ------------------------------------------------------------------------------------------------------------------------
@@ -72,7 +55,6 @@ end
 if is_active then
    GameEvents.PlayerDoTurn.Add(lekmod_nabatea_building_food)
    GameEvents.UnitPrekill.Add(lekmod_nabatea_building_food)
-   GameEvents.TeamSetHasTech.Add(lekmod_nabatea_ua_farm_food)
 end
    -- A unique unit can be present in the game without the civilization being active.
    GameEvents.UnitSetXY.Add(lekmod_nabatea_unit_exploration)

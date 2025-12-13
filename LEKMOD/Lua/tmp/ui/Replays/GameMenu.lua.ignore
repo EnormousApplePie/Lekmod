@@ -1,5 +1,5 @@
 ----------------------------------------------------------------        
-----------------------------------------------------------------        
+------<!-- Override to enable save menu in Multiplayer -->------      
 include("IconSupport");
 include("SupportFunctions");
 include("InstanceManager");
@@ -105,9 +105,7 @@ Controls.RestartGameButton:RegisterCallback(Mouse.eLClick, OnRestartGame);
 function OnRetire()
 	if(Game ~= nil) then
 		if (Game:IsNetworkMultiPlayer()) then
-			Game.DoControl(ControlTypes.CONTROL_RETIRE);
-			OnReturn();
-			-- OnMainMenu();
+			OnMainMenu();
 		else
 			Game.DoControl(ControlTypes.CONTROL_RETIRE);
 			OnReturn();
@@ -151,7 +149,7 @@ function OnShowHide( isHide, isInit )
 			bHideLoadGameOption = true;
 			
 			if(not Matchmaking.IsHost()) then
-				bHideSaveGameOption = true;
+				bHideSaveGameOption = false;
 			end
 		end
 	end
@@ -164,7 +162,6 @@ function OnShowHide( isHide, isInit )
 	
 	--For now, do not allow retiring from multiplayer games or the tutorial.
 	local isTutorialOrMultiplayer = Game and (Game.IsGameMultiPlayer() or Game.IsStaticTutorialActive());
-	local isTutorialOrMultiplayer = Game and Game.IsStaticTutorialActive();
 	local isScenario = PreGame.GetLoadWBScenario();
 	
 	local startTurn = Game and Game.GetStartTurn() or 0;
@@ -390,7 +387,6 @@ function PopulateGameOptions()
 			local controlTable = g_AdvancedOptionIM:GetInstance();
 			g_AdvancedOptionsList[count] = controlTable;
 			controlTable.Text:LocalizeAndSetText(option.Description);
-			controlTable.Text:LocalizeAndSetToolTip(option.Help);
 			count = count + 1;
 		end
 	end

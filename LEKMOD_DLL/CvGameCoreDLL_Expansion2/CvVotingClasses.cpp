@@ -7608,6 +7608,9 @@ void CvGameLeagues::FoundLeague(PlayerTypes eFounder)
 void CvGameLeagues::DoPlayerAliveStatusChanged(PlayerTypes ePlayer)
 {
 	bool bAlive = GET_PLAYER(ePlayer).isAlive();
+#if defined(LEKMOD_PREVENT_MINOR_CIV_KILL_VOTE_EXPLOIT)
+	bool InSession = false;
+#endif
 #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
 	CvLeague* it = GetActiveLeague();
 	if (it)
@@ -7627,9 +7630,20 @@ void CvGameLeagues::DoPlayerAliveStatusChanged(PlayerTypes ePlayer)
 		{
 			it->AddMember(ePlayer);
 		}
+#if defined(LEKMOD_PREVENT_MINOR_CIV_KILL_VOTE_EXPLOIT)
+		// Check if any league is in session, but in a way that avoids overwriting a previous true value
+		InSession = InSession || it->IsInSession();
+#endif
 	}
-
+#if !defined(LEKMOD_PREVENT_MINOR_CIV_KILL_VOTE_EXPLOIT)
 	GC.getGame().DoUpdateDiploVictory();
+#else
+	// Only change the votes needed if the league is not in session, to prevent exploits, this is updated at the start of each turn anyway, so it auto-checksums
+	if (!InSession)
+	{
+		GC.getGame().DoUpdateDiploVictory();
+	}
+#endif
 }
 
 void CvGameLeagues::DoUnitedNationsBuilt(PlayerTypes /*eBuilder*/)

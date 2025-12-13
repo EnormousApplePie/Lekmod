@@ -702,7 +702,7 @@ function GetYieldTooltip(pCity, iYieldType, iBase, iTotal, strIconString, strMod
 	end
 	-- End 34.8
 	if (iYieldType == YieldTypes.YIELD_FOOD) then
-		local iYieldFromTrade = pCity:GetYieldRate(YieldTypes.YIELD_FOOD, false) - pCity:GetYieldRate(YieldTypes.YIELD_FOOD, true);
+		local iYieldFromTrade = ( pCity:GetYieldRateTimes100(YieldTypes.YIELD_FOOD, false) - pCity:GetYieldRateTimes100(YieldTypes.YIELD_FOOD, true) ) / 100;
 		if (iYieldFromTrade ~= 0) then
 			strYieldBreakdown = strYieldBreakdown .. "[ICON_BULLET]" .. Locale.ConvertTextKey("TXT_KEY_FOOD_FROM_TRADE_ROUTES", iYieldFromTrade);
 			strYieldBreakdown = strYieldBreakdown .. "[NEWLINE]";
