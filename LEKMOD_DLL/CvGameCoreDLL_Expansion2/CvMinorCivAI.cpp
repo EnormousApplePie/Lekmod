@@ -1054,7 +1054,18 @@ void CvMinorCivQuest::DoStartQuest(int iStartTurn)
 	// Bully target City-State
 	else if(m_eType == MINOR_CIV_QUEST_BULLY_CITY_STATE)
 	{
-		PlayerTypes eTargetMinor = pMinor->GetMinorCivAI()->GetBestCityStateTarget(m_eAssignedPlayer);
+		PlayerTypes eTargetMinor = NO_PLAYER;
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES)
+		eTargetMinor = pMinor->GetMinorCivAI()->GetBestBullyQuestTarget(m_eAssignedPlayer);
+#else
+		eTargetMinor = pMinor->GetMinorCivAI()->GetBestCityStateTarget(m_eAssignedPlayer);
+#endif
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES)
+		if(eTargetMinor == NO_PLAYER)
+		{
+			return;
+		}
+#endif
 		CvAssertMsg(eTargetMinor != NO_PLAYER, "MINOR CIV AI: eTargetMinor should not be NO_PLAYER when giving a Bully CS quest! Please send Anton your save file and version.");
 		int iLastBullyTurn = GET_PLAYER(eTargetMinor).GetMinorCivAI()->GetTurnLastBulliedByMajor(m_eAssignedPlayer);
 
@@ -3613,11 +3624,6 @@ bool CvMinorCivAI::IsValidQuestForPlayer(PlayerTypes ePlayer, MinorCivQuestTypes
 		// This player must not have bullied us recently
 		if(IsRecentlyBulliedByMajor(ePlayer))
 			return false;
-#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES) // Lekmod: Don't give out GP quests too early (Turn 90 scaled with game speed)
-		int iGameSpeedPercent = GC.getGame().getGameSpeedInfo().getGreatPeoplePercent();
-		if (GC.getGame().getGameTurn() < (90 * iGameSpeedPercent) / 100)
-			return false;	
-#endif
 		UnitTypes eUnit = GetBestGreatPersonForQuest(ePlayer);
 
 		if(eUnit == NO_UNIT)
@@ -3723,7 +3729,12 @@ bool CvMinorCivAI::IsValidQuestForPlayer(PlayerTypes ePlayer, MinorCivQuestTypes
 		if(IsRecentlyBulliedByMajor(ePlayer))
 			return false;
 
-		PlayerTypes eTargetCityState = GetBestCityStateTarget(ePlayer);
+		PlayerTypes eTargetCityState = NO_PLAYER;
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES)
+		eTargetCityState = GetBestBullyQuestTarget(ePlayer);
+#else
+		eTargetCityState = GetBestCityStateTarget(ePlayer);
+#endif
 
 		if(eTargetCityState == NO_PLAYER)
 			return false;
@@ -5022,6 +5033,19 @@ UnitTypes CvMinorCivAI::GetBestGreatPersonForQuest(PlayerTypes ePlayer)
 			continue;
 		}
 
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES)
+		const UnitAITypes eDefaultAI = (UnitAITypes) pkUnitInfo->GetDefaultUnitAIType();
+		if(eDefaultAI == UNITAI_MUSICIAN || eDefaultAI == UNITAI_GENERAL || eDefaultAI == UNITAI_ADMIRAL)
+		{
+			const int iGameSpeedPercent = GC.getGame().getGameSpeedInfo().getGreatPeoplePercent();
+			const int iEarliestTurn = (90 * iGameSpeedPercent) / 100;
+			if(GC.getGame().getGameTurn() < iEarliestTurn)
+			{
+				continue;
+			}
+		}
+#endif
+
 		veValidUnits.push_back(eUnit);
 	}
 
@@ -5105,6 +5129,129 @@ PlayerTypes CvMinorCivAI::GetBestCityStateTarget(PlayerTypes eForPlayer)
 
 	return eBestCityStateTarget;
 }
+
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES)
+PlayerTypes CvMinorCivAI::GetBestBullyQuestTarget(PlayerTypes eForPlayer)
+{
+	CvAssertMsg(eForPlayer >= 0, "eForPlayer is expected to be non-negative (invalid Index)");
+	CvAssertMsg(eForPlayer < MAX_MAJOR_CIVS, "eForPlayer is expected to be within maximum bounds (invalid Index)");
+
+	if(GetPersonality() != MINOR_CIV_PERSONALITY_HOSTILE)
+	{
+		return NO_PLAYER;
+	}
+
+	CvPlayer* pMajor = &GET_PLAYER(eForPlayer);
+	if(!pMajor || !pMajor->isAlive())
+	{
+		return NO_PLAYER;
+	}
+
+	CvCity* pMajorCapital = pMajor->getCapitalCity();
+	if(!pMajorCapital)
+	{
+		return NO_PLAYER;
+	}
+
+	CvPlot* pMajorCapitalPlot = pMajorCapital->plot();
+	if(!pMajorCapitalPlot)
+	{
+		return NO_PLAYER;
+	}
+
+	PlayerProximityTypes eClosestProximity = PLAYER_PROXIMITY_DISTANT;
+
+	for(int iTargetLoop = MAX_MAJOR_CIVS; iTargetLoop < MAX_CIV_PLAYERS; iTargetLoop++)
+	{
+		PlayerTypes eTarget = (PlayerTypes) iTargetLoop;
+
+		if(!GET_PLAYER(eTarget).isAlive())
+			continue;
+
+		if(GetPlayer()->getTeam() == GET_PLAYER(eTarget).getTeam())
+			continue;
+
+		if(!GET_TEAM(pMajor->getTeam()).isHasMet(GET_PLAYER(eTarget).getTeam()))
+			continue;
+
+		PlayerProximityTypes eProximity = GetPlayer()->GetProximityToPlayer(eTarget);
+		if(eProximity > eClosestProximity)
+		{
+			eClosestProximity = eProximity;
+		}
+	}
+
+	if(eClosestProximity == PLAYER_PROXIMITY_DISTANT)
+	{
+		return NO_PLAYER;
+	}
+
+	FStaticVector<PlayerTypes, MAX_CIV_PLAYERS, true, c_eCiv5GameplayDLL, 0> veValidTargets;
+
+	for(int iTargetLoop = MAX_MAJOR_CIVS; iTargetLoop < MAX_CIV_PLAYERS; iTargetLoop++)
+	{
+		PlayerTypes eTarget = (PlayerTypes) iTargetLoop;
+		CvPlayer* pTarget = &GET_PLAYER(eTarget);
+		if(!pTarget || !pTarget->isAlive())
+			continue;
+
+		if(GetPlayer()->getTeam() == pTarget->getTeam())
+			continue;
+
+		if(!GET_TEAM(pMajor->getTeam()).isHasMet(pTarget->getTeam()))
+			continue;
+
+		if(GetPlayer()->GetProximityToPlayer(eTarget) != eClosestProximity)
+			continue;
+
+		CvCity* pTargetCapital = pTarget->getCapitalCity();
+		if(!pTargetCapital)
+			continue;
+
+		CvPlot* pTargetPlot = pTargetCapital->plot();
+		if(!pTargetPlot)
+			continue;
+
+		const int iCapitalDistance = plotDistance(pMajorCapital->getX(), pMajorCapital->getY(), pTargetPlot->getX(), pTargetPlot->getY());
+		const bool bWithinCapitalRange = (iCapitalDistance != -1 && iCapitalDistance <= 20);
+
+		int iClosestCityDistance = INT_MAX;
+		int iLoop = 0;
+		for(CvCity* pLoopCity = pMajor->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pMajor->nextCity(&iLoop))
+		{
+			CvPlot* pLoopPlot = pLoopCity->plot();
+			if(!pLoopPlot)
+				continue;
+
+			const int iDistance = plotDistance(pLoopCity->getX(), pLoopCity->getY(), pTargetPlot->getX(), pTargetPlot->getY());
+			if(iDistance >= 0 && iDistance < iClosestCityDistance)
+			{
+				iClosestCityDistance = iDistance;
+			}
+		}
+		const bool bWithinCityRange = (iClosestCityDistance != INT_MAX && iClosestCityDistance <= 10);
+
+		if(!bWithinCapitalRange && !bWithinCityRange)
+			continue;
+
+		const bool bPlayerStronger = (pMajor->GetMilitaryMight() > pTarget->GetMilitaryMight());
+		const bool bTargetUnderstaffed = (pTarget->getNumMilitaryUnits() < 3);
+
+		if(!bPlayerStronger && !bTargetUnderstaffed)
+			continue;
+
+		veValidTargets.push_back(eTarget);
+	}
+
+	if(veValidTargets.size() == 0)
+	{
+		return NO_PLAYER;
+	}
+
+	const int iRandIndex = GC.getGame().getJonRandNum(veValidTargets.size(), "Finding random Bully quest target.");
+	return veValidTargets[iRandIndex];
+}
+#endif
 
 // Returns the PlayerTypes enum of the most recent valid bully, NO_PLAYER if there isn't one
 PlayerTypes CvMinorCivAI::GetMostRecentBullyForQuest() const
@@ -7918,8 +8065,25 @@ void CvMinorCivAI::DoSpawnUnit(PlayerTypes eMajor)
 
 				if (pNewUnit->jumpToNearestValidPlot())
 				{
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES)
+					CvCity* pMinorXpCity = GetPlayer()->getCapitalCity();
+					int iMinorXP = (pMinorXpCity != NULL) ? pMinorXpCity->getProductionExperience(pNewUnit->getUnitType()) : 0;
+
+					CvCity* pMajorXpCity = pMajorCity;
+					int iMajorXP = (pMajorXpCity != NULL) ? pMajorXpCity->getProductionExperience(pNewUnit->getUnitType()) : 0;
+
+					if(pMajorXpCity != NULL && iMajorXP > iMinorXP)
+					{
+						pMajorXpCity->addProductionExperience(pNewUnit);
+					}
+					else if(pMinorXpCity != NULL)
+					{
+						pMinorXpCity->addProductionExperience(pNewUnit);
+					}
+#else
 					if(GetPlayer()->getCapitalCity())
 						GetPlayer()->getCapitalCity()->addProductionExperience(pNewUnit);
+#endif
 
 					Localization::String strMessage = Localization::Lookup("TXT_KEY_NOTIFICATION_CITY_STATE_UNIT_SPAWN");
 					strMessage << GetPlayer()->getNameKey();
