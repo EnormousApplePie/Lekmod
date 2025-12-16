@@ -1145,7 +1145,7 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED
 // Change the religious pressure when losing population
 #define LEKMOD_RELIGIOUS_PRESSURE_POP_LOSS
-// New Tables for updating Unit Strenght and Promotions based on era (Hetaroi)
+// New Tables for updating Unit Strength and Promotions based on era (Hetaroi)
 #define LEKMOD_ERA_BASED_UNIT_UPDATES
 
 
