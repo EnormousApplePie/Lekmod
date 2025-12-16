@@ -8428,38 +8428,36 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 #else
 			if (GET_TEAM(eTeam).IsResourceRevealed(eResource))
 			{
-				if (GET_TEAM(eTeam).IsResourceTrade(eResource))
 #endif
-				{
-					// Extra yield from resources
-					if(pWorkingCity != NULL)
-						iYield += pWorkingCity->GetResourceExtraYield(eResource, eYield);
+				// Extra yield from resources
+				if(pWorkingCity != NULL)
+					iYield += pWorkingCity->GetResourceExtraYield(eResource, eYield);
 #if !defined(TRAITIFY) // Refactor the Yield Change based on resource usage into one function that the arraytable defines the resource type it effects instead of separate tables
-					// Extra yield from Trait
-					if (pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
-					{
-						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetYieldChangeStrategicResources(eYield);
-					}
-					// NQMP GJS - New Netherlands UA BEGIN
-					else if (pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_LUXURY)
-					{
-						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetYieldChangeLuxuryResources(eYield);
-					}
-					// NQMP GJS - New Netherlands UA END
+				// Extra yield from Trait
+				if (pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
+				{
+					iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetYieldChangeStrategicResources(eYield);
+				}
+				// NQMP GJS - New Netherlands UA BEGIN
+				else if (pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_LUXURY)
+				{
+					iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetYieldChangeLuxuryResources(eYield);
+				}
+				// NQMP GJS - New Netherlands UA END
 #else
-					ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
-					ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
+				ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+				ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
 
-					//Extra yield from Trait, handles yields applied to a ResourceClass and not a specific resource for the Purposes of Russia, Jerusalem, and the Netherlands
-					if (pkResourceInfo->getResourceClassType() != NO_RESOURCECLASS && eResource != eArtifacts && eResource != eHiddenArtifacts)
-					{
-						ResourceClassTypes eResourceClass = (ResourceClassTypes)pkResourceInfo->getResourceClassType();
-						iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceClassYieldChange(eResourceClass, eYield);
-					}
+				//Extra yield from Trait, handles yields applied to a ResourceClass and not a specific resource for the Purposes of Russia, Jerusalem, and the Netherlands
+				if (pkResourceInfo->getResourceClassType() != NO_RESOURCECLASS && eResource != eArtifacts && eResource != eHiddenArtifacts)
+				{
+					ResourceClassTypes eResourceClass = (ResourceClassTypes)pkResourceInfo->getResourceClassType();
+					iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceClassYieldChange(eResourceClass, eYield);
+				}
 #endif
-					iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceYieldChange(eResource, eYield);
-					iYield += GET_PLAYER(ePlayer).getResourceYieldChange(eResource, eYield);
-				}	
+				iYield += GET_PLAYER(ePlayer).GetPlayerTraits()->GetResourceYieldChange(eResource, eYield);
+				iYield += GET_PLAYER(ePlayer).getResourceYieldChange(eResource, eYield);
+				
 			}
 		}
 	}

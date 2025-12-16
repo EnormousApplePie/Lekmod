@@ -10696,7 +10696,10 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 	changeBorderObstacleCount(pBuildingInfo->IsPlayerBorderObstacle() * iChange);
 
 	changeSpaceProductionModifier(pBuildingInfo->GetGlobalSpaceProductionModifier() * iChange);
-
+#if defined(LEKMOD_LEGACY) // outside the loop
+	ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+	ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
+#endif
 	for(iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		pArea->changeYieldRateModifier(GetID(), ((YieldTypes)iI), (pBuildingInfo->GetAreaYieldModifier(iI) * iChange));
@@ -10709,11 +10712,9 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 		for (iJ = 0; iJ < GC.getNumResourceClassInfos(); iJ++)
 		{
 			ResourceClassTypes eResourceClass = (ResourceClassTypes)iJ;
-			int iYield = pBuildingInfo->GetResourceClassYieldChangePlayer(eResourceClass, iI) * iChange;
+			int iYield = pBuildingInfo->GetResourceClassYieldChangePlayer(eResourceClass, iI);
 			if (iYield != 0)
 			{
-				ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
-				ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
 				for (int i = 0; i < GC.getNumResourceInfos(); ++i)
 				{
 					ResourceTypes eResource = (ResourceTypes)i;
@@ -27074,6 +27075,10 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			ChangeGreatWorkClassTourismChange(eGreatWorkClass, iMod);
 		}
 	}
+#if defined(LEKMOD_v34) // used in the loop, so define here for less overhead
+	ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+	ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
+#endif
 	for(iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		eYield = (YieldTypes) iI;
@@ -27128,8 +27133,6 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			iMod = pPolicy->GetPolicyResourceClassYieldChanges(eResourceClass, iI) * iChange;
 			if (iMod != 0)
 			{
-				ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
-				ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
 				for (int i = 0; i < GC.getNumResourceInfos(); ++i)
 				{
 					ResourceTypes eResource = (ResourceTypes)i;
@@ -27999,6 +28002,8 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 	
 	int iYield;
 	YieldTypes eYield;
+	ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+	ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		eYield = (YieldTypes)iI;
@@ -28050,8 +28055,6 @@ void CvPlayer::processLegacies(LegacyTypes eLegacy, int iChange)
 			iYield = kLegacy.GetResourceClassYieldChange(eResourceClass, iI) * iChange;
 			if (iYield != 0)
 			{
-				ResourceTypes eArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
-				ResourceTypes eHiddenArtifacts = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);
 				for (int i = 0; i < GC.getNumResourceInfos(); ++i)
 				{
 					ResourceTypes eResource = (ResourceTypes)i;
