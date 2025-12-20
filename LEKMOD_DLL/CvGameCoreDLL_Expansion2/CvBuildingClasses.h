@@ -177,7 +177,6 @@ public:
 	int GetFreeTechs() const;
 	int GetFreePolicies() const;
 	int GetFreeFlatFaith() const; // NQMP GJS - New Stonehenge
-	int GetMountainScienceYield() const; // NQMP GJS - mountain science yield
 	int GetFreeGreatPeople() const;
 	int GetMedianTechPercentChange() const;
 	int GetGold() const;
@@ -456,7 +455,6 @@ private:
 	int m_iFreeTechs;
 	int m_iFreePolicies;
 	int m_iFreeFlatFaith; // NQMP GJS - New Stonehenge
-	int m_iMountainScienceYield; // NQMP GJS - mountain science yield
 	int m_iFreeGreatPeople;
 	int m_iMedianTechPercentChange;
 	int m_iGold;

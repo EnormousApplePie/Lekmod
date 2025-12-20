@@ -48,8 +48,8 @@ function lekmod_switzerland_uu_mountain_bonus(player_id, unit_id)
 	local player = Players[player_id]
 	local unit = player:GetUnitByID(unit_id)
 	if not unit:IsHasPromotion(mountaineer) then return end
-   -- Note: IsNearTerrainType (method) and FEATURE_ARARAT_MOUNTAIN are Lekmod specific! Not available in the base game
-   if unit:IsNearFeatureType(GameInfoTypes["FEATURE_ARARAT_MOUNTAIN"], 1, false) then
+   -- Note: IsNearTerrainType (method) is Lekmod specific! Not available in the base game
+   if unit:IsNearTerrainType(GameInfoTypes["TERRAIN_MOUNTAIN"], 1, false) then
       unit:SetHasPromotion(mountaineer_active, true);
    else
       unit:SetHasPromotion(mountaineer_active, false);

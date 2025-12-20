@@ -1566,6 +1566,9 @@ public:
 	int getYieldChange(int i) const;
 	int getRiverYieldChange(int i) const;
 	int getHillsYieldChange(int i) const;
+#if defined(LEKMOD_MOUNTAINS)
+	int getMountainYieldChange(int i) const;
+#endif
 	int get3DAudioScriptFootstepIndex(int i) const;
 
 	bool isTerrain(int i) const;
@@ -1622,6 +1625,9 @@ protected:
 	int* m_piYieldChange;
 	int* m_piRiverYieldChange;
 	int* m_piHillsYieldChange;
+#if defined(LEKMOD_MOUNTAINS)
+	int* m_piMountainYieldChange;
+#endif
 	int* m_pi3DAudioScriptFootstepIndex;
 	bool* m_pbTerrain;
 
@@ -1722,6 +1728,9 @@ public:
 	int getYield(int i) const;
 	int getRiverYieldChange(int i) const;
 	int getHillsYieldChange(int i) const;
+#if defined(LEKMOD_MOUNTAINS)
+	int getMountainYieldChange(int i) const;
+#endif
 	int get3DAudioScriptFootstepIndex(int i) const;
 
 	// Other
@@ -1747,6 +1756,9 @@ protected:
 	int* m_piYields;
 	int* m_piRiverYieldChange;
 	int* m_piHillsYieldChange;
+#if defined(LEKMOD_MOUNTAINS)
+	int* m_piMountainYieldChange;
+#endif
 	int* m_pi3DAudioScriptFootstepIndex;
 
 	CvString m_strEffectTypeTag;		// Effect type for effect macros

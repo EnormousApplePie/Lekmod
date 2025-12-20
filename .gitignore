@@ -7,6 +7,14 @@ LEKMOD_DLL/**/Release/
 
 ## Keep the distribution DLL in the LEKMOD folder tracked
 !LEKMOD/CvGameCore_Expansion2.dll
+## Build output directories for the DLL project
+LEKMOD_DLL/**/BuildOutput/
+LEKMOD_DLL/**/BuildTemp/
+LEKMOD_DLL/**/Debug/
+LEKMOD_DLL/**/Release/
+
+## Keep the distribution DLL in the LEKMOD folder tracked
+!LEKMOD/CvGameCore_Expansion2.dll
 LEKMOD_DLL/BuildTemp/
 
 LEKMOD_DLL/.vs/
@@ -20,3 +28,48 @@ LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildTemp/
 /LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildOutput/VS2008_ModWin32/CvGameCore_Expansion2.exp
 /LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildOutput/VS2008_ModWin32/CvGameCore_Expansion2.lib
 /LEKMOD_DLL/CvGameCoreDLL_Expansion2/BuildOutput/VS2008_ModWin32/CvGameCore_Expansion2.pdb
+/.vs
+/.vs/Lekmod
+/.vs/Lekmod/CopilotIndices/17.12.53.23981
+/.vs/Lekmod/CopilotIndices/17.12.53.23981/CodeChunks.db
+/.vs/Lekmod/CopilotIndices/17.12.53.23981/SemanticSymbols.db
+/.vs/Lekmod/v17
+/.vs/Lekmod/v17/.wsuo
+/.vs/Lekmod/v17/DocumentLayout.json
+/.vs/VSWorkspaceState.json
+
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+*.spec
+
+# Downloads folder
+downloads/
+
+# Temp files
+*.tmp
+lekmod_temp/
+*.backup
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+*.exe (except in releases)
