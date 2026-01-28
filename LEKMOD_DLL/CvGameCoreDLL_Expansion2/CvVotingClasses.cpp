@@ -109,7 +109,20 @@ CvString LeagueHelpers::GetTextForChoice(ResolutionDecisionTypes eDecision, int 
 EraTypes LeagueHelpers::GetGameEraForTrigger()
 {
 	EraTypes eGameEra = NO_ERA;
-
+	// Game era is the era of the most advanced player
+	EraTypes eMostAdvancedEra = NO_ERA;
+	for (int i = 0; i < MAX_MAJOR_CIVS; i++)
+	{
+		if (GET_PLAYER((PlayerTypes)i).isAlive())
+		{
+			EraTypes e = GET_PLAYER((PlayerTypes)i).GetCurrentEra();
+			if (GET_PLAYER((PlayerTypes)i).GetCurrentEra() > eMostAdvancedEra)
+			{
+				eMostAdvancedEra = e;
+			}
+		}
+	}
+	/*
 	// Game era is one era less than the most advanced player
 	EraTypes eMostAdvancedEra = NO_ERA;
 	for (int i = 0; i < MAX_MAJOR_CIVS; i++)
@@ -146,6 +159,7 @@ EraTypes LeagueHelpers::GetGameEraForTrigger()
 	{
 		eGameEra = eMostAdvancedEra;
 	}
+	*/
 
 	return eGameEra;
 }
