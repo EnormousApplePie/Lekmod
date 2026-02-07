@@ -1234,6 +1234,12 @@ GreatPeopleDirectiveTypes CvPlayerAI::GetDirectiveProphet(CvUnit*)
 		{
 			eDirective = GREAT_PEOPLE_DIRECTIVE_SPREAD_RELIGION;
 		}
+#if defined(TRAITIFY)
+		else if (GetPlayerTraits()->IsBannedUnitMission((MissionTypes)GC.getInfoTypeForString("MISSION_ENHANCE_RELIGION")))
+		{
+			eDirective = GREAT_PEOPLE_DIRECTIVE_CONSTRUCT_IMPROVEMENT;
+		}
+#endif
 		else
 		{
 			eDirective = GREAT_PEOPLE_DIRECTIVE_USE_POWER;
@@ -1244,7 +1250,11 @@ GreatPeopleDirectiveTypes CvPlayerAI::GetDirectiveProphet(CvUnit*)
 	else
 	{
 		// Locked out?
+#if !defined(TRAITIFY)
 		if (GC.getGame().GetGameReligions()->GetNumReligionsStillToFound() <= 0)
+#else
+		if ((GC.getGame().GetGameReligions()->GetNumReligionsStillToFound() <= 0) || (GetPlayerTraits()->IsBannedUnitMission((MissionTypes)GC.getInfoTypeForString("MISSION_FOUND_RELIGION"))))
+#endif
 		{
 			eDirective = GREAT_PEOPLE_DIRECTIVE_CONSTRUCT_IMPROVEMENT;
 		}

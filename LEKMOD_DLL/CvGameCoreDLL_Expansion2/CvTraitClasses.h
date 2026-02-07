@@ -233,6 +233,8 @@ public:
 	int GetBuildingClassYieldModifiers(int i, int j) const;
 	int GetFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const;
 	int GetRouteMovementChange(int i) const;
+	int GetFreshWaterImprovementYieldChanges(int i, int j) const;
+	int GetNonFreshWaterImprovementYieldChanges(int i, int j) const;
 #endif
 #if defined(LEKMOD_v34)
 	int GetYieldPerPopulation(int i) const;
@@ -481,6 +483,8 @@ protected:
 	int** m_ppiFeatureYieldChanges;
 	int** m_ppiResourceYieldChanges;
 	int** m_ppiTerrainYieldChanges;
+	int** m_ppiFreshWaterImprovementYieldChanges;
+	int** m_ppiNonFreshWaterImprovementYieldChanges;
 
 	int* m_paiRouteMovementChange;
 	int* m_paiBuildingClassHappiness;
@@ -1282,6 +1286,8 @@ public:
 	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYieldType);
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
 	int GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
+	int GetFreshWaterImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYieldType);
+	int GetNonFreshWaterImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYieldType);
 #endif
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 	int GetCapitalYieldChange(YieldTypes eYield);
@@ -1559,6 +1565,8 @@ private:
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiResourceYieldChange;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiResourceClassYieldChange;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiBuildingCostOverride;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiFreshWaterImprovementYieldChange;
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiNonFreshWaterImprovementYieldChange;
 #endif
 #if defined(LEKMOD_CITY_YIELDS_TRAITS)
 	int m_aiCapitalYieldChange[NUM_YIELD_TYPES];

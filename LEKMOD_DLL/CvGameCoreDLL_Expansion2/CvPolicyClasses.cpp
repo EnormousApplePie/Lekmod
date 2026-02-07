@@ -5392,7 +5392,7 @@ bool CvPlayerPolicies::IsTimeToChooseIdeology() const
 	PolicyBranchTypes eAutocracyBranch = (PolicyBranchTypes)GC.getPOLICY_BRANCH_AUTOCRACY();
 	PolicyBranchTypes eOrderBranch = (PolicyBranchTypes)GC.getPOLICY_BRANCH_ORDER();
 #ifdef AI_CANT_ADOPT_IDEOLOGY
-	if (!m_pPlayer->isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+	if (!m_pPlayer->isHuman() && GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_CULTURE"))
 	{
 		return false;
 	}

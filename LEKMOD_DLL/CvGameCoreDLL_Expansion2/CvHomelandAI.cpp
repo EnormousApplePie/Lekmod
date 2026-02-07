@@ -3850,7 +3850,11 @@ void CvHomelandAI::ExecuteProphetMoves()
 		case GREAT_PEOPLE_DIRECTIVE_USE_POWER:
 
 			// Can I found a religion?
+#if !defined(TRAITIFY)
 			if(pUnit->CanFoundReligion(pUnit->plot()))
+#else
+			if (pUnit->CanFoundReligion(pUnit->plot()) && !GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsBannedUnitMission((MissionTypes)GC.getInfoTypeForString("MISSION_FOUND_RELIGION")))
+#endif
 			{
 				CvString strLogString;
 				strLogString.Format("Great Prophet founding a religion, X: %d, Y: %d", pUnit->plot()->getX(), pUnit->plot()->getY());
@@ -3860,7 +3864,11 @@ void CvHomelandAI::ExecuteProphetMoves()
 			}
 
 			// Can I enhance a religion?
-			else if(pUnit->CanEnhanceReligion(pUnit->plot()))
+#if !defined(TRAITIFY)
+			else if (pUnit->CanEnhanceReligion(pUnit->plot()))
+#else
+			else if (pUnit->CanFoundReligion(pUnit->plot()) && !GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsBannedUnitMission((MissionTypes)GC.getInfoTypeForString("MISSION_ENHANCE_RELIGION")))
+#endif
 			{
 				CvString strLogString;
 				strLogString.Format("Great Prophet enhancing a religion, X: %d, Y: %d", pUnit->plot()->getX(), pUnit->plot()->getY());

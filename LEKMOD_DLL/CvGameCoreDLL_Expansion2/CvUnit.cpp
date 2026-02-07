@@ -1440,18 +1440,18 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 			bool bGivePromotion = false;
 #if defined(LEKMOD_RETRAIN_MISSION)
 			bool bWasChosen = false;
+
+			if (pUnit->isHasPromotion(ePromotion) && pUnit->IsPromotionChosenByPlayer(ePromotion))
+			{
+				bWasChosen = true;
+			}
 #endif
 			// Old unit has the promotion
 			if(pUnit->isHasPromotion(ePromotion) && !pkPromotionInfo->IsLostWithUpgrade())
 			{
 				bGivePromotion = true;
 			}
-#if defined(LEKMOD_RETRAIN_MISSION)
-			if(pUnit->isHasPromotion(ePromotion) && pUnit->IsPromotionChosenByPlayer(ePromotion))
-			{
-				bWasChosen = true;
-			}
-#endif
+
 			// New unit gets promotion for free (as per XML)
 			else if(getUnitInfo().GetFreePromotions(ePromotion) && (!bIsUpgrade || !pkPromotionInfo->IsNotWithUpgrade()))
 			{
@@ -1464,7 +1464,13 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 			{
 				bGivePromotion = true;
 			}
-
+#if defined(LEKMOD_HELICOPTER_EMBARK_FIX)
+			// Special case: if the old unit could embark, and the new unit can't, remove the embark promotion
+			if (ePromotion == GET_PLAYER(getOwner()).GetEmbarkationPromotion() && getUnitInfo().GetDomainType() == DOMAIN_HOVER) // Hovers have a mutable domain, so get the XML's value
+			{
+				bGivePromotion = false;
+			}
+#endif
 			setHasPromotion(ePromotion, bGivePromotion);
 #if defined(LEKMOD_RETRAIN_MISSION)
 			if (bWasChosen)
@@ -1479,7 +1485,11 @@ void CvUnit::convert(CvUnit* pUnit, bool bIsUpgrade)
 	setLastMoveTurn(pUnit->getLastMoveTurn());
 	setDamage(pUnit->getDamage());
 	setMoves(pUnit->getMoves());
+#if !defined(LEKMOD_HELICOPTER_EMBARK_FIX)
 	setEmbarked(pUnit->isEmbarked());
+#else
+	setEmbarked((getUnitInfo().GetDomainType() == DOMAIN_HOVER) ? false : pUnit->isEmbarked());
+#endif
 	setFacingDirection(pUnit->getFacingDirection(false));
 	SetBeenPromotedFromGoody(pUnit->IsHasBeenPromotedFromGoody());
 	SetTourismBlastStrength(pUnit->GetTourismBlastStrength());
@@ -14165,7 +14175,7 @@ int CvUnit::GetRangeCombatDamage(const CvUnit* pDefender, CvCity* pCity, bool bI
 
 		if (pDefender->isEmbarked())
 		{
-			iDefenderStrength = pDefender->GetEmbarkedUnitDefense();;
+			iDefenderStrength = pDefender->GetEmbarkedUnitDefense();
 		}
 
 		// Use Ranged combat value for defender, UNLESS it's a boat or an Impi (ranged support)
@@ -19852,6 +19862,24 @@ bool CvUnit::IsNearTerrainType(TerrainTypes eTerrainType, int iRange, bool bSame
 					
 					return true;
 
+				}
+				else if (eTerrainType == TERRAIN_MOUNTAIN && pLoopPlot->isMountain())
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+					return true;
+				}
+				else if (eTerrainType == TERRAIN_HILL && pLoopPlot->isHills())
+				{
+					//check if we care about the owner
+					if (bSameOwner && pLoopPlot->getOwner() == getOwner())
+					{
+						continue;
+					}
+					return true;
 				}
 			}
 		}

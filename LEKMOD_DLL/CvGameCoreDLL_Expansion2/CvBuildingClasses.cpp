@@ -100,7 +100,6 @@ CvBuildingEntry::CvBuildingEntry(void):
 	m_iFreeTechs(0),
 	m_iFreePolicies(0),
 	m_iFreeFlatFaith(0), // NQMP GJS - New Stonehenge
-	m_iMountainScienceYield(0), // NQMP GJS - mountain science yield
 	m_iFreeGreatPeople(0),
 	m_iMedianTechPercentChange(0),
 	m_iGold(0),
@@ -500,7 +499,6 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	m_iFreeTechs = kResults.GetInt("FreeTechs");
 	m_iFreePolicies = kResults.GetInt("FreePolicies");
 	m_iFreeFlatFaith = kResults.GetInt("FreeFlatFaith"); // NQMP GJS - New Stonehenge
-	m_iMountainScienceYield = kResults.GetInt("MountainScienceYield"); // NQMP GJS - mountain science yield
 	m_iFreeGreatPeople = kResults.GetInt("FreeGreatPeople");
 	m_iMedianTechPercentChange = kResults.GetInt("MedianTechPercentChange");
 	m_iGold = kResults.GetInt("Gold");
@@ -1830,14 +1828,6 @@ int CvBuildingEntry::GetFreeFlatFaith() const
 	return m_iFreeFlatFaith;
 }
 // NQMP GJS - New Stonehenge end
-
-// NQMP GJS - mountain science yield begin
-/// Amount of instant flat faith granted by this building
-int CvBuildingEntry::GetMountainScienceYield() const
-{
-	return m_iMountainScienceYield;
-}
-// NQMP GJS - mountain science yield end
 
 /// Number of free Great People granted by this building
 int CvBuildingEntry::GetFreeGreatPeople() const
@@ -4476,18 +4466,18 @@ void CvCityBuildings::rebuildGreatWorkYields()
 			BuildingTypes eBuilding;
 			playerCulture->GetGreatWorkLocation((*it).iGreatWorkIndex, iCityID, eBuilding, iSlot);
 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
-			CvGreatWork* pWork = &culture->m_CurrentGreatWorks[(*it).iGreatWorkIndex];
-			if (pWork)
+			CvGreatWork* work = &culture->m_CurrentGreatWorks[(*it).iGreatWorkIndex];
+			if (work)
 			{
-				std::fill(pWork->m_viYield.begin(), pWork->m_viYield.end(), 0);
+				std::fill(work->m_viYield.begin(), work->m_viYield.end(), 0);
 				for (int yield = 0; yield < NUM_YIELD_TYPES; yield++)
 				{
 					YieldTypes eYield = static_cast<YieldTypes>(yield);
-					int base = GC.getGreatWorkClassInfo(pWork->m_eClassType)->getGreatWorkClassBaseYield(eYield);
+					int base = GC.getGreatWorkClassInfo(work->m_eClassType)->getGreatWorkClassBaseYield(eYield);
 					int playerYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkYieldChange(eYield);
-					int playerClassYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkClassYieldChange(pWork->m_eClassType, eYield);
+					int playerClassYield = GET_PLAYER(m_pCity->getOwner()).GetGreatWorkClassYieldChange(work->m_eClassType, eYield);
 					int buildingYieldChange = pkBuildingInfo->GetBuildingGreatWorkYieldChange(eYield);
-					pWork->m_viYield[yield] = base + playerYield + playerClassYield + buildingYieldChange;
+					work->m_viYield[yield] = base + playerYield + playerClassYield + buildingYieldChange;
 				}
 			}
 		}
