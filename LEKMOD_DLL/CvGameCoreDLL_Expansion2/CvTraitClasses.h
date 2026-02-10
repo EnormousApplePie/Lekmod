@@ -67,6 +67,7 @@ public:
 	int GetCityStateBonusModifier() const;
 	int GetCityStateFriendshipModifier() const;
 	int GetCityStateCombatModifier() const;
+	int GetCombatModifierEnemyCities() const;
 	int GetLandBarbarianConversionPercent() const;
 	int GetLandBarbarianConversionExtraUnits() const;
 	int GetSeaBarbarianConversionPercent() const;
@@ -311,6 +312,7 @@ protected:
 	int m_iCityStateBonusModifier;
 	int m_iCityStateFriendshipModifier;
 	int m_iCityStateCombatModifier;
+	int m_iCombatModifierEnemyCities;
 	int m_iLandBarbarianConversionPercent;
 	int m_iLandBarbarianConversionExtraUnits;
 	int m_iSeaBarbarianConversionPercent;
@@ -652,6 +654,10 @@ public:
 	int GetCityStateCombatModifier() const
 	{
 		return m_iCityStateCombatModifier;
+	};
+	int GetCombatModifierEnemyCities() const
+	{
+		return m_iCombatModifierEnemyCities;
 	};
 	int GetLandBarbarianConversionPercent() const
 	{
@@ -1296,6 +1302,7 @@ private:
 	int m_iCityStateBonusModifier;
 	int m_iCityStateFriendshipModifier;
 	int m_iCityStateCombatModifier;
+	int m_iCombatModifierEnemyCities;
 	int m_iLandBarbarianConversionPercent;
 	int m_iLandBarbarianConversionExtraUnits;
 	int m_iSeaBarbarianConversionPercent;

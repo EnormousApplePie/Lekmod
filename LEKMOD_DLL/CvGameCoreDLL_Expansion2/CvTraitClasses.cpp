@@ -34,6 +34,7 @@ CvTraitEntry::CvTraitEntry() :
 	m_iCityStateBonusModifier(0),
 	m_iCityStateFriendshipModifier(0),
 	m_iCityStateCombatModifier(0),
+	m_iCombatModifierEnemyCities(0),
 	m_iLandBarbarianConversionPercent(0),
 	m_iLandBarbarianConversionExtraUnits(0),
 	m_iSeaBarbarianConversionPercent(0),
@@ -384,6 +385,12 @@ int CvTraitEntry::GetCityStateFriendshipModifier() const
 int CvTraitEntry::GetCityStateCombatModifier() const
 {
 	return m_iCityStateCombatModifier;
+}
+
+/// Accessor:: combat modifier against enemy cities following your religion
+int CvTraitEntry::GetCombatModifierEnemyCities() const
+{
+	return m_iCombatModifierEnemyCities;
 }
 
 /// Accessor:: percent chance a barbarian camp joins this civ
@@ -1537,6 +1544,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_iCityStateBonusModifier               = kResults.GetInt("CityStateBonusModifier");
 	m_iCityStateFriendshipModifier          = kResults.GetInt("CityStateFriendshipModifier");
 	m_iCityStateCombatModifier				= kResults.GetInt("CityStateCombatModifier");
+	m_iCombatModifierEnemyCities			= kResults.GetInt("CombatModifierEnemyCities");
 	m_iLandBarbarianConversionPercent       = kResults.GetInt("LandBarbarianConversionPercent");
 	m_iLandBarbarianConversionExtraUnits    = kResults.GetInt("LandBarbarianConversionExtraUnits");
 	m_iSeaBarbarianConversionPercent        = kResults.GetInt("SeaBarbarianConversionPercent");
@@ -2729,6 +2737,7 @@ void CvPlayerTraits::InitPlayerTraits()
 			m_iCityStateBonusModifier += trait->GetCityStateBonusModifier();
 			m_iCityStateFriendshipModifier += trait->GetCityStateFriendshipModifier();
 			m_iCityStateCombatModifier += trait->GetCityStateCombatModifier();
+			m_iCombatModifierEnemyCities += trait->GetCombatModifierEnemyCities();
 			m_iLandBarbarianConversionPercent += trait->GetLandBarbarianConversionPercent();
 			m_iLandBarbarianConversionExtraUnits += trait->GetLandBarbarianConversionExtraUnits();
 			m_iSeaBarbarianConversionPercent += trait->GetSeaBarbarianConversionPercent();
@@ -3324,6 +3333,7 @@ void CvPlayerTraits::Reset()
 	m_iGoldenAgeDurationModifier = 0;
 	m_iGoldenAgeMoveChange = 0;
 	m_iGoldenAgeCombatModifier = 0;
+	m_iCombatModifierEnemyCities = 0;
 	m_iGoldenAgeTourismModifier = 0;
 	m_iGoldenAgeGreatArtistRateModifier = 0;
 	m_iGoldenAgeGreatMusicianRateModifier = 0;
@@ -4840,6 +4850,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	kStream >> m_iCityStateBonusModifier;
 	kStream >> m_iCityStateFriendshipModifier;
 	kStream >> m_iCityStateCombatModifier;
+	kStream >> m_iCombatModifierEnemyCities;
 	kStream >> m_iLandBarbarianConversionPercent;
 	kStream >> m_iLandBarbarianConversionExtraUnits;
 	kStream >> m_iSeaBarbarianConversionPercent;
@@ -5367,6 +5378,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_iCityStateBonusModifier;
 	kStream << m_iCityStateFriendshipModifier;
 	kStream << m_iCityStateCombatModifier;
+	kStream << m_iCombatModifierEnemyCities;
 	kStream << m_iLandBarbarianConversionPercent;
 	kStream << m_iLandBarbarianConversionExtraUnits;
 	kStream << m_iSeaBarbarianConversionPercent;

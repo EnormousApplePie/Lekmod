@@ -12718,6 +12718,9 @@ int CvUnit::GetGenericMaxStrengthModifier(const CvUnit* pOtherUnit, const CvPlot
 							iTempModifier = pCityReligion->m_Beliefs.GetCombatModifierEnemyCities();
 							iModifier += iTempModifier;
 						}
+						// Trait bonus for fighting near enemy cities following your religion
+						iTempModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetCombatModifierEnemyCities();
+						iModifier += iTempModifier;
 					}
 				}
 			}
@@ -13550,6 +13553,9 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 							iTempModifier = pCityReligion->m_Beliefs.GetCombatModifierEnemyCities();
 							iModifier += iTempModifier;
 						}
+						// Trait bonus for fighting near enemy cities following your religion
+						iTempModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetCombatModifierEnemyCities();
+						iModifier += iTempModifier;
 					}
 				}
 			}
@@ -13598,6 +13604,9 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 								iTempModifier = pCityReligion->m_Beliefs.GetCombatModifierEnemyCities();
 								iModifier += iTempModifier;
 							}
+							// Trait bonus for fighting near enemy cities following your religion
+							iTempModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetCombatModifierEnemyCities();
+							iModifier += iTempModifier;
 						}
 					}
 				}
@@ -13751,6 +13760,9 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 							iTempModifier = pCityReligion->m_Beliefs.GetCombatModifierEnemyCities();
 							iModifier += iTempModifier;
 						}
+						// Trait bonus for fighting near enemy cities following your religion
+						iTempModifier = GET_PLAYER(getOwner()).GetPlayerTraits()->GetCombatModifierEnemyCities();
+						iModifier += iTempModifier;
 					}
 				}
 			}
