@@ -156,7 +156,7 @@ end
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 function GetPopulationValue( iPlayer )
-    return Players[iPlayer]:GetRealPopulation();
+    return Players[iPlayer]:GetTotalPopulation();
 end
 
 
@@ -262,7 +262,7 @@ end
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 function GetGoldValue( iPlayer )
-    return Players[iPlayer]:CalculateGrossGold();
+    return Players[iPlayer]:CalculateGoldRate();
 end
 
 
@@ -297,7 +297,7 @@ end
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 function GetLandValue( iPlayer )
-    return Players[iPlayer]:GetNumPlots() * 10000;
+    return Players[iPlayer]:GetNumPlots();
 end
 
 
@@ -384,13 +384,7 @@ end
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 function GetApprovalValue( iPlayer )
-    local value = 60 + (Players[iPlayer]:GetExcessHappiness() * 3);
-    if( value < 0 ) then
-        return 0;
-    elseif( value > 100 ) then
-        return 100;
-    end
-    return value;
+    return Players[iPlayer]:GetExcessHappiness();
 end
 
 
@@ -402,17 +396,17 @@ function BuildApprovalEntry( iPlayer )
         
     instance.Name:LocalizeAndSetText( "TXT_KEY_DEMOGRAPHICS_APPROVAL" );
     
-    instance.Value:SetText( "[ICON_HAPPINESS_1] " .. Locale.ToNumber(m_ApprovalTable[ iPlayer ], "#'%'"));
+    instance.Value:SetText( "[ICON_HAPPINESS_1] " .. Locale.ToNumber(m_ApprovalTable[ iPlayer ], "#,###,###,###"));
    
     local best = GetBest( m_ApprovalTable, iPlayer );
     SetIcon(best[2], instance.BestIcon, instance.BestIconBG, instance.BestIconShadow);
-    instance.Best:SetText( Locale.ToNumber(best[1], "#'%'") );
+    instance.Best:SetText( Locale.ToNumber(best[1], "#,###,###,###") );
 	
-    instance.Average:SetText( Locale.ToNumber( GetAverage( m_ApprovalTable, iPlayer ), "#'%'" ) );
+    instance.Average:SetText( Locale.ToNumber( GetAverage( m_ApprovalTable, iPlayer ), "#,###,###,###" ) );
     
     local worst = GetWorst( m_ApprovalTable, iPlayer );
     SetIcon(worst[2], instance.WorstIcon, instance.WorstIconBG, instance.WorstIconShadow);
-    instance.Worst:LocalizeAndSetText( Locale.ToNumber(worst[1], "#'%'" ) );
+    instance.Worst:LocalizeAndSetText( Locale.ToNumber(worst[1], "#,###,###,###" ) );
     
     instance.Rank:SetText( Locale.ToNumber(GetRank( m_ApprovalTable, iPlayer ), "#") );
 end
@@ -421,23 +415,27 @@ end
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 function GetLiteracyValue( iPlayer )
-
     local pTeamTechs = Teams[ Players[ iPlayer ]:GetTeam() ]:GetTeamTechs();
-    
     local iWriting = GameInfoTypes[ "TECH_WRITING" ];
-    if( iWriting ~= nil and 
-        not pTeamTechs:HasTech( iWriting ) ) then
+    if( iWriting ~= nil and not pTeamTechs:HasTech( iWriting ) ) then
         return 0;
     end
-    
     local iCount = 0;
-	for row in GameInfo.Technologies() do
-	    if( pTeamTechs:HasTech( row.ID ) ) then
-	        iCount = iCount + 1;
-	    end
-	end
-	
-	return 100 * iCount / #GameInfo.Technologies;
+    for row in GameInfo.Technologies() do
+        if( pTeamTechs:HasTech( row.ID ) ) then
+            iCount = iCount + 1;
+        end
+    end
+    return iCount;
+end
+
+function GetLiteracyDisplayString( iPlayer )
+    local pTeamTechs = Teams[ Players[ iPlayer ]:GetTeam() ]:GetTeamTechs();
+    local iWriting = GameInfoTypes[ "TECH_WRITING" ];
+    if( iWriting ~= nil and not pTeamTechs:HasTech( iWriting ) ) then
+        return "??";
+    end
+    return Locale.ToNumber( m_LiteracyTable[ iPlayer ], "#" );
 end
 
 
@@ -449,17 +447,17 @@ function BuildLiteracyEntry( iPlayer )
     
     instance.Name:LocalizeAndSetText( "TXT_KEY_DEMOGRAPHICS_LITERACY" );
     
-    instance.Value:SetText( "[ICON_RESEARCH] " .. Locale.ToNumber(m_LiteracyTable[ iPlayer ], "#'%'"));
+    instance.Value:SetText( "[ICON_RESEARCH] " .. GetLiteracyDisplayString( iPlayer ));
    
     local best = GetBest( m_LiteracyTable, iPlayer );
     SetIcon(best[2], instance.BestIcon, instance.BestIconBG, instance.BestIconShadow);
-    instance.Best:SetText( Locale.ToNumber(best[1], "#'%'") );
+    instance.Best:SetText( GetLiteracyDisplayString( best[2] ) );
 	
-    instance.Average:SetText( Locale.ToNumber( GetAverage( m_LiteracyTable, iPlayer ), "#'%'" ) );
+    instance.Average:SetText( Locale.ToNumber( GetAverage( m_LiteracyTable, iPlayer ), "#" ) );
     
     local worst = GetWorst( m_LiteracyTable, iPlayer );
     SetIcon(worst[2], instance.WorstIcon, instance.WorstIconBG, instance.WorstIconShadow);
-    instance.Worst:LocalizeAndSetText( Locale.ToNumber(worst[1], "#'%'" ) );
+    instance.Worst:LocalizeAndSetText( GetLiteracyDisplayString( worst[2] ) );
     
     instance.Rank:SetText( Locale.ToNumber(GetRank( m_LiteracyTable, iPlayer ), "#") );
 end
