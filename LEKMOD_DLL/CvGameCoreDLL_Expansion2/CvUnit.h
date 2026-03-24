@@ -670,6 +670,9 @@ public:
 	void changeCombatBonusVsDifferentIdeologyModifier(int iChange);
 	bool isUnitDifferentIdeology(const CvUnit* pOtherUnit) const;
 #endif
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	int getTourismInfluenceCombatModifierVsUnit(const CvUnit* pOtherUnit) const;
+#endif
 	int hillsDefenseModifier() const;
 	int openAttackModifier() const;
 	int openRangedAttackModifier() const;

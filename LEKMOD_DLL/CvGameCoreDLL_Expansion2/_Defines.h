@@ -948,6 +948,8 @@
 #define LEKMOD_NO_FREE_TEAM_WONDERS
 // Combat bonus against different ideology
 #define LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
+// Combat bonus from tourism influence % vs enemy major (Tourism_InfluenceCombatMod table)
+#define LEKMOD_TOURISM_COMBAT_MOD
 // Trait Table that overrides build times for certain build actions
 #define LEKMOD_BUILD_TIME_OVERRIDE
 // Global move change from policies

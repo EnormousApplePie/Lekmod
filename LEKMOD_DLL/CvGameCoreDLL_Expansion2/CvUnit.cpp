@@ -13094,6 +13094,13 @@ int CvUnit::GetMaxAttackStrength(const CvPlot* pFromPlot, const CvPlot* pToPlot,
 		}
 		
 #endif
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+		iTempModifier = getTourismInfluenceCombatModifierVsUnit(pDefender);
+		if(iTempModifier != 0)
+		{
+			iModifier += iTempModifier;
+		}
+#endif
 	}
 
 	// Unit can't drop below 10% strength
@@ -13240,6 +13247,13 @@ int CvUnit::GetMaxDefenseStrength(const CvPlot* pInPlot, const CvUnit* pAttacker
 			{
 				iModifier += iTempModifier;
 			}
+		}
+#endif
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+		iTempModifier = getTourismInfluenceCombatModifierVsUnit(pAttacker);
+		if(iTempModifier != 0)
+		{
+			iModifier += iTempModifier;
 		}
 #endif
 	}
@@ -13497,6 +13511,13 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 				}
 			}
 #endif
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+			iTempModifier = getTourismInfluenceCombatModifierVsUnit(pOtherUnit);
+			if(iTempModifier != 0)
+			{
+				iModifier += iTempModifier;
+			}
+#endif
 #ifdef AUI_UNIT_FIX_BAD_BONUS_STACKS
 		}
 		// Ranged DEFENSE
@@ -13626,6 +13647,13 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 				iModifier += iTempModifier;
 			}
 		
+		}
+#endif
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+		iTempModifier = getTourismInfluenceCombatModifierVsUnit(pOtherUnit);
+		if(iTempModifier != 0)
+		{
+			iModifier += iTempModifier;
 		}
 #endif
 		}
@@ -19741,6 +19769,72 @@ bool CvUnit::isUnitDifferentIdeology(const CvUnit* pOtherUnit) const
 		return false;
 
 	return eOtherIdeology != eThisIdeology;
+}
+#endif
+
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+//	--------------------------------------------------------------------------------
+int CvUnit::getTourismInfluenceCombatModifierVsUnit(const CvUnit* pOtherUnit) const
+{
+	VALIDATE_OBJECT
+	if(!pOtherUnit || pOtherUnit == this)
+	{
+		return 0;
+	}
+	if(!(IsCombatUnit() || IsCanAttackRanged()))
+	{
+		return 0;
+	}
+
+	const CvPlayer& kOwner = GET_PLAYER(getOwner());
+	const PlayerTypes eEnemy = pOtherUnit->getOwner();
+	const CvPlayer& kEnemyOwner = GET_PLAYER(eEnemy);
+
+	if(!kOwner.isMajorCiv() || !kEnemyOwner.isMajorCiv())
+	{
+		return 0;
+	}
+	if(kOwner.getTeam() == kEnemyOwner.getTeam())
+	{
+		return 0;
+	}
+	if(!GET_TEAM(kOwner.getTeam()).isHasMet(kEnemyOwner.getTeam()))
+	{
+		return 0;
+	}
+
+	const int iMinInfl = GC.getLekmodTourismCombatMinInfluencePercent();
+	const int iMaxInfl = GC.getLekmodTourismCombatMaxInfluencePercent();
+	const int iMinBonus = GC.getLekmodTourismCombatMinBonus();
+	const int iMaxBonus = GC.getLekmodTourismCombatMaxBonus();
+
+	const int iLifetimeCulture = kEnemyOwner.GetJONSCultureEverGenerated();
+	if(iLifetimeCulture <= 0)
+	{
+		return 0;
+	}
+
+	const int iInfluenceOn = kOwner.GetCulture()->GetInfluenceOn(eEnemy);
+	const int iPercent = (iInfluenceOn * 100) / iLifetimeCulture;
+
+	if(iPercent < iMinInfl)
+	{
+		return 0;
+	}
+	if(iPercent >= iMaxInfl)
+	{
+		return iMaxBonus;
+	}
+
+	const int iSpanInfl = iMaxInfl - iMinInfl;
+	if(iSpanInfl <= 0)
+	{
+		return iMaxBonus;
+	}
+
+	const int iSpanBonus = iMaxBonus - iMinBonus;
+	const int iNumer = (iPercent - iMinInfl) * iSpanBonus + (iSpanInfl / 2);
+	return iMinBonus + (iNumer / iSpanInfl);
 }
 #endif
 

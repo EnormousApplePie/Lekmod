@@ -274,6 +274,9 @@ void CvLuaUnit::PushMethods(lua_State* L, int t)
 #ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
 	Method(GetCombatBonusVsDifferentIdeologyModifier);
 #endif
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	Method(GetTourismInfluenceCombatModifier);
+#endif
 	Method(HillsDefenseModifier);
 	Method(RoughAttackModifier);
 	Method(OpenAttackModifier);
@@ -2746,6 +2749,18 @@ int CvLuaUnit::lGetCombatBonusVsDifferentIdeologyModifier(lua_State* L)
 	CvUnit* pkUnit = GetInstance(L);
 
 	const int iResult = pkUnit->combatBonusVsDifferentIdeologyModifier();
+	lua_pushinteger(L, iResult);
+	return 1;
+}
+#endif
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+//------------------------------------------------------------------------------
+//int GetTourismInfluenceCombatModifier(CyUnit pOtherUnit);
+int CvLuaUnit::lGetTourismInfluenceCombatModifier(lua_State* L)
+{
+	CvUnit* pkUnit = GetInstance(L);
+	CvUnit* pkOther = GetInstance(L, 2, false);
+	const int iResult = pkOther ? pkUnit->getTourismInfluenceCombatModifierVsUnit(pkOther) : 0;
 	lua_pushinteger(L, iResult);
 	return 1;
 }
