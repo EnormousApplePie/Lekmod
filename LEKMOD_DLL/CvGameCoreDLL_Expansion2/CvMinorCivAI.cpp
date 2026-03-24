@@ -8802,7 +8802,7 @@ CvString CvMinorCivAI::GetMajorBullyUnitDetails(PlayerTypes ePlayer)
 	CvString sFactors = "";
 	int iScore = CalculateBullyMetric(ePlayer, /*bForUnit*/true, &sFactors);
 	bool bCanBully = CanMajorBullyUnit(ePlayer, iScore);
-	UnitTypes eUnitType = (UnitTypes) GC.getInfoTypeForString("UNIT_WORKER"); //antonjs: todo: XML/function
+	UnitTypes eUnitType = static_cast<UnitTypes>(GET_PLAYER(ePlayer).getCivilizationInfo().getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_WORKER"))); //antonjs: todo: XML/function
 	CvUnitEntry* pUnitInfo = GC.getUnitInfo(eUnitType);
 	CvAssert(pUnitInfo);
 	if (!pUnitInfo)
@@ -8884,7 +8884,7 @@ void CvMinorCivAI::DoMajorBullyUnit(PlayerTypes eBully, UnitTypes eUnitType)
 	int iBullyMetric = CalculateBullyMetric(eBully, /*bForUnit*/true);
 	bool bSuccess = CanMajorBullyUnit(eBully, iBullyMetric);
 	int iOldFriendshipTimes100 = GetEffectiveFriendshipWithMajorTimes100(eBully);
-
+	UnitTypes bullyUnit = NO_UNIT;
 	if(bSuccess)
 	{
 		if(eUnitType == NO_UNIT)
@@ -8903,8 +8903,8 @@ void CvMinorCivAI::DoMajorBullyUnit(PlayerTypes eBully, UnitTypes eUnitType)
 
 		int iX = pCapital->getX();
 		int iY = pCapital->getY();
-
-		CvUnit* pNewUnit = GET_PLAYER(eBully).initUnit(eUnitType, iX, iY);
+		bullyUnit = static_cast<UnitTypes>(GET_PLAYER(eBully).getCivilizationInfo().getCivilizationUnits(GC.getUnitInfo(eUnitType)->GetUnitClassType()));
+		CvUnit* pNewUnit = GET_PLAYER(eBully).initUnit(bullyUnit, iX, iY);
 		if (pNewUnit->jumpToNearestValidPlot())
 		{
 			pNewUnit->finishMoves(); // The given unit cannot move this turn
@@ -8926,7 +8926,7 @@ void CvMinorCivAI::DoMajorBullyUnit(PlayerTypes eBully, UnitTypes eUnitType)
 	}
 
 	// Logging
-	GET_PLAYER(eBully).GetDiplomacyAI()->LogMinorCivBullyUnit(GetPlayer()->GetID(), iOldFriendshipTimes100, GetEffectiveFriendshipWithMajorTimes100(eBully), eUnitType, bSuccess, iBullyMetric);
+	GET_PLAYER(eBully).GetDiplomacyAI()->LogMinorCivBullyUnit(GetPlayer()->GetID(), iOldFriendshipTimes100, GetEffectiveFriendshipWithMajorTimes100(eBully), bullyUnit, bSuccess, iBullyMetric);
 
 	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 }

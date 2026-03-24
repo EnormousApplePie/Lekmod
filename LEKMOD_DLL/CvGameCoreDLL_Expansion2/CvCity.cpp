@@ -6460,10 +6460,10 @@ int CvCity::getProductionDifferenceTimes100(int /*iProductionNeeded*/, int /*iPr
 		return 0;
 	}
 
-	int iFoodProduction = ((bFoodProduction) ? GetFoodProduction(getYieldRate(YIELD_FOOD, false) - foodConsumption(true)) : 0);
+	int iFoodProduction = bFoodProduction ? GetFoodProduction(getYieldRate(YIELD_FOOD, false) - foodConsumption(true)) : 0;
 	iFoodProduction *= 100;
 
-	int iOverflow = ((bOverflow) ? (getOverflowProductionTimes100() + getFeatureProduction() * 100) : 0);
+	int iOverflow = bOverflow ? (getOverflowProductionTimes100() + getFeatureProduction() * 100) : 0;
 
 	// Sum up difference
 	int iBaseProduction = getBaseYieldRate(YIELD_PRODUCTION) * 100;
