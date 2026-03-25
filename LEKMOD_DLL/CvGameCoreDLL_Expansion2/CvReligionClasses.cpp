@@ -2599,11 +2599,7 @@ bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 
 	if(pSpawnCity != NULL && pSpawnCity->getOwner() == kPlayer.GetID())
 	{
-#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
-#else
-		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
-#endif
 #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
 		kPlayer.ChangeFaith(-iCost);
 #else
@@ -2615,11 +2611,8 @@ bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 		pSpawnCity = kPlayer.getCapitalCity();
 		if(pSpawnCity != NULL)
 		{
-#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
-#else
-		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
-#endif
+
 #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
 			kPlayer.ChangeFaith(-iCost);
 #else
