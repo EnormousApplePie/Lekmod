@@ -283,6 +283,9 @@ protected:
 #ifdef LEKMOD_DIFFERENT_IDEO_COMBAT_BONUS
 	static int lGetCombatBonusVsDifferentIdeologyModifier(lua_State* L);
 #endif
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	static int lGetTourismInfluenceCombatModifier(lua_State* L);
+#endif
 	static int lHillsDefenseModifier(lua_State* L);
 	static int lOpenAttackModifier(lua_State* L);
 	static int lOpenRangedAttackModifier(lua_State* L);

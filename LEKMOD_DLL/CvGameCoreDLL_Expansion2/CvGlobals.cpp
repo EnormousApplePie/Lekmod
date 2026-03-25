@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -1825,6 +1825,12 @@ CvGlobals::CvGlobals() :
 	m_iCULTURE_LEVEL_POPULAR(15),
 	m_iCULTURE_LEVEL_INFLUENTIAL(20),
 	m_iCULTURE_LEVEL_DOMINANT(50),
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	m_iLekmodTourismCombatMinInfluencePercent(10),
+	m_iLekmodTourismCombatMaxInfluencePercent(100),
+	m_iLekmodTourismCombatMinBonus(0),
+	m_iLekmodTourismCombatMaxBonus(15),
+#endif
 	m_iMIN_DIG_SITES_PER_MAJOR_CIV(5),
 	m_iMAX_DIG_SITES_PER_MAJOR_CIV(8),
 	m_iPERCENT_SITES_HIDDEN(30),
@@ -6846,6 +6852,31 @@ void CvGlobals::cacheGlobals()
 	m_iSPOILS_OF_WAR_PERCENT_MODERN = getDefineINT("SPOILS_OF_WAR_PERCENT_MODERN");
 	m_iSPOILS_OF_WAR_PERCENT_ATOMIC = getDefineINT("SPOILS_OF_WAR_PERCENT_ATOMIC");
 	m_iSPOILS_OF_WAR_PERCENT_FUTURE = getDefineINT("SPOILS_OF_WAR_PERCENT_FUTURE");
+#endif
+
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	// Defaults match Tourism_InfluenceCombatMod.xml; overwritten if table row loads
+	m_iLekmodTourismCombatMinInfluencePercent = 10;
+	m_iLekmodTourismCombatMaxInfluencePercent = 100;
+	m_iLekmodTourismCombatMinBonus = 0;
+	m_iLekmodTourismCombatMaxBonus = 15;
+	{
+		Database::Connection* pDb = GetGameDatabase();
+		if(pDb)
+		{
+			Database::Results kQuery;
+			if (pDb->Execute(kQuery, "SELECT MinInfluencePercent, MaxInfluencePercent, MinCombatBonus, MaxCombatBonus FROM Tourism_InfluenceCombatMod LIMIT 1"))
+			{
+				if(kQuery.Step())
+				{
+					m_iLekmodTourismCombatMinInfluencePercent = kQuery.GetInt(0);
+					m_iLekmodTourismCombatMaxInfluencePercent = kQuery.GetInt(1);
+					m_iLekmodTourismCombatMinBonus = kQuery.GetInt(2);
+					m_iLekmodTourismCombatMaxBonus = kQuery.GetInt(3);
+				}
+			}
+		}
+	}
 #endif
 }
 
