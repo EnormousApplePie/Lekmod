@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -4037,9 +4037,18 @@ int CvPlayerCulture::ComputePublicOpinionUnhappiness(int iDissatisfaction, int &
 		totalUnhappiness *= (100 + iUnhappinessModifier);
 		totalUnhappiness /= 100;
 	}
+#ifdef LEKMOD_IDEO_PRESSURE_CHANGE
+	totalUnhappiness /= 2;
+#endif
 	return totalUnhappiness;
 #else
-	return max(m_pPlayer->getNumCities() * iPerCityUnhappy, m_pPlayer->getTotalPopulation() / iUnhappyPerXPop);
+	{
+		int totalUnhappiness = max(m_pPlayer->getNumCities() * iPerCityUnhappy, m_pPlayer->getTotalPopulation() / iUnhappyPerXPop);
+#ifdef LEKMOD_IDEO_PRESSURE_CHANGE
+		totalUnhappiness /= 2;
+#endif
+		return totalUnhappiness;
+	}
 #endif
 }
 

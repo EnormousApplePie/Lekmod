@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ù 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -528,6 +528,10 @@ public:
 	bool IsFaithPurchaseAllGreatPeople() const;
 #ifdef NQ_BELIEF_TOGGLE_ALLOW_FAITH_GIFTS_TO_MINORS
 	bool IsAllowsFaithGiftsToMinors() const;
+#endif
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+	static void LoadBuildingPurchaseFaithGoldTable();
+	bool TryGetBuildingPurchaseFaithGoldRawCost(BuildingTypes eBuilding, YieldTypes eYield, int iNumCities, int* piTotal) const;
 #endif
 
 	// Serialization

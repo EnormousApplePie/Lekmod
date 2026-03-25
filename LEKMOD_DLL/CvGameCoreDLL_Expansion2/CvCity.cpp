@@ -5714,6 +5714,30 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 	if(pkBuildingInfo == NULL)
 		return -1;
 
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+	{
+		const int iHurryMod = pkBuildingInfo->GetHurryCostModifier();
+		if (iHurryMod != -1 && pkBuildingInfo->GetGoldCost() == 0 && pkBuildingInfo->GetFaithCost() <= 0)
+		{
+			int iRaw = 0;
+			if (getLekmodBeliefBuildingPurchaseRawCost(eBuilding, YIELD_GOLD, &iRaw) && iRaw > 0)
+			{
+				int iCostL = iRaw;
+				iCostL *= (100 + iHurryMod);
+				iCostL /= 100;
+				iCostL *= GC.getGame().getGameSpeedInfo().getConstructPercent();
+				iCostL /= 100;
+				iCostL *= (100 + GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_BUILDING_PURCHASE_COST_MODIFIER));
+				iCostL /= 100;
+				int iDivisor = GC.getGOLD_PURCHASE_VISIBLE_DIVISOR();
+				iCostL /= iDivisor;
+				iCostL *= iDivisor;
+				return iCostL;
+			}
+		}
+	}
+#endif
+
 #ifdef LEKMOD_BUILDING_GOLD_COST
 	int iCost = pkBuildingInfo->GetGoldCost();
 #if defined(TRAITIFY) // BuildingCostOverride Gold
@@ -5768,6 +5792,35 @@ int CvCity::GetPurchaseCost(BuildingTypes eBuilding)
 	return iCost;
 }
 
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+//	--------------------------------------------------------------------------------
+bool CvCity::getLekmodBeliefBuildingPurchaseRawCost(BuildingTypes eBuilding, YieldTypes eYield, int* piRaw) const
+{
+	VALIDATE_OBJECT
+	if (piRaw == NULL || eBuilding == NO_BUILDING)
+	{
+		return false;
+	}
+	CvGameReligions* pGR = GC.getGame().GetGameReligions();
+	if (!pGR)
+	{
+		return false;
+	}
+	const ReligionTypes eMaj = GetCityReligions()->GetReligiousMajority();
+	if (eMaj <= RELIGION_PANTHEON)
+	{
+		return false;
+	}
+	const CvReligion* pRel = pGR->GetReligion(eMaj, getOwner());
+	if (!pRel)
+	{
+		return false;
+	}
+	const int iNumCities = GET_PLAYER(getOwner()).getNumCities();
+	return pRel->m_Beliefs.TryGetBuildingPurchaseFaithGoldRawCost(eBuilding, eYield, iNumCities, piRaw) && *piRaw > 0;
+}
+#endif
+
 //	--------------------------------------------------------------------------------
 #ifdef AUI_CONSTIFY
 int CvCity::GetFaithPurchaseCost(BuildingTypes eBuilding) const
@@ -5791,6 +5844,16 @@ int CvCity::GetFaithPurchaseCost(BuildingTypes eBuilding)
 	if (iOverrideCost > 0) // Only apply override if a valid value exists
 	{
 		iCost = iOverrideCost;
+	}
+#endif
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+	if (iCost <= 0)
+	{
+		int iRaw = 0;
+		if (getLekmodBeliefBuildingPurchaseRawCost(eBuilding, YIELD_FAITH, &iRaw) && iRaw > 0)
+		{
+			iCost = iRaw;
+		}
 	}
 #endif
 	EraTypes eEra = GET_TEAM(GET_PLAYER(getOwner()).getTeam()).GetCurrentEra();
@@ -16327,6 +16390,28 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 				}
 			}
 #ifndef LEKMOD_FAITH_PURCHASE_NO_RELIGION
+			}
+#endif
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+			if (pkBuildingInfo)
+			{
+				int iRawCk = 0;
+				if (pkBuildingInfo->GetFaithCost() <= 0 && getLekmodBeliefBuildingPurchaseRawCost(eBuildingType, YIELD_FAITH, &iRawCk) && iRawCk > 0)
+				{
+					if (!pkBuildingInfo->IsUnlockedByBelief())
+					{
+						if (GetCityBuildings()->GetNumBuilding(eBuildingType) > 0)
+						{
+							return false;
+						}
+#if defined(TRAITIFY)
+						if (GET_PLAYER(getOwner()).GetPlayerTraits()->GetBuildingCostOverride(eBuildingType, YIELD_FAITH) < 0)
+						{
+							return false;
+						}
+#endif
+					}
+				}
 			}
 #endif
 			iFaithCost = GetFaithPurchaseCost(eBuildingType);

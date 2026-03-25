@@ -922,6 +922,8 @@
 #define LEKMOD_100_EVASIION_FIX
 // Unlocks ideology if all your cities have a factory or otherwise a building that unlocks ideology, else the specified number entered (default 3)
 #define LEKMOD_UNLOCK_IDEO_ALL_CITIES
+// Halves only Public Opinion unhappiness (the applied [ICON_HAPPINESS_4] penalty), not pressure icons, dissatisfaction tiers, or revolt/WC logic. See CvPlayerCulture::ComputePublicOpinionUnhappiness.
+#define LEKMOD_IDEO_PRESSURE_CHANGE
 // Adds a promotion that enables units to have a movement penalty (amount specified in xml) when attacking cities
 #define LEKMOD_MOVE_PENALTY_CITY_COMBAT
 // Building tourism from TechEnhancedTourism can now apply multiple times if the same building exists multiple times in the city
@@ -936,6 +938,8 @@
 #define LEKMOD_FREE_BUILDING_FIX
 // Added a new tag to the buildings table in xml "gold cost". This overrides the gold cost of a building regardless of hurry cost modifiers but will be discounted by other effects.
 #define LEKMOD_BUILDING_GOLD_COST
+// Beliefs_BuildingPurchaseFaithGold table + BELIEF_LEKMOD_NATWONDER_FAITH_PURCHASE (CvBeliefClasses — CvReligionBeliefs::LoadBuildingPurchaseFaithGoldTable)
+#define LEKMOD_BELIEF_BUILDING_PURCHASE
 // Uncouples an assumption that belief buildings cannot have production costs
 #define LEKMOD_BELIEF_BUILDING_PRODUCTION_COST
 // New buildingentry table that awards a certain yield whenever a great person is expended (mausoelum effect)

@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	? 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -11,6 +11,10 @@
 #include "CvGameCoreUtils.h"
 #include "CvInfosSerializationHelper.h"
 #include "CvBarbarians.h"
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+#include "CvInternalGameCoreUtils.h"
+#include "CvReligionClasses.h"
+#endif
 
 #include "LintFree.h"
 
@@ -2232,6 +2236,145 @@ void CvReligionBeliefs::Write(FDataStream& kStream) const
 
 	BuildingClassArrayHelpers::Write(kStream, m_paiBuildingClassEnabled, GC.getNumBuildingClassInfos());
 }
+
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+namespace
+{
+	struct LekmodBeliefBldPurchaseRow
+	{
+		BeliefTypes eBelief;
+		BuildingClassTypes eBuildingClass;
+		int iCost;
+		YieldTypes eYield;
+		int iIncrementalPerCity;
+	};
+
+	std::vector<LekmodBeliefBldPurchaseRow> s_buildingPurchaseFaithGoldRows;
+}
+
+void CvReligionBeliefs::LoadBuildingPurchaseFaithGoldTable()
+{
+	s_buildingPurchaseFaithGoldRows.clear();
+
+	Database::Connection* pDb = GC.GetGameDatabase();
+	if (!pDb)
+	{
+		return;
+	}
+
+	Database::Results kQuery;
+	const char* szSql =
+		"SELECT Beliefs.ID, BuildingClasses.ID, Beliefs_BuildingPurchaseFaithGold.Cost, Yields.ID, Beliefs_BuildingPurchaseFaithGold.IncrementalCostPerCity "
+		"FROM Beliefs_BuildingPurchaseFaithGold "
+		"INNER JOIN Beliefs ON Beliefs.Type = Beliefs_BuildingPurchaseFaithGold.BeliefType "
+		"INNER JOIN BuildingClasses ON BuildingClasses.Type = Beliefs_BuildingPurchaseFaithGold.BuildingClassType "
+		"INNER JOIN Yields ON Yields.Type = Beliefs_BuildingPurchaseFaithGold.YieldType";
+
+	if (!pDb->Execute(kQuery, szSql))
+	{
+		return;
+	}
+
+	while (kQuery.Step())
+	{
+		LekmodBeliefBldPurchaseRow row;
+		row.eBelief = (BeliefTypes)kQuery.GetInt(0);
+		row.eBuildingClass = (BuildingClassTypes)kQuery.GetInt(1);
+		row.iCost = kQuery.GetInt(2);
+		row.eYield = (YieldTypes)kQuery.GetInt(3);
+		row.iIncrementalPerCity = kQuery.GetInt(4);
+		if (row.eBelief != NO_BELIEF && row.eBuildingClass != NO_BUILDINGCLASS && row.iCost >= 0 && (row.eYield == YIELD_FAITH || row.eYield == YIELD_GOLD))
+		{
+			s_buildingPurchaseFaithGoldRows.push_back(row);
+		}
+	}
+
+	const BeliefTypes eNatBelief = (BeliefTypes)GC.getInfoTypeForString("BELIEF_LEKMOD_NATWONDER_FAITH_PURCHASE", true);
+	if (eNatBelief != NO_BELIEF)
+	{
+		std::vector<bool> hasRowForClass(GC.getNumBuildingClassInfos(), false);
+		for (size_t i = 0; i < s_buildingPurchaseFaithGoldRows.size(); i++)
+		{
+			if (s_buildingPurchaseFaithGoldRows[i].eBelief == eNatBelief && s_buildingPurchaseFaithGoldRows[i].eYield == YIELD_FAITH)
+			{
+				const int idx = (int)s_buildingPurchaseFaithGoldRows[i].eBuildingClass;
+				if (idx >= 0 && idx < (int)hasRowForClass.size())
+				{
+					hasRowForClass[idx] = true;
+				}
+			}
+		}
+
+		for (int iBC = 0; iBC < GC.getNumBuildingClassInfos(); iBC++)
+		{
+			const BuildingClassTypes eBC = (BuildingClassTypes)iBC;
+			CvBuildingClassInfo* pkC = GC.getBuildingClassInfo(eBC);
+			if (!pkC || !isNationalWonderClass(*pkC))
+			{
+				continue;
+			}
+			if (hasRowForClass[iBC])
+			{
+				continue;
+			}
+			BuildingTypes eSample = NO_BUILDING;
+			for (int iB = 0; iB < GC.getNumBuildingInfos(); iB++)
+			{
+				CvBuildingEntry* pkB = GC.getBuildingInfo((BuildingTypes)iB);
+				if (pkB && pkB->GetBuildingClassType() == iBC)
+				{
+					eSample = (BuildingTypes)iB;
+					break;
+				}
+			}
+			if (eSample == NO_BUILDING)
+			{
+				continue;
+			}
+			if (GC.getBuildingInfo(eSample)->GetFaithCost() > 0)
+			{
+				continue;
+			}
+			LekmodBeliefBldPurchaseRow row;
+			row.eBelief = eNatBelief;
+			row.eBuildingClass = eBC;
+			row.iCost = 200;
+			row.eYield = YIELD_FAITH;
+			row.iIncrementalPerCity = 50;
+			s_buildingPurchaseFaithGoldRows.push_back(row);
+		}
+	}
+}
+
+bool CvReligionBeliefs::TryGetBuildingPurchaseFaithGoldRawCost(BuildingTypes eBuilding, YieldTypes eYield, int iNumCities, int* piTotal) const
+{
+	if (piTotal == NULL || eBuilding == NO_BUILDING)
+	{
+		return false;
+	}
+	CvBuildingEntry* pkB = GC.getBuildingInfo(eBuilding);
+	if (!pkB)
+	{
+		return false;
+	}
+	const BuildingClassTypes eBC = (BuildingClassTypes)pkB->GetBuildingClassType();
+	for (size_t i = 0; i < s_buildingPurchaseFaithGoldRows.size(); i++)
+	{
+		const LekmodBeliefBldPurchaseRow& row = s_buildingPurchaseFaithGoldRows[i];
+		if (row.eYield != eYield || row.eBuildingClass != eBC)
+		{
+			continue;
+		}
+		if (!HasBelief(row.eBelief))
+		{
+			continue;
+		}
+		*piTotal = row.iCost + row.iIncrementalPerCity * (iNumCities > 0 ? iNumCities : 0);
+		return true;
+	}
+	return false;
+}
+#endif
 
 /// BELIEF HELPER CLASSES
 

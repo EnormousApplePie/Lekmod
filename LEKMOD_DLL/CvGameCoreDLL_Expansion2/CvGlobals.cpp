@@ -31,7 +31,6 @@
 #include "cvStopWatch.h"
 #include "CvReplayInfo.h"
 #include "CvTypes.h"
-
 #include "CvDllDatabaseUtility.h"
 #include "CvDllScriptSystemUtility.h"
 
@@ -6877,6 +6876,9 @@ void CvGlobals::cacheGlobals()
 			}
 		}
 	}
+#endif
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+	CvReligionBeliefs::LoadBuildingPurchaseFaithGoldTable();
 #endif
 }
 
