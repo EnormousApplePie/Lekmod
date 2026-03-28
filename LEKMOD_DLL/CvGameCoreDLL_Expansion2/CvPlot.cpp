@@ -8433,6 +8433,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 				// Extra yield from resources
 				if(pWorkingCity != NULL)
 					iYield += pWorkingCity->GetResourceExtraYield(eResource, eYield);
+
 #if !defined(TRAITIFY) // Refactor the Yield Change based on resource usage into one function that the arraytable defines the resource type it effects instead of separate tables
 				// Extra yield from Trait
 				if (pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)

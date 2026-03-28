@@ -25,89 +25,89 @@ public:
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
     // These are key functions, very important.
-    int GetCivilization() const;
-    int GetEraOffered() const;
-	bool IsInstant() const;
+	int GetCivilization() const { return m_iCivilization; }
+    int GetEraOffered() const { return m_iEraOffered; }
+	bool IsInstant() const { return m_bInstant; }
 	// One-Shot Free Units
-	bool IncludesOneShotFreeUnits(LegacyTypes eLegacy) const;
+	bool IncludesOneShotFreeUnits(LegacyTypes eLegacy) const { return m_pbHasOneShotUnits ? m_pbHasOneShotUnits[eLegacy] : false; }
 	void SetIncludesOneShotFreeUnits(LegacyTypes eLegacy);
 	// Accessor Functions
-	int GetHappinessPerOriginalCity() const;
-	int GetGoldenAgeTurns() const;
-	int GetGreatGeneralSiegeBonus() const;
-	int GetResistanceTimeReduction() const;
-	int GetYieldModCapitalProximity() const;
-	int GetPlotGoldCostModifier() const;
-	int GetPlotCultureCostModifier() const;
-	int GetHappinessFromGreatImprovements() const;
-	int GetHappinessFromForeignReligiousMajority() const;
-	int GetVotesPerCapital() const;
-	int GetInfluenceChangeMajorityReligion() const;
-	int GetInfluenceChangeTradeConnection() const;
-	int GetPurchasedUnitExtraMoves() const;
-	int GetHappinessPerTheme() const;
-	bool IsTradeUnplunderable() const;
-	bool IsCannotPlunder() const;
-	int GetFriendlyCityReligionCombatModifier() const;
-	int GetOccupiedCityReligionCombatModifier() const;
-	int GetEnemyCityReligionCombatModifier() const;
-	int GetGreatProphetCostModifier() const;
-	int GetHolyCityReligiousPressureModifier() const;
+	int GetHappinessPerOriginalCity() const { return m_iHappinessPerOriginalCity; }
+	int GetGoldenAgeTurns() const { return m_iGoldenAgeTurns; }
+	int GetGreatGeneralSiegeBonus() const { return m_iGreatGeneralSiegeBonus; }
+	int GetResistanceTimeReduction() const { return m_iResistanceTimeReduction; }
+	int GetYieldModCapitalProximity() const { return m_iYieldModCapitalProximity; }
+	int GetPlotGoldCostModifier() const { return m_iPlotGoldCostModifier; }
+	int GetPlotCultureCostModifier() const { return m_iPlotCultureCostModifier; }
+	int GetHappinessFromGreatImprovements() const { return m_iHappinessFromGreatImprovements; }
+	int GetHappinessFromForeignReligiousMajority() const { return m_iHappinessFromForeignReligiousMajority; }
+	int GetVotesPerCapital() const { return m_iVotesPerCapital; }
+	int GetInfluenceChangeMajorityReligion() const { return m_iInfluenceChangeMajorityReligion; }
+	int GetInfluenceChangeTradeConnection() const { return m_iInfluenceChangeTradeConnection; }
+	int GetPurchasedUnitExtraMoves() const { return m_iPurchasedUnitExtraMoves; }
+	int GetHappinessPerTheme() const { return m_iHappinessPerTheme; }
+	bool IsTradeUnplunderable() const { return m_bTradeUnplunderable; }
+	bool IsCannotPlunder() const { return m_bCannotPlunder; }
+	int GetFriendlyCityReligionCombatModifier() const { return m_iFriendlyCityReligionCombatModifier; }
+	int GetOccupiedCityReligionCombatModifier() const { return m_iOccupiedCityReligionCombatModifier; }
+	int GetEnemyCityReligionCombatModifier() const { return m_iEnemyCityReligionCombatModifier; }
+	int GetGreatProphetCostModifier() const { return m_iGreatProphetCostModifier; }
+	int GetHolyCityReligiousPressureModifier() const { return m_iHolyCityReligiousPressureModifier; }
     // Arrays
-	int IsFreePromotion(int i) const;
-	int GetPromotionNearbyGeneral(int i) const;
+	int IsFreePromotion(int i) const { return m_pbFreePromotion ? m_pbFreePromotion[i] : false; }
+	int GetPromotionNearbyGeneral(int i) const { return m_piPromotionNearbyGeneralUnitCombat ? m_piPromotionNearbyGeneralUnitCombat[i] : -1; }
 	bool IsFreePromotionUnitType(const int promotionID, const int unitTypeID) const;
-	int GetPlotPurchaseYieldReward(int i) const;
-	int GetCityYieldChange(int i) const;
-	int GetOriginalCityYieldChange(int i) const;
-	int GetConqueredCityYieldChange(int i) const;
-	int GetCityYieldModifier(int i) const;
-	int GetBuildingClassProductionModifier(int i) const;
-	int GetBuildingClassHappinessChange(int i) const;
-	int GetBuildingClassGlobalHappinessChange(int i) const;
-	int GetBuildingClassYieldChange(int i, int j) const;
-	int GetBuildingClassYieldModifier(int i, int j) const;
-	int GetBuildingClassGreatPersonPointChange(int i, int j) const;
-	int GetBuildingClassGreatPersonPointModifier(int i, int j) const;
-	int GetUnitResourceRequirementChange(int i, int j) const;
-	int GetUnitRangedStrengthChange(int i) const;
-	int GetUnitStrengthChange(int i) const;
-	int GetResourceYieldChange(int i, int j) const;
-	int GetResourceClassYieldChange(int i, int j) const;
-	int GetSpecialistYieldChange(int i, int j) const;
-	int GetSpecialistHappinessChange(int i) const;
-	int GetImprovementYieldChange(int i, int j) const;
-	int GetImprovementTourismBonus(int i) const;
-	int GetImprovementYieldChangePerXWorldWonder(int i, int j) const;
-	int GetImprovementNearbyHealChangeByDomain(int i, int j) const;
-	int GetImprovementNearbyCombatModifierByDomain(int i, int j) const;
-	int GetGreatWorkClassYieldChange(int i, int j) const;
-	int GetGreatWorkClassTourismChange(int i) const;
-	bool IsNoTrainUnit(UnitTypes eUnit) const;
-	bool IsNoConstructBuilding(BuildingTypes eBuilding) const;
-	int GetLegacyUnitClassOverride(int i) const;
-	int GetLegacyBuildingClassOverride(int i) const;
-	bool IsUnitIgnoreTechPrereq(UnitTypes eUnit) const;
-	bool IsUnitIgnorePolicyPrereq(UnitTypes eUnit) const;
-	bool IsBuildingIgnoreTechPrereq(BuildingTypes eBuilding) const;
-	bool IsBuildingIgnorePolicyPrereq(BuildingTypes eBuilding) const;
-	bool IsRevealResource(ResourceTypes eResource) const;
-	int GetUnitCostOverride(int i, int j) const;
-	int GetBuildingCostOverride(int i, int j) const;
-	int GetNumFreeUnitsByClass(int i) const;
-	int GetNumFreeUnitsByType(int i) const;
-	int GetBuildTimeOverride(int i) const;
-	int GetYieldBonusFromThemes(int i) const;
+	int GetPlotPurchaseYieldReward(int i) const { return m_piPlotPurchaseYieldReward ? m_piPlotPurchaseYieldReward[i] : 0; }
+	int GetCityYieldChange(int i) const { return m_piCityYieldChange ? m_piCityYieldChange[i] : 0; }
+	int GetOriginalCityYieldChange(int i) const { return m_piOriginalCityYieldChange ? m_piOriginalCityYieldChange[i] : 0; }
+	int GetConqueredCityYieldChange(int i) const { return m_piConqueredCityYieldChange ? m_piConqueredCityYieldChange[i] : 0; }
+	int GetCityYieldModifier(int i) const { return m_piCityYieldModifier ? m_piCityYieldModifier[i] : 0; }
+	int GetBuildingClassProductionModifier(int i) const { return m_piBuildingClassProductionModifier ? m_piBuildingClassProductionModifier[i] : 0; }
+	int GetBuildingClassHappinessChange(int i) const { return m_piBuildingClassHappinessChange ? m_piBuildingClassHappinessChange[i] : 0; }
+	int GetBuildingClassGlobalHappinessChange(int i) const { return m_piBuildingClassGlobalHappinessChange ? m_piBuildingClassGlobalHappinessChange[i] : 0; }
+	int GetBuildingClassYieldChange(int i, int j) const { return m_paiBuildingClassYieldChange ? m_paiBuildingClassYieldChange[i][j] : 0; }
+	int GetBuildingClassYieldModifier(int i, int j) const { return m_paiBuildingClassYieldModifier ? m_paiBuildingClassYieldModifier[i][j] : 0; }
+	int GetBuildingClassGreatPersonPointChange(int i, int j) const { return m_paiBuildingClassGreatPersonPointChange ? m_paiBuildingClassGreatPersonPointChange[i][j] : 0; }
+	int GetBuildingClassGreatPersonPointModifier(int i, int j) const { return m_paiBuildingClassGreatPersonPointModifier ? m_paiBuildingClassGreatPersonPointModifier[i][j] : 0; }
+	int GetUnitResourceRequirementChange(int i, int j) const { return m_paiUnitResourceRequirementChange ? m_paiUnitResourceRequirementChange[i][j] : 0; }
+	int GetUnitRangedStrengthChange(int i) const { return m_piUnitRangedStrengthChange ? m_piUnitRangedStrengthChange[i] : 0; }
+	int GetUnitStrengthChange(int i) const { return m_piUnitStrengthChange ? m_piUnitStrengthChange[i] : 0; }
+	int GetResourceYieldChange(int i, int j) const { return m_paiResourceYieldChange ? m_paiResourceYieldChange[i][j] : 0; }
+	int GetResourceClassYieldChange(int i, int j) const { return m_paiResourceClassYieldChange ? m_paiResourceClassYieldChange[i][j] : 0; }
+	int GetSpecialistYieldChange(int i, int j) const { return m_paiSpecialistYieldChange ? m_paiSpecialistYieldChange[i][j] : 0; }
+	int GetSpecialistHappinessChange(int i) const { return m_piSpecialistHappinessChange ? m_piSpecialistHappinessChange[i] : 0; }
+	int GetImprovementYieldChange(int i, int j) const { return m_paiImprovementYieldChange ? m_paiImprovementYieldChange[i][j] : 0; }
+	int GetImprovementTourismBonus(int i) const { return m_piImprovementTourismBonus ? m_piImprovementTourismBonus[i] : 0; }
+	int GetImprovementYieldChangePerXWorldWonder(int i, int j) const { return m_paiImprovementYieldChangePerXWorldWonder ? m_paiImprovementYieldChangePerXWorldWonder[i][j] : 0; }
+	int GetImprovementNearbyHealChangeByDomain(int i, int j) const { return m_paiImprovementNearbyHealChangeByDomain ? m_paiImprovementNearbyHealChangeByDomain[i][j] : 0; }
+	int GetImprovementNearbyCombatModifierByDomain(int i, int j) const { return m_paiImprovementNearbyCombatModifierByDomain ? m_paiImprovementNearbyCombatModifierByDomain[i][j] : 0; }
+	int GetGreatWorkClassYieldChange(int i, int j) const { return m_paiGreatWorkClassYieldChange ? m_paiGreatWorkClassYieldChange[i][j] : 0; }
+	int GetGreatWorkClassTourismChange(int i) const { return m_piGreatWorkClassTourismChange ? m_piGreatWorkClassTourismChange[i] : 0; }
+	bool IsNoTrainUnit(UnitTypes eUnit) const { return NO_UNIT != eUnit ? m_abNoTrainUnit[eUnit] : false; }
+	bool IsNoConstructBuilding(BuildingTypes eBuilding) const { return NO_BUILDING != eBuilding ? m_abNoConstructBuilding[eBuilding] : false; }
+	int GetLegacyUnitClassOverride(int i) const { return m_piLegacyUnitClassOverride ? m_piLegacyUnitClassOverride[i] : -1; }
+	int GetLegacyBuildingClassOverride(int i) const { return m_piLegacyBuildingClassOverride ? m_piLegacyBuildingClassOverride[i] : -1; }
+	bool IsUnitIgnoreTechPrereq(UnitTypes eUnit) const { return NO_UNIT != eUnit ? m_pbUnitIgnoreTechPrereq[eUnit] : false; }
+	bool IsUnitIgnorePolicyPrereq(UnitTypes eUnit) const { return NO_UNIT != eUnit ? m_pbUnitIgnorePolicyPrereq[eUnit] : false; }
+	bool IsBuildingIgnoreTechPrereq(BuildingTypes eBuilding) const { return NO_BUILDING != eBuilding ? m_pbBuildingIgnoreTechPrereq[eBuilding] : false; }
+	bool IsBuildingIgnorePolicyPrereq(BuildingTypes eBuilding) const { return NO_BUILDING != eBuilding ? m_pbBuildingIgnorePolicyPrereq[eBuilding] : false; }
+	bool IsRevealResource(ResourceTypes eResource) const { return NO_RESOURCE != eResource ? m_abRevealResource[eResource] : false; }
+	int GetUnitCostOverride(int i, int j) const { return m_paiUnitCostOverride ? m_paiUnitCostOverride[i][j] : 0; }
+	int GetBuildingCostOverride(int i, int j) const { return m_paiBuildingCostOverride ? m_paiBuildingCostOverride[i][j] : 0; }
+	int GetNumFreeUnitsByClass(int i) const { return m_piNumFreeUnitsByClass ? m_piNumFreeUnitsByClass[i] : 0; }
+	int GetNumFreeUnitsByType(int i) const { return m_piNumFreeUnitsByType ? m_piNumFreeUnitsByType[i] : 0; }
+	int GetBuildTimeOverride(int i) const { return m_piBuildTimeOverride ? m_piBuildTimeOverride[i] : 0; }
+	int GetYieldBonusFromThemes(int i) const { return m_piYieldBonusFromThemes ? m_piYieldBonusFromThemes[i] : 0; }
 #if defined(TRADE_REFACTOR)
-	int GetTradeConnectionLandYieldChanges(int i, int j) const;
-	int GetTradeConnectionSeaYieldChanges(int i, int j) const;
-	int GetIncomingTradeConnectionLandYieldChanges(int i, int j) const;
-	int GetIncomingTradeConnectionSeaYieldChanges(int i, int j) const;
-	int GetTradeConnectionLandYieldModifier(int i, int j) const;
-	int GetTradeConnectionSeaYieldModifier(int i, int j) const;
+	int GetTradeConnectionLandYieldChanges(int i, int j) const { return m_paiTradeConnectionLandYieldChanges ? m_paiTradeConnectionLandYieldChanges[i][j] : 0; }
+	int GetTradeConnectionSeaYieldChanges(int i, int j) const { return m_paiTradeConnectionSeaYieldChanges ? m_paiTradeConnectionSeaYieldChanges[i][j] : 0; }
+	int GetIncomingTradeConnectionLandYieldChanges(int i, int j) const { return m_paiIncomingTradeConnectionLandYieldChanges ? m_paiIncomingTradeConnectionLandYieldChanges[i][j] : 0; }
+	int GetIncomingTradeConnectionSeaYieldChanges(int i, int j) const { return m_paiIncomingTradeConnectionSeaYieldChanges ? m_paiIncomingTradeConnectionSeaYieldChanges[i][j] : 0; }
+	int GetTradeConnectionLandYieldModifier(int i, int j) const { return m_paiTradeConnectionLandYieldModifier ? m_paiTradeConnectionLandYieldModifier[i][j] : 0; }
+	int GetTradeConnectionSeaYieldModifier(int i, int j) const { return m_paiTradeConnectionSeaYieldModifier ? m_paiTradeConnectionSeaYieldModifier[i][j] : 0; }
 #endif
-	int GetHolyCityYieldChange(int i) const;
-	int GetGreatWorkClassGreatPersonPoint(int i, int j) const;
+	int GetHolyCityYieldChange(int i) const { return m_piHolyCityYieldChange ? m_piHolyCityYieldChange[i] : 0; }
+	int GetGreatWorkClassGreatPersonPoint(int i, int j) const { return m_paiGreatWorkClassGreatPersonPoint ? m_paiGreatWorkClassGreatPersonPoint[i][j] : 0; }
 private:
     int m_iCivilization;
     int m_iEraOffered;
@@ -207,13 +207,13 @@ private:
 class CvLegacyXMLEntries
 {
 public:
-    CvLegacyXMLEntries(void);
-    ~CvLegacyXMLEntries(void);
+	CvLegacyXMLEntries(void) {}
+	~CvLegacyXMLEntries(void) { DeleteLegacyArray(); }
 
-	std::vector<CvLegacyEntry*>& GetLegacyEntries();
+	std::vector<CvLegacyEntry*>& GetLegacyEntries() { return m_paLegacyEntries; }
     // Legacy Functions
-	int GetNumLegacies();
-	CvLegacyEntry* GetLegacyEntry(int iIndex);
+	int GetNumLegacies() { return m_paLegacyEntries.size(); }
+	CvLegacyEntry* GetLegacyEntry(int iIndex) { return (iIndex >= 0 && iIndex < m_paLegacyEntries.size()) ? m_paLegacyEntries[iIndex] : NULL; }
     void DeleteLegacyArray();
 private:
 	std::vector<CvLegacyEntry*> m_paLegacyEntries;
@@ -239,96 +239,97 @@ public:
     void Read(FDataStream& kStream);
     void Write(FDataStream& kStream) const;
 
-    CvPlayer* GetPlayer() const;
+	CvPlayer* GetPlayer() const { return m_pPlayer; }
 
-	bool HasLegacy(LegacyTypes eIndex) const;
+	bool HasLegacy(LegacyTypes eIndex) const { return m_pabHasLegacy[eIndex]; }
     void SetLegacy(LegacyTypes eIndex, bool bNewValue);
-    CvLegacyXMLEntries* GetLegacies() const;
+    CvLegacyXMLEntries* GetLegacies() const { return m_pLegacies; }
 	std::vector<LegacyTypes> GetCivLegacies() const;
 	std::vector<LegacyTypes> GetEraLegacies(EraTypes eEra) const;
 	bool CanChooseLegacy(LegacyTypes eIndex) const;
     // Activation Time!
     void testLegacyNotification(EraTypes eEra) const;
-    void updatePlayerLegacies(LegacyTypes eLegacy);
-	bool HasOneShotFreeUnitsFired(LegacyTypes eLegacy) const;
-	void SetOneShotFreeUnitsFired(LegacyTypes eLegacy, bool bFired);
+    void updatePlayerLegacies(LegacyTypes eLegacy, int Change);
+	bool HasOneShotFreeUnitsFired(LegacyTypes eLegacy) const { return m_pabOneShotFreeUnitsFired[eLegacy]; }
+	void SetOneShotFreeUnitsFired(LegacyTypes eLegacy, bool bFired) { m_pabOneShotFreeUnitsFired[eLegacy] = bFired; }
     // Do AI for legacy choices. will likely be random until the feature settles.
     void DoLegacyAI();
     void DoChooseLegacy();
     // Accessors 
-	int GetHappinessPerOriginalCity() const;
-	int GetGoldenAgeTurns() const;
-	int GetGreatGeneralSiegeBonus() const;
-	int GetResistanceTimeReduction() const;
-	int GetYieldModCapitalProximity() const;
-	int GetPlotGoldCostModifier() const;
-	int GetPlotCultureCostModifier() const;
-	int GetHappinessFromGreatImprovements() const;
-	int GetHappinessFromForeignReligiousMajority() const;
-	int GetVotesPerCapital() const;
-	int GetInfluenceChangeMajorityReligion() const;
-	int GetInfluenceChangeTradeConnection() const;
-	int GetPurchasedUnitExtraMoves() const;
-	int GetHappinessPerTheme() const;
-	bool IsTradeUnplunderable() const;
-	bool IsCannotPlunder() const;
-	int GetFriendlyCityReligionCombatModifier() const;
-	int GetOccupiedCityReligionCombatModifier() const;
-	int GetEnemyCityReligionCombatModifier() const;
-	int GetGreatProphetCostModifier() const;
-	int GetHolyCityReligiousPressureModifier() const;
+	int GetHappinessPerOriginalCity() const { return m_iHappinessPerOriginalCity; }
+	int GetGoldenAgeTurns() const { return m_iGoldenAgeTurns; }
+	int GetGreatGeneralSiegeBonus() const { return m_iGreatGeneralSiegeBonus; }
+	int GetResistanceTimeReduction() const { return m_iResistanceTimeReduction; }
+	int GetYieldModCapitalProximity() const { return m_iYieldModCapitalProximity; }
+	int GetPlotGoldCostModifier() const	{ return m_iPlotGoldCostModifier; }
+	int GetPlotCultureCostModifier() const { return m_iPlotCultureCostModifier; }
+	int GetHappinessFromGreatImprovements() const { return m_iHappinessFromGreatImprovements; }
+	int GetHappinessFromForeignReligiousMajority() const { return m_iHappinessFromForeignReligiousMajority; }
+	int GetVotesPerCapital() const { return m_iVotesPerCapital; }
+	int GetInfluenceChangeMajorityReligion() const { return m_iInfluenceChangeMajorityReligion; }
+	int GetInfluenceChangeTradeConnection() const { return m_iInfluenceChangeTradeConnection; }
+	int GetPurchasedUnitExtraMoves() const { return m_iPurchasedUnitExtraMoves; }
+	int GetHappinessPerTheme() const { return m_iHappinessPerTheme; }
+	bool IsTradeUnplunderable() const { return m_bTradeUnplunderable; }
+	bool IsCannotPlunder() const { return m_bCannotPlunder; }
+	int GetFriendlyCityReligionCombatModifier() const { return m_iFriendlyCityReligionCombatModifier; }
+	int GetOccupiedCityReligionCombatModifier() const { return m_iOccupiedCityReligionCombatModifier; }
+	int GetEnemyCityReligionCombatModifier() const { return m_iEnemyCityReligionCombatModifier; }
+	int GetGreatProphetCostModifier() const { return m_iGreatProphetCostModifier; }
+	int GetHolyCityReligiousPressureModifier() const { return m_iHolyCityReligiousPressureModifier; }
 	// Arrays
 	bool HasFreePromotionUnitType(PromotionTypes ePromotion, UnitTypes eUnitType) const;
-	int GetPromotionNearbyGeneralUnitCombat(UnitCombatTypes eUnitCombat) const;
-	int GetPlotPurchaseYieldReward(YieldTypes eYield) const;
-	int GetCityYieldChange(YieldTypes eYield) const;
-	int GetOriginalCityYieldChange(YieldTypes eYield) const;
-	int GetConqueredCityYieldChange(YieldTypes eYield) const;
-	int GetCityYieldModifier(YieldTypes eYield) const;
-	int GetUnitResourceRequirementChange(UnitTypes eUnit, ResourceTypes eResource) const;
-	int GetUnitRangedStrengthChange(UnitTypes eUnit) const;
-	int GetUnitStrengthChange(UnitTypes eUnit) const;
-	int GetBuildingClassProductionModifier(BuildingClassTypes eBuildingClass) const;
-	int GetBuildingClassHappinessChange(BuildingClassTypes eBuildingClass) const;
-	int GetBuildingClassGlobalHappinessChange(BuildingClassTypes eBuildingClass) const;
-	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield) const;
-	int GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYield) const;
+	int GetGreatWorkClassGreatPersonPoint(GreatWorkClass eGreatWorkClass, SpecialistTypes eSpecialist) const;
 	int GetBuildingClassGreatPersonPointChange(BuildingClassTypes eBuildingClass, SpecialistTypes eSpecialist) const;
 	int GetBuildingClassGreatPersonPointModifier(BuildingClassTypes eBuildingClass, SpecialistTypes eSpecialist) const;
-	int GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYield) const;
-	int GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYield) const;
-	int GetSpecialistYieldChange(SpecialistTypes eSpecialist, YieldTypes eYield) const;
-	int GetSpecialistHappinessChange(SpecialistTypes eSpecialist) const;
-	int GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const;
-	int GetImprovementTourismBonus(ImprovementTypes eImprovement) const;
-	int GetImprovementYieldChangePerXWorldWonder(ImprovementTypes eImprovement, YieldTypes eYield) const;
-	int GetNearbyImprovementHealChangeByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const;
-	int GetNearbyImprovementCombatModifierByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const;
-	int GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const;
-	int GetGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass) const;
-	bool NoTrainUnit(UnitTypes eUnit) const;
-	bool NoConstructBuilding(BuildingTypes eBuilding) const;
-	int GetLegacyUnitClassOverride(UnitClassTypes eUnitClass) const;
-	int GetLegacyBuildingClassOverride(BuildingClassTypes eBuildingClass) const;
-	bool IsUnitIgnoreTechPrereq(UnitTypes eUnit) const;
-	bool IsUnitIgnorePolicyPrereq(UnitTypes eUnit) const;
-	bool IsBuildingIgnoreTechPrereq(BuildingTypes eBuilding) const;
-	bool IsBuildingIgnorePolicyPrereq(BuildingTypes eBuilding) const;
-	bool IsRevealResource(ResourceTypes eResource) const;
-	int GetUnitCostOverride(UnitTypes eUnit, YieldTypes eYield) const;
-	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYield) const;
-	int GetBuildTimeOverride(BuildTypes eBuild) const;
-	int GetYieldBonusFromThemes(YieldTypes eYield) const;
+	int GetUnitResourceRequirementChange(UnitTypes eUnit, ResourceTypes eResource) const;
+
+	int GetPromotionNearbyGeneralUnitCombat(UnitCombatTypes eUnitCombat) const { return NO_UNITCOMBAT != eUnitCombat ? m_viPromotionNearbyGeneralUnitCombat[(int)eUnitCombat] : NO_PROMOTION; }
+	int GetPlotPurchaseYieldReward(YieldTypes eYield) const { return NO_YIELD != eYield ? m_viPlotPurchaseYieldReward[(int)eYield] : 0; }
+	int GetCityYieldChange(YieldTypes eYield) const { return NO_YIELD != eYield ? m_viCityYieldChange[(int)eYield] : 0; }
+	int GetOriginalCityYieldChange(YieldTypes eYield) const { return NO_YIELD != eYield ? m_viOriginalCityYieldChange[(int)eYield] : 0; }
+	int GetConqueredCityYieldChange(YieldTypes eYield) const { return NO_YIELD != eYield ? m_viConqueredCityYieldChange[(int)eYield] : 0; }
+	int GetCityYieldModifier(YieldTypes eYield) const { return NO_YIELD != eYield ? m_viCityYieldModifier[(int)eYield] : 0; }
+	int GetUnitRangedStrengthChange(UnitTypes eUnit) const { return NO_UNIT != eUnit ? m_viUnitRangedStrengthChanges[(int)eUnit] : 0; }
+	int GetUnitStrengthChange(UnitTypes eUnit) const { return NO_UNIT != eUnit ? m_viUnitStrengthChanges[(int)eUnit] : 0; }
+	int GetBuildingClassProductionModifier(BuildingClassTypes eBuildingClass) const { return NO_BUILDINGCLASS != eBuildingClass ? m_viBuildingClassProductionModifiers[(int)eBuildingClass] : 0; }
+	int GetBuildingClassHappinessChange(BuildingClassTypes eBuildingClass) const { return NO_BUILDINGCLASS != eBuildingClass ? m_viBuildingClassHappinessChanges[(int)eBuildingClass] : 0; }
+	int GetBuildingClassGlobalHappinessChange(BuildingClassTypes eBuildingClass) const { return NO_BUILDINGCLASS != eBuildingClass ? m_viBuildingClassGlobalHappinessChanges[(int)eBuildingClass] : 0; }
+	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield) const { return NO_BUILDINGCLASS != eBuildingClass ? m_vaaiBuildingClassYieldChanges[(int)eBuildingClass][(int)eYield] : 0; }
+	int GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYield) const { return NO_BUILDINGCLASS != eBuildingClass ? m_vaaiBuildingClassYieldModifiers[(int)eBuildingClass][(int)eYield] : 0; }
+	int GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYield) const { return NO_RESOURCE != eResource ? m_vaaiResourceYieldChanges[(int)eResource][(int)eYield] : 0; }
+	int GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYield) const { return NO_RESOURCECLASS != eResourceClass ? m_vaaiResourceClassYieldChanges[(int)eResourceClass][(int)eYield] : 0; }
+	int GetSpecialistYieldChange(SpecialistTypes eSpecialist, YieldTypes eYield) const { return NO_SPECIALIST != eSpecialist ? m_vaaiSpecialistYieldChanges[(int)eSpecialist][(int)eYield] : 0; }
+	int GetSpecialistHappinessChange(SpecialistTypes eSpecialist) const { return NO_SPECIALIST != eSpecialist ? m_viSpecialistHappinessChanges[(int)eSpecialist] : 0; }
+	int GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const { return NO_IMPROVEMENT != eImprovement ? m_vaaiImprovementYieldChanges[(int)eImprovement][(int)eYield] : 0; }
+	int GetImprovementTourismBonus(ImprovementTypes eImprovement) const { return NO_IMPROVEMENT != eImprovement ? m_viImprovementTourismBonuses[(int)eImprovement] : 0; }
+	int GetImprovementYieldChangePerXWorldWonder(ImprovementTypes eImprovement, YieldTypes eYield) const { return NO_IMPROVEMENT != eImprovement ? m_vaaiImprovementYieldChangePerXWorldWonder[(int)eImprovement][(int)eYield] : 0; }
+	int GetNearbyImprovementHealChangeByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const { return NO_IMPROVEMENT != eImprovement ? m_vaaiNearbyImprovementHealChangeByDomain[(int)eImprovement][(int)eDomain] : 0; }
+	int GetNearbyImprovementCombatModifierByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const { return NO_IMPROVEMENT != eImprovement ? m_vaaiNearbyImprovementCombatModifierByDomain[(int)eImprovement][(int)eDomain] : 0; }
+	int GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const { return NO_GREAT_WORK_CLASS != eGreatWorkClass ? m_vaaiGreatWorkClassYieldChanges[(int)eGreatWorkClass][(int)eYield] : 0; }
+	int GetGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass) const { return NO_GREAT_WORK_CLASS != eGreatWorkClass ? m_viGreatWorkClassTourismChanges[(int)eGreatWorkClass] : 0; }
+	bool NoTrainUnit(UnitTypes eUnit) const { return NO_UNIT != eUnit ? m_vbNoTrain[eUnit] : false; }
+	bool NoConstructBuilding(BuildingTypes eBuilding) const { return NO_BUILDING != eBuilding ? m_vbNoConstruct[eBuilding] : false; }
+	int GetLegacyUnitClassOverride(UnitClassTypes eUnitClass) const { return NO_UNITCLASS != eUnitClass ? m_viLegacyUnitClassOverrides[(int)eUnitClass] : NO_UNIT; }
+	int GetLegacyBuildingClassOverride(BuildingClassTypes eBuildingClass) const { return NO_BUILDINGCLASS != eBuildingClass ? m_viLegacyBuildingClassOverrides[(int)eBuildingClass] : NO_BUILDING; }
+	bool IsUnitIgnoreTechPrereq(UnitTypes eUnit) const { return NO_UNIT != eUnit ? m_vbUnitIgnoreTechPrereq[eUnit] : false; }
+	bool IsUnitIgnorePolicyPrereq(UnitTypes eUnit) const { return NO_UNIT != eUnit ? m_vbUnitIgnorePolicyPrereq[eUnit] : false; }
+	bool IsBuildingIgnoreTechPrereq(BuildingTypes eBuilding) const { return NO_BUILDING != eBuilding ? m_vbBuildingIgnoreTechPrereq[eBuilding] : false; }
+	bool IsBuildingIgnorePolicyPrereq(BuildingTypes eBuilding) const { return NO_BUILDING != eBuilding ? m_vbBuildingIgnorePolicyPrereq[eBuilding] : false; }
+	bool IsRevealResource(ResourceTypes eResource) const { return NO_RESOURCE != eResource ? m_vbRevealResource[eResource] : false; }
+	int GetUnitCostOverride(UnitTypes eUnit, YieldTypes eYield) const { return NO_UNIT != eUnit ? m_vaaiUnitCostOverrides[(int)eUnit][(int)eYield] : 0; }
+	int GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYield) const { return NO_BUILDING != eBuilding ? m_vaaiBuildingCostOverrides[(int)eBuilding][(int)eYield] : 0; }
+	int GetBuildTimeOverride(BuildTypes eBuild) const { return NO_BUILD != eBuild ? m_viBuildTimeOverrides[(int)eBuild] : 0; }
+	int GetYieldBonusFromThemes(YieldTypes eYield) const { return NO_YIELD != eYield ? m_viYieldBonusFromThemes[(int)eYield] : 0; }
 #if defined(TRADE_REFACTOR)
-	int GetTradeConnectionLandYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const;
-	int GetTradeConnectionSeaYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const;
-	int GetIncomingTradeConnectionLandYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const;
-	int GetIncomingTradeConnectionSeaYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const;
-	int GetTradeConnectionLandYieldModifier(TradeConnectionType eConnection, YieldTypes eYield) const;
-	int GetTradeConnectionSeaYieldModifier(TradeConnectionType eConnection, YieldTypes eYield) const;
+	int GetTradeConnectionLandYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const { return NO_TRADE_CONNECTION != eConnection ? m_vaaiTradeConnectionLandYieldChange[(int)eConnection][(int)eYield] : 0; }
+	int GetTradeConnectionSeaYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const { return NO_TRADE_CONNECTION != eConnection ? m_vaaiTradeConnectionSeaYieldChange[(int)eConnection][(int)eYield] : 0; }
+	int GetIncomingTradeConnectionLandYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const { return NO_TRADE_CONNECTION != eConnection ? m_vaaiIncomingTradeConnectionLandYieldChange[(int)eConnection][(int)eYield] : 0; }
+	int GetIncomingTradeConnectionSeaYieldChanges(TradeConnectionType eConnection, YieldTypes eYield) const { return NO_TRADE_CONNECTION != eConnection ? m_vaaiIncomingTradeConnectionSeaYieldChange[(int)eConnection][(int)eYield] : 0; }
+	int GetTradeConnectionLandYieldModifier(TradeConnectionType eConnection, YieldTypes eYield) const { return NO_TRADE_CONNECTION != eConnection ? m_vaaiTradeConnectionLandYieldModifier[(int)eConnection][(int)eYield] : 0; }
+	int GetTradeConnectionSeaYieldModifier(TradeConnectionType eConnection, YieldTypes eYield) const { return NO_TRADE_CONNECTION != eConnection ? m_vaaiTradeConnectionSeaYieldModifier[(int)eConnection][(int)eYield] : 0; }
 #endif
-	int GetHolyCityYieldChange(YieldTypes eYield) const;
-	int GetGreatWorkClassGreatPersonPoint(GreatWorkClass eGreatWorkClass, SpecialistTypes eSpecialist) const;
+	int GetHolyCityYieldChange(YieldTypes eYield) const { return NO_YIELD != eYield ? m_viHolyCityYieldChange[(int)eYield] : 0; }
 private:
     bool* m_pabHasLegacy;
 	bool* m_pabOneShotFreeUnitsFired;

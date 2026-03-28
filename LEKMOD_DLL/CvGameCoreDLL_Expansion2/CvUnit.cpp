@@ -16944,7 +16944,9 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	if (bOwnerIsActivePlayer)
 		DLLUI->SetDontShowPopups(false);
 #if defined(LEKMOD_LEGACY) // Gonna Do something wonky, probably gonna get rid of this
-	if (IsNearUnitWithPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_GREAT_GENERAL", true /*bHideAssert*/), GC.getGREAT_GENERAL_RANGE(), false, true))
+	int iRange = GC.getGREAT_GENERAL_RANGE();
+	PromotionTypes eGreatGeneralPromotion = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_GREAT_GENERAL", true /*bHideAssert*/);
+	if (IsNearUnitWithPromotion(eGreatGeneralPromotion, iRange, false, true))
 	{
 		// This returns an ID of the legacy promotion for our unit combat type, or NO_PROMOTION
 		PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneralUnitCombat(getUnitCombatType());
@@ -16962,9 +16964,99 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 		PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneralUnitCombat(getUnitCombatType());
 		if (eLegacyPromotion != NO_PROMOTION)
 		{
-			if (isHasPromotion(eLegacyPromotion) && (!IsPromotionChosenByPlayer(eLegacyPromotion) || !getUnitInfo().GetFreePromotions(eLegacyPromotion))) // chosen by player or free on the unit itself, so keep it
+			if (isHasPromotion(eLegacyPromotion) && !IsPromotionChosenByPlayer(eLegacyPromotion) && !getUnitInfo().GetFreePromotions(eLegacyPromotion)) // chosen by player or free on the unit itself, so keep it
 			{
 				setHasPromotion(eLegacyPromotion, false);
+			}
+		}
+	}
+	if (isHasPromotion(eGreatGeneralPromotion))
+	{
+		CvPlot* pLoopPlot;
+		IDInfo* pUnitNode;
+		CvUnit* pLoopUnit;
+
+		for (int iX = -iRange; iX <= iRange; iX++)
+		{
+			for (int iY = -iRange; iY <= iRange; iY++)
+			{
+				pLoopPlot = plotXYWithRangeCheck(pOldPlot->getX(), pOldPlot->getY(), iX, iY, iRange);
+
+				if (pLoopPlot == NULL)
+					continue;
+				if (pLoopPlot->getNumUnits() <= 0)
+					continue;
+
+				pUnitNode = pLoopPlot->headUnitNode();
+
+				while (pUnitNode != NULL)
+				{
+					pLoopUnit = ::getUnit(*pUnitNode);
+					pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+					if (pLoopUnit == NULL)
+						continue;
+					if (pLoopUnit->getOwner() != getOwner())
+						continue;
+					if (pLoopUnit->getUnitCombatType() == NO_UNITCOMBAT)
+						continue;
+					PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneralUnitCombat(pLoopUnit->getUnitCombatType());
+					if (eLegacyPromotion == NO_PROMOTION)
+						continue;
+
+					// Re-check from the unit's current position whether it is near ANY valid Great General
+					if (pLoopUnit->IsNearUnitWithPromotion(eGreatGeneralPromotion, iRange, false, true))
+					{
+						if (!pLoopUnit->isHasPromotion(eLegacyPromotion))
+							pLoopUnit->setHasPromotion(eLegacyPromotion, true);
+					}
+					else
+					{
+						// chosen by player or free on the unit itself, so keep it
+						if (pLoopUnit->isHasPromotion(eLegacyPromotion) && !pLoopUnit->IsPromotionChosenByPlayer(eLegacyPromotion) && !pLoopUnit->getUnitInfo().GetFreePromotions(eLegacyPromotion))
+							pLoopUnit->setHasPromotion(eLegacyPromotion, false);
+					}
+				}
+			}
+		}
+		for (int iX = -iRange; iX <= iRange; iX++)
+		{
+			for (int iY = -iRange; iY <= iRange; iY++)
+			{
+				pLoopPlot = plotXYWithRangeCheck(getX(), getY(), iX, iY, iRange);
+				if (pLoopPlot == NULL)
+					continue;
+				if (pLoopPlot->getNumUnits() <= 0)
+					continue;
+
+				pUnitNode = pLoopPlot->headUnitNode();
+
+				while (pUnitNode != NULL)
+				{
+					pLoopUnit = ::getUnit(*pUnitNode);
+					pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+					if (pLoopUnit == NULL)
+						continue;
+					if (pLoopUnit->getOwner() != getOwner())
+						continue;
+					if (pLoopUnit->getUnitCombatType() == NO_UNITCOMBAT)
+						continue;
+					PromotionTypes eLegacyPromotion = (PromotionTypes)GET_PLAYER(getOwner()).GetPlayerLegacies()->GetPromotionNearbyGeneralUnitCombat(pLoopUnit->getUnitCombatType());
+					if (eLegacyPromotion == NO_PROMOTION)
+						continue;
+
+					// Re-check from the unit's current position whether it is near ANY valid Great General
+					if (pLoopUnit->IsNearUnitWithPromotion(eGreatGeneralPromotion, iRange, false, true))
+					{
+						if (!pLoopUnit->isHasPromotion(eLegacyPromotion))
+							pLoopUnit->setHasPromotion(eLegacyPromotion, true);
+					}
+					else
+					{
+						// chosen by player or free on the unit itself, so keep it
+						if (pLoopUnit->isHasPromotion(eLegacyPromotion) && !pLoopUnit->IsPromotionChosenByPlayer(eLegacyPromotion) && !pLoopUnit->getUnitInfo().GetFreePromotions(eLegacyPromotion))
+							pLoopUnit->setHasPromotion(eLegacyPromotion, false);
+					}
+				}
 			}
 		}
 	}

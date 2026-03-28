@@ -110,6 +110,33 @@ void CvTeam::init(TeamTypes eID)
 
 	//--------------------------------
 	// Init other game data
+#if defined(LEKMOD_LEGACY)
+	// Any Resources revealed at the start of the game should be revealed to the team
+	ResourceTypes eResource;
+	TechTypes eRevealTech;
+	TechTypes eTradeTech;
+	PolicyTypes eRevealPolicy;
+	for (int resource = 0; resource < GC.getNumResourceInfos(); ++resource)
+	{
+		eResource = static_cast<ResourceTypes>(resource);
+		eRevealTech = static_cast<TechTypes>(GC.getResourceInfo(eResource)->getTechReveal());
+		if (eRevealTech == NO_TECH || m_pTeamTechs->HasTech(eRevealTech))
+		{
+			m_abResourceRevealed[resource] = true;
+			// Techs have priority over policies, so only check the reveal policy if there is no reveal tech or if the team has the reveal tech
+			eRevealPolicy = static_cast<PolicyTypes>(GC.getResourceInfo(eResource)->getPolicyReveal());
+			if (eRevealPolicy == NO_POLICY || HavePolicyInTeam(eRevealPolicy))
+			{
+				m_abResourceRevealed[resource] = true;
+			}
+		}
+		eTradeTech = static_cast<TechTypes>(GC.getResourceInfo(eResource)->getTechCityTrade());
+		if (eTradeTech == NO_TECH || m_pTeamTechs->HasTech(eTradeTech))
+		{
+			m_abResourceTrade[resource] = true;
+		}
+	}
+#endif
 }
 
 

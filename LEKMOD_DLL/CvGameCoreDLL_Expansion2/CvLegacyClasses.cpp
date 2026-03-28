@@ -567,13 +567,13 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		pResults->Reset();
 	}
 	{
-		kUtility.InitializeArray(m_piPromotionNearbyGeneralUnitCombat, "UnitCombatInfos");
+		kUtility.InitializeArray(m_piPromotionNearbyGeneralUnitCombat, "UnitCombatInfos", -1);
 		std::string strKey("Legacy_FreePromotionNearbyGeneral");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if (pResults == NULL)
 		{
 			pResults = kUtility.PrepareResults(strKey,
-				"SELECT UnitCombatInfos.ID as UnitCombatID, UnitPromotions.ID as PromotionID FROM Legacy_FreePromotionNearbyGeneral "
+				"SELECT UnitCombatInfos.ID as UnitCombatID, COALESCE(UnitPromotions.ID, -1) as PromotionID FROM Legacy_FreePromotionNearbyGeneral "
 				"INNER JOIN UnitPromotions ON UnitPromotions.Type = PromotionType "
 				"INNER JOIN UnitCombatInfos ON UnitCombatInfos.Type = UnitCombatType "
 				"WHERE LegacyType = ?");
@@ -581,7 +581,7 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		pResults->Bind(1, szLegacyType);
 		while (pResults->Step())
 		{
-			const int iUnitCombat = pResults->GetInt(2);
+			const int iUnitCombat = pResults->GetInt(0);
 			const int iPromotion = pResults->GetInt(1);
 			m_piPromotionNearbyGeneralUnitCombat[iUnitCombat] = iPromotion;
 		}
@@ -888,27 +888,6 @@ bool CvLegacyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	// Return true at the very end.
 	return true;
 }
-// What civilization is the legacy offered to?
-int CvLegacyEntry::GetCivilization() const
-{
-	return m_iCivilization;
-}
-// At what era is this Legacy offered to the player?
-int CvLegacyEntry::GetEraOffered() const
-{
-	return m_iEraOffered;
-}
-// Does this legacy trigger the choice instantly when entering the prereq era?
-bool CvLegacyEntry::IsInstant() const
-{
-	return m_bInstant;
-}
-// Does this Legacy Include Free Units?
-bool CvLegacyEntry::IncludesOneShotFreeUnits(LegacyTypes eLegacy) const
-{
-	CvAssertMsg(eLegacy >= 0 && eLegacy < GC.getNumLegacyInfos(), "Legacy index out of bounds");
-	return m_pbHasOneShotUnits[eLegacy];
-}
 // Set if this Legacy Has Free Units
 void CvLegacyEntry::SetIncludesOneShotFreeUnits(LegacyTypes eLegacy)
 {
@@ -938,141 +917,6 @@ void CvLegacyEntry::SetIncludesOneShotFreeUnits(LegacyTypes eLegacy)
 
 	m_pbHasOneShotUnits[eLegacy] = bHasOneShotUnits;
 }
-// Special Stuff, doesnt need a Player Legacy object
-int CvLegacyEntry::GetNumFreeUnitsByClass(int i) const
-{
-	return m_piNumFreeUnitsByClass ? m_piNumFreeUnitsByClass[i] : 0;
-}
-int CvLegacyEntry::GetNumFreeUnitsByType(int i) const
-{
-	return m_piNumFreeUnitsByType ? m_piNumFreeUnitsByType[i] : 0;
-}
-// SIMPLE GETTERS
-int CvLegacyEntry::GetHappinessPerOriginalCity() const
-{
-	return m_iHappinessPerOriginalCity;
-}
-int CvLegacyEntry::GetGoldenAgeTurns() const
-{
-	return m_iGoldenAgeTurns;
-}
-int CvLegacyEntry::GetGreatGeneralSiegeBonus() const
-{
-	return m_iGreatGeneralSiegeBonus;
-}
-int CvLegacyEntry::GetResistanceTimeReduction() const
-{
-	return m_iResistanceTimeReduction;
-}
-int CvLegacyEntry::GetYieldModCapitalProximity() const
-{
-	return m_iYieldModCapitalProximity;
-}
-int CvLegacyEntry::GetPlotGoldCostModifier() const
-{
-	return m_iPlotGoldCostModifier;
-}
-int CvLegacyEntry::GetPlotCultureCostModifier() const
-{
-	return m_iPlotCultureCostModifier;
-}
-int CvLegacyEntry::GetHappinessFromGreatImprovements() const
-{
-	return m_iHappinessFromGreatImprovements;
-}
-int CvLegacyEntry::GetHappinessFromForeignReligiousMajority() const
-{
-	return m_iHappinessFromForeignReligiousMajority;
-}
-int CvLegacyEntry::GetVotesPerCapital() const
-{
-	return m_iVotesPerCapital;
-}
-int CvLegacyEntry::GetInfluenceChangeMajorityReligion() const
-{
-	return m_iInfluenceChangeMajorityReligion;
-}
-int CvLegacyEntry::GetInfluenceChangeTradeConnection() const
-{
-	return m_iInfluenceChangeTradeConnection;
-}
-int CvLegacyEntry::GetPurchasedUnitExtraMoves() const
-{
-	return m_iPurchasedUnitExtraMoves;
-}
-int CvLegacyEntry::GetHappinessPerTheme() const
-{
-	return m_iHappinessPerTheme;
-}
-bool CvLegacyEntry::IsTradeUnplunderable() const
-{
-	return m_bTradeUnplunderable;
-}
-bool CvLegacyEntry::IsCannotPlunder() const
-{
-	return m_bCannotPlunder;
-}
-int CvLegacyEntry::GetFriendlyCityReligionCombatModifier() const
-{
-	return m_iFriendlyCityReligionCombatModifier;
-}
-int CvLegacyEntry::GetOccupiedCityReligionCombatModifier() const
-{
-	return m_iOccupiedCityReligionCombatModifier;
-}
-int CvLegacyEntry::GetEnemyCityReligionCombatModifier() const
-{
-	return m_iEnemyCityReligionCombatModifier;
-}
-int CvLegacyEntry::GetGreatProphetCostModifier() const
-{
-	return m_iGreatProphetCostModifier;
-}
-int CvLegacyEntry::GetHolyCityReligiousPressureModifier() const
-{
-	return m_iHolyCityReligiousPressureModifier;
-}
-// ARRAYS
-bool CvLegacyEntry::IsRevealResource(ResourceTypes eResource) const
-{
-	return NO_RESOURCE != eResource ? m_abRevealResource[eResource] : false;
-}
-bool CvLegacyEntry::IsNoTrainUnit(UnitTypes eUnit) const
-{
-	return NO_UNIT != eUnit ? m_abNoTrainUnit[eUnit] : false;
-}
-bool CvLegacyEntry::IsNoConstructBuilding(BuildingTypes eBuilding) const
-{
-	return NO_BUILDING != eBuilding ? m_abNoConstructBuilding[eBuilding] : false;
-}
-int CvLegacyEntry::GetLegacyBuildingClassOverride(int i) const
-{
-	return m_piLegacyBuildingClassOverride ? m_piLegacyBuildingClassOverride[i] : -1;
-}
-bool CvLegacyEntry::IsBuildingIgnorePolicyPrereq(BuildingTypes eBuilding) const
-{
-	return NO_BUILDING != eBuilding ? m_pbBuildingIgnorePolicyPrereq[eBuilding] : false;
-}
-bool CvLegacyEntry::IsBuildingIgnoreTechPrereq(BuildingTypes eBuilding) const
-{
-	return NO_BUILDING != eBuilding ? m_pbBuildingIgnoreTechPrereq[eBuilding] : false;
-}
-int CvLegacyEntry::GetLegacyUnitClassOverride(int i) const
-{
-	return m_piLegacyUnitClassOverride ? m_piLegacyUnitClassOverride[i] : -1;
-}
-bool CvLegacyEntry::IsUnitIgnorePolicyPrereq(UnitTypes eUnit) const
-{
-	return NO_UNIT != eUnit ? m_pbUnitIgnorePolicyPrereq[eUnit] : false;
-}
-bool CvLegacyEntry::IsUnitIgnoreTechPrereq(UnitTypes eUnit) const
-{
-	return NO_UNIT != eUnit ? m_pbUnitIgnoreTechPrereq[eUnit] : false;
-}
-int CvLegacyEntry::IsFreePromotion(int i) const
-{
-	return m_pbFreePromotion ? m_pbFreePromotion[i] : -1;
-}
 bool CvLegacyEntry::IsFreePromotionUnitType(const int promotionID, const int unitTypeID) const
 {
 	std::multimap<int, int>::const_iterator it = m_FreePromotionUnitType.find(promotionID);
@@ -1093,190 +937,9 @@ bool CvLegacyEntry::IsFreePromotionUnitType(const int promotionID, const int uni
 
 	return false;
 }
-int CvLegacyEntry::GetPlotPurchaseYieldReward(int i) const
-{
-	return m_piPlotPurchaseYieldReward ? m_piPlotPurchaseYieldReward[i] : 0;
-}
-int CvLegacyEntry::GetPromotionNearbyGeneral(int i) const
-{
-	return m_piPromotionNearbyGeneralUnitCombat ? m_piPromotionNearbyGeneralUnitCombat[i] : -1;
-}
-int CvLegacyEntry::GetCityYieldChange(int i) const
-{
-	return m_piCityYieldChange ? m_piCityYieldChange[i] : 0;
-}
-int CvLegacyEntry::GetOriginalCityYieldChange(int i) const
-{
-	return m_piOriginalCityYieldChange ? m_piOriginalCityYieldChange[i] : 0;
-}
-int CvLegacyEntry::GetConqueredCityYieldChange(int i) const
-{
-	return m_piConqueredCityYieldChange ? m_piConqueredCityYieldChange[i] : 0;
-}
-int CvLegacyEntry::GetCityYieldModifier(int i) const
-{
-	return m_piCityYieldModifier ? m_piCityYieldModifier[i] : 0;
-}
-int CvLegacyEntry::GetBuildingClassProductionModifier(int i) const
-{
-	return m_piBuildingClassProductionModifier ? m_piBuildingClassProductionModifier[i] : 0;
-}
-int CvLegacyEntry::GetBuildingClassHappinessChange(int i) const
-{
-	return m_piBuildingClassHappinessChange ? m_piBuildingClassHappinessChange[i] : 0;
-}
-int CvLegacyEntry::GetBuildingClassGlobalHappinessChange(int i) const
-{
-	return m_piBuildingClassGlobalHappinessChange ? m_piBuildingClassGlobalHappinessChange[i] : 0;
-}
-int CvLegacyEntry::GetUnitResourceRequirementChange(int i, int j) const
-{
-	return m_paiUnitResourceRequirementChange ? m_paiUnitResourceRequirementChange[i][j] : 0;
-}
-int CvLegacyEntry::GetUnitRangedStrengthChange(int i) const
-{
-	return m_piUnitRangedStrengthChange ? m_piUnitRangedStrengthChange[i] : 0;
-}
-int CvLegacyEntry::GetUnitStrengthChange(int i) const
-{
-	return m_piUnitStrengthChange ? m_piUnitStrengthChange[i] : 0;
-}
-int CvLegacyEntry::GetBuildingClassYieldChange(int i, int j) const
-{
-	return m_paiBuildingClassYieldChange ? m_paiBuildingClassYieldChange[i][j] : 0;
-}
-int CvLegacyEntry::GetBuildingClassYieldModifier(int i, int j) const
-{
-	return m_paiBuildingClassYieldModifier ? m_paiBuildingClassYieldModifier[i][j] : 0;
-}
-int CvLegacyEntry::GetResourceYieldChange(int i, int j) const
-{
-	return m_paiResourceYieldChange ? m_paiResourceYieldChange[i][j] : 0;
-}
-int CvLegacyEntry::GetResourceClassYieldChange(int i, int j) const
-{
-	return m_paiResourceClassYieldChange ? m_paiResourceClassYieldChange[i][j] : 0;
-}
-int CvLegacyEntry::GetSpecialistYieldChange(int i, int j) const
-{
-	return m_paiSpecialistYieldChange ? m_paiSpecialistYieldChange[i][j] : 0;
-}
-int CvLegacyEntry::GetSpecialistHappinessChange(int i) const
-{
-	return m_piSpecialistHappinessChange ? m_piSpecialistHappinessChange[i] : 0;
-}
-int CvLegacyEntry::GetImprovementYieldChange(int i, int j) const
-{
-	return m_paiImprovementYieldChange ? m_paiImprovementYieldChange[i][j] : 0;
-}
-int CvLegacyEntry::GetImprovementYieldChangePerXWorldWonder(int i, int j) const
-{
-	return m_paiImprovementYieldChangePerXWorldWonder ? m_paiImprovementYieldChangePerXWorldWonder[i][j] : 0;
-}
-int CvLegacyEntry::GetImprovementNearbyHealChangeByDomain(int i, int j) const
-{
-	return m_paiImprovementNearbyHealChangeByDomain ? m_paiImprovementNearbyHealChangeByDomain[i][j] : 0;
-}
-int CvLegacyEntry::GetImprovementNearbyCombatModifierByDomain(int i, int j) const
-{
-	return m_paiImprovementNearbyCombatModifierByDomain ? m_paiImprovementNearbyCombatModifierByDomain[i][j] : 0;
-}
-int CvLegacyEntry::GetBuildingClassGreatPersonPointModifier(int i, int j) const
-{
-	return m_paiBuildingClassGreatPersonPointModifier ? m_paiBuildingClassGreatPersonPointModifier[i][j] : 0;
-}
-int CvLegacyEntry::GetBuildingClassGreatPersonPointChange(int i, int j) const
-{
-	return m_paiBuildingClassGreatPersonPointChange ? m_paiBuildingClassGreatPersonPointChange[i][j] : 0;
-}
-int CvLegacyEntry::GetGreatWorkClassYieldChange(int i, int j) const
-{
-	return m_paiGreatWorkClassYieldChange ? m_paiGreatWorkClassYieldChange[i][j] : 0;
-}
-int CvLegacyEntry::GetGreatWorkClassTourismChange(int i) const
-{
-	return m_piGreatWorkClassTourismChange ? m_piGreatWorkClassTourismChange[i] : 0;
-}
-int CvLegacyEntry::GetImprovementTourismBonus(int i) const
-{
-	return m_piImprovementTourismBonus ? m_piImprovementTourismBonus[i] : 0;
-}
-int CvLegacyEntry::GetBuildingCostOverride(int i, int j) const
-{
-	return m_paiBuildingCostOverride ? m_paiBuildingCostOverride[i][j] : -1;
-}
-int CvLegacyEntry::GetUnitCostOverride(int i, int j) const
-{
-	return m_paiUnitCostOverride ? m_paiUnitCostOverride[i][j] : -1;
-}
-int CvLegacyEntry::GetBuildTimeOverride(int i) const
-{
-	return m_piBuildTimeOverride ? m_piBuildTimeOverride[i] : -1;
-}
-int CvLegacyEntry::GetYieldBonusFromThemes(int i) const
-{
-	return m_piYieldBonusFromThemes ? m_piYieldBonusFromThemes[i] : 0;
-}
-#if defined(TRADE_REFACTOR)
-int CvLegacyEntry::GetTradeConnectionLandYieldChanges(int i, int j) const
-{
-	return m_paiTradeConnectionLandYieldChanges ? m_paiTradeConnectionLandYieldChanges[i][j] : 0;
-}
-int CvLegacyEntry::GetTradeConnectionSeaYieldChanges(int i, int j) const
-{
-	return m_paiTradeConnectionSeaYieldChanges ? m_paiTradeConnectionSeaYieldChanges[i][j] : 0;
-}
-int CvLegacyEntry::GetIncomingTradeConnectionLandYieldChanges(int i, int j) const
-{
-	return m_paiIncomingTradeConnectionLandYieldChanges ? m_paiIncomingTradeConnectionLandYieldChanges[i][j] : 0;
-}
-int CvLegacyEntry::GetIncomingTradeConnectionSeaYieldChanges(int i, int j) const
-{
-	return m_paiIncomingTradeConnectionSeaYieldChanges ? m_paiIncomingTradeConnectionSeaYieldChanges[i][j] : 0;
-}
-int CvLegacyEntry::GetTradeConnectionLandYieldModifier(int i, int j) const
-{
-	return m_paiTradeConnectionLandYieldModifier ? m_paiTradeConnectionLandYieldModifier[i][j] : 0;
-}
-int CvLegacyEntry::GetTradeConnectionSeaYieldModifier(int i, int j) const
-{
-	return m_paiTradeConnectionSeaYieldModifier ? m_paiTradeConnectionSeaYieldModifier[i][j] : 0;
-}
-#endif
-int CvLegacyEntry::GetHolyCityYieldChange(int i) const
-{
-	return m_piHolyCityYieldChange ? m_piHolyCityYieldChange[i] : 0;
-}
-int CvLegacyEntry::GetGreatWorkClassGreatPersonPoint(int i, int j) const
-{
-	return m_paiGreatWorkClassGreatPersonPoint ? m_paiGreatWorkClassGreatPersonPoint[i][j] : 0;
-}
 //=====================================
 // CvLegacyXMLEntries
 //=====================================
-/// Constructor
-CvLegacyXMLEntries::CvLegacyXMLEntries(void)
-{
-}
-
-/// Destructor
-CvLegacyXMLEntries::~CvLegacyXMLEntries(void)
-{
-	DeleteLegacyArray();
-}
-
-// Get the vector of legacy entries
-std::vector<CvLegacyEntry*>& CvLegacyXMLEntries::GetLegacyEntries()
-{
-	return m_paLegacyEntries;
-}
-
-// Get the number of legacies
-int CvLegacyXMLEntries::GetNumLegacies()
-{
-	return m_paLegacyEntries.size();
-}
-
 void CvLegacyXMLEntries::DeleteLegacyArray()
 {
 	for (std::vector<CvLegacyEntry*>::iterator it = m_paLegacyEntries.begin(); it != m_paLegacyEntries.end(); ++it)
@@ -1286,12 +949,6 @@ void CvLegacyXMLEntries::DeleteLegacyArray()
 
 	m_paLegacyEntries.clear();
 }
-
-CvLegacyEntry* CvLegacyXMLEntries::GetLegacyEntry(int iIndex)
-{
-	return m_paLegacyEntries[iIndex];
-}
-
 //=====================================
 // CvPlayerLegacies
 //=====================================
@@ -1894,17 +1551,6 @@ void CvPlayerLegacies::Write(FDataStream& kStream) const
 	m_pLegacyAI->Write(kStream);
 }
 // Accessors
-// Get the player
-CvPlayer* CvPlayerLegacies::GetPlayer() const
-{
-	return m_pPlayer;
-}
-// Check if the player has a specific legacy
-bool CvPlayerLegacies::HasLegacy(LegacyTypes eIndex) const
-{
-	CvAssertMsg(eIndex >= 0 && eIndex < GC.getNumLegacyInfos(), "Legacy index out of bounds");
-	return m_pabHasLegacy[eIndex];
-}
 // Set a legacy for the player
 void CvPlayerLegacies::SetLegacy(LegacyTypes eIndex, bool bNewValue)
 {
@@ -1916,13 +1562,8 @@ void CvPlayerLegacies::SetLegacy(LegacyTypes eIndex, bool bNewValue)
 	if (HasLegacy(eIndex) != bNewValue)
 	{
 		m_pabHasLegacy[eIndex] = bNewValue;
-		updatePlayerLegacies(eIndex); // Loads the legacy effects into the player legacy object
+		updatePlayerLegacies(eIndex, bNewValue ? 1 : -1); // Loads the legacy effects into the player legacy object
 	}
-}
-// Get Legacy data from the XML
-CvLegacyXMLEntries* CvPlayerLegacies::GetLegacies() const
-{
-	return m_pLegacies;
 }
 // Get the Legacies for this civ that have not been chosen.
 std::vector<LegacyTypes> CvPlayerLegacies::GetCivLegacies() const
@@ -2007,20 +1648,8 @@ void CvPlayerLegacies::testLegacyNotification(EraTypes eEra) const
 		}
 	}
 }
-// Has this Legacy already given its free units?
-bool CvPlayerLegacies::HasOneShotFreeUnitsFired(LegacyTypes eLegacy) const
-{
-	CvAssertMsg(eLegacy >= 0 && eLegacy < GC.getNumLegacyInfos(), "Legacy index out of bounds");
-	return m_pabOneShotFreeUnitsFired[eLegacy];
-}
-// Set that this Legacy has given its free units
-void CvPlayerLegacies::SetOneShotFreeUnitsFired(LegacyTypes eLegacy, bool bFired)
-{
-	CvAssertMsg(eLegacy >= 0 && eLegacy < GC.getNumLegacyInfos(), "Legacy index out of bounds");
-	m_pabOneShotFreeUnitsFired[eLegacy] = bFired;
-}
 // Load Legacy Entry info into the PlayerLegacies object for access
-void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
+void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy, int Change)
 {
 	CvLegacyEntry* pkLegacyEntry = GC.getLegacyInfo(eLegacy);
 	if (pkLegacyEntry == NULL)
@@ -2028,62 +1657,62 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	int iChange = 0;
 	bool bTemp = false;
 	const CvLegacyEntry& kLegacy = (*pkLegacyEntry);
-	m_iHappinessPerOriginalCity += kLegacy.GetHappinessPerOriginalCity();
-	m_iGoldenAgeTurns += kLegacy.GetGoldenAgeTurns();
-	m_iGreatGeneralSiegeBonus += kLegacy.GetGreatGeneralSiegeBonus();
-	m_iResistanceTimeReduction += kLegacy.GetResistanceTimeReduction();
-	m_iYieldModCapitalProximity += kLegacy.GetYieldModCapitalProximity();
-	m_iPlotGoldCostModifier += kLegacy.GetPlotGoldCostModifier();
-	m_iPlotCultureCostModifier += kLegacy.GetPlotCultureCostModifier();
-	m_iHappinessFromGreatImprovements += kLegacy.GetHappinessFromGreatImprovements();
-	m_iHappinessFromForeignReligiousMajority += kLegacy.GetHappinessFromForeignReligiousMajority();
-	m_iVotesPerCapital += kLegacy.GetVotesPerCapital();
-	m_iInfluenceChangeMajorityReligion += kLegacy.GetInfluenceChangeMajorityReligion();
-	m_iInfluenceChangeTradeConnection += kLegacy.GetInfluenceChangeTradeConnection();
-	m_iPurchasedUnitExtraMoves += kLegacy.GetPurchasedUnitExtraMoves();
-	m_iHappinessPerTheme += kLegacy.GetHappinessPerTheme();
-	m_iFriendlyCityReligionCombatModifier += kLegacy.GetFriendlyCityReligionCombatModifier();
-	m_iOccupiedCityReligionCombatModifier += kLegacy.GetOccupiedCityReligionCombatModifier();
-	m_iEnemyCityReligionCombatModifier += kLegacy.GetEnemyCityReligionCombatModifier();
-	m_iGreatProphetCostModifier += kLegacy.GetGreatProphetCostModifier();
-	m_iHolyCityReligiousPressureModifier += kLegacy.GetHolyCityReligiousPressureModifier();
+	m_iHappinessPerOriginalCity += kLegacy.GetHappinessPerOriginalCity() * Change;
+	m_iGoldenAgeTurns += kLegacy.GetGoldenAgeTurns() * Change;
+	m_iGreatGeneralSiegeBonus += kLegacy.GetGreatGeneralSiegeBonus() * Change;
+	m_iResistanceTimeReduction += kLegacy.GetResistanceTimeReduction() * Change;
+	m_iYieldModCapitalProximity += kLegacy.GetYieldModCapitalProximity() * Change;
+	m_iPlotGoldCostModifier += kLegacy.GetPlotGoldCostModifier() * Change;
+	m_iPlotCultureCostModifier += kLegacy.GetPlotCultureCostModifier() * Change;
+	m_iHappinessFromGreatImprovements += kLegacy.GetHappinessFromGreatImprovements() * Change;
+	m_iHappinessFromForeignReligiousMajority += kLegacy.GetHappinessFromForeignReligiousMajority() * Change;
+	m_iVotesPerCapital += kLegacy.GetVotesPerCapital() * Change;
+	m_iInfluenceChangeMajorityReligion += kLegacy.GetInfluenceChangeMajorityReligion() * Change;
+	m_iInfluenceChangeTradeConnection += kLegacy.GetInfluenceChangeTradeConnection() * Change;
+	m_iPurchasedUnitExtraMoves += kLegacy.GetPurchasedUnitExtraMoves() * Change;
+	m_iHappinessPerTheme += kLegacy.GetHappinessPerTheme() * Change;
+	m_iFriendlyCityReligionCombatModifier += kLegacy.GetFriendlyCityReligionCombatModifier() * Change;
+	m_iOccupiedCityReligionCombatModifier += kLegacy.GetOccupiedCityReligionCombatModifier() * Change;
+	m_iEnemyCityReligionCombatModifier += kLegacy.GetEnemyCityReligionCombatModifier() * Change;
+	m_iGreatProphetCostModifier += kLegacy.GetGreatProphetCostModifier() * Change;
+	m_iHolyCityReligiousPressureModifier += kLegacy.GetHolyCityReligiousPressureModifier() * Change;
 	bTemp = kLegacy.IsCannotPlunder();
 	if (bTemp) m_bCannotPlunder = bTemp;
 	bTemp = kLegacy.IsTradeUnplunderable();
 	if (bTemp) m_bTradeUnplunderable = bTemp;
 	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 	{
-		iChange = kLegacy.GetHolyCityYieldChange((YieldTypes)iYield);
+		iChange = kLegacy.GetHolyCityYieldChange((YieldTypes)iYield) * Change;
 		if (iChange != 0)
 		{
 			m_viHolyCityYieldChange[iYield] += iChange;
 		}
-		iChange = kLegacy.GetYieldBonusFromThemes((YieldTypes)iYield);
+		iChange = kLegacy.GetYieldBonusFromThemes((YieldTypes)iYield) * Change;
 		if (iChange != 0)
 		{
 			m_viYieldBonusFromThemes[iYield] += iChange;
 		}
-		iChange = kLegacy.GetPlotPurchaseYieldReward((YieldTypes)iYield);
+		iChange = kLegacy.GetPlotPurchaseYieldReward((YieldTypes)iYield) * Change;
 		if (iChange != 0)
 		{
 			m_viPlotPurchaseYieldReward[iYield] += iChange;
 		}
-		iChange = kLegacy.GetCityYieldChange((YieldTypes)iYield);
+		iChange = kLegacy.GetCityYieldChange((YieldTypes)iYield) * Change;
 		if (iChange != 0)
 		{
 			m_viCityYieldChange[iYield] += iChange;
 		}
-		iChange = kLegacy.GetOriginalCityYieldChange((YieldTypes)iYield);
+		iChange = kLegacy.GetOriginalCityYieldChange((YieldTypes)iYield) * Change;
 		if (iChange != 0)
 		{
 			m_viOriginalCityYieldChange[iYield] += iChange;
 		}
-		iChange = kLegacy.GetConqueredCityYieldChange((YieldTypes)iYield);
+		iChange = kLegacy.GetConqueredCityYieldChange((YieldTypes)iYield) * Change;
 		if (iChange != 0)
 		{
 			m_viConqueredCityYieldChange[iYield] += iChange;
 		}
-		iChange = kLegacy.GetCityYieldModifier((YieldTypes)iYield);
+		iChange = kLegacy.GetCityYieldModifier((YieldTypes)iYield) * Change;
 		if (iChange != 0)
 		{
 			m_viCityYieldModifier[iYield] += iChange;
@@ -2091,12 +1720,12 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		// BuildingClass
 		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
 		{
-			iChange = kLegacy.GetBuildingClassYieldChange((BuildingClassTypes)iBuildingClass, (YieldTypes)iYield);
+			iChange = kLegacy.GetBuildingClassYieldChange((BuildingClassTypes)iBuildingClass, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiBuildingClassYieldChanges[iBuildingClass][iYield] += iChange;
 			}
-			iChange = kLegacy.GetBuildingClassYieldModifier((BuildingClassTypes)iBuildingClass, (YieldTypes)iYield);
+			iChange = kLegacy.GetBuildingClassYieldModifier((BuildingClassTypes)iBuildingClass, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiBuildingClassYieldModifiers[iBuildingClass][iYield] += iChange;
@@ -2105,7 +1734,7 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		// Specialist
 		for (int iSpecialist = 0; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
 		{
-			iChange = kLegacy.GetSpecialistYieldChange((SpecialistTypes)iSpecialist, (YieldTypes)iYield);
+			iChange = kLegacy.GetSpecialistYieldChange((SpecialistTypes)iSpecialist, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiSpecialistYieldChanges[iSpecialist][iYield] += iChange;
@@ -2114,7 +1743,7 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		// Resource
 		for (int iResource = 0; iResource < GC.getNumResourceInfos(); iResource++)
 		{
-			iChange = kLegacy.GetResourceYieldChange((ResourceTypes)iResource, (YieldTypes)iYield);
+			iChange = kLegacy.GetResourceYieldChange((ResourceTypes)iResource, (YieldTypes)iYield) * Change;
 			if(iChange != 0)
 			{
 				m_vaaiResourceYieldChanges[iResource][iYield] += iChange;
@@ -2123,7 +1752,7 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		// ResourceClass
 		for (int iResourceClass = 0; iResourceClass < GC.getNumResourceClassInfos(); iResourceClass++)
 		{
-			iChange = kLegacy.GetResourceClassYieldChange((ResourceClassTypes)iResourceClass, (YieldTypes)iYield);
+			iChange = kLegacy.GetResourceClassYieldChange((ResourceClassTypes)iResourceClass, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiResourceClassYieldChanges[iResourceClass][iYield] += iChange;
@@ -2132,12 +1761,12 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		// Improvement
 		for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 		{
-			iChange = kLegacy.GetImprovementYieldChange((ImprovementTypes)iImprovement, (YieldTypes)iYield);
+			iChange = kLegacy.GetImprovementYieldChange((ImprovementTypes)iImprovement, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiImprovementYieldChanges[iImprovement][iYield] += iChange;
 			}
-			iChange = kLegacy.GetImprovementYieldChangePerXWorldWonder((ImprovementTypes)iImprovement, (YieldTypes)iYield);
+			iChange = kLegacy.GetImprovementYieldChangePerXWorldWonder((ImprovementTypes)iImprovement, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiImprovementYieldChangePerXWorldWonder[iImprovement][iYield] += iChange;
@@ -2146,7 +1775,7 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		// Great Work Class
 		for (int iGreatWorkClass = 0; iGreatWorkClass < GC.getNumGreatWorkClassInfos(); iGreatWorkClass++)
 		{
-			iChange = kLegacy.GetGreatWorkClassYieldChange((GreatWorkClass)iGreatWorkClass, (YieldTypes)iYield);
+			iChange = kLegacy.GetGreatWorkClassYieldChange((GreatWorkClass)iGreatWorkClass, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiGreatWorkClassYieldChanges[iGreatWorkClass][iYield] += iChange;
@@ -2155,7 +1784,7 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		// Buildings
 		for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
 		{
-			iChange = kLegacy.GetBuildingCostOverride((BuildingTypes)iBuilding, (YieldTypes)iYield);
+			iChange = kLegacy.GetBuildingCostOverride((BuildingTypes)iBuilding, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiBuildingCostOverrides[iBuilding][iYield] = iChange;
@@ -2164,7 +1793,7 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 		// Units
 		for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
 		{
-			iChange = kLegacy.GetUnitCostOverride((UnitTypes)iUnit, (YieldTypes)iYield);
+			iChange = kLegacy.GetUnitCostOverride((UnitTypes)iUnit, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiUnitCostOverrides[iUnit][iYield] = iChange;
@@ -2173,32 +1802,32 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 #if defined(TRADE_REFACTOR)
 		for (int iTradeConnection = 0; iTradeConnection < NUM_TRADE_CONNECTION_TYPES; iTradeConnection++)
 		{
-			iChange = kLegacy.GetTradeConnectionLandYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			iChange = kLegacy.GetTradeConnectionLandYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiTradeConnectionLandYieldChange[iTradeConnection][iYield] += iChange;
 			}
-			iChange = kLegacy.GetTradeConnectionSeaYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			iChange = kLegacy.GetTradeConnectionSeaYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiTradeConnectionSeaYieldChange[iTradeConnection][iYield] += iChange;
 			}
-			iChange = kLegacy.GetIncomingTradeConnectionLandYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			iChange = kLegacy.GetIncomingTradeConnectionLandYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiIncomingTradeConnectionLandYieldChange[iTradeConnection][iYield] += iChange;
 			}
-			iChange = kLegacy.GetIncomingTradeConnectionSeaYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			iChange = kLegacy.GetIncomingTradeConnectionSeaYieldChanges((TradeConnectionType)iTradeConnection, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiIncomingTradeConnectionSeaYieldChange[iTradeConnection][iYield] += iChange;
 			}
-			iChange = kLegacy.GetTradeConnectionLandYieldModifier((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			iChange = kLegacy.GetTradeConnectionLandYieldModifier((TradeConnectionType)iTradeConnection, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiTradeConnectionLandYieldModifier[iTradeConnection][iYield] += iChange;
 			}
-			iChange = kLegacy.GetTradeConnectionSeaYieldModifier((TradeConnectionType)iTradeConnection, (YieldTypes)iYield);
+			iChange = kLegacy.GetTradeConnectionSeaYieldModifier((TradeConnectionType)iTradeConnection, (YieldTypes)iYield) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiTradeConnectionSeaYieldModifier[iTradeConnection][iYield] += iChange;
@@ -2210,12 +1839,12 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	{
 		for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 		{
-			iChange = kLegacy.GetImprovementNearbyHealChangeByDomain((ImprovementTypes)iImprovement, (DomainTypes)iDomain);
+			iChange = kLegacy.GetImprovementNearbyHealChangeByDomain((ImprovementTypes)iImprovement, (DomainTypes)iDomain) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiNearbyImprovementHealChangeByDomain[iImprovement][iDomain] += iChange;
 			}
-			iChange = kLegacy.GetImprovementNearbyCombatModifierByDomain((ImprovementTypes)iImprovement, (DomainTypes)iDomain);
+			iChange = kLegacy.GetImprovementNearbyCombatModifierByDomain((ImprovementTypes)iImprovement, (DomainTypes)iDomain) * Change;
 			if (iChange != 0)
 			{
 				m_vaaiNearbyImprovementCombatModifierByDomain[iImprovement][iDomain] += iChange;
@@ -2225,15 +1854,19 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	// BuildingClass - Non-yield
 	for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); iBuildingClass++)
 	{
-		m_viBuildingClassProductionModifiers[iBuildingClass] += kLegacy.GetBuildingClassProductionModifier(iBuildingClass);
-		m_viBuildingClassHappinessChanges[iBuildingClass] += kLegacy.GetBuildingClassHappinessChange(iBuildingClass);
-		m_viBuildingClassGlobalHappinessChanges[iBuildingClass] += kLegacy.GetBuildingClassGlobalHappinessChange(iBuildingClass);
-		m_viLegacyBuildingClassOverrides[iBuildingClass] = kLegacy.GetLegacyBuildingClassOverride(iBuildingClass);
+		m_viBuildingClassProductionModifiers[iBuildingClass] += kLegacy.GetBuildingClassProductionModifier(iBuildingClass) * Change;
+		m_viBuildingClassHappinessChanges[iBuildingClass] += kLegacy.GetBuildingClassHappinessChange(iBuildingClass) * Change;
+		m_viBuildingClassGlobalHappinessChanges[iBuildingClass] += kLegacy.GetBuildingClassGlobalHappinessChange(iBuildingClass) * Change;
+		// Check if the legacy actually changes this, as later legacies could reset the override back to the original.
+		if (kLegacy.GetLegacyBuildingClassOverride(iBuildingClass) != NO_BUILDING)
+		{
+			m_viLegacyBuildingClassOverrides[iBuildingClass] = kLegacy.GetLegacyBuildingClassOverride(iBuildingClass);
+		}
 	}
 	// Specialist - Non-yield
 	for (int iSpecialist = 0; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
 	{
-		iChange = kLegacy.GetSpecialistHappinessChange(iSpecialist);
+		iChange = kLegacy.GetSpecialistHappinessChange(iSpecialist) * Change;
 		if (iChange != 0)
 		{
 			m_viSpecialistHappinessChanges[iSpecialist] += iChange;
@@ -2242,149 +1875,81 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy)
 	// Units - Non-yield
 	for (int iUnit = 0; iUnit < GC.getNumUnitInfos(); iUnit++)
 	{
-		m_viUnitRangedStrengthChanges[iUnit] += kLegacy.GetUnitRangedStrengthChange(iUnit);
-		m_viUnitStrengthChanges[iUnit] += kLegacy.GetUnitStrengthChange(iUnit);
-		m_vbNoTrain[iUnit] = kLegacy.IsNoTrainUnit((UnitTypes)iUnit);
-		m_vbUnitIgnorePolicyPrereq[iUnit] = kLegacy.IsUnitIgnorePolicyPrereq((UnitTypes)iUnit);
-		m_vbUnitIgnoreTechPrereq[iUnit] = kLegacy.IsUnitIgnoreTechPrereq((UnitTypes)iUnit);
+		m_viUnitRangedStrengthChanges[iUnit] += kLegacy.GetUnitRangedStrengthChange(iUnit) * Change;
+		m_viUnitStrengthChanges[iUnit] += kLegacy.GetUnitStrengthChange(iUnit) * Change;
+		// Check if the legacy actually changes this, as later legacies could reset the override back to the original.
+		if (kLegacy.IsNoTrainUnit((UnitTypes)iUnit))
+		{
+			m_vbNoTrain[iUnit] = kLegacy.IsNoTrainUnit((UnitTypes)iUnit);
+		}
+		// Check if the legacy actually changes this, as later legacies could reset the override back to the original.
+		if (kLegacy.IsUnitIgnorePolicyPrereq((UnitTypes)iUnit))
+		{
+			m_vbUnitIgnorePolicyPrereq[iUnit] = kLegacy.IsUnitIgnorePolicyPrereq((UnitTypes)iUnit);
+		}
+		// Check if the legacy actually changes this, as later legacies could reset the override back to the original.
+		if (kLegacy.IsUnitIgnoreTechPrereq((UnitTypes)iUnit))
+		{
+			m_vbUnitIgnoreTechPrereq[iUnit] = kLegacy.IsUnitIgnoreTechPrereq((UnitTypes)iUnit);
+		}
 	}
 	// UnitClasses
 	for (int iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); iUnitClass++)
 	{
-		m_viLegacyUnitClassOverrides[iUnitClass] = kLegacy.GetLegacyUnitClassOverride(iUnitClass);
+		// Check if the legacy actually changes this, as later legacies could reset the override back to the original.
+		if (kLegacy.GetLegacyUnitClassOverride(iUnitClass) != NO_UNIT)
+		{
+			m_viLegacyUnitClassOverrides[iUnitClass] = kLegacy.GetLegacyUnitClassOverride(iUnitClass);
+		}
 	}
 	// Buildings - Non-yield
 	for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); iBuilding++)
 	{
-		m_vbNoConstruct[iBuilding] = kLegacy.IsNoConstructBuilding((BuildingTypes)iBuilding);
-		m_vbBuildingIgnorePolicyPrereq[iBuilding] = kLegacy.IsBuildingIgnorePolicyPrereq((BuildingTypes)iBuilding);
-		m_vbBuildingIgnoreTechPrereq[iBuilding] = kLegacy.IsBuildingIgnoreTechPrereq((BuildingTypes)iBuilding);
+		// Check if the legacy actually changes this, as later legacies could reset the override back to the original.
+		if (kLegacy.IsNoConstructBuilding((BuildingTypes)iBuilding))
+		{
+			m_vbNoConstruct[iBuilding] = kLegacy.IsNoConstructBuilding((BuildingTypes)iBuilding);
+		}
+		// Check if the legacy actually changes this, as later legacies could reset the override back to the original.
+		if (kLegacy.IsBuildingIgnorePolicyPrereq((BuildingTypes)iBuilding))
+		{
+			m_vbBuildingIgnorePolicyPrereq[iBuilding] = kLegacy.IsBuildingIgnorePolicyPrereq((BuildingTypes)iBuilding);
+		}
+		// Check if the legacy actually changes this, as later legacies could reset the override back to the original.
+		if (kLegacy.IsBuildingIgnoreTechPrereq((BuildingTypes)iBuilding))
+		{
+			m_vbBuildingIgnoreTechPrereq[iBuilding] = kLegacy.IsBuildingIgnoreTechPrereq((BuildingTypes)iBuilding);
+		}
 	}
 	// Resources - Non-yield
 	for (int iResource = 0; iResource < GC.getNumResourceInfos(); iResource++)
 	{
-		m_vbRevealResource[iResource] = kLegacy.IsRevealResource((ResourceTypes)iResource);
+		if (kLegacy.IsRevealResource((ResourceTypes)iResource))
+		{
+			m_vbRevealResource[iResource] = kLegacy.IsRevealResource((ResourceTypes)iResource);
+		}
 	}
 	// UnitCombatClasses
 	for (int iUnitCombat = 0; iUnitCombat < GC.getNumUnitCombatClassInfos(); iUnitCombat++)
 	{
-		m_viPromotionNearbyGeneralUnitCombat[iUnitCombat] = kLegacy.GetPromotionNearbyGeneral(iUnitCombat);
+		if (kLegacy.GetPromotionNearbyGeneral(iUnitCombat) != NO_PROMOTION)
+		{
+			m_viPromotionNearbyGeneralUnitCombat[iUnitCombat] = kLegacy.GetPromotionNearbyGeneral(iUnitCombat);
+		}
 	}
 	// Improvements - Non-yield
 	for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 	{
-		m_viImprovementTourismBonuses[iImprovement] += kLegacy.GetImprovementTourismBonus(iImprovement);
+		m_viImprovementTourismBonuses[iImprovement] += kLegacy.GetImprovementTourismBonus(iImprovement) * Change;
 	}
 	// Builds
 	for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
 	{
-		m_viBuildTimeOverrides[iBuild] = kLegacy.GetBuildTimeOverride(iBuild);
+		if (kLegacy.GetBuildTimeOverride(iBuild) != 0)
+		{
+			m_viBuildTimeOverrides[iBuild] = kLegacy.GetBuildTimeOverride(iBuild);
+		}
 	}
-}
-// How Much happiness per original city does the player get from legacies
-int CvPlayerLegacies::GetHappinessPerOriginalCity() const
-{
-	return m_iHappinessPerOriginalCity;
-}
-// How many golden age turns does the player get from legacies
-int CvPlayerLegacies::GetGoldenAgeTurns() const
-{
-	return m_iGoldenAgeTurns;
-}
-// How much siege bonus does the player get for great generals from legacies
-int CvPlayerLegacies::GetGreatGeneralSiegeBonus() const
-{
-	return m_iGreatGeneralSiegeBonus;
-}
-// How much resistance time reduction does the player get from legacies
-int CvPlayerLegacies::GetResistanceTimeReduction() const
-{
-	return m_iResistanceTimeReduction;
-}
-// Change the behavoir of the CityYieldMod table based on this value
-int CvPlayerLegacies::GetYieldModCapitalProximity() const
-{
-	return m_iYieldModCapitalProximity;
-}
-// How much does the player's legacies change the gold cost of plots?
-int CvPlayerLegacies::GetPlotGoldCostModifier() const
-{
-	return m_iPlotGoldCostModifier;
-}
-// How much does the player's legacies change the culture cost of plots?
-int CvPlayerLegacies::GetPlotCultureCostModifier() const
-{
-	return m_iPlotCultureCostModifier;
-}
-// How much happiness does the player get from great improvements from legacies
-int CvPlayerLegacies::GetHappinessFromGreatImprovements() const
-{
-	return m_iHappinessFromGreatImprovements;
-}
-// How much happiness does the player get from foreign cities following their religion from legacies
-int CvPlayerLegacies::GetHappinessFromForeignReligiousMajority() const
-{
-	return m_iHappinessFromForeignReligiousMajority;
-}
-// How many votes per capital does the player get from legacies
-int CvPlayerLegacies::GetVotesPerCapital() const
-{
-	return m_iVotesPerCapital;
-}
-// How much influence change does the player get for majority religion in a City-State
-int CvPlayerLegacies::GetInfluenceChangeMajorityReligion() const
-{
-	return m_iInfluenceChangeMajorityReligion;
-}
-// How much influence change does the player get for a trade connection with a City-State 
-int CvPlayerLegacies::GetInfluenceChangeTradeConnection() const
-{
-	return m_iInfluenceChangeTradeConnection;
-}
-// How many extra moves does the player get for purchased units from legacies
-int CvPlayerLegacies::GetPurchasedUnitExtraMoves() const
-{
-	return m_iPurchasedUnitExtraMoves;
-}
-// How much happiness per theme does the player get from legacies
-int CvPlayerLegacies::GetHappinessPerTheme() const
-{
-	return m_iHappinessPerTheme;
-}
-// Can your Trade Routes be plundered?
-bool CvPlayerLegacies::IsTradeUnplunderable() const
-{
-	return m_bTradeUnplunderable;
-}
-// Is the ability to plunder Trade Routes blocked by Legacy?
-bool CvPlayerLegacies::IsCannotPlunder() const
-{
-	return m_bCannotPlunder;
-}
-// Does this legacy give a combat mod for friendly cities based on religion
-int CvPlayerLegacies::GetFriendlyCityReligionCombatModifier() const
-{
-	return m_iFriendlyCityReligionCombatModifier;
-}
-// Does this legacy give a combat mod for occupied cities based on religion
-int CvPlayerLegacies::GetOccupiedCityReligionCombatModifier() const
-{
-	return m_iOccupiedCityReligionCombatModifier;
-}
-// Does this legacy give a combat mod for enemy cities based on religion
-int CvPlayerLegacies::GetEnemyCityReligionCombatModifier() const
-{
-	return m_iEnemyCityReligionCombatModifier;
-}
-// How much does the player reduce Great Prophet cost from legacies
-int CvPlayerLegacies::GetGreatProphetCostModifier() const
-{
-	return m_iGreatProphetCostModifier;
-}
-// How much does this legacy increase the pressure exerted by the Holy City
-int CvPlayerLegacies::GetHolyCityReligiousPressureModifier() const
-{
-	return m_iHolyCityReligiousPressureModifier;
 }
 // ARRAYS START
 // Does the player have a free promotion for a specific unit type from legacies
@@ -2522,284 +2087,6 @@ int CvPlayerLegacies::GetGreatWorkClassGreatPersonPoint(GreatWorkClass eGreatWor
 	}
 	return 0;
 }
-// BELOW HERE ARE SIMPLE GETTERS FOR PLAYER LEGACY EFFECTS AS THEY HAVE SIMPLE STORAGE
-// Get the promotion granted for having a nearby general for a specific unit combat type from legacies
-int CvPlayerLegacies::GetPromotionNearbyGeneralUnitCombat(UnitCombatTypes eUnitCombat) const
-{
-	CvAssertMsg(eUnitCombat >= 0 && eUnitCombat < GC.getNumUnitCombatClassInfos(), "UnitCombat index out of bounds");
-	return NO_UNITCOMBAT != eUnitCombat ? m_viPromotionNearbyGeneralUnitCombat[eUnitCombat] : NO_PROMOTION;
-}
-// Does this Legacy reveal this resource type for the player
-bool CvPlayerLegacies::IsRevealResource(ResourceTypes eResource) const
-{
-	return NO_RESOURCE != eResource ? m_vbRevealResource[eResource] : false;
-}
-// Get the Building Type override for a specific building class from legacies
-int CvPlayerLegacies::GetLegacyBuildingClassOverride(BuildingClassTypes eBuildingClass) const
-{
-	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
-	return NO_BUILDINGCLASS != eBuildingClass ? m_viLegacyBuildingClassOverrides[(int)eBuildingClass] : NO_BUILDING;
-}
-// Does this Legacy allow this building type to ignore policy prerequisites
-bool CvPlayerLegacies::IsBuildingIgnorePolicyPrereq(BuildingTypes eBuildingType) const
-{
-	return NO_BUILDING != eBuildingType ? m_vbBuildingIgnorePolicyPrereq[eBuildingType] : false;
-}
-// Does this Legacy allow this building type to ignore tech prerequisites
-bool CvPlayerLegacies::IsBuildingIgnoreTechPrereq(BuildingTypes eBuildingType) const
-{
-	return NO_BUILDING != eBuildingType ? m_vbBuildingIgnoreTechPrereq[eBuildingType] : false;
-}
-// Get the unit type override for a specific unit class from legacies
-int CvPlayerLegacies::GetLegacyUnitClassOverride(UnitClassTypes eUnitClass) const
-{
-	CvAssertMsg(eUnitClass >= 0 && eUnitClass < GC.getNumUnitClassInfos(), "UnitClass index out of bounds");
-	return NO_UNITCLASS != eUnitClass ? m_viLegacyUnitClassOverrides[(int)eUnitClass] : NO_UNIT;
-}
-// Does this Legacy allow this unit type to ignore policy prerequisites
-bool CvPlayerLegacies::IsUnitIgnorePolicyPrereq(UnitTypes eUnitType) const
-{
-	return NO_UNIT != eUnitType ? m_vbUnitIgnorePolicyPrereq[eUnitType] : false;
-}
-// Does this Legacy allow this unit type to ignore tech prerequisites
-bool CvPlayerLegacies::IsUnitIgnoreTechPrereq(UnitTypes eUnitType) const
-{
-	return NO_UNIT != eUnitType ? m_vbUnitIgnoreTechPrereq[eUnitType] : false;
-}
-// Is this unit type not trainable by the player from legacies
-bool CvPlayerLegacies::NoTrainUnit(UnitTypes eUnitType) const
-{
-	return NO_UNIT != eUnitType ? m_vbNoTrain[eUnitType] : false;
-}
-// Is this building type not constructable by the player from legacies
-bool CvPlayerLegacies::NoConstructBuilding(BuildingTypes eBuildingType) const
-{
-	return NO_BUILDING != eBuildingType ? m_vbNoConstruct[eBuildingType] : false;
-}
-// How much yield reward does the player get for purchasing a plot from legacies
-int CvPlayerLegacies::GetPlotPurchaseYieldReward(YieldTypes eYield) const
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_YIELD != eYield ? m_viPlotPurchaseYieldReward[eYield] : 0;
-}
-// How much yield change does the player get for a city from legacies
-int CvPlayerLegacies::GetCityYieldChange(YieldTypes eYield) const
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_YIELD != eYield ? m_viCityYieldChange[eYield] : 0;
-}
-// How much yield change does the player get for an original city from legacies
-int CvPlayerLegacies::GetOriginalCityYieldChange(YieldTypes eYield) const
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_YIELD != eYield ? m_viOriginalCityYieldChange[eYield] : 0;
-}
-// How much yield change does the player get for a conquered city from legacies
-int CvPlayerLegacies::GetConqueredCityYieldChange(YieldTypes eYield) const
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_YIELD != eYield ? m_viConqueredCityYieldChange[eYield] : 0;
-}
-// How much yield modifier does the player get for a city from legacies
-int CvPlayerLegacies::GetCityYieldModifier(YieldTypes eYield) const
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_YIELD != eYield ? m_viCityYieldModifier[eYield] : 0;
-}
-// How much production modifier does the player get for a building class from legacies
-int CvPlayerLegacies::GetBuildingClassProductionModifier(BuildingClassTypes eBuildingClass) const
-{
-	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
-	return eBuildingClass != NO_BUILDINGCLASS ? m_viBuildingClassProductionModifiers[(int)eBuildingClass] : 0;
-}
-int CvPlayerLegacies::GetBuildingClassHappinessChange(BuildingClassTypes eBuildingClass) const
-{
-	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
-	return eBuildingClass != NO_BUILDINGCLASS ? m_viBuildingClassHappinessChanges[(int)eBuildingClass] : 0;
-}
-int CvPlayerLegacies::GetBuildingClassGlobalHappinessChange(BuildingClassTypes eBuildingClass) const
-{
-	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
-	return eBuildingClass != NO_BUILDINGCLASS ? m_viBuildingClassGlobalHappinessChanges[(int)eBuildingClass] : 0;
-}
-// How much ranged strength change does the player get for a unit from legacies
-int CvPlayerLegacies::GetUnitRangedStrengthChange(UnitTypes eUnit) const
-{
-	CvAssertMsg(eUnit >= 0 && eUnit < GC.getNumUnitInfos(), "Unit index out of bounds");
-	return eUnit != NO_UNIT ? m_viUnitRangedStrengthChanges[(int)eUnit] : 0;
-}
-// How much strength change does the player get for a unit from legacies
-int CvPlayerLegacies::GetUnitStrengthChange(UnitTypes eUnit) const
-{
-	CvAssertMsg(eUnit >= 0 && eUnit < GC.getNumUnitInfos(), "Unit index out of bounds");
-	return eUnit != NO_UNIT ? m_viUnitStrengthChanges[(int)eUnit] : 0;
-}
-// How much yield change does the player get for a building class from legacies
-int CvPlayerLegacies::GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield) const
-{
-	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eBuildingClass != NO_BUILDINGCLASS ? m_vaaiBuildingClassYieldChanges[(int)eBuildingClass][(int)eYield] : 0;
-}
-// How much yield modifier does the player get for a building class from legacies
-int CvPlayerLegacies::GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYield) const
-{
-	CvAssertMsg(eBuildingClass >= 0 && eBuildingClass < GC.getNumBuildingClassInfos(), "BuildingClass index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eBuildingClass != NO_BUILDINGCLASS ? m_vaaiBuildingClassYieldModifiers[(int)eBuildingClass][(int)eYield] : 0;
-}
-// How much of eYield does eResource get from Legacies?
-int CvPlayerLegacies::GetResourceYieldChange(ResourceTypes eResource, YieldTypes eYield) const
-{
-	CvAssertMsg(eResource >= 0 && eResource < GC.getNumResourceInfos(), "Resource index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eResource != NO_RESOURCE ? m_vaaiResourceYieldChanges[(int)eResource][(int)eYield] : 0;
-}
-// How much of eYield does eResourceClass get from Legacies?
-int CvPlayerLegacies::GetResourceClassYieldChange(ResourceClassTypes eResourceClass, YieldTypes eYield) const
-{
-	CvAssertMsg(eResourceClass >= 0 && eResourceClass < GC.getNumResourceClaasInfos(), "ResourceClass index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eResourceClass != NO_RESOURCECLASS ? m_vaaiResourceClassYieldChanges[(int)eResourceClass][(int)eYield] : 0;
-}
-// How much yield change does the player get for a specialist from legacies
-int CvPlayerLegacies::GetSpecialistYieldChange(SpecialistTypes eSpecialist, YieldTypes eYield) const
-{
-	CvAssertMsg(eSpecialist >= 0 && eSpecialist < GC.getNumSpecialistInfos(), "Specialist index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eSpecialist != NO_SPECIALIST ? m_vaaiSpecialistYieldChanges[(int)eSpecialist][(int)eYield] : 0;
-}
-// How much happiness change does the player get for a specialist from legacies
-int CvPlayerLegacies::GetSpecialistHappinessChange(SpecialistTypes eSpecialist) const
-{
-	CvAssertMsg(eSpecialist >= 0 && eSpecialist < GC.getNumSpecialistInfos(), "Specialist index out of bounds");
-	return eSpecialist != NO_SPECIALIST ? m_viSpecialistHappinessChanges[(int)eSpecialist] : 0;
-}
-// How much yield change does the player get for an improvement from legacies
-int CvPlayerLegacies::GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const
-{
-	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eImprovement != NO_IMPROVEMENT ? m_vaaiImprovementYieldChanges[(int)eImprovement][(int)eYield] : 0;
-}
-// How much yield change per X world wonders does the player get for an improvement from legacies
-int CvPlayerLegacies::GetImprovementYieldChangePerXWorldWonder(ImprovementTypes eImprovement, YieldTypes eYield) const
-{
-	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return eImprovement != NO_IMPROVEMENT ? m_vaaiImprovementYieldChangePerXWorldWonder[(int)eImprovement][(int)eYield] : 0;
-}
-// How much nearby heal change by domain does the player get for an improvement from legacies
-int CvPlayerLegacies::GetNearbyImprovementHealChangeByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const
-{
-	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
-	CvAssertMsg(eDomain >= 0 && eDomain < NUM_DOMAIN_TYPES, "Domain index out of bounds");
-	return eImprovement != NO_IMPROVEMENT ? m_vaaiNearbyImprovementHealChangeByDomain[(int)eImprovement][(int)eDomain] : 0;
-}
-// How much nearby combat modifier by domain does the player get for an improvement from legacies
-int CvPlayerLegacies::GetNearbyImprovementCombatModifierByDomain(ImprovementTypes eImprovement, DomainTypes eDomain) const
-{
-	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
-	CvAssertMsg(eDomain >= 0 && eDomain < NUM_DOMAIN_TYPES, "Domain index out of bounds");
-	return eImprovement != NO_IMPROVEMENT ? m_vaaiNearbyImprovementCombatModifierByDomain[(int)eImprovement][(int)eDomain] : 0;
-}
-// How much yield change does the player get for a great work class from legacies
-int CvPlayerLegacies::GetGreatWorkClassYieldChange(GreatWorkClass eGreatWorkClass, YieldTypes eYield) const
-{
-	CvAssertMsg(eGreatWorkClass >= 0 && eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "GreatWorkClass index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_GREAT_WORK_CLASS != eGreatWorkClass ? m_vaaiGreatWorkClassYieldChanges[(int)eGreatWorkClass][(int)eYield] : 0;
-}
-// How much tourism change does the player get for a great work class from legacies
-int CvPlayerLegacies::GetGreatWorkClassTourismChange(GreatWorkClass eGreatWorkClass) const
-{
-	CvAssertMsg(eGreatWorkClass >= 0 && eGreatWorkClass < GC.getNumGreatWorkClassInfos(), "GreatWorkClass index out of bounds");
-	return NO_GREAT_WORK_CLASS != eGreatWorkClass ? m_viGreatWorkClassTourismChanges[(int)eGreatWorkClass] : 0;
-}
-// How much tourism bonus does the player get for an improvement from legacies
-int CvPlayerLegacies::GetImprovementTourismBonus(ImprovementTypes eImprovement) const
-{
-	CvAssertMsg(eImprovement >= 0 && eImprovement < GC.getNumImprovementInfos(), "Improvement index out of bounds");
-	return NO_IMPROVEMENT != eImprovement ? m_viImprovementTourismBonuses[(int)eImprovement] : 0;
-}
-// Does this Legacy set the cost of a building type for the player
-int CvPlayerLegacies::GetBuildingCostOverride(BuildingTypes eBuilding, YieldTypes eYield) const
-{
-	CvAssertMsg(eBuilding >= 0 && eBuilding < GC.getNumBuildingInfos(), "Building index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_BUILDING != eBuilding ? m_vaaiBuildingCostOverrides[(int)eBuilding][(int)eYield] : 0;
-}
-// Does this Legacy set the cost of a unit type for the player
-int CvPlayerLegacies::GetUnitCostOverride(UnitTypes eUnit, YieldTypes eYield) const
-{
-	CvAssertMsg(eUnit >= 0 && eUnit < GC.getNumUnitInfos(), "Unit index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_UNIT != eUnit ? m_vaaiUnitCostOverrides[(int)eUnit][(int)eYield] : 0;
-}
-// Does this Legacy set the build time of a build type for the player
-int CvPlayerLegacies::GetBuildTimeOverride(BuildTypes eBuild) const
-{
-	CvAssertMsg(eBuild >= 0 && eBuild < GC.getNumBuildInfos(), "Build index out of bounds");
-	return NO_BUILD != eBuild ? m_viBuildTimeOverrides[(int)eBuild] : -1;
-}
-// Does this legacy give a yield bonus for having active themes?
-int CvPlayerLegacies::GetYieldBonusFromThemes(YieldTypes eYield) const
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_YIELD != eYield ? m_viYieldBonusFromThemes[(int)eYield] : 0;
-}
-// Does this legacy give a yield bonus in the holy city
-int CvPlayerLegacies::GetHolyCityYieldChange(YieldTypes eYield) const
-{
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_YIELD != eYield ? m_viHolyCityYieldChange[(int)eYield] : 0;
-}
-#if defined(TRADE_REFACTOR)
-// How much land yield change does the player get for a trade connection type from legacies
-int CvPlayerLegacies::GetTradeConnectionLandYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
-{
-	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionLandYieldChange[(int)eTradeConnection][(int)eYield] : 0;
-}
-// How much sea yield change does the player get for a trade connection type from legacies
-int CvPlayerLegacies::GetTradeConnectionSeaYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
-{
-	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionSeaYieldChange[(int)eTradeConnection][(int)eYield] : 0;
-}
-// How much yield does this player's legacy give the player sending them a trade connection by land
-int CvPlayerLegacies::GetIncomingTradeConnectionLandYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
-{
-	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiIncomingTradeConnectionLandYieldChange[(int)eTradeConnection][(int)eYield] : 0;
-}
-// How much yield does this player's legacy give the player sending them a trade connection by sea
-int CvPlayerLegacies::GetIncomingTradeConnectionSeaYieldChanges(TradeConnectionType eTradeConnection, YieldTypes eYield) const
-{
-	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiIncomingTradeConnectionSeaYieldChange[(int)eTradeConnection][(int)eYield] : 0;
-}
-// How much land yield modifier does the player get for a trade connection type from legacies
-int CvPlayerLegacies::GetTradeConnectionLandYieldModifier(TradeConnectionType eTradeConnection, YieldTypes eYield) const
-{
-	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionLandYieldModifier[(int)eTradeConnection][(int)eYield] : 0;
-}
-// How much sea yield modifier does the player get for a trade connection type from legacies
-int CvPlayerLegacies::GetTradeConnectionSeaYieldModifier(TradeConnectionType eTradeConnection, YieldTypes eYield) const
-{
-	CvAssertMsg(eTradeConnection >= 0 && eTradeConnection < NUM_TRADE_CONNECTION_TYPES, "TradeConnection index out of bounds");
-	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "Yield index out of bounds");
-	return NO_TRADE_CONNECTION != eTradeConnection ? m_vaaiTradeConnectionSeaYieldModifier[(int)eTradeConnection][(int)eYield] : 0;
-}
-#endif
-
-
 // AI METHODS
 void CvPlayerLegacies::DoLegacyAI()
 {
