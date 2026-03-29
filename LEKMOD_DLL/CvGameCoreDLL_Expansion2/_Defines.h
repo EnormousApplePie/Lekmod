@@ -922,7 +922,7 @@
 #define LEKMOD_100_EVASIION_FIX
 // Unlocks ideology if all your cities have a factory or otherwise a building that unlocks ideology, else the specified number entered (default 3)
 #define LEKMOD_UNLOCK_IDEO_ALL_CITIES
-// Halves only Public Opinion unhappiness (the applied [ICON_HAPPINESS_4] penalty), not pressure icons, dissatisfaction tiers, or revolt/WC logic. See CvPlayerCulture::ComputePublicOpinionUnhappiness.
+// Halves base public opinion unhappiness first, then applies IdeologyPressureUnhappinessModifier per owned policy (and trait) as successive % factors, not one summed %. Does not change pressure icons, dissatisfaction tiers, or revolt/WC logic. See CvPlayerCulture::ComputePublicOpinionUnhappiness.
 #define LEKMOD_IDEO_PRESSURE_CHANGE
 // Adds a promotion that enables units to have a movement penalty (amount specified in xml) when attacking cities
 #define LEKMOD_MOVE_PENALTY_CITY_COMBAT

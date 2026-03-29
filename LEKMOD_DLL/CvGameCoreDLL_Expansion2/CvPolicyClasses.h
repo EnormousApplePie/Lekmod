@@ -936,6 +936,9 @@ public:
 
 	// Functions to return benefits from policies
 	int GetNumericModifier(PolicyModifierType eType);
+#ifdef NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
+	int GetIdeologyPressureUnhappinessMultiplierTimes100();
+#endif
 	int GetYieldModifier(YieldTypes eYieldType);
 	int GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);

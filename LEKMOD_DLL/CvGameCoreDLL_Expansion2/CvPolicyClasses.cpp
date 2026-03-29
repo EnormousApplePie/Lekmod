@@ -3962,6 +3962,27 @@ int CvPlayerPolicies::GetNumericModifier(PolicyModifierType eType)
 	return rtnValue;
 }
 
+#ifdef NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
+// Cumulative multiplier in units of 100: product over owned policies of (100 + IdeologyPressureUnhappinessModifier) / 100.
+int CvPlayerPolicies::GetIdeologyPressureUnhappinessMultiplierTimes100()
+{
+	int iMultiplier = 100;
+	const int iNumPolicies = m_pPolicies->GetNumPolicies();
+	for(int i = 0; i < iNumPolicies; i++)
+	{
+		if(m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			const int m = m_pPolicies->GetPolicyEntry(i)->GetIdeologyPressureUnhappinessModifier();
+			if(m != 0)
+			{
+				iMultiplier = iMultiplier * (100 + m) / 100;
+			}
+		}
+	}
+	return iMultiplier;
+}
+#endif
+
 /// Get overall modifier from policies for a type of yield
 int CvPlayerPolicies::GetYieldModifier(YieldTypes eYieldType)
 {
