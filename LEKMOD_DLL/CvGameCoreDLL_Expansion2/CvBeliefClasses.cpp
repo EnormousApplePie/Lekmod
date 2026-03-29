@@ -79,6 +79,10 @@ CvBeliefEntry::CvBeliefEntry() :
 	m_iGreatPersonExpendedFaith(0),
 	m_iCityStateMinimumInfluence(0),
 	m_iCityStateInfluenceModifier(0),
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	m_iCityStateFollowingReligionDecayMod(0),
+	m_iCityStateFollowingReligionRecoveryMod(0),
+#endif
 	m_iOtherReligionPressureErosion(0),
 	m_iSpyPressure(0),
 	m_iInquisitorPressureRetention(0),
@@ -436,6 +440,18 @@ int CvBeliefEntry::GetCityStateInfluenceModifier() const
 {
 	return m_iCityStateInfluenceModifier;
 }
+
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+int CvBeliefEntry::GetCityStateFollowingReligionDecayMod() const
+{
+	return m_iCityStateFollowingReligionDecayMod;
+}
+
+int CvBeliefEntry::GetCityStateFollowingReligionRecoveryMod() const
+{
+	return m_iCityStateFollowingReligionRecoveryMod;
+}
+#endif
 
 /// Accessor: percentage of religious pressure gain that becomes a drop in pressure of other religions
 int CvBeliefEntry::GetOtherReligionPressureErosion() const
@@ -835,6 +851,10 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iGreatPersonExpendedFaith       = kResults.GetInt("GreatPersonExpendedFaith");
 	m_iCityStateMinimumInfluence      = kResults.GetInt("CityStateMinimumInfluence");
 	m_iCityStateInfluenceModifier     = kResults.GetInt("CityStateInfluenceModifier");
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	m_iCityStateFollowingReligionDecayMod = kResults.GetInt("CityStateFollowingReligionDecayMod");
+	m_iCityStateFollowingReligionRecoveryMod = kResults.GetInt("CityStateFollowingReligionRecoveryMod");
+#endif
 	m_iOtherReligionPressureErosion   = kResults.GetInt("OtherReligionPressureErosion");
 	m_iSpyPressure					  = kResults.GetInt("SpyPressure");
 	m_iInquisitorPressureRetention    = kResults.GetInt("InquisitorPressureRetention");
@@ -1187,6 +1207,10 @@ CvReligionBeliefs::CvReligionBeliefs(const CvReligionBeliefs& source)
 	m_iGreatPersonExpendedFaith = source.m_iGreatPersonExpendedFaith;
 	m_iCityStateMinimumInfluence = source.m_iCityStateMinimumInfluence;
 	m_iCityStateInfluenceModifier = source.m_iCityStateInfluenceModifier;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	m_iCityStateFollowingReligionDecayMod = source.m_iCityStateFollowingReligionDecayMod;
+	m_iCityStateFollowingReligionRecoveryMod = source.m_iCityStateFollowingReligionRecoveryMod;
+#endif
 	m_iOtherReligionPressureErosion = source.m_iOtherReligionPressureErosion;
 	m_iSpyPressure = source.m_iSpyPressure;
 	m_iInquisitorPressureRetention = source.m_iInquisitorPressureRetention;
@@ -1266,6 +1290,10 @@ void CvReligionBeliefs::Reset()
 	m_iGreatPersonExpendedFaith = 0;
 	m_iCityStateMinimumInfluence = 0;
 	m_iCityStateInfluenceModifier = 0;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	m_iCityStateFollowingReligionDecayMod = 0;
+	m_iCityStateFollowingReligionRecoveryMod = 0;
+#endif
 	m_iOtherReligionPressureErosion = 0;
 	m_iSpyPressure = 0;
 	m_iInquisitorPressureRetention = 0;
@@ -1351,6 +1379,10 @@ void CvReligionBeliefs::AddBelief(BeliefTypes eBelief)
 	m_iGreatPersonExpendedFaith += belief->GetGreatPersonExpendedFaith();
 	m_iCityStateMinimumInfluence += belief->GetCityStateMinimumInfluence();
 	m_iCityStateInfluenceModifier += belief->GetCityStateInfluenceModifier();
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	m_iCityStateFollowingReligionDecayMod += belief->GetCityStateFollowingReligionDecayMod();
+	m_iCityStateFollowingReligionRecoveryMod += belief->GetCityStateFollowingReligionRecoveryMod();
+#endif
 	m_iOtherReligionPressureErosion += belief->GetOtherReligionPressureErosion();
 	m_iSpyPressure += belief->GetSpyPressure();
 	m_iInquisitorPressureRetention += belief->GetInquisitorPressureRetention();
@@ -2148,10 +2180,25 @@ void CvReligionBeliefs::Read(FDataStream& kStream)
 	if (uiVersion >= 2)
 	{
 		kStream >> m_iFaithBuildingTourism;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+		kStream >> m_iCityStateFollowingReligionDecayMod;
+		kStream >> m_iCityStateFollowingReligionRecoveryMod;
+#else
+		{
+			int iDiscardDecay;
+			int iDiscardRecovery;
+			kStream >> iDiscardDecay;
+			kStream >> iDiscardRecovery;
+		}
+#endif
 	}
 	else
 	{
 		m_iFaithBuildingTourism = 0;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+		m_iCityStateFollowingReligionDecayMod = 0;
+		m_iCityStateFollowingReligionRecoveryMod = 0;
+#endif
 	}
 
 	kStream >> m_eObsoleteEra;
@@ -2222,6 +2269,13 @@ void CvReligionBeliefs::Write(FDataStream& kStream) const
 	kStream << m_iSpyPressure;
 	kStream << m_iInquisitorPressureRetention;
 	kStream << m_iFaithBuildingTourism;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	kStream << m_iCityStateFollowingReligionDecayMod;
+	kStream << m_iCityStateFollowingReligionRecoveryMod;
+#else
+	kStream << 0;
+	kStream << 0;
+#endif
 
 	kStream << m_eObsoleteEra;
 	kStream << m_eResourceRevealed;

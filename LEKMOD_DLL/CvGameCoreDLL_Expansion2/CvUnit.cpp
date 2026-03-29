@@ -19803,6 +19803,15 @@ int CvUnit::getTourismInfluenceCombatModifierVsUnit(const CvUnit* pOtherUnit) co
 		return 0;
 	}
 
+	if(GC.isLekmodTourismCombatIdeologyRequired())
+	{
+		const PolicyBranchTypes eEnemyIdeology = kEnemyOwner.GetPlayerPolicies()->GetLateGamePolicyTree();
+		if(eEnemyIdeology == NO_POLICY_BRANCH_TYPE)
+		{
+			return 0;
+		}
+	}
+
 	const int iMinInfl = GC.getLekmodTourismCombatMinInfluencePercent();
 	const int iMaxInfl = GC.getLekmodTourismCombatMaxInfluencePercent();
 	const int iMinBonus = GC.getLekmodTourismCombatMinBonus();

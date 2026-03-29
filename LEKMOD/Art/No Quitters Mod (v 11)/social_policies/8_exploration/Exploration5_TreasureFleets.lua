@@ -1,3 +1,4 @@
+--[[
 function addTreasureFleetsBuilding(player, iX, iY)
 	local plot = Map.GetPlot(iX, iY);
 	local cCity = plot:GetPlotCity();
@@ -35,3 +36,4 @@ function NQMP_Patronage_OnPolicyAdopted(playerID, policyID)
 
 end
 GameEvents.PlayerAdoptPolicy.Add(NQMP_Patronage_OnPolicyAdopted)
+--]]

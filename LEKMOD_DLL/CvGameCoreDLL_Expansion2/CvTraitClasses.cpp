@@ -33,6 +33,9 @@ CvTraitEntry::CvTraitEntry() :
 	m_iPopulationUnhappinessModifier(0),
 	m_iCityStateBonusModifier(0),
 	m_iCityStateFriendshipModifier(0),
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	m_iFirstProphetCostMod(0),
+#endif
 	m_iCityStateCombatModifier(0),
 	m_iLandBarbarianConversionPercent(0),
 	m_iLandBarbarianConversionExtraUnits(0),
@@ -379,6 +382,13 @@ int CvTraitEntry::GetCityStateFriendshipModifier() const
 {
 	return m_iCityStateFriendshipModifier;
 }
+
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+int CvTraitEntry::GetFirstProphetCostMod() const
+{
+	return m_iFirstProphetCostMod;
+}
+#endif
 
 /// Accessor:: percent boost in value of city state bonuses
 int CvTraitEntry::GetCityStateCombatModifier() const
@@ -1536,6 +1546,9 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_iPopulationUnhappinessModifier    	= kResults.GetInt("PopulationUnhappinessModifier");
 	m_iCityStateBonusModifier               = kResults.GetInt("CityStateBonusModifier");
 	m_iCityStateFriendshipModifier          = kResults.GetInt("CityStateFriendshipModifier");
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	m_iFirstProphetCostMod					= kResults.GetInt("FirstProphetCostMod");
+#endif
 	m_iCityStateCombatModifier				= kResults.GetInt("CityStateCombatModifier");
 	m_iLandBarbarianConversionPercent       = kResults.GetInt("LandBarbarianConversionPercent");
 	m_iLandBarbarianConversionExtraUnits    = kResults.GetInt("LandBarbarianConversionExtraUnits");
@@ -2728,6 +2741,9 @@ void CvPlayerTraits::InitPlayerTraits()
 			m_iPopulationUnhappinessModifier += trait->GetPopulationUnhappinessModifier();
 			m_iCityStateBonusModifier += trait->GetCityStateBonusModifier();
 			m_iCityStateFriendshipModifier += trait->GetCityStateFriendshipModifier();
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+			m_iFirstProphetCostMod += trait->GetFirstProphetCostMod();
+#endif
 			m_iCityStateCombatModifier += trait->GetCityStateCombatModifier();
 			m_iLandBarbarianConversionPercent += trait->GetLandBarbarianConversionPercent();
 			m_iLandBarbarianConversionExtraUnits += trait->GetLandBarbarianConversionExtraUnits();
@@ -3296,6 +3312,9 @@ void CvPlayerTraits::Reset()
 	m_iPopulationUnhappinessModifier = 0;
 	m_iCityStateBonusModifier = 0;
 	m_iCityStateFriendshipModifier = 0;
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	m_iFirstProphetCostMod = 0;
+#endif
 	m_iCityStateCombatModifier = 0;
 	m_iLandBarbarianConversionPercent = 0;
 	m_iLandBarbarianConversionExtraUnits = 0;
@@ -5344,6 +5363,9 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 	{
 		m_aUniqueLuxuryAreas.clear();
 	}
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	kStream >> m_iFirstProphetCostMod;
+#endif
 }
 
 /// Serialization write
@@ -5624,6 +5646,9 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	{
 		kStream << m_aUniqueLuxuryAreas[iI];
 	}
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	kStream << m_iFirstProphetCostMod;
+#endif
 }
 
 // PRIVATE METHODS

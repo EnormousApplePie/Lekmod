@@ -16,6 +16,7 @@
 #include "CvDllInterfaces.h"
 #include "CvDllPlot.h"
 #include "cvStopWatch.h"
+#include "CvReligionClasses.h"
 
 // must be included after all other headers
 #include "LintFree.h"
@@ -5515,8 +5516,26 @@ int CvMinorCivAI::GetFriendshipChangePerTurnTimes100(PlayerTypes ePlayer)
 	// Modifier to rate based on traits and religion
 	int iTraitMod = kPlayer.GetPlayerTraits()->GetCityStateFriendshipModifier();
 	int iReligionMod = 0;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	int iBeliefDecayMod = 0;
+	int iBeliefRecoveryMod = 0;
+#endif
 	if (IsSameReligionAsMajor(ePlayer))
+	{
 		iReligionMod += /*50*/ GC.getMINOR_FRIENDSHIP_RATE_MOD_SHARED_RELIGION();
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+		const ReligionTypes eFounderReligion = GC.getGame().GetGameReligions()->GetReligionCreatedByPlayer(ePlayer);
+		if (eFounderReligion != NO_RELIGION)
+		{
+			const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eFounderReligion, ePlayer);
+			if (pReligion)
+			{
+				iBeliefDecayMod = pReligion->m_Beliefs.GetCityStateFollowingReligionDecayMod();
+				iBeliefRecoveryMod = pReligion->m_Beliefs.GetCityStateFollowingReligionRecoveryMod();
+			}
+		}
+#endif
+	}
 
 	// Relation to anchor point?
 	int iBaseFriendship = GetBaseFriendshipWithMajor(ePlayer);
@@ -5542,7 +5561,9 @@ int CvMinorCivAI::GetFriendshipChangePerTurnTimes100(PlayerTypes ePlayer)
 		iDecayMod += GET_PLAYER(ePlayer).GetMinorFriendshipDecayMod();
 		iDecayMod += (-1) * (iTraitMod / 2);
 		iDecayMod += (-1) * (iReligionMod / 2);
-		
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+		iDecayMod += (-1) * (iBeliefDecayMod / 2);
+#endif
 		if (iDecayMod < 0)
 			iDecayMod = 0;
 
@@ -5557,6 +5578,9 @@ int CvMinorCivAI::GetFriendshipChangePerTurnTimes100(PlayerTypes ePlayer)
 		int iRecoveryMod = 100;
 		iRecoveryMod += iTraitMod;
 		iRecoveryMod += iReligionMod;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+		iRecoveryMod += iBeliefRecoveryMod;
+#endif
 		
 		if (iRecoveryMod < 0)
 			iRecoveryMod = 0;
@@ -9024,6 +9048,17 @@ void CvMinorCivAI::DoMajorBullyGold(PlayerTypes eBully, int iGold)
 			iInfluenceChange = GC.getMINOR_FRIENDSHIP_DROP_BULLY_GOLD_SUCCESS();
 			bShouldRemoveQuests = true;
 		}
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+		{
+			const int iLekmodTributeRewardTimes100 = GET_PLAYER(eBully).GetPlayerPolicies()->GetMinorBullyInfluenceReward();
+			const bool bLekmodTributeNoPenalty = GET_PLAYER(eBully).GetPlayerPolicies()->IsMinorBullyNoPenalty();
+			if (bLekmodTributeNoPenalty && iInfluenceChange < 0)
+				iInfluenceChange = 0;
+			iInfluenceChange += iLekmodTributeRewardTimes100;
+			if (bLekmodTributeNoPenalty)
+				bShouldRemoveQuests = false;
+		}
+#endif
 		DoBulliedByMajorReaction(eBully, iInfluenceChange, bShouldRemoveQuests);
 #else
 		DoBulliedByMajorReaction(eBully, GC.getMINOR_FRIENDSHIP_DROP_BULLY_GOLD_SUCCESS());
@@ -9077,7 +9112,20 @@ void CvMinorCivAI::DoMajorBullyUnit(PlayerTypes eBully, UnitTypes eUnitType)
 				GetPlayer()->getCapitalCity()->addProductionExperience(pNewUnit);
 
 #ifdef NQ_MINOR_FRIENDSHIP_GAIN_BULLY_GOLD_SUCCESS_FROM_POLICIES
-			DoBulliedByMajorReaction(eBully, GC.getMINOR_FRIENDSHIP_DROP_BULLY_WORKER_SUCCESS(), true);
+			{
+				int iWorkerInfluenceTimes100 = GC.getMINOR_FRIENDSHIP_DROP_BULLY_WORKER_SUCCESS();
+				bool bWorkerRemoveQuests = true;
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+				const int iLekmodTributeRewardTimes100 = GET_PLAYER(eBully).GetPlayerPolicies()->GetMinorBullyInfluenceReward();
+				const bool bLekmodTributeNoPenalty = GET_PLAYER(eBully).GetPlayerPolicies()->IsMinorBullyNoPenalty();
+				if (bLekmodTributeNoPenalty && iWorkerInfluenceTimes100 < 0)
+					iWorkerInfluenceTimes100 = 0;
+				iWorkerInfluenceTimes100 += iLekmodTributeRewardTimes100;
+				if (bLekmodTributeNoPenalty)
+					bWorkerRemoveQuests = false;
+#endif
+				DoBulliedByMajorReaction(eBully, iWorkerInfluenceTimes100, bWorkerRemoveQuests);
+			}
 #else
 			DoBulliedByMajorReaction(eBully, GC.getMINOR_FRIENDSHIP_DROP_BULLY_WORKER_SUCCESS());
 #endif

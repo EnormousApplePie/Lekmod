@@ -1829,6 +1829,7 @@ CvGlobals::CvGlobals() :
 	m_iLekmodTourismCombatMaxInfluencePercent(100),
 	m_iLekmodTourismCombatMinBonus(0),
 	m_iLekmodTourismCombatMaxBonus(15),
+	m_bLekmodTourismCombatIdeologyRequired(false),
 #endif
 	m_iMIN_DIG_SITES_PER_MAJOR_CIV(5),
 	m_iMAX_DIG_SITES_PER_MAJOR_CIV(8),
@@ -6859,12 +6860,13 @@ void CvGlobals::cacheGlobals()
 	m_iLekmodTourismCombatMaxInfluencePercent = 100;
 	m_iLekmodTourismCombatMinBonus = 0;
 	m_iLekmodTourismCombatMaxBonus = 15;
+	m_bLekmodTourismCombatIdeologyRequired = false;
 	{
 		Database::Connection* pDb = GetGameDatabase();
 		if(pDb)
 		{
 			Database::Results kQuery;
-			if (pDb->Execute(kQuery, "SELECT MinInfluencePercent, MaxInfluencePercent, MinCombatBonus, MaxCombatBonus FROM Tourism_InfluenceCombatMod LIMIT 1"))
+			if (pDb->Execute(kQuery, "SELECT MinInfluencePercent, MaxInfluencePercent, MinCombatBonus, MaxCombatBonus, IdeologyRequired FROM Tourism_InfluenceCombatMod LIMIT 1"))
 			{
 				if(kQuery.Step())
 				{
@@ -6872,6 +6874,7 @@ void CvGlobals::cacheGlobals()
 					m_iLekmodTourismCombatMaxInfluencePercent = kQuery.GetInt(1);
 					m_iLekmodTourismCombatMinBonus = kQuery.GetInt(2);
 					m_iLekmodTourismCombatMaxBonus = kQuery.GetInt(3);
+					m_bLekmodTourismCombatIdeologyRequired = (kQuery.GetInt(4) != 0);
 				}
 			}
 		}

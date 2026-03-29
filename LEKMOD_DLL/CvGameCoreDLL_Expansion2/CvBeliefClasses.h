@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	ù 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	? 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -85,6 +85,11 @@ public:
 	int GetGreatPersonExpendedFaith() const;
 	int GetCityStateMinimumInfluence() const;
 	int GetCityStateInfluenceModifier() const;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	// Like Greece UA trait mod, but from a belief; only applies when a city-state follows your religion (see CvMinorCivAI::GetFriendshipChangePerTurnTimes100).
+	int GetCityStateFollowingReligionDecayMod() const;
+	int GetCityStateFollowingReligionRecoveryMod() const;
+#endif
 	int GetOtherReligionPressureErosion() const;
 	int GetSpyPressure() const;
 	int GetInquisitorPressureRetention() const;
@@ -202,6 +207,10 @@ protected:
 	int m_iGreatPersonExpendedFaith;
 	int m_iCityStateMinimumInfluence;
 	int m_iCityStateInfluenceModifier;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	int m_iCityStateFollowingReligionDecayMod;
+	int m_iCityStateFollowingReligionRecoveryMod;
+#endif
 	int m_iOtherReligionPressureErosion;
 	int m_iSpyPressure;
 	int m_iInquisitorPressureRetention;
@@ -450,6 +459,16 @@ public:
 	{
 		return m_iCityStateInfluenceModifier;
 	}
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	int GetCityStateFollowingReligionDecayMod() const
+	{
+		return m_iCityStateFollowingReligionDecayMod;
+	}
+	int GetCityStateFollowingReligionRecoveryMod() const
+	{
+		return m_iCityStateFollowingReligionRecoveryMod;
+	}
+#endif
 	int GetOtherReligionPressureErosion() const
 	{
 		return m_iOtherReligionPressureErosion;
@@ -581,6 +600,10 @@ private:
 	int m_iGreatPersonExpendedFaith;
 	int m_iCityStateMinimumInfluence;
 	int m_iCityStateInfluenceModifier;
+#ifdef LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+	int m_iCityStateFollowingReligionDecayMod;
+	int m_iCityStateFollowingReligionRecoveryMod;
+#endif
 	int m_iOtherReligionPressureErosion;
 	int m_iSpyPressure;
 	int m_iInquisitorPressureRetention;

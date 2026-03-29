@@ -145,6 +145,10 @@ CvPolicyEntry::CvPolicyEntry(void):
 	m_iProtectedMinorPerTurnInfluence(0),
 	m_iAfraidMinorPerTurnInfluence(0),
 	m_iMinorBullyScoreModifier(0),
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+	m_iMinorBullyInfluenceReward(0),
+	m_bMinorBullyNoPenalty(false),
+#endif
 	m_iThemingBonusMultiplier(0),
 	m_iInternalTradeRouteYieldModifier(0),
 #ifdef FRUITY_TRADITION_LANDED_ELITE 
@@ -304,6 +308,42 @@ CvPolicyEntry::CvPolicyEntry(void):
 	m_ppiBuildingClassFlavorChanges(NULL),
 #endif
 #endif
+#if defined(LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS)
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	m_ppiPolicyTerrainYieldChange(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyTerrainYieldChangeUnimproved(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyTerrainYieldChangeNoResource(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyTerrainYieldChangeUnimprovedNoResource(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyTerrainYieldChangeExcludingLakes(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyFeatureYieldChange(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyFeatureYieldChangeUnimproved(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyFeatureYieldChangeNoResource(std::pair<int**, size_t>(NULL, 0)),
+	m_ppiPolicyFeatureYieldChangeUnimprovedNoResource(std::pair<int**, size_t>(NULL, 0)),
+#else
+	m_ppiPolicyTerrainYieldChange(NULL),
+	m_ppiPolicyTerrainYieldChangeUnimproved(NULL),
+	m_ppiPolicyTerrainYieldChangeNoResource(NULL),
+	m_ppiPolicyTerrainYieldChangeUnimprovedNoResource(NULL),
+	m_ppiPolicyTerrainYieldChangeExcludingLakes(NULL),
+	m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes(NULL),
+	m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes(NULL),
+	m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes(NULL),
+	m_ppiPolicyFeatureYieldChange(NULL),
+	m_ppiPolicyFeatureYieldChangeUnimproved(NULL),
+	m_ppiPolicyFeatureYieldChangeNoResource(NULL),
+	m_ppiPolicyFeatureYieldChangeUnimprovedNoResource(NULL),
+#endif
+#endif
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus(std::pair<int**, size_t>(NULL, 0)),
+#else
+	m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus(NULL),
+#endif
+#endif
 #ifdef AUI_WARNING_FIXES
 	m_piImprovementCultureChange(NULL),
 #endif
@@ -375,6 +415,42 @@ CvPolicyEntry::~CvPolicyEntry(void)
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldChanges);
 #ifdef AUI_POLICY_BUILDING_CLASS_FLAVOR_MODIFIERS
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassFlavorChanges);
+#endif
+#endif
+#if defined(LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS)
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChange.first, m_ppiPolicyTerrainYieldChange.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeUnimproved.first, m_ppiPolicyTerrainYieldChangeUnimproved.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeNoResource.first, m_ppiPolicyTerrainYieldChangeNoResource.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedNoResource.first, m_ppiPolicyTerrainYieldChangeUnimprovedNoResource.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeExcludingLakes.first, m_ppiPolicyTerrainYieldChangeExcludingLakes.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes.first, m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes.first, m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes.first, m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyFeatureYieldChange.first, m_ppiPolicyFeatureYieldChange.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyFeatureYieldChangeUnimproved.first, m_ppiPolicyFeatureYieldChangeUnimproved.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyFeatureYieldChangeNoResource.first, m_ppiPolicyFeatureYieldChangeNoResource.second);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyFeatureYieldChangeUnimprovedNoResource.first, m_ppiPolicyFeatureYieldChangeUnimprovedNoResource.second);
+#else
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeUnimproved);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeNoResource);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedNoResource);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeExcludingLakes);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyFeatureYieldChange);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyFeatureYieldChangeUnimproved);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyFeatureYieldChangeNoResource);
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyFeatureYieldChangeUnimprovedNoResource);
+#endif
+#endif
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus.first, m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus.second);
+#else
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus);
 #endif
 #endif
 
@@ -539,6 +615,10 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iProtectedMinorPerTurnInfluence = kResults.GetInt("ProtectedMinorPerTurnInfluence");
 	m_iAfraidMinorPerTurnInfluence = kResults.GetInt("AfraidMinorPerTurnInfluence");
 	m_iMinorBullyScoreModifier = kResults.GetInt("MinorBullyScoreModifier");
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+	m_iMinorBullyInfluenceReward = kResults.GetInt("MinorBullyInfluenceReward");
+	m_bMinorBullyNoPenalty = (kResults.GetInt("MinorBullyNoPenalty") != 0);
+#endif
 	m_iThemingBonusMultiplier = kResults.GetInt("ThemingBonusMultiplier");
 	m_iInternalTradeRouteYieldModifier = kResults.GetInt("InternalTradeRouteYieldModifier");
 #ifdef FRUITY_TRADITION_LANDED_ELITE
@@ -830,6 +910,154 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		}
 	}
 
+#if defined(LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS)
+	//Policy_TerrainYieldChanges
+	{
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChange.first, "Terrains", "Yields");
+		m_ppiPolicyTerrainYieldChange.second = kUtility.MaxRows("Terrains");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeUnimproved.first, "Terrains", "Yields");
+		m_ppiPolicyTerrainYieldChangeUnimproved.second = kUtility.MaxRows("Terrains");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeNoResource.first, "Terrains", "Yields");
+		m_ppiPolicyTerrainYieldChangeNoResource.second = kUtility.MaxRows("Terrains");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedNoResource.first, "Terrains", "Yields");
+		m_ppiPolicyTerrainYieldChangeUnimprovedNoResource.second = kUtility.MaxRows("Terrains");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeExcludingLakes.first, "Terrains", "Yields");
+		m_ppiPolicyTerrainYieldChangeExcludingLakes.second = kUtility.MaxRows("Terrains");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes.first, "Terrains", "Yields");
+		m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes.second = kUtility.MaxRows("Terrains");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes.first, "Terrains", "Yields");
+		m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes.second = kUtility.MaxRows("Terrains");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes.first, "Terrains", "Yields");
+		m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes.second = kUtility.MaxRows("Terrains");
+#else
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChange, "Terrains", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeUnimproved, "Terrains", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeNoResource, "Terrains", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedNoResource, "Terrains", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeExcludingLakes, "Terrains", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes, "Terrains", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes, "Terrains", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes, "Terrains", "Yields");
+#endif
+		std::string strKeyTerrain("Policy_TerrainYieldChanges_ExcludeLakes");
+		Database::Results* pResultsTerrain = kUtility.GetResults(strKeyTerrain);
+		if (pResultsTerrain == NULL)
+		{
+			pResultsTerrain = kUtility.PrepareResults(strKeyTerrain, "select Terrains.ID as TerrainID, Yields.ID as YieldID, YieldChange, Unimproved, NoResource, ExcludeLakes from Policy_TerrainYieldChanges inner join Terrains on Terrains.Type = TerrainType inner join Yields on Yields.Type = YieldType where PolicyType = ?");
+		}
+		pResultsTerrain->Bind(1, szPolicyType);
+		while (pResultsTerrain->Step())
+		{
+			const int iTerrainID = pResultsTerrain->GetInt(0);
+			const int iYieldID = pResultsTerrain->GetInt(1);
+			const int iYieldChange = pResultsTerrain->GetInt(2);
+			const bool bUnimproved = (pResultsTerrain->GetInt(3) != 0);
+			const bool bNoResource = (pResultsTerrain->GetInt(4) != 0);
+			const bool bExcludeLakes = (pResultsTerrain->GetInt(5) != 0);
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+			if (bExcludeLakes)
+			{
+				if (bUnimproved && bNoResource)
+					m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes.first[iTerrainID][iYieldID] += iYieldChange;
+				else if (bUnimproved)
+					m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes.first[iTerrainID][iYieldID] += iYieldChange;
+				else if (bNoResource)
+					m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes.first[iTerrainID][iYieldID] += iYieldChange;
+				else
+					m_ppiPolicyTerrainYieldChangeExcludingLakes.first[iTerrainID][iYieldID] += iYieldChange;
+			}
+			else
+			{
+				if (bUnimproved && bNoResource)
+					m_ppiPolicyTerrainYieldChangeUnimprovedNoResource.first[iTerrainID][iYieldID] += iYieldChange;
+				else if (bUnimproved)
+					m_ppiPolicyTerrainYieldChangeUnimproved.first[iTerrainID][iYieldID] += iYieldChange;
+				else if (bNoResource)
+					m_ppiPolicyTerrainYieldChangeNoResource.first[iTerrainID][iYieldID] += iYieldChange;
+				else
+					m_ppiPolicyTerrainYieldChange.first[iTerrainID][iYieldID] += iYieldChange;
+			}
+#else
+			if (bExcludeLakes)
+			{
+				if (bUnimproved && bNoResource)
+					m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes[iTerrainID][iYieldID] += iYieldChange;
+				else if (bUnimproved)
+					m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes[iTerrainID][iYieldID] += iYieldChange;
+				else if (bNoResource)
+					m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes[iTerrainID][iYieldID] += iYieldChange;
+				else
+					m_ppiPolicyTerrainYieldChangeExcludingLakes[iTerrainID][iYieldID] += iYieldChange;
+			}
+			else
+			{
+				if (bUnimproved && bNoResource)
+					m_ppiPolicyTerrainYieldChangeUnimprovedNoResource[iTerrainID][iYieldID] += iYieldChange;
+				else if (bUnimproved)
+					m_ppiPolicyTerrainYieldChangeUnimproved[iTerrainID][iYieldID] += iYieldChange;
+				else if (bNoResource)
+					m_ppiPolicyTerrainYieldChangeNoResource[iTerrainID][iYieldID] += iYieldChange;
+				else
+					m_ppiPolicyTerrainYieldChange[iTerrainID][iYieldID] += iYieldChange;
+			}
+#endif
+		}
+	}
+	//Policy_FeatureYieldChanges
+	{
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+		kUtility.Initialize2DArray(m_ppiPolicyFeatureYieldChange.first, "Features", "Yields");
+		m_ppiPolicyFeatureYieldChange.second = kUtility.MaxRows("Features");
+		kUtility.Initialize2DArray(m_ppiPolicyFeatureYieldChangeUnimproved.first, "Features", "Yields");
+		m_ppiPolicyFeatureYieldChangeUnimproved.second = kUtility.MaxRows("Features");
+		kUtility.Initialize2DArray(m_ppiPolicyFeatureYieldChangeNoResource.first, "Features", "Yields");
+		m_ppiPolicyFeatureYieldChangeNoResource.second = kUtility.MaxRows("Features");
+		kUtility.Initialize2DArray(m_ppiPolicyFeatureYieldChangeUnimprovedNoResource.first, "Features", "Yields");
+		m_ppiPolicyFeatureYieldChangeUnimprovedNoResource.second = kUtility.MaxRows("Features");
+#else
+		kUtility.Initialize2DArray(m_ppiPolicyFeatureYieldChange, "Features", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyFeatureYieldChangeUnimproved, "Features", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyFeatureYieldChangeNoResource, "Features", "Yields");
+		kUtility.Initialize2DArray(m_ppiPolicyFeatureYieldChangeUnimprovedNoResource, "Features", "Yields");
+#endif
+		std::string strKeyFeature("Policy_FeatureYieldChanges");
+		Database::Results* pResultsFeature = kUtility.GetResults(strKeyFeature);
+		if (pResultsFeature == NULL)
+		{
+			pResultsFeature = kUtility.PrepareResults(strKeyFeature, "select Features.ID as FeatureID, Yields.ID as YieldID, YieldChange, Unimproved, NoResource from Policy_FeatureYieldChanges inner join Features on Features.Type = FeatureType inner join Yields on Yields.Type = YieldType where PolicyType = ?");
+		}
+		pResultsFeature->Bind(1, szPolicyType);
+		while (pResultsFeature->Step())
+		{
+			const int iFeatureID = pResultsFeature->GetInt(0);
+			const int iYieldID = pResultsFeature->GetInt(1);
+			const int iYieldChange = pResultsFeature->GetInt(2);
+			const bool bUnimproved = (pResultsFeature->GetInt(3) != 0);
+			const bool bNoResource = (pResultsFeature->GetInt(4) != 0);
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+			if (bUnimproved && bNoResource)
+				m_ppiPolicyFeatureYieldChangeUnimprovedNoResource.first[iFeatureID][iYieldID] += iYieldChange;
+			else if (bUnimproved)
+				m_ppiPolicyFeatureYieldChangeUnimproved.first[iFeatureID][iYieldID] += iYieldChange;
+			else if (bNoResource)
+				m_ppiPolicyFeatureYieldChangeNoResource.first[iFeatureID][iYieldID] += iYieldChange;
+			else
+				m_ppiPolicyFeatureYieldChange.first[iFeatureID][iYieldID] += iYieldChange;
+#else
+			if (bUnimproved && bNoResource)
+				m_ppiPolicyFeatureYieldChangeUnimprovedNoResource[iFeatureID][iYieldID] += iYieldChange;
+			else if (bUnimproved)
+				m_ppiPolicyFeatureYieldChangeUnimproved[iFeatureID][iYieldID] += iYieldChange;
+			else if (bNoResource)
+				m_ppiPolicyFeatureYieldChangeNoResource[iFeatureID][iYieldID] += iYieldChange;
+			else
+				m_ppiPolicyFeatureYieldChange[iFeatureID][iYieldID] += iYieldChange;
+#endif
+		}
+	}
+#endif
+
 #ifdef AUI_POLICY_BUILDING_CLASS_FLAVOR_MODIFIERS
 	//BuildingClassFlavorChanges
 	{
@@ -895,6 +1123,36 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 		}
 	}
+
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+	// Policy_GreatPersonImprovement_Adjacency_YieldBonus (yield bonus per adjacent improvement with CreatedByGreatPerson)
+	{
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+		kUtility.Initialize2DArray(m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus.first, "Improvements", "Yields");
+		m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus.second = kUtility.MaxRows("Improvements");
+#else
+		kUtility.Initialize2DArray(m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus, "Improvements", "Yields");
+#endif
+		std::string strKeyGPAdj("Policy_GreatPersonImprovement_Adjacency_YieldBonus");
+		Database::Results* pResultsGPAdj = kUtility.GetResults(strKeyGPAdj);
+		if (pResultsGPAdj == NULL)
+		{
+			pResultsGPAdj = kUtility.PrepareResults(strKeyGPAdj, "select Improvements.ID as ImprovementID, Yields.ID as YieldID, Yield from Policy_GreatPersonImprovement_Adjacency_YieldBonus inner join Improvements on Improvements.Type = ImprovementType inner join Yields on Yields.Type = YieldType where PolicyType = ?");
+		}
+		pResultsGPAdj->Bind(1, szPolicyType);
+		while (pResultsGPAdj->Step())
+		{
+			const int ImprovementID = pResultsGPAdj->GetInt(0);
+			const int YieldID = pResultsGPAdj->GetInt(1);
+			const int iBonus = pResultsGPAdj->GetInt(2);
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+			m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus.first[ImprovementID][YieldID] += iBonus;
+#else
+			m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus[ImprovementID][YieldID] += iBonus;
+#endif
+		}
+	}
+#endif
 
 	//ImprovementCultureChanges
 	kUtility.PopulateArrayByValue(m_piImprovementCultureChange, "Improvements", "Policy_ImprovementCultureChanges", "ImprovementType", "PolicyType", szPolicyType, "CultureChange");
@@ -1742,6 +2000,18 @@ int CvPolicyEntry::GetMinorBullyScoreModifier() const
 	return m_iMinorBullyScoreModifier;
 }
 
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+int CvPolicyEntry::GetMinorBullyInfluenceReward() const
+{
+	return m_iMinorBullyInfluenceReward;
+}
+
+bool CvPolicyEntry::IsMinorBullyNoPenalty() const
+{
+	return m_bMinorBullyNoPenalty;
+}
+#endif
+
 /// Boost to museum theming
 int CvPolicyEntry::GetThemingBonusMultiplier() const
 {
@@ -2485,6 +2755,21 @@ int CvPolicyEntry::GetImprovementYieldChanges(int i, int j) const
 #endif
 }
 
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+int CvPolicyEntry::GetGreatPersonImprovementAdjacencyYieldBonus(int i, int j) const
+{
+	CvAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(j > -1, "Index out of bounds");
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	return m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus.first ? m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus.first[i][j] : 0;
+#else
+	return m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus ? m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus[i][j] : 0;
+#endif
+}
+#endif
+
 /// Yield modifier for a specific BuildingClass by yield type
 int CvPolicyEntry::GetBuildingClassYieldModifiers(int i, int j) const
 {
@@ -2512,6 +2797,92 @@ int CvPolicyEntry::GetBuildingClassYieldChanges(int i, int j) const
 	return m_ppiBuildingClassYieldChanges[i][j];
 #endif
 }
+
+#if defined(LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS)
+int CvPolicyEntry::GetPolicyTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYield, bool bUnimprovedPlot, bool bNoResourcePlot, bool bLakePlot) const
+{
+	if (eTerrain == NO_TERRAIN || eYield < 0 || eYield >= NUM_YIELD_TYPES)
+		return 0;
+	CvAssertMsg(eTerrain < GC.getNumTerrainInfos(), "Index out of bounds");
+	CvAssertMsg(eTerrain > -1, "Index out of bounds");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(eYield > -1, "Index out of bounds");
+	int iSum = 0;
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	if (m_ppiPolicyTerrainYieldChange.first)
+		iSum += m_ppiPolicyTerrainYieldChange.first[eTerrain][eYield];
+	if (bUnimprovedPlot && m_ppiPolicyTerrainYieldChangeUnimproved.first)
+		iSum += m_ppiPolicyTerrainYieldChangeUnimproved.first[eTerrain][eYield];
+	if (bNoResourcePlot && m_ppiPolicyTerrainYieldChangeNoResource.first)
+		iSum += m_ppiPolicyTerrainYieldChangeNoResource.first[eTerrain][eYield];
+	if (bUnimprovedPlot && bNoResourcePlot && m_ppiPolicyTerrainYieldChangeUnimprovedNoResource.first)
+		iSum += m_ppiPolicyTerrainYieldChangeUnimprovedNoResource.first[eTerrain][eYield];
+	if (!bLakePlot)
+	{
+		if (m_ppiPolicyTerrainYieldChangeExcludingLakes.first)
+			iSum += m_ppiPolicyTerrainYieldChangeExcludingLakes.first[eTerrain][eYield];
+		if (bUnimprovedPlot && m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes.first)
+			iSum += m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes.first[eTerrain][eYield];
+		if (bNoResourcePlot && m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes.first)
+			iSum += m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes.first[eTerrain][eYield];
+		if (bUnimprovedPlot && bNoResourcePlot && m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes.first)
+			iSum += m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes.first[eTerrain][eYield];
+	}
+#else
+	if (m_ppiPolicyTerrainYieldChange)
+		iSum += m_ppiPolicyTerrainYieldChange[eTerrain][eYield];
+	if (bUnimprovedPlot && m_ppiPolicyTerrainYieldChangeUnimproved)
+		iSum += m_ppiPolicyTerrainYieldChangeUnimproved[eTerrain][eYield];
+	if (bNoResourcePlot && m_ppiPolicyTerrainYieldChangeNoResource)
+		iSum += m_ppiPolicyTerrainYieldChangeNoResource[eTerrain][eYield];
+	if (bUnimprovedPlot && bNoResourcePlot && m_ppiPolicyTerrainYieldChangeUnimprovedNoResource)
+		iSum += m_ppiPolicyTerrainYieldChangeUnimprovedNoResource[eTerrain][eYield];
+	if (!bLakePlot)
+	{
+		if (m_ppiPolicyTerrainYieldChangeExcludingLakes)
+			iSum += m_ppiPolicyTerrainYieldChangeExcludingLakes[eTerrain][eYield];
+		if (bUnimprovedPlot && m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes)
+			iSum += m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes[eTerrain][eYield];
+		if (bNoResourcePlot && m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes)
+			iSum += m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes[eTerrain][eYield];
+		if (bUnimprovedPlot && bNoResourcePlot && m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes)
+			iSum += m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes[eTerrain][eYield];
+	}
+#endif
+	return iSum;
+}
+
+int CvPolicyEntry::GetPolicyFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield, bool bUnimprovedPlot, bool bNoResourcePlot) const
+{
+	if (eFeature == NO_FEATURE || eYield < 0 || eYield >= NUM_YIELD_TYPES)
+		return 0;
+	CvAssertMsg(eFeature < GC.getNumFeatureInfos(), "Index out of bounds");
+	CvAssertMsg(eFeature > -1, "Index out of bounds");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(eYield > -1, "Index out of bounds");
+	int iSum = 0;
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	if (m_ppiPolicyFeatureYieldChange.first)
+		iSum += m_ppiPolicyFeatureYieldChange.first[eFeature][eYield];
+	if (bUnimprovedPlot && m_ppiPolicyFeatureYieldChangeUnimproved.first)
+		iSum += m_ppiPolicyFeatureYieldChangeUnimproved.first[eFeature][eYield];
+	if (bNoResourcePlot && m_ppiPolicyFeatureYieldChangeNoResource.first)
+		iSum += m_ppiPolicyFeatureYieldChangeNoResource.first[eFeature][eYield];
+	if (bUnimprovedPlot && bNoResourcePlot && m_ppiPolicyFeatureYieldChangeUnimprovedNoResource.first)
+		iSum += m_ppiPolicyFeatureYieldChangeUnimprovedNoResource.first[eFeature][eYield];
+#else
+	if (m_ppiPolicyFeatureYieldChange)
+		iSum += m_ppiPolicyFeatureYieldChange[eFeature][eYield];
+	if (bUnimprovedPlot && m_ppiPolicyFeatureYieldChangeUnimproved)
+		iSum += m_ppiPolicyFeatureYieldChangeUnimproved[eFeature][eYield];
+	if (bNoResourcePlot && m_ppiPolicyFeatureYieldChangeNoResource)
+		iSum += m_ppiPolicyFeatureYieldChangeNoResource[eFeature][eYield];
+	if (bUnimprovedPlot && bNoResourcePlot && m_ppiPolicyFeatureYieldChangeUnimprovedNoResource)
+		iSum += m_ppiPolicyFeatureYieldChangeUnimprovedNoResource[eFeature][eYield];
+#endif
+	return iSum;
+}
+#endif
 
 #ifdef AUI_POLICY_BUILDING_CLASS_FLAVOR_MODIFIERS
 int CvPolicyEntry::GetBuildingClassFlavorChanges(int i, int j) const
@@ -3653,6 +4024,92 @@ int CvPlayerPolicies::GetBuildingClassYieldChange(BuildingClassTypes eBuildingCl
 
 	return rtnValue;
 }
+
+#if defined(LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS)
+int CvPlayerPolicies::GetPolicyTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYield, bool bUnimprovedPlot, bool bNoResourcePlot, bool bLakePlot)
+{
+	int rtnValue = 0;
+#ifdef AUI_WARNING_FIXES
+	for (uint i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#else
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#endif
+	{
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			rtnValue += m_pPolicies->GetPolicyEntry(i)->GetPolicyTerrainYieldChange(eTerrain, eYield, bUnimprovedPlot, bNoResourcePlot, bLakePlot);
+		}
+	}
+	return rtnValue;
+}
+
+int CvPlayerPolicies::GetPolicyFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield, bool bUnimprovedPlot, bool bNoResourcePlot)
+{
+	int rtnValue = 0;
+#ifdef AUI_WARNING_FIXES
+	for (uint i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#else
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#endif
+	{
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			rtnValue += m_pPolicies->GetPolicyEntry(i)->GetPolicyFeatureYieldChange(eFeature, eYield, bUnimprovedPlot, bNoResourcePlot);
+		}
+	}
+	return rtnValue;
+}
+#endif
+
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+int CvPlayerPolicies::GetMinorBullyInfluenceReward() const
+{
+	int rtnValue = 0;
+#ifdef AUI_WARNING_FIXES
+	for (uint i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#else
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#endif
+	{
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+			rtnValue += m_pPolicies->GetPolicyEntry(i)->GetMinorBullyInfluenceReward();
+	}
+	return rtnValue;
+}
+
+bool CvPlayerPolicies::IsMinorBullyNoPenalty() const
+{
+#ifdef AUI_WARNING_FIXES
+	for (uint i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#else
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#endif
+	{
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i) && m_pPolicies->GetPolicyEntry(i)->IsMinorBullyNoPenalty())
+			return true;
+	}
+	return false;
+}
+#endif
+
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+int CvPlayerPolicies::GetPolicyGreatPersonImprovementAdjacencyYieldBonus(ImprovementTypes eImprovement, YieldTypes eYield)
+{
+	int rtnValue = 0;
+#ifdef AUI_WARNING_FIXES
+	for (uint i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#else
+	for (int i = 0; i < m_pPolicies->GetNumPolicies(); i++)
+#endif
+	{
+		if (m_pabHasPolicy[i] && !IsPolicyBlocked((PolicyTypes)i))
+		{
+			rtnValue += m_pPolicies->GetPolicyEntry(i)->GetGreatPersonImprovementAdjacencyYieldBonus(eImprovement, eYield);
+		}
+	}
+	return rtnValue;
+}
+#endif
 
 /// Get culture change from policies for a specific improvement
 int CvPlayerPolicies::GetImprovementCultureChange(ImprovementTypes eImprovement)

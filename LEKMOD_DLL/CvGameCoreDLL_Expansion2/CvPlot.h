@@ -999,6 +999,10 @@ protected:
 
 	CvArchaeologyData m_kArchaeologyData;
 
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+	void updateAdjacentImprovedPlotsYieldForGreatPersonPolicyAdjacency();
+#endif
+
 	void processArea(CvArea* pArea, int iChange);
 	void doImprovementUpgrade();
 	void updateImpassable();

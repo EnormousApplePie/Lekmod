@@ -16593,7 +16593,14 @@ void CvCity::Purchase(UnitTypes eUnitType, BuildingTypes eBuildingType, ProjectT
 				return;	// Can't create the unit, most likely we have no place for it.  We have not deducted the cost yet so just exit.
 
 			CvUnit* pUnit = kPlayer.getUnit(iResult);
+#ifdef LEKMOD_FAITH_MOVE_AFTER_PURCHASE
+			if (!pUnit->getUnitInfo().CanMoveAfterPurchase())
+			{
+				pUnit->setMoves(0);
+			}
+#else
 			pUnit->setMoves(0);
+#endif
 
 			ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 			if (pkScriptSystem) 

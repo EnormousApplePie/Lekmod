@@ -2863,6 +2863,19 @@ int CvPlayerReligions::GetCostNextProphet(bool bIncludeBeliefDiscounts, bool bAd
 		}
 	}
 
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	// First prophet only: count includes auto-spawn and faith purchase (ChangeNumProphetsSpawned)
+	if (m_iNumProphetsSpawned == 0)
+	{
+		const int iTraitMod = m_pPlayer->GetPlayerTraits()->GetFirstProphetCostMod();
+		if (iTraitMod != 0)
+		{
+			iCost *= (100 + iTraitMod);
+			iCost /= 100;
+		}
+	}
+#endif
+
 	if (bAdjustForSpeedDifficulty)
 	{
 		// Adjust for game speed

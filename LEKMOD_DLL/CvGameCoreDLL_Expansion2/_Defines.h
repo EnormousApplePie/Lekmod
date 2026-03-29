@@ -958,6 +958,12 @@
 #define LEKMOD_BUILD_TIME_OVERRIDE
 // Global move change from policies
 #define LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
+// Policy_TerrainYieldChanges (Unimproved, NoResource, ExcludeLakes) / Policy_FeatureYieldChanges; CvPlot::calculateNatureYield
+#define LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS
+// Policies.MinorBullyInfluenceReward (same integer scale as MINOR_FRIENDSHIP_DROP_BULLY_*) / MinorBullyNoPenalty — gold & worker tribute (requires NQ bully reaction 3-arg path)
+#define LEKMOD_POLICY_MINOR_BULLY_TRIBUTE
+// Policy_GreatPersonImprovement_Adjacency_YieldBonus (per adjacent GP-created improvement; CvPlot::calculateImprovementYieldChange)
+#define LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD
 // No Combat Randomness Game Option
 #define LEKMOD_NO_COMBAT_RANDOMNESS
 // Additional plot influence modifiers
@@ -968,6 +974,8 @@
 #define LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
 // Yields from converting cities and/or citizens to a religion
 #define LEKMOD_PROMO_YIELD_FROM_CONVERSION
+// Per-player, per-city, per-promotion, per-yield cap for majority conversion yields (UnitPromotions_YieldsFromFollowerConversion.OnlyOnce)
+#define LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE
 
 
 /// ###############################
@@ -1137,6 +1145,12 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_TRAIT_BAN_UNIT_MISSIONS
 // Add more flexibility to City Yield changes from Traits
 #define LEKMOD_CITY_YIELDS_TRAITS
+#ifdef LEKMOD_CITY_YIELDS_TRAITS
+// Non-capital cities founded with the trait's YieldSettleUnit: max that receive Trait_CityEraYieldChange at once (earlier getGameTurnFounded() first, then lower City ID; 0 = unlimited)
+#ifndef LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX
+#define LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX 1
+#endif
+#endif
 // Refactor Submarine Attack logic
 #define LEKMOD_SUBMARINE_ATTACK_CHANGES
 // Export the WLTKD count down for UI purposes.
@@ -1149,6 +1163,12 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define RELIGION_PRESSURE_LUA
 // Extend the functionality of Religious Tolerance
 #define LEKMOD_RELIGIOUS_TOLERANCE_EXTENDED
+// Belief columns CityStateFollowingReligionDecayMod / RecoveryMod: Greece-style CS influence decay & recovery when CS follows your religion (founder only)
+#define LEKMOD_BELIEF_CITY_STATE_FOLLOWING_RELIGION_INFLUENCE
+/// Trait column FirstProphetCostMod (%): discount on faith cost for the very first Great Prophet (XML -50 = half cost); any prior spawn/purchase that increments prophet count ends it.
+#define LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+/// Unit table xml tag MoveAfterPurchase now works for faith-bought units (same as gold purchases) instead of always zeroing moves
+#define LEKMOD_FAITH_MOVE_AFTER_PURCHASE
 // Change the religious pressure when losing population
 #define LEKMOD_RELIGIOUS_PRESSURE_POP_LOSS
 // Make mountains more yieldable
