@@ -8768,7 +8768,9 @@ void CvPlayer::found(int iX, int iY, UnitTypes eSettlerUnit)
 #if defined(TRAITIFY)
 	pCity->updateYield();
 #endif
+=========
 
+>>>>>>>>> Temporary merge branch 2
 	AwardFreeBuildings(pCity);
 
 	DoUpdateNextPolicyCost();

@@ -309,6 +309,9 @@ public:
 	BuildingTypes GetBestWonderForQuest(PlayerTypes ePlayer);
 	UnitTypes GetBestGreatPersonForQuest(PlayerTypes ePlayer);
 	PlayerTypes GetBestCityStateTarget(PlayerTypes eForPlayer);
+#if defined(LEKMOD_CITYSTATE_QUEST_CHANGES)
+	PlayerTypes GetBestBullyQuestTarget(PlayerTypes eForPlayer);
+#endif
 	PlayerTypes GetMostRecentBullyForQuest() const;
 	bool IsWantsMinorDead(PlayerTypes eMinor);
 	PlayerTypes GetBestPlayerToFind(PlayerTypes ePlayer);
