@@ -62,7 +62,7 @@
 // Version 1 
 //	 * CvPlayer save version reset for expansion pack 2.
 //------------------------------------------------------------------------------
-const int g_CurrentCvPlayerVersion = 16;
+const int g_CurrentCvPlayerVersion = 17;
 
 //Simply empty check utility.
 bool isEmpty(const char* szString)
@@ -433,6 +433,9 @@ CvPlayer::CvPlayer() :
 	, m_eConqueror(NO_PLAYER)
 	, m_bHasAdoptedStateReligion("CvPlayer::m_bHasAdoptedStateReligion", m_syncArchive)
 	, m_bAlliesGreatPersonBiasApplied("CvPlayer::m_bAlliesGreatPersonBiasApplied", m_syncArchive)
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION) && defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	, m_aiConversionMajorityOnceUsedKeys("CvPlayer::m_aiConversionMajorityOnceUsedKeys", m_syncArchive)
+#endif
 	, m_eID("CvPlayer::m_eID", m_syncArchive)
 	, m_ePersonalityType("CvPlayer::m_ePersonalityType", m_syncArchive)
 	, m_aiCityYieldChange("CvPlayer::m_aiCityYieldChange", m_syncArchive)
@@ -1270,6 +1273,10 @@ void CvPlayer::uninit()
 	m_bAlliesGreatPersonBiasApplied = false;
 	m_lastGameTurnInitialAIProcessed = -1;
 
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION) && defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	m_aiConversionMajorityOnceUsedKeys.clear();
+#endif
+
 	m_eID = NO_PLAYER;
 }
 
@@ -1351,6 +1358,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 	m_aiSiphonLuxuryCount.clear();
 	m_aiSiphonLuxuryCount.resize(MAX_PLAYERS, 0);
+
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION) && defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	m_aiConversionMajorityOnceUsedKeys.clear();
+#endif
+
+#if defined(LEKMOD_CITY_YIELDS_TRAITS) && defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE) && defined(LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX) && (LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX > 0)
+	m_aiYieldSettleUnitCityOrder.clear();
+#endif
 
 	m_aOptions.clear();
 
@@ -2608,6 +2623,10 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 
 	iBattleDamage = pOldCity->getDamage();
 
+#ifdef LEKMOD_TRACK_CITY_SETTLER_UNITTYPE
+	UnitTypes eAcquiredCitySettlerUnit = pOldCity->SettlerUnit();
+#endif
+
 	// Traded cities between humans don't heal (an exploit would be to trade a city back and forth between teammates to get an instant heal.)
 	if(!bGift || !isHuman() || !GET_PLAYER(pOldCity->getOwner()).isHuman())
 	{
@@ -2863,6 +2882,13 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 		pNewCity->setGameTurnFounded(iGameTurnFounded);
 		pNewCity->SetEverCapital(bEverCapital);
 	}
+
+#ifdef LEKMOD_TRACK_CITY_SETTLER_UNITTYPE
+	if (!bIsMinorCivBuyout)
+	{
+		pNewCity->SetSettlerUnit(eAcquiredCitySettlerUnit);
+	}
+#endif
 
 	// Population change for capturing a city
 	if(!bRecapture && bConquest)	// Don't drop it if we're recapturing our own City
@@ -3522,6 +3548,21 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
 	doSelfConsistencyCheckAllCities();
 	GET_PLAYER(eOldOwner).doSelfConsistencyCheckAllCities();
+#endif
+
+#if defined(LEKMOD_CITY_YIELDS_TRAITS) && defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE) && defined(LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX) && (LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX > 0)
+	{
+		const bool bYieldSettleKeyed =
+			(GetPlayerTraits()->GetYieldSettleUnit() != NO_UNIT) ||
+			(eOldOwner != NO_PLAYER && GET_PLAYER(eOldOwner).isAlive() && GET_PLAYER(eOldOwner).GetPlayerTraits()->GetYieldSettleUnit() != NO_UNIT);
+		if (bYieldSettleKeyed)
+		{
+			updateYield();
+			if (eOldOwner != NO_PLAYER && GET_PLAYER(eOldOwner).isAlive())
+				GET_PLAYER(eOldOwner).updateYield();
+			GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+		}
+	}
 #endif
 
 #ifdef _MSC_VER
@@ -8768,9 +8809,6 @@ void CvPlayer::found(int iX, int iY, UnitTypes eSettlerUnit)
 #if defined(TRAITIFY)
 	pCity->updateYield();
 #endif
-=========
-
->>>>>>>>> Temporary merge branch 2
 	AwardFreeBuildings(pCity);
 
 	DoUpdateNextPolicyCost();
@@ -8822,6 +8860,75 @@ void CvPlayer::found(int iX, int iY, UnitTypes eSettlerUnit)
 	}
 }
 
+#if defined(LEKMOD_CITY_YIELDS_TRAITS) && defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE) && defined(LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX) && (LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX > 0)
+
+// Non-capitals with SettlerUnit == trait unit. Order by founding turn then city ID — ID alone is wrong after
+// acquireCity(), which recreates the city and assigns a new ID while preserving getGameTurnFounded().
+void CvPlayer::RebuildYieldSettleUnitCityOrder()
+{
+	m_aiYieldSettleUnitCityOrder.clear();
+	UnitTypes eTraitUnit = GetPlayerTraits()->GetYieldSettleUnit();
+	if (eTraitUnit == NO_UNIT)
+		return;
+
+	std::vector<std::pair<int, int> > v;
+	int iLoop;
+	for (CvCity* pLoop = firstCity(&iLoop); pLoop != NULL; pLoop = nextCity(&iLoop))
+	{
+		if (pLoop->isCapital())
+			continue;
+		if (pLoop->SettlerUnit() != eTraitUnit)
+			continue;
+		v.push_back(std::make_pair(pLoop->getGameTurnFounded(), pLoop->GetID()));
+	}
+	std::sort(v.begin(), v.end());
+	m_aiYieldSettleUnitCityOrder.reserve(v.size());
+	for (size_t i = 0; i < v.size(); ++i)
+		m_aiYieldSettleUnitCityOrder.push_back(v[i].second);
+}
+
+bool CvPlayer::IsCityReceivingYieldSettleUnitEraBonus(const CvCity* pCity)
+{
+	CvAssert(pCity != NULL);
+	if (!pCity)
+		return true;
+
+	UnitTypes eTraitUnit = GetPlayerTraits()->GetYieldSettleUnit();
+	if (eTraitUnit == NO_UNIT)
+		return true;
+	if (pCity->getOwner() != GetID())
+		return true;
+	if (pCity->SettlerUnit() != eTraitUnit)
+		return true;
+	if (pCity->isCapital())
+		return true;
+
+	RebuildYieldSettleUnitCityOrder();
+
+	const int iMax = LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX;
+	int iRemaining = iMax;
+	const int iTargetID = pCity->GetID();
+
+	for (size_t i = 0; i < m_aiYieldSettleUnitCityOrder.size(); ++i)
+	{
+		CvCity* pLoop = getCity(m_aiYieldSettleUnitCityOrder[i]);
+		if (pLoop == NULL)
+			continue;
+		if (pLoop->getOwner() != GetID())
+			continue;
+		if (pLoop->isCapital())
+			continue;
+		if (pLoop->SettlerUnit() != eTraitUnit)
+			continue;
+
+		if (pLoop->GetID() == iTargetID)
+			return (iRemaining > 0);
+		if (iRemaining > 0)
+			--iRemaining;
+	}
+	return false;
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool bIgnoreCost, bool bIgnoreUniqueUnitStatus, CvString* toolTipSink) const
@@ -13579,6 +13686,29 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 	}
 }
 #endif
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION) && defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+bool CvPlayer::IsConversionMajorityYieldOnceUsed(int iCityID, PromotionTypes ePromotion, YieldTypes eYield) const
+{
+	const std::vector<int>& v = m_aiConversionMajorityOnceUsedKeys;
+	for (size_t i = 0; i + 2 < v.size(); i += 3)
+	{
+		if (v[i] == iCityID && v[i + 1] == (int)ePromotion && v[i + 2] == (int)eYield)
+			return true;
+	}
+	return false;
+}
+
+//	--------------------------------------------------------------------------------
+void CvPlayer::MarkConversionMajorityYieldOnceUsed(int iCityID, PromotionTypes ePromotion, YieldTypes eYield)
+{
+	if (IsConversionMajorityYieldOnceUsed(iCityID, ePromotion, eYield))
+		return;
+	std::vector<int>& v = m_aiConversionMajorityOnceUsedKeys.dirtyGet();
+	v.push_back(iCityID);
+	v.push_back((int)ePromotion);
+	v.push_back((int)eYield);
+}
+#endif
 #if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION)
 void CvPlayer::DoYieldsFromConversion(CvUnit* pConvertingUnit, CvCity* pPressuredCity,int iFollowerDelta, bool bMajority, int iX, int iY, int iExistingDelay)
 {
@@ -13608,6 +13738,10 @@ void CvPlayer::DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConverting
 		return; // No change in followers, so no yields to give
 	int iPerFollower = 0;
 	int iPerFollowerMajority = 0;
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	std::vector<PromotionTypes> aePromotionsToMarkOnce;
+	const int iCityID = pPressuredCity->GetID();
+#endif
 	// sum across all promotions the unit has
 	for (int iP = 0; iP < GC.getNumPromotionInfos(); iP++)
 	{
@@ -13617,7 +13751,24 @@ void CvPlayer::DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConverting
 			if (pEntry)
 			{
 				iPerFollower += pEntry->GetYieldFromFollowerConversion(eYield);
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+				if (bMajority)
+				{
+					const int iMajAmt = pEntry->GetYieldFromFollowerConversionMajority(eYield);
+					if (iMajAmt > 0)
+					{
+						if (pEntry->GetYieldFromFollowerConversionMajorityOnlyOnce(eYield))
+						{
+							if (IsConversionMajorityYieldOnceUsed(iCityID, (PromotionTypes)iP, eYield))
+								continue;
+							aePromotionsToMarkOnce.push_back((PromotionTypes)iP);
+						}
+						iPerFollowerMajority += iMajAmt;
+					}
+				}
+#else
 				iPerFollowerMajority += pEntry->GetYieldFromFollowerConversionMajority(eYield);
+#endif
 			}
 		}
 	}
@@ -13663,6 +13814,15 @@ void CvPlayer::DoYieldBonusFromConversion(YieldTypes eYield, CvUnit* pConverting
 
 		iNumBonuses++;
 		ReportYieldFromKill(eYield, iTotalValue, iX, iY, iNumBonuses);
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+		if (bMajority)
+		{
+			for (size_t iMu = 0; iMu < aePromotionsToMarkOnce.size(); iMu++)
+			{
+				MarkConversionMajorityYieldOnceUsed(iCityID, aePromotionsToMarkOnce[iMu], eYield);
+			}
+		}
+#endif
 	}
 }
 #endif
@@ -29139,6 +29299,16 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_eConqueror;
 	kStream >> m_bHasAdoptedStateReligion;
 	kStream >> m_bAlliesGreatPersonBiasApplied;
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION) && defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	if (uiVersion >= 17)
+	{
+		kStream >> m_aiConversionMajorityOnceUsedKeys;
+	}
+	else
+	{
+		m_aiConversionMajorityOnceUsedKeys.clear();
+	}
+#endif
 	kStream >> m_eID;
 	kStream >> m_ePersonalityType;
 	kStream >> m_aiCityYieldChange;
@@ -29760,6 +29930,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_eConqueror;
 	kStream << m_bHasAdoptedStateReligion;
 	kStream << m_bAlliesGreatPersonBiasApplied;
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION) && defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	kStream << m_aiConversionMajorityOnceUsedKeys;
+#endif
 
 	kStream << m_eID;
 	kStream << m_ePersonalityType;

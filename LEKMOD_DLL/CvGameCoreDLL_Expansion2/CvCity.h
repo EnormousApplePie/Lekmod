@@ -256,7 +256,9 @@ public:
 	int GetPurchaseCost(ProjectTypes eProject);
 	int GetPurchaseCostFromProduction(int iProduction);
 #endif
-
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+	bool getLekmodBeliefBuildingPurchaseRawCost(BuildingTypes eBuilding, YieldTypes eYield, int* piRaw) const;
+#endif
 	int getProductionTurnsLeft(int iProductionNeeded, int iProduction, int iFirstProductionDifference, int iProductionDifference) const;
 	void setProduction(int iNewValue);
 	void changeProduction(int iChange);

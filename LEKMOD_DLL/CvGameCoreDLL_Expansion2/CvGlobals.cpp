@@ -31,7 +31,6 @@
 #include "cvStopWatch.h"
 #include "CvReplayInfo.h"
 #include "CvTypes.h"
-
 #include "CvDllDatabaseUtility.h"
 #include "CvDllScriptSystemUtility.h"
 
@@ -1825,6 +1824,13 @@ CvGlobals::CvGlobals() :
 	m_iCULTURE_LEVEL_POPULAR(15),
 	m_iCULTURE_LEVEL_INFLUENTIAL(20),
 	m_iCULTURE_LEVEL_DOMINANT(50),
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	m_iLekmodTourismCombatMinInfluencePercent(10),
+	m_iLekmodTourismCombatMaxInfluencePercent(100),
+	m_iLekmodTourismCombatMinBonus(0),
+	m_iLekmodTourismCombatMaxBonus(15),
+	m_bLekmodTourismCombatIdeologyRequired(false),
+#endif
 	m_iMIN_DIG_SITES_PER_MAJOR_CIV(5),
 	m_iMAX_DIG_SITES_PER_MAJOR_CIV(8),
 	m_iPERCENT_SITES_HIDDEN(30),
@@ -6910,6 +6916,36 @@ void CvGlobals::cacheGlobals()
 	m_iSPOILS_OF_WAR_PERCENT_MODERN = getDefineINT("SPOILS_OF_WAR_PERCENT_MODERN");
 	m_iSPOILS_OF_WAR_PERCENT_ATOMIC = getDefineINT("SPOILS_OF_WAR_PERCENT_ATOMIC");
 	m_iSPOILS_OF_WAR_PERCENT_FUTURE = getDefineINT("SPOILS_OF_WAR_PERCENT_FUTURE");
+#endif
+
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	// Defaults match Tourism_InfluenceCombatMod.xml; overwritten if table row loads
+	m_iLekmodTourismCombatMinInfluencePercent = 10;
+	m_iLekmodTourismCombatMaxInfluencePercent = 100;
+	m_iLekmodTourismCombatMinBonus = 0;
+	m_iLekmodTourismCombatMaxBonus = 15;
+	m_bLekmodTourismCombatIdeologyRequired = false;
+	{
+		Database::Connection* pDb = GetGameDatabase();
+		if(pDb)
+		{
+			Database::Results kQuery;
+			if (pDb->Execute(kQuery, "SELECT MinInfluencePercent, MaxInfluencePercent, MinCombatBonus, MaxCombatBonus, IdeologyRequired FROM Tourism_InfluenceCombatMod LIMIT 1"))
+			{
+				if(kQuery.Step())
+				{
+					m_iLekmodTourismCombatMinInfluencePercent = kQuery.GetInt(0);
+					m_iLekmodTourismCombatMaxInfluencePercent = kQuery.GetInt(1);
+					m_iLekmodTourismCombatMinBonus = kQuery.GetInt(2);
+					m_iLekmodTourismCombatMaxBonus = kQuery.GetInt(3);
+					m_bLekmodTourismCombatIdeologyRequired = (kQuery.GetInt(4) != 0);
+				}
+			}
+		}
+	}
+#endif
+#ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
+	CvReligionBeliefs::LoadBuildingPurchaseFaithGoldTable();
 #endif
 }
 

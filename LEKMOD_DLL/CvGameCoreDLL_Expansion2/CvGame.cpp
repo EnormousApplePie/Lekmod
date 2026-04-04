@@ -8659,15 +8659,15 @@ void CvGame::doTurn()
 				GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
 #endif
 			}
-#ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
-#ifdef LEKMOD_v34 // Process deals after happiness is applied.
-			m_kGameDeals.DoTurn();
-#endif
-#endif
 		}
 	}
-
-
+#ifdef LEKMOD_v34 // Process deals after happiness is applied.
+	// Do hotseat here, since its turn based and not network based, so we don't want to do it in updateMoves();
+	if (isHotSeat() || !isGameMultiPlayer())
+	{
+		m_kGameDeals.DoTurn();
+	}
+#endif
 	LogGameState();
 #ifndef AUTOSAVE_END_OF_TURN
 	if(isNetworkMultiPlayer())

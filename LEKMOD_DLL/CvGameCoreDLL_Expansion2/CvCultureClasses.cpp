@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -3859,13 +3859,29 @@ void CvPlayerCulture::DoPublicOpinion()
 			m_strOpinionUnhappinessTooltip += locText.toUTF8();
 
 #ifdef NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
+#ifndef LEKMOD_IDEO_PRESSURE_CHANGE
 			int iUnhappinessModifier = m_pPlayer->GetPlayerPolicies()->GetNumericModifier(POLICYMOD_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER);
 #if defined(TRAITIFY) // Ideology Pressure Unhappiness Modifier from Traits
 			iUnhappinessModifier += m_pPlayer->GetPlayerTraits()->GetIdeologyPressureUnhappinessModifier();
 #endif
 			locText = Localization::Lookup("TXT_KEY_CO_OPINION_TT_UNHAPPINESS_LINE5");
-			locText << -iUnhappinessModifier;
+			locText << iUnhappinessModifier;
 			m_strOpinionUnhappinessTooltip += locText.toUTF8();
+#else
+			int iMult = m_pPlayer->GetPlayerPolicies()->GetIdeologyPressureUnhappinessMultiplierTimes100();
+#if defined(TRAITIFY)
+			{
+				const int t = m_pPlayer->GetPlayerTraits()->GetIdeologyPressureUnhappinessModifier();
+				if(t != 0)
+				{
+					iMult = iMult * (100 + t) / 100;
+				}
+			}
+#endif
+			locText = Localization::Lookup("TXT_KEY_CO_OPINION_TT_UNHAPPINESS_LINE5_LEKMOD");
+			locText << (iMult - 100);
+			m_strOpinionUnhappinessTooltip += locText.toUTF8();
+#endif
 #endif
 		}
 	}
@@ -4098,14 +4114,40 @@ int CvPlayerCulture::ComputePublicOpinionUnhappiness(int iDissatisfaction, int &
 	}
 #ifdef NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
 	int totalUnhappiness = max(m_pPlayer->getNumCities() * iPerCityUnhappy, m_pPlayer->getTotalPopulation() / iUnhappyPerXPop);
+#ifndef LEKMOD_IDEO_PRESSURE_CHANGE
 	if (iUnhappinessModifier != 0)
 	{
 		totalUnhappiness *= (100 + iUnhappinessModifier);
 		totalUnhappiness /= 100;
 	}
+#else
+	// Lekmod: halve first; then apply each policy's IdeologyPressureUnhappinessModifier as a separate % step (multiplicative), then trait once.
+	UNREFERENCED_PARAMETER(iUnhappinessModifier);
+	totalUnhappiness /= 2;
+	int iMult = m_pPlayer->GetPlayerPolicies()->GetIdeologyPressureUnhappinessMultiplierTimes100();
+#if defined(TRAITIFY)
+	{
+		const int t = m_pPlayer->GetPlayerTraits()->GetIdeologyPressureUnhappinessModifier();
+		if (t != 0)
+		{
+			iMult = iMult * (100 + t) / 100;
+		}
+	}
+#endif
+	if (iMult != 100)
+	{
+		totalUnhappiness = totalUnhappiness * iMult / 100;
+	}
+#endif
 	return totalUnhappiness;
 #else
-	return max(m_pPlayer->getNumCities() * iPerCityUnhappy, m_pPlayer->getTotalPopulation() / iUnhappyPerXPop);
+	{
+		int totalUnhappiness = max(m_pPlayer->getNumCities() * iPerCityUnhappy, m_pPlayer->getTotalPopulation() / iUnhappyPerXPop);
+#ifdef LEKMOD_IDEO_PRESSURE_CHANGE
+		totalUnhappiness /= 2;
+#endif
+		return totalUnhappiness;
+	}
 #endif
 }
 

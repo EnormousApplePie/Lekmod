@@ -186,6 +186,9 @@ CvPromotionEntry::CvPromotionEntry():
 #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
     m_paiYieldFromFollowerConversion(NULL),
     m_paiYieldFromFollowerConversionMajority(NULL),
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	m_pabYieldFromFollowerConversionMajorityOnlyOnce(NULL),
+#endif
 #endif
 	m_piTerrainAttackPercent(NULL),
 	m_piTerrainDefensePercent(NULL),
@@ -225,6 +228,9 @@ CvPromotionEntry::~CvPromotionEntry(void)
 #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
     SAFE_DELETE_ARRAY(m_paiYieldFromFollowerConversion);
     SAFE_DELETE_ARRAY(m_paiYieldFromFollowerConversionMajority);
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	SAFE_DELETE_ARRAY(m_pabYieldFromFollowerConversionMajorityOnlyOnce);
+#endif
 #endif
 	SAFE_DELETE_ARRAY(m_piTerrainAttackPercent);
 	SAFE_DELETE_ARRAY(m_piTerrainDefensePercent);
@@ -513,15 +519,26 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	{
 		kUtility.InitializeArray(m_paiYieldFromFollowerConversion, "Yields", 0);
 		kUtility.InitializeArray(m_paiYieldFromFollowerConversionMajority, "Yields", 0);
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+		kUtility.InitializeArray(m_pabYieldFromFollowerConversionMajorityOnlyOnce, NUM_YIELD_TYPES, false);
+#endif
 		std::string sqlKey = "UnitPromotions_YieldsFromFollowerConversion";
 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 		if (pResults == NULL)
 		{
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+			const char* szSQL =
+				"SELECT Yields.ID, Amount, OnlyMajority, COALESCE(OnlyOnce, 0) "
+				"FROM UnitPromotions_YieldsFromFollowerConversion "
+				"INNER JOIN Yields ON Yields.Type = Yield "
+				"WHERE PromotionType = ?";
+#else
 			const char* szSQL =
 				"SELECT Yields.ID, Amount, OnlyMajority "
 				"FROM UnitPromotions_YieldsFromFollowerConversion "
 				"INNER JOIN Yields ON Yields.Type = Yield "
 				"WHERE PromotionType = ?";
+#endif
 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 		}
 
@@ -532,8 +549,16 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 			const int iYieldID = pResults->GetInt(0);
 			const int iAmount = pResults->GetInt(1);
 			const bool bOnlyMajority = pResults->GetBool(2);
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+			const bool bOnlyOnce = pResults->GetBool(3);
+#endif
 			if (bOnlyMajority)
+			{
 				m_paiYieldFromFollowerConversionMajority[iYieldID] = iAmount;
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+				m_pabYieldFromFollowerConversionMajorityOnlyOnce[iYieldID] = bOnlyOnce;
+#endif
+			}
 			else
 				m_paiYieldFromFollowerConversion[iYieldID] = iAmount;
 		}
@@ -1835,6 +1860,18 @@ int CvPromotionEntry::GetYieldFromFollowerConversionMajority(int i) const
     }
     return 0;
 }
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+bool CvPromotionEntry::GetYieldFromFollowerConversionMajorityOnlyOnce(int i) const
+{
+	CvAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(i > -1, "Index out of bounds");
+	if (i > -1 && i < NUM_YIELD_TYPES && m_pabYieldFromFollowerConversionMajorityOnlyOnce)
+	{
+		return m_pabYieldFromFollowerConversionMajorityOnlyOnce[i];
+	}
+	return false;
+}
+#endif
 #endif
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
 int CvPromotionEntry::GetUpgradeConversionPromotion(int i) const

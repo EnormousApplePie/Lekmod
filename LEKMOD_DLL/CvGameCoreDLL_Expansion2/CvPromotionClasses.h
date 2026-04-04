@@ -26,6 +26,9 @@ public:
 #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
     int GetYieldFromFollowerConversion(int i) const;
     int GetYieldFromFollowerConversionMajority(int i) const;
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+    bool GetYieldFromFollowerConversionMajorityOnlyOnce(int i) const;
+#endif
 #endif
 	CvPromotionEntry(void);
 	~CvPromotionEntry(void);
@@ -273,6 +276,9 @@ protected:
 #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
     int* m_paiYieldFromFollowerConversion;
     int* m_paiYieldFromFollowerConversionMajority;
+#if defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+    bool* m_pabYieldFromFollowerConversionMajorityOnlyOnce;
+#endif
 #endif
 	int m_iLayerAnimationPath;
 #if !defined(LEKMOD_RELOCATE_PROMOTION_PREREQ_ORS)

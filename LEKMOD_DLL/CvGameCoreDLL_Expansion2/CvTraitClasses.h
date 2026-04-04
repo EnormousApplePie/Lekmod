@@ -66,6 +66,9 @@ public:
 	int GetPopulationUnhappinessModifier() const;
 	int GetCityStateBonusModifier() const;
 	int GetCityStateFriendshipModifier() const;
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	int GetFirstProphetCostMod() const;
+#endif
 	int GetCityStateCombatModifier() const;
 	int GetLandBarbarianConversionPercent() const;
 	int GetLandBarbarianConversionExtraUnits() const;
@@ -324,6 +327,9 @@ protected:
 	int m_iPopulationUnhappinessModifier;
 	int m_iCityStateBonusModifier;
 	int m_iCityStateFriendshipModifier;
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	int m_iFirstProphetCostMod;
+#endif
 	int m_iCityStateCombatModifier;
 	int m_iLandBarbarianConversionPercent;
 	int m_iLandBarbarianConversionExtraUnits;
@@ -676,6 +682,12 @@ public:
 	{
 		return m_iCityStateFriendshipModifier;
 	};
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	int GetFirstProphetCostMod() const
+	{
+		return m_iFirstProphetCostMod;
+	}
+#endif
 	int GetCityStateCombatModifier() const
 	{
 		return m_iCityStateCombatModifier;
@@ -1342,6 +1354,9 @@ private:
 	int m_iPopulationUnhappinessModifier;
 	int m_iCityStateBonusModifier;
 	int m_iCityStateFriendshipModifier;
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	int m_iFirstProphetCostMod;
+#endif
 	int m_iCityStateCombatModifier;
 	int m_iLandBarbarianConversionPercent;
 	int m_iLandBarbarianConversionExtraUnits;

@@ -810,8 +810,11 @@ local function SetupBuildingList( city, buildings, buildingIM )
 			isProducing = isNotResistance
 			thisBuildingAndYieldTypes.YieldType = (GameInfo.Yields[yieldID] or {}).Type or -1
 			-- Yield changes from the building
+			-- Match EUI GetHelpTextForBuilding: PlayerBuildingClass (empire) + Policy + Trait + Religion (+ League)
 			buildingYieldRate = Game.GetBuildingYieldChange( buildingID, yieldID )
 						+ (gk_mode and cityOwner:GetPlayerBuildingClassYieldChange( buildingClassID, yieldID )
+						+ cityOwner:GetPolicyBuildingClassYieldChange( buildingClassID, yieldID )
+						+ cityOwner:GetTraitBuildingClassYieldChange( buildingClassID, yieldID )
 						+ city:GetReligionBuildingClassYieldChange( buildingClassID, yieldID ) or 0)
 						+ (bnw_mode and city:GetLeagueBuildingClassYieldChange( buildingClassID, yieldID ) or 0)
 			-- Yield modifiers from the building

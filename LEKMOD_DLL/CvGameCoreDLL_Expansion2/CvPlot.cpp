@@ -6811,6 +6811,16 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 				}
 			}
 		}
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+		{
+			const bool bOldGP = (eOldImprovement != NO_IMPROVEMENT && GC.getImprovementInfo(eOldImprovement)->IsCreatedByGreatPerson());
+			const bool bNewGP = (eNewValue != NO_IMPROVEMENT && GC.getImprovementInfo(eNewValue)->IsCreatedByGreatPerson());
+			if (bOldGP || bNewGP)
+			{
+				updateAdjacentImprovedPlotsYieldForGreatPersonPolicyAdjacency();
+			}
+		}
+#endif
 		updateYield();
 
 		// Update the amount of a Resource used up by this Improvement
@@ -6859,6 +6869,16 @@ void CvPlot::SetImprovementPillaged(bool bPillaged)
 	{
 		m_bImprovementPillaged = bPillaged;
 		updateYield();
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+		if (getImprovementType() != NO_IMPROVEMENT)
+		{
+			CvImprovementEntry* pkImprovementEntry = GC.getImprovementInfo(getImprovementType());
+			if (pkImprovementEntry != NULL && pkImprovementEntry->IsCreatedByGreatPerson())
+			{
+				updateAdjacentImprovedPlotsYieldForGreatPersonPolicyAdjacency();
+			}
+		}
+#endif
 
 		// Quantified Resource changes
 		if(getResourceType() != NO_RESOURCE && getImprovementType() != NO_IMPROVEMENT)
@@ -7741,6 +7761,23 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 					iYieldChange += iReligionChange;
 				}
 			}
+#ifdef LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS
+			if (pWorkingCity != NULL)
+			{
+				CvPlayerPolicies* pPolicyYields = GET_PLAYER(pWorkingCity->getOwner()).GetPlayerPolicies();
+				if (pPolicyYields != NULL)
+				{
+					ResourceTypes ePolicyNatureResource = NO_RESOURCE;
+					if (eTeam != NO_TEAM)
+					{
+						ePolicyNatureResource = getResourceType(eTeam);
+					}
+					const bool bPolicyNoResourcePlot = (ePolicyNatureResource == NO_RESOURCE);
+					const bool bPolicyUnimprovedPlot = (getImprovementType() == NO_IMPROVEMENT);
+					iYieldChange += pPolicyYields->GetPolicyFeatureYieldChange(getFeatureType(), eYield, bPolicyUnimprovedPlot, bPolicyNoResourcePlot);
+				}
+			}
+#endif
 			// Natural Wonders
 			if(m_eOwner != NO_PLAYER && pFeatureInfo->IsNaturalWonder())
 			{
@@ -7836,6 +7873,23 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		if (iTraitTerrainChange != 0)
 		{
 			iYield += iTraitTerrainChange;
+		}
+	}
+#endif
+#ifdef LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS
+	if (pWorkingCity != NULL)
+	{
+		CvPlayerPolicies* pPolicyYields = GET_PLAYER(pWorkingCity->getOwner()).GetPlayerPolicies();
+		if (pPolicyYields != NULL)
+		{
+			ResourceTypes ePolicyNatureResource = NO_RESOURCE;
+			if (eTeam != NO_TEAM)
+			{
+				ePolicyNatureResource = getResourceType(eTeam);
+			}
+			const bool bPolicyNoResourcePlot = (ePolicyNatureResource == NO_RESOURCE);
+			const bool bPolicyUnimprovedPlot = (getImprovementType() == NO_IMPROVEMENT);
+			iYield += pPolicyYields->GetPolicyTerrainYieldChange(getTerrainType(), eYield, bPolicyUnimprovedPlot, bPolicyNoResourcePlot, isLake());
 		}
 	}
 #endif
@@ -7977,6 +8031,36 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
+#endif
+
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+	if (ePlayer != NO_PLAYER)
+	{
+		CvPlayerPolicies* pPolicies = GET_PLAYER(ePlayer).GetPlayerPolicies();
+		if (pPolicies != NULL)
+		{
+			const int iBonusPerGPAdj = pPolicies->GetPolicyGreatPersonImprovementAdjacencyYieldBonus(eImprovement, eYield);
+			if (iBonusPerGPAdj != 0)
+			{
+				for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+				{
+					CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iI));
+					if (pAdjacentPlot == NULL)
+						continue;
+					const ImprovementTypes eAdjacentImprovement = pAdjacentPlot->getImprovementType();
+					if (eAdjacentImprovement == NO_IMPROVEMENT)
+						continue;
+					if (pAdjacentPlot->getOwner() != ePlayer)
+						continue;
+					CvImprovementEntry* pAdjacentImprovementInfo = GC.getImprovementInfo(eAdjacentImprovement);
+					if (pAdjacentImprovementInfo != NULL && pAdjacentImprovementInfo->IsCreatedByGreatPerson())
+					{
+						iYield += iBonusPerGPAdj;
+					}
+				}
+			}
+		}
+	}
 #endif
 
 	// Check to see if there's a bonus to apply before doing any looping
@@ -8191,6 +8275,35 @@ int CvPlot::calculateImprovementAdjacentYieldChange(YieldTypes eYield, Improveme
 		}
 
 	}
+
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+	{
+		CvPlayerPolicies* pPolicies = GET_PLAYER(ePlayer).GetPlayerPolicies();
+		if (pPolicies != NULL)
+		{
+			const int iBonusPerGPAdj = pPolicies->GetPolicyGreatPersonImprovementAdjacencyYieldBonus(eImprovement, eYield);
+			if (iBonusPerGPAdj != 0)
+			{
+				for (uint iJ = 0; iJ < NUM_DIRECTION_TYPES; ++iJ)
+				{
+					CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iJ));
+					if (pAdjacentPlot == NULL)
+						continue;
+					const ImprovementTypes eAdjacentImprovement = pAdjacentPlot->getImprovementType();
+					if (eAdjacentImprovement == NO_IMPROVEMENT)
+						continue;
+					if (pAdjacentPlot->getOwner() != ePlayer)
+						continue;
+					CvImprovementEntry* pAdjacentImprovementInfo = GC.getImprovementInfo(eAdjacentImprovement);
+					if (pAdjacentImprovementInfo != NULL && pAdjacentImprovementInfo->IsCreatedByGreatPerson())
+					{
+						iYield += iBonusPerGPAdj;
+					}
+				}
+			}
+		}
+	}
+#endif
 
 	return iYield;
 }
@@ -8491,7 +8604,12 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 			}
 			else if (eTraitUnit != NO_UNIT && eTraitUnit == eSettleUnit) // some are!
 			{
-				iTemp += kPlayer.GetPlayerTraits()->GetCityEraYieldChange(eCurrentEra, eYield) * 100;
+#if defined(LEKMOD_CITY_YIELDS_TRAITS) && defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE) && defined(LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX) && (LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX > 0)
+				if (kPlayer.IsCityReceivingYieldSettleUnitEraBonus(pCity))
+#endif
+				{
+					iTemp += kPlayer.GetPlayerTraits()->GetCityEraYieldChange(eCurrentEra, eYield) * 100;
+				}
 			}
 		}
 		for (int jJ = 0; jJ < GC.getNumTechInfos(); jJ++)
@@ -8631,6 +8749,21 @@ bool CvPlot::hasYield() const
 
 	return false;
 }
+
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+//	--------------------------------------------------------------------------------
+void CvPlot::updateAdjacentImprovedPlotsYieldForGreatPersonPolicyAdjacency()
+{
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+	{
+		CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), (DirectionTypes)iI);
+		if (pAdjacentPlot != NULL && pAdjacentPlot->getImprovementType() != NO_IMPROVEMENT)
+		{
+			pAdjacentPlot->updateYield();
+		}
+	}
+}
+#endif
 
 
 //	--------------------------------------------------------------------------------

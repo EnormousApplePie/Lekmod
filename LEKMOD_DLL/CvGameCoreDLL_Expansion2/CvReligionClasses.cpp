@@ -2601,11 +2601,7 @@ bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 
 	if(pSpawnCity != NULL && pSpawnCity->getOwner() == kPlayer.GetID())
 	{
-#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
-#else
-		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
-#endif
 #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
 		kPlayer.ChangeFaith(-iCost);
 #else
@@ -2617,11 +2613,8 @@ bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 		pSpawnCity = kPlayer.getCapitalCity();
 		if(pSpawnCity != NULL)
 		{
-#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
-#else
-		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
-#endif
+
 #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
 			kPlayer.ChangeFaith(-iCost);
 #else
@@ -2879,6 +2872,20 @@ int CvPlayerReligions::GetCostNextProphet(bool bIncludeBeliefDiscounts, bool bAd
 		iCost /= 100;
 	}
 #endif
+
+#ifdef LEKMOD_TRAIT_FIRST_PROPHET_COST_MOD
+	// First prophet only: count includes auto-spawn and faith purchase (ChangeNumProphetsSpawned)
+	if (m_iNumProphetsSpawned == 0)
+	{
+		const int iTraitMod = m_pPlayer->GetPlayerTraits()->GetFirstProphetCostMod();
+		if (iTraitMod != 0)
+		{
+			iCost *= (100 + iTraitMod);
+			iCost /= 100;
+		}
+	}
+#endif
+
 	if (bAdjustForSpeedDifficulty)
 	{
 		// Adjust for game speed

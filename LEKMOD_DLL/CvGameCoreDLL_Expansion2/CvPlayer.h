@@ -1565,6 +1565,9 @@ public:
 	int getNumCities() const;
 	CvCity* getCity(int iID);
 	const CvCity* getCity(int iID) const;
+#if defined(LEKMOD_CITY_YIELDS_TRAITS) && defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE) && defined(LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX) && (LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX > 0)
+	bool IsCityReceivingYieldSettleUnitEraBonus(const CvCity* pCity);
+#endif
 	CvCity* addCity();
 	void deleteCity(int iID);
 	CvCity* GetFirstCityWithBuildingClass(BuildingClassTypes eBuildingClass);
@@ -2312,6 +2315,10 @@ protected:
 	FAutoVariable<bool, CvPlayer> m_bHasAdoptedStateReligion;
 	FAutoVariable<bool, CvPlayer> m_bAlliesGreatPersonBiasApplied;
 
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION) && defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	FAutoVariable<std::vector<int>, CvPlayer> m_aiConversionMajorityOnceUsedKeys;
+#endif
+
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiCityYieldChange;
 #if defined(LEKMOD_LEGACY)
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiOriginalCityYieldChange;
@@ -2334,6 +2341,9 @@ protected:
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiMinorFriendshipAnchors; // DEPRECATED
 	std::vector<int> m_aiSiphonLuxuryCount;
 	std::vector<int> m_aiGreatWorkYieldChange;
+#if defined(LEKMOD_CITY_YIELDS_TRAITS) && defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE) && defined(LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX) && (LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX > 0)
+	std::vector<int> m_aiYieldSettleUnitCityOrder;
+#endif
 
 #ifdef LEKMOD_v34
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiSameLandMassYieldChange;
@@ -2527,6 +2537,15 @@ protected:
 	void doUpdateCacheOnTurn();
 
 	void doArmySize();
+
+#if defined(LEKMOD_PROMO_YIELD_FROM_CONVERSION) && defined(LEKMOD_PROMO_CONVERSION_MAJORITY_ONLY_ONCE)
+	bool IsConversionMajorityYieldOnceUsed(int iCityID, PromotionTypes ePromotion, YieldTypes eYield) const;
+	void MarkConversionMajorityYieldOnceUsed(int iCityID, PromotionTypes ePromotion, YieldTypes eYield);
+#endif
+
+#if defined(LEKMOD_CITY_YIELDS_TRAITS) && defined(LEKMOD_TRACK_CITY_SETTLER_UNITTYPE) && defined(LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX) && (LEKMOD_YIELD_SETTLE_UNIT_NON_CAP_MAX > 0)
+	void RebuildYieldSettleUnitCityOrder();
+#endif
 
 	friend class CvPlayerManager;
 	friend CvUnit* GetPlayerUnit(IDInfo& unit);

@@ -161,6 +161,10 @@ public:
 	int GetProtectedMinorPerTurnInfluence() const;
 	int GetAfraidMinorPerTurnInfluence() const;
 	int GetMinorBullyScoreModifier() const;
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+	int GetMinorBullyInfluenceReward() const;
+	bool IsMinorBullyNoPenalty() const;
+#endif
 	int GetThemingBonusMultiplier() const;
 	int GetInternalTradeRouteYieldModifier() const;
 #ifdef FRUITY_TRADITION_LANDED_ELITE
@@ -335,6 +339,13 @@ public:
 #ifdef AUI_POLICY_BUILDING_CLASS_FLAVOR_MODIFIERS
 	int GetBuildingClassFlavorChanges(int i, int j) const;
 #endif
+#if defined(LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS)
+	int GetPolicyTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYield, bool bUnimprovedPlot, bool bNoResourcePlot, bool bLakePlot) const;
+	int GetPolicyFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield, bool bUnimprovedPlot, bool bNoResourcePlot) const;
+#endif
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+	int GetGreatPersonImprovementAdjacencyYieldBonus(int i, int j) const;
+#endif
 	int GetFlavorValue(int i) const;
 
 	bool IsOneShot() const;
@@ -471,6 +482,10 @@ private:
 	int m_iProtectedMinorPerTurnInfluence;
 	int m_iAfraidMinorPerTurnInfluence;
 	int m_iMinorBullyScoreModifier;
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+	int m_iMinorBullyInfluenceReward;
+	bool m_bMinorBullyNoPenalty;
+#endif
 	int m_iThemingBonusMultiplier;
 	int m_iInternalTradeRouteYieldModifier;
 #ifdef FRUITY_TRADITION_LANDED_ELITE
@@ -654,6 +669,38 @@ private:
 #endif
 	int** m_ppiBuildingClassYieldModifiers;
 	int** m_ppiBuildingClassYieldChanges;
+#endif
+#if defined(LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS)
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	std::pair<int**, size_t> m_ppiPolicyTerrainYieldChange;
+	std::pair<int**, size_t> m_ppiPolicyTerrainYieldChangeUnimproved;
+	std::pair<int**, size_t> m_ppiPolicyTerrainYieldChangeNoResource;
+	std::pair<int**, size_t> m_ppiPolicyTerrainYieldChangeUnimprovedNoResource;
+	std::pair<int**, size_t> m_ppiPolicyFeatureYieldChange;
+	std::pair<int**, size_t> m_ppiPolicyFeatureYieldChangeUnimproved;
+	std::pair<int**, size_t> m_ppiPolicyFeatureYieldChangeNoResource;
+	std::pair<int**, size_t> m_ppiPolicyFeatureYieldChangeUnimprovedNoResource;
+#else
+	int** m_ppiPolicyTerrainYieldChange;
+	int** m_ppiPolicyTerrainYieldChangeUnimproved;
+	int** m_ppiPolicyTerrainYieldChangeNoResource;
+	int** m_ppiPolicyTerrainYieldChangeUnimprovedNoResource;
+	int** m_ppiPolicyTerrainYieldChangeExcludingLakes;
+	int** m_ppiPolicyTerrainYieldChangeUnimprovedExcludingLakes;
+	int** m_ppiPolicyTerrainYieldChangeNoResourceExcludingLakes;
+	int** m_ppiPolicyTerrainYieldChangeUnimprovedNoResourceExcludingLakes;
+	int** m_ppiPolicyFeatureYieldChange;
+	int** m_ppiPolicyFeatureYieldChangeUnimproved;
+	int** m_ppiPolicyFeatureYieldChangeNoResource;
+	int** m_ppiPolicyFeatureYieldChangeUnimprovedNoResource;
+#endif
+#endif
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	std::pair<int**, size_t> m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus;
+#else
+	int** m_ppiPolicyGreatPersonImprovementAdjacencyYieldBonus;
+#endif
 #endif
 	int* m_piFlavorValue;
 };
@@ -903,9 +950,23 @@ public:
 
 	// Functions to return benefits from policies
 	int GetNumericModifier(PolicyModifierType eType);
+#ifdef NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
+	int GetIdeologyPressureUnhappinessMultiplierTimes100();
+#endif
 	int GetYieldModifier(YieldTypes eYieldType);
 	int GetBuildingClassYieldModifier(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
 	int GetBuildingClassYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYieldType);
+#if defined(LEKMOD_POLICY_TERRAIN_FEATURE_YIELDS)
+	int GetPolicyTerrainYieldChange(TerrainTypes eTerrain, YieldTypes eYield, bool bUnimprovedPlot, bool bNoResourcePlot, bool bLakePlot);
+	int GetPolicyFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield, bool bUnimprovedPlot, bool bNoResourcePlot);
+#endif
+#if defined(LEKMOD_POLICY_GREATPERSON_IMPROVEMENT_ADJACENCY_YIELD)
+	int GetPolicyGreatPersonImprovementAdjacencyYieldBonus(ImprovementTypes eImprovement, YieldTypes eYield);
+#endif
+#if defined(LEKMOD_POLICY_MINOR_BULLY_TRIBUTE)
+	int GetMinorBullyInfluenceReward() const;
+	bool IsMinorBullyNoPenalty() const;
+#endif
 	int GetBuildingClassProductionModifier(BuildingClassTypes eBuildingClass);
 	int GetBuildingClassTourismModifier(BuildingClassTypes eBuildingClass);
 	int GetImprovementCultureChange(ImprovementTypes eImprovement);

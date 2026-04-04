@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	? 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -7633,6 +7633,28 @@ public:
 	{
 		return m_iCULTURE_LEVEL_DOMINANT;
 	}
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	inline int getLekmodTourismCombatMinInfluencePercent()
+	{
+		return m_iLekmodTourismCombatMinInfluencePercent;
+	}
+	inline int getLekmodTourismCombatMaxInfluencePercent()
+	{
+		return m_iLekmodTourismCombatMaxInfluencePercent;
+	}
+	inline int getLekmodTourismCombatMinBonus()
+	{
+		return m_iLekmodTourismCombatMinBonus;
+	}
+	inline int getLekmodTourismCombatMaxBonus()
+	{
+		return m_iLekmodTourismCombatMaxBonus;
+	}
+	inline bool isLekmodTourismCombatIdeologyRequired()
+	{
+		return m_bLekmodTourismCombatIdeologyRequired;
+	}
+#endif
 	inline int getPROMOTION_GOODY_HUT_PICKER()
 	{
 		return m_iPROMOTION_GOODY_HUT_PICKER;
@@ -9772,6 +9794,13 @@ protected:
 	int   m_iCULTURE_LEVEL_POPULAR;
 	int   m_iCULTURE_LEVEL_INFLUENTIAL;
 	int   m_iCULTURE_LEVEL_DOMINANT;
+#ifdef LEKMOD_TOURISM_COMBAT_MOD
+	int   m_iLekmodTourismCombatMinInfluencePercent;
+	int   m_iLekmodTourismCombatMaxInfluencePercent;
+	int   m_iLekmodTourismCombatMinBonus;
+	int   m_iLekmodTourismCombatMaxBonus;
+	bool  m_bLekmodTourismCombatIdeologyRequired;
+#endif
 	int   m_iMIN_DIG_SITES_PER_MAJOR_CIV;
 	int   m_iMAX_DIG_SITES_PER_MAJOR_CIV;
 	int   m_iPERCENT_SITES_HIDDEN;
