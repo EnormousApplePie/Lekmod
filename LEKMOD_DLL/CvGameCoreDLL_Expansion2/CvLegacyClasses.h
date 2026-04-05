@@ -96,7 +96,7 @@ public:
 	int GetBuildingCostOverride(int i, int j) const { return m_paiBuildingCostOverride ? m_paiBuildingCostOverride[i][j] : 0; }
 	int GetNumFreeUnitsByClass(int i) const { return m_piNumFreeUnitsByClass ? m_piNumFreeUnitsByClass[i] : 0; }
 	int GetNumFreeUnitsByType(int i) const { return m_piNumFreeUnitsByType ? m_piNumFreeUnitsByType[i] : 0; }
-	int GetBuildTimeOverride(int i) const { return m_piBuildTimeOverride ? m_piBuildTimeOverride[i] : 0; }
+	int GetBuildTimeOverride(int i) const { return m_piBuildTimeOverride ? m_piBuildTimeOverride[i] : -1; }
 	int GetYieldBonusFromThemes(int i) const { return m_piYieldBonusFromThemes ? m_piYieldBonusFromThemes[i] : 0; }
 #if defined(TRADE_REFACTOR)
 	int GetTradeConnectionLandYieldChanges(int i, int j) const { return m_paiTradeConnectionLandYieldChanges ? m_paiTradeConnectionLandYieldChanges[i][j] : 0; }

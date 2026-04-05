@@ -1942,12 +1942,35 @@ void CvPlayerLegacies::updatePlayerLegacies(LegacyTypes eLegacy, int Change)
 	{
 		m_viImprovementTourismBonuses[iImprovement] += kLegacy.GetImprovementTourismBonus(iImprovement) * Change;
 	}
-	// Builds
+	// Builds — XML uses -1 as "no row" (PopulateArrayByValue default); 0 is a valid override (instant build).
 	for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
 	{
-		if (kLegacy.GetBuildTimeOverride(iBuild) != 0)
+		const int iLegacyVal = kLegacy.GetBuildTimeOverride(iBuild);
+		if (iLegacyVal == -1)
+			continue;
+		if (Change > 0)
 		{
-			m_viBuildTimeOverrides[iBuild] = kLegacy.GetBuildTimeOverride(iBuild);
+			if (m_viBuildTimeOverrides[iBuild] == -1 || iLegacyVal < m_viBuildTimeOverrides[iBuild])
+				m_viBuildTimeOverrides[iBuild] = iLegacyVal;
+		}
+		else
+		{
+			m_viBuildTimeOverrides[iBuild] = -1;
+			for (int iL = 0; iL < GC.getNumLegacyInfos(); iL++)
+			{
+				const LegacyTypes eOther = static_cast<LegacyTypes>(iL);
+				if (!HasLegacy(eOther))
+					continue;
+				CvLegacyEntry* pkOther = GC.getLegacyInfo(eOther);
+				if (pkOther == NULL)
+					continue;
+				const int v = pkOther->GetBuildTimeOverride(iBuild);
+				if (v != -1)
+				{
+					if (m_viBuildTimeOverrides[iBuild] == -1 || v < m_viBuildTimeOverrides[iBuild])
+						m_viBuildTimeOverrides[iBuild] = v;
+				}
+			}
 		}
 	}
 }

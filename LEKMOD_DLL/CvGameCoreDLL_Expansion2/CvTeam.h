@@ -173,6 +173,7 @@ public:
 	void SetResourceRevealed(ResourceTypes eResource, bool bRevealed);
 	bool IsResourceTrade(ResourceTypes eResource) const;
 	void SetResourceTrade(ResourceTypes eResource, bool bTrade);
+	void UpdateLegacyResourceRevealFromTechAndPolicy();
 #endif
 	int getAllowEmbassyTradingAllowedCount() const;
 	bool isAllowEmbassyTradingAllowed() const;

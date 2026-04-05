@@ -3102,6 +3102,7 @@ CvCityBuildings::CvCityBuildings():
 	m_bSoldBuildingThisTurn(false),
 #if defined(LEKMOD_LEGACY)
 	m_bGreatWorkClassMapDirty(true),
+	m_iHappinessFromGreatWorks(0),
 #endif
 
 	m_pBuildings(NULL),
@@ -3194,6 +3195,7 @@ void CvCityBuildings::Reset()
 	m_bSoldBuildingThisTurn = false;
 #if defined(LEKMOD_LEGACY)
 	m_bGreatWorkClassMapDirty = true;
+	m_iHappinessFromGreatWorks = 0;
 #endif
 
 	for(iI = 0; iI < m_pBuildings->GetNumBuildings(); iI++)

@@ -3720,6 +3720,9 @@ void CvPlayerPolicies::SetPolicy(PolicyTypes eIndex, bool bNewValue)
 				}
 			}
 		}
+#if defined(LEKMOD_LEGACY)
+		GET_TEAM(m_pPlayer->getTeam()).UpdateLegacyResourceRevealFromTechAndPolicy();
+#endif
 	}
 }
 
@@ -5930,35 +5933,37 @@ bool CvPlayerPolicies::IsTimeToChooseIdeology() const
 				}
 			}
 #else
-			for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-			{
-				CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo((BuildingTypes)iI);
-				if (pkBuildingInfo)
-				{
-					if (pkBuildingInfo->GetXBuiltTriggersIdeologyChoice() > 0)
-					{
-						BuildingClassTypes eBuildingClass = (BuildingClassTypes)pkBuildingInfo->GetBuildingClassType();
-						if (eBuildingClass != NO_BUILDINGCLASS)
-						{
-							const BuildingTypes eCivBuilding = (BuildingTypes)pkInfo->getCivilizationBuildings(eBuildingClass);
-							if (eCivBuilding != NO_BUILDING)
-							{
-								if (m_pPlayer->getBuildingClassCount(eBuildingClass) >= pkBuildingInfo->GetXBuiltTriggersIdeologyChoice())
-								{
-									return true;
-								}
-#ifdef LEKMOD_UNLOCK_IDEO_ALL_CITIES
-								else if (m_pPlayer->getNumCities() < pkBuildingInfo->GetXBuiltTriggersIdeologyChoice())
-								{
-									if (m_pPlayer->getBuildingClassCount(eBuildingClass) >= m_pPlayer->getNumCities())
-									{
-										return true;
-									}
-								}
+			// Use this civ's building for each class only (same as vanilla). Looping all BuildingTypes wrongly applies
+			// other civs' UB rows (e.g. Chile's Cooperative X=1 on BUILDINGCLASS_FACTORY) to every player with one factory.
+#ifdef AUI_WARNING_FIXES
+			for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+#else
+			for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 #endif
-							}
+			{
+				const BuildingClassTypes eBuildingClass = static_cast<BuildingClassTypes>(iI);
+				const BuildingTypes eBuilding = static_cast<BuildingTypes>(pkInfo->getCivilizationBuildings(eBuildingClass));
+				if (eBuilding == NO_BUILDING)
+					continue;
+				CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+				if (pkBuildingInfo == NULL)
+					continue;
+				const int iIdeologyTriggerCount = pkBuildingInfo->GetXBuiltTriggersIdeologyChoice();
+				if (iIdeologyTriggerCount > 0)
+				{
+					if (m_pPlayer->getBuildingClassCount(eBuildingClass) >= iIdeologyTriggerCount)
+					{
+						return true;
+					}
+#ifdef LEKMOD_UNLOCK_IDEO_ALL_CITIES
+					else if (m_pPlayer->getNumCities() < iIdeologyTriggerCount)
+					{
+						if (m_pPlayer->getBuildingClassCount(eBuildingClass) >= m_pPlayer->getNumCities())
+						{
+							return true;
 						}
 					}
+#endif
 				}
 			}
 #endif

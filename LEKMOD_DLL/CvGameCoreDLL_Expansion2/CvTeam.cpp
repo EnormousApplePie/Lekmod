@@ -111,25 +111,13 @@ void CvTeam::init(TeamTypes eID)
 	//--------------------------------
 	// Init other game data
 #if defined(LEKMOD_LEGACY)
-	// Any Resources revealed at the start of the game should be revealed to the team
+	UpdateLegacyResourceRevealFromTechAndPolicy();
+
 	ResourceTypes eResource;
-	TechTypes eRevealTech;
 	TechTypes eTradeTech;
-	PolicyTypes eRevealPolicy;
 	for (int resource = 0; resource < GC.getNumResourceInfos(); ++resource)
 	{
 		eResource = static_cast<ResourceTypes>(resource);
-		eRevealTech = static_cast<TechTypes>(GC.getResourceInfo(eResource)->getTechReveal());
-		if (eRevealTech == NO_TECH || m_pTeamTechs->HasTech(eRevealTech))
-		{
-			m_abResourceRevealed[resource] = true;
-			// Techs have priority over policies, so only check the reveal policy if there is no reveal tech or if the team has the reveal tech
-			eRevealPolicy = static_cast<PolicyTypes>(GC.getResourceInfo(eResource)->getPolicyReveal());
-			if (eRevealPolicy == NO_POLICY || HavePolicyInTeam(eRevealPolicy))
-			{
-				m_abResourceRevealed[resource] = true;
-			}
-		}
 		eTradeTech = static_cast<TechTypes>(GC.getResourceInfo(eResource)->getTechCityTrade());
 		if (eTradeTech == NO_TECH || m_pTeamTechs->HasTech(eTradeTech))
 		{
@@ -3324,6 +3312,27 @@ void CvTeam::SetResourceTrade(ResourceTypes eResource, bool bTrade)
 		}
 	}
 }
+
+//	--------------------------------------------------------------------------------
+/// Recompute which resources are visible under LEKMOD_LEGACY (plot getResourceType uses team flags).
+/// Must enforce both TechReveal and PolicyReveal like vanilla — e.g. hidden antiquity sites need Aesthetics finisher.
+void CvTeam::UpdateLegacyResourceRevealFromTechAndPolicy()
+{
+	for (int i = 0; i < GC.getNumResourceInfos(); i++)
+	{
+		ResourceTypes eResource = static_cast<ResourceTypes>(i);
+		if (eResource == NO_RESOURCE)
+			continue;
+		CvResourceInfo* pkInfo = GC.getResourceInfo(eResource);
+		if (pkInfo == NULL)
+			continue;
+		const TechTypes eRevealTech = static_cast<TechTypes>(pkInfo->getTechReveal());
+		const PolicyTypes eRevealPolicy = static_cast<PolicyTypes>(pkInfo->getPolicyReveal());
+		const bool bTechOk = (eRevealTech == NO_TECH || m_pTeamTechs->HasTech(eRevealTech));
+		const bool bPolicyOk = (eRevealPolicy == NO_POLICY || HavePolicyInTeam(eRevealPolicy));
+		SetResourceRevealed(eResource, bTechOk && bPolicyOk);
+	}
+}
 #endif
 //	--------------------------------------------------------------------------------
 int CvTeam::getAllowEmbassyTradingAllowedCount() const
@@ -6007,6 +6016,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 				}
 			}
 #else
+			UpdateLegacyResourceRevealFromTechAndPolicy();
 			for (int resource = 0; resource < GC.getNumResourceInfos(); resource++)
 			{
 				ResourceTypes eResource = (ResourceTypes)resource;
@@ -6015,16 +6025,6 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 				CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
 				if (pResourceInfo == NULL)
 					continue;
-				const TechTypes eTechReveal = static_cast<TechTypes>(pResourceInfo->getTechReveal());
-				if (eTechReveal == eIndex)
-				{
-					SetResourceRevealed(eResource, bNewValue);
-				}
-				else if (eTechReveal == NO_TECH)
-				{
-					// If there's no reveal tech, the resource is always revealed
-					SetResourceRevealed(eResource, true);
-				}
 				if (pResourceInfo->getTechCityTrade() == eIndex)
 				{
 					SetResourceTrade(eResource, bNewValue);
