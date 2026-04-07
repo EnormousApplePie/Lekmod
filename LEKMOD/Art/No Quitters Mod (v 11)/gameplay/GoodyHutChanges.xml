@@ -1,58 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created by ModBuddy on 4/21/2015 11:42:59 PM -->
+<!-- Lekmod ruin overhaul -->
 <GameData>
-	
-	<!-- Merge Map + Barb ruin, and make them do a map 5 tiles radius from the ruin, with no empty spaces -->
+
+	<!-- === GOODY HUT UPDATES === -->
 	<GoodyHuts>
+
+		<!-- FOOD: era-scaled food to capital; unit gets Glutton (-10% str, lost on upgrade) -->
 		<Update>
-			<Set RevealNearbyBarbariansRange="5" MapOffset="1" MapRange="5" MapProb="100" />
-			<Where Type="GOODY_MAP" />
+			<Set FoodMin="0" FoodMax="0" IncreasePerPop="0" FoodEraScale="1" FreePromotion="PROMOTION_GLUTTON"/>
+			<Where Type="GOODY_FOOD"/>
 		</Update>
+
+		<!-- UPGRADE: available from turn 6; unit loses 15 HP -->
+		<Update>
+			<Set AfterTurn="6" UnitDamage="15"/>
+			<Where Type="GOODY_UPGRADE_UNIT"/>
+		</Update>
+
+		<!-- TECH/SCIENCE: era-scaled science + HP damage + XP; no longer grants free tech -->
+		<Update>
+			<Set ScienceEraRuin="1"/>
+			<Where Type="GOODY_TECH"/>
+		</Update>
+
+		<!-- MOBILITY: ancient era only; grant Mobility promotion instead of XP -->
+		<Update>
+			<Set Type="GOODY_MOBILITY" Experience="0" FreePromotion="PROMOTION_MOBILITY" BeforeEra="1"/>
+			<Where Type="GOODY_EXPERIENCE"/>
+		</Update>
+
+		<!-- MAP: slightly larger jagged reveal (75% per tile), +6 XP to unit -->
+		<Update>
+			<Set RevealNearbyBarbariansRange="5" MapOffset="1" MapRange="6" MapProb="75" Experience="6"/>
+			<Where Type="GOODY_MAP"/>
+		</Update>
+
+		<!-- CULTURE: era-scaled by turn; available from turn 6 -->
+		<Update>
+			<Set Culture="0" CultureEraTurn="1" AfterTurn="6"/>
+			<Where Type="GOODY_CULTURE"/>
+		</Update>
+
+		<!-- PANTHEON FAITH: flat 14 faith; only if 0 faith stockpile; available from turn 6 -->
+		<Update>
+			<Set Faith="14" FaithZeroOnly="1" AfterTurn="6"/>
+			<Where Type="GOODY_PANTHEON_FAITH"/>
+		</Update>
+
+		<!-- RANDOM FAITH: era-scaled faith (turn * 2 * era); heals unit to full; same conditions as before -->
+		<Update>
+			<Set FaithMin="0" FaithMax="0" FaithEraTurn="1" Healing="100"/>
+			<Where Type="GOODY_RANDOM_FAITH"/>
+		</Update>
+
+		<!-- GOLD: base 45 + rand(1-10)*5*era; if total >= 80, spawn era-appropriate barbarian -->
+		<Update>
+			<Set Gold="45" NumGoldRandRolls="0" GoldRandAmount="0" GoldEraFactor="5" EraBarbarianSpawn="1"/>
+			<Where Type="GOODY_GOLD"/>
+		</Update>
+
 	</GoodyHuts>
+
+	<!-- Remove standalone barb-reveal from handicap goody pool (merged into Map ruin) -->
 	<HandicapInfo_Goodies>
-		<Delete GoodyType="GOODY_REVEAL_NEARBY_BARBS" />
+		<Delete GoodyType="GOODY_REVEAL_NEARBY_BARBS"/>
 	</HandicapInfo_Goodies>
-	<Language_en_US>
-		<Delete Tag="TXT_KEY_GOODY_MAP" />
-		<Row Tag="TXT_KEY_GOODY_MAP">
-			<Text>You discover a crudely-drawn map which outlines nearby terrain and and evidence of recent barbarian activity!</Text>
+
+	<!-- === PROMOTION: GLUTTON (food ruin debuff) === -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_GLUTTON</Type>
+			<Description>TXT_KEY_PROMOTION_GLUTTON</Description>
+			<Help>TXT_KEY_PROMOTION_GLUTTON_HELP</Help>
+			<PortraitIndex>14</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<HotKeyPriority>0</HotKeyPriority>
+			<HotKeyPriorityAlt>0</HotKeyPriorityAlt>
+			<OrderPriority>0</OrderPriority>
+			<AltDown>false</AltDown>
+			<AltDownAlt>false</AltDownAlt>
+			<ShiftDown>false</ShiftDown>
+			<ShiftDownAlt>false</ShiftDownAlt>
+			<CtrlDown>false</CtrlDown>
+			<CtrlDownAlt>false</CtrlDownAlt>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<NotWithUpgrade>false</NotWithUpgrade>
+			<InstaHeal>false</InstaHeal>
+			<Leader>false</Leader>
+			<Blitz>false</Blitz>
+			<Amphib>false</Amphib>
+			<River>false</River>
+			<EnemyRoute>false</EnemyRoute>
+			<RivalTerritory>false</RivalTerritory>
+			<MustSetUpToRangedAttack>false</MustSetUpToRangedAttack>
+			<RangedSupportFire>false</RangedSupportFire>
+			<CanMoveAfterAttacking>false</CanMoveAfterAttacking>
+			<AlwaysHeal>false</AlwaysHeal>
+			<HealOutsideFriendly>false</HealOutsideFriendly>
+			<HillsDoubleMove>false</HillsDoubleMove>
+			<RoughTerrainEndsTurn>false</RoughTerrainEndsTurn>
+			<IgnoreTerrainCost>false</IgnoreTerrainCost>
+			<HoveringUnit>false</HoveringUnit>
+			<FlatMovementCost>false</FlatMovementCost>
+			<CanMoveImpassable>false</CanMoveImpassable>
+			<NoCapture>false</NoCapture>
+			<OnlyDefensive>false</OnlyDefensive>
+			<NoDefensiveBonus>false</NoDefensiveBonus>
+			<NukeImmune>false</NukeImmune>
+			<HiddenNationality>false</HiddenNationality>
+			<AlwaysHostile>false</AlwaysHostile>
+			<NoRevealMap>false</NoRevealMap>
+			<Recon>false</Recon>
+			<CanMoveAllTerrain>false</CanMoveAllTerrain>
+			<FreePillageMoves>false</FreePillageMoves>
+			<AirSweepCapable>false</AirSweepCapable>
+			<AllowsEmbarkation>false</AllowsEmbarkation>
+			<EmbarkedAllWater>false</EmbarkedAllWater>
+			<HealIfDestroyExcludesBarbarians>false</HealIfDestroyExcludesBarbarians>
+			<CombatPercent>-10</CombatPercent>
 		</Row>
-		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP" />
+	</UnitPromotions>
+
+	<!-- === LANGUAGE STRINGS === -->
+	<Language_en_US>
+
+		<!-- Map ruin -->
+		<Delete Tag="TXT_KEY_GOODY_MAP"/>
+		<Row Tag="TXT_KEY_GOODY_MAP">
+			<Text>You discover a crudely-drawn map which outlines nearby terrain and evidence of recent barbarian activity. Your scouts study it carefully, gaining experience.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP"/>
 		<Row Tag="TXT_KEY_GOODY_CHOOSE_MAP">
 			<Text>Study their maps of nearby territory and barbarians.</Text>
 		</Row>
-	</Language_en_US>
-	<Language_DE_DE>
-		<Delete Tag="TXT_KEY_GOODY_MAP" />
-		<Row Tag="TXT_KEY_GOODY_MAP">
-			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and and evidence of recent barbarian activity!</Text>
+
+		<!-- Culture ruin -->
+		<Delete Tag="TXT_KEY_GOODY_CULTURE"/>
+		<Row Tag="TXT_KEY_GOODY_CULTURE">
+			<Text>Your people are inspired by the ancient artifacts and customs found here, generating [ICON_CULTURE] Culture.</Text>
 		</Row>
-		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP" />
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_CULTURE"/>
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_CULTURE">
+			<Text>Absorb their cultural practices and traditions.</Text>
+		</Row>
+
+		<!-- Pantheon faith ruin -->
+		<Delete Tag="TXT_KEY_GOODY_FAITH"/>
+		<Row Tag="TXT_KEY_GOODY_FAITH">
+			<Text>You discover ancient relics that stir spiritual awe, generating [ICON_FAITH] Faith.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_FAITH"/>
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_FAITH">
+			<Text>Revere the spiritual relics of the ancients.</Text>
+		</Row>
+
+		<!-- Random faith ruin -->
+		<Delete Tag="TXT_KEY_LEKMOD_GOODY_FAITH"/>
+		<Row Tag="TXT_KEY_LEKMOD_GOODY_FAITH">
+			<Text>Your unit is filled with divine energy from the ancient site, healing fully and generating [ICON_FAITH] Faith scaled to the current era.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_LEKMOD_CHOOSE_GOODY_FAITH"/>
+		<Row Tag="TXT_KEY_LEKMOD_CHOOSE_GOODY_FAITH">
+			<Text>Draw upon the spiritual power of this ancient site.</Text>
+		</Row>
+
+		<!-- Food ruin -->
+		<Delete Tag="TXT_KEY_LEKMOD_GOODY_FOOD"/>
+		<Row Tag="TXT_KEY_LEKMOD_GOODY_FOOD">
+			<Text>Your unit discovers vast stores of ancient provisions, sending [ICON_FOOD] Food to your capital — but overindulging leaves them weakened.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_LEKMOD_CHOOSE_GOODY_FOOD"/>
+		<Row Tag="TXT_KEY_LEKMOD_CHOOSE_GOODY_FOOD">
+			<Text>Feast on the ancient food stores (weakens the unit).</Text>
+		</Row>
+
+		<!-- Glutton promotion -->
+		<Row Tag="TXT_KEY_PROMOTION_GLUTTON">
+			<Text>Glutton</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_GLUTTON_HELP">
+			<Text>This unit overindulged on ancient provisions. -10% [ICON_STRENGTH] Combat Strength. Lost on upgrade.</Text>
+		</Row>
+
+	</Language_en_US>
+
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_GOODY_MAP"/>
+		<Row Tag="TXT_KEY_GOODY_MAP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and evidence of recent barbarian activity. Your scouts study it carefully, gaining experience.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP"/>
 		<Row Tag="TXT_KEY_GOODY_CHOOSE_MAP">
 			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][NEWLINE]Study their maps of nearby territory and barbarians.</Text>
 		</Row>
 	</Language_DE_DE>
+
 	<Language_PL_PL>
-		<Delete Tag="TXT_KEY_GOODY_MAP" />
+		<Delete Tag="TXT_KEY_GOODY_MAP"/>
 		<Row Tag="TXT_KEY_GOODY_MAP">
-			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and and evidence of recent barbarian activity!</Text>
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and evidence of recent barbarian activity. Your scouts study it carefully, gaining experience.</Text>
 		</Row>
-		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP" />
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP"/>
 		<Row Tag="TXT_KEY_GOODY_CHOOSE_MAP">
 			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][NEWLINE]Study their maps of nearby territory and barbarians.</Text>
 		</Row>
 	</Language_PL_PL>
+
 	<Language_RU_RU>
-		<Delete Tag="TXT_KEY_GOODY_MAP" />
+		<Delete Tag="TXT_KEY_GOODY_MAP"/>
 		<Row Tag="TXT_KEY_GOODY_MAP">
-			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and and evidence of recent barbarian activity!</Text>
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and evidence of recent barbarian activity. Your scouts study it carefully, gaining experience.</Text>
 		</Row>
-		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP" />
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP"/>
 		<Row Tag="TXT_KEY_GOODY_CHOOSE_MAP">
 			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][NEWLINE]Study their maps of nearby territory and barbarians.</Text>
 		</Row>
 	</Language_RU_RU>
 
-	<!-- Culture Ruins delayed to turn 12 in DLL (ID: NQMP_1_GJS) -->
-	
 </GameData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Lekmod ruin overhaul: new columns for era-scaled and special goody effects -->
+	<Table name="GoodyHuts">
+		<Column name="BeforeEra" type="integer" default="0"/>
+		<Column name="UnitDamage" type="integer" default="0"/>
+		<Column name="GoldEraFactor" type="integer" default="0"/>
+		<Column name="EraBarbarianSpawn" type="boolean" default="0"/>
+		<Column name="ScienceEraRuin" type="boolean" default="0"/>
+		<Column name="CultureEraTurn" type="boolean" default="0"/>
+		<Column name="FaithEraTurn" type="boolean" default="0"/>
+		<Column name="FoodEraScale" type="boolean" default="0"/>
+		<Column name="FaithZeroOnly" type="boolean" default="0"/>
+	</Table>
+</GameData>

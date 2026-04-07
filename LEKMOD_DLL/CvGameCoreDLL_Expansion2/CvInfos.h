@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -1242,6 +1242,16 @@ public:
 	int getExcludeUnitClass() const;
 	int getCityStateInfluence() const;
 	bool isReligionFaith() const;
+	// Lekmod ruin overhaul
+	int getBeforeEra() const;
+	int getUnitDamage() const;
+	int getGoldEraFactor() const;
+	bool isEraBarbarianSpawn() const;
+	bool isScienceEraRuin() const;
+	bool isCultureEraTurn() const;
+	bool isFaithEraTurn() const;
+	bool isFoodEraScale() const;
+	bool isFaithZeroOnly() const;
 #endif
 
 	const char* getSound() const;
@@ -1293,6 +1303,16 @@ protected:
 	int m_iExcludeUnitClass;
 	int m_iCityStateInfluence;
 	bool m_bReligionFaith;
+	// Lekmod ruin overhaul
+	int m_iBeforeEra;
+	int m_iUnitDamage;
+	int m_iGoldEraFactor;
+	bool m_bEraBarbarianSpawn;
+	bool m_bScienceEraRuin;
+	bool m_bCultureEraTurn;
+	bool m_bFaithEraTurn;
+	bool m_bFoodEraScale;
+	bool m_bFaithZeroOnly;
 #endif
 
 	CvString m_strSound;

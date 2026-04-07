@@ -6848,7 +6848,39 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 			return false;
 		}
 	}
-	
+	// Era gate: only available before this era index (0=ancient, 1=classical, ...)
+	if(kGoodyInfo.getBeforeEra() > 0)
+	{
+		if((int)GetCurrentEra() >= kGoodyInfo.getBeforeEra())
+		{
+			return false;
+		}
+	}
+	// Faith zero: only available if player has no accumulated faith
+	if(kGoodyInfo.isFaithZeroOnly())
+	{
+		if(GetFaith() > 0)
+		{
+			return false;
+		}
+	}
+	// Science ruin: unit must be present and alive
+	if(kGoodyInfo.isScienceEraRuin())
+	{
+		if(pUnit == NULL)
+		{
+			return false;
+		}
+	}
+	// Food era scale: need a capital city
+	if(kGoodyInfo.isFoodEraScale())
+	{
+		if(getCapitalCity() == NULL)
+		{
+			return false;
+		}
+	}
+
 	// Set a few limits for the new rewards
 	if(kGoodyInfo.getFoodMin() > 0 || kGoodyInfo.getFoodMax() > 0)
 	{
@@ -7198,8 +7230,8 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		}
 	}
 
-	// Tech
-	if(kGoodyInfo.isTech())
+	// Tech (science era ruin bypasses the free-tech path entirely)
+	if(kGoodyInfo.isTech() && !kGoodyInfo.isScienceEraRuin())
 	{
 		bTechFound = false;
 
@@ -7672,6 +7704,135 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 
 	}
 
+	// Helper: era index (1=ancient, 2=classical, 3=medieval, ...)
+	const int iEra = (int)GetCurrentEra() + 1;
+
+	// Food era scale: 7 + floor(2 * era * 1.1 * capital_pop)
+	if(kGoodyInfo.isFoodEraScale() && pUnit != NULL)
+	{
+		CvCity* pCapital = getCapitalCity();
+		if(pCapital != NULL)
+		{
+			int iFood = 7 + (int)(2.0 * iEra * 1.1 * pCapital->getPopulation());
+			pCapital->changeFood(iFood);
+			// Grant Glutton promotion if a FreePromotion is set
+			if(kGoodyInfo.getFreePromotion() != NO_PROMOTION)
+			{
+				pUnit->setHasPromotion((PromotionTypes)kGoodyInfo.getFreePromotion(), true);
+			}
+			if(GetID() == GC.getGame().getActivePlayer())
+			{
+				strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iFood);
+				char text[256] = { 0 };
+				float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 3;
+				sprintf_s(text, "[COLOR_WHITE]+%d[ENDCOLOR][ICON_FOOD]", iFood);
+				GC.GetEngineUserInterface()->AddPopupText(pPlot->getX(), pPlot->getY(), text, fDelay);
+			}
+			TestMidTurnPopGrowth(pCapital, true);
+		}
+	}
+
+	// Culture era-turn: culture = turn * era
+	if(kGoodyInfo.isCultureEraTurn())
+	{
+		int iCultureAmount = GC.getGame().getElapsedGameTurns() * iEra;
+		if(iCultureAmount > 0)
+		{
+			changeJONSCulture(iCultureAmount);
+#ifdef AUI_PLAYER_FIX_RECEIVE_GOODY_MESSAGE
+			strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iCultureAmount);
+#endif
+		}
+	}
+
+	// Faith era-turn: faith = turn * 2 * era, heal unit to full
+	if(kGoodyInfo.isFaithEraTurn() && pUnit != NULL)
+	{
+		int iFaithAmount = GC.getGame().getElapsedGameTurns() * 2 * iEra;
+		if(iFaithAmount > 0)
+		{
+			ChangeFaith(iFaithAmount);
+			pUnit->changeDamage(-pUnit->getDamage()); // heal to full
+			if(GetID() == GC.getGame().getActivePlayer())
+			{
+				strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iFaithAmount);
+				char text[256] = { 0 };
+				float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 3;
+				sprintf_s(text, "[COLOR_WHITE]+%d[ENDCOLOR][ICON_PEACE]", iFaithAmount);
+				GC.GetEngineUserInterface()->AddPopupText(pPlot->getX(), pPlot->getY(), text, fDelay);
+			}
+		}
+	}
+
+	// Gold era factor: base gold already applied above; add rand(1..10) * factor * era
+	if(kGoodyInfo.getGoldEraFactor() > 0)
+	{
+		int iEraGold = (1 + GC.getGame().getJonRandNum(10, "Goody Gold Era Rand")) * kGoodyInfo.getGoldEraFactor() * iEra;
+		GetTreasury()->ChangeGold(iEraGold);
+		// Restate total gold in notification (base was set by the Gold block above)
+		int iTotalGold = kGoodyInfo.getGold() + iEraGold;
+		if(GetID() == GC.getGame().getActivePlayer())
+		{
+			strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iTotalGold);
+		}
+
+		// Era barb spawn when total gold >= 80
+		if(kGoodyInfo.isEraBarbarianSpawn() && iTotalGold >= 80)
+		{
+			UnitClassTypes eBarbClass = NO_UNITCLASS;
+			int iCurrentEra = (int)GetCurrentEra();
+			if(iCurrentEra == 0)      eBarbClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_WARRIOR", true);
+			else if(iCurrentEra == 1) eBarbClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SWORDSMAN", true);
+			else if(iCurrentEra == 2) eBarbClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_KNIGHT", true);
+			else if(iCurrentEra == 3) eBarbClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_LANCER", true);
+			else                      eBarbClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_GATLINGGUN", true);
+
+			if(eBarbClass != NO_UNITCLASS)
+			{
+				UnitTypes eBarbUnit = (UnitTypes)GET_PLAYER(BARBARIAN_PLAYER).getCivilizationInfo().getCivilizationUnits(eBarbClass);
+				if(eBarbUnit != NO_UNIT)
+				{
+					int iSpawnDir = GC.getGame().getJonRandNum(NUM_DIRECTION_TYPES, "Goody Gold Barb Spawn");
+					for(int iPass = 0; iPass < NUM_DIRECTION_TYPES; iPass++)
+					{
+						CvPlot* pSpawnPlot = plotDirection(pPlot->getX(), pPlot->getY(), (DirectionTypes)((iSpawnDir + iPass) % NUM_DIRECTION_TYPES));
+						if(pSpawnPlot && !pSpawnPlot->isImpassable() && !pSpawnPlot->isMountain() && !pSpawnPlot->getPlotCity() && pSpawnPlot->getNumUnits() == 0 && pSpawnPlot->getArea() == pPlot->getArea())
+						{
+							GET_PLAYER(BARBARIAN_PLAYER).initUnit(eBarbUnit, pSpawnPlot->getX(), pSpawnPlot->getY(), UNITAI_ATTACK);
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Science era ruin: X = rand(20..30) * era, capped at 90; unit loses X HP (min 1); unit gains X/2 XP
+	if(kGoodyInfo.isScienceEraRuin() && pUnit != NULL)
+	{
+		int iX = (20 + GC.getGame().getJonRandNum(11, "Goody Science Era Rand")) * iEra;
+		iX = std::min(iX, 90);
+		// Science yield
+		GET_TEAM(getTeam()).changeResearchProgress(GET_TEAM(getTeam()).GetCurrentResearch(), iX, GetID());
+		// HP damage (leave at least 1 HP)
+		int iDamage = std::min(iX, pUnit->GetMaxHitPoints() - pUnit->getDamage() - 1);
+		if(iDamage > 0) pUnit->changeDamage(iDamage);
+		// XP gain
+		int iXP = iX / 2;
+		pUnit->changeExperience(iXP);
+		pUnit->testPromotionReady();
+		if(GetID() == GC.getGame().getActivePlayer())
+		{
+			strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iX);
+		}
+	}
+
+	// Unit damage (fixed, e.g. upgrade ruin -15 HP, capped at 1 HP remaining)
+	if(kGoodyInfo.getUnitDamage() > 0 && pUnit != NULL)
+	{
+		int iDmg = std::min(kGoodyInfo.getUnitDamage(), pUnit->GetMaxHitPoints() - pUnit->getDamage() - 1);
+		if(iDmg > 0) pUnit->changeDamage(iDmg);
+	}
 
 #endif
 
@@ -8099,8 +8260,8 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		}
 	}
 
-	// Tech
-	if(kGoodyInfo.isTech())
+	// Tech (skipped if this is a science era ruin — that path is handled above)
+	if(kGoodyInfo.isTech() && !kGoodyInfo.isScienceEraRuin())
 	{
 		iBestValue = 0;
 		eBestTech = NO_TECH;
