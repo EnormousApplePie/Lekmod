@@ -30232,19 +30232,6 @@
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<!-- Goddess of Festivals, Sugar -->
-		<Row> 
-			<BeliefType>BELIEF_GOD_FESTIVALS</BeliefType> 
-			<ResourceType>RESOURCE_SUGAR</ResourceType> 
-			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_GOD_FESTIVALS</BeliefType> 
-			<ResourceType>RESOURCE_SUGAR</ResourceType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
 		<!-- Goddess of Festivals, Spices -->
 		<Row> 
 			<BeliefType>BELIEF_GOD_FESTIVALS</BeliefType> 
@@ -30610,6 +30597,12 @@
 		<Row> 
 			<BeliefType>BELIEF_WIND</BeliefType> 
 			<ResourceType>RESOURCE_COFFEE</ResourceType> 
+			<YieldType>YIELD_FAITH</YieldType> 
+			<Yield>2</Yield> 
+		</Row>
+		<Row> 
+			<BeliefType>BELIEF_WIND</BeliefType> 
+			<ResourceType>RESOURCE_SUGAR</ResourceType> 
 			<YieldType>YIELD_FAITH</YieldType> 
 			<Yield>2</Yield> 
 		</Row>
