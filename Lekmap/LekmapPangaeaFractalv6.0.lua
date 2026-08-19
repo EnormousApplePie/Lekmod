@@ -694,7 +694,15 @@ function GetMapScriptInfo()
 			-- DefaultValue = 2,
 			-- SortPriority = -99,
 			-- },
-
+			-- {
+			-- Name = "[COLOR:0:185:255:255]Spawn Validation (Req. Isolation Fix)[ENDCOLOR]", -- (49)
+			-- Values = {
+			-- 	"Off - Old Default",
+			-- 	"[COLOR:0:185:255:255]On - Turn off If < 6 Players[COLOR:0:185:255:255]",
+			-- },
+			-- DefaultValue = 2,
+			-- SortPriority = -99,
+			-- },
 			{
 				Name = "Mountain Reduction", -- (20)
 				Values = {
@@ -721,15 +729,6 @@ function GetMapScriptInfo()
 				},
 				DefaultValue = 2,
 				SortPriority = -99,
-			},
-			{
-			Name = "Spawn Validation", -- (22)
-			Values = {
-				"Off - Old Default",
-				"On - Turn off If Not 6 Player FFA",
-			},
-			DefaultValue = 2,
-			SortPriority = -99,
 			},
 		},
 	};
@@ -10148,8 +10147,8 @@ function GenerateMap()
 
 	-- beta_tectonic_mounts = Map.GetCustomOption(45);
 	beta_tectonic_mounts = 2
-	beta_spawn_validation = Map.GetCustomOption(22);
-	-- beta_spawn_validation = 2
+	-- beta_spawn_validation = Map.GetCustomOption(49);
+	beta_spawn_validation = 2
 
 	-- beta_lake_fish = Map.GetCustomOption(37)
 	beta_lake_fish = 1
