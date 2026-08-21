@@ -22,7 +22,7 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap v6.0",
+		Name = "Lekmap v6.1",
 		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Pangaea - Fractal with Beta options by Jacobian",
 		IsAdvancedMap = false,
 		IconIndex = 0,
@@ -708,26 +708,47 @@ function GetMapScriptInfo()
 				Values = {
 					"0% - Old Default",
 					"5%",
-					"10%",
-					"15% - Default",
+					"10% - Default",
+					"15%",
 					"20%",
 					"30%",
 				},
-				DefaultValue = 4,
+				DefaultValue = 3,
 				SortPriority = -99,
 			},
 			{
 				Name = "Independent Hill Reduction", -- (21)
 				Values = {
 					"0% - Old Default",
-					"5% - Default",
+					"5%",
 					"10%",
 					"20%",
 					"30%",
 					"40%",
 					"50%",
 				},
-				DefaultValue = 2,
+				DefaultValue = 1,
+				SortPriority = -99,
+			},
+			{
+			Name = "Isolation Fix", -- (22)
+			Values = {
+				"5.0 Cutoff (Low Remake Chance)",
+				"7.0 Cutoff (Medium Remake Chance)",
+				"9.0 Cutoff (High Remake Chance)",
+			},
+			DefaultValue = 2,
+			SortPriority = -99,
+			},
+			{
+				Name = "Non-Coastal-CS Deadband", -- (23)
+				Values = {
+					"Off - Old Default",
+					"2 Hex",
+					"3 Hex - Current Default",
+					"4 Hex",
+				},
+				DefaultValue = 3,
 				SortPriority = -99,
 			},
 		},
@@ -1306,7 +1327,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 
 		-- increase water to account for peninsulas
 		if beta_tectonic_mounts == 2 then
-			water_percent = water_percent+4
+			water_percent = water_percent+3
 		end
 		
 		-- Set values for hills and mountains according to World Age chosen by user.
@@ -1612,7 +1633,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 					for i, dumby in pairs(blob) do
 						adj_is = adj_is_cache[i]
 						for loop2, adj_i in ipairs(adj_is) do
-							if BETA_TECTONIC_LANDS[adj_i] == 0 or BETA_TECTONIC_LANDS[adj_i] == 3 then
+							if BETA_TECTONIC_LANDS[adj_i] == 0 then
 								blob_islands[loop] = false
 								blob_connectors[i] = true
 								-- BETA_TECTONIC_LANDS[i] = 2
@@ -3873,6 +3894,16 @@ function AssignStartingPlots:ChooseLocations(args)
 
 						if plot:GetArea() ~= iBiggestAreaID then
 							plotMult = 0.0
+						end
+
+						if beta_inland_prox_penalty == 2 and (isCoastal ~= true) then
+							local coast_prox = GetCoastDistance(x, y)
+							if coast_prox < 3 then
+								plotMult = 0.0
+							else
+								local coast_penalty = (1.0/(1+(math.exp(-(coast_prox-3)*1.5))));
+								plotMult = plotMult*coast_penalty
+							end
 						end
 						
 						if plotMult <= 0.0 then
@@ -6319,7 +6350,7 @@ function CalculateFlows(test_plots, pulse_depth, use_CS, CS_plots, CS_mult, impa
 							mountain_base_cache[i] = mountain_base_cache[i]+20.0*impass_mult
 							mountain_base_cache_coast[i] = mountain_base_cache_coast[i]+2.0
 						else -- coastal plot
-							mountain_base_cache[i] = mountain_base_cache[i]+3.0
+							mountain_base_cache[i] = mountain_base_cache[i]+2.0
 						end
 					end
 					if plot_type_cache[adj_i] == PlotTypes.PLOT_MOUNTAIN then
@@ -6673,8 +6704,8 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 		end
 
 	local accept_map = false
-	-- local beta_isolation_rejection = Map.GetCustomOption(40)
-	local beta_isolation_rejection = 4
+	local beta_isolation_rejection = Map.GetCustomOption(22) + 2
+	-- local beta_isolation_rejection = 4
 	
 	-- self.iNumCivs, self.iNumCityStates, self.player_ID_list, self.bTeamGame, self.teams_with_major_civs, self.number_civs_per_team = GetPlayerAndTeamInfo()
 	if beta_isolation_rejection == 1 or beta_isolation_rejection == 2 then
@@ -6812,6 +6843,9 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 		local min_dist = 99
 		if beta_min_distance ~= 1 then
 			min_dist = 5+beta_min_distance
+		end
+		if self.iNumCivs ~= 6 then
+			min_dist = 99
 		end
 		local min_acceptable = true
 		
@@ -6990,7 +7024,7 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 		end
 
 		local spawn_validity = true
-		if beta_spawn_validation == 2 then
+		if beta_spawn_validation == 2 and self.iNumCivs == 6 then
 			for player_index, pPlot in ipairs(player_plots) do
 				local needs_coast = player_coastal_bias[player_index]
 				if pPlot:IsCoastalLand(50) ~= needs_coast then
@@ -10136,8 +10170,8 @@ function GenerateMap()
 	ripple_decider = Map.GetCustomOption(6);
 	-- beta_cliffs = Map.GetCustomOption(27);
 	beta_cliffs = 2
-	-- beta_coast_zone = Map.GetCustomOption(36);
-	beta_coast_zone = 4
+	beta_coast_zone = Map.GetCustomOption(23);
+	-- beta_coast_zone = 4
 	-- beta_coastal_deadzone = Map.GetCustomOption(24);
 	beta_coastal_deadzone = 4
 	-- beta_more_coal = Map.GetCustomOption(42);
@@ -10152,6 +10186,9 @@ function GenerateMap()
 
 	-- beta_lake_fish = Map.GetCustomOption(37)
 	beta_lake_fish = 1
+
+
+	beta_inland_prox_penalty = 2
 
 	iW, iH = Map.GetGridSize();
 
@@ -10220,4 +10257,86 @@ function FeatureGenerator:AddIceAtPlot(plot, iX, iY, lat)
 			end
 		end
 	end
+end
+
+function AddRivers()
+	local riverSourceRangeDefault = 1.5;
+	local seaWaterRangeDefault = 0.75;
+	local plotsPerRiverEdge =  9;
+	local riverRnd = 210;
+	
+	if beta_tectonic_mounts == 2 then
+		riverSourceRangeDefault = 1.48;
+		seaWaterRangeDefault = 0.75;
+		plotsPerRiverEdge =  9;
+		riverRnd = 212;
+	end
+
+	local rivers_level = Map.GetCustomOption(9)
+
+	if rivers_level == 1 then
+		riverSourceRangeDefault = 3;
+		seaWaterRangeDefault = 2;
+		plotsPerRiverEdge =  12;
+		riverRnd = 180;
+	elseif rivers_level	== 3 then
+		riverSourceRangeDefault = 1;
+		seaWaterRangeDefault = 0.5;
+		plotsPerRiverEdge =  8;
+		riverRnd = 230;
+	end
+
+	print("Map Generation - Adding Rivers");
+	
+	local passConditions = {
+		function(plot)
+			return (plot:IsHills() or plot:IsMountain());
+		end,
+		
+		function(plot)
+			return (not plot:IsCoastalLand()) and (Map.Rand(8, "MapGenerator AddRivers") == 0);
+		end,
+		
+		function(plot)
+			local area = plot:Area();
+			return (plot:IsHills() or plot:IsMountain()) and (area:GetNumRiverEdges() <	((area:GetNumTiles() / plotsPerRiverEdge) + 1));
+		end,
+		
+		function(plot)
+			local area = plot:Area();
+			return (area:GetNumRiverEdges() < (area:GetNumTiles() / plotsPerRiverEdge) + 1);
+		end
+	}
+	
+	for iPass, passCondition in ipairs(passConditions) do
+					
+		if (iPass <= 2) then
+			riverSourceRange = riverSourceRangeDefault;
+			seaWaterRange = seaWaterRangeDefault;
+		else
+			riverSourceRange = (riverSourceRangeDefault / 2);
+			seaWaterRange = (seaWaterRangeDefault / 2);
+		end
+			
+		local iW, iH = Map.GetGridSize();
+
+		for i = 0, (iW * iH) - 1, 1 do
+			plot = Map.GetPlotByIndex(i);
+			if(not plot:IsWater()) then
+				if(passCondition(plot)) then -- and plot:IsNaturalWonder() == false and AdjacentToNaturalWonder(plot) == false) then
+					if (not Map.FindWater(plot, riverSourceRange, true)) then
+						if (not Map.FindWater(plot, seaWaterRange, false)) then
+							local inlandCorner = plot:GetInlandCorner();
+							if(inlandCorner) then -- and plot:IsNaturalWonder() == false and AdjacentToNaturalWonder(plot) == false) then
+								local riverChance = Map.Rand(riverRnd, "MapGenerator AddRivers");
+								if riverChance > 178 then
+									DoRiver(inlandCorner);
+								end
+							end
+						end
+					end
+				end			
+			end
+		end
+	end		
 end
