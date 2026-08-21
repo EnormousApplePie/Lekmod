@@ -104,8 +104,8 @@ function GetMapScriptInfo()
 				Name = "Start Distance",	-- 6 start distance
 				Values = {
 					"Close",
-					"Normal - Old Default",
-					"Far",
+					"Normal",
+					"Far - Default",
 				},
 				DefaultValue = 3,
 				SortPriority = -94,
@@ -371,7 +371,7 @@ function GetMapScriptInfo()
 				Name = "No Flat Desert Luxes", -- (18)
 				Values = {
 					"Off - Old Default",
-					"On",
+					"On - Default",
 				},
 				DefaultValue = 2,
 				SortPriority = -99,
@@ -734,7 +734,7 @@ function GetMapScriptInfo()
 			Name = "Isolation Fix", -- (22)
 			Values = {
 				"5.0 Cutoff (Low Remake Chance)",
-				"7.0 Cutoff (Medium Remake Chance)",
+				"7.0 Cutoff (Medium Remake Chance) - Default",
 				"9.0 Cutoff (High Remake Chance)",
 			},
 			DefaultValue = 2,
@@ -745,10 +745,19 @@ function GetMapScriptInfo()
 				Values = {
 					"Off - Old Default",
 					"2 Hex",
-					"3 Hex - Current Default",
+					"3 Hex - Default",
 					"4 Hex",
 				},
 				DefaultValue = 3,
+				SortPriority = -99,
+			},
+			{
+				Name = "Sea Side Cliffs", -- (24) -- adjust
+				Values = {
+					"Off - Old Default",
+					"On - Default",
+				},
+				DefaultValue = 2,
 				SortPriority = -99,
 			},
 		},
@@ -6731,7 +6740,7 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 			end
 		end
 
-		local land_graph, total_flow_graph = CalculateFlows(player_plots, 24, true, cs_plots, 2, 1.0)
+		local land_graph, total_flow_graph = CalculateFlows(player_plots, 24, true, cs_plots, 2, 2.0)
 		local land_graph_territory, total_flow_graph_territory = CalculateFlows(player_plots, 36, true, cs_plots, 8, 0.5)
 		-- local back_flow_plots = {}
 		-- for y = 0, iH - 1 do
@@ -10168,8 +10177,8 @@ function GenerateMap()
 	-- beta_bay_diffusion =  Map.GetCustomOption(22);
 	beta_bay_diffusion =  2
 	ripple_decider = Map.GetCustomOption(6);
-	-- beta_cliffs = Map.GetCustomOption(27);
-	beta_cliffs = 2
+	beta_cliffs = Map.GetCustomOption(24);
+	-- beta_cliffs = 2
 	beta_coast_zone = Map.GetCustomOption(23);
 	-- beta_coast_zone = 4
 	-- beta_coastal_deadzone = Map.GetCustomOption(24);
