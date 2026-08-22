@@ -1310,6 +1310,9 @@ public:
 #endif
 	int GetUnimprovedFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield) const;
 	const std::vector<FreeResourceCities>& GetFreeResourceCities() const { return m_vFreeResourceCities; }
+	// Second element of each pair is a plot index (CvPlot::GetPlotIndex), not an Area ID -- Area IDs are
+	// reassigned by CvMap::recalculateAreas() (e.g. IGE/WorldBuilder edits), so callers must resolve the
+	// stored plot to its current Area ID via GC.getMap().plotByIndex(...)->getArea() before comparing.
 	std::vector<std::pair<int, int> >& GetUsedGroupAreas() { return m_vUsedGroupAreas; }
 	std::vector<std::pair<int, int> >& GetGroupPriority() { return m_vGroupPriority; }
 #if defined(LEKMOD_FREE_RESOURCE_CITY_GRANT)

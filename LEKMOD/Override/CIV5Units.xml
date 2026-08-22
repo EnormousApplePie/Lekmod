@@ -1670,7 +1670,7 @@
 		<Column name="YieldTimes100" type="integer" notnull="true" />
 		<Column name="CityStateOnly" type="boolean" default="false" />
 	</Table> 
-	<!-- if CityStateOnly is true, then TradeConnectionType can be left alone as INTERNATIONAL is assumed -->
+	<!-- if CityStateOnly is true, then TradeConnectionType can be left alone as INTERNATIONAL is assumed, it doesnt play well with the Tooltip if you leave it out though. -->
 	<Policy_TradeRouteYieldChanges>
 		<Delete />
 		<Row>
@@ -2013,7 +2013,7 @@
 		</Row>
 		<Row>
 			<TradeConnectionType>TRADE_CONNECTION_PRODUCTION</TradeConnectionType>
-			<EraType>ERA_MODERN</EraType>
+			<EraType>ERA_FUTURE</EraType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<DestinationBonus>350</DestinationBonus>
 		</Row>
@@ -185032,7 +185032,6 @@
 			<GridX>0</GridX>
 			<GridY>0</GridY>
 			<Level>3</Level>
-			<InternalTradeRouteYieldModifier>200</InternalTradeRouteYieldModifier>
 			<PortraitIndex>11</PortraitIndex>
 			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas>
 			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved>
@@ -204813,11 +204812,11 @@
 			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType> 
 			<MovesChange>2</MovesChange> 
 		</Row>
-		<Row> 
-			<TraitType>TRAIT_OCEAN_MOVEMENT</TraitType> 
-			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType> 
-			<MovesChange>2</MovesChange> 
-		</Row
+		<Row>
+			<TraitType>TRAIT_OCEAN_MOVEMENT</TraitType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
+			<MovesChange>2</MovesChange>
+		</Row>
 	</Trait_MovesChangeUnitCombats> 
 
 	<Table name="Trait_NoTrain">

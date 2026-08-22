@@ -7180,7 +7180,10 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 
 						for (size_t iUsed = 0; iUsed < vUsedGroupAreas.size(); ++iUsed)
 						{
-							if (vUsedGroupAreas[iUsed].first == kRule.m_iGroup && vUsedGroupAreas[iUsed].second == iArea)
+							if (vUsedGroupAreas[iUsed].first != kRule.m_iGroup)
+								continue;
+							CvPlot* pStoredPlot = GC.getMap().plotByIndex(vUsedGroupAreas[iUsed].second);
+							if (pStoredPlot && pStoredPlot->getArea() == iArea)
 							{
 								bAlreadyUsedArea = true;
 								break;
@@ -7291,8 +7294,10 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 
 						for (size_t iUsed = 0; iUsed < vUsedGroupAreas.size(); ++iUsed)
 						{
-							if (vUsedGroupAreas[iUsed].first == pRule->m_iGroup &&
-								vUsedGroupAreas[iUsed].second == iArea)
+							if (vUsedGroupAreas[iUsed].first != pRule->m_iGroup)
+								continue;
+							CvPlot* pStoredPlot = GC.getMap().plotByIndex(vUsedGroupAreas[iUsed].second);
+							if (pStoredPlot && pStoredPlot->getArea() == iArea)
 							{
 								bAlreadyStored = true;
 								break;
@@ -7301,7 +7306,7 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 
 						if (!bAlreadyStored)
 						{
-							vUsedGroupAreas.push_back(std::make_pair(pRule->m_iGroup, iArea));
+							vUsedGroupAreas.push_back(std::make_pair(pRule->m_iGroup, (int)pCityPlot->GetPlotIndex()));
 						}
 					}
 				}

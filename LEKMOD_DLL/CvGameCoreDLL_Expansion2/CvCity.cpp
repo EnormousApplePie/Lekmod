@@ -589,14 +589,17 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 					bool bAlreadyStored = false;
 					for (size_t iUsed = 0; iUsed < usedGroupAreas.size(); ++iUsed)
 					{
-						if (usedGroupAreas[iUsed].first == kRule.m_iGroup && usedGroupAreas[iUsed].second == plot()->getArea())
+						if (usedGroupAreas[iUsed].first != kRule.m_iGroup)
+							continue;
+						CvPlot* pStoredPlot = GC.getMap().plotByIndex(usedGroupAreas[iUsed].second);
+						if (pStoredPlot && pStoredPlot->getArea() == plot()->getArea())
 						{
 							bAlreadyStored = true;
 							break;
 						}
 					}
 					if (!bAlreadyStored)
-						usedGroupAreas.push_back(std::make_pair(kRule.m_iGroup, plot()->getArea()));
+						usedGroupAreas.push_back(std::make_pair(kRule.m_iGroup, (int)plot()->GetPlotIndex()));
 				}
 
 				bool bFoundPriority = false;
@@ -643,7 +646,10 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 				const std::vector<std::pair<int, int> >& areaPair = trait->GetUsedGroupAreas();
 				for (size_t iUsed = 0; iUsed < areaPair.size(); ++iUsed)
 				{
-					if (areaPair[iUsed].first == kRule.m_iGroup && areaPair[iUsed].second == plot()->getArea())
+					if (areaPair[iUsed].first != kRule.m_iGroup)
+						continue;
+					CvPlot* pStoredPlot = GC.getMap().plotByIndex(areaPair[iUsed].second);
+					if (pStoredPlot && pStoredPlot->getArea() == plot()->getArea())
 					{
 						bAlreadyUsedArea = true;
 						break;
@@ -763,7 +769,10 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 				for (size_t iUsed = 0; iUsed < areaPair.size(); ++iUsed)
 				{
-					if (areaPair[iUsed].first == pRule->m_iGroup && areaPair[iUsed].second == plot()->getArea())
+					if (areaPair[iUsed].first != pRule->m_iGroup)
+						continue;
+					CvPlot* pStoredPlot = GC.getMap().plotByIndex(areaPair[iUsed].second);
+					if (pStoredPlot && pStoredPlot->getArea() == plot()->getArea())
 					{
 						bAlreadyStored = true;
 						break;
@@ -772,7 +781,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 				if (!bAlreadyStored)
 				{
-					areaPair.push_back(std::make_pair(pRule->m_iGroup, plot()->getArea()));
+					areaPair.push_back(std::make_pair(pRule->m_iGroup, (int)plot()->GetPlotIndex()));
 				}
 			}
 		}

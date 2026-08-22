@@ -59,6 +59,7 @@ local function BuildSingleSide(pPlayer, pOriginCity, pTargetCity, eConnectionTyp
 	local resourceSources = {}
 	local potentialPolicies = {}
 	local potentialBeliefs = {}
+	local potentialPolicyModifiers = {}
 
 	local originBeliefs = {}
 	local destBeliefs = {}
@@ -326,6 +327,26 @@ local function BuildSingleSide(pPlayer, pOriginCity, pTargetCity, eConnectionTyp
 				domainModifierText = string.format("%s %+d%%%s (%+g%s)", domainModifierText, domainModifier, yieldIcon, bonus, yieldIcon)
 				hasModifiers = true
 			end
+
+			for row in GameInfo.Policy_TradeRouteYieldModifiers(thisConnectionDomainYield) do
+				local policyInfo = GameInfo.Policies[row.PolicyType]
+
+				if policyInfo and not pPlayer:HasPolicy(policyInfo.ID) then
+					local modifier = tonumber(row.YieldModifier) or 0
+
+					if modifier ~= 0 then
+						local bonus = sumValue * modifier / 100
+						local entry = potentialPolicyModifiers[policyInfo.ID]
+
+						if not entry then
+							entry = { PolicyInfo = policyInfo, Text = "" }
+							potentialPolicyModifiers[policyInfo.ID] = entry
+						end
+
+						entry.Text = string.format("%s %+d%%%s (%+g%s)", entry.Text, modifier, yieldIcon, bonus, yieldIcon)
+					end
+				end
+			end
 		end
 
 		local totalValue = (pPlayer:GetTradeConnectionTotalValue(pOriginCity, pTargetCity, eConnectionType, bAsOrigin, yieldID, eDomain, true) or 0) / 100
@@ -438,14 +459,20 @@ local function BuildSingleSide(pPlayer, pOriginCity, pTargetCity, eConnectionTyp
 		end
 	end
 
-	if hasModifiers then
-		lines[#lines + 1] = "Sum:" .. (sumText ~= "" and sumText or " 0")
+	if hasModifiers or next(potentialPolicyModifiers) then
+		if sumText ~= baseText then
+			lines[#lines + 1] = "Sum:" .. (sumText ~= "" and sumText or " 0")
+		end
 		lines[#lines + 1] = "[MODIFIERS]"
 
-		if policyModifierText ~= "" then lines[#lines + 1] = "  Policies:" .. policyModifierText end
-		if traitModifierText ~= "" then lines[#lines + 1] = "  Traits:" .. traitModifierText end
-		if riverModifierText ~= "" then lines[#lines + 1] = "  River:" .. riverModifierText end
-		if domainModifierText ~= "" then lines[#lines + 1] = "  Domain:" .. domainModifierText end
+		if policyModifierText ~= "" then lines[#lines + 1] = " [ICON_BULLET][COLOR_POSITIVE_TEXT]Policies[ENDCOLOR]:" .. policyModifierText end
+		if traitModifierText ~= "" then lines[#lines + 1] = " [ICON_BULLET][COLOR_POSITIVE_TEXT]Traits[ENDCOLOR]:" .. traitModifierText end
+		if riverModifierText ~= "" then lines[#lines + 1] = " [ICON_BULLET][COLOR_POSITIVE_TEXT]River[ENDCOLOR]:" .. riverModifierText end
+		if domainModifierText ~= "" then lines[#lines + 1] = " [ICON_BULLET][COLOR_POSITIVE_TEXT]Domain[ENDCOLOR]:" .. domainModifierText end
+
+		for _, entry in pairs(potentialPolicyModifiers) do
+			lines[#lines + 1] = "  [ICON_BULLET][COLOR_YELLOW]" .. Locale.Lookup(entry.PolicyInfo.Description) .. "[ENDCOLOR]:" .. entry.Text
+		end
 	end
 
 	if totalText ~= "" or sumText ~= "" then
