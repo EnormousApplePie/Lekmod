@@ -2861,7 +2861,7 @@ function AssignStartingPlots:PlaceImpactAndRipples(x, y)
 	self:PlaceResourceImpact(x, y, 2, 3) -- Luxury layer, set all plots within this civ start as off limits.
 	self:PlaceResourceImpact(x, y, 3, 3) -- Bonus layer
 	self:PlaceResourceImpact(x, y, 4, 3) -- Fish layer
-	if plot:IsCoastalLand() then
+	if plot:IsCoastalLand(50) then
 		if self._lek_collide_coastals then
 			self:PlaceResourceImpactCoastalMod(x, y, 5, 3, 4) -- MOD: SAPHT 10 range city state coastal
 		else
@@ -9348,30 +9348,32 @@ function AssignStartingPlots:PlaceResourceImpactCoastalMod(x, y, impact_table_nu
 					-- Identify the next plot in the ring.
 					nextX = currentX + plot_adjustments[1];
 					nextY = currentY + plot_adjustments[2];
-					local plot = Map.GetPlot(nextX, nextY);
-					if plot:IsCoastalLand() then
+					
 						-- Make sure the plot exists
-						if wrapX == false and (nextX < 0 or nextX >= iW) then -- X is out of bounds.
-							-- Do not add ripple data to this plot.
-						elseif wrapY == false and (nextY < 0 or nextY >= iH) then -- Y is out of bounds.
-							-- Do not add ripple data to this plot.
-						else -- Plot is in bounds, process it.
-							-- Handle any world wrap.
-							local realX = nextX;
-							local realY = nextY;
-							if wrapX then
-								realX = realX % iW;
-							end
-							if wrapY then
-								realY = realY % iH;
-							end
-							-- Record ripple data for this plot.
-							local ringPlotIndex = realY * iW + realX + 1;
+					if wrapX == false and (nextX < 0 or nextX >= iW) then -- X is out of bounds.
+						-- Do not add ripple data to this plot.
+					elseif wrapY == false and (nextY < 0 or nextY >= iH) then -- Y is out of bounds.
+						-- Do not add ripple data to this plot.
+					else -- Plot is in bounds, process it.
+						-- Handle any world wrap.
+						local realX = nextX;
+						local realY = nextY;
+						if wrapX then
+							realX = realX % iW;
+						end
+						if wrapY then
+							realY = realY % iH;
+						end
+						-- Record ripple data for this plot.
+						local ringPlotIndex = realY * iW + realX + 1;
+
+						local plot = Map.GetPlot(realX, realY);
+						if plot:IsCoastalLand(50) then
 
 							self.cityStateData[ringPlotIndex] = 1;
 							-- 
 							-- This is the only call that is proper to this modded function
-							self:ExpandCoastalRing(nextX, nextY, 3)
+							self:ExpandCoastalRing(realX, realY, 3)
 						end
 					end
 					currentX, currentY = nextX, nextY;
@@ -13539,6 +13541,7 @@ function AssignStartingPlots:FixResourceGraphics()
 			local plot = Map.GetPlot(x, y)
 			local res_ID = plot:GetResourceType(-1)
 			local featureType = plot:GetFeatureType()
+			local terrainType = plot:GetTerrainType()
 			
 			-- Mined/Quarried Resources
 			if res_ID == self.marble_ID or 
