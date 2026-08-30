@@ -1600,22 +1600,34 @@ g_toolTipHandler.SciencePerTurn = function()-- control )
 		tips:insert( g_scienceTextColor )
 		tips:insert( S( "%+g", sciencePerTurnTimes100 / 100 ) .. "[ENDCOLOR] " .. L"TXT_KEY_REPLAY_DATA_SCIENCEPERTURN" )
 
-		-- Science LOSS from Budget Deficits
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_BUDGET_DEFICIT", g_activePlayer:GetScienceFromBudgetDeficitTimes100() / 100 )
+		-- Standardized science breakdown (must sum to sciencePerTurnTimes100 = GetYieldTimes100(YIELD_SCIENCE))
+		local scienceID     = YieldTypes.YIELD_SCIENCE
+		local scienceInfo   = GameInfo.Yields[scienceID]
+		local citiesNoTrade = g_activePlayer:GetYieldFromCitiesTimes100(scienceID, true)
+		local cities        = g_activePlayer:GetYieldFromCitiesTimes100(scienceID, false)
+		local researchAgr   = g_activePlayer:GetYieldFromOtherPlayersTimes100(scienceID)
+		local happiness     = g_activePlayer:GetYieldFromHappinessTimes100(scienceID)
+		local traits        = g_activePlayer:GetYieldFromTraitsTimes100(scienceID)
+		local misc          = g_activePlayer:GetYieldPerTurnFromMisc(scienceID) * 100
+		local religion      = g_activePlayer:GetYieldFromReligionTimes100(scienceID, g_activePlayer:GetYieldTimes100(scienceID, true))
+		local penalties     = g_activePlayer:GetYieldPenaltiesTimes100(scienceID) -- budget deficit, negative
+		local minors        = g_activePlayer:GetYieldFromMinorCivsTimes100(scienceID) -- Scholasticism
 
-		-- Science from Cities
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_CITIES", g_activePlayer:GetScienceFromCitiesTimes100(true) / 100 )
-
-		-- Science from Trade Routes
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_ITR", ( g_activePlayer:GetScienceFromCitiesTimes100(false) - g_activePlayer:GetScienceFromCitiesTimes100(true) ) / 100 )
-
-		-- Science from Other Players
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_MINORS", g_activePlayer:GetScienceFromOtherPlayersTimes100() / 100 )
+		local scienceIcon = YieldIcons[scienceID]
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_BUDGET_DEFICIT", penalties / 100, scienceIcon )
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_CITIES", citiesNoTrade / 100, scienceIcon )
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_TRADE_ROUTES", ( cities - citiesNoTrade ) / 100, scienceIcon )
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_HAPPINESS", happiness / 100, scienceIcon )
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_TRAITS", traits / 100, scienceIcon )
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_RELIGION", religion / 100, scienceIcon )
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_UNCATEGORIZED", misc / 100, scienceIcon )
+		if g_activePlayer:GetGoldenAgeTurns() > 0 then
+			local base = cities + researchAgr + happiness + traits + misc + religion
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_GOLDEN_AGE", ( base * scienceInfo.PlayerGoldenAgeYieldMod ) / 10000, scienceIcon )
+		end
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_MINORS", minors / 100, scienceIcon )
 
 		if civ5_mode then
-			-- Science from Happiness
-			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_HAPPINESS", g_activePlayer:GetScienceFromHappinessTimes100() / 100 )
-
 			-- Science from Vassals / Compatibility with Putmalk's Civ IV Diplomacy Features Mod
 			if g_activePlayer.GetScienceFromVassalTimes100 then
 				tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_VASSALS", g_activePlayer:GetScienceFromVassalTimes100() / 100 )
@@ -1628,7 +1640,7 @@ g_toolTipHandler.SciencePerTurn = function()-- control )
 			end
 
 			-- Science from Research Agreements
-			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_SCIENCE_FROM_RESEARCH_AGREEMENTS", g_activePlayer:GetScienceFromResearchAgreementsTimes100() / 100 )
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_RESEARCH_AGREEMENTS", researchAgr / 100, YieldIcons[YieldTypes.YIELD_SCIENCE] )
 
 			-- Show Research Agreements
 
@@ -2718,6 +2730,7 @@ g_toolTipHandler.CultureString = function()-- control )
 		local otherPlayers 	= g_activePlayer:GetYieldFromOtherPlayersTimes100(cultureID); -- total culture from other players, currently not a thing ?v35
 		local happiness 	= g_activePlayer:GetYieldFromHappinessTimes100(cultureID); -- total culture from excess happiness, for culture this is expressed as a % of excess happiness as a yield
 		local traits 		= g_activePlayer:GetYieldFromTraitsTimes100(cultureID); -- total culture from leader traits
+		local misc 			= g_activePlayer:GetYieldPerTurnFromMisc(cultureID) * 100; -- flat player-level yield (free culture per turn, etc.)
 		local religion 		= g_activePlayer:GetYieldFromReligionTimes100(cultureID, g_activePlayer:GetYieldTimes100(cultureID, true)); -- total culture from religion, the 2nd parameter is for the previous total yield as there is a GoldenAge like mod baked into the function.
 		local penalties 	= g_activePlayer:GetYieldPenaltiesTimes100(cultureID); -- total culture lost from penalties, only used for science atm and generally expected to be negative
 		local minors 		= g_activePlayer:GetYieldFromMinorCivsTimes100(cultureID); -- total culture earned from CS friends and allies
@@ -2748,39 +2761,30 @@ g_toolTipHandler.CultureString = function()-- control )
 		end
 
 		tips:insert( "" )
-		-- Culture for Free
-		--tips:insertLocalizedIfNonZero( "TXT_KEY_TP_CULTURE_FOR_FREE", culturePerTurnForFree )
+		local cultureIcon = YieldIcons[cultureID];
 		-- Total
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD", total / 100, name );
-		-- Culture from Cities
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_CITIES", cities / 100 );
-		-- Other Players
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_OTHER_PLAYERS", otherPlayers / 100 );
-		-- Culture from Excess Happiness
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_HAPPINESS", happiness / 100 );
-		-- Culture from Traits
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_TRAITS", traits / 100 );
-		-- Culture from Religion
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_RELIGION", religion / 100 );
-		
-		
-		local baseCulture = cities + otherPlayers + happiness + traits + religion;
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD", total / 100, cultureIcon );
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_CITIES", cities / 100, cultureIcon );
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_OTHER_PLAYERS", otherPlayers / 100, cultureIcon );
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_HAPPINESS", happiness / 100, cultureIcon );
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_TRAITS", traits / 100, cultureIcon );
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_RELIGION", religion / 100, cultureIcon );
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_UNCATEGORIZED", misc / 100, cultureIcon );
+
+		local baseCulture = cities + otherPlayers + happiness + traits + misc + religion;
 		local isWorldsFair = g_activePlayer:GetCultureBonusTurns() > 0;
 		local isGoldenAge = g_activePlayer:GetGoldenAgeTurns() > 0;
 		local cultureAfterBonusTurns = baseCulture;
 		if isWorldsFair then
 			cultureAfterBonusTurns = (baseCulture * (100 + GameDefines.TEMPORARY_CULTURE_BOOST_MOD)) / 100;
-			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_BONUS_TURNS", (cultureAfterBonusTurns - baseCulture) / 100 , g_activePlayer:GetCultureBonusTurns() );
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_BONUS_TURNS", (cultureAfterBonusTurns - baseCulture) / 100, cultureIcon, g_activePlayer:GetCultureBonusTurns() );
 		end
-		-- Culture from Golden Age
 		if isGoldenAge then
-			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_GOLDEN_AGE", (cultureAfterBonusTurns * cultureInfo.PlayerGoldenAgeYieldMod) / 10000 ); -- from Times100 and Modifier
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_GOLDEN_AGE", (cultureAfterBonusTurns * cultureInfo.PlayerGoldenAgeYieldMod) / 10000, cultureIcon );
 		end
-		
-		-- Culture from Penalties
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_PENALTIES", penalties / 100 );
-		-- Culture from Minor Civs
-		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_MINORS", minors / 100 );
+
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_PENALTIES", penalties / 100, cultureIcon );
+		tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_MINORS", minors / 100, cultureIcon );
 		-- Let people know that building more cities makes policies harder to get
 		if g_isBasicHelp then
 			tips:insert( "" )
@@ -2815,17 +2819,30 @@ if civ5_mode and gk_mode then
 			tips:insert( "[COLOR_WHITE]" .. S("%+g", faithPerTurn ) .. "[ENDCOLOR] "
 				.. L"TXT_KEY_YIELD_FAITH" .. "[ICON_PEACE] " .. L"TXT_KEY_GOLD_PERTURN_HEADING4_TITLE" )
 
-			-- Faith from Cities
-			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_FAITH_FROM_CITIES", g_activePlayer:GetFaithPerTurnFromCities() )
+			-- Standardized faith breakdown (must sum to faithPerTurn = GetYield(YIELD_FAITH))
+			local faithID   = YieldTypes.YIELD_FAITH
+			local faithInfo = GameInfo.Yields[faithID]
+			local cities    = g_activePlayer:GetYieldFromCitiesTimes100(faithID, false)
+			local happiness = g_activePlayer:GetYieldFromHappinessTimes100(faithID)
+			local traits    = g_activePlayer:GetYieldFromTraitsTimes100(faithID)
+			local misc      = g_activePlayer:GetYieldPerTurnFromMisc(faithID) * 100
+			local religion  = g_activePlayer:GetYieldFromReligionTimes100(faithID, g_activePlayer:GetYieldTimes100(faithID, true))
+			local minors    = g_activePlayer:GetYieldFromMinorCivsTimes100(faithID)
 
-			-- Faith from Outposts
-			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_FAITH_FROM_OUTPOSTS", civBE_mode and g_activePlayer:GetFaithPerTurnFromOutposts() or 0 )
-
-			-- Faith from Minor Civs
-			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_FAITH_FROM_MINORS", g_activePlayer:GetFaithPerTurnFromMinorCivs() )
-
-			-- Faith from Religion
-			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_FAITH_FROM_RELIGION", g_activePlayer:GetFaithPerTurnFromReligion() )
+			local faithIcon = YieldIcons[faithID]
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_CITIES", cities / 100, faithIcon )
+			if civBE_mode then
+				tips:insertLocalizedIfNonZero( "TXT_KEY_TP_FAITH_FROM_OUTPOSTS", g_activePlayer:GetFaithPerTurnFromOutposts() or 0 )
+			end
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_HAPPINESS", happiness / 100, faithIcon )
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_TRAITS", traits / 100, faithIcon )
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_RELIGION", religion / 100, faithIcon )
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_UNCATEGORIZED", misc / 100, faithIcon )
+			if g_activePlayer:GetGoldenAgeTurns() > 0 then
+				local base = cities + happiness + traits + misc + religion
+				tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_GOLDEN_AGE", ( base * faithInfo.PlayerGoldenAgeYieldMod ) / 10000, faithIcon )
+			end
+			tips:insertLocalizedIfNonZero( "TXT_KEY_TP_YIELD_FROM_MINORS", minors / 100, faithIcon )
 
 			-- New World Deluxe Scenario ( you still need to delete TopPanel.lua from ...\Steam\SteamApps\common\sid meier's civilization v\assets\DLC\DLC_07\Scenarios\Conquest of the New World Deluxe\UI )
 			if EUI.deluxe_scenario then

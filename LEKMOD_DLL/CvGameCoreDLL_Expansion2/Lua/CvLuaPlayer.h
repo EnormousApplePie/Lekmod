@@ -1097,6 +1097,7 @@ protected:
 	static int lGetYieldFromMinorCivsTimes100(lua_State* L);
 	static int lGetYieldFromTraitsTimes100(lua_State* L);
 	static int lGetYieldFromReligionTimes100(lua_State* L);
+	static int lGetYieldPerTurnFromMisc(lua_State* L);
 #endif
 #if defined(LEKMOD_EXPERIMENTAL_CHANGES)
 	static int lGetWorldWonderYieldChanges(lua_State* L);

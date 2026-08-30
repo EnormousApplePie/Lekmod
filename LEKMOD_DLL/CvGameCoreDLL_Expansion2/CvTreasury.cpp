@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	Â© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -242,13 +242,21 @@ int CvTreasury::GetGoldFromCitiesTimes100(bool bExcludeTradeRoutes) const
 /// Gold Per Turn from Diplomatic Deals
 int CvTreasury::GetGoldPerTurnFromDiplomacy() const
 {
+#if !defined(STANDARDIZE_YIELDS)
 	return m_iGoldPerTurnFromDiplomacy;
+#else
+	return m_pPlayer->GetYieldPerTurnFromMisc(YIELD_GOLD);
+#endif
 }
 
 /// Sets Gold Per Turn from Diplomatic Deals
 void CvTreasury::SetGoldPerTurnFromDiplomacy(int iValue)
 {
+#if !defined(STANDARDIZE_YIELDS)
 	m_iGoldPerTurnFromDiplomacy = iValue;
+#else
+	m_pPlayer->ChangeYieldPerTurnFromMisc(YIELD_GOLD, iValue - GetGoldPerTurnFromDiplomacy());
+#endif
 }
 
 /// Changes Gold Per Turn from Diplomatic Deals

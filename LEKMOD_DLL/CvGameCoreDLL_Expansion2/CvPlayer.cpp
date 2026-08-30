@@ -447,6 +447,7 @@ CvPlayer::CvPlayer() :
 #endif
 #if defined(STANDARDIZE_YIELDS) // YieldEverGenerated Array, instead of an int per yield type
 	, m_aiYieldEverGeneratedTimes100("CvPlayer::m_aiYieldEverGeneratedTimes100", m_syncArchive)
+	, m_aiYieldPerTurnFromMisc("CvPlayer::m_aiYieldPerTurnFromMisc", m_syncArchive)
 #endif
 	, m_aiCityYieldChange("CvPlayer::m_aiCityYieldChange", m_syncArchive)
 	, m_aiCoastalCityYieldChange("CvPlayer::m_aiCoastalCityYieldChange", m_syncArchive)
@@ -1327,6 +1328,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 #if defined(STANDARDIZE_YIELDS)
 	m_aiYieldEverGeneratedTimes100.clear();
 	m_aiYieldEverGeneratedTimes100.resize(NUM_YIELD_TYPES, 0);
+	m_aiYieldPerTurnFromMisc.clear();
+	m_aiYieldPerTurnFromMisc.resize(NUM_YIELD_TYPES, 0);
 #endif
 	m_aiCityYieldChange.clear();
 	m_aiCityYieldChange.resize(NUM_YIELD_TYPES, 0);
@@ -12551,13 +12554,18 @@ int CvPlayer::GetJONSCulturePerTurnFromTraits() const
 /// Culture per turn player starts with for free
 int CvPlayer::GetJONSCulturePerTurnForFree() const
 {
+#if !defined(STANDARDIZE_YIELDS)
 	return m_iJONSCulturePerTurnForFree;
+#else
+	return GetYieldPerTurnFromMisc(YIELD_CULTURE);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
 /// Culture per turn player starts with for free
 void CvPlayer::ChangeJONSCulturePerTurnForFree(int iChange)
 {
+#if !defined(STANDARDIZE_YIELDS)
 	if(iChange != 0)
 		m_iJONSCulturePerTurnForFree += iChange;
 
@@ -12565,6 +12573,9 @@ void CvPlayer::ChangeJONSCulturePerTurnForFree(int iChange)
 	{
 		GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 	}
+#else
+	ChangeYieldPerTurnFromMisc(YIELD_CULTURE, iChange);
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -13138,6 +13149,27 @@ void CvPlayer::SetTotalYieldEverGeneratedTimes100(YieldTypes eYield, int iChange
 		m_aiYieldEverGeneratedTimes100.setAt(eYield, iChange);
 	}
 }
+//	--------------------------------------------------------------------------------
+/// Standardized player-level flat "yield per turn" bucket (free culture, diplomacy gold, ...)
+int CvPlayer::GetYieldPerTurnFromMisc(YieldTypes eYield) const
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "eYield out of bounds");
+	return m_aiYieldPerTurnFromMisc[eYield];
+}
+//	--------------------------------------------------------------------------------
+void CvPlayer::ChangeYieldPerTurnFromMisc(YieldTypes eYield, int iChange)
+{
+	CvAssertMsg(eYield >= 0 && eYield < NUM_YIELD_TYPES, "eYield out of bounds");
+	if (iChange != 0)
+	{
+		m_aiYieldPerTurnFromMisc.setAt(eYield, m_aiYieldPerTurnFromMisc[eYield] + iChange);
+
+		if (GC.getGame().getActivePlayer() == GetID())
+		{
+			GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
+		}
+	}
+}
 #endif
 /// Cities remaining to get free Gardens
 int CvPlayer::GetNumCitiesFreePietyGardens() const
@@ -13475,7 +13507,7 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, CvUnit* pAttackingUnit, C
 #endif
 	if (pkKilledUnitInfo)
 	{
-		int iCombatStrength = max(pKilledUnit->GetBaseCombatStrength(), pKilledUnit->GetBaseRangedCombatStrength());
+		int iCombatStrength = std::max(pKilledUnit->GetBaseCombatStrength(true), pKilledUnit->GetBaseRangedCombatStrength());
 		if (iCombatStrength > 0)
 		{
 			int iPolicyValue = 0;
@@ -14411,6 +14443,7 @@ int CvPlayer::GetTotalFaithPerTurn() const
 	if(IsAnarchy())
 		return 0;
 
+#if !defined(STANDARDIZE_YIELDS)
 	// Faith per turn from Cities
 	iFaithPerTurn += GetFaithPerTurnFromCities();
 
@@ -14419,6 +14452,10 @@ int CvPlayer::GetTotalFaithPerTurn() const
 
 	// Faith per turn from Religion (Founder beliefs)
 	iFaithPerTurn += GetFaithPerTurnFromReligion();
+#else
+	// Standardized: all player-level faith flows through getYieldTimes100().
+	iFaithPerTurn = getYieldTimes100(YIELD_FAITH, false /*bForReligion*/) / 100;
+#endif
 
 	return iFaithPerTurn;
 }
@@ -14473,6 +14510,12 @@ int CvPlayer::GetFaithPerTurnFromMinor(PlayerTypes eMinor) const
 /// Faith per turn from Religion
 int CvPlayer::GetFaithPerTurnFromReligion() const
 {
+#if defined(STANDARDIZE_YIELDS)
+	// Standardized: single religion-yield path (also used by GetTotalFaithPerTurn via getYieldTimes100).
+	// NOTE: returns a PLAIN (not Times100) value, matching this function's historical contract and callers.
+	// The iPrevTotal arg must be passed in Times100 units (same as GetCulturePerTurnFromReligionTimes100).
+	return getYieldFromReligionTimes100(YIELD_FAITH, getYieldTimes100(YIELD_FAITH, true)) / 100;
+#else
 	int iFaithPerTurn = 0;
 
 	// Founder beliefs
@@ -14534,6 +14577,7 @@ int CvPlayer::GetFaithPerTurnFromReligion() const
 	}
 
 	return iFaithPerTurn;
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -22102,6 +22146,7 @@ int CvPlayer::getYieldTimes100(YieldTypes eYield, bool bForReligion) const
 	yield += getYieldFromOtherPlayersTimes100(eYield);
 	yield += getYieldFromHappinessTimes100(eYield);
 	yield += getYieldFromTraitsTimes100(eYield);
+	yield += GetYieldPerTurnFromMisc(eYield) * 100; // this pulls from a non times 100 thing and its also unused so fuck it.
 	if (bForReligion)
 		return yield;
 	yield += getYieldFromReligionTimes100(eYield, yield);
@@ -22218,6 +22263,7 @@ int CvPlayer::getYieldFromMinorCivsTimes100(YieldTypes eYield) const
 		{
 			case YIELD_SCIENCE:
 				yield += kMinor.GetMinorCivAI()->GetCurrentScienceFriendshipBonusTimes100(GetID());
+				break;
 			case YIELD_CULTURE:
 				yield += GetCulturePerTurnFromMinor(ePlayer) * 100;
 				break;
@@ -22313,6 +22359,7 @@ int CvPlayer::GetScienceTimes100() const
 	if(IsAnarchy())
 		return 0;
 
+#if !defined(STANDARDIZE_YIELDS)
 	int iValue = 0;
 
 	// Science from our Cities
@@ -22336,6 +22383,9 @@ int CvPlayer::GetScienceTimes100() const
 	iValue += GetScienceFromBudgetDeficitTimes100();
 
 	return max(iValue, 0);
+#else
+	return max(getYieldTimes100(YIELD_SCIENCE, false /*bForReligion*/), 0);
+#endif
 }
 
 
@@ -28765,6 +28815,7 @@ void CvPlayer::Read(FDataStream& kStream)
 #endif
 #if defined(STANDARDIZE_YIELDS)
 	kStream >> m_aiYieldEverGeneratedTimes100;
+	kStream >> m_aiYieldPerTurnFromMisc;
 #endif
 	kStream >> m_aiCityYieldChange;
 	kStream >> m_aiCoastalCityYieldChange;
@@ -29406,6 +29457,7 @@ void CvPlayer::Write(FDataStream& kStream) const
 #endif
 #if defined(STANDARDIZE_YIELDS)
 	kStream << m_aiYieldEverGeneratedTimes100;
+	kStream << m_aiYieldPerTurnFromMisc;
 #endif
 	kStream << m_aiCityYieldChange;
 	kStream << m_aiCoastalCityYieldChange;

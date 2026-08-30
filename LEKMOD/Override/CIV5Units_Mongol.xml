@@ -1089,55 +1089,80 @@
 			</Text>
 		</Replace>
 		<!-- End New Civs -->
-		<!-- Yield Standardization, Decimal Precision later -->
+		<!-- Yield Standardization:  {1_Num} = per-turn value (green when +, red when -); {2_Icon} = caller-supplied yield icon. -->
 		<Row Tag="TXT_KEY_TP_YIELD">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} Total <!-- insert the icon and string -->
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} Total.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_CITIES"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_CITIES">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} produced by Cities.
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} produced by Cities.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_OTHER_PLAYERS"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_TRADE_ROUTES">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} produced by agreements with other Players.
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from [ICON_INTERNATIONAL_TRADE] Trade Routes with other civilizations.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_HAPPINESS"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_OTHER_PLAYERS">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} produced by Excess [ICON_HAPPINESS_1] Happiness.
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from agreements with other Players.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_TRAITS"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_RESEARCH_AGREEMENTS">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} produced by your Trait.
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from Research Agreements with other players.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_RELIGION"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_HAPPINESS">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} produced by your [ICON_RELIGION] Religion.
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from excess [ICON_HAPPINESS_1] Happiness.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_PENALTIES"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_TRAITS">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} lost from Penalities.
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from your Trait.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_MINORS"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_RELIGION">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} produced by your [ICON_INFLUENCE] Influence over [ICON_CITY_STATE] City-States.
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from your [ICON_RELIGION] Religion.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_BONUS_TURNS"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_MINORS">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} produced by The World's Fair!
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from [ICON_INFLUENCE] Influence over [ICON_CITY_STATE] City-States.
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_TP_YIELD_FROM_GOLDEN_AGE"> 
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_BONUS_TURNS">
 			<Text>
-				[ICON_BULLET] {1_Yield: number "'+'##;'[COLOR:255:60:60:255]-'##'[ENDCOLOR]'"} produced by your [ICON_GOLDEN_AGE] Golden Age!
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from a recent World Congress project (Turns left: {3_TurnsLeft}).
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_GOLDEN_AGE">
+			<Text>
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from your [ICON_GOLDEN_AGE] Golden Age!
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_PENALTIES">
+			<Text>
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} lost from Penalties.
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_BUDGET_DEFICIT">
+			<Text>
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} lost to a [ICON_GOLD] budget deficit!
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_YIELD_FROM_UNCATEGORIZED">
+			<Text>
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} from other sources.
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_YIELD_FOR_FREE">
+			<Text>
+				[ICON_BULLET] {1_Num: number "'[COLOR_POSITIVE_TEXT]+'##'[ENDCOLOR]';'[COLOR_NEGATIVE_TEXT]-'##'[ENDCOLOR]'"} {2_Icon} for free.
 			</Text>
 		</Row>
 		<!-- End v35 -->
@@ -67120,6 +67145,11 @@ The second sack of Ulundi is considered by historians to be the definitive end o
 				COSTLY ATTACK
 			</Text>
 		</Replace>
+		<Row Tag="TXT_KEY_EUPANEL_GUARANTEED_CAPTURE"> 
+			<Text>
+				COSTLY ATTACK
+			</Text>
+		</Row>
 		<Replace Tag="TXT_KEY_EUPANEL_ROUGH_TERRAIN_BONUS"> 
 			<Text>
 				Rough Terrain Attack Bonus
@@ -115696,7 +115726,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants 3 [ICON_CULTURE] Culture in the [ICON_CAPITAL] Capital. Unlocks building the [ICON_WONDER_HANGING_GARDEN] Hanging Gardens.[NEWLINE][NEWLINE]Adopting all [COLOR_POSITIVE_TEXT]Policies[ENDCOLOR] in the Tradition tree will grant +15% [ICON_FOOD] Growth and a free [ICON_BUILDING_AQUEDUCT] Aqueduct in your first 4 cities. It also allows the purchase of [ICON_GREAT_ENGINEER] Great Engineers with [ICON_PEACE] Faith starting in the [COLOR_CYAN]Industrial Era[ENDCOLOR].
+				[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants +3 [ICON_CULTURE] Culture [ICON_BUILDING_PALACE] from the [COLOR_YELLOW]Palace[ENDCOLOR]. Unlocks building the [ICON_WONDER_HANGING_GARDEN] Hanging Gardens.[NEWLINE][NEWLINE]Adopting all [COLOR_POSITIVE_TEXT]Policies[ENDCOLOR] in the Tradition tree will grant +15% [ICON_FOOD] Growth and a free [ICON_BUILDING_AQUEDUCT] Aqueduct in your first 4 cities. It also allows the purchase of [ICON_GREAT_ENGINEER] Great Engineers with [ICON_PEACE] Faith starting in the [COLOR_CYAN]Industrial Era[ENDCOLOR].
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_BRANCH_UNLOCK_SPEND"> 
@@ -116476,7 +116506,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Mandate of Heaven[ENDCOLOR][NEWLINE]+1 [ICON_PRODUCTION] Production and +1 [ICON_PEACE] Faith in the [ICON_CAPITAL] Capital. +1 [ICON_HAPPINESS_1] Happiness from each [ICON_BUILDING_TEMPLE] Temple. 20% discount on all purchases of [COLOR_POSITIVE_TEXT]Religious Units[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Buildings[ENDCOLOR] with [ICON_PEACE] Faith.
+				[COLOR_POSITIVE_TEXT]Mandate of Heaven[ENDCOLOR][NEWLINE]+1 [ICON_PRODUCTION] Production and +1 [ICON_PEACE] Faith from the [ICON_BUILDING_PALACE] [COLOR_YELLOW]Palace[ENDCOLOR]. +1 [ICON_HAPPINESS_1] Happiness from each [ICON_BUILDING_TEMPLE] Temple. 20% discount on all purchases of [COLOR_POSITIVE_TEXT]Religious Units[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Buildings[ENDCOLOR] with [ICON_PEACE] Faith.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_MARITIME_INFRASTRUCTURE"> 
@@ -136600,44 +136630,59 @@ The ship has weather'd every rack; the prize we sought is won."
 				Each City you own will increase Social Policy costs by {1_Num}%.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_CULTURE_FOR_FREE"> 
+		<Replace Tag="TXT_KEY_TP_CULTURE_FOR_FREE">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] for free.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] for free.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_BONUS_TURNS"> 
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_BONUS_TURNS">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] from a recent World Congress project (Turns left: {2_TurnsLeft}).
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] from a recent World Congress project (Turns left: {2_TurnsLeft}).
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_CITIES"> 
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_CITIES">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] produced by Cities.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] produced by Cities.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_GOLDEN_AGE"> 
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_OTHER_PLAYERS">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] from your Golden Age.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] produced by agreements with other Players.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_HAPPINESS"> 
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_GOLDEN_AGE">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] from excess [ICON_HAPPINESS_1] Happiness.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] from your [ICON_GOLDEN_AGE] Golden Age.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_MINORS"> 
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_HAPPINESS">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] from City-States.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] from excess [ICON_HAPPINESS_1] Happiness.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_RELIGION"> 
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_MINORS">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] from Religion.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] from [ICON_INFLUENCE] Influence over [ICON_CITY_STATE] City-States.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_TRAITS"> 
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_RELIGION">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] from Traits.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] from your [ICON_RELIGION] Religion.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_TRAITS">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] from your Trait.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_MISC">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_CULTURE] from other sources.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_CULTURE_FROM_PENALTIES">
+			<Text>
+				[ICON_BULLET][COLOR_NEGATIVE_TEXT]{1_Num} [ICON_CULTURE] lost from Penalties.[ENDCOLOR]
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_TP_CULTURE_NEXT_POLICY"> 
@@ -136667,17 +136712,37 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_TP_FAITH_FROM_CITIES"> 
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] produced by Cities.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_PEACE] produced by Cities.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_TP_FAITH_FROM_MINORS"> 
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] from City-States.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_PEACE] from City-States.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_FAITH_FROM_RELIGION"> 
+		<Replace Tag="TXT_KEY_TP_FAITH_FROM_RELIGION">
 			<Text>
-				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] from Founder Beliefs.
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_PEACE] from Founder Beliefs.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_FAITH_FROM_HAPPINESS">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_PEACE] from excess [ICON_HAPPINESS_1] Happiness.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_FAITH_FROM_TRAITS">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_PEACE] from your Trait.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_FAITH_FROM_GOLDEN_AGE">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_PEACE] from your [ICON_GOLDEN_AGE] Golden Age!
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_FAITH_FROM_MISC">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_PEACE] from other sources.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_TP_FAITH_NEXT_GREAT_PERSON"> 
@@ -136930,9 +136995,29 @@ The ship has weather'd every rack; the prize we sought is won."
 				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from City-States.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_TP_SCIENCE_FROM_RESEARCH_AGREEMENTS"> 
+		<Replace Tag="TXT_KEY_TP_SCIENCE_FROM_RESEARCH_AGREEMENTS">
 			<Text>
 				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from Research Agreements with other players.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_SCIENCE_FROM_TRAITS">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from your Trait.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_SCIENCE_FROM_RELIGION">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from your [ICON_RELIGION] Religion.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_SCIENCE_FROM_GOLDEN_AGE">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from your [ICON_GOLDEN_AGE] Golden Age!
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_TP_SCIENCE_FROM_MISC">
+			<Text>
+				[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from other sources.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_TP_TECH_CITY_COST"> 

@@ -198,7 +198,7 @@ function GetHelpTextForBuilding(iBuildingID, bExcludeName, bExcludeHeader, bNoMa
     	end
 		local buildingClassType = pBuildingInfo.BuildingClass
 		local buildingClass = GameInfo.BuildingClasses[ buildingClassType ]
-		if buildingClass and tonumber(buildingClass.MaxGlobalInstances) or 0 then -- this is a World Wonder
+		if buildingClass and (tonumber(buildingClass.MaxGlobalInstances) or -1) > 0 then -- this is a World Wonder
 			iYieldChange = iYieldChange + pActivePlayer:GetWorldWonderYieldChanges(iYieldType);
 		end
     	iYieldModifier = iYieldModifier + Game.GetBuildingYieldModifier(iBuildingID, iYieldType) + pActivePlayer:GetPolicyBuildingClassYieldModifier(buildingClassID, iYieldType);

@@ -518,6 +518,8 @@ public:
 	int GetTotalYieldEverGeneratedTimes100(YieldTypes eYield) const;
 	void ChangeTotalYieldEverGeneratedTimes100(YieldTypes eYield, int iChange);
 	void SetTotalYieldEverGeneratedTimes100(YieldTypes eYield, int iChange);
+	int GetYieldPerTurnFromMisc(YieldTypes eYield) const;
+	void ChangeYieldPerTurnFromMisc(YieldTypes eYield, int iChange);
 #endif
 	int GetNumCitiesFreeAestheticsSchools() const; // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	void ChangeNumCitiesFreeAestheticsSchools(int iChange); // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
@@ -2328,6 +2330,7 @@ protected:
 #endif
 #if defined(STANDARDIZE_YIELDS) // YieldEverGenerated Array, instead of an int per yield type
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiYieldEverGeneratedTimes100;
+	FAutoVariable<std::vector<int>, CvPlayer> m_aiYieldPerTurnFromMisc;
 #endif
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiCityYieldChange;
 	FAutoVariable<std::vector<int>, CvPlayer> m_aiCoastalCityYieldChange;

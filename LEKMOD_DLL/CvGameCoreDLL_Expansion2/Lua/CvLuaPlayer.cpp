@@ -1092,6 +1092,7 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(GetYieldFromMinorCivsTimes100);
 	Method(GetYieldFromTraitsTimes100);
 	Method(GetYieldFromReligionTimes100);
+	Method(GetYieldPerTurnFromMisc);
 #endif
 #if defined(LEKMOD_EXPERIMENTAL_CHANGES)
 	Method(GetWorldWonderYieldChanges);
@@ -12003,21 +12004,24 @@ int CvLuaPlayer::lGetYield(lua_State* L)
 {
 	CvPlayerAI* pkPlayer = GetInstance(L);
 	const YieldTypes eYield = (YieldTypes)lua_tointeger(L, 2);
-	lua_pushinteger(L, pkPlayer->getYield(eYield, false));
+	const bool bForReligion = luaL_optbool(L, 3, false);
+	lua_pushinteger(L, pkPlayer->getYield(eYield, bForReligion));
 	return 1;
 }
 int CvLuaPlayer::lGetYieldTimes100(lua_State* L)
 {
 	CvPlayerAI* pkPlayer = GetInstance(L);
 	const YieldTypes eYield = (YieldTypes)lua_tointeger(L, 2);
-	lua_pushinteger(L, pkPlayer->getYieldTimes100(eYield, false));
+	const bool bForReligion = luaL_optbool(L, 3, false);
+	lua_pushinteger(L, pkPlayer->getYieldTimes100(eYield, bForReligion));
 	return 1;
 }
 int CvLuaPlayer::lGetYieldFromCitiesTimes100(lua_State* L)
 {
 	CvPlayerAI* pkPlayer = GetInstance(L);
 	const YieldTypes eYield = (YieldTypes)lua_tointeger(L, 2);
-	lua_pushinteger(L, pkPlayer->getYieldFromCitiesTimes100(eYield, false));
+	const bool bIgnoreTrade = luaL_optbool(L, 3, false);
+	lua_pushinteger(L, pkPlayer->getYieldFromCitiesTimes100(eYield, bIgnoreTrade));
 	return 1;
 }
 int CvLuaPlayer::lGetYieldFromOtherPlayersTimes100(lua_State* L)
@@ -12070,6 +12074,13 @@ int CvLuaPlayer::lGetYieldFromReligionTimes100(lua_State* L)
 	const YieldTypes eYield = (YieldTypes)lua_tointeger(L, 2);
 	const int iValue = lua_tointeger(L, 3);
 	lua_pushinteger(L, pkPlayer->getYieldFromReligionTimes100(eYield, iValue));
+	return 1;
+}
+int CvLuaPlayer::lGetYieldPerTurnFromMisc(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const YieldTypes eYield = (YieldTypes)lua_tointeger(L, 2);
+	lua_pushinteger(L, pkPlayer->GetYieldPerTurnFromMisc(eYield));
 	return 1;
 }
 #endif
