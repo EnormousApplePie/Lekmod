@@ -22,7 +22,7 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap v6.1",
+		Name = "Lekmap v6.2",
 		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Pangaea - Fractal with Beta options by Jacobian",
 		IsAdvancedMap = false,
 		IconIndex = 0,
@@ -1520,8 +1520,8 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 			local iWaterShallow = self.continentsFrac:GetHeight(water_percent-28);
 
 			if beta_tectonic_mounts == 2 then
-				iMountain100 = self.mountainsFrac:GetHeight(93);
-				iMountain99 = self.mountainsFrac:GetHeight(77);
+				iMountain100 = self.mountainsFrac:GetHeight(94);
+				iMountain99 = self.mountainsFrac:GetHeight(85);
 				-- iMountain97 = self.mountainsFrac:GetHeight(82);
 				iMountain95 = self.mountainsFrac:GetHeight(68);
 				iShallow = self.mountainsFrac:GetHeight(54);
@@ -1636,10 +1636,21 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				
 
 				for loop, blob in ipairs(blobs) do
+
 					blob_islands[loop] = true
 					local blob_connectors = {}
 					local blob_depths = {}
+					local blob_size = tablelength(blob)
 					for i, dumby in pairs(blob) do
+
+						--- new pass to restore hills to small islands
+						if self.plotTypes[i] == PlotTypes.PLOT_LAND then
+							local hill_restore = Map.Rand(blob_size*3+9, "Hill Restore")
+							if hill_restore < 3 then
+								self.plotTypes[i] = PlotTypes.PLOT_HILLS
+							end
+						end
+
 						adj_is = adj_is_cache[i]
 						for loop2, adj_i in ipairs(adj_is) do
 							if BETA_TECTONIC_LANDS[adj_i] == 0 then
