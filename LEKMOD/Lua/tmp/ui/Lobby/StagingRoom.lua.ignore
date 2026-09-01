@@ -1453,7 +1453,7 @@ end
 -------------------------------------------------
 function OnPreGameDirty()
     if( ContextPtr:IsHidden() == false ) then
-	    UpdateDisplay();
+	    UpdateDisplay(); -- includes Draft_OnUpdateDisplay -> ban-ready PreGame pull
 		UpdatePageTabView(true);
 		CheckGameAutoStart();  -- Check for autostart because this event could to due to a ready status changing.
 	end
@@ -1750,7 +1750,7 @@ function ShowHideHandler( bIsHide, bIsInit )
 		UIManager:SetUICursor( 0 );
 		RequestLobbyChatHistory();
 		SendUiCheckNotLaunchedIfNeeded();
-		-- Ban-ready sync tick runs inside Draft_SyncBanScroll / OnStagingUpdate.
+		-- Ban-ready is PreGame-synced (pulled in Draft_SyncBanScroll / PreGameDirty).
 		if( not PreGame.IsHotSeatGame() ) then
 			EnsureStagingUpdate();
 		end

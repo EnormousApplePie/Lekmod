@@ -42382,7 +42382,7 @@
 			<Help>TXT_KEY_BUILDING_ROVA_HELP</Help> 
 			<NeverCapture>true</NeverCapture> 
 			<Cost>75</Cost> 
-			<FaithCost>225</FaithCost> 
+			<FaithCost>200</FaithCost> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<AllowsRangeStrike>true</AllowsRangeStrike> 
 			<Defense>500</Defense> 
