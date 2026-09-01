@@ -67147,7 +67147,7 @@ The second sack of Ulundi is considered by historians to be the definitive end o
 		</Replace>
 		<Row Tag="TXT_KEY_EUPANEL_GUARANTEED_CAPTURE"> 
 			<Text>
-				COSTLY ATTACK
+				GUARANTEED CAPTURE
 			</Text>
 		</Row>
 		<Replace Tag="TXT_KEY_EUPANEL_ROUGH_TERRAIN_BONUS"> 
@@ -115696,7 +115696,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Piety[ENDCOLOR] increases the [ICON_PEACE] Faith of empires.[NEWLINE][NEWLINE]Adopting Piety provides you with +1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith in the [ICON_CAPITAL] Capital. +50% [ICON_PRODUCTION] Production towards [ICON_BUILDING_SHRINE] Shrines and [ICON_BUILDING_TEMPLE] Temples. Unlocks building the [ICON_WONDER_MOSQUE_OF_DJENNE] Great Mosque of Djenne.[NEWLINE][NEWLINE]Adopting all [COLOR_POSITIVE_TEXT]Policies[ENDCOLOR] in the Piety tree causes a [ICON_PROPHET] Great Prophet to appear. [COLOR_POSITIVE_TEXT]Holy Sites[ENDCOLOR] provide +1 [ICON_FOOD] Food and +3 [ICON_CULTURE] Culture. Provides a free [ICON_BUILDING_GARDEN] Garden in your first 4 cities and allows [ICON_PEACE] Faith purchasing of 1 [ICON_GREAT_PEOPLE] Great Person of every kind with exception to a [ICON_GREAT_SCIENTIST] Great Scientist starting in the [COLOR_CYAN]Industrial Era[ENDCOLOR].
+				[COLOR_POSITIVE_TEXT]Piety[ENDCOLOR] increases the [ICON_PEACE] Faith of empires.[NEWLINE][NEWLINE]Adopting Piety provides you with +1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith from the [ICON_BUILDING_PALACE] [COLOR_YELLOW]Palace[ENDCOLOR]. +50% [ICON_PRODUCTION] Production towards [ICON_BUILDING_SHRINE] Shrines and [ICON_BUILDING_TEMPLE] Temples. Unlocks building the [ICON_WONDER_MOSQUE_OF_DJENNE] Great Mosque of Djenne.[NEWLINE][NEWLINE]Adopting all [COLOR_POSITIVE_TEXT]Policies[ENDCOLOR] in the Piety tree causes a [ICON_PROPHET] Great Prophet to appear. [COLOR_POSITIVE_TEXT]Holy Sites[ENDCOLOR] provide +1 [ICON_FOOD] Food and +3 [ICON_CULTURE] Culture. Provides a free [ICON_BUILDING_GARDEN] Garden in your first 4 cities and allows [ICON_PEACE] Faith purchasing of 1 [ICON_GREAT_PEOPLE] Great Person of every kind with exception to a [ICON_GREAT_SCIENTIST] Great Scientist starting in the [COLOR_CYAN]Industrial Era[ENDCOLOR].
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM"> 

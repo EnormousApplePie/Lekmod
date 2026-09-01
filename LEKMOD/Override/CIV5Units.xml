@@ -186889,56 +186889,6 @@
 		</Row>
 	</Policy_BuildingClassProductionModifiers> 
 
-	<Table name="Policy_BuildingClassTourismModifiers">
-		<Column name="PolicyType" type="text" reference="Policies(Type)" />
-		<Column name="BuildingClassType" type="text" reference="BuildingClasses(Type)" />
-		<Column name="TourismModifier" type="integer"  />
-	</Table> 
-	<Policy_BuildingClassTourismModifiers>
-		<Delete />
-
-		<Row> 
-			<PolicyType>POLICY_MEDIA_CULTURE</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType> 
-			<TourismModifier>34</TourismModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_FINE_ARTS</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType> 
-			<TourismModifier>20</TourismModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_FINE_ARTS</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType> 
-			<TourismModifier>20</TourismModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_FINE_ARTS</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MUSEUM</BuildingClassType> 
-			<TourismModifier>20</TourismModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_FINE_ARTS</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType> 
-			<TourismModifier>20</TourismModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_NATIONALISM</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
-			<TourismModifier>10</TourismModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_NATIONALISM</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType> 
-			<TourismModifier>10</TourismModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_NATIONALISM</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
-			<TourismModifier>10</TourismModifier> 
-		</Row>
-	</Policy_BuildingClassTourismModifiers> 
-
 	<Table name="Policy_BuildingClassYieldChanges">
 		<Column name="PolicyType" type="text" reference="Policies(Type)" />
 		<Column name="BuildingClassType" type="text" reference="BuildingClasses(Type)" />
@@ -187422,7 +187372,54 @@
 	</Table> 
 	<Policy_BuildingClassYieldModifiers>
 		<Delete />
-
+		<Row> 
+			<PolicyType>POLICY_MEDIA_CULTURE</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType> 
+			<YieldType>YIELD_TOURISM</YieldType> 
+			<YieldMod>34</YieldMod> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_FINE_ARTS</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType> 
+			<YieldType>YIELD_TOURISM</YieldType> 
+			<YieldMod>20</YieldMod> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_FINE_ARTS</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType> 
+			<YieldType>YIELD_TOURISM</YieldType> 
+			<YieldMod>20</YieldMod> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_FINE_ARTS</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_MUSEUM</BuildingClassType> 
+			<YieldType>YIELD_TOURISM</YieldType> 
+			<YieldMod>20</YieldMod> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_FINE_ARTS</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType> 
+			<YieldType>YIELD_TOURISM</YieldType> 
+			<YieldMod>20</YieldMod> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_NATIONALISM</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
+			<YieldType>YIELD_TOURISM</YieldType> 
+			<YieldMod>10</YieldMod> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_NATIONALISM</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType> 
+			<YieldType>YIELD_TOURISM</YieldType> 
+			<YieldMod>10</YieldMod> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_NATIONALISM</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
+			<YieldType>YIELD_TOURISM</YieldType> 
+			<YieldMod>10</YieldMod> 
+		</Row>
 		<Row> 
 			<PolicyType>POLICY_THEOCRACY</PolicyType> 
 			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType> 

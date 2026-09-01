@@ -14545,18 +14545,21 @@ int CvUnit::GetMaxAttackStrength(const CvCombatInfo& kInfo, CvCombatModifierList
 			else // No Feature - Use Terrain Attack Mod
 			{
 				iTempModifier = terrainAttackModifier(plot.getTerrainType());
+				const char* szTerrainText = GC.getTerrainInfo(plot.getTerrainType())->GetDescription();
 				if (plot.isHills())
 				{
 					iTempModifier += terrainAttackModifier(TERRAIN_HILL);
+					szTerrainText = "TXT_KEY_TERRAIN_HILL";
 				}
-				if (plot.isMountain())
+				else if (plot.isMountain())
 				{
 					iTempModifier += terrainAttackModifier(TERRAIN_MOUNTAIN);
+					szTerrainText = "TXT_KEY_TERRAIN_MOUNTAIN";
 				}
 				iModifier += iTempModifier;
 				if (kModifierList && iTempModifier)
 				{
-					GC.getGame().BuildCombatModHelpText(*kModifierList, "TXT_KEY_ATTACKMOD_TERRAIN", iTempModifier, GC.getTerrainInfo(plot.getTerrainType())->GetDescription());
+					GC.getGame().BuildCombatModHelpText(*kModifierList, "TXT_KEY_ATTACKMOD_TERRAIN", iTempModifier, szTerrainText);
 				}
 			}
 		}
@@ -14844,19 +14847,22 @@ int CvUnit::GetMaxDefenseStrength(const CvCombatInfo& kInfo, CvCombatModifierLis
 		else // No Feature - use Terrain Defense Mod
 		{
 			iTempModifier = terrainDefenseModifier(plot.getTerrainType());
+			const char* szTerrainText = GC.getTerrainInfo(plot.getTerrainType())->GetDescription();
 			// Tack on Hills Defense Mod
 			if (plot.isHills())
 			{
 				iTempModifier += terrainDefenseModifier(TERRAIN_HILL);
+				szTerrainText = "TXT_KEY_TERRAIN_HILL";
 			}
 			if (plot.isMountain())
 			{
 				iTempModifier += terrainDefenseModifier(TERRAIN_MOUNTAIN);
+				szTerrainText = "TXT_KEY_TERRAIN_MOUNTAIN";
 			}
 			iModifier += iTempModifier;
 			if (kModifierList && iTempModifier)
 			{
-				GC.getGame().BuildCombatModHelpText(*kModifierList, "TXT_KEY_DEFENSEMOD_TERRAIN_EXTRA", iTempModifier, GC.getTerrainInfo(plot.getTerrainType())->GetDescription());
+				GC.getGame().BuildCombatModHelpText(*kModifierList, "TXT_KEY_DEFENSEMOD_TERRAIN_EXTRA", iTempModifier, szTerrainText);
 			}
 		}
 	}

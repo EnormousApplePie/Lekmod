@@ -14341,7 +14341,7 @@ int CvCity::calculateStrengthValue(bool bForRangeStrike, CvCombatModifierList* k
 		iStrengthValue += iGarrisonStrength;
 
 		if (kModifierList)
-			GC.getGame().BuildCombatStrengthHelpText(*kModifierList, "TXT_KEY_COMBATMOD_CITY_GARRISON", iGarrisonStrength, pGarrisonedUnit->getName());
+			GC.getGame().BuildCombatStrengthHelpText(*kModifierList, "TXT_KEY_COMBATMOD_CITY_GARRISON", iGarrisonStrength, "TXT_KEY_MISSION_GARRISON");
 	}
 
 	// Technology contribution.
