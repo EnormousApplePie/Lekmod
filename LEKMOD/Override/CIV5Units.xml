@@ -103,6 +103,7 @@
 			<Type>MINOR_CIV_PERSONALITY_FRIENDLY</Type>
 			<Description>TXT_KEY_CITY_STATE_PERSONALITY_FRIENDLY</Description>
 			<Help>TXT_KEY_CITY_STATE_PERSONALITY_FRIENDLY_TT</Help>
+			<ForbiddenMinorCivTrait>MINOR_CIV_TRAIT_MILITARISTIC</ForbiddenMinorCivTrait>
 			<FriendshipDecayModifierPercent>75</FriendshipDecayModifierPercent>
 			<QuestInfluenceModifierPercent>125</QuestInfluenceModifierPercent>
 			<StripPersonalityBonusesIfAttackedMinor>true</StripPersonalityBonusesIfAttackedMinor>
@@ -179,6 +180,7 @@
 			<MaxGlobalCount>2</MaxGlobalCount>
 			<MaxGlobalCountDivisor>12</MaxGlobalCountDivisor>
 			<TransformsAtEra>ERA_MODERN</TransformsAtEra>
+			<Disabled>True</Disabled>
 		</Row>
 	</Minor_Civ_Personalities>
 
@@ -106447,10 +106449,10 @@
 			<Civilopedia>TXT_KEY_FEATURE_SHALLOWS_TEXT</Civilopedia>
 			<Help>TXT_KEY_FEATURE_SHALLOWS_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_FORD</ArtDefineTag>
-			<Movement>2</Movement>
+			<Movement>1</Movement>
 			<SeeThrough>0</SeeThrough>
 			<Defense>-15</Defense>
-			<InfluenceCost>-1</InfluenceCost>
+			<InfluenceCost>1</InfluenceCost>
 			<Impassable>false</Impassable>
 			<NoCity>true</NoCity>
 			<NoImprovement>false</NoImprovement>
@@ -137111,7 +137113,7 @@
 			<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType> 
 		</Row>
 		<Row> 
-			<ImprovementType>IMPROVEMENT_POLDER</ImprovementType> 
+			<ImprovementType>IMPROVEMENT_WATER_POLDER</ImprovementType> 
 			<FeatureType>FEATURE_LAKE</FeatureType> 
 		</Row>
 		<Row> 
@@ -138314,7 +138316,7 @@
 			<SpecificCivRequired>true</SpecificCivRequired>
 			<CivilizationType>CIVILIZATION_NETHERLANDS</CivilizationType>
 			<RequiresFeature>true</RequiresFeature>
-			<AllowsWalkWater>true</AllowsWalkWater>
+			<AllowsWalkWater>false</AllowsWalkWater>
 			<PillageGold>18</PillageGold>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>EXPANSION_TERRAIN_ATLAS</IconAtlas>

@@ -1,0 +1,13 @@
+<Asset>
+  <Mesh file="LakeReference.gr2" source="Max" />
+  <Texture file="LakeReference_D.dds" source="Max" />
+  <Texture file="LakeReference_H.dds" source="Max" />
+  <Texture file="afri_anc_city_sref.dds" source="Max" />
+  <Texture file="Generic_Grey_8.dds" source="Max" />
+  <Texture file="afri_anc_city_diff.dds" source="Max" />
+  <Texture file="Forest_Generic_d.dds" source="Max" />
+  <Texture file="LakeReference_S.dds" source="Max" />
+  <Texture file="forest_generic_s.dds" source="Max" />
+  <Texture file="oasis_sref.dds" source="Max" />
+  <Texture file="oasis_diff.dds" source="Max" />
+</Asset>

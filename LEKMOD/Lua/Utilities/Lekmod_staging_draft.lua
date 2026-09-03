@@ -263,7 +263,11 @@ function Draft_PersistToPreGame()
 		return;
 	end
 	Draft_OptSet(DRAFT_OPT_VER, DRAFT_SAVE_VERSION);
-	Draft_OptSet(DRAFT_OPT_RULES, Draft_PackRules());
+	-- Rules are host-authoritative (same as MPGameOptions). Clients must not
+	-- overwrite GAMEOPTION_LEKMOD_DRAFT_RULES with a stale local pack.
+	if Matchmaking.IsHost() then
+		Draft_OptSet(DRAFT_OPT_RULES, Draft_PackRules());
+	end
 
 	local maxP = GameDefines.MAX_MAJOR_CIVS;
 	-- Each player writes only their own ban-ready slot (same idea as PreGame.SetReady).
@@ -2141,9 +2145,18 @@ function Draft_BroadcastBans(playerID)
 	SendDraftChat("BAN|" .. tostring(playerID) .. "|" .. encoded);
 end
 
+-- Same path as MPGameOptions.SendGameOptionChanged: write PreGame then broadcast.
+-- Chat RULES is kept as a thin backup for clients that miss a settings packet.
 function Draft_BroadcastRules()
 	if not Matchmaking.IsHost() then
 		return;
+	end
+	if PreGame ~= nil and PreGame.SetGameOption ~= nil then
+		Draft_OptSet(DRAFT_OPT_VER, DRAFT_SAVE_VERSION);
+		Draft_OptSet(DRAFT_OPT_RULES, Draft_PackRules());
+	end
+	if Network ~= nil and Network.BroadcastGameSettings ~= nil then
+		Network.BroadcastGameSettings();
 	end
 	local r = g_DraftRules;
 	local body = string.format(
@@ -2156,6 +2169,40 @@ function Draft_BroadcastRules()
 		r.seasonalBans and 1 or 0
 	);
 	SendDraftChat(body);
+end
+
+-- Clients apply host draft rules from PreGame (like reading other game options).
+-- Returns true if local rules changed.
+function Draft_PullRulesFromPreGame()
+	if PreGame == nil or PreGame.GetGameOption == nil then
+		return false;
+	end
+	-- Host is the writer; never pull over in-progress local edits.
+	if Matchmaking.IsHost() then
+		return false;
+	end
+	if Draft_OptGet(DRAFT_OPT_VER) < 1 then
+		return false;
+	end
+	local packed = Draft_OptGet(DRAFT_OPT_RULES);
+	if packed == Draft_PackRules() then
+		return false;
+	end
+
+	local prevBans = tonumber(g_DraftRules.bansPerPlayer) or 0;
+	Draft_UnpackRules(packed);
+	local newBans = tonumber(g_DraftRules.bansPerPlayer) or 0;
+	for _, pid in ipairs(GetDraftPlayerOrder()) do
+		EnsureBanArray(pid);
+	end
+	EnsureBanArray(Matchmaking.GetLocalID());
+	Draft_PopulateRulesUI();
+	if prevBans ~= newBans then
+		ResetHorizontalBanScrolls();
+		Draft_RefreshBanUI();
+	end
+	Draft_UpdateActionButtons();
+	return true;
 end
 
 function Draft_BroadcastPools()
@@ -2636,22 +2683,28 @@ local function OnRulesChanged()
 		Draft_PopulateRulesUI();
 		return;
 	end
-	-- Clear ban-ready when rules change
+	-- Clear ban-ready when rules change (host clears PreGame ready bits too).
 	g_DraftBanReady = {};
-	-- Resize ban arrays in place. Do NOT destroy InstanceManagers here � abandoning
+	local maxP = GameDefines.MAX_MAJOR_CIVS;
+	for pid = 0, maxP - 1 do
+		Draft_OptSet(Draft_ReadyOptName(pid), 0);
+	end
+	-- Resize ban arrays in place. Do NOT destroy InstanceManagers here — abandoning
 	-- them and creating new ones on the same stacks leaves orphan icons / bad widths
 	-- on BanHost horizontal scroll after bans-per-player changes.
 	for _, pid in ipairs(GetDraftPlayerOrder()) do
 		EnsureBanArray(pid);
 	end
 	EnsureBanArray(Matchmaking.GetLocalID());
+	-- Persist full draft state, then broadcast like other lobby game options.
+	Draft_PersistToPreGame();
 	Draft_BroadcastRules();
+	Draft_BroadcastReadyMask();
 	-- May no-op while on Draft Rules tab; Players tab refresh rebuilds icons.
 	Draft_RefreshBanUI();
 	-- After rebuild (or immediately if still on Draft Rules), reset horizontal scroll.
 	ResetHorizontalBanScrolls();
 	Draft_PopulateRulesUI();
-	Draft_PersistToPreGame();
 end
 
 function Draft_OnBansPull(value)
@@ -3054,6 +3107,7 @@ function Draft_OnUpdateDisplay()
 		Draft_ValidateAllCivsAgainstPools();
 	end
 	Draft_PullBanReadyFromPreGame();
+	Draft_PullRulesFromPreGame();
 	Draft_RefreshBanUI();
 	Draft_RefreshDraftIconsAll();
 	Draft_UpdateActionButtons();

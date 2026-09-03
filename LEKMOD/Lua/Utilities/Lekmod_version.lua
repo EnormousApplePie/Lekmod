@@ -5,7 +5,7 @@
 LekmodVersion = LekmodVersion or {}
 
 -- Technical version for MP lobby name / update checks (display titles live in TXT_KEY_LEKMOD_*).
-LekmodVersion.LOCAL_VERSION = "v35.2003"
+LekmodVersion.LOCAL_VERSION = "v35.3000"
 
 -- Plain lobby chat posted by clients that skipped ui_check.bat (Steam invite bypasses the legal screen).
 LekmodVersion.UI_CHECK_CHAT = "UI_CHECK NOT LAUNCHED"

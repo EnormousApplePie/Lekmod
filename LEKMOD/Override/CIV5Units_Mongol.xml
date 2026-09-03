@@ -12,21 +12,21 @@
 	<Language_en_US>
 		<!-- Version Number, Leave at top -->
 		<Row Tag="TXT_KEY_LEKMOD_VERSION">
-			<Text>LEKMOD v35.2003</Text>
+			<Text>LEKMOD v35.3000</Text>
 		</Row>
 		<Replace Tag="TXT_KEY_MULTIPLAYER_STAGING_ROOM"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]LEKMOD v35.2[ENDCOLOR]
+				[COLOR_POSITIVE_TEXT]LEKMOD v35.3[ENDCOLOR]
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_AD_SETUP_ADVANCED_OPTIONS"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]LEKMOD v35.2[ENDCOLOR]  
+				[COLOR_POSITIVE_TEXT]LEKMOD v35.3[ENDCOLOR]  
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_GAME_SELECTION_SCREEN"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]LEKMOD v35.2[ENDCOLOR] 
+				[COLOR_POSITIVE_TEXT]LEKMOD v35.3[ENDCOLOR] 
 			</Text>
 		</Replace>
 		<!-- END VERSION -->
@@ -21930,7 +21930,7 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILD_PONTOON_BRIDGE_HELP"> 
 			<Text>
-				Both land and naval units can traverse this Coast tile. May only be constructed in a Coast tile with 2 or more land tiles adjacent to it. Constructed by a Work Boat, which is consumed by the construction of the Pontoon Bridge. <!-- Thanks szope! -->
+				Both land and naval units can traverse this Coast tile. May only be constructed in a Coast tile with 2 or more land tiles adjacent to it. <!-- Thanks szope! -->
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILD_PONTOON_BRIDGE_REC"> 
