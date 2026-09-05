@@ -1257,6 +1257,8 @@ romania and brazil traits are double counted
 #define LEKMOD_COMBAT_PREDICTOR_IMPROVEMENTS
 // UnitPromotions_Domains: Attack / Defense columns (like UnitClasses); Modifier still applies to both sides
 #define LEKMOD_DOMAIN_PROMO_ATTACK_DEFENSE
+// Promotion: fortify bonus ignored when defending against ranged/bombard attacks
+#define LEKMOD_NO_FORTIFY_VS_RANGED_PROMO
 #define GAMEOPTION_NO_COMBAT_RANDOMNESS "GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS"
 // Push out the hard coded culture classes aspects into the dll.
 #define LEKMOD_CULTURE_CLASSES_DATABASE

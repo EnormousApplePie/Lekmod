@@ -188,6 +188,9 @@ public:
 	bool IsNoCapture() const;
 	bool IsOnlyDefensive() const;
 	bool IsNoDefensiveBonus() const;
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+	bool IsNoFortifyVsRanged() const;
+#endif
 	bool IsNukeImmune() const;
 	bool IsHiddenNationality() const;
 	bool IsAlwaysHostile() const;
@@ -432,6 +435,9 @@ protected:
 	bool m_bNoCapture;
 	bool m_bOnlyDefensive;
 	bool m_bNoDefensiveBonus;
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+	bool m_bNoFortifyVsRanged;
+#endif
 	bool m_bNukeImmune;
 	bool m_bHiddenNationality;
 	bool m_bAlwaysHostile;

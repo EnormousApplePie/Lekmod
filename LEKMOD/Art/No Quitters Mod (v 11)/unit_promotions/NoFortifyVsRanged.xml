@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ranged units: fortify applies vs melee, not vs ranged/bombard -->
+<GameData>
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_NO_FORTIFY_VS_RANGED</Type>
+			<Description>TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED</Description>
+			<Help>TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>5</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+			<NoFortifyVsRanged>true</NoFortifyVsRanged>
+		</Row>
+	</UnitPromotions>
+
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+
+	<Language_en_US>
+		<Row Tag="TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED">
+			<Text>Exposed to Barrage</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED_HELP">
+			<Text>Does not receive Fortification bonuses when defending against Ranged attacks. Fortification still applies against melee attacks.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_DEFENSEMOD_FORTIFICATION_VS_COMBAT">
+			<Text>Fortification vs {2_CombatClass} ({1_Num} Turns)</Text>
+		</Row>
+	</Language_en_US>
+</GameData>

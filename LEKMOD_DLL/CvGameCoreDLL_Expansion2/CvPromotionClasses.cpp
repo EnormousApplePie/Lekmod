@@ -152,6 +152,9 @@ CvPromotionEntry::CvPromotionEntry():
 	m_bNoCapture(false),
 	m_bOnlyDefensive(false),
 	m_bNoDefensiveBonus(false),
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+	m_bNoFortifyVsRanged(false),
+#endif
 	m_bNukeImmune(false),
 	m_bHiddenNationality(false),
 	m_bAlwaysHostile(false),
@@ -300,6 +303,12 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_bNoCapture = kResults.GetBool("NoCapture");
 	m_bOnlyDefensive = kResults.GetBool("OnlyDefensive");
 	m_bNoDefensiveBonus = kResults.GetBool("NoDefensiveBonus");
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+	if (kResults.HasColumn("NoFortifyVsRanged"))
+	{
+		m_bNoFortifyVsRanged = kResults.GetBool("NoFortifyVsRanged");
+	}
+#endif
 	m_bNukeImmune = kResults.GetBool("NukeImmune");
 	m_bHiddenNationality = kResults.GetBool("HiddenNationality");
 	m_bAlwaysHostile = kResults.GetBool("AlwaysHostile");
@@ -1683,6 +1692,14 @@ bool CvPromotionEntry::IsNoDefensiveBonus() const
 {
 	return m_bNoDefensiveBonus;
 }
+
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+/// Accessor: Fortify bonus does not apply vs ranged/bombard attacks
+bool CvPromotionEntry::IsNoFortifyVsRanged() const
+{
+	return m_bNoFortifyVsRanged;
+}
+#endif
 
 /// Accessor: Cannot be hurt by nukes?
 bool CvPromotionEntry::IsNukeImmune() const

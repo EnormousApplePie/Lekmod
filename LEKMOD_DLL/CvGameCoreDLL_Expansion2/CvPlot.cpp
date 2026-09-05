@@ -3307,8 +3307,10 @@ int CvPlot::defenseModifier(TeamTypes eDefender, bool, bool bHelp) const
 		const bool bWalkWaterImprovement = pkImprovement && pkImprovement->IsAllowsWalkWater();
 		if (bWalkWaterFeature && bWalkWaterImprovement && !isHills() && !isMountain())
 		{
-			// Shallows feature + pontoon improvement: one plot defense, not both
-			iModifier = std::min(iModifier, iImprovementDef);
+			// Shallows + pontoon/water polder: one defense penalty, not feature + DefenseModifierGlobal
+			const int iImprovementTotal = iImprovementDef + iImprovementGlobal;
+			iModifier = std::min(iModifier, iImprovementTotal);
+			iImprovementGlobal = 0;
 		}
 		else
 		{

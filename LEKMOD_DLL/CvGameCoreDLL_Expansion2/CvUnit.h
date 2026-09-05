@@ -632,6 +632,12 @@ public:
 	int getNoDefensiveBonusCount() const;
 	void changeNoDefensiveBonusCount(int iValue);
 
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+	bool isNoFortifyVsRanged() const;
+	int getNoFortifyVsRangedCount() const;
+	void changeNoFortifyVsRangedCount(int iValue);
+#endif
+
 	bool isNoCapture() const;
 	int getNoCaptureCount() const;
 	void changeNoCaptureCount(int iValue);
@@ -1601,6 +1607,9 @@ protected:
 	FAutoVariable<int, CvUnit> m_iCanMoveImpassableCount;
 	FAutoVariable<int, CvUnit> m_iOnlyDefensiveCount;
 	FAutoVariable<int, CvUnit> m_iNoDefensiveBonusCount;
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+	FAutoVariable<int, CvUnit> m_iNoFortifyVsRangedCount;
+#endif
 	FAutoVariable<int, CvUnit> m_iNoCaptureCount;
 	FAutoVariable<int, CvUnit> m_iNukeImmuneCount;
 	FAutoVariable<int, CvUnit> m_iHiddenNationalityCount;

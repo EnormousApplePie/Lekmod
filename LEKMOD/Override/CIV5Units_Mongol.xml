@@ -31,6 +31,18 @@
 		</Replace>
 		<!-- END VERSION -->
 		<!-- Start v35 -->
+		<Row Tag="TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED">
+			<Text>No Fortification Bonus vs Ranged</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED_HELP">
+			<Text>Does not receive Fortification bonuses when defending against Ranged or Air attacks.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_DEFENSEMOD_FORTIFICATION_VS_COMBAT">
+			<Text>[ICON_MISSION_FORTIFY] Fortification Defense vs {1_Group}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_DEFENSEMOD_FORTIFY_GROUP_MELEE">
+			<Text>Melee</Text>
+		</Row>
 		<Row Tag="TXT_KEY_YIELD_FROM_LANDMARKS"> 
 			<Text>
 				{1_Num} {2_IconString} from Landmarks.
@@ -115726,7 +115738,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants +3 [ICON_CULTURE] Culture [ICON_BUILDING_PALACE] from the [COLOR_YELLOW]Palace[ENDCOLOR]. Unlocks building the [ICON_WONDER_HANGING_GARDEN] Hanging Gardens.[NEWLINE][NEWLINE]Adopting all [COLOR_POSITIVE_TEXT]Policies[ENDCOLOR] in the Tradition tree will grant +15% [ICON_FOOD] Growth and a free [ICON_BUILDING_AQUEDUCT] Aqueduct in your first 4 cities. It also allows the purchase of [ICON_GREAT_ENGINEER] Great Engineers with [ICON_PEACE] Faith starting in the [COLOR_CYAN]Industrial Era[ENDCOLOR].
+				[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants +3 [ICON_CULTURE] Culture from the [ICON_BUILDING_PALACE] [COLOR_YELLOW]Palace[ENDCOLOR]. Unlocks building the [ICON_WONDER_HANGING_GARDEN] Hanging Gardens.[NEWLINE][NEWLINE]Adopting all [COLOR_POSITIVE_TEXT]Policies[ENDCOLOR] in the Tradition tree will grant +15% [ICON_FOOD] Growth and a free [ICON_BUILDING_AQUEDUCT] Aqueduct in your first 4 cities. It also allows the purchase of [ICON_GREAT_ENGINEER] Great Engineers with [ICON_PEACE] Faith starting in the [COLOR_CYAN]Industrial Era[ENDCOLOR].
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_BRANCH_UNLOCK_SPEND"> 

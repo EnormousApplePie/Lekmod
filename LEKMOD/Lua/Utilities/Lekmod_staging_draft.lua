@@ -39,6 +39,9 @@ g_DraftPageMode = g_DraftPageMode or "players";
 g_DraftRules = g_DraftRules or LekmodDrafter.DefaultRules();
 g_DraftBans = g_DraftBans or {};          -- [playerID] = { civID or -1, ... }
 g_DraftBanReady = g_DraftBanReady or {};  -- [playerID] = true/false
+-- True only after we locally check ban-ready, until PreGame confirms our R_* bit.
+-- Must NOT keep ready forever — that blocked host clears on rules change.
+g_DraftBanReadyPendingLocal = g_DraftBanReadyPendingLocal or false;
 g_DraftPools = g_DraftPools or {};        -- [playerID] = { civID, ... }
 g_DraftLocked = g_DraftLocked or false;
 g_DraftSwapDesire = g_DraftSwapDesire or {}; -- [playerID] = otherPlayerID they want to swap drafts with
@@ -332,6 +335,7 @@ function Draft_RestoreFromPreGame()
 	Draft_UnpackRules(Draft_OptGet(DRAFT_OPT_RULES));
 	g_DraftBans = {};
 	g_DraftBanReady = {};
+	g_DraftBanReadyPendingLocal = false;
 	g_DraftBanHostControl = {};
 	g_DraftPools = {};
 	g_DraftSwapDesire = {};
@@ -534,10 +538,14 @@ end
 local function Draft_ApplyReadyMask(mask, preserveLocalOptimistic)
 	mask = tonumber(mask) or 0;
 	local localID = Matchmaking.GetLocalID();
+	local localBitSet = localID ~= nil and (math.floor(mask / Draft_Pow2(localID)) % 2 == 1);
+	-- Only keep an unconfirmed local ready click — never ignore a host clear after rules reset.
 	local keepLocal = preserveLocalOptimistic
+		and g_DraftBanReadyPendingLocal
 		and not Matchmaking.IsHost()
 		and localID ~= nil
-		and g_DraftBanReady[localID] == true;
+		and g_DraftBanReady[localID] == true
+		and not localBitSet;
 	g_DraftBanReady = {};
 	local maxP = GameDefines.MAX_MAJOR_CIVS;
 	for pid = 0, maxP - 1 do
@@ -545,9 +553,10 @@ local function Draft_ApplyReadyMask(mask, preserveLocalOptimistic)
 			g_DraftBanReady[pid] = true;
 		end
 	end
-	-- Client may still be ready locally while a lost packet left the host mask stale.
 	if keepLocal then
 		g_DraftBanReady[localID] = true;
+	else
+		g_DraftBanReadyPendingLocal = false;
 	end
 end
 
@@ -562,6 +571,9 @@ end
 
 -- Pull ban-ready like PreGame.IsReady(): each player's own GameOption bit.
 -- Returns true if g_DraftBanReady changed (caller may refresh UI).
+-- Host reads per-player R_* (players own their bits). Clients prefer the host
+-- aggregate DRAFT_OPT_READY mask so a rules-reset (mask 0) is not undone by
+-- stale remote R_* bits the host cannot reliably clear.
 function Draft_PullBanReadyFromPreGame()
 	if PreGame == nil or PreGame.GetGameOption == nil or PreGame.IsHotSeatGame() then
 		return false;
@@ -569,46 +581,29 @@ function Draft_PullBanReadyFromPreGame()
 	local localID = Matchmaking.GetLocalID();
 	local changed = false;
 	local maxP = GameDefines.MAX_MAJOR_CIVS;
-	local anyPerPlayer = false;
-	for pid = 0, maxP - 1 do
-		if Draft_OptGet(Draft_ReadyOptName(pid)) == 1 then
-			anyPerPlayer = true;
-			break;
-		end
-	end
+	local mask = Draft_OptGet(DRAFT_OPT_READY);
+	local isHost = Matchmaking.IsHost();
 
-	if anyPerPlayer then
-		for pid = 0, maxP - 1 do
-			local ready = Draft_OptGet(Draft_ReadyOptName(pid)) == 1;
-			-- Keep local optimistic ready until our own option bit lands.
-			if pid == localID and g_DraftBanReady[localID] == true and not ready then
-				ready = true;
-			end
-			if (g_DraftBanReady[pid] == true) ~= ready then
-				changed = true;
-			end
-			if ready then
-				g_DraftBanReady[pid] = true;
-			else
-				g_DraftBanReady[pid] = nil;
-			end
+	for pid = 0, maxP - 1 do
+		local ready;
+		if isHost then
+			ready = Draft_OptGet(Draft_ReadyOptName(pid)) == 1;
+		else
+			ready = math.floor(mask / Draft_Pow2(pid)) % 2 == 1;
 		end
-	else
-		-- Legacy lobby save: only the aggregate mask exists.
-		local mask = Draft_OptGet(DRAFT_OPT_READY);
-		for pid = 0, maxP - 1 do
-			local ready = math.floor(mask / Draft_Pow2(pid)) % 2 == 1;
-			if pid == localID and g_DraftBanReady[localID] == true and not ready then
-				ready = true;
-			end
-			if (g_DraftBanReady[pid] == true) ~= ready then
-				changed = true;
-			end
-			if ready then
-				g_DraftBanReady[pid] = true;
-			else
-				g_DraftBanReady[pid] = nil;
-			end
+		-- Keep only a pending local ready click until host mask / our bit lands.
+		if pid == localID and g_DraftBanReadyPendingLocal and g_DraftBanReady[localID] == true and not ready then
+			ready = true;
+		elseif pid == localID and ready then
+			g_DraftBanReadyPendingLocal = false;
+		end
+		if (g_DraftBanReady[pid] == true) ~= ready then
+			changed = true;
+		end
+		if ready then
+			g_DraftBanReady[pid] = true;
+		else
+			g_DraftBanReady[pid] = nil;
 		end
 	end
 	return changed;
@@ -647,6 +642,7 @@ function Draft_ResetState(clearPersist)
 	g_DraftRules = LekmodDrafter.DefaultRules();
 	g_DraftBans = {};
 	g_DraftBanReady = {};
+	g_DraftBanReadyPendingLocal = false;
 	g_DraftBanHostControl = {};
 	g_DraftPools = {};
 	g_DraftLocked = false;
@@ -2123,6 +2119,7 @@ function Draft_OnLocalBanReady(bChecked)
 		return;
 	end
 	g_DraftBanReady[localID] = bChecked and true or false;
+	g_DraftBanReadyPendingLocal = bChecked and true or false;
 	if bChecked then
 		-- Close any open picker so ready state can't be bypassed mid-edit.
 		g_PendingBan = nil;
@@ -2184,23 +2181,24 @@ function Draft_PullRulesFromPreGame()
 	if Draft_OptGet(DRAFT_OPT_VER) < 1 then
 		return false;
 	end
+	local prevPacked = Draft_PackRules();
 	local packed = Draft_OptGet(DRAFT_OPT_RULES);
-	if packed == Draft_PackRules() then
+	if packed == prevPacked then
 		return false;
 	end
 
-	local prevBans = tonumber(g_DraftRules.bansPerPlayer) or 0;
 	Draft_UnpackRules(packed);
-	local newBans = tonumber(g_DraftRules.bansPerPlayer) or 0;
+	-- Host cleared ban-ready with the rules write; drop local ready UI too.
+	g_DraftBanReady = {};
+	g_DraftBanReadyPendingLocal = false;
+	Draft_WriteLocalBanReadyOption(false);
 	for _, pid in ipairs(GetDraftPlayerOrder()) do
 		EnsureBanArray(pid);
 	end
 	EnsureBanArray(Matchmaking.GetLocalID());
 	Draft_PopulateRulesUI();
-	if prevBans ~= newBans then
-		ResetHorizontalBanScrolls();
-		Draft_RefreshBanUI();
-	end
+	ResetHorizontalBanScrolls();
+	Draft_RefreshBanUI();
 	Draft_UpdateActionButtons();
 	return true;
 end
@@ -2297,6 +2295,7 @@ function Draft_OnRestorePreviousDraft()
 	g_DraftParticipantCount = snapCount;
 	-- Restore ban-ready (green highlight) for slots that still exist in the deal.
 	g_DraftBanReady = {};
+	g_DraftBanReadyPendingLocal = false;
 	local snapReady = snap.banReady or {};
 	for _, pid in ipairs(GetDraftPlayerOrder()) do
 		if snapReady[pid] == true then
@@ -2338,6 +2337,7 @@ function Draft_OnResetDraft()
 	g_DraftLocked = false;
 	g_DraftPools = {};
 	g_DraftBanReady = {};
+	g_DraftBanReadyPendingLocal = false;
 	g_DraftBanHostControl = {};
 	g_DraftSwapFirst = nil;
 	g_DraftSwapDesire = {};
@@ -2433,6 +2433,10 @@ function Draft_HandleProtocol(fromPlayer, text)
 			g_DraftRules.guaranteedInlands = tonumber(inland);
 			g_DraftRules.vanillaOnly = tonumber(vanilla) == 1;
 			g_DraftRules.seasonalBans = tonumber(seasonal) == 1;
+			-- Host rules change clears everyone's ban-ready (see OnRulesChanged).
+			g_DraftBanReady = {};
+			g_DraftBanReadyPendingLocal = false;
+			Draft_WriteLocalBanReadyOption(false);
 			-- Resize ban arrays (all draft participants, including AI).
 			for _, pid in ipairs(GetDraftPlayerOrder()) do
 				EnsureBanArray(pid);
@@ -2441,6 +2445,7 @@ function Draft_HandleProtocol(fromPlayer, text)
 			Draft_PopulateRulesUI();
 			Draft_RefreshBanUI();
 			ResetHorizontalBanScrolls();
+			Draft_UpdateActionButtons();
 			Draft_PersistToPreGame();
 		end
 		return true;
@@ -2591,6 +2596,7 @@ function Draft_HandleProtocol(fromPlayer, text)
 		g_DraftLocked = false;
 		g_DraftPools = {};
 		g_DraftBanReady = {};
+		g_DraftBanReadyPendingLocal = false;
 		g_DraftBanHostControl = {};
 		g_DraftSwapFirst = nil;
 		g_DraftSwapDesire = {};
@@ -2685,6 +2691,7 @@ local function OnRulesChanged()
 	end
 	-- Clear ban-ready when rules change (host clears PreGame ready bits too).
 	g_DraftBanReady = {};
+	g_DraftBanReadyPendingLocal = false;
 	local maxP = GameDefines.MAX_MAJOR_CIVS;
 	for pid = 0, maxP - 1 do
 		Draft_OptSet(Draft_ReadyOptName(pid), 0);
@@ -3106,8 +3113,9 @@ function Draft_OnUpdateDisplay()
 	if g_DraftLocked and not Draft_IsHistoryOnly() then
 		Draft_ValidateAllCivsAgainstPools();
 	end
-	Draft_PullBanReadyFromPreGame();
+	-- Rules first: a host rules reset clears ready before we re-pull bits/mask.
 	Draft_PullRulesFromPreGame();
+	Draft_PullBanReadyFromPreGame();
 	Draft_RefreshBanUI();
 	Draft_RefreshDraftIconsAll();
 	Draft_UpdateActionButtons();

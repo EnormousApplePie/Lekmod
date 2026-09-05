@@ -235,6 +235,9 @@ CvUnit::CvUnit() :
 	, m_iCanMoveImpassableCount("CvUnit::m_iCanMoveImpassableCount", m_syncArchive)
 	, m_iOnlyDefensiveCount("CvUnit::m_iOnlyDefensiveCount", m_syncArchive)
 	, m_iNoDefensiveBonusCount("CvUnit::m_iNoDefensiveBonusCount", m_syncArchive)
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+	, m_iNoFortifyVsRangedCount("CvUnit::m_iNoFortifyVsRangedCount", m_syncArchive)
+#endif
 	, m_iNoCaptureCount("CvUnit::m_iNoCaptureCount", m_syncArchive)
 	, m_iNukeImmuneCount("CvUnit::m_iNukeImmuneCount", m_syncArchive)
 	, m_iHiddenNationalityCount("CvUnit::m_iHiddenNationalityCount", m_syncArchive)
@@ -1101,6 +1104,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iCanMoveImpassableCount = 0;
 	m_iOnlyDefensiveCount = 0;
 	m_iNoDefensiveBonusCount = 0;
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+	m_iNoFortifyVsRangedCount = 0;
+#endif
 	m_iNoCaptureCount = 0;
 	m_iNukeImmuneCount = 0;
 	m_iAlwaysHealCount = 0;
@@ -3982,7 +3988,8 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 				if (targetPlot.IsAllowsWalkWater())
 				{
 #if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
-					// Match ConsumesAllMoves / CostsOnlyOne: Denmark pays 1 MP, everyone else ends turn
+					// Denmark pays 1 MP onto walk-water (ConsumesAllMoves / CostsOnlyOne).
+					// Everyone else ends the turn.
 					if (!GET_PLAYER(getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
 					{
 						finishMoves();
@@ -3990,6 +3997,7 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 					}
 #else
 					finishMoves();
+					bShouldDeductCost = false;
 #endif
 				}
 			}
@@ -13313,7 +13321,15 @@ int CvUnit::GetMaxDefenseStrength(const CvPlot* pInPlot, const CvUnit* pAttacker
 
 		// Fortification
 		iTempModifier = fortifyModifier();
-		iModifier += iTempModifier;
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+		// Promo: fortify only vs melee (not ranged or air)
+		bool bStripFortify = isNoFortifyVsRanged() &&
+			(bFromRangedAttack || (pAttacker != NULL && pAttacker->getDomainType() == DOMAIN_AIR));
+		if (!bStripFortify)
+#endif
+		{
+			iModifier += iTempModifier;
+		}
 
 		// City Defense
 		if (pInPlot->isCity())
@@ -14793,11 +14809,33 @@ int CvUnit::GetMaxDefenseStrength(const CvCombatInfo& kInfo, CvCombatModifierLis
 
 		// Fortification
 		iTempModifier = fortifyModifier();
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+		// Promo: fortify only vs melee (ranged, bombing, and air sweep do not get it)
+		const bool bNonMeleeAttack = bRangedAttack || kInfo.getAttackIsAirSweep() ||
+			(pAttacker != NULL && pAttacker->getDomainType() == DOMAIN_AIR);
+		const bool bStripFortify = isNoFortifyVsRanged() && bNonMeleeAttack;
+		if (bStripFortify)
+		{
+			// omit bonus and help line
+		}
+		else
+#endif
 		{
 			iModifier += iTempModifier;
 			if (kModifierList && iTempModifier)
 			{
-				GC.getGame().BuildCombatModHelpText(*kModifierList, "TXT_KEY_DEFENSEMOD_FORTIFICATION", iTempModifier, getFortifyTurns());
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+				if (isNoFortifyVsRanged())
+				{
+					Localization::String localizedText = Localization::Lookup("TXT_KEY_DEFENSEMOD_FORTIFICATION_VS_COMBAT");
+					localizedText << Localization::Lookup("TXT_KEY_DEFENSEMOD_FORTIFY_GROUP_MELEE").toUTF8();
+					kModifierList->AddEntry(localizedText.toUTF8(), iTempModifier);
+				}
+				else
+#endif
+				{
+					GC.getGame().BuildCombatModHelpText(*kModifierList, "TXT_KEY_DEFENSEMOD_FORTIFICATION", iTempModifier, getFortifyTurns());
+				}
 			}
 		}
 
@@ -16261,6 +16299,32 @@ void CvUnit::changeNoDefensiveBonusCount(int iValue)
 		m_iNoDefensiveBonusCount += iValue;
 	}
 }
+
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+//	--------------------------------------------------------------------------------
+bool CvUnit::isNoFortifyVsRanged() const
+{
+	VALIDATE_OBJECT
+	return getNoFortifyVsRangedCount() > 0;
+}
+
+//	--------------------------------------------------------------------------------
+int CvUnit::getNoFortifyVsRangedCount() const
+{
+	VALIDATE_OBJECT
+	return m_iNoFortifyVsRangedCount;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::changeNoFortifyVsRangedCount(int iValue)
+{
+	VALIDATE_OBJECT
+	if (iValue != 0)
+	{
+		m_iNoFortifyVsRangedCount += iValue;
+	}
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 bool CvUnit::isNoCapture() const
@@ -22754,6 +22818,9 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeCanMoveImpassableCount((thisPromotion.IsCanMoveImpassable()) ? iChange : 0);
 		changeOnlyDefensiveCount((thisPromotion.IsOnlyDefensive()) ? iChange : 0);
 		changeNoDefensiveBonusCount((thisPromotion.IsNoDefensiveBonus()) ? iChange : 0);
+#if defined(LEKMOD_NO_FORTIFY_VS_RANGED_PROMO)
+		changeNoFortifyVsRangedCount((thisPromotion.IsNoFortifyVsRanged()) ? iChange : 0);
+#endif
 		changeNoCaptureCount((thisPromotion.IsNoCapture()) ? iChange : 0);
 		changeNukeImmuneCount((thisPromotion.IsNukeImmune()) ? iChange: 0);
 		changeHiddenNationalityCount((thisPromotion.IsHiddenNationality()) ? iChange: 0);

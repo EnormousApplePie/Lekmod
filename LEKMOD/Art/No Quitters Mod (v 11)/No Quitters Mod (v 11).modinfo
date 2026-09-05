@@ -332,6 +332,9 @@ Big thanks to Delnar_Ersike for all of his code, fixes, and knowledge!!</Descrip
     <File md5="DB4E6391F1DA199CF84E484D94372287" import="0">unit_promotions/MergeAmbushAndFormation.xml</File>
     <File md5="11F1E8EC6A13C736CDC39F08DD08933A" import="0">unit_promotions/NavalMeleeChanges.xml</File>
     <File md5="5AA080D57DECBB10E734C9513B10AA43" import="0">unit_promotions/RemoveBlitzFromParadrops.xml</File>
+    <File md5="2B6F6EA19C27DF7FB22EF93ED55D42BC" import="0">unit_promotions/NoFortifyVsRanged.sql</File>
+    <File md5="054A17CFDFB2FE0505E9FE351582F21F" import="0">unit_promotions/NoFortifyVsRanged.xml</File>
+    <File md5="2E791954E7FB716E98B5A4CFAA15EA2C" import="0">unit_promotions/NoFortifyVsRanged_Free.sql</File>
     <File md5="DB695D6723498F3A50CCBFDBFF437339" import="0">wonders_national/CircusMaximusChanges.xml</File>
     <File md5="219E84D71743459EF39B39C84E0FC3B2" import="0">wonders_national/EastIndiaCompanyChanges.xml</File>
     <File md5="FA47D03401A60C139F056538236A8CC6" import="0">wonders_national/GrandTempleChanges.xml</File>
@@ -554,6 +557,9 @@ Big thanks to Delnar_Ersike for all of his code, fixes, and knowledge!!</Descrip
       <UpdateDatabase>unit_promotions/HeavyChargeDownhill.xml</UpdateDatabase>
       <UpdateDatabase>unit_promotions/MergeAmbushAndFormation.xml</UpdateDatabase>
       <UpdateDatabase>unit_promotions/NavalMeleeChanges.xml</UpdateDatabase>
+      <UpdateDatabase>unit_promotions/NoFortifyVsRanged.sql</UpdateDatabase>
+      <UpdateDatabase>unit_promotions/NoFortifyVsRanged.xml</UpdateDatabase>
+      <UpdateDatabase>unit_promotions/NoFortifyVsRanged_Free.sql</UpdateDatabase>
       <UpdateDatabase>units/AfricanForestElephant.xml</UpdateDatabase>
       <UpdateDatabase>units/ArmoredUnitChanges.xml</UpdateDatabase>
       <UpdateDatabase>units/BallistaChanges.xml</UpdateDatabase>

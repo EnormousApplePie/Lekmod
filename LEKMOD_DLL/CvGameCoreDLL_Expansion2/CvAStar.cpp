@@ -1329,7 +1329,13 @@ int PathCost(CvAStarNode* parent, CvAStarNode* node, int data, const void* point
 		bToPlotIsWater = bToPlotIsWater && pToPlot->isWater();
 		bFromPlotIsWater = bFromPlotIsWater && pFromPlot->isWater();
 	}
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+	// From-plot embark domain only — cache isEmbarked is the unit's start state and stays
+	// true after a virtual disembark onto walk-water, which broke military re-embark costs.
+	int iBaseMoves = pCacheData->baseMoves(bFromPlotIsWater ? DOMAIN_SEA : pCacheData->getDomainType());
+#else
 	int iBaseMoves = pCacheData->baseMoves(bFromPlotIsWater || pCacheData->isEmbarked() ? DOMAIN_SEA : pCacheData->getDomainType());
+#endif
 	int iMaxMoves = iBaseMoves * GC.getMOVE_DENOMINATOR();
 #else
 	bool bToPlotIsWater = pToPlot->isWater() && !pToPlot->IsAllowsWalkWater();
@@ -1363,7 +1369,11 @@ int PathCost(CvAStarNode* parent, CvAStarNode* node, int data, const void* point
 #ifdef AUI_ASTAR_MINOR_OPTIMIZATION
 	int iCost = CvUnitMovement::MovementCost(pUnit, pFromPlot, pToPlot, iBaseMoves, iMaxMoves, iMax);
 #else
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+	int iCost = CvUnitMovement::MovementCost(pUnit, pFromPlot, pToPlot, pCacheData->baseMoves((pToPlot->isWater() && !pToPlot->IsAllowsWalkWater())?DOMAIN_SEA:pCacheData->getDomainType()), pCacheData->maxMoves(), iMax);
+#else
 	int iCost = CvUnitMovement::MovementCost(pUnit, pFromPlot, pToPlot, pCacheData->baseMoves((pToPlot->isWater() || pCacheData->isEmbarked())?DOMAIN_SEA:pCacheData->getDomainType()), pCacheData->maxMoves(), iMax);
+#endif
 #endif
 
 	TeamTypes eUnitTeam = pCacheData->getTeam();
@@ -2279,7 +2289,11 @@ int PathAdd(CvAStarNode* parent, CvAStarNode* node, int data, const void* pointe
 		int iStartMoves = parent->m_iData1;
 		iTurns = parent->m_iData2;
 #ifdef AUI_ASTAR_MINOR_OPTIMIZATION
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+		int iBaseMoves = pCacheData->baseMoves((pFromPlot->isWater() && !pFromPlot->IsAllowsWalkWater()) ? DOMAIN_SEA : pCacheData->getDomainType());
+#else
 		int iBaseMoves = pCacheData->baseMoves(((pFromPlot->isWater() && !pFromPlot->IsAllowsWalkWater()) || pCacheData->isEmbarked()) ? DOMAIN_SEA : pCacheData->getDomainType());
+#endif
 #endif
 
 		if(iStartMoves == 0)
@@ -2306,7 +2320,11 @@ int PathAdd(CvAStarNode* parent, CvAStarNode* node, int data, const void* pointe
 		}
 		else
 		{
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+			iMoves = std::min(iMoves, std::max(0, iStartMoves - CvUnitMovement::MovementCost(pUnit, pFromPlot, pToPlot, pCacheData->baseMoves((pToPlot->isWater() && !pToPlot->IsAllowsWalkWater())?DOMAIN_SEA:pCacheData->getDomainType()), pCacheData->maxMoves(), iStartMoves)));
+#else
 			iMoves = std::min(iMoves, std::max(0, iStartMoves - CvUnitMovement::MovementCost(pUnit, pFromPlot, pToPlot, pCacheData->baseMoves((pToPlot->isWater() || pCacheData->isEmbarked())?DOMAIN_SEA:pCacheData->getDomainType()), pCacheData->maxMoves(), iStartMoves)));
+#endif
 		}
 #endif
 	}
@@ -2528,7 +2546,11 @@ int IgnoreUnitsCost(CvAStarNode* parent, CvAStarNode* node, int data, const void
 		bToPlotIsWater = bToPlotIsWater && pToPlot->isWater();
 		bFromPlotIsWater = bFromPlotIsWater && pFromPlot->isWater();
 	}
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+	int iBaseMoves = pCacheData->baseMoves(bFromPlotIsWater ? DOMAIN_SEA : pCacheData->getDomainType());
+#else
 	int iBaseMoves = pCacheData->baseMoves(bFromPlotIsWater || pCacheData->isEmbarked() ? DOMAIN_SEA : pCacheData->getDomainType());
+#endif
 	int iMaxMoves = iBaseMoves * GC.getMOVE_DENOMINATOR();
 #endif
 
@@ -2552,7 +2574,11 @@ int IgnoreUnitsCost(CvAStarNode* parent, CvAStarNode* node, int data, const void
 #ifdef AUI_ASTAR_MINOR_OPTIMIZATION
 	int iCost = CvUnitMovement::MovementCostNoZOC(pUnit, pFromPlot, pToPlot, iBaseMoves, iMaxMoves, iMax);
 #else
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+	iCost = CvUnitMovement::MovementCostNoZOC(pUnit, pFromPlot, pToPlot, pCacheData->baseMoves((pToPlot->isWater() && !pToPlot->IsAllowsWalkWater())?DOMAIN_SEA:pCacheData->getDomainType()), pCacheData->maxMoves(), iMax);
+#else
 	iCost = CvUnitMovement::MovementCostNoZOC(pUnit, pFromPlot, pToPlot, pCacheData->baseMoves((pToPlot->isWater() || pCacheData->isEmbarked())?DOMAIN_SEA:pCacheData->getDomainType()), pCacheData->maxMoves(), iMax);
+#endif
 #endif
 
 	TeamTypes eUnitTeam = pUnit->getTeam();
@@ -3084,7 +3110,11 @@ int IgnoreUnitsPathAdd(CvAStarNode* parent, CvAStarNode* node, int data, const v
 		int iStartMoves = parent->m_iData1;
 		iTurns = parent->m_iData2;
 #ifdef AUI_ASTAR_MINOR_OPTIMIZATION
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+		int iBaseMoves = pCacheData->baseMoves((pFromPlot->isWater() && !pFromPlot->IsAllowsWalkWater()) ? DOMAIN_SEA : pCacheData->getDomainType());
+#else
 		int iBaseMoves = pCacheData->baseMoves(((pFromPlot->isWater() && !pFromPlot->IsAllowsWalkWater()) || pCacheData->isEmbarked()) ? DOMAIN_SEA : pCacheData->getDomainType());
+#endif
 #endif
 
 		if(iStartMoves == 0)
@@ -3105,7 +3135,11 @@ int IgnoreUnitsPathAdd(CvAStarNode* parent, CvAStarNode* node, int data, const v
 #else
 		// We can't use maxMoves, because that checks where the unit is currently, and we're plotting a path so we have to see
 		// what the max moves would be like if the unit was already at the desired location.
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+		iMoves = std::min(iMoves, std::max(0, iStartMoves - CvUnitMovement::MovementCostNoZOC(pUnit, pFromPlot, pToPlot, pCacheData->baseMoves((pToPlot->isWater() && !pToPlot->IsAllowsWalkWater())?DOMAIN_SEA:pCacheData->getDomainType()), pCacheData->maxMoves())));
+#else
 		iMoves = std::min(iMoves, std::max(0, iStartMoves - CvUnitMovement::MovementCostNoZOC(pUnit, pFromPlot, pToPlot, pCacheData->baseMoves((pToPlot->isWater() || pCacheData->isEmbarked())?DOMAIN_SEA:pCacheData->getDomainType()), pCacheData->maxMoves())));
+#endif
 #endif
 	}
 
@@ -4733,17 +4767,24 @@ int UIPathValid(CvAStarNode* parent, CvAStarNode* node, int data, const void* po
 #endif
 				{
 #if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
-					// Walk-water lets land units leave their starting landmass (land -> pontoon -> other land).
-					// Vanilla only allows plots adjacent to the unit's current area, which hides those tiles.
+					// Embark-capable units may leave their starting area (land <-> ocean).
+					// PathDestValid already allows this; UI range must match or the blue outline
+					// stays stuck on the current domain despite a valid same-turn path.
+					bool bAllowCrossArea = pUnit->CanEverEmbark();
+					// Walk-water also lets land units leave their starting landmass
+					// (land -> pontoon -> other land) when they cannot embark.
+					if (!bAllowCrossArea)
+					{
 #ifdef AUI_ASTAR_CACHE_PLOTS_AT_NODES
-					const CvPlot* pFromPlot = parent->m_pPlot;
+						const CvPlot* pFromPlot = parent->m_pPlot;
 #else
-					CvPlot* pFromPlot = GC.getMap().plot(parent->m_iX, parent->m_iY);
+						CvPlot* pFromPlot = GC.getMap().plot(parent->m_iX, parent->m_iY);
 #endif
-					const bool bWalkWaterBridge = pToPlot->IsAllowsWalkWater() ||
-						(pFromPlot && (pFromPlot->IsAllowsWalkWater() ||
-							((!pFromPlot->isWater() || pFromPlot->IsAllowsWalkWater()) && pFromPlot->getArea() == pToPlot->getArea())));
-					if (!bWalkWaterBridge)
+						bAllowCrossArea = pToPlot->IsAllowsWalkWater() ||
+							(pFromPlot && (pFromPlot->IsAllowsWalkWater() ||
+								((!pFromPlot->isWater() || pFromPlot->IsAllowsWalkWater()) && pFromPlot->getArea() == pToPlot->getArea())));
+					}
+					if (!bAllowCrossArea)
 #endif
 					{
 						return FALSE;

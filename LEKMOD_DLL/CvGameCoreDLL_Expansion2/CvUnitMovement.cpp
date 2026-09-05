@@ -211,21 +211,22 @@ bool CvUnitMovement::ConsumesAllMoves(const CvUnit* pUnit, const CvPlot* pFromPl
 	}
 
 #if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
-	// Walk-water is land-like for unembarked units. Embark/disembark across that boundary
-	// must match actual move() behavior (consume all MP), including pontoon <-> open water.
+	// Walk-water is land-like for movement. Use plot state only (not isEmbarked) so pathfinding
+	// mid-route matches after a virtual disembark onto pontoon/shallows.
 	if (pUnit->CanEverEmbark() && !pUnit->IsHoveringUnit() && !pUnit->canMoveAllTerrain())
 	{
-		const bool bFromLandLike = !pFromPlot->isWater() || (pFromPlot->IsAllowsWalkWater() && !pUnit->isEmbarked());
+		const bool bFromLandLike = !pFromPlot->isWater() || pFromPlot->IsAllowsWalkWater();
 		const bool bToLandLike = !pToPlot->isWater() || pToPlot->IsAllowsWalkWater();
 
 		if (bFromLandLike != bToLandLike)
 		{
-			// Disembark for 1 MP (Denmark) — combat and civilians
+			// Denmark: open water -> true land OR walk-water costs 1 MP
 			if (bToLandLike && !bFromLandLike && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
 			{
 				return false;
 			}
 #ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
+			// Civilian embark (land/walk-water -> open water) costs 1 MP; military burns all
 			if (!bToLandLike && bFromLandLike && !pUnit->IsCombatUnit() &&
 				GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove())
 			{
@@ -267,16 +268,23 @@ bool CvUnitMovement::ConsumesAllMoves(const CvUnit* pUnit, const CvPlot* pFromPl
 	{
 		//
 		
-		// Is the unit from a civ that can disembark for just 1 MP?
+		// Denmark: open water -> land/walk-water does not burn all MP
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+		if (bFromWaterForEmbark && !bToWaterForEmbark && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
+#else
 		if (!pToPlot->isWater() && pFromPlot->isWater() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
-
+#endif
 		{
 			return false;
 		}
 
 #ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
     // New: Civilian embark does not consume all moves if trait present
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+    if (bToWaterForEmbark && !bFromWaterForEmbark)
+#else
     if (pToPlot->isWater() && !pFromPlot->isWater())
+#endif
     {
         if (!pUnit->IsCombatUnit() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove())
         {
@@ -316,23 +324,30 @@ bool CvUnitMovement::CostsOnlyOne(const CvUnit* pUnit, const CvPlot* pFromPlot, 
 		return true;
 	}
 
-	// Is the unit from a civ that can disembark for just 1 MP?
-	if (!pToPlot->isWater() && pFromPlot->isWater() && pUnit->CanEverEmbark() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
+	// Denmark UA: open water -> land or walk-water costs 1 MP.
+	// Do not gate on isEmbarked() — pathfinder evaluates mid-route segments.
+	if (pUnit->CanEverEmbark() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
 	{
-		return true;
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+		const bool bFromWaterForEmbark = pFromPlot->isWater() && !pFromPlot->IsAllowsWalkWater();
+		const bool bToLandLike = !pToPlot->isWater() || pToPlot->IsAllowsWalkWater();
+		if (bFromWaterForEmbark && bToLandLike)
+		{
+			return true;
+		}
+#else
+		if (!pToPlot->isWater() && pFromPlot->isWater())
+		{
+			return true;
+		}
+#endif
 	}
 #if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
-	// Disembark onto walk-water (pontoon) also uses the flat 1 MP trait (combat + civilians)
-	if (pToPlot->IsAllowsWalkWater() && pUnit->isEmbarked() && pFromPlot->isWater() &&
-		pUnit->CanEverEmbark() &&
-		GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
-	{
-		return true;
-	}
-	// Embark from walk-water onto open water: civilian one-move trait
+	// Embark from walk-water onto open water: civilian one-move trait (plot-based; ignore isEmbarked
+	// so pathfinding after a virtual disembark still costs 1 MP for civilians).
 #ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
 	if (!pToPlot->IsAllowsWalkWater() && pToPlot->isWater() && pFromPlot->IsAllowsWalkWater() &&
-		pUnit->CanEverEmbark() && !pUnit->isEmbarked() && !pUnit->IsCombatUnit() &&
+		pUnit->CanEverEmbark() && !pUnit->IsCombatUnit() &&
 		GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove())
 	{
 		return true;
@@ -341,7 +356,11 @@ bool CvUnitMovement::CostsOnlyOne(const CvUnit* pUnit, const CvPlot* pFromPlot, 
 #endif
 #ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
     // New: Only civilian units embarking cost 1 move
+#if defined(LEKMOD_WATER_WALK_IMPROVEMENT_RULES)
+    if (pToPlot->isWater() && !pToPlot->IsAllowsWalkWater() && !pFromPlot->isWater() && pUnit->CanEverEmbark())
+#else
     if (pToPlot->isWater() && !pFromPlot->isWater() && pUnit->CanEverEmbark())
+#endif
     {
         if (!pUnit->IsCombatUnit() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsCiviliansEmbarkOneMove())
         {

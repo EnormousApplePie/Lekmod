@@ -7819,6 +7819,11 @@
 			<FriendlyName>Academy</FriendlyName> 
 		</Row>
 		<Row> 
+			<Type>ART_DEF_IMPROVEMENT_BUGANDA_LAKE</Type> 
+			<LandmarkType>Improvement</LandmarkType> 
+			<FriendlyName>Kabakas Lake</FriendlyName> 
+		</Row>
+		<Row> 
 			<Type>ART_DEF_IMPROVEMENT_CITADEL</Type> 
 			<LandmarkType>Improvement</LandmarkType> 
 			<FriendlyName>Citadel</FriendlyName> 
@@ -8546,6 +8551,26 @@
 			<LayoutHandler>SNAPSHOT</LayoutHandler> 
 			<ResourceType>ART_DEF_RESOURCE_ALL</ResourceType> 
 			<Model>Assets/Buildings/Improvements/Academy/PL_IND_Academy.fxsxml</Model> 
+			<TerrainContour>1</TerrainContour> 
+		</Row>
+		<Row> 
+			<Era>Any</Era> 
+			<State>Constructed</State> 
+			<Scale>1</Scale> 
+			<ImprovementType>ART_DEF_IMPROVEMENT_BUGANDA_LAKE</ImprovementType> 
+			<LayoutHandler>SNAPSHOT</LayoutHandler> 
+			<ResourceType>ART_DEF_RESOURCE_ALL</ResourceType> 
+			<Model>LakeReference.fxsxml</Model> 
+			<TerrainContour>1</TerrainContour> 
+		</Row>
+		<Row> 
+			<Era>Any</Era> 
+			<State>UnderConstruction</State> 
+			<Scale>1</Scale> 
+			<ImprovementType>ART_DEF_IMPROVEMENT_BUGANDA_LAKE</ImprovementType> 
+			<LayoutHandler>SNAPSHOT</LayoutHandler> 
+			<ResourceType>ART_DEF_RESOURCE_ALL</ResourceType> 
+			<Model>HB_LakeReference.fxsxml</Model> 
 			<TerrainContour>1</TerrainContour> 
 		</Row>
 		<Row> 
@@ -13235,7 +13260,7 @@
 			<LayoutHandler>RANDOM</LayoutHandler> 
 			<ResourceType>ART_DEF_FEATURE_FORD</ResourceType> 
 			<Model>Ford.fxsxml</Model> 
-			<TerrainContour>1</TerrainContour> 
+			<TerrainContour>0</TerrainContour> 
 		</Row>
 		<Row> 
 			<Era>Any</Era> 
@@ -14953,6 +14978,11 @@
 			<StrategicViewType>ART_DEF_IMPROVEMENT_ACADEMY</StrategicViewType> 
 			<TileType>Improvement</TileType> 
 			<Asset>SV_Academy.dds</Asset> 
+		</Row>
+		<Row> 
+			<StrategicViewType>ART_DEF_IMPROVEMENT_BUGANDA_LAKE</StrategicViewType> 
+			<TileType>Improvement</TileType> 
+			<Asset>SV_Buganda_Lake.dds</Asset> 
 		</Row>
 		<Row> 
 			<StrategicViewType>ART_DEF_IMPROVEMENT_BARBARIAN_CAMP</StrategicViewType> 
@@ -49244,8 +49274,8 @@
 			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
 			<ImprovementType>IMPROVEMENT_BUGANDA_LAKE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<IconIndex>33</IconIndex>
-			<IconAtlas>UNIT_ACTION_ATLAS</IconAtlas>
+			<IconIndex>1</IconIndex>
+			<IconAtlas>LEKMOD_BUGANDA_UI_ATLAS</IconAtlas>
 		</Row>
 		<Row>
 			<ID>71</ID>
@@ -134600,7 +134630,49 @@
             <IconsPerRow>1</IconsPerRow>
             <IconsPerColumn>1</IconsPerColumn>
         </Row>
-		 <Row>
+		<Row>
+            <Atlas>LEKMOD_BUGANDA_UI_ATLAS</Atlas>
+            <IconSize>32</IconSize>
+            <Filename>atlas_buganda_ui_32.dds</Filename>
+            <IconsPerRow>2</IconsPerRow>
+            <IconsPerColumn>2</IconsPerColumn>
+        </Row>
+        <Row>
+            <Atlas>LEKMOD_BUGANDA_UI_ATLAS</Atlas>
+            <IconSize>64</IconSize>
+            <Filename>atlas_buganda_ui_64.dds</Filename>
+            <IconsPerRow>2</IconsPerRow>
+            <IconsPerColumn>2</IconsPerColumn>
+        </Row>
+        <Row>
+            <Atlas>LEKMOD_BUGANDA_UI_ATLAS</Atlas>
+            <IconSize>80</IconSize>
+            <Filename>atlas_buganda_ui_80.dds</Filename>
+            <IconsPerRow>2</IconsPerRow>
+            <IconsPerColumn>2</IconsPerColumn>
+        </Row>
+        <Row>
+            <Atlas>LEKMOD_BUGANDA_UI_ATLAS</Atlas>
+            <IconSize>128</IconSize>
+            <Filename>atlas_buganda_ui_128.dds</Filename>
+            <IconsPerRow>2</IconsPerRow>
+            <IconsPerColumn>2</IconsPerColumn>
+        </Row>
+        <Row>
+            <Atlas>LEKMOD_BUGANDA_UI_ATLAS</Atlas>
+            <IconSize>45</IconSize>
+            <Filename>atlas_buganda_ui_45.dds</Filename>
+            <IconsPerRow>2</IconsPerRow>
+            <IconsPerColumn>2</IconsPerColumn>
+        </Row>
+        <Row>
+            <Atlas>LEKMOD_BUGANDA_UI_ATLAS</Atlas>
+            <IconSize>256</IconSize>
+            <Filename>atlas_buganda_ui_256.dds</Filename>
+            <IconsPerRow>2</IconsPerRow>
+            <IconsPerColumn>2</IconsPerColumn>
+        </Row>
+		<Row>
             <Atlas>LEKMOD_MALI_ATLAS</Atlas>
             <IconSize>32</IconSize>
             <Filename>atlas_mali_32.dds</Filename>
@@ -138468,7 +138540,7 @@
 			<Type>IMPROVEMENT_BUGANDA_LAKE</Type>
 			<Description>TXT_KEY_BUGANDA_LAKE</Description>
 			<Civilopedia>TXT_KEY_CIV5_BUGANDA_LAKE_TEXT</Civilopedia>
-			<ArtDefineTag>ART_DEF_FEATURE_OASIS</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_BUGANDA_LAKE</ArtDefineTag>
 			<SpecificCivRequired>true</SpecificCivRequired>
 			<CivilizationType>CIVILIZATION_BUGANDA</CivilizationType>
 			<BuildableOnResources>true</BuildableOnResources>
@@ -138479,8 +138551,8 @@
 			<PillageGold>20</PillageGold>
 			<AdjacentCityMakesValid>true</AdjacentCityMakesValid>
 			<FreshWaterSource>true</FreshWaterSource>
-			<PortraitIndex>28</PortraitIndex>
-			<IconAtlas>TERRAIN_ATLAS</IconAtlas>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_BUGANDA_UI_ATLAS</IconAtlas>
 		</Row>
 	</Improvements>
 
@@ -209798,6 +209870,8 @@
 		<Column name="AttackExtraMoves" type="INTEGER" default="0" />
 		<Column name="KillRefreshMove" type="boolean" default="false" />
 		<Column name="KillRefreshAttack" type="boolean" default="false" />
+		<Column name="NoFortifyVsRanged" type="INTEGER" default="0" />
+		
 	</Table> 
 	<UnitPromotions>
 		<Delete />
@@ -251151,6 +251225,20 @@
 			<KillRefreshMove>true</KillRefreshMove>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
+		<Row>
+			<ID>343</ID>  
+			<Type>PROMOTION_NO_FORTIFY_VS_RANGED</Type>
+			<Description>TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED</Description>
+			<Help>TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>57</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<NoFortifyVsRanged>true</NoFortifyVsRanged>
+		</Row>
 	</UnitPromotions>
 
 	<Table name="UnitPromotions_KillYieldValidEras">
@@ -253634,6 +253722,18 @@
 		</Row>
 		<Row> 
 			<PromotionType>PROMOTION_SCOUTING_1</PromotionType> 
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType> 
+		</Row>
+		<Row> 
+			<PromotionType>PROMOTION_SCOUTING_2</PromotionType> 
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType> 
+		</Row>
+		<Row> 
+			<PromotionType>PROMOTION_SCOUTING_3</PromotionType> 
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType> 
+		</Row>
+		<Row> 
+			<PromotionType>PROMOTION_SCOUTING_1</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType> 
 		</Row>
 		<Row> 
@@ -255021,6 +255121,10 @@
 		<Row> 
 			<PromotionType>PROMOTION_SWISS_MOUNTAINEER</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType> 
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
 		</Row>
 	</UnitPromotions_UnitCombats> 
 
@@ -260469,16 +260573,32 @@
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
 		<Row> 
+			<UnitType>UNIT_ARCHER</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
 			<UnitType>UNIT_MC_RAPA_NUI_MATATOA</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_MC_RAPA_NUI_MATATOA</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_BUFFALO_HUNTER</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
 		<Row> 
+			<UnitType>UNIT_BUFFALO_HUNTER</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
 			<UnitType>UNIT_BARBARIAN_ARCHER</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_BARBARIAN_ARCHER</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_SPEARMAN</UnitType> 
@@ -260642,6 +260762,10 @@
 		</Row>
 		<Row> 
 			<UnitType>UNIT_CHINESE_CHUKONU</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_CHINESE_CHUKONU</UnitType> 
 			<PromotionType>PROMOTION_SECOND_ATTACK</PromotionType> 
 		</Row>
 		<Row> 
@@ -260650,6 +260774,10 @@
 		</Row>
 		<Row> 
 			<UnitType>UNIT_ENGLISH_LONGBOWMAN</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_ENGLISH_LONGBOWMAN</UnitType> 
 			<PromotionType>PROMOTION_RANGE</PromotionType> 
 		</Row>
 		<Row> 
@@ -260659,6 +260787,10 @@
 		<Row> 
 			<UnitType>UNIT_MC_ROMANIAN_VINATOR</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_MC_ROMANIAN_VINATOR</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_PIKEMAN</UnitType> 
@@ -261280,6 +261412,10 @@
 		</Row>
 		<Row> 
 			<UnitType>UNIT_INCAN_SLINGER</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_INCAN_SLINGER</UnitType> 
 			<PromotionType>PROMOTION_WITHDRAW_BEFORE_MELEE</PromotionType> 
 		</Row>
 		<Row> 
@@ -261319,6 +261455,10 @@
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
 		<Row> 
+			<UnitType>UNIT_BABYLONIAN_BOWMAN</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
 			<UnitType>UNIT_CELT_PICTISH_WARRIOR</UnitType> 
 			<PromotionType>PROMOTION_FOREIGN_LANDS</PromotionType> 
 		</Row>
@@ -261341,6 +261481,10 @@
 		<Row> 
 			<UnitType>UNIT_MAYAN_ATLATLIST</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_MAYAN_ATLATLIST</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_MC_OMANI_BAGHLAH</UnitType> 
@@ -261523,6 +261667,10 @@
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
 		<Row> 
+			<UnitType>UNIT_COMPOSITE_BOWMAN</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
 			<UnitType>UNIT_GALLEASS</UnitType> 
 			<PromotionType>PROMOTION_OCEAN_IMPASSABLE</PromotionType> 
 		</Row>
@@ -261597,6 +261745,14 @@
 		<Row> 
 			<UnitType>UNIT_MACHINE_GUN</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_GATLINGGUN</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_MACHINE_GUN</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
 		</Row>
 
 		<Row> 
@@ -261782,6 +261938,10 @@
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
 		<Row> 
+			<UnitType>UNIT_BAZOOKA</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
+		<Row> 
 			<UnitType>UNIT_KRIS_SWORDSMAN</UnitType> 
 			<PromotionType>PROMOTION_MYSTIC_BLADE</PromotionType> 
 		</Row>
@@ -261808,6 +261968,10 @@
 		<Row> 
 			<UnitType>UNIT_BARBARIAN_AXMAN</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_BARBARIAN_AXMAN</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_XCOM_SQUAD</UnitType> 
@@ -262362,6 +262526,10 @@
 			<UnitType>UNIT_NUBIAN_BOW</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
+		<Row> 
+			<UnitType>UNIT_NUBIAN_BOW</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
+		</Row>
 		<Row>
 			<UnitType>UNIT_COLORADO</UnitType>
 			<PromotionType>PROMOTION_ANTI_TANK_WEAK</PromotionType>
@@ -262386,6 +262554,10 @@
 		<Row>
 			<UnitType>UNIT_FINNISH_FOREST_PATROL</UnitType>
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_FINNISH_FOREST_PATROL</UnitType>
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType>
 		</Row>
 		<!-- Akkad units -->
 		<Row>
@@ -262441,6 +262613,10 @@
 		<Row>
 			<UnitType>UNIT_US_LONGBOWMAN</UnitType>
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_US_LONGBOWMAN</UnitType>
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType>
 		</Row>
 		<!-- v29 unit changes
 		<Row>
@@ -262661,6 +262837,10 @@
 		<Row> 
 			<UnitType>UNIT_MALI_COMPOSITE_BOWMAN</UnitType> 
 			<PromotionType>PROMOTION_MALI_SKIRMISHER_TACTICS</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_MALI_COMPOSITE_BOWMAN</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
 		</Row>
 		<!-- Buganda -->
 		<Row> 
@@ -271555,7 +271735,7 @@
 			<Combat>15</Combat>
 			<Cost>150</Cost>
 			<Moves>6</Moves>
-			<BaseSightRange>4</BaseSightRange>
+			<BaseSightRange>2</BaseSightRange>
 			<Class>UNITCLASS_AIRSHIP</Class>
 			<CombatClass>UNITCOMBAT_HELICOPTER</CombatClass>
 			<Domain>DOMAIN_HOVER</Domain>
