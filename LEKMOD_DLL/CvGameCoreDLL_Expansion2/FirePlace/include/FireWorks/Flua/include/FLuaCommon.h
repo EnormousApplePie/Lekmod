@@ -76,6 +76,8 @@ namespace FLua
             {
                 assert(pfn);
                 static_assert(sizeof(pfn) <= sizeof(m_pfnFunc), "function pointer storage");
+                // Mac member-function pointers are larger than static function pointers.
+                // Copy only the static pointer into the initialized storage.
                 memcpy(&m_pfnFunc, &pfn, sizeof(pfn));
             }
 		
@@ -474,6 +476,7 @@ namespace FLua
 		// Get functions for primitive types
 		template<> static inline bool Get(lua_State *L, int idx) { return lua_toboolean(L, idx) != 0; }
 		template<> static inline lua_Integer Get(lua_State *L, int idx) { return lua_tointeger(L, idx); }
+		// lua_Integer is already long on macOS, so a second specialization would collide.
 		#ifndef LEKMOD_MACOS
 		template<> static inline long Get(lua_State *L, int idx) { return (long)lua_tointeger(L, idx); }
 #endif

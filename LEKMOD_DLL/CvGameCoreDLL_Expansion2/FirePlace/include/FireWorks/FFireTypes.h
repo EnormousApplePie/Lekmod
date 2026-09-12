@@ -20,6 +20,7 @@ typedef unsigned char		byte;
 typedef unsigned short		word;
 typedef unsigned int		uint;
 #ifdef LEKMOD_MACOS
+// Engine DWORDs and CRCs remain 32 bits on the LP64 Mac host.
 typedef unsigned int dword;
 #else
 typedef unsigned long		dword;

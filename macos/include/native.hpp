@@ -17,6 +17,7 @@
 #include <unordered_map>
 #include <unordered_set>
 namespace std { namespace tr1 { using std::shared_ptr; using std::weak_ptr; using std::unordered_map; using std::unordered_set; } }
+// Select the SDK PC paths; LEKMOD_MACOS handles differences from the Windows ABI.
 #define _WINPC 1
 #define _WIN64 1
 #define WIN32 1

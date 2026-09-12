@@ -11147,6 +11147,7 @@ void CvGame::Write(FDataStream& kStream) const
 			CvAssertMsg(false,"Saved game database exists, but could not open it!");
 		}
 
+		// The saved database size is 32 bits; long is 64 bits on macOS.
 		int nilSize = 0;
 		kStream << nilSize;
 	}

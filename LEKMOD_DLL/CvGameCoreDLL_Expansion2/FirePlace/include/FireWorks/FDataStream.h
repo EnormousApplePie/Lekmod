@@ -523,6 +523,7 @@ FDataStream & operator>>(FDataStream & loadFrom, ArrayWrapper<ValueType> & v)
 	return loadFrom;
 }
 
+// Accept temporary wrappers while reading into the caller-owned array.
 template<typename ValueType>
 FDataStream & operator>>(FDataStream & loadFrom, ArrayWrapper<ValueType> && v)
 {

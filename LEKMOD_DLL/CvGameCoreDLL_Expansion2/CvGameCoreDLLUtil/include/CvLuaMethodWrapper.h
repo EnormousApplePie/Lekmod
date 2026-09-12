@@ -6,6 +6,7 @@
 template< class Derived, class InstanceType>
 class CvLuaMethodWrapper
 {
+	// Allow Derived to use wrappers for the class that declares an inherited method.
 	friend Derived;
 
 protected:

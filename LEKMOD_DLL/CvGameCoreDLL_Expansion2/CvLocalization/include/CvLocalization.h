@@ -336,6 +336,7 @@ namespace Localization
 		CvLocalizationAPI bool PushArgument(_In_bytecount_(length) const char* szText, size_t length);
 		CvLocalizationAPI bool PushArgument(const int val);
 #ifdef LEKMOD_MACOS
+        // The Mac host exports the 64-bit overload as long, not long long.
         CvLocalizationAPI bool PushArgument(long val);
         bool PushArgument(__int64 val) { return PushArgument(static_cast<long>(val)); }
 #else

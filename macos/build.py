@@ -71,6 +71,7 @@ def main():
         return 0
     candidate = BUILD / "candidate.dylib"
     objects = [BUILD / (Path(name.replace("\\", "/")).stem + ".o") for name in sources]
+    # Engine imports resolve from the game executable; audit them before replacing the output.
     link = subprocess.run(["clang++", "-arch", "x86_64", "-mmacosx-version-min=10.13",
                            "-dynamiclib", "-stdlib=libc++", "-Wl,-undefined,dynamic_lookup",
                            "-Wl,-exported_symbol,_DllGetGameContext",

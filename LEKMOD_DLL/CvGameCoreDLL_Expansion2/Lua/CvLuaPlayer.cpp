@@ -1175,6 +1175,7 @@ int CvLuaPlayer::lAcquireCity(lua_State* L)
 //void killCities();
 int CvLuaPlayer::lKillCities(lua_State* L)
 {
+	// Inherited methods still have CvPlayer member-pointer types, so use its wrapper.
 	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::killCities);
 }
 
