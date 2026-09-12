@@ -13,6 +13,7 @@ import subprocess
 import sys
 
 import crossplay
+import eui
 from audit import check_imports
 from game_install import (ASSETS, CORE, STOCK_CORE_SHA256, app_path, detect_apps,
                           ensure_closed, game_running, installed_state, installation_lock, read_vdf,
@@ -102,7 +103,7 @@ def verify_signature(app):
         raise RuntimeError('The game bundle changed or its signature needs repair.')
 
 
-def inspect(app, desired, log=lambda _: None):
+def inspect(app, desired, log=lambda _: None, desired_eui=None):
     checks = []
     def add(key, title, state, detail):
         checks.append(dict(id=key, title=title, state=state, detail=detail))
@@ -144,14 +145,21 @@ def inspect(app, desired, log=lambda _: None):
                    or not any((directory / name).iterdir())]
         if missing:
             raise RuntimeError('Install the required DLC in Steam: ' + ', '.join(missing))
-        if any(p.name.lower() in ('ui_bc1', 'ui_bc1_xits') for p in directory.iterdir()):
-            raise RuntimeError('Remove EUI (UI_bc1/UI_bc1_xits) before using the standard Mac UI.')
-    checked('dlc', 'Expansions & DLC', dlc, 'Required DLC folders present · standard UI')
+    checked('dlc', 'Expansions & DLC', dlc, 'Required DLC folders present')
     try:
         state = installed_state(app)
     except RuntimeError as error:
         add('record', 'Installation record', 'blocked', str(error))
         state = {}
+    if desired_eui is None:
+        desired_eui = bool(state.get('eui'))
+    result['eui_installed'] = bool(eui.existing(app))
+    result['eui_cached'] = eui.cached()
+    result['eui_enabled'] = desired_eui
+    if checked('eui', 'EUI', lambda: eui.guard(app, state), 'EUI installation recognized'):
+        checks.pop()
+        checked('eui', 'EUI', lambda: eui.check(app, state, desired_eui),
+                'EUI 1.28g verified' if desired_eui else 'Standard UI · EUI is optional', 'repair')
     known = checked('core', 'Native Lekmod library', lambda: validate_core(app), 'Installed library recognized')
     digest = sha256(app / CORE)
     if known and (digest == STOCK_CORE_SHA256 or not state.get('lekmod')):
@@ -204,8 +212,8 @@ def inspect(app, desired, log=lambda _: None):
     return result
 
 
-def run_action(app, desired, action, log=lambda _: None):
-    report = inspect(app, desired, log)
+def run_action(app, desired, action, log=lambda _: None, desired_eui=None, eui_archive=None):
+    report = inspect(app, desired, log, desired_eui=desired_eui)
     if action == 'status':
         return report
     if report['running']:
@@ -214,23 +222,32 @@ def run_action(app, desired, action, log=lambda _: None):
         raise RuntimeError('Resolve the checks marked “Needs attention”, then check again.')
     if action.startswith(('install-', 'uninstall-')):
         operation, component = action.split('-', 1)
-        if component not in ('lekmod', 'lekmap'):
+        if component not in ('lekmod', 'lekmap', 'eui'):
             raise ValueError('Unknown launcher component')
-        if operation == 'install':
-            installer.install(app, component=component, crossplay_enabled=desired, log=log)
+        if component == 'eui':
+            enabled = operation == 'install'
+            if enabled and eui_archive is not None:
+                eui.import_archive(eui_archive)
+            installer.install(app, component='eui', eui_enabled=enabled, log=log)
+            preferences(app, eui=enabled)
+            desired_eui = enabled
+        elif operation == 'install':
+            installer.install(app, component=component, crossplay_enabled=desired,
+                              eui_enabled=desired_eui, log=log)
         else:
             uninstall(app, component, log=log)
-        return inspect(app, desired, log)
+        return inspect(app, desired, log, desired_eui=desired_eui)
     if action == 'repair' or not report['ready']:
         log('Installing and repairing Lekmod. The previous game app will be kept as a backup…')
-        installer.install(app, component='lekmod' if installed_state(app).get('lekmap') is False else 'both', crossplay_enabled=desired, log=log)
-        report = inspect(app, desired, log)
+        installer.install(app, component='lekmod' if installed_state(app).get('lekmap') is False else 'both',
+                          crossplay_enabled=desired, eui_enabled=desired_eui, log=log)
+        report = inspect(app, desired, log, desired_eui=desired_eui)
     if not report['ready']:
         raise RuntimeError('Validation did not pass after repair. The game was not launched.')
     if action == 'launch':
         # Recheck under the same lock used by the installer, just before Steam handoff.
         with installation_lock(app):
-            report = inspect(app, desired, log)
+            report = inspect(app, desired, log, desired_eui=desired_eui)
             if not report['ready']:
                 raise RuntimeError('The installation changed before launch. Check it again.')
             ensure_closed()
@@ -252,9 +269,10 @@ class Progress(io.TextIOBase):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=('process-status', 'status', 'repair', 'launch', 'install-lekmod', 'uninstall-lekmod', 'install-lekmap', 'uninstall-lekmap'))
+    parser.add_argument('action', choices=('process-status', 'status', 'repair', 'launch', 'install-lekmod', 'uninstall-lekmod', 'install-lekmap', 'uninstall-lekmap', 'install-eui', 'uninstall-eui'))
     parser.add_argument('--app', type=Path)
     parser.add_argument('--crossplay', choices=('on', 'off'))
+    parser.add_argument('--eui-archive', type=Path, help='Original EUI 1.28g ZIP (first install only)')
     args = parser.parse_args()
     try:
         if args.action == 'process-status':
@@ -279,7 +297,9 @@ def main():
         except (OSError, ValueError, subprocess.SubprocessError) as error:
             emit('progress', message='Menu artwork unavailable: ' + str(error))
         with redirect_stdout(Progress()):
-            report = run_action(app, desired, args.action, log=print)
+            report = run_action(app, desired, args.action, log=print,
+                                desired_eui=bool(saved['installations'][str(app)]['eui']),
+                                eui_archive=args.eui_archive)
         report['apps'] = list(map(str, apps))
         emit('result', **report)
         return 0

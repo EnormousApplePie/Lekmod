@@ -1,5 +1,6 @@
 import AppKit
 import SwiftUI
+import UniformTypeIdentifiers
 
 // Render the launcher's own vector mark while building the app bundle.
 func writeIcons(to directory: String) {
@@ -93,6 +94,9 @@ struct Report: Decodable {
     let steam_session: SteamSession?
     let lekmod_installed: Bool?
     let lekmap_installed: Bool?
+    let eui_installed: Bool?
+    let eui_cached: Bool?
+    let eui_enabled: Bool?
 }
 
 struct SteamSession: Decodable {
@@ -199,7 +203,22 @@ final class LauncherModel: ObservableObject {
         }
     }
 
-    func run(_ action: String, preference: Bool? = nil) {
+    func installEUI() {
+        if report?.eui_cached == true { run("install-eui"); return }
+        let panel = NSOpenPanel()
+        panel.title = "Install EUI 1.28g"
+        panel.message = "Choose the original EUI 1.28g ZIP from CivFanatics. The launcher keeps a verified copy for repairs."
+        panel.allowedContentTypes = [.zip]
+        panel.accessoryView = NSHostingView(rootView: Link("Download EUI 1.28g",
+            destination: URL(string: "https://forums.civfanatics.com/resources/civ5-enhanced-user-interface.24303/version/22637/download")!).padding(8))
+        panel.canChooseDirectories = false
+        panel.allowsMultipleSelection = false
+        if panel.runModal() == .OK, let url = panel.url {
+            run("install-eui", archive: url.path)
+        }
+    }
+
+    func run(_ action: String, preference: Bool? = nil, archive: String? = nil) {
         guard !busy else { return }
         guard let repository = Bundle.main.object(forInfoDictionaryKey: "LekmodRepository") as? String,
               let python = Bundle.main.object(forInfoDictionaryKey: "LekmodPython") as? String else {
@@ -217,6 +236,7 @@ final class LauncherModel: ObservableObject {
         task.arguments = [repository + "/macos/launcher.py", action]
         if !app.isEmpty { task.arguments! += ["--app", app] }
         if let preference { task.arguments! += ["--crossplay", preference ? "on" : "off"] }
+        if let archive { task.arguments! += ["--eui-archive", archive] }
         task.currentDirectoryURL = URL(fileURLWithPath: repository)
         var environment = ProcessInfo.processInfo.environment
         environment["PYTHONUNBUFFERED"] = "1"
@@ -518,11 +538,11 @@ struct LauncherView: View {
                         }.padding(.top, 3)
                         Text("MAC LAUNCHER").font(.system(size: 9, weight: .semibold, design: .serif)).tracking(2.5)
                             .foregroundStyle(gold.opacity(0.85)).padding(.top, 7)
-                        Spacer(minLength: 24)
+                        Spacer(minLength: 12)
                         components
-                        installation.padding(.top, 24)
+                        installation.padding(.top, 18)
                         Text(model.report?.version ?? "Local checkout")
-                            .font(.system(size: 10, design: .serif)).foregroundStyle(muted).padding(.top, 16)
+                            .font(.system(size: 10, design: .serif)).foregroundStyle(muted).padding(.top, 12)
                     }.frame(width: (geometry.size.width - 60) / 2)
                     mainPanel.frame(width: (geometry.size.width - 132) / 2)
                 }.padding(.horizontal, 32).padding(.top, 48).padding(.bottom, 32)
@@ -591,7 +611,7 @@ struct LauncherView: View {
         VStack(spacing: 6) {
             HStack(spacing: 11) {
                 HStack(spacing: 9) {
-                    mark(key == "lekmod" ? "lekmod" : "map", size: 14).frame(width: 40)
+                    mark(key == "lekmod" ? "lekmod" : key == "eui" ? "rectangle.3.group" : "map", size: 14).frame(width: 40)
                     Text(title).font(.system(size: 14, design: .serif)).foregroundStyle(parchment)
                         .frame(width: 64, alignment: .center)
                 }.frame(maxWidth: .infinity, alignment: .center)
@@ -599,24 +619,32 @@ struct LauncherView: View {
                             state: installed == true ? "ok" : "pending")
             }
             HStack(spacing: 12) {
-                Button { model.run("install-" + key, preference: model.crossplay) } label: {
+                Button {
+                    if key == "eui" { model.installEUI() }
+                    else { model.run("install-" + key, preference: model.crossplay) }
+                } label: {
                     Label("Install", systemImage: "arrow.down.to.line")
-                }.disabled(model.busy || model.report?.repairable != true || model.gameActive || installed == true)
+                }.disabled(model.busy || model.report?.repairable != true || model.gameActive
+                           || installed == true && (key != "eui" || model.report?.eui_cached == true))
                     .accessibilityLabel("Install " + title)
                 Button { model.run("uninstall-" + key) } label: {
                     Label("Uninstall", systemImage: "minus.circle")
-                }.disabled(model.busy || model.report?.repairable != true || model.gameActive || installed != true)
+                }.disabled(model.busy || model.report?.repairable != true || model.gameActive
+                           || installed != true && (key != "eui" || model.report?.eui_enabled != true))
                     .accessibilityLabel("Uninstall " + title)
-                    .help("Remove " + title + ". Keep a backup, saved games, and the other component.")
+                    .help("Remove " + title + ". Keep a backup, saved games, and the other components.")
             }.buttonStyle(GoldButton(primary: false)).controlSize(.small).frame(maxWidth: 280)
         }
     }
 
     private var components: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 8) {
             component("Lekmod", "lekmod", installed: model.report?.lekmod_installed)
             Rectangle().fill(gold.opacity(0.28)).frame(height: 1)
             component("Lekmap", "lekmap", installed: model.report?.lekmap_installed)
+            Rectangle().fill(gold.opacity(0.28)).frame(height: 1)
+            component("EUI", "eui", installed: model.report?.eui_installed)
+                .help(summary(["eui"]).help)
         }
     }
 
@@ -652,7 +680,7 @@ struct LauncherView: View {
                 row("Game", "civ", ["game", "host"], good: "Compatible")
                 row("DLC", "civ", ["dlc"], good: "Installed")
                 row("Engine", "gearshape", ["core", "abi", "signature"], good: "Verified")
-                row("Assets", "gearshape", ["lekmod_assets"], good: "Verified")
+                row("Assets", "gearshape", ["lekmod_assets", "eui"], good: "Verified")
                 row("Map", "map", ["lekmap_assets"], good: "Verified")
                 row("Version", "arrow.triangle.2.circlepath", ["source"], good: "Up to date")
             }.frame(maxHeight: .infinity).padding(.vertical, 8)

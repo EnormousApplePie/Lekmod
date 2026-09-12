@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Install this checkout's native Lekmod and/or Lekmap into Civilization V."""
 import argparse
+from contextlib import nullcontext
 from datetime import datetime, timezone
 import json
 from pathlib import Path
 import shutil
 import subprocess
 import sys
+import eui
 
 from audit import check_imports
 from game_install import (ASSETS, CORE, MANIFEST, STOCK_CORE_SHA256, app_path,
@@ -23,12 +25,9 @@ ROOT = HERE.parent
 
 def preflight(app, component):
     validate_app(app)
-    if component in ('lekmod', 'both'):
+    if component in ('lekmod', 'both', 'eui'):
         validate_core(app)
-        dlc = app / ASSETS / 'DLC'
-        if any(p.name.lower() in ('ui_bc1', 'ui_bc1_xits') for p in dlc.iterdir()):
-            raise RuntimeError('This Mac installer supports the standard UI. Remove EUI '
-                               '(UI_bc1/UI_bc1_xits) from the game before installing Lekmod.')
+        eui.guard(app, installed_state(app))
         if not (ROOT / 'LEKMOD/ui_check.bat').is_file():
             raise RuntimeError('The checkout is missing LEKMOD assets.')
     if component in ('lekmap', 'both') and not any((ROOT / 'Lekmap').glob('Lekmap*.lua')):
@@ -53,14 +52,19 @@ def describe(app, component):
 
 
 def install(app, component='both', jobs=4, skip_build=False, log=print,
-            crossplay_enabled=None):
+            crossplay_enabled=None, eui_enabled=None):
     with installation_lock(app):
         ensure_closed()
         preflight(app, component)
         library = HERE / 'build' / CORE.name
         mod = component in ('lekmod', 'both')
         maps = component in ('lekmap', 'both')
-        before_source = source_digest(ROOT) if mod else None
+        state = installed_state(app)
+        ui_only = component == 'eui'
+        assets = mod or (ui_only and state.get('lekmod'))
+        enabled = bool(state.get('eui') or eui.existing(app)) if eui_enabled is None else eui_enabled
+        archive = eui.read_archive() if enabled and (mod or ui_only) else None
+        before_source = source_digest(ROOT) if assets else None
         before_maps = tree_digest(ROOT / 'Lekmap') if maps else None
         if mod:
             if not skip_build:
@@ -84,7 +88,10 @@ def install(app, component='both', jobs=4, skip_build=False, log=print,
                 # A maps-only update must not bless an independently replaced core.
                 state.pop('stock_core_sha256', None)
                 state.pop('lekmod', None)
-            if mod:
+            eui_folder = None
+            if mod or ui_only:
+                eui_folder = eui.prepare(staged, state, enabled, archive)
+            if assets:
                 # Only modify the staged bundle; the previous packages remain in the backup.
                 for package in (staged / ASSETS / 'DLC').iterdir():
                     if package.name.upper().startswith('LEKMOD'):
@@ -92,7 +99,8 @@ def install(app, component='both', jobs=4, skip_build=False, log=print,
                             package.unlink()
                         else:
                             shutil.rmtree(package)
-                prepare_lekmod(ROOT / 'LEKMOD', staged / ASSETS / 'DLC/LEKMOD')
+                prepare_lekmod(ROOT / 'LEKMOD', staged / ASSETS / 'DLC/LEKMOD', eui=eui_folder)
+            if mod:
                 shutil.copy2(library, staged / CORE)
                 sign_core(staged)
                 state.update(stock_core_sha256=STOCK_CORE_SHA256,
@@ -106,17 +114,20 @@ def install(app, component='both', jobs=4, skip_build=False, log=print,
                 prepare_lekmap(ROOT / 'Lekmap', destination)
                 state['lekmap'] = True
             if mod and (crossplay_enabled is not None or state.get('crossplay', {}).get('enabled')):
-                enabled = (crossplay_enabled if crossplay_enabled is not None
-                           else state['crossplay']['enabled'])
-                configure_crossplay(staged, state, enabled, repair=crossplay_enabled is not None)
+                crossplay_mode = (crossplay_enabled if crossplay_enabled is not None
+                                 else state['crossplay']['enabled'])
+                configure_crossplay(staged, state, crossplay_mode, repair=crossplay_enabled is not None)
             log('Recording installation fingerprints…')
             validation = state.setdefault('validation', {})
-            if mod:
+            if assets:
                 if source_digest(ROOT) != before_source:
                     raise RuntimeError('The checkout changed during installation. Please retry.')
                 validation.update(format=1, host_sha256=before_host,
-                                  source_sha256=before_source,
+                                  ui='eui' if enabled else 'standard',
                                   lekmod_sha256=tree_digest(staged / ASSETS / 'DLC/LEKMOD'))
+                if mod:
+                    # A UI-only switch must not mark an older native library up to date.
+                    validation['source_sha256'] = before_source
             if maps:
                 if tree_digest(ROOT / 'Lekmap') != before_maps:
                     raise RuntimeError('Lekmap changed during installation. Please retry.')
@@ -136,7 +147,9 @@ def install(app, component='both', jobs=4, skip_build=False, log=print,
                     or sha256(app / 'Contents/MacOS/Civilization V') != before_host):
                 raise RuntimeError('Steam changed the game during installation. Please retry.')
 
-        return replace_app(app, populate, log)
+        update_text = (mod or ui_only) and (enabled or ui_only or state.get('eui'))
+        with eui.text_files(enabled, archive) if update_text else nullcontext():
+            return replace_app(app, populate, log)
 
 
 def main(argv=None):

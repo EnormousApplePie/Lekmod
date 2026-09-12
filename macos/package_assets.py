@@ -2,6 +2,7 @@
 from pathlib import Path
 import re
 import shutil
+import sys
 
 
 def source_path(root, relative):
@@ -20,7 +21,7 @@ def source_path(root, relative):
     return current
 
 
-def prepare_lekmod(source, destination):
+def prepare_lekmod(source, destination, eui=None):
     shutil.copytree(source, destination,
                     ignore=lambda _path, names: [n for n in names
                         if n.startswith('.') or Path(n).suffix.lower() in ('.dll', '.pdb', '.bat')])
@@ -34,11 +35,33 @@ def prepare_lekmod(source, destination):
     for path in ui.iterdir():
         if path.is_file() and path.name not in keep:
             path.unlink()
-    for src, dst in mappings:
-        target = destination / dst.replace('\\', '/')
-        if not target.resolve().is_relative_to(ui.resolve()):
-            raise RuntimeError(f'Invalid UI destination: {dst}')
-        shutil.copy2(source_path(destination, src), target)
+    if eui is None:
+        for src, dst in mappings:
+            target = destination / dst.replace('\\', '/')
+            if not target.resolve().is_relative_to(ui.resolve()):
+                raise RuntimeError(f'Invalid UI destination: {dst}')
+            shutil.copy2(source_path(destination, src), target)
+    else:
+        # Reuse the Windows compatibility rules with native paths and strict copies.
+        root = str(Path(__file__).resolve().parent.parent)
+        if root not in sys.path:
+            sys.path.insert(0, root)
+        from LekmodInstaller.ui_manager import UIManager
+
+        class MacUIManager(UIManager):
+            def _find_eui_folder(self, _civ5_path):
+                return str(eui)
+
+            def _copy_ui_file(self, lekmod_path, tmp_rel, ui_dest, dest_name=None):
+                src = source_path(Path(lekmod_path), 'Lua/tmp/' + tmp_rel + '.ignore')
+                shutil.copy2(src, Path(ui_dest) / (dest_name or Path(tmp_rel).name))
+                return True
+
+        MacUIManager().configure_ui_files(str(destination), 'Enhanced UI', lambda _: None)
+        # ui_check.bat also overlays this helper; the Windows Python helper omits it.
+        if (eui / 'Core/CityStateStatusHelper.lua').is_file():
+            shutil.copy2(source_path(destination, 'Lua/tmp/eui/Core/CityStateStatusHelper.lua.ignore'),
+                         ui / 'CityStateStatusHelper.lua')
     for subdir in ('UI', 'Utilities'):
         (destination / 'Lua' / subdir / 'LekmodUiConfigured.lua').write_text(
             'LekmodUiConfigured = true\n')

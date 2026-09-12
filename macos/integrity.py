@@ -48,7 +48,9 @@ def source_digest(root):
                 raise RuntimeError(f'Unexpected source link: {path}')
             if path.is_file():
                 files.append((relative.as_posix(), path))
-    for name in ('build.py', 'package_assets.py', 'crossplay.py', 'integrity.py'):
+    for name in ('build.py', 'package_assets.py', 'crossplay.py', 'integrity.py', 'eui.py'):
         path = root / 'macos' / name
         files.append(('macos/' + name, path))
+    path = root / 'LekmodInstaller/ui_manager.py'
+    files.append(('LekmodInstaller/ui_manager.py', path))
     return _fingerprint(files)

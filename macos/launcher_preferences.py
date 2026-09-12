@@ -3,12 +3,12 @@ import json
 from pathlib import Path
 import tempfile
 
-from game_install import installed_state
+from game_install import ASSETS, installed_state
 
 SUPPORT = Path.home() / 'Library/Application Support/Lekmod Launcher'
 
 
-def preferences(app=None, desired=None, directory=SUPPORT):
+def preferences(app=None, desired=None, directory=SUPPORT, eui=None):
     """Remember intent outside the game bundle, including after Steam restores it."""
     path = directory / 'settings.json'
     state = json.loads(path.read_text()) if path.is_file() else {}
@@ -26,6 +26,13 @@ def preferences(app=None, desired=None, directory=SUPPORT):
                 record['crossplay'] = False
         if desired is not None:
             record['crossplay'] = desired
+        if 'eui' not in record:
+            try:
+                record['eui'] = bool(installed_state(app).get('eui')) or (app / ASSETS / 'DLC/UI_bc1').is_dir()
+            except RuntimeError:
+                record['eui'] = False
+        if eui is not None:
+            record['eui'] = eui
         state['selected_app'] = str(app)
         directory.mkdir(parents=True, exist_ok=True)
         with tempfile.NamedTemporaryFile(mode='w', dir=directory, delete=False) as temporary:

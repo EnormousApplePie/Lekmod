@@ -1,7 +1,8 @@
 # macOS (experimental)
 
 Requires Python 3.9+, Xcode Command Line Tools, Steam Civilization V (Aspyr build
-180925) with all non-map DLC, and Rosetta on Apple silicon. Standard UI only.
+180925) with all non-map DLC, and Rosetta on Apple silicon. Supports the standard
+UI and optional EUI 1.28g.
 
 ## Launcher
 
@@ -21,10 +22,10 @@ The launcher checks the supported game build, Steam installation, DLC folders,
 native library, mod file contents, checkout version, and app signature before
 launching through Steam. **Repair & Play** restores the installation, verifies it
 again, and launches; **Repair** updates the files without starting the game.
-The left-side **Install** and **Uninstall** controls manage Lekmod and Lekmap
+The left-side **Install** and **Uninstall** controls manage Lekmod, Lekmap, and EUI
 separately. Uninstalling Lekmod restores a verified original gameplay library
 from the retained backups; uninstalling Lekmap removes only its map scripts.
-Both actions preserve saved games and the other component. An intentionally
+These actions preserve saved games and the other components. An intentionally
 uninstalled Lekmap stays uninstalled when repairing or launching Lekmod.
 Close Civilization V before repairing. An unsupported game executable or unknown
 library stops the workflow with an explanation rather than applying a guessed fix.
@@ -41,6 +42,21 @@ It uses this checkout and the Python interpreter used to build it. Reopen the
 `.command` file after moving the checkout or changing Python. Launcher preferences
 live in `~/Library/Application Support/Lekmod Launcher/settings.json`, outside the
 Steam installation, so cross-play can be restored after Steam replaces game files.
+
+For bc1's EUI, download the original [EUI 1.28g ZIP](https://forums.civfanatics.com/resources/civ5-enhanced-user-interface.24303/version/22637/download),
+then choose it with **EUI → Install**. The launcher checks its fixed SHA-256 and
+keeps a copy in `~/Library/Application Support/Lekmod Launcher/` for offline
+reinstallation and repair. Only this release is supported; move any existing
+unmanaged `UI_bc1` or `UI_bc1_xits` installation out of DLC first.
+Installing or removing EUI selects the matching Lekmod UI files automatically.
+EUI-only changes preserve the native engine and Lekmap; uninstall restores the
+standard UI and retains the previous app in the usual backup folder. The launcher
+remembers EUI outside Steam and checks its files before launching.
+Its English text resource is installed under
+`~/Library/Application Support/Sid Meier's Civilization 5/Text/`; existing custom
+text is preserved. EUI is downloaded separately under its author's terms and is
+not redistributed with this repository. If Safari extracts the download, the
+original ZIP can be recovered from Trash.
 
 The previous app is retained in `.lekmod-backups` beside the game; its exact
 path is printed after installation. To restore, close the game, move the current
