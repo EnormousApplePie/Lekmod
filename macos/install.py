@@ -14,6 +14,7 @@ from game_install import (ASSETS, CORE, MANIFEST, STOCK_CORE_SHA256, app_path,
                           installed_state, replace_app, sha256, sign_app, sign_core, sign_nested,
                           validate_app, validate_core)
 from package_assets import prepare_lekmap, prepare_lekmod
+from crossplay import configure_staged as configure_crossplay
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -100,6 +101,8 @@ def install(app, component='both', jobs=4, skip_build=False, log=print):
                     shutil.rmtree(destination)
                 prepare_lekmap(ROOT / 'Lekmap', destination)
                 state['lekmap'] = True
+            if mod and state.get('crossplay', {}).get('enabled'):
+                configure_crossplay(staged, state, True)
             sign_nested(staged)
             if before_core == STOCK_CORE_SHA256:
                 state['stock_core_sha256'] = STOCK_CORE_SHA256

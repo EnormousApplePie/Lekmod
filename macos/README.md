@@ -24,4 +24,25 @@ Rerun after updating the checkout. Windows release downloads are not used.
 The previous app is retained in `.lekmod-backups` beside the game; its exact
 path is printed after installation. To restore, close the game, move the current
 app aside, and move the backup app into its place. Steam updates/Verify Files
-may undo installation. Mac/Windows multiplayer is unverified.
+may undo installation.
+
+## Experimental Windows cross-play
+
+Cross-play is opt-in and requires the same Lekmod release and required DLC on
+both machines. For the supported Aspyr 180925 executable, the native library
+adapts the multiplayer registration string to Windows build 403694 at a verified
+call site. The game retains its original global build metadata and version
+checks, and the installer preserves the setting across Lekmod updates.
+
+After installing, close the game and enable cross-play:
+
+```sh
+python3 macos/crossplay.py --enable
+```
+
+Launch through Steam, host a multiplayer game on Windows, and invite the Mac
+Steam account. To disable cross-play, close the game and run:
+
+```sh
+python3 macos/crossplay.py --disable
+```
