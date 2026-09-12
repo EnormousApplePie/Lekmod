@@ -10,11 +10,30 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import game_install as game
 import install as installer
+import uninstall as remover
+import crossplay
 
 
 def write(path, text):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text)
+
+
+class RunningGameTests(unittest.TestCase):
+    def test_aspyr_play_window_and_game_both_block_replacement(self):
+        for codes in ([0], [1, 0]):
+            with self.subTest(codes=codes), patch.object(game.subprocess, 'run', side_effect=[
+                    subprocess.CompletedProcess([], code, '', '') for code in codes]):
+                with self.assertRaisesRegex(RuntimeError, 'Close Civilization V'):
+                    game.ensure_closed()
+
+    def test_closed_game_passes_and_process_lookup_failure_blocks(self):
+        with patch.object(game.subprocess, 'run', side_effect=[
+                subprocess.CompletedProcess([], 1, '', ''), subprocess.CompletedProcess([], 1, '', '')]):
+            game.ensure_closed()
+        with patch.object(game.subprocess, 'run', return_value=subprocess.CompletedProcess([], 2, '', 'lookup failed')):
+            with self.assertRaisesRegex(RuntimeError, 'Cannot check'):
+                game.ensure_closed()
 
 
 class InstallerTests(unittest.TestCase):
@@ -48,6 +67,10 @@ class InstallerTests(unittest.TestCase):
         stack.enter_context(patch.multiple(installer, ROOT=self.repo, HERE=self.repo / 'macos',
                                           STOCK_CORE_SHA256=digest))
         stack.enter_context(patch.object(game, 'STOCK_CORE_SHA256', digest))
+        stack.enter_context(patch.object(remover, 'STOCK_CORE_SHA256', digest))
+        stack.enter_context(patch.object(remover, 'ensure_closed'))
+        stack.enter_context(patch.object(remover, 'sign_app'))
+        stack.enter_context(patch.object(installer, 'source_digest', return_value='fixture-source'))
         for module, name in [(game, 'ensure_closed')] + [
                 (installer, n) for n in ('ensure_closed', 'check_imports', 'sign_nested', 'sign_app')]:
             stack.enter_context(patch.object(module, name))
@@ -63,6 +86,41 @@ class InstallerTests(unittest.TestCase):
 
     def install(self, component='both', skip_build=True):
         return installer.install(self.app, component, skip_build=skip_build, log=lambda _: None)
+
+    def test_uninstall_mod_restores_stock_preserves_maps_and_reinstalls(self):
+        self.install()
+        write(self.app / crossplay.FLAG, '403694 FINAL_RELEASE\n')
+        backup = remover.uninstall(self.app, 'lekmod', log=lambda _: None)
+        self.assertEqual((self.app / game.CORE).read_text(), 'stock')
+        self.assertFalse((self.app / game.ASSETS / 'DLC/LEKMOD').exists())
+        self.assertFalse((self.app / crossplay.FLAG).exists())
+        self.assertTrue((self.app / game.ASSETS / 'Maps/Lekmap/LekmapPangaea.lua').exists())
+        self.assertFalse(game.installed_state(self.app)['lekmod'])
+        self.assertEqual((backup / game.CORE).read_text(), 'native signed')
+        self.install('lekmod')
+        self.assertTrue(game.installed_state(self.app)['lekmod'])
+        self.assertEqual((self.app / game.CORE).read_text(), 'native signed')
+
+    def test_uninstall_maps_preserves_native_core_and_other_maps(self):
+        self.install()
+        write(self.app / game.ASSETS / 'Maps/other.lua', 'keep')
+        digest = game.sha256(self.app / game.CORE)
+        remover.uninstall(self.app, 'lekmap', log=lambda _: None)
+        self.assertEqual(game.sha256(self.app / game.CORE), digest)
+        self.assertFalse((self.app / game.ASSETS / 'Maps/Lekmap').exists())
+        self.assertEqual((self.app / game.ASSETS / 'Maps/other.lua').read_text(), 'keep')
+        self.assertFalse(game.installed_state(self.app)['lekmap'])
+        self.install('lekmap')
+        self.assertTrue(game.installed_state(self.app)['lekmap'])
+
+    def test_uninstall_rejects_unverified_stock_backup_without_mutation(self):
+        stock_backup = self.install()
+        write(stock_backup / game.CORE, 'wrong library')
+        before = (self.app / game.MANIFEST).read_bytes()
+        with self.assertRaisesRegex(RuntimeError, 'original game library'):
+            remover.uninstall(self.app, 'lekmod')
+        self.assertEqual((self.app / game.MANIFEST).read_bytes(), before)
+        self.assertEqual((self.app / game.CORE).read_text(), 'native signed')
 
     def test_steam_detection(self):
         steam, external = self.root / 'Steam', self.root / 'External Library'
@@ -112,6 +170,24 @@ class InstallerTests(unittest.TestCase):
             self.assertEqual((self.app / game.CORE).read_text(), 'stock')
             self.assertFalse((self.app / game.MANIFEST).exists())
             self.assertFalse(list(self.root.glob('.lekmod-stage-*')))
+
+    def test_checkout_change_during_install_preserves_original(self):
+        with patch.object(installer, 'source_digest', side_effect=['before', 'after']):
+            with self.assertRaisesRegex(RuntimeError, 'checkout changed'):
+                self.install()
+        self.assertEqual((self.app / game.CORE).read_text(), 'stock')
+
+    def test_update_records_final_assets_after_crossplay_configuration(self):
+        def configure(app, state, enabled, repair=False):
+            write(app / game.ASSETS / 'DLC/LEKMOD/Lua/UI/crossplay.lua', 'configured')
+            state['crossplay'] = {'enabled': enabled}
+        with patch.object(installer, 'configure_crossplay', side_effect=configure) as configure_call:
+            installer.install(self.app, skip_build=True, log=lambda _: None, crossplay_enabled=True)
+        configure_call.assert_called_once()
+        state = game.installed_state(self.app)
+        self.assertEqual(state['validation']['lekmod_sha256'],
+                         installer.tree_digest(self.app / game.ASSETS / 'DLC/LEKMOD'))
+        self.assertTrue(state['crossplay']['enabled'])
 
     def test_maps_only_skips_build_and_lekmod_assets(self):
         with patch.object(installer.subprocess, 'run', wraps=subprocess.run) as run:

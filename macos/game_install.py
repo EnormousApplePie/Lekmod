@@ -124,6 +124,9 @@ def installed_state(app):
         state = json.loads(path.read_text())
         if not isinstance(state, dict) or state.get('installer') != 'lekmod-macos':
             raise ValueError('Unknown manifest format')
+        for key in ('crossplay', 'validation'):
+            if key in state and not isinstance(state[key], dict):
+                raise ValueError(f'Invalid {key} installation record')
         return state
     except (ValueError, OSError) as error:
         raise RuntimeError(f'Invalid installation record: {path}: {error}') from error
@@ -142,12 +145,21 @@ def validate_core(app):
                        'game through Steam before installing Lekmod.')
 
 
-def ensure_closed():
+def game_running():
     result = subprocess.run(['pgrep', '-x', 'Civilization V'], capture_output=True, text=True)
-    if result.returncode == 0:
-        raise RuntimeError('Close Civilization V before installing.')
-    if result.returncode != 1:
+    if result.returncode == 1:
+        # Steam first opens Aspyr's separate PLAY window. It holds this bundle
+        # open too, so wait for it to close before replacing the installation.
+        result = subprocess.run(['pgrep', '-f', r'/Civilization V[^/]*\.app/Contents/MacOS/AppBundleExe( |$)'],
+                                capture_output=True, text=True)
+    if result.returncode not in (0, 1):
         raise RuntimeError('Cannot check whether Civilization V is running: ' + result.stderr)
+    return result.returncode == 0
+
+
+def ensure_closed():
+    if game_running():
+        raise RuntimeError('Close Civilization V before installing.')
 
 
 def clone_app(source, destination):

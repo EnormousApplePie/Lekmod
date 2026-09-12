@@ -15,6 +15,7 @@ from game_install import (ASSETS, CORE, MANIFEST, STOCK_CORE_SHA256, app_path,
                           validate_app, validate_core)
 from package_assets import prepare_lekmap, prepare_lekmod
 from crossplay import configure_staged as configure_crossplay
+from integrity import source_digest, tree_digest
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -51,13 +52,16 @@ def describe(app, component):
     return '\n'.join(lines)
 
 
-def install(app, component='both', jobs=4, skip_build=False, log=print):
+def install(app, component='both', jobs=4, skip_build=False, log=print,
+            crossplay_enabled=None):
     with installation_lock(app):
         ensure_closed()
         preflight(app, component)
         library = HERE / 'build' / CORE.name
         mod = component in ('lekmod', 'both')
         maps = component in ('lekmap', 'both')
+        before_source = source_digest(ROOT) if mod else None
+        before_maps = tree_digest(ROOT / 'Lekmap') if maps else None
         if mod:
             if not skip_build:
                 log('Building native Lekmod (first build may take several minutes)…')
@@ -101,8 +105,23 @@ def install(app, component='both', jobs=4, skip_build=False, log=print):
                     shutil.rmtree(destination)
                 prepare_lekmap(ROOT / 'Lekmap', destination)
                 state['lekmap'] = True
-            if mod and state.get('crossplay', {}).get('enabled'):
-                configure_crossplay(staged, state, True)
+            if mod and (crossplay_enabled is not None or state.get('crossplay', {}).get('enabled')):
+                enabled = (crossplay_enabled if crossplay_enabled is not None
+                           else state['crossplay']['enabled'])
+                configure_crossplay(staged, state, enabled, repair=crossplay_enabled is not None)
+            log('Recording installation fingerprints…')
+            validation = state.setdefault('validation', {})
+            if mod:
+                if source_digest(ROOT) != before_source:
+                    raise RuntimeError('The checkout changed during installation. Please retry.')
+                validation.update(format=1, host_sha256=before_host,
+                                  source_sha256=before_source,
+                                  lekmod_sha256=tree_digest(staged / ASSETS / 'DLC/LEKMOD'))
+            if maps:
+                if tree_digest(ROOT / 'Lekmap') != before_maps:
+                    raise RuntimeError('Lekmap changed during installation. Please retry.')
+                validation.update(lekmap_sha256=tree_digest(staged / ASSETS / 'Maps/Lekmap'),
+                                  lekmap_source_sha256=before_maps)
             sign_nested(staged)
             if before_core == STOCK_CORE_SHA256:
                 state['stock_core_sha256'] = STOCK_CORE_SHA256
@@ -120,49 +139,6 @@ def install(app, component='both', jobs=4, skip_build=False, log=print):
         return replace_app(app, populate, log)
 
 
-class Cancelled(Exception):
-    pass
-
-
-def dialog(script, *arguments):
-    """Pass paths as argv, never interpolate them into AppleScript source."""
-    result = subprocess.run(['osascript', '-e', script, *map(str, arguments)],
-                            capture_output=True, text=True)
-    if result.returncode:
-        if '(-128)' in result.stderr:
-            raise Cancelled()
-        raise RuntimeError(result.stderr.strip())
-    return result.stdout.strip()
-
-
-def choose(options, prompt):
-    selection = dialog('''on run argv
-        set answer to choose from list (items 2 thru -1 of argv) with prompt (item 1 of argv) with title "Lekmod Installer" default items {item 2 of argv}
-        if answer is false then error number -128
-        return item 1 of answer
-    end run''', prompt, *options)
-    return selection
-
-
-def gui_options(args):
-    apps = detect_apps()
-    if args.app:
-        app = app_path(args.app)
-    else:
-        options = [str(p) for p in apps] + ['Browse…']
-        selected = choose(options, 'Choose your Civilization V installation:')
-        if selected == 'Browse…':
-            selected = dialog('''set folderPath to choose folder with prompt "Choose the folder containing Civilization V.app:"\nreturn POSIX path of folderPath''')
-        app = app_path(selected)
-    component = {'Lekmod and Lekmap': 'both', 'Lekmod': 'lekmod', 'Lekmap': 'lekmap'}[
-        choose(['Lekmod and Lekmap', 'Lekmod', 'Lekmap'], 'Choose what to install:')]
-    preflight(app, component)
-    dialog('''on run argv
-        display dialog (item 1 of argv) with title "Install Lekmod / Lekmap" buttons {"Cancel", "Install"} default button "Install" cancel button "Cancel"
-    end run''', describe(app, component))
-    return app, component
-
-
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--app', type=Path, help='Civilization V.app or its containing folder')
@@ -171,7 +147,7 @@ def main(argv=None):
     parser.add_argument('--skip-build', action='store_true', help='Use the existing native build')
     parser.add_argument('--list', action='store_true', help='List detected games without changes')
     parser.add_argument('--dry-run', action='store_true', help='Validate and show paths without changes')
-    parser.add_argument('--gui', action='store_true', help='Use native macOS selection dialogs')
+    parser.add_argument('--gui', action='store_true', help='Open the native Lekmod launcher')
     args = parser.parse_args(argv)
     try:
         if sys.platform != 'darwin':
@@ -185,7 +161,12 @@ def main(argv=None):
         if args.gui and args.dry_run:
             raise RuntimeError('Use --dry-run without --gui.')
         if args.gui:
-            app, component = gui_options(args)
+            from build_launcher import build
+            if args.app:
+                from launcher import preferences
+                preferences(app_path(args.app))
+            subprocess.run(['/usr/bin/open', str(build())], check=True)
+            return 0
         else:
             apps = [app_path(args.app)] if args.app else detect_apps()
             if len(apps) != 1:
@@ -200,22 +181,9 @@ def main(argv=None):
         message = (f'Installation complete. Launch Civilization V through Steam.\n\n'
                    f'Previous app backup:\n{backup}')
         print(message)
-        if args.gui:
-            dialog('''on run argv
-                display dialog (item 1 of argv) with title "Lekmod Installer" buttons {"OK"} default button "OK"
-            end run''', message)
-        return 0
-    except Cancelled:
         return 0
     except (OSError, RuntimeError, subprocess.CalledProcessError) as error:
         print(f'Installation failed: {error}', file=sys.stderr)
-        if args.gui:
-            try:
-                dialog('''on run argv
-                    display dialog (item 1 of argv) with title "Installation failed" buttons {"OK"} default button "OK" with icon stop
-                end run''', str(error))
-            except (Cancelled, OSError, RuntimeError):
-                pass
         return 1
 
 

@@ -15,6 +15,8 @@ import sys
 from game_install import (ASSETS, CORE, MANIFEST, app_path, detect_apps, ensure_closed,
                           installation_lock, installed_state, replace_app, sha256,
                           sign_app, validate_app, validate_core)
+from integrity import tree_digest
+from launcher_preferences import preferences
 
 HOST = Path('Contents/MacOS/Civilization V')
 PLIST = Path('Contents/Info.plist')
@@ -34,7 +36,7 @@ EVENTS = {
 }
 
 
-def configure_staged(app, state, enabled):
+def configure_staged(app, state, enabled, repair=False):
     """Only call on a staged bundle. Preserve all unrelated plist/manifest keys."""
     if sha256(app / HOST) != HOST_SHA256:
         raise RuntimeError('Cross-play prototype requires the inspected Aspyr 180925 executable.')
@@ -73,7 +75,7 @@ def configure_staged(app, state, enabled):
     flag = app / FLAG
     if not flag.resolve().is_relative_to(app.resolve()):
         raise RuntimeError('Cross-play setting points outside the app bundle.')
-    if flag.exists() and flag.read_text() != WINDOWS_BUILD + ' FINAL_RELEASE\n':
+    if flag.exists() and flag.read_text() != WINDOWS_BUILD + ' FINAL_RELEASE\n' and not repair:
         raise RuntimeError('Unrecognized cross-play setting; refusing to overwrite it.')
 
     joining = app / ASSETS / 'DLC/LEKMOD/Lua/UI/JoiningRoom.lua'
@@ -125,12 +127,16 @@ def configure(app, enabled):
 
         def populate(staged):
             configure_staged(staged, state, enabled)
+            if state.get('validation', {}).get('format') == 1:
+                state['validation']['lekmod_sha256'] = tree_digest(staged / ASSETS / 'DLC/LEKMOD')
             (staged / MANIFEST).write_text(json.dumps(state, indent=2) + '\n')
             sign_app(staged)
             if any(sha256(app / relative) != digest for relative, digest in before.items()):
                 raise RuntimeError('The installation changed while staging cross-play.')
 
-        return replace_app(app, populate)
+        backup = replace_app(app, populate)
+        preferences(app, enabled)
+        return backup
 
 
 def main():
