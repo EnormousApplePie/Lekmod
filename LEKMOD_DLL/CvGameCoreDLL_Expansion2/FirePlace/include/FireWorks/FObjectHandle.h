@@ -35,7 +35,11 @@ struct DestructionNotification
 {
 	~DestructionNotification()
 	{
+#if defined(LEKMOD_MACOS)
+		typename std::set<const NotificationTarget *>::const_iterator i;
+#else
 		std::set<const NotificationTarget *>::const_iterator i;
+#endif
 		for(i = m_targets.begin(); i != m_targets.end(); ++i)
 		{
 			const NotificationTarget * t = *i;

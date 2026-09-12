@@ -1450,6 +1450,10 @@ public:
 	virtual const CvString DLLCALL emailAddress() = 0; 
 	virtual float DLLCALL endTurnTimerLength() = 0; 
 	virtual EraTypes DLLCALL era() = 0;
+#ifdef LEKMOD_MACOS
+	// Aspyr 180925 inserts the era type string at pre-game vtable slot 28.
+	virtual const CvString DLLCALL eraKey() = 0;
+#endif
 	virtual PlayerTypes DLLCALL findPlayerByNickname(const char * const name) = 0;
 	virtual GameMode DLLCALL gameMode() = 0;
 	virtual const CvString DLLCALL  gameName() = 0;

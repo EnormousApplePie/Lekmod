@@ -50,6 +50,9 @@ public:
 	const CvString DLLCALL emailAddress();
 	float DLLCALL endTurnTimerLength();
 	EraTypes DLLCALL era();
+#ifdef LEKMOD_MACOS
+	const CvString DLLCALL eraKey();
+#endif
 	PlayerTypes DLLCALL findPlayerByNickname(const char* const name);
 	GameMode DLLCALL gameMode();
 	const CvString DLLCALL  gameName();

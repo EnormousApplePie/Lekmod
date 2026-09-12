@@ -38,7 +38,11 @@ public:
 	CvString& operator=( const std::string& s) { assign(s.c_str());	return *this; }	
 
 	// FString compatibility
+#if defined(LEKMOD_MACOS)
+	bool IsEmpty() const { return (empty() || (*this)[0] == '\0');}
+#else
 	bool IsEmpty() const { return (empty() || this[0] == '\0');}
+#endif
 	const char* GetCString() const 	{ return c_str(); }
 	int CompareNoCase( const char* lpsz ) const { return _stricmp(lpsz, c_str()); }
 	int CompareNoCase( const char* lpsz, int iLength ) const { return _strnicmp(lpsz, c_str(), iLength);  }

@@ -1322,7 +1322,11 @@ const char* CvUnitEntry::GetUnitNames(int i) const
 {
 	CvAssertMsg(i < GetNumUnitNames(), "Index out of bounds");
 	CvAssertMsg(i > -1, "Index out of bounds");
+#if defined(LEKMOD_MACOS)
+	return (m_paszUnitNames) ? m_paszUnitNames[i].c_str() : NULL;
+#else
 	return (m_paszUnitNames) ? m_paszUnitNames[i] : NULL;
+#endif
 }
 
 /// Unique great works created by individual units.
