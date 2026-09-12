@@ -241,11 +241,11 @@ protected:
 	unsigned int m_uiCurrSize;		//The current number of elements in the vector
 	unsigned int m_uiCurrMaxSize;	//The maximum number of elements which can be stored in the current memory store.
 
-	template< class T, bool bPODType, unsigned int AllocPool, unsigned int nSubID, class FAST_VEC_ALLOC >
-	friend void* operator new( size_t uiSize, FFastVector< T, bPODType, AllocPool, nSubID, FAST_VEC_ALLOC >& kVector );
+	template< class U, bool POD, unsigned int Pool, unsigned int SubID, class Allocator >
+	friend void* operator new( size_t uiSize, FFastVector< U, POD, Pool, SubID, Allocator >& kVector );
 
-	template< class T, unsigned int L, bool bPODType, unsigned int AllocPool, unsigned int nSubID >
-	friend void* operator new( size_t uiSize, FStaticVector< T, L, bPODType, AllocPool, nSubID >& kVector );
+	template< class U, unsigned int N, bool POD, unsigned int Pool, unsigned int SubID >
+	friend void* operator new( size_t uiSize, FStaticVector< U, N, POD, Pool, SubID >& kVector );
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -276,6 +276,10 @@ public:
 
 	typedef FFastVector< T, bPODType, AllocPool, nSubID, FAST_VEC_ALLOC > THIS_TYPE;
 	typedef BaseVector< T, bPODType > BASE_TYPE;
+	using BASE_TYPE::m_pData;
+	using BASE_TYPE::m_uiCurrSize;
+	using BASE_TYPE::m_uiCurrMaxSize;
+	using BASE_TYPE::Destroy;
 	typedef T TYPE;
 
 	typedef TYPE* iterator;
@@ -304,7 +308,7 @@ public:
 #ifdef BREAK_ON_REPEATED_RESIZE
 		m_nResizeTimes = 0;
 #endif
-		Copy(RHS);
+		this->Copy(RHS);
 	};
 	FFastVector(unsigned int uiStartingMaxSize = 0)
 	{
@@ -523,8 +527,8 @@ protected:
 	unsigned int m_nResizeTimes;
 #endif
 
-	template< class T, bool bPODType, unsigned int AllocPool, unsigned int nSubID, class FAST_VEC_ALLOC >
-	friend void* operator new( size_t uiSize, THIS_TYPE& kVector );
+	template< class U, bool POD, unsigned int Pool, unsigned int SubID, class Allocator >
+	friend void* operator new( size_t uiSize, FFastVector<U, POD, Pool, SubID, Allocator>& kVector );
 };
 
 // Placement new on a FFastVector allows you to call a constructor directly on memory internal to the vector.
@@ -572,6 +576,10 @@ template<
 {
 	typedef FStaticVector< T, L, bPODType, AllocPool, nSubID > THIS_TYPE;
 	typedef BaseVector< T, bPODType > BASE_TYPE;
+	using BASE_TYPE::m_pData;
+	using BASE_TYPE::m_uiCurrSize;
+	using BASE_TYPE::m_uiCurrMaxSize;
+	using BASE_TYPE::Destroy;
 
 public:
 	typedef T* iterator;
@@ -596,7 +604,7 @@ public:
 #ifdef BREAK_ON_STATIC_RESIZE
 		m_iNumResized = 0;
 #endif
-		Copy(RHS);
+		this->Copy(RHS);
 	};
 	FStaticVector()
     {
@@ -624,7 +632,7 @@ public:
 		}else{
 			Destroy(m_pData, m_uiCurrSize);
 		}
-		Copy(RHS);
+		this->Copy(RHS);
 	};
 
     bool operator == (const THIS_TYPE& RHS) const {
@@ -819,8 +827,8 @@ protected:
 	unsigned char m_iNumResized;
 #endif
 
-	template< class T, unsigned int L, bool bPODType, unsigned int AllocPool, unsigned int nSubID >
-	friend void* operator new( size_t uiSize, FStaticVector< T, L, bPODType, AllocPool, nSubID >& kVector );
+	template< class U, unsigned int N, bool POD, unsigned int Pool, unsigned int SubID >
+	friend void* operator new( size_t uiSize, FStaticVector< U, N, POD, Pool, SubID >& kVector );
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1163,6 +1171,10 @@ template<
 {
 	typedef FFixedVector< T, bPODType, AllocPool, nSubID > THIS_TYPE;
 	typedef BaseVector< T, bPODType > BASE_TYPE;
+	using BASE_TYPE::m_pData;
+	using BASE_TYPE::m_uiCurrSize;
+	using BASE_TYPE::m_uiCurrMaxSize;
+	using BASE_TYPE::Destroy;
 
 public:
 	typedef T* iterator;
@@ -1366,11 +1378,10 @@ protected:
 		FFREEALIGNED( (unsigned char*)pVal );
 	};
 
-	template< class T, bool bPODType, unsigned int AllocPool, unsigned int nSubID >
-	friend void* operator new( size_t uiSize, FFixedVector< T, bPODType, AllocPool, nSubID >& kVector );
+	template< class U, bool POD, unsigned int Pool, unsigned int SubID >
+	friend void* operator new( size_t uiSize, FFixedVector< U, POD, Pool, SubID >& kVector );
 };
 
 #if defined(_WIN32) || defined(_WIN64)
 #pragma warning( pop )
 #endif
-

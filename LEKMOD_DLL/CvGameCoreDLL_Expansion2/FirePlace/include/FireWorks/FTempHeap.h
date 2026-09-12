@@ -121,7 +121,10 @@ protected:
 
 
 #ifdef FXS_IS_DLL
-extern TempHeap* GetTempHeap();
+#ifdef LEKMOD_MACOS
+extern "C"
+#endif
+TempHeap* GetTempHeap();
 //extern void BindTempHeapProc();
 #else
 extern "C" {

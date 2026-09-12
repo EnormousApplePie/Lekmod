@@ -524,6 +524,12 @@ FDataStream & operator>>(FDataStream & loadFrom, ArrayWrapper<ValueType> & v)
 }
 
 template<typename ValueType>
+FDataStream & operator>>(FDataStream & loadFrom, ArrayWrapper<ValueType> && v)
+{
+    return operator>>(loadFrom, v);
+}
+
+template<typename ValueType>
 FDataStream & operator<<(FDataStream & saveTo, const ArrayWrapperConst<ValueType> & v)
 {
 	int i = 0;

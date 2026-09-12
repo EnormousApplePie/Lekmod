@@ -309,8 +309,8 @@ protected:
 	//The actual data
 	VectorType m_vec;
 
-	template< class T, bool bPODType, unsigned int AllocPool, unsigned int nSubID, class BASE_ALLOC > 
-	friend void* operator new( size_t uiSize, FFastAllocator< T, bPODType, AllocPool, nSubID, BASE_ALLOC >& kAlloc );
+	template< class U, bool POD, unsigned int Pool, unsigned int SubID, class Allocator >
+	friend void* operator new( size_t uiSize, FFastAllocator< U, POD, Pool, SubID, Allocator >& kAlloc );
 };
 
 // Placement new on a FFastAllocator allows allocation and construction to be combined.
@@ -353,7 +353,7 @@ template<
 	class T,
 	unsigned int AllocPool = c_eMPoolTypeContainer, 
 	unsigned int nSubID = 0,
-	class BASE_ALLOC = typename BaseVector< T, bPODType >::FDefaultFastVectorAllocator
+	class BASE_ALLOC = typename BaseVector< T, false >::FDefaultFastVectorAllocator
 > class FFixedBlockAllocator
 {
 	const static unsigned int ms_uiAnchorNodeIndex = 0x0fffffff;
@@ -554,7 +554,7 @@ public:
 
 	//Don't allow copying
 private:
-	void operator = (const FFastAllocator& rhs){}
+	void operator = (const FFixedBlockAllocator& rhs){}
 
 
 public:
@@ -598,8 +598,8 @@ protected:
 	//The actual data
 	T* m_pData;
 
-	template< class T, unsigned int AllocPool, unsigned int nSubID, class BASE_ALLOC >
-	friend void* operator new( size_t uiSize, FFixedBlockAllocator< T, AllocPool, nSubID, BASE_ALLOC >& kAlloc );
+	template< class U, unsigned int Pool, unsigned int SubID, class Allocator >
+	friend void* operator new( size_t uiSize, FFixedBlockAllocator< U, Pool, SubID, Allocator >& kAlloc );
 };
 
 // Placement new on a FFastAllocator allows allocation and construction to be combined.

@@ -23,7 +23,7 @@
 class FCriticalSection;
 
 // Kind of like an assert for the compiler.  If the condition is not true then a compilation error is caused.
-#define FLUA_COMPILE_TIME_CONDITION(CONDITION, ERR_NAME) typedef int ERROR_##ERR_NAME##[(CONDITION)? 1 : -1]
+#define FLUA_COMPILE_TIME_CONDITION(CONDITION, ERR_NAME) typedef int ERROR_##ERR_NAME[(CONDITION)? 1 : -1]
 
 // Forces a compile time error.  Useful for template specializations that aren't suppose to compile.
 #define FLUA_COMPILE_TIME_ERROR(ERR_NAME) FLUA_COMPILE_TIME_CONDITION(false, ERR_NAME)
@@ -72,8 +72,12 @@ namespace FLua
 		// Static functions
 		ErrorHandler(ErrorHandlerStaticFunc pfn) :
 			m_pkClass(NULL),
-			m_pfnFunc(Details::UnsafeCast<ErrorHandlerFunc>(pfn))
-			{ assert(pfn); }
+			m_pfnFunc()
+            {
+                assert(pfn);
+                static_assert(sizeof(pfn) <= sizeof(m_pfnFunc), "function pointer storage");
+                memcpy(&m_pfnFunc, &pfn, sizeof(pfn));
+            }
 		
 		// Member functions
 		template<class T, class TFuncOwner>
@@ -198,7 +202,7 @@ namespace FLua
 			T ret = T(); // Don't use with reference types!!! ...EVER!!!
 
 			// Get the lua analog for this type off of the lua stack
-			typedef Details::LuaAnalog<T>::Result Analog;
+			typedef typename Details::LuaAnalog<T>::Result Analog;
 			Analog analog = Details::Get<Analog>(m_pkLuaState, m_iStackIndex);
 
 			// Validate the value from lua
@@ -470,7 +474,9 @@ namespace FLua
 		// Get functions for primitive types
 		template<> static inline bool Get(lua_State *L, int idx) { return lua_toboolean(L, idx) != 0; }
 		template<> static inline lua_Integer Get(lua_State *L, int idx) { return lua_tointeger(L, idx); }
+		#ifndef LEKMOD_MACOS
 		template<> static inline long Get(lua_State *L, int idx) { return (long)lua_tointeger(L, idx); }
+#endif
 		template<> static inline lua_Number Get(lua_State *L, int idx) { return lua_tonumber(L, idx); }
 		template<> static inline float Get(lua_State *L, int idx) { return (float)lua_tonumber(L, idx); }
 		template<> static inline const char *Get(lua_State *L, int idx) { return lua_tostring(L, idx); }

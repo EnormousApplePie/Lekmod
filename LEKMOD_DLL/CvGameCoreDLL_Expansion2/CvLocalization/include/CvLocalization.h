@@ -335,7 +335,12 @@ namespace Localization
 		CvLocalizationAPI bool PushArgument(_In_z_ const char* szText);
 		CvLocalizationAPI bool PushArgument(_In_bytecount_(length) const char* szText, size_t length);
 		CvLocalizationAPI bool PushArgument(const int val);
+#ifdef LEKMOD_MACOS
+        CvLocalizationAPI bool PushArgument(long val);
+        bool PushArgument(__int64 val) { return PushArgument(static_cast<long>(val)); }
+#else
 		CvLocalizationAPI bool PushArgument(const __int64 val);
+#endif
 		CvLocalizationAPI bool PushArgument(const float val);
 		CvLocalizationAPI bool PushArgument(const double val);
 		CvLocalizationAPI bool PushArgument(const String& strText);

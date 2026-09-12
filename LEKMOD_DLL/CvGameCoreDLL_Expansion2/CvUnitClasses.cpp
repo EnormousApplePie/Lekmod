@@ -1322,7 +1322,7 @@ const char* CvUnitEntry::GetUnitNames(int i) const
 {
 	CvAssertMsg(i < GetNumUnitNames(), "Index out of bounds");
 	CvAssertMsg(i > -1, "Index out of bounds");
-	return (m_paszUnitNames) ? m_paszUnitNames[i] : NULL;
+	return (m_paszUnitNames) ? m_paszUnitNames[i].c_str() : NULL;
 }
 
 /// Unique great works created by individual units.

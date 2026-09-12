@@ -2799,7 +2799,7 @@ void PromotionArrayHelpers::ReadV3(FDataStream& kStream, CvBitfield& kPromotions
 #ifdef AUI_WARNING_FIXES
 				szError.Format("LOAD ERROR:  Promotion Type not found: %s", sTemp.GetCString());
 #else
-				szError.Format("LOAD ERROR: Promotion Type not found: %s", sTemp);
+				szError.Format("LOAD ERROR: Promotion Type not found: %s", sTemp.GetCString());
 #endif
 				GC.LogMessage(szError.GetCString());
 				CvAssertMsg(false, szError);

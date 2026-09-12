@@ -22,7 +22,7 @@
 // FLUA_EXPOSE_TYPE(CLASS, NAME)
 // Exposes CLASS to lua under with NAME as the type name in lua
 #define FLUA_EXPOSE_TYPE_EX(CLASS, NAME) \
-	static FLua::TypeExposure<CLASS>::NameRegistrar LuaRegTypeName_##NAME##(#NAME);
+	static FLua::TypeExposure<CLASS>::NameRegistrar LuaRegTypeName_##NAME(#NAME);
 
 // FLUA_EXPOSE_TYPE(CLASS)
 // Exposes CLASS to lua under with CLASS as the type name in lua
@@ -43,17 +43,17 @@
 // Restrict the exposure to only states that fall into one of the provided category flags
 // Use this when FLUA_EXPOSE_MEMBER_R generates and invalid name for the thunk function or registrar
 #define FLUA_EXPOSE_MEMBER_REX(CLASS, FUNC, THUNK_NAME, CATEGORY_FLAGS) \
-	int LuaThunk_##CLASS##_##THUNK_NAME##(lua_State *L) { \
+	int LuaThunk_##CLASS##_##THUNK_NAME(lua_State *L) { \
 	return FLua::Details::Call<CLASS>(&CLASS::FUNC, L, #CLASS "::" #THUNK_NAME); \
 	} \
-	int LuaToString_##CLASS##_##THUNK_NAME##(lua_State *L) { \
+	int LuaToString_##CLASS##_##THUNK_NAME(lua_State *L) { \
 	char szDescription[256]; \
 	FLua::Details::DescribeFunc(&CLASS::FUNC, #THUNK_NAME, szDescription, 256); \
 	lua_pushstring(L, szDescription); \
 	return 1; \
 	} \
-	static FLua::TypeExposure<##CLASS##>::FunctionRegistrar LuaReg_##CLASS##_##THUNK_NAME## \
-	(#THUNK_NAME, &LuaThunk_##CLASS##_##THUNK_NAME##, &LuaToString_##CLASS##_##THUNK_NAME##, FLua::Details::DoConstCheck(&CLASS::FUNC), CATEGORY_FLAGS)
+	static FLua::TypeExposure<CLASS>::FunctionRegistrar LuaReg_##CLASS##_##THUNK_NAME \
+	(#THUNK_NAME, &LuaThunk_##CLASS##_##THUNK_NAME, &LuaToString_##CLASS##_##THUNK_NAME, FLua::Details::DoConstCheck(&CLASS::FUNC), CATEGORY_FLAGS)
 
 // FLUA_EXPOSE_MEMBER_EX(CLASS, FUNC, THUNK_NAME)
 // Exposes the member function FUNC on type CLASS with a thunk name of THUNK_NAME.
@@ -73,17 +73,17 @@
 // Exposes the member function FUNC on type CLASS.  Use this for when there are a const and noncost
 // version of a function with the same name.  It will always expose the nonconst version.
 #define FLUA_EXPOSE_MEMBER_AS_NONCONST(CLASS, FUNC) \
-	int LuaThunk_##CLASS##_##FUNC##(lua_State *L) { \
+	int LuaThunk_##CLASS##_##FUNC(lua_State *L) { \
 	return FLua::Details::Call<CLASS>(&CLASS::FUNC, L, #CLASS "::" #FUNC); \
 	} \
-	int LuaToString_##CLASS##_##FUNC##(lua_State *L) { \
+	int LuaToString_##CLASS##_##FUNC(lua_State *L) { \
 	char szDescription[256]; \
 	FLua::Details::DescribeFunc(&CLASS::FUNC, #FUNC, szDescription, 256); \
 	lua_pushstring(L, szDescription); \
 	return 1; \
 	} \
-	static FLua::TypeExposure<##CLASS##>::FunctionRegistrar LuaReg_##CLASS##_##FUNC## \
-	(#FUNC, &LuaThunk_##CLASS##_##FUNC##, &LuaToString_##CLASS##_##FUNC##, false, FLua::TypeExposures::sm_uiUnrestrictedExposure)
+	static FLua::TypeExposure<CLASS>::FunctionRegistrar LuaReg_##CLASS##_##FUNC \
+	(#FUNC, &LuaThunk_##CLASS##_##FUNC, &LuaToString_##CLASS##_##FUNC, false, FLua::TypeExposures::sm_uiUnrestrictedExposure)
 
 // FLUA_SUPPORT_ENUM(ENUM)
 // Allows an enum to be used in lua exposures.  Does not expose the members of the enum.

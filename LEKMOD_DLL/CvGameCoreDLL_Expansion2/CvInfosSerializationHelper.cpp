@@ -154,7 +154,7 @@ int Read(FDataStream& kStream, bool* bValid /*= NULL*/)
 #ifdef AUI_WARNING_FIXES
 			szError.Format("LOAD ERROR: Type not found: %s", sTemp.GetCString());
 #else
-			szError.Format("LOAD ERROR: Type not found: %s", sTemp);
+			szError.Format("LOAD ERROR: Type not found: %s", sTemp.GetCString());
 #endif
 			GC.LogMessage(szError.GetCString());
 			CvAssertMsg(false, szError);

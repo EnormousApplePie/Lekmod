@@ -48,7 +48,7 @@
 template <class T>
 void deleteInfoArray(std::vector<T*>& array)
 {
-	for(std::vector<T*>::iterator it = array.begin(); it != array.end(); ++it)
+	for(typename std::vector<T*>::iterator it = array.begin(); it != array.end(); ++it)
 	{
 		SAFE_DELETE(*it);
 	}
@@ -1976,7 +1976,7 @@ CvGlobals::~CvGlobals()
 {
 }
 
-#ifdef AUI_MINIDUMPS // Altered to work, and be more helpful like VP's
+#if defined(AUI_MINIDUMPS) && !defined(LEKMOD_MACOS) // Altered to work, and be more helpful like VP's
 /************************************************************************************************/
 /* MINIDUMP_MOD                           04/10/11                                terkhen       */
 /*                                                                                              */
@@ -2084,7 +2084,7 @@ LONG WINAPI CustomFilter(EXCEPTION_POINTERS *ExceptionInfo)
 //
 void CvGlobals::init()
 {
-#if defined(AUI_MINIDUMPS)
+#if defined(AUI_MINIDUMPS) && !defined(LEKMOD_MACOS)
 	SetUnhandledExceptionFilter(CustomFilter);
 #endif
 	//

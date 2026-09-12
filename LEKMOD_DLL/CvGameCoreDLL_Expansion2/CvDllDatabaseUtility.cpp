@@ -604,7 +604,7 @@ bool CvDllDatabaseUtility::ValidateGameDatabase()
 #else
 #define ValidateCount(func) if(func() <= 0){bError = true, LogMsg("ERROR: %s <= 0", #func);}
 #endif
-#define ValidateVectorSize(vec) ValidateCount(gc.##vec);
+#define ValidateVectorSize(vec) ValidateCount(gc.vec);
 bool CvDllDatabaseUtility::ValidatePrefetchProcess()
 {
 	bool bError = false;

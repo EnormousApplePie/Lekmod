@@ -1520,7 +1520,7 @@ Diversify Spain and Australia's NW Discovery bonus
   CvString sRef;  \
   CvString::format(sRef, "[%s:%d]: ", __FUNCTION__, __LINE__);  \
   CvString sMsg;  \
-  CvString::format(sMsg, sFmt, __VA_ARGS__);  \
+  CvString::format(sMsg, sFmt, ##__VA_ARGS__);  \
   sRef+= sMsg; \
   LOGFILEMGR.GetLog("PATCH.log", FILogFile::kDontTimeStamp)->Msg(sRef.c_str());  \
 }

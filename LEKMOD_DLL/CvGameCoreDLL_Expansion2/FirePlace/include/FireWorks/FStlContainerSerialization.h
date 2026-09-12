@@ -82,9 +82,9 @@ template<typename ElementType, typename ContainerType>
 void SerializeToSequenceContainer(FDataStream & loadFrom, ContainerType & container)
 {
 	container.clear();
-	ContainerType::size_type count = 0;
+	typename ContainerType::size_type count = 0;
 	loadFrom >> count;
-	ContainerType::size_type i = 0;
+	typename ContainerType::size_type i = 0;
 	for(i = 0; i < count; ++i)
 	{
 		ElementType v;

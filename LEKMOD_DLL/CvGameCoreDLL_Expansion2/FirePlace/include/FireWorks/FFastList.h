@@ -158,7 +158,7 @@ public:
 	////////////////////////////////////////////////////////////////////////
 	explicit FFastList() : BASE_TYPE() {};
 	explicit FFastList( unsigned int uiCapacity ) : BASE_TYPE(uiCapacity) {};
-	explicit TYPE( const TYPE& rhs ) : BASE_TYPE( rhs ) {};
+	explicit FFastList( const TYPE& rhs ) : BASE_TYPE( rhs ) {};
 
 	//Copy operator
 	const TYPE& operator = ( const TYPE& rhs ){  
@@ -196,9 +196,9 @@ public:
 	////////////////////////////////////////////////////////////////////////
 	// Member functions which get/use various iterators
 	////////////////////////////////////////////////////////////////////////
-	iterator begin(){ return iterator( m_uiFirst, this ); };
+	iterator begin(){ return iterator( this->m_uiFirst, this ); };
 	iterator end(){ return iterator( ANCHOR_NODE_INDEX, this ); };
-	const_iterator begin() const{ return const_iterator( m_uiFirst, this ); };
+	const_iterator begin() const{ return const_iterator( this->m_uiFirst, this ); };
 	const_iterator end() const{ return const_iterator( ANCHOR_NODE_INDEX, this ); };
 	const_iterator begin_const() const{ return const_iterator( m_uiFirst, this ); };
 	const_iterator end_const() const{ return const_iterator( ANCHOR_NODE_INDEX, this ); };
@@ -244,7 +244,7 @@ public:
 
 
 	const ALLOC_TYPE& get_allocator() const{ return m_kAllocator; };
-	ALLOC_TYPE& get_allocator(){ return m_kAllocator; };
+	ALLOC_TYPE& get_allocator(){ return this->m_kAllocator; };
 
 };
 
@@ -284,17 +284,17 @@ public:
 	// Base iterator class which defined all iterator-ness except whether
 	// access is const or non-const.
 	////////////////////////////////////////////////////////////////////////
-	template< class TAIL >
+	template< class IteratorTail >
 	class base_iterator : 
 		public std::iterator<std::bidirectional_iterator_tag, MultiListNodePolicy<T> >, 
-		public TAIL
+		public IteratorTail
 	{
 	public:
-		explicit base_iterator() : m_uiCurrPos( ANCHOR_NODE_INDEX ), TAIL(NULL) {};
+		explicit base_iterator() : m_uiCurrPos( ANCHOR_NODE_INDEX ), IteratorTail(NULL) {};
 		explicit base_iterator( unsigned int uiPos, TYPE* pVec )
-			: m_uiCurrPos( uiPos ), TAIL( pVec ) {};
+			: m_uiCurrPos( uiPos ), IteratorTail( pVec ) {};
 		explicit base_iterator( unsigned int uiPos, const TYPE* pVec )
-			: m_uiCurrPos( uiPos ), TAIL( pVec ) {};
+			: m_uiCurrPos( uiPos ), IteratorTail( pVec ) {};
 
 		~base_iterator(){};
 
@@ -309,9 +309,9 @@ public:
 		};
 		base_iterator& operator++(){
 			if( m_uiCurrPos == ANCHOR_NODE_INDEX ){
-				m_uiCurrPos = m_pFastList->m_uiFirst;
+				m_uiCurrPos = this->m_pFastList->m_uiFirst;
 			}else{
-				m_uiCurrPos = m_pFastList->get_allocator()[ m_uiCurrPos ].LIST_GetNext();
+				m_uiCurrPos = this->m_pFastList->get_allocator()[ m_uiCurrPos ].LIST_GetNext();
 			}
 			return *this;
 		};
@@ -365,7 +365,7 @@ public:
 
 	protected:
 		unsigned int m_uiCurrPos;
-		friend class TYPE;
+		friend TYPE;
 	};
 
 	////////////////////////////////////////////////////////////////////////
@@ -381,7 +381,7 @@ public:
 		~iterator(){};
 
 		T& operator*(){
-			return m_pFastList->get_allocator()[ m_uiCurrPos ];
+			return this->m_pFastList->get_allocator()[ this->m_uiCurrPos ];
 		};
 		T* operator->(){
 			return &m_pFastList->get_allocator()[ m_uiCurrPos ];
@@ -401,7 +401,7 @@ public:
 		~const_iterator(){};
 
 		const T & operator*() const{
-			return m_pFastList->get_allocator()[ m_uiCurrPos ];
+			return this->m_pFastList->get_allocator()[ this->m_uiCurrPos ];
 		};
 		const T* operator->() const{
 			return &m_pFastList->get_allocator()[ m_uiCurrPos ];
@@ -486,7 +486,7 @@ public:
 	//Push a new element to the back of a list
 	unsigned int push_back( const T& x )
 	{
-		unsigned int uiNewIndex = get_allocator().Alloc( x );
+		unsigned int uiNewIndex = this->get_allocator().Alloc( x );
 		push_back_existing( uiNewIndex );
 		return uiNewIndex;
 	};
@@ -562,7 +562,7 @@ public:
 		return iterator( uiNext, this );
 	};
 	iterator erase( iterator  it ){
-		const unsigned int uiNext = get_allocator()[it.get_index()].LIST_GetNext();
+		const unsigned int uiNext = this->get_allocator()[it.get_index()].LIST_GetNext();
 		UnLink( it.get_index(), uiNext );
 		return iterator( uiNext, this );
 	};
@@ -633,12 +633,12 @@ protected:
 	{
 		assert( get_allocator().is_element_valid(i) );
 
-		T* a = &get_allocator()[i];
+		T* a = &this->get_allocator()[i];
 		if( j == ANCHOR_NODE_INDEX ){
 			a->LIST_SetNext(ANCHOR_NODE_INDEX);
 			a->LIST_SetPrev(ANCHOR_NODE_INDEX);
 		}else{
-			T* b = &get_allocator()[j];
+			T* b = &this->get_allocator()[j];
 
 			//Set the links for the new node
 			unsigned int uiBNext = b->LIST_GetNext();
@@ -647,7 +647,7 @@ protected:
 
 			//Fix the links for the next and previous nodes
 			if( uiBNext != ANCHOR_NODE_INDEX )
-				get_allocator()[uiBNext].LIST_SetPrev(i);
+				this->get_allocator()[uiBNext].LIST_SetPrev(i);
 			b->LIST_SetNext(i);
 		}
 	};
@@ -658,23 +658,23 @@ protected:
 		assert( get_allocator().is_element_valid(uiStart) );
 
 		if( uiStart == m_uiFirst){ m_uiFirst = uiEnd; }
-		uiStart = get_allocator()[uiStart].LIST_GetPrev();
+		uiStart = this->get_allocator()[uiStart].LIST_GetPrev();
 		if( uiEnd == ANCHOR_NODE_INDEX ){
 			uiEnd = m_uiLast;
 			m_uiLast = uiStart;
 		}else{
 			assert( get_allocator().is_element_valid(uiEnd) );
-			uiEnd = get_allocator()[uiEnd].LIST_GetPrev();
+			uiEnd = this->get_allocator()[uiEnd].LIST_GetPrev();
 		}
 
 		while( uiStart != uiEnd ){
-			T& kEnd = get_allocator()[uiEnd];
+			T& kEnd = this->get_allocator()[uiEnd];
 			unsigned int uiNext = kEnd.LIST_GetNext();
 			unsigned int uiPrev = kEnd.LIST_GetPrev();
-			if( uiNext != ANCHOR_NODE_INDEX ) get_allocator()[uiNext].LIST_SetPrev( uiPrev );
-			if( uiPrev != ANCHOR_NODE_INDEX ) get_allocator()[uiPrev].LIST_SetNext( uiNext );
+			if( uiNext != ANCHOR_NODE_INDEX ) this->get_allocator()[uiNext].LIST_SetPrev( uiPrev );
+			if( uiPrev != ANCHOR_NODE_INDEX ) this->get_allocator()[uiPrev].LIST_SetNext( uiNext );
 			kEnd.LIST_SetDeleted(true);
-			get_allocator().FreeIfDeleted(uiEnd);
+			this->get_allocator().FreeIfDeleted(uiEnd);
 
 			m_uiSize--;
 
@@ -1135,7 +1135,7 @@ protected:
 		unsigned int m_uiCurrList;
 		unsigned int m_uiCurrPos;
 		const TYPE* m_pFastList;
-		friend class TYPE;
+		friend TYPE;
 	};
 
 public:

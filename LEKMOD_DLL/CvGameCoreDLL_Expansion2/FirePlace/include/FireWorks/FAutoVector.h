@@ -220,7 +220,7 @@ template<typename ElementType, typename ClassContainer>
 FAutoVariable<std::vector<ElementType>, ClassContainer> & FAutoVariable<std::vector<ElementType>, ClassContainer>::operator=(const std::vector<ElementType> & rhs)
 {
 	clear();
-	std::vector<ElementType>::const_iterator i;
+	typename std::vector<ElementType>::const_iterator i;
 	for(i = rhs.begin(); i != rhs.end(); ++i)
 	{
 		push_back(*i);

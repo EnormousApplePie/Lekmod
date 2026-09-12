@@ -122,7 +122,13 @@ namespace Database{
 		const char* m_szColumns;
 		bool m_bSingleQuery;
 
+#ifdef LEKMOD_MACOS
+        // Aspyr build 180925 uses a 72-byte legacy hash container here.
+        // Its constructor, destructor and all accessors belong to the host.
+        alignas(8) unsigned char m_hshColumnPositions[72];
+#else
 		stdext::hash_map<std::string, int> m_hshColumnPositions;
+#endif
 	};
 
 	class SingleResult : public Results

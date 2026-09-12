@@ -1175,7 +1175,7 @@ int CvLuaPlayer::lAcquireCity(lua_State* L)
 //void killCities();
 int CvLuaPlayer::lKillCities(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::killCities);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::killCities);
 }
 
 //------------------------------------------------------------------------------
@@ -1227,7 +1227,7 @@ int CvLuaPlayer::lInitUnitWithNameOffset(lua_State* L)
 //void disbandUnit(bool bAnnounce);
 int CvLuaPlayer::lDisbandUnit(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::disbandUnit);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::disbandUnit);
 }
 //------------------------------------------------------------------------------
 //CvPlot *addFreeUnit(UnitTypes eUnit, UnitAITypes eUnitAI = NO_UNITAI)
@@ -1245,7 +1245,7 @@ int CvLuaPlayer::lAddFreeUnit(lua_State* L)
 //void killUnits();
 int CvLuaPlayer::lKillUnits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::killUnits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::killUnits);
 }
 //------------------------------------------------------------------------------
 //void CvPlayer::chooseTech(int iDiscover, const char* strText, TechTypes iTechJustDiscovered)
@@ -1263,13 +1263,13 @@ int CvLuaPlayer::lChooseTech(lua_State* L)
 //bool isHuman();
 int CvLuaPlayer::lIsHuman(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isHuman);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isHuman);
 }
 //------------------------------------------------------------------------------
 //bool isBarbarian();
 int CvLuaPlayer::lIsBarbarian(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isBarbarian);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isBarbarian);
 }
 //------------------------------------------------------------------------------
 //string getName([form]);
@@ -1350,7 +1350,7 @@ int CvLuaPlayer::lGetCivilizationAdjectiveKey(lua_State* L)
 //bool isWhiteFlag();
 int CvLuaPlayer::lIsWhiteFlag(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isWhiteFlag);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isWhiteFlag);
 }
 //------------------------------------------------------------------------------
 //wstring GetStateReligionName();
@@ -1380,19 +1380,19 @@ int CvLuaPlayer::lGetWorstEnemyName(lua_State* L)
 //ArtStyleTypes  getArtStyleType();
 int CvLuaPlayer::lGetArtStyleType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getArtStyleType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getArtStyleType);
 }
 //------------------------------------------------------------------------------
 //int countCityFeatures(FeatureTypes  eFeature);
 int CvLuaPlayer::lCountCityFeatures(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::countCityFeatures);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::countCityFeatures);
 }
 //------------------------------------------------------------------------------
 //int countNumBuildings(BuildingTypes  eBuilding);
 int CvLuaPlayer::lCountNumBuildings(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::countNumBuildings);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::countNumBuildings);
 }
 //------------------------------------------------------------------------------
 //int GetNumWorldWonders();
@@ -1476,21 +1476,21 @@ int CvLuaPlayer::lIsCapitalConnectedToCity(lua_State* L)
 //bool isTurnActive( void );
 int CvLuaPlayer::lIsTurnActive(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isTurnActive);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isTurnActive);
 }
 
 //------------------------------------------------------------------------------
 //bool IsSimultaneousTurns( void );
 int CvLuaPlayer::lIsSimultaneousTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isSimultaneousTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isSimultaneousTurns);
 }
 
 //------------------------------------------------------------------------------
 //void findNewCapital();
 int CvLuaPlayer::lFindNewCapital(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::findNewCapital);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::findNewCapital);
 }
 //------------------------------------------------------------------------------
 //bool canRaze(CyCity* pCity);
@@ -1541,13 +1541,13 @@ int CvLuaPlayer::lCanReceiveGoody(lua_State* L)
 //void receiveGoody(CyPlot* pPlot, GoodyTypes  eGoody, CyUnit* pUnit);
 int CvLuaPlayer::lReceiveGoody(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::receiveGoody);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::receiveGoody);
 }
 //------------------------------------------------------------------------------
 //void doGoody(CyPlot* pPlot, CyUnit* pUnit);
 int CvLuaPlayer::lDoGoody(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::doGoody);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::doGoody);
 }
 //------------------------------------------------------------------------------
 // This function checks the handicap as well as CanReceiveGoody to test validity
@@ -1581,13 +1581,13 @@ int CvLuaPlayer::lCanGetGoody(lua_State* L)
 //bool canFound(int iX, int iY);
 int CvLuaPlayer::lCanFound(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::canFound);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::canFound);
 }
 //------------------------------------------------------------------------------
 //void found(int iX, int iY);
 int CvLuaPlayer::lFound(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::found);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::found);
 }
 
 //------------------------------------------------------------------------------
@@ -1623,19 +1623,19 @@ int CvLuaPlayer::lCanConstruct(lua_State* L)
 //bool canCreate(ProjectTypes  eProject, bool bContinue, bool bTestVisible);
 int CvLuaPlayer::lCanCreate(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::canCreate);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::canCreate);
 }
 //------------------------------------------------------------------------------
 //bool canPrepare(SpecialistTypes  eSpecialist, bool bContinue);
 int CvLuaPlayer::lCanPrepare(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::canPrepare);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::canPrepare);
 }
 //------------------------------------------------------------------------------
 //bool canMaintain(ProcessTypes  eProcess, bool bContinue);
 int CvLuaPlayer::lCanMaintain(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::canMaintain);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::canMaintain);
 }
 //------------------------------------------------------------------------------
 //bool IsCanPurchaseAnyCity(bool bOnlyTestVisible, UnitTypes eUnitType, BuildingTypes eBuildingType, YieldTypes ePurchaseYield);
@@ -1657,43 +1657,43 @@ int CvLuaPlayer::lIsCanPurchaseAnyCity(lua_State* L)
 //bool GetFaithPurchaseType();
 int CvLuaPlayer::lGetFaithPurchaseType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetFaithPurchaseType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetFaithPurchaseType);
 }
 //------------------------------------------------------------------------------
 //void SetFaithPurchaseType(FaithPurchaseTypes eType);
 int CvLuaPlayer::lSetFaithPurchaseType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetFaithPurchaseType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetFaithPurchaseType);
 }
 //------------------------------------------------------------------------------
 //bool GetFaithPurchaseIndex();
 int CvLuaPlayer::lGetFaithPurchaseIndex(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetFaithPurchaseIndex);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetFaithPurchaseIndex);
 }
 //------------------------------------------------------------------------------
 //void SetFaithPurchaseIndex(int iIndex);
 int CvLuaPlayer::lSetFaithPurchaseIndex(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetFaithPurchaseIndex);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetFaithPurchaseIndex);
 }
 //------------------------------------------------------------------------------
 //bool isProductionMaxedUnitClass(UnitClassTypes  eUnitClass);
 int CvLuaPlayer::lIsProductionMaxedUnitClass(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isProductionMaxedUnitClass);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isProductionMaxedUnitClass);
 }
 //------------------------------------------------------------------------------
 //bool isProductionMaxedBuildingClass(BuildingClassTypes  eBuildingClass, bool bAcquireCity);
 int CvLuaPlayer::lIsProductionMaxedBuildingClass(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isProductionMaxedBuildingClass);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isProductionMaxedBuildingClass);
 }
 //------------------------------------------------------------------------------
 //bool isProductionMaxedProject(ProjectTypes  eProject);
 int CvLuaPlayer::lIsProductionMaxedProject(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isProductionMaxedProject);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isProductionMaxedProject);
 }
 //------------------------------------------------------------------------------
 //int getUnitProductionNeeded(UnitTypes  iIndex);
@@ -1789,14 +1789,14 @@ int CvLuaPlayer::lHasBusyMovingUnit(lua_State* L)
 //int getBuildingClassPrereqBuilding(BuildingTypes  eBuilding, BuildingClassTypes  ePrereqBuildingClass, int iExtra);
 int CvLuaPlayer::lGetBuildingClassPrereqBuilding(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getBuildingClassPrereqBuilding);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getBuildingClassPrereqBuilding);
 }
 
 //------------------------------------------------------------------------------
 //void removeBuildingClass(BuildingClassTypes  eBuildingClass);
 int CvLuaPlayer::lRemoveBuildingClass(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::removeBuildingClass);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::removeBuildingClass);
 }
 
 //------------------------------------------------------------------------------
@@ -1843,20 +1843,20 @@ int CvLuaPlayer::lGetBestRoute(lua_State* L)
 //int getImprovementUpgradeRate() const;
 int CvLuaPlayer::lGetImprovementUpgradeRate(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getImprovementUpgradeRate);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getImprovementUpgradeRate);
 }
 //------------------------------------------------------------------------------
 //int calculateTotalYield(YieldTypes  eYield);
 int CvLuaPlayer::lCalculateTotalYield(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::calculateTotalYield);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::calculateTotalYield);
 }
 
 //------------------------------------------------------------------------------
 //int calculateUnitCost();
 int CvLuaPlayer::lCalculateUnitCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::calculateUnitCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::calculateUnitCost);
 }
 //------------------------------------------------------------------------------
 //int calculateUnitSupply();
@@ -1873,7 +1873,7 @@ int CvLuaPlayer::lCalculateUnitSupply(lua_State* L)
 //int GetNumMaintenanceFreeUnits();
 int CvLuaPlayer::lGetNumMaintenanceFreeUnits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumMaintenanceFreeUnits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumMaintenanceFreeUnits);
 }
 
 //------------------------------------------------------------------------------
@@ -1920,13 +1920,13 @@ int CvLuaPlayer::lGetImprovementGoldMaintenance(lua_State* L)
 //int calculateGoldRate();
 int CvLuaPlayer::lCalculateGoldRate(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::calculateGoldRate);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::calculateGoldRate);
 }
 //------------------------------------------------------------------------------
 //int CalculateGoldRateTimes100();
 int CvLuaPlayer::lCalculateGoldRateTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::calculateGoldRateTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::calculateGoldRateTimes100);
 }
 //------------------------------------------------------------------------------
 //int CalculateGrossGoldTimes100();
@@ -1952,7 +1952,7 @@ int CvLuaPlayer::lCalculateInflatedCosts(lua_State* L)
 //int calculateResearchModifier(TechTypes  eTech);
 int CvLuaPlayer::lCalculateResearchModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::calculateResearchModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::calculateResearchModifier);
 }
 //------------------------------------------------------------------------------
 //bool isResearch();
@@ -2148,37 +2148,37 @@ int CvLuaPlayer::lChangeNumPolicyLeagueVotes(lua_State* L)
 //int unitsRequiredForGoldenAge();
 int CvLuaPlayer::lUnitsRequiredForGoldenAge(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::unitsRequiredForGoldenAge);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::unitsRequiredForGoldenAge);
 }
 //------------------------------------------------------------------------------
 //int unitsGoldenAgeCapable();
 int CvLuaPlayer::lUnitsGoldenAgeCapable(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::unitsGoldenAgeCapable);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::unitsGoldenAgeCapable);
 }
 //------------------------------------------------------------------------------
 //int unitsGoldenAgeReady();
 int CvLuaPlayer::lUnitsGoldenAgeReady(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::unitsGoldenAgeReady);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::unitsGoldenAgeReady);
 }
 //------------------------------------------------------------------------------
 //int GreatGeneralThreshold(bool bMilitary);
 int CvLuaPlayer::lGreatGeneralThreshold(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::greatGeneralThreshold);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::greatGeneralThreshold);
 }
 //------------------------------------------------------------------------------
 //int GreatAdmiralThreshold(bool bMilitary);
 int CvLuaPlayer::lGreatAdmiralThreshold(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::greatAdmiralThreshold);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::greatAdmiralThreshold);
 }
 //------------------------------------------------------------------------------
 //int specialistYield(SpecialistTypes  eSpecialist, YieldTypes  eYield);
 int CvLuaPlayer::lSpecialistYield(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::specialistYield);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::specialistYield);
 }
 
 //------------------------------------------------------------------------------
@@ -2194,7 +2194,7 @@ int CvLuaPlayer::lSetGreatGeneralCombatBonus(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetGreatGeneralCombatBonus(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetGreatGeneralCombatBonus);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetGreatGeneralCombatBonus);
 }
 
 //------------------------------------------------------------------------------
@@ -2220,25 +2220,25 @@ int CvLuaPlayer::lSetStartingPlot(lua_State* L)
 //int getTotalPopulation();
 int CvLuaPlayer::lGetTotalPopulation(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getTotalPopulation);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getTotalPopulation);
 }
 //------------------------------------------------------------------------------
 //int getAveragePopulation();
 int CvLuaPlayer::lGetAveragePopulation(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAveragePopulation);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAveragePopulation);
 }
 //------------------------------------------------------------------------------
 //long getRealPopulation();
 int CvLuaPlayer::lGetRealPopulation(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getRealPopulation);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getRealPopulation);
 }
 //------------------------------------------------------------------------------
 //int GetNewCityExtraPopulation() const;
 int CvLuaPlayer::lGetNewCityExtraPopulation(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNewCityExtraPopulation);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNewCityExtraPopulation);
 }
 //------------------------------------------------------------------------------
 //void ChangeNewCityExtraPopulation(int iChange);
@@ -2254,13 +2254,13 @@ int CvLuaPlayer::lChangeNewCityExtraPopulation(lua_State* L)
 //int getTotalLand();
 int CvLuaPlayer::lGetTotalLand(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getTotalLand);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getTotalLand);
 }
 //------------------------------------------------------------------------------
 //int getTotalLandScored();
 int CvLuaPlayer::lGetTotalLandScored(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getTotalLandScored);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getTotalLandScored);
 }
 //------------------------------------------------------------------------------
 //int getGold();
@@ -2391,151 +2391,151 @@ int CvLuaPlayer::lGetGoldPerTurnFromTraits(lua_State* L)
 #ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
 int CvLuaPlayer::lGetTotalJONSCulturePerTurnTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetTotalJONSCulturePerTurnTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetTotalJONSCulturePerTurnTimes100);
 }
 int CvLuaPlayer::lGetJONSCulturePerTurnFromCitiesTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCulturePerTurnFromCitiesTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCulturePerTurnFromCitiesTimes100);
 }
 int CvLuaPlayer::lGetJONSCulturePerTurnFromExcessHappinessTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCulturePerTurnFromExcessHappinessTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCulturePerTurnFromExcessHappinessTimes100);
 }
 int CvLuaPlayer::lGetCulturePerTurnFromReligionTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCulturePerTurnFromReligionTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCulturePerTurnFromReligionTimes100);
 }
 int CvLuaPlayer::lGetCulturePerTurnFromBonusTurnsTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCulturePerTurnFromBonusTurnsTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCulturePerTurnFromBonusTurnsTimes100);
 }
 int CvLuaPlayer::lGetJONSCultureTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getJONSCultureTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getJONSCultureTimes100);
 }
 int CvLuaPlayer::lSetJONSCultureTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setJONSCultureTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setJONSCultureTimes100);
 }
 int CvLuaPlayer::lChangeJONSCultureTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeJONSCultureTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeJONSCultureTimes100);
 }
 int CvLuaPlayer::lGetJONSCultureEverGeneratedTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCultureEverGeneratedTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCultureEverGeneratedTimes100);
 }
 #endif
 //------------------------------------------------------------------------------
 //int GetTotalJONSCulturePerTurn();
 int CvLuaPlayer::lGetTotalJONSCulturePerTurn(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetTotalJONSCulturePerTurn);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetTotalJONSCulturePerTurn);
 }
 //------------------------------------------------------------------------------
 //int getJONSCulturePerTurnFromCities();
 int CvLuaPlayer::lGetJONSCulturePerTurnFromCities(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCulturePerTurnFromCities);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCulturePerTurnFromCities);
 }
 //------------------------------------------------------------------------------
 //int getJONSCulturePerTurnFromExcessHappiness();
 int CvLuaPlayer::lGetJONSCulturePerTurnFromExcessHappiness(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCulturePerTurnFromExcessHappiness);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCulturePerTurnFromExcessHappiness);
 }
 //------------------------------------------------------------------------------
 //int getJONSCulturePerTurnFromTraits();
 int CvLuaPlayer::lGetJONSCulturePerTurnFromTraits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCulturePerTurnFromTraits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCulturePerTurnFromTraits);
 }
 //------------------------------------------------------------------------------
 //int GetCultureWonderMultiplier();
 int CvLuaPlayer::lGetCultureWonderMultiplier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCultureWonderMultiplier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCultureWonderMultiplier);
 }
 //------------------------------------------------------------------------------
 //int getJONSCulturePerTurnForFree();
 int CvLuaPlayer::lGetJONSCulturePerTurnForFree(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCulturePerTurnForFree);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCulturePerTurnForFree);
 }
 //------------------------------------------------------------------------------
 //void changeJONSCulturePerTurnForFree(int iChange);
 int CvLuaPlayer::lChangeJONSCulturePerTurnForFree(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeJONSCulturePerTurnForFree);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeJONSCulturePerTurnForFree);
 }
 //------------------------------------------------------------------------------
 // DEPRECATED, use lGetCulturePerTurnFromMinorCivs instead
 //int getJONSCulturePerTurnFromMinorCivs();
 int CvLuaPlayer::lGetJONSCulturePerTurnFromMinorCivs(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCulturePerTurnFromMinorCivs);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCulturePerTurnFromMinorCivs);
 }
 //------------------------------------------------------------------------------
 // DEPRECATED, does nothing
 //void changeJONSCulturePerTurnFromMinorCivs(int iChange);
 int CvLuaPlayer::lChangeJONSCulturePerTurnFromMinorCivs(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeJONSCulturePerTurnFromMinorCivs);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeJONSCulturePerTurnFromMinorCivs);
 }
 //------------------------------------------------------------------------------
 //int GetCulturePerTurnFromMinorCivs();
 int CvLuaPlayer::lGetCulturePerTurnFromMinorCivs(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCulturePerTurnFromMinorCivs);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCulturePerTurnFromMinorCivs);
 }
 //------------------------------------------------------------------------------
 //int GetCulturePerTurnFromMinor(int iMinor);
 int CvLuaPlayer::lGetCulturePerTurnFromMinor(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCulturePerTurnFromMinor);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCulturePerTurnFromMinor);
 }
 //------------------------------------------------------------------------------
 //int GetCulturePerTurnFromReligion();
 int CvLuaPlayer::lGetCulturePerTurnFromReligion(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCulturePerTurnFromReligion);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCulturePerTurnFromReligion);
 }
 //------------------------------------------------------------------------------
 //int GetCulturePerTurnFromBonusTurns();
 int CvLuaPlayer::lGetCulturePerTurnFromBonusTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCulturePerTurnFromBonusTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCulturePerTurnFromBonusTurns);
 }
 //------------------------------------------------------------------------------
 //int GetCultureCityModifier();
 int CvLuaPlayer::lGetCultureCityModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCultureCityModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCultureCityModifier);
 }
 
 //------------------------------------------------------------------------------
 //int getJONSCulture();
 int CvLuaPlayer::lGetJONSCulture(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getJONSCulture);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getJONSCulture);
 }
 //------------------------------------------------------------------------------
 //void setJONSCulture(int iNewValue);
 int CvLuaPlayer::lSetJONSCulture(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setJONSCulture);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setJONSCulture);
 }
 //------------------------------------------------------------------------------
 //void changeJONSCulture(int iChange);
 int CvLuaPlayer::lChangeJONSCulture(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeJONSCulture);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeJONSCulture);
 }
 //------------------------------------------------------------------------------
 //int GetJONSCultureEverGenerated();
 int CvLuaPlayer::lGetJONSCultureEverGenerated(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetJONSCultureEverGenerated);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetJONSCultureEverGenerated);
 }
 //------------------------------------------------------------------------------
 //int GetLastTurnLifetimeCulture();
@@ -2833,43 +2833,43 @@ int CvLuaPlayer::lGetNumGreatWorkSlots(lua_State* L)
 //int GetFaith();
 int CvLuaPlayer::lGetFaith(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetFaith);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetFaith);
 }
 //------------------------------------------------------------------------------
 //void SetFaith(int iNewValue);
 int CvLuaPlayer::lSetFaith(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetFaith);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetFaith);
 }
 //------------------------------------------------------------------------------
 //void ChangeFaith(int iNewValue);
 int CvLuaPlayer::lChangeFaith(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeFaith);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeFaith);
 }
 //------------------------------------------------------------------------------
 //int GetTotalFaithPerTurn();
 int CvLuaPlayer::lGetTotalFaithPerTurn(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetTotalFaithPerTurn);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetTotalFaithPerTurn);
 }
 //------------------------------------------------------------------------------
 //int GetFaithPerTurnFromCities();
 int CvLuaPlayer::lGetFaithPerTurnFromCities(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetFaithPerTurnFromCities);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetFaithPerTurnFromCities);
 }
 //------------------------------------------------------------------------------
 //int GetFaithPerTurnFromMinorCivs();
 int CvLuaPlayer::lGetFaithPerTurnFromMinorCivs(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetFaithPerTurnFromMinorCivs);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetFaithPerTurnFromMinorCivs);
 }
 //------------------------------------------------------------------------------
 //int GetFaithPerTurnFromReligion();
 int CvLuaPlayer::lGetFaithPerTurnFromReligion(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetFaithPerTurnFromReligion);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetFaithPerTurnFromReligion);
 }
 #ifdef NQ_BELIEF_TOGGLE_ALLOW_FAITH_GIFTS_TO_MINORS
 //------------------------------------------------------------------------------
@@ -3041,125 +3041,125 @@ int CvLuaPlayer::lDoesUnitPassFaithPurchaseCheck(lua_State* L)
 //int GetHappiness();
 int CvLuaPlayer::lGetHappiness(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappiness);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappiness);
 }
 //------------------------------------------------------------------------------
 //void SetHappiness(int iNewValue);
 int CvLuaPlayer::lSetHappiness(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetHappiness);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetHappiness);
 }
 
 //------------------------------------------------------------------------------
 //int GetExcessHappiness();
 int CvLuaPlayer::lGetExcessHappiness(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetExcessHappiness);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetExcessHappiness);
 }
 
 //------------------------------------------------------------------------------
 //bool IsEmpireUnhappy() const;
 int CvLuaPlayer::lIsEmpireUnhappy(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsEmpireUnhappy);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsEmpireUnhappy);
 }
 
 //------------------------------------------------------------------------------
 //bool IsEmpireVeryUnhappy() const;
 int CvLuaPlayer::lIsEmpireVeryUnhappy(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsEmpireVeryUnhappy);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsEmpireVeryUnhappy);
 }
 
 //------------------------------------------------------------------------------
 //bool IsEmpireSuperUnhappy() const;
 int CvLuaPlayer::lIsEmpireSuperUnhappy(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsEmpireSuperUnhappy);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsEmpireSuperUnhappy);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessFromPolicies() const;
 int CvLuaPlayer::lGetHappinessFromPolicies(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromPolicies);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromPolicies);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessFromCities() const;
 int CvLuaPlayer::lGetHappinessFromCities(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromCities);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromCities);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessFromBuildings() const;
 int CvLuaPlayer::lGetHappinessFromBuildings(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromBuildings);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromBuildings);
 }
 
 //------------------------------------------------------------------------------
 //int GetExtraHappinessPerCity() const;
 int CvLuaPlayer::lGetExtraHappinessPerCity(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetExtraHappinessPerCity);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetExtraHappinessPerCity);
 }
 
 //------------------------------------------------------------------------------
 //void ChangeExtraHappinessPerCity(int iChange);
 int CvLuaPlayer::lChangeExtraHappinessPerCity(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeExtraHappinessPerCity);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeExtraHappinessPerCity);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessFromResources() const;
 int CvLuaPlayer::lGetHappinessFromResources(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromResources);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromResources);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessFromResourceVariety() const;
 int CvLuaPlayer::lGetHappinessFromResourceVariety(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromResourceVariety);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromResourceVariety);
 }
 
 //------------------------------------------------------------------------------
 //int GetExtraHappinessPerLuxury() const;
 int CvLuaPlayer::lGetExtraHappinessPerLuxury(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetExtraHappinessPerLuxury);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetExtraHappinessPerLuxury);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessFromReligion() const;
 int CvLuaPlayer::lGetHappinessFromReligion(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromReligion);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromReligion);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessFromNaturalWonders() const;
 int CvLuaPlayer::lGetHappinessFromNaturalWonders(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromNaturalWonders);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromNaturalWonders);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessFromLeagues() const;
 int CvLuaPlayer::lGetHappinessFromLeagues(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromLeagues);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromLeagues);
 }
 
 //------------------------------------------------------------------------------
 //int GetUnhappiness() const;
 int CvLuaPlayer::lGetUnhappiness(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetUnhappiness);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetUnhappiness);
 }
 
 //------------------------------------------------------------------------------
@@ -3203,14 +3203,14 @@ int CvLuaPlayer::lGetUnhappinessFromCityCount(lua_State* L)
 //int GetUnhappinessFromCapturedCityCount() const;
 int CvLuaPlayer::lGetUnhappinessFromCapturedCityCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetUnhappinessFromCapturedCityCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetUnhappinessFromCapturedCityCount);
 }
 
 //------------------------------------------------------------------------------
 //int GetUnhappinessFromCityPopulation() const;
 int CvLuaPlayer::lGetUnhappinessFromCityPopulation(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetUnhappinessFromCityPopulation);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetUnhappinessFromCityPopulation);
 }
 
 //------------------------------------------------------------------------------
@@ -3229,14 +3229,14 @@ int CvLuaPlayer::lGetUnhappinessFromCitySpecialists(lua_State* L)
 //int GetUnhappinessFromPuppetCityPopulation() const;
 int CvLuaPlayer::lGetUnhappinessFromPuppetCityPopulation(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetUnhappinessFromPuppetCityPopulation);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetUnhappinessFromPuppetCityPopulation);
 }
 
 //------------------------------------------------------------------------------
 //int GetUnhappinessFromOccupiedCities() const;
 int CvLuaPlayer::lGetUnhappinessFromOccupiedCities(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetUnhappinessFromOccupiedCities);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetUnhappinessFromOccupiedCities);
 }
 
 //------------------------------------------------------------------------------
@@ -3253,38 +3253,38 @@ int CvLuaPlayer::lGetUnhappinessFromPublicOpinion(lua_State* L)
 //int GetUnhappinessFromUnits() const;
 int CvLuaPlayer::lGetUnhappinessFromUnits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetUnhappinessFromUnits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetUnhappinessFromUnits);
 }
 
 //------------------------------------------------------------------------------
 //void ChangeUnhappinessFromUnits(int iChange);
 int CvLuaPlayer::lChangeUnhappinessFromUnits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeUnhappinessFromUnits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeUnhappinessFromUnits);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetUnhappinessMod(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetUnhappinessMod);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetUnhappinessMod);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetCityCountUnhappinessMod(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCityCountUnhappinessMod);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCityCountUnhappinessMod);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetOccupiedPopulationUnhappinessMod(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetOccupiedPopulationUnhappinessMod);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetOccupiedPopulationUnhappinessMod);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetCapitalUnhappinessMod(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCapitalUnhappinessMod);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCapitalUnhappinessMod);
 }
 
 //------------------------------------------------------------------------------
@@ -3308,50 +3308,50 @@ int CvLuaPlayer::lGetTraitPopUnhappinessMod(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lIsHalfSpecialistUnhappiness(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isHalfSpecialistUnhappiness);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isHalfSpecialistUnhappiness);
 }
 
 //------------------------------------------------------------------------------
 //int GetHappinessPerGarrisonedUnit() const;
 int CvLuaPlayer::lGetHappinessPerGarrisonedUnit(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessPerGarrisonedUnit);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessPerGarrisonedUnit);
 }
 //------------------------------------------------------------------------------
 //void SetHappinessPerGarrisonedUnit(int iValue);
 int CvLuaPlayer::lSetHappinessPerGarrisonedUnit(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetHappinessPerGarrisonedUnit);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetHappinessPerGarrisonedUnit);
 }
 //------------------------------------------------------------------------------
 //void ChangeHappinessPerGarrisonedUnit(int iChange);
 int CvLuaPlayer::lChangeHappinessPerGarrisonedUnit(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeHappinessPerGarrisonedUnit);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeHappinessPerGarrisonedUnit);
 }
 //------------------------------------------------------------------------------
 //int GetHappinessFromTradeRoutes() const;
 int CvLuaPlayer::lGetHappinessFromTradeRoutes(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromTradeRoutes);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromTradeRoutes);
 }
 //------------------------------------------------------------------------------
 //int GetHappinessPerTradeRoute() const;
 int CvLuaPlayer::lGetHappinessPerTradeRoute(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessPerTradeRoute);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessPerTradeRoute);
 }
 //------------------------------------------------------------------------------
 //void SetHappinessPerTradeRoute(int iValue);
 int CvLuaPlayer::lSetHappinessPerTradeRoute(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetHappinessPerTradeRoute);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetHappinessPerTradeRoute);
 }
 //------------------------------------------------------------------------------
 //void ChangeHappinessPerTradeRoute(int iChange);
 int CvLuaPlayer::lChangeHappinessPerTradeRoute(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeHappinessPerTradeRoute);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeHappinessPerTradeRoute);
 }
 //------------------------------------------------------------------------------
 //void GetTradeRouteModifier ()
@@ -5288,28 +5288,28 @@ int CvLuaPlayer::lGetSwappableGreatMusic (lua_State* L)
 //int GetHappinessFromMinorCivs() const;
 int CvLuaPlayer::lGetHappinessFromMinorCivs(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromMinorCivs);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromMinorCivs);
 }
 //------------------------------------------------------------------------------
 //int GetHappinessFromMinor(PlayerTypes eMinor) const;
 int CvLuaPlayer::lGetHappinessFromMinor(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHappinessFromMinor);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHappinessFromMinor);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetBarbarianCombatBonus(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetBarbarianCombatBonus);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetBarbarianCombatBonus);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lSetBarbarianCombatBonus(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetBarbarianCombatBonus);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetBarbarianCombatBonus);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lChangeBarbarianCombatBonus(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeBarbarianCombatBonus);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeBarbarianCombatBonus);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetCombatBonusVsHigherTech(lua_State* L)
@@ -5346,27 +5346,27 @@ int CvLuaPlayer::lGetCombatBonusVsSmallerCiv(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lIsAlwaysSeeBarbCamps(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsAlwaysSeeBarbCamps);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsAlwaysSeeBarbCamps);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lSetAlwaysSeeBarbCampsCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetAlwaysSeeBarbCampsCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetAlwaysSeeBarbCampsCount);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lChangeAlwaysSeeBarbCampsCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeAlwaysSeeBarbCampsCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeAlwaysSeeBarbCampsCount);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetGarrisonedCityRangeStrikeModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetGarrisonedCityRangeStrikeModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetGarrisonedCityRangeStrikeModifier);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lChangeGarrisonedCityRangeStrikeModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeGarrisonedCityRangeStrikeModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeGarrisonedCityRangeStrikeModifier);
 }
 
 //------------------------------------------------------------------------------
@@ -5506,13 +5506,13 @@ int CvLuaPlayer::lHasPolicyBranch(lua_State* L)
 //void setHasPolicy(PolicyTypes  eIndex, bool bNewValue);
 int CvLuaPlayer::lSetHasPolicy(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setHasPolicy);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setHasPolicy);
 }
 //------------------------------------------------------------------------------
 //int getNextPolicyCost();
 int CvLuaPlayer::lGetNextPolicyCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNextPolicyCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNextPolicyCost);
 }
 //------------------------------------------------------------------------------
 //bool canAdoptPolicy(PolicyTypes  iIndex);
@@ -5541,7 +5541,7 @@ int CvLuaPlayer::lCanAdoptPolicy(lua_State* L)
 //void doAdoptPolicy(PolicyTypes  eIndex);
 int CvLuaPlayer::lDoAdoptPolicy(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::doAdoptPolicy);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::doAdoptPolicy);
 }
 
 
@@ -5685,204 +5685,204 @@ int CvLuaPlayer::lGetTenet(lua_State* L)
 //int IsAnarchy();
 int CvLuaPlayer::lIsAnarchy(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsAnarchy);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsAnarchy);
 }
 //------------------------------------------------------------------------------
 //int GetAnarchyNumTurns();
 int CvLuaPlayer::lGetAnarchyNumTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetAnarchyNumTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetAnarchyNumTurns);
 }
 //------------------------------------------------------------------------------
 //int SetAnarchyNumTurns();
 int CvLuaPlayer::lSetAnarchyNumTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetAnarchyNumTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetAnarchyNumTurns);
 }
 //------------------------------------------------------------------------------
 //int ChangeAnarchyNumTurns();
 int CvLuaPlayer::lChangeAnarchyNumTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeAnarchyNumTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeAnarchyNumTurns);
 }
 
 //------------------------------------------------------------------------------
 //int getAdvancedStartPoints();
 int CvLuaPlayer::lGetAdvancedStartPoints(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartPoints);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartPoints);
 }
 //------------------------------------------------------------------------------
 //void setAdvancedStartPoints(int iNewValue);
 int CvLuaPlayer::lSetAdvancedStartPoints(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setAdvancedStartPoints);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setAdvancedStartPoints);
 }
 //------------------------------------------------------------------------------
 //void changeAdvancedStartPoints(int iChange);
 int CvLuaPlayer::lChangeAdvancedStartPoints(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeAdvancedStartPoints);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeAdvancedStartPoints);
 }
 //------------------------------------------------------------------------------
 //int getAdvancedStartUnitCost(UnitTypes  eUnit, bool bAdd, CyPlot* pPlot);
 int CvLuaPlayer::lGetAdvancedStartUnitCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartUnitCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartUnitCost);
 }
 //------------------------------------------------------------------------------
 //int getAdvancedStartCityCost(bool bAdd, CyPlot* pPlot);
 int CvLuaPlayer::lGetAdvancedStartCityCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartCityCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartCityCost);
 }
 //------------------------------------------------------------------------------
 //int getAdvancedStartPopCost(bool bAdd, CyCity* pCity);
 int CvLuaPlayer::lGetAdvancedStartPopCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartPopCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartPopCost);
 }
 //------------------------------------------------------------------------------
 //int getAdvancedStartBuildingCost(BuildingTypes  eBuilding, bool bAdd, CyCity* pCity);
 int CvLuaPlayer::lGetAdvancedStartBuildingCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartBuildingCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartBuildingCost);
 }
 //------------------------------------------------------------------------------
 //int getAdvancedStartImprovementCost(ImprovementTypes  eImprovement, bool bAdd, CyPlot* pPlot);
 int CvLuaPlayer::lGetAdvancedStartImprovementCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartImprovementCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartImprovementCost);
 }
 //------------------------------------------------------------------------------
 //int getAdvancedStartRouteCost(RouteTypes  eRoute, bool bAdd, CyPlot* pPlot);
 int CvLuaPlayer::lGetAdvancedStartRouteCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartRouteCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartRouteCost);
 }
 //------------------------------------------------------------------------------
 //int getAdvancedStartTechCost(TechTypes  eTech, bool bAdd);
 int CvLuaPlayer::lGetAdvancedStartTechCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartTechCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartTechCost);
 }
 //------------------------------------------------------------------------------
 //int getAdvancedStartVisibilityCost(bool bAdd, CyPlot* pPlot);
 int CvLuaPlayer::lGetAdvancedStartVisibilityCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getAdvancedStartVisibilityCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getAdvancedStartVisibilityCost);
 }
 
 //------------------------------------------------------------------------------
 //int GetAttackBonusTurns();
 int CvLuaPlayer::lGetAttackBonusTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetAttackBonusTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetAttackBonusTurns);
 }
 
 //------------------------------------------------------------------------------
 //int GetCultureBonusTurns();
 int CvLuaPlayer::lGetCultureBonusTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCultureBonusTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCultureBonusTurns);
 }
 
 //------------------------------------------------------------------------------
 //int GetTourismBonusTurns();
 int CvLuaPlayer::lGetTourismBonusTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetTourismBonusTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetTourismBonusTurns);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetGoldenAgeProgressThreshold(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetGoldenAgeProgressThreshold);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetGoldenAgeProgressThreshold);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetGoldenAgeProgressMeter(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetGoldenAgeProgressMeter);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetGoldenAgeProgressMeter);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lSetGoldenAgeProgressMeter(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetGoldenAgeProgressMeter);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetGoldenAgeProgressMeter);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lChangeGoldenAgeProgressMeter(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeGoldenAgeProgressMeter);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeGoldenAgeProgressMeter);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetNumGoldenAges(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumGoldenAges);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumGoldenAges);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lSetNumGoldenAges(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetNumGoldenAges);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetNumGoldenAges);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lChangeNumGoldenAges(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeNumGoldenAges);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeNumGoldenAges);
 }
 
 //------------------------------------------------------------------------------
 //int getGoldenAgeTurns();
 int CvLuaPlayer::lGetGoldenAgeTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGoldenAgeTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGoldenAgeTurns);
 }
 //------------------------------------------------------------------------------
 //int getGoldenAgeLength();
 int CvLuaPlayer::lGetGoldenAgeLength(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGoldenAgeLength);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGoldenAgeLength);
 }
 //------------------------------------------------------------------------------
 //bool isGoldenAge();
 int CvLuaPlayer::lIsGoldenAge(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isGoldenAge);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isGoldenAge);
 }
 //------------------------------------------------------------------------------
 //void changeGoldenAgeTurns(int iChange);
 int CvLuaPlayer::lChangeGoldenAgeTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeGoldenAgeTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeGoldenAgeTurns);
 }
 //------------------------------------------------------------------------------
 //int getNumUnitGoldenAges();
 int CvLuaPlayer::lGetNumUnitGoldenAges(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumUnitGoldenAges);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumUnitGoldenAges);
 }
 //------------------------------------------------------------------------------
 //void changeNumUnitGoldenAges(int iChange);
 int CvLuaPlayer::lChangeNumUnitGoldenAges(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeNumUnitGoldenAges);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeNumUnitGoldenAges);
 }
 //------------------------------------------------------------------------------
 //int getStrikeTurns();
 int CvLuaPlayer::lGetStrikeTurns(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getStrikeTurns);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getStrikeTurns);
 }
 //------------------------------------------------------------------------------
 //int getGoldenAgeModifier();
 int CvLuaPlayer::lGetGoldenAgeModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGoldenAgeModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGoldenAgeModifier);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetGoldenAgeTourismModifier(lua_State* L)
@@ -5920,7 +5920,7 @@ int CvLuaPlayer::lGetGoldenAgeGreatMusicianRateModifier(lua_State* L)
 //int getHurryModifier(HurryTypes  eHurry);
 int CvLuaPlayer::lGetHurryModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getHurryModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getHurryModifier);
 }
 //------------------------------------------------------------------------------
 //void CreateGreatGeneral(int eGreatPersonUnit, bool bIncrementThreshold, bool bIncrementExperience, int iX, int iY);
@@ -5938,91 +5938,91 @@ int CvLuaPlayer::lCreateGreatGeneral(lua_State* L)
 //int getGreatPeopleCreated();
 int CvLuaPlayer::lGetGreatPeopleCreated(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatPeopleCreated);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatPeopleCreated);
 }
 //------------------------------------------------------------------------------
 //int getGreatGeneralsCreated();
 int CvLuaPlayer::lGetGreatGeneralsCreated(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatGeneralsCreated);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatGeneralsCreated);
 }
 //------------------------------------------------------------------------------
 //int getGreatPeopleThresholdModifier();
 int CvLuaPlayer::lGetGreatPeopleThresholdModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatPeopleThresholdModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatPeopleThresholdModifier);
 }
 //------------------------------------------------------------------------------
 //int getGreatGeneralsThresholdModifier();
 int CvLuaPlayer::lGetGreatGeneralsThresholdModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatGeneralsThresholdModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatGeneralsThresholdModifier);
 }
 //------------------------------------------------------------------------------
 //int getGreatAdmiralsThresholdModifier();
 int CvLuaPlayer::lGetGreatAdmiralsThresholdModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatAdmiralsThresholdModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatAdmiralsThresholdModifier);
 }
 //------------------------------------------------------------------------------
 //int getGreatPeopleRateModifier();
 int CvLuaPlayer::lGetGreatPeopleRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatPeopleRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatPeopleRateModifier);
 }
 //------------------------------------------------------------------------------
 //int getGreatGeneralRateModifier();
 int CvLuaPlayer::lGetGreatGeneralRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatGeneralRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatGeneralRateModifier);
 }
 //------------------------------------------------------------------------------
 //int getDomesticGreatGeneralRateModifier();
 int CvLuaPlayer::lGetDomesticGreatGeneralRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getDomesticGreatGeneralRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getDomesticGreatGeneralRateModifier);
 }
 
 //------------------------------------------------------------------------------
 //int getGreatWriterRateModifier();
 int CvLuaPlayer::lGetGreatWriterRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatWriterRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatWriterRateModifier);
 }
 
 //------------------------------------------------------------------------------
 //int getGreatArtistRateModifier();
 int CvLuaPlayer::lGetGreatArtistRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatArtistRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatArtistRateModifier);
 }
 
 //------------------------------------------------------------------------------
 //int getGreatMusicianRateModifier();
 int CvLuaPlayer::lGetGreatMusicianRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatMusicianRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatMusicianRateModifier);
 }
 
 //------------------------------------------------------------------------------
 //int getGreatScientistRateModifier();
 int CvLuaPlayer::lGetGreatScientistRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatScientistRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatScientistRateModifier);
 }
 
 //------------------------------------------------------------------------------
 //int getGreatMerchantRateModifier();
 int CvLuaPlayer::lGetGreatMerchantRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatMerchantRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatMerchantRateModifier);
 }
 
 //------------------------------------------------------------------------------
 //int getGreatEngineerRateModifier();
 int CvLuaPlayer::lGetGreatEngineerRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGreatEngineerRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGreatEngineerRateModifier);
 }
 
 //------------------------------------------------------------------------------
@@ -6164,232 +6164,232 @@ int CvLuaPlayer::lGetSpecialistProductionModifier(lua_State* L)
 //int getMaxGlobalBuildingProductionModifier();
 int CvLuaPlayer::lGetMaxGlobalBuildingProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getMaxGlobalBuildingProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getMaxGlobalBuildingProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int getMaxTeamBuildingProductionModifier();
 int CvLuaPlayer::lGetMaxTeamBuildingProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getMaxTeamBuildingProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getMaxTeamBuildingProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int getMaxPlayerBuildingProductionModifier();
 int CvLuaPlayer::lGetMaxPlayerBuildingProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getMaxPlayerBuildingProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getMaxPlayerBuildingProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int getFreeExperience();
 int CvLuaPlayer::lGetFreeExperience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getFreeExperience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getFreeExperience);
 }
 //------------------------------------------------------------------------------
 //int getFeatureProductionModifier();
 int CvLuaPlayer::lGetFeatureProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getFeatureProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getFeatureProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int getWorkerSpeedModifier();
 int CvLuaPlayer::lGetWorkerSpeedModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getWorkerSpeedModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getWorkerSpeedModifier);
 }
 //------------------------------------------------------------------------------
 //int getImprovementUpgradeRateModifier();
 int CvLuaPlayer::lGetImprovementUpgradeRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getImprovementUpgradeRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getImprovementUpgradeRateModifier);
 }
 //------------------------------------------------------------------------------
 //int getMilitaryProductionModifier();
 int CvLuaPlayer::lGetMilitaryProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getMilitaryProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getMilitaryProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int getSpaceProductionModifier();
 int CvLuaPlayer::lGetSpaceProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getSpaceProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getSpaceProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int getSettlerProductionModifier();
 int CvLuaPlayer::lGetSettlerProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getSettlerProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getSettlerProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int getCapitalSettlerProductionModifier();
 int CvLuaPlayer::lGetCapitalSettlerProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getCapitalSettlerProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getCapitalSettlerProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int getWonderProductionModifier();
 int CvLuaPlayer::lGetWonderProductionModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getWonderProductionModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getWonderProductionModifier);
 }
 //------------------------------------------------------------------------------
 //int GetUnitProductionMaintenanceMod();
 int CvLuaPlayer::lGetUnitProductionMaintenanceMod(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetUnitProductionMaintenanceMod);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetUnitProductionMaintenanceMod);
 }
 //------------------------------------------------------------------------------
 //int GetNumUnitsSupplied();
 int CvLuaPlayer::lGetNumUnitsSupplied(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumUnitsSupplied);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumUnitsSupplied);
 }
 //------------------------------------------------------------------------------
 //int GetNumUnitsSuppliedByHandicap();
 int CvLuaPlayer::lGetNumUnitsSuppliedByHandicap(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumUnitsSuppliedByHandicap);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumUnitsSuppliedByHandicap);
 }
 //------------------------------------------------------------------------------
 //int GetNumUnitsSuppliedByCities();
 int CvLuaPlayer::lGetNumUnitsSuppliedByCities(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumUnitsSuppliedByCities);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumUnitsSuppliedByCities);
 }
 //------------------------------------------------------------------------------
 //int GetNumUnitsSuppliedByPopulation();
 int CvLuaPlayer::lGetNumUnitsSuppliedByPopulation(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumUnitsSuppliedByPopulation);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumUnitsSuppliedByPopulation);
 }
 //------------------------------------------------------------------------------
 //int GetNumUnitsOutOfSupply();
 int CvLuaPlayer::lGetNumUnitsOutOfSupply(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumUnitsOutOfSupply);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumUnitsOutOfSupply);
 }
 //------------------------------------------------------------------------------
 //int getCityDefenseModifier();
 int CvLuaPlayer::lGetCityDefenseModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getCityDefenseModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getCityDefenseModifier);
 }
 //------------------------------------------------------------------------------
 //int getNumNukeUnits();
 int CvLuaPlayer::lGetNumNukeUnits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumNukeUnits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumNukeUnits);
 }
 //------------------------------------------------------------------------------
 //int getNumOutsideUnits();
 int CvLuaPlayer::lGetNumOutsideUnits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumOutsideUnits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumOutsideUnits);
 }
 
 //------------------------------------------------------------------------------
 //int getGoldPerUnit();
 int CvLuaPlayer::lGetGoldPerUnit(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGoldPerUnit);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGoldPerUnit);
 }
 //------------------------------------------------------------------------------
 //void ChangeGoldPerUnitTimes100();
 int CvLuaPlayer::lChangeGoldPerUnitTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeGoldPerUnitTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeGoldPerUnitTimes100);
 }
 //------------------------------------------------------------------------------
 //int getGoldPerMilitaryUnit();
 int CvLuaPlayer::lGetGoldPerMilitaryUnit(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getGoldPerMilitaryUnit);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getGoldPerMilitaryUnit);
 }
 //------------------------------------------------------------------------------
 //int getExtraUnitCost();
 int CvLuaPlayer::lGetExtraUnitCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getExtraUnitCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getExtraUnitCost);
 }
 //------------------------------------------------------------------------------
 //int getNumMilitaryUnits();
 int CvLuaPlayer::lGetNumMilitaryUnits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumMilitaryUnits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumMilitaryUnits);
 }
 //------------------------------------------------------------------------------
 //int getHappyPerMilitaryUnit();
 int CvLuaPlayer::lGetHappyPerMilitaryUnit(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getHappyPerMilitaryUnit);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getHappyPerMilitaryUnit);
 }
 //------------------------------------------------------------------------------
 //bool isMilitaryFoodProduction();
 int CvLuaPlayer::lIsMilitaryFoodProduction(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isMilitaryFoodProduction);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isMilitaryFoodProduction);
 }
 //------------------------------------------------------------------------------
 //int getHighestUnitLevel();
 int CvLuaPlayer::lGetHighestUnitLevel(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getHighestUnitLevel);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getHighestUnitLevel);
 }
 
 //------------------------------------------------------------------------------
 //int getConscriptCount();
 int CvLuaPlayer::lGetConscriptCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getConscriptCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getConscriptCount);
 }
 //------------------------------------------------------------------------------
 //void setConscriptCount(int iNewValue);
 int CvLuaPlayer::lSetConscriptCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setConscriptCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setConscriptCount);
 }
 //------------------------------------------------------------------------------
 //void changeConscriptCount(int iChange);
 int CvLuaPlayer::lChangeConscriptCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeConscriptCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeConscriptCount);
 }
 
 //------------------------------------------------------------------------------
 //int getMaxConscript();
 int CvLuaPlayer::lGetMaxConscript(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getMaxConscript);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getMaxConscript);
 }
 //------------------------------------------------------------------------------
 //int getOverflowResearch();
 int CvLuaPlayer::lGetOverflowResearch(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getOverflowResearch);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getOverflowResearch);
 }
 //------------------------------------------------------------------------------
 //bool getExpInBorderModifier();
 int CvLuaPlayer::lGetExpInBorderModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getExpInBorderModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getExpInBorderModifier);
 }
 //------------------------------------------------------------------------------
 //int getLevelExperienceModifier();
 int CvLuaPlayer::lGetLevelExperienceModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getLevelExperienceModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getLevelExperienceModifier);
 }
 //------------------------------------------------------------------------------
 //int getCultureBombTimer();
 int CvLuaPlayer::lGetCultureBombTimer(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getCultureBombTimer);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getCultureBombTimer);
 }
 //------------------------------------------------------------------------------
 //int getConversionTimer();
 int CvLuaPlayer::lGetConversionTimer(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getConversionTimer);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getConversionTimer);
 }
 //------------------------------------------------------------------------------
 //CvCity* getCapitalCity()
@@ -6405,67 +6405,67 @@ int CvLuaPlayer::lGetCapitalCity(lua_State* L)
 //int IsHasLostCapital();
 int CvLuaPlayer::lIsHasLostCapital(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsHasLostCapital);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsHasLostCapital);
 }
 //------------------------------------------------------------------------------
 //int getCitiesLost();
 int CvLuaPlayer::lGetCitiesLost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getCitiesLost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getCitiesLost);
 }
 
 //------------------------------------------------------------------------------
 //int getPower();
 int CvLuaPlayer::lGetPower(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getPower);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getPower);
 }
 //------------------------------------------------------------------------------
 //int GetMilitaryMight();
 int CvLuaPlayer::lGetMilitaryMight(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetMilitaryMight);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetMilitaryMight);
 }
 //------------------------------------------------------------------------------
 //int getTotalTimePlayed();
 int CvLuaPlayer::lGetTotalTimePlayed(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getTotalTimePlayed);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getTotalTimePlayed);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScore(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScore);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScore);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromCities(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromCities);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromCities);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromPopulation(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromPopulation);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromPopulation);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromLand(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromLand);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromLand);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromWonders(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromWonders);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromWonders);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromTechs(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromTechs);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromTechs);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromFutureTech(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromFutureTech);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromFutureTech);
 }
 //------------------------------------------------------------------------------
 //void ChangeScoreFromFutureTech(int iChange);
@@ -6480,7 +6480,7 @@ int CvLuaPlayer::lChangeScoreFromFutureTech(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromScenario1(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromScenario1);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromScenario1);
 }
 //------------------------------------------------------------------------------
 //void ChangeScoreFromScenario1(int iChange);
@@ -6495,7 +6495,7 @@ int CvLuaPlayer::lChangeScoreFromScenario1(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromScenario2(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromScenario2);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromScenario2);
 }
 //------------------------------------------------------------------------------
 //void ChangeScoreFromScenario2(int iChange);
@@ -6510,7 +6510,7 @@ int CvLuaPlayer::lChangeScoreFromScenario2(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromScenario3(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromScenario3);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromScenario3);
 }
 //------------------------------------------------------------------------------
 //void ChangeScoreFromScenario3(int iChange);
@@ -6525,7 +6525,7 @@ int CvLuaPlayer::lChangeScoreFromScenario3(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromScenario4(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromScenario4);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromScenario4);
 }
 //------------------------------------------------------------------------------
 //void ChangeScoreFromScenario4(int iChange);
@@ -6540,22 +6540,22 @@ int CvLuaPlayer::lChangeScoreFromScenario4(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromPolicies(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromPolicies);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromPolicies);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromGreatWorks(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromGreatWorks);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromGreatWorks);
 }
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lGetScoreFromReligion(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScoreFromReligion);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScoreFromReligion);
 }
 
 int CvLuaPlayer::lIsGoldenAgeCultureBonusDisabled(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsGoldenAgeCultureBonusDisabled);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsGoldenAgeCultureBonusDisabled);
 }
 
 
@@ -6563,7 +6563,7 @@ int CvLuaPlayer::lIsGoldenAgeCultureBonusDisabled(lua_State* L)
 //bool isMinorCiv();
 int CvLuaPlayer::lIsMinorCiv(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isMinorCiv);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isMinorCiv);
 }
 //------------------------------------------------------------------------------
 //bool getMinorCivID();
@@ -7419,87 +7419,87 @@ int CvLuaPlayer::lGetFriendshipFromUnitGift(lua_State* L)
 //bool isAlive();
 int CvLuaPlayer::lIsAlive(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isAlive);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isAlive);
 }
 //------------------------------------------------------------------------------
 //bool isEverAlive();
 int CvLuaPlayer::lIsEverAlive(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isEverAlive);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isEverAlive);
 }
 //------------------------------------------------------------------------------
 //bool isExtendedGame();
 int CvLuaPlayer::lIsExtendedGame(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isExtendedGame);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isExtendedGame);
 }
 //------------------------------------------------------------------------------
 //bool isFoundedFirstCity();
 int CvLuaPlayer::lIsFoundedFirstCity(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isFoundedFirstCity);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isFoundedFirstCity);
 }
 
 //------------------------------------------------------------------------------
 //EndTurnBlockingType GetEndTurnBlockingType()
 int CvLuaPlayer::lGetEndTurnBlockingType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetEndTurnBlockingType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetEndTurnBlockingType);
 }
 //------------------------------------------------------------------------------
 //EndTurnBlockingType GetEndTurnBlockingNotificationIndex()
 int CvLuaPlayer::lGetEndTurnBlockingNotificationIndex(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetEndTurnBlockingNotificationIndex);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetEndTurnBlockingNotificationIndex);
 }
 
 //------------------------------------------------------------------------------
 //bool isStrike();
 int CvLuaPlayer::lIsStrike(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isStrike);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isStrike);
 }
 //------------------------------------------------------------------------------
 //int getID();
 int CvLuaPlayer::lGetID(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetID);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetID);
 }
 //------------------------------------------------------------------------------
 //int HandicapTypes getHandicapType();
 int CvLuaPlayer::lGetHandicapType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getHandicapType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getHandicapType);
 }
 //------------------------------------------------------------------------------
 //int CivilizationTypes getCivilizationType();
 int CvLuaPlayer::lGetCivilizationType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getCivilizationType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getCivilizationType);
 }
 //------------------------------------------------------------------------------
 //LeaderHeadTypes  getLeaderType();
 int CvLuaPlayer::lGetLeaderType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getLeaderType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getLeaderType);
 }
 //------------------------------------------------------------------------------
 //LeaderHeadTypes  getPersonalityType()
 int CvLuaPlayer::lGetPersonalityType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getPersonalityType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getPersonalityType);
 }
 //------------------------------------------------------------------------------
 //void setPersonalityType(LeaderHeadTypes  eNewValue);
 int CvLuaPlayer::lSetPersonalityType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setPersonalityType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setPersonalityType);
 }
 //------------------------------------------------------------------------------
 //ErasTypes  GetCurrentEra();
 int CvLuaPlayer::lGetCurrentEra(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetCurrentEra);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetCurrentEra);
 }
 //------------------------------------------------------------------------------
 //int getTeam();
@@ -7582,253 +7582,253 @@ int CvLuaPlayer::lGetPlayerColors(lua_State* L)
 //int getSeaPlotYield(YieldTypes eIndex);
 int CvLuaPlayer::lGetSeaPlotYield(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getSeaPlotYield);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getSeaPlotYield);
 }
 //------------------------------------------------------------------------------
 //int getYieldRateModifier(YieldTypes eIndex);
 int CvLuaPlayer::lGetYieldRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getYieldRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getYieldRateModifier);
 }
 //------------------------------------------------------------------------------
 //int getCapitalYieldRateModifier(YieldTypes eIndex);
 int CvLuaPlayer::lGetCapitalYieldRateModifier(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getCapitalYieldRateModifier);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getCapitalYieldRateModifier);
 }
 //------------------------------------------------------------------------------
 //int getExtraYieldThreshold(YieldTypes eIndex);
 int CvLuaPlayer::lGetExtraYieldThreshold(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getExtraYieldThreshold);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getExtraYieldThreshold);
 }
 //------------------------------------------------------------------------------
 //int getScience();
 int CvLuaPlayer::lGetScience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScience);
 }
 //------------------------------------------------------------------------------
 //int GetScienceTimes100();
 int CvLuaPlayer::lGetScienceTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScienceTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScienceTimes100);
 }
 //int GetScienceFromCitiesTimes100();
 int CvLuaPlayer::lGetScienceFromCitiesTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScienceFromCitiesTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScienceFromCitiesTimes100);
 }
 //int GetScienceFromOtherPlayersTimes100();
 int CvLuaPlayer::lGetScienceFromOtherPlayersTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScienceFromOtherPlayersTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScienceFromOtherPlayersTimes100);
 }
 //int GetScienceFromHappinessTimes100();
 int CvLuaPlayer::lGetScienceFromHappinessTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScienceFromHappinessTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScienceFromHappinessTimes100);
 }
 #ifdef NQ_GOLD_TO_SCIENCE_FROM_POLICIES
 //int GetScienceFromGoldTimes100();
 int CvLuaPlayer::lGetScienceFromGoldTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScienceFromGoldTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScienceFromGoldTimes100);
 }
 #endif
 #ifdef NQ_MINOR_FRIENDSHIP_GAIN_BULLY_GOLD_SUCCESS_FROM_POLICIES
 //int GetMinorFriendshipGainBullyGoldSuccess();
 int CvLuaPlayer::lGetMinorFriendshipGainBullyGoldSuccess(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetMinorFriendshipGainBullyGoldSuccess);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetMinorFriendshipGainBullyGoldSuccess);
 }
 #endif
 //int GetScienceFromResearchAgreementsTimes100();
 int CvLuaPlayer::lGetScienceFromResearchAgreementsTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScienceFromResearchAgreementsTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScienceFromResearchAgreementsTimes100);
 }
 //int GetScienceFromBudgetDeficitTimes100();
 int CvLuaPlayer::lGetScienceFromBudgetDeficitTimes100(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetScienceFromBudgetDeficitTimes100);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetScienceFromBudgetDeficitTimes100);
 }
 //------------------------------------------------------------------------------
 //int GetProximityToPlayer(PlayerTypes  eIndex);
 int CvLuaPlayer::lGetProximityToPlayer(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetProximityToPlayer);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetProximityToPlayer);
 }
 //------------------------------------------------------------------------------
 //void DoUpdateProximityToPlayer(PlayerTypes  eIndex);
 int CvLuaPlayer::lDoUpdateProximityToPlayer(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::DoUpdateProximityToPlayer);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::DoUpdateProximityToPlayer);
 }
 //------------------------------------------------------------------------------
 //int GetIncomingUnitType(PlayerTypes eFromPlayer);
 int CvLuaPlayer::lGetIncomingUnitType(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayer::GetIncomingUnitType);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetIncomingUnitType);
 }
 //------------------------------------------------------------------------------
 //int GetIncomingUnitCountdown(PlayerTypes eFromPlayer);
 int CvLuaPlayer::lGetIncomingUnitCountdown(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayer::GetIncomingUnitCountdown);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetIncomingUnitCountdown);
 }
 //------------------------------------------------------------------------------
 //bool isOption(PlayerOptionTypes  eIndex);
 int CvLuaPlayer::lIsOption(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isOption);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isOption);
 }
 //------------------------------------------------------------------------------
 //void setOption(PlayerOptionTypes  eIndex, bool bNewValue);
 int CvLuaPlayer::lSetOption(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setOption);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setOption);
 }
 //------------------------------------------------------------------------------
 //bool isPlayable();
 int CvLuaPlayer::lIsPlayable(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isPlayable);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isPlayable);
 }
 //------------------------------------------------------------------------------
 //void setPlayable(bool bNewValue);
 int CvLuaPlayer::lSetPlayable(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setPlayable);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setPlayable);
 }
 //------------------------------------------------------------------------------
 //int getNumResourceUsed(ResourceTypes  iIndex);
 int CvLuaPlayer::lGetNumResourceUsed(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumResourceUsed);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumResourceUsed);
 }
 //------------------------------------------------------------------------------
 //int getNumResourceTotal(ResourceTypes  iIndex, bool bIncludeImport);
 int CvLuaPlayer::lGetNumResourceTotal(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumResourceTotal);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumResourceTotal);
 }
 //------------------------------------------------------------------------------
 //void changeNumResourceTotal(ResourceTypes  iIndex, int iChange);
 int CvLuaPlayer::lChangeNumResourceTotal(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeNumResourceTotal);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeNumResourceTotal);
 }
 //------------------------------------------------------------------------------
 //int getNumResourceAvailable(ResourceTypes  iIndex, bool bIncludeImport);
 int CvLuaPlayer::lGetNumResourceAvailable(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumResourceAvailable);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumResourceAvailable);
 }
 
 //------------------------------------------------------------------------------
 //int getResourceExport(ResourceTypes  iIndex);
 int CvLuaPlayer::lGetResourceExport(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getResourceExport);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getResourceExport);
 }
 //------------------------------------------------------------------------------
 //int getResourceImport(ResourceTypes  iIndex);
 int CvLuaPlayer::lGetResourceImport(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getResourceImport);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getResourceImport);
 }
 //------------------------------------------------------------------------------
 //int getResourceFromMinors(ResourceTypes  iIndex);
 int CvLuaPlayer::lGetResourceFromMinors(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getResourceFromMinors);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getResourceFromMinors);
 }
 
 //------------------------------------------------------------------------------
 //int getImprovementCount(ImprovementTypes  iIndex);
 int CvLuaPlayer::lGetImprovementCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getImprovementCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getImprovementCount);
 }
 
 //------------------------------------------------------------------------------
 //bool isBuildingFree(BuildingTypes  iIndex);
 int CvLuaPlayer::lIsBuildingFree(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isBuildingFree);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isBuildingFree);
 }
 //------------------------------------------------------------------------------
 //int getUnitClassCount(UnitClassTypes  eIndex);
 int CvLuaPlayer::lGetUnitClassCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getUnitClassCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getUnitClassCount);
 }
 //------------------------------------------------------------------------------
 //bool isUnitClassMaxedOut(UnitClassTypes  eIndex, int iExtra);
 int CvLuaPlayer::lIsUnitClassMaxedOut(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isUnitClassMaxedOut);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isUnitClassMaxedOut);
 }
 //------------------------------------------------------------------------------
 //int getUnitClassMaking(UnitClassTypes  eIndex);
 int CvLuaPlayer::lGetUnitClassMaking(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getUnitClassMaking);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getUnitClassMaking);
 }
 //------------------------------------------------------------------------------
 //int getUnitClassCountPlusMaking(UnitClassTypes  eIndex);
 int CvLuaPlayer::lGetUnitClassCountPlusMaking(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getUnitClassCountPlusMaking);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getUnitClassCountPlusMaking);
 }
 //------------------------------------------------------------------------------
 //int getBuildingClassCount(BuildingClassTypes  iIndex);
 int CvLuaPlayer::lGetBuildingClassCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getBuildingClassCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getBuildingClassCount);
 }
 //------------------------------------------------------------------------------
 //bool isBuildingClassMaxedOut(BuildingClassTypes  iIndex, int iExtra);
 int CvLuaPlayer::lIsBuildingClassMaxedOut(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isBuildingClassMaxedOut);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isBuildingClassMaxedOut);
 }
 //------------------------------------------------------------------------------
 //int getBuildingClassMaking(BuildingClassTypes  iIndex);
 int CvLuaPlayer::lGetBuildingClassMaking(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getBuildingClassMaking);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getBuildingClassMaking);
 }
 //------------------------------------------------------------------------------
 //int getBuildingClassCountPlusMaking(BuildingClassTypes  iIndex);
 int CvLuaPlayer::lGetBuildingClassCountPlusMaking(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getBuildingClassCountPlusMaking);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getBuildingClassCountPlusMaking);
 }
 //------------------------------------------------------------------------------
 //int getHurryCount(HurryTypes  eIndex);
 int CvLuaPlayer::lGetHurryCount(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getHurryCount);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getHurryCount);
 }
 //------------------------------------------------------------------------------
 //bool IsHasAccessToHurry(HurryTypes  eIndex);
 int CvLuaPlayer::lIsHasAccessToHurry(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsHasAccessToHurry);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsHasAccessToHurry);
 }
 //------------------------------------------------------------------------------
 //bool IsCanHurry(HurryTypes  eIndex);
 int CvLuaPlayer::lIsCanHurry(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::IsCanHurry);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::IsCanHurry);
 }
 //------------------------------------------------------------------------------
 //int GetHurryGoldCost(HurryTypes  eIndex);
 int CvLuaPlayer::lGetHurryGoldCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetHurryGoldCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetHurryGoldCost);
 }
 
 //------------------------------------------------------------------------------
@@ -7846,50 +7846,50 @@ int CvLuaPlayer::lIsResearchingTech(lua_State* L)
 //void setResearchingTech(TechTypes eIndex, bool bNewValue);
 int CvLuaPlayer::lSetResearchingTech(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setResearchingTech);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setResearchingTech);
 }
 
 //------------------------------------------------------------------------------
 //int getCombatExperience();
 int CvLuaPlayer::lGetCombatExperience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getCombatExperience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getCombatExperience);
 }
 //------------------------------------------------------------------------------
 //void changeCombatExperience(int iChange);
 int CvLuaPlayer::lChangeCombatExperience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeCombatExperience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeCombatExperience);
 }
 //------------------------------------------------------------------------------
 //void setCombatExperience(int iExperience);
 int CvLuaPlayer::lSetCombatExperience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setCombatExperience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setCombatExperience);
 }
 //------------------------------------------------------------------------------
 //int getLifetimeCombatExperience();
 int CvLuaPlayer::lGetLifetimeCombatExperience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getLifetimeCombatExperience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getLifetimeCombatExperience);
 }
 //------------------------------------------------------------------------------
 //int getNavalCombatExperience();
 int CvLuaPlayer::lGetNavalCombatExperience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNavalCombatExperience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNavalCombatExperience);
 }
 //------------------------------------------------------------------------------
 //void changeNavalCombatExperience(int iChange);
 int CvLuaPlayer::lChangeNavalCombatExperience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::changeNavalCombatExperience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::changeNavalCombatExperience);
 }
 //------------------------------------------------------------------------------
 //void setCombatExperience(int iExperience);
 int CvLuaPlayer::lSetNavalCombatExperience(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::setNavalCombatExperience);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::setNavalCombatExperience);
 }
 //------------------------------------------------------------------------------
 //int getSpecialistExtraYield(SpecialistTypes  eIndex1, YieldTypes  eIndex2);
@@ -7915,37 +7915,37 @@ int CvLuaPlayer::lGetSpecialistExtraYield(lua_State* L)
 //int findPathLength(TechTypes  eTech, bool bCost);
 int CvLuaPlayer::lFindPathLength(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::findPathLength);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::findPathLength);
 }
 //------------------------------------------------------------------------------
 //int getQueuePosition( TechTypes  eTech );
 int CvLuaPlayer::lGetQueuePosition(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getQueuePosition);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getQueuePosition);
 }
 //------------------------------------------------------------------------------
 //void clearResearchQueue();
 int CvLuaPlayer::lClearResearchQueue(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::clearResearchQueue);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::clearResearchQueue);
 }
 //------------------------------------------------------------------------------
 //bool pushResearch(TechTypes  iIndex, bool bClear);
 int CvLuaPlayer::lPushResearch(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::pushResearch);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::pushResearch);
 }
 //------------------------------------------------------------------------------
 //void popResearch(TechTypes  eTech);
 int CvLuaPlayer::lPopResearch(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::popResearch);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::popResearch);
 }
 //------------------------------------------------------------------------------
 //int getLengthResearchQueue();
 int CvLuaPlayer::lGetLengthResearchQueue(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getLengthResearchQueue);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getLengthResearchQueue);
 }
 //------------------------------------------------------------------------------
 //void addCityName(string szName);
@@ -7964,7 +7964,7 @@ int CvLuaPlayer::lAddCityName(lua_State* L)
 //int getNumCityNames();
 int CvLuaPlayer::lGetNumCityNames(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumCityNames);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumCityNames);
 }
 //------------------------------------------------------------------------------
 //string getCityName(int iIndex);
@@ -8025,7 +8025,7 @@ int CvLuaPlayer::lCities(lua_State* L)
 //int getNumCities();
 int CvLuaPlayer::lGetNumCities(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumCities);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumCities);
 }
 //------------------------------------------------------------------------------
 //CyCity* getCity(int iID);
@@ -8092,19 +8092,19 @@ int CvLuaPlayer::lGetUnitByID(lua_State* L)
 //int getNumUnits();
 int CvLuaPlayer::lGetNumUnits(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::getNumUnits);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::getNumUnits);
 }
 //------------------------------------------------------------------------------
 //void AI_updateFoundValues(bool bStartingLoc);
 int CvLuaPlayer::lAI_updateFoundValues(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::AI_updateFoundValues);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::AI_updateFoundValues);
 }
 //------------------------------------------------------------------------------
 //int AI_foundValue(int iX, int iY, int iMinUnitRange/* = -1*/, bool bStartingLoc/* = false*/);
 int CvLuaPlayer::lAI_foundValue(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::AI_foundValue);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::AI_foundValue);
 }
 
 //------------------------------------------------------------------------------
@@ -8220,31 +8220,31 @@ int CvLuaPlayer::lSetScriptData(lua_State* L)
 //int GetNumPlots();
 int CvLuaPlayer::lGetNumPlots(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumPlots);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumPlots);
 }
 //------------------------------------------------------------------------------
 //int GetNumPlotsBought();
 int CvLuaPlayer::lGetNumPlotsBought(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetNumPlotsBought);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetNumPlotsBought);
 }
 //------------------------------------------------------------------------------
 //void SetNumPlotsBought(int iValue);
 int CvLuaPlayer::lSetNumPlotsBought(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::SetNumPlotsBought);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::SetNumPlotsBought);
 }
 //------------------------------------------------------------------------------
 //void ChangeNumPlotsBought(int iChange);
 int CvLuaPlayer::lChangeNumPlotsBought(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::ChangeNumPlotsBought);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::ChangeNumPlotsBought);
 }
 //------------------------------------------------------------------------------
 //int GetBuyPlotCost();
 int CvLuaPlayer::lGetBuyPlotCost(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::GetBuyPlotCost);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::GetBuyPlotCost);
 }
 //------------------------------------------------------------------------------
 // int GetPlotDanger();
@@ -11937,19 +11937,19 @@ int CvLuaPlayer::lGetCommitVoteDetails(lua_State* L)
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lIsConnected(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isConnected);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isConnected);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lIsObserver(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::isObserver);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::isObserver);
 }
 
 //------------------------------------------------------------------------------
 int CvLuaPlayer::lHasTurnTimerExpired(lua_State* L)
 {
-	return BasicLuaMethod(L, &CvPlayerAI::hasTurnTimerExpired);
+	return CvLuaMethodWrapper<CvLuaPlayer, CvPlayer>::BasicLuaMethod(L, &CvPlayer::hasTurnTimerExpired);
 }
 
 //-------------------------------------------------------------------------

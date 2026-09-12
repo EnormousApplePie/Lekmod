@@ -8,18 +8,28 @@
 #include "CvGameCoreDLLPCH.h"
 #include "CvGlobals.h"
 #include "ICvDLLUserInterface.h"
+#ifndef LEKMOD_MACOS
 #include "Win32/FDebugHelper.h"
+#endif
 #include "CvDllContext.h"
+#ifdef LEKMOD_MACOS
+#include "abi_checks.hpp"
+#endif
 
 // must be included after all other headers
 #include "LintFree.h"
 
 //------------------------------------------------------------------------------
-extern "C" ICvGameContext1* DllGetGameContext()
+extern "C"
+#ifdef LEKMOD_MACOS
+__attribute__((visibility("default")))
+#endif
+ICvGameContext1* DllGetGameContext()
 {
 	return CvDllGameContext::GetSingleton();
 }
 //------------------------------------------------------------------------------
+#ifndef LEKMOD_MACOS
 BOOL APIENTRY DllMain(HANDLE hModule,
                       DWORD  ul_reason_for_call,
                       LPVOID)
@@ -58,3 +68,19 @@ BOOL APIENTRY DllMain(HANDLE hModule,
 
 	return TRUE;	// success
 }
+
+#else
+__attribute__((constructor)) static void LekmodInitialize()
+{
+    fprintf(stderr, "[Lekmod macOS] Initializing native v35.3 game core\n");
+    timeBeginPeriod(1);
+    CvDllGameContext::InitializeSingleton();
+    fprintf(stderr, "[Lekmod macOS] Game context initialized\n");
+}
+__attribute__((destructor)) static void LekmodShutdown()
+{
+    timeEndPeriod(1);
+    CvDllGameContext::DestroySingleton();
+    GC.setDLLIFace(NULL);
+}
+#endif
