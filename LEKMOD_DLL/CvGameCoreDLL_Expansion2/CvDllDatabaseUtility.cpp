@@ -604,7 +604,11 @@ bool CvDllDatabaseUtility::ValidateGameDatabase()
 #else
 #define ValidateCount(func) if(func() <= 0){bError = true, LogMsg("ERROR: %s <= 0", #func);}
 #endif
+#if defined(LEKMOD_MACOS)
 #define ValidateVectorSize(vec) ValidateCount(gc.vec);
+#else
+#define ValidateVectorSize(vec) ValidateCount(gc.##vec);
+#endif
 bool CvDllDatabaseUtility::ValidatePrefetchProcess()
 {
 	bool bError = false;

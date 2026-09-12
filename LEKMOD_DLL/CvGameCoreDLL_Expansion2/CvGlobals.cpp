@@ -48,7 +48,11 @@
 template <class T>
 void deleteInfoArray(std::vector<T*>& array)
 {
+#if defined(LEKMOD_MACOS)
 	for(typename std::vector<T*>::iterator it = array.begin(); it != array.end(); ++it)
+#else
+	for(std::vector<T*>::iterator it = array.begin(); it != array.end(); ++it)
+#endif
 	{
 		SAFE_DELETE(*it);
 	}
@@ -1976,7 +1980,9 @@ CvGlobals::~CvGlobals()
 {
 }
 
-#if defined(AUI_MINIDUMPS) && !defined(LEKMOD_MACOS) // Altered to work, and be more helpful like VP's
+#if defined(LEKMOD_MACOS)
+#else
+#ifdef AUI_MINIDUMPS // Altered to work, and be more helpful like VP's
 /************************************************************************************************/
 /* MINIDUMP_MOD                           04/10/11                                terkhen       */
 /*                                                                                              */
@@ -2074,6 +2080,7 @@ LONG WINAPI CustomFilter(EXCEPTION_POINTERS *ExceptionInfo)
 	return EXCEPTION_EXECUTE_HANDLER;
 }
 #endif
+#endif
 
 /************************************************************************************************/
 /* MINIDUMP_MOD                                END                                              */
@@ -2084,8 +2091,11 @@ LONG WINAPI CustomFilter(EXCEPTION_POINTERS *ExceptionInfo)
 //
 void CvGlobals::init()
 {
-#if defined(AUI_MINIDUMPS) && !defined(LEKMOD_MACOS)
+#if defined(LEKMOD_MACOS)
+#else
+#if defined(AUI_MINIDUMPS)
 	SetUnhandledExceptionFilter(CustomFilter);
+#endif
 #endif
 	//
 	// These vars are used to initialize the globals.

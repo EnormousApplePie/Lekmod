@@ -46,7 +46,11 @@ namespace FSerialization
 	std::string toString(const std::vector<ValueType> & source)
 	{
 		std::string result = "{";
+#if defined(LEKMOD_MACOS)
 		typename std::vector<ValueType>::const_iterator i;
+#else
+		std::vector<ValueType>::const_iterator i;
+#endif
 		for(i = source.begin(); i != source.end(); ++i)
 		{
 			if(i != source.begin())

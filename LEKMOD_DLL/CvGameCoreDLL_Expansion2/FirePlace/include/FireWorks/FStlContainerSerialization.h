@@ -82,9 +82,17 @@ template<typename ElementType, typename ContainerType>
 void SerializeToSequenceContainer(FDataStream & loadFrom, ContainerType & container)
 {
 	container.clear();
+#if defined(LEKMOD_MACOS)
 	typename ContainerType::size_type count = 0;
+#else
+	ContainerType::size_type count = 0;
+#endif
 	loadFrom >> count;
+#if defined(LEKMOD_MACOS)
 	typename ContainerType::size_type i = 0;
+#else
+	ContainerType::size_type i = 0;
+#endif
 	for(i = 0; i < count; ++i)
 	{
 		ElementType v;

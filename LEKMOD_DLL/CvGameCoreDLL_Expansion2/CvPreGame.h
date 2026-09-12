@@ -302,7 +302,11 @@ int										 getActiveSlotCount();
 int										 readActiveSlotCountFromSaveGame(FDataStream& loadFrom, bool bReadVersion);
 
 extern const std::vector<TeamTypes>& sr_TeamTypes;
+#if defined(LEKMOD_MACOS)
 inline TeamTypes     teamType(PlayerTypes p)
+#else
+static TeamTypes     teamType(PlayerTypes p)
+#endif
 {
 	if(p >= 0 && p < MAX_PLAYERS)
 		return sr_TeamTypes[p];

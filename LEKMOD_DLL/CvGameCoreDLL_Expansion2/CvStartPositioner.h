@@ -37,7 +37,11 @@ public:
 		m_iAreaID = source.m_iAreaID;
 	}
 
+#if defined(LEKMOD_MACOS)
 	bool operator<(const CvContinent& continent) const
+#else
+	bool operator<(const CvContinent& continent)
+#endif
 	{
 		return (m_uiFertilityNextRegion > continent.m_uiFertilityNextRegion);
 	}
@@ -112,7 +116,11 @@ public:
 		m_iNumCivsPlaced = source.m_iNumCivsPlaced;
 	}
 
+#if defined(LEKMOD_MACOS)
 	bool operator<(const CvStartRegion& continent) const
+#else
+	bool operator<(const CvStartRegion& continent)
+#endif
 	{
 		return (m_uiFertility / (m_iNumCivsPlaced + 1) >
 		        continent.m_uiFertility / (continent.m_iNumCivsPlaced + 1));
@@ -161,7 +169,11 @@ public:
 		m_iRank = startRankObj.m_iRank;
 	}
 
+#if defined(LEKMOD_MACOS)
 	bool operator<(const CvPlayerStartRank& startRankObj) const
+#else
+	bool operator<(const CvPlayerStartRank& startRankObj)
+#endif
 	{
 		return (m_iRank < startRankObj.m_iRank);
 	}

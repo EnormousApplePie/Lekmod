@@ -1,4 +1,7 @@
 #pragma once
+#if !defined(LEKMOD_MACOS) || !defined(__APPLE__)
+#error "The macOS Windows.h shim must not be used by a Windows build"
+#endif
 #include <cstdint>
 #include <cstddef>
 #include <cstring>

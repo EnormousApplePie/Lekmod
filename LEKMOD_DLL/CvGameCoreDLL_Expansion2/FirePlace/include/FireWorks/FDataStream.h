@@ -523,6 +523,7 @@ FDataStream & operator>>(FDataStream & loadFrom, ArrayWrapper<ValueType> & v)
 	return loadFrom;
 }
 
+#if defined(LEKMOD_MACOS)
 // Accept temporary wrappers while reading into the caller-owned array.
 template<typename ValueType>
 FDataStream & operator>>(FDataStream & loadFrom, ArrayWrapper<ValueType> && v)
@@ -530,6 +531,7 @@ FDataStream & operator>>(FDataStream & loadFrom, ArrayWrapper<ValueType> && v)
     return operator>>(loadFrom, v);
 }
 
+#endif
 template<typename ValueType>
 FDataStream & operator<<(FDataStream & saveTo, const ArrayWrapperConst<ValueType> & v)
 {

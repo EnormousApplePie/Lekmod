@@ -4084,7 +4084,15 @@ int JoinLandmass(CvAStarNode* parent, CvAStarNode* node, int data, const void* p
 /// Constructor
 CvTwoLayerPathFinder::CvTwoLayerPathFinder()
 {
+#if defined(LEKMOD_MACOS)
 // The base constructor is called automatically before this body.
+#else
+#ifdef AUI_WARNING_FIXES
+	this->CvAStar::CvAStar();
+#else
+	CvAStar::CvAStar();
+#endif
+#endif
 	m_ppaaPartialMoveNodes = NULL;
 }
 

@@ -48,7 +48,11 @@ public:
 
 	//!Allocates an array to Count(szTableName) and zero's memory.
 	template<typename T>
+#if defined(LEKMOD_MACOS)
 void InitializeArray(T*& pArray, const char* szTableName, T defaultValue = (T)0);
+#else
+void InitializeArray(T*& pArray, const char* szTableName, T default = (T)0);
+#endif
 
 	bool Initialize2DArray(int**& pArray, const char* szTable1Name, const char* szTable2Name, int iDefault = 0);
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -180,7 +184,11 @@ inline void CvDatabaseUtility::InitializeArray(float*& pArray, const size_t coun
 }
 //------------------------------------------------------------------------------
 template<typename T>
+#if defined(LEKMOD_MACOS)
 inline void CvDatabaseUtility::InitializeArray(T*& pArray, const char* szTableName, T defaultValue)
+#else
+inline void CvDatabaseUtility::InitializeArray(T*& pArray, const char* szTableName, T default)
+#endif
 {
 	size_t count = MaxRows(szTableName);
 
@@ -193,7 +201,11 @@ inline void CvDatabaseUtility::InitializeArray(T*& pArray, const char* szTableNa
 	if(count == 0)
 		count = 1;
 
+#if defined(LEKMOD_MACOS)
 	InitializeArray(pArray, count, defaultValue);
+#else
+	InitializeArray(pArray, count, default);
+#endif
 }
 
 #endif //CVDATABASEUTILITY_H

@@ -158,7 +158,11 @@ public:
 	////////////////////////////////////////////////////////////////////////
 	explicit FFastList() : BASE_TYPE() {};
 	explicit FFastList( unsigned int uiCapacity ) : BASE_TYPE(uiCapacity) {};
+#if defined(LEKMOD_MACOS)
 	explicit FFastList( const TYPE& rhs ) : BASE_TYPE( rhs ) {};
+#else
+	explicit TYPE( const TYPE& rhs ) : BASE_TYPE( rhs ) {};
+#endif
 
 	//Copy operator
 	const TYPE& operator = ( const TYPE& rhs ){  
@@ -196,9 +200,17 @@ public:
 	////////////////////////////////////////////////////////////////////////
 	// Member functions which get/use various iterators
 	////////////////////////////////////////////////////////////////////////
+#if defined(LEKMOD_MACOS)
 	iterator begin(){ return iterator( this->m_uiFirst, this ); };
+#else
+	iterator begin(){ return iterator( m_uiFirst, this ); };
+#endif
 	iterator end(){ return iterator( ANCHOR_NODE_INDEX, this ); };
+#if defined(LEKMOD_MACOS)
 	const_iterator begin() const{ return const_iterator( this->m_uiFirst, this ); };
+#else
+	const_iterator begin() const{ return const_iterator( m_uiFirst, this ); };
+#endif
 	const_iterator end() const{ return const_iterator( ANCHOR_NODE_INDEX, this ); };
 	const_iterator begin_const() const{ return const_iterator( m_uiFirst, this ); };
 	const_iterator end_const() const{ return const_iterator( ANCHOR_NODE_INDEX, this ); };
@@ -244,7 +256,11 @@ public:
 
 
 	const ALLOC_TYPE& get_allocator() const{ return m_kAllocator; };
+#if defined(LEKMOD_MACOS)
 	ALLOC_TYPE& get_allocator(){ return this->m_kAllocator; };
+#else
+	ALLOC_TYPE& get_allocator(){ return m_kAllocator; };
+#endif
 
 };
 
@@ -284,17 +300,37 @@ public:
 	// Base iterator class which defined all iterator-ness except whether
 	// access is const or non-const.
 	////////////////////////////////////////////////////////////////////////
+#if defined(LEKMOD_MACOS)
 	template< class IteratorTail >
+#else
+	template< class TAIL >
+#endif
 	class base_iterator : 
 		public std::iterator<std::bidirectional_iterator_tag, MultiListNodePolicy<T> >, 
+#if defined(LEKMOD_MACOS)
 		public IteratorTail
+#else
+		public TAIL
+#endif
 	{
 	public:
+#if defined(LEKMOD_MACOS)
 		explicit base_iterator() : m_uiCurrPos( ANCHOR_NODE_INDEX ), IteratorTail(NULL) {};
+#else
+		explicit base_iterator() : m_uiCurrPos( ANCHOR_NODE_INDEX ), TAIL(NULL) {};
+#endif
 		explicit base_iterator( unsigned int uiPos, TYPE* pVec )
+#if defined(LEKMOD_MACOS)
 			: m_uiCurrPos( uiPos ), IteratorTail( pVec ) {};
+#else
+			: m_uiCurrPos( uiPos ), TAIL( pVec ) {};
+#endif
 		explicit base_iterator( unsigned int uiPos, const TYPE* pVec )
+#if defined(LEKMOD_MACOS)
 			: m_uiCurrPos( uiPos ), IteratorTail( pVec ) {};
+#else
+			: m_uiCurrPos( uiPos ), TAIL( pVec ) {};
+#endif
 
 		~base_iterator(){};
 
@@ -309,9 +345,17 @@ public:
 		};
 		base_iterator& operator++(){
 			if( m_uiCurrPos == ANCHOR_NODE_INDEX ){
+#if defined(LEKMOD_MACOS)
 				m_uiCurrPos = this->m_pFastList->m_uiFirst;
+#else
+				m_uiCurrPos = m_pFastList->m_uiFirst;
+#endif
 			}else{
+#if defined(LEKMOD_MACOS)
 				m_uiCurrPos = this->m_pFastList->get_allocator()[ m_uiCurrPos ].LIST_GetNext();
+#else
+				m_uiCurrPos = m_pFastList->get_allocator()[ m_uiCurrPos ].LIST_GetNext();
+#endif
 			}
 			return *this;
 		};
@@ -365,7 +409,11 @@ public:
 
 	protected:
 		unsigned int m_uiCurrPos;
+#if defined(LEKMOD_MACOS)
 		friend TYPE;
+#else
+		friend class TYPE;
+#endif
 	};
 
 	////////////////////////////////////////////////////////////////////////
@@ -381,7 +429,11 @@ public:
 		~iterator(){};
 
 		T& operator*(){
+#if defined(LEKMOD_MACOS)
 			return this->m_pFastList->get_allocator()[ this->m_uiCurrPos ];
+#else
+			return m_pFastList->get_allocator()[ m_uiCurrPos ];
+#endif
 		};
 		T* operator->(){
 			return &m_pFastList->get_allocator()[ m_uiCurrPos ];
@@ -401,7 +453,11 @@ public:
 		~const_iterator(){};
 
 		const T & operator*() const{
+#if defined(LEKMOD_MACOS)
 			return this->m_pFastList->get_allocator()[ this->m_uiCurrPos ];
+#else
+			return m_pFastList->get_allocator()[ m_uiCurrPos ];
+#endif
 		};
 		const T* operator->() const{
 			return &m_pFastList->get_allocator()[ m_uiCurrPos ];
@@ -486,7 +542,11 @@ public:
 	//Push a new element to the back of a list
 	unsigned int push_back( const T& x )
 	{
+#if defined(LEKMOD_MACOS)
 		unsigned int uiNewIndex = this->get_allocator().Alloc( x );
+#else
+		unsigned int uiNewIndex = get_allocator().Alloc( x );
+#endif
 		push_back_existing( uiNewIndex );
 		return uiNewIndex;
 	};
@@ -562,7 +622,11 @@ public:
 		return iterator( uiNext, this );
 	};
 	iterator erase( iterator  it ){
+#if defined(LEKMOD_MACOS)
 		const unsigned int uiNext = this->get_allocator()[it.get_index()].LIST_GetNext();
+#else
+		const unsigned int uiNext = get_allocator()[it.get_index()].LIST_GetNext();
+#endif
 		UnLink( it.get_index(), uiNext );
 		return iterator( uiNext, this );
 	};
@@ -633,12 +697,20 @@ protected:
 	{
 		assert( get_allocator().is_element_valid(i) );
 
+#if defined(LEKMOD_MACOS)
 		T* a = &this->get_allocator()[i];
+#else
+		T* a = &get_allocator()[i];
+#endif
 		if( j == ANCHOR_NODE_INDEX ){
 			a->LIST_SetNext(ANCHOR_NODE_INDEX);
 			a->LIST_SetPrev(ANCHOR_NODE_INDEX);
 		}else{
+#if defined(LEKMOD_MACOS)
 			T* b = &this->get_allocator()[j];
+#else
+			T* b = &get_allocator()[j];
+#endif
 
 			//Set the links for the new node
 			unsigned int uiBNext = b->LIST_GetNext();
@@ -647,7 +719,11 @@ protected:
 
 			//Fix the links for the next and previous nodes
 			if( uiBNext != ANCHOR_NODE_INDEX )
+#if defined(LEKMOD_MACOS)
 				this->get_allocator()[uiBNext].LIST_SetPrev(i);
+#else
+				get_allocator()[uiBNext].LIST_SetPrev(i);
+#endif
 			b->LIST_SetNext(i);
 		}
 	};
@@ -658,23 +734,44 @@ protected:
 		assert( get_allocator().is_element_valid(uiStart) );
 
 		if( uiStart == m_uiFirst){ m_uiFirst = uiEnd; }
+#if defined(LEKMOD_MACOS)
 		uiStart = this->get_allocator()[uiStart].LIST_GetPrev();
+#else
+		uiStart = get_allocator()[uiStart].LIST_GetPrev();
+#endif
 		if( uiEnd == ANCHOR_NODE_INDEX ){
 			uiEnd = m_uiLast;
 			m_uiLast = uiStart;
 		}else{
 			assert( get_allocator().is_element_valid(uiEnd) );
+#if defined(LEKMOD_MACOS)
 			uiEnd = this->get_allocator()[uiEnd].LIST_GetPrev();
+#else
+			uiEnd = get_allocator()[uiEnd].LIST_GetPrev();
+#endif
 		}
 
 		while( uiStart != uiEnd ){
+#if defined(LEKMOD_MACOS)
 			T& kEnd = this->get_allocator()[uiEnd];
+#else
+			T& kEnd = get_allocator()[uiEnd];
+#endif
 			unsigned int uiNext = kEnd.LIST_GetNext();
 			unsigned int uiPrev = kEnd.LIST_GetPrev();
+#if defined(LEKMOD_MACOS)
 			if( uiNext != ANCHOR_NODE_INDEX ) this->get_allocator()[uiNext].LIST_SetPrev( uiPrev );
 			if( uiPrev != ANCHOR_NODE_INDEX ) this->get_allocator()[uiPrev].LIST_SetNext( uiNext );
+#else
+			if( uiNext != ANCHOR_NODE_INDEX ) get_allocator()[uiNext].LIST_SetPrev( uiPrev );
+			if( uiPrev != ANCHOR_NODE_INDEX ) get_allocator()[uiPrev].LIST_SetNext( uiNext );
+#endif
 			kEnd.LIST_SetDeleted(true);
+#if defined(LEKMOD_MACOS)
 			this->get_allocator().FreeIfDeleted(uiEnd);
+#else
+			get_allocator().FreeIfDeleted(uiEnd);
+#endif
 
 			m_uiSize--;
 
@@ -1135,7 +1232,11 @@ protected:
 		unsigned int m_uiCurrList;
 		unsigned int m_uiCurrPos;
 		const TYPE* m_pFastList;
+#if defined(LEKMOD_MACOS)
 		friend TYPE;
+#else
+		friend class TYPE;
+#endif
 	};
 
 public:

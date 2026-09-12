@@ -177,14 +177,14 @@ EraTypes CvDllPreGame::era()
 	return CvPreGame::era();
 }
 //------------------------------------------------------------------------------
-#ifdef LEKMOD_MACOS
+#if defined(LEKMOD_MACOS)
 const CvString CvDllPreGame::eraKey()
 {
     const CvEraInfo* info = GC.getEraInfo(CvPreGame::era());
     return info ? info->GetType() : "";
 }
-#endif
 
+#endif
 PlayerTypes CvDllPreGame::findPlayerByNickname(const char* const name)
 {
 	return CvPreGame::findPlayerByNickname(name);
