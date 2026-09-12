@@ -8,7 +8,7 @@ from pathlib import Path
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
-from audit import check_imports
+from audit import DEFAULT_APP, check_imports
 
 HERE = Path(__file__).resolve().parent
 CORE = HERE.parent / "LEKMOD_DLL/CvGameCoreDLL_Expansion2"
@@ -24,6 +24,8 @@ def main():
     parser.add_argument("--check", action="store_true", help="Check the common headers only")
     parser.add_argument("--source", help="Compile one source relative to the core directory")
     parser.add_argument("--jobs", type=int, default=4)
+    parser.add_argument("--app", type=Path, default=DEFAULT_APP,
+                        help="Civilization V.app to audit against")
     args = parser.parse_args()
     BUILD.mkdir(exist_ok=True)
     flags = ["clang++", "-arch", "x86_64", "-mmacosx-version-min=10.13",
@@ -82,7 +84,7 @@ def main():
         print(link.stderr)
         return link.returncode
     try:
-        check_imports(candidate)
+        check_imports(candidate, args.app.expanduser())
     except RuntimeError as error:
         print(error)
         return 1
