@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 --	FILE:	 Lekmapv2.2.lua (Modified Pangaea_Plus.lua)
---	AUTHOR:  Original Bob Thomas, Changes HellBlazer, lek10, EnormousApplePie, Cirra, Meota, t0mtezuma, Jacobian
+--	AUTHOR:  Original Bob Thomas, Changes HellBlazer, lek10, EnormousApplePie, Cirra, Meota, t0mtezuma
 --	PURPOSE: Global map script - Simulates a Pan-Earth Supercontinent, with
 --           numerous tectonic island chains.
 ------------------------------------------------------------------------------
@@ -22,13 +22,88 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap v6.2",
+		Name = "Lekmap v6.3",
 		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Pangaea - Fractal with Beta options by Jacobian",
 		IsAdvancedMap = false,
 		IconIndex = 0,
 		SortIndex = 2,
 		SupportsMultiplayer = true,
-	CustomOptions = {
+		CustomOptions = {
+
+
+			{
+				Name = "Dummy-1",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+			{
+				Name = "Dummy-2",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+			{
+				Name = "Dummy-3",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+			{
+				Name = "Dummy-4",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+			{
+				Name = "Dummy-5",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+			{
+				Name = "Dummy-6",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+			{
+				Name = "Dummy-7",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+			{
+				Name = "Dummy-8",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+			{
+				Name = "Dummy-9",
+				Values = {
+					"",
+				},
+				DefaultValue = 1,
+				SortPriority = 9999,
+			},
+
 			-- 1
 			{
 				Name = "TXT_KEY_MAP_OPTION_WORLD_AGE", -- 1
@@ -104,8 +179,8 @@ function GetMapScriptInfo()
 				Name = "Start Distance",	-- 6 start distance
 				Values = {
 					"Close",
-					"Normal",
-					"Far - Default",
+					"Normal - Old Default",
+					"Far",
 				},
 				DefaultValue = 3,
 				SortPriority = -94,
@@ -184,8 +259,8 @@ function GetMapScriptInfo()
 					"Default -8 tiles",
 					"Default -6 tiles",
 					"Default -4 tiles",
-					"Default -2 tiles",
-					"Default (58 on Small)",
+					"Default -2 (56 New Small Default) tiles",
+					"Default (58 On Small)",
 					"Default +2 tiles",
 					"Default +4 tiles",
 					"Default +6 tiles",
@@ -193,7 +268,7 @@ function GetMapScriptInfo()
 					"Default +10 tiles",
 				},
 
-				DefaultValue = 6,
+				DefaultValue = 5,
 				SortPriority = -89,
 			},
 
@@ -205,8 +280,8 @@ function GetMapScriptInfo()
 					"Default -8 tiles",
 					"Default -6 tiles",
 					"Default -4 tiles",
-					"Default -2 tiles",
-					"Default (52 on Small)",
+					"Default -2 (50 New Small Default) tiles",
+					"Default (52 On Small)",
 					"Default +2 tiles",
 					"Default +4 tiles",
 					"Default +6 tiles",
@@ -215,7 +290,7 @@ function GetMapScriptInfo()
 
 				},
 
-				DefaultValue = 6,
+				DefaultValue = 5,
 				SortPriority = -88,
 			},
 
@@ -291,7 +366,7 @@ function GetMapScriptInfo()
 
 			-- 16
 			{
-				Name = "Coastal Spawns",	-- Can inland civ spawn on the coast (15)
+				Name = "Coastal Spawns",	-- Can inland civ spawn on the coast (16)
 				Values = {
 					"Coastal Civs Only",
 					"Random",
@@ -304,7 +379,7 @@ function GetMapScriptInfo()
 
 			-- 17
 			{
-				Name = "Coastal Luxes",	-- Can coast spawns have non-coastal luxes (16)
+				Name = "Coastal Luxes",	-- Can coast spawns have non-coastal luxes (17)
 				Values = {
 					"Guaranteed",
 					"Random",
@@ -316,7 +391,7 @@ function GetMapScriptInfo()
 
 			-- 18
 			{
-				Name = "Inland Sea Spawns",	-- Can coastal civ spawn on inland seas (17)
+				Name = "Inland Sea Spawns",	-- Can coastal civ spawn on inland seas (18)
 				Values = {
 					"Allowed",
 					"Not allowed",
@@ -327,37 +402,49 @@ function GetMapScriptInfo()
 			},
 			
 			-- 19
-			-- {
-			-- 	Name = "Fjord Distance",	-- Distance between fjords (19)
-			-- 	Values = {
-			-- 		"[COLOR_POSITIVE_TEXT]No fjords[ENDCOLOR]",
-			-- 		"20 tiles",
-			-- 		"15 tiles",
-			-- 		"12 tiles",
-			-- 		"10 tiles -- Old Default",
-			-- 		"8 tiles",
-			-- 		"6 tiles",
-			-- 	},
+			{
+				Name = "Fjord Distance",	-- Distance between fjords (19)
+				Values = {
+					"No fjords -- Default",
+					"20 tiles",
+					"15 tiles",
+					"12 tiles",
+					"10 tiles -- Old Default",
+					"8 tiles",
+					"6 tiles",
+				},
 
-			-- 	DefaultValue = 1,
-			-- 	SortPriority = -82,
-			-- },
+				DefaultValue = 1,
+				SortPriority = -82,
+			},
 			
 			--20
-			-- {
-			-- 	Name = "Fjord Length",	-- Length of fjords (20)
-			-- 	Values = {
-			-- 		"2 tiles -- Default",
-			-- 		"3 tiles",
-			-- 		"4 tiles",
-			-- 		"5 tiles",
-			-- 		"6 tiles",
-			-- 	},
+			{
+				Name = "Fjord Length",	-- Length of fjords (20)
+				Values = {
+					"2 tiles -- Default",
+					"3 tiles",
+					"4 tiles",
+					"5 tiles",
+					"6 tiles",
+				},
 
-			-- 	DefaultValue = 1,
-			-- 	SortPriority = -81,
-			-- },
-
+				DefaultValue = 1,
+				SortPriority = -81,
+			},
+			{
+				Name = "Mountain Reduction", -- (21)
+				Values = {
+					"0%",
+					"5%",
+					"10%",
+					"15%",
+					"20%",
+					"30%",
+				},
+				DefaultValue = 1,
+				SortPriority = -80,
+			},
 			-- {
 			-- 	Name = "[COLOR_POSITIVE_TEXT]Bay/Lake Rework[ENDCOLOR]", -- (22)
 			-- 	Values = {
@@ -365,17 +452,17 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 2,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
-			{
-				Name = "No Flat Desert Luxes", -- (18)
-				Values = {
-					"Off - Old Default",
-					"On - Default",
-				},
-				DefaultValue = 2,
-				SortPriority = -99,
-			},
+			-- 			{
+			-- 	Name = "[COLOR_POSITIVE_TEXT]No Flat Desert Luxes[ENDCOLOR]", -- (23)
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
+			-- },
 			-- {
 			-- 	Name = "[COLOR_POSITIVE_TEXT]Coastal CS Deadzone[ENDCOLOR]", -- (24)
 			-- 	Values = {
@@ -385,7 +472,7 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_POSITIVE_TEXT]7[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 4,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_POSITIVE_TEXT]Flexible Lux Distance[ENDCOLOR]", -- (25)
@@ -396,19 +483,7 @@ function GetMapScriptInfo()
 			-- 		"3-4 Lower Weighted",
 			-- 	},
 			-- 	DefaultValue = 2,
-			-- 	SortPriority = -99,
-			-- },
-			-- {
-			-- 	Name = "[COLOR_POSITIVE_TEXT]Meteors[ENDCOLOR]", -- (26)   -- disable
-			-- 	Values = {
-			-- 		"0 - Old Default",
-			-- 		"[COLOR_POSITIVE_TEXT]1[ENDCOLOR]",
-			-- 		"3",
-			-- 		"5",
-			-- 		"7",
-			-- 	},
-			-- 	DefaultValue = 2,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_POSITIVE_TEXT]Reworked Spawns[ENDCOLOR]", -- (26)
@@ -419,7 +494,7 @@ function GetMapScriptInfo()
 			-- 		"On - Strong Center Bias",
 			-- 	},
 			-- 	DefaultValue = 3,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_POSITIVE_TEXT]Sea Side Cliffs[ENDCOLOR]", -- (27) -- adjust
@@ -427,32 +502,23 @@ function GetMapScriptInfo()
 			-- 		"Off - Old Default",
 			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
 			-- 	},
-			-- 	DefaultValue = 2,
-			-- 	SortPriority = -99,
+			-- 	DefaultValue = 1,
+			-- 	SortPriority = -80,
 			-- },
-			-- {
-			-- 	Name = "[COLOR_POSITIVE_TEXT]Bad CS Boost[ENDCOLOR]", -- (29) -- disable
-			-- 	Values = {
-			-- 		"Off - Old Default",
-			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
-			-- 	},
-			-- 	DefaultValue = 2,
-			-- 	SortPriority = -99,
-			-- },
-			-- {
-			-- 	Name = "[COLOR_POSITIVE_TEXT]Independent Hill Reduction[ENDCOLOR]", -- (28)
-			-- 	Values = {
-			-- 		"0% - Old Default",
-			-- 		"[COLOR_POSITIVE_TEXT]5%[ENDCOLOR]",
-			-- 		"10%",
-			-- 		"20%",
-			-- 		"30%",
-			-- 		"40%",
-			-- 		"50%",
-			-- 	},
-			-- 	DefaultValue = 2,
-			-- 	SortPriority = -99,
-			-- },
+			{
+				Name = "Independent Hill Reduction", -- (28)
+				Values = {
+					"0% - Old Default",
+					"5%",
+					"10%",
+					"20%",
+					"30%",
+					"40%",
+					"50%",
+				},
+				DefaultValue = 1,
+				SortPriority = -80,
+			},
 			-- {
 			-- 	Name = "[COLOR_POSITIVE_TEXT]Remove Ice[ENDCOLOR]", -- (29)
 			-- 	Values = {
@@ -462,7 +528,7 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_NEGATIVE_TEXT]Literally Nuke It From Orbit[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 2,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_NEGATIVE_TEXT]Player 1 Handicap[ENDCOLOR]", -- (30)
@@ -475,7 +541,7 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_NEGATIVE_TEXT]6 Regional Copies[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 1,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_NEGATIVE_TEXT]Player 2 Handicap[ENDCOLOR]", -- (31)
@@ -488,7 +554,7 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_NEGATIVE_TEXT]6 Regional Copies[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 1,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_NEGATIVE_TEXT]Player 3 Handicap[ENDCOLOR]", -- (32)
@@ -501,7 +567,7 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_NEGATIVE_TEXT]6 Regional Copies[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 1,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_NEGATIVE_TEXT]Player 4 Handicap[ENDCOLOR]", -- (33)
@@ -514,7 +580,7 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_NEGATIVE_TEXT]6 Regional Copies[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 1,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_NEGATIVE_TEXT]Player 5 Handicap[ENDCOLOR]", -- (34)
@@ -527,7 +593,7 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_NEGATIVE_TEXT]6 Regional Copies[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 1,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_NEGATIVE_TEXT]Player 6 Handicap[ENDCOLOR]", -- (35)
@@ -540,22 +606,22 @@ function GetMapScriptInfo()
 			-- 		"[COLOR_NEGATIVE_TEXT]6 Regional Copies[ENDCOLOR]",
 			-- 	},
 			-- 	DefaultValue = 1,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_POSITIVE_TEXT]Non-Coastal-CS Deadband[ENDCOLOR]", -- (36)
 			-- 	Values = {
 			-- 		"Off - Old Default",
 			-- 		"2 Hex",
-			-- 		"3 Hex",
-			-- 		"[COLOR_POSITIVE_TEXT]4 Hex[ENDCOLOR]",
+			-- 		"[COLOR_POSITIVE_TEXT]3 Hex[ENDCOLOR]",
+			-- 		"4 Hex",
 			-- 		"5 Hex",
 			-- 		"6 Hex",
 			-- 		"7 Hex",
 			-- 		"8 Hex",
 			-- 	},
-			-- 	DefaultValue = 4,
-			-- 	SortPriority = -99,
+			-- 	DefaultValue = 3,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- 	Name = "[COLOR_POSITIVE_TEXT]Lake Fish[ENDCOLOR]", -- (37)
@@ -563,204 +629,332 @@ function GetMapScriptInfo()
 			-- 		"Off - Old Default",
 			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
 			-- 	},
+			-- 	DefaultValue = 1,
+			-- 	SortPriority = -80,
+			-- },
+			-- {
+			-- 	Name = "[COLOR_POSITIVE_TEXT]Larger Random Lux Pool[ENDCOLOR]", -- (38)
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
+			-- 	},
 			-- 	DefaultValue = 2,
-			-- 	SortPriority = -99,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
-			-- Name = "[COLOR_POSITIVE_TEXT]Larger Random Lux Pool[ENDCOLOR]", -- (38)
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 2,
-			-- SortPriority = -99,
-			-- },
-			-- {
-			-- Name = "[COLOR_NEGATIVE_TEXT]Extra Secondary Copies[ENDCOLOR]", -- (39)
-			-- Values = {
-			-- 	"Off",
-			-- 	"[COLOR_NEGATIVE_TEXT]1[ENDCOLOR]",
-			-- 	"[COLOR_NEGATIVE_TEXT]2[ENDCOLOR]",
-			-- 	"[COLOR_NEGATIVE_TEXT]3[ENDCOLOR]",
-			-- 	"[COLOR_NEGATIVE_TEXT]4[ENDCOLOR]",
-			-- 	"[COLOR_NEGATIVE_TEXT]5[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 1,
-			-- SortPriority = -99,
-			-- },
-			-- {
-			-- Name = "[COLOR:0:185:255:255]Isolation Fix[ENDCOLOR]", -- (40)
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"Warning Only",
-			-- 	"[COLOR:0:185:135:255]5.0 Cutoff (Low Remake Chance)[ENDCOLOR]",
-			-- 	"[COLOR:0:185:255:255]7.0 Cutoff (Medium Remake Chance)[ENDCOLOR]",
-			-- 	"[COLOR:0:185:135:255]9.0 Cutoff (High Remake Chance)[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 4,
-			-- SortPriority = -99,
+			-- 	Name = "[COLOR_NEGATIVE_TEXT]Extra Secondary Copies[ENDCOLOR]", -- (39)
+			-- 	Values = {
+			-- 		"Off",
+			-- 		"[COLOR_NEGATIVE_TEXT]1[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]2[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]3[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]4[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]5[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 1,
+			-- 	SortPriority = -80,
 			-- },
 			{
-				Name = "Error Notifications", -- (19) -- change
+				Name = "Isolation Fix", -- (40)
 				Values = {
-					"[COLOR_NEGATIVE_TEXT]Off - This Will Make Jacobian Very Sad[ENDCOLOR]",
-					"On",
-					"[COLOR_NEGATIVE_TEXT]Error Testing - This Will Intentionally Cause an Error[ENDCOLOR]",
+					"5.0 Cutoff (Lower Remake Chance)",
+					"7.0 Cutoff (Default)",
+					"9.0 Cutoff (Higher Remake Chance)",
 				},
 				DefaultValue = 2,
-				SortPriority = -99,
+				SortPriority = -79,
 			},
 			-- {
-			-- Name = "[COLOR_NEGATIVE_TEXT]More Coal[ENDCOLOR]", -- (42)
-			-- Values = {
-			-- 	"Off",
-			-- 	"[COLOR_NEGATIVE_TEXT]On - 8[ENDCOLOR]",
-			-- 	"[COLOR_NEGATIVE_TEXT]On - 9[ENDCOLOR]",
-			-- 	"[COLOR_NEGATIVE_TEXT]On - 10[ENDCOLOR]",
-			-- 	"[COLOR_NEGATIVE_TEXT]On - 11[ENDCOLOR]",
-			-- 	"[COLOR_NEGATIVE_TEXT]On - 12[ENDCOLOR]",
+			-- 	Name = "[COLOR_POSITIVE_TEXT]Error Notifications[ENDCOLOR]", -- (41) -- change
+			-- 	Values = {
+			-- 		"[COLOR_NEGATIVE_TEXT]Off[ENDCOLOR]",
+			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]Error Testing - This Will Intentionally Cause an Error[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
 			-- },
-			-- DefaultValue = 1,
-			-- SortPriority = -99,
+			-- {
+			-- Name = "[COLOR_POSITIVE_TEXT]More Coal[ENDCOLOR]", -- (42)
+			-- 	Values = {
+			-- 		"Off",
+			-- 		"[COLOR_POSITIVE_TEXT]On - 8[ENDCOLOR]",
+			-- 		"[COLOR_POSITIVE_TEXT]On - 9[ENDCOLOR]",
+			-- 		"[COLOR_POSITIVE_TEXT]On - 10[ENDCOLOR]",
+			-- 		"[COLOR_POSITIVE_TEXT]On - 11[ENDCOLOR]",
+			-- 		"[COLOR_POSITIVE_TEXT]On - 12[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 1,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
 			-- Name = "[COLOR:0:185:255:255]Min Distance (Req. Isolation Fix)[ENDCOLOR]", -- (43)
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"[COLOR:0:185:135:255]7[ENDCOLOR]",
-			-- 	"[COLOR:0:185:135:255]8[ENDCOLOR]",
-			-- 	"[COLOR:0:185:135:255]9[ENDCOLOR]",
-			-- 	"[COLOR:0:185:135:255]10[ENDCOLOR]",
-			-- 	"[COLOR:0:185:255:255]11[ENDCOLOR]",
-			-- 	"[COLOR:0:185:135:255]12[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 6,
-			-- SortPriority = -99,
-			-- },
-			-- {
-			-- Name = "[COLOR:0:185:255:255]Proximal CS (Req. Isolation Fix)[ENDCOLOR]", -- (44)
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"[COLOR:0:185:255:255]On[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 2,
-			-- SortPriority = -99,
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR:0:185:135:255]7[ENDCOLOR]",
+			-- 		"[COLOR:0:185:135:255]8[ENDCOLOR]",
+			-- 		"[COLOR:0:185:135:255]9[ENDCOLOR]",
+			-- 		"[COLOR:0:185:255:255]10[ENDCOLOR]",
+			-- 		"[COLOR:0:185:135:255]11[ENDCOLOR]",
+			-- 		"[COLOR:0:185:135:255]12[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 5,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
-			-- Name = "[COLOR_POSITIVE_TEXT]Buff Bad Luxes[ENDCOLOR]", -- (47) -- disable
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"[COLOR_POSITIVE_TEXT]+1 Gold Incense/Truffles[ENDCOLOR]",
+			-- 	Name = "[COLOR:0:185:255:255]Proximal CS (Req. Isolation Fix)[ENDCOLOR]", -- (44)
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR:0:185:255:255]On[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
 			-- },
-			-- DefaultValue = 2,
-			-- SortPriority = -99,
+			-- -- {
+			-- -- Name = "[COLOR_POSITIVE_TEXT]Buff Bad Luxes[ENDCOLOR]", -- (47) -- disable
+			-- -- Values = {
+			-- -- 	"Off - Old Default",
+			-- -- 	"[COLOR_POSITIVE_TEXT]+1 Gold Incense/Truffles[ENDCOLOR]",
+			-- -- },
+			-- -- DefaultValue = 2,
+			-- -- SortPriority = -99,
+			-- -- },
+			-- {
+			-- 	Name = "[COLOR:225:155:255:230]Tectonic Rework[ENDCOLOR]", -- (45)
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR:225:155:255:230]On (DO NOT TURN ON ISLANDS)[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
-			-- Name = "[COLOR:225:155:255:230]Tectonic Rework[ENDCOLOR]", -- (45)
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"[COLOR:225:155:255:230]On (DO NOT TURN ON ISLANDS)[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 2,
-			-- SortPriority = -99,
-			-- },
-			-- {
-			-- Name = "[COLOR_POSITIVE_TEXT]Smart Regional Placement[ENDCOLOR]", -- (46)
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 2,
-			-- SortPriority = -99,
+			-- 	Name = "[COLOR_POSITIVE_TEXT]Smart Regional Placement[ENDCOLOR]", -- (46)
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
-			-- Name = "[COLOR:0:185:255:255]Reroll Count[ENDCOLOR]", -- (47)
-			-- Values = {
-			-- 	"[COLOR:0:185:135:255]15[ENDCOLOR]",
-			-- 	"[COLOR:0:185:135:255]50[ENDCOLOR]",
-			-- 	"[COLOR:0:185:135:255]100[ENDCOLOR]",
-			-- 	"[COLOR:0:185:255:255]300[ENDCOLOR]",
-			-- 	"[COLOR:0:185:135:255]99999[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 4,
-			-- SortPriority = -99,
-			-- },
-			-- {
-			-- Name = "[COLOR_POSITIVE_TEXT]Better CS Placement[ENDCOLOR]", -- (48)
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
-			-- },
-			-- DefaultValue = 2,
-			-- SortPriority = -99,
+			-- 	Name = "[COLOR:0:185:255:255]Reroll Count[ENDCOLOR]", -- (47)
+			-- 	Values = {
+			-- 		"[COLOR:0:185:135:255]15[ENDCOLOR]",
+			-- 		"[COLOR:0:185:135:255]50[ENDCOLOR]",
+			-- 		"[COLOR:0:185:135:255]100[ENDCOLOR]",
+			-- 		"[COLOR:0:185:255:255]300[ENDCOLOR]",
+			-- 		"[COLOR:0:185:135:255]99999[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 4,
+			-- 	SortPriority = -80,
 			-- },
 			-- {
-			-- Name = "[COLOR:0:185:255:255]Spawn Validation (Req. Isolation Fix)[ENDCOLOR]", -- (49)
-			-- Values = {
-			-- 	"Off - Old Default",
-			-- 	"[COLOR:0:185:255:255]On - Turn off If < 6 Players[COLOR:0:185:255:255]",
+			-- 	Name = "[COLOR_POSITIVE_TEXT]Better CS Placement[ENDCOLOR]", -- (48)
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
 			-- },
-			-- DefaultValue = 2,
-			-- SortPriority = -99,
+			-- {
+			-- 	Name = "[COLOR:0:185:255:255]Spawn Validation (Req. Isolation Fix)[ENDCOLOR]", -- (49)
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR:0:185:255:255]On - Turn off If < 6 Players[COLOR:0:185:255:255]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
 			-- },
-			{
-				Name = "Mountain Reduction", -- (20)
-				Values = {
-					"0% - Old Default",
-					"5%",
-					"10% - Default",
-					"15%",
-					"20%",
-					"30%",
-				},
-				DefaultValue = 3,
-				SortPriority = -99,
-			},
-			{
-				Name = "Independent Hill Reduction", -- (21)
-				Values = {
-					"0% - Old Default",
-					"5%",
-					"10%",
-					"20%",
-					"30%",
-					"40%",
-					"50%",
-				},
-				DefaultValue = 1,
-				SortPriority = -99,
-			},
-			{
-			Name = "Isolation Fix", -- (22)
-			Values = {
-				"5.0 Cutoff (Low Remake Chance)",
-				"7.0 Cutoff (Medium Remake Chance) - Default",
-				"9.0 Cutoff (High Remake Chance)",
-			},
-			DefaultValue = 2,
-			SortPriority = -99,
-			},
-			{
-				Name = "Non-Coastal-CS Deadband", -- (23)
-				Values = {
-					"Off - Old Default",
-					"2 Hex",
-					"3 Hex - Default",
-					"4 Hex",
-				},
-				DefaultValue = 3,
-				SortPriority = -99,
-			},
-			{
-				Name = "Sea Side Cliffs", -- (24) -- adjust
-				Values = {
-					"Off - Old Default",
-					"On - Default",
-				},
-				DefaultValue = 2,
-				SortPriority = -99,
-			},
-		},
+			-- {
+			-- 	Name = "[COLOR_NEGATIVE_TEXT]Meteors[ENDCOLOR]", -- (50)   -- disable
+			-- 	Values = {
+			-- 		"0 - Old Default",
+			-- 		"[COLOR_NEGATIVE_TEXT]1[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]3[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]5[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]7[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 1,
+			-- 	SortPriority = -80,
+			-- },
+			-- 	{
+			-- 	Name = "[COLOR_POSITIVE_TEXT]Bad CS Boost[ENDCOLOR]", -- (51) -- disable
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 1,
+			-- 	SortPriority = -80,
+			-- },
+			-- {
+			-- 	Name = "[COLOR_NEGATIVE_TEXT]Disable Shallows[ENDCOLOR]", -- (52) -- disable
+			-- 	Values = {
+			-- 		"Off",
+			-- 		"[COLOR_NEGATIVE_TEXT]On[ENDCOLOR]",
+			-- 		"[COLOR_NEGATIVE_TEXT]Replace With Pontoons[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 1,
+			-- 	SortPriority = -80,
+			-- },
+			-- {
+			-- 	Name = "[COLOR_POSITIVE_TEXT]True Sea Level[ENDCOLOR]", -- (53) -- disable
+			-- 	Values = {
+			-- 		"-4.5%",
+			-- 		"-3.0%",
+			-- 		"[COLOR_POSITIVE_TEXT]-1.5%[ENDCOLOR]",
+			-- 		"+0.0%",
+			-- 		"+1.5%",
+			-- 		"+3.0%",
+			-- 		"+4.5%",
+			-- 	},
+			-- 	DefaultValue = 3,
+			-- 	SortPriority = -80,
+			-- },
+			-- {
+			-- 	Name = "[COLOR_POSITIVE_TEXT]Inland Coast-Proximity Penalty[ENDCOLOR]", -- (54) -- disable
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
+			-- },
+			-- {
+			-- 	Name = "[COLOR_POSITIVE_TEXT]Randomize North/South Axis[ENDCOLOR]", -- (55)
+			-- 	Values = {
+			-- 		"Off - Old Default",
+			-- 		"[COLOR_POSITIVE_TEXT]On[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 1,
+			-- 	SortPriority = -80,
+			-- },
+
+			-- {
+			-- 	Name = "[COLOR:225:155:255:230]Island Water Depth Start (Req. Tectonic Rework)[ENDCOLOR]", -- (56)
+			-- 	Values = {
+			-- 		"[COLOR:225:155:255:230]0% (Start on Coast)[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]1%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]2%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]3%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]4%  (Default)[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]5%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]6%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]7%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]8%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]9%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]10%[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 5,
+			-- 	SortPriority = -80,
+			-- },
+			-- {
+			-- 	Name = "[COLOR:225:155:255:230]Island Water Depth End (Req. Tectonic Rework)[ENDCOLOR]", -- (57)
+			-- 	Values = {
+			-- 		"[COLOR:225:155:255:230]10%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]12%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]14%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]16%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]18%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]20%  (Default)[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]22%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]24%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]26%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]28%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]30%[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 3,
+			-- 	SortPriority = -80,
+			-- },
+			-- {
+			-- 	Name = "[COLOR:225:155:255:230]Shallows Water Depth Extension (Req. Tectonic Rework)[ENDCOLOR]", -- (58)
+			-- 	Values = {
+			-- 		"[COLOR:225:155:255:230]0%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]1%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]2%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]3%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]4%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]5%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]6%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]7%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]8% (Default)[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]9%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]10%[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 9,
+			-- 	SortPriority = -80,
+			-- },
+
+			-- {
+			-- 	Name = "[COLOR:225:155:255:230]Baseline Island Rate (Req. Tectonic Rework)[ENDCOLOR]", -- (58)
+			-- 	Values = {
+			-- 		"[COLOR:225:155:255:230]0%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]20%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]40%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]60%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]80%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]100% (Default)[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]120%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]140%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]160%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]180%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]200%[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 6,
+			-- 	SortPriority = -80,
+			-- },
+
+			-- {
+			-- 	Name = "[COLOR:225:155:255:230]Island Condensation Rate (Req. Tectonic Rework)[ENDCOLOR]", -- (59)
+			-- 	Values = {
+			-- 		"[COLOR:225:155:255:230]0%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]10%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]20%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]30%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]40%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]50%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]60%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]70%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]80%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]90%[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]100% (Default)[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 6,
+			-- 	SortPriority = -80,
+			-- },
+
+			-- {
+			-- 	Name = "[COLOR:225:155:255:230]Max Island Size (Req. Tectonic Rework)[ENDCOLOR]", -- (60)
+			-- 	Values = {
+			-- 		"[COLOR:225:155:255:230]8[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]10[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]12[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]14[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]16[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]18[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]20[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]22[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]24[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]26[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]28[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]30 (Default)[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 12,
+			-- 	SortPriority = -80,
+			-- },
+			
+			-- {
+			-- 	Name = "[COLOR:225:155:255:230]Fill Fjords with Shallows (Req. Tectonic Rework)[ENDCOLOR]", -- (61)
+			-- 	Values = {
+			-- 		"[COLOR:225:155:255:230]Off[ENDCOLOR]",
+			-- 		"[COLOR:225:155:255:230]On (Default)[ENDCOLOR]",
+			-- 	},
+			-- 	DefaultValue = 2,
+			-- 	SortPriority = -80,
+			-- },
+
+		}
 	};
 end
 ------------------------------------------------------------------------------
@@ -836,24 +1030,224 @@ end
 
 ------------------------------------------------------------------------------
 function GetMapInitData(worldSize)
+
+
+	local option_i = 10
+
+	beta_world_age = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_temp = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_rain = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_sea_level = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_starts = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_ripple_decider = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_wonders = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_grass_moist = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_river_level = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_tundra_level = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_map_x = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_map_y = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_res = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_balanced_regionals = Map.GetCustomOption(option_i)
+	option_i = option_i+1	
+
+	-- beta_island_setting = Map.GetCustomOption(option_i)
+	-- option_i = option_i+1
+	beta_island_setting = 1
+
+	beta_mixed_bias = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_coast_lux = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_allow_inland_sea = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_fjord_dist = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_fjord_length = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_mountain_mod = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_bay_diffusion = 2
+	-- option_i = option_i+1
+
+	beta_remove_desert_lux = 2
+	-- option_i = option_i+1
+
+	beta_coastal_deadzone = 4
+	-- option_i = option_i+1
+
+	beta_flexy_lux = 2
+	-- option_i = option_i+1
+
+	beta_start_rework = 3
+	-- option_i = option_i+1
+
+	beta_cliffs = 1
+	-- option_i = option_i+1
+
+	beta_hill_mod = Map.GetCustomOption(option_i)
+	option_i = option_i+1
+
+	beta_no_ice = 2
+	-- option_i = option_i+1
+
+	beta_handicap_player1 = 1
+	-- option_i = option_i+1
+
+	beta_handicap_player2 = 1
+	-- option_i = option_i+1
+
+	beta_handicap_player3 = 1
+	-- option_i = option_i+1
+
+	beta_handicap_player4 = 1
+	-- option_i = option_i+1
+
+	beta_handicap_player5 = 1
+	-- option_i = option_i+1
+
+	beta_handicap_player6 = 1
+	-- option_i = option_i+1
+
+	beta_coast_zone = 3
+	-- option_i = option_i+1
+
+	beta_lake_fish = 1
+	-- option_i = option_i+1
+
+	beta_lux_variety = 2
+	-- option_i = option_i+1
+
+	beta_double_secondary = 1
+	-- option_i = option_i+1
+
+	beta_isolation_rejection = Map.GetCustomOption(option_i)+2
+	option_i = option_i+1
+
+	beta_errors = 2
+
+	beta_more_coal = 1
+	-- option_i = option_i+1
+
+	beta_min_distance = 5
+	-- option_i = option_i+1
+
+	beta_prox_cs = 2
+	-- option_i = option_i+1
+
+	beta_tectonic_mounts = 2
+	-- option_i = option_i+1
+
+	beta_smart_lux = 2
+	-- option_i = option_i+1
+
+	beta_reroll_count = 4
+	-- option_i = option_i+1
+
+	beta_cs_placement = 2
+	-- option_i = option_i+1
+
+	beta_spawn_validation = 2
+	-- option_i = option_i+1
+
+	beta_meteors = 1
+	-- option_i = option_i+1
+
+	beta_boost_cs = 1
+	-- option_i = option_i+1
+
+	beta_disable_shallows = 1
+	-- option_i = option_i+1
+
+	beta_true_sea_level = 3
+	-- option_i = option_i+1
+
+	beta_inland_prox_penalty = 2
+	-- option_i = option_i+1
+
+	beta_pole_random = 1
+	-- option_i = option_i+1
+
+
+
+	beta_island_depth_start = 5
+	-- option_i = option_i+1
+
+	beta_island_depth_end = 3
+	-- option_i = option_i+1
+
+	beta_island_shallow_offset = 9
+	-- option_i = option_i+1
+
+	beta_island_baseline_rate = 9
+	-- option_i = option_i+1
+
+	beta_island_condensation_rate = 6
+	-- option_i = option_i+1
+
+	beta_island_max_size = 9
+	-- option_i = option_i+1
+
+	beta_fill_fjords = 1
+	-- option_i = option_i+1
+
+	-- beta_island_seed = Map.GetCustomOption(option_i)
+	-- option_i = option_i+1
+
+	-- beta_island_cohesion_mult = Map.GetCustomOption(option_i)
+	-- option_i = option_i+1
+
+	-- beta_island_hill_percent = Map.GetCustomOption(option_i)
+
 	
-	local LandSizeXDuel = 22 + (Map.GetCustomOption(11) * 2);
-	local LandSizeYDuel = 18 + (Map.GetCustomOption(12) * 2);
+	local LandSizeXDuel = 22 + (beta_map_x * 2);
+	local LandSizeYDuel = 18 + (beta_map_y * 2);
 
-	local LandSizeXTiny = 36 + (Map.GetCustomOption(11) * 2);
-	local LandSizeYTiny = 30 + (Map.GetCustomOption(12) * 2);
+	local LandSizeXTiny = 36 + (beta_map_x * 2);
+	local LandSizeYTiny = 30 + (beta_map_y * 2);
 
-	local LandSizeXSmall = 46 + (Map.GetCustomOption(11) * 2);
-	local LandSizeYSmall = 40 + (Map.GetCustomOption(12) * 2);
+	local LandSizeXSmall = 46 + (beta_map_x * 2);
+	local LandSizeYSmall = 40 + (beta_map_y * 2);
 
-	local LandSizeXStandard = 54 + (Map.GetCustomOption(11) * 2);
-	local LandSizeYStandard = 48 + (Map.GetCustomOption(12) * 2);
+	local LandSizeXStandard = 54 + (beta_map_x * 2);
+	local LandSizeYStandard = 48 + (beta_map_y * 2);
 
-	local LandSizeXLarge = 62 + (Map.GetCustomOption(11) * 2);
-	local LandSizeYLarge = 54 + (Map.GetCustomOption(12) * 2);
+	local LandSizeXLarge = 62 + (beta_map_x * 2);
+	local LandSizeYLarge = 54 + (beta_map_y * 2);
 
-	local LandSizeXHuge = 70 + (Map.GetCustomOption(11) * 2);
-	local LandSizeYHuge = 62 + (Map.GetCustomOption(12) * 2);
+	local LandSizeXHuge = 70 + (beta_map_x * 2);
+	local LandSizeYHuge = 62 + (beta_map_y * 2);
 
 	local worldsizes = {};
 
@@ -1260,7 +1654,6 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 	if(args == nil) then args = {}; end
 
 	-- local beta_tectonic_mounts = Map.GetCustomOption(45)
-	local beta_tectonic_mounts = 2
 	local allcomplete = false;
 
 	while allcomplete == false do
@@ -1288,27 +1681,23 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 		local xstart, xend = 0,0;
 		local ystart, yend = 0,0;
 
-		local sea_level = Map.GetCustomOption(4)
+		-- local beta_true_sea_level = Map.GetCustomOption(53)
+		local sea_level = beta_sea_level
 		if sea_level == 4 then
 			sea_level = 1 + Map.Rand(3, "Random Sea Level - Lua");
 		end
-		local world_age = Map.GetCustomOption(1)
+		local world_age = beta_world_age
 		if world_age == 5 then
 			world_age = 1 + Map.Rand(3, "Random World Age - Lua");
 		end
 
 		-- Set Sea Level according to user selection.
 		local water_percent = sea_level_normal;
-		-- local fjorddistmodif = Map.GetCustomOption(19);		-- Small effect added based on fjord settings
-		local fjorddistmodif = 1
-		-- local fjordlengthmodif = Map.GetCustomOption(20);
-		local fjordlengthmodif = 1
+		local fjorddistmodif = beta_fjord_dist;		-- Small effect added based on fjord settings
+		local fjordlengthmodif = beta_fjord_length;
 
-		local beta_mountain_mod = Map.GetCustomOption(20);
-		local beta_hill_mod = Map.GetCustomOption(21);
-		-- local beta_mountain_mod = 4
-		-- local beta_hill_mod = 2
-
+		local beta_mountain_mod = beta_mountain_mod;
+		-- local beta_hill_mod = Map.GetCustomOption(28);
 		local hill_prob = 100
 		if beta_hill_mod == 2 then
 			hill_prob = 95
@@ -1336,8 +1725,10 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 
 		-- increase water to account for peninsulas
 		if beta_tectonic_mounts == 2 then
-			water_percent = water_percent+3
+			water_percent = water_percent+4
 		end
+
+		water_percent = water_percent + beta_true_sea_level-4
 		
 		-- Set values for hills and mountains according to World Age chosen by user.
 		local adjustment = world_age_normal;
@@ -1415,6 +1806,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 
 				rift_dice = -1;
 				grain_dice = 7;
+				-- grain_dice = 7;
 
 				self.continentsFrac = nil;
 				self:InitFractal{continent_grain = grain_dice, rift_grain = rift_dice};
@@ -1515,17 +1907,34 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 
 			local iShallow = self.mountainsFrac:GetHeight(93);
 
-			local iWaterThresholdIslands1 = self.continentsFrac:GetHeight(water_percent-4);
-			local iWaterThresholdIslands2 = self.continentsFrac:GetHeight(water_percent-20);
-			local iWaterShallow = self.continentsFrac:GetHeight(water_percent-28);
+			local lower_thresh_offset = beta_island_depth_start-1
+			local upper_thresh_offset = 2*(beta_island_depth_end-1)+10
+			local shallow_thresh_offset = beta_island_shallow_offset-1
+
+			local iWaterThresholdIslands1 = self.continentsFrac:GetHeight(water_percent-lower_thresh_offset);
+			local iWaterThresholdIslands2 = self.continentsFrac:GetHeight(water_percent-upper_thresh_offset);
+			local iWaterShallow = self.continentsFrac:GetHeight(water_percent-upper_thresh_offset-shallow_thresh_offset);
+
+			local i_lower_seed = 0
+
+			local baseline_island_rate = (beta_island_baseline_rate-1)*20.0/100.0  --
+			local island_seed_canidates = (beta_island_condensation_rate-1)*10.0/100.0
+			local island_grow_canidates = 1.0/island_seed_canidates
 
 			if beta_tectonic_mounts == 2 then
-				iMountain100 = self.mountainsFrac:GetHeight(94);
-				iMountain99 = self.mountainsFrac:GetHeight(85);
+				iMountain100 = self.mountainsFrac:GetHeight(100-math.floor((100-94)*island_grow_canidates*baseline_island_rate));
+				iMountain99 = self.mountainsFrac:GetHeight(100-math.floor((100-85)*island_grow_canidates*baseline_island_rate));
 				-- iMountain97 = self.mountainsFrac:GetHeight(82);
-				iMountain95 = self.mountainsFrac:GetHeight(68);
-				iShallow = self.mountainsFrac:GetHeight(54);
+				iMountain95 = self.mountainsFrac:GetHeight(100-math.floor((100-68)*island_grow_canidates*baseline_island_rate));
+				iShallow = self.mountainsFrac:GetHeight(100-math.floor((100-54)*island_grow_canidates*baseline_island_rate));
+				i_lower_seed = self.mountainsFrac:GetHeight(100-math.floor((100-54)*island_seed_canidates*baseline_island_rate))
 			end
+
+
+
+
+
+
 
 			-- dump_map(self.mountainsFrac)
 
@@ -1537,8 +1946,30 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 
 
 			--create a global that tracks tectonic land
+
+			print("DIMENSIONS")
+			print("X: "..iW)
+			print("Y: "..iH)
+
+			local BETA_TECTONIC_LANDS_TEMP = table.fill(-1, iW * iH)
 			if beta_tectonic_mounts == 2 then
 				BETA_TECTONIC_LANDS = table.fill(-1, iW * iH)
+			end
+
+			if beta_tectonic_mounts == 2 then
+				for x = 0, self.iNumPlotsX - 1 do
+					for y = 0, self.iNumPlotsY - 1 do
+			
+						local i = y * self.iNumPlotsX + x + 1;
+						local val = self.continentsFrac:GetHeight(x, y);
+						local mountainVal = self.mountainsFrac:GetHeight(x, y);
+
+						if (mountainVal >= i_lower_seed) and (val >= iWaterThresholdIslands2) and (val >= iWaterThresholdIslands1) == false then
+							BETA_TECTONIC_LANDS_TEMP[i] = 1
+						end
+
+					end
+				end
 			end
 
 			for x = 0, self.iNumPlotsX - 1 do
@@ -1548,6 +1979,19 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 					local val = self.continentsFrac:GetHeight(x, y);
 					local mountainVal = self.mountainsFrac:GetHeight(x, y);
 					local hillVal = self.hillsFrac:GetHeight(x, y);
+
+					local is_tectonic_canidate = false
+					if beta_tectonic_mounts == 2 then
+						if BETA_TECTONIC_LANDS_TEMP[i] == 1 then
+							is_tectonic_canidate = true
+						end
+						local adj_is = adj_is_cache[i]
+						for loop2, adj_i in ipairs(adj_is) do
+							if BETA_TECTONIC_LANDS_TEMP[adj_i] == 1 then
+								is_tectonic_canidate = true
+							end
+						end
+					end
 	
 					if(val <= iWaterThreshold) then
 						self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
@@ -1562,18 +2006,18 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 									self.plotTypes[i] = PlotTypes.PLOT_LAND;
 								end
 							else
-								if (mountainVal >= iMountain100) and (val >= iWaterThresholdIslands2) and (val >= iWaterThresholdIslands1) == false then -- Isolated peak in the ocean
+								if (mountainVal >= iMountain100) and (val >= iWaterThresholdIslands2) and (val >= iWaterThresholdIslands1) == false and is_tectonic_canidate then -- Isolated peak in the ocean
 									self.plotTypes[i] = PlotTypes.PLOT_MOUNTAIN;
 									BETA_TECTONIC_LANDS[i] = 1
-								elseif (mountainVal >= iMountain99) and (val >= iWaterThresholdIslands2) and (val >= iWaterThresholdIslands1) == false then
+								elseif (mountainVal >= iMountain99) and (val >= iWaterThresholdIslands2) and (val >= iWaterThresholdIslands1) == false and is_tectonic_canidate then
 									self.plotTypes[i] = PlotTypes.PLOT_HILLS;
 									BETA_TECTONIC_LANDS[i] = 1
-								elseif (mountainVal >= iMountain95) and (val >= iWaterThresholdIslands2) and (val >= iWaterThresholdIslands1) == false then
+								elseif (mountainVal >= iMountain95) and (val >= iWaterThresholdIslands2) and (val >= iWaterThresholdIslands1) == false and is_tectonic_canidate then
 									self.plotTypes[i] = PlotTypes.PLOT_LAND;
 									BETA_TECTONIC_LANDS[i] = 1
-								elseif (mountainVal >= iShallow) and (val >= iWaterShallow) and (val >= iWaterThreshold) == false then
+								elseif (mountainVal >= iShallow) and (val >= iWaterShallow) and (val >= iWaterThreshold) == false and is_tectonic_canidate then
 									local iIsShallows = Map.Rand(100, "Shallows Chance")
-									if iIsShallows > 70 then
+									if iIsShallows > 85 then
 										BETA_TECTONIC_LANDS[i] = 3
 									end
 								end
@@ -1707,6 +2151,27 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				end
 			end
 
+			local max_blob_size = 2*beta_island_max_size+6
+
+			if beta_tectonic_mounts == 2 then
+			
+				local blob_graph, blobs = get_blobs(BETA_TECTONIC_LANDS)
+
+				local blob_islands = {}
+				-- local blob_connectors = {}
+
+
+				for loop, blob in ipairs(blobs) do
+					local blob_size = tablelength(blob)
+					if blob_size > max_blob_size then
+						for i, dumby in pairs(blob) do
+							self.plotTypes[i] = PlotTypes.PLOT_OCEAN
+							BETA_TECTONIC_LANDS[i] = -1
+						end
+					end
+				end
+			end
+
 			-- dump_map(BETA_TECTONIC_LANDS)
 
 			-- for i, vals in pairs(BETA_TECTONIC_LANDS) do
@@ -1753,7 +2218,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				local chkend = 0;
 				local chokepoint = 16;
 				if beta_tectonic_mounts == 2 then
-					chokepoint = 14;
+					chokepoint = 16;
 				end
 				local bXChkFail = false;
 				local bYChkFail = false;
@@ -1824,7 +2289,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				local landincol_prev1 = chokepoint;
 				local landincol_prev2 = chokepoint;
 
-				for x = chkstart, chkend do
+				for x = math.max(0, chkstart), math.min(chkend, iW-1) do
 					landincol = 0;
 					contlandincol = 0;
 					for y = 2, iH-2  do
@@ -1887,8 +2352,8 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 					bfland = false;
 					landincol = 0;
 			
-					for x = 1, iW  do
-						local i = iW * y + x + 1;
+					for x = 1, iW-2  do
+						local i = xy_to_i(x, y, iW, iH);
 						--print("Plot Location = ", i);
 						local tec_check = true
 						if beta_tectonic_mounts == 2 then
@@ -1932,11 +2397,11 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				--print("Mainland Start Row: ", chkstart);
 				--print("Mainland End Row: ", chkend);
 				--print("-----");
-				for y = chkstart, chkend do
+				for y = math.max(0, chkstart), math.min(iH-1, chkend) do
 					landincol = 0;
 					contlandincol = 0;
-					for x = 1, iW  do
-						local i = iW * y + x + 1;
+					for x = 1, iW-2  do
+						local i = xy_to_i(x, y, iW, iH);
 						--print("Plot Location = ", i);
 						local tec_check = true
 						if beta_tectonic_mounts == 2 then
@@ -2167,8 +2632,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 		
 
 		--Fjordgenerator by t0m:
-		-- fjord_distance_setting = Map.GetCustomOption(19);
-		fjord_distance_setting = 1;
+		fjord_distance_setting = beta_fjord_dist;
 		if fjord_distance_setting ~= 1 then
 			if fjord_distance_setting == 2 then
 				fjord_d = 20;
@@ -2184,8 +2648,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				fjord_d = 6;
 			end
 		
-			-- fjord_length_setting = Map.GetCustomOption(20);
-			fjord_length_setting = 1
+			fjord_length_setting = beta_fjord_length;
 			if fjord_length_setting == 1 then
 				fjord_l = 2;
 			elseif fjord_length_setting == 2 then
@@ -2209,6 +2672,9 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				do
 					local PlotIndex = iW * y + x + 1;
 					if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN then
+						if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN and beta_tectonic_mounts == 2 and beta_fill_fjords == 2 then
+							BETA_TECTONIC_LANDS[PlotIndex] = 3
+						end
 						self.plotTypes[PlotIndex] = PlotTypes.PLOT_OCEAN;
 						j = 1;
 						while (j < fjord_l - 1 + Map.Rand(3, ""))
@@ -2234,6 +2700,9 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 								i = 1;
 							end
 							local PlotIndex = iW * y + x + 1;
+							if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN and beta_tectonic_mounts == 2 and beta_fill_fjords == 2 then
+								BETA_TECTONIC_LANDS[PlotIndex] = 3
+							end
 							self.plotTypes[PlotIndex] = PlotTypes.PLOT_OCEAN;
 							j = j + 1;
 						end
@@ -2261,6 +2730,9 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				do
 					local PlotIndex = iW * y + x + 1;
 					if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN then
+						if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN and beta_tectonic_mounts == 2 and beta_fill_fjords == 2 then
+							BETA_TECTONIC_LANDS[PlotIndex] = 3
+						end
 						self.plotTypes[PlotIndex] = PlotTypes.PLOT_OCEAN;
 						j = 1;
 						while (j < fjord_l - 1 + Map.Rand(3, ""))
@@ -2286,6 +2758,9 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 								i = 1;
 							end
 							local PlotIndex = iW * y + x + 1;
+							if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN and beta_tectonic_mounts == 2 and beta_fill_fjords == 2 then
+								BETA_TECTONIC_LANDS[PlotIndex] = 3
+							end
 							self.plotTypes[PlotIndex] = PlotTypes.PLOT_OCEAN;
 							j = j + 1;
 						end
@@ -2313,6 +2788,9 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				do
 					local PlotIndex = iW * y + x + 1;
 					if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN then
+						if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN and beta_tectonic_mounts == 2 and beta_fill_fjords == 2 then
+							BETA_TECTONIC_LANDS[PlotIndex] = 3
+						end
 						self.plotTypes[PlotIndex] = PlotTypes.PLOT_OCEAN;
 						j = 1;
 						while (j < fjord_l - 1 + Map.Rand(3, ""))
@@ -2345,6 +2823,9 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 								i = 1;
 							end
 							local PlotIndex = iW * y + x + 1;
+							if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN and beta_tectonic_mounts == 2 and beta_fill_fjords == 2 then
+								BETA_TECTONIC_LANDS[PlotIndex] = 3
+							end
 							self.plotTypes[PlotIndex] = PlotTypes.PLOT_OCEAN;
 							j = j + 1;
 						end
@@ -2372,6 +2853,9 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 				do
 					local PlotIndex = iW * y + x + 1;
 					if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN then
+						if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN and beta_tectonic_mounts == 2 and beta_fill_fjords == 2 then
+							BETA_TECTONIC_LANDS[PlotIndex] = 3
+						end
 						self.plotTypes[PlotIndex] = PlotTypes.PLOT_OCEAN;
 						j = 1;
 						while (j < fjord_l - 1 + Map.Rand(3, ""))
@@ -2404,6 +2888,9 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 								i = 1;
 							end
 							local PlotIndex = iW * y + x + 1;
+							if self.plotTypes[PlotIndex] ~= PlotTypes.PLOT_OCEAN and beta_tectonic_mounts == 2 and beta_fill_fjords == 2 then
+								BETA_TECTONIC_LANDS[PlotIndex] = 3
+							end
 							self.plotTypes[PlotIndex] = PlotTypes.PLOT_OCEAN;
 							j = j + 1;
 						end
@@ -2525,11 +3012,10 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 
 		print("######### Creating Islands #########");
 
-		-- islandSetting = Map.GetCustomOption(15);
-		islandSetting = 1
+		islandSetting = beta_island_setting
 		
 		if islandSetting < 26 then	
-			islCount = Map.GetCustomOption(15) - 1;
+			islCount = beta_island_setting - 1;
 		elseif islandSetting == 26 then
 			islCount = Map.Rand(5, "") + 6
 		elseif islandSetting == 27 then
@@ -2781,7 +3267,7 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 		end
 
 		print("######### Finished Islands #########");
-		
+		-- dump_map(self.plotTypes)
 		-- local iW, iH = Map.GetGridSize();
 		local centerX = iW / 2;
 		local centerY = iH / 2;
@@ -2877,7 +3363,8 @@ function PangaeaFractalWorld:GeneratePlotTypes(args)
 			end
 		end
 	end
-
+	-- dump_map(self.plotTypes)
+	
 	return self.plotTypes;
 end
 
@@ -3201,9 +3688,7 @@ function AssignStartingPlots:ChooseLocations(args)
 	-- local iW, iH = Map.GetGridSize();
 
 	-- local beta_start_rework = Map.GetCustomOption(26);
-	local beta_start_rework = 3
 	-- local beta_tectonic_mounts = Map.GetCustomOption(45);
-	local beta_tectonic_mounts = 2
 
 	local master_center_x = 0
 	local master_center_y = 0
@@ -3515,7 +4000,6 @@ function AssignStartingPlots:ChooseLocations(args)
 	else
 		-- keep same
 			-- local beta_cliffs = Map.GetCustomOption(27);
-			beta_cliffs = 2
 
 			print("Map Generation - Choosing Start Locations for Civilizations");
 			local args = args or {};
@@ -3909,7 +4393,7 @@ function AssignStartingPlots:ChooseLocations(args)
 						end
 						
 						if betaDistanceData[region_number][i] > 0 then
-							plotMult = plotMult*(1.0-(betaDistanceData[region_number][i]/100.0))
+							plotMult = plotMult*(1.0-((betaDistanceData[region_number][i]/100.0))^2)
 						end
 
 						if plot:GetArea() ~= iBiggestAreaID then
@@ -4458,10 +4942,10 @@ function GeneratePlotTypes()
 	-- dump_map(fractal_world);
 	
 	SetPlotTypes(plotTypes);
+	-- dump_map()
 	if beta_tectonic_mounts == 2 then
 		PinchTectonics();
 	end
-
 	GenerateCoasts();
 end
 ------------------------------------------------------------------------------
@@ -4470,12 +4954,12 @@ function GenerateTerrain()
 	local DesertPercent = 22;
 
 	-- Get Temperature setting input by user.
-	local temp = Map.GetCustomOption(2)
+	local temp = beta_temp
 	if temp == 4 then
 		temp = 1 + Map.Rand(3, "Random Temperature - Lua");
 	end
 
-	local grassMoist = Map.GetCustomOption(8);
+	local grassMoist = beta_grass_moist
 
 	local args = {
 			temperature = temp,
@@ -4488,8 +4972,11 @@ function GenerateTerrain()
 
 	-- added local beta-27
 	local terrainTypes = terraingen:GenerateTerrain();
-	
+	-- dump_map();
+
 	SetTerrainTypes(terrainTypes);
+	
+
 
 	-- MOD.EAP: New
 	Map.RecalculateAreas();
@@ -4731,7 +5218,7 @@ end
 function AddFeatures()
 
 	-- Get Rainfall setting input by user.
-	local rain = Map.GetCustomOption(3)
+	local rain = beta_rain
 	if rain == 4 then
 		rain = 1 + Map.Rand(3, "Random Rainfall - Lua");
 	end
@@ -4741,7 +5228,6 @@ function AddFeatures()
 
 	-- False parameter removes mountains from coastlines.
 	-- local beta_cliffs = Map.GetCustomOption(27);
-	beta_cliffs = 2
 	if beta_cliffs == 1 then
 		featuregen:AddFeatures(false);
 	else
@@ -4771,7 +5257,7 @@ function dump_map(graph)
 	for y = 0, iH - 1 do
 		for x = 0, iW - 1 do
 			local i = iW * y + x+1;
-			-- local plot = Map.GetPlot(x, y);
+			local plot = Map.GetPlot(x, y);
 			-- local boost = 0
 
 			-- if fractal:GetHeight(x, y) >= thresh1 then
@@ -4835,8 +5321,8 @@ end
 
 function AssignStartingPlots:FixResourceGraphics()
 
-	local rain = Map.GetCustomOption(2)	-- BETA MOVED THIS OUTSIDE FOR PERFORMANCE
-	local remove_desert_lux = Map.GetCustomOption(18);
+	local rain = beta_rain	-- BETA MOVED THIS OUTSIDE FOR PERFORMANCE
+	local remove_desert_lux = beta_remove_desert_lux;
 	
 	--[[ MOD.Barathor: 
 	
@@ -4878,10 +5364,13 @@ function AssignStartingPlots:FixResourceGraphics()
 			   res_ID == self.copper_ID or 
 			   res_ID == self.gems_ID or 
 			   res_ID == self.salt_ID or 
-			   res_ID == self.lapis_ID or 
-			   res_ID == self.jade_ID or 
-			   res_ID == self.obsidian_ID or
-			   res_ID == self.amber_ID then 
+			   (res_ID == self.lapis_ID and beta_using_lekmod) or 
+			   (res_ID == self.jade_ID and beta_using_lekmod) or 
+			   (res_ID == self.obsidian_ID and beta_using_lekmod) or
+			   (res_ID == self.amber_ID and beta_using_lekmod) or
+			   (res_ID == self.platinum_ID and beta_using_nova) or
+			   (res_ID == self.sulfur_ID and beta_using_nova) or
+			   (res_ID == self.limestone_ID and beta_using_nova) then
 			   
 				-- If a forest or jungle is present, keep it.  Remove anything else.
 				if (featureType ~= FeatureTypes.FEATURE_FOREST) and (featureType ~= FeatureTypes.FEATURE_JUNGLE) then
@@ -4899,10 +5388,11 @@ function AssignStartingPlots:FixResourceGraphics()
 				   res_ID == self.silk_ID or 
 				   res_ID == self.dye_ID or 
 				   res_ID == self.fur_ID or
-				   red_ID == self.coconut_ID or
-				   red_ID == self.rubber_ID or
-				   res_ID == self.hardwood_ID or
-				   res_ID == self.deer_ID then
+				   (red_ID == self.coconut_ID and beta_using_lekmod) or
+				   (red_ID == self.rubber_ID and beta_using_lekmod) or
+				   (res_ID == self.hardwood_ID and beta_using_lekmod) or
+				   res_ID == self.deer_ID or
+				   (res_ID == self.pineapple_ID and beta_using_nova) then
 				
 				if (featureType ~= FeatureTypes.FEATURE_FOREST) then
 					plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1)
@@ -4976,10 +5466,10 @@ function AssignStartingPlots:FixResourceGraphics()
 				   res_ID == self.wine_ID or 
 				   res_ID == self.olives_ID or 
 				   res_ID == self.coffee_ID or
-				   res_ID == self.tobacco_ID or 
-				   res_ID == self.tea_ID or 
-				   res_ID == self.perfume_ID or 
-				   res_ID == self.cotton_ID then 
+				   (res_ID == self.tobacco_ID and beta_using_lekmod) or 
+				   (res_ID == self.tea_ID and beta_using_lekmod) or 
+				   (res_ID == self.perfume_ID and beta_using_lekmod) or 
+				   res_ID == self.cotton_ID then
 				
 				--if res_ID == self.ivory_ID then
 					-- Always want it flat.  Other types are fine on hills.
@@ -5016,10 +5506,10 @@ function AssignStartingPlots:FixResourceGraphics()
 					res_ID == self.copper_ID or 
 					res_ID == self.gems_ID or 
 					res_ID == self.salt_ID or 
-					res_ID == self.lapis_ID or 
-					res_ID == self.jade_ID or 
-					res_ID == self.obsidian_ID or
-					res_ID == self.amber_ID or
+					(res_ID == self.lapis_ID and beta_using_lekmod) or 
+					(res_ID == self.jade_ID and beta_using_lekmod) or 
+					(res_ID == self.obsidian_ID and beta_using_lekmod) or
+					(res_ID == self.amber_ID and beta_using_lekmod) or
 
 					res_ID == self.cocoa_ID or 
 					res_ID == self.citrus_ID or 
@@ -5029,20 +5519,36 @@ function AssignStartingPlots:FixResourceGraphics()
 					res_ID == self.silk_ID or 
 					res_ID == self.dye_ID or 
 					res_ID == self.fur_ID or
-					red_ID == self.coconut_ID or
-					red_ID == self.rubber_ID or
-					res_ID == self.hardwood_ID or
+					(red_ID == self.coconut_ID and beta_using_lekmod) or
+					(red_ID == self.rubber_ID and beta_using_lekmod) or
+					(res_ID == self.hardwood_ID and beta_using_lekmod) or
 					res_ID == self.deer_ID or
 
 					res_ID == self.incense_ID or 
 					res_ID == self.ivory_ID or 
 					res_ID == self.wine_ID or 
 					res_ID == self.olives_ID or 
-					res_ID == self.coffee_ID or
-					res_ID == self.tobacco_ID or 
-					res_ID == self.tea_ID or 
-					res_ID == self.perfume_ID or 
-					res_ID == self.cotton_ID then
+					(res_ID == self.coffee_ID and beta_using_lekmod) or
+					(res_ID == self.tobacco_ID and beta_using_lekmod) or 
+					(res_ID == self.tea_ID and beta_using_lekmod) or 
+					(res_ID == self.perfume_ID and beta_using_lekmod) or 
+					res_ID == self.cotton_ID or
+					
+					(res_ID == self.beer_ID and beta_using_nova) or
+					(res_ID == self.honey_ID and beta_using_nova) or
+					(res_ID == self.cognac_ID and beta_using_nova) or
+					(res_ID == self.cheese_ID and beta_using_nova) or
+					(res_ID == self.rice_ID and beta_using_nova) or
+					(res_ID == self.steel_ID and beta_using_nova) or
+					(res_ID == self.platinum_ID and beta_using_nova) or
+					(res_ID == self.sulfur_ID and beta_using_nova) or
+					(res_ID == self.potato_ID and beta_using_nova) or
+					(res_ID == self.barley_ID and beta_using_nova) or
+					(res_ID == self.pineapple_ID and beta_using_nova) or
+					(res_ID == self.limestone_ID and beta_using_nova) or
+					(res_ID == self.feathers_ID and beta_using_nova) or
+					(res_ID == self.caviar_ID and beta_using_nova) or
+					(res_ID == self.red_caviar_ID and beta_using_nova) then
 
 						if terrainType == TerrainTypes.TERRAIN_DESERT and featureType ~= FeatureTypes.FEATURE_FLOOD_PLAINS and plotType ~= PlotTypes.PLOT_HILLS then
 							plot:SetTerrainType(TerrainTypes.TERRAIN_PLAINS, false, true)
@@ -5469,9 +5975,7 @@ end
 function AssignStartingPlots:PlaceLuxuries()
 
 	-- local beta_double_secondary = Map.GetCustomOption(39);
-	local beta_double_secondary = 1
 	-- local beta_smart_lux = Map.GetCustomOption(46);
-	local beta_smart_lux = 2
 
 	-- This function is dependent upon AssignLuxuryRoles() and PlaceCityStates() having been executed first.
 	-- local iW, iH = Map.GetGridSize();
@@ -6018,7 +6522,14 @@ function AssignStartingPlots:PlaceLuxuries()
 				table.insert(candidate_types, self.whale_ID);
 				table.insert(candidate_types, self.pearls_ID);
 				table.insert(candidate_types, self.crab_ID);
-				table.insert(candidate_types, self.coral_ID);
+				if beta_using_lekmod then
+					table.insert(candidate_types, self.coral_ID);
+				end
+
+				if beta_using_nova then
+					table.insert(candidate_types, self.caviar_ID);
+					table.insert(candidate_types, self.red_caviar_ID);
+				end
 
 				local force_id = coastal_rotation % 4
 				coastal_rotation = coastal_rotation + 1
@@ -6143,7 +6654,13 @@ function AssignStartingPlots:PlaceLuxuries()
 				table.insert(candidate_types, self.whale_ID);
 				table.insert(candidate_types, self.pearls_ID);
 				table.insert(candidate_types, self.crab_ID);
-				table.insert(candidate_types, self.coral_ID);
+				if beta_using_lekmod then
+					table.insert(candidate_types, self.coral_ID);
+				end
+				if beta_using_nova then
+					table.insert(candidate_types, self.caviar_ID);
+					table.insert(candidate_types, self.red_caviar_ID);
+				end
 				iNumTypesAllowed = iNumTypesAllowed + 4;
 				print("sapht: forcing a coastal lux (2)")
 				-- local diceroll = 1 + Map.Rand(iNumTypesAllowed, "Choosing second luxury type at a start location - LUA");
@@ -6368,7 +6885,7 @@ function CalculateFlows(test_plots, pulse_depth, use_CS, CS_plots, CS_mult, impa
 					if plot_type_cache[adj_i] == PlotTypes.PLOT_OCEAN then
 						if is_coastal_cache[i] == false then  -- inland sea
 							mountain_base_cache[i] = mountain_base_cache[i]+20.0*impass_mult
-							mountain_base_cache_coast[i] = mountain_base_cache_coast[i]+2.0
+							mountain_base_cache_coast[i] = mountain_base_cache_coast[i]+4.0
 						else -- coastal plot
 							mountain_base_cache[i] = mountain_base_cache[i]+2.0
 						end
@@ -6687,7 +7204,7 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 		-- print(dump(map_output));
 		-- print("MAP READOUT OVER");
 
-		-- local beta_boost_cs = Map.GetCustomOption(29);
+		-- local beta_boost_cs = Map.GetCustomOption(51);
 
 		for cs_number = 1, self.iNumCityStates do
 			if self.city_state_validity_table[cs_number] == true then
@@ -6700,9 +7217,9 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 				if plot:GetPlotType() == PlotTypes.PLOT_MOUNTAIN then
 					plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true);
 				end
-				-- if beta_boost_cs == 2 then
-				-- 	BoostCS(cityState, x, y);
-				-- end
+				if beta_boost_cs == 2 then
+					BoostCS(cityState, x, y);
+				end
 			else
 				local data_table = self.cityStatePlots[cs_number];
 				if data_table ~= nil then
@@ -6716,16 +7233,15 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 					if plot:GetPlotType() == PlotTypes.PLOT_MOUNTAIN then
 						plot:SetPlotType(PlotTypes.PLOT_HILLS, false, true);
 					end
-					-- if beta_boost_cs == 2 then
-					-- 	BoostCS(cityState, x, y);
-					-- end
+					if beta_boost_cs == 2 then
+						BoostCS(cityState, x, y);
+					end
 				end
 			end
 		end
 
 	local accept_map = false
-	local beta_isolation_rejection = Map.GetCustomOption(22) + 2
-	-- local beta_isolation_rejection = 4
+	-- local beta_isolation_rejection = Map.GetCustomOption(40)
 	
 	-- self.iNumCivs, self.iNumCityStates, self.player_ID_list, self.bTeamGame, self.teams_with_major_civs, self.number_civs_per_team = GetPlayerAndTeamInfo()
 	if beta_isolation_rejection == 1 or beta_isolation_rejection == 2 then
@@ -6826,7 +7342,6 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 		end
 
 		-- local beta_prox_cs = Map.GetCustomOption(44)
-		local beta_prox_cs = 2
 		local prox_cs = false
 		if beta_prox_cs == 1 then
 			prox_cs = true
@@ -6859,13 +7374,9 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 
 		-- new distance factor
 		-- local beta_min_distance = Map.GetCustomOption(43)
-		local beta_min_distance = 6
 		local min_dist = 99
 		if beta_min_distance ~= 1 then
 			min_dist = 5+beta_min_distance
-		end
-		if self.iNumCivs ~= 6 then
-			min_dist = 99
 		end
 		local min_acceptable = true
 		
@@ -6978,12 +7489,16 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 		-- print(dump(region_adjs))
 		-- print(dump(region_depth_adjs))
 		-- print("TOPOLOGY CHECK: " .. tostring(topology_check))
+		-- dump_map(total_flow_graph)
 
 		local most_isolated = 1000.0
 		local worst_player = 0
 
+		local iso_scores = {}
+
 		for l = 1, self.iNumCivs do
 			local isolation_score = flow_first[l]*0.1+flow_second[l]*0.85+flow_third[l]*0.85
+			iso_scores[l] = isolation_score
 			if isolation_score < most_isolated then
 				most_isolated = isolation_score
 				worst_player = l
@@ -7006,45 +7521,64 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 
 
 		local lux_ids = {}
-		lux_ids[GameInfo.Resources.RESOURCE_WHALE.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_PEARLS.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_IVORY.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_FUR.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_SILK.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_DYE.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_SPICES.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_SUGAR.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_COTTON.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_WINE.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_INCENSE.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_GOLD.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_SILVER.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_GEMS.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_MARBLE.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_COPPER.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_SALT.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_CITRUS.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_TRUFFLES.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_CRAB.ID] = 1
-		lux_ids[GameInfo.Resources.RESOURCE_COCOA.ID] = 1
+		lux_ids[GameInfo.Resources.RESOURCE_WHALE.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_PEARLS.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_IVORY.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_FUR.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_SILK.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_DYE.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_SPICES.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_SUGAR.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_COTTON.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_WINE.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_INCENSE.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_GOLD.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_SILVER.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_GEMS.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_MARBLE.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_COPPER.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_SALT.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_CITRUS.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_TRUFFLES.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_CRAB.ID] = 0
+		lux_ids[GameInfo.Resources.RESOURCE_COCOA.ID] = 0
 
 
 		if beta_using_lekmod then
-			lux_ids[GameInfo.Resources.RESOURCE_COFFEE.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_TEA.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_TOBACCO.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_AMBER.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_JADE.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_OLIVE.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_PERFUME.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_CORAL.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_LAPIS.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_OBSIDIAN.ID] = 1
-			lux_ids[GameInfo.Resources.RESOURCE_COCONUT.ID] = 1
+			lux_ids[GameInfo.Resources.RESOURCE_COFFEE.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_TEA.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_TOBACCO.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_AMBER.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_JADE.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_OLIVE.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_PERFUME.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_CORAL.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_LAPIS.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_OBSIDIAN.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_COCONUT.ID] = 0
 		end
 
+		if beta_using_nova then
+			lux_ids[GameInfo.Resources.RESOURCE_BEER.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_HONEY.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_COGNAC.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_CHEESE.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_RICE.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_STEEL.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_PLATINUM.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_SULFUR.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_POTATO.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_BARLEY.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_PINEAPPLE.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_LIMESTONE.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_FEATHERS.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_CAVIAR.ID] = 0
+			lux_ids[GameInfo.Resources.RESOURCE_RED_CAVIAR.ID] = 0
+		end
+
+
 		local spawn_validity = true
-		if beta_spawn_validation == 2 and self.iNumCivs == 6 then
+		if beta_spawn_validation == 2 then
 			for player_index, pPlot in ipairs(player_plots) do
 				local needs_coast = player_coastal_bias[player_index]
 				if pPlot:IsCoastalLand(50) ~= needs_coast then
@@ -7159,36 +7693,99 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 
 
 		local final_choke_pass = true
-		for y = math.ceil(iH * 2 / 5), math.ceil((iH - 1) * 3 / 5) do
-			local entry_count = 0
-			for x = 0, iW - 1 do
-				local plot = Map.GetPlot(x, y);
-				local i = xy_to_i(x, y, iW, iH)
-				if plot:GetArea() == iBiggestAreaID and BETA_TECTONIC_LANDS[i] < 1 then
-					entry_count = entry_count+1
+		if beta_tectonic_mounts == 2 then
+			for y = math.ceil(iH * 2 / 5), math.ceil((iH - 1) * 3 / 5) do
+				local entry_count = 0
+				for x = 0, iW - 1 do
+					local plot = Map.GetPlot(x, y);
+					local i = xy_to_i(x, y, iW, iH)
+					if plot:GetArea() == iBiggestAreaID and BETA_TECTONIC_LANDS[i] < 1 then
+						entry_count = entry_count+1
+					end
+				end
+				if entry_count < 10 then
+					final_choke_pass = false
 				end
 			end
-			if entry_count < 10 then
-				final_choke_pass = false
+
+			
+			for x =  math.ceil(iW * 2 / 5), math.ceil((iW - 1) * 3 / 5) do
+				local entry_count = 0
+				for y = 0, iH - 1 do
+					local plot = Map.GetPlot(x, y);
+					local i = xy_to_i(x, y, iW, iH)
+					if plot:GetArea() == iBiggestAreaID and BETA_TECTONIC_LANDS[i] < 1 then
+						entry_count = entry_count+1
+					end
+				end
+				if entry_count < 10 then
+					final_choke_pass = false
+				end
 			end
 		end
 
-		
-		for x =  math.ceil(iW * 2 / 5), math.ceil((iW - 1) * 3 / 5) do
-			local entry_count = 0
-			for y = 0, iH - 1 do
-				local plot = Map.GetPlot(x, y);
-				local i = xy_to_i(x, y, iW, iH)
-				if plot:GetArea() == iBiggestAreaID and BETA_TECTONIC_LANDS[i] < 1 then
-					entry_count = entry_count+1
-				end
-			end
-			if entry_count < 10 then
-				final_choke_pass = false
-			end
-		end
+		-- local main_tile_count = 0
+		-- local main_horse_count = 0
+		-- local islands_map = table.fill(0, iW * iH)
+		-- for x = 0, iW-1 do
+		-- 	for y = 0, iH - 1 do
+		-- 		local plot = Map.GetPlot(x, y);
+		-- 		local i = xy_to_i(x, y, iW, iH)
+		-- 		local resType = plot:GetResourceType()
+		-- 		if plot:GetArea() ~= iBiggestAreaID and plot:GetPlotType() ~= PlotTypes.PLOT_OCEAN then
+		-- 			islands_map[i] = 1
+		-- 		end
+		-- 		-- if plot:GetArea() == iBiggestAreaID and plot:IsCoastalLand(50) then
+		-- 		-- 	if plot:GetPlotType() == PlotTypes.PLOT_LAND then
+		-- 		-- 		main_tile_count = main_tile_count + 1
+		-- 		-- 	end
 
-		-- print("MAINLAND TILES " .. main_tile_count)
+		-- 		-- 	if plot:GetPlotType() == PlotTypes.PLOT_HILLS then
+		-- 		-- 		main_tile_count = main_tile_count + 1
+		-- 		-- 		main_horse_count = main_horse_count + 1
+		-- 		-- 	end
+		-- 		-- end
+		-- 		-- if plot:IsNWOfRiver() then
+		-- 		-- 	main_tile_count = main_tile_count + 1
+		-- 		-- end
+		-- 		-- if plot:IsNEOfRiver() then
+		-- 		-- 	main_tile_count = main_tile_count + 1
+		-- 		-- 	-- lux_ids[resType] = lux_ids[resType]+1
+		-- 		-- end
+		-- 	end
+		-- end
+
+		-- local blob_graph, island_blobs = get_blobs(islands_map)
+
+		-- for loop, blob in ipairs(island_blobs) do
+		-- 	local land_count = 0
+		-- 	local hill_count = 0
+		-- 	for i, dumby in pairs(blob) do
+		-- 		local x, y = i_to_xy(i, iW, iH)
+		-- 		local plot = Map.GetPlot(x,y)
+		-- 		local plotType = plot:GetPlotType()
+		-- 		if plotType == PlotTypes.PLOT_LAND then
+		-- 			land_count = land_count+1
+		-- 		end
+		-- 		if plotType == PlotTypes.PLOT_HILLS then
+		-- 			land_count = land_count+1
+		-- 			hill_count = hill_count+1
+		-- 		end
+		-- 	end
+		-- 	if land_count > 0 then
+		-- 		print("ISLAND HILLS " .. hill_count)
+		-- 		print("ISLAND TILES " .. land_count)
+		-- 	end
+		-- end
+
+
+		-- -- for resType, resCount in pairs(lux_ids) do 
+		-- -- 	if resCount > 1 then
+		-- -- 		main_tile_count = main_tile_count + resCount-1
+		-- -- 	end
+		-- -- end
+
+		-- print("MAINLAND TILES " .. main_horse_count/math.max(1, main_tile_count))
 
 	
 		-- local fail_data = table.fill(1, 6)
@@ -7226,16 +7823,23 @@ function AssignStartingPlots:PlaceResourcesAndCityStates()
 
 		if iso_check and min_acceptable and prox_cs and topology_check and worst_ratio > 0.45 and spawn_validity and final_choke_pass then
 			accept_map = true
-			if beta_isolation_rejection == 2 then
-				for id, player in pairs(Players) do
-					player:AddNotification(NotificationTypes.NOTIFICATION_GENERIC, "Player " .. worst_player .. " Has the Worst Isolation Score of: " .. most_isolated, "Player Connectivity")
+		end
+		if beta_isolation_rejection == 2 then
+			for id, player in pairs(Players) do
+				local iso_output = ""
+				for l, iso_score in pairs(iso_scores) do
+					iso_output = iso_output .. "Player " .. l .." Isolation Score: " .. iso_score .. "\n"
 				end
+				-- player:AddNotification(NotificationTypes.NOTIFICATION_GENERIC, "Player " .. worst_player .. " Has the Worst Isolation Score of: " .. most_isolated, "Player Connectivity")
+				player:AddNotification(NotificationTypes.NOTIFICATION_GENERIC, iso_output, "Player Connectivity")
 			end
 		end
 	end
 
 	-- Activate for debug only
-	self:PrintFinalResourceTotalsToLog()
+	-- self:PrintFinalResourceTotalsToLog()
+
+	
 
 	
 
@@ -7467,7 +8071,6 @@ end
 function AssignStartingPlots:GetRandomLuxuriesTargetNumber()
 
 	-- local beta_lux_variety = Map.GetCustomOption(38);
-	local beta_lux_variety = 2
 
 	--[[ MOD.Barathor:
 		 This data was separated out to allow easy replacement in map scripts.
@@ -7847,23 +8450,25 @@ function AssignStartingPlots:PlaceStrategicAndBonusResources()
 	{self.deer_ID, 1, 100, 3, 4} };
 	self:ProcessResourceList(22 * bonus_multiplier, 3, self.forest_flat_that_are_not_tundra, resources_to_place)
 	
-	local resources_to_place = {
-	{self.hardwood_ID, 1, 100, 1, 2} };
-	self:ProcessResourceList(22 * bonus_multiplier, 3, self.hills_covered_list, resources_to_place)
+	if beta_using_lekmod then
+		local resources_to_place = {
+		{self.hardwood_ID, 1, 100, 1, 2} };
+		self:ProcessResourceList(22 * bonus_multiplier, 3, self.hills_covered_list, resources_to_place)
 
-	local resources_to_place = {
-	{self.hardwood_ID, 1, 100, 1, 2} };
-	self:ProcessResourceList(22 * bonus_multiplier, 3, self.flat_covered, resources_to_place)
+		local resources_to_place = {
+		{self.hardwood_ID, 1, 100, 1, 2} };
+		self:ProcessResourceList(22 * bonus_multiplier, 3, self.flat_covered, resources_to_place)
 
-	local resources_to_place = {
-	{self.hardwood_ID, 1, 100, 1, 2} };
-	self:ProcessResourceList(22 * bonus_multiplier, 3, self.tundra_flat_forest, resources_to_place)
-	
-	local resources_to_place = {
-	{self.maize_ID, 1, 100, 1, 2} };
-	self:ProcessResourceList(35 * bonus_multiplier, 3, self.plains_flat_no_feature, resources_to_place)
-	
-	
+		local resources_to_place = {
+		{self.hardwood_ID, 1, 100, 1, 2} };
+		self:ProcessResourceList(22 * bonus_multiplier, 3, self.tundra_flat_forest, resources_to_place)
+
+		local resources_to_place = {
+		{self.maize_ID, 1, 100, 1, 2} };
+		self:ProcessResourceList(35 * bonus_multiplier, 3, self.plains_flat_no_feature, resources_to_place)
+
+	end
+
 end
 
 -- added functionality to make sure fish don't collide with shallows
@@ -8080,7 +8685,7 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 		else
 		return false
 		end
-	elseif featureType == FeatureTypes.FEATURE_FOREST then -- Place Hardwood
+	elseif featureType == FeatureTypes.FEATURE_FOREST and beta_using_lekmod then -- Place Hardwood
 		plot:SetResourceType(self.hardwood_ID, 1);
 		print("Placed Hardwood.");
 		self.amounts_of_resources_placed[self.hardwood_ID + 1] = self.amounts_of_resources_placed[self.hardwood_ID + 1] + 1;
@@ -8098,7 +8703,7 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 			return false
 		end
 	-- Sheep or Deer on Hills, if not desert	
-	elseif plotType == PlotTypes.PLOT_HILLS and featureType == FeatureTypes.NO_FEATURE and terrainType ~= TerrainTypes.TERRAIN_DESERT then
+	elseif plotType == PlotTypes.PLOT_HILLS and featureType == FeatureTypes.NO_FEATURE and terrainType ~= TerrainTypes.TERRAIN_DESERT and beta_using_lekmod then
 		plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1);
 		plot:SetResourceType(self.hardwood_ID, 1);
 		print("Placed Hardwood.");
@@ -8246,7 +8851,7 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 		print("Placed Cow.");
 		self.amounts_of_resources_placed[self.cow_ID + 1] = self.amounts_of_resources_placed[self.cow_ID + 1] + 1;
 		return true, false, false
-	elseif plotType == PlotTypes.PLOT_LAND and featureType == FeatureTypes.NO_FEATURE and terrainType == TerrainTypes.TERRAIN_PLAINS then
+	elseif plotType == PlotTypes.PLOT_LAND and featureType == FeatureTypes.NO_FEATURE and terrainType == TerrainTypes.TERRAIN_PLAINS and beta_using_lekmod then
 		plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1);
 		plot:SetResourceType(self.hardwood_ID, 1);
 		print("Placed Hardwood.");
@@ -8261,7 +8866,7 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 					print("Placed Deer.");
 					self.amounts_of_resources_placed[self.deer_ID + 1] = self.amounts_of_resources_placed[self.deer_ID + 1] + 1;
 					return true, false, false
-	elseif terrainType == TerrainTypes.TERRAIN_TUNDRA and plotType == PlotTypes.PLOT_LAND and featureType == FeatureTypes.NO_FEATURE then -- Place Hardwood
+	elseif terrainType == TerrainTypes.TERRAIN_TUNDRA and plotType == PlotTypes.PLOT_LAND and featureType == FeatureTypes.NO_FEATURE and beta_using_lekmod then -- Place Hardwood
 					--add forest to the location to make it even better
 					plot:SetFeatureType(FeatureTypes.FEATURE_FOREST, -1);
 					plot:SetResourceType(self.hardwood_ID, 1);
@@ -8437,255 +9042,310 @@ function AssignStartingPlots:PlaceResourceImpactCoastalMod(x, y, impact_table_nu
 	end
 end
 
--- function ThrowMeteors(starting_plots, num_meteors)
--- 	-- local iW, iH = Map.GetGridSize();
--- 	local temp_list_all = {};
--- 	local adj_list = {}
--- 	for y = 0, iH - 1 do
--- 		for x = 0, iW - 1 do
--- 			local i = y * iW + x + 1;
--- 			local plot = Map.GetPlot(x, y);
--- 			if starting_plots.cityStateData[i] < 1 and plot:GetPlotType() ~= PlotTypes.PLOT_OCEAN and adj_list[i] == nil then 
--- 				-- starting_plots.distanceData[i] < 50 and 
--- 				table.insert(temp_list_all, i);
--- 				local adj_is = adj_is_cache[i]
--- 				for loop, adj_i in ipairs(adj_is) do
--- 					adj_list[adj_i] = 1;
--- 					local adj_is2 = adj_is_cache[adj_i]
--- 					if adj_is2 ~= nil then
--- 						for loop2, adj_i2 in ipairs(adj_is2) do
--- 							adj_list[adj_i2] = 1;
--- 							local adj_is3 = adj_is_cache[adj_i2]
--- 							if adj_is3 ~= nil then
--- 								for loop3, adj_i3 in ipairs(adj_is3) do
--- 									adj_list[adj_i3] = 1;
--- 								end
--- 							end
--- 						end
--- 					end
--- 				end
--- 			end
--- 		end
--- 	end
--- 	local list_all = GetShuffledCopyOfTable(temp_list_all);
--- 	-- print("GOT HERE SMITIN")
--- 	-- print(tablelength(list_all))
--- 	for l = 1, num_meteors do
--- 		i = list_all[l];
--- 		if i ~= nil then
--- 			local x, y = i_to_xy(i, iW, iH);
--- 			local plot = Map.GetPlot(x, y);
--- 			plot:SetPlotType(PlotTypes.PLOT_HILLS)
--- 			plot:SetTerrainType(TerrainTypes.TERRAIN_TUNDRA)
--- 			plot:SetFeatureType(FeatureTypes.FEATURE_FALLOUT)
--- 			plot:SetResourceType(starting_plots.gems_ID, 1)
+function ThrowMeteors(starting_plots, num_meteors)
+	-- local iW, iH = Map.GetGridSize();
+	local temp_list_all = {};
+	local adj_list = {}
+	for y = 0, iH - 1 do
+		for x = 0, iW - 1 do
+			local i = y * iW + x + 1;
+			local plot = Map.GetPlot(x, y);
+			if starting_plots.cityStateData[i] < 1 and plot:GetPlotType() ~= PlotTypes.PLOT_OCEAN and adj_list[i] == nil then 
+				-- starting_plots.distanceData[i] < 50 and 
+				table.insert(temp_list_all, i);
+				local adj_is = adj_is_cache[i]
+				for loop, adj_i in ipairs(adj_is) do
+					adj_list[adj_i] = 1;
+					local adj_is2 = adj_is_cache[adj_i]
+					if adj_is2 ~= nil then
+						for loop2, adj_i2 in ipairs(adj_is2) do
+							adj_list[adj_i2] = 1;
+							local adj_is3 = adj_is_cache[adj_i2]
+							if adj_is3 ~= nil then
+								for loop3, adj_i3 in ipairs(adj_is3) do
+									adj_list[adj_i3] = 1;
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	local list_all = GetShuffledCopyOfTable(temp_list_all);
+	-- print("GOT HERE SMITIN")
+	-- print(tablelength(list_all))
+	for l = 1, num_meteors do
+		i = list_all[l];
+		if i ~= nil then
+			local x, y = i_to_xy(i, iW, iH);
+			local plot = Map.GetPlot(x, y);
+			plot:SetPlotType(PlotTypes.PLOT_HILLS)
+			plot:SetTerrainType(TerrainTypes.TERRAIN_TUNDRA)
+			plot:SetFeatureType(FeatureTypes.FEATURE_FALLOUT)
+			plot:SetResourceType(starting_plots.gems_ID, 1)
 
--- 			starting_plots:PlaceResourceImpact(x, y, 1, 0)					-- Strategic layer
--- 			starting_plots:PlaceResourceImpact(x, y, 2, 0)					-- Luxury layer
--- 			starting_plots:PlaceResourceImpact(x, y, 3, 0)					-- Bonus layer
--- 			starting_plots:PlaceResourceImpact(x, y, 5, 2)					-- City State layer
--- 			starting_plots:PlaceResourceImpact(x, y, 7, 0)					-- Marble layer
+			starting_plots:PlaceResourceImpact(x, y, 1, 0)					-- Strategic layer
+			starting_plots:PlaceResourceImpact(x, y, 2, 0)					-- Luxury layer
+			starting_plots:PlaceResourceImpact(x, y, 3, 0)					-- Bonus layer
+			starting_plots:PlaceResourceImpact(x, y, 5, 2)					-- City State layer
+			starting_plots:PlaceResourceImpact(x, y, 7, 0)					-- Marble layer
 
--- 			local temp_adj_is = adj_is_cache[i]
--- 			local adj_list_m = GetShuffledCopyOfTable(temp_adj_is)
--- 			local loop_count = 1
--- 			for loop, adj_i in ipairs(adj_list_m) do
--- 				local adj_x, adj_y = i_to_xy(adj_i, iW, iH);
--- 				local adj_plot = Map.GetPlot(adj_x, adj_y);
--- 				if adj_plot ~= nil then
--- 					if adj_plot:GetPlotType() ~= PlotTypes.PLOT_OCEAN then
--- 						adj_plot:SetPlotType(PlotTypes.PLOT_LAND)
--- 						adj_plot:SetTerrainType(TerrainTypes.TERRAIN_TUNDRA)
--- 						if loop_count == 1 then
--- 							adj_plot:SetResourceType(starting_plots.uranium_ID, 2)
--- 							adj_plot:SetFeatureType(FeatureTypes.FEATURE_FALLOUT)
+			local temp_adj_is = adj_is_cache[i]
+			local adj_list_m = GetShuffledCopyOfTable(temp_adj_is)
+			local loop_count = 1
+			for loop, adj_i in ipairs(adj_list_m) do
+				local adj_x, adj_y = i_to_xy(adj_i, iW, iH);
+				local adj_plot = Map.GetPlot(adj_x, adj_y);
+				if adj_plot ~= nil then
+					if adj_plot:GetPlotType() ~= PlotTypes.PLOT_OCEAN then
+						adj_plot:SetPlotType(PlotTypes.PLOT_LAND)
+						adj_plot:SetTerrainType(TerrainTypes.TERRAIN_TUNDRA)
+						if loop_count == 1 then
+							adj_plot:SetResourceType(starting_plots.uranium_ID, 2)
+							adj_plot:SetFeatureType(FeatureTypes.FEATURE_FALLOUT)
 
--- 							starting_plots:PlaceResourceImpact(x, y, 1, 0)					-- Strategic layer
--- 							starting_plots:PlaceResourceImpact(x, y, 2, 0)					-- Luxury layer
--- 							starting_plots:PlaceResourceImpact(x, y, 3, 0)					-- Bonus layer
--- 							starting_plots:PlaceResourceImpact(x, y, 7, 0)					-- Marble layer
+							starting_plots:PlaceResourceImpact(x, y, 1, 0)					-- Strategic layer
+							starting_plots:PlaceResourceImpact(x, y, 2, 0)					-- Luxury layer
+							starting_plots:PlaceResourceImpact(x, y, 3, 0)					-- Bonus layer
+							starting_plots:PlaceResourceImpact(x, y, 7, 0)					-- Marble layer
 
--- 						elseif loop_count == 2 then
--- 							adj_plot:SetResourceType(starting_plots.oil_ID, 6)
--- 							adj_plot:SetFeatureType(-1)
+						elseif loop_count == 2 then
+							adj_plot:SetResourceType(starting_plots.oil_ID, 6)
+							adj_plot:SetFeatureType(-1)
 							
--- 							starting_plots:PlaceResourceImpact(x, y, 1, 0)					-- Strategic layer
--- 							starting_plots:PlaceResourceImpact(x, y, 2, 0)					-- Luxury layer
--- 							starting_plots:PlaceResourceImpact(x, y, 3, 0)					-- Bonus layer
--- 							starting_plots:PlaceResourceImpact(x, y, 7, 0)					-- Marble layer
+							starting_plots:PlaceResourceImpact(x, y, 1, 0)					-- Strategic layer
+							starting_plots:PlaceResourceImpact(x, y, 2, 0)					-- Luxury layer
+							starting_plots:PlaceResourceImpact(x, y, 3, 0)					-- Bonus layer
+							starting_plots:PlaceResourceImpact(x, y, 7, 0)					-- Marble layer
 
--- 						else
--- 							-- adj_plot:SetResourceType(-1)
--- 							adj_plot:SetFeatureType(-1)
--- 						end
--- 						loop_count = loop_count+1
--- 					end
--- 				end
--- 			end
--- 			-- print("GET SMITED")
--- 		end
--- 	end
--- end
+						else
+							-- adj_plot:SetResourceType(-1)
+							adj_plot:SetFeatureType(-1)
+						end
+						loop_count = loop_count+1
+					end
+				end
+			end
+			-- print("GET SMITED")
+		end
+	end
+end
 
--- function BoostCS(cityState, x, y)
--- 	-- local iW, iH = Map.GetGridSize();
+function BoostCS(cityState, x, y)
+	-- local iW, iH = Map.GetGridSize();
 	
--- 	local resources = 0;
--- 	local food_yields = 0;
--- 	local prod_yields = 0;
+	local resources = 0;
+	local food_yields = 0;
+	local prod_yields = 0;
 
--- 	local adj_is1 = GetAdjacent(x, y, iW, iH);
--- 	adj_is1 = GetShuffledCopyOfTable(adj_is1);
--- 	for loop, adj_i1 in ipairs(adj_is1) do
--- 		local adjx1, adjy1 = i_to_xy(adj_i1, iW, iH);
--- 		local adj_plot1 = Map.GetPlot(adjx1, adjy1);
--- 		if adj_plot1:GetResourceType() ~= -1 then
--- 			resources = resources+1
--- 		end
+	local adj_is1 = GetAdjacent(x, y, iW, iH);
+	adj_is1 = GetShuffledCopyOfTable(adj_is1);
+	for loop, adj_i1 in ipairs(adj_is1) do
+		local adjx1, adjy1 = i_to_xy(adj_i1, iW, iH);
+		local adj_plot1 = Map.GetPlot(adjx1, adjy1);
+		if adj_plot1:GetResourceType() ~= -1 then
+			resources = resources+1
+		end
 
 		
--- 		food_yields = food_yields+adj_plot1:CalculateBestNatureYield(YieldTypes.YIELD_FOOD, cityState:GetTeam())
--- 		prod_yields = prod_yields+adj_plot1:CalculateBestNatureYield(YieldTypes.YIELD_PRODUCTION, cityState:GetTeam())
--- 	end
+		food_yields = food_yields+adj_plot1:CalculateBestNatureYield(YieldTypes.YIELD_FOOD, cityState:GetTeam())
+		prod_yields = prod_yields+adj_plot1:CalculateBestNatureYield(YieldTypes.YIELD_PRODUCTION, cityState:GetTeam())
+	end
 
--- 	local boost_needed = 0;
--- 	if resources < 3 then
--- 		boost_needed = boost_needed+1;
--- 	end
--- 	if (food_yields < 6) or (prod_yields < 5) or (food_yields+prod_yields < 14) then
--- 		boost_needed = boost_needed+1;
--- 	end
+	local boost_needed = 0;
+	if resources < 3 then
+		boost_needed = boost_needed+1;
+	end
+	if (food_yields < 6) or (prod_yields < 5) or (food_yields+prod_yields < 14) then
+		boost_needed = boost_needed+1;
+	end
 
--- 	local cs_trait = cityState:GetMinorCivTrait();
--- 	for loop, adj_i1 in ipairs(adj_is1) do
--- 		local adjx1, adjy1 = i_to_xy(adj_i1, iW, iH);
--- 		local adj_plot1 = Map.GetPlot(adjx1, adjy1);
--- 		local adj_ptype = adj_plot1:GetPlotType();
--- 		local adj_ftype = adj_plot1:GetFeatureType();
--- 		-- print("Resource Type: " .. tostring(adj_plot1:GetResourceType()));
--- 		if boost_needed > 0 and (adj_plot1:GetResourceType() == -1) then
--- 			if cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_CULTURED then
--- 				local imp_canidates = {};
--- 				if adj_ftype == FeatureTypes.FEATURE_FOREST or adj_ftype == FeatureTypes.FEATURE_JUNGLE then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_BRAZILWOOD_CAMP.ID);
--- 				end
+	local cs_trait = cityState:GetMinorCivTrait();
+	for loop, adj_i1 in ipairs(adj_is1) do
+		local adjx1, adjy1 = i_to_xy(adj_i1, iW, iH);
+		local adj_plot1 = Map.GetPlot(adjx1, adjy1);
+		local adj_ptype = adj_plot1:GetPlotType();
+		local adj_ftype = adj_plot1:GetFeatureType();
+		-- print("Resource Type: " .. tostring(adj_plot1:GetResourceType()));
+		if boost_needed > 0 and (adj_plot1:GetResourceType() == -1) then
+			if cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_CULTURED then
+				local imp_canidates = {};
+				if adj_ftype == FeatureTypes.FEATURE_FOREST or adj_ftype == FeatureTypes.FEATURE_JUNGLE then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_BRAZILWOOD_CAMP.ID);
+				end
 				
--- 				if adj_ptype == PlotTypes.PLOT_HILLS then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIBET.ID);
--- 				elseif adj_ptype == PlotTypes.PLOT_MOUNTAIN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIBET.ID);
--- 				end
+				if adj_ptype == PlotTypes.PLOT_HILLS then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIBET.ID);
+					end
+					-- table.insert(imp_canidates, 41);
+				elseif adj_ptype == PlotTypes.PLOT_MOUNTAIN then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIBET.ID);
+					end
+					-- table.insert(imp_canidates, 41);
+				end
 
--- 				if adj_ptype == PlotTypes.PLOT_OCEAN or adj_ptype == PlotTypes.PLOT_LAND then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_AYER.ID);
--- 				end
+				if adj_ptype == PlotTypes.PLOT_OCEAN or adj_ptype == PlotTypes.PLOT_LAND then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_AYER.ID);
+					end
+				end
 				
--- 				if adj_ptype ~= PlotTypes.PLOT_OCEAN and  adj_ptype ~= PlotTypes.PLOT_MOUNTAIN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_CHATEAU.ID);
--- 				end
+				if adj_ptype ~= PlotTypes.PLOT_OCEAN and  adj_ptype ~= PlotTypes.PLOT_MOUNTAIN then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_CHATEAU.ID);
+				end
+				
+				if tablelength(imp_canidates) > 0 then
+					adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
+					boost_needed = boost_needed-1;
+				end
+
+			elseif cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_MILITARISTIC then
+				local imp_canidates = {};
+				
+				if adj_ptype == PlotTypes.PLOT_HILLS then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MC_SCOTTISH_CLAN_CASTLE.ID);
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_GOTH.ID);
+					end
+				elseif adj_ptype == PlotTypes.PLOT_LAND then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_GOTH.ID);
+					end
+				end
+
+				
+
+				if adj_ptype == PlotTypes.PLOT_OCEAN then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_LANDMARK.ID);
+				end
+				
+				if adj_ptype ~= PlotTypes.PLOT_OCEAN and adj_ptype ~= PlotTypes.PLOT_MOUNTAIN then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_KASBAH.ID);
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MOTTE.ID);
+					end
+					if beta_using_nova then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_LANDMARK.ID);
+					end
+				end
 					
--- 				adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
--- 				boost_needed = boost_needed-1;
+				if tablelength(imp_canidates) > 0 then
+					adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
+					boost_needed = boost_needed-1;
+				end
 
--- 			elseif cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_MILITARISTIC then
--- 				local imp_canidates = {};
+			elseif cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_MARITIME then
+				local imp_canidates = {};
 				
--- 				if adj_ptype == PlotTypes.PLOT_HILLS then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MC_SCOTTISH_CLAN_CASTLE.ID);
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_GOTH.ID);
--- 				elseif adj_ptype == PlotTypes.PLOT_LAND then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_GOTH.ID);
--- 				end
+				if adj_ftype == FeatureTypes.FEATURE_MARSH and adj_ptype == PlotTypes.PLOT_LAND then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_POLDER.ID);
+				end
 
+				if adj_ptype == PlotTypes.PLOT_LAND then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TEPE.ID);
+					end
+					if beta_using_nova then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIPI.ID);
+					end
+				end
+
+				if adj_ptype == PlotTypes.PLOT_OCEAN then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_WATER_POLDER.ID);
+				end
+
+				if adj_ptype == PlotTypes.PLOT_HILLS then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MC_MAORI_PA.ID);
+					end
+					-- table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TERRACE_FARM.ID);
+				end
+
+				if tablelength(imp_canidates) > 0 then
+					adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
+					boost_needed = boost_needed-1;
+				end
+
+			elseif cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_MERCANTILE then
+				local imp_canidates = {};
 				
+				if adj_ftype == FeatureTypes.FEATURE_FOREST or adj_ftype == FeatureTypes.FEATURE_JUNGLE then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_BRAZILWOOD_CAMP.ID);
+				end
 
--- 				if adj_ptype == PlotTypes.PLOT_OCEAN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_LANDMARK.ID);
--- 				end
-				
--- 				if adj_ptype ~= PlotTypes.PLOT_OCEAN and  adj_ptype ~= PlotTypes.PLOT_MOUNTAIN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_KASBAH.ID);
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MOTTE.ID);
--- 				end
-					
--- 				adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
--- 				boost_needed = boost_needed-1;
+				if adj_ptype ~= PlotTypes.PLOT_OCEAN and  adj_ptype ~= PlotTypes.PLOT_MOUNTAIN then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_CHATEAU.ID);
+				end
 
--- 			elseif cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_MARITIME then
--- 				local imp_canidates = {};
-				
--- 				if adj_ftype == FeatureTypes.FEATURE_MARSH and adj_ptype == PlotTypes.PLOT_LAND then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_POLDER.ID);
--- 				end
+				if adj_ptype == PlotTypes.PLOT_HILLS then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MC_SCOTTISH_CLAN_CASTLE.ID);
+					end
+				end
 
--- 				if adj_ptype == PlotTypes.PLOT_LAND then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TEPE.ID);
--- 				end
-
--- 				if adj_ptype == PlotTypes.PLOT_OCEAN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_WATER_POLDER.ID);
--- 				end
-
--- 				if adj_ptype == PlotTypes.PLOT_HILLS then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MC_MAORI_PA.ID);
--- 					-- table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TERRACE_FARM.ID);
--- 				end
-
--- 				adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
--- 				boost_needed = boost_needed-1;
-
--- 			elseif cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_MERCANTILE then
--- 				local imp_canidates = {};
-				
--- 				if adj_ftype == FeatureTypes.FEATURE_FOREST or adj_ftype == FeatureTypes.FEATURE_JUNGLE then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_BRAZILWOOD_CAMP.ID);
--- 				end
-
--- 				if adj_ptype ~= PlotTypes.PLOT_OCEAN and  adj_ptype ~= PlotTypes.PLOT_MOUNTAIN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_CHATEAU.ID);
--- 				end
-
--- 				if adj_ptype == PlotTypes.PLOT_HILLS then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MC_SCOTTISH_CLAN_CASTLE.ID);
--- 				end
-
--- 				if adj_ptype == PlotTypes.PLOT_LAND or adj_ptype == PlotTypes.PLOT_OCEAN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_LANDMARK.ID);
--- 				end
+				if adj_ptype == PlotTypes.PLOT_LAND or adj_ptype == PlotTypes.PLOT_OCEAN then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_LANDMARK.ID);
+				end
 
 					
--- 				adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
--- 				boost_needed = boost_needed-1;
+				if tablelength(imp_canidates) > 0 then
+					adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
+					boost_needed = boost_needed-1;
+				end
 			
--- 			elseif cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_RELIGIOUS then
--- 				local imp_canidates = {};
+			elseif cs_trait == MinorCivTraitTypes.MINOR_CIV_TRAIT_RELIGIOUS then
+				local imp_canidates = {};
 
--- 				if adj_ptype == PlotTypes.PLOT_HILLS then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIBET.ID);
--- 				elseif adj_ptype == PlotTypes.PLOT_MOUNTAIN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIBET.ID);
--- 				end
+				if beta_using_nova then
+					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_LANDMARK.ID);
+				end
 
--- 				if adj_ptype == PlotTypes.PLOT_HILLS then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MC_MAORI_PA.ID);
--- 					-- table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TERRACE_FARM.ID);
--- 				end
+				if adj_ptype == PlotTypes.PLOT_HILLS then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIBET.ID);
+					end
+					-- table.insert(imp_canidates, 41);
+				elseif adj_ptype == PlotTypes.PLOT_MOUNTAIN then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIBET.ID);
+					end
+					-- table.insert(imp_canidates, 41);
+				end
 
--- 				if adj_ptype == PlotTypes.PLOT_LAND then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TEPE.ID);
--- 				end
+				if adj_ptype == PlotTypes.PLOT_HILLS then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_MC_MAORI_PA.ID);
+					end
+					-- table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TERRACE_FARM.ID);
+				end
 
--- 				if adj_ptype == PlotTypes.PLOT_OCEAN then
--- 					table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_AKSUM.ID);
--- 				end
+				if adj_ptype == PlotTypes.PLOT_LAND then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TEPE.ID);
+					end
+					if beta_using_nova then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_TIPI.ID);
+					end
+				end
+
+				if adj_ptype == PlotTypes.PLOT_OCEAN then
+					if beta_using_lekmod then
+						table.insert(imp_canidates, GameInfo.Improvements.IMPROVEMENT_AKSUM.ID);
+					end
+				end
 					
--- 				adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
--- 				boost_needed = boost_needed-1;
+				if tablelength(imp_canidates) > 0 then
+					adj_plot1:SetImprovementType(GetShuffledCopyOfTable(imp_canidates)[1]);
+					boost_needed = boost_needed-1;
+				end
 
--- 			end
--- 		end
--- 	end
--- end
+			end
+		end
+	end
+end
 
 -- changed to add regional probe 
 
@@ -8709,6 +9369,7 @@ function AssignStartingPlots:BalanceAndAssign(args)
 	-- Check Game Option for disabling civ-specific biases.
 	-- If they are to be disabled, then all civs are simply assigned to start plots at random.
 	local bDisableStartBias = Game.GetCustomOption("GAMEOPTION_DISABLE_START_BIAS");
+	local bDisableStartBias
 	if bDisableStartBias == 1 then
 		--print("-"); print("ALERT: Civ Start Biases have been selected to be Disabled!"); print("-");
 		local playerList = {};
@@ -9478,8 +10139,51 @@ function ZonePinches()
 						end
 					end
 				end
-				if land_adjacent then
-					plot:SetFeatureType(FeatureTypes.FEATURE_SHALLOWS)
+				if land_adjacent and beta_disable_shallows ~= 2 and beta_using_lekmod then
+					if beta_disable_shallows == 1 then
+						plot:SetFeatureType(FeatureTypes.FEATURE_SHALLOWS)
+					else
+						plot:SetImprovementType(GameInfo.Improvements.IMPROVEMENT_PONTOON_BRIDGE.ID)
+					end
+				end
+			end
+		end
+	end
+
+	-- remove shallows that go no anywhere
+	for dumby = 0, 3 do
+		for y = 0, iH - 1 do
+			for x = 0, iW - 1 do
+				local i = xy_to_i(x, y, iW, iH)
+				local plot = Map.GetPlot(x, y)
+				if BETA_TECTONIC_LANDS[i] > 0 and plot:GetPlotType() == PlotTypes.PLOT_OCEAN and beta_using_lekmod and plot:GetTerrainType() == TerrainTypes.TERRAIN_COAST then
+					if plot:GetFeatureType() == FeatureTypes.FEATURE_SHALLOWS then
+						local adj_is = adj_is_cache[i]
+						local goes_somewhere = false
+						local first_occurence = -1
+						local loop_round = -1
+						for loop, adj_i in ipairs(adj_is) do
+							loop_round = loop_round+1
+							local adj_x, adj_y = i_to_xy(adj_i, iW, iH)
+							local adj_plot = Map.GetPlot(adj_x, adj_y)
+							if adj_plot ~= nil then
+								if (adj_plot:GetPlotType() ~= PlotTypes.PLOT_OCEAN) or (adj_plot:GetFeatureType() == FeatureTypes.FEATURE_SHALLOWS ) then
+									if first_occurence == -1 then
+										first_occurence = loop_round
+									else
+										if 3 - math.abs(loop_round-first_occurence-3) > 1 then
+											goes_somewhere = true
+										end
+									end
+								end
+							end
+						end
+						if goes_somewhere == false then
+							if beta_disable_shallows == 1 then
+								plot:SetFeatureType(FeatureTypes.NO_FEATURE)
+							end
+						end
+					end
 				end
 			end
 		end
@@ -9515,34 +10219,34 @@ function StartPlotSystem()
 	local RegionalMethod = 1;
 
 	-- Get Resources setting input by user.
-	local AllowInlandSea = Map.GetCustomOption(17)
-	local res = Map.GetCustomOption(13)
-	local starts = Map.GetCustomOption(5)
+	local AllowInlandSea = beta_allow_inland_sea
+	local res = beta_res
+	local starts = beta_starts
 	--if starts == 7 then
 		--starts = 1 + Map.Rand(8, "Random Resources Option - Lua");
 	--end
 
 	-- Handle coastal spawns and start bias
 	MixedBias = false;
-	if Map.GetCustomOption(15) == 1 then
+	if beta_mixed_bias == 1 then
 		OnlyCoastal = true;
 		BalancedCoastal = false;
 	end	
-	if Map.GetCustomOption(15) == 2 then
+	if beta_mixed_bias == 2 then
 		BalancedCoastal = false;
 		OnlyCoastal = false;
 	end
 	
-	if Map.GetCustomOption(15) == 3 then
+	if beta_mixed_bias == 3 then
 		OnlyCoastal = true;
 		BalancedCoastal = true;
 	end
 	
-	if Map.GetCustomOption(16) == 1 then
+	if beta_coast_lux == 1 then
 	CoastLux = true
 	end
 
-	if Map.GetCustomOption(16) == 2 then
+	if beta_coast_lux == 2 then
 	CoastLux = false
 	end
 
@@ -9595,7 +10299,7 @@ function StartPlotSystem()
 	start_plot_database:BalanceAndAssign(args)
 
 	print("Placing Natural Wonders.");
-	local wonders = Map.GetCustomOption(7)
+	local wonders = beta_wonders
 	if wonders == 14 then
 		wonders = Map.Rand(13, "Number of Wonders To Spawn - Lua");
 	elseif wonders == 15 then
@@ -9614,16 +10318,16 @@ function StartPlotSystem()
 	};
 	start_plot_database:PlaceNaturalWonders(wonderargs);
 
-	-- local beta_meteors = Map.GetCustomOption(26);
-	-- if beta_meteors == 2 then
-	-- 	ThrowMeteors(start_plot_database, 1);
-	-- elseif beta_meteors == 3 then
-	-- 	ThrowMeteors(start_plot_database, 3);
-	-- elseif beta_meteors == 4 then
-	-- 	ThrowMeteors(start_plot_database, 5);
-	-- elseif beta_meteors == 5 then
-	-- 	ThrowMeteors(start_plot_database, 7);
-	-- end
+	-- local beta_meteors = Map.GetCustomOption(50);
+	if beta_meteors == 2 then
+		ThrowMeteors(start_plot_database, 1);
+	elseif beta_meteors == 3 then
+		ThrowMeteors(start_plot_database, 3);
+	elseif beta_meteors == 4 then
+		ThrowMeteors(start_plot_database, 5);
+	elseif beta_meteors == 5 then
+		ThrowMeteors(start_plot_database, 7);
+	end
 
 	print("Placing Resources and City States.");
 	local accept_map = start_plot_database:PlaceResourcesAndCityStates();
@@ -9924,6 +10628,190 @@ function AssignStartingPlots:PlaceCityStates()
 	end
 end
 
+--update options
+
+function AssignStartingPlots:AssignLuxuryToRegion(region_number)
+	-- Assigns a luxury type to an individual region.
+	local region_type = self.regionTypes[region_number];
+	local luxury_candidates;
+	local CoastLux = self.CoastLux;
+	local BalancedRegionals = beta_balanced_regionals
+
+	if region_type > 0 and region_type < 9 then -- Note: if number of Region Types is modified, this line and the table to which it refers need adjustment.
+		luxury_candidates = self.luxury_region_weights[region_type];
+	else
+		luxury_candidates = self.luxury_fallback_weights; -- Undefined Region, enable all possible luxury types.
+	end
+	--
+	-- Build options list.
+	local iNumAvailableTypes = 0;
+	local resource_IDs, resource_weights, res_threshold = {}, {}, {};
+	local split_cap = self:GetLuxuriesSplitCap() -- New for expansion. Cap no longer set to hardcoded value of 3.
+	print(dump(self.luxury_assignment_count))
+	for index, resource_options in ipairs(luxury_candidates) do
+		local res_ID = resource_options[1];
+		if res_ID ~= nil then
+			if self.luxury_assignment_count[res_ID] < split_cap then -- This type still eligible.
+				local test = TestMembership(self.resourceIDs_assigned_to_regions, res_ID)
+				if self.iNumTypesAssignedToRegions < self.iNumMaxAllowedForRegions or test == true then -- Not a new type that would exceed number of allowed types, so continue.
+
+					print("Adding Res ID: " .. res_ID);
+					-- print("Coral ID: " .. tostring(self.coral_ID));
+
+					-- Water-based resources need to run a series of permission checks: coastal start in region, not a disallowed regions type, enough water, etc.
+					if res_ID == self.whale_ID or res_ID == self.pearls_ID or res_ID == self.crab_ID or (self.bModLuxes and res_ID == self.coral_ID) or (beta_using_nova and (res_ID == self.caviar_ID or res_ID == self.red_caviar_ID)) then
+						if not self._lek_coastal_refish then
+							if self.startLocationConditions[region_number][1] == true then -- This region's start is along an ocean, so water-based luxuries are allowed.
+								-- MOD.Barathor: Start
+								-- MOD.Barathor: Base required coastal water total off of the target number of regional luxuries to place.
+								local target_list = self:GetRegionLuxuryTargetNumbers()
+								local target = target_list[self.iNumCivs]
+								local water_needed = 8
+								if self.regionTerrainCounts[region_number][8] >= water_needed then -- Enough water available.
+									table.insert(resource_IDs, res_ID);
+									local adjusted_weight = resource_options[2] / (0.1 + (self.luxury_assignment_count[res_ID]/2)) -- If selected before, for a different region, reduce weight.
+									table.insert(resource_weights, adjusted_weight);
+									iNumAvailableTypes = iNumAvailableTypes + 1;
+								end
+							end
+						end
+					-- Land-based resources are automatically approved if they were in the region's option table.
+					--res_ID == self.salt_ID
+					elseif BalancedRegionals == 1 and (res_ID == self.salt_ID or res_ID == self.spices_ID or res_ID == self.gems_ID or res_ID == self.obsidian_ID or res_ID == self.marble_ID or res_ID == self.rubber_ID or res_ID == self.perfume_ID) then
+						-- No salt to regions please, sorry
+					else
+						table.insert(resource_IDs, res_ID);
+						local adjusted_weight = resource_options[2] / (1 + self.luxury_assignment_count[res_ID])
+						table.insert(resource_weights, adjusted_weight);
+						iNumAvailableTypes = iNumAvailableTypes + 1;
+					end
+				end
+			end
+		end
+	end
+	
+	-- If options list is empty, pick from fallback options. First try to respect water-resources not being assigned to regions without coastal starts.
+	if iNumAvailableTypes == 0 then
+		for index, resource_options in ipairs(self.luxury_fallback_weights) do
+			local res_ID = resource_options[1];
+			if self.luxury_assignment_count[res_ID] < 3 then -- This type still eligible.
+				local test = TestMembership(self.resourceIDs_assigned_to_regions, res_ID)
+				if self.iNumTypesAssignedToRegions < self.iNumMaxAllowedForRegions or test == true then -- Won't exceed allowed types.
+					if res_ID == self.whale_ID or res_ID == self.pearls_ID or res_ID == self.crab_ID or (self.bModLuxes and res_ID == self.coral_ID) or (beta_using_nova and (res_ID == self.caviar_ID or res_ID == self.red_caviar_ID)) then
+						-- No coastal luxes if we use this option
+						if not self._lek_coastal_refish then
+							if self.startLocationConditions[region_number][1] == true then -- This region's start is along an ocean, so water-based luxuries are allowed.
+								-- MOD.Barathor: Start
+								-- MOD.Barathor: Base required coastal water total off of the target number of regional luxuries to place.
+								local target_list = self:GetRegionLuxuryTargetNumbers()
+								local target = target_list[self.iNumCivs]
+								local water_needed = 8
+								if self.regionTerrainCounts[region_number][8] >= water_needed then -- Enough water available.
+									table.insert(resource_IDs, res_ID);
+									local adjusted_weight = resource_options[2] / (1 + self.luxury_assignment_count[res_ID]) --If selected before, for a different region, reduce weight.
+									table.insert(resource_weights, adjusted_weight);
+									iNumAvailableTypes = iNumAvailableTypes + 1;
+								end
+							end
+						end
+					elseif res_ID == self.salt_ID then
+					-- No salt to regions please, sorry
+					else
+						table.insert(resource_IDs, res_ID);
+						local adjusted_weight = resource_options[2] / (1 + self.luxury_assignment_count[res_ID])
+						table.insert(resource_weights, adjusted_weight);
+						iNumAvailableTypes = iNumAvailableTypes + 1;
+					end
+				end
+			end
+		end
+	end
+
+	-- If we get to here and still need to assign a luxury type, it means we have to force a water-based luxury in to this region, period.
+	-- This should be the rarest of the rare emergency assignment cases, unless modifications to the system have tightened things too far.
+	if iNumAvailableTypes == 0 then
+		print("-"); print("Having to use emergency Luxury assignment process for Region#", region_number);
+		print("This likely means a near-maximum number of civs in this game, and problems with not having enough legal Luxury types to spread around.");
+		print("If you are modifying luxury types or number of regions allowed to get the same type, check to make sure your changes haven't violated the math so each region can have a legal assignment.");
+		for index, resource_options in ipairs(self.luxury_fallback_weights) do
+			local res_ID = resource_options[1];
+			if self.luxury_assignment_count[res_ID] < 3 then -- This type still eligible.
+				local test = TestMembership(self.resourceIDs_assigned_to_regions, res_ID)
+				if self.iNumTypesAssignedToRegions < self.iNumMaxAllowedForRegions or test == true then -- Won't exceed allowed types.
+					table.insert(resource_IDs, res_ID);
+					local adjusted_weight = resource_options[2] / (1 + self.luxury_assignment_count[res_ID])
+					table.insert(resource_weights, adjusted_weight);
+					iNumAvailableTypes = iNumAvailableTypes + 1;
+				end
+			end
+		end
+	end
+	if iNumAvailableTypes == 0 then -- Bad mojo!
+		print("-"); print("FAILED to assign a Luxury type to Region#", region_number); print("-");
+	end
+
+	-- Choose luxury.
+	local coast_lux = false;
+	local num_coast_lux = 0;
+	local totalWeight = 0;
+	local coastal_luxes = {};
+	for i, this_weight in ipairs(resource_weights) do
+		totalWeight = totalWeight + this_weight;
+	end
+	local accumulatedWeight = 0;
+	print("----------------------------------- Regional Luxury Assignment Readout For Region #" .. tostring(region_number) .. "-----------------------------------");
+	for index = 1, iNumAvailableTypes do
+		local threshold = (resource_weights[index] + accumulatedWeight) * 10000 / totalWeight;
+		table.insert(res_threshold, threshold);
+		accumulatedWeight = accumulatedWeight + resource_weights[index];
+		
+		if resource_IDs[index] == self.whale_ID or resource_IDs[index] == self.pearls_ID or resource_IDs[index] == self.crab_ID 
+			or (beta_using_lekmod and resource_IDs[index] == self.coral_ID) 
+			or (beta_using_nova and (resource_IDs[index] == self.caviar_ID or resource_IDs[index] == self.red_caviar_ID)) then
+				coast_lux = true;
+				num_coast_lux = num_coast_lux + 1;
+				coastal_luxes[resource_IDs[index]] = true;
+				table.insert(coastal_luxes, resource_IDs[index]);
+		end
+
+		print("Res ID: " .. resource_IDs[index]);
+		print("Res Weight: " .. resource_weights[index]);
+		print("Threshold: " .. threshold);
+	end
+	local use_this_ID;
+
+	print("");
+	print("");
+	print("Coast Start: " .. tostring(self.startLocationConditions[region_number][1]));
+	print("Coast Lux: " .. tostring(coast_lux));
+
+	local sea_lux_cahnce = Map.Rand(100, "Chance for sea lux as coastal");
+
+	if sea_lux_cahnce > 0 and CoastLux == false then
+		coast_lux = false;
+	end
+
+	if self.startLocationConditions[region_number][1] == true and coast_lux == true then
+		local diceroll = 1 + Map.Rand(num_coast_lux, "Choose resource type - Assign Luxury To Region - Lua");
+		print("----------------------- Coastal Lux Chosen -----------------------");
+		print("Num Coastal Luxes: " .. tostring(num_coast_lux));
+		print("Diceroll: " .. tostring(diceroll));
+		use_this_ID = coastal_luxes[diceroll];
+		print("Res ID: " .. tostring(use_this_ID));
+	else
+		local diceroll = Map.Rand(10000, "Choose resource type - Assign Luxury To Region - Lua");
+		print("Res Diceroll: " .. diceroll);
+		for index, threshold in ipairs(res_threshold) do
+			if diceroll <= threshold then -- Choose this resource type.
+				use_this_ID = resource_IDs[index];
+				break
+			end
+		end
+	end
+
+	return use_this_ID;
+end
+
 -- nested function to allow in-game error reporting
 
 function GenMap()
@@ -9936,9 +10824,7 @@ function GenMap()
 	-- local iW, iH = Map.GetGridSize();
 	local attempt_cap = 15
 	-- local beta_tectonic_mounts = Map.GetCustomOption(45)
-	local beta_tectonic_mounts = 2
 	-- local beta_reroll_count = Map.GetCustomOption(47)
-	beta_reroll_count = 4
 
 	if beta_reroll_count == 2 then
 		attempt_cap = 50
@@ -9974,6 +10860,7 @@ function GenMap()
 		--wipe map
 
 		coast_cache = {};
+		
 		has_cached_coast = false;
 
 		cs_starts = {}
@@ -10002,8 +10889,9 @@ function GenMap()
 		-- print("GOT HERE 1")
 		
 		-- Terrain covers climate: grassland, plains, desert, tundra, snow.
+		-- dump_map();
 		GenerateTerrain();
-
+		
 
 		
 		-- print("GOT HERE 2")
@@ -10025,6 +10913,8 @@ function GenMap()
 		-- print("GOT HERE 4")
 		
 		-- Lakes would interfere with rivers, causing them to stop and not reach the ocean, if placed any sooner.
+		
+		
 		AddLakes();
 
 		
@@ -10033,6 +10923,7 @@ function GenMap()
 		
 		-- Features depend on plot types, terrain types, rivers and lakes to help determine their placement.
 		-- dump_map();
+		
 		AddFeatures();
 		
 
@@ -10054,6 +10945,12 @@ function GenMap()
 		-- Due to plot changes from Natural Wonders and possibly other source, another recalculation is done as the final action of the system.
 		accept_map, region_luxury_assignment, player_to_region = StartPlotSystem();
 
+		-- if accept_map then
+		-- 	print("MAP SUCCESS: 1")
+		-- else
+		-- 	print("MAP SUCCESS: 0")
+		-- end
+
 		-- accept_map = false
 
 
@@ -10071,6 +10968,11 @@ function GenMap()
 		-- end
 	end
 
+
+	
+
+	-- dump_map(smooth_impassable_cache)
+	-- dump_map(BETA_TECTONIC_LANDS)
 	local elapsed_time = os.clock()-time
 
 	-- janky way to deal with unfit cs - make a mountain at plot 00
@@ -10087,26 +10989,40 @@ function GenMap()
 	Map.RecalculateAreas();
 
 
-	-- if iNumCivs <= 6 then
-	-- 	for loop = 1, iNumCivs do
-	-- 		local playerNum = player_ID_list[loop]; -- MP games can have gaps between player numbers, so we cannot assume a sequential set of IDs.
-	-- 		local player = Players[playerNum];
-	-- 		local plot = player:GetStartingPlot();
-	-- 		local beta_handicap_player = Map.GetCustomOption(29+loop);
-	-- 		if beta_handicap_player == 2 then
-	-- 			player:InitUnit(82, plot:GetX(), plot:GetY());
-	-- 		elseif beta_handicap_player == 3 then
-	-- 			player:InitUnit(1, plot:GetX(), plot:GetY());
-	-- 		elseif beta_handicap_player == 4 then
-	-- 			player:InitUnit(6, plot:GetX(), plot:GetY());
-	-- 		elseif beta_handicap_player == 5 then
-	-- 			player:InitUnit(128, plot:GetX(), plot:GetY());
-	-- 		elseif beta_handicap_player == 6 then
-	-- 			local resource_ID = region_luxury_assignment[player_to_region[playerNum]];
-	-- 			plot:SetResourceType(resource_ID, 6)
-	-- 		end
-	-- 	end
-	-- end
+	if iNumCivs <= 6 then
+		for loop = 1, iNumCivs do
+			local playerNum = player_ID_list[loop]; -- MP games can have gaps between player numbers, so we cannot assume a sequential set of IDs.
+			local player = Players[playerNum];
+			local plot = player:GetStartingPlot();
+			local beta_handicap_player = 0
+			if loop == 1 then
+				beta_handicap_player = beta_handicap_player1
+			elseif loop == 2 then
+				beta_handicap_player = beta_handicap_player2
+			elseif loop == 3 then
+				beta_handicap_player = beta_handicap_player3
+			elseif loop == 4 then
+				beta_handicap_player = beta_handicap_player4
+			elseif loop == 5 then
+				beta_handicap_player = beta_handicap_player5
+			elseif loop == 6 then
+				beta_handicap_player = beta_handicap_player6
+			end
+
+			if beta_handicap_player == 2 then
+				player:InitUnit(82, plot:GetX(), plot:GetY());
+			elseif beta_handicap_player == 3 then
+				player:InitUnit(1, plot:GetX(), plot:GetY());
+			elseif beta_handicap_player == 4 then
+				player:InitUnit(6, plot:GetX(), plot:GetY());
+			elseif beta_handicap_player == 5 then
+				player:InitUnit(128, plot:GetX(), plot:GetY());
+			elseif beta_handicap_player == 6 then
+				local resource_ID = region_luxury_assignment[player_to_region[playerNum]];
+				plot:SetResourceType(resource_ID, 6)
+			end
+		end
+	end
 	
 	
 	-- local beta_lake_fish = Map.GetCustomOption(37)
@@ -10163,7 +11079,7 @@ function GenMap()
 	-- Continental artwork selection must wait until Areas are finalized, so it gets handled last.
 	DetermineContinents();
 
-	local beta_errors = Map.GetCustomOption(19)
+	-- local beta_errors = Map.GetCustomOption(41)
 	if beta_errors == 3 then
 		local bad_var = {}
 		if bad_var > 5 then
@@ -10180,37 +11096,88 @@ function GenerateMap()
 		beta_using_lekmod = true
 	end
 
-	-- make these globals for performance
+	beta_using_nova = false
+
+	if GameInfo.Resources.RESOURCE_BEER ~= nil then
+		beta_using_nova = true
+	end
+
+
+	-- local option_count = 54
+
+
+	
+	iW, iH = Map.GetGridSize();
+
+
+	if beta_pole_random == 2 then
+		beta_lat_transform = {}
+		-- beta_test_lat = {}
+		--test polls:
+		local pX, pY, pZ = 0.0, 0.0, 0.0
+		for dumby = 0, 10000 do
+			pX = pX + Map.Rand(2.0, "Gaussian")
+			pY = pY + Map.Rand(2.0, "Gaussian")
+			pZ = pZ + Map.Rand(2.0, "Gaussian")
+		end
+		
+		pX, pY, pZ = pX - 5000, pY - 5000, pZ - 5000
+
+		local vl = math.sqrt((pX^2)+(pY^2)+(pZ^2))
+		pX, pY, pZ = pX/vl, pY/vl, pZ/vl
+
+		for x = 0, iW - 1 do
+			for y = 0, iH - 1 do 
+				-- local i = y * self.iWidth + x;
+				local i = xy_to_i(x, y, iW, iH)
+
+				--ranges from -1 to 1 when buffer factor = 1.0
+				local scale_factor = 1.333
+				local old_lat = ((iH - 1) / 2 - y) / ((iH - 1) / 2)
+				-- beta_test_lat[i] = old_lat
+				local lat = scale_factor*old_lat;
+				local long = ((iW - 1) / 2 - x) / ((iW - 1) / 2);
+
+				local lat_new = new_lat(lat, long, pX, pY, pZ)
+
+				--forward:
+				-- x = R(lambda - lambda0)
+				-- y = Rln(tan(1/4*pi+1/2*rho))
+
+				beta_lat_transform[i] = math.abs(lat_new)
+
+			end
+		end
+	end
+
+	-- dump_map(beta_lat_transform)
+
+	-- -- make these globals for performance
 	-- beta_flexy_lux = Map.GetCustomOption(25); -- trying this outside for performance
-	beta_flexy_lux = 2
 	-- beta_no_ice = Map.GetCustomOption(29);
-	beta_no_ice = 2
 	-- beta_bay_diffusion =  Map.GetCustomOption(22);
-	beta_bay_diffusion =  2
-	ripple_decider = Map.GetCustomOption(6);
-	beta_cliffs = Map.GetCustomOption(24);
-	-- beta_cliffs = 2
-	beta_coast_zone = Map.GetCustomOption(23);
-	-- beta_coast_zone = 4
+	-- ripple_decider = Map.GetCustomOption(6);
+	-- beta_cliffs = Map.GetCustomOption(27);
+	-- beta_coast_zone = Map.GetCustomOption(36);
 	-- beta_coastal_deadzone = Map.GetCustomOption(24);
-	beta_coastal_deadzone = 4
 	-- beta_more_coal = Map.GetCustomOption(42);
-	beta_more_coal = 1
 	-- beta_cs_placement = Map.GetCustomOption(48);
-	beta_cs_placement = 2
 
 	-- beta_tectonic_mounts = Map.GetCustomOption(45);
-	beta_tectonic_mounts = 2
 	-- beta_spawn_validation = Map.GetCustomOption(49);
-	beta_spawn_validation = 2
 
 	-- beta_lake_fish = Map.GetCustomOption(37)
-	beta_lake_fish = 1
+
+	-- beta_disable_shallows = Map.GetCustomOption(52);
+	-- beta_inland_prox_penalty = Map.GetCustomOption(54);
 
 
-	beta_inland_prox_penalty = 2
+	ripple_decider = beta_ripple_decider
 
-	iW, iH = Map.GetGridSize();
+
+
+
+	
 
 	wrapX = Map:IsWrapX();
 	wrapY = Map:IsWrapY();
@@ -10225,23 +11192,150 @@ function GenerateMap()
 		end
 	end
 
-	local beta_errors = Map.GetCustomOption(19)
+	-- local beta_errors = Map.GetCustomOption(41)
 	-- test a gen loop
 	 local status, err = xpcall(GenMap, debug.traceback)
 	 if status == false then
 		print(err)
 		if beta_errors ~= 1 then
 			for id, player in pairs(Players) do
-				player:AddNotification(NotificationTypes.NOTIFICATION_SPY_WAS_KILLED, err, "Error Report - Please Screenshot and Send to Jacobian.")
+				player:AddNotification(NotificationTypes.NOTIFICATION_SPY_WAS_KILLED, err, "Error Report - Please Screenshot and Send to the Devs.")
 			end
 		end
 	else
 		if beta_errors ~= 1 then
 			for id, player in pairs(Players) do
-				player:AddNotification(NotificationTypes.NOTIFICATION_SPY_RIG_ELECTION_SUCCESS, "The map completed generation. You are good to play. Thank you for playing Lekmap v6.0!", "The Map Script Completed Successfully")
+				player:AddNotification(NotificationTypes.NOTIFICATION_SPY_RIG_ELECTION_SUCCESS, "The map completed generation. You are good to play. Thank you for playing Lekmap!", "The Map Script Completed Successfully")
 			end
 		end
 	end
+end
+
+--overwrite the option
+
+function FeatureGenerator.Create(args)
+	--[[ Civ4's truncated "Climate" setting has been abandoned. Civ5 has returned to 
+	Civ3-style map options for World Age, Temperature, and Rainfall. Control over the 
+	terrain has been removed from the XML.  - Bob Thomas, March 2010  ]]--
+	--
+	-- Sea Level and World Age map options affect only plot generation.
+	-- Temperature map options affect only terrain generation.
+	-- Rainfall map options affect only feature generation.
+	--	
+	local grassMoist = beta_grass_moist
+
+	local args = args or {};
+	local rainfall = args.rainfall or 2; -- Default is Normal rainfall.
+	local jungle_grain = args.jungle_grain or 5;
+	local forest_grain = args.forest_grain or 6;
+	local clump_grain = args.clump_grain or 10;
+	local iJungleChange = args.iJungleChange or 20;
+	local iForestChange = args.iForestChange or 7;
+	local iClumpChange = args.iClumpChange or 5;
+	local iJungleFactor = args.iJungleFactor or 7;
+	local iAridFactor = args.iAridFactor or 6;
+	local iWetFactor = args.iWetFactor or 2;
+	local fMarshChange = args.fMarshChange or 1.5;
+	local fOasisChange = args.fOasisChange or 1.5;
+	local fracXExp = args.fracXExp or -1;
+	local fracYExp = args.fracYExp or -1;
+	
+	-- Set feature traits.
+	local iJunglePercent = args.iJunglePercent or 42;
+
+	if grassMoist == 1 then
+		iJunglePercent = iJunglePercent - 5;
+	elseif grassMoist == 3 then
+		iJunglePercent = iJunglePercent + 5;
+	end
+
+	local iForestPercent = args.iForestPercent or 20;
+	local iClumpHeight = args.iClumpHeight or 75;
+	local fMarshPercent = args.fMarshPercent or 8;
+	local iOasisPercent = args.iOasisPercent or 25;
+
+	-- if MapShape == 3 then
+	-- 	iForestPercent = iForestPercent + 6;
+	-- 	iJunglePercent = iJunglePercent + 3;
+	-- 	fMarshPercent = fMarshPercent + 1;
+	-- end
+
+	-- Adjust foliage amounts according to user's Rainfall selection. (Which must be passed in by the map script.)
+	if rainfall == 1 then -- Rainfall is sparse, climate is Arid.
+		iJunglePercent = iJunglePercent - iJungleChange;
+		iJungleFactor = iAridFactor;
+		iForestPercent = iForestPercent - iForestChange;
+		iClumpHeight = iClumpHeight - iClumpChange;
+		fMarshPercent = fMarshPercent / fMarshChange;
+		iOasisPercent = iOasisPercent / fOasisChange;
+	elseif rainfall == 3 then -- Rainfall is abundant, climate is Wet.
+		iJunglePercent = iJunglePercent + iJungleChange;
+		iJungleFactor = iWetFactor;
+		iForestPercent = iForestPercent + iForestChange;
+		iClumpHeight = iClumpHeight + iClumpChange;
+		fMarshPercent = fMarshPercent * fMarshChange;
+		iOasisPercent = iOasisPercent * fOasisChange;
+	else -- Rainfall is Normal.
+	end
+
+	--[[ Activate printout for debugging only.
+	print("-"); print("--- Rainfall Readout ---");
+	print("- Rainfall Setting:", rainfall);
+	print("- Jungle Percentage:", iJunglePercent);
+	print("- Loose Forest %:", iForestPercent);
+	print("- Clump Forest %:", 100 - iClumpHeight);
+	print("- Marsh Percentage:", fMarshPercent);
+	print("- Oasis Percentage:", iOasisPercent);
+	print("- - - - - - - - - - - - - - -");
+	]]--
+
+	local gridWidth, gridHeight = Map.GetGridSize();
+	local world_info = GameInfo.Worlds[Map.GetWorldSize()];
+	jungle_grain = jungle_grain + world_info.FeatureGrainChange;
+	forest_grain = forest_grain + world_info.FeatureGrainChange;
+
+	-- create instance data
+	local instance = {
+	
+		-- methods
+		__initFractals		= FeatureGenerator.__initFractals,
+		__initFeatureTypes	= FeatureGenerator.__initFeatureTypes,
+		AddFeatures			= FeatureGenerator.AddFeatures,
+		GetLatitudeAtPlot	= FeatureGenerator.GetLatitudeAtPlot,
+		AddFeaturesAtPlot	= FeatureGenerator.AddFeaturesAtPlot,
+		AddOasisAtPlot		= FeatureGenerator.AddOasisAtPlot,
+		AddIceAtPlot		= FeatureGenerator.AddIceAtPlot,
+		AddMarshAtPlot		= FeatureGenerator.AddMarshAtPlot,
+		AddJunglesAtPlot	= FeatureGenerator.AddJunglesAtPlot,
+		AddForestsAtPlot	= FeatureGenerator.AddForestsAtPlot,
+		AddAtolls			= FeatureGenerator.AddAtolls,
+		AdjustTerrainTypes	= FeatureGenerator.AdjustTerrainTypes,
+		
+		-- members
+		iGridW = gridWidth,
+		iGridH = gridHeight,
+		
+		iJunglePercent = iJunglePercent,
+		iJungleFactor = iJungleFactor,
+		iForestPercent = iForestPercent,
+		iClumpHeight = iClumpHeight,
+		fMarshPercent = fMarshPercent,
+		iOasisPercent = iOasisPercent,
+	
+		jungle_grain = jungle_grain,
+		forest_grain = forest_grain,
+		clump_grain = clump_grain,
+		
+		fractalFlags = Map.GetFractalFlags(),
+		fracXExp = fracXExp,
+		fracYExp = fracYExp,
+	};
+
+	-- initialize instance data
+	instance:__initFractals()
+	instance:__initFeatureTypes()
+	
+	return instance;
 end
 
 function FeatureGenerator:AddIceAtPlot(plot, iX, iY, lat)
@@ -10292,7 +11386,7 @@ function AddRivers()
 		riverRnd = 212;
 	end
 
-	local rivers_level = Map.GetCustomOption(9)
+	local rivers_level = beta_river_level
 
 	if rivers_level == 1 then
 		riverSourceRangeDefault = 3;
@@ -10360,3 +11454,1883 @@ function AddRivers()
 		end
 	end		
 end
+
+function TerrainGenerator.Create(args)
+	--[[ Civ4's truncated "Climate" setting has been abandoned. Civ5 has returned to 
+	Civ3-style map options for World Age, Temperature, and Rainfall. Control over the 
+	terrain has been removed from the XML.  - Bob Thomas, March 2010  ]]--
+	--
+	-- Sea Level and World Age map options affect only plot generation.
+	-- Temperature map options affect only terrain generation.
+	-- Rainfall map options affect only feature generation.
+	--
+	local args = args or {};
+	local temperature = args.temperature or 2; -- Default setting is Temperate.
+	local fracXExp = args.fracXExp or -1;
+	local fracYExp = args.fracYExp or -1;
+	local grain_amount = args.grain_amount or 3;
+	local grassMoist = args.iGrassMoist or 2;
+
+	-- These settings offer a limited ability for map scripts to modify terrain.
+	-- Where these are inadequate, replace the TerrainGenerator with a custom method.
+	local temperature_shift = args.temperature_shift or 0.1;
+	local desert_shift = args.desert_shift or 16;
+	
+	-- Set terrain bands.
+	local iDesertPercent = args.iDesertPercent or 32;
+	local iPlainsPercent = args.iPlainsPercent or 65; -- Deserts are processed first, so Plains will take this percentage of whatever remains. - Bob
+
+	if grassMoist == 1 then
+		iPlainsPercent = 50;
+	elseif grassMoist == 3 then
+		iPlainsPercent = 80;
+	end
+
+	local fSnowLatitude  = args.fSnowLatitude  or 0.90;
+	
+	local tundra_level = beta_tundra_level
+
+	local fTundraLatitude = args.fTundraLatitude or 0.59;
+
+	if tundra_level	== 1 then
+		fTundraLatitude = 0.65;			
+	elseif tundra_level	== 3 then
+		fTundraLatitude = 0.35;
+	end
+
+	local fGrassLatitude = args.fGrassLatitude or 0.1; -- Above this is actually the latitude where it stops being all grass. - Bob
+	
+	if grassMoist == 3 then
+		fGrassLatitude = 0.05;
+	end
+
+	local fDesertBottomLatitude = args.fDesertBottomLatitude or 0.2;
+	local fDesertTopLatitude = args.fDesertTopLatitude or 0.5;
+	-- Adjust terrain bands according to user's Temperature selection. (Which must be passed in by the map script.)
+	if temperature == 1 then -- World Temperature is Cool.
+		iDesertPercent = iDesertPercent - desert_shift;
+		fTundraLatitude = fTundraLatitude - (temperature_shift * 1.5);
+		fDesertTopLatitude = fDesertTopLatitude - temperature_shift;
+		fGrassLatitude = fGrassLatitude - (temperature_shift * 0.5);
+	elseif temperature == 3 then -- World Temperature is Hot.
+		iDesertPercent = iDesertPercent + desert_shift;
+		fSnowLatitude  = fSnowLatitude + (temperature_shift * 0.5);
+		fTundraLatitude = fTundraLatitude + temperature_shift;
+		fDesertTopLatitude = fDesertTopLatitude + temperature_shift;
+		fGrassLatitude = fGrassLatitude - (temperature_shift * 0.5);
+	else -- Normal Temperature.
+	end
+	
+	--[[ Activate printout for debugging only
+	print("-"); print("- Desert Percentage:", iDesertPercent);
+	print("--- Latitude Readout ---");
+	print("- All Grass End Latitude:", fGrassLatitude);
+	print("- Desert Start Latitude:", fDesertBottomLatitude);
+	print("- Desert End Latitude:", fDesertTopLatitude);
+	print("- Tundra Start Latitude:", fTundraLatitude);
+	print("- Snow Start Latitude:", fSnowLatitude);
+	print("- - - - - - - - - - - - - -");
+	]]--
+
+	local gridWidth, gridHeight = Map.GetGridSize();
+	local world_info = GameInfo.Worlds[Map.GetWorldSize()];
+
+	local data = {
+	
+		-- member methods
+		InitFractals			= TerrainGenerator.InitFractals,
+		GetLatitudeAtPlot		= TerrainGenerator.GetLatitudeAtPlot,
+		GenerateTerrain			= TerrainGenerator.GenerateTerrain,
+		GenerateTerrainAtPlot	= TerrainGenerator.GenerateTerrainAtPlot,
+	
+		-- member variables
+		grain_amount	= grain_amount,
+		fractalFlags	= Map.GetFractalFlags(), 
+		iWidth			= gridWidth,
+		iHeight			= gridHeight,
+		
+		iDesertPercent	= iDesertPercent,
+		iPlainsPercent	= iPlainsPercent,
+
+		iDesertTopPercent		= 100,
+		iDesertBottomPercent	= math.max(0, math.floor(100-iDesertPercent)),
+		iPlainsTopPercent		= 100,
+		iPlainsBottomPercent	= math.max(0, math.floor(100-iPlainsPercent)),
+		
+		fSnowLatitude			= fSnowLatitude,
+		fTundraLatitude			= fTundraLatitude,
+		fGrassLatitude			= fGrassLatitude,
+		fDesertBottomLatitude	= fDesertBottomLatitude,
+		fDesertTopLatitude		= fDesertTopLatitude,
+		
+		fracXExp		= fracXExp,
+		fracYExp		= fracYExp,
+		
+	}
+
+	data:InitFractals();
+	
+	return data;
+end
+
+--takes in -1 to 1
+function merc_to_xyz(lat, long)
+
+	local lambda = long*math.pi
+	local ly = lat*math.pi/2
+	local phi = (math.atan(math.exp(ly))-(0.25*math.pi))*2
+
+	local x = math.sin(lambda)*math.cos(phi)
+	local y = math.cos(lambda)*math.cos(phi)
+	local z = math.sin(phi)
+
+	return x, y, z
+
+end
+
+-- inputs should be normalized
+function new_lat(lat, long, pX, pY, pZ)
+	local x, y, z = merc_to_xyz(lat, long)
+	local cos_sim = x*pX + y*pY + z*pZ
+	local ly = 0.5*math.pi-math.acos(math.max(-0.99999, math.min(0.99999, cos_sim)))
+	return ly*2/math.pi
+	-- return z
+end
+
+
+function TerrainGenerator:GenerateTerrain()		
+	
+	local terrainData = {};
+
+	for x = 0, self.iWidth - 1 do
+		for y = 0, self.iHeight - 1 do 
+			-- local i = y * self.iWidth + x;
+			local i = xy_to_i(x, y, iW, iH)
+			local terrain = self:GenerateTerrainAtPlot(x, y);
+			terrainData[i] = terrain;
+		end
+	end
+
+	return terrainData;
+end
+
+function SetTerrainTypes(terrainTypes)
+	print("Setting Terrain Types (MapGenerator.Lua)");
+	for i, plot in Plots() do
+		if not plot:IsWater() then
+			plot:SetTerrainType(terrainTypes[i+1], false, false);
+		end		
+	end
+end
+
+function TerrainGenerator:GenerateTerrainAtPlot(iX, iY)
+
+	local i = xy_to_i(iX, iY, iW, iH)
+	
+	local lat = 0
+	if beta_pole_random == 1 then
+		lat = self:GetLatitudeAtPlot(iX,iY);
+	else
+		lat = beta_lat_transform[i]
+	end
+
+	local plot = Map.GetPlot(iX, iY);
+	if (plot:IsWater()) then
+		local val = plot:GetTerrainType();
+		if val == TerrainTypes.NO_TERRAIN then -- Error handling.
+			val = self.terrainGrass;
+			plot:SetPlotType(PlotTypes.PLOT_LAND, false, false);
+		end
+		return val;	 
+	end
+	
+	local terrainVal = self.terrainGrass;
+
+	if(lat >= self.fSnowLatitude) then
+		terrainVal = self.terrainSnow;
+	elseif(lat >= self.fTundraLatitude) then
+		terrainVal = self.terrainTundra;
+	elseif (lat < self.fGrassLatitude) then
+		terrainVal = self.terrainGrass;
+	else
+		local desertVal = self.deserts:GetHeight(iX, iY);
+		local plainsVal = self.plains:GetHeight(iX, iY);
+		if ((desertVal >= self.iDesertBottom) and (desertVal <= self.iDesertTop) and (lat >= self.fDesertBottomLatitude) and (lat < self.fDesertTopLatitude)) then
+			terrainVal = self.terrainDesert;
+		elseif ((plainsVal >= self.iPlainsBottom) and (plainsVal <= self.iPlainsTop)) then
+			terrainVal = self.terrainPlains;
+		end
+	end
+	
+	-- Error handling.
+	if (terrainVal == TerrainTypes.NO_TERRAIN) then
+		return plot:GetTerrainType();
+	end
+
+	return terrainVal;
+end
+
+
+
+
+function FeatureGenerator:AddFeaturesAtPlot(iX, iY)
+	-- adds any appropriate features at the plot (iX, iY) where (0,0) is in the SW
+	-- local lat = self:GetLatitudeAtPlot(iX, iY);
+	local lat = 0
+	if beta_pole_random == 1 then
+		lat = self:GetLatitudeAtPlot(iX,iY);
+	else
+		lat = beta_lat_transform[xy_to_i(iX, iY, iW, iH)]
+	end
+	
+	local plot = Map.GetPlot(iX, iY);
+
+	if plot:CanHaveFeature(self.featureFloodPlains) then
+		-- All desert plots along river are set to flood plains.
+		plot:SetFeatureType(self.featureFloodPlains, -1)
+	end
+	
+	if (plot:GetFeatureType() == FeatureTypes.NO_FEATURE) then
+		self:AddOasisAtPlot(plot, iX, iY, lat);
+	end
+
+	if (plot:GetFeatureType() == FeatureTypes.NO_FEATURE) then
+		self:AddIceAtPlot(plot, iX, iY, lat);
+	end
+
+	if (plot:GetFeatureType() == FeatureTypes.NO_FEATURE) then
+		self:AddMarshAtPlot(plot, iX, iY, lat);
+	end
+		
+	if (plot:GetFeatureType() == FeatureTypes.NO_FEATURE) then
+		self:AddJunglesAtPlot(plot, iX, iY, lat);
+	end
+	
+	if (plot:GetFeatureType() == FeatureTypes.NO_FEATURE) then
+		self:AddForestsAtPlot(plot, iX, iY, lat);
+	end
+		
+end
+
+-- adding Nova support
+
+function AssignStartingPlots:__Init()
+	-- Set up data tables that record whether a plot is coastal land and whether a plot is adjacent to coastal land.
+	self.plotDataIsCoastal, self.plotDataIsNextToCoast = GenerateNextToCoastalLandDataTables()
+	self.plotDataIsThreeFromCoast = GenerateThreeFromCoastTable(self.plotDataIsCoastal, self.plotDataIsNextToCoast)
+	--
+	-- Set up data for resource ID shortcuts.
+	--print("########## Resource ID's ##########");
+	local csvids = "";
+	for resource_data in GameInfo.Resources() do
+		table.insert(self.resources, resource_data);
+		local resourceID = resource_data.ID;
+		local resourceType = resource_data.Type;
+		-- Set up Bonus IDs
+		csvids = csvids .. resourceType .. "," .. resourceID .. "\n";
+		if resourceType == "RESOURCE_WHEAT" then
+			self.wheat_ID = resourceID;
+		elseif resourceType == "RESOURCE_COW" then
+			self.cow_ID = resourceID;
+		elseif resourceType == "RESOURCE_DEER" then
+			self.deer_ID = resourceID;
+		elseif resourceType == "RESOURCE_BANANA" then
+			self.banana_ID = resourceID;
+		elseif resourceType == "RESOURCE_FISH" then
+			self.fish_ID = resourceID;
+		elseif resourceType == "RESOURCE_SHEEP" then
+			self.sheep_ID = resourceID;
+		elseif resourceType == "RESOURCE_STONE" then
+			self.stone_ID = resourceID;
+		-- Set up Strategic IDs
+		elseif resourceType == "RESOURCE_IRON" then
+			self.iron_ID = resourceID;
+		elseif resourceType == "RESOURCE_HORSE" then
+			self.horse_ID = resourceID;
+		elseif resourceType == "RESOURCE_COAL" then
+			self.coal_ID = resourceID;
+		elseif resourceType == "RESOURCE_OIL" then
+			self.oil_ID = resourceID;
+		elseif resourceType == "RESOURCE_ALUMINUM" then
+			self.aluminum_ID = resourceID;
+		elseif resourceType == "RESOURCE_URANIUM" then
+			self.uranium_ID = resourceID;
+		-- Set up Luxury IDs
+		elseif resourceType == "RESOURCE_WHALE" then
+			self.whale_ID = resourceID;
+		elseif resourceType == "RESOURCE_PEARLS" then
+			self.pearls_ID = resourceID;
+		elseif resourceType == "RESOURCE_IVORY" then
+			self.ivory_ID = resourceID;
+		elseif resourceType == "RESOURCE_FUR" then
+			self.fur_ID = resourceID;
+		elseif resourceType == "RESOURCE_SILK" then
+			self.silk_ID = resourceID;
+		elseif resourceType == "RESOURCE_DYE" then
+			self.dye_ID = resourceID;
+		elseif resourceType == "RESOURCE_SPICES" then
+			self.spices_ID = resourceID;
+		elseif resourceType == "RESOURCE_SUGAR" then
+			self.sugar_ID = resourceID;
+		elseif resourceType == "RESOURCE_COTTON" then
+			self.cotton_ID = resourceID;
+		elseif resourceType == "RESOURCE_WINE" then
+			self.wine_ID = resourceID;
+		elseif resourceType == "RESOURCE_INCENSE" then
+			self.incense_ID = resourceID;
+		elseif resourceType == "RESOURCE_GOLD" then
+			self.gold_ID = resourceID;
+		elseif resourceType == "RESOURCE_SILVER" then
+			self.silver_ID = resourceID;
+		elseif resourceType == "RESOURCE_GEMS" then
+			self.gems_ID = resourceID;
+		elseif resourceType == "RESOURCE_MARBLE" then
+			self.marble_ID = resourceID;
+		-- Set up Expansion Pack Luxury IDs
+		elseif resourceType == "RESOURCE_COPPER" then
+			self.copper_ID = resourceID;
+		elseif resourceType == "RESOURCE_SALT" then
+			self.salt_ID = resourceID;
+		elseif resourceType == "RESOURCE_CITRUS" then
+			self.citrus_ID = resourceID;
+		elseif resourceType == "RESOURCE_TRUFFLES" then
+			self.truffles_ID = resourceID;
+		elseif resourceType == "RESOURCE_CRAB" then
+			self.crab_ID = resourceID;
+		elseif resourceType == "RESOURCE_COCOA" then
+			self.cocoa_ID = resourceID;
+		elseif resourceType == "RESOURCE_BISON" then
+			self.bison_ID = resourceID;
+		-- Mod Luxury IDs
+		elseif resourceType == "RESOURCE_COFFEE" then	-- MOD.Barathor: New
+			self.coffee_ID = resourceID;
+		elseif resourceType == "RESOURCE_TEA" then		-- MOD.Barathor: New
+			self.tea_ID = resourceID;
+		elseif resourceType == "RESOURCE_TOBACCO" then	-- MOD.Barathor: New
+			self.tobacco_ID = resourceID;
+		elseif resourceType == "RESOURCE_AMBER" then	-- MOD.Barathor: New
+			self.amber_ID = resourceID;
+		elseif resourceType == "RESOURCE_JADE" then		-- MOD.Barathor: New
+			self.jade_ID = resourceID;
+		elseif resourceType == "RESOURCE_OLIVE" then	-- MOD.Barathor: New
+			self.olives_ID = resourceID;
+		elseif resourceType == "RESOURCE_PERFUME" then	-- MOD.Barathor: New
+			self.perfume_ID = resourceID;
+		elseif resourceType == "RESOURCE_CORAL" then	-- MOD.Barathor: New
+			self.coral_ID = resourceID;
+		elseif resourceType == "RESOURCE_LAPIS" then	-- MOD.Barathor: New
+			self.lapis_ID = resourceID;
+		-- Even More Resources for Vox Populi (luxuries)
+		elseif resourceType == "RESOURCE_LAVENDER" then	-- MOD.HungryForFood: New
+			self.lavender_ID = resourceID;
+		elseif resourceType == "RESOURCE_OBSIDIAN" then	-- MOD.HungryForFood: New
+			self.obsidian_ID = resourceID;
+		elseif resourceType == "RESOURCE_PLATINUM" then	-- MOD.HungryForFood: New
+			self.platinum_ID = resourceID;
+		elseif resourceType == "RESOURCE_POPPY" then	-- MOD.HungryForFood: New
+			self.poppy_ID = resourceID;
+		elseif resourceType == "RESOURCE_TIN" then		-- MOD.HungryForFood: New
+			self.tin_ID = resourceID;
+		-- Even More Resources for Vox Populi (bonus)
+		elseif resourceType == "RESOURCE_COCONUT" then	-- MOD.HungryForFood: New
+			self.coconut_ID = resourceID;
+		elseif resourceType == "RESOURCE_HARDWOOD" then	-- MOD.HungryForFood: New
+			self.hardwood_ID = resourceID;
+		elseif resourceType == "RESOURCE_LEAD" then		-- MOD.HungryForFood: New
+			self.lead_ID = resourceID;
+		elseif resourceType == "RESOURCE_MAIZE" then	-- MOD.HungryForFood: New
+			self.maize_ID = resourceID;
+		elseif resourceType == "RESOURCE_PINEAPPLE" then	-- MOD.HungryForFood: New
+			self.pineapple_ID = resourceID;
+		elseif resourceType == "RESOURCE_POTATO" then	-- MOD.HungryForFood: New
+			self.potato_ID = resourceID;
+		elseif resourceType == "RESOURCE_RICE" then	-- MOD.HungryForFood: New
+			self.rice_ID = resourceID;
+		elseif resourceType == "RESOURCE_RUBBER" then	-- MOD.HungryForFood: New
+			self.rubber_ID = resourceID;
+		elseif resourceType == "RESOURCE_SULFUR" then	-- MOD.HungryForFood: New
+			self.sulfur_ID = resourceID;
+		elseif resourceType == "RESOURCE_TITANIUM" then	-- MOD.HungryForFood: New
+			self.titanium_ID = resourceID;
+
+		-- nova fields --- might have some redundancy with the above
+
+		elseif resourceType == "RESOURCE_PLATINUM" then	-- MOD.HungryForFood: New
+			self.platinum_ID = resourceID;
+		elseif resourceType == "RESOURCE_PINEAPPLE" then	-- MOD.HungryForFood: New
+			self.pineapple_ID = resourceID;
+		elseif resourceType == "RESOURCE_POTATO" then	-- MOD.HungryForFood: New
+			self.potato_ID = resourceID;
+		elseif resourceType == "RESOURCE_RICE" then	-- MOD.HungryForFood: New
+			self.rice_ID = resourceID;
+		elseif resourceType == "RESOURCE_SULFUR" then	-- MOD.HungryForFood: New
+			self.sulfur_ID = resourceID;
+		-- Nova: New Luxuries (10 of 15; the other 5 -- PLATINUM, PINEAPPLE, POTATO,
+		-- RICE, SULFUR -- share Type names with fields already resolved above and need no new field)
+		elseif resourceType == "RESOURCE_BARLEY" then	-- Nova: New
+			self.barley_ID = resourceID;
+		elseif resourceType == "RESOURCE_BEER" then	-- Nova: New
+			self.beer_ID = resourceID;
+		elseif resourceType == "RESOURCE_CAVIAR" then	-- Nova: New
+			self.caviar_ID = resourceID;
+		elseif resourceType == "RESOURCE_CHEESE" then	-- Nova: New
+			self.cheese_ID = resourceID;
+		elseif resourceType == "RESOURCE_COGNAC" then	-- Nova: New
+			self.cognac_ID = resourceID;
+		elseif resourceType == "RESOURCE_FEATHERS" then	-- Nova: New
+			self.feathers_ID = resourceID;
+		elseif resourceType == "RESOURCE_HONEY" then	-- Nova: New
+			self.honey_ID = resourceID;
+		elseif resourceType == "RESOURCE_LIMESTONE" then	-- Nova: New
+			self.limestone_ID = resourceID;
+		elseif resourceType == "RESOURCE_RED_CAVIAR" then	-- Nova: New
+			self.red_caviar_ID = resourceID;
+		elseif resourceType == "RESOURCE_STEEL" then	-- Nova: New
+			self.steel_ID = resourceID;
+		end
+
+	end
+
+	if self.coral_ID ~= nil then
+		self.bModLuxes = true;
+	end
+
+	print("########## Resource ID's ##########");
+	print(csvids);
+end
+
+
+-- adding more Nova support:
+-- bModLuxes should fail and default to Vanilla then add Nova
+
+function AssignStartingPlots:__InitLuxuryWeights()
+	-- Initialize luxury data table. Index == Region Type
+	-- Customize this function if the terrain will fall significantly
+	-- outside Earth normal, or if region definitions have been modified.
+	
+	-- Note: The water-based luxuries are set to appear in a region only if that region has its start on the coast.
+	-- So the weights shown for those are reduced in practice to the degree that a map has inland starts.
+	
+	
+
+	if self.bModLuxes == true then
+
+		self.luxury_region_weights[1] = {			-- Tundra
+		{self.fur_ID,		40},
+		{self.marble_ID,	10},
+		{self.silver_ID,	40},
+		{self.amber_ID,		40},
+		{self.salt_ID,		40},
+		{self.gold_ID,		10},
+		{self.copper_ID,	10},
+		{self.gems_ID,		10},
+		{self.jade_ID,		10},
+		{self.lapis_ID,		10},
+		{self.whale_ID,		10},
+		{self.crab_ID,		10},
+		{self.pearls_ID,	10},
+		{self.obsidian_ID,	10},
+		{self.coral_ID,		10},	};
+
+		self.luxury_region_weights[2] = {			-- Jungle
+		{self.citrus_ID,	40},
+		{self.cocoa_ID,		40},
+		{self.spices_ID,	40},
+		{self.sugar_ID,		40},
+		{self.obsidian_ID,	40},
+		{self.coconut_ID,	40},
+		{self.rubber_ID,	40},
+		{self.truffles_ID,	40},
+		{self.silk_ID,		10},
+		{self.dye_ID,		10},
+		{self.fur_ID,		10},
+		{self.whale_ID,		10},
+		{self.crab_ID,		10},
+		{self.pearls_ID,	10},
+		{self.coral_ID,		10},	};
+		
+		self.luxury_region_weights[3] = {			-- Forest
+		{self.truffles_ID,	40},
+		{self.marble_ID,	05},
+		{self.silk_ID,		10},
+		{self.dye_ID,		10},
+		{self.fur_ID,		40},
+		{self.coconut_ID,	10},
+		{self.rubber_ID,	10},
+		{self.citrus_ID,	10},
+		{self.cocoa_ID,		10},
+		{self.spices_ID,	10},
+		{self.sugar_ID,		10},
+		{self.whale_ID,		10},
+		{self.crab_ID,		10},
+		{self.pearls_ID,	10},
+		{self.coral_ID,		10},	};
+		
+		self.luxury_region_weights[4] = {			-- Desert
+		{self.incense_ID,	40},
+		{self.marble_ID,	05},
+		{self.salt_ID,		40},
+		{self.gold_ID,		40},
+		{self.lapis_ID,		40},
+		{self.obsidian_ID,	10},
+		{self.copper_ID,	10},
+		{self.silver_ID,	10},
+		{self.amber_ID,		10},
+		{self.gems_ID,		10},
+		{self.jade_ID,		10},
+		{self.whale_ID,		10},
+		{self.crab_ID,		10},
+		{self.pearls_ID,	10},
+		{self.coral_ID,		10},	};
+		
+		self.luxury_region_weights[5] = {			-- Hills
+		{self.gold_ID,		30},
+		{self.marble_ID,	15},
+		{self.silver_ID,	30},
+		{self.copper_ID,	30},
+		{self.gems_ID,		30},
+		{self.salt_ID,		30},
+		{self.jade_ID,		30},
+		{self.amber_ID,		30},
+		{self.lapis_ID,		30},
+		{self.obsidian_ID,	30},
+		{self.whale_ID,		10},
+		{self.crab_ID,		10},
+		{self.pearls_ID,	10},
+		{self.coral_ID,		10},	};
+
+		
+		self.luxury_region_weights[6] = {			-- Plains
+		{self.incense_ID,	40},
+		{self.marble_ID,	10},
+		{self.ivory_ID,		40},
+		{self.wine_ID,		40},
+		{self.olives_ID,	40},
+		{self.coffee_ID,	40},
+		{self.tobacco_ID,	10},
+		{self.tea_ID,		10},
+		{self.perfume_ID,	40},
+		{self.cotton_ID,	10},
+		{self.whale_ID,		10},
+		{self.crab_ID,		10},
+		{self.pearls_ID,	10},
+		{self.coral_ID,		10},	};
+		
+		self.luxury_region_weights[7] = {			-- Grass
+		{self.tobacco_ID,	40},
+		{self.marble_ID,	10},
+		{self.tea_ID,		40},
+		{self.cotton_ID,	40},
+		{self.perfume_ID,	25},
+		{self.ivory_ID,		10},
+		{self.wine_ID,		10},
+		{self.olives_ID,	25},
+		{self.coffee_ID,	25},
+		{self.whale_ID,		10},
+		{self.crab_ID,		10},
+		{self.pearls_ID,	10},
+		{self.coral_ID,		10},	};
+		
+		self.luxury_region_weights[8] = {			-- Hybrid
+		{self.gold_ID,		30},
+		{self.marble_ID,	15},
+		{self.silver_ID,	30},					-- MOD.Barathor: Favor very flexible resources, like resources that are mined or in the water.
+		{self.copper_ID,	30},
+		{self.gems_ID,		30},
+		{self.salt_ID,		30},
+		{self.jade_ID,		30},
+		{self.amber_ID,		30},
+		{self.lapis_ID,		30},
+		{self.obsidian_ID,	30},
+		{self.coffee_ID,	05},
+		{self.coconut_ID,	05},
+		{self.rubber_ID,	05},
+		{self.tobacco_ID,	05},
+		{self.tea_ID,		05},
+		{self.perfume_ID,	05},
+		{self.cotton_ID,	05},
+		{self.ivory_ID,		05},
+		{self.wine_ID,		05},
+		{self.olives_ID,	05},
+		{self.incense_ID,	05},
+		{self.truffles_ID,	05},
+		{self.silk_ID,		05},
+		{self.dye_ID,		05},
+		{self.fur_ID,		05},
+		{self.citrus_ID,	05},
+		{self.cocoa_ID,		05},
+		{self.spices_ID,	05},
+		{self.sugar_ID,		05},
+		{self.whale_ID,		20},
+		{self.crab_ID,		20},
+		{self.pearls_ID,	20},
+		{self.coral_ID,		20},	};
+
+		self.luxury_region_weights[9] = {			-- Wetlands
+		{self.tobacco_ID,	40},
+		{self.tea_ID,		40},
+		{self.perfume_ID,	20},
+		{self.cotton_ID,	30},
+		{self.olives_ID,	20},
+		{self.silver_ID,	20},
+		{self.sugar_ID,		20},
+		{self.copper_ID,	20},
+		{self.coral_ID,		20},
+		{self.crab_ID,		25},
+		{self.pearls_ID,	25},
+		{self.coconut_ID,	30},
+		{self.rubber_ID,	05},
+		{self.whale_ID,		25},
+		{self.cocoa_ID,		10},
+		{self.truffles_ID,	05},
+		{self.spices_ID,	05},
+		{self.gems_ID,		20},	};
+		
+		self.luxury_fallback_weights = {			-- Random / Fallback
+		{self.gold_ID,		10},
+		{self.silver_ID,	10},					-- MOD.Barathor: Favor water resources since they work great as randoms and make the coasts more interesting. 
+		{self.copper_ID,	10},					--				 Also, slightly favor mined resources for their flexibility.
+		{self.gems_ID,		10},
+		{self.marble_ID,	05},
+		{self.salt_ID,		10},
+		{self.jade_ID,		10},
+		{self.amber_ID,		10},
+		{self.lapis_ID,		10},
+		{self.obsidian_ID,	10},
+		{self.coffee_ID,	05},
+		{self.tobacco_ID,	05},
+		{self.tea_ID,		05},
+		{self.perfume_ID,	05},
+		{self.cotton_ID,	05},
+		{self.ivory_ID,		05},
+		{self.wine_ID,		05},
+		{self.olives_ID,	05},
+		{self.incense_ID,	05},
+		{self.truffles_ID,	05},
+		{self.silk_ID,		05},
+		{self.dye_ID,		05},
+		{self.fur_ID,		05},
+		{self.citrus_ID,	05},
+		{self.cocoa_ID,		05},
+		{self.spices_ID,	05},
+		{self.sugar_ID,		05},
+		{self.whale_ID,		30},
+		{self.crab_ID,		30},
+		{self.pearls_ID,	30},
+		{self.coconut_ID,	05},
+		{self.rubber_ID,	05},
+		{self.coral_ID,		30},	};
+
+		self.luxury_city_state_weights = {			-- City States	
+		{self.gold_ID,		05},
+		{self.obsidian_ID,	05},
+		{self.marble_ID,	05},
+		{self.silver_ID,	05},					-- MOD.Barathor: Slightly favor water resources since they're flexible and most city-states are coastal.
+		{self.copper_ID,	05},					--				 Also, slightly favor mined resources for their flexibility.
+		{self.gems_ID,		05},
+		{self.salt_ID,		05},
+		{self.jade_ID,		05},
+		{self.amber_ID,		05},
+		{self.lapis_ID,		05},
+		{self.coffee_ID,	05},
+		{self.tobacco_ID,	05},
+		{self.tea_ID,		05},
+		{self.perfume_ID,	05},
+		{self.cotton_ID,	05},
+		{self.ivory_ID,		05},
+		{self.wine_ID,		05},
+		{self.olives_ID,	05},
+		{self.incense_ID,	05},
+		{self.truffles_ID,	05},
+		{self.silk_ID,		05},
+		{self.dye_ID,		05},
+		{self.fur_ID,		05},
+		{self.citrus_ID,	05},
+		{self.cocoa_ID,		05},
+		{self.spices_ID,	05},
+		{self.sugar_ID,		05},
+		{self.coconut_ID,	05},
+		{self.rubber_ID,	05},
+		{self.whale_ID,		30},
+		{self.crab_ID,		30},
+		{self.pearls_ID,	30},
+		{self.coral_ID,		30},	};
+	else
+		self.luxury_region_weights[1] = {			-- Tundra
+		{self.fur_ID,		40},
+		{self.marble_ID,	10},
+		{self.whale_ID,		25},
+		{self.crab_ID,		25},
+		{self.pearls_ID,	25},
+		{self.silver_ID,	25},
+		{self.copper_ID,	15},
+		{self.salt_ID,		20},
+		{self.gems_ID,		05},
+		{self.dye_ID,		05},	};
+
+		self.luxury_region_weights[2] = {			-- Jungle
+		{self.cocoa_ID,		35},
+		{self.citrus_ID,	35},
+		{self.spices_ID,	35},
+		{self.coconut_ID,	35},
+		{self.rubber_ID,	35},
+		{self.gems_ID,		25},
+		{self.sugar_ID,		20},
+		{self.pearls_ID,	25},
+		{self.copper_ID,	05},
+		{self.truffles_ID,	25},
+		{self.crab_ID,		25},
+		{self.whale_ID,		25},
+		{self.silk_ID,		25},
+		{self.dye_ID,		25},	};
+		
+		self.luxury_region_weights[3] = {			-- Forest
+		{self.dye_ID,		10},
+		{self.silk_ID,		10},
+		{self.truffles_ID,	30},
+		{self.coconut_ID,	30},
+		{self.rubber_ID,	10},
+		{self.fur_ID,		10},
+		{self.spices_ID,	10},
+		{self.citrus_ID,	05},
+		{self.salt_ID,		05},
+		{self.copper_ID,	05},
+		{self.cocoa_ID,		05},
+		{self.crab_ID,		25},
+		{self.whale_ID,		25},
+		{self.pearls_ID,	25},	};
+		
+		self.luxury_region_weights[4] = {			-- Desert
+		{self.incense_ID,	35},
+		{self.salt_ID,		25},
+		{self.marble_ID,	05},
+		{self.gold_ID,		25},
+		{self.copper_ID,	25},
+		{self.cotton_ID,	15},
+		{self.sugar_ID,		15},
+		{self.pearls_ID,	25},
+		{self.crab_ID,		25},
+		{self.whale_ID,		25},
+		{self.citrus_ID,	05},	};
+		
+		self.luxury_region_weights[5] = {			-- Hills
+		{self.gold_ID,		30},
+		{self.marble_ID,	15},
+		{self.silver_ID,	30},
+		{self.copper_ID,	30},
+		{self.gems_ID,		30},
+		{self.pearls_ID,	25},
+		{self.salt_ID,		20},
+		{self.crab_ID,		25},
+		{self.whale_ID,		25},	};
+		
+		self.luxury_region_weights[6] = {			-- Plains
+		{self.ivory_ID,		35},
+		{self.wine_ID,		35},
+		{self.marble_ID,	05},
+		{self.salt_ID,		05},
+		{self.incense_ID,	25},
+		{self.spices_ID,	25},
+		{self.whale_ID,		25},
+		{self.pearls_ID,	25},
+		{self.crab_ID,		25},
+		{self.truffles_ID,	25},
+		{self.rubber_ID,	25},
+		{self.gold_ID,		25},	};
+		
+		self.luxury_region_weights[7] = {			-- Grass
+		{self.cotton_ID,	30},
+		{self.marble_ID,	10},
+		{self.silver_ID,	20},
+		{self.sugar_ID,		20},
+		{self.copper_ID,	20},
+		{self.crab_ID,		25},
+		{self.pearls_ID,	25},
+		{self.whale_ID,		25},
+		{self.cocoa_ID,		25},
+		{self.truffles_ID,	05},
+		{self.spices_ID,	05},
+		{self.gems_ID,		25},	};
+		
+		self.luxury_region_weights[8] = {			-- Hybrid
+		{self.ivory_ID,		15},
+		{self.cotton_ID,	15},
+		{self.wine_ID,		15},
+		{self.marble_ID,	10},
+		{self.silver_ID,	10},
+		{self.salt_ID,		05},
+		{self.copper_ID,	20},
+		{self.whale_ID,		25},
+		{self.pearls_ID,	25},
+		{self.crab_ID,		25},
+		{self.truffles_ID,	10},
+		{self.cocoa_ID,		10},
+		{self.spices_ID,	05},
+		{self.sugar_ID,		05},
+		{self.citrus_ID,	05},
+		{self.incense_ID,	05},
+		{self.silk_ID,		05},
+		{self.coconut_ID,	10},
+		{self.rubber_ID,	10},
+		{self.gems_ID,		15},
+		{self.gold_ID,		05},	};
+
+		self.luxury_region_weights[9] = {			-- Wetlands
+		{self.cotton_ID,	30},
+		{self.silver_ID,	20},
+		{self.sugar_ID,		20},
+		{self.copper_ID,	20},
+		{self.crab_ID,		25},
+		{self.pearls_ID,	25},
+		{self.whale_ID,		25},
+		{self.cocoa_ID,		10},
+		{self.coconut_ID,	25},
+		{self.truffles_ID,	05},
+		{self.spices_ID,	05},
+		{self.gems_ID,		20},	};
+		
+		self.luxury_fallback_weights = {			-- Fallbacks, in case of extreme map conditions, or
+		{self.whale_ID,		10},					-- for games with oodles of civilizations.
+		{self.pearls_ID,	10},
+		{self.gold_ID,		10},
+		{self.marble_ID,	05},
+		{self.silver_ID,	05},					-- This list is also used to assign Disabled and Random types.
+		{self.gems_ID,		10},					-- So it's important that this list contain every available luxury type.
+		{self.ivory_ID,		05},
+		{self.fur_ID,		10},					-- NOTE: Marble affects Wonders, so is handled as a special case, on the side.
+		{self.dye_ID,		05},
+		{self.spices_ID,	05},
+		{self.silk_ID,		05},
+		{self.sugar_ID,		05},
+		{self.cotton_ID,	05},
+		{self.wine_ID,		05},
+		{self.incense_ID,	05},
+		{self.copper_ID,	05},
+		{self.salt_ID,		05},
+		{self.citrus_ID,	05},
+		{self.truffles_ID,	05},
+		{self.cocoa_ID,		05},
+		{self.rubber_ID,	05},
+		{self.coconut_ID,	05},
+		{self.crab_ID,		10},	};
+
+		self.luxury_city_state_weights = {			-- Weights for City States
+		{self.whale_ID,		5},					-- Leaning toward types that are used less often by civs.
+		{self.pearls_ID,	5},
+		{self.gold_ID,		5},
+		{self.marble_ID,	5},					-- Recommended that this list also contains every available luxury.
+		{self.silver_ID,	5},
+		{self.gems_ID,		5},					-- NOTE: Marble affects Wonders, so is handled as a special case, on the side.
+		{self.ivory_ID,		5},
+		{self.fur_ID,		10},
+		{self.dye_ID,		20},
+		{self.spices_ID,	20},
+		{self.silk_ID,		20},
+		{self.sugar_ID,		25},
+		{self.cotton_ID,	20},
+		{self.wine_ID,		20},
+		{self.incense_ID,	25},
+		{self.copper_ID,	5},
+		{self.salt_ID,		5},
+		{self.citrus_ID,	5},
+		{self.truffles_ID,	5},
+		{self.cocoa_ID,		5},
+		{self.crab_ID,		5},	};
+	end
+
+	local function AddLux(list, id, weight)
+		if list ~= nil and id ~= nil then
+			table.insert(list, {id, weight});
+		end
+	end
+
+	if beta_using_nova then
+		AddLux(self.luxury_region_weights[6], self.beer_ID,       30);	-- Plains
+		AddLux(self.luxury_region_weights[7], self.beer_ID,       20);	-- Grass
+		AddLux(self.luxury_region_weights[3], self.honey_ID,      30);	-- Forest
+		AddLux(self.luxury_region_weights[2], self.honey_ID,      15);	-- Jungle
+		AddLux(self.luxury_region_weights[6], self.cognac_ID,     35);	-- Plains (grapes, like Wine)
+		AddLux(self.luxury_region_weights[7], self.cognac_ID,     15);	-- Grass
+		AddLux(self.luxury_region_weights[7], self.cheese_ID,     30);	-- Grass (pasture)
+		AddLux(self.luxury_region_weights[6], self.cheese_ID,     15);	-- Plains
+		AddLux(self.luxury_region_weights[9], self.rice_ID,       30);	-- Wetlands (paddies)
+		AddLux(self.luxury_region_weights[7], self.rice_ID,       15);	-- Grass
+		AddLux(self.luxury_region_weights[5], self.steel_ID,      30);	-- Hills (mined)
+		AddLux(self.luxury_region_weights[8], self.steel_ID,      15);	-- Hybrid
+		AddLux(self.luxury_region_weights[5], self.platinum_ID,   30);	-- Hills (mined)
+		AddLux(self.luxury_region_weights[1], self.platinum_ID,   15);	-- Tundra (precious metal, like Silver/Gold)
+		-- Nova 11.09.2026: вес серы поднят по просьбе владельца -- выпадала редко (пустыня 30->60,
+		-- холмы 20->45, смешанный регион 0->20). Ставится она только на холмы, поэтому в луга и
+		-- равнины её не добавляем: там её негде было бы разложить.
+		AddLux(self.luxury_region_weights[4], self.sulfur_ID,     60);	-- Desert (volcanic/mined)
+		AddLux(self.luxury_region_weights[5], self.sulfur_ID,     45);	-- Hills
+		AddLux(self.luxury_region_weights[8], self.sulfur_ID,     20);	-- Hybrid (обычно с холмами)
+		AddLux(self.luxury_region_weights[1], self.potato_ID,     25);	-- Tundra (cool-climate crop)
+		AddLux(self.luxury_region_weights[6], self.potato_ID,     15);	-- Plains
+		AddLux(self.luxury_region_weights[6], self.barley_ID,     30);	-- Plains (dry grain)
+		AddLux(self.luxury_region_weights[4], self.barley_ID,     10);	-- Desert
+		AddLux(self.luxury_region_weights[7], self.barley_ID,     15);	-- Grass
+		AddLux(self.luxury_region_weights[2], self.pineapple_ID,  35);	-- Jungle (tropical fruit)
+		AddLux(self.luxury_region_weights[9], self.pineapple_ID,  10);	-- Wetlands
+		-- Nova: Limestone must never become a region's exclusive luxury type, so it is deliberately
+		-- NOT added to luxury_region_weights here (see also the unconditional limestone_ID skip
+		-- clauses added to AssignLuxuryToRegion). It stays in luxury_fallback_weights/
+		-- luxury_city_state_weights below, so it is still placed normally as a City-State or
+		-- Random luxury -- just never as a region's regional luxury.
+		AddLux(self.luxury_region_weights[9], self.feathers_ID,   30);	-- Wetlands (waterfowl)
+		AddLux(self.luxury_region_weights[1], self.feathers_ID,   15);	-- Tundra
+		AddLux(self.luxury_region_weights[3], self.feathers_ID,   10);	-- Forest
+		-- Water luxuries: added to every region table like Whale/Pearls/Crab. Coastal availability
+		-- is enforced separately by the coastal-resource check inside AssignLuxuryToRegion.
+		for region_type = 1, 9 do
+			AddLux(self.luxury_region_weights[region_type], self.caviar_ID,     25);
+			AddLux(self.luxury_region_weights[region_type], self.red_caviar_ID, 25);
+		end
+		-- Fallback weights: per in-file comments, this list should contain every available luxury.
+		AddLux(self.luxury_fallback_weights, self.beer_ID,       10);
+		AddLux(self.luxury_fallback_weights, self.honey_ID,      10);
+		AddLux(self.luxury_fallback_weights, self.cognac_ID,     10);
+		AddLux(self.luxury_fallback_weights, self.cheese_ID,     10);
+		AddLux(self.luxury_fallback_weights, self.rice_ID,       10);
+		AddLux(self.luxury_fallback_weights, self.steel_ID,      10);
+		AddLux(self.luxury_fallback_weights, self.platinum_ID,   10);
+		AddLux(self.luxury_fallback_weights, self.sulfur_ID,     20);	-- Nova 11.09.2026: было 10
+		AddLux(self.luxury_fallback_weights, self.potato_ID,     10);
+		AddLux(self.luxury_fallback_weights, self.barley_ID,     10);
+		AddLux(self.luxury_fallback_weights, self.pineapple_ID,  10);
+		AddLux(self.luxury_fallback_weights, self.limestone_ID,  10);
+		AddLux(self.luxury_fallback_weights, self.feathers_ID,   10);
+		AddLux(self.luxury_fallback_weights, self.caviar_ID,     10);
+		AddLux(self.luxury_fallback_weights, self.red_caviar_ID, 10);
+		-- City-State exclusive weights: same rationale, every available luxury should be listed.
+		AddLux(self.luxury_city_state_weights, self.beer_ID,       10);
+		AddLux(self.luxury_city_state_weights, self.honey_ID,      10);
+		AddLux(self.luxury_city_state_weights, self.cognac_ID,     10);
+		AddLux(self.luxury_city_state_weights, self.cheese_ID,     10);
+		AddLux(self.luxury_city_state_weights, self.rice_ID,       10);
+		AddLux(self.luxury_city_state_weights, self.steel_ID,      5);
+		AddLux(self.luxury_city_state_weights, self.platinum_ID,   5);
+		AddLux(self.luxury_city_state_weights, self.sulfur_ID,     5);
+		AddLux(self.luxury_city_state_weights, self.potato_ID,     10);
+		AddLux(self.luxury_city_state_weights, self.barley_ID,     10);
+		AddLux(self.luxury_city_state_weights, self.pineapple_ID,  10);
+		AddLux(self.luxury_city_state_weights, self.limestone_ID,  5);
+		AddLux(self.luxury_city_state_weights, self.feathers_ID,   10);
+		AddLux(self.luxury_city_state_weights, self.caviar_ID,     5);
+		AddLux(self.luxury_city_state_weights, self.red_caviar_ID, 5);
+	end
+end
+
+
+-- more nova compatability:
+
+function AssignStartingPlots:GetListOfAllowableLuxuriesAtCitySite(x, y, radius, loc_is_coastal)
+	--print("-"); print("- -"); print("Getting list of luxuries allowable at city state site:", x, y, "Radius:", radius);
+	local iW, iH = Map.GetGridSize();
+	local wrapX = Map:IsWrapX();
+	local wrapY = Map:IsWrapY();
+	local odd = self.firstRingYIsOdd;
+	local even = self.firstRingYIsEven;
+	local nextX, nextY, plot_adjustments;
+	local allowed_luxuries = table.fill(false, 99);		-- MOD.Barathor: original = 35; updated to hold higher luxury ID's
+	local function AllowNewLux(id) if id ~= nil then allowed_luxuries[id] = true end end	-- Nova: nil-guard for our custom luxuries
+
+
+
+	for ripple_radius = 1, radius do
+		local ripple_value = radius - ripple_radius + 1;
+		local currentX = x - ripple_radius;
+		local currentY = y;
+		for direction_index = 1, 6 do
+			for plot_to_handle = 1, ripple_radius do
+			 	if currentY / 2 > math.floor(currentY / 2) then
+					plot_adjustments = odd[direction_index];
+				else
+					plot_adjustments = even[direction_index];
+				end
+				nextX = currentX + plot_adjustments[1];
+				nextY = currentY + plot_adjustments[2];
+				if wrapX == false and (nextX < 0 or nextX >= iW) then
+					-- X is out of bounds.
+				elseif wrapY == false and (nextY < 0 or nextY >= iH) then
+					-- Y is out of bounds.
+				else
+					local realX = nextX;
+					local realY = nextY;
+					if wrapX then
+						realX = realX % iW;
+					end
+					if wrapY then
+						realY = realY % iH;
+					end
+					-- We've arrived at the correct x and y for the current plot.
+					local plot = Map.GetPlot(realX, realY);
+					local plotType = plot:GetPlotType()
+					local terrainType = plot:GetTerrainType()
+					local featureType = plot:GetFeatureType()
+					local plotIndex = realY * iW + realX + 1;
+					-- MOD.Barathor: Start
+					--[[ MOD.Barathor: Fixed: Check to make sure this plot doesn't already contain a resource!
+						 This corrects a rare bug that occurs and denies some civs their 2nd bonus luxury type, since 
+						 it would mark a tile's resource options to "true" when there's already a regional luxury present. ]]
+					if plot:GetResourceType(-1) == -1 then	
+						-- Check this plot for luxury placement eligibility. Set allowed luxuries to true.
+						--[[ MOD.Barathor: Updated all conditions below.  Also added expansion and mod luxuries.
+							 This function is used for placing luxuries at city-states and second types at civ starts. ]]
+						if plotType == PlotTypes.PLOT_OCEAN then -- Testing for Water Luxury eligibility. This is more involved than land-based.
+							if terrainType == TerrainTypes.TERRAIN_COAST then
+								if plot:IsLake() == false then
+									if featureType ~= self.feature_atoll and featureType ~= FeatureTypes.FEATURE_ICE and loc_is_coastal == true then
+										allowed_luxuries[self.whale_ID] = true
+										allowed_luxuries[self.pearls_ID] = true
+										allowed_luxuries[self.crab_ID] = true
+										if self.bModLuxes == true then
+											allowed_luxuries[self.coral_ID] = true
+										end
+										if beta_using_nova then
+											AllowNewLux(self.caviar_ID)
+											AllowNewLux(self.red_caviar_ID)
+										end
+									end
+								end
+							end
+						--[[ MOD.Barathor: With my new FixResourceGraphics(), plot and feature type doesn't matter.
+							 The only important thing is the terrain type. This greatly increases the flexibility of
+							 placing luxuries at city-states and can easily support more diversity in assignments. ]]
+						elseif plotType == PlotTypes.PLOT_HILLS or plotType == PlotTypes.PLOT_LAND then
+							if terrainType == TerrainTypes.TERRAIN_TUNDRA then
+								allowed_luxuries[self.marble_ID] = true
+								allowed_luxuries[self.gold_ID] = true
+								allowed_luxuries[self.silver_ID] = true
+								allowed_luxuries[self.copper_ID] = true	
+								allowed_luxuries[self.gems_ID] = true
+								allowed_luxuries[self.salt_ID] = true
+								
+								if self.bModLuxes == true then
+									allowed_luxuries[self.jade_ID] = true
+									allowed_luxuries[self.amber_ID] = true
+									allowed_luxuries[self.lapis_ID] = true
+									allowed_luxuries[self.obsidian_ID] = true
+								end
+								--
+								allowed_luxuries[self.fur_ID] = true
+								allowed_luxuries[self.dye_ID] = true
+								if beta_using_nova then
+									AllowNewLux(self.steel_ID)
+									AllowNewLux(self.platinum_ID)
+									AllowNewLux(self.limestone_ID)
+									AllowNewLux(self.potato_ID)
+									AllowNewLux(self.feathers_ID)
+								end
+							elseif terrainType == TerrainTypes.TERRAIN_DESERT then
+								allowed_luxuries[self.marble_ID] = true
+								allowed_luxuries[self.gold_ID] = true
+								allowed_luxuries[self.silver_ID] = true
+								allowed_luxuries[self.copper_ID] = true	
+								allowed_luxuries[self.gems_ID] = true
+								allowed_luxuries[self.salt_ID] = true
+								
+								if self.bModLuxes == true then
+									allowed_luxuries[self.jade_ID] = true
+									allowed_luxuries[self.amber_ID] = true
+									allowed_luxuries[self.lapis_ID] = true
+									allowed_luxuries[self.obsidian_ID] = true
+								end
+								--
+								allowed_luxuries[self.incense_ID] = true
+								allowed_luxuries[self.ivory_ID] = true
+								if beta_using_nova then
+									AllowNewLux(self.steel_ID)
+									AllowNewLux(self.platinum_ID)
+									AllowNewLux(self.sulfur_ID)
+									AllowNewLux(self.limestone_ID)
+									AllowNewLux(self.barley_ID)
+								end
+							elseif terrainType == TerrainTypes.TERRAIN_PLAINS then
+								allowed_luxuries[self.marble_ID] = true
+								allowed_luxuries[self.gold_ID] = true
+								allowed_luxuries[self.silver_ID] = true
+								allowed_luxuries[self.copper_ID] = true	
+								allowed_luxuries[self.gems_ID] = true
+								allowed_luxuries[self.salt_ID] = true
+								
+								if self.bModLuxes == true then
+									allowed_luxuries[self.jade_ID] = true
+									allowed_luxuries[self.amber_ID] = true
+									allowed_luxuries[self.lapis_ID] = true
+									allowed_luxuries[self.obsidian_ID] = true
+									allowed_luxuries[self.coconut_ID] = true
+									allowed_luxuries[self.rubber_ID] = true
+								end
+
+								--
+								allowed_luxuries[self.spices_ID] = true
+								allowed_luxuries[self.silk_ID] = true
+								allowed_luxuries[self.sugar_ID] = true
+								allowed_luxuries[self.citrus_ID] = true
+								allowed_luxuries[self.truffles_ID] = true
+								allowed_luxuries[self.cocoa_ID] = true
+								allowed_luxuries[self.fur_ID] = true
+								allowed_luxuries[self.dye_ID] = true
+								
+								--
+								allowed_luxuries[self.cotton_ID] = true
+								allowed_luxuries[self.wine_ID] = true
+								allowed_luxuries[self.ivory_ID] = true
+								
+								if self.bModLuxes == true then
+									allowed_luxuries[self.coffee_ID] = true
+									allowed_luxuries[self.tea_ID] = true
+									allowed_luxuries[self.tobacco_ID] = true
+									allowed_luxuries[self.perfume_ID] = true
+									allowed_luxuries[self.olives_ID] = true
+									
+								end
+
+								allowed_luxuries[self.incense_ID] = true
+
+								if beta_using_nova then
+									AllowNewLux(self.steel_ID)
+									AllowNewLux(self.platinum_ID)
+									AllowNewLux(self.limestone_ID)
+									AllowNewLux(self.beer_ID)
+									AllowNewLux(self.cognac_ID)
+									AllowNewLux(self.cheese_ID)
+									AllowNewLux(self.rice_ID)
+									AllowNewLux(self.barley_ID)
+									AllowNewLux(self.pineapple_ID)
+									AllowNewLux(self.potato_ID)
+									AllowNewLux(self.honey_ID)
+									AllowNewLux(self.feathers_ID)
+								end
+
+							elseif terrainType == TerrainTypes.TERRAIN_GRASS then
+								allowed_luxuries[self.marble_ID] = true
+								allowed_luxuries[self.gold_ID] = true
+								allowed_luxuries[self.silver_ID] = true
+								allowed_luxuries[self.copper_ID] = true	
+								allowed_luxuries[self.gems_ID] = true
+								allowed_luxuries[self.salt_ID] = true
+								
+								if self.bModLuxes == true then
+									allowed_luxuries[self.jade_ID] = true
+									allowed_luxuries[self.amber_ID] = true
+									allowed_luxuries[self.lapis_ID] = true
+									allowed_luxuries[self.obsidian_ID] = true
+								end
+
+								--
+								allowed_luxuries[self.spices_ID] = true
+								allowed_luxuries[self.silk_ID] = true
+								allowed_luxuries[self.sugar_ID] = true
+								allowed_luxuries[self.citrus_ID] = true
+								allowed_luxuries[self.truffles_ID] = true
+								allowed_luxuries[self.cocoa_ID] = true
+								allowed_luxuries[self.fur_ID] = true
+								allowed_luxuries[self.dye_ID] = true
+								if beta_using_lekmod then
+									allowed_luxuries[self.coconut_ID] = true
+								end
+								--
+								allowed_luxuries[self.cotton_ID] = true
+								allowed_luxuries[self.wine_ID] = true
+								allowed_luxuries[self.ivory_ID] = true
+								
+								if self.bModLuxes == true then
+									allowed_luxuries[self.coffee_ID] = true
+									allowed_luxuries[self.tea_ID] = true
+									allowed_luxuries[self.tobacco_ID] = true
+									allowed_luxuries[self.olives_ID] = true
+									allowed_luxuries[self.rubber_ID] = true
+								end
+
+								allowed_luxuries[self.incense_ID] = true
+								if beta_using_nova then
+									AllowNewLux(self.steel_ID)
+									AllowNewLux(self.platinum_ID)
+									AllowNewLux(self.limestone_ID)
+									AllowNewLux(self.beer_ID)
+									AllowNewLux(self.cognac_ID)
+									AllowNewLux(self.cheese_ID)
+									AllowNewLux(self.rice_ID)
+									AllowNewLux(self.barley_ID)
+									AllowNewLux(self.pineapple_ID)
+									AllowNewLux(self.potato_ID)
+									AllowNewLux(self.honey_ID)
+									AllowNewLux(self.feathers_ID)
+								end
+							end
+						end
+					end
+					-- MOD.Barathor: End
+					currentX, currentY = nextX, nextY;
+				end
+			end
+		end
+	end
+	return allowed_luxuries
+end
+
+-- more nova compatability
+
+function AssignStartingPlots:GetListOfAllowableLuxuriesNearCitySite(x, y, radius, loc_is_coastal)
+	--print("-"); print("- -"); print("Getting list of luxuries allowable at city state site:", x, y, "Radius:", radius);
+	local iW, iH = Map.GetGridSize();
+	local wrapX = Map:IsWrapX();
+	local wrapY = Map:IsWrapY();
+	local odd = self.firstRingYIsOdd;
+	local even = self.firstRingYIsEven;
+	local nextX, nextY, plot_adjustments;
+	local allowed_luxuries = table.fill(false, 41);
+	local function AllowNewLux(id) if id ~= nil then allowed_luxuries[id] = true end end	-- Nova: nil-guard for our custom luxuries
+	--print("Radius = ", radius);
+	for ripple_radius = 4, radius do
+		--print("Ripple Radius = ", ripple_radius);
+		local ripple_value = radius - ripple_radius + 1;
+		local currentX = x - ripple_radius;
+		local currentY = y;
+		for direction_index = 1, 6 do
+			for plot_to_handle = 1, ripple_radius do
+			 	if currentY / 2 > math.floor(currentY / 2) then
+					plot_adjustments = odd[direction_index];
+				else
+					plot_adjustments = even[direction_index];
+				end
+				nextX = currentX + plot_adjustments[1];
+				nextY = currentY + plot_adjustments[2];
+				if wrapX == false and (nextX < 0 or nextX >= iW) then
+					-- X is out of bounds.
+				elseif wrapY == false and (nextY < 0 or nextY >= iH) then
+					-- Y is out of bounds.
+				else
+					local realX = nextX;
+					local realY = nextY;
+					if wrapX then
+						realX = realX % iW;
+					end
+					if wrapY then
+						realY = realY % iH;
+					end
+					-- We've arrived at the correct x and y for the current plot.
+					local plot = Map.GetPlot(realX, realY);
+					local plotType = plot:GetPlotType()
+					local terrainType = plot:GetTerrainType()
+					local featureType = plot:GetFeatureType()
+					local plotIndex = realY * iW + realX + 1;
+					-- Check this plot for luxury placement eligibility. Set allowed luxuries to true.
+					if plotType == PlotTypes.PLOT_OCEAN then -- Testing for Water Luxury eligibility. This is more involved than land-based.
+						if terrainType == TerrainTypes.TERRAIN_COAST then
+							if plot:IsLake() == false then
+								if featureType ~= self.feature_atoll and featureType ~= FeatureTypes.FEATURE_ICE and loc_is_coastal == true then
+									allowed_luxuries[self.whale_ID] = true;
+									allowed_luxuries[self.pearls_ID] = true;
+									allowed_luxuries[self.crab_ID] = true;
+									if beta_using_nova then
+										AllowNewLux(self.caviar_ID);
+										AllowNewLux(self.red_caviar_ID);
+									end
+									--print("-"); print("Coast Allowed");
+								end
+							end
+						end
+					-- Checking for land-based eligibility.
+					elseif plotType == PlotTypes.PLOT_HILLS and terrainType ~= TerrainTypes.TERRAIN_SNOW then
+						--print("-"); print("Hills Allowed");
+						allowed_luxuries[self.gold_ID] = true;
+						allowed_luxuries[self.silver_ID] = true;
+						allowed_luxuries[self.gems_ID] = true;
+						if beta_using_nova then
+							AllowNewLux(self.steel_ID);
+							AllowNewLux(self.platinum_ID);
+						end
+
+						if featureType == FeatureTypes.NO_FEATURE then
+							allowed_luxuries[self.marble_ID] = true;
+							allowed_luxuries[self.copper_ID] = true;
+							if beta_using_nova then
+								AllowNewLux(self.limestone_ID);
+							end
+						end
+					elseif plotType == PlotTypes.PLOT_LAND then
+						if featureType == FeatureTypes.NO_FEATURE then
+							if terrainType == TerrainTypes.TERRAIN_TUNDRA then
+								allowed_luxuries[self.fur_ID] = true;
+								allowed_luxuries[self.silver_ID] = true;
+								allowed_luxuries[self.marble_ID] = true;
+								allowed_luxuries[self.salt_ID] = true;
+								allowed_luxuries[self.copper_ID] = true;
+								if beta_using_nova then
+									AllowNewLux(self.potato_ID);
+									AllowNewLux(self.feathers_ID);
+									AllowNewLux(self.platinum_ID);
+								end
+								--print("-"); print("Flat No Feature Tundra Allowed");
+							elseif terrainType == TerrainTypes.TERRAIN_DESERT then
+								allowed_luxuries[self.gold_ID] = true;
+								allowed_luxuries[self.marble_ID] = true;
+								allowed_luxuries[self.incense_ID] = true;
+								allowed_luxuries[self.salt_ID] = true;
+								allowed_luxuries[self.copper_ID] = true;
+								if beta_using_nova then
+									AllowNewLux(self.sulfur_ID);
+									AllowNewLux(self.barley_ID);
+									AllowNewLux(self.limestone_ID);
+								end
+								--print("-"); print("Flat No Feature Desert Allowed");
+							elseif terrainType == TerrainTypes.TERRAIN_PLAINS then
+								allowed_luxuries[self.marble_ID] = true;
+								allowed_luxuries[self.ivory_ID] = true;
+								allowed_luxuries[self.wine_ID] = true;
+								allowed_luxuries[self.incense_ID] = true;
+								allowed_luxuries[self.salt_ID] = true;
+								if beta_using_nova then
+									AllowNewLux(self.beer_ID);
+									AllowNewLux(self.cognac_ID);
+									AllowNewLux(self.barley_ID);
+									AllowNewLux(self.limestone_ID);
+								end
+								--print("-"); print("Flat No Feature Plains Allowed");
+							elseif terrainType == TerrainTypes.TERRAIN_GRASS then
+								if plot:IsFreshWater() then
+									allowed_luxuries[self.sugar_ID] = true;
+									allowed_luxuries[self.cotton_ID] = true;
+									allowed_luxuries[self.wine_ID] = true;
+									if beta_using_nova then
+										AllowNewLux(self.rice_ID);
+										AllowNewLux(self.cheese_ID);
+									end
+									--print("-"); print("Flat No Feature Fresh Grass Allowed");
+								else
+									allowed_luxuries[self.marble_ID] = true;
+									allowed_luxuries[self.ivory_ID] = true;
+									allowed_luxuries[self.cotton_ID] = true;
+									allowed_luxuries[self.wine_ID] = true;
+									if beta_using_nova then
+										AllowNewLux(self.beer_ID);
+										AllowNewLux(self.cognac_ID);
+										AllowNewLux(self.cheese_ID);
+									end
+									--print("-"); print("Flat No Feature Grass Allowed");
+								end
+							end
+						elseif featureType == FeatureTypes.FEATURE_MARSH then		
+							allowed_luxuries[self.dye_ID] = true;
+							allowed_luxuries[self.sugar_ID] = true;
+							if beta_using_lekmod then
+								allowed_luxuries[self.rubber_ID_] = true;
+								allowed_luxuries[self.coconut_ID] = true;
+							end
+							if beta_using_nova then
+								AllowNewLux(self.rice_ID);
+								AllowNewLux(self.feathers_ID);
+							end
+							--print("-"); print("Flat Marsh Allowed");
+						elseif featureType == FeatureTypes.FEATURE_FLOOD_PLAINS then		
+							allowed_luxuries[self.cotton_ID] = true;
+							allowed_luxuries[self.incense_ID] = true;
+							allowed_luxuries[self.citrus_ID] = true;
+							if beta_using_nova then
+								AllowNewLux(self.rice_ID);
+								AllowNewLux(self.barley_ID);
+								AllowNewLux(self.feathers_ID);
+							end
+							--print("-"); print("Flat Flood Plains Allowed");
+						elseif featureType == FeatureTypes.FEATURE_JUNGLE then		
+							allowed_luxuries[self.gems_ID] = true;
+							allowed_luxuries[self.dye_ID] = true;
+							allowed_luxuries[self.spices_ID] = true;
+							allowed_luxuries[self.silk_ID] = true;
+							allowed_luxuries[self.sugar_ID] = true;
+							allowed_luxuries[self.cocoa_ID] = true;
+							allowed_luxuries[self.citrus_ID] = true;
+							allowed_luxuries[self.truffles_ID] = true;
+							if beta_using_lekmod then
+								allowed_luxuries[self.rubber_ID] = true;
+								allowed_luxuries[self.coconut_ID] = true;
+							end
+							if beta_using_nova then
+								AllowNewLux(self.pineapple_ID);
+								AllowNewLux(self.honey_ID);
+							end
+
+							--print("-"); print("Flat Jungle Allowed");
+						elseif featureType == FeatureTypes.FEATURE_FOREST then		
+							allowed_luxuries[self.fur_ID] = true;
+							allowed_luxuries[self.dye_ID] = true;
+							if beta_using_lekmod then
+								allowed_luxuries[self.rubber_ID] = true;
+								allowed_luxuries[self.coconut_ID] = true;
+							end
+							if beta_using_nova then
+								AllowNewLux(self.honey_ID)
+							end
+							--print("-"); print("Flat Forest Allowed");
+							if terrainType == TerrainTypes.TERRAIN_TUNDRA then
+								allowed_luxuries[self.silver_ID] = true;
+								--print("-"); print("Flat Tundra Forest Allowed");
+							else
+								allowed_luxuries[self.spices_ID] = true;
+								allowed_luxuries[self.silk_ID] = true;
+								allowed_luxuries[self.citrus_ID] = true;
+								allowed_luxuries[self.truffles_ID] = true;
+								if beta_using_lekmod then
+									allowed_luxuries[self.rubber_ID] = true;
+									allowed_luxuries[self.coconut_ID] = true;
+								end
+								if beta_using_nova then
+									AllowNewLux(self.feathers_ID);
+								end
+								--print("-"); print("Flat Forest No Tundra Allowed");
+							end
+						end
+					end
+					currentX, currentY = nextX, nextY;
+				end
+			end
+		end
+	end
+
+	--for i, v in pairs(allowed_luxuries) do
+		--print("Idx: ", i, v);
+	--end
+	return allowed_luxuries
+end
+
+-- more nova compatability
+
+function AssignStartingPlots:GetIndicesForLuxuryType(resource_ID)
+	-- This function will identify up to four of the fifteen "Luxury Plot Lists"
+	-- (visually listed on screen directly above this text) that match terrain 
+	-- best suitable for this type of luxury.
+	--print("-"); print("Obtaining indices for Luxury#", resource_ID);
+
+	local primary, secondary, tertiary, quaternary, quinary, senary = -1, -1, -1, -1, -1, -1;	-- MOD.Barathor: New -- added a quinary and senary list
+																								-- MOD.Barathor: Modders, don't forget, if you add or remove indices, make sure you have the correct number of primary, secondary, etc. as well!
+	-- MOD.Barathor: New -- All Indices are either updated or new.
+	-- Water Luxuries
+	if resource_ID == self.whale_ID then
+		primary = 1;
+	elseif resource_ID == self.pearls_ID then
+		primary = 1;
+	elseif resource_ID == self.crab_ID then
+		primary = 1;
+	elseif resource_ID == self.coral_ID then
+		primary = 1;
+	-- Rock Luxuries
+	elseif resource_ID == self.marble_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	elseif resource_ID == self.gold_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	elseif resource_ID == self.silver_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	elseif resource_ID == self.copper_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	elseif resource_ID == self.gems_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	elseif resource_ID == self.salt_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	elseif resource_ID == self.jade_ID then							
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	elseif resource_ID == self.amber_ID then						
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;	
+	elseif resource_ID == self.lapis_ID then							
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	elseif resource_ID == self.obsidian_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 27, 24, 36, 37, 5, 31;
+	-- Tree Luxuries
+	elseif resource_ID == self.cocoa_ID then						
+		primary, secondary, tertiary, quaternary, quinary, senary = 8, 15, 28, 37, 24, 2;
+	elseif resource_ID == self.citrus_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 8, 15, 28, 37, 24, 2;
+	elseif resource_ID == self.spices_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 8, 15, 28, 37, 24, 2;
+	elseif resource_ID == self.sugar_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 8, 15, 28, 37, 24, 2;
+	elseif resource_ID == self.truffles_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 15, 8, 28, 37, 24, 2;
+	elseif resource_ID == self.rubber_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 8, 15, 28, 37, 24, 2;
+	elseif resource_ID == self.coconut_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 8, 15, 28, 37, 24, 2;
+	elseif resource_ID == self.silk_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 15, 8, 28, 37, 24, 2;
+	elseif resource_ID == self.dye_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 9, 8, 5, 38, 23, 2;
+	elseif resource_ID == self.fur_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 21, 15, 7, 38, 23, 2;
+	-- Land Luxuries
+	elseif resource_ID == self.incense_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 39, 11, 22, 33, 28, 16;
+	elseif resource_ID == self.ivory_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 11, 16, 39, 22, 33, 28;
+	elseif resource_ID == self.wine_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 11, 16, 33, 24, 28, 2;
+	elseif resource_ID == self.olives_ID then						
+		primary, secondary, tertiary, quaternary, quinary, senary = 11, 16, 33, 24, 28, 2;
+	elseif resource_ID == self.coffee_ID then						
+		primary, secondary, tertiary, quaternary, quinary, senary = 11, 16, 33, 24, 28, 2;	
+	elseif resource_ID == self.tobacco_ID then						
+		primary, secondary, tertiary, quaternary, quinary, senary = 16, 11, 33, 24, 28, 2;
+	elseif resource_ID == self.tea_ID then							
+		primary, secondary, tertiary, quaternary, quinary, senary = 16, 11, 33, 24, 28, 2;
+	elseif resource_ID == self.perfume_ID then						
+		primary, secondary, tertiary, quaternary, quinary, senary = 16, 11, 33, 24, 28, 2;
+	elseif resource_ID == self.cotton_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 16, 11, 33, 24, 28, 2;
+	
+	
+	elseif resource_ID == self.caviar_ID then
+		primary = 1;
+	elseif resource_ID == self.red_caviar_ID then
+		primary = 1;
+	elseif resource_ID == self.beer_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 16, 11, 12, 18, 33, 2;
+	elseif resource_ID == self.cognac_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 11, 16, 33, 37, -1, 2;
+	elseif resource_ID == self.cheese_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 16, 11, 13, 33, 37, 2;
+	elseif resource_ID == self.honey_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 9, 15, 8, -1, 33, 2;
+	elseif resource_ID == self.rice_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 13, 19, 3, 2, 12, 18;
+	-- MOD: steel/platinum/sulfur are IMPROVEMENT_MINE luxuries -- restricted to hills, desert-free (items #3+#4).
+	elseif resource_ID == self.steel_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 24, 23, 5, 7, 6, -1;
+	elseif resource_ID == self.platinum_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 24, 23, 5, 7, 6, -1;
+	elseif resource_ID == self.sulfur_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 24, 23, 5, 7, 6, -1;
+	-- MOD: item #3 -- 20 (desert-or-tundra flat) swapped for desert-free equivalents.
+	elseif resource_ID == self.potato_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 17, 18, 14, 21, 16, 11;
+	elseif resource_ID == self.barley_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 18, 12, 11, 16, 17, 38;
+	elseif resource_ID == self.pineapple_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 8, 15, 33, 37, -1, 2;
+	-- MOD: limestone is IMPROVEMENT_QUARRY (not mine) -- item #3 only, desert lists swapped (35 -> 38 = flat open, no desert).
+	elseif resource_ID == self.limestone_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 23, 24, 17, 37, 31, 38;
+	elseif resource_ID == self.feathers_ID then
+		primary, secondary, tertiary, quaternary, quinary, senary = 2, 3, 13, 19, 16, 11;
+	end
+
+	--print("Found indices of", primary, secondary, tertiary, quaternary);
+
+	return primary, secondary, tertiary, quaternary, quinary, senary;		-- MOD.Barathor: New -- added a quinary and senary list
+end
+
+
+function AssignStartingPlots:PlaceSexyBonusAtCivStarts()
+	-- This function will place a Bonus resource in the third ring around a Civ's start.
+	-- The added Bonus is meant to make the start look more sexy, so to speak.
+	-- Third-ring resources will take a long time to bring online, but will assist the site in the late game.
+	-- Alternatively, it may assist a different city if another city is settled close enough to the capital and takes control of this tile.
+	local iW, iH = Map.GetGridSize();
+	local wrapX = Map:IsWrapX();
+	local wrapY = Map:IsWrapY();
+	local odd = self.firstRingYIsOdd;
+	local even = self.firstRingYIsEven;
+	local nextX, nextY, plot_adjustments;
+	
+	local bonus_type_associated_with_region_type = {self.deer_ID, self.banana_ID, 
+	self.deer_ID, self.wheat_ID, self.maize_ID, self.sheep_ID, self.wheat_ID, self.cow_ID, self.cow_ID, self.wheat_ID, self.hardwood_ID, self.maize_ID,};
+	
+	for region_number = 1, self.iNumCivs do
+		local x = self.startingPlots[region_number][1];
+		local y = self.startingPlots[region_number][2];
+		local region_type = self.regionTypes[region_number];
+		local use_this_ID = bonus_type_associated_with_region_type[region_type];
+		local plot_list, fish_list = {}, {};
+		-- For notes on how the hex-iteration works, refer to PlaceResourceImpact()
+		local ripple_radius = 2;
+		local currentX = x - ripple_radius;
+		local currentY = y;
+		for direction_index = 1, 6 do
+			for plot_to_handle = 1, ripple_radius do
+			 	if currentY / 2 > math.floor(currentY / 2) then
+					plot_adjustments = odd[direction_index];
+				else
+					plot_adjustments = even[direction_index];
+				end
+				nextX = currentX + plot_adjustments[1];
+				nextY = currentY + plot_adjustments[2];
+				if wrapX == false and (nextX < 0 or nextX >= iW) then
+					-- X is out of bounds.
+				elseif wrapY == false and (nextY < 0 or nextY >= iH) then
+					-- Y is out of bounds.
+				else
+					local realX = nextX;
+					local realY = nextY;
+					if wrapX then
+						realX = realX % iW;
+					end
+					if wrapY then
+						realY = realY % iH;
+					end
+					-- We've arrived at the correct x and y for the current plot.
+					local plot = Map.GetPlot(realX, realY);
+					local featureType = plot:GetFeatureType()
+					if plot:GetResourceType(-1) == -1 and featureType ~= FeatureTypes.FEATURE_OASIS then -- No resource or Oasis here, safe to proceed.
+						local plotType = plot:GetPlotType()
+						local terrainType = plot:GetTerrainType()
+						local plotIndex = realY * iW + realX + 1;
+						-- Now check this plot for eligibility for the applicable Bonus type for this region.
+						if use_this_ID == self.deer_ID then
+							if featureType == FeatureTypes.FEATURE_FOREST then
+								table.insert(plot_list, plotIndex);
+							elseif terrainType == TerrainTypes.TERRAIN_TUNDRA and plotType == PlotTypes.PLOT_LAND then
+								table.insert(plot_list, plotIndex);
+							end
+						elseif use_this_ID == self.hardwood_ID and beta_using_lekmod then
+							if featureType == FeatureTypes.FEATURE_FOREST then
+								table.insert(plot_list, plotIndex);
+							elseif terrainType == TerrainTypes.TERRAIN_TUNDRA and plotType == PlotTypes.PLOT_LAND then
+								table.insert(plot_list, plotIndex);
+							end
+						elseif use_this_ID == self.banana_ID then
+							if featureType == FeatureTypes.FEATURE_JUNGLE then
+								table.insert(plot_list, plotIndex);
+							end
+						elseif use_this_ID == self.wheat_ID then
+							if plotType == PlotTypes.PLOT_LAND then
+								if terrainType == TerrainTypes.TERRAIN_PLAINS and featureType == FeatureTypes.NO_FEATURE then
+									table.insert(plot_list, plotIndex);
+								elseif featureType == FeatureTypes.FEATURE_FLOOD_PLAINS then
+									table.insert(plot_list, plotIndex);
+								elseif terrainType == TerrainTypes.TERRAIN_DESERT and plot:IsFreshWater() then
+									table.insert(plot_list, plotIndex);
+								end
+							end
+						elseif use_this_ID == self.maize_ID and beta_using_lekmod then
+							if plotType == PlotTypes.PLOT_LAND then
+								if terrainType == TerrainTypes.TERRAIN_PLAINS and featureType == FeatureTypes.NO_FEATURE then
+									table.insert(plot_list, plotIndex);
+								end
+							end
+						elseif use_this_ID == self.sheep_ID then
+							if plotType == PlotTypes.PLOT_HILLS and featureType == FeatureTypes.NO_FEATURE then
+								if terrainType == TerrainTypes.TERRAIN_PLAINS or terrainType == TerrainTypes.TERRAIN_GRASS or terrainType == TerrainTypes.TERRAIN_TUNDRA then
+									table.insert(plot_list, plotIndex);
+								end
+							end
+						elseif use_this_ID == self.cow_ID then
+							if plotType == PlotTypes.PLOT_LAND then
+								if terrainType == TerrainTypes.TERRAIN_GRASS or terrainType == TerrainTypes.TERRAIN_PLAINS then
+									if featureType == FeatureTypes.NO_FEATURE then
+										table.insert(plot_list, plotIndex);
+									end
+								end
+							end
+						end
+						if plotType == PlotTypes.PLOT_OCEAN then
+							if not plot:IsLake() then
+								if featureType ~= self.feature_atoll and featureType ~= FeatureTypes.FEATURE_ICE then
+									if terrainType == TerrainTypes.TERRAIN_COAST then
+										table.insert(fish_list, plotIndex);
+									end
+								end
+							end
+						end
+					end
+				end
+				currentX, currentY = nextX, nextY;
+			end
+		end
+		local iNumCandidates = table.maxn(plot_list);
+		if iNumCandidates > 0 then
+			--print("Placing 'sexy Bonus' in third ring of start location in Region#", region_number);
+			local shuf_list = GetShuffledCopyOfTable(plot_list)
+			if use_this_ID ~= nil then
+				local iNumLeftToPlace = self:PlaceSpecificNumberOfResources(use_this_ID, 1, 1, 1, -1, 0, 0, shuf_list);
+			end
+			if iNumCandidates > 1 and use_this_ID == self.sheep_ID then
+				-- Hills region, attempt to give them a second Sexy Sheep.
+				--print("Placing a second 'sexy Sheep' in third ring of start location in Hills Region#", region_number);
+				iNumLeftToPlace = self:PlaceSpecificNumberOfResources(use_this_ID, 1, 1, 1, -1, 0, 0, shuf_list);
+			end
+		else
+			local iFishCandidates = table.maxn(fish_list);
+			if iFishCandidates > 0 then
+				--print("Placing 'sexy Fish' in third ring of start location in Region#", region_number);
+				local shuf_list = GetShuffledCopyOfTable(fish_list)
+				local iNumLeftToPlace = self:PlaceSpecificNumberOfResources(self.fish_ID, 1, 1, 1, -1, 0, 0, shuf_list);
+			end
+		end
+	end
+end
+
+function AssignStartingPlots:AddExtraBonusesToHillsRegions()
+	-- Hills regions are very low on food, yet not deemed by the fertility measurements to be so.
+	-- Spreading some food bonus around in these regions will help bring them up closer to par.
+	local iW, iH = Map.GetGridSize();
+	local wrapX = Map:IsWrapX();
+	local wrapY = Map:IsWrapY();
+	-- Identify Hills Regions, if any.
+	local hills_regions, iNumHillsRegions = {}, 0;
+	for region_number = 1, self.iNumCivs do
+		if self.regionTypes[region_number] == 5 then
+			iNumHillsRegions = iNumHillsRegions + 1;
+			table.insert(hills_regions, region_number);
+		end
+	end
+	if iNumHillsRegions == 0 then -- We're done.
+		return
+	end
+	-- Process Hills Regions
+	local shuffled_hills_regions = GetShuffledCopyOfTable(hills_regions)
+	for loop, region_number in ipairs(shuffled_hills_regions) do
+		local iWestX = self.regionData[region_number][1];
+		local iSouthY = self.regionData[region_number][2];
+		local iWidth = self.regionData[region_number][3];
+		local iHeight = self.regionData[region_number][4];
+		local iAreaID = self.regionData[region_number][5];
+		--
+		local terrainCounts = self.regionTerrainCounts[region_number];
+		--local totalPlots = terrainCounts[1];
+		local areaPlots = terrainCounts[2];
+		--local waterCount = terrainCounts[3];
+		local flatlandsCount = terrainCounts[4];
+		local hillsCount = terrainCounts[5];
+		local peaksCount = terrainCounts[6];
+		--local lakeCount = terrainCounts[7];
+		--local coastCount = terrainCounts[8];
+		--local oceanCount = terrainCounts[9];
+		--local iceCount = terrainCounts[10];
+		local grassCount = terrainCounts[11];
+		local plainsCount = terrainCounts[12];
+		--local desertCount = terrainCounts[13];
+		--local tundraCount = terrainCounts[14];
+		--local snowCount = terrainCounts[15];
+		--local forestCount = terrainCounts[16];
+		--local jungleCount = terrainCounts[17];
+		--local marshCount = terrainCounts[18];
+		--local riverCount = terrainCounts[19];
+		--local floodplainCount = terrainCounts[20];
+		--local oasisCount = terrainCounts[21];
+		--local coastalLandCount = terrainCounts[22];
+		--local nextToCoastCount = terrainCounts[23];
+		--
+		-- Check how badly infertile the region is by comparing hills and mountains to flat farmlands.
+		local hills_ratio = (hillsCount + peaksCount) / areaPlots;
+		local farm_ratio = (grassCount + plainsCount) / areaPlots;
+		if self.method == 3 then -- Need to ignore water tiles, which are included in areaPlots with this regional division method.
+			hills_ratio = (hillsCount + peaksCount) / (hillsCount + peaksCount + flatlandsCount);
+			farm_ratio = (grassCount + plainsCount) / (hillsCount + peaksCount + flatlandsCount);
+		end
+		-- If the infertility quotient is greater than 1, this will increase how
+		-- many Bonus get placed, up to a max of double the normal ratio.
+		local infertility_quotient = 1 + math.max(0, hills_ratio - farm_ratio);
+		
+		--print("Infertility Quotient for Hills Region#", region_number, " is:", infertility_quotient);
+		
+		--
+		-- Generate plot lists for the extra Bonus placements.
+		local dry_hills, flat_plains, flat_grass, flat_tundra, jungles, forests = {}, {}, {}, {}, {}, {};
+		for region_loop_y = 0, iHeight - 1 do
+			for region_loop_x = 0, iWidth - 1 do
+				local x = (region_loop_x + iWestX) % iW;
+				local y = (region_loop_y + iSouthY) % iH;
+				local plot = Map.GetPlot(x, y);
+				local plotIndex = y * iW + x + 1;
+				local area_of_plot = plot:GetArea();
+				local plotType = plot:GetPlotType()
+				local terrainType = plot:GetTerrainType()
+				local featureType = plot:GetFeatureType()
+				if plotType == PlotTypes.PLOT_LAND or plotType == PlotTypes.PLOT_HILLS then
+					-- Check plot for region membership. Only process this plot if it is a member.
+					if (area_of_plot == iAreaID) or (iAreaID == -1) then
+						if plot:GetResourceType(-1) == -1 then
+							if featureType == FeatureTypes.FEATURE_JUNGLE then
+								table.insert(jungles, plotIndex);
+							elseif featureType == FeatureTypes.FEATURE_FOREST then
+								table.insert(forests, plotIndex);
+							elseif featureType == FeatureTypes.FEATURE_FLOOD_PLAINS then
+								table.insert(flat_plains, plotIndex);
+							elseif featureType == FeatureTypes.NO_FEATURE then
+								if plotType == PlotTypes.PLOT_HILLS then
+									if (terrainType == TerrainTypes.TERRAIN_GRASS or terrainType == TerrainTypes.TERRAIN_PLAINS or terrainType == TerrainTypes.TERRAIN_TUNDRA) then
+										if plot:IsFreshWater() == false then
+											table.insert(dry_hills, plotIndex);
+										end
+									end
+								elseif plotType == PlotTypes.PLOT_LAND then
+									if terrainType == TerrainTypes.TERRAIN_PLAINS then
+										table.insert(flat_plains, plotIndex);
+									elseif terrainType == TerrainTypes.TERRAIN_DESERT and plot:IsFreshWater() then
+										table.insert(flat_plains, plotIndex);
+									elseif terrainType == TerrainTypes.TERRAIN_GRASS then
+										table.insert(flat_grass, plotIndex);
+									elseif terrainType == TerrainTypes.TERRAIN_TUNDRA then
+										table.insert(flat_tundra, plotIndex);
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		
+		--[[
+		print("-"); print("--- Extra-Bonus Plot Counts for Hills Region#", region_number, "---");
+		print("- Jungles:", table.maxn(jungles));
+		print("- Forests:", table.maxn(forests));
+		print("- Tundra:", table.maxn(flat_tundra));
+		print("- Plains:", table.maxn(flat_plains));
+		print("- Grass:", table.maxn(flat_grass));
+		print("- Dry Hills:", table.maxn(dry_hills));
+		]]--
+		
+		-- Now that the plot lists are ready, place the Bonuses.
+		if table.maxn(dry_hills) > 0 then
+			local resources_to_place = {
+			{self.sheep_ID, 1, 100, 1, 1} };
+			self:ProcessResourceList(9 / infertility_quotient, 3, dry_hills, resources_to_place)
+		end
+		if table.maxn(jungles) > 0 then
+			local resources_to_place = {
+			{self.banana_ID, 1, 100, 1, 2} };
+			self:ProcessResourceList(14 / infertility_quotient, 3, jungles, resources_to_place)
+		end
+		if table.maxn(flat_tundra) > 0 then
+			local resources_to_place = {
+			{self.deer_ID, 1, 100, 0, 1} };
+			self:ProcessResourceList(14 / infertility_quotient, 3, flat_tundra, resources_to_place)
+		end
+		if table.maxn(flat_tundra) > 0 and beta_using_lekmod then
+			local resources_to_place = {
+			{self.hardwood_ID, 1, 100, 0, 1} };
+			self:ProcessResourceList(14 / infertility_quotient, 3, flat_tundra, resources_to_place)
+		end
+		if table.maxn(flat_plains) > 0 then
+			local resources_to_place = {
+			{self.wheat_ID, 1, 100, 0, 2} };
+			self:ProcessResourceList(18 / infertility_quotient, 3, flat_plains, resources_to_place)
+		end
+		if table.maxn(flat_plains) > 0 and beta_using_lekmod then
+			local resources_to_place = {
+			{self.maize_ID, 1, 100, 0, 2} };
+			self:ProcessResourceList(18 / infertility_quotient, 3, flat_plains, resources_to_place)
+		end
+		if table.maxn(flat_grass) > 0 then
+			local resources_to_place = {
+			{self.cow_ID, 1, 100, 1, 2} };
+			self:ProcessResourceList(20 / infertility_quotient, 3, flat_grass, resources_to_place)
+		end
+		if table.maxn(forests) > 0 then
+			local resources_to_place = {
+			{self.deer_ID, 1, 100, 1, 2} };
+			self:ProcessResourceList(24 / infertility_quotient, 3, forests, resources_to_place)
+		end
+		if table.maxn(forests) > 0 and beta_using_lekmod then
+			local resources_to_place = {
+			{self.hardwood_ID, 1, 100, 1, 2} };
+			self:ProcessResourceList(24 / infertility_quotient, 3, forests, resources_to_place)
+		end
+		
+		--
+		--print("-"); print("Added extra Bonus resources to Hills Region#", region_number);
+		--
+	end
+end
+
