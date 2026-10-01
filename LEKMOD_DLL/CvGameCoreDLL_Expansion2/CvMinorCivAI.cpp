@@ -2596,13 +2596,15 @@ void CvMinorCivAI::DoFirstContactWithMajor(TeamTypes eTeam, bool bSuppressMessag
 
 #ifdef LEKMOD_MINOR_CIV_PERSONALITIES
 			CvMinorCivPersonalityInfo* pkPersonalityInfo = GetPersonalityInfo();
-			if(pkPersonalityInfo && bFirstMajorCiv)
+			// A gift that is already 0 (minor-civ aggressor, or no contact gold left) stays 0.
+			if(pkPersonalityInfo && iGoldGift > 0)
 			{
-				iGoldGift += pkPersonalityInfo->GetFirstMeetGoldModifier();
+				if(bFirstMajorCiv)
+					iGoldGift += pkPersonalityInfo->GetFirstMeetGoldModifier();
+				else
+					iGoldGift += pkPersonalityInfo->GetOtherMeetGoldModifier();
 				if(iGoldGift < 0)
-				{
 					iGoldGift = 0;
-				}
 			}
 #endif
 		}
@@ -11556,6 +11558,7 @@ CvMinorCivPersonalityInfo::CvMinorCivPersonalityInfo() :
 	m_iQuestInfluenceModifierPercent(100),
 	m_bStripPersonalityBonusesIfAttackedMinor(false),
 	m_iFirstMeetGoldModifier(0),
+	m_iOtherMeetGoldModifier(0),
 	m_iTradeRouteGoldModifierPercent(100),
 	m_iGoldGiftInfluenceModifierPercent(100),
 	m_iTributeGoldModifierPercent(100),
@@ -11657,6 +11660,11 @@ bool CvMinorCivPersonalityInfo::IsStripPersonalityBonusesIfAttackedMinor() const
 int CvMinorCivPersonalityInfo::GetFirstMeetGoldModifier() const
 {
 	return m_iFirstMeetGoldModifier;
+}
+
+int CvMinorCivPersonalityInfo::GetOtherMeetGoldModifier() const
+{
+	return m_iOtherMeetGoldModifier;
 }
 
 int CvMinorCivPersonalityInfo::GetTradeRouteGoldModifierPercent() const
@@ -11802,6 +11810,7 @@ bool CvMinorCivPersonalityInfo::CacheResults(Database::Results& kResults, CvData
 	m_iQuestInfluenceModifierPercent = kResults.GetInt("QuestInfluenceModifierPercent");
 	m_bStripPersonalityBonusesIfAttackedMinor = kResults.GetBool("StripPersonalityBonusesIfAttackedMinor");
 	m_iFirstMeetGoldModifier = kResults.GetInt("FirstMeetGoldModifier");
+	m_iOtherMeetGoldModifier = kResults.GetInt("OtherMeetGoldModifier");
 	m_iTradeRouteGoldModifierPercent = kResults.GetInt("TradeRouteGoldModifierPercent");
 	m_iGoldGiftInfluenceModifierPercent = kResults.GetInt("GoldGiftInfluenceModifierPercent");
 	m_iTributeGoldModifierPercent = kResults.GetInt("TributeGoldModifierPercent");

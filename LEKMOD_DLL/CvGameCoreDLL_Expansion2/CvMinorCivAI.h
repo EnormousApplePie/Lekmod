@@ -699,6 +699,7 @@ public:
 	int GetQuestInfluenceModifierPercent() const;
 	bool IsStripPersonalityBonusesIfAttackedMinor() const;
 	int GetFirstMeetGoldModifier() const;
+	int GetOtherMeetGoldModifier() const;
 	int GetTradeRouteGoldModifierPercent() const;
 	int GetGoldGiftInfluenceModifierPercent() const;
 	int GetTributeGoldModifierPercent() const;
@@ -741,6 +742,7 @@ protected:
 	int m_iQuestInfluenceModifierPercent;
 	bool m_bStripPersonalityBonusesIfAttackedMinor;
 	int m_iFirstMeetGoldModifier;
+	int m_iOtherMeetGoldModifier;
 	int m_iTradeRouteGoldModifierPercent;
 	int m_iGoldGiftInfluenceModifierPercent;
 	int m_iTributeGoldModifierPercent;

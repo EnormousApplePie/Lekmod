@@ -12,25 +12,31 @@
 	<Language_en_US>
 		<!-- Version Number, Leave at top -->
 		<Row Tag="TXT_KEY_LEKMOD_VERSION">
-			<Text>LEKMOD v35.3000</Text>
+			<Text>LEKMOD v35.4.003</Text>
 		</Row>
-		<Replace Tag="TXT_KEY_MULTIPLAYER_STAGING_ROOM"> 
+		<Replace Tag="TXT_KEY_MULTIPLAYER_STAGING_ROOM">
 			<Text>
-				[COLOR_POSITIVE_TEXT]LEKMOD v35.3[ENDCOLOR]
+				[COLOR_POSITIVE_TEXT]LEKMOD v35.4[ENDCOLOR]
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_AD_SETUP_ADVANCED_OPTIONS"> 
+		<Replace Tag="TXT_KEY_AD_SETUP_ADVANCED_OPTIONS">
 			<Text>
-				[COLOR_POSITIVE_TEXT]LEKMOD v35.3[ENDCOLOR]  
+				[COLOR_POSITIVE_TEXT]LEKMOD v35.4[ENDCOLOR]
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_GAME_SELECTION_SCREEN"> 
+		<Replace Tag="TXT_KEY_GAME_SELECTION_SCREEN">
 			<Text>
-				[COLOR_POSITIVE_TEXT]LEKMOD v35.3[ENDCOLOR] 
+				[COLOR_POSITIVE_TEXT]LEKMOD v35.4[ENDCOLOR]
 			</Text>
 		</Replace>
 		<!-- END VERSION -->
 		<!-- Start v35 -->
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_DESTRUCTIVE_RECAPTURE">
+			<Text>No Destructive Recapture</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_DESTRUCTIVE_RECAPTURE_HELP">
+			<Text>If enabled, capturing a City will only reduce its [ICON_CITIZEN] Population and destroy Buildings once per turn, no matter who captures it. Capturing the City again on the same turn will not reduce them. This restriction ends once any Player reaches the Modern Era.</Text>
+		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_NO_FORTIFY_VS_RANGED">
 			<Text>No Fortification Bonus vs Ranged</Text>
 		</Row>
@@ -125,7 +131,7 @@
 			<Text>Impoverished</Text>
 		</Row>
 		<Row Tag="TXT_KEY_MINOR_CIV_PERSONALITY_IMPOVERISHED_HELP">
-			<Text>[COLOR_POSITIVE_TEXT]Impoverished[ENDCOLOR] City-States struggle financially. They give less gold on first contact, but respond more strongly to gold gifts and may ask for gold even when they have not been bullied.</Text>
+			<Text>[COLOR_POSITIVE_TEXT]Impoverished[ENDCOLOR] City-States struggle financially. They give [COLOR_POSITIVE_TEXT]20 [ICON_GOLD] Gold[ENDCOLOR] to the first civilization that meets them and [COLOR_POSITIVE_TEXT]10 [ICON_GOLD] Gold[ENDCOLOR] to later visitors, but respond more strongly to gold gifts and may ask for gold even when they have not been bullied.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_MINOR_CIV_PERSONALITY_PIRATE_REPUBLIC">
 			<Text>Pirate Republic</Text>

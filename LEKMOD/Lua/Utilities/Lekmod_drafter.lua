@@ -140,6 +140,69 @@ LekmodDrafter.TypeAliases = {
   Aztec = "CIVILIZATION_AZTEC",
 }
 
+-- NQ Tournament 11 allow-list. Keys match CivMeta (Prussia/Venice/New Zealand use internal keys).
+LekmodDrafter.Tournament11Keys = {
+	"Akkad", "Aksum", "Arabia", "Argentina", "Assyria", "Aztec", "Belgium", "Brazil",
+	"Buganda", "Burma", "Byzantium", "Carthage", "Chile", "China", "Colombia", "Czechia",
+	"France", "Georgia", "Inca", "Japan", "Kilwa", "Kongo", "Lithuania", "Mali",
+	"Manchuria", "Moors", "Mughals", "NewZealand", "Normandy", "Nubia", "Oman", "Persia",
+	"Philippines", "Poland", "Polynesia", "Portugal", "Prussian", "Romania", "Rome", "Russia",
+	"Songhai", "Spain", "Sumeria", "Switzerland", "Tibet", "Tunisia", "Turkey", "Vatican",
+	"Venetian", "Wales",
+}
+
+LekmodDrafter.Tournament11 = {}
+for _, key in ipairs(LekmodDrafter.Tournament11Keys) do
+	LekmodDrafter.Tournament11[key] = true
+end
+
+function LekmodDrafter.IsTournamentCiv(meta)
+	return meta ~= nil and meta.key ~= nil and LekmodDrafter.Tournament11[meta.key] == true
+end
+
+-- Civ IDs still legal under the active draft rules.
+-- nil means no extra filter (full playable list).
+function LekmodDrafter.RulesAllowSet(rules)
+	rules = rules or LekmodDrafter.DefaultRules()
+	if not rules.vanillaOnly and not rules.seasonalBans then
+		return nil
+	end
+	local allow = {}
+	for civID, meta in pairs(LekmodDrafter.BuildIDIndex()) do
+		local ok = true
+		if rules.vanillaOnly and not LekmodDrafter.HasTag(meta, "vanilla") then
+			ok = false
+		end
+		if rules.seasonalBans and not LekmodDrafter.IsTournamentCiv(meta) then
+			ok = false
+		end
+		if ok then
+			allow[civID] = true
+		end
+	end
+	return allow
+end
+
+-- Wrapped civ names for the Draft Rules checkbox (one source of truth with the allow-list).
+function LekmodDrafter.TournamentListText()
+	local names = {}
+	for _, key in ipairs(LekmodDrafter.Tournament11Keys) do
+		local meta = LekmodDrafter.CivMeta[key]
+		table.insert(names, (meta and meta.displayName) or key)
+	end
+	table.sort(names)
+	local lines = {}
+	local row = {}
+	for i, name in ipairs(names) do
+		table.insert(row, name)
+		if #row == 8 or i == #names then
+			table.insert(lines, table.concat(row, ", "))
+			row = {}
+		end
+	end
+	return "Tournament 11 allowed civs:[NEWLINE]" .. table.concat(lines, "[NEWLINE]")
+end
+
 function LekmodDrafter.DefaultRules()
 	return {
 		bansPerPlayer = LekmodDrafter.DEFAULT_BANS,
@@ -344,8 +407,8 @@ function LekmodDrafter.CreateDraft(rules, playerOrder, bansByPlayer)
 			-- skip
 		elseif rules.vanillaOnly and not LekmodDrafter.HasTag(meta, "vanilla") then
 			-- skip
-		elseif rules.seasonalBans and LekmodDrafter.HasTag(meta, "seasonal") then
-			-- seasonal tag = out of seasonal pool
+		elseif rules.seasonalBans and not LekmodDrafter.IsTournamentCiv(meta) then
+			-- NQ Tournament 11: every other playable civ is banned
 		else
 			table.insert(allowed, civID)
 			if LekmodDrafter.IsCoastal(meta) then

@@ -1925,11 +1925,33 @@ end
 
 -------------------------------------------------
 -------------------------------------------------
+local g_PendingCivPulldowns = {};
+
+function Draft_FlushPendingCivPulldowns()
+	for pullDown, playerID in pairs(g_PendingCivPulldowns) do
+		PopulateCivPulldown(pullDown, playerID);
+	end
+end
+
 function PopulateCivPulldown( pullDown, playerID )
+	if pullDown == nil then
+		return;
+	end
+
+	-- Rebuilding an open PullDown hides its button until the context is reloaded.
+	local isOpen = false;
+	pcall(function()
+		if pullDown.IsOpen ~= nil and pullDown:IsOpen() then
+			isOpen = true;
+		end
+	end);
+	if isOpen then
+		g_PendingCivPulldowns[pullDown] = playerID;
+		return;
+	end
+	g_PendingCivPulldowns[pullDown] = nil;
 
     local controlTable = {};
-
-	pullDown:ClearEntries();
 
 	local draftLocked = Draft_IsDraftLocked ~= nil and Draft_IsDraftLocked();
 	local realPlayerID = GetPlayerIDBySelectionIndex(playerID);
@@ -1940,7 +1962,11 @@ function PopulateCivPulldown( pullDown, playerID )
 		for _, id in ipairs(draftPool) do
 			allowSet[id] = true;
 		end
+	elseif LekmodDrafter ~= nil and LekmodDrafter.RulesAllowSet ~= nil then
+		allowSet = LekmodDrafter.RulesAllowSet(g_DraftRules);
 	end
+
+	pullDown:ClearEntries();
 
 	local function FillCivPullEntry(entry, civID, title, tooltip)
 		if entry.CivName ~= nil then
@@ -2045,6 +2071,15 @@ function PopulateCivPulldown( pullDown, playerID )
 
     pullDown:CalculateInternals();
     pullDown:RegisterSelectionCallback( CivSelected );
+	-- ClearEntries can leave the closed button hidden even after new entries exist.
+	if not pullDown:IsHidden() then
+		pcall(function()
+			local btn = pullDown:GetButton();
+			if btn ~= nil then
+				btn:SetHide(false);
+			end
+		end);
+	end
 end
 
 

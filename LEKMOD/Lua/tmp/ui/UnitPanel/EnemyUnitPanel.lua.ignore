@@ -1032,7 +1032,7 @@ function OnMouseOverHex( hexX, hexY )
 		local pHeadPlayer = Players[Game.GetActivePlayer()];
 		local pHeadCity = UI.GetHeadSelectedCity();
 		local FightWhileEmbarked = pHeadPlayer:IsEmbarkedMissionAllowed(GameInfoTypes.MISSION_RANGE_ATTACK);
-		local bCtrl = UIManager:GetControl(); -- Hold Control to preview the fight as if the enemy were attacking us (defensive combat).
+		local bCtrl = UIManager:GetControl(); -- Hold Control to preview the fight as if the enemy were attacking us (defensive combat). Works without a war, same as Alt.
 		local bEmbarkedFullStrength = pHeadPlayer:IsEmbarkedUnitsFullStrength(); -- Trait: embarked units fight at full strength, so they can melee naval/embarked units too.
 
 		if (pHeadUnit ~= nil) then
@@ -1075,7 +1075,7 @@ function OnMouseOverHex( hexX, hexY )
 						
 						local pCity = pPlot:GetPlotCity();
 						
-						if (pTeam:IsAtWar(pCity:GetTeam()) or (UIManager:GetAlt() and pCity:GetOwner() ~= iTeam)) then
+						if (pTeam:IsAtWar(pCity:GetTeam()) or ((UIManager:GetAlt() or bCtrl) and pCity:GetOwner() ~= iTeam)) then
 							UpdateCityStats(pCity);
 							if (bCtrl) then
 								UpdateCombatOddsCityVsUnit(pCity, pHeadUnit); -- Defensive preview: simulate their city bombarding us.
@@ -1118,7 +1118,7 @@ function OnMouseOverHex( hexX, hexY )
 												UpdateUnitPromotions(pUnit);
 												UpdateUnitStats(pUnit);
 												
-												if (pTeam:IsAtWar(pUnit:GetTeam()) or (UIManager:GetAlt() and pUnit:GetOwner() ~= iTeam)) then
+												if (pTeam:IsAtWar(pUnit:GetTeam()) or ((UIManager:GetAlt() or bCtrl) and pUnit:GetOwner() ~= iTeam)) then
 													if (bCtrl) then
 														UpdateCombatOddsUnitVsUnit(pUnit, pHeadUnit); -- Defensive preview: simulate them attacking us.
 													else
@@ -1151,7 +1151,7 @@ function OnMouseOverHex( hexX, hexY )
 						
 						local pCity = pPlot:GetPlotCity();
 						
-						if (pTeam:IsAtWar(pCity:GetTeam()) or (UIManager:GetAlt() and pCity:GetOwner() ~= iTeam)) then
+						if (pTeam:IsAtWar(pCity:GetTeam()) or ((UIManager:GetAlt() or bCtrl) and pCity:GetOwner() ~= iTeam)) then
 							UpdateCityStats(pCity);
 							if (bCtrl) then
 								UpdateCombatOddsCityVsUnit(pCity, pHeadUnit); -- Defensive preview: simulate their city bombarding us.
@@ -1184,7 +1184,7 @@ function OnMouseOverHex( hexX, hexY )
 										UpdateUnitPromotions(pUnit);
 										UpdateUnitStats(pUnit);
 												
-										if (pTeam:IsAtWar(pUnit:GetTeam()) or (UIManager:GetAlt() and pUnit:GetOwner() ~= iTeam)) then
+										if (pTeam:IsAtWar(pUnit:GetTeam()) or ((UIManager:GetAlt() or bCtrl) and pUnit:GetOwner() ~= iTeam)) then
 											if (bCtrl) then
 												UpdateCombatOddsUnitVsUnit(pUnit, pHeadUnit); -- Defensive preview: simulate them attacking us.
 											else
@@ -1218,7 +1218,7 @@ function OnMouseOverHex( hexX, hexY )
 					-- Enemy city info
 					local theirCity = pPlot:GetPlotCity();
 
-					if (theirCity ~= nil and (myTeam:IsAtWar(theirCity:GetTeam()) or (UIManager:GetAlt() and theirCity:GetOwner() ~= myTeamID))) then
+					if (theirCity ~= nil and (myTeam:IsAtWar(theirCity:GetTeam()) or ((UIManager:GetAlt() or bCtrl) and theirCity:GetOwner() ~= myTeamID))) then
 
 						UpdateCityStats(theirCity);
 						if (bCtrl) then
@@ -1249,7 +1249,7 @@ function OnMouseOverHex( hexX, hexY )
 							-- No air units
 							if (theirUnit:GetDomainType() ~= DomainTypes.DOMAIN_AIR) then
 
-								if (myTeam:IsAtWar(theirUnit:GetTeam()) or (UIManager:GetAlt() and theirUnit:GetOwner() ~= myTeamID)) then
+								if (myTeam:IsAtWar(theirUnit:GetTeam()) or ((UIManager:GetAlt() or bCtrl) and theirUnit:GetOwner() ~= myTeamID)) then
 
 									-- Enemy Unit info
 									UpdateUnitPortrait(theirUnit);

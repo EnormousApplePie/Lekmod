@@ -861,6 +861,10 @@ public:
 	// THESE ARE READ-ONLY
 	//
 	void cacheGlobals();
+#ifdef LEKMOD_NO_DESTRUCTIVE_RECAPTURE
+	int getNoDestructiveRecaptureTurns() const;
+	bool isNoDestructiveRecaptureObsolete() const;
+#endif
 
 	// use very sparingly - this is costly
 	CvString getDefineSTRING(const char* szName, bool bReportErrors = true);
@@ -9804,6 +9808,10 @@ protected:
 	int   m_iLekmodTourismCombatMinBonus;
 	int   m_iLekmodTourismCombatMaxBonus;
 	bool  m_bLekmodTourismCombatIdeologyRequired;
+#endif
+#ifdef LEKMOD_NO_DESTRUCTIVE_RECAPTURE
+	int   m_iNoDestructiveRecaptureTurns;
+	int   m_iNoDestructiveRecaptureObsoleteEra;
 #endif
 	int   m_iMIN_DIG_SITES_PER_MAJOR_CIV;
 	int   m_iMAX_DIG_SITES_PER_MAJOR_CIV;

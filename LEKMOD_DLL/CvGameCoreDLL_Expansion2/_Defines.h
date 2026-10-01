@@ -1453,6 +1453,8 @@ Diversify Spain and Australia's NW Discovery bonus
 #define NEW_CITIES_LIBERATION
 // When a city is captured, buildings in it are destroyed only once per turn for each city
 #define BUILDINGS_DESTROY_ONCE_PER_TURN
+// Game option: capture pop/building losses happen at most once every X turns per city, until any major enters the obsolete era
+#define LEKMOD_NO_DESTRUCTIVE_RECAPTURE
 // Fixed a bug due to which in some cases the cost of technologies could decrease when annexing a city
 #define FIX_MAX_EFFECTIVE_CITIES
 // "Instant heals" cannot be taken on built or purchased units that have available promotions or after durationing promotion

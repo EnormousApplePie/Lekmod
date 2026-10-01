@@ -2769,6 +2769,22 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 	bRecapture = false; //((eHighestCulturePlayer != NO_PLAYER) ? (GET_PLAYER(eHighestCulturePlayer).getTeam() == getTeam()) : false);
 #endif
 
+#ifdef LEKMOD_NO_DESTRUCTIVE_RECAPTURE
+	bool bNoDestructiveRecaptureWindow = false;
+	if(bConquest && GC.getGame().isOption("GAMEOPTION_NO_DESTRUCTIVE_RECAPTURE") && !GC.isNoDestructiveRecaptureObsolete())
+	{
+		const int iWindowTurns = GC.getNoDestructiveRecaptureTurns();
+		if(iWindowTurns > 0)
+		{
+			const int iTurnsSinceAcquireForWindow = GC.getGame().getGameTurn() - pOldCity->getGameTurnAcquired();
+			if(iTurnsSinceAcquireForWindow < iWindowTurns)
+			{
+				bNoDestructiveRecaptureWindow = true;
+			}
+		}
+	}
+#endif
+
 	// Returning spies back to pool
 	CvCityEspionage* pOldCityEspionage = pOldCity->GetCityEspionage();
 	if(pOldCityEspionage)
@@ -2956,7 +2972,11 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 #endif
 
 	// Population change for capturing a city
+#ifdef LEKMOD_NO_DESTRUCTIVE_RECAPTURE
+	if(!bRecapture && bConquest && !bNoDestructiveRecaptureWindow)	// Don't drop it if we're recapturing our own City, or inside the no-destructive-recapture window
+#else
 	if(!bRecapture && bConquest)	// Don't drop it if we're recapturing our own City
+#endif
 	{
 		int iPercentPopulationRetained = /*50*/ GC.getCITY_CAPTURE_POPULATION_PERCENT();
 		int iInfluenceReduction = GetCulture()->GetInfluenceCityConquestReduction(eOldOwner);
@@ -3210,10 +3230,17 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 							{
 								// here would be a good place to put additional checks (for example, influence)
 #ifdef BUILDINGS_DESTROY_ONCE_PER_TURN
-								if(!bConquest || bRecapture || !(iTurnsSinceAcquire > 0) || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+#ifdef LEKMOD_NO_DESTRUCTIVE_RECAPTURE
+								if(!bConquest || bRecapture || bNoDestructiveRecaptureWindow || !(iTurnsSinceAcquire > 0) || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
 #else
-								
+								if(!bConquest || bRecapture || !(iTurnsSinceAcquire > 0) || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+#endif
+#else
+#ifdef LEKMOD_NO_DESTRUCTIVE_RECAPTURE
+								if(!bConquest || bRecapture || bNoDestructiveRecaptureWindow || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+#else
 								if(!bConquest || bRecapture || (GC.getGame().getJonRandNum(100, "Capture Probability") < pkLoopBuildingInfo->GetConquestProbability()))
+#endif
 #endif
 								{
 									iNum += paiNumRealBuilding[iI];
@@ -5760,7 +5787,13 @@ void CvPlayer::DoUnitReset()
 	for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 	{
 		// HEAL UNIT?
-		if (!pLoopUnit->isEmbarked())
+		// Embarked units do not heal, unless a trait lets them use the heal mission while embarked (Buganda acts as if on land).
+#if defined(v35_TRAITIFY)
+		const bool bEmbarkedBlocksHeal = pLoopUnit->isEmbarked() && !GET_PLAYER(pLoopUnit->getOwner()).GetPlayerTraits()->IsEmbarkedMissionAllowed(static_cast<MissionTypes>(GC.getInfoTypeForString("MISSION_HEAL")));
+#else
+		const bool bEmbarkedBlocksHeal = pLoopUnit->isEmbarked();
+#endif
+		if (!bEmbarkedBlocksHeal)
 		{
 			if (pLoopUnit->hasMoved())
 			{

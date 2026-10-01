@@ -1049,20 +1049,25 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 				"WHERE BeliefType = ?";
 			results = kUtility.PrepareResults(key, query);
 		}
-		results->Bind(1, szBeliefType);
-		while (results->Step())
+		if (results != NULL)
 		{
-			const int YieldID = results->GetInt(0);
-			const int YieldPerXFollowers = results->GetInt(1);
-			const int YieldPerXForeignFollowers = results->GetInt(2);
-			m_paiYieldChangePerXFollowers[YieldID] = YieldPerXFollowers;
-			m_paiYieldChangePerXForeignFollowers[YieldID] = YieldPerXForeignFollowers;
-			if (YieldID == YIELD_GOLD)
+			results->Bind(1, szBeliefType);
+			while (results->Step())
 			{
-				m_paiYieldChangePerXFollowers[YieldID] += iGoldPerXFollowers;
+				const int YieldID = results->GetInt(0);
+				const int YieldPerXFollowers = results->GetInt(1);
+				const int YieldPerXForeignFollowers = results->GetInt(2);
+				m_paiYieldChangePerXFollowers[YieldID] = YieldPerXFollowers;
+				m_paiYieldChangePerXForeignFollowers[YieldID] = YieldPerXForeignFollowers;
 			}
+			results->Reset();
 		}
-		results->Reset();
+		// GoldPerXFollowers (Tithe) lives on the Beliefs row, not in Belief_YieldChangePerXFollowers.
+		// Fold it in even when that table has no gold row for this belief.
+		if (iGoldPerXFollowers > 0)
+		{
+			m_paiYieldChangePerXFollowers[YIELD_GOLD] += iGoldPerXFollowers;
+		}
 	}
 #endif
 #if !defined(LEKMOD_BELIEF_YIELDIFY)

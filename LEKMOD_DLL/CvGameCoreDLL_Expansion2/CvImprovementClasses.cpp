@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	ù 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	¬ù 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -514,7 +514,8 @@ bool CvImprovementEntry::CacheResults(Database::Results& kResults, CvDatabaseUti
 		const int iNumYields = kUtility.MaxRows("Yields");
 		const int iNumMaxAmount = 7;
 
-		kUtility.Initialize2DArray(m_piImprovementAdjacentBonusCivilization, 200, iImprovementTypes);
+		// Unset entries must not be 0. Academy is improvement ID 0, and the match test treats a stored ID as a hit.
+		kUtility.Initialize2DArray(m_piImprovementAdjacentBonusCivilization, 200, iImprovementTypes, -1);
 		kUtility.Initialize2DArray(m_ppiImprovementAdjacentCivilizationAmount, iNumYields, iNumMaxAmount);
 		kUtility.Initialize2DArray(m_ppiImprovementAdjacentBonusCivilizationNoAmount, iImprovementTypes, iNumYields);
 

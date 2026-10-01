@@ -900,7 +900,10 @@
         </Container>
 
         <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Anchor="L,T" TextAnchorSide="Right" Font="TwCenMT20" Offset="0,4" TextOffset="40,0" String="Vanilla civs only" ToolTip="Restrict the draft pool to base-game civilizations" IsChecked="0" ID="DraftVanillaCheck" ConsumeMouse="1" />
-        <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Anchor="L,T" TextAnchorSide="Right" Font="TwCenMT20" Offset="0,4" TextOffset="40,0" String="Lekmod seasonal bans" ToolTip="Remove civs marked seasonal from the draft pool" IsChecked="0" ID="DraftSeasonalCheck" ConsumeMouse="1" />
+        <CheckBox ButtonTexture="assets/UI/Art/Controls/CheckBox2TheBox.dds" Anchor="L,T" TextAnchorSide="Right" Font="TwCenMT20" Offset="0,4" TextOffset="40,0" String="NQ Tournament Civ list" ToolTip="NQ Tournament 11. Bans every playable civilization except the list below." IsChecked="0" ID="DraftSeasonalCheck" ConsumeMouse="1" />
+        <Container Size="1100,168">
+          <Label Anchor="L,T" Offset="40,0" Font="TwCenMT16" ColorSet="Beige_Black_Alpha" WrapWidth="1040" ID="DraftTournamentListLabel" String="" />
+        </Container>
 
         <Stack Anchor="L,T" Padding="8" StackGrowth="Right">
           <GridButton Style="SmallButton" Size="180,32" ID="DraftResetButton">

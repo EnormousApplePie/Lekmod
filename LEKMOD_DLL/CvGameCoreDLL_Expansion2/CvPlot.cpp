@@ -1113,10 +1113,37 @@ bool CvPlot::isLake() const
 	return false;
 }
 #if defined(LEKMOD_BUGANDA_LAKE)
+static FeatureTypes GetLakeVictoriaFeatureType()
+{
+	static FeatureTypes eFeature = NO_FEATURE;
+	static bool bFound = false;
+	if (!bFound)
+	{
+		const int iFeature = GC.getInfoTypeForString("FEATURE_LAKE_VICTORIA", true);
+		if (iFeature != -1)
+		{
+			eFeature = static_cast<FeatureTypes>(iFeature);
+			bFound = true;
+		}
+	}
+	return eFeature;
+}
+
+// Portion of iPrimary that is not already covered by iAlreadyIncluded.
+static int YieldNotAlreadyIncluded(int iPrimary, int iAlreadyIncluded)
+{
+	if (iPrimary <= 0)
+		return 0;
+	if (iAlreadyIncluded <= 0)
+		return iPrimary;
+	return iPrimary - std::min(iPrimary, iAlreadyIncluded);
+}
+
 bool CvPlot::isPseudoLake() const
 {
-	// this is for new buganda lake and lake victoria
-	return m_bPseudoLake || (getFeatureType() == static_cast<FeatureTypes>(GC.getInfoTypeForString("FEATURE_LAKE_VICTORIA")));
+	// Buganda's fresh-water improvement, and Lake Victoria (counts as a lake).
+	const FeatureTypes eLakeVictoria = GetLakeVictoriaFeatureType();
+	return m_bPseudoLake || (eLakeVictoria != NO_FEATURE && getFeatureType() == eLakeVictoria);
 }
 void CvPlot::setPseudoLake(bool bValue)
 {
@@ -8411,6 +8438,55 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			}
 		}
 	}
+#if defined(LEKMOD_BUGANDA_LAKE)
+	// YieldNotAdditive (Lake Victoria) replaces the tile yield and wipes the lake-proxy
+	// FEATURE_ICE bonuses applied above. Restore any of that proxy yield the feature row
+	// did not already include, so lake beliefs and traits count once.
+	if (!bIgnoreFeature && getFeatureType() != NO_FEATURE && getFeatureType() == GetLakeVictoriaFeatureType())
+	{
+		CvFeatureInfo* pLakeVictoriaInfo = GC.getFeatureInfo(getFeatureType());
+		if (pLakeVictoriaInfo != NULL && pLakeVictoriaInfo->isYieldNotAdditive())
+		{
+			int iProxyYield = 0;
+#ifdef NQ_LAKE_BELIEF_BONUSES
+			if (pWorkingCity != NULL && eMajority != NO_RELIGION)
+			{
+				const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, pWorkingCity->getOwner());
+				if (pReligion)
+				{
+					int iIceBelief = pReligion->m_Beliefs.GetFeatureYieldChange(FEATURE_ICE, eYield);
+					int iFeatureBelief = pReligion->m_Beliefs.GetFeatureYieldChange(getFeatureType(), eYield);
+					if (eSecondaryPantheon != NO_BELIEF)
+					{
+						CvBeliefEntry* pSecondary = GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon);
+						if (pSecondary != NULL)
+						{
+							iIceBelief += pSecondary->GetFeatureYieldChange(FEATURE_ICE, eYield);
+							iFeatureBelief += pSecondary->GetFeatureYieldChange(getFeatureType(), eYield);
+						}
+					}
+					iProxyYield += YieldNotAlreadyIncluded(iIceBelief, iFeatureBelief);
+				}
+			}
+#endif
+#if defined(TRAITIFY)
+			if (m_eOwner != NO_PLAYER)
+			{
+				CvPlayerTraits* pTraits = GET_PLAYER((PlayerTypes)m_eOwner).GetPlayerTraits();
+				int iIceTrait = pTraits->GetFeatureYieldChange(FEATURE_ICE, eYield);
+				int iFeatureTrait = pTraits->GetFeatureYieldChange(getFeatureType(), eYield);
+				if (getImprovementType() == NO_IMPROVEMENT)
+				{
+					iIceTrait += pTraits->GetUnimprovedFeatureYieldChange(FEATURE_ICE, eYield);
+					iFeatureTrait += pTraits->GetUnimprovedFeatureYieldChange(getFeatureType(), eYield);
+				}
+				iProxyYield += YieldNotAlreadyIncluded(iIceTrait, iFeatureTrait);
+			}
+#endif
+			iYield += iProxyYield;
+		}
+	}
+#endif
 
 	// GJS - this was moved after the Feature terrain yield replacement if statement (just above this) to allow yield changes from religion based on terrain with replacement features
 	// Extra yield for religion on this terrain
@@ -8475,7 +8551,12 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			}
 			const bool bPolicyNoResourcePlot = (ePolicyNatureResource == NO_RESOURCE);
 			const bool bPolicyUnimprovedPlot = (getImprovementType() == NO_IMPROVEMENT);
-			iYield += pPolicyYields->GetPolicyTerrainYieldChange(getTerrainType(), eYield, bPolicyUnimprovedPlot, bPolicyNoResourcePlot, isLake());
+#if defined(LEKMOD_BUGANDA_LAKE)
+					const bool bPolicyLakePlot = isLake() || isPseudoLake();
+#else
+					const bool bPolicyLakePlot = isLake();
+#endif
+					iYield += pPolicyYields->GetPolicyTerrainYieldChange(getTerrainType(), eYield, bPolicyUnimprovedPlot, bPolicyNoResourcePlot, bPolicyLakePlot);
 		}
 	}
 #endif
@@ -9000,6 +9081,9 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 
 		pWorkingCity = getWorkingCity();
 
+#if defined(LEKMOD_BUGANDA_LAKE)
+		bool bAddedLakePlotYield = false;
+#endif
 		if(isWater())
 		{
 			if(!isImpassable() && !isMountain())
@@ -9017,6 +9101,9 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 							if (pWorkingCity->getLakePlotYield(eYield) > 0)
 							{
 								iCityYield = pWorkingCity->getLakePlotYield(eYield);
+#if defined(LEKMOD_BUGANDA_LAKE)
+								bAddedLakePlotYield = true;
+#endif
 							}
 						}
 						else
@@ -9041,7 +9128,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 			}
 		}
 #if defined(LEKMOD_BUGANDA_LAKE)
-		if (isPseudoLake())
+		// Real lakes already received this in the water block. Lake Victoria is impassable, so that block skips it.
+		if (isPseudoLake() && !bAddedLakePlotYield)
 		{
 			if (pWorkingCity != NULL)
 			{
@@ -9050,6 +9138,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 					if (pWorkingCity->getLakePlotYield(eYield) > 0)
 					{
 						iYield += pWorkingCity->getLakePlotYield(eYield);
+						bAddedLakePlotYield = true;
 					}
 				}
 			}
@@ -9096,7 +9185,15 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		{
 			if(pWorkingCity != NULL)
 			{
-				iYield += pWorkingCity->GetFeatureExtraYield(getFeatureType(), eYield);
+				int iFeatureExtraYield = pWorkingCity->GetFeatureExtraYield(getFeatureType(), eYield);
+#if defined(LEKMOD_BUGANDA_LAKE)
+				// Lake Victoria feature rows duplicate Building_LakePlotYieldChanges. Keep the overlap once.
+				if (bAddedLakePlotYield && getFeatureType() == GetLakeVictoriaFeatureType())
+				{
+					iFeatureExtraYield = YieldNotAlreadyIncluded(iFeatureExtraYield, pWorkingCity->getLakePlotYield(eYield));
+				}
+#endif
+				iYield += iFeatureExtraYield;
 			}
 		}
 
@@ -12211,6 +12308,9 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 
 		CvCity* pWorkingCity = getWorkingCity();
 
+#if defined(LEKMOD_BUGANDA_LAKE)
+		bool bAddedLakePlotYield = false;
+#endif
 		// Water plots
 		if(isWater())
 		{
@@ -12229,6 +12329,9 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 						if(pWorkingCity->getLakePlotYield(eYield) > 0 && isLake())
 						{
 							iCityYield = pWorkingCity->getLakePlotYield(eYield);
+#if defined(LEKMOD_BUGANDA_LAKE)
+							bAddedLakePlotYield = true;
+#endif
 						}
 						// Worked sea plot
 						else
@@ -12253,13 +12356,17 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 			}
 		}
 #if defined(LEKMOD_BUGANDA_LAKE)
-		if (isPseudoLake())
+		if (isPseudoLake() && !bAddedLakePlotYield)
 		{
 			if (pWorkingCity != NULL)
 			{
 				if (pWorkingCity->isRevealed(eTeam, false))
 				{
-					iYield += pWorkingCity->getLakePlotYield(eYield);
+					if (pWorkingCity->getLakePlotYield(eYield) > 0)
+					{
+						iYield += pWorkingCity->getLakePlotYield(eYield);
+						bAddedLakePlotYield = true;
+					}
 				}
 			}
 		}
@@ -12298,7 +12405,16 @@ int CvPlot::getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUp
 #endif
 		{
 			if(pWorkingCity != NULL)
-				iYield += pWorkingCity->GetFeatureExtraYield(getFeatureType(), eYield);
+			{
+				int iFeatureExtraYield = pWorkingCity->GetFeatureExtraYield(getFeatureType(), eYield);
+#if defined(LEKMOD_BUGANDA_LAKE)
+				if (bAddedLakePlotYield && getFeatureType() == GetLakeVictoriaFeatureType())
+				{
+					iFeatureExtraYield = YieldNotAlreadyIncluded(iFeatureExtraYield, pWorkingCity->getLakePlotYield(eYield));
+				}
+#endif
+				iYield += iFeatureExtraYield;
+			}
 		}
 
 

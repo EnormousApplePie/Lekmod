@@ -74,6 +74,7 @@
 		<Column name="QuestInfluenceModifierPercent" type="integer" default="100"/>
 		<Column name="StripPersonalityBonusesIfAttackedMinor" type="boolean" default="false"/>
 		<Column name="FirstMeetGoldModifier" type="integer" default="0"/>
+		<Column name="OtherMeetGoldModifier" type="integer" default="0"/>
 		<Column name="TradeRouteGoldModifierPercent" type="integer" default="100"/>
 		<Column name="GoldGiftInfluenceModifierPercent" type="integer" default="100"/>
 		<Column name="TributeGoldModifierPercent" type="integer" default="100"/>
@@ -141,7 +142,8 @@
 			<Type>MINOR_CIV_PERSONALITY_IMPOVERISHED</Type>
 			<Description>TXT_KEY_MINOR_CIV_PERSONALITY_IMPOVERISHED</Description>
 			<Help>TXT_KEY_MINOR_CIV_PERSONALITY_IMPOVERISHED_HELP</Help>
-			<FirstMeetGoldModifier>-15</FirstMeetGoldModifier>
+			<FirstMeetGoldModifier>-10</FirstMeetGoldModifier>
+			<OtherMeetGoldModifier>-5</OtherMeetGoldModifier>
 			<GoldGiftInfluenceModifierPercent>125</GoldGiftInfluenceModifierPercent>
 			<IgnoreBulliedForGoldQuest>true</IgnoreBulliedForGoldQuest>
 		</Row>
@@ -106669,6 +106671,8 @@
 		<Column name="Visible" type="boolean"  default="true"/>
 		<Column name="SupportsSinglePlayer" type="boolean"  default="true"/>
 		<Column name="SupportsMultiplayer" type="boolean"  default="true"/>
+		<Column name="NoDestructiveRecaptureTurns" type="integer" default="0"/>
+		<Column name="NoDestructiveRecaptureObsoleteEra" type="text" default="NULL"/>
 	</Table> 
 	<GameOptions>
 		<Delete />
@@ -107328,6 +107332,18 @@
 			<Type>GAMEOPTION_GOLDENAGE_ALT</Type>
 			<Description>TXT_KEY_GAME_OPTION_GOLDENAGE_ALT</Description>
 			<Help>TXT_KEY_GAME_OPTION_GOLDENAGE_ALT_HELP</Help>
+			<Default>false</Default> 
+			<Visible>true</Visible> 
+			<SupportsSinglePlayer>true</SupportsSinglePlayer>
+			<SupportsMultiplayer>true</SupportsMultiplayer> 
+		</Row>
+		<Row>
+			<ID>66</ID> 
+			<Type>GAMEOPTION_NO_DESTRUCTIVE_RECAPTURE</Type>
+			<Description>TXT_KEY_GAME_OPTION_NO_DESTRUCTIVE_RECAPTURE</Description>
+			<Help>TXT_KEY_GAME_OPTION_NO_DESTRUCTIVE_RECAPTURE_HELP</Help>
+			<NoDestructiveRecaptureTurns>1</NoDestructiveRecaptureTurns>
+			<NoDestructiveRecaptureObsoleteEra>ERA_MODERN</NoDestructiveRecaptureObsoleteEra>
 			<Default>false</Default> 
 			<Visible>true</Visible> 
 			<SupportsSinglePlayer>true</SupportsSinglePlayer>
@@ -260755,6 +260771,10 @@
 		<Row> 
 			<UnitType>UNIT_CROSSBOWMAN</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+		</Row>
+		<Row> 
+			<UnitType>UNIT_CROSSBOWMAN</UnitType> 
+			<PromotionType>PROMOTION_NO_FORTIFY_VS_RANGED</PromotionType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_CHINESE_CHUKONU</UnitType> 

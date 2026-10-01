@@ -6947,7 +6947,79 @@ void CvGlobals::cacheGlobals()
 #ifdef LEKMOD_BELIEF_BUILDING_PURCHASE
 	CvReligionBeliefs::LoadBuildingPurchaseFaithGoldTable();
 #endif
+
+#ifdef LEKMOD_NO_DESTRUCTIVE_RECAPTURE
+	m_iNoDestructiveRecaptureTurns = 1;
+	m_iNoDestructiveRecaptureObsoleteEra = NO_ERA;
+	{
+		Database::Connection* pDb = GetGameDatabase();
+		if(pDb)
+		{
+			Database::Results kQuery;
+			if(pDb->Execute(kQuery, "SELECT NoDestructiveRecaptureTurns, NoDestructiveRecaptureObsoleteEra FROM GameOptions WHERE Type = 'GAMEOPTION_NO_DESTRUCTIVE_RECAPTURE' LIMIT 1"))
+			{
+				if(kQuery.Step())
+				{
+					const int iTurns = kQuery.GetInt(0);
+					if(iTurns > 0)
+					{
+						m_iNoDestructiveRecaptureTurns = iTurns;
+					}
+
+					const char* szEra = kQuery.GetText(1);
+					if(szEra != NULL && szEra[0] != '\0')
+					{
+						Database::Results kEra;
+						if(pDb->Execute(kEra, "SELECT ID FROM Eras WHERE Type = ? LIMIT 1"))
+						{
+							kEra.Bind(1, szEra);
+							if(kEra.Step())
+							{
+								m_iNoDestructiveRecaptureObsoleteEra = kEra.GetInt(0);
+							}
+						}
+					}
+				}
+			}
+
+			if(m_iNoDestructiveRecaptureObsoleteEra == NO_ERA)
+			{
+				Database::Results kModern;
+				if(pDb->Execute(kModern, "SELECT ID FROM Eras WHERE Type = 'ERA_MODERN' LIMIT 1") && kModern.Step())
+				{
+					m_iNoDestructiveRecaptureObsoleteEra = kModern.GetInt(0);
+				}
+			}
+		}
+	}
+#endif
 }
+
+#ifdef LEKMOD_NO_DESTRUCTIVE_RECAPTURE
+int CvGlobals::getNoDestructiveRecaptureTurns() const
+{
+	return m_iNoDestructiveRecaptureTurns;
+}
+
+bool CvGlobals::isNoDestructiveRecaptureObsolete() const
+{
+	if(m_iNoDestructiveRecaptureObsoleteEra < 0)
+	{
+		return false;
+	}
+
+	for(int iPlayer = 0; iPlayer < MAX_MAJOR_CIVS; iPlayer++)
+	{
+		const CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+		if(kPlayer.isEverAlive() && kPlayer.GetCurrentEra() >= m_iNoDestructiveRecaptureObsoleteEra)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+#endif
 
 
 int CvGlobals::getDefineINT(const char* szName, bool bReportErrors)
