@@ -1518,6 +1518,16 @@ Diversify Spain and Australia's NW Discovery bonus
 
 /*LOGGING START*/
 ///
+#if defined(LEKMOD_MACOS)
+#define SLOG(sFmt, ...) {  \
+  CvString sRef;  \
+  CvString::format(sRef, "[%s:%d]: ", __FUNCTION__, __LINE__);  \
+  CvString sMsg;  \
+  CvString::format(sMsg, sFmt, ##__VA_ARGS__);  \
+  sRef+= sMsg; \
+  LOGFILEMGR.GetLog("PATCH.log", FILogFile::kDontTimeStamp)->Msg(sRef.c_str());  \
+}
+#else
 #define SLOG(sFmt, ...) {  \
   CvString sRef;  \
   CvString::format(sRef, "[%s:%d]: ", __FUNCTION__, __LINE__);  \
@@ -1526,6 +1536,7 @@ Diversify Spain and Australia's NW Discovery bonus
   sRef+= sMsg; \
   LOGFILEMGR.GetLog("PATCH.log", FILogFile::kDontTimeStamp)->Msg(sRef.c_str());  \
 }
+#endif
 /*LOGGING END*/
 
 

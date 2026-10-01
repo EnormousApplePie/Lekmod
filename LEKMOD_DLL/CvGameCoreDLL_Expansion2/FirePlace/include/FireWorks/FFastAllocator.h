@@ -309,8 +309,13 @@ protected:
 	//The actual data
 	VectorType m_vec;
 
+#if defined(LEKMOD_MACOS)
+	template< class U, bool POD, unsigned int Pool, unsigned int SubID, class Allocator >
+	friend void* operator new( size_t uiSize, FFastAllocator< U, POD, Pool, SubID, Allocator >& kAlloc );
+#else
 	template< class T, bool bPODType, unsigned int AllocPool, unsigned int nSubID, class BASE_ALLOC > 
 	friend void* operator new( size_t uiSize, FFastAllocator< T, bPODType, AllocPool, nSubID, BASE_ALLOC >& kAlloc );
+#endif
 };
 
 // Placement new on a FFastAllocator allows allocation and construction to be combined.
@@ -353,7 +358,11 @@ template<
 	class T,
 	unsigned int AllocPool = c_eMPoolTypeContainer, 
 	unsigned int nSubID = 0,
+#if defined(LEKMOD_MACOS)
+	class BASE_ALLOC = typename BaseVector< T, false >::FDefaultFastVectorAllocator
+#else
 	class BASE_ALLOC = typename BaseVector< T, bPODType >::FDefaultFastVectorAllocator
+#endif
 > class FFixedBlockAllocator
 {
 	const static unsigned int ms_uiAnchorNodeIndex = 0x0fffffff;
@@ -554,7 +563,11 @@ public:
 
 	//Don't allow copying
 private:
+#if defined(LEKMOD_MACOS)
+	void operator = (const FFixedBlockAllocator& rhs){}
+#else
 	void operator = (const FFastAllocator& rhs){}
+#endif
 
 
 public:
@@ -598,8 +611,13 @@ protected:
 	//The actual data
 	T* m_pData;
 
+#if defined(LEKMOD_MACOS)
+	template< class U, unsigned int Pool, unsigned int SubID, class Allocator >
+	friend void* operator new( size_t uiSize, FFixedBlockAllocator< U, Pool, SubID, Allocator >& kAlloc );
+#else
 	template< class T, unsigned int AllocPool, unsigned int nSubID, class BASE_ALLOC >
 	friend void* operator new( size_t uiSize, FFixedBlockAllocator< T, AllocPool, nSubID, BASE_ALLOC >& kAlloc );
+#endif
 };
 
 // Placement new on a FFastAllocator allows allocation and construction to be combined.

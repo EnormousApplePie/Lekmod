@@ -570,6 +570,9 @@ extern "C"
 	__declspec(dllexport) extern FStringA::FStringAData* FStringA_GetStringInitData();
 }
 #else
+#ifdef LEKMOD_MACOS
+extern "C"
+#endif
 FStringA::FStringAData* FStringA_GetStringInitData();
 #endif
 
@@ -1062,6 +1065,9 @@ extern "C"
 	__declspec(dllexport) extern FStringW::FStringWData* FStringW_GetStringInitData();
 }
 #else
+#ifdef LEKMOD_MACOS
+extern "C"
+#endif
 FStringW::FStringWData* FStringW_GetStringInitData();
 #endif
 

@@ -11,6 +11,9 @@
 #include "CvDllDlcPackageInfo.h"
 #include "CvDllWorldInfo.h"
 #include "CvPreGame.h"
+#if defined(LEKMOD_MACOS)
+#include "crossplay.hpp"
+#endif
 
 CvDllPreGame::CvDllPreGame()
 {
@@ -177,6 +180,14 @@ EraTypes CvDllPreGame::era()
 	return CvPreGame::era();
 }
 //------------------------------------------------------------------------------
+#if defined(LEKMOD_MACOS)
+const CvString CvDllPreGame::eraKey()
+{
+    const CvEraInfo* info = GC.getEraInfo(CvPreGame::era());
+    return info ? info->GetType() : "";
+}
+
+#endif
 PlayerTypes CvDllPreGame::findPlayerByNickname(const char* const name)
 {
 	return CvPreGame::findPlayerByNickname(name);
@@ -991,8 +1002,14 @@ void CvDllPreGame::SetCityScreenBlocked(bool bCityScreenBlocked)
 	CvPreGame::SetCityScreenBlocked(bCityScreenBlocked);
 }
 //------------------------------------------------------------------------------
+#if defined(LEKMOD_MACOS)
+__attribute__((noinline))
+#endif
 void CvDllPreGame::setVersionString(const std::string& v)
 {
+#if defined(LEKMOD_MACOS)
+	LekmodMac::adaptRegistration(v, __builtin_return_address(0));
+#endif
 	CvPreGame::setVersionString(v);
 }
 //------------------------------------------------------------------------------

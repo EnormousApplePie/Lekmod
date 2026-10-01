@@ -23,7 +23,11 @@
 class FCriticalSection;
 
 // Kind of like an assert for the compiler.  If the condition is not true then a compilation error is caused.
+#if defined(LEKMOD_MACOS)
+#define FLUA_COMPILE_TIME_CONDITION(CONDITION, ERR_NAME) typedef int ERROR_##ERR_NAME[(CONDITION)? 1 : -1]
+#else
 #define FLUA_COMPILE_TIME_CONDITION(CONDITION, ERR_NAME) typedef int ERROR_##ERR_NAME##[(CONDITION)? 1 : -1]
+#endif
 
 // Forces a compile time error.  Useful for template specializations that aren't suppose to compile.
 #define FLUA_COMPILE_TIME_ERROR(ERR_NAME) FLUA_COMPILE_TIME_CONDITION(false, ERR_NAME)
@@ -72,8 +76,19 @@ namespace FLua
 		// Static functions
 		ErrorHandler(ErrorHandlerStaticFunc pfn) :
 			m_pkClass(NULL),
+#if defined(LEKMOD_MACOS)
+			m_pfnFunc()
+            {
+                assert(pfn);
+                static_assert(sizeof(pfn) <= sizeof(m_pfnFunc), "function pointer storage");
+                // Mac member-function pointers are larger than static function pointers.
+                // Copy only the static pointer into the initialized storage.
+                memcpy(&m_pfnFunc, &pfn, sizeof(pfn));
+            }
+#else
 			m_pfnFunc(Details::UnsafeCast<ErrorHandlerFunc>(pfn))
 			{ assert(pfn); }
+#endif
 		
 		// Member functions
 		template<class T, class TFuncOwner>
@@ -198,7 +213,11 @@ namespace FLua
 			T ret = T(); // Don't use with reference types!!! ...EVER!!!
 
 			// Get the lua analog for this type off of the lua stack
+#if defined(LEKMOD_MACOS)
+			typedef typename Details::LuaAnalog<T>::Result Analog;
+#else
 			typedef Details::LuaAnalog<T>::Result Analog;
+#endif
 			Analog analog = Details::Get<Analog>(m_pkLuaState, m_iStackIndex);
 
 			// Validate the value from lua
@@ -470,7 +489,11 @@ namespace FLua
 		// Get functions for primitive types
 		template<> static inline bool Get(lua_State *L, int idx) { return lua_toboolean(L, idx) != 0; }
 		template<> static inline lua_Integer Get(lua_State *L, int idx) { return lua_tointeger(L, idx); }
+#if defined(LEKMOD_MACOS)
+		// lua_Integer is already long on macOS, so a second specialization would collide.
+#else
 		template<> static inline long Get(lua_State *L, int idx) { return (long)lua_tointeger(L, idx); }
+#endif
 		template<> static inline lua_Number Get(lua_State *L, int idx) { return lua_tonumber(L, idx); }
 		template<> static inline float Get(lua_State *L, int idx) { return (float)lua_tonumber(L, idx); }
 		template<> static inline const char *Get(lua_State *L, int idx) { return lua_tostring(L, idx); }

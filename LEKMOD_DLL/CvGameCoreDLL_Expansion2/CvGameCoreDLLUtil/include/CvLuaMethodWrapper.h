@@ -6,6 +6,10 @@
 template< class Derived, class InstanceType>
 class CvLuaMethodWrapper
 {
+#if defined(LEKMOD_MACOS)
+	// Allow Derived to use wrappers for the class that declares an inherited method.
+	friend Derived;
+#endif
 
 protected:
 	//These are helper templates that will allow for quick and easy member function wrapping when

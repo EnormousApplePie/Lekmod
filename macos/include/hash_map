@@ -1,0 +1,15 @@
+#pragma once
+#include <unordered_map>
+#include <string>
+namespace stdext {
+template<class K, class Compare=std::less<K>> struct hash_compare {
+    size_t operator()(const K& k) const { return std::hash<K>{}(k); }
+    bool operator()(const K& a,const K& b) const { return Compare{}(a,b); }
+};
+template<class K,class Traits> struct hash_equal {
+    bool operator()(const K& a,const K& b) const { Traits t; return !t(a,b) && !t(b,a); }
+};
+template<class K,class V,class Traits=hash_compare<K>> struct hash_map : std::unordered_map<K,V,Traits,hash_equal<K,Traits>> {
+    using std::unordered_map<K,V,Traits,hash_equal<K,Traits>>::unordered_map;
+};
+}

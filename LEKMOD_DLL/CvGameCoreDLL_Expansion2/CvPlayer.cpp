@@ -6206,7 +6206,11 @@ const CvCity* CvPlayer::getBusyCity() const
 #ifdef AUI_WARNING_FIXES
 	return NULL;
 #else
+#if defined(LEKMOD_MACOS)
+	return NULL;
+#else
 	return false;
+#endif
 #endif
 }
 
@@ -15094,7 +15098,11 @@ void CvPlayer::DoResetCityRevoltCounter()
 		CvNotifications* pNotifications = GetNotifications();
 		if(pNotifications && isHuman())
 		{
+#if defined(LEKMOD_MACOS)
+			Localization::String strMessage = Localization::String(GetLocalizedText("TXT_KEY_NOTIFICATION_POSSIBLE_CITY_REVOLT", iTurns, pMostUnhappyCity->getName(), GET_PLAYER(eRecipient).getCivilizationShortDescription()).c_str());
+#else
 			Localization::String strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_POSSIBLE_CITY_REVOLT", iTurns, pMostUnhappyCity->getName(), GET_PLAYER(eRecipient).getCivilizationShortDescription());
+#endif
 			Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_POSSIBLE_CITY_REVOLT_SUMMARY");
 			pNotifications->Add(NOTIFICATION_CITY_REVOLT_POSSIBLE, strMessage.toUTF8(), strSummary.toUTF8(), pMostUnhappyCity->getX(), pMostUnhappyCity->getY(), -1);
 		}
@@ -19964,7 +19972,11 @@ void CvPlayer::SetHasLostCapital(bool bValue, PlayerTypes eConqueror)
 				// and finding out who owns their original capital.
 				typedef std::tr1::array<int, MAX_CIV_TEAMS> CivTeamArray;
 				CivTeamArray aTeamCityCount;
+#if defined(LEKMOD_MACOS)
+				aTeamCityCount.fill(0);
+#else
 				aTeamCityCount.assign(0);
+#endif
 
 				CvMap& kMap = GC.getMap();
 				for (int iLoopPlayer = 0; iLoopPlayer < MAX_MAJOR_CIVS; ++iLoopPlayer)
@@ -25263,7 +25275,11 @@ CvCity* CvPlayer::GetFirstCityWithBuildingClass(BuildingClassTypes eBuildingClas
 #ifdef AUI_WARNING_FIXES
 	return NULL;
 #else
+#if defined(LEKMOD_MACOS)
+	return NULL;
+#else
 	return false;
+#endif
 #endif
 }
 

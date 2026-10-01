@@ -6636,7 +6636,11 @@ void CvUnit::DoAttrition()
 					if (pPlot && pPlot->GetActiveFogOfWarMode() == FOGOFWARMODE_OFF)
 #endif
 					{
+#if defined(LEKMOD_MACOS)
+						Localization::String string = Localization::String(GetLocalizedText("TXT_KEY_MISC_YOU_UNIT_WAS_DAMAGED_ATTRITION").c_str());
+#else
 						Localization::String string = GetLocalizedText("TXT_KEY_MISC_YOU_UNIT_WAS_DAMAGED_ATTRITION");
+#endif
 
 						char text[256];
 						sprintf_s (text, "%s [COLOR_WHITE]-%d [ICON_PEACE][ENDCOLOR]", string.toUTF8(), iStrengthLoss);

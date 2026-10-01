@@ -165,16 +165,25 @@ namespace Database{
 		//! Pointer to sqlite3 database.
 		sqlite3* m_db;
 
+#if defined(LEKMOD_MACOS)
+		// Aspyr 180925 constructs and destroys this object in the host executable.
+		// Its two 72-byte hash tables differ from modern libc++ unordered_map.
+		// Keep the host-owned string/tables/logger opaque (logger is at 0xb0).
+		unsigned char m_hostStorage[176];
+#else
 		//! Statistics buffer used for logging out memory stats
 		std::string m_strMemoryStats;
 
 		//! Hash map of count statements indexed by table name.
 		std::tr1::unordered_map<std::string, sqlite3_stmt*> m_hshCountStatements;
 		std::tr1::unordered_map<std::string, int> m_hshCountValues;
+#endif
 
 		static char ms_pPageCacheBuffer[DB_PAGECACHE_SIZE * DB_NUM_PAGES];
 		static char ms_pScratchBuffer[DB_PAGECACHE_SIZE * DB_NUM_THREADS * 6];	
 
+#if !defined(LEKMOD_MACOS)
 		mutable std::auto_ptr<IDatabaseLogger> m_pkDatabaseLogger;
+#endif
 	};
 }

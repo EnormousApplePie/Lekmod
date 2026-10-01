@@ -12,9 +12,12 @@
 #include "FCallStack.h"
 #include "FStlContainerSerialization.h"
 
+#if defined(LEKMOD_MACOS)
+#else
 #ifdef WIN32
 #	include "Win32/FDebugHelper.h"
 #endif//_WINPC
+#endif
 
 // include this after all other headers!
 #include "LintFree.h"
@@ -226,12 +229,15 @@ unsigned short CvRandom::get(unsigned short usNum, const char* pszLog)
 						else
 #endif
 						{
+#if defined(LEKMOD_MACOS)
+#else
 #ifdef WIN32
 							// Get callstack directly
 							FCallStack callStack;
 							FDebugHelper::GetInstance().GetCallStack(&callStack, 0, 8);
 							std::string stackTrace = callStack.toString(true, 6);
 							pLog->Msg(stackTrace.c_str());
+#endif
 #endif
 						}
 					}
@@ -326,12 +332,15 @@ unsigned int CvRandom::getBinom(unsigned int uiNum, const char* pszLog)
 						else
 #endif
 						{
+#if defined(LEKMOD_MACOS)
+#else
 #ifdef WIN32
 							// Get callstack directly
 							FCallStack callStack;
 							FDebugHelper::GetInstance().GetCallStack(&callStack, 0, 8);
 							std::string stackTrace = callStack.toString(true, 6);
 							pLog->Msg(stackTrace.c_str());
+#endif
 #endif
 						}
 					}

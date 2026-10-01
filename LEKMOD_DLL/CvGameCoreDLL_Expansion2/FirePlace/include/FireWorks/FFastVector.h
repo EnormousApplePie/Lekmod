@@ -241,11 +241,21 @@ protected:
 	unsigned int m_uiCurrSize;		//The current number of elements in the vector
 	unsigned int m_uiCurrMaxSize;	//The maximum number of elements which can be stored in the current memory store.
 
+#if defined(LEKMOD_MACOS)
+	template< class U, bool POD, unsigned int Pool, unsigned int SubID, class Allocator >
+	friend void* operator new( size_t uiSize, FFastVector< U, POD, Pool, SubID, Allocator >& kVector );
+#else
 	template< class T, bool bPODType, unsigned int AllocPool, unsigned int nSubID, class FAST_VEC_ALLOC >
 	friend void* operator new( size_t uiSize, FFastVector< T, bPODType, AllocPool, nSubID, FAST_VEC_ALLOC >& kVector );
+#endif
 
+#if defined(LEKMOD_MACOS)
+	template< class U, unsigned int N, bool POD, unsigned int Pool, unsigned int SubID >
+	friend void* operator new( size_t uiSize, FStaticVector< U, N, POD, Pool, SubID >& kVector );
+#else
 	template< class T, unsigned int L, bool bPODType, unsigned int AllocPool, unsigned int nSubID >
 	friend void* operator new( size_t uiSize, FStaticVector< T, L, bPODType, AllocPool, nSubID >& kVector );
+#endif
 };
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -276,6 +286,12 @@ public:
 
 	typedef FFastVector< T, bPODType, AllocPool, nSubID, FAST_VEC_ALLOC > THIS_TYPE;
 	typedef BaseVector< T, bPODType > BASE_TYPE;
+#if defined(LEKMOD_MACOS)
+	using BASE_TYPE::m_pData;
+	using BASE_TYPE::m_uiCurrSize;
+	using BASE_TYPE::m_uiCurrMaxSize;
+	using BASE_TYPE::Destroy;
+#endif
 	typedef T TYPE;
 
 	typedef TYPE* iterator;
@@ -304,7 +320,11 @@ public:
 #ifdef BREAK_ON_REPEATED_RESIZE
 		m_nResizeTimes = 0;
 #endif
+#if defined(LEKMOD_MACOS)
+		this->Copy(RHS);
+#else
 		Copy(RHS);
+#endif
 	};
 	FFastVector(unsigned int uiStartingMaxSize = 0)
 	{
@@ -523,8 +543,13 @@ protected:
 	unsigned int m_nResizeTimes;
 #endif
 
+#if defined(LEKMOD_MACOS)
+	template< class U, bool POD, unsigned int Pool, unsigned int SubID, class Allocator >
+	friend void* operator new( size_t uiSize, FFastVector<U, POD, Pool, SubID, Allocator>& kVector );
+#else
 	template< class T, bool bPODType, unsigned int AllocPool, unsigned int nSubID, class FAST_VEC_ALLOC >
 	friend void* operator new( size_t uiSize, THIS_TYPE& kVector );
+#endif
 };
 
 // Placement new on a FFastVector allows you to call a constructor directly on memory internal to the vector.
@@ -572,6 +597,12 @@ template<
 {
 	typedef FStaticVector< T, L, bPODType, AllocPool, nSubID > THIS_TYPE;
 	typedef BaseVector< T, bPODType > BASE_TYPE;
+#if defined(LEKMOD_MACOS)
+	using BASE_TYPE::m_pData;
+	using BASE_TYPE::m_uiCurrSize;
+	using BASE_TYPE::m_uiCurrMaxSize;
+	using BASE_TYPE::Destroy;
+#endif
 
 public:
 	typedef T* iterator;
@@ -596,7 +627,11 @@ public:
 #ifdef BREAK_ON_STATIC_RESIZE
 		m_iNumResized = 0;
 #endif
+#if defined(LEKMOD_MACOS)
+		this->Copy(RHS);
+#else
 		Copy(RHS);
+#endif
 	};
 	FStaticVector()
     {
@@ -624,7 +659,11 @@ public:
 		}else{
 			Destroy(m_pData, m_uiCurrSize);
 		}
+#if defined(LEKMOD_MACOS)
+		this->Copy(RHS);
+#else
 		Copy(RHS);
+#endif
 	};
 
     bool operator == (const THIS_TYPE& RHS) const {
@@ -819,8 +858,13 @@ protected:
 	unsigned char m_iNumResized;
 #endif
 
+#if defined(LEKMOD_MACOS)
+	template< class U, unsigned int N, bool POD, unsigned int Pool, unsigned int SubID >
+	friend void* operator new( size_t uiSize, FStaticVector< U, N, POD, Pool, SubID >& kVector );
+#else
 	template< class T, unsigned int L, bool bPODType, unsigned int AllocPool, unsigned int nSubID >
 	friend void* operator new( size_t uiSize, FStaticVector< T, L, bPODType, AllocPool, nSubID >& kVector );
+#endif
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1163,6 +1207,12 @@ template<
 {
 	typedef FFixedVector< T, bPODType, AllocPool, nSubID > THIS_TYPE;
 	typedef BaseVector< T, bPODType > BASE_TYPE;
+#if defined(LEKMOD_MACOS)
+	using BASE_TYPE::m_pData;
+	using BASE_TYPE::m_uiCurrSize;
+	using BASE_TYPE::m_uiCurrMaxSize;
+	using BASE_TYPE::Destroy;
+#endif
 
 public:
 	typedef T* iterator;
@@ -1366,11 +1416,15 @@ protected:
 		FFREEALIGNED( (unsigned char*)pVal );
 	};
 
+#if defined(LEKMOD_MACOS)
+	template< class U, bool POD, unsigned int Pool, unsigned int SubID >
+	friend void* operator new( size_t uiSize, FFixedVector< U, POD, Pool, SubID >& kVector );
+#else
 	template< class T, bool bPODType, unsigned int AllocPool, unsigned int nSubID >
 	friend void* operator new( size_t uiSize, FFixedVector< T, bPODType, AllocPool, nSubID >& kVector );
+#endif
 };
 
 #if defined(_WIN32) || defined(_WIN64)
 #pragma warning( pop )
 #endif
-

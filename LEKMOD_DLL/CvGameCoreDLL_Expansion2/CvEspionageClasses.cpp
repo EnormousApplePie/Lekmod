@@ -835,7 +835,11 @@ void CvPlayerEspionage::ProcessSpy(uint uiSpyIndex)
 					CvNotifications* pNotifications = m_pPlayer->GetNotifications();
 					if(pNotifications)
 					{
+#if defined(LEKMOD_MACOS)
+						Localization::String strSummary = Localization::String(GetLocalizedText("TXT_KEY_NOTIFICATION_SPY_STEAL_TECH_S").c_str());
+#else
 						Localization::String strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SPY_STEAL_TECH_S");
+#endif
 						Localization::String strNotification = Localization::Lookup("TXT_KEY_NOTIFICATION_SPY_STEAL_TECH");
 						strNotification << GetSpyRankName(pSpy->m_eRank);
 						strNotification << m_pPlayer->getCivilizationInfo().getSpyNames(pSpy->m_iName);
@@ -1235,7 +1239,11 @@ CvCity* CvPlayerEspionage::GetCityWithSpy(uint uiSpyIndex)
 #ifdef AUI_WARNING_FIXES
 		return NULL;
 #else
+#if defined(LEKMOD_MACOS)
+		return NULL;
+#else
 		return false;
+#endif
 #endif
 	}
 
@@ -2801,7 +2809,11 @@ void CvPlayerEspionage::ProcessSpyMessages()
 			case SPY_RESULT_DETECTED:
 				// notify defending player that a spy of unknown origin stole something
 			{
+#if defined(LEKMOD_MACOS)
+				Localization::String strSummary = Localization::String(GetLocalizedText("TXT_KEY_NOTIFICATION_TECH_STOLEN_SPY_DETECTED_WO_TECH_S").c_str());;
+#else
 				Localization::String strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_TECH_STOLEN_SPY_DETECTED_WO_TECH_S");;
+#endif
 				Localization::String strNotification;
 
 				if(pCityEspionage->m_aiSpyAssignment[m_pPlayer->GetID()] == -1)

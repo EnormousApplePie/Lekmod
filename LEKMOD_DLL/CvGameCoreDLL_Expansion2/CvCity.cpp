@@ -109,7 +109,11 @@ void ClearCityDeltas()
 template <typename T>
 bool ModifierUpdateInsertRemove(vector<pair<T, int>>& container, T key, int value, bool modifyExisting)
 {
+#if defined(LEKMOD_MACOS)
+	for (typename vector<pair<T, int>>::iterator it = container.begin(); it != container.end(); ++it)
+#else
 	for (vector<pair<T, int>>::iterator it = container.begin(); it != container.end(); ++it)
+#endif
 	{
 		if (it->first == key)
 		{
@@ -146,7 +150,11 @@ bool ModifierUpdateInsertRemove(vector<pair<T, int>>& container, T key, int valu
 template <typename T>
 int ModifierLookup(const vector<pair<T, int>>& container, T key)
 {
+#if defined(LEKMOD_MACOS)
+	for (typename vector<pair<T, int>>::const_iterator it = container.begin(); it != container.end(); ++it)
+#else
 	for (vector<pair<T, int>>::const_iterator it = container.begin(); it != container.end(); ++it)
+#endif
 		if (it->first == key)
 			return it->second;
 

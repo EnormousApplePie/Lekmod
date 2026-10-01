@@ -87,11 +87,23 @@ protected:
 #ifdef AUI_USE_SFMT_RNG
 	SFMersenneTwister m_MersenneTwister;
 #endif
+#if defined(LEKMOD_MACOS)
+	// Aspyr serializes these values as 32 bits even on its LP64 host.
+	// Keep the LCG state bounded so a local sync round trip remains equal.
+	typedef uint32_t RandomWord;
+	RandomWord m_ulRandomSeed;
+#else
 	unsigned long m_ulRandomSeed;
+#endif
 
 	// for OOS checks/debugging
+#if defined(LEKMOD_MACOS)
+	RandomWord m_ulCallCount;
+	RandomWord m_ulResetCount;
+#else
 	unsigned long m_ulCallCount;
 	unsigned long m_ulResetCount;
+#endif
 	bool m_bSynchronous;		// If true, the instance is marked as being one that should be synchronous across multi-player games.
 
 #ifdef _DEBUG
