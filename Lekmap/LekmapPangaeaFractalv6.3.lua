@@ -255,17 +255,17 @@ function GetMapScriptInfo()
 			{
 				Name = "Land Size X",	-- add setting for land type (11)
 				Values = {
-					"Default -10 tiles",
 					"Default -8 tiles",
 					"Default -6 tiles",
 					"Default -4 tiles",
-					"Default -2 (56 New Small Default) tiles",
-					"Default (58 On Small)",
+					"Default -2 tiles",
+					"Default +0 (56 On Small) tiles",
 					"Default +2 tiles",
 					"Default +4 tiles",
 					"Default +6 tiles",
 					"Default +8 tiles",
 					"Default +10 tiles",
+					"Default +12 tiles",
 				},
 
 				DefaultValue = 5,
@@ -276,17 +276,17 @@ function GetMapScriptInfo()
 			{
 				Name = "Land Size Y",	-- add setting for land type (12)
 				Values = {
-					"Default -10 tiles",
 					"Default -8 tiles",
 					"Default -6 tiles",
 					"Default -4 tiles",
-					"Default -2 (50 New Small Default) tiles",
-					"Default (52 On Small)",
+					"Default -2 tiles",
+					"Default +0 (50 On Small) tiles",
 					"Default +2 tiles",
 					"Default +4 tiles",
 					"Default +6 tiles",
 					"Default +8 tiles",
 					"Default +10 tiles",
+					"Default +12 tiles",
 
 				},
 
